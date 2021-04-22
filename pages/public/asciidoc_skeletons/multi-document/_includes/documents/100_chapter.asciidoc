@@ -1,0 +1,53 @@
+// ~/document_base_folder/_includes/documents
+// Sublevel Entry Document: 100_chapter.asciidoc
+// -----------------------------------------------------------------------------
+
+== Chapter 1
+
+J1 Template support popular icons font sets out-of-the-box:
+
+* link:{url-mdi--home}[Material Design Icons, {browser-window--new}] (MDI)
+* link:{url-fontawesome--home}[FontAwesome Icons V5, {browser-window--new}] (FA)
+* link:{url-iconify--home}[Iconify Icons, {browser-window--new}] (II)
+
+The icon sets MDI and FA are very good in design and have a rich set of
+different icons for many categories used for the Web. See below some details
+for link:{url-roundtrip--mdi-icons}[Material Design Icons, {browser-window--new}]
+and link:{url-roundtrip--fontawesome-icons}[FontAwesome Icons, {browser-window--new}].
+
+Iconify icons is not a locally stored icon-set like MDI or FA. All icons are
+loaded over the Internet using the so-called *Unified OpenSource Icon
+Framework*. See section link:{url-roundtrip--iconify-icons}[Iconify Icons, {browser-window--new}]
+for more information.
+
+=== Section
+
+The primary icon-set for J1 Template is link:{url-mdi--home}[Material Design Icons, {browser-window--new}],
+because it is extremely rich set providing more than 5900+ icons for the
+current version (v5.9.55). From a design perspective, _MDI_ has an excellen
+*Material Design* support an comes with the original icon set created by
+_Google_ build-in.
+
+_Material Design Icons_ (MDI) is a beneficial design resource for Web Design
+that is based on _Google_'s Material Design. _MDI_ is a community-driven
+project to create an increased number of icons based on _Google_'s official repository
+and MD style specification.
+
+==== Subsection
+
+_MDI_ is a growing collection to allow designers and developers targeting
+various platforms to download icons in the format, color and size they need
+for any project. The repo contains today 2100+ icons plus converted icons from
+the official set created by _Google_.
+
+// include::{documentdir}/tables/110_material_design_icons.asciidoc
+// include::{tabledir}/110_material_design_icons.asciidoc
+include::./tables/110_material_design_icons.asciidoc[]
+
+NOTE: Using Material Design Icons with Asciidoc is quite easy as an inline
+macro `mdi:` is available to place icons where ever you want. See more about
+this in section
+link:{url-roundtrip--asciidoc-extensions}#icon-fonts[Asciidoc Extensions, {browser-window--new}]
+
+_J1 Template_ supports the full set of _MDI_ for the Web (Webfont, WOFF). The
+icon set is fully integrated and can be used out-of-the-box.

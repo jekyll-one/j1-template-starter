@@ -1,0 +1,64 @@
+---
+# ~/document_base_folder
+# Top Level Entry Document:             200_chapter.asciidoc
+#
+title:                                  Skeleton book
+tagline:                                chapter 2
+date:                                   2021-01-01 00:00:00 +100
+description: >
+                                        Top Level Entry Document 100_chapter.asciidoc
+
+categories:                             [ Asciidoc, Knowledge ]
+tags:                                   [ Skeleton, Book ]
+
+sitemap:                                false
+robots:
+  index:                                false
+  follow:                               false
+
+permalink:                              /pages/public/skeleton/book/chapter_2/
+regenerate:                             false
+
+resources:                              [ lightbox, lightGallery, justifiedGallery ]
+resource_options:
+  - toccer:
+      collapseDepth:                    3
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/skeleton/sigmund-1920x1280.jpg
+          alt:                          Photo by Sigmund on Unsplash
+          alignY:                       top
+          badge:
+            type:                       unsplash
+            author:                     Sigmund
+            href:                       https://unsplash.com/@sigmund
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+include::{documentdir}/200_chapter.asciidoc[]

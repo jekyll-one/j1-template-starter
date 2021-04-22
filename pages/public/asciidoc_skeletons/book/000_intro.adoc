@@ -1,0 +1,67 @@
+---
+# Top Level Entry Document:             000_intro.asciidoc
+#
+title:                                  Introduction
+tagline:                                Skeleton Book
+date:                                   2021-01-01 00:00:00 +100
+description: >
+                                        Before you start writing, some general thoughts make sense to clarify what
+                                        Speaking, Reading and Writing are all about. What are the differences, what
+                                        the difficulties. I recomment to groove into that topic to become acquainted
+                                        with the base how human use a language rather than step in directly to tools
+                                        and techniques for writing.
+
+tags:                                   [ Introduction, Tutorial ]
+categories:                             [ Asciidoc, Knowledge, Skeleton ]
+
+sitemap:                                false
+robots:
+  index:                                false
+  follow:                               false
+
+
+permalink:                              /pages/public/skeleton/book/intro/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - toccer:
+      collapseDepth:                    4
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/skeleton/sigmund-1920x1280.jpg
+          alt:                          Photo by Sigmund on Unsplash
+          alignY:                       top
+          badge:
+            type:                       unsplash
+            author:                     Sigmund
+            href:                       https://unsplash.com/@sigmund
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+include::{documentdir}/000_intro.asciidoc[]

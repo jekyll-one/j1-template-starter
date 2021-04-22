@@ -1,0 +1,168 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/toccer.yml
+# Default configuration settings for J1 Toccer (TOC Module)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:                                Toccer
+  scope:                                Default settings
+  location:                             _data/modules/defaults/toccer.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL settings
+  #
+  # enabled
+  # ----------------------------------------------------------------------------
+  #   Enables|Disables the use of J1 TocManager
+  #
+  #   values:                           boolean (true|false)
+  #   default:                          false
+  #
+  #   log
+  #   --------------------------------------------------------------------------
+  #   Setting the log option to true enables the current option settings to
+  #   be written to the JavaScript console so you can inspect the settings.
+  #
+  #     values:                         boolean (true|false)
+  #     default:                        false
+  # ----------------------------------------------------------------------------
+  enabled:                              true
+  log:                                  false
+
+  # ----------------------------------------------------------------------------
+  # MODULE settings
+  #
+  # tocSelector
+  # ----------------------------------------------------------------------------
+  #   Specifies the <div> element where to render the table of contents.
+  #
+  #   type:                             string (HTML class)
+  #   values:                           any HTML class
+  #   default:                          .js-toc
+  #
+  #   headingSelector
+  #   --------------------------------------------------------------------------
+  #   Which headings to grab inside of the contentSelector element to build
+  #   the table of contents.
+  #
+  #     type:                           string (HTML class)
+  #     values:                         any HTML heading element class
+  #     default:                        "h1, h2, h3"
+  #
+  #   ignoreSelector
+  #   --------------------------------------------------------------------------
+  #   Headings that match the ignoreSelector will be skipped and ignored.
+  #   Use this HTML class to exclude a heading from TOC.
+  #
+  #     type:                           string (HTML class)
+  #     values:                         any HTML class
+  #     default:                        .notoc
+  #
+  #   contentSelector
+  #   --------------------------------------------------------------------------
+  #   Specifies the <div> element, typiclly your contet area, from which
+  #   the headings are taken to calculate the TOC.
+  #
+  #     type:                           string (HTML class)
+  #     default:                        .js-toc-content
+  #
+  #   activeLinkColor
+  #   --------------------------------------------------------------------------
+  #   Color of the TOC element that is marked as selected (active).
+  #
+  #     type:                           string (color)
+  #     default:                        "#204A87"
+  #
+  #   collapseDepth
+  #   --------------------------------------------------------------------------
+  #   Specifies how many heading levels should NOT collapsed (displayed).
+  #   For example, a value of 6 will show everything (since there are
+  #   only 6 heading levels (H1 .. H6) and a value of 1 will collapse
+  #   all. Hidden sections opened and closed (accordion effect) as the
+  #   content is being scrolled down.
+  #
+  #     type:                           integer ( [1..6] )
+  #     default:                        2
+  #
+  #   throttleTimeout
+  #   --------------------------------------------------------------------------
+  #   Timeout between events firing to make sure it's not too rapid
+  #   (for performance reasons).
+  #
+  #     type:                           integer
+  #     default:                        50
+  #
+  #   scrollOptions
+  #   --------------------------------------------------------------------------
+  #   smooth-scroll options object, see more details at:
+  #   https://github.com/cferdinandi/smooth-scroll
+  #
+  #   values
+  #
+  #     easing                          Type|Speed of the scroll effect the heading|section
+  #                                     (of the content) is scrolled to if a toc element
+  #                                     has been selected.
+  #       Linear,                       moves at the same speed from start to finish.
+  #       EaseIn,                       gradually increases in speed.
+  #       EaseOut,                      gradually decreases in speed.
+  #       EaseInOut,                    gradually increases in speed, peaks, and then
+  #                                     gradually slows down.
+  #
+  #       values:                       Linear|
+  #                                     easeInQuad|easeInCubic|easeInQuart|easeInQuint
+  #                                     easeOutQuad|easeOutCubic|easeOutQuart|easeOutQuint
+  #                                     easeInOutQuad|easeInOutCubic|easeInOutQuart|easeInOutQuint
+  #
+  #       default:                      easeInOutCubic
+  #
+  #     offset
+  #       Amount of space (calculated as pixels) between the top of page and the
+  #       selected table of contents item after the page has been scrolled.
+  #
+  #       values:                       integer
+  #       default:                      0
+  #
+  #     speed
+  #       Overall time (measured in milliseconds) to complete the scroll.
+  #
+  #       values:                       integer
+  #       default:                      300
+  #
+  #     updateURL
+  #       ...
+  #
+  #       values:                       boolean (true|false)
+  #       default:                      true
+  #
+  # ----------------------------------------------------------------------------
+  tocSelector:                          .js-toc
+  contentSelector:                      .js-toc-content
+  headingSelector:                      "h2, h3, h4, h5, h6"
+  ignoreSelector:                       .notoc
+  collapseDepth:                        4
+  activeLinkColor:                      "#f44336"
+  throttleTimeout:                      150
+  scrollSmooth:                         true
+  scrollSmoothDuration:                 300
+  scrollSmoothOffset:                   10                                      # TODO: to checked, if set dynamically with toccer adapter
+  scrollContainer:                      null                                    # TODO: to checked, what this option does
+
+# ------------------------------------------------------------------------------
+# END config

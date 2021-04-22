@@ -1,0 +1,113 @@
+# ------------------------------------------------------------------------------
+# ~/_data/apps/light_gallery.yml
+# User configuration settings for J1 LightGallery (lg)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:                                Light Gallery
+  scope:                                User settings
+  location:                             _data/apps/light_gallery.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # behavior and appearance
+  #
+  autoplay:
+    enabled:                        false
+    pause:                          5000
+    progressBar:                    true
+    fourceAutoplay:                 false
+    autoplayControls:               true
+    appendAutoplayControlsTo:       .lg-toolbar
+
+  fullScreen:
+    enabled:                        true
+
+  # ----------------------------------------------------------------------------
+  # HASH plugin
+  #
+  hash:
+    enabled:                        false
+
+  # ----------------------------------------------------------------------------
+  # PAGER plugin
+  #
+  pager:
+    enabled:                        true
+
+  # ----------------------------------------------------------------------------
+  # SHARE plugin
+  #
+  share:
+    enabled:                        false
+    facebook:                       true
+    facebookDropdownText:           Facebook
+    twitter:                        true
+    twitterDropdownText:            Twitter
+    googlePlus:                     true
+    googlePlusDropdownText:         GooglePlus
+    pinterest:                      true
+    pinterestDropdownText:          Pinterest
+
+  # ----------------------------------------------------------------------------
+  # THUMBNAIL plugin
+  #
+  thumbnail:
+    enabled:                        false
+    animateThumb:                   true
+    currentPagerPosition:           middle
+    thumbWidth:                     100
+    thumbContHeight:                100
+    thumbMargin:                    5
+    exThumbImage:                   false
+    showThumbByDefault:             true
+    toogleThumb:                    true
+    pullCaptionUp:                  true
+    enableThumbDrag:                true
+    enableThumbSwipe:               true
+    swipeThreshold:                 50
+    loadYoutubeThumbnail:           true
+    youtubeThumbSize:               1
+    loadVimeoThumbnail:             true
+    vimeoThumbSize:                 thumbnail_small
+    loadDailymotionThumbnail:       true
+
+  # ----------------------------------------------------------------------------
+  # VIDEO plugin
+  #
+  video:
+    videoMaxWidth:                  855
+    youtubePlayerParams:            false
+    vimeoPlayerParams:              false
+    dailymotionPlayerParams:        false
+    vkPlayerParams:                 false
+    videojs:                        true                                        # Enable VideoJS player
+    videojsOptions:                 {}
+
+  # ----------------------------------------------------------------------------
+  # ZOOM plugin
+  #
+  zoom:
+    enabled:                        false
+    scale:                          1
+    actualSize:                     true
+    enableZoomAfter:                300
+
+# ------------------------------------------------------------------------------
+# END config

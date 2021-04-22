@@ -1,0 +1,53 @@
+// ~/document_base_folder/_includes/documents
+// Sublevel Entry Document: 200_chapter.asciidoc
+// -----------------------------------------------------------------------------
+
+== Chapter 2
+
+A Lightbox, in general, is a helper which displays enlarged, almost
+screen-filling versions of pictures (or videos), while dimming the rest of the
+page. The technique, introduced by Lightbox V2, gained widespread popularity
+due to its simple and elegant style. The term lightbox is used since then for
+Javascript libraries to support such functionality.
+
+For J1 Template, two different lightboxes can be used:
+
+* Lightbox V2 (lightbox)
+* LightGallery
+
+The default lightbox used by J1 Template is Lightbox V2, a Javascript library
+written by _Lokesh Dhakar_. The name of that (build-in) is simply: lightbox.
+For more complex use cases, like a thumbnail gallery preview or video support,
+LightGallery can be used alternatively.
+
+NOTE: The name LightGallery implies a sort of a Gallery, but the library is a
+_lightbox_. And, LightGallery provides much more functionality on image-based
+data rather than enlarged displaying of images. See the examples below to check
+for the differences in comparison to the simpler Lightbox V2 lightbox.
+
+Both lightboxes are fully integrated to be used as standalone modules or to be
+used as helpers _under-the-hood_ by other apps or modules focussing on
+image-data like gallery or carousel, the build-in carousel module.
+
+=== Section
+
+Find below an example of using the lightbox Lightbox standalone. See how
+single (individual) images are linked for the use with Lightbox.
+
+.Lightbox block for standalone images
+lightbox::example-standalone[ 400, {data-images-standalone} ]
+
+For a group of images (image sets), Lightbox support image groups. Click
+on the images below to see how Lightbox manage image groups.
+
+.Lightbox block for grouped images
+lightbox::example-group[ 400, {data-images-group}, group ]
+
+==== Subsection
+
+LightGallery provides more complex functions on image data. The lightbox
+supports a gallery-style thumbnail preview plus image resizing, a dowload
+dialogue, sharing provider support and some more helpful. Check what
+LightGallery can do by the following example.
+
+gallery::jg_example[]

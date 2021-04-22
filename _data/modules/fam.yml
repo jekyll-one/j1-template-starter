@@ -1,0 +1,211 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/fam.yml
+# User Configuration of the FAM Module (Floating Action Menu)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+# NOTE:
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+  title:                                Floating Action Menu
+  scope:                                User settings
+  location:                             _data/modules/fam.yml
+
+# ------------------------------------------------------------------------------
+# User settings
+#
+settings:
+  enabled:                              true
+
+  menu_options:
+    hoverEnabled:                       true
+
+  # ----------------------------------------------------------------------------
+  # User defined FAM buttons
+  #
+  menus:
+
+    # --------------------------------------------------------------------------
+    # FAM for scrolling to the page top position (default)
+    #
+    - name:                             Scroll to top
+      enabled:                          true
+      id:                               default
+      icon:                             plus
+      icon_hover:                       chevron-up
+      color:                            md-blue
+
+      # ------------------------------------------------------------------------
+      # MENU items
+      #
+      items:
+        - item:
+          enabled:                      true
+          event_handler:                scroll_to_top
+
+    # --------------------------------------------------------------------------
+    # FAM to open sidebar-based (Mmenu Drawer) table of contents (toccer)
+    #
+    - name:                             Open TOC
+      enabled:                          true
+      id:                               open_toc
+      icon:                             plus
+      icon_hover:                       cursor-pointer
+      color:                            md-blue
+
+      # ------------------------------------------------------------------------
+      # MENU items
+      #
+      items:
+        - item:                         To Top
+          enabled:                      true
+          id:                           fam_scroll_to_top
+          color:                        md-green
+          event_handler:                scroll_to_top
+          icon:                         step-backward-2
+          icon_properties:              rotate-90
+
+        - item:                         Table of Contents
+          enabled:                      true
+          id:                           open_mmenu_toc
+          color:                        md-blue
+          event_handler:                open_mmenu_toc
+          icon:                         wrap
+
+    # --------------------------------------------------------------------------
+    # FAM for in-page navigation (simplified)
+    #
+    - name:                             in-page control
+      enabled:                          true
+      id:                               page_ctrl_simple
+      icon:                             plus
+      icon_hover:                       cursor-pointer
+      color:                            md-blue
+
+      # ------------------------------------------------------------------------
+      # MENU items
+      #
+      items:
+
+        - item:                         To Top
+          enabled:                      true
+          id:                           fam_scroll_to_top
+          color:                        md-green
+          event_handler:                scroll_to_top
+          icon:                         step-backward-2
+          icon_properties:              rotate-90
+
+        - item:                         Previous Section
+          enabled:                      true
+          id:                           fam_previous_section
+          color:                        md-green
+          event_handler:                scroll_previous_section
+          icon:                         step-backward
+          icon_properties:              rotate-90
+
+        - item:                         Next Section
+          enabled:                      true
+          id:                           fam_next_section
+          color:                        md-green
+          event_handler:                scroll_next_section
+          icon:                         step-forward
+          icon_properties:              rotate-90
+
+        - item:                         Table of Contents
+          enabled:                      true
+          id:                           open_mmenu_toc
+          color:                        md-blue
+          event_handler:                open_mmenu_toc
+          icon:                         wrap
+
+    # --------------------------------------------------------------------------
+    # FAM for in-page navigation
+    #
+    - name:                             in-page control
+      enabled:                          true
+      id:                               page_ctrl
+      icon:                             plus
+      icon_hover:                       cursor-pointer
+      color:                            md-blue
+
+      # ------------------------------------------------------------------------
+      # MENU items
+      #
+      items:
+
+        - item:                         Reload Page
+          enabled:                      true
+          id:                           fam_reload_page
+          color:                        md-red
+          event_handler:                reload_page
+          icon:                         reload
+
+        - item:                         To Top
+          enabled:                      true
+          id:                           fam_scroll_to_top
+          color:                        md-green
+          event_handler:                scroll_to_top
+          icon:                         step-backward-2
+          icon_properties:              rotate-90
+
+        - item:                         Previous Section
+          enabled:                      true
+          id:                           fam_previous_section
+          color:                        md-green
+          event_handler:                scroll_previous_section
+          icon:                         step-backward
+          icon_properties:              rotate-90
+
+        - item:                         Next Section
+          enabled:                      true
+          id:                           fam_next_section
+          color:                        md-green
+          event_handler:                scroll_next_section
+          icon:                         step-forward
+          icon_properties:              rotate-90
+
+        - item:                         To bottom
+          enabled:                      true
+          id:                           fam_scroll_to_bottom
+          color:                        md-green
+          event_handler:                scroll_to_bottom
+          icon:                         step-forward-2
+          icon_properties:              rotate-90
+
+        - item:                         Table of Contents
+          enabled:                      true
+          id:                           open_mmenu_toc
+          color:                        md-blue
+          event_handler:                open_mmenu_toc
+          icon:                         wrap
+
+      # - item:                         Leave a Comment
+      #   enabled:                      false
+      #   id:                           fam_scroll_to_comments
+      #   properties:
+      #   event_handler:                scroll_to_comments
+      #   icon:                         comment
+      #   icon_properties:
+      #
+      # - item:                         Tester
+      #   enabled:                      false
+      #   id:                           fam_test
+      #   properties:
+      #   event_handler:                alert_me
+      #   icon:                         alert
+      #   icon_properties:
+
+# ------------------------------------------------------------------------------
+# END config

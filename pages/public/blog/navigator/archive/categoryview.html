@@ -1,0 +1,181 @@
+---
+layout:                                 page
+title:                                  Creators Blog
+tagline:                                posts by category
+description:                            Browse articles by category
+
+categories:                             [ Navigator ]
+tags:                                   [ Blog, Categories, Viewer ]
+
+sort:                                   date
+toc:                                    true
+fam_menu_id:                            open_toc
+
+indexed:                                false
+exclude_from_search:                    true
+
+pagination:
+  enabled:                              false
+  permalink:                            /page:num/
+
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
+          alt:                          Photo by Matthaeus
+          alignY:                       top
+          badge:
+            type:                       unsplash
+            author:                     Matthaeus
+            href:                       https://unsplash.com/@matthaeus123
+---
+
+{% comment %} Debugging|Helpers
+-------------------------------------------------------------------------------- {% endcomment %}
+{% comment %} site_category_word_list:  {{site_category_word_list|debug}} {% endcomment %}
+
+{% comment %} Liquid procedures
+-------------------------------------------------------------------------------- {% endcomment %}
+{% capture get_page_path %}themes/{{site.template.name}}/procedures/global/get_page_path.proc{% endcapture %}
+{% capture select_icon_size %}themes/{{site.template.name}}/procedures/global/select_icon_size.proc{% endcapture %}
+{% capture get_category_item %}themes/{{site.template.name}}/procedures/global/get_category_item.proc{% endcapture %}
+{% capture create_word_cloud %}themes/{{site.template.name}}/procedures/global/create_word_cloud.proc{% endcapture %}
+
+{% comment %} Variables
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign view_config         = site.data.builder.blog_navigator.category_view %}
+{% assign view_description    = view_config.description %}
+
+{% if site.permalink == 'none' %}
+  {% capture browser_page_url %}{{page.url}}.html{% endcapture %}
+{% else %}
+  {% capture browser_page_url %}{{page.url}}{% endcapture %}
+{% endif %}
+
+{% include {{get_page_path}} mode='absolute' %}
+{% assign navigator_path = page_path|remove_first:'archive' %}
+
+{% capture navigator %}{{navigator_path}}{% endcapture %}
+{% capture date_view %}{{page_path}}/dateview/{% endcapture %}
+{% capture category_view %}{{page_path}}/categoryview/{% endcapture %}
+{% capture tag_view %}{{page_path}}/tagview/{% endcapture %}
+{% capture all_view %}{{page_path}}/{% endcapture %}
+
+{% if page.sort == 'title' %}
+  {% assign sorted_posts = site.posts|sort: 'title' %}
+{% elsif page.sort == 'date' %}
+  {% assign sorted_posts = site.posts|sort: 'date' %}
+{% else %}
+  {% assign sorted_posts = site.posts|sort: 'date' %}
+{% endif %}
+
+{% comment %} TODO: skip_words configured by yaml data file?
+-------------------------------------------------------------------------------- {% endcomment %}
+{% capture skip_words %} Posts Public {% endcapture %}
+
+{% capture site_category_word_list %}{% for category in site.categories %}{{category|first|capitalize|lstrip|rstrip}}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign category_words = site_category_word_list|split:',' %}
+{% assign categories = category_words|uniq %}
+
+{% for category in categories %}
+  {% if skip_words contains category %} {% continue %} {% endif %}
+  {% capture category_list %}{{category_list|append: category}}{% unless forloop.last %},{% endunless %}{% endcapture %}
+{% endfor %}
+
+{% comment %} Main
+-------------------------------------------------------------------------------- {% endcomment %}
+<!-- [INFO   ] [ {{page.url}} ] [Generate HTML}] -->
+{% include {{create_word_cloud}} word_list=category_list source="categories" skip_words=skip_words %}
+
+<div class="paginator ml-3">
+  <ul class="pagination raised-z0">
+    <li class="page-item"><a class="page-link" href="{{navigator|prepend: site.baseurl}}" title="Blog View">Navigator</a></li>
+    <li class="page-item"><a class="page-link" href="{{date_view|prepend: site.baseurl}}" title="View by Date">By Date</a></li>
+    <!-- li class="page-item"><a class="page-link" href="{{tag_view |prepend: site.baseurl}}" title="View by Tag">By Tag</a></li -->
+    <li class="page-item"><a class="page-link" href="{{all_view |prepend: site.baseurl}}" title="View All">All Posts</a></li>
+  </ul>
+</div>
+
+<div class="post-search-results ml-3">
+
+  <div class="view-description">{{view_description}}</div>
+  <div class="post-headline">
+    <h2 id="post-headline" class="mt-5">Posts by Category</h2>
+  </div>
+  {% assign tags = site.categories|sort %}
+  {% for tag in tags %}
+    {% assign category = tag|first %}
+    {% unless category_list contains category %} {% continue %} {% endunless %}
+    <h3 id="{{tag|first|downcase}}" class="anchor-link mb-4"><i class="mdi mdi-pin mr-1"></i>{{tag|first|capitalize}}</h3>
+
+      {% for post in sorted_posts %}
+        {%if post.categories contains tag[0]%}
+          {% assign category = tag|first %}
+          {% include {{get_category_item}} category=category %}
+          {% include {{select_icon_size}} family=icon_family size=icon_size %}
+          {% assign icon_size = size %}
+          {% assign excerpt = post.excerpt|truncatewords:50|replace:'...',' ...'|strip_html|strip_newlines|strip %}
+
+          <!-- Collect comment provider details -->
+          {% for sharing in builder_config.sharing_provider %}
+            {% assign provider      = sharing.provider %}
+            {% assign likes_count   = sharing.likes_count %}
+            {% assign comment_count = sharing.comment_count %}
+          {% endfor %}
+
+          <article class="card raised-z5 mb-5">
+            <h3 id="{{100000|rand}}" class="card-header bg-primary notoc">{{post.title}}</h3>
+            <!-- h5 class="notoc card-subtitle text-muted mb-2">{{post.tagline}}</h5 -->
+            <div class="card-body r-text-300">{{excerpt}}</div>
+
+            <div class="card-footer r-text-200">
+              <div class="card-footer-text">
+                {% if post.date %}
+                <i class="mdi mdi-calendar-blank mr-1"></i> {{post.date | date: "%Y %B, %e"}}
+                {% endif %}
+                {% if likes_count %}
+                <span class="font-weight-bold"> · </span>
+                <i class="mdi mdi-heart mr-1"></i> {{likes_count}}
+                {% endif %}
+                {% if comment_count %}
+                <span class="font-weight-bold"> · </span>
+                <i class="mdi mdi-comment mr-1"></i> {{comment_count}}
+                {% endif %}
+              </div>
+              <a class="card-link md-grey-800 font-weight-bold g-font-size-12 text-uppercase"
+                 href="{{post.url}}#readmore">
+                 Read · {{post.tagline}}
+              </a>
+            </div>
+          </article>
+        {% endif %}
+      {% endfor %}
+  {% endfor %}
+</div>
+
+<!-- [INFO   ] [j1.page.{{page.title}}                   ] [Save the current page to cookieUserState cookie: {{browser_page_url}}] -->
+{% comment %} Update cookie for lastpage
+-------------------------------------------------------------------------------- {% endcomment %}
+<script>
+  function setLastPage() {
+    var logger = log4javascript.getLogger('j1.BlogNavigator');
+    var cookie_names                = j1.getCookieNames();
+    const user_state_cookie_name    = cookie_names.user_session;
+    var user_state                  = j1.readCookie(user_state_cookie_name);
+    var user_state_last_page        = "{{browser_page_url}}";
+    user_state.last_page            = user_state_last_page;
+//  j1.setUserState( {last_page:user_state_last_page} );
+    j1.writeCookie({
+      name: user_state_cookie_name,
+      data: user_state
+    });
+    logger.info('Saved current Post Browser page to cookie: {{browser_page_url}}');
+  }
+  window.onload = setLastPage();
+</script>

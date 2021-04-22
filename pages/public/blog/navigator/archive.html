@@ -1,0 +1,140 @@
+---
+layout:                                 page
+title:                                  Creators Blog
+tagline:                                all posts
+description:                            Browse all articles
+
+categories:                             [ Navigator ]
+tags:                                   [ Blog, Archive, Viewer ]
+
+sort:                                   date
+toc:                                    true
+fam_menu_id:                            open_toc
+
+indexed:                                false
+exclude_from_search:                    true
+
+pagination:
+  enabled:                              false
+  permalink:                            /page:num/
+
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
+          alt:                          Photo by Matthaeus
+          alignY:                       top
+          badge:
+            type:                       unsplash
+            author:                     Matthaeus
+            href:                       https://unsplash.com/@matthaeus123
+---
+
+{% comment %} Liquid procedures
+-------------------------------------------------------------------------------- {% endcomment %}
+{% capture get_page_path %}themes/{{site.template.name}}/procedures/global/get_page_path.proc{% endcapture %}
+{% capture select_icon_size %}themes/{{site.template.name}}/procedures/global/select_icon_size.proc{% endcapture %}
+{% capture get_category_item %}themes/{{site.template.name}}/procedures/global/get_category_item.proc{% endcapture %}
+
+{% comment %} Variables
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign view_config         = site.data.builder.blog_navigator.archive_view %}
+{% assign view_description    = view_config.description %}
+
+{% if site.permalink == 'none' %}
+  {% capture browser_page_url %}{{page.url}}.html{% endcapture %}
+{% else %}
+  {% capture browser_page_url %}{{page.url}}{% endcapture %}
+{% endif %}
+
+{% include {{get_page_path}} mode='absolute' %}
+
+{% capture navigator %}{{page_path}}/{% endcapture %}
+{% capture blog_preview %}{{page_path}}/archive/preview/{% endcapture %}
+{% capture date_view %}{{page_path}}/archive/dateview/{% endcapture %}
+{% capture category_view %}{{page_path}}/archive/categoryview/{% endcapture %}
+{% capture tag_view %}{{page_path}}/archive/tagview/{% endcapture %}
+{% capture all_view %}{{page_path}}/{% endcapture %}
+
+{% comment %} Main
+-------------------------------------------------------------------------------- {% endcomment %}
+<!-- [INFO   ] [ {{page.url}} ] [Generate HTML}] -->
+<div class="paginator ml-3">
+  <ul class="pagination raised-z0">
+    <li class="page-item"><a class="page-link" href="{{navigator     | prepend: site.baseurl}}" title="Blog View">Navigator</a></li>
+    <li class="page-item"><a class="page-link" href="{{category_view | prepend: site.baseurl}}" title="View by Category">By Category</a></li>
+    <!-- li class="page-item"><a class="page-link" href="{{tag_view      | prepend: site.baseurl}}" title="View by Tag">By Tag</a></li -->
+    <li class="page-item"><a class="page-link" href="{{date_view     | prepend: site.baseurl}}" title="View All">By Date</a></li>
+  </ul>
+</div>
+
+<div id="index" class="post-search-results ml-3">
+  <div class="view-description">{{view_description}}</div>
+  <div class="post-headline">
+    <h2 id="post-headline" class="mt-5">All Posts</h2>
+  </div>
+
+  <!-- ul class="list-unstyled link-news" -->
+  {% for post in site.posts %}
+    {% assign excerpt = post.excerpt|truncatewords:50|replace:'...',' ...'|strip_html|strip_newlines|strip %}
+
+    <!-- Collect comment provider details -->
+    {% for sharing in builder_config.sharing_provider %}
+      {% assign provider      = sharing.provider %}
+      {% assign likes_count   = sharing.likes_count %}
+      {% assign comment_count = sharing.comment_count %}
+    {% endfor %}
+
+    <article class="card raised-z5 mb-5">
+      <h3 id="{{100000|rand}}" class="card-header bg-primary">{{post.title}}</h3>
+      <!-- h5 class="notoc card-subtitle text-muted mb-2">{{post.tagline}}</h5 -->
+      <div class="card-body r-text-300">{{excerpt}}</div>
+      <div class="card-footer r-text-200">
+        <div class="card-footer-text">
+          {% if post.date %}
+          <i class="mdi mdi-calendar-blank mr-1"></i> {{post.date | date: "%Y %B, %e"}}
+          {% endif %}
+          {% if likes_count %}
+          <span class="font-weight-bold"> · </span>
+          <i class="mdi mdi-heart mr-1"></i> {{likes_count}}
+          {% endif %}
+          {% if comment_count %}
+          <span class="font-weight-bold"> · </span>
+          <i class="mdi mdi-comment mr-1"></i> {{comment_count}}
+          {% endif %}
+        </div>
+        <a class="card-link md-grey-800 font-weight-bold g-font-size-12 text-uppercase"
+           href="{{post.url}}#readmore">
+           Read · {{post.tagline}}
+        </a>
+      </div>
+    </article>
+  {% endfor %}
+</div>
+
+<!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [{{page.title}} - Save the current page to cookieUserState cookie: {{browser_page_url}}] -->
+{% comment %} Update cookie for lastpage
+-------------------------------------------------------------------------------- {% endcomment %}
+<script type="text/javascript">
+  function setLastPage() {
+    var logger = log4javascript.getLogger('j1.BlogNavigator');
+    var cookie_names                = j1.getCookieNames();
+    const user_state_cookie_name    = cookie_names.user_session;
+    var user_state                  = j1.readCookie(user_state_cookie_name);
+    var user_state_last_page        = "{{browser_page_url}}";
+    user_state.last_page            = user_state_last_page;
+//  j1.setUserState( {last_page:user_state_last_page} );
+    j1.writeCookie({
+      name: user_state_cookie_name,
+      data: user_state
+    });
+    logger.info('Saved current Post Browser page to cookie: {{browser_page_url}}');
+  }
+  window.onload = setLastPage();
+</script>

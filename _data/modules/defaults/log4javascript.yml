@@ -1,0 +1,127 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/log4javascript.yml
+# Default configuration for J1 Logger module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:                                Logger
+  scope:                                Default settings
+  location:                             _data/modules/defaults/log4javascript.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # APPENDER configurations
+  #
+  appenders:
+
+    # --------------------------------------------------------------------------
+    # CONSOLE appender
+    - name:                             Console Appender
+      appender:
+        name:                           consoleAppender
+        enabled:                        false
+        type:                           BrowserConsoleAppender
+        layout:                         PatternLayout
+        custom_fields:                  [ file, line, path ]
+        pattern_string:                 "[%d{HH:mm:ss.SSS}] [%-5p] [%-40c] [%f{1}:%f{2}] [%m]%n                       [%f{3}]"
+
+    # --------------------------------------------------------------------------
+    # AJAX appender
+    - name:                             Ajax Appender
+      appender:
+        name:                           ajaxAppender
+        enabled:                        false
+        type:                           BrowserAjaxAppender
+        layout:                         JsonLayout
+        custom_fields:                  [ file, line, path ]
+
+        log_folder:                     log
+        log_file_name:                  messages
+        log_file_ext:                   log
+
+        create_on_start:                true
+        reset_on_start:                 true
+        rolling_files:                  false
+        mode:                           append
+
+
+    # --------------------------------------------------------------------------
+    # POPUP appender
+    - name:                             Popup Appender
+      appender:
+        name:                           popupAppender
+        enabled:                        false
+        type:                           PopUpAppender
+        width:                          600
+        height:                         400
+        lazyInit:                       false
+        initiallyMinimized:             false
+        layout:                         PatternLayout
+        custom_fields:                  []
+        pattern_string:                 "[%d{HH:mm:ss}] [ %-5p] - [%m{1}]%n"
+
+  # ----------------------------------------------------------------------------
+  # LOGGER configurations
+  #
+  loggers:
+
+    # --------------------------------------------------------------------------
+    # J1 PARENT logger (j1)
+    - name:                             Parent Logger
+      logger:
+        type:                           parent
+        name:                           j1
+        appender:                       [ consoleAppender, ajaxAppender ]
+        level:
+          production:                   warn
+          development:                  debug
+
+    # --------------------------------------------------------------------------
+    # ADAPTER CHILD logger (j1.adapter)
+    # - log:
+    #     type:                         child
+    #     name:                         adapter
+    #     appender:                     [ consoleAppender ]
+    #     level:
+    #       production:                 warn
+    #       development:                debug
+
+    # --------------------------------------------------------------------------
+    # LOADER CHILD logger (j1.loader)
+    # - log:
+    #     type:                         child
+    #     name:                         loader
+    #     appender:                     [ consoleAppender ]
+    #     level:
+    #       production:                 warn
+    #       development:                debug
+
+    # --------------------------------------------------------------------------
+    # MODULE CHILD logger (j1.module)
+    # - log:
+    #     type:                         child
+    #     name:                         module
+    #     appender:                     [ consoleAppender ]
+    #     level:
+    #       production:                 warn
+    #       development:                debug
+
+# ------------------------------------------------------------------------------
+# END config

@@ -1,0 +1,227 @@
+# ------------------------------------------------------------------------------
+# ~/_data/apps/navigator.yml
+# User configuration settings for J1 NAV Module
+# All sub-modules except Main Navigation bar
+#
+# NOTE: For Main Navigation bar, see navigator_menu.yml
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+  title:                                Navigator
+  scope:                                User settings
+  location:                             _data/modules/navigator.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # NavBar
+  #
+  nav_bar:
+    enabled:                            true
+    fixed:                              true
+
+  # ----------------------------------------------------------------------------
+  # NavMenu (Desktop)
+  #
+  nav_menu:
+    enabled:                            true
+    delay_open_menu:                    250
+
+  # ----------------------------------------------------------------------------
+  # NavMenu (MMobile)
+  #
+  nav_mmenu:
+    enabled:                            true
+
+    # --------------------------------------------------------------------------
+    # INSTANCE configuration (drawers|menus)
+    # --------------------------------------------------------------------------
+    menus:
+
+      # ------------------------------------------------------------------------
+      # NAVIGATION Main
+      #
+      - menu:
+          enabled:                      true
+
+          xhr_container_id:             navigator_nav_mmenu
+          xhr_data_path:                /assets/data/mmenu/index.html
+
+          drawer:
+            position:                   right
+
+          content:
+            id:                         menu_mmenu
+            type:                       navigation
+            title:                      Navigation
+            theme:                      dark
+            button:                     "#mmenu-button"
+            button_activated:           always
+
+      # ------------------------------------------------------------------------
+      # DRAWER Sidebar
+      #
+      - menu:
+          enabled:                      false
+
+          xhr_container_id:             navigator_sidebar_mmenu
+          xhr_data_path:                /assets/data/mmenu_sidebar/index.html
+
+          drawer:
+            position:                   left
+
+          content:
+            id:                         sidebar_mmenu
+            type:                       drawer
+            title:                      Site Info
+            theme:                      dark
+            button:                     "#navbar-brand"
+            button_activated:           always
+
+            boxes:
+
+              - box:
+                  enabled:              true
+                  type:                 user_info
+                  title:                User
+
+                  links:
+                    - title:            Provider
+                      value:            ??provider
+                      href:             ??provider-site-url
+                      target:           _blank
+                      icon:             domain
+                    - title:            User
+                      icon:             account
+                      value:            ??user-name
+                      href:             ??provider_member_url
+                      target:           none
+                    - title:            Permissions
+                      icon:             account-check
+                      value:            ??provider-permissions
+                      href:             ??provider_member_url
+                      target:           none
+                    - title:            Membership
+                      icon:             account-settings
+                      value:            ??provider-membership
+                      href:             ??provider_member_url
+                      target:           none
+                    - title:            Cookies
+                      icon:             cookie
+                      value:            ??cookie-state
+                      href:             ??provider_privacy_url
+                      target:           none
+
+              - box:
+                  enabled:              true
+                  type:                 theme_info
+                  title:                Theme
+
+                  links:
+                    - title:            Name
+                      icon:             face
+                      value:            ??theme-name
+                      href:             /pages/public/previewer/theme/
+                      target:           none
+                    - title:            Author
+                      icon:             grease-pencil
+                      value:            ??theme-author
+                      href:             ??theme-author-url
+                      target:           _blank
+                    - title:            Version
+                      icon:             numeric
+                      value:            ??theme-version
+                      href:             /pages/public/previewer/theme/
+                      target:           none
+
+              - box:
+                  enabled:              true
+                  type:                 site_info
+                  title:                Site
+
+                  links:
+                    - title:            About
+                      icon:             home-outline
+                      href:             /pages/public/about/site/
+                      target:           none
+
+#                   - title:            Become a Patron
+#                     icon:             patreon
+#                     href:             /pages/public/about/become_a_patron/
+#                     target:           _blank
+
+                    - title:            Impress
+                      icon:             alert-outline
+                      href:             /pages/public/legal/en/impress/
+                      target:           none
+                    - title:            Privacy
+                      icon:             heart
+                      href:             /pages/public/legal/en/privacy/
+                      target:           none
+                    - title:            License
+                      icon:             checkbox-multiple-marked-circle-outline
+                      href:             /pages/public/legal/en/license_agreement/
+                      target:           none
+
+#                   - title:            Contact
+#                     icon:             contact-mail
+#                     href:             mailto:contact@jekyll.one
+#                     target:           none
+
+      # ------------------------------------------------------------------------
+      # DRAWER TOC
+      #
+      - menu:
+          enabled:                      true
+
+          xhr_container_id:             navigator_toc_mmenu
+          xhr_data_path:                /assets/data/mmenu_toc/index.html
+
+          drawer:
+            position:                   right
+
+          content:
+            id:                         toc_mmenu
+            type:                       drawer
+            title:                      Table of Contents
+            theme:                      dark
+            button:                     "#open_mmenu_toc"
+            button_activated:           "js-toc-content"
+
+  # ----------------------------------------------------------------------------
+  # NavQuicklinks
+  #
+  nav_quicklinks:
+    enabled:                            true
+
+    home_url:                           /                                       # none | URL
+    back_url:                           none                                    # none | URL
+
+    r_text_sizer:                       false                                   # true | false
+
+    github_url:                         none                                    # https://github.com/jekyll-one
+    disqus_url:                         none                                    # https://disqus.com/
+    patreon_url:                        none                                    # https://www.patreon.com/jekyll_one/posts
+
+  # ----------------------------------------------------------------------------
+  # NavTopsearch
+  #
+  nav_topsearch:
+    enabled:                            true
+
+# ------------------------------------------------------------------------------
+# END config

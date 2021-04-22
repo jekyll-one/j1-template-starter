@@ -1,0 +1,505 @@
+---
+title:                                  Roundtrip
+tagline:                                asciidoc extensions
+date:                                   2020-11-07 00:00:00 +100
+description: >
+                                        J1 Template implements some incubating Ruby-based
+                                        extensions for Asciidoctor. Most extensions are based
+                                        on the examples given with the Asciidoctor Extensions
+                                        Lab. All implemented Asciidoctor Extensions can be
+                                        found in this article.
+
+categories:                             [ Asciidoc, Extension ]
+tags:                                   [ Roundtrip, Introduction ]
+
+comments:                               false
+fam_menu_id:                            page_ctrl_simple
+
+permalink:                              /pages/public/learn/roundtrip/asciidoc_extensions/
+regenerate:                             false
+
+resources:                              [ lightbox, iconify, twemoji, rouge ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/puzzle-1920x1280-bw.jpg
+          alt:                          puzzle-1920x1280-bw
+#         badge:
+#           type:                       unsplash
+#           author:                     Harpal Singh
+#           href:                       https://unsplash.com/@aquatium
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+J1 Template implements some incubating Ruby-based extensions for Asciidoctor.
+Most extensions are based on the examples given with the
+{asciidoctor-extensions-lab}[Asciidoctor Extensions Lab, {browser-window--new}].
+If you simply want to use the extensions from this repository, go ahead to
+{asciidoctor-extensions-use-extension}[Using an extension, {browser-window--new}].
+
+To create extensions on your own, it is highly recommended to read the
+{asciidoctor-user-manual-extensions}[extensions section, {browser-window--new}] in
+the Asciidoctor user manual.
+
+== Asciidoc Extensions
+
+All already implemented Asciidoctor Extensions can be found below. Additional
+valuable extensions to the Markup language Asciidoc to the Markup language
+Asciidoc are made especially for documents of the Jekyll content type pages
+(but can be used for posts or collections as well).
+
+== Asciidoc Code
+
+J1 Template adds a simple Javascript based on the `View Result Extension` to
+any `listingblock`. The extension adds an interactive toggle button `VIEW`
+to the output of an Asciidoc listing block box placed to the top right of
+the example box. If a result block `[.result]` is placed under a `listingblock`,
+clicking the toggle button `VIEW` displays (or hide) the content given by the
+`result block`.
+
+The `View Result Extension` is quite helpful, for sections discussing
+Asciidoc code and how the resulting (HTML) code would look alike.
+
+.This example place a button `VIEW` top right of the example box
+[source, prometheus, role="noclip"]
+----
+* displayed always
+----
+
+[.result]
+====
+ displayed till clicked, but closed on second click
+====
+
+== Asciidoc Admonitions
+
+All colors for all default admonition blocks set to the standard MD color
+set. Find available block types an their colors below.
+
+.NOTE block
+NOTE: Icon background-color: indigo
+
+.TIP block
+TIP: Icon background-color: green
+
+.IMPORTANT block
+IMPORTANT: Icon background-color: orange
+
+.WARNING block
+WARNING: Icon background-color: yellow
+
+.CAUTION block
+CAUTION: Icon background-color: red
+
+
+== Q&A Blocks
+
+Q&A sections are used quite often to answer popular questions. To make
+such a Q&A section more eye-minded. The additional Admonition Blocks
+`[QUESTION]` and `[ANSWER]` are available through the J1 Template Asciidoctor
+extensions.
+
+=== Question block
+
+The admonition Question block is an extension to the Asciidoc admonition
+block types that introduce an admonition of type question.
+
+.Example of a question block
+[source, prometheus, role="noclip"]
+----
+[QUESTION]
+What's the main tool for selecting colors?
+----
+
+[.result]
+====
+.QUESTION
+[QUESTION]
+What's the main tool for selecting colors used for J1 Template?
+====
+
+===  Answer block
+
+The Admonition Answer block is an extension to the Asciidoc admonition
+block types that introduce an admonition type of answer in conjunction
+with the type question's admonition.
+
+.Example of a answer block
+[source, prometheus, role="noclip"]
+----
+[ANSWER]
+For J1 Template, go for for the Core documentation section. You'll
+find the full color scheme for Material Design.
+----
+
+[.result]
+====
+.ANSWER
+[ANSWER]
+For J1 Template, go for the {jekyll-one-core-doc-color-scheme}[Core documentation, window="blank"] section.
+You'll find the full color scheme for Material Design.
+====
+
+== Lightboxes
+
+To make the use of the built-in Lightbox easier, the J1 Template offers an
+Asciidoc extension: the LightBox block macro. The `lightbox::` block macro
+embeds one or more images into the output document and puts the default
+Lightbox for J1 automatically on. For all images, the `size` (width) and
+individual `caption text` can be configured.
+
+.Lightbox Block
+[source, prometheus, role="noclip"]
+----
+.block_title
+lightbox::block_id[ images_width, images_data [, group_name] ]
+----
+
+NOTE: For a `lightbox::` block, images are placed in the output document
+without any other scaling than in width - they are placed using simple
+HTML `img` tags. This is fine for images that are even in size. For images in
+different sizes, a gallery should be used as a J1 Gallery Apps to rearrange
+images and make them fit at their best for the available space.
+
+=== Standalone Images
+
+For your convenience and better readability, the image data should be
+defined as Asciidoc attributes. The image data is given as a string
+of data pairs:
+
+.Paired attributes
+[source, prometheus, role="noclip"]
+----
+"path/to/image-1, image-caption-1, ..."
+----
+
+.Example of an data attribute for a lightbox block
+[source, prometheus, role="noclip"]
+----
+:data-images: "pages/image-1.jpg, Description 1, "pages/image-2.jpg, Description 2"
+----
+
+The base path for all image-related data is a side-wide (Asciidoc)
+configuration (see `_config.yml`) and points per default to `/assets/images`.
+The base path is automatically added to each image. If you want to use the
+default asset path for images, a relative path needs to be given for
+`path/to/image`.
+
+WARNING: If an absolute path is configured, like `/path/to/image`, the base
+path gets ignored - this is the default behavior of the Asciidoc Markup
+processor. If an absolute path is given, the full path to the images
+used has to be configured.
+
+The parameter `group` for the `lightbox::` block is an option. If no
+`group` parameter is given for a block, the related images are treated as
+standalone.
+
+.Lightbox block for standalone images
+[source, prometheus, role="noclip"]
+----
+lightbox::images-standalone[ 400, {data-images-standalone} ]
+----
+
+.Lightbox block for standalone images
+lightbox::images-standalone[ 400, {data-images-standalone} ]
+
+=== Grouped Images
+
+If more than a single image is given for a `lightbox::` block, the images can be
+grouped together to enable a simple sliding functionality through this group
+of related images. To enable grouping, the option `group` needs to be
+configured for the block.
+
+.Lightbox block for grouped images
+[source, prometheus, role="noclip"]
+----
+lightbox::images-group[ 400, {data-images-group}, group_name ]
+----
+
+.Lightbox block for grouped images
+lightbox::images-group[ 400, {data-images-group}, group_name ]
+
+
+== Icon Fonts
+
+The J1 Template comes with full icon support for Asciidoc documents included.
+All icon fonts are supported:
+
+* FA (FontAwesome)
+* MDI (MaterialDesign icons)
+* Iconify
+* Twitter Emoji
+
+== Material Designs Icons
+
+Material Designs Icons can be used as inline icons by using
+the `mdi:` inline macro:
+
+[source, prometheus, role="noclip"]
+----
+mdi:icon_name[icon_size, modifier] <1> <2> <3>
+----
+<1> All `icon_name` can be found on the Preview page for MDI Icon Previewer
+<2> The `icon_size` attribute can be one of: `xs`, `sm`, `lg` and `1x` to `10x`
+<3> The `modifier` can be used to set the e.g the color (md-blue), an
+    animation (fa-pulsed) or the orientation (fa-rotate-45)
+
+.Click on _view result_ to see how it's looks alike
+[source, prometheus, role="noclip"]
+----
+mdi:home[2x, mdi-pulsed ml-3 mr-2 mb-2] Symbol icon (pulsed) +
+mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
+mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
+----
+
+[.result]
+====
+mdi:home[2x, mdi-pulsed ml-3 mr-2 mb-2] Symbol icon (pulsed) +
+mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
+mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
+====
+
+NOTE: Parameters `icon_size` and `modifier` are optional. If not given,
+the icons `size` is set to default  (`1x`), the color to `black` and no
+settings for the `modifier` are applied.
+
+== Font Awesome Icons
+
+Font Awesome Icons can be used as inline icons by using
+the `fas:` (solid icons) or `fab` (brand icons) inline macro:
+
+[source, prometheus, role="noclip"]
+----
+fas:icon_name[icon_size, modifier] <1> <2> <3>
+----
+<1> All `icon_name` can be found on the Preview page for FA Icon Previewer
+<2> The `icon_size` attribute can be one of: `xs`, `sm`, `lg` and `1x` to `10x`
+<3> The `modifier` can be used to set e.g the color (md-blue), an
+    animation (fa-pulsed) or the orientation (fa-rotate-45) of an icon
+
+.Click on _view result_ to see how it's looks alike
+[source, prometheus, role="noclip"]
+----
+fas:home[2x, fa-pulsed ml-2 mr-2 mb-2] Solid icon (pulsed) +
+fab:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
+fab:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
+----
+
+[.result]
+====
+fas:home[2x, fa-pulsed ml-2 mr-2 mb-2] Solid icon (pulsed) +
+fab:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
+fab:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
+====
+
+NOTE: Parameters `icon_size` and `modifier` are optional. If not given,
+the icons `size` is set to default (`1x`), the color to `black` and no
+settings for the `modifier` are applied.
+
+
+== Iconify Icons
+
+Iconify Icons can be used as inline icons by using the `iconify:`
+inline macro:
+
+[source, prometheus, role="noclip"]
+----
+iconify:icon_name[icon_size, modifier] <1> <2> <3>
+----
+<1> All `icon_name` can be found on the Preview page for FA Icon Previewer
+<2> The `icon_size` attribute can be one of: `xs`, `sm`, `lg` and `1x` to `10x`
+<3> The `modifier` can be used to set e.g the color (md-blue) or additional
+positioning classes for margings and padding
+
+.Click on _view result_ to see how it's looks alike
+[source, prometheus, role="noclip"]
+----
+iconify:logos:opensource[2x, ml-4 mr-2 mb-2] Brand icon OpenSource  +
+iconify:logos:netlify[2x, ml-4 mr-2 mb-2] Brand icon Netlify +
+iconify:simple-icons:netlify[2x, md-red ml-4 mr-2] Brand icon Netlify
+----
+
+[.result]
+====
+iconify:logos:opensource[2x, ml-4 mb-2] Brand icon OpenSource  +
+iconify:logos:netlify[2x, ml-4 mb-2] Brand icon Netlify +
+iconify:simple-icons:netlify[2x, md-red ml-4] Brand icon Netlify, colored
+====
+
+Find all Iconify Icons available on page
+link:{iconify-icon-sets}[Iconify Icon Sets, {browser-window--new}].
+
+[NOTE]
+====
+Parameters `icon_size` and `modifier` are optional. If not given,
+the icons `size` is set to default  (`1x`), the color to `black` and no
+settings for the `modifier` are applied.
+
+Not all icon sets support the color settings for the `modifier`. If
+applied, the color settings will have no effect.
+====
+
+
+== Twitter Emoji Icons
+
+Twitter Emoji's can be used as inline icons by using the `emoji:`
+inline macro:
+
+[source, prometheus]
+----
+emoji:icon_name[icon_size] <1> <2>
+----
+<1> All `icon_name` can be found on the Preview page for Twitter Emoji's
+<2> The `icon_size` attribute can be one of: `xs`, `sm`, `lg` and `1x` to `5x`
+
+.Click on _view result_ to see how it's look alike
+[source, prometheus, role="noclip"]
+----
+This is an example of how you can emoji:heart[2x, pulsed mt-1] Asciidoctor
+and Twitter Emoji emoji:smile[].
+----
+
+[.result]
+====
+This is an example of how you can emoji:heart[2x, pulsed mt-1] Asciidoctor
+and Twitter Emoji emoji:smile[].
+====
+
+== Blind Text (Lorem)
+
+The Ruby Gem Middleman, a Ruby-based static site generator, provides a
+set of great helpers for generating random text content. The Lorem
+inline macro `lorem:` adapted this functionality from Middleman for the use
+of Asciidoc-based documents processed by Jekyll.
+
+If you start writing larger documents having several chapters, not all of the
+content is available at the beginning. It is quite useful to place blind text
+first to get a better impression of how a page will look-alike that is not
+finished yet.
+
+Placeholders for blind text comes in several flavors given by `macro`. The
+syntax for the `lorem:` inline macro is simple like this:
+
+[source, prometheus]
+----
+lorem:macro[]
+lorem:macro[size]
+----
+
+.Example of a lorem sentences macro
+[source, prometheus, role="noclip"]
+----
+lorem:sentences[5]
+----
+
+[.result]
+====
+lorem:sentences[5]
+====
+
+=== Lorem Types
+
+All macro types available for `lorem:` to be used for blind text can be
+found with the following table below.
+
+//.Tabelle
+[cols="5,2,5a", options="header", role="rtable mb-2"]
+|===============================================================================
+|Macro | Type |Example
+
+|`word[]`
+|text
+|
+lorem:word[]
+
+|`words[5]`
+|text
+|
+lorem:words[5]
+
+|`sentence[]`
+|text
+|
+lorem:sentence[]
+
+|`sentences[5]`
+|text
+|
+lorem:sentences[5]
+
+|`date[]`
+|date
+|
+lorem:date[]
+
+|`date[strftime]` e.g. `date[%Y-%m-%d]``
+|date
+|
+lorem:date[%Y-%m-%d]
+
+|`name[]`
+|text
+|
+lorem:name[]
+
+|`first_name[]`
+|text
+|
+lorem:first_name[]
+
+|`last_name[]`
+|text
+|
+lorem:last_name[]
+
+|`email[]`
+|email
+|
+lorem:email[]
+
+|===============================================================================
+
+// Include documents
+// -----------------------------------------------------------------------------
+include::{documentdir}/100_gistblock.asciidoc[]
+
+
+== Whats next
+
+Asciidoc, respectively Asciidoctor, extensions open up the Markup language to
+new use cases. Using the full power of programming languages to extend what's
+needed, whether it be Ruby, Java, Groovy, or JavaScript. The number of
+extensions will grow - to get handy and powerful functionality that is needed
+for modern web pages based on the Asciidoc Markup language generated by Jekyll.
+For sure!
+
+The next preview is focussing on advanced Bootstrap Modals. The modals feature
+is currently in beta status, but it is a great option to customize your
+user dialogues using them!
+
+Have a look for the link:{roundtrip-extended-modals}[BS modal extensions]
+feature of J1 Template.

@@ -1,0 +1,41 @@
+.Rouge attributes
+[cols="3,9a", subs=+macros, options="header", role="rtable mt-3 mb-5"]
+|===============================================================================
+|Attribute |Description
+
+|`rouge-css`
+|Controls what method is used for applying CSS to the tokens.
+Can be `class` (CSS classes), `style` (inline styles) or `external` (external styles).
+When `class` is used, Rouge styles for the specified theme are included in an HTML header.
+When `external` is specified, CSS classes are used but no styles will be added except
+when `rouge-theme` is not empty in which case its value is interpreted as a URL to a
+style sheet and a link to that style sheet will be added to the HTML header.
+Default is `class`.
+
+|`rouge-theme`
+|Sets the name of the Rouge color theme to use.
+Look into https://github.com/jneen/rouge/tree/master/lib/rouge/themes[lib/rouge/themes]
+in the Rouge repository for a list of available themes.
+Default is `github`.
+
+|`rouge-style`
+|Alternative name for the `rouge-theme` for compatibility with
+_asciidoctor-pdf_.
+
+|`rouge-highlighted-class`
+|CSS class to use on a line wrapper element for highlighted lines.
+Default is `highlighted`.
+
+|`rouge-line-class`
+|CSS class to set on a line wrapper element
+Default is `line`.
+
+|`rouge-line-id`
+|Format string for specifying an HTML `id` for each line (e.g. with
+`rouge-line-id="L%i"` each line of the listing will get an id of the
+form `id="L1"`, `id="L2"`, etc.). This really only makes sense if the
+format string is distinct for each source listing, otherwise it will
+lead to duplicate IDs which makes the generated HTML invalid.
+Default is no line ids.
+
+|===============================================================================

@@ -1,0 +1,223 @@
+# ------------------------------------------------------------------------------
+# ~/_data/apps/carousel.yml
+# Default configuration for J1 Carousel (based on Owl Carousel V1)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:                                Carousel
+  scope:                                Default settings
+  location:                             _data/apps/default/carousel.yml
+
+# ------------------------------------------------------------------------------
+# Default configuration settings
+#
+
+# ----------------------------------------------------------------------------
+# GENERAL Carousel settings
+#
+# enabled
+# ----------------------------------------------------------------------------
+#   Enables|Disables the use of a carousel|slider
+#
+# xhr_data_path
+# ----------------------------------------------------------------------------
+#   All data items displayed by a slider are being read from a
+#   JSON file automatically generated from that configuration.
+#   AJAX get method is used to supply the slider with respective
+#   the HTML code at the time the slider is initialized (by the
+#   J1 Adapter for J1 Owl Sliders).
+#
+#   values:                             string
+#   default:                            /assets/data/carousel.json
+#
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# DEFAULT options
+#
+# items
+# ----------------------------------------------------------------------------
+#   This variable allows to set the maximum amount of items displayed
+#   at a time with the widest browser width.
+#
+#   values:                             integer
+#   default:                            5
+#
+# itemsDesktop
+# ----------------------------------------------------------------------------
+#   Preset the number of slides visible with a particular browser
+#   width. The format is [x,y] whereby x means the browser width
+#   and y the number of slides displayed. For example [1199,4] means
+#   that if the window size is lower or equal 1199, show 4 slides
+#   per page.
+#
+#   values:                             array (of resolution|item pairs)
+#   default:                            [1199,4]
+#   Other (named) presets:              see items|itemsDesktop
+#
+#   values:                             array (resolution|item pairs)
+#   defaults:
+#     itemsDesktop:                     [1199,4]
+#     itemsDesktopSmall:                [980,3]
+#     itemsTablet:                      [768,2]
+#     itemsTabletSmall:                 false
+#     itemsMobile:                      [479,1]
+#
+# singleItem:
+# ----------------------------------------------------------------------------
+#  Display only one item independent from screen size.
+#
+#   values:                             boolean (true|false)
+#   default:                            false
+#
+# itemsScaleUp
+# ----------------------------------------------------------------------------
+#   Don't stretch items when it is less than the supplied items.
+#
+#   values:                             boolean (true|false)
+#   default:                            false
+#
+# itemsCustom
+# ----------------------------------------------------------------------------
+#   Specifies how many items|slides are shown depending on the
+#   screen width. If this option is set, the options itemsDeskop,
+#   itemsDesktopSmall, itemsTablet, itemsMobile are DISABLED
+#   automatically.
+#
+#   NOTE: For better preview results, order the arrays by screen size.
+#         This is RECOMMENDED but not mandatory.
+#
+#   NOTE: Don’t forget to include the lowest available screen size, otherwise
+#         the carousel takes as default value for a screen the next lower screen
+#         size available (from what you configured).
+#
+#   Example: [ [0, 2], [400, 4], [700, 6], [1000, 8], [1200, 10], [1600, 16] ]
+#
+#   values:                             array (of screen|item pairs)
+#   default:                            false (no defaults)
+#
+# ----------------------------------------------------------------------------
+defaults:
+
+  enabled:                                false
+
+  # ----------------------------------------------------------------------------
+  # View port sizes
+  #
+  items:                                5
+  itemsCustom:                          false
+  itemsDesktop:                         [1199,4]
+  itemsDesktopSmall:                    [980,3]
+  itemsTablet:                          [768,2]
+  itemsTabletSmall:                     false
+  itemsMobile:                          [479,1]
+  singleItem:                           false
+  itemsScaleUp:                         false
+
+  # ----------------------------------------------------------------------------
+  # Basic Speeds
+  #
+  slideSpeed:                           200
+  paginationSpeed:                      800
+  rewindSpeed:                          1000
+
+  # ----------------------------------------------------------------------------
+  # Autoplay
+  #
+  autoPlay:                             false
+  stopOnHover:                          false
+
+  # ----------------------------------------------------------------------------
+  # Navigation
+  #
+  navigation:                           false
+  navigationText:                       ["prev","next"]
+  rewindNav:                            true
+  scrollPerPage:                        false
+
+  # ----------------------------------------------------------------------------
+  # Pagination
+  #
+  pagination:                           true
+  paginationNumbers:                    false
+
+  # ----------------------------------------------------------------------------
+  # Responsive
+  #
+  responsive:                           true
+  responsiveRefreshRate:                200
+  responsiveBaseWidth:                  window
+
+  # ----------------------------------------------------------------------------
+  # CSS Styles
+  #
+  baseClass:                            owl-carousel
+  theme:                                owl-theme
+
+  # ----------------------------------------------------------------------------
+  # Lazy load
+  #
+  lazyLoad:                             false
+  lazyFollow:                           true
+  lazyEffect:                           fade
+
+  # ----------------------------------------------------------------------------
+  # Auto height
+  #
+  autoHeight:                           false
+
+  # ----------------------------------------------------------------------------
+  # AJAX (JSON)
+  #
+  # All data items displayed by a carousel are being read
+  # from a JSON file (default: carousel.json) automatically
+  # generated from that configuration.
+  # AJAX methods are used to supply the needed HTML code at
+  # the time the carousel is initialized (by the Initializer)
+  #
+  xhr_data_path:                        /assets/data/carousel.json
+  jsonSuccess:                          false
+
+  # ----------------------------------------------------------------------------
+  # Mouse Events
+  #
+  dragBeforeAnimFinish:                 true
+  mouseDrag:                            true
+  touchDrag:                            true
+
+  # ----------------------------------------------------------------------------
+  # Transitions
+  #
+  transitionStyle:                      false
+
+  # ----------------------------------------------------------------------------
+  # Callbacks
+  #
+  beforeUpdate:                         false
+  afterUpdate:                          false
+  beforeInit:                           false
+  afterInit:                            false
+  beforeMove:                           false
+  afterMove:                            false
+  afterAction:                          false
+  startDragging:                        false
+  afterLazyLoad:                        false
+
+  # ----------------------------------------------------------------------------
+  # Other
+  #
+  addClassActive:                       false
+
+# ------------------------------------------------------------------------------
+# END config

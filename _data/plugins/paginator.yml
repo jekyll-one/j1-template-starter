@@ -1,0 +1,54 @@
+# ------------------------------------------------------------------------------
+# ~/_data/plugins/paginator.yml
+# User configuration for J1 Paginator (Jekyll Paginate V2)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:                                J1 Paginator
+  scope:                                User settings
+  location:                             _data/plugins/paginator.yml
+
+# ------------------------------------------------------------------------------
+# GENERAL plugin settings
+#
+# enabled
+# ------------------------------------------------------------------------------
+#   Enables|Disables the plugin for processing
+#
+#   values:                             true|false (boolean)
+#   default:                            false
+#
+#enabled:                                true
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # PAGINATION settings
+  #
+  pagination:
+    enabled:                            true
+    rebuild:                            false                                   # currently NOT used
+
+  # AUTOPAGE settings
+  #
+  autopages:
+    enabled:                            false
+    rebuild:                            false                                   # currently NOT used
+
+# ------------------------------------------------------------------------------
+# END config

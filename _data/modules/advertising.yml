@@ -1,0 +1,47 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/advertising.yml
+# User Configuration of the Ad Module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+# NOTE:
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+  title:                                Advertising
+  scope:                                User settings
+  location:                             _data/modules/advertising.yml
+
+# ------------------------------------------------------------------------------
+# User settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # AD elements
+  #
+  ads:
+
+    # --------------------------------------------------------------------------
+    # Image attic (used for layouts posts|pages, image-based)
+    #
+    - name:                             Full width top
+      ad:
+        enabled:                        true
+        id:                             ad_full_width_top
+        layout:                         [ page, post ]
+        type:                           ad-bla
+
+# ------------------------------------------------------------------------------
+# END config

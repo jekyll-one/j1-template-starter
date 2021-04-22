@@ -1,0 +1,51 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/framer.yml
+# User configuration settings for iFrameResizer
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:                                Framer
+  scope:                                User settings
+  location:                             _data/modules/framer.yml
+
+# ------------------------------------------------------------------------------
+# SETTINGS
+#
+settings:
+
+  enabled:                            true
+
+  load:                               sync
+  log:                                false
+  autoResize:                         true
+  bodyBackground:
+  bodyMargin:                         0
+  checkOrigin:                        true
+  inPageLinks:                        false
+  interval:                           32
+  heightCalculationMethod:            bodyOffset
+  widthCalculationMethod:             scroll
+  maxHeight:                          100000000
+  minHeight:                          512
+  maxWidth:                           100000000
+  minWidth:                           0
+  resizeFrom:                         parent
+  scrolling:                          false
+  sizeHeight:                         true
+  sizeWidth:                          false
+  tolerance:                          0
+
+# ------------------------------------------------------------------------------
+# END config

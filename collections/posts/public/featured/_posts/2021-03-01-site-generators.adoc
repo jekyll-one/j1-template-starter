@@ -1,0 +1,130 @@
+---
+title:                                  Site Generators
+tagline:                                top open source tools
+
+categories:                             [ Featured ]
+tags:                                   [ Jekyll, Generators ]
+
+series:                                 false
+image:                                  /assets/images/modules/attics/machine-generator-1920x1280.jpg
+
+adsense:                                false
+comments:                               false
+advertising:                            false
+toc:                                    true
+
+regenerate:                             false
+
+resources:                              [ lightbox ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/machine-generator-1920x1280.jpg
+          alt:                          Photo by Isis Françal on Unsplash
+#         caption:
+#           text:                       Photo by Isis Françal on Unsplash
+#           href:                       https://unsplash.com/@isisfra
+          badge:
+            type:                       unsplash
+            author:                     Isis França
+            href:                       https://unsplash.com/@isisfra
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+// Place an excerpt at the most top position
+// -----------------------------------------------------------------------------
+This article highlights top OpenSource projects providing static site
+generators in many different programming languages. And Jekyll is only
+one of them. Have a look if a full-blown CMS is (really) needed for your
+project!
+
+// [role="clearfix mb-3"]
+excerpt__end
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+[[readmore]]
+== Dynamic page access
+
+// [role="mb-3"]
+// image::/assets/images/collections/blog/featured/markus-spiske-2.jpg[{{page.title}}]
+
+A typical CMS-driven website works by building each and every page
+*dynamically*. That means fetching the content from a database to pass them
+over to a template system (engine) to load the page content, adding the
+required structure information (e.g., CSS styles) and Javascript components if
+needed. This means every page is assembled *on demand*.
+
+.Accessing scheme for a CMS (dynamic web)
+lightbox::kickstart-wiad--dynamic-web-access[ 800, {data-kickstart-wiad--dynamic-web-access} ]
+
+callout::1["Web Browser"]
+callout::2["Web Server"]
+callout::3["Rendering Engine (e.g. PHP-based)"]
+callout::4["Database (e.g. MySQL, Postgres)"]
+callout::5["Static content (Images, Videos, JS- and CSS files) and Caches", ml-2 mb-3]
+
+== Is a CMS needed?
+
+For many websites, dynamic page generation is entirely unnecessary and
+adds unwanted risks in terms of complexity, performance losses, and security
+issues. After all, the content of most websites changes, when the content
+authors make changes. Why the hell should a web page always assemble on
+demand if there are no changes?
+
+NOTE: To be fair, most CMS are providing caching systems for web pages to
+prevent unnecessary creation processes. It is not easy to implement such
+a caching strategy, and in the very end, it adds the next level of
+complexity.
+
+A Static Site Generator takes a different approach and generates all the pages
+of the website *upfront*. That does not necessarily mean that a static website
+is always built from scratch. Modern generators support a so-called
+incremental build, as does. When there are changes detected to the
+content, only selected pages will rebuild.
+
+.Accessing scheme for a static web
+lightbox::kickstart-wiad--static-web-access[ 800, {data-kickstart-wiad--static-web-access} ]
+
+callout::1["Web Browser"]
+callout::2["Web Server"]
+callout::3["Server-side rendered (prepared) static content", ml-2 mb-3]
+
+== Statically build web pages
+
+Overall, statically build web pages having no moving parts in the deployed
+website. This results in browser-side caching only, the performance
+goes up, and static sites are far more secure because they *build already*.
+To find out what OpenSource Static Site Generators are available today and
+their ranking in terms of popularity, go for _Jamstack_. You'll find a
+comprehensive list of staic site generators used today.
+
+Check popular static site generators at {url-jamstack--generators}[Jamstack, {browser-window--new}]!
+
+// .Current ratings at Jamstack (March 2021)
+[role="mb-3"]
+image::/assets/images/collections/blog/featured/jamstack-generators.gif["jamstack-generators"]

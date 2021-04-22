@@ -1,0 +1,133 @@
+---
+# Master Document HTML conversion:      book.adoc
+#
+title:                                  Skeleton
+tagline:                                book
+date:                                   2021-01-01 00:00:00 +100
+description: >
+                                        A document of type book typically consists in a large number of chapters and
+                                        sections. To make this manageable, book-type documents are splitted in multiple
+                                        files placed in a nested folder structure. Complex AsciiDoc projects of type
+                                        book can be easily worked on by multiple authors.
+
+categories:                             [ Asciidoc, Skeleton ]
+tags:                                   [ Knowledge, Skeleton, Book ]
+
+sitemap:                                false
+robots:
+  index:                                false
+  follow:                               false
+
+permalink:                              /pages/public/skeleton/book/
+regenerate:                             false
+
+resources:                              [ lightbox, lightGallery, justifiedGallery ]
+resource_options:
+  - toccer:
+      collapseDepth:                    4
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/skeleton/humble-lamb-1920x1280.jpg
+          alt:                          Photo by Humble Lamb on Unsplash
+          alignY:                       top
+          badge:
+            type:                       unsplash
+            author:                     Humble Lamb
+            href:                       https://unsplash.com/@humblelamb
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Asciidoc *Skeleton book* a helper for setting up a base file and folder
+structure for complex *multi-chapter* AsciiDoc projects of type *book*
+based on _Jekyll_ and _J1 Template_. You need *both* to use this skeleton
+creating AsciiDoc documents from it.
+
+A document of type book typically consists in a large number of chapters and
+sections. To make this manageable, book-type documents are splitted in multiple
+files placed in a nested folder structure. Complex AsciiDoc projects of type
+*book* can be easily worked on by multiple authors.
+
+[NOTE]
+====
+.Converting the Skeleton
+
+The Asciidoc Skeleton *book* is fully *relocateable* and can be placed in
+any subfolder of your Jekyll site for *HTML* output. For *PDF* output, a
+single variable `BASE_PATH` has to be set for your environment.
+
+See the *batch* files `a2p.bat` for _Windows_ (`cmd.exe`) or `a2p.sh` used
+on _Unix_ or _Linux_ OS for the shell (bash).
+====
+
+The skeleton can be used to create HTML output (backend *html5*) for websites
+and *PDF* output (backend *pdf*) for offline reading as well. _J1 Template_
+comes with the full support of _Asciidoctor PDF_, a Ruby-based add-on for
+_Asciidoctor_ using the Ruby PDF writer _Prawn_.
+
+Prawn is a pure Ruby PDF generation library that provides a lot of great
+functionality while trying to remain simple and reasonably performant.
+
+Some of the important features of the *PDF* writer _Prawn_ are:
+
+* Vector drawing support, including lines, polygons, curves,
+  ellipses, etc.
+* Extensive text rendering support, including flowing text
+  nd limited inline formatting options.
+* Support for both PDF builtin fonts as well as embedded TrueType
+  fonts
+* A variety of low level tools for basic layout needs, including a
+  simple grid system
+* PNG and JPG image embedding, with flexible scaling options
+* Security features including encryption and password protection
+* Tools for rendering repeatable content (i.e headers, footers, and
+  page numbers)
+* Comprehensive internationalization features, including full support
+  for UTF-8 based fonts, right-to-left text rendering, fallback font support,
+  and extension points for customizable text wrapping.
+* Support for PDF outlines for document navigation
+
+[role="mb-5"]
+*Happy Jekylling!*
+
+
+// Include Intro
+// -----------------------------------------------------------------------------
+
+include::{documentdir}/000_intro.asciidoc[]
+
+
+// Include Sublevel Entry Documents
+// -----------------------------------------------------------------------------
+
+include::{documentdir}/100_chapter.asciidoc[]
+
+include::{documentdir}/200_chapter.asciidoc[]
+
+
+// Include References
+// -----------------------------------------------------------------------------
+
+include::{documentdir}/900_references.asciidoc[]

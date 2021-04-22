@@ -1,0 +1,40 @@
+# ------------------------------------------------------------------------------
+# ~/_data/utilities/util_srv.yml
+# User configuration settings for J1 Utility Services
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one/j1-template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+# NOTE: For the utility server, toplevel ports like 44444 are used to prevent
+#       Chrome unsafe port issues (net::ERR_UNSAFE_PORT)
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:                                Utility Services
+  scope:                                User settings
+  location:                             _data/utilities/util_srv.yml
+
+# ------------------------------------------------------------------------------
+# USER configuration settings
+#
+settings:
+
+  enabled:                              false                                   # if set to true, util server will be started
+
+  ssl:                                  false
+  origin:                               localhost
+  host_name:                            0.0.0.0
+  port:                                 40020
+  verbose:                              false
+
+# ------------------------------------------------------------------------------
+# END config

@@ -1,0 +1,156 @@
+# ------------------------------------------------------------------------------
+# ~/_data/private.yml
+# The private.yml file is used to set sensitive private data used by
+# J1 components to configure security and authentication settings
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2019 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1_template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+# NOTE:
+#   As this file contains very confidential data, a productive private.yml
+#   file should ALWAYS be excluded from ANY source published to the public
+#   (e.g. a repo at Github)
+# ------------------------------------------------------------------------------
+
+
+# ==============================================================================
+# GLOBAL settings
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+global:
+
+  # used by J1 to encrypt cookies
+  session_secret:                       12ada70c0d34914d194f1a790c9b23bd
+
+
+# ==============================================================================
+# MODULE settings
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+modules:
+
+  # J1 Webhook
+  # NOTE:
+  # ----------------------------------------------------------------------------
+  webhook:
+
+    comment:
+      name:                             j1-template@jekyll-one-org
+      user:                             j1juergen
+      repo:                             jekyll-one-org/j1-template
+      server_url:                       https://github.com/jekyll-one-org/j1-template/settings/hooks
+
+    secret:                             12ada70c0d34914d194f1a790c9b23bd        # secret used at GH Webhook
+    payload_url:                        https://smee.io/bzTe8lpQq1KeSJF         # payload url (e.g channel at smee.io)
+
+
+# ==============================================================================
+# # J1 Utility Server
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+util_srv:
+
+  oauth:
+
+    # GH OAuth settings used for J1 Control Center (NetlifyCMS) for the
+    # external OAuth client (base_url)
+    # --------------------------------------------------------------------------
+    comment:
+      name:                           j1-utilitiy-server@local-44444
+      user:                           j1juergen@jekyll-one-org
+      user_url:                       https://github.com/organizations/jekyll-one-org/settings/applications/1129706
+      strategy:                       members
+      members:                        all
+
+    site_url:                         http://localhost:44444
+    site_redirect_url:                http://localhost:44444/auth/github/callback
+    client_scope:                     repo, user
+    client_id:                        1a0d2977414958182711
+    client_secret:                    358b3b44e3711f9b279d4ae7164c9de2e5dafc27
+
+
+# ==============================================================================
+# MIDDLEWARE settings
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+middleware:
+
+  # OAuth settings (J1 Auth Client)
+  # ----------------------------------------------------------------------------
+  oauth:
+
+    # --------------------------------------------------------------------------
+    # DISQUS credentials
+    # ==========================================================================
+    disqus:
+
+      # J1 Auth client (mode APP, development system)
+      # ------------------------------------------------------------------------
+      comment:
+        name:                           starter@localhost
+        user:                           juergen.adams@jekyll-one.com
+        strategy:                       members
+
+      client_url:                       http://localhost:41010
+      client_redirect_url:              http://localhost:41010/auth/disqus/callback
+      client_id:                        6JCzzU8t2yr11JLps0IWbslWvJJz1s07Q6W9XUBjzJa3zc6ziRlGCJWssslzoj3i
+      client_secret:                    7e36hTTenfAV2wH2csw8ZXj1HY6QhwzvGbImPLTxvMeX5psQHdXOJWDD37KHJ2rw
+
+    # --------------------------------------------------------------------------
+    # GITHUB credentials
+    # ==========================================================================
+    github:
+
+      # J1 Auth client (mode APP, development system)
+      # ------------------------------------------------------------------------
+      comment:
+        name:                           starter@localhost
+        user:                           jekyll-one
+        org:                            jekyll-one-org
+        strategy:                       members
+        members:                        all
+
+      client_url:                       http://localhost:41010
+      client_redirect_url:              http://localhost:41010/auth/github/callback
+      client_id:                        4759b4d27a5f526c632a
+      client_secret:                    8472988317760fd097d1e80e996f4ec410c1857a
+
+    # --------------------------------------------------------------------------
+    # PATREON credentials
+    # ==========================================================================
+    patreon:
+
+      # J1 Auth client (mode APP, development system)
+      # ------------------------------------------------------------------------
+#     comment:
+#       name:                           j1-starter-local-5k
+#       user:                           juergen@jekyll.one
+#       strategy:                       members
+#       api:                            v1
+#
+#     client_url:                       http://localhost:5000
+#     client_redirect_url:              http://localhost:5000/auth/github/callback
+#     client_id:                        bDuEYHyKjtypxb5wQKMILCCUw-x5XtYD-_9MsDAO22agQGoaB2CRKtP5UReRVflS
+#     client_secret:                    uDRsD1dwWSLPUCeBrjz4umjsNMD04drCtTqy7xSEjkqIVACGa-h-n1w8t9o2mW42
+
+    # --------------------------------------------------------------------------
+    # TWITTER credentials (currently NOT supported)
+    # ==========================================================================
+    twitter:
+
+      # J1 Auth client
+      # ------------------------------------------------------------------------
+#     comment:
+#       name:                           <your-oauth-app-name>
+#       user:                           <your-userid>
+#       strategy:                       <your-strategy>
+#       api:                            v1
+#
+#     client_url:                       <your-client-url>
+#     client_redirect_url:              <your-client-redirect-url>
+#     client_id:                        <your-client-id>
+#     client_secret:                    <your-client-secret>
+
+# ------------------------------------------------------------------------------
+# END

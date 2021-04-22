@@ -1,0 +1,256 @@
+---
+title:                                  Roundtrip
+tagline:                                typography
+date:                                   2020-11-05 00:00:00 +100
+description: >
+                                        The character font serves as one of the most crucial branding elements for
+                                        any business. Typography matters for any media presenting text. The text will
+                                        take on an important role of acting not only as plain text but will also serve
+                                        as something like images.
+
+categories:                             [ Typography, Module ]
+tags:                                   [ Roundtrip, Introduction ]
+
+
+comments:                               false
+fam_menu_id:                            page_ctrl_simple
+
+permalink:                              /pages/public/learn/roundtrip/typography/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.3
+      slides:
+        - url:                          /assets/images/pages/roundtrip/typography-1920x1280-bw.jpg
+          alt:                          Photo by Alice Donovan Rousel on Unsplash
+          preload:                      0
+          transitionDuration:           fast
+          resolutionRefreshRate:        500
+          badge:
+            type:                       unsplash
+            author:                     Alice Donovan Rousel
+            href:                       https://unsplash.com/@alicekat/portfolio
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+== Typography
+
+The character font serves as one of the most crucial branding elements for
+any business. Typography matters for any media presenting text. The text will
+take on an important role of acting not only as plain text but will also serve
+as something like images.
+
+== Responsive Text
+
+One common flaw seen in many templates and frameworks (sadly to say: the same
+to Bootstrap, including V4) is a lack of support for genuinely responsive text.
+While elements on a page resize fluidly, the text still resizes on a fixed basis.
+To avoiding this issue, especially for heavily text focussed pages, J1 Template
+supports styles that fluidly scale text size and line-height to optimize
+readability for the user.
+
+Below you find an example of how text behaves if defined on a fixed basis -
+what you'll see quite often. Change the size of your Browser Window to see
+what will happen in terms of responsiveness.
+
+++++
+<div>
+  <button type="button" name="toggle-r-text" class="btn btn-primary btn-raised btn-flex mt-3 mb-3">
+    <i class="toggle-button mdi mdi-toggle-switch-off mdi-lg mdi-md-bg-primary-50 mr-1"></i>
+    Toggle rtext
+  </button>
+  <div class="mb-4">
+    <div class="content">
+      <!-- jadams, 2020-11-15: adjusted heading levels (Google optimisation) -->
+      <h3 class="notoc">The Extremes of Good and Evil</h3>
+      <p class="small notoc text-gray mb-3">Cicero, Paragraph 1.10.32 · Translation by H. Rackham, Issue 1914 - De Finibus</p>
+      <p class="toggle-description no-r-text">
+        But I must explain to you how all this mistaken idea of denouncing
+        pleasure and praising pain was born and I will give you a complete
+        account of the system, and expound the actual teachings of the great
+        explorer of the truth, the master-builder of human happiness.
+        <br/><br/>
+        No one rejects, dislikes, or avoids pleasure itself, because it is
+        pleasure, but because those who do not know how to pursue pleasure
+        rationally encounter consequences that are extremely painful. Nor
+        again is there anyone who loves or pursues or desires to obtain pain
+        of itself, because it is pain, but because occasionally circumstances
+        occur in which toil and pain can procure him some great pleasure.
+        <br/><br/>
+        To take a trivial example, which of us ever undertakes laborious
+        physical exercise, except to obtain some advantage from it? But who
+        has any right to find fault with a man who chooses to enjoy a pleasure
+        that has no annoying consequences, or one who avoids a pain that
+        produces no resultant pleasure?
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('button[name="toggle-r-text"]').on('click', function (e) {
+    $('p.toggle-description').toggleClass('no-r-text r-text-300');
+    $('.toggle-button').toggleClass('mdi-toggle-switch-off mdi-toggle-switch');
+  });
+</script>
+++++
+
+To see Responsive Text `r-text` in action, use the button above to toggle on
+and off Responsive Text to see the difference!
+
+== Scaling Responsive Text
+
+Responsive Text comes in five different scale factors in a range from 100 to
+500. Scaling `r-text` gives you the flexibility to use `r-text` everywhere. Or
+you can offer different text sizes of your Web for visitors having a visual
+handicap or reading disabilities.
+
+To see `r-text` scaling in action, click on the button above to resize
+the text from `r-text` level 300 to 500 back and forth. Simply resize
+your Browser and watch the size of this text body change to see the
+responsiveness in action.
+
+++++
+<div>
+  <button type="button" name="scale-r-text" class="btn btn-primary btn-raised btn-flex mt-3 mb-3">
+    <i class="scale-button mdi mdi-arrow-up mdi-lg mdi-md-bg-primary-50 mr-1"></i>
+    Scale rtext
+  </button>
+  <div class="mb-4">
+    <div class="content">
+      <!-- jadams, 2020-11-15: adjusted heading levels (Google optimisation) -->
+      <h3 class="notoc">The Extremes of Good and Evil</h3>
+      <p class="small notoc text-gray mb-3">Cicero, Paragraph 1.10.32 · Translation by H. Rackham, Issue 1914 - De Finibus</p>
+      <p class="scale-description r-text-300">
+        On the other hand, we denounce with righteous indignation and dislike men who
+        are so beguiled and demoralized by the charms of pleasure of the moment, so
+        blinded by desire, that they cannot foresee the pain and trouble that are
+        bound to ensue; and equal blame belongs to those who fail in their duty through
+        weakness of will, which is the same as saying through shrinking from toil and pain.
+        <br/><br/>
+        These cases are perfectly simple and easy to distinguish. In a free hour, when
+        our power of choice is untrammelled and when nothing prevents our being able to
+        do what we like best, every pleasure is to be welcomed and every pain avoided.
+        But in certain circumstances and owing to the claims of duty or the obligations
+        of business is will frequently occur that pleasures have to be repudiated and
+        annoyances accepted. The wise man therefore always holds in these matters to
+        this principle of selection: he rejects pleasures to secure other greater
+        pleasures, or else he endures pains to avoid worse pains.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('button[name="scale-r-text"]').on('click', function (e) {
+    $('p.scale-description').toggleClass('r-text-300 r-text-500');
+    $('.scale-button').toggleClass('mdi-arrow-up mdi-arrow-down');
+  });
+</script>
+++++
+
+== Scale factors
+
+As mentioned, `r-text` comes in five levels of size. The base of `r-text` is
+the Fibonacci numbers extracted from the Fibonacci series. These numbers are
+the most popular division ratios in typography. When speaking of the golden
+ratio (1: 1.618) in typography and graphic design, the Fibonacci numbers are
+usually the base.
+
+The Fibonacci series is translated into CSS Media queries and scale a base
+font size accordingly. Further, the resulting font scale series have
+multipliers (scale factors) ranging from 0.5 (50%) up to 1.0 (100%) of the
+base.
+
+That way, five series are available by the five scale factors. See the following
+table how `r-text` scales.
+
+[cols="3,2,7a", options="header", role="rtable"]
+|===============================================================================
+|Property | Factor |Example text
+
+|`r-text-100`
+|0.5
+|
+[role="r-text-100"]
+But I must explain to you how all this mistaken idea of denouncing
+pleasure and praising pain was born and I will give you a complete
+account of the system, and expound the actual teachings of the great
+explorer of the truth, the master-builder of human happiness.
+|`r-text-200`
+|0.7
+|
+[role="r-text-200"]
+But I must explain to you how all this mistaken idea of denouncing
+pleasure and praising pain was born and I will give you a complete
+account of the system, and expound the actual teachings of the great
+explorer of the truth, the master-builder of human happiness.
+
+|`r-text-300`
+|0.8
+|
+[role="r-text-300"]
+But I must explain to you how all this mistaken idea of denouncing
+pleasure and praising pain was born and I will give you a complete
+account of the system, and expound the actual teachings of the great
+explorer of the truth, the master-builder of human happiness.
+
+|`r-text-400`
+|0.9
+|
+[role="r-text-400"]
+But I must explain to you how all this mistaken idea of denouncing
+pleasure and praising pain was born and I will give you a complete
+account of the system, and expound the actual teachings of the great
+explorer of the truth, the master-builder of human happiness.
+
+|`r-text-500`
+|1.0
+|
+[role="r-text-500"]
+But I must explain to you how all this mistaken idea of denouncing
+pleasure and praising pain was born and I will give you a complete
+account of the system, and expound the actual teachings of the great
+explorer of the truth, the master-builder of human happiness.
+
+|===============================================================================
+
+== Whats next
+
+Have you enjoyed playing with the text? We hope so. But even more, J1 can do for
+your web pages. With the examples on that page, icons were used to support the
+meaning of what was grouped as text.
+
+J1 Template supports popular icons font sets like:
+
+* Material Design Icons
+* FontAwesome Icons V5
+* Iconify
+
+Would you like learn more about icons? The next example page focus on what's
+possible using link:{roundtrip-icon-fonts}[icon fonts, {browser-window--new}].

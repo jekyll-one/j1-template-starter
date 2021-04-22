@@ -1,0 +1,2081 @@
+---
+title:                                  Theme previewer
+tagline:                                common components
+date:                                   2020-11-08 00:00:00 +100
+description: >
+                                        Bootstrap is a HTML, CSS & JS Library that focuses on
+                                        simplifying the development of modern web pages. The
+                                        primary purpose to apply the framework to J1 is to
+                                        provide a general standard colors, sizes, fonts and
+                                        the overall layout of a J1-based site. Bootstrap provides
+                                        basic style definitions for all common used HTML elements.
+                                        The Themes Previewer provides an overview for common components
+                                        of a selected theme. Find base Bootstrap features and styles for
+                                        the current theme selected.
+
+categories:                             [ Previewer ]
+tags:                                   [ Bootstrap, Themes ]
+
+scrollbar:                              false
+flowtext:                               false
+
+permalink:                              /pages/public/previewer/theme/
+regenerate:                             false
+
+resources:                              [ rouge, clipboard ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/themes-1920x1280-bw.jpg
+          alt:                          Photo by Clem Onojeghuo on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Clem Onojeghuo
+            href:                       https://unsplash.com/@clemono
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+++++
+  <!-- Prepend H1 tag here -->
+  <div id="theme" class="row ml-0 mb-3">
+
+    <!-- Load the previously selected theme from the (user state) cookie -->
+    <script>
+    $(document).ready(function() {
+      var interval_count = 0;
+      var max_count      = 10;
+      var cookie_names   = j1.getCookieNames();
+      var user_state     = {};
+      var themeName;
+      var themeNameHeadline;
+      var user_state_detected;
+
+      var dependencies_met_themer = setInterval(function() {
+        interval_count += 1;
+        // if ( j1.adapter.themer.getState() == 'finished' ) {
+        if (j1.getState() == 'finished') {
+          user_state_detected = j1.existsCookie (cookie_names.user_state);
+          if ( user_state_detected ) {
+            user_state = j1.readCookie(cookie_names.user_state);
+            themeName  = user_state.theme_name;
+          } else {
+            themeName  = 'J1 Default';
+          }
+          var themeNameHeadline = '<h2 id="theme_name">Theme ' +themeName+ '</h2>';
+          $('#theme').prepend(themeNameHeadline);
+          clearInterval(dependencies_met_themer);
+          }
+        if (interval_count > max_count) {
+          clearInterval(dependencies_met_themer);
+        }
+      }, 25);
+    });
+    </script>
+  </div>
+++++
+
+Themes step in the framework to further adjust the appearance of a website
+based on the core CSS rules and definitions of Bootstrap. Themes does not
+change the functionality of the framwork, but modifies rule-based e.g. the
+color scheme, fonts, sizes or the appearance of more complex elements like
+forms or tables. Additionally, a theme may add additonal components but in
+the *sense* of Bootstrap's framework rules and philosophy.
+
+== Navbars
+
+See examples for Bootstrap’s powerful, responsive navigation header, the
+navbar. Includes support for branding, navigation, and more, including
+support for the collapse plugin.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-navbar}[Bootstrap Docs {char-middot} Navbar, {browser-window--new}]
+
+Theming the navbar has never been easier thanks to the combination of
+theming classes and background-color utilities. Choose from `.navbar-light`
+for use with light background colors, or '.navbar-dark' for dark background
+colors. Then, customize with `.bg-*` utilities.
+
+++++
+<div class="doc-example mb-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-1">
+    <a href="#" class="navbar-brand">Navbar<div class="ripple-container"></div></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Features</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">About</a>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <span class="bmd-form-group"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></span>
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-1">
+    <a href="#" class="navbar-brand">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Features</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">About</a>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <span class="bmd-form-group"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></span>
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <a href="#" class="navbar-brand">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Features</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a  href="#" class="nav-link">About</a>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <span class="bmd-form-group"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></span>
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</div>
+++++
+
+[source, html, role="noclip"]
+----
+<nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+</nav>
+
+<nav class="navbar navbar-dark bg-primary">
+  <!-- Navbar content -->
+</nav>
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <!-- Navbar content -->
+</nav>
+----
+
+
+== Buttons
+
+Use Bootstrap’s custom button styles for actions in forms, dialogs, and
+more with support for multiple sizes, states, and more. Bootstrap includes
+several predefined button styles, each serving its own semantic purpose,
+with a few extras thrown in for more control.
+
+// pass:[<i class="mdi mdi-bootstrap mdi-md-deep-purple mdi-24px"></i>]
+// mdi:bootstrap[24px, mdi-pulsed mdi-md-deep-purple]
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-buttons}[Bootstrap Docs {char-middot} Buttons, {browser-window--new}]
+
+=== Active buttons
+
+Buttons will appear pressed (with a darker background, darker border, and
+inset shadow) when active.
+++++
+<div class="doc-example mb-3">
+  <button type="button" class="btn btn-primary btn-raised">Primary</button>
+  <button type="button" class="btn btn-primary btn-raised">Secondary</button>
+  <button type="button" class="btn btn-success btn-raised">Success</button>
+  <button type="button" class="btn btn-info btn-raised">Info</button>
+  <button type="button" class="btn btn-warning btn-raised">Warning</button>
+  <button type="button" class="btn btn-danger btn-raised">Danger</button>
+  <button type="button" class="btn btn-link btn-raised">Link</button>
+</div>
+++++
+
+[source, html, role="noclip"]
+----
+<button type="button" class="btn btn-primary btn-raised">Primary</button>
+<button type="button" class="btn btn-primary btn-raised">Secondary</button>
+<button type="button" class="btn btn-success btn-raised">Success</button>
+<button type="button" class="btn btn-info btn-raised">Info</button>
+<button type="button" class="btn btn-warning btn-raised">Warning</button>
+<button type="button" class="btn btn-danger btn-raised">Danger</button>
+<button type="button" class="btn btn-link btn-raised">Link</button>
+----
+
+
+=== Disabled buttons
+
+Buttons look inactive by adding the disabled boolean attribute to any
+<button> element.
+++++
+<div class="doc-example mb-3">
+  <button type="button" class="btn btn-primary btn-raised disabled">Primary</button>
+  <button type="button" class="btn btn-primary btn-raised disabled">Secondary</button>
+  <button type="button" class="btn btn-success btn-raised disabled">Success</button>
+  <button type="button" class="btn btn-info btn-raised disabled">Info</button>
+  <button type="button" class="btn btn-warning btn-raised disabled">Warning</button>
+  <button type="button" class="btn btn-danger btn-raised disabled">Danger</button>
+  <button type="button" class="btn btn-link btn-raised disabled">Link</button>
+</div>
+++++
+
+[source, html, role="noclip"]
+----
+<button type="button" class="btn btn-primary btn-raised disabled">Primary</button>
+<button type="button" class="btn btn-primary btn-raised disabled">Secondary</button>
+<button type="button" class="btn btn-success btn-raised disabled">Success</button>
+<button type="button" class="btn btn-info btn-raised disabled">Info</button>
+<button type="button" class="btn btn-warning btn-raised disabled">Warning</button>
+<button type="button" class="btn btn-danger btn-raised disabled">Danger</button>
+<button type="button" class="btn btn-link btn-raised disabled">Link</button>
+----
+
+=== Outline buttons
+
+In need of a button, but not the hefty background colors they bring? Replace
+the default modifier classes with the `.btn-outline-*` ones to remove all
+background images and colors on any button.
+
+++++
+<div class="doc-example mb-3">
+  <button type="button" class="btn btn-outline-primary btn-raised">Primary</button>
+  <button type="button" class="btn btn-outline-secondary btn-raised">Secondary</button>
+  <button type="button" class="btn btn-outline-success btn-raised">Success</button>
+  <button type="button" class="btn btn-outline-info btn-raised">Info</button>
+  <button type="button" class="btn btn-outline-warning btn-raised">Warning</button>
+  <button type="button" class="btn btn-outline-danger btn-raised">Danger</button>
+</div>
+++++
+
+[source, html, role="noclip"]
+----
+<button type="button" class="btn btn-outline-primary btn-raised">Primary</button>
+<button type="button" class="btn btn-outline-secondary btn-raised">Secondary</button>
+<button type="button" class="btn btn-outline-success btn-raised">Success</button>
+<button type="button" class="btn btn-outline-info btn-raised">Info</button>
+<button type="button" class="btn btn-outline-warning btn-raised">Warning</button>
+<button type="button" class="btn btn-outline-danger btn-raised">Danger</button>
+----
+
+=== Flat buttons
+
+Flat buttons are text-only buttons. They may be used in dialogs, toolbars,
+or inline. They do not lift, but fill with color on press.
+
+++++
+<div class="doc-example">
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-secondary">Secondary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-link">Link</button>
+</div>
+++++
+
+[source, html, role="noclip"]
+----
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-link">Link</button>
+----
+
+
+=== Button sizes
+
+Beside the default size, small and large buttons are available.
+
+++++
+<div class="doc-example mb-3">
+  <button type="button" class="btn btn-primary btn-raised btn-lg">Large button</button>
+  <button type="button" class="btn btn-primary btn-raised">Default button</button>
+  <button type="button" class="btn btn-primary btn-raised btn-sm">Small button</button>
+</div>
+++++
+
+[source, html, role="noclip"]
+----
+<button type="button" class="btn btn-primary btn-raised btn-lg">Large button</button>
+<button type="button" class="btn btn-primary btn-raised">Default button</button>
+<button type="button" class="btn btn-primary btn-raised btn-sm">Small button</button>
+----
+
+=== Block level button
+
+Create block level buttons—those that span the full width of a parent—by
+adding .btn-block.
+
+++++
+<div class="doc-example mb-3">
+  <button type="button" class="btn btn-primary btn-lg btn-block btn-raised">Block level button</button>
+  <button type="button" class="btn btn-secondary btn-lg btn-block btn-raised">Block level button</button>
+</div>
+++++
+
+[source, html, role="noclip"]
+----
+<button type="button"
+        class="btn btn-primary btn-lg btn-block btn-raised">
+  Block level button
+</button>
+<button type="button"
+        class="btn btn-secondary btn-lg btn-block btn-raised">
+  Block level button
+</button>
+----
+
+=== Toggle button
+
+++++
+<div class="doc-example mb-3">
+  <button type="button" class="btn btn-primary btn-raised" data-toggle="button" aria-pressed="false" autocomplete="off">
+    Single toggle
+  </button>
+</div>
+++++
+
+[source, html, role="noclip"]
+----
+<button type="button" class="btn btn-primary btn-raised"
+  data-toggle="button" aria-pressed="false" autocomplete="off">
+    Single toggle
+</button>
+----
+
+=== Checkboxes and Radio buttons
+
+Bootstrap’s .button styles can be applied to other elements, such as
+`<label>`, to provide checkbox or radio style button toggling. The checked
+state for these buttons is only updated via click event on the button.
+
+++++
+<div class="doc-example mb-3">
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-primary btn-raised btn-flex active">
+      <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+    </label>
+    <label class="btn btn-primary btn-raised btn-flex">
+      <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+    </label>
+    <label class="btn btn-primary btn-raised btn-flex">
+      <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+    </label>
+  </div>
+</div>
+++++
+
+[source, html, role="noclip"]
+----
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-primary btn-raised btn-flex active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+  </label>
+  <label class="btn btn-primary btn-raised btn-flex">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+  </label>
+  <label class="btn btn-primary btn-raised btn-flex">
+    <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+  </label>
+</div>
+----
+
+=== Floating action buttons
+
+A floating action button represents the primary action in an application,
+it is used for a promoted action.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+https://material.io/components/buttons-floating-action-button#types-of-transitions[Google Material Design {char-middot} Floating action buttons, {browser-window--new}]
+
+++++
+<div class="doc-example">
+  <button type="button" class="btn bmd-btn-fab btn-primary" aria-label="fab-button">
+    <i class="mdi mdi-plus"></i>
+  </button>
+</div>
+++++
+
+[source, html, role="noclip"]
+----
+  <button type="button" class="btn bmd-btn-fab" aria-label="fab-button">
+    <i class="mdi mdi-plus"></i>
+  </button>
+----
+
+==== Colors
+
+++++
+<div class="doc-example">
+  <button type="button" class="btn bmd-btn-fab btn-primary" aria-label="fab-button-primary">
+    <i class="mdi mdi-plus"></i>
+  </button>
+  <button type="button" class="btn bmd-btn-fab btn-secondary" aria-label="fab-button-secondary">
+    <i class="mdi mdi-plus"></i>
+  </button>
+  <button type="button" class="btn bmd-btn-fab btn-danger" aria-label="fab-button-danger">
+    <i class="mdi mdi-plus"></i>
+  </button>
+  <button type="button" class="btn bmd-btn-fab btn-info" aria-label="fab-button-info">
+    <i class="mdi mdi-plus"></i>
+  </button>
+  <button type="button" class="btn bmd-btn-fab btn-success" aria-label="fab-button-success">
+    <i class="mdi mdi-plus"></i>
+  </button>
+  <button type="button" class="btn bmd-btn-fab btn-warning" aria-label="fab-button-warning">
+    <i class="mdi mdi-plus"></i>
+  </button>
+  <button type="button" class="btn bmd-btn-fab btn-dark" aria-label="fab-button-dark">
+    <i class="mdi mdi-plus"></i>
+  </button>
+  <button type="button" class="btn bmd-btn-fab btn-light" aria-label="fab-button-light">
+    <i class="mdi mdi-plus"></i>
+  </button>
+</div>
+++++
+
+[source, html, role="noclip"]
+----
+  <button type="button" class="btn bmd-btn-fab btn-primary" aria-label="fab-button-primary">
+    <i class="mdi mdi-plus"></i>
+  </button>
+  <button type="button" class="btn bmd-btn-fab btn-secondary" aria-label="fab-button-secondary">
+    <i class="mdi mdi-plus"></i>
+  </button>
+  ...
+  <button type="button" class="btn bmd-btn-fab btn-dark" aria-label="fab-button-dark">
+    <i class="mdi mdi-plus"></i>
+  </button>
+  <button type="button" class="btn bmd-btn-fab btn-light" aria-label="fab-button-light">
+    <i class="mdi mdi-plus"></i>
+  </button>
+----
+
+==== Sizes
+
+A smaller sized, i.e. mini floating action button, is also available.
+
+++++
+<div class="doc-example">
+  <button type="button" class="btn btn-danger bmd-btn-fab bmd-btn-fab-sm" aria-label="fab-button-small">
+    <i class="mdi mdi-plus"></i>
+  </button>
+</div>
+++++
+
+[source, html, role="noclip"]
+----
+  <button type="button" class="btn btn-danger bmd-btn-fab bmd-btn-fab-sm" aria-label="fab-button-small">
+    <i class="mdi mdi-plus"></i>
+  </button>
+----
+
+== Typography
+
+Bootstrap sets basic global display, typography, and link styles. When more
+control is needed, check out the textual utility classes.
+
+For a more inclusive and accessible type scale, it is assuemed that
+the browser default root font-size (typically 16px) so visitors can
+customize their browser defaults as needed.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--content-typography}[Bootstrap Docs {char-middot} Typography, {browser-window--new}]
+
+=== Headings
+
+++++
+<div class="doc-example mb-3">
+  <div class="row mb-5">
+  <div class="col-md-4">
+      <h1 class="notoc">Heading 1</h1>
+      <h2 class="notoc">Heading 2</h2>
+      <h3 class="notoc">Heading 3</h3>
+      <h4 class="notoc">Heading 4</h4>
+      <h5 class="notoc">Heading 5</h5>
+      <h6 class="notoc">Heading 6</h6>
+      <h3 class="notoc">
+        Heading 3
+        <small class="text-muted">with muted text</small>
+      </h3>
+      <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+    </div>
+    <div class="col-md-4">
+      <h3 class="notoc">Example body text</h2>
+      <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+      <p><small>This line of text is meant to be treated as fine print.</small></p>
+      <p>The following is <strong>rendered as bold text</strong>.</p>
+      <p>The following is <em>rendered as italicized text</em>.</p>
+      <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+    </div>
+    <div class="col-md-4">
+      <h3 class="notoc">Emphasis classes</h2>
+      <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+      <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+      <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+      <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+      <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    </div>
+  </div>
+</div>
+++++
+
+=== Blockquotes
+
+++++
+<div class="doc-example mb-3">
+  <div class="row">
+    <div class="col-md-6">
+      <blockquote class="blockquote">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+      </blockquote>
+    </div>
+    <div class="col-md-6">
+      <blockquote class="blockquote blockquote-reverse">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+      </blockquote>
+    </div>
+  </div>
+</div>
+++++
+
+== Tables
+
+Due to the widespread use of tables across third-party widgets like calendars
+and date pickers, we’ve designed our tables to be opt-in. Just add the base
+class `.table` to any `<table>`, then extend with custom styles or our various
+included modifier classes.
+
+Using the most basic table markup, here’s how .table-based tables look in
+Bootstrap. All table styles are inherited in Bootstrap 4, meaning any nested
+tables will be styled in the same manner as the parent.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--content-tables}[Bootstrap Docs {char-middot} Tables, {browser-window--new}]
+
+
+++++
+<div class="doc-example mb-3">
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Column heading</th>
+        <th>Column heading</th>
+        <th>Column heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr class="table-info">
+        <td>3</td>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr class="table-success">
+        <td>4</td>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr class="table-danger">
+        <td>5</td>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr class="table-warning">
+        <td>6</td>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr class="table-active">
+        <td>7</td>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+++++
+
+== Forms
+
+Bootstrap’s form controls expand on our Rebooted form styles with classes.
+Use these classes to opt into their customized displays for a more consistent
+rendering across browsers and devices.
+
+Be sure to use an appropriate type attribute on all inputs (e.g., email
+for email address or number for numerical information) to take advantage
+of newer input controls like email verification, number selection, and more.
+
+Here’s a quick example to demonstrate Bootstrap’s form styles. Keep reading
+for documentation on required classes, form layout, and more.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-forms}[Bootstrap Docs {char-middot} Forms, {browser-window--new}]
+
+++++
+<div class="doc-example mb-3">
+  <form>
+    <div class="form-group">
+      <input type="email" class="form-control" id="exampleInputEmail1" autocomplete="none">
+      <label for="exampleInputEmail1" class="bmd-label-floating">Email address</label>
+      <span class="form-clear d-none"><i class="mdi mdi-2x mdi-format-clear"></i></span>
+      <span class="bmd-help">We'll never share your email with anyone else.</span>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputPassword1" class="bmd-label-floating">Password</label>
+      <span class="form-clear d-none"><i class="mdi mdi-2x mdi-format-clear"></i></span>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary btn-raised">Submit</button>
+  </form>
+</div>
+++++
+
+Textual form controls—like <input>s, <select>s, and <textarea>s—are styled with
+the .form-control class. Included are styles for general appearance, focus
+state, sizing, and more.
+
+++++
+<div class="doc-example mb-3">
+  <form>
+    <div class="form-group">
+      <input type="email" class="form-control" id="exampleFormControlInput1">
+      <label for="exampleInputEmail1" class="bmd-label-floating">Email address</label>
+    </div>
+    <div class="form-group">
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <label for="exampleFormControlSelect1" class="bmd-label-floating">Example select</label>
+    </div>
+    <div class="form-group">
+      <select multiple class="form-control" id="exampleFormControlSelect2">
+        <option>option 1</option>
+        <option>option 2</option>
+        <option>option 3</option>
+      </select>
+      <label for="exampleFormControlSelect2" class="bmd-label-floating">Example multiple select</label>
+    </div>
+    <div class="form-group">
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <label for="exampleFormControlTextarea1" class="bmd-label-floating">Example textarea</label>
+    </div>
+  </form>
+</div>
+++++
+
+For file inputs, swap the .form-control for .form-control-file.
+
+++++
+<div class="doc-example mb-3">
+  <form>
+    <div class="form-group">
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      <label for="exampleFormControlFile1" class="bmd-label-floating">Example file input</label>
+    </div>
+  </form>
+</div>
+++++
+
+== Navs
+
+Navigation available in Bootstrap share general markup and styles, from the
+base .nav class to the active and disabled states. Swap modifier classes to
+switch between each style.
+
+The base .nav component is built with flexbox and provide a strong foundation
+for building all types of navigation components. It includes some style
+overrides (for working with lists), some link padding for larger hit areas,
+and basic disabled styling.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-navs}[Bootstrap Docs {char-middot} Navs, {browser-window--new}]
+
+=== Tabs
+
+Tabs takes the basic nav from above and adds the .nav-tabs class to generate
+a tabbed interface. Use them to create tabbable regions with our tab
+JavaScript plugin.
+
+++++
+<div class="doc-example mb-3">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#profile">Profile</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true" aria-expanded="false">
+        Dropdown
+      </a>
+      <div class="dropdown-menu">
+        <a href="#" class="dropdown-item">Action</a>
+        <a href="#" class="dropdown-item">Another action</a>
+        <a href="#" class="dropdown-item">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item">Separated link</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link disabled">Disabled</a>
+    </li>
+  </ul>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade active show" id="home">
+      <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+    </div>
+    <div class="tab-pane fade" id="profile">
+      <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+    </div>
+    <div class="tab-pane fade" id="dropdown1">
+      <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+    </div>
+    <div class="tab-pane fade" id="dropdown2">
+      <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
+    </div>
+  </div>
+</div>
+++++
+
+
+=== Pills
+
+Take that same HTML as Tabs, but use .nav-pills class instead.
+
+++++
+<div class="doc-example mb-3">
+  <div class="row mb-5">
+
+    <div class="col-md-6">
+      <h4 class="notoc">Standard Pills</h4>
+      <ul class="nav nav-pills">
+        <li class="nav-item mr-1 mb-2">
+          <a href="#" class="nav-link active">Active</a>
+        </li>
+        <li class="nav-item dropdown mr-1">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Action</a>
+            <a href="#" class="dropdown-item">Another action</a>
+            <a href="#" class="dropdown-item">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">Separated link</a>
+          </div>
+        </li>
+        <li class="nav-item mr-1 mb-2">
+          <a href="#" class="nav-link">Link</a>
+        </li>
+        <li class="nav-item mr-1 mb-2">
+          <a href="#" class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h5 class="notoc">Stacked Pills (vertical)</h5>
+      <ul class="nav nav-pills flex-column mb-4">
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link active">Active</a>
+        </li>
+        <li class="nav-item dropdown mb-1">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Action</a>
+            <a href="#" class="dropdown-item">Another action</a>
+            <a href="#" class="dropdown-item">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">Separated link</a>
+          </div>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link">Link</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="#" class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+++++
+
+=== Breadcrumbs
+
+Breadcrumbs indicate the current page’s location within a navigational
+hierarchy that automatically adds separators via CSS.
+
+Separators are automatically added in CSS through ::before and content.
+
+++++
+<div class="doc-example mb-3">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active">Home</li>
+  </ol>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active">Library</li>
+  </ol>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Library</a></li>
+    <li class="breadcrumb-item active">Data</li>
+  </ol>
+</div>
+++++
+
+=== Pagination
+
+We use a large block of connected links for our pagination, making links
+hard to miss and easily scalable—all while providing large hit areas.
+Pagination is built with list HTML elements so screen readers can announce
+the number of available links. Use a wrapping <nav> element to identify
+it as a navigation section to screen readers and other assistive technologies.
+
+++++
+<div class="doc-example mb-3">
+  <div>
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a href="#" class="page-link">&laquo;</a>
+      </li>
+      <li class="page-item active">
+        <a href="#" class="page-link">1</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">2</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">3</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">4</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">5</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">&raquo;</a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="pagination pagination-lg">
+      <li class="page-item disabled">
+        <a href="#" class="page-link">&laquo;</a>
+      </li>
+      <li class="page-item active">
+        <a href="#" class="page-link">1</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">2</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">3</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">4</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">5</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">&raquo;</a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="pagination pagination-sm">
+      <li class="page-item disabled">
+        <a href="#" class="page-link">&laquo;</a>
+      </li>
+      <li class="page-item active">
+        <a href="#" class="page-link">1</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">2</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">3</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">4</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">5</a>
+      </li>
+      <li class="page-item">
+        <a href="#" class="page-link">&raquo;</a>
+      </li>
+    </ul>
+  </div>
+</div>
+++++
+
+== Indicators
+
+With Bootstrap, indicators are elememts to raise the users awareness. Alerts
+are dynamic elememts that can be used to *indicate* success or something went
+wrong.  Contrasting *Badges, static BS elememts, to raise attention e.g for
+something *new*.
+
+=== Alerts
+
+Alerts provide contextual feedback messages for typical user actions with the
+handful of available and flexible alert messages.
+
+Alerts are available for any length of text, as well as an optional dismiss
+button. For proper styling, use one of the eight required contextual classes
+(e.g., .alert-success). For inline dismissal, use the alerts
+https://getbootstrap.com/docs/4.0/components/alerts/#dismissing[jQuery plugin].
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-alerts}[Bootstrap Docs {char-middot} Alerts, {browser-window--new}]
+
+++++
+<div class="doc-example mb-3">
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <div class="alert alert-dismissible alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4 class="alert-heading notoc">Warning!</h4>
+        <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-md-4">
+      <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="alert alert-dismissible alert-info">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+      </div>
+    </div>
+  </div>
+</div>
+++++
+
+=== Badges
+
+Badges are small count and labeling components. They scale to match the size
+of the immediate parent element by using relative font sizing and em units.
+
+Note that depending on how they are used, badges may be confusing for users
+of screen readers and similar assistive technologies. While the styling of
+badges provides a visual cue as to their purpose, these users will simply
+be presented with the content of the badge. Depending on the specific
+situation, these badges may seem like random additional words or numbers
+at the end of a sentence, link, or button.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-badges}[Bootstrap Docs {char-middot} Badge, {browser-window--new}]
+
+++++
+<div class="doc-example mb-3">
+  <div class="bs-component mb-3">
+    <span class="badge badge-primary">Primary</span>
+    <span class="badge badge-secondary">Secondary</span>
+    <span class="badge badge-success">Success</span>
+    <span class="badge badge-danger">Danger</span>
+    <span class="badge badge-warning">Warning</span>
+    <span class="badge badge-info">Info</span>
+    <span class="badge badge-light">Light</span>
+    <span class="badge badge-dark">Dark</span>
+  </div>
+  <div class="bs-component mb-4">
+    <span class="badge badge-pill badge-primary">Primary</span>
+    <span class="badge badge-pill badge-secondary">Secondary</span>
+    <span class="badge badge-pill badge-success">Success</span>
+    <span class="badge badge-pill badge-danger">Danger</span>
+    <span class="badge badge-pill badge-warning">Warning</span>
+    <span class="badge badge-pill badge-info">Info</span>
+    <span class="badge badge-pill badge-light">Light</span>
+    <span class="badge badge-pill badge-dark">Dark</span>
+  </div>
+</div>
+++++
+
+ifdef::scrollbars[]
+=== Scrollbars
+
+Chromium-based browsers like Chrome, Edge, Safari or Opera support the *webkit*
+`::-webkit-scrollbar` pseudo element, which allows to modify the look of the
+browser's scrollbar.
+
+NOTE: Custom (webkit-based) scrollbars are not supported with the Firefox
+browser.
+
+.Default scrollbar J1 Template
+[source, css, role="noclip"]
+----
+::-webkit-scrollbar {
+	width: 12px;
+	background-color: $grey-100;
+}
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px $darken-300;
+  border-radius: 0px;
+  background-color: $grey-100;
+}
+::-webkit-scrollbar-thumb {
+	-webkit-box-shadow: inset 0 0 6px $lighten-300;
+	background-color: $grey-800;
+}
+----
+
+For J1 Template, following flavours are implemented.
+
+[subs="attributes"]
+++++
+<div>
+  <div class="row">
+    <div class="scrollbar" id="style-default">
+      <div class="force-overflow"></div>
+    </div>
+
+    <div class="scrollbar scroller-1">
+      <div class="force-overflow"></div>
+    </div>
+
+    <div class="scrollbar scroller-2">
+      <div class="force-overflow"></div>
+    </div>
+
+    <div class="scrollbar scroller-3">
+      <div class="force-overflow"></div>
+    </div>
+
+    <div class="scrollbar scroller-4">
+      <div class="force-overflow"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="scrollbar scroller-5">
+      <div class="force-overflow"></div>
+    </div>
+
+    <div class="scrollbar scroller-6">
+      <div class="force-overflow"></div>
+    </div>
+
+    <div class="scrollbar scroller-7">
+      <div class="force-overflow"></div>
+    </div>
+
+    <div class="scrollbar scroller-8">
+      <div class="force-overflow"></div>
+    </div>
+
+    <div class="scrollbar scroller-9">
+      <div class="force-overflow"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="scrollbar scroller-10">
+      <div class="force-overflow"></div>
+    </div>
+
+    <div class="scrollbar scroller-11">
+      <div class="force-overflow"></div>
+    </div>
+
+    <div class="scrollbar scroller-13">
+      <div class="force-overflow"></div>
+    </div>
+
+    <div class="scrollbar scroller-14">
+      <div class="force-overflow"></div>
+    </div>
+
+    <div class="scrollbar scroller-15">
+      <div class="force-overflow"></div>
+    </div>
+  </div>
+</div>
+
+<!-- script>
+NOTE: $.browser.webkit does NOT exists !!!
+if (!$.browser.webkit) {
+  $('.wrapper').html('<p>Sorry! Non webkit browser detected. Scrollbars <b>not</b> displayed :</p>');
+}
+</script -->
+++++
+endif::[]
+
+== Progress
+
+Bootstrap custom progress bars featuring support for stacked bars, animated
+backgrounds, and text labels. Progress components are built with two HTML
+elements, some CSS to set the width, and a few attributes. We don’t use the
+HTML5 <progress> element, ensuring you can stack progress bars, animate them,
+and place text labels over them.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-progress}[Bootstrap Docs {char-middot} Progress, {browser-window--new}]
+
+=== Basic
+
+++++
+<div class="doc-example mb-3">
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+</div>
+++++
+
+.Basic progressbar
+[source, html, role="noclip"]
+----
+  <div class="progress">
+    <div  class="progress-bar" role="progressbar"
+          style="width: 25%;"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100">
+    </div>
+  </div>
+----
+
+=== Contextual alternatives
+
+++++
+<div class="doc-example mb-3">
+  <div class="progress mb-1">
+    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress mb-1">
+    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress mb-1">
+    <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+</div>
+++++
+
+.Progressbar SUCCESS
+[source, html, role="noclip"]
+----
+  <div class="progress">
+    <div  class="progress-bar bg-success" role="progressbar"
+          style="width: 25%;"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100">
+    </div>
+  </div>
+----
+
+=== Multiple bars
+
+++++
+<div class="doc-example mb-3">
+  <div class="progress">
+    <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar bg-danger"  role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+</div>
+++++
+
+=== Striped
+
+++++
+<div class="doc-example mb-3">
+  <div class="progress mb-1">
+    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress mb-1">
+    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress mb-1">
+    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress mb-1">
+    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+</div>
+++++
+
+=== Animated
+
+++++
+<div class="doc-example mb-3">
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+  </div>
+</div>
+++++
+
+== Containers
+
+In sense of Bootstrap, *containers* are more complex, eye-catching elements to
+showcase facts or topics of a site. Typical elements are:
+
+* Jumbotron
+* Lists
+* Cards
+
+Find below examples how BS can support the users awarenes.
+
+
+=== Jumbotron
+
+Lightweight, flexible component for showcasing hero unit style content.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-jumbotron}[Bootstrap Docs {char-middot} Jumbotron, {browser-window--new}]
+
+++++
+<div class="doc-example mb-3">
+  <div class="jumbotron">
+    <h1 class="display-3">Hello, world!</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+      <a href="#" class="btn btn-primary btn-raised btn-lg" role="button">Learn more</a>
+    </p>
+  </div>
+</div>
+++++
+
+=== List groups
+
+List groups are a flexible and powerful component for displaying a series of
+content. Modify and extend them to support just about any content within.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-list_group}[Bootstrap Docs {char-middot} List group, {browser-window--new}]
+
+++++
+<div class="doc-example mb-3">
+  <div class="row mb-5">
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Describe item #1
+          <span class="badge badge-primary badge-pill">14</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Describe item #2
+          <span class="badge badge-primary badge-pill">2</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Describe item #3
+          <span class="badge badge-primary badge-pill">1</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+          Describe item #1
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">Describe item #2
+        </a>
+        <a href="#" class="list-group-item list-group-item-action disabled">Describe item #3
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+          <div class="d-flex w-100 justify-content-between">
+            <h4 class="mb-1 notoc">List group item heading</h4>
+            <small>3 days ago</small>
+          </div>
+          <p class="mb-1">Some quick example text to build on a list and make up the bulk of the list group's content.</p>
+          <small>Summarize whats all about.</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1 notoc">List group item heading</h5>
+            <small class="text-muted">3 days ago</small>
+          </div>
+          <p class="mb-1">Some quick example text to build on a list and make up the bulk of the list group's content.</p>
+          <small class="text-muted">Summarize whats all about.</small>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+++++
+
+
+=== Cards
+
+Bootstrap’s cards provide a flexible and extensible content container with
+multiple variants and options. A card is a flexible and extensible content
+container. It includes options for headers and footers, a wide variety of
+content, contextual background colors, and powerful display options.
+
+If you’re familiar with Bootstrap 3, cards replace our old panels, wells,
+and thumbnails. Similar functionality to those components is available as
+modifier classes for cards.
+
+Cards are built with as little markup and styles as possible, but still
+manage to deliver a ton of control and customization. Built with flexbox,
+they offer easy alignment and mix well with other Bootstrap components.
+They have no margin by default, so use spacing utilities as needed.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-cards}[Bootstrap Docs {char-middot} Card, {browser-window--new}]
+
+==== Simple cards
+++++
+<div class="doc-example mb-3">
+
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="card mb-3" style="max-width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title notoc">Card title</h4>
+          <h5 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="card mb-3" style="max-width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title notoc">Card title</h4>
+          <h6 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="card mb-3" style="max-width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title notoc">Card title</h4>
+          <h6 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-12 pl-3">
+      <div class="card mb-3" style="max-width: 20rem;">
+        <div class="card-header text-white bg-primary">
+          <h3 class="notoc">Header</h3>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title notoc">Primary card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="card mb-3" style="max-width: 20rem;">
+        <div class="card-header text-white bg-secondary">
+          <h3 class="notoc">Header</h3>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title notoc">Secondary card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="card mb-3" style="max-width: 20rem;">
+        <div class="card-header text-white bg-success">
+          <h3 class="notoc">Header</h3>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title notoc">Success card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-12 pl-3">
+      <div class="card mb-3" style="max-width: 20rem;">
+        <div class="card-header text-white bg-info">
+          <h3 class="notoc">Header</h3>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title notoc">Info card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <div class="card-footer r-text-200">
+          <a class="card-link bs-info font-weight-bold g-font-size-12 text-uppercase"
+             href="#">Action · Footer Link
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="card mb-3" style="max-width: 20rem;">
+        <div class="card-header text-white bg-warning">
+          <h3 class="notoc">Header</h3>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title notoc">Warning card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <div class="card-footer r-text-200">
+          <a class="card-link bs-warning font-weight-bold g-font-size-12 text-uppercase"
+             href="#">Action · Footer Link
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="card mb-3" style="max-width: 20rem;">
+        <div class="card-header text-white bg-danger">
+          <h3 class="notoc">Header</h3>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title notoc">Danger card title</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <div class="card-footer r-text-200">
+          <a href="#" class="card-link bs-danger font-weight-bold g-font-size-12 text-uppercase">
+          Action · Footer Link
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+++++
+
+==== Image cards
+++++
+<div class="doc-example mb-3">
+
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="card mb-3" style="max-width: 20rem;">
+        <img src="/assets/images/modules/attics/building-blocks-1920x1280-bw.jpg" alt="Free site generators">
+        <div class="card-body">
+          <h5 class="card-title notoc">Card title</h5>
+          <h6 class="card-subtitle text-muted notoc">Image card subtitle</h6>
+        </div>
+
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="card mb-3" style="max-width: 20rem;">
+        <img src="/assets/images/modules/attics/building-blocks-1920x1280-bw.jpg" alt="Free site generators">
+        <div class="card-body">
+          <h5 class="card-title notoc">Card title</h5>
+          <h6 class="card-subtitle text-muted notoc">Image card subtitle</h6>
+        </div>
+
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="card mb-3" style="max-width: 20rem;">
+        <h3 class="card-header notoc">Header</h3>
+        <img src="/assets/images/modules/attics/building-blocks-1920x1280-bw.jpg" alt="Free site generators">
+        <div class="card-body">
+          <h5 class="card-title notoc">Card title</h5>
+          <h6 class="card-subtitle text-muted notoc">Image card subtitle</h6>
+        </div>
+
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+++++
+
+== Dialogs
+
+Dialogs are important, interactive UI (user interface) components in Bootstrap
+to *inform* visitor of an website.
+
+=== Modals
+
+Use Bootstrap’s JavaScript modal plugin to add dialogs to your site for
+lightboxes, user notifications, or completely custom content. Modals are
+built with HTML, CSS, and JavaScript. They’re positioned over everything
+else in the document and remove scroll from the <body> so that modal
+content scrolls instead.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-modal}[Bootstrap Docs {char-middot} Modal, {browser-window--new}]
+
+.Modal types
+[cols="2a,8a,2a", options="header", width="100%", role="rtable"]
+|===============================================================================
+|Type |Description |Launch Example
+
+|*Base*
+|Lauch the modal by clicking the button below. It will slide down and fade in
+from the top of the page.
+|
+++++
+<div class="ml-0">
+  <!-- Button trigger modal -->
+  <button type="button"
+    class="btn btn-primary btn-raised"
+    data-toggle="modal"
+    data-target="#exampleSimpleModal">
+    Launch Example
+  </button>
+</div>
+
+<!-- Modal -->
+<div id="exampleSimpleModal"
+  class="modal fade top"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleSimpleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="exampleSimpleModalLabel" class="modal-title notoc">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+++++
+
+|*Static backdrop*
+|This model is set to *static* and is will *not* close when clicking outside
+it (the backdrop).
+|
+++++
+<div class="ml-0">
+  <!-- Button trigger modal -->
+  <button type="button"
+    class="btn btn-primary btn-raised"
+    data-toggle="modal"
+    data-target="#exampleStaticModal">
+    Launch Example
+  </button>
+</div>
+
+<!-- Modal -->
+<div id="exampleStaticModal"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleStaticModalLabel" aria-hidden="true"
+  data-keyboard="false"
+  data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="exampleStatcModalLabel" class="modal-title notoc">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+++++
+
+|*Scrolling long content*
+|When modals become too long for the user’s viewport or device, they scroll
+independent of the page itself. Try the demo and resize your browser for
+the height.
+|
+++++
+<div class="ml-0">
+  <!-- Button trigger modal -->
+  <button type="button"
+    class="btn btn-primary btn-raised"
+    data-toggle="modal"
+    data-target="#exampleModalLong">
+    Launch Example
+  </button>
+</div>
+
+<!-- Modal -->
+<div
+  id="exampleModalLong"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="exampleModalLongTitle" class="modal-title notoc">The Extremes of Good and Evil</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          On the other hand, we denounce with righteous indignation and dislike men who
+          are so beguiled and demoralized by the charms of pleasure of the moment, so
+          blinded by desire, that they cannot foresee the pain and trouble that are
+          bound to ensue; and equal blame belongs to those who fail in their duty through
+          weakness of will, which is the same as saying through shrinking from toil and pain.
+        </p>
+        <p>
+          These cases are perfectly simple and easy to distinguish. In a free hour, when
+          our power of choice is untrammelled and when nothing prevents our being able to
+          do what we like best, every pleasure is to be welcomed and every pain avoided.
+          But in certain circumstances and owing to the claims of duty or the obligations
+          of business is will frequently occur that pleasures have to be repudiated and
+          annoyances accepted. The wise man therefore always holds in these matters to
+          this principle of selection: he rejects pleasures to secure other greater
+          pleasures, or else he endures pains to avoid worse pains.
+        </p>
+        <p>
+          On the other hand, we denounce with righteous indignation and dislike men who
+          are so beguiled and demoralized by the charms of pleasure of the moment, so
+          blinded by desire, that they cannot foresee the pain and trouble that are
+          bound to ensue; and equal blame belongs to those who fail in their duty through
+          weakness of will, which is the same as saying through shrinking from toil and pain.
+        </p>
+        <p>
+          These cases are perfectly simple and easy to distinguish. In a free hour, when
+          our power of choice is untrammelled and when nothing prevents our being able to
+          do what we like best, every pleasure is to be welcomed and every pain avoided.
+          But in certain circumstances and owing to the claims of duty or the obligations
+          of business is will frequently occur that pleasures have to be repudiated and
+          annoyances accepted. The wise man therefore always holds in these matters to
+          this principle of selection: he rejects pleasures to secure other greater
+          pleasures, or else he endures pains to avoid worse pains.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+++++
+
+|*Scrollable long content*
+|It#s also possible to create a scrollable modal that allows scroll the
+modal body. Try the demo and scroll the content.
+|
+++++
+<div class="ml-0">
+  <!-- Button trigger modal -->
+  <button type="button"
+    class="btn btn-primary btn-raised"
+    data-toggle="modal"
+    data-target="#exampleModalLongScrollable">
+    Launch Example
+  </button>
+</div>
+
+<!-- Modal -->
+<div
+  id="exampleModalLongScrollable"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLongScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="exampleModalLongScrollableTitle" class="modal-title notoc">The Extremes of Good and Evil</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          On the other hand, we denounce with righteous indignation and dislike men who
+          are so beguiled and demoralized by the charms of pleasure of the moment, so
+          blinded by desire, that they cannot foresee the pain and trouble that are
+          bound to ensue; and equal blame belongs to those who fail in their duty through
+          weakness of will, which is the same as saying through shrinking from toil and pain.
+        </p>
+        <p>
+          These cases are perfectly simple and easy to distinguish. In a free hour, when
+          our power of choice is untrammelled and when nothing prevents our being able to
+          do what we like best, every pleasure is to be welcomed and every pain avoided.
+          But in certain circumstances and owing to the claims of duty or the obligations
+          of business is will frequently occur that pleasures have to be repudiated and
+          annoyances accepted. The wise man therefore always holds in these matters to
+          this principle of selection: he rejects pleasures to secure other greater
+          pleasures, or else he endures pains to avoid worse pains.
+        </p>
+        <p>
+          On the other hand, we denounce with righteous indignation and dislike men who
+          are so beguiled and demoralized by the charms of pleasure of the moment, so
+          blinded by desire, that they cannot foresee the pain and trouble that are
+          bound to ensue; and equal blame belongs to those who fail in their duty through
+          weakness of will, which is the same as saying through shrinking from toil and pain.
+        </p>
+        <p>
+          These cases are perfectly simple and easy to distinguish. In a free hour, when
+          our power of choice is untrammelled and when nothing prevents our being able to
+          do what we like best, every pleasure is to be welcomed and every pain avoided.
+          But in certain circumstances and owing to the claims of duty or the obligations
+          of business is will frequently occur that pleasures have to be repudiated and
+          annoyances accepted. The wise man therefore always holds in these matters to
+          this principle of selection: he rejects pleasures to secure other greater
+          pleasures, or else he endures pains to avoid worse pains.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+++++
+
+|*Vertically centered*
+|For important messages, center the modal.
+|
+++++
+<div class="ml-0">
+  <!-- Button trigger modal -->
+  <button type="button"
+    class="btn btn-primary btn-raised"
+    data-toggle="modal" data-target="#exampleModalVerticalCenter">
+    Launch Example
+  </button>
+</div>
+
+<!-- Modal -->
+<div id="exampleModalVerticalCenter"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalVerticalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="exampleModalVerticalCenterTitle" class="modal-title notoc">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+++++
+
+|*Tooltips and Popovers*
+|Tooltips and popovers can be placed within modals as needed. When modals are
+closed, any tooltips and popovers within are also automatically dismissed.
+|
+++++
+<div class="ml-0">
+  <!-- Button trigger modal -->
+  <button type="button"
+    class="btn btn-primary btn-raised"
+    data-toggle="modal"
+    data-target="#exampleModalTooltip">
+    Launch Example
+  </button>
+</div>
+
+<!-- Modal -->
+<div id="exampleModalTooltip"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalTooltipTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="exampleModalTooltipTitle" class="modal-title notoc">Modal title</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4 class="notoc">Popover in a modal</h4>
+        <p>This <a href="#" role="button" class="btn btn-primary btn-raised popover-test" data-toggle="popover" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on hover or click.</p>
+        <hr>
+        <h4 class="notoc">Tooltips in a modal</h4>
+        <p><a href="#" class="tooltip-test" data-toggle="tooltip" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" data-toggle="tooltip" title="Tooltip">that link</a> have tooltips on hover.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+++++
+|===============================================================================
+
+.Base Modal example
+[source, html, role="noclip"]
+----
+<!-- Trigger Button (modal) -->
+<div class="ml-0">
+  <button type="button"
+    class="btn btn-primary btn-raised"
+    data-toggle="modal"
+    data-target="#exampleSimpleModal">
+    Launch Example
+  </button>
+</div>
+
+<!-- Modal -->
+<div id="exampleSimpleModal"
+  class="modal fade top"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleSimpleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="exampleSimpleModalLabel" class="modal-title notoc">Modal title</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button"
+          class="btn btn-primary btn-flex btn-raised mr-2"> Do nothing
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary btn-flex btn-raised"
+          data-dismiss="modal"> Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+----
+
+=== Popovers and Tooltips
+
+Popovers and Tooltips rely on the 3rd party library __Popper.js__ for positioning.
+To make them properly positioned, the Javascript library `popper.min.js` has to
+be included before `bootstrap.js` in order to make popovers and tooltips to work.
+
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-popovers}[Bootstrap Docs {char-middot} Popovers, {browser-window--new}]
+mdi:bootstrap[24px, mdi-md-deep-purple]
+link:{url-bs-docs--components-tooltips}[Bootstrap Docs {char-middot} Tooltips, {browser-window--new}]
+
+NOTE: Popovers and Tooltips require the BS tooltip plugin as a dependency.
+
+++++
+<div class="doc-example mb-3">
+  <div class="row mb-5">
+    <div class="col-md-6">
+      <h5 class="mb-5 notoc">Popovers</h5>
+      <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top</button>
+      <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Bottom</button>
+      <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right</button>
+      <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left</button>
+    </div>
+    <div class="col-md-6">
+      <h5 class="mb-5 notoc">Tooltips</h5>
+      <button type="button" class="btn btn-primary btn-raised" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Top</button>
+      <button type="button" class="btn btn-primary btn-raised" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Bottom</button>
+      <button type="button" class="btn btn-primary btn-raised" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Right</button>
+      <button type="button" class="btn btn-primary btn-raised" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Left</button>
+    </div>
+  </div>
+</div>
+++++
+
+.Example for Popovers and Tooltips
+[source, html, role="noclip"]
+----
+  <div class="row mb-5">
+    <div class="col-md-6">
+      <h5 class="mb-5 notoc">Popovers</h5>
+      <button type="button" class="btn btn-primary btn-raised"
+        title="Popover Title" data-container="body"
+        data-toggle="popover" data-placement="top"
+        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top
+      </button>
+      ...
+    </div>
+    <div class="col-md-6">
+      <h5 class="mb-5 notoc">Tooltips</h5>
+      <button type="button" class="btn btn-primary btn-raised"
+              data-toggle="tooltip" data-placement="top"
+              title="Tooltip on top">Top
+      </button>
+      ...
+    </div>
+  </div>
+----

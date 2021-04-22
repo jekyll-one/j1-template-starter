@@ -1,0 +1,258 @@
+# ------------------------------------------------------------------------------
+# ~/_data/layouts/home.yml
+# Configuration data to specify the (HTML) Layout of all content
+# pages of type HOME placed by the content loader
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+# NOTE:
+#   By J1 template, "Liquid Procedures" are being used intensively. To load
+#   HTML data for a layout, the loader procedure places the data based this
+#   YAML data file into the REGION specified with a LANE.
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Layout configuration settings
+#
+#   lanes|lane
+#   ----------------------------------------------------------------------------
+#   Set LANE specific configuration parameters for a page LAYOUT. The
+#   LANES array contains multiple (lane) hashes that describes the type
+#   of the component that is loaded into a lane and their specific
+#   (placement) parameters.
+#
+#   region
+#   ----------------------------------------------------------------------------
+#   J1 templates defines, based on the general structure of a HTML page
+#   (head|body), more specific REGIONS based on HTML5 semantic elements
+#   to place HTML data:
+#
+#   head              <head> section. Contains (site-wide) meta data and
+#                     all CSS and JS files are to be loaded for a page.
+#   body-navigation   <body> NAV section. Contains the main navigation bar.
+#                     Placed a the BEGINNING of the <body> section.
+#   body-header       <body> HEADER section. Contains the page banner (header).
+#                     Placed AFTER the page navigation but BEFORE the main
+#                     content (body-main) of a page.
+#   body-main         <body> MAIN section. J1 template puts a <main> container
+#                     element in the <body> section to place the (main) content.
+#                     All content related elements are loaded into the region
+#                     'body-main'. Content may components like boxes, panels,
+#                     quotes etc. and the document content like sections and
+#                     articles.
+#   body-footer       <body> FOOTER section. J1 template puts a <footer> element
+#                     at the end of the <BODY> section. The body-footer region
+#                     contains all elements that should be loaded at the end
+#                     of a page; typically the page footer.
+#
+#   values:           head|body-navigation|body-header|body-main|body-footer
+#   default:          no defaults
+#
+#   type
+#   ----------------------------------------------------------------------------
+#   The (HTML) content of a lane can be included (from an include file) or
+#   loaded asychronously from a HTML data file by AJAX (get|load) calls.
+#   J1 template is using jQuery as an interface to AJAX calls.
+#
+#   values:           include|load
+#   default:          no defaults
+#
+#   source
+#   ----------------------------------------------------------------------------
+#   The parameter source defines a (site root relativ) path to the data
+#   source to be included or loaded.
+#
+#   values:           string (path)
+#   default:          no defaults
+#
+#   file
+#   ----------------------------------------------------------------------------
+#   Defines the data file to be included or loaded.
+#
+#   values:           string
+#   default:          no defaults
+#
+#   id
+#   ----------------------------------------------------------------------------
+#   Used for AJAX load calls (see parameter type). The id is used twice. First,
+#   id references a HTML fragment as part of the (HTML) data file (see parameter
+#   data below). Second, the id is used to identify the placeholder (div)
+#   element where the AJAX call puts the data on.
+#
+#   values:           string
+#   default:          no defaults
+#
+#   class
+#   ----------------------------------------------------------------------------
+#   Additional CSS classes that are put on the placeholder (div) element.
+#   Can be used for type 'load', only.
+#
+#   values:           string (CSS class name)
+#   default:          no defaults
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Layout configuration settings
+#
+lanes:
+
+  # ----------------------------------------------------------------------------
+  # MASTER header
+  #
+  - lane:
+      enabled:                          true
+      region:                           body-header
+      type:                             sync
+      base:                             _includes/themes/j1
+      path:                             modules/attics
+      file:                             generator.html
+
+  # ----------------------------------------------------------------------------
+  # MASTER slider
+  #
+  - lane:
+      enabled:                          false
+      id:                               master_slider
+      region:                           body-header
+      type:                             async
+      properties:                       mb-0
+
+  # ----------------------------------------------------------------------------
+  #   PAGE CONTENT (region body-main)
+  #
+  #   NOTE:
+  #     The CONTENT of a post or page may already rendered (page contains HTML
+  #     data) or unrendered (page contains MARKUP data). In both cases, rendered
+  #     or unrendered content, a valid FRONTMATTER is needed to pass the data.
+  #
+  #     The CONTENT generation for posts and pages depends on the data type,
+  #     the MARKUP language (Markdown, Asciidoc) the page is using. The data
+  #     type is specified by the file EXTENSION (e.g. ".md" for Markdown or
+  #     ".adoc" for Asciidoc formatted content).
+  #
+  #     To enable Jekyll running the render phase, the respective processor
+  #     (e.g.kramdown for MARKDOWN or asciidoctor for ASCIIDOC) needs to be
+  #     loaded and configured (Gemfile and the side-wide configuration file
+  #     _config.yml).
+  #
+  #   NOTE:
+  #     The CONTENT of a PAGE is passed trough a (Liquid) wrapper procedure
+  #     (page_content.html) to add or inject specific ADDITIONAL data like
+  #     a TOC etc. that influences the resulting page.
+  #
+  #     To modify the wrapper, DO NOT CHANGE the template files. See with
+  #     ***URL*** how to create your own wrapper (and OVERLOAD the J1 template
+  #     system with the data you provided).
+  #
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # TRANSLATOR connector
+  #
+  - lane:
+      enabled:                          true
+      region:                           body-main
+      type:                             sync
+      base:                             _includes/themes/j1
+      path:                             modules/connectors
+      file:                             translator
+
+  # ----------------------------------------------------------------------------
+  # TEASER banner
+  #
+  - lane:
+      enabled:                          true
+      id:                               home_teaser_banner
+      region:                           body-main
+      type:                             async
+      properties:                       mt-3 mr-5 mb-0 ml-3
+
+  # ----------------------------------------------------------------------------
+  # DIVIDER banner
+  #
+  - lane:
+      enabled:                          false
+      id:                               divider-1
+      region:                           body-main
+      type:                             async
+      properties:                       mt-4 mr-5 mb-4 ml-5
+
+  # ----------------------------------------------------------------------------
+  # INTRO panel
+  #
+  - lane:
+      enabled:                          true
+      id:                               home_intro_panel
+      region:                           body-main
+      type:                             async
+      properties:                       mt-3 mr-5 mb-3 ml-3
+
+  # ----------------------------------------------------------------------------
+  # PARALLAX banner
+  #
+  - lane:
+      enabled:                          true
+      id:                               home_parallax_banner
+      region:                           body-main
+      type:                             async
+      properties:                       mb-3
+
+  # ----------------------------------------------------------------------------
+  # IMAGE banner
+  #
+  - lane:
+      enabled:                          false
+      id:                               home_image_banner
+      region:                           body-main
+      type:                             async
+      properties:                       mb-3
+
+  # ----------------------------------------------------------------------------
+  # SERVICE panel
+  #
+  - lane:
+      enabled:                          false
+      id:                               home_service_panel
+      region:                           body-main
+      type:                             async
+      properties:                       mt-3 mr-5 mb-3 ml-3
+
+  # ----------------------------------------------------------------------------
+  # DIVIDER banner
+  #
+  - lane:
+      enabled:                          false
+      id:                               divider-2
+      region:                           body-main
+      type:                             async
+      properties:                       mt-4 mr-5 mb-4 ml-5
+
+  # ----------------------------------------------------------------------------
+  # NEWS panel
+  #
+  - lane:
+      enabled:                          true
+      id:                               home_news_panel
+      region:                           body-main
+      type:                             async
+      properties:                       mt-3 mr-5 mb-3 ml-3
+
+  # ----------------------------------------------------------------------------
+  # FAM
+  #
+  - lane:
+      enabled:                          true
+      id:                               fam-container
+      region:                           body-main
+      type:                             async
+
+# ------------------------------------------------------------------------------
+# END config

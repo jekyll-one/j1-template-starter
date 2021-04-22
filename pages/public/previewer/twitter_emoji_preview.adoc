@@ -1,0 +1,191 @@
+---
+title:                                  Emoji Previewer
+tagline:                                search and select twitter emojis
+date:                                   2020-11-08 00:00:00 +100
+description: >
+                                        Twitter Emoji Icons V1 Previewer.Twitter Emoji is a colored
+                                        icon font developed by Twitter. The full icon set  is fully
+                                        supported by J1 Template.
+
+categories:                             [ Previewer ]
+tags:                                   [ Emoji, Icons, Fonts, Twitter ]
+
+scrollbar:                              false
+
+permalink:                              /pages/public/previewer/twitter_emoji/
+regenerate:                             false
+
+resources:                              [ twemoji, twemoji_picker, fam ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/emojies-1920x1280-bw.jpg
+          alt:                          Photo by Fausto Garcia on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Fausto Garcia
+            href:                       https://unsplash.com/@faustogarmen/portfolio
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+:jollygoodcode--emoji:                  https://github.com/jollygoodcode/twemoji
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="local" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Twitter Emoji's
+
+J1 Template comes with the Twitter Emoji library (Twemoji) V1 included and
+offers more than 800+ icons. A lot of icons - hard to remember all the names,
+isn't it?
+
+To use all the Emoji's with your documents you don't need to remember any name.
+Simply pick the icon you want - use the <<Emoji Picker>>.
+
+To find the icon you need, to fasten your search the Emoji Library is sorted
+by five categories:
+
+* people, classic Emoji's like emoji:smile[] (`smile`) and emoji:laughing[] (`laughing`) or faces like emoji:girl[] (`girl`)
+* nature, like emoji:mouse[] (`mouse`), emoji:rose[] (`rose`) or emoji:sunny[] (`sunny`)
+* objects, like emoji:bell[] (`bell`), emoji:hammer[] (`hammer`) or emoji:notes[] (`notes`)
+* places, like emoji:office[] (`office`), emoji:car[] (`car`) or flags like emoji:de[] (`de`)
+* symbols, like emoji:ok[] (`ok`), emoji:clock12[] (`clock12`) or emoji:scorpius[] (`scorpius`)
+
+=== Asciidoc Markup
+
+Using Twitter Emoji's for your Asciidoc documents is quite simple - use the
+`emoji:` inline macro like this:
+
+[source, adoc, role="noclip"]
+----
+Your text emoji:icon_name[] ...
+Your text emoji:icon_name[size, modifier] ...
+----
+
+For all Emoji's (`icon_name`), two parameters *can* be given for the `size` and
+a `modifier` to put additional features on the icon. See the following chapters
+for all *sizes* and *modifiers* (`rotate`, `spin`, `flip` and `pulsed`)
+available.
+
+If *none* if the additional parameters are specified, the `size` is set to `1x`
+and *no* `modifier` is used for an Emoji.
+
+.Click on `view result` to see the nice turtle ...
+----
+You're faster than a emoji:turtle[2x] - for sure emoji:heart[pulsed] !
+----
+
+[.result]
+====
+You're faster than a emoji:turtle[2x] - for sure emoji:heart[pulsed] !
+====
+
+Writing complex Asciidoc Macros for documents are not fun. For the `emoji:`
+inline macro the name of the Emoji is need. Go for the <<Emoji Picker>> and
+you're done in seconds.
+
+=== Sizes
+
+For more eye-minded placement, or to place emphasis on, all Emoji's can be
+specified in different sizes by the *optional* parameter `size`. See with the
+following what sizes are available.
+
+==== BS grid Size
+
+For a better Bootstrap integration, the icon size can be given like the
+view-port shortcuts `xs`, `sm`, `md`, `lg` and `xl`.
+
+include::{tabledir}/twitter_emoji/100_bs_sizes.asciidoc[]
+
+==== Relative Size
+
+All icons can be specifier relativ to the base size of `1em` from `1x` to `5x`.
+See the examples with the table below.
+
+include::{tabledir}/twitter_emoji/100_relative_sizes.asciidoc[]
+
+
+=== Rotate
+
+To vary Emoji's in their orientation, the icons can be rotated for 7 different
+angle. This is quite useful, if an Emoji has an orientation already but does
+*not* fit your need.
+
+NOTE: Using `flip-*` and `rotate-*` at the *same* time is *not* supported
+
+include::{tabledir}/twitter_emoji/200_rotate.asciidoc[]
+
+=== Flip
+
+Like `rotate`, an icon can be flipped by horizontal and vertical *axes*. It is
+similiar to `rotate` but the *angle* (perspective) remains *unchanged*.
+
+include::{tabledir}/twitter_emoji/300_flip.asciidoc[]
+
+=== Spin and Pulsed
+
+For realy *eye-minded* placements of Emoji's, icons can be animated im terms
+of *rotation* and *pulse*. Be careful using animated Emoji's, because this
+may cause disturbing effects and can demand unwanted attention.
+
+include::{tabledir}/twitter_emoji/400_spin_pulsed.asciidoc[]
+
+[NOTE, role="mb-5"]
+====
+Animations gets stopped if the mouse (pointer) is moved over an animated
+Emoji.
+====
+
+== Emoji Picker
+
+The Picker for `Emoji's` is easy to use. Open the *category view* by a click on
+the button `Picker` and click on an *emoji* you want to use. Automatically, the
+Asciidoc code is copied to the *clipboard*. You can paste the code directly from the
+clipboard to the document your're currently work on.
+
+For your reference, all Emoji's selected are copied into to *text-field* of the
+picker (and the Asciidoc code as well emoji:stuck-out-tongue-winking-eye[]).
+If gets too much, a click on the `Clear` button cleans up the text-field.
+
+Simple like that!
+
+++++
+<div id="picker" class="mt-3 mb-5">
+  <textarea id="twemoji-picker" class="form-control"></textarea>
+</div>
+<div class="paragraph mt-5">
+  <p style="color: transparent;"> dummy-text</p>
+</div>
+<script>
+  $('#twemoji-picker').twemojiPicker({
+    init: '',
+    placeholder: 'Click on button Picker to select Emoji\'s from a Category',
+    size: '3.5rem',
+    iconSize: '2rem',
+    height: '100px',
+    width: '100%',
+    category: ['smile', 'mouse', 'wrench', 'house', 'large-blue-diamond'],
+    categorySize: '2.5rem',
+    pickerPosition: 'bottom',
+    pickerHeight: '1300px',
+    pickerWidth: '100%'
+  });
+</script>
+++++

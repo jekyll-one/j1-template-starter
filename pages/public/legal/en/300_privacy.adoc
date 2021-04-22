@@ -1,0 +1,420 @@
+---
+title:                                  Privacy
+tagline:                                your personal data
+date:                                   2020-10-23 00:00:00 +100
+description: >
+                                        Protection of your personal data
+
+categories:                             [ Legal ]
+tags:                                   [ Privacy, Statement ]
+
+sitemap:                                false
+robots:
+  index:                                false
+  follow:                               false
+
+fam_menu_id:                            page_ctrl_simple
+scrollbar:                              false
+comments:                               false
+toc:                                    true
+
+permalink:                              /pages/public/legal/en/privacy/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:legal-warning:                         false
+
+// Attribute settings for section control
+//
+:cookies:                               true
+:revoke-cookie-consent:                 true
+:delete-cookies:                        true
+:content-permissions:                   true
+:server-logs:                           true
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ifeval::[{legal-warning} == true]
+WARNING: This document *does not* constitute any *legal advice*. It is
+highly recommended to verify legal aspects and implications.
+endif::[]
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+The operators of this website take the protection of your personal data extremely
+seriously. We treat your personal data as confidential and comply with the
+data protection legislation and this privacy policy.
+
+It is generally *not* possible to use our website without disclosing personal
+data. Personal data (for example page visits) is collected on our website.
+This is voluntary insofar as possible. This data is never disclosed to third
+parties without your express consent.
+
+ifeval::[{cookies} == true]
+== Cookies
+
+A cookie is a commonly used automated data collection method. Cookies are
+small text files placed on your computer or device by websites that you
+visit to make websites work or work more efficiently.
+
+We, may our partners, make use of cookies, web beacons, pixel tags, scripts,
+or other similar technologies on our websites to improve the browsing
+experience of our pages:
+
+* Tailor information presented to you based on your browsing preferences,
+  such as language, user account data, selected content, and geographical
+  region
+
+* Collect statistics regarding your website usage
+
+All personal data collected is stored in Cookies. We use different kinds
+of cookies. Cookies are classified by its *lifespan* and the *domain* to
+which it belongs.
+
+Session Cookie::
+Classified by *lifespan*. Necessary to provide you with services and
+features available through our websites for the time of your visit. If you
+leave our pages, these cookies are automatically deleted by your web browser.
+Without these cookies, services you may need cannot be provided.
+
+Persistent Cookie::
+Classified by *lifespan*. Necessary to provide you with services and
+features available through our websites if you return the site. Without
+these cookies, services cannot be provided.
+
+First-party Cookie::
+Classified by the *domain*. First-party Cookies are created by *this* site.
+We are using both types: Session Cookies *and* Persistent Cookies.
+
+Second-party Cookie::
+Classified by the *domain*. Used to integrate services from *other* sites
+like Github, Disqus, and others.
+
+[NOTE]
+====
+If you do not wish to receive cookies, you may be able to refuse them by
+adjusting your browser settings to reject cookies. If you do so, we may *not*
+able to offer you *any* of our functionalities, services, or support.
+If you have previously visited our websites, you may also have to delete any
+existing cookies from your browser.
+====
+endif::[]
+
+
+ifeval::[{revoke-cookie-consent} == true]
+== Revoke Cookie Consent
+
+If you do *not* wish to receive *cookies* anymore from *this site*, you can
+revoke the cookie consent you've given. Furthermore, you may be able to refuse
+them by adjusting your *browser* settings to *reject cookies*.
+
+CAUTION: Suppose you have previously visited our website — or any pages this
+session — and agreed on the use of cookies. In that case, you may also have
+to delete already-existing cookies by your browser to clear all cookies left.
+
+++++
+<div class="ml-0 mb-0">
+  <button type="button" name="revokeCookieConsent" class="btn btn-primary btn-raised btn-flex mb-3" style="min-width: 25rem">
+    <i class="toggle-button mdi mdi-toggle-switch-off mdi-lg mdi-md-bg-primary-50 mr-1"></i>
+    Revoke Cookie Consent
+  </button>
+</div>
+
+<script>
+  var logger                      = log4javascript.getLogger('page.privacy');
+  var cookie_names                = j1.getCookieNames();
+  const cookie_consent_name       = cookie_names.cookie_consent;
+  const cookie_user_session_name  = cookie_names.user_session;
+  var user_state                  = j1.readCookie(cookie_user_session_name);
+  var user_state_empty            = {};
+  var pageChanged;
+
+  // ---------------------------------------------------------------------------
+  //  Initializer
+  // ---------------------------------------------------------------------------
+  $(document).ready(function() {
+    if ( user_state.cookies_accepted == 'declined' ) {
+      $('.toggle-button').toggleClass('mdi-toggle-switch-off mdi-toggle-switch');
+    }
+  });
+
+  // ---------------------------------------------------------------------------
+  //  EventHandler
+  // ---------------------------------------------------------------------------
+  $('button[name="revokeCookieConsent"]').on('click', function (e) {
+    if ( user_state.cookies_accepted === 'declined' ) {
+      logger.debug('Cookie Consent already DECLINED. Click event ignored');
+      return true;
+    } else {
+      logger.debug('Enter Cookie Consent REVOKE dialog');
+      $('#cookieRevokeCentralDanger').modal('show');
+    }
+
+    /* Manage button click events from "Cookie Consent REVOKE" dialog */
+    $('a.btn').click(function() {
+      if (this.id === 'revokeCookies') {
+        logger.debug('User clicked revokeCookiesButton');
+        user_state.cookies_accepted = 'declined';
+        j1.writeCookie({
+          name: cookie_user_session_name,
+          data: user_state
+        });
+
+        $('.toggle-button').toggleClass('mdi-toggle-switch-off mdi-toggle-switch');
+
+        // Hide cookie icon
+        $('#cookie-state').css('display', 'none');
+        return true;
+      }
+      if (this.id === 'remainCookies') {
+        logger.debug('User clicked remainCookiesButton');
+        return true;
+      }
+      return true;
+    });
+  });
+</script>
+++++
+endif::[]
+
+ifeval::[{delete-cookies} == true]
+== Delete cookies
+
+Suppose you have previously visited our website — or any pages this session —
+and agreed on the use of cookies. In that case, you may also have to delete
+already-existing cookies by your browser to clear all cookies left.
+
+By clicking the button below, all cookies related to *this* site will be
+deleted.
+
+++++
+<div class="ml-0 mb-0">
+  <button type="button" name="deleteCookies" class="btn btn-primary btn-raised btn-flex mb-3" style="min-width: 25rem">
+    <i class="mdi mdi-cookie mdi-lg mdi-md-bg-primary-50 mr-1"></i>
+    Delete Cookies
+  </button>
+</div>
+
+<script>
+  var logger       = log4javascript.getLogger('page.privacy');
+  var cookie_names = j1.getCookieNames();
+
+  // ---------------------------------------------------------------------------
+  //  EventHandler
+  // ---------------------------------------------------------------------------
+  $('button[name="deleteCookies"]').on('click', function (e) {
+    logger.debug('User clicked deleteCookiesButton');
+
+    j1.removeCookie({
+      name: cookie_names.user_session
+    });
+    j1.removeCookie({
+      name: cookie_names.user_state
+    });
+    j1.removeCookie({
+      name: cookie_names.app_session
+    });
+
+    logger.debug('cookies deleted: ' + cookie_names.user_session + ', ' + cookie_names.user_state);
+    logger.debug('pass to (browser) default page');
+    j1.goHome();
+
+  });
+</script>
+++++
+endif::[]
+
+ifeval::[{server-logs} == true]
+== Server log files
+
+We gather certain information automatically by our webservers and store it in
+log files. This information may include Internet protocol (IP) addresses,
+browser type, internet service provider (ISP), referring/exit pages, operating
+system, date/time stamp, and/or clickstream data.
+
+These are:
+
+* Browser type and version
+* Operating System
+* Referrer URL
+* Hostname
+* Timestamp of page requests
+
+We may combine this log information with other information we collect about
+you. We do this to improve the services we offer you, to improve marketing,
+analytics, or site functionality. We use Local Storage, such as HTML5, to
+store content information and preferences. Third parties with whom we partner
+to provide certain features on our website or display advertising based
+upon your web browsing activity also use HTML5 to collect and store information.
+Various browsers may offer their own management tools for removing HTML5.
+endif::[]
+
+ifeval::[{google-analytics} == true]
+== Use of Google Analytics
+
+This website uses Google Analytics, a web analytics service provided by:
+Anbieter ist die:
+
+ Google Inc.
+ 1600 Amphitheatre Parkway Mountain View
+ CA 94043
+ USA
+
+Google Analytics uses so called “cookies”, which are text files placed on
+your computer to help the website analyze how users use the site. The
+information generated by the cookie about your use of the website will be
+transmitted to and stored by Google on servers in the United States. In
+case IP-anonymization is activated on this website, your IP address will
+be truncated within the area of member states of the European Union or
+other parties to the Agreement on the European Economic Area. Only in
+exceptional cases the whole IP address will be transferred to a Google
+server in the USA and truncated there.
+
+Google will use this information on behalf of the operator of this website
+for the purpose of evaluating your use of the website, compiling reports on
+website activity for website operators and providing them other services
+relating to website activity and internet usage. The IP address conveyed by
+your browser within the scope of Google Analytics, will not be associated
+with any other data held by Google.
+
+You may object to the use of cookies by selecting the appropriate settings
+on your browser, however please note that if you do this you may not be able
+to use the full functionality of this website. You can also avoid the
+recording of data referring to your use of the website generated by cookies
+(including your IP address) by Google as well as the processing of your
+data by Google by downloading and installing the browser plug-in available
+from the following link: http://tools.google.com/dlpage/gaoptout?hl=de
+endif::[]
+
+
+ifeval::[{facebook} == true]
+== Use of Facebook Plug-ins
+
+We have integrated plug-ins (Like-Button) by the social network *Facebook*,
+provided by:
+
+ Facebook Inc.
+ 1 Hacker Way
+ Menlo Park
+ California 94025
+ USA
+
+into our website.
+
+You can identify these Facebook Plug ins by the Facebook logo or the "Like"
+button on our website. You can find an overview of the Facebook plug ins
+on: http://developers.facebook.com/docs/plug-ins/.
+
+When you visit our website, the plug-in will establish a direct connection
+between your browser and the Facebook server. Thereby Facebook will be informed
+about your visit on our website with your IP address. If you click the Facebook
+"Like" button while you are logged into your Facebook account, you can link
+the contents of our website to your Facebook profile. Facebook can thereby
+associate your visit to our website with your user account.
+
+We would like to point out that, as the website provider, we possess no
+knowledge of the contents of the transmitted data or its use by Facebook. You
+can find further information on this topic in the Facebook privacy policy at
+http://de-de.facebook.com/policy.php. If you do not want Facebook to be able
+to associate your visit to our website with your Facebook user account,
+please log out of your Facebook account before visiting our website.
+endif::[]
+
+
+ifeval::[{twitter} == true]
+== Use of Twitter
+
+We have integrated functions by the service provider Twitter into our website.
+These functions are offered by:
+
+ Twitter Inc.
+ 1355 Market Street
+ Suite 900, San Francisco
+ CA 94103
+ USA
+
+When using Twitter and the "re-tweet" function, the websites you have visited
+will be linked to your Twitter account and made available to other users.
+Data will also be transmitted to Twitter.
+
+We would like to point out that as provider of the website we possess no
+knowledge of the contents of the data transmitted or its use by Twitter.
+You can find further information on this topic in the Twitter privacy
+policy at http://twitter.com/privacy. You can change your Twitter privacy
+settings in your account settings at http://twitter.com/account/settings.
+endif::[]
+
+
+ifeval::[{instagram} == true]
+== Use of Instagram
+
+Auf unseren Seiten sind Funktionen des Dienstes Instagram eingebunden. Diese
+Funktionen werden angeboten durch die
+
+  Instagram Inc.
+  1601 Willow Road
+  Menlo Park
+  CA 94025
+  USA
+
+integriert. Wenn Sie in Ihrem Instagram Account eingeloggt sind können Sie
+durch Anklicken des *Instagram Buttons* die Inhalte unserer Seiten mit
+Ihrem *Instagram Profil* verlinken. Dadurch kann Instagram den Besuch unserer
+Seiten Ihrem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als
+Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie
+deren Nutzung durch Instagram erhalten.
+
+Weitere Informationen hierzu finden Sie in der
+http://instagram.com/about/legal/privacy/[Datenschutzerklärung von Instagram, window="_blank"].
+endif::[]
+
+ifeval::[{youtube} == true]
+== Use of YouTube
+
+Unsere Webseite nutzt Plugins der von Google betriebenen Seite *YouTube*.
+Betreiber der Seiten ist die
+
+  YouTube LLC,
+  901 Cherry Ave San Bruno
+  CA 94066
+  USA
+
+Wenn Sie eine unserer mit einem *YouTube Plugin* ausgestatteten Seiten
+besuchen, wird eine Verbindung zu den Servern von YouTube hergestellt. Dabei
+wird dem Youtube-Server mitgeteilt, welche unserer Seiten Sie besucht haben.
+
+Wenn Sie in Ihrem YouTube-Account eingeloggt sind ermöglichen Sie YouTube,
+Ihr Surfverhalten direkt Ihrem persönlichen Profil zuzuordnen. Dies können
+Sie verhindern, indem Sie sich aus Ihrem YouTube Account ausloggen.
+
+Weitere Informationen zum Umgang von Nutzerdaten finden Sie in der
+https://www.google.de/intl/de/policies/privacy[Datenschutzerklärung von YouTube, window="_blank"].
+endif::[]

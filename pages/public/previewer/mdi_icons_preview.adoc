@@ -1,0 +1,220 @@
+---
+title:                                  MDI Icon Previewer
+tagline:                                search and select mdi icons
+date:                                   2020-11-08 00:00:00 +100
+description: >
+                                        Previewer for Material Design Icons (MDI) for J1 Template.
+                                        Material Design Icons is a growing icon collection allows
+                                        designers and developers targeting various platforms to download
+                                        icons in the format, color and size they need for any project.
+
+categories:                             [ Preview ]
+tags:                                   [ MDI, Icons, Fonts ]
+
+scrollbar:                              false
+
+permalink:                              /pages/public/previewer/mdi_font/
+regenerate:                             false
+
+resources:                              [ clipboard, lightbox, rouge, mdi_previewer ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/icon-fonts-1920x1280-bw.jpg
+          alt:                          icon-fonts-1920x1280-bw
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+//:my-asciidoc-attribute:
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+== Material Design Icons
+
+_Material Design Icons_ (MDI) is a very helpful design resource for Web Design
+that is based on _Google's_ specification of Material Design. *MDI* is a
+community-driven project to create an increased icon-set based on the official
+Material Design Icon repository provided by _Google_.
+
+*MDI* is a fast growing collection to allow designers and developers targeting
+various platforms to download icons in the format, color and size they needed
+for a project. In the current *MDI* version (v5.9.55), 5900+ icons - plus
+converted icons from the official icon set created by _Google_ - are available.
+
+_J1 Template_ supports the full set of *MDI* icons for the Web (Webfont, WOFF).
+The icon set is fully integrated and can be used out-of-the-box.
+
+== HTML Markup
+
+There is no *official* markup for font icons, but 2 markups are widely used.
+Both markups can be used in block elements like the anchor tag `<a>`. That
+way, it's on you what to use for font icons.
+
+[source, html]
+----
+<span class="mdi mdi-name" role="img" aria-label="name" ></span> <1>
+<i class="mdi mdi-name"></i> <1> <2>
+----
+<1> Both forms are consistent with the HTML5 spec
+<2> It's short and the `<i>` tag may associated for an **i**con
+    (semantic meaning)
+
+NOTE: The `<i>` tag provides more meaning to machines because of the HTML spec,
+it provides more meaning to *humans* because the `i` can easily associated with
+`icon`. And it's only *one letter* long - that win! And if you make sure to
+include equivalent text either inside the `<i>` tag or right next to it
+(as Twitter for Bootstrap does), then screen readers understand where to
+click to reply, the link is usable if CSS doesn't load, and human readers
+with good eyesight and a decent browser see a pretty icon.
+
+== Asciidoc Markup
+
+For pages using Asciidoc for the source (default), a easier solution is to
+use  Markups from Asciidoc.
+
+[source, html]
+----
+pass:[<i class="mdi mdi-<name> mdi-<size> mdi-<modifier>"></i>] <1>
+mdi:<name>[<size>, <modifier>] <2>
+----
+<1> Markup using a pass block
+<2> Markup using the Asciidoc extension (mdi:)
+
+
+== Sizes
+
+For more eye-minded placement, or to place emphasis on, all icons can be
+specified in different sizes by the *optional* parameter `size`.
+
+NOTE: The size of an icon is typically specified relative to the *base* font
+size. Today, the base font size is set to `16px`. That mean for for font
+icons, that the *width* of an icon is set to `32px` if a relative size
+of `2x` is specified.
+
+See with the following what sizes are available.
+
+=== Fixed Size
+
+If needed, the icon size can given in *absolute* sizes from `18px` to `48px`.
+
+include::{tabledir}/mdi_icons/100_absolute_sizes.asciidoc[]
+
+=== BS Grid Size
+
+For a better Bootstrap integration, the icon size can be given like the
+view-port shortcuts `xs`, `sm`, `md`, `lg` and `xl`.
+
+include::{tabledir}/mdi_icons/110_bs_grid_sizes.asciidoc[]
+
+=== Relative Size
+
+All icons can be specifier relativ to the base size of `1em` from `1x` to `10x`.
+See the examples with the table below.
+
+include::{tabledir}/mdi_icons/120_relative_sizes.asciidoc[]
+
+== Rotate
+
+To vary icons in their orientation, the icons can be rotated for 7 different
+angle. This is quite useful, if an icon has an orientation already but does
+*not* fit your need.
+
+NOTE: Using `flip-*` and `rotate-*` at the *same* time is *not* supported
+
+include::{tabledir}/mdi_icons/200_rotate.asciidoc[]
+
+== Flip
+
+Like `rotate`, an icon can be flipped by horizontal and vertical *axes*. It is
+similiar to `rotate` but the *angle* (perspective) remains *unchanged*.
+
+NOTE: Using `mdi-flip-*` and `mdi-rotate-*` at the same time is *not* supported
+
+include::{tabledir}/mdi_icons/300_flip.asciidoc[]
+
+== Spin and Pulsed
+
+For realy *eye-minded* placements of icons, icons can be animated im terms
+of *rotation* and *pulse*. Be careful using animated icons, because this
+may cause disturbing effects and can demand unwanted attention.
+
+include::{tabledir}/mdi_icons/400_spin_pulsed.asciidoc[]
+
+== Color Palette
+
+The implementation of _MDI_ font icons support the full color palette of
+_Google_'s_ Material design specification.
+
+=== BW Colors
+
+The default color set used for _MDI_ are *black-and-white* for the flavours
+`light` and `dark` of default (dark) if *not* specified.
+
+include::{tabledir}/mdi_icons/500_bw_color_palette.asciidoc[]
+
+=== BS Colors
+
+The implementation of _MDI_ font icons support the base color palette of
+Bootstrap range from `primary` to `danger`.
+
+.Bootstrap base color palette
+lightbox::base-color-palette[ 300, {lightbox-image-data--base-color-palette} ]
+
+include::{tabledir}/mdi_icons/510_bs_color_palette.asciidoc[]
+
+=== MD Color Palette
+
+For _J1 Template_, 17 additional color variations are available comply with
+the concepts of _Google Material Design_:
+
+.Material Design color palette
+lightbox::md-color-palette[ 800, {lightbox-image-data--md-color-palette} ]
+
+==== Indigo
+
+The color `Indigo` is used as the `primary` color for J1 Template. You'll find
+this color quite often in various `weights` (ranges from `50` to `900`).
+
+include::{tabledir}/mdi_icons/601_md_color_palette_indigo.asciidoc[]
+
+==== Pink
+
+The color `Pink` is used as the `complementary` color for J1 Template. You'll
+find this color to put an emphasis on some elements. All colors comes in ranges
+from `50` to `900` but for `Pink` mostly the default `weight` of `500` is used.
+
+include::{tabledir}/mdi_icons/602_md_color_palette_pink.asciidoc[]
+
+==  Icon Overview
+
+The Material Design Icon Font support a rich set of 5900+ icons
+(version  v5.9.55)  from a wide varity of topics.
+
+NOTE: Click on the elements below to copy icon data to clipboard
+
+++++
+<!-- div class="my-popper">Popper element</div -->
+<div id="icons" class="icons"></div>
+++++

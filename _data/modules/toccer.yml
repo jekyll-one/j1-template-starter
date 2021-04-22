@@ -1,0 +1,52 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/toccer.yml
+# Default configuration settings for J1 Toccer (TOC Module)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:                                Toccer
+  scope:                                Default settings
+  location:                             _data/modules/toccer.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL settings
+  #
+  # enabled
+  # ----------------------------------------------------------------------------
+  #   Enables|Disables the use of J1 TocManager
+  #
+  #   values:                           boolean (true|false)
+  #   default:                          false
+  #
+  #   log
+  #   --------------------------------------------------------------------------
+  #   Setting the log option to true enables the current option settings to
+  #   be written to the JavaScript console so you can inspect the settings.
+  #
+  #     values:                         boolean (true|false)
+  #     default:                        false
+  # ----------------------------------------------------------------------------
+  enabled:                              true
+  log:                                  false
+  delay:                                400
+
+
+# ------------------------------------------------------------------------------
+# END config

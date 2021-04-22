@@ -1,0 +1,89 @@
+---
+title:                                  Skeleton
+tagline:                                multi document
+date:                                   2021-01-01 00:00:00 +100
+description: >
+                                        Multi-chapter documents are used for more complex articles of a website. If
+                                        the number of chapters is or exceeds three for an article, it could make sense
+                                        to split a larger documents chapter-wise into separate files. This document
+                                        type is based on  *multiple* Asciidoc documents and make use of (local and
+                                        global) Asciidoc include files and attributes.
+
+categories:                             [ Asciidoc, Skeleton ]
+tags:                                   [ Knowledge, Skeleton, Document ]
+
+sitemap:                                false
+robots:
+  index:                                false
+  follow:                               false
+
+permalink:                              /pages/public/skeleton/multi/
+regenerate:                             false
+
+resources:                              [ lightbox, lightGallery, justifiedGallery ]
+resource_options:
+  - toccer:
+      collapseDepth:                    4
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/skeleton/annie-spratt-1920x1280.jpg
+          alt:                          Photo by Annie Spratt on Unsplash
+          alignY:                       top
+          badge:
+            type:                       unsplash
+            author:                     Annie Spratt
+            href:                       https://unsplash.com/@anniespratt
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Asciidoc *skeleton multi-document* a helper for setting up a base file and
+folder structure for multi-chapter AsciiDoc projects based on _Jekyll_
+and _J1 Template_. You need *both* to use this skeleton creating AsciiDoc
+documents from it.
+
+Multi-chapter documents are used for more complex articles of a website. If
+the number of chapters is or exceeds three for an article, it could make sense
+to split a larger documents chapter-wise into separate files. This document
+type is based on  *multiple* Asciidoc documents and make use of (local and
+global) Asciidoc include files and attributes.
+
+[NOTE]
+====
+.Moving documents based on the skeleton
+
+All Asciidoc Document Skeletons are fully *relocateable* and can be placed in
+any subfolder of your Jekyll site.
+====
+
+[role="mb-5"]
+*Happy Jekylling!*
+
+
+// Include Sublevel Documents
+// -----------------------------------------------------------------------------
+include::{documentdir}/100_chapter.asciidoc[]
+
+include::{documentdir}/200_chapter.asciidoc[]

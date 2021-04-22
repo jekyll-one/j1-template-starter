@@ -1,0 +1,253 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/blocks/defaults/banner.yml
+#  Default configuration settings for BANNER lanes
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2021 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# DEFAULT settings
+#
+defaults:
+  # ----------------------------------------------------------------------------
+  # Global settings
+  #
+  data_path:                            /assets/data/banner/index.html
+
+  # ------------------------------------------------------------------------------
+  # General parallax settings
+  #
+  # Global configuration for parallax|banner quotes. These settings are
+  # side-wide and should match your theme not individual images. Be careful
+  # for the selection of banner images.
+  #
+  # Individual settings (e.g. page placement, cite, source) are configured
+  # with the panels configuration (j1_panels.yml).
+  #
+  #   gridify
+  #   ----------------------------------------------------------------------------
+  #   If enabled, a grit pattern is placed over the background image. This
+  #   puts some "noise" on the image to focus more on the quote|text rather
+  #   than the image.
+  #
+  #   values:                         boolean (true|false)
+  #   default:                        true
+  #
+  #   gridifier
+  #   ----------------------------------------------------------------------------
+  #   Pixel image used to gridify the background image of the banner.
+  #
+  #   values:                         image path|name (string)
+  #   default:                        /assets/images/modules/patterns/gridtile.png
+  #
+  #   darken
+  #   ----------------------------------------------------------------------------
+  #   Sets the lightning for the banner|background image. As higher the value
+  #   for darken as less is the (background) light. Values are out of the
+  #   range from 1 (light) to 9 (dark). Useful to focus on the quote|text
+  #   rather than the background image.
+  #
+  #   values:                         number [1 .. 9]
+  #   default:                        3
+  #
+  #   background
+  #   ----------------------------------------------------------------------------
+  #   Default background image of the banner if no other image is specified with
+  #   the panels configuration (j1_panels.yml).
+  #
+  #   values:                         image path|name (string)
+  #   default:                        /assets/images/quotes/default.png
+  # ------------------------------------------------------------------------------
+  parallax_settings:
+
+    gridify:                          true
+    gridifier:                        /assets/images/modules/patterns/gridtile.png
+    text_color:                       rgba_lighten
+    cite_color:                       rgba_lighten
+    darken:                           3
+    background:                       /assets/images/quotes/default.png
+    background_pos_x:                 50%
+    background_pos_y:                 0
+
+  # ----------------------------------------------------------------------------
+  # DIVIDER banner
+  #
+  divider:
+    # --------------------------------------------------------------------------
+    # DIVIDER banner settings
+    #
+    id:                                 divider
+    enabled:                            false
+    type:                               divider
+    comment:                            Default Divider Banner
+
+    lane_span:                          fixed
+
+
+  # ----------------------------------------------------------------------------
+  # TEASER banner
+  #
+  teaser:
+    # --------------------------------------------------------------------------
+    # TEASER banner settings
+    #
+    enabled:                            false
+    id:                                 teaser_banner
+    type:                               teaser
+    comment:                            Default Teaser Banner
+
+    icon_family:                        MDI
+    style:                              light
+    background_color_1:                 md_gray_50
+    background_color_2:                 md_gray_50
+
+    lane_span:                          fixed
+
+    cards:
+      card:
+        enabled:                        true
+        width:                          12
+        type:                           text
+        animate:                        fadeInUp
+        title:                          Title line
+        description: >
+                                        Main teaser (description) text
+        tagline: >
+                                        Tagline below
+        buttons:
+
+          - button:
+              text:                     Button-1
+              class:                    btn-primary btn-raised btn-flex
+              icon:                     image
+              icon_color:               md_white
+              icon_size:                lg
+              href:                     javascript:void(0)
+              target:                   _blank
+
+          - button:
+              text:                     Button-2
+              class:                    btn-primary btn-raised btn-flex
+              icon:                     image
+              icon_color:               md_white
+              icon_size:                lg
+              href:                     javascript:void(0)
+              target:                   _blank
+
+          - button:
+              text:                     Button-3
+              class:                    btn-danger btn-raised btn-flex
+              icon:                     image
+              icon_color:               md_white
+              icon_size:                lg
+              href:                     javascript:void(0)
+              target:                   _blank
+  # ----------------------------------------------------------------------------
+  # IMAGE banner
+  #
+  image:
+    # --------------------------------------------------------------------------
+    # IMAGE banner settings
+    #
+    enabled:                            false
+    id:                                 image_banner
+    type:                               image
+    comment:                            Default Image Banner
+
+    background_color_1:                 md_gray_300
+    background_color_2:                 md_gray_50
+
+    lane_span:                          fluid
+
+    cards:
+
+      card:
+        enabled:                        false
+        gridify:                        false
+        size_y:                         450
+        darken:                         1
+        background_image:               /assets/images/modules/attics/ideas-start-here-1920x1200.png
+
+        buttons:
+
+          button:
+            text:                       Button
+            class:                      btn-primary btn-raised btn-flex
+            icon:                       image
+            icon_color:                 md_white
+            icon_size:                  lg
+            href:                       javascript:void(0)
+            target:                     _blank
+
+  # ----------------------------------------------------------------------------
+  # PARALLAX banner
+  #
+  parallax:
+    # --------------------------------------------------------------------------
+    # PARALLAX banner settings
+    #
+    enabled:                            false
+    id:                                 parallax_banner
+    type:                               parallax
+    comment:                            Default Parallax Banner
+
+    style:                              dark
+    background_color_1:                 md_gray_300
+    background_color_2:                 md_gray_50
+
+    lane_span:                          fluid
+
+    cards:
+
+      card:
+        enabled:                        true
+        type:                           quote
+        cite_text: >
+                                        Cite text
+
+        cite:                           Cite
+        text_color:                     rgba_lighten_900
+        cite_color:                     rgba_lighten
+        gridify:                        true
+        size_y:                         300
+        darken:                         7
+        background_image:               /assets/images/quotes/people.png
+
+        buttons:
+
+          button:
+            text:                       Button
+            class:                      btn-primary btn-raised btn-flex
+            icon:                       image
+            icon_color:                 md_white
+            icon_size:                  lg
+            href:                       javascript:void(0)
+            target:                     _blank
+
+  # ----------------------------------------------------------------------------
+  # EXCEPTION banner
+  #
+  #   NOTE:
+  #   The EXCEPTION banner is used to place additional information to the
+  #   (default) exception CONTAINER if processing of a banner has failed
+  #
+  exception:
+    # --------------------------------------------------------------------------
+    # EXCEPTION banner settings
+    #
+    id:                                 exception_container
+    enabled:                            true
+    type:                               exception
+    comment:                            Default Exception Banner
+
+    lane_span:                          fixed
+
+# ------------------------------------------------------------------------------
+# END config

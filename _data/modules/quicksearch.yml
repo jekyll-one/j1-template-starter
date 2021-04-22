@@ -1,0 +1,38 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/modules/quicksearch.yml
+#  User configuration settings for J1 QuickSearch module
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2021 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:                                J1 QuickSearch
+  scope:                                User settings
+  location:                             _data/modules/quicksearch.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  enabled:                              true
+  placement:                            navbar
+  target:                               _blank
+  rebuild:                              false
+  full_index:                           false
+
+  stopwords_locale:                     en
+  min_length:                           3
+
+# ------------------------------------------------------------------------------
+# END config

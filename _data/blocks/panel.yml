@@ -1,0 +1,351 @@
+# ------------------------------------------------------------------------------
+# ~/_data/components/j1_panel.yml
+# Template specific configuration data to configure panel lanes
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for CC only)
+#
+about_config:
+  title:                                Panel
+  scope:                                User settings
+  location:                             _data/blocks/panel.yml
+
+# ------------------------------------------------------------------------------
+# SETTINGS
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # INTRO Panel
+  #
+  intro:
+    # --------------------------------------------------------------------------
+    # INTRO panel properties
+    #
+    - name:                             Home Intro Panel
+      panel:
+        enabled:                        true
+        id:                             home_intro_panel
+        comment:                        Home Intro Panel
+        type:                           intro
+        animate:
+
+        title:                          All in One
+        tagline:                        top features
+        description: >
+                                        <p>
+                                          People quite often ask if static websites make sense
+                                          for anything beyond a one-page website. Some others see in
+                                          static websites the stone age of the World Wide Web. What's
+                                          about static websites today? What's achievable?
+                                        </p>
+                                        <p>
+                                          This board highlights top features, which make static webs
+                                          not only an option, but an attractive method to create fast,
+                                          secure, and sophisticated websites for many use cases.
+                                        </p>
+
+        style:                          flat
+        raised:
+        lane_span:                      fixed
+
+        cards:
+
+          - name:                       Full Responsive
+            card:
+              enabled:                  true
+              type:                     text
+              title:                    Full Responsive
+              tagline:                  J1 Template
+              icon:                     responsive
+              icon_family:              MDI
+              icon_size:                3x
+              icon_color:               md-white
+              text: >
+                                        The Web is everywhere. J1 Template supports modern web browsers
+                                        on all devices for best results on PCs, Tablets, and SmartPhones.
+
+              buttons:
+
+                - name:                 Read More
+                  button:
+                    type:               text
+                    text:               Read · Follow Your Visitors
+                    class:
+                    icon:
+                    icon_size:
+                    icon_color:
+                    href:               /pages/public/panels/intro_panel#responsive-design
+
+          - name:                       HTML5
+            card:
+              enabled:                  true
+              type:                     text
+              title:                    HTML &#xB7; CSS &#xB7; JS
+              tagline:                  J1 Template
+              icon:                     language-html5
+              icon_family:              MDI
+              icon_size:                3x
+              icon_color:               md-white
+              text: >
+                                        Current Technology and Design. Excellent performance in running
+                                        a website. Use Jekyll One to present your content at its best.
+
+              buttons:
+                - name:                 Read More
+                  button:
+                    type:               text
+                    text:               Read · Make your Web Site unique
+                    class:
+                    icon:
+                    icon_size:
+                    icon_color:
+                    href:               /pages/public/panels/intro_panel#current-technology
+
+
+          - name:                       Start in No Time
+            card:
+              enabled:                  true
+              type:                     text
+              title:                    Start in No Time
+              tagline:                  J1 Template
+              icon:                     clock
+              icon_family:              MDI
+              icon_size:                3x
+              icon_color:               md-white
+              text: >
+                                        No programming is needed to start using J1. The Template
+                                        provides a large number of building blocks to create
+                                        modern web pages in minutes.
+
+              buttons:
+                - name:                 Read More
+                  button:
+                    type:               text
+                    text:               Read · Configure whats to be done
+                    class:
+                    icon:
+                    icon_size:
+                    icon_color:
+                    href:               /pages/public/panels/intro_panel#launch-ready
+
+
+  # ----------------------------------------------------------------------------
+  # SERVICE Panel
+  #
+  service:
+    # --------------------------------------------------------------------------
+    # SERVICE panel properties
+    #
+    - name:                             Home Service Panel
+      panel:
+        enabled:                        true
+        id:                             home_service_panel
+        comment:                        Home Service Panel
+        type:                           service
+        animate:
+        icon_family:                    MDI
+
+        style:                          flat
+        lane_span:                      fluid
+
+        header:
+          enabled:                      true
+          title:                        Components
+          tagline:                      overview
+          description: >
+                                        Creating and managing Web sites using Jekyll is different
+                                        in comparison to CMS Systems like Drupal, Joomla, or WordPress.
+                                        No surprise: Jekyll One Template is <b>different</b> as well.
+                                        Template systems are very common, a huge number of site
+                                        templates are available for all CMS and Web site generators.
+                                        The same to Jekyll. J1 Template is <b>not</b> the first
+                                        template for Jekyll available - it is probably the <b>youngest</b>!
+                                        <br \><br \>
+                                        Classic templates are focussing the <b>layout</b> and <b>design</b>
+                                        of a web. They offer pre-build, standardized <b>building blocks</b>
+                                        and tools <b>designing</b> web sites. The are embedded into the
+                                        creators system and often hard to customize. J1 for Jekyll goes different.
+                                        J1 Template combines layout, design and <b>functionality</b> for a web.
+                                        The template offers building blocks to create common page components,
+                                        implements a system independent markup language (Asciidoc and Markdown)
+                                        to create the content and adds a large number of useful functions based
+                                        on common Javascript libraries for the web from a single source. That way,
+                                        J1 web sites behaves as one unit in design <b>and</b> functionality.
+                                        No breaks between the different components.
+                                        <br \><br \>
+                                        How get this managed? Find below the answers to how J1 Template is
+                                        organized, the building blocks, and functional components as an overview.
+                                        Read in in a quite compact form what J1 Template constitutes: the <b>Core</b>,
+                                        the <b>Components</b> and the <b>Module</b>.
+
+
+        cards:
+
+          - name:                       The Core
+            card:
+              enabled:                  true
+              type:                     service
+              icon:                     bullseye
+              icon_size:                mdi-6x
+              icon_color:               md-white
+              href:                     /pages/public/panel/service_panel/core
+              title:                    J1 Template
+              tagline:                  The Core
+              text: >
+                                        The core integrates the site generator Jekyll into J1,
+                                        contains all base functions for page layout, design, and
+                                        configuration. Provides procedures to generate web pages
+                                        automatically based on a given layout based on design settings.
+
+              services:
+
+                - name:                 Layout System
+                  service:
+                    title:              Layout System
+                    href:               /pages/public/panel/service_panel/core#layout-system
+
+                - name:                 Template Engine
+                  service:
+                    title:              Template Engine
+                    href:               /pages/public/panel/service_panel/core#template-engine
+
+                - name:                 Bootstrap Integration
+                  service:
+                    title:              Bootstrap Integration
+                    href:               /pages/public/panel/service_panel/core#bootstrap-integration
+
+          - name:                       The Components
+            card:
+              enabled:                  true
+              type:                     service
+              icon:                     locker-multiple
+              icon_size:                mdi-6x
+              icon_color:               md-white
+              href:                     /pages/public/panel/service_panel/components/
+              title:                    J1 Template
+              tagline:                  The Components
+              text: >
+                                        Building blocks ready-to-use to create common page components,
+                                        connections to systems and workflows of social networks like
+                                        Twitter or Facebook or Online Services like Disqus for
+                                        a blog-related Web and Comments.
+
+              services:
+
+                - name:                 Blocks
+                  service:
+                    title:              Blocks
+                    href:               /pages/public/panel/service_panel/components#panel
+
+                - name:                 Builder
+                  service:
+                    title:              Builder
+                    href:               /pages/public/panel/service_panel/components#builder
+
+                - name:                 Connectors
+                  service:
+                    title:              Connectors
+                    href:               /pages/public/panel/service_panel/components#connectors
+
+          - name:                       The Modules
+            card:
+              enabled:                  true
+              type:                     service
+              icon:                     language-javascript
+              icon_size:                mdi-6x
+              icon_color:               md-white
+              href:                     /pages/public/panel/service_panel/modules/
+              title:                    J1 Template
+              tagline:                  The Modules
+              text: >
+                                        Javascript libraries and ready-to-use applications
+                                        gets the site dynamic. JS modules add complex functionality
+                                        to Web pages to integrate for example image and video content
+                                        or provides sliders to present animated text or image data.
+
+              services:
+
+                - name:                 Slider
+                  service:
+                    title:              Slider
+                    href:               /pages/public/panel/service_panel/modules#slider
+
+                - name:                 Galleries
+                  service:
+                    title:              Galleries
+                    href:               /pages/public/panel/service_panel/modules#galleries
+
+                - name:                 Lightboxes
+                  service:
+                    title:              Lightboxes
+                    href:               /pages/public/panel/service_panel/modules#lightboxes
+
+  # ----------------------------------------------------------------------------
+  # NEWS Panel
+  #
+  news:
+    # --------------------------------------------------------------------------
+    # NEWS panel properties
+    #
+    - name:                             Home News Panel
+      panel:
+        enabled:                        true
+        id:                             home_news_panel
+        comment:                        Home News Panel
+        type:                           news
+        animate:
+        title:                          Creators Blog
+        tagline:                        latest news
+
+        description: >
+                                        Explore the blog and find interesting articles around Jekyll and
+                                        website creation processes in general. And this blog is an excellent
+                                        example of how J1 and Jekyll can be used for blogging.
+                                        <br/>
+                                        Have fun!
+
+        cards:
+
+          - name:                       Recent Posts
+            card:
+              enabled:                  true
+              category:                 featured
+#             truncatewords:            30                                      # currently NOT used
+              max_posts:                3
+              readmore_text:            Read
+
+  # # ----------------------------------------------------------------------------
+  # # STEP Panel
+  # #
+  # step:
+  #   # --------------------------------------------------------------------------
+  #   # STEP panel properties
+  #   #
+  #   - name:                         Home Step Panel
+  #     panel:
+  #       enabled:                    false
+  #       id:                         home_step_panel
+  #       type:                       step
+  #       style:                      dark
+  #       lane_span:                  fixed
+  #
+  #       cards:
+  #         - card:
+  #             title:                Marketing & Consulting
+  #             tagline: >
+  #                                   Donec id elit non mi porta gravida at eget
+  #                                   metus id elit mi egetine. Fusce dapibus
+
+# ------------------------------------------------------------------------------
+# END config

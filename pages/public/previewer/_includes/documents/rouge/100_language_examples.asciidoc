@@ -1,0 +1,119 @@
+/////
+==== Brainfuck
+
+The program prints *Hello World!*. For sure, it's brainfuck.
+
+.Hello World!
+[source, brainfuck]
+----
+  ++++++++++
+  [
+   >+++++++>++++++++++>+++>+<<<<-     Schleife zur Vorbereitung der Textausgabe
+  ]
+  >++.                                Ausgabe von 'H'
+  >+.                                 Ausgabe von 'e'
+  +++++++.                            'l'
+  .                                   'l'
+  +++.                                'o'
+  >++.                                Leerzeichen
+  <<+++++++++++++++.                  'W'
+  >.                                  'o'
+  +++.                                'r'
+  ------.                             'l'
+  --------.                           'd'
+  >+.                                 '!'
+  >.                                  Zeilenvorschub
+  +++.                                Wagenrücklauf
+----
+/////
+
+==== Liquid
+
+// [source, liquid, linenums, highlight='3-7']
+// [source, liquid, role="linenums"]
+//
+// {% raw %}
+[source, liquid]
+----
+Hello {{ 'now' | date: "%Y %h" }}
+
+{% comment %}
+if item.quantity is 4...
+{% endcomment %}
+
+{% for i in (1..item.quantity) %}
+  {{ i }}
+{% endfor %}
+
+{% comment %} results in 1,2,3,4 {% endcomment %}
+----
+// {% endraw %}
+
+==== Javascript
+
+[source, javascript, linenums, highlight='3-7']
+----
+// ---------------------------------------------------------------
+// helper functions
+// ---------------------------------------------------------------
+function styleSheetLoaded(styleSheet) {
+  var sheets     = document.styleSheets,
+      stylesheet = sheets[(sheets.length - 1)];
+
+  // find CSS file 'styleSheetName' in document
+  for(var i in document.styleSheets) {
+    if(sheets[i].href && sheets[i].href.indexOf(styleSheet) > -1) {
+      return true;;
+    }
+  }
+}
+----
+
+==== Ruby
+
+// :source-highlighter: rouge
+// :source-highlighter: pygments
+// :pygments-style: emacs
+// :icons: font
+
+[source, ruby, linenums]
+----
+# Load Asciidoctor extensions needed
+#
+require 'asciidoctor/extensions' unless RUBY_ENGINE == 'opal'
+include Asciidoctor <1>
+
+Asciidoctor:Extensions.register do
+  class J1BlockMacro < Extensions:BlockMacroProcessor
+    use_dsl
+    named :banner
+    name_positional_attributes 'role'
+
+    def process parent, target, attrs
+      html = %(<div id="#{target}" class="#{attrs['role']}"></div>)
+      create_pass_block parent, html, attrs, subs: nil
+    end
+  end
+  block_macro J1BlockMacro
+end
+----
+<1> don't miss to load the Asciidoctor ruby
+
+/////
+==== Asciidoc
+
+[source, prometheus, linenums]
+----
+== Lightbox Examples
+
+Find below an example of using the lightbox Lightbox standalone.
+See how single (individual) images are linked for the use with
+Lightbox.
+
+.A Lightbox block for standalone images
+lightbox:example-standalone[ 400, {data-images-standalone} ]
+
+NOTE: The name LightGallery implies a sort of a Gallery but
+the library is a _lightbox_.
+----
+/////

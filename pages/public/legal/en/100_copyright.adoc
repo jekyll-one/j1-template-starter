@@ -1,0 +1,116 @@
+---
+title:                                  Copyright
+tagline:                                software and content
+date:                                   2020-10-23 00:00:00 +100
+description: >
+                                        Copyright for Software and Content
+
+categories:                             [ Legal ]
+tags:                                   [ License, Copyright ]
+
+sitemap:                                false
+robots:
+  index:                                false
+  follow:                               false
+
+fam_menu_id:                            page_ctrl_simple
+scrollbar:                              false
+comments:                               false
+toc:                                    true
+
+permalink:                              /pages/public/legal/en/copyright/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:disclaimer:                            true
+:legal-warning:                         false
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ifeval::[{legal-warning} == true]
+WARNING: This document *does not* constitute any *legal advice*. It is
+highly recommended to verify legal aspects and implications.
+endif::[]
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+
+== Copyright
+
+The content and works published on this website are governed by the copyright
+laws of Germany. Any duplication, processing, distribution, or any form of
+utilization beyond the scope of copyright law shall require the prior written
+consent of the author or authors in question.
+
+The content provided by this site is subject to German copyright law. The
+duplication, editing, distribution, and any kind of exploitation outside
+the limits of copyright require the respective author or creator's written
+consent.
+
+As far as the content on this page was not created by the operator, third
+parties' copyrights are respected. Nevertheless, you were on one copyright
+infringement, we friendly ask for a corresponding note.
+
+ifeval::[{disclaimer} == true]
+== Disclaimer
+
+The website contents were created with the care and to the best of our
+conscience. Nevertheless, this website's provider assumes no responsibility
+for the topicality, completeness, and accuracy of the pages and content
+provided.
+
+=== Liability for content
+
+As a content provider, we are responsible for our own content in by § 7
+Abs.1 TMG according to §§ 8 to 10 TMG. However, as a service provider,
+we are not obliged to transmit or transmit to monitor stored foreign
+information or, according to circumstances, research that indicates unlawful
+activity.
+
+Obligations to remove or block the use of information according to the general
+laws remain unaffected. A related Liability, however, is only from the date of
+knowledge of a concrete Infringement possible. Upon becoming aware of appropriate
+Violations, we will remove this content immediately.
+
+=== Liability for linked pages
+
+Our offer contains links to external websites of third parties. On their
+contents, we have no influence. That's why we can for this foreign content
+also assume no liability. For the contents of the linked pages is always
+the respective provider or operator of the pages responsible.
+
+The linked pages were at the time of linking to possible legal violations
+checked. Illegal content was, at the time of linking those content pages, not
+recognizable.
+
+However, a permanent content control of the linked pages is without concrete
+evidence of an infringement unreasonable. Becoming aware of violations,
+remove such links.
+endif::[]

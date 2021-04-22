@@ -1,0 +1,212 @@
+# ------------------------------------------------------------------------------
+# ~/_data/apps/j1_navigator.yml
+# Default configuration settings of the J1 NAV Module for all sub-modules
+# except the main navigation bar
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+# NOTE:
+#   For main navigation bar settings, see j1_navigator_menu.yml
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+  title:                                Navigator
+  scope:                                Default settings
+  location:                             _data/modules/defaults/navigator.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+
+  # ------------------------------------------------------------------------------
+  # Font icon settings
+  #
+  #   icon_family
+  #   ----------------------------------------------------------------------------
+  #   Set the Icon font (Material Design Icon MDI|FontAwesone FA)
+  #
+  #   values:                         familiy (MDI|FA)
+  #   default:                        MDI
+  #
+  #   icon_style
+  #   ----------------------------------------------------------------------------
+  #   Select the style (FA only, for MDI always mdi)
+  #
+  #   values:                         style (mdi|far|fas|fab)
+  #   default:                        mdi
+  #
+  #   icon_color
+  #   ----------------------------------------------------------------------------
+  #   Select the icon color used
+  #
+  #   values:                         color string (all supported MD color names mdi-*)
+  #   default:                        no default
+  #
+  #   icon_size
+  #   ----------------------------------------------------------------------------
+  #   Select the icon color used
+  #
+  #   values:                         size string (all supported size names mdi-*)
+  #   default:                        true
+  #
+  icon_family:                          MDI
+  icon_style:                           mdi
+  icon_color:                           mdi-grey
+  icon_size:                            mdi-sm
+
+  nav_primary_color:                    "#2196F3"                               # md-blue, general color for navbar and nav-menus
+
+  # ----------------------------------------------------------------------------
+  # NavBar
+  #
+  nav_bar:
+    enabled:                            false
+
+    xhr_container_id:                   navigator_nav_navbar
+
+    media_breakpoint:                   lg
+    brand_position:                     right                                   # left|right
+    brand_type:                         image
+    brand_type_collapsed:               text
+    fixed:                              true
+    style:                              overlay
+    color:                              light
+    position:                           left
+    bottom_line_height:                 1
+    bottom_line_color:                  "#EEEEEE"                               # md-grey-200
+    background_color_full:              rgba(0, 0, 0, 0.4)                      # darken-400
+    background_color_collapsed:         "#2196F3"                               # md-blue
+    background_color_scrolled:          "#2196F3"                               # md-blue
+
+  # ----------------------------------------------------------------------------
+  # NavMenu (Mobile)
+  #
+  nav_mmenu:
+    enabled:                            false
+
+    mmenu_plugin:
+      node:                             "null"
+      mediaQuery:                       all
+      max_width:                        100000                                  # set media breakpoint to infinite
+
+    mmenu_navigator:
+      selected:                         Selected
+      slidingSubmenus:                  true
+      title:                            Navigation
+      theme:                            dark
+
+    mmenu_drawer:
+      position:                         right
+
+  # ----------------------------------------------------------------------------
+  # NavMenu (Desktop)
+  #
+  nav_menu:
+    enabled:                            false
+
+    xhr_container_id:                   navigator_nav_menu
+    xhr_data_path:                      /assets/data/menu/index.html
+
+    raised_level:                       5                                       # level
+    delay_menu_open:                    200                                     # milli seconds
+    max_height:                         550                                     # px
+    menu_font_size:                     larger
+    megamenu_font_size:                 small
+    icon_family:                        MDI
+    icon_style:                         mdi                                     # far regular icon
+    icon_color:                         "#9E9E9E"                               # md-grey
+    icon_size:                          mdi-sm
+    menu_item_color:                    rgba(255, 255, 255, 0.5)                # rgba-lighten
+    menu_item_color_hover:              rgba(255, 255, 255, 0.9)                # rgba-lighten-900
+    dropdown_style:                     raised
+    dropdown_item_style:                flat
+    dropdown_animate:                   false
+    dropdown_animate_in:                slideInDown
+    dropdown_animate_out:               fadeOutDown
+    dropdown_animate_duration:          .75                                     # seconds
+    dropdown_item_min_width:            15                                      # rem
+    dropdown_menu_max_height:           25.5                                    # rem
+    dropdown_font_size:                 small
+    dropdown_padding_x:                 18                                      # rem
+    dropdown_padding_y:                 10                                      # px
+    dropdown_item_color:                "#212121"                               # md-grey-900
+    dropdown_border_color:              "#3f51b5"                               # BS bg-primary
+    dropdown_border_top:                0                                       # 3, px
+    dropdown_border_radius:             0                                       # px
+    dropdown_background_color_hover:    "#ECEFF1"                               # md-bluegrey-50
+    dropdown_background_color_active:   "#CFD8DC"                               # md-bluegrey-100
+
+  # ----------------------------------------------------------------------------
+  # NavQuicklinks
+  #
+  nav_quicklinks:
+    enabled:                            false
+
+    xhr_container_id:                   navigator_nav_quicklinks
+    xhr_data_path:                      /assets/data/quicklinks/index.html
+
+    icon_family:                        MDI
+    icon_color:                         rgba(255, 255, 255, 0.5)                # rgba-lighten
+    icon_color_hover:                   rgba(255, 255, 255, 0.9)                # rgba-lighten-900
+    icon_size:                          mdi-2x
+
+    cookies_icon:                       cookie
+    top_search_icon:                    magnify
+
+    translator_icon:                    flag-variant
+
+    toc_icon:                           wrap
+
+    home_icon:                          home-variant
+    home_url:                           none
+
+    r_text_sizer:                       false
+    r_text_icon:                        format-text                             # format-color-text format-annotation-plus
+
+    back_icon:                          subdirectory-arrow-left
+    back_url:                           none
+
+    disqus_icon:                        disqus
+    disqus_url:                         none
+    github_icon:                        github-circle
+    github_url:                         none
+    patreon_icon:                       patreon
+    patreon_url:                        none
+    facebook_icon:                      facebook
+    facebook_url:                       none
+    twitter_icon:                       twitter
+    twitter_url:                        none
+
+  # ----------------------------------------------------------------------------
+  # NavTopsearch
+  #
+  nav_topsearch:
+    enabled:                            false
+
+    xhr_container_id:                   navigator_nav_topsearch
+    type:                               quicksearch
+    icon_family:                        MDI
+    icon_color:                         "#FFFFFF"                               # md-white
+    icon_size:                          mdi-2x
+    search_icon:                        magnify
+    close_icon:                         close
+    clear_icon:                         format-clear
+    input_color:                        rgba(0, 0, 0, 0.7)                      # rgba-darken-700
+    background_color:                   "#FAFAFA"                               # md-grey-50
+    placeholder:                        QuickSearch
+    search_heading_lead:                ""
+    result_heading_lead:                ""
+
+# ------------------------------------------------------------------------------
+# END config

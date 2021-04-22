@@ -1,0 +1,183 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/attics.yml
+# User configuration settings for attics used on all layouts|pages.
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+# NOTE:
+#   If NO attic (top page header) is assigned to a LAYOUT, all pages based
+#   on this layout will have NO top page header.
+# ------------------------------------------------------------------------------
+# NOTE:
+#   By J1 template, "Liquid Procedures" are being used intensively. To load
+#   HTML data for a layout, the loader procedure places the data based this
+#   YAML data file into the REGION specified with a LANE.
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:                                Attics
+  scope:                                User settings
+  location:                             _data/modules/attics.yml
+
+# ------------------------------------------------------------------------------
+# SETTINGS
+#
+settings:
+  # ----------------------------------------------------------------------------
+  # Global settings for text- and image-based header
+  #
+  debug:                                false
+
+  # ----------------------------------------------------------------------------
+  # Global settings for image-based attics only
+  #
+
+  # spinner animation before a show starts, can be pulsed|spinner|rotate-dots.
+  # See: ~/framework/jquery/backstretch/css/backstretch.css
+  spinner:                              false
+
+  # caption defaults
+  #
+  caption:                              ""
+  caption_href:                         ""
+  caption_color:                        rgba_lighten
+
+  # Sets the opacity for all header images. Can be
+  #  any number between 0.0 and 1.0
+  opacity:                              1
+  # alignX, the x-alignment for the image, can be
+  # 'left'|'center'|'right' or any number between 0.0 and 1.0
+  alignX:                               0.5
+
+  # alignY, the y-alignment for the image, can be
+  # 'top'|'center'|'bottom' or any number between 0.0 and 1.0
+  alignY:                               0.5
+
+  # scale, controls the scaling mode. Can be one of
+  # cover, fit, fit-smaller or fill
+  scale:                                cover
+
+  # transition, type of transition between slides
+  transition:                           fadeInOut
+
+  # duration, time in between slides (if slideshow)
+  duration:                             5000
+
+  # transitionDuration, duration at which the image will transition in.
+  # Integers in milliseconds are accepted, as well as standard jQuery
+  # speed strings as slow, normal or fast
+  transitionDuration:                   normal
+
+  # animateFirst, if set to true, the first image will
+  # transition in like all the others (slideshows only)
+  animateFirst:                         true
+
+  # start, index of the first image to show
+  start:                                0
+
+  # paused, whether the images should slide after given duration
+  paused:                               false
+
+  # preload, controls how many images preload at a time
+  preload:                              2
+
+  # preloadSize, controls how many images are preloaded
+  # in parallel
+  preloadSize:                          1
+
+  # bypassCss, avoid to add any CSS styles to the IMG element
+  bypassCss:                            false
+
+  # alwaysTestWindowResolution, test against the window
+  # width instead of the element width
+  alwaysTestWindowResolution:           false
+
+  # resolutionRefreshRate, contrls how long to wait before
+  # switching resolution
+  resolutionRefreshRate:                2500
+
+  # resolutionChangeRatioThreshold, controls how much a change
+  # should it be before switching resolution
+  resolutionChangeRatioThreshold:       0.1
+
+  # isVideo, pass source type video to the plugin, if cannot
+  # be recognized automatically
+  isVideo:                              false
+
+  # loop, enables|disables looping on videos. If true,
+  # duration is used to determine when to stop
+  loop:                                 false
+
+  # mute, enables|disables sound on videos
+  mute:                                 false
+
+
+  # ----------------------------------------------------------------------------
+  # Attic properties (Layout specific settings)
+  #
+  headers:
+
+    # --------------------------------------------------------------------------
+    # Home (page) attic (image-based)
+    #
+    - name:                             Home attic
+      header:
+        enabled:                        true
+        id:                             home_attic
+        layout:                         home
+        raised_level:                   0                                       # was: 15
+        padding_top:                    300
+        margin_bottom:                  0
+        title:
+          align:                        center
+        tagline:
+          align:                        center
+
+    # --------------------------------------------------------------------------
+    # Image attic (used for layouts posts|pages, image-based)
+    #
+    - name:                             Image attic
+      header:
+        enabled:                        true
+        id:                             image_attic
+        layout:                         [ page, post ]
+        raised_level:                   0                                       # was: 15
+        text_emphasis:                  strong
+        title:
+          color:                        rgba_lighten_800
+        tagline:
+          color:                        rgba_lighten_800
+#       image_header:
+#        duration:                      3000
+#        transitionDuration:            2500
+#        animateFirst:                  false
+#        slides:
+#          - url:                       "/assets/images/modules/attics/pagehead-default-1200.jpg"
+#            alt:                       "J1 Master Header - Default image for Layout PAGE"
+#            caption:                   "Caption for the header image with a link"
+#            caption_href:              "#"
+#            caption_color:             "rgba(255, 255, 255, 0.8)"
+
+    # --------------------------------------------------------------------------
+    #  Text attic (used for layouts collection|app|raw|blog, text-based)
+    #
+    - name:                             Text attic
+      header:
+        enabled:                        true
+        id:                             text_attic
+        layout:                         [ collection, app, raw, blog_archive ]
+        raised_level:                   0                                     # was: 15
+
+# ------------------------------------------------------------------------------
+# END config

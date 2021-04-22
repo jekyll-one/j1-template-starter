@@ -1,0 +1,260 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/j1_navigator_menu.yml (run-time)
+# Configuration of the J1 NAV Module for the main navigation bar
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+# NOTE:
+#   For general navigation settings, see navigator.yml
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Menu LEARN
+#
+- item:                                 Learn
+  sublevel:
+
+    - title:                            Where to go
+      href:                             /pages/public/learn/where_to_go/
+      icon:                             paw
+
+    # --------------------------------------------------------------------------
+    # Roundtrip
+    #
+    - title:                            Roundtrip
+      icon:                             wallet-travel
+      dropdown:
+
+        - title:                        Present images
+          href:                         /pages/public/learn/roundtrip/present_images/
+          icon:                         image
+        - title:                        Present videos
+          href:                         /pages/public/learn/roundtrip/present_videos/
+          icon:                         video
+        - title:                        Typography
+          href:                         /pages/public/learn/roundtrip/typography/
+          icon:                         format-text
+        - title:                        Icon fonts
+          href:                         /pages/public/learn/roundtrip/mdi_icon_font/
+          icon:                         fan
+        - title:                        Asciidoc extensions
+          href:                         /pages/public/learn/roundtrip/asciidoc_extensions/
+          icon:                         format-annotation-plus
+        - title:                        BS modal extensions
+          href:                         /pages/public/learn/roundtrip/modals/
+          icon:                         image
+        - title:                        BS table extensions
+          href:                         /pages/public/learn/roundtrip/responsive_tables/
+          icon:                         table
+        - title:                        BS themes
+          href:                         /pages/public/learn/roundtrip/themes/
+          icon:                         theme-light-dark
+        - title:                        QuickSearch
+          href:                         /pages/public/learn/roundtrip/quicksearch/
+          icon:                         magnify
+
+    # --------------------------------------------------------------------------
+    # Asciidoc Skeletons
+    #
+    - title:                            Asciidoc Skeletons
+      icon:                             television-guide
+      dropdown:
+        - title:                        Simple-Document
+          href:                         /pages/public/skeleton/simple/
+          icon:                         file-document-outline
+        - title:                        Multi-Document
+          href:                         /pages/public/skeleton/multi/
+          icon:                         file-document-multiple-outline
+        - title:                        Documentation
+          href:                         /pages/public/skeleton/book/
+          icon:                         book-open-blank-variant
+
+# ------------------------------------------------------------------------------
+# Menu BLOG
+#
+- item:                                 Blog
+  sublevel:
+    - title:                            Creators Blog
+      href:                             /pages/public/blog/navigator/
+      icon:                             navigation
+    - title:                            Categories
+      href:                             /pages/public/blog/navigator/archive/categoryview/
+      icon:                             pin
+    - title:                            Date
+      href:                             /pages/public/blog/navigator/archive/dateview/
+      icon:                             calendar
+    - title:                            Archive
+      href:                             /pages/public/blog/navigator/archive/
+      icon:                             archive
+
+# ------------------------------------------------------------------------------
+# Menu ONLINE
+#
+- item:                                 Online
+  megamenu:
+    - title:                            Sites
+      icon:                             #web
+      column:
+        - title:                        Jekyll Home
+          href:                         https://jekyllrb.com/
+          target:                       _blank
+          icon:                         flask
+        - title:                        Ruby
+          href:                         https://www.ruby-lang.org/en/
+          target:                       _blank
+          icon:                         language-ruby
+        - title:                        RubyGems
+          href:                         https://rubygems.org/gems/j1-template/
+          target:                       _blank
+          icon:                         language-ruby
+        - title:                        NpmJS
+          href:                         https://www.npmjs.com/
+          target:                       _blank
+          icon:                         language-javascript
+        - title:                        Bootstrap Home
+          href:                         http://getbootstrap.com/
+          target:                       _blank
+          icon:                         bootstrap
+        - title:                        Bootstrap CDN
+          href:                         https://www.bootstrapcdn.com/
+          target:                       _blank
+          icon:                         bootstrap
+        - title:                        FA Icons
+          href:                         http://fontawesome.io/icons/
+          target:                       _blank
+          icon:                         font-awesome
+        - title:                        MD Icons
+          href:                         https://materialdesignicons.com/
+          target:                       _blank
+          icon:                         google
+        - title:                        Fonts
+          href:                         https://fonts.google.com/
+          target:                       _blank
+          icon:                         google
+        - title:                        cdnJS
+          href:                         https://cdnjs.com/
+          target:                       _blank
+          icon:                         arrow-down-bold-hexagon-outline
+
+    - title:                            Knowledge
+      icon:                             #lightbulb-on
+      column:
+        - title:                        Learn Jekyll at CloudCannon
+          href:                         http://jekyll.tips/
+          target:                       _blank
+          icon:                         flask
+        - title:                        Jekyll Cheat Sheet
+          href:                         https://learn.cloudcannon.com/jekyll-cheat-sheet/
+          target:                       _blank
+          icon:                         flask
+        - title:                        Jekyll Stackoverflow
+          href:                         https://stackoverflow.com/questions/tagged/jekyll
+          target:                       _blank
+          icon:                         flask
+        - title:                        BS 4 Stackoverflow
+          href:                         https://stackoverflow.com/questions/tagged/bootstrap-4
+          target:                       _blank
+          icon:                         bootstrap
+        - title:                        W3 Schools
+          href:                         http://www.w3schools.com/
+          target:                       _blank
+          icon:                         xml
+        - title:                        SelfHTML
+          href:                         https://wiki.selfhtml.org/
+          target:                       _blank
+          icon:                         language-html5
+        - title:                        LearnCSS
+          href:                         https://developer.mozilla.org/en-US/docs/Learn/CSS
+          target:                       _blank
+          icon:                         language-css3
+        - title:                        Asciidoc Language
+          href:                         https://docs.asciidoctor.org/asciidoc/latest/
+          target:                       _blank
+          icon:                         format-color-text
+        - title:                        Asciidoc FAQ
+          href:                         http://www.methods.co.nz/asciidoc/faq.html
+          target:                       _blank
+          icon:                         format-color-text
+        - title:                        Asciidoctor
+          href:                         http://asciidoctor.org/
+          target:                       _blank
+          icon:                         hospital
+
+    - title:                            Tools
+      icon:                             #wrench
+      column:
+        - title:                        FreeFormatter
+          href:                         http://www.freeformatter.com/
+          target:                       _blank
+          icon:                         cached
+        - title:                        Convert CSS to Sass
+          href:                         http://sebastianpontow.de/css2compass/
+          target:                       _blank
+          icon:                         language-css3
+        - title:                        CSS Matic Tools
+          href:                         https://www.cssmatic.com
+          target:                       _blank
+          icon:                         language-css3
+        - title:                        JSON Editor
+          href:                         https://jsoneditoronline.org/
+          target:                       _blank
+          icon:                         code-json
+        - title:                        YAML Parser
+          href:                         http://yaml-online-parser.appspot.com/
+          target:                       _blank
+          icon:                         code-braces
+        - title:                        XML-YAML Converter
+          href:                         http://codebeautify.org/xml-to-yaml
+          target:                       _blank
+          icon:                         xml
+        - title:                        Character Codes
+          href:                         http://character-code.com/
+          target:                       _blank
+          icon:                         alpha-a-box-outline
+        - title:                        Wordcloud Generator
+          href:                         https://www.jasondavies.com/wordcloud/
+          target:                       _blank
+          icon:                         cloud
+        - title:                        RegEx 101
+          href:                         https://regex101.com/
+          target:                       _blank
+          icon:                         regex
+        - title:                        RegEx Library
+          href:                         http://www.regexlib.com/
+          target:                       _blank
+          icon:                         regex
+
+# ------------------------------------------------------------------------------
+# Menu Themes
+#
+- item:                                 Themes
+  theme_select:
+    - local_themes:                     enabled
+      title:                            Jekyll One
+      icon:                             alpha-j-box
+    - bootswatch_themes:                enabled
+      title:                            Bootswatch
+      icon:                             bootstrap
+    - preview:                          enabled
+      title:                            Previewer
+      href:                             /pages/public/previewer/theme/
+      icon:                             eye
+
+# ------------------------------------------------------------------------------
+# Menu ABOUT
+#
+- item:                                 About
+  sublevel:
+    - title:                            This site
+      icon:                             home-variant-outline
+      href:                             /pages/public/about/site
+
+# ------------------------------------------------------------------------------
+# END config

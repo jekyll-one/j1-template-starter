@@ -1,0 +1,47 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/fam.yml
+# Default Configuration of the FAM Module (Floating Action Menu)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+# NOTE:
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+  title:                                Floating Action Menu
+  scope:                                Default settings
+  location:                             _data/modules/defaults/fam.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+  enabled:                              false
+  mode:                                 icon
+
+  xhr_container_id:                     fam-container
+  xhr_data_path:                        /assets/data/fam/index.html
+
+  icon_family:                          MDI
+  icon_color:                           mdi-md-grey
+  icon_size:                            mdi-2x
+  raised_level:                         5
+
+  menu_options:
+    direction:                          top
+    hoverEnabled:                       false
+    toolbarEnabled:                     false
+
+# ------------------------------------------------------------------------------
+# END config

@@ -1,0 +1,164 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/authentication.yml
+# User configuration settings for J1 Authentication module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:                                Authentication
+  scope:                                User settings
+  location:                             _data/modules/authentication.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # Authentication (j1_auth)
+  #
+  # If a site is started as an app, this transforms the web into an
+  # Web Application based on Rack and Sinatra using the Omniauth
+  # software stack for authentication to enable User Management
+  # and Authentication services for secured private web sites.
+  #
+  # enabled
+  # ---------------------------------------------------------------
+  #   Enables or disables the Auth Manager services for the web.
+  #   If disabled, all pages are accessible without authentication.
+  #
+  #   values:                           true|false
+  #   default:                          false
+  #
+  # ssl
+  # ----------------------------------------------------------------------------
+  #   Enforce SSL communication for the app. If you've got SSL
+  #   set up, ensure SSL is enforced.
+  #
+  #   values:                           true|false
+  #   default:                          false
+  #
+  # provider
+  # ----------------------------------------------------------------------------
+  #   List of enabled OAuth providers to be used for the auth
+  #   service for authentication. The first provider in a list
+  #   is used for default.
+  #
+  #   values:                           [disqus|github|facebook|patreon|twitter]
+  #   default:                          none
+  #
+  # whitelist
+  # ----------------------------------------------------------------------------
+  #   List of pages (and assets) skipped for authentication.
+  #   Values can be given as regular expressions.
+  #
+  #   values:                           string
+  #   default:                          none
+  #
+  # ----------------------------------------------------------------------------
+  j1_auth:
+    enabled:                            false
+    ssl:                                false
+
+    content:
+      public:
+        - \W*((?i)assets(?-i))\W*
+        - \W*((?i)public(?-i))\W*
+      protected:
+        - \W*((?i)protected(?-i))\W*
+      private:
+        - \W*((?i)private(?-i))\W*
+
+    providers:
+      activated:                        [ github, disqus ]
+
+      disqus:
+        provider_url:                   https://disqus.com
+        strategy:                       member
+        scope:                          []
+        users:                          [ all ]
+        permissions:                    [ protected ]
+        data_fields:                    []
+        conditions:
+          protected:
+            enabled:                    true
+            users:
+              blacklist:                []
+          private:
+            enabled:                    false
+            users:
+              whitelist:                [ all ]
+              blacklist:                []
+
+      github:
+        provider_url:                   https://github.com
+        strategy:                       member
+        scope:                          []
+        users:                          [ all ]
+        permissions:                    [ protected, private ]
+        data_fields:                    []
+        conditions:
+          protected:
+            enabled:                    true
+            users:
+              blacklist:                []
+          private:
+            enabled:                    true
+            users:
+              whitelist:                [ all ]
+              blacklist:                []
+
+  # ----------------------------------------------------------------------------
+  # Auth CLIENT
+  #
+  auth_client:
+    enabled:                            true
+
+    auth_signin_modal:
+      title:                            SignIn
+      body_text: >
+                                        In order to get *signed in*, check one of the options below
+                                        and mark a provider for authentication. You'll be *redirected*
+                                        to authenticate with the provider *selected*. If signed in
+                                        *successfully*, you get back to this site for the page requested.
+
+
+                                        NOTE: To get access to secured pages of this site,
+                                        authentication with a provider is needed only *once*.
+
+    auth_signout_modal:
+      title:                            SignOut
+      body_text: >
+                                        After signing out from this site, you'll be *redirected*
+                                        to the *provider* you're currently authenticated. From your
+                                        home page at the *provider*, you can *sign out* completely.
+
+
+                                        NOTE: In order to signing out *completely*, check the switch
+                                        below to *on*.
+
+    auth_disqus:
+      id:                               1
+      title:                            Disqus
+      text:                             SignIn to Disqus. Get access to all *PROTECTED* content pages of this site.
+
+    auth_github:
+      id:                               2
+      title:                            Github
+      text:                             SignIn to Github. Get access to all *PROTECTED* content pages of this site.
+
+
+# ------------------------------------------------------------------------------
+# END config

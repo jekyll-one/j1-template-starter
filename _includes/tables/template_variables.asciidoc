@@ -1,0 +1,46 @@
+.Template variables (Asciidoc)
+[cols="cols="3,3a,6a, subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Name |Value |Description
+
+|`content_root`
+|{content_root}
+|Path to the document source folder *relative* to the current content *source
+type* (`post` or `page`)
+
+|`page_root`
+|{page_root}
+|Path to the document folder seen *absolute* from the current content *source
+type* (`post` or `page`)
+
+|`globalincludedir`
+|{globalincludedir}
+|Path to the *global* includes folder *relative* to the current content *source
+type* (`post` or `page`)
+
+|`globaltablesdir`
+|{globaltablesdir}
+|Path to the *global* includes folder for *tables* *relative* to the current
+content *source type* (`post` or `page`)
+
+|`globaldocumentsdir`
+|{globaldocumentsdir}
+|Path to the *global* includes folder for *documents* *relative* to the current
+content *source type* (`post` or `page`)
+
+|`includedir`
+|{includedir}
+|Path to the *local* includes folder seen *absolute* from the current
+content *source type* (`post` or `page`)
+
+|`documentdir`
+|{documentdir}
+|Path to the *local* include folder for *documents* seen *absolute*
+from the current content *source type* (`post` or `page`)
+
+|`tabledir`
+|{tabledir}
+|Path to the *local* include folder for *tables* seen *absolute*
+from the current content *source type* (`post` or `page`)
+
+|===============================================================================

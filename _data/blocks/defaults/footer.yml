@@ -1,0 +1,179 @@
+# ------------------------------------------------------------------------------
+# ~/_data/blocks/defaults/footer.yml
+# Default configuration settings for site-wide footer
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# DEFAULT settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # FOOTER global settings
+  #
+  data_path:                            /assets/data/footer/index.html
+  container-id:                         j1_footer
+
+  # ----------------------------------------------------------------------------
+  # FOOTER properties
+  #
+  footer:
+    id:                                 default-footer
+    enabled:                            true
+    comment:                            Default Footer
+    theme:                              footer-light-theme
+
+    # --------------------------------------------------------------------------
+    # ISSUE settings
+    #
+    issue:
+      enabled:                          true
+      date:                             site.time
+      date_format:                      "%A, %-d %B %Y"
+      text:                             Last modified
+
+    # --------------------------------------------------------------------------
+    # ICON settings
+    #
+    icons:
+      facebook:
+        enabled:                        false
+        href:                           "#"
+      twitter:
+        enabled:                        false
+        href:                           "#"
+
+    # --------------------------------------------------------------------------
+    # LEGAL settings
+    #
+    legals:
+
+      - name:                           Copyright
+        legal:
+          enabled:                      true
+          type:                         copyright
+          statement:                    J1 · Copyright © 2019 · All rights reserved
+          href:                         /pages/public/legal/en/copyright/
+      - name:                           Impress
+        legal:
+          enabled:                      true
+          type:                         impress
+          statement:                    Impress
+          href:                         /pages/public/legal/en/impress/
+      - name:                           Terms Of Use
+        legal:
+          enabled:                      true
+          type:                         terms
+          statement:                    Terms Of Use
+          href:                         /pages/public/legal/en/terms_of_use/
+      - name:                           Privacy
+        legal:
+          enabled:                      true
+          type:                         privacy
+          statement:                    Privacy
+          href:                         /pages/public/legal/en/privacy/
+      - name:                           License
+        legal:
+          enabled:                      false
+          type:                         license
+          statement:                    License
+          href:                         /pages/public/legal/en/license_agreement/
+      - name:                           Support
+        legal:
+          enabled:                      false
+          type:                         support
+          statement:                    Support
+          href:                         /pages/public/legal/en/terms_of_use/
+
+    # --------------------------------------------------------------------------
+    # BOXES
+    #
+    boxes:
+
+      # ------------------------------------------------------------------------
+      # ABOUT box
+      #
+      - name:                           About
+        type:                           about
+        enabled:                        true
+        justify:                        true
+        title:                          J1 Template
+        text: >
+                                        Jekyll meets Bootstrap - and makes a lot of friends.
+                                        J1 Template combines the best of OpenSource software for
+                                        the Web and the Web site generator Jekyll. J1 is Open
+                                        Source and the modules packed as well - no pain for private
+                                        or professional use.
+                                        <br/><br/>
+                                        <b>Create powerful modern static sites.<br/>
+                                        Secure, flexible and fast.</b>
+
+      # ------------------------------------------------------------------------
+      # NEWS box
+      #
+      - name:                           News
+        type:                           news
+        enabled:                        true
+        title:                          Recent News
+        category:                       featured
+        max_posts:                      3
+
+      # ------------------------------------------------------------------------
+      # REFERENCES box
+      #
+      - name:                           References
+        type:                           references
+        enabled:                        true
+        title:                          Useful Links
+        links:
+
+          - name:                       Jekyll Home
+            link:
+              title:                    Jekyll Home
+              tagline:                  First addresss for latest news
+              href:                     http://jekyllrb.com/
+
+          - name:                       Jekyll Tips
+            link:
+              title:                    Jekyll Tips
+              tagline:                  Learn from experts
+              href:                     http://jekyll.tips/
+
+          - name:                       Stackoverflow
+            link:
+              title:                    Stackoverflow
+              tagline:                  Get help from the community
+              href:                     http://stackoverflow.com/questions/tagged/jekyll
+
+      # ------------------------------------------------------------------------
+      # CONTACT box
+      #
+      - name:                           Contact
+        type:                           contact
+        enabled:                        false
+        title:                          Contacts
+        address:
+          enabled:                      false
+          address_1:                    JekyllOne Ltd.
+          address_2:                    795 Folsom Ave, Suite 600
+          address_3:                    San Francisco, CA 94107
+        phone:
+          enabled:                      false
+          phone_1:                      (+123) 456 7890
+          phone_2:                      (+123) 456 7891
+        internet:
+          enabled:                      false
+          mail:                         contact@jekyll.one
+          href:                         www.jekyll.one
+
+# ------------------------------------------------------------------------------
+# END config

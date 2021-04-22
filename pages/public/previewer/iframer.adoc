@@ -1,0 +1,93 @@
+---
+title:                                  Framer
+tagline:                                automagic iframes
+date:                                   2020-11-08 00:00:00 +100
+description: >
+                                        Test page for J1 module framer. Framer enables the automatic
+                                        resizing of the height and width of both same and cross domain
+                                        iFrames to fit their contained content. It provides a range of
+                                        features to address the most common issues with using HTML iFrames.
+
+categories:                             [ Previewer ]
+tags:                                   [ HTML, iframe ]
+
+
+toc:                                    false
+
+permalink:                              /pages/public/iframer/
+regenerate:                             false
+
+resources:                              [ framer, fam ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/jessica-ruscello-1920x1280.jpg
+          alt:                          Photo by Jessica Ruscello Unsplash
+#         caption:
+#           text:                       Photo by Jessica Ruscello on Unsplash
+#           href:                       https://unsplash.com/@jasonrosewell
+          badge:
+            type:                       unsplash
+            author:                     Jessica Ruscello
+            href:                       https://unsplash.com/@jruscello
+---
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+== Automagic iFrame
+
+Resize window or click one of the links in the iFrame to watch it resize.
+
+++++
+<p id="callback" class="ml-2"></p>
+
+<iframe
+  src="/assets/themes/j1/modules/iframeResizer/examples/frame.content.html"
+  width="100%"
+  style="border-width:0;"
+  scrolling="no"
+  title="Test Content">
+</iframe>
+
+<script>
+  $(document).ready(function() {
+    var dependencies_met_page_finished = setInterval (function () {
+      if (j1.adapter.framer.getState() === 'finished') {
+        iFrameResize({
+          log:       true,
+          minHeight: 250,
+          onResized: function(messageData){
+
+            $('p#callback').html(
+              '<b>Frame ID:</b> '    + messageData.iframe.id +
+              ' <b>Height:</b> '     + messageData.height +
+              ' <b>Width:</b> '      + messageData.width +
+              ' <b>Event type:</b> ' + messageData.type
+            );
+          },
+          onMessage: function(messageData){
+
+            $('p#callback').html(
+              '<b>Frame ID:</b> '    + messageData.iframe.id +
+              ' <b>Message:</b> '    + messageData.message
+            );
+            alert(messageData.message);
+            document.getElementsByTagName('iframe')[0].iFrameResizer.sendMessage('Hello back from parent page');
+          },
+          onClosed: function(id){
+            $('p#callback').html(
+              '<b>IFrame (</b>'    + id +
+              '<b>) removed from page.</b>'
+            );
+          }
+        });
+        clearInterval(dependencies_met_page_finished);
+      }
+    }, 25);
+  });
+</script>
+++++

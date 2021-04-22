@@ -1,0 +1,170 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/log4r.yml
+# User configuration for J1 Logger module (Ruby)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:                                Ruby Logger
+  scope:                                User settings
+  location:                             _data/modules/log4r.yml
+
+log4r_config:
+
+  # ============================================================================
+  # BASE configurations (pre config)
+  #
+  pre_config:
+    global:
+      level:                            DEBUG
+    root:
+      level:                            DEBUG
+
+  # ============================================================================
+  # LOGGER configurations
+  #   j1.mw
+  #   j1.mw.auth_mgr
+  #   j1.mw.auth_mgr.preflight
+  #   j1.mw.auth_mgr.preflight.content
+  #   j1.mw.auth_mgr.preflight.auth
+  #   j1.mw.auth_mgr.auth
+  #   j1.mw.auth_mgr.post_auth
+  #   j1.mw.auth_mgr.api
+  #   j1.mw.auth_mgr.api.auth
+  #   j1.mw.auth_mgr.api.post_auth
+  #   j1.mw.auth_mgr.api.state
+  #   j1.mw.auth_mgr.api.validate
+  # ----------------------------------------------------------------------------
+  loggers:
+
+    - name:                             j1.mw
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [logfile]
+
+    - name:                             j1.mw.auth_mgr
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [logfile]
+
+    - name:                             j1.mw.auth_mgr.preflight
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [logfile]
+
+    - name:                             j1.mw.auth_mgr.preflight.content
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [logfile]
+
+    - name:                             j1.mw.auth_mgr.preflight.auth
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [logfile]
+
+    - name:                             j1.mw.auth_mgr.auth
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [logfile]
+
+    - name:                             j1.mw.auth_mgr.post_auth
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [logfile]
+
+    - name:                             j1.mw.auth_mgr.api
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [logfile]
+
+    - name:                             j1.mw.auth_mgr.api.auth
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [logfile]
+
+    - name:                             j1.mw.auth_mgr.api.post_auth
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [logfile]
+
+    - name:                             j1.mw.auth_mgr.api.state
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [logfile]
+
+    - name:                             j1.mw.auth_mgr.api.validate
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [logfile]
+
+    - name:                             j1.mw.auth_mgr.api.log2disk
+      level:                            DEBUG
+      additive:                         false
+      trace:                            false
+      outputters:                       [log2disk]
+
+  # ============================================================================
+  # APPENDER configurations (outputters, incl. formatters)
+  #   date_pattern: '%Y-%m-%d %H:%M:%S'         (default, ISO8601)
+  #   date_pattern: '%Y-%m-%d %H:%M:%S.%L'      (%L: milli)
+  #   date_pattern: '%Y-%m-%d %H:%M:%S.%L %z'   (milli + %z: timezone)
+  # ----------------------------------------------------------------------------
+  outputters:
+
+    - name:                             console
+      type:                             StderrOutputter
+      level:                            INFO
+      formatter:
+        date_pattern:                   '%Y-%m-%d %H:%M:%S.%L'
+        pattern:                        '[%d] [%X{pageID}] [%-5l] [%-40X{path}] [%-40c] %m'
+        type:                           PatternFormatter
+
+    - name:                             logfile
+      type:                             DateFileOutputter
+      level:                            INFO
+      date_pattern:                     '%Y-%m-%d'
+      trunc:                            false
+      dirname:                          ./log
+      filename:                         messages.log                            # if given, name + ext is needed!
+      formatter:
+        date_pattern:                   '%Y-%m-%d %H:%M:%S.%L'
+        pattern:                        '[%d] [%X{pageID}] [%-5l] [%-40X{path}] [%-40c] %m'
+        type:                           PatternFormatter
+
+    - name:                             log2disk
+      type:                             DateFileOutputter
+      level:                            DEBUG
+      date_pattern:                     '%Y-%m-%d'
+      trunc:                            false
+      dirname:                          ./log
+      filename:                         messages.log                            # if given, name + ext is needed!
+      formatter:
+        date_pattern:                   '%Y-%m-%d %H:%M:%S.%L'
+        pattern:                        '[%X{timestamp}] [%X{id}] [%-5X{level}] [%-40X{path}] [%X{logger}] %X{message}'
+        type:                           PatternFormatter
+
+# ------------------------------------------------------------------------------
+# END config
