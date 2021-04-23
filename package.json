@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "j1_starter",
-  "version": "2021.1.0",
+  "version": "2021.1.1",
   "description": "J1 Template Starter Web",
   "homepage": "https://your.site",
   "author": {
@@ -19,9 +19,9 @@
     "loglevel": "silent"
   },
   "engines": {
-    "node": ">=10.0",
+    "node": ">=12.0",
     "npm": ">=6.0",
-    "yarn": ">=1.6"
+    "yarn": ">=1.22"
   },
   "keywords": [
     "Jekyll",
@@ -58,18 +58,22 @@
     "app:rackup": "cross-env SINATRA_ACTIVESUPPORT_WARNING=false WEBSERVER=$npm_package_jekyll_opt_webserver INTERFACE=$npm_package_jekyll_opt_interface PORT=$npm_package_jekyll_opt_app_port j1 rackup",
     "app:jekyll": "cross-var cross-env JEKYLL_ENV=$npm_package_config_mode BUNDLE_GEMFILE=$npm_package_ruby_gemfile bundle exec jekyll b -c $npm_package_jekyll_configfile $npm_package_jekyll_opt_incremental --watch",
     "app:open": "npm run delay-3s && cross-var opn $npm_package_jekyll_opt_app_url",
+
     "delay-1s": "node ./node_modules/npm-delay 1000",
     "delay-2s": "node ./node_modules/npm-delay 2000",
     "delay-3s": "node ./node_modules/npm-delay 3000",
     "delay-5s": "node ./node_modules/npm-delay 5000",
+
     "algolia": "cross-var cross-env ALGOLIA_API_KEY=$npm_package_algolia_admin_key bundle exec jekyll algolia",
     "algolia-check": "cross-var cross-env ALGOLIA_API_KEY=$npm_package_algolia_admin_key bundle exec jekyll algolia --dry-run --verbose",
+
     "build": "run-s -s build:*",
     "build:info": "echo Build site incremental ..",
     "build:do": "cross-env SINATRA_ACTIVESUPPORT_WARNING=false bundle exec jekyll b --incremental",
     "postbuild": "run-s -s postbuild:*",
     "postbuild:finished": "echo .. build finished.",
     "postbuild:hint": "echo To open the site, run: yarn site",
+
     "bundle": "run-s -s bundler:*",
     "bundler:info": "echo Create bundle ..",
     "bundler:clean": "shx rm -f Gemfile.lock",
@@ -80,6 +84,7 @@
     "bundle_vendor:info": "echo Bundle Rubies using vendor path ..",
     "bundle_vendor:set-path": "bundle config set --local path ./vendor",
     "bundle_vendor:bundle": "bundle install",
+
     "rebuild": "run-s -s rebuild:* && run-s -s post-rebuild:*",
     "rebuild:info": "echo Rebuild site incremental ..",
     "rebuild:clean": "echo Clean up site files .. && bundle exec jekyll clean",
@@ -87,6 +92,7 @@
     "post-rebuild": "run-s -s postrebuild:*",
     "post-rebuild:finished": "echo .. rebuild finished.",
     "post-rebuild:hint": "echo To open the site, run: yarn site.",
+
     "clean": "run-s -s clean-site && run-s clean:*",
     "clean-site": "echo Clean up site files .. && bundle exec jekyll clean",
     "clean:start": "echo Clean up projects files ..",
@@ -95,12 +101,14 @@
     "clean:etc-folder": "echo Remove etc folder .. && shx rm -rf etc",
     "clean:logfiles": "echo Remove various log files .. && shx rm -f *.log",
     "clean:locks": "echo Remove lock files .. && shx rm -f *.lock && shx rm -f package-lock.json",
+
     "reset": "run-s -s reset:*",
     "reset:start": "echo Reset project to factory state ..",
     "reset:base-clean-files": "echo Clean up base modules .. && npm --silent run clean",
     "reset:utilsrv-clean-files": "echo Clean up utility server .. && npm --prefix ./utilsrv --silent run clean",
     "reset:utilsrv-clean-modules": "shx rm -rf ./utilsrv/node_modules",
     "reset:finished": "echo done.",
+
     "setup": "npm --silent run setup-start && npm --silent run setup-base && run-s -s setup:*",
     "setup-start": "echo Setup project for first use ..",
     "setup-base": "echo Bootstrap base modules .. && echo J1 Project Base modules: > install.log && npm --silent i lnk-cli shx npm-run-all cross-var cross-env -D >> install.log && echo done.",
@@ -115,9 +123,11 @@
     "setup:node-modules-utilsrv": "echo Bootstrap utility server modules .. && echo J1 Utility Server modules: >> install.log && cd utilsrv && npm --silent install >> ../install.log && cd .. && echo done.",
     "setup:detect-os": "echo Detect OS .. && cross-env if-env OS=Windows_NT && cross-var echo \"OS detected: $OS\" || OS=$(echo $(getos)) && echo \"OS detected: $OS\" && echo done.",
     "setup:site": "run-s -s build",
+
     "site": "run-p -s site:*",
     "site:jekyll": "echo Startup the site .. && cross-env SINATRA_ACTIVESUPPORT_WARNING=false bundle exec jekyll s --incremental --livereload --livereload-port $npm_package_jekyll_opt_livereload_port --open",
     "site:utilsrv": "npm --prefix ./utilsrv --silent run utilsrv",
+
     "bump": "run-s -s ver && run-s -s bump:* && run-s -s ver",
     "ver": "cross-var cross-env echo \"Project version: $npm_package_version\"",
     "bump:project": "cross-var cross-env npm version $npm_package_config_bumplevel",

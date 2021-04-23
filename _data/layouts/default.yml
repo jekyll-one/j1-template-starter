@@ -98,13 +98,14 @@
 #
 # ------------------------------------------------------------------------------
 
-# -------------------------------------------------------------------------
-# Layout configuration settings
+# ------------------------------------------------------------------------------
+# DEFAULT layout configuration
 #
 lanes:
 
-  # ------------------------------------------------------------------
-  # META data (head)
+  # ----------------------------------------------------------------------------
+  # META data
+  #
   - lane:
       enabled:                          true
       region:                           head
@@ -113,8 +114,9 @@ lanes:
       path:                             layouts
       file:                             layout_metadata_generator.html
 
-  # ------------------------------------------------------------------
-  # CONNECTORS (Google Analytics)
+  # ----------------------------------------------------------------------------
+  # CONNECTORS (analytics)
+  #
   - lane:
       enabled:                          true
       region:                           head
@@ -122,19 +124,21 @@ lanes:
       base:                             _includes/themes/j1
       path:                             modules/connectors
       file:                             analytics
+
   # ----------------------------------------------------------------------------
-  # TRANSLATOR connector
+  # CONNECTORS (translation)
   #
   - lane:
-      enabled:                          false
+      enabled:                          true
       region:                           head
       type:                             sync
       base:                             _includes/themes/j1
       path:                             modules/connectors
       file:                             translator
 
-  # ------------------------------------------------------------------
-  # CONNECTORS (Google Ads)
+  # ----------------------------------------------------------------------------
+  # CONNECTORS (advertising)
+  #
   - lane:
       enabled:                          true
       region:                           head
@@ -143,8 +147,9 @@ lanes:
       path:                             modules/connectors
       file:                             ads
 
-  # ------------------------------------------------------------------
-  # RESOURCE loader (head)
+  # ----------------------------------------------------------------------------
+  # RESOURCE loader
+  #
   - lane:
       enabled:                          true
       region:                           head
@@ -153,14 +158,8 @@ lanes:
       path:                             layouts
       file:                             layout_resource_generator.html
 
-  # ------------------------------------------------------------------
-  #   NAVIGATOR (body-navigation)
-  #
-  #   NOTE:
-  #   The Generator of the NAV Module (generator.html) is based
-  #   on several Liquid procedures to generate the HTML code for
-  #   all components of the navigation system (NAV Module) as:
-  #   MainMenu, Quicklinks, SideBar and TopSearch.
+  # ----------------------------------------------------------------------------
+  # NAVIGATION
   #
   - lane:
       enabled:                          true
@@ -171,7 +170,7 @@ lanes:
       file:                             generator.html
 
   # ----------------------------------------------------------------------------
-  # EXCEPTION container (body-footer)
+  # EXCEPTION container
   #
   #   NOTE:
   #   The EXCEPTION container is used to place additional information
@@ -184,14 +183,8 @@ lanes:
       type:                             async
       class:                            container-fluid no-padding
 
-  # ------------------------------------------------------------------
-  #   FOOTER (body-footer)
-  #
-  #   NOTE:
-  #   The FOOTER component (default: footer_light_themes.html) is
-  #   a complex LOADER based on several Liquid procedures to LOAD
-  #   and INITIALIZE all parts of the page footer (cards) as:
-  #   About, News, Links and Contact.
+  # ----------------------------------------------------------------------------
+  # FOOTER
   #
   - lane:
       enabled:                          true
@@ -200,35 +193,8 @@ lanes:
       type:                             async
       class:
 
-  # ------------------------------------------------------------------
-  # SHIM loader (body-footer)
-  #   NOTE: UNUSED as it is moved to ???
-  #
-  # - lane:
-  #     enabled:                          false
-  #     region:                           body-footer
-  #     type:                             sync
-  #     base:                             _includes/themes/j1
-  #     path:                             layouts
-  #     file:                             layout_shim_generator.html
-
-  # ------------------------------------------------------------------
-  # THEME loader (body-footer)
-  #   NOTE: UNUSED as it is moved to themer.js
-  #
-  # - lane:
-  #     enabled:                          false
-  #     region:                           body-footer
-  #     type:                             sync
-  #     base:                             _includes/themes/j1
-  #     path:                             layouts
-  #     file:                             layout_theme_generator.html
-
-  # ------------------------------------------------------------------
-  #   MODULE generator (body-footer)
-  #
-  #   NOTE:
-  #
+  # ----------------------------------------------------------------------------
+  # MODULE generator
   #
   - lane:
       enabled:                          true

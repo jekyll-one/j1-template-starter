@@ -53,7 +53,7 @@ environment:                            production
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2021.1.0
+version:                                2021.1.1
 
 # version
 # ------------------------------------------------------------------------------
@@ -241,9 +241,13 @@ author:
 webmaster:
   email:                                webmaster@example.domain
 
+# crawling/indexing DISABLED for default. Settings managed page-wise using
+# frontmatter defaults or by page settings to make sure that only WANTED
+# pages gets crawled.
+#
 robots:
   index:                                false
-  follow:                               true
+  follow:                               false
 
 # ------------------------------------------------------------------------------
 # BRAND configuration
@@ -251,7 +255,7 @@ robots:
 
 brand:
   image:                                modules/icons/j1/j1-512x512.png
-  image_height:                         48                                      # was: 64
+  image_height:                         48
   text:                                 Starter Web
   text_color:                           "#9E9E9E"
 

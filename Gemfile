@@ -54,7 +54,7 @@ gem 'jekyll', '~> 4.2'
 
 # Theme Rubies, default: J1 Template (NOT used for the development system)
 #
-gem 'j1-template', '~> 2021.1.0'
+gem 'j1-template', '~> 2021.1.1'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
