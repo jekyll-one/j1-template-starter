@@ -8,7 +8,7 @@ you go to the Jekyll Way.
 
 **Create powerful modern Static Webs: Secure, Flexible and Fast.**
 
-![Screenshot](https://github.com/jekyll-one-org/j1-template-starter/raw/main/home-screenshot.jpg "J1 Starter Web")
+![Screenshot](https://github.com/jekyll-one/j1-template-starter/raw/main/home-screenshot.jpg "J1 Starter Web")
 
 * Fully Responsive. J1 Template supports modern web browsers on all
   devices for best results on PCs, Tablets, and SmartPhones.
