@@ -55,7 +55,7 @@ issues for private or professional use.
 * Themeable source code highlighting (Rouge)
 * Desktop and Mobile Web and Navigation ready
 * Fully configurable
-* 100/100 Google Lighthouse scores
+* 100/100 Google Lighthouse scores (at e.g. Netlify ir Github)
 
 ## Modules and Extensions
 
