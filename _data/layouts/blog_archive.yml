@@ -155,5 +155,14 @@ lanes:
       path:                             layouts
       file:                             content_generator_blog_archive.html
 
+  # ----------------------------------------------------------------------------
+  # FAM
+  #
+  - lane:
+      enabled:                          true
+      id:                               fam-container
+      region:                           body-main
+      type:                             async
+
 # ------------------------------------------------------------------------------
 # END config

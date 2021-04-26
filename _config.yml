@@ -53,7 +53,7 @@ environment:                            production
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2021.1.1
+version:                                2021.1.2
 
 # version
 # ------------------------------------------------------------------------------
@@ -420,10 +420,10 @@ sass:
 # POSTS Management
 # Set the post articles to include, exclude and ignore
 #
-#future:                                false
-#show_drafts:                           false
-#unpublished:                           false
-#limit_posts:                           10
+future:                                 true                                    # workaround (non US) TZ issues (of April 2021)
+show_drafts:                            false
+unpublished:                            false
+limit_posts:                            1000000                                 # set to UNLIMITED
 
 # ------------------------------------------------------------------------------
 # LIQUID template engine
@@ -637,7 +637,7 @@ defaults:
 
       analytics:                        false
       advertising:                      false
-      comments:                         true
+      comments:                         false
 
       series:                           false
 
@@ -676,7 +676,7 @@ defaults:
 
       analytics:                        false
       advertising:                      false
-      comments:                         true
+      comments:                         false
 
       series:                           true
 

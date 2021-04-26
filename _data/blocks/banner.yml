@@ -155,26 +155,41 @@ settings:
                                         </p>
               buttons:
 
-                - name:                 Roundtrip button
+                - name:                 Roundtrip
                   button:
-                    text:               Roundtrip
-                    class:              btn btn-raised btn-flex btn-md btn-primary mr-2 mb-2
-                    style:              "min-width: 12rem"
-                    icon:               eye
-                    icon_color:         md_white
-                    icon_size:          24px
+                    title:              Roundtrip
+                    tagline:            learn top features
+                    class:              btn btn-raised btn-xl btn-md-blue text-uppercase mr-2 mb-2
+#                   style:              "min-width: 370px"
+                    style:
+                    icon:               briefcase-search-outline
+                    icon_color:
+                    icon_size:          3x
                     href:               /pages/public/learn/roundtrip/present_images/
                     target:
 
-                - name:                 Download button
+                - name:                 Download
                   button:
-                    text:               Download
-                    class:              btn btn-raised btn-flex btn-md btn-primary mr-2 mb-2
-                    style:              "min-width: 12rem"
-                    icon:               download
-                    icon_color:         md_white
-                    icon_size:          24px
+                    title:              Download
+                    tagline:            get on rubygems
+                    class:              btn btn-raised btn-xl btn-md-blue text-uppercase mr-2 mb-2
+                    style:
+                    icon:               briefcase-download-outline
+                    icon_color:
+                    icon_size:          3x
                     href:               "https://rubygems.org/gems/j1-template"
+                    target:             blank
+
+                - name:                 Quickstart
+                  button:
+                    title:              Quickstart
+                    tagline:            finished in 15 minutes
+                    class:              btn btn-raised btn-xl btn-md-blue text-uppercase mr-2 mb-2
+                    style:
+                    icon:               briefcase-check-outline
+                    icon_color:
+                    icon_size:          3x
+                    href:               https://jekyll.one/pages/public/learn/quickstart/
                     target:             blank
 
     # --------------------------------------------------------------------------
@@ -238,7 +253,7 @@ settings:
                     text:               Start creating your static web
                     class:              btn btn-raised btn-flex btn-md btn-primary g-mr-5
                     icon:               rocket
-                    icon_color:         md_white
+                    icon_color:         md-black
                     icon_size:          24px
                     href:               /pages/public/learn/kickstarter/web_in_a_day/meet_and_greet/
                     target:

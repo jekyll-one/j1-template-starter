@@ -48,6 +48,7 @@ resource_options:
 -------------------------------------------------------------------------------- {% endcomment %}
 {% assign view_config         = site.data.builder.blog_navigator.category_view %}
 {% assign view_description    = view_config.description %}
+{% assign defaults            = site.data.builder.blog_navigator.defaults %}
 
 {% if site.permalink == 'none' %}
   {% capture browser_page_url %}{{page.url}}.html{% endcapture %}
@@ -126,29 +127,46 @@ resource_options:
             {% assign comment_count = sharing.comment_count %}
           {% endfor %}
 
-          <article class="card raised-z5 mb-5">
-            <h3 id="{{100000|rand}}" class="card-header bg-primary notoc">{{post.title}}</h3>
-            <!-- h5 class="notoc card-subtitle text-muted mb-2">{{post.tagline}}</h5 -->
-            <div class="card-body r-text-300">{{excerpt}}</div>
+          <article class="card raised-z3 mb-5">
+            <h4 id="{{100000|rand}}" class="card-header bg-primary">{{post.title}}</h4>
+            <div class="row mx-0">
 
-            <div class="card-footer r-text-200">
-              <div class="card-footer-text">
-                {% if post.date %}
-                <i class="mdi mdi-calendar-blank mr-1"></i> {{post.date | date: "%Y %B, %e"}}
-                {% endif %}
-                {% if likes_count %}
-                <span class="font-weight-bold"> · </span>
-                <i class="mdi mdi-heart mr-1"></i> {{likes_count}}
-                {% endif %}
-                {% if comment_count %}
-                <span class="font-weight-bold"> · </span>
-                <i class="mdi mdi-comment mr-1"></i> {{comment_count}}
-                {% endif %}
+              <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Check if post image is available] -->
+              {% if post.image %}
+              <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Post image is available] -->
+              <div class="col-md-6 img-bg--fill px-0"
+                style="background-image: url({{post.image}});">
               </div>
-              <a class="card-link md-grey-800 font-weight-bold g-font-size-12 text-uppercase"
-                 href="{{post.url}}#readmore">
-                 Read · {{post.tagline}}
-              </a>
+              {% else %}
+              <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Post image missing, using configured default image] -->
+              <div class="col-md-6 img-bg--fill px-0"
+                style="background-image: url({{defaults.post_image}});">
+              </div>
+              {% endif %}
+
+              <div class="col-md-6">
+                <div class="card-body r-text-300">{{excerpt}}</div>
+                <div class="card-footer r-text-200">
+                  <div class="card-footer-text">
+                    <hr class="my-3">
+                    {% if post.date %}
+                    <i class="mdi mdi-calendar-blank mdi-md-grey mr-1"></i> {{post.date | date: "%Y %B, %e"}}
+                    {% endif %}
+                    {% if likes_count %}
+                    <span class="font-weight-bold"> · </span>
+                    <i class="mdi mdi-heart mdi-md-grey mr-1"></i> {{likes_count}}
+                    {% endif %}
+                    {% if comment_count %}
+                    <span class="font-weight-bold"> · </span>
+                    <i class="mdi mdi-comment mdi-md-grey mr-1"></i> {{comment_count}}
+                    {% endif %}
+                  </div>
+                  <a class="card-link text-muted text-lowercase"
+                     href="{{post.url}}#readmore">
+                     Read · {{post.tagline}}
+                  </a>
+                </div>
+              </div>
             </div>
           </article>
         {% endif %}

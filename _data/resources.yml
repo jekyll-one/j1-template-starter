@@ -1170,7 +1170,10 @@ resources:
       enabled:                          true
       comment:                          Floating Button Menu
       region:                           head
-      layout:                           [ home, page, post, collection ]        # TODO: check if FAM makes sense for layout app
+      layout:                           [                                       # TODO: check if FAM makes sense for layout app
+                                          home, page, post, collection,
+                                          blog_archive
+                                        ]
       required:                         always
       preload:                          false                                   # property currently unused
       script_load:                      sync
