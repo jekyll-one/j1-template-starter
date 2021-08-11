@@ -53,7 +53,7 @@ environment:                            production
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2021.1.2
+version:                                2021.1.19
 
 # version
 # ------------------------------------------------------------------------------
@@ -318,7 +318,7 @@ permalink:                              pretty
 # if you are running jekyll serve in a development environment,
 # site.url will be set to the value of host, port.
 #
-url:                                    "https://j1-template-starter.netlify.app"
+url:                                    "http://localhost:40000"
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -520,6 +520,7 @@ whitelist:
 # EXCERPT settings
 #
 excerpt_separator:                      excerpt__end
+excerpt_truncate_words:                 100
 
 # ------------------------------------------------------------------------------
 # COLLECTION settings
@@ -592,13 +593,18 @@ defaults:
       layout:                           page
       author:                           J1 Team
 
-#     robots:
-#       index:                          true
-#       follow:                         true
+      robots:
+        index:                          false
+        follow:                         false
 
-      analytics:                        false
+      personalization:                  false
+      exclude_from_search:              false
+
+      analytics:                        true
+      comments:                         true
       advertising:                      false
-      comments:                         false
+      youtube:                          true
+      vimeo:                            true
 
       toc:                              true
       fam_menu_id:                      page_ctrl_simple
@@ -624,20 +630,25 @@ defaults:
   # PUBLIC - FEATURED
   #
   - scope:
-      path:                             posts/public/featured/_posts
+      path:                             posts/public/featured
       type:                             posts
 
     values:
       layout:                           post
       author:                           J1 Team
 
-#     robots:
-#       index:                          true
-#       follow:                         true
+      robots:
+        index:                          false
+        follow:                         false
 
-      analytics:                        false
+      personalization:                  false
+      exclude_from_search:              false
+
+      analytics:                        true
+      comments:                         true
       advertising:                      false
-      comments:                         false
+      youtube:                          true
+      vimeo:                            true
 
       series:                           false
 
@@ -646,13 +657,13 @@ defaults:
       scrollbar:                        false
 
       icons:
-#       category-icon:                  comment-text-outline
+        category-icon:                  false                                   # comment-text-outline
         family:                         MDI
         color:                          md-blue
         size:                           5x
 
       images:
-#       category-image:                 img26.jpg
+        category-image:                 false                                   # img26.jpg
         dir:                            /assets/images/collections/blog/featured
 
       resource_options:
@@ -664,34 +675,33 @@ defaults:
   #
   - scope:
       type:                             posts
-      path:                             posts/public/series/_posts
+      path:                             posts/public/series
 
     values:
       layout:                           post
       author:                           J1 Team
 
-#     robots:
-#       index:                          true
-#       follow:                         true
+      robots:
+        index:                          false
+        follow:                         false
 
-      analytics:                        false
+      personalization:                  false
+      exclude_from_search:              false
+
+      analytics:                        true
+      comments:                         true
       advertising:                      false
-      comments:                         false
-
-      series:                           true
-
-      toc:                              true
-      fam_menu_id:                      page_ctrl_simple
-      scrollbar:                        false
+      youtube:                          true
+      vimeo:                            true
 
       icons:
-#       category-icon:                  dots-horizontal-circle
+        category-icon:                  false                                   # dots-horizontal-circle
         family:                         MDI
         color:                          md-indigo
         size:                           5x
 
       images:
-#       category-image:                 img26.jpg
+        category-image:                 false                                   # img26.jpg
         dir:                            /assets/images/collections/blog/series
 
   # ----------------------------------------------------------------------------
@@ -699,15 +709,24 @@ defaults:
   #
   - scope:
       type:                             posts
-      path:                             posts/public/wikipedia/_posts
+      path:                             posts/public/wikipedia
 
     values:
       layout:                           post
       author:                           Wikipedia
 
-      analytics:                        false
-      advertising:                      false
+      robots:
+        index:                          false
+        follow:                         false
+
+      personalization:                  false
+      exclude_from_search:              false
+
+      analytics:                        true
       comments:                         false
+      advertising:                      false
+      youtube:                          false
+      vimeo:                            false
 
       series:                           false
 
@@ -716,13 +735,13 @@ defaults:
       scrollbar:                        false
 
       icons:
-#       category-icon:                  wikipedia
+        category-icon:                  false                                   # wikipedia
         family:                         MDI
         color:                          md-indigo
         size:                           5x
 
       images:
-        category-image:
+        category-image:                 false
         dir:                            /assets/images/collections/blog/wikipedia
 
   # ----------------------------------------------------------------------------
@@ -739,6 +758,20 @@ defaults:
     values:
       layout:                           page
       sitemap:                          false
+
+      robots:
+        index:                          false
+        follow:                         false
+
+      personalization:                  false
+      exclude_from_search:              false
+
+      analytics:                        false
+      comments:                         false
+      advertising:                      false
+      youtube:                          false
+      vimeo:                            false
+
 
 # ==============================================================================
 # 6. LAYOUT configuration

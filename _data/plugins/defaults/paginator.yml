@@ -35,7 +35,7 @@ about_config:
 # ------------------------------------------------------------------------------
 # User configuration settings
 #
-settings:
+defaults:
 
   # ----------------------------------------------------------------------------
   # GENERAL paginator settings
@@ -58,17 +58,18 @@ settings:
   pagination:
     enabled:                            false
 
-    title:                              :title
+    debug:                              false
+    title:                              :title - page :num
     rebuild:                            true                                    # currently NOT used
 
     permalink:                          /page:num/
-    per_page:                           4
+    per_page:                           10
     limit:                              0
     sort_field:                         date
-    sort_reverse:                       true
+    sort_reverse:                       false
     trail:
-      before:                           2
-      after:                            2
+      before:                           0
+      after:                            0
 
   # AUTOPAGE settings
   #

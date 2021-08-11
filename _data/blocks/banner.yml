@@ -121,6 +121,7 @@ settings:
         enabled:                        true
         comment:                        Top teaser shown on home page
         type:                           teaser
+        properties:                     mt-3 mr-3 mb-5 ml-3
         icon_family:                    MDI
 
         style:                          light
@@ -159,7 +160,7 @@ settings:
                   button:
                     title:              Roundtrip
                     tagline:            learn top features
-                    class:              btn btn-raised btn-xl btn-md-blue text-uppercase mr-2 mb-2
+                    class:              btn btn-raised btn-xl btn-primary text-uppercase mr-2 mb-2
 #                   style:              "min-width: 370px"
                     style:
                     icon:               briefcase-search-outline
@@ -172,7 +173,7 @@ settings:
                   button:
                     title:              Download
                     tagline:            get on rubygems
-                    class:              btn btn-raised btn-xl btn-md-blue text-uppercase mr-2 mb-2
+                    class:              btn btn-raised btn-xl btn-primary text-uppercase mr-2 mb-2
                     style:
                     icon:               briefcase-download-outline
                     icon_color:
@@ -184,7 +185,7 @@ settings:
                   button:
                     title:              Quickstart
                     tagline:            finished in 15 minutes
-                    class:              btn btn-raised btn-xl btn-md-blue text-uppercase mr-2 mb-2
+                    class:              btn btn-raised btn-xl btn-primary text-uppercase mr-2 mb-2
                     style:
                     icon:               briefcase-check-outline
                     icon_color:
@@ -297,6 +298,7 @@ settings:
         id:                               home_parallax_banner
         enabled:                          true
         type:                             parallax
+        properties:                       mt-5 mb-5
         comment:                          Main parallax banner shown on home page
 
         style:                            dark

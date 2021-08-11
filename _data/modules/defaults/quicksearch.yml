@@ -27,13 +27,14 @@ defaults:
   enabled:                              false
   placement:                            navbar
   target:                               _blank
-  rebuild:                              true
+  rebuild:                              false
   full_index:                           true
 
-  excludes:                             [
-                                          /assets/*, /apps/*, /log/* ,
-                                          /node_modules/*, '/*\.htm*/'
-                                        ]
+  # currently NOT supported, use pagewise exclude_from_search: true|false
+  # excludes:                           [
+  #                                       /assets/*, /apps/*, /log/* ,
+  #                                       /node_modules/*, '/*\.htm*/'
+  #                                     ]
 
   stopwords:                            /assets/themes/j1/modules/lunrSearch/stopwords/en.txt
   stopwords_locale:                     en

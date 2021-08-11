@@ -140,6 +140,7 @@ cookies:
   app_session:                          j1.app.session
   user_session:                         j1.user.session
   user_state:                           j1.user.state
+  user_consent:                         j1.user.consent
 
 
 # ==============================================================================
@@ -148,10 +149,12 @@ cookies:
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-#   flicker_timeout (2019-08-06: currently NOT used anymore)
+#   flicker_timeout
 #   ----------------------------------------------------------------------------
 #   Number of milliseconds (ms) the current page is hidden (display: none)
 #   to prevent "DOM flicker" (aka "FOUC": Flash of unstyled content)
+#
+#   TODO: To be checked if needed
 #
 #   prettify
 #   ----------------------------------------------------------------------------
@@ -161,7 +164,7 @@ cookies:
 #   NOTE: Used for developent mode ONLY
 #   NOTE: See ~/packages/300_template_src/_layouts/default.html
 # ------------------------------------------------------------------------------
-flicker_timeout:                        250
+flicker_timeout:                        150
 
 # ------------------------------------------------------------------------------
 # HTML PrettyPrint
@@ -373,38 +376,58 @@ body:
 # ------------------------------------------------------------------------------
 # COMMENTS settings
 #
-# Set 'enabled' to false to turn commenting off globally
-# Set 'provider' to the comment provider you want to use
+# Set 'enabled' to false to turn off globally. Affects all pages independently
+# from what is set pagewise!
+# Set 'provider' to the provider you want to use.
+# ------------------------------------------------------------------------------
+# hyvor
+#
+#   site_id: your-website-id
 # ------------------------------------------------------------------------------
 # disqus
 #
-#   short_name: your-disqus-short-name (w/o disqus.com)
-#
+#   site_id: your-disqus-short-name
 # ------------------------------------------------------------------------------
 comments:
   enabled:                              false
-  provider:                             disqus
+
+  provider:                             hyvor                                   # disqus | hyvor | commento | just-comments
+  xhr_data_path:                        /assets/data
+  comments_headline:
+    en:                                 Leave a comment
+    de:                                 Kommentieren
+
+  hyvor:
+    site_id:                            'hyvor-site-id'
 
   disqus:
-    short_name:                         '<your-site-short-name>'
+    site_id:                            '<your-site-short-name>'
 
-# facebook:
-#   appid:                              123
-#   num_posts:                          5
-#   width:                              580
-#   colorscheme:                        light
+  # commento:                                                                   # currently NOT supported
+  #   site_id:                          'commento-site-id'
+  #
+  # just-comments:                                                              # currently NOT supported
+  #   site_id:                          'just-comments-site-id'
 
-# custom:
-#   custom_data:
+  # facebook:                                                                   # currently NOT supported
+  #   appid:                            'facebook-app-id'
+  #   num_posts:                        5
+  #   width:                            580
+  #   colorscheme:                      light
+
+  # custom:                                                                     # currently NOT supported
+  #   custom_data:
 
 # ------------------------------------------------------------------------------
 # ANALYTICS settings
 #
-# Set 'enabled' to false to turn analytics off globally
-# Set 'provider' to the analytics provider you want to use
-#
+# Set 'enabled' to false to turn off globally. Affects all pages independently
+# from what is set pagewise!
+# Set 'provider' to the provider you want to use.
+# ------------------------------------------------------------------------------
 analytics:
   enabled:                              false
+
   provider:                             google
 
   google:
@@ -416,25 +439,31 @@ analytics:
 # ------------------------------------------------------------------------------
 # ADVERTISING settings
 #
-# Set 'enabled' to false to turn advertising off globally
-# Set 'provider' to the analytics provider you want to use
-#
+# Set 'enabled' to false to turn off globally. Affects all pages independently
+# from what is set pagewise!
+# Set 'provider' to the provider you want to use.
+# ------------------------------------------------------------------------------
 advertising:
   enabled:                              false
+
   provider:                             google
+
   google:
     publisher_id:                       '<your-publisher-id>'
+
   custom:
     custom_data:
 
 # ------------------------------------------------------------------------------
 # TRANSLATOR settings
 #
-# Set 'enabled' to false to turn translators off globally
-# Set 'provider' to the translation provider you want to use
-#
+# Set 'enabled' to false to turn off globally. Affects all pages independently
+# from what is set pagewise!
+# Set 'provider' to the provider you want to use.
+# ------------------------------------------------------------------------------
 translation:
   enabled:                              false
+
   provider:                             google
 
   google:
@@ -450,9 +479,10 @@ translation:
 # like, reddit buttons etc. Set 'provider' to the sharing provider you
 # want to use. Set 'provider' to false to turn sharing off globally.
 #
-# Set 'enabled' to false to turn sharing off globally
-# Set 'provider' to the sharing provider you want to use
-#
+# Set 'enabled' to false to turn off globally. Affects all pages independently
+# from what is set pagewise!
+# Set 'provider' to the provider you want to use.
+# ------------------------------------------------------------------------------
 # sharing:
 #   enabled:                            false
 #   provider:

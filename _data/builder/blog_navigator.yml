@@ -1,7 +1,6 @@
 # ------------------------------------------------------------------------------
 # ~/_data/builder/blog_navigator.yml
-# Template specific configuration data to configure generated pages
-# by the blog post navigator
+# # User Configuration to configure generated pages by the blog post navigator
 #
 # Product/Info:
 # https://jekyll.one
@@ -14,201 +13,20 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Global Builder settings
-# ------------------------------------------------------------------------------
-
-# Settings for future posts
+# About this configuration (used for J1 CC only)
 #
-# Future posts
-# -------------------------------------
-# The future flag allows post authors to give the post a date in the future
-# and to have it excluded from the build until the system time is equal or
-# after the post time.
-#
-# In Jekyll 3, this has been corrected and --future is disabled by default.
-# This means you will need to include --future if you want your future-dated
-# posts to generate when running jekyll build or jekyll serve.
-#
-# Note: In Jekyll 2.x, the --future flag was automatically enabled.
-#
-#future:                                 false
+about_config:
+  title:                                Blog Navigator
+  scope:                                User settings
+  location:                             _data/builder/blog_navigator.yml
 
 # ------------------------------------------------------------------------------
-#   Blog (page) builder settings
-# ------------------------------------------------------------------------------
+# User settings
+#
+settings:
 
-#   The helper modules collate_simple.proc|collate_calendar.proc and
-#   collate_timeline.proc (located in the include|procedures/posts folder)
-#   are page generators to display blog posts in a e.g. timeline presentation
-#   (collate_timeline.proc) of a given category. Some genereal features to
-#   control how to build those pages can be set here.
-#
-#   icon|image_random
-#   ----------------------------------------------------------------------------
-#   For the timeline-box, an icon OR image can be configured that is displayed
-#   with the post excerpt text. DON'T use both - only icon OR image is
-#   supported for the timeline-box. The parameters icon|image can be
-#   overwritten by the frontmatter of a post.
-#
-#   icon
-#     If configured, puts an icon in front of the post excerpt for all posts
-#     of a category. Can be seen as a default setting and can be overwritten
-#     individually by the frontmatter parameter "icon" each post.
-#
-#     values:                 string (name of the icon|false)
-#     default:                false
-#
-#   icon_family
-#     Set the icon familiy from what a configured "icon" should be taken from.
-#     Note that the respective CSS file for the icon-set needs to be included
-#     (with the CSS loader).
-#
-#     values:                 string (FontAwesome|Glyphicon)
-#     default:                FontAwesome
-#
-#   image_random
-#     If configured, selects an random image from the folder specified by
-#     "image_random_path" for all posts of a category. Can be seen as a
-#     default setting if no specific "image" is|should configured with the
-#     posts frontmatter.
-#
-#     values:                 boolean (true|false)
-#     default:                false
-#
-#   image_random_path
-#     If "image_random" is set to "true", the random image is taken from folder
-#     specified by "image_random_path"
-#
-#     values:                 string (path)
-#     default:                empty
-#
-#   sharing_provider
-#   ----------------------------------------------------------------------------
-#   Set the provider (API) from which are likes_count|comment_count is taken.
-#
-#   provider
-#     Name of the the provider (API) used for commenting the blog post.
-#
-#     values:                 disqus|livefyre|intensedebate|facebook|false
-#     default:                false
-#
-#   likes_count, comment_count
-#     If set to true, set the respective values for the blog posts helper
-#     to display their numbers
-#
-#     values:                 boolean (true|false)
-#     default:                true
-# ------------------------------------------------------------------------------
-
-# ------------------------------------------------------------------------------
-# Builder settings
-#
-#   previewer
-#   ----------------------------------------------------------------------------
-#   Set the previewer type
-#
-#   NOTE:
-#   The helper modules collate_simple.proc|collate_calendar.proc and
-#   collate_timeline.proc (located in the include|procedures/posts folder)
-#   are page generators to display blog posts in a e.g. timeline presentation
-#   (collate_timeline.proc) of a given category. Some genereal features to
-#   control how to build those pages can be set here.
-#
-#   previewer
-#     Name of the preview generator for the article preview.
-#
-#     values:                 list|calendar|timeline
-#     default:                list
-#
-#   description
-#   ----------------------------------------------------------------------------
-#   For the timeline-box, an icon OR image can be configured that is displayed
-#   with the post excerpt text. DON'T use both - only icon OR image is
-#   supported for the timeline-box. The parameters icon|image can be
-#   overwritten by the frontmatter of a post.
-#
-# ------------------------------------------------------------------------------
-#
-
-defaults:
   post_image:                           /assets/images/modules/attics/christa-dodoo-1920x1280.jpg
-
-previewer:                              timeline
-
-article_navigator:
-  description: >
-                                        Navigate through all articles available this site. Go for the various
-                                        views to find what your are interested in. Go for the <b>Category Viewer</b>
-                                        to find articles of a specific <b>topic</b>. You can search for articles
-                                        by date using the <b>Date View</b> or search for keywords by the <b>Tag View</b>.
-                                        <br /> <br />
-                                        <i>Happy Jekylling!</i>
-
-article_previewer:
-  enabled:                              true
-  description: >
-                                        All articles are reverse ordered by date. The current articles are displayed
-                                        first. To preview older posts, use the button <b>Older Posts</b> from the
-                                        Preview Bar. For newer posts use the button <b>Newer Posts</b> for
-                                        more recent articles.
-
-archive_view:
-  enabled:                              true
-  description: >
-                                        Check out <b>all</b> articles in the blog posts <b>archive</b>.
-                                        Below, find articles available this site sorted from the youngest
-                                        to the oldest. On the right, a table of contents list all articles
-                                        same order.
-                                        <br/><br/>
-                                        From the navigation line, go back to the <b>Navigator</b> page or
-                                        go for the <b>Category Viewer</b> to find articles of a specific
-                                        <b>topic</b>. You can search articles for keywords by the <b>Tag View</b>
-                                        or find articles by date using the the <b>Date View</b>.
-
-
-category_view:
-  enabled:                              true
-  word_cloud:                           true
-  description: >
-                                        Check out <b>all</b> articles in the blog posts <b>archive</b>.
-                                        Below, find articles available this site <b>grouped</b> by
-                                        <b>categoy</b>. On the right, a table of contents list all
-                                        articles same order.
-                                        <br/><br/>
-                                        From the navigation line, go back to the <b>Navigator</b> page
-                                        or go for the <b>Date Viewer</b> to find articles by <b>date</b>.
-                                        You can search articles for keywords by the <b>Tag View</b> of
-                                        a specific <b>topic</b> or find articles using the
-                                        <b>All Posts View</b>.
-
-
-date_view:
-  enabled:                              true
-  description: >
-                                        Check out <b>all</b> articles in the blog posts <b>archive</b>.
-                                        Below, find articles available this site <b>grouped</b> by
-                                        <b>month</b>. On the right, a table of contents list all
-                                        articles same order.
-                                        <br/><br/>
-                                        From the navigation line, go back to the <b>Navigator</b> page or
-                                        go for the <b>Category Viewer</b> to find articles of a specific
-                                        <b>topic</b>. You can search articles for keywords by the
-                                        <b>Tag View</b>  or find articles using the <b>All Posts View</b>.
-
-tag_view:
-  enabled:                              false
-  word_cloud:                           true
-  description: >
-                                        Check out <b>all</b> articles in the blog posts <b>archive</b>.
-                                        Below, find articles available this site <b>grouped</b> by
-                                        <b>tag</b>. On the right, a table of contents list all articles
-                                        same order.
-                                        <br/><br/>
-                                        From the navigation line, go back to the <b>Navigator</b> page
-                                        or go for the <b>Date Viewer</b> to find articles by <b>date</b>.
-                                        You can search articles for categories using the <b>Category Viewer</b>
-                                        to find articles of a specific <b>topic</b> or find articles
-                                        using the <b>All Posts View</b>.
+  previewer:                            timeline
 
 # ------------------------------------------------------------------------------
 # END config

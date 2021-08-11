@@ -1,0 +1,90 @@
+---
+title:                                  Impressum
+tagline:                                rechtliche daten
+date:                                   2023-01-01 01:00:00 +100
+description: >
+                                        Description has to be placed here
+
+categories:                             [ Site ]
+tags:                                   [ Impressum ]
+
+robots:
+  index:                                false
+  follow:                               false
+
+sitemap:                                false
+exclude_from_search:                    true
+
+fam_menu_id:                            page_ctrl_simple
+scrollbar:                              false
+comments:                               false
+toc:                                    false
+
+permalink:                              /pages/public/legal/de/impress/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/markus-spiske-1920x1280.jpg
+          alt:                          Photo by Markus Spiske on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Markus Spiske
+            href:                       https://unsplash.com/@markusspiske
+---
+
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:eu-region:                             true
+:legal-warning:                         false
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ifeval::[{legal-warning} == true]
+WARNING: This document *does not* constitute any *legal advice*. It is
+highly recommended to verify legal aspects and implications.
+endif::[]
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+
+ifeval::[{eu-region} == true]
+.Postanschrift
+----
+  <ihre-post-anschrift>
+----
+endif::[]
+
+.Kontakt
+----
+  webmaster@<ihr-mail-server.domain>
+----
+
+ifeval::[{eu-region} == true]
+.Verantwortlich im Sinne von § 55 Abs. 2 RStV:
+----
+  <ihre-post-anschrift>
+----
+endif::[]

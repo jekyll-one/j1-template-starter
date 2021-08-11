@@ -10,14 +10,20 @@ description: >
                                         best user experience on all modern devices.
 
 
-tags:                                   [ Jekyll, Template ]
-categories:                             [ Info, Introduction ]
+categories:                             [ Info ]
+tags:                                   [ Info, Jekyll, Template ]
+
+robots:
+  index:                                false
+  follow:                               false
+
+exclude_from_search:                    true
 
 comments:                               false
 fam_menu_id:                            page_ctrl_simple
 
 permalink:                              /pages/public/panels/intro_panel/
-regenerate:                             false
+regenerate:                             true
 
 resources:                              [
                                           clipboard, rouge, carousel, lightbox,

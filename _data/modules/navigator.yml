@@ -49,7 +49,7 @@ settings:
 
     # --------------------------------------------------------------------------
     # INSTANCE configuration (drawers|menus)
-    # --------------------------------------------------------------------------
+    #
     menus:
 
       # ------------------------------------------------------------------------
@@ -59,6 +59,7 @@ settings:
           enabled:                      true
 
           xhr_container_id:             navigator_nav_mmenu
+          xhr_data_element:             menu_mmenu
           xhr_data_path:                /assets/data/mmenu/index.html
 
           drawer:
@@ -73,12 +74,34 @@ settings:
             button_activated:           always
 
       # ------------------------------------------------------------------------
+      # DRAWER TOC
+      #
+      - menu:
+          enabled:                      true
+
+          xhr_container_id:             navigator_toc_mmenu
+          xhr_data_element:             toc_mmenu
+          xhr_data_path:                /assets/data/mmenu_toc/index.html
+
+          drawer:
+            position:                   right
+
+          content:
+            id:                         toc_mmenu
+            type:                       drawer
+            title:                      Table of Contents
+            theme:                      dark
+            button:                     "#open_mmenu_toc"
+            button_activated:           "js-toc-content"
+
+      # ------------------------------------------------------------------------
       # DRAWER Sidebar
       #
       - menu:
           enabled:                      false
 
           xhr_container_id:             navigator_sidebar_mmenu
+          xhr_data_element:             sidebar_mmenu
           xhr_data_path:                /assets/data/mmenu_sidebar/index.html
 
           drawer:
@@ -181,26 +204,6 @@ settings:
 #                     icon:             contact-mail
 #                     href:             mailto:contact@jekyll.one
 #                     target:           none
-
-      # ------------------------------------------------------------------------
-      # DRAWER TOC
-      #
-      - menu:
-          enabled:                      true
-
-          xhr_container_id:             navigator_toc_mmenu
-          xhr_data_path:                /assets/data/mmenu_toc/index.html
-
-          drawer:
-            position:                   right
-
-          content:
-            id:                         toc_mmenu
-            type:                       drawer
-            title:                      Table of Contents
-            theme:                      dark
-            button:                     "#open_mmenu_toc"
-            button_activated:           "js-toc-content"
 
   # ----------------------------------------------------------------------------
   # NavQuicklinks

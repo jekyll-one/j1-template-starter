@@ -1,0 +1,118 @@
+---
+title:                                  Urheberrecht
+tagline:                                software and inhalte
+date:                                   2023-01-01 01:00:00 +100
+description: >
+                                        Description has to be placed here
+
+categories:                             [ Site ]
+tags:                                   [ Urheberrecht ]
+
+robots:
+  index:                                false
+  follow:                               false
+
+sitemap:                                false
+exclude_from_search:                    true
+
+fam_menu_id:                            page_ctrl_simple
+scrollbar:                              false
+comments:                               false
+toc:                                    true
+
+permalink:                              /pages/public/legal/de/copyright/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/markus-spiske-1920x1280.jpg
+          alt:                          Photo by Markus Spiske on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Markus Spiske
+            href:                       https://unsplash.com/@markusspiske
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:disclaimer:                            true
+:legal-warning:                         false
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ifeval::[{legal-warning} == true]
+WARNING: This document *does not* constitute any *legal advice*. It is
+highly recommended to verify legal aspects and implications.
+endif::[]
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+== Urheberrecht
+
+Die auf dieser Seite bereitgestellten Inhalte unterliegen dem deutschen
+Urheberrecht. Das Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
+Verwertung außerhalb die Grenzen des Urheberrechts bedürfen der Schriftform des
+jeweiligen Autors bzw. Erstellers Zustimmung.
+
+Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden
+Urheberrechte dritter Parteien respektiert. Es gelten die Regelungen zum
+Urheberrecht der jeweiligen Autoren.
+
+ifeval::[{disclaimer} == true]
+== Haftungsausschluss
+
+Die Inhalte der Website wurden mit Sorgfalt und nach bestem Wissen erstellt.
+Dennoch übernimmt der Anbieter dieser Website keine Verantwortung
+für die Aktualität, Vollständigkeit und Richtigkeit der Seiten und Inhalte.
+
+=== Haftung für Inhalte
+
+Als Inhaltsanbieter sind wir für eigene Inhalte nach § 7 verantwortlich
+gemäß Abs.1 TMG  §§ 8 bis 10 TMG. Als Dienstleister wir sind nicht
+verpflichtet fremde Inhalte zu überwachen die auf eine rechtswidrige Aktivität
+hinweisen.
+
+Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach
+den allgemeinen Gesetzen Deutschland oder der EU bleiben davon unberührt. Eine
+diesbezügliche Haftung besteht jedoch erst ab dem Datum des Kenntnis einer
+konkreten Rechtsverletzung. Bei Bekanntwerden entsprechender Verstöße wird
+der Betreiber diese Inhalte umgehend entfernen.
+
+=== Haftung für verlinkte Seiten
+
+Unser Angebot enthält teilweise Links zu externen Webseiten Dritter. Auf deren
+Inhalte hat der Betreiber keinen Einfluss. Deshalb kann der Betreiber für diese
+fremden Inhalte keine Haftung übernehmen. Für die Inhalte der verlinkten Seiten
+ist stets der jeweilige Anbieter oder Betreiber der jeweiligen Seiten
+verantwortlich.
+
+Die verlinkten Seiten waren zum Zeitpunkt der Verlinkung auf mögliche
+Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der
+Verlinkung nicht erkennbar.
+
+Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne
+konkrete Anhaltspunkte für einen Verstoß nicht gezetzlich vorgeschrieben und
+wird seitens der Betreiber nicht durchgeführt. Sollten Sie auf Verstöße
+aufmerksam werden, entfernen Sie solche Links ebenfalls aus Ihren Lesezeichen.
+endif::[]

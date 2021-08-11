@@ -221,6 +221,10 @@ module Jekyll
         items.select! {|i| i.respond_to?(:output_ext) && output_ext(i) == '.html' && ! @excludes.any? {|s| (i.url =~ Regexp.new(s)) != nil } }
         items.reject! {|i| i.data['exclude_from_search'] }
 
+        # jadams, 2012-08-04
+        # TODO: List of excludes should (alternatively) be taken from
+        #       quicksearch.yml configuration
+
         items
       end
     end
@@ -360,6 +364,6 @@ end
 
 module Jekyll
   module J1LunrSearch
-    VERSION = '2021.1.2'
+    VERSION = '2021.1.19'
   end
 end

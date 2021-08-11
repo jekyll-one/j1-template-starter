@@ -7,18 +7,22 @@ description: >
                                         spend to share ideas and give feedback. Thank you to everyone
                                         who comments at {j1--site-name}.
 
-tags:                                   [ Legal ]
-categories:                             [ Comments, Policy ]
+categories:                             [ Site ]
+tags:                                   [ Comments, Policy ]
 
-sitemap:                                false
 robots:
   index:                                false
   follow:                               false
+  
+sitemap:                                false
+exclude_from_search:                    true
 
 fam_menu_id:                            page_ctrl_simple
 scrollbar:                              false
-comments:                               false
 toc:                                    true
+
+advertising:                            false
+comments:                               false
 
 permalink:                              /pages/public/legal/en/comment_policy/
 regenerate:                             true
@@ -46,8 +50,8 @@ resource_options:
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
 // :page--attr:                         <attr-value>
-:disqus:                                true
-
+:disqus:                                false
+:hyvor:                                 true
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
 {% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
@@ -67,17 +71,33 @@ We love comments and appreciate our visitor's time to share ideas and give
 feedback. Thank you to everyone who places a comment on the {j1--site-name}
 website.
 
-ifeval::[{disqus} == true]
+ifeval::[{hyvor} == true]
 To access the public commenting feature, you will need to register for
-an account as an individual at _Disqus_. One of the primary purposes of
+an account as an *individual* at _Hyvor_. One of the primary purposes of
 encouraging comments on the {j1--site-name} website is to promote a sense
 of community.
 
-NOTE: _Disqus_ (/dɪsˈkʌs/) is a blog comment hosting service for websites
-and online communities that use a networked platform. The company's
-platform includes various features, such as social integration, social
-networking, user profiles, spam and moderation tools, analytics,
-email notifications, and mobile commenting.
+NOTE:  _Hyvor Talk_ is a *privacy-first*, no ads, no tracking platform to
+support visitors for comments on websites. When you visit our website, the
+commenting platform will establish a direct connection between your browser
+and the server at Hyvor, but does *not* sell any of your personal data to
+third-parties or any advertisers. The _Hyvor Talk_ platform includes various
+features, such as social integration and social networking to support
+your personal networks.
+endif::[]
+
+ifeval::[{disqus} == true]
+To access the public commenting feature, you will need to register for
+an account as an *individual* at _Disqus_. One of the primary purposes of
+encouraging comments on the {j1--site-name} website is to promote a sense
+of community.
+
+NOTE: _Disqus_ (/dɪsˈkʌs/) is a *commercial* blog comment hosting service
+for websites and online communities that use a networked platform. When you
+visit our website, the commenting platform will establish a direct connection
+between your browser and the server at Disqus. The _Disqus_ platform includes
+various features, such as social integration and social networking to support
+your personal networks.
 endif::[]
 
 == Discuss with Respect
@@ -85,22 +105,22 @@ endif::[]
 One of the most important aspects of a helpful blog is the conversation
 that occurs through comments that visitors publish on blog posts. However,
 comment conversations can sometimes take a negative turn or feature spam
-links. That's why it's helpful to have a blog comment policy. Visitors
-understand what is and is not acceptable when commenting on your blog posts.
+links. That's why it's helpful to have this blog comment policy. Visitors
+can understand what is and is not acceptable when commenting.
 
-== Comments are Welcome
+=== Comments are Welcome
 
 Comments are welcomed and encouraged on this site, but there are some
 instances where comments will be edited or deleted. The owner of this site
 reserves the right to edit or delete any comments submitted to the blog
 without notice.
 
-This comment policy is subject to change at any time:
+NOTE: This comment policy is subject to change at any time.
 
 Promotional::
 Comments deemed to be spam or solely promotional in nature will be
-deleted. Including a link to relevant content is permitted, but comments
-should be relevant to the post topic.
+deleted. Links to relevant content are permitted, but comments should be
+relevant to the article topics.
 
 Profanity::
 Comments including profanity will be deleted.
@@ -111,7 +131,7 @@ will be deleted. Note this may include abusive, threatening, pornographic,
 offensive, misleading, or libelous language.
 
 Attack::
-Comments that attack an individual directly will be deleted.
+Comments that attack any *individual* directly will be deleted.
 
 Harassing::
 Comments that harass other posters will be deleted. While conversation and

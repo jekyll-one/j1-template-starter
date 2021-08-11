@@ -5,18 +5,22 @@ date:                                   2020-10-23 00:00:00 +100
 description: >
                                         Protection of your personal data
 
-categories:                             [ Legal ]
-tags:                                   [ Privacy, Statement ]
+categories:                             [ Site ]
+tags:                                   [ Privacy, Policy ]
 
-sitemap:                                false
 robots:
   index:                                false
   follow:                               false
 
+sitemap:                                false
+exclude_from_search:                    true
+
 fam_menu_id:                            page_ctrl_simple
 scrollbar:                              false
-comments:                               false
 toc:                                    true
+
+advertising:                            false
+comments:                               false
 
 permalink:                              /pages/public/legal/en/privacy/
 regenerate:                             false
@@ -28,7 +32,7 @@ resource_options:
       padding_bottom:                   50
       opacity:                          0.5
       slides:
-        - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
+        - url:                          /assets/images/modules/attics/lianhao-1920x1280.jpg
 ---
 
 // Page Initializer
@@ -44,10 +48,15 @@ resource_options:
 // Attribute settings for section control
 //
 :cookies:                               true
-:revoke-cookie-consent:                 true
-:delete-cookies:                        true
-:content-permissions:                   true
-:server-logs:                           true
+:cookie-consent:                        true
+:logs-files:                            false
+:google-analytics:                      true
+:hyvor:                                 true
+:disqus:                                false
+:facebook:                              false
+:twitter:                               false
+:instagram:                             false
+:youtube:                               true
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -73,187 +82,71 @@ The operators of this website take the protection of your personal data extremel
 seriously. We treat your personal data as confidential and comply with the
 data protection legislation and this privacy policy.
 
-It is generally *not* possible to use our website without disclosing personal
-data. Personal data (for example page visits) is collected on our website.
-This is voluntary insofar as possible. This data is never disclosed to third
-parties without your express consent.
-
 ifeval::[{cookies} == true]
 == Cookies
 
-A cookie is a commonly used automated data collection method. Cookies are
-small text files placed on your computer or device by websites that you
-visit to make websites work or work more efficiently.
+This website is using cookies and similar technologies that are required for
+operation. You are free to decide to give, refuse or withdraw your consent by
+clicking the `Settings` button in the privacy dialog. Subsequent changes are
+possible at *any* time by clicking on the `cookie icon` in the *menu bar*.
 
-We, may our partners, make use of cookies, web beacons, pixel tags, scripts,
-or other similar technologies on our websites to improve the browsing
-experience of our pages:
+*Extended* cookies are only used with your consent. Those additional cookies
+are used to analyze the usage of this website. Analysis of the use of this
+website help gives you a better user experience of the website to offer. More
+information about what data is collected and how they may be passed on
+to partners can be found in the privacy dialog by clicking on the
+`Privacy Policy` button.
 
-* Tailor information presented to you based on your browsing preferences,
-  such as language, user account data, selected content, and geographical
-  region
+Necessary::
+data is stored to run base services of this site. This website is based on
+static content, and no database is used behind it. All information (data)
+needed to control this site is stored in so-called *session cookies*. Session
+cookies are automatically removed by your browser if you *close* all windows.
 
-* Collect statistics regarding your website usage
+Analysis::
+of the use of this website helps us to optimize your user experience of the
+website. For analysis, Google Analytics (GA) is used. This website does *not*
+transfer any *personal data* to GA. Implicit personal information, like IP
+addresses, is *anonymized* to protect your privacy.
 
-All personal data collected is stored in Cookies. We use different kinds
-of cookies. Cookies are classified by its *lifespan* and the *domain* to
-which it belongs.
-
-Session Cookie::
-Classified by *lifespan*. Necessary to provide you with services and
-features available through our websites for the time of your visit. If you
-leave our pages, these cookies are automatically deleted by your web browser.
-Without these cookies, services you may need cannot be provided.
-
-Persistent Cookie::
-Classified by *lifespan*. Necessary to provide you with services and
-features available through our websites if you return the site. Without
-these cookies, services cannot be provided.
-
-First-party Cookie::
-Classified by the *domain*. First-party Cookies are created by *this* site.
-We are using both types: Session Cookies *and* Persistent Cookies.
-
-Second-party Cookie::
-Classified by the *domain*. Used to integrate services from *other* sites
-like Github, Disqus, and others.
-
-[NOTE]
-====
-If you do not wish to receive cookies, you may be able to refuse them by
-adjusting your browser settings to reject cookies. If you do so, we may *not*
-able to offer you *any* of our functionalities, services, or support.
-If you have previously visited our websites, you may also have to delete any
-existing cookies from your browser.
-====
+Personalization::
+is used e.g. to collect user feedback or running advertising campaigns to
+provide you a website free of charge. Partners like `Disqus` or `Google`
+provide you excellent personalized services and enables us to finance the
+costs for running this site.
 endif::[]
 
 
-ifeval::[{revoke-cookie-consent} == true]
-== Revoke Cookie Consent
+ifeval::[{cookie-consent} == true]
+== Cookie Consent
 
-If you do *not* wish to receive *cookies* anymore from *this site*, you can
-revoke the cookie consent you've given. Furthermore, you may be able to refuse
-them by adjusting your *browser* settings to *reject cookies*.
+If you want to configure what *cookies* are used by *this site*, you can
+adjust your consent settings on cookies you've already given. Furthermore,
+you may be able to refuse them by adjusting your *browser* settings to
+*reject cookies*. Please be carefull on changing your browser setting on
+cookies. Reject on cookies may cause severe issues visiting websites that
+depends on cookies like *this site*.
 
 CAUTION: Suppose you have previously visited our website — or any pages this
 session — and agreed on the use of cookies. In that case, you may also have
-to delete already-existing cookies by your browser to clear all cookies left.
+to delete already-existing cookies by your browser to clear all unwanted
+cookies left.
 
 ++++
-<div class="ml-0 mb-0">
-  <button type="button" name="revokeCookieConsent" class="btn btn-primary btn-raised btn-flex mb-3" style="min-width: 25rem">
-    <i class="toggle-button mdi mdi-toggle-switch-off mdi-lg mdi-md-bg-primary-50 mr-1"></i>
-    Revoke Cookie Consent
-  </button>
+<div class="mt-4 mb-3">
+  <a  href="javascript:j1.cookieConsent.showDialog()"
+      class="btn btn-primary btn-lg btn-block btn-raised btn-flex mb-3"
+      aria-label="Cookie Consent"
+      style="min-width: 25rem">
+      <i class="mdi mdi-cookie mdi-2x mr-2"></i>
+      Cookie Consent
+  </a>
 </div>
-
-<script>
-  var logger                      = log4javascript.getLogger('page.privacy');
-  var cookie_names                = j1.getCookieNames();
-  const cookie_consent_name       = cookie_names.cookie_consent;
-  const cookie_user_session_name  = cookie_names.user_session;
-  var user_state                  = j1.readCookie(cookie_user_session_name);
-  var user_state_empty            = {};
-  var pageChanged;
-
-  // ---------------------------------------------------------------------------
-  //  Initializer
-  // ---------------------------------------------------------------------------
-  $(document).ready(function() {
-    if ( user_state.cookies_accepted == 'declined' ) {
-      $('.toggle-button').toggleClass('mdi-toggle-switch-off mdi-toggle-switch');
-    }
-  });
-
-  // ---------------------------------------------------------------------------
-  //  EventHandler
-  // ---------------------------------------------------------------------------
-  $('button[name="revokeCookieConsent"]').on('click', function (e) {
-    if ( user_state.cookies_accepted === 'declined' ) {
-      logger.debug('Cookie Consent already DECLINED. Click event ignored');
-      return true;
-    } else {
-      logger.debug('Enter Cookie Consent REVOKE dialog');
-      $('#cookieRevokeCentralDanger').modal('show');
-    }
-
-    /* Manage button click events from "Cookie Consent REVOKE" dialog */
-    $('a.btn').click(function() {
-      if (this.id === 'revokeCookies') {
-        logger.debug('User clicked revokeCookiesButton');
-        user_state.cookies_accepted = 'declined';
-        j1.writeCookie({
-          name: cookie_user_session_name,
-          data: user_state
-        });
-
-        $('.toggle-button').toggleClass('mdi-toggle-switch-off mdi-toggle-switch');
-
-        // Hide cookie icon
-        $('#cookie-state').css('display', 'none');
-        return true;
-      }
-      if (this.id === 'remainCookies') {
-        logger.debug('User clicked remainCookiesButton');
-        return true;
-      }
-      return true;
-    });
-  });
-</script>
 ++++
 endif::[]
 
-ifeval::[{delete-cookies} == true]
-== Delete cookies
-
-Suppose you have previously visited our website — or any pages this session —
-and agreed on the use of cookies. In that case, you may also have to delete
-already-existing cookies by your browser to clear all cookies left.
-
-By clicking the button below, all cookies related to *this* site will be
-deleted.
-
-++++
-<div class="ml-0 mb-0">
-  <button type="button" name="deleteCookies" class="btn btn-primary btn-raised btn-flex mb-3" style="min-width: 25rem">
-    <i class="mdi mdi-cookie mdi-lg mdi-md-bg-primary-50 mr-1"></i>
-    Delete Cookies
-  </button>
-</div>
-
-<script>
-  var logger       = log4javascript.getLogger('page.privacy');
-  var cookie_names = j1.getCookieNames();
-
-  // ---------------------------------------------------------------------------
-  //  EventHandler
-  // ---------------------------------------------------------------------------
-  $('button[name="deleteCookies"]').on('click', function (e) {
-    logger.debug('User clicked deleteCookiesButton');
-
-    j1.removeCookie({
-      name: cookie_names.user_session
-    });
-    j1.removeCookie({
-      name: cookie_names.user_state
-    });
-    j1.removeCookie({
-      name: cookie_names.app_session
-    });
-
-    logger.debug('cookies deleted: ' + cookie_names.user_session + ', ' + cookie_names.user_state);
-    logger.debug('pass to (browser) default page');
-    j1.goHome();
-
-  });
-</script>
-++++
-endif::[]
-
-ifeval::[{server-logs} == true]
-== Server log files
+ifeval::[{logs-files} == true]
+== Log files
 
 We gather certain information automatically by our webservers and store it in
 log files. This information may include Internet protocol (IP) addresses,
@@ -281,12 +174,13 @@ ifeval::[{google-analytics} == true]
 == Use of Google Analytics
 
 This website uses Google Analytics, a web analytics service provided by:
-Anbieter ist die:
 
- Google Inc.
- 1600 Amphitheatre Parkway Mountain View
- CA 94043
- USA
+----
+   Google Inc.
+   1600 Amphitheatre Parkway
+   CA 94043
+   USA
+----
 
 Google Analytics uses so called “cookies”, which are text files placed on
 your computer to help the website analyze how users use the site. The
@@ -307,31 +201,31 @@ with any other data held by Google.
 
 You may object to the use of cookies by selecting the appropriate settings
 on your browser, however please note that if you do this you may not be able
-to use the full functionality of this website. You can also avoid the
-recording of data referring to your use of the website generated by cookies
-(including your IP address) by Google as well as the processing of your
-data by Google by downloading and installing the browser plug-in available
-from the following link: http://tools.google.com/dlpage/gaoptout?hl=de
-endif::[]
+to use the full functionality of this website.
 
+/////
+You can also avoid the recording of data referring to your use of the website
+generated by cookies (including your IP address) by Google as well as the
+processing of your data by Google by downloading and installing the browser
+plug-in available from the following:
+link:{url-google--deactivate-ga-en}[Browser-Add-on Google Analytics, {browser-window--new}]
+/////
+
+endif::[]
 
 ifeval::[{facebook} == true]
 == Use of Facebook Plug-ins
 
-We have integrated plug-ins (Like-Button) by the social network *Facebook*,
-provided by:
+Commenting on *Facebook* is available if you have *agreed* on
+*personalization* with your privacy settings to use this site provided by:
 
- Facebook Inc.
- 1 Hacker Way
- Menlo Park
- California 94025
- USA
-
-into our website.
-
-You can identify these Facebook Plug ins by the Facebook logo or the "Like"
-button on our website. You can find an overview of the Facebook plug ins
-on: http://developers.facebook.com/docs/plug-ins/.
+----
+  Facebook Inc.
+  1 Hacker Way
+  Menlo Park
+  California 94025
+  USA
+----
 
 When you visit our website, the plug-in will establish a direct connection
 between your browser and the Facebook server. Thereby Facebook will be informed
@@ -343,35 +237,39 @@ associate your visit to our website with your user account.
 We would like to point out that, as the website provider, we possess no
 knowledge of the contents of the transmitted data or its use by Facebook. You
 can find further information on this topic in the Facebook privacy policy at
-http://de-de.facebook.com/policy.php. If you do not want Facebook to be able
-to associate your visit to our website with your Facebook user account,
-please log out of your Facebook account before visiting our website.
+link:{url-facebook--privacy-policy-en}[Privacy Police, {browser-window--new}].
+If you do not want Facebook to be able to associate your visit to our website
+with your Facebook user account, please log out of your Facebook account
+before visiting our website.
 endif::[]
-
 
 ifeval::[{twitter} == true]
 == Use of Twitter
 
-We have integrated functions by the service provider Twitter into our website.
-These functions are offered by:
+Commenting on *Twitter* is available if you have *agreed* on
+*personalization* with your privacy settings to use this site provided by:
 
- Twitter Inc.
- 1355 Market Street
- Suite 900, San Francisco
- CA 94103
- USA
+----
+  Twitter Inc.
+  1355 Market Street
+  Suite 900
+  CA 94103
+  USA
+----
 
 When using Twitter and the "re-tweet" function, the websites you have visited
 will be linked to your Twitter account and made available to other users.
-Data will also be transmitted to Twitter.
+Data will also be transmitted to Twitter. We would like to point out that as
+provider of the website we possess no knowledge of the contents of the data
+transmitted or its use by Twitter.
 
-We would like to point out that as provider of the website we possess no
-knowledge of the contents of the data transmitted or its use by Twitter.
-You can find further information on this topic in the Twitter privacy
-policy at http://twitter.com/privacy. You can change your Twitter privacy
-settings in your account settings at http://twitter.com/account/settings.
+Further information on the handling of user data can be found in the
+link:{url-twitter--privacy-en}[Privacy Police, {browser-window--new}].
+
+You can change your Twitter privacy settings in your account settings at
+link:{url-twitter--login}[Login, {browser-window--new}].
+
 endif::[]
-
 
 ifeval::[{instagram} == true]
 == Use of Instagram
@@ -379,11 +277,13 @@ ifeval::[{instagram} == true]
 Auf unseren Seiten sind Funktionen des Dienstes Instagram eingebunden. Diese
 Funktionen werden angeboten durch die
 
+----
   Instagram Inc.
   1601 Willow Road
   Menlo Park
   CA 94025
   USA
+----
 
 integriert. Wenn Sie in Ihrem Instagram Account eingeloggt sind können Sie
 durch Anklicken des *Instagram Buttons* die Inhalte unserer Seiten mit
@@ -393,28 +293,89 @@ Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie
 deren Nutzung durch Instagram erhalten.
 
 Weitere Informationen hierzu finden Sie in der
-http://instagram.com/about/legal/privacy/[Datenschutzerklärung von Instagram, window="_blank"].
+link:{url-instagram--privacy-policy}[Privacy Police Instagram, {browser-window--new}].
+
 endif::[]
 
 ifeval::[{youtube} == true]
 == Use of YouTube
 
-Unsere Webseite nutzt Plugins der von Google betriebenen Seite *YouTube*.
-Betreiber der Seiten ist die
+We have integrated functions by the service provider *YouTube* into our
+website on selected pages. *YouTube* is available if you have *agreed* on
+*personalization* with your privacy settings to use this site provided by:
 
-  YouTube LLC,
+----
+  YouTube LLC
   901 Cherry Ave San Bruno
   CA 94066
   USA
+----
 
-Wenn Sie eine unserer mit einem *YouTube Plugin* ausgestatteten Seiten
-besuchen, wird eine Verbindung zu den Servern von YouTube hergestellt. Dabei
-wird dem Youtube-Server mitgeteilt, welche unserer Seiten Sie besucht haben.
+If you use one of our pages equipped with a *YouTube plugin* visit, a
+connection to the YouTube servers is established. There the YouTube server
+is informed which of our pages you have visited.
 
-Wenn Sie in Ihrem YouTube-Account eingeloggt sind ermöglichen Sie YouTube,
-Ihr Surfverhalten direkt Ihrem persönlichen Profil zuzuordnen. Dies können
-Sie verhindern, indem Sie sich aus Ihrem YouTube Account ausloggen.
+If you are logged into your YouTube account, you enable YouTube to assign
+your surfing behavior directly to your personal profile. You can prevent this
+by logging out of your YouTube account.
 
-Weitere Informationen zum Umgang von Nutzerdaten finden Sie in der
-https://www.google.de/intl/de/policies/privacy[Datenschutzerklärung von YouTube, window="_blank"].
+Further information on the handling of user data can be found in the
+link:{url-google--privacy-policy-en}[Privacy Police Google/YouTube, {browser-window--new}].
+
+endif::[]
+
+
+ifeval::[{disqus} == true]
+== Use of Disqus
+
+We have integrated the social network|commenting platform *Disqus* into our
+website. Commenting on *Disqus* is available if you have *agreed* on
+*personalization* with your privacy settings to use this site provided by:
+
+----
+  Disqus, Inc.
+  301 Howard Street
+  Suite 300
+  CA 94105
+  USA
+----
+
+When you visit our website, the plug-in will establish a direct connection
+between your browser and the Disqus server. Thereby Disqus will be informed
+about your visit on our website with your IP address and other data tracked
+by cookies and similiar technologies. Your personal data is shared by partners
+of the provider *Disqus* with third-party advertising platforms.
+
+Further information on the handling of user data can be found in the
+https://help.disqus.com/en/articles/1717103-disqus-privacy-policy[Privacy Policy, {browser-window--new}].
+
+endif::[]
+
+ifeval::[{hyvor} == true]
+== Use of Hyvor Talk
+
+We have integrated the social network|commenting platform *Hyvor Talk* into
+our website. Commenting on *Hyvor Talk* is available if you have *agreed* on
+*personalization* with your privacy settings to use this site provided by:
+
+----
+Green Mount State
+Madawa, Pilessa
+No 130
+Kurunegala
+Sri Lanka
+----
+
+Hyvor Talk is a *privacy-first*, no ads, no tracking platform to support
+visitors for comments on this website. When you visit our website, the
+commenting platform will establish a direct connection between your browser
+and the Hyvor servers, but does *not* sell any of your personal data to
+third-parties or advertisers.
+
+Further information on the handling of user data can be found in the
+https://hyvor.com/privacy-policy[Privacy Policy, {browser-window--new}].
+
+NOTE: Hyvor Talk does not place any tracking, advertising, affiliate, or any
+third-party codes.
+
 endif::[]

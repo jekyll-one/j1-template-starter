@@ -1,11 +1,12 @@
 ---
 layout:                                 page
 title:                                  Creators Blog
-tagline:                                blog posts by tag
-description:                            Browse articles by tag
+tagline:                                posts by tag
+description: >
+                                        Browse articles by tag
 
-categories:                             [ Navigator ]
-tags:                                   [ Blog, Tags, Viewer ]
+categories:                             [ Blog ]
+tags:                                   [ Navigator, Tags ]
 
 sort:                                   date
 toc:                                    true
@@ -15,14 +16,25 @@ pagination:
   enabled:                              false
   permalink:                            /page:num/
 
+analytics:                              true
+advertising:                            false
+comments:                               false
+
 regenerate:                             false
 
 resource_options:
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
       opacity:                          0.5
       slides:
-        - url:                          /assets/images/modules/attics/library-1920x1280-bw.jpg
-          alt:                          library-1920x1280-bw
+        - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
+          alt:                          Photo by Matthaeus
+          alignY:                       top
+          badge:
+            type:                       unsplash
+            author:                     Matthaeus
+            href:                       https://unsplash.com/@matthaeus123
 ---
 
 {% comment %} TODO: logic for "letter_group_written == false" to be fixed
@@ -36,11 +48,26 @@ resource_options:
 {% capture get_category_item %}themes/{{site.template.name}}/procedures/global/get_category_item.proc{% endcapture %}
 {% capture create_word_cloud %}themes/{{site.template.name}}/procedures/global/create_word_cloud.proc{% endcapture %}
 
+{% comment %} Set config files
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign template_config               = site.data.j1_config %}
+{% assign blocks                        = site.data.blocks %}
+{% assign modules                       = site.data.modules %}
+{% assign builder                       = site.data.builder %}
+{% assign plugins                       = site.data.plugins %}
+
+{% comment %} Set config data
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign blog_navigator_defaults       = builder.defaults.blog_navigator.defaults %}
+{% assign blog_navigator_settings       = builder.blog_navigator.settings %}
+
+{% comment %} Set config options
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign blog_navigator_options        = blog_navigator_defaults | merge: blog_navigator_settings %}
+
 {% comment %} Variables
 -------------------------------------------------------------------------------- {% endcomment %}
-{% assign view_config           = site.data.builder.blog_navigator.tag_view %}
-{% assign view_description      = view_config.description %}
-{% assign defaults            = site.data.builder.blog_navigator.defaults %}
+{% assign truncate_words                 = site.excerpt_truncate_words %}
 
 {% if site.permalink == 'none' %}
   {% capture browser_page_url %}{{page.url}}.html{% endcapture %}
@@ -77,6 +104,46 @@ resource_options:
   {% capture tag_list %}{{tag_list | append: tag}}{% unless forloop.last %},{% endunless %}{% endcapture %}
 {% endfor %}
 
+{% comment %} language detection
+-------------------------------------------------------------------------------- {% endcomment %}
+{% if site.language == "en" %}
+  {% assign language = "en" %}
+{% elsif site.language == "de"%}
+  {% assign language = "de" %}
+{% else %}
+  {% assign language = "en" %}
+{% endif %}
+
+{% if language == "en" %}
+  {% assign readmore_text              = "read" %}
+
+  {% assign category_view_button_text = blog_navigator_options.button_text.view_selector.category_view.en %}
+  {% assign date_view_button_text     = blog_navigator_options.button_text.view_selector.date_view.en %}
+  {% assign archive_view_button_text  = blog_navigator_options.button_text.view_selector.archive_view.en %}
+  {% assign tag_view_button_text      = blog_navigator_options.button_text.view_selector.tag_view.en %}
+
+  {% assign view_headline             = blog_navigator_options.tag_view.page_text.en.headline %}
+  {% assign view_description_text     = blog_navigator_options.tag_view.page_text.en.description %}
+{% endif %}
+
+{% if language == "de" %}
+  {% assign readmore_text              = "lesen" %}
+
+  {% assign category_view_button_text = blog_navigator_options.button_text.view_selector.category_view.de %}
+  {% assign date_view_button_text     = blog_navigator_options.button_text.view_selector.date_view.de %}
+  {% assign archive_view_button_text  = blog_navigator_options.button_text.view_selector.archive_view.de %}
+  {% assign tag_view_button_text      = blog_navigator_options.button_text.view_selector.tag_view.de %}
+
+  {% assign view_headline             = blog_navigator_options.tag_view.page_text.de.headline %}
+  {% assign view_description_text     = blog_navigator_options.tag_view.page_text.de.description %}
+{% endif %}
+
+{% comment %} Debugging
+--------------------------------------------------------------------------------
+skip_categories:            {{skip_categories | debug}}
+site_category_word_list:    {{site_category_word_list | debug}}
+--------------------------------------------------------------------------------
+{% endcomment %}
 
 {% comment %} Main
 -------------------------------------------------------------------------------- {% endcomment %}
@@ -85,16 +152,22 @@ resource_options:
 
 <div class="paginator ml-3">
   <ul class="pagination raised-z0">
-    <li class="page-item"><a class="page-link" href="{{navigator | prepend: site.baseurl}}" title="Blog View">Navigator</a></li>
-    <li class="page-item"><a class="page-link" href="{{date_view | prepend: site.baseurl}}" title="View by Date">By Date</a></li>
-    <li class="page-item"><a class="page-link" href="{{category_view | prepend: site.baseurl}}" title="View by Category">By Category</a></li>
-    <li class="page-item"><a class="page-link" href="{{all_view | prepend: site.baseurl}}" title="View All">All Posts</a></li>
+    <li class="page-item"><a class="page-link" href="{{navigator | prepend: site.baseurl}}" alt="Blog View">Navigator</a></li>
+    <li class="page-item"><a class="page-link" href="{{date_view | prepend: site.baseurl}}" alt="View by Date">By Date</a></li>
+    <li class="page-item"><a class="page-link" href="{{category_view | prepend: site.baseurl}}" alt="View by Category">By Category</a></li>
+    <li class="page-item"><a class="page-link" href="{{all_view | prepend: site.baseurl}}" alt="View All">All Posts</a></li>
   </ul>
 </div>
 
 <div class="post-search-results ml-3">
-  <div class="view-description mb-1">{{view_description}}</div>
-  <div class="post-headline"> <h2 id="post-headline" class="mt-5">Posts By Tag</h2></div>
+  {% if blog_navigator_options.tag_view.page_text.enabled %}
+  <div class="view-description">{{view_description_text}}</div>
+  {% endif %}
+
+  <div class="post-headline">
+    <h1 id="post-headline notoc" class="mt-5">Posts By Tag</h1>
+  </div>
+
   {% assign letter_group = letter_group_array[letter_group_counter] %}
 
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
@@ -115,7 +188,7 @@ resource_options:
       --------------------------------------------------------------------------
       <!-- jadams, 2018-01-17: logic seems NOT work. Disabled. -->
       {% if letter_group_written == false %}
-        <h3 id="id_{{letter_group}}" class="toc-link mt-5 mb-5"><a title="Back to top" href="#"><i class="fa fa-tags mr-2"></i></a>{{letter_group | upcase}}</h3>
+        <h2 id="id_{{letter_group}}" class="toc-link mt-5 mb-5"><a alt="Back to top" href="#"><i class="fa fa-tags mr-2"></i></a>{{letter_group | upcase}}</h2>
         {% assign letter_group_written = true %}
       {% endif %}
       -------------------------------------------------------------------------- {% endcomment %}
@@ -127,11 +200,11 @@ resource_options:
                     Added workaround by checking if letter_group has a value
       -------------------------------------------------------------------------- {% endcomment %}
       {% if letter_group %}
-      <h3 id="id_{{letter_group}}" class="toc-link mb-3">
-        <a title="Back to top" href="#">
+      <h2 id="id_{{letter_group}}" class="toc-link mb-3">
+        <a alt="Back to top" href="#">
           <i class="fa fa-tags mr-2"></i>
         </a>{{letter_group | upcase}}
-      </h3>
+      </h2>
       {% endif %}
       {% assign letter_group_written = true %}
     {% endif %}
@@ -142,7 +215,7 @@ resource_options:
     first_letter: {{first_letter | debug}}
     {% endcomment %}
 
-    <h4 id="{{this_word | replace: '+','_' | replace: ' ','_' | downcase}}" class="toc-link"><a title="Back to top" href="#"><i class="fa fa-tag mr-2"></i></a>{{this_word}}</h4>
+    <h3 id="{{this_word | replace: '+','_' | replace: ' ','_' | downcase}}" class="toc-link"><a alt="Back to top" href="#"><i class="fa fa-tag mr-2"></i></a>{{this_word}}</h3>
 
     {% for post in site.tags[this_word] %}{% if post.title != null %}
       {% include {{get_category}} post=post %}
@@ -152,11 +225,11 @@ resource_options:
       {% include {{select_icon_size}} family=icon_family size=icon_size %}
       {% assign icon_size = size %}
 
-      {% assign excerpt = post.excerpt|truncatewords:50|replace:'...',' ...'|strip_html|strip_newlines|strip %}
+      {% assign excerpt = post.excerpt|truncatewords:truncate_words|replace:'...',' ...'|strip_html|strip_newlines|strip %}
 
       <!-- place post  -->
       <article class="card raised-z3 mb-5">
-        <h3 id="{{100000|rand}}" class="card-header bg-primary">{{post.title}}</h3>
+        <h4 id="{{100000|rand}}" class="card-header bg-primary">{{post.title}}</h4>
         <div class="row mx-0">
 
           <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Check if post image is available] -->
@@ -168,7 +241,7 @@ resource_options:
           {% else %}
           <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Post image missing, using configured default image] -->
           <div class="col-md-6 img-bg--fill px-0"
-            style="background-image: url({{defaults.post_image}});">
+            style="background-image: url({{blog_navigator_options.post_image}});">
           </div>
           {% endif %}
 
@@ -178,20 +251,25 @@ resource_options:
               <div class="card-footer-text">
                 <hr class="my-3">
                 {% if post.date %}
-                <i class="mdi mdi-calendar-blank mdi-md-grey mr-1"></i> {{post.date | date: "%Y %B, %e"}}
+                  {% if language == "en" %}
+                    <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>{{post.date | localize: "%Y %B, %e"}}
+                  {% endif %}
+                  {% if language == "de" %}
+                    <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>{{post.date | localize: "%-d. %B %Y"}}
+                  {% endif %}
                 {% endif %}
                 {% if likes_count %}
                 <span class="font-weight-bold"> · </span>
-                <i class="mdi mdi-heart mdi-md-grey mr-1"></i> {{likes_count}}
+                <i class="mdi mdi-heart mr-1"></i> {{likes_count}}
                 {% endif %}
                 {% if comment_count %}
                 <span class="font-weight-bold"> · </span>
-                <i class="mdi mdi-comment mdi-md-grey mr-1"></i> {{comment_count}}
+                <i class="mdi mdi-comment mr-1"></i> {{comment_count}}
                 {% endif %}
               </div>
               <a class="card-link text-muted text-lowercase"
                  href="{{post.url}}#readmore">
-                 Read · {{post.tagline}}
+                 {{readmore_text}} · {{post.tagline}}
               </a>
             </div>
           </div>
@@ -211,10 +289,11 @@ resource_options:
     var user_state                  = j1.readCookie(user_state_cookie_name);
     var user_state_last_page        = "{{browser_page_url}}";
     user_state.last_page            = user_state_last_page;
-//  j1.setUserState( {last_page:user_state_last_page} );
+
     j1.writeCookie({
       name: user_state_cookie_name,
-      data: user_state
+      data: user_state,
+      samesite: 'Strict'
     });
     logger.info('Saved current Post Browser page to cookie: {{browser_page_url}}');
   }

@@ -362,9 +362,7 @@ resources:
 
                                         ]
         files:                          [
-                                          modules/util/js/js.cookie.js,
-                                          modules/util/js/lite-url.js,
-                                          modules/util/js/platform.js,
+                                          modules/util/js/gtag-opt-in.js,
                                           adapter/js/j1.js
                                         ]
         js:                             [
@@ -460,9 +458,9 @@ resources:
         init_function:                  [ j1.adapter.navigator.init ]
 
   # ----------------------------------------------------------------------------
-  # MMenu Light
+  # Mobile Menu (Light)
   #
-  - name:                               Mobile Menu
+  - name:                               MMenu
     resource:
       id:                               mmenu
       enabled:                          true
@@ -476,8 +474,8 @@ resources:
       pass_init_data:                   false
       data:
         css:                            [
-                                          modules/mmenuLight/css/mmenu,
-                                          modules/mmenuLight/css/theme/uno
+                                          modules/mmenuLight/css/mmenu-light,
+                                          modules/mmenuLight/css/theme/uno/mmenu
                                         ]
         files:                          [
                                           modules/mmenuLight/js/mmenu.js,
@@ -549,13 +547,13 @@ resources:
         init_function:                  [ j1.adapter.back2top.init ]
 
   # ----------------------------------------------------------------------------
-  # CookieBar
+  #  GDPR compatible Cookie Consent for J1 Template
   #
-  - name:                               CookieBar
+  - name:                               J1 CookieConsent
     resource:
-      id:                               cookiebar
+      id:                               cookieConsent
       enabled:                          true
-      comment:                          module cookiebar
+      comment:                          module cookieConsent
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -565,9 +563,9 @@ resources:
       pass_init_data:                   false
       data:
         css:                            []
-        files:                          [ adapter/js/cookiebar.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.cookiebar.init ]
+        files:                          [ adapter/js/cookieConsent.js ]
+        js:                             [ modules/cookieConsent/js/cookieConsent ]
+        init_function:                  [ j1.adapter.cookieConsent.init ]
 
   # ----------------------------------------------------------------------------
   # jqMouseWheel, jQuery plugin to add cross-browser mouse wheel support
@@ -676,7 +674,7 @@ resources:
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            [ modules/rtable/css/theme/uno ]
+        css:                            [ modules/rtable/css/theme/uno/rtable ]
         files:                          [ adapter/js/rtable.js ]
         js:                             [ modules/rtable/js/rtable ]
         init_function:                  [ j1.adapter.rtable.init ]
@@ -1180,9 +1178,8 @@ resources:
       dependencies:                     false
       pass_init_data:                   true
       data:
-        css:                            []
+        css:                            [ modules/fam/css/theme/uno/fam ]             # styles for (J1) theme Uno]
         files:                          [
-                                          modules/fam/css/uno/fam.css,          # styles for (J1) theme Uno
 #                                         modules/cash/js/cash.js,              # current version|s of Cash NOT usable
                                           modules/materialize/js/cash.js,       # adapted|old (1.3.5) version from Materialize
                                           modules/fam/js/fam.js,                # modified version for J1 (former: button.js)

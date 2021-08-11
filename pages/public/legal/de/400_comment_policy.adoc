@@ -1,0 +1,125 @@
+---
+title:                                  Kommentarrichtlinie
+tagline:                                mit respekt diskutieren
+date:                                   2023-01-01 01:00:00 +100
+description: >
+                                        Wir lieben Kommentare und schätzen die Zeit unserer Besucher, Ideen
+                                        auszutauschen und Feedback zu geben. Vielen Dank an alle, die einen
+                                        Kommentar geschrieben haben.
+
+categories:                             [ Site ]
+tags:                                   [ Kommentar, Richtlinie ]
+
+robots:
+  index:                                false
+  follow:                               false
+
+sitemap:                                false
+exclude_from_search:                    true
+
+fam_menu_id:                            page_ctrl_simple
+scrollbar:                              false
+comments:                               false
+toc:                                    true
+
+permalink:                              /pages/public/legal/de/comment_policy/
+regenerate:                             true
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/leon-1920x1280.jpg
+          alt:                          Photo by Leon on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Leon
+            href:                       https://unsplash.com/@myleon
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:disqus:                                true
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+Wir lieben Kommentare und schätzen die Zeit unserer Besucher, Ideen
+auszutauschen und zu geben Feedback. Vielen Dank an alle, die einen Kommentar
+zu {j1--site-name} hinterlassen haben.
+
+ifeval::[{disqus} == true]
+To access the public commenting feature, you will need to register for
+an account as an individual at _Disqus_. One of the primary purposes of
+encouraging comments on the {j1--site-name} website is to promote a sense
+of community.
+
+NOTE: _Disqus_ (/dɪsˈkʌs/) ist ein Blog-Kommentar-Hosting-Dienst für Websites
+und Online-Communitys, die eine vernetzte Plattform nutzen. Die Firmen
+Plattform umfasst verschiedene Funktionen, wie soziale Integration, soziale
+Netzwerke, Benutzerprofile, Spam- und Moderationstools, Analysen,
+E-Mail-Benachrichtigungen und mobile Kommentare.
+endif::[]
+
+== Mit Respekt diskutieren
+
+Einer der wichtigsten Aspekte eines hilfreichen Blogs ist die Konversation
+über Kommentare, die Besucher veröffentlichen. Kommentare können manchmal
+eine negative Wendung nehmen oder unerwünschte Werbungen enthalten. Aus diesem
+Grund ist eine Richtlinie für Blog-Kommentare hilfreich. Alle Besucher können
+verstehen was akzeptabel ist und was nicht.
+
+== Kommentare sind willkommen
+
+Kommentare sind auf dieser Seite willkommen und erwünscht, aber es gibt einige
+Fälle, in denen Kommentare bearbeitet oder gelöscht werden. Der Inhaber dieser
+Seite behält sich das Recht vor, an den Blog übermittelte Kommentare ohne
+vorherige Ankündigung zu bearbeiten oder zu löschen.
+
+Die folgende Kommentarrichtlinie kann jederzeit geändert werden:
+
+Werbung::
+Kommentare, die als Spam oder rein werbender Natur gelten, werden
+gelöscht. Das Einfügen eines Links zu relevanten Inhalten ist erlaubt, jedoch
+sollen Kommentare zum Thema des Beitrags passen.
+
+Schimpfwörter::
+Kommentare mit Schimpfwörtern werden gelöscht.
+
+Grobe Sprache::
+Kommentare die Sprache enthalten, die als anstößig angesehen werden könnten
+werden gelöscht. Dazu zählen beleidigende, bedrohende, pornografische,
+beleidigende, irreführende oder verleumderische Anmerkungen.
+
+Angriffe::
+Kommentare die eine Person direkt angreifen werden gelöscht.
+
+Belästigung::
+Kommentare, die andere Besucher oder generell Menschen belästigen können
+werden gelöscht. Alle Kommentare müssen respektvoll gegenüber allen Besuchern
+sein, die Kommentare hinterlassen.
+
+Anonymität::
+Anonyme Kommentare werden gelöscht. Es werden nur Kommentare von Personen
+akzeptiert, die sich persönlich identifizieren.

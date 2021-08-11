@@ -73,7 +73,7 @@ defaults:
   nav_bar:
     enabled:                            false
 
-    xhr_container_id:                   navigator_nav_navbar
+#   xhr_container_id:                   navigator_nav_navbar
 
     media_breakpoint:                   lg
     brand_position:                     right                                   # left|right
@@ -116,6 +116,7 @@ defaults:
     enabled:                            false
 
     xhr_container_id:                   navigator_nav_menu
+    xhr_data_element:                   desktop_menu
     xhr_data_path:                      /assets/data/menu/index.html
 
     raised_level:                       5                                       # level
@@ -154,6 +155,7 @@ defaults:
     enabled:                            false
 
     xhr_container_id:                   navigator_nav_quicklinks
+    xhr_data_element:                   quicklinks
     xhr_data_path:                      /assets/data/quicklinks/index.html
 
     icon_family:                        MDI
@@ -194,7 +196,8 @@ defaults:
   nav_topsearch:
     enabled:                            false
 
-    xhr_container_id:                   navigator_nav_topsearch
+    container_id:                       navigator_nav_topsearch
+
     type:                               quicksearch
     icon_family:                        MDI
     icon_color:                         "#FFFFFF"                               # md-white

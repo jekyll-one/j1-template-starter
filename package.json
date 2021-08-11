@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "j1_starter",
-  "version": "2021.1.2",
+  "version": "2021.1.19",
   "description": "J1 Template Starter Web",
   "homepage": "https://your.site",
   "author": {
@@ -86,7 +86,7 @@
     "rebuild:do": "cross-env SINATRA_ACTIVESUPPORT_WARNING=false bundle exec jekyll b --incremental",
     "post-rebuild": "run-s -s postrebuild:*",
     "post-rebuild:finished": "echo .. rebuild finished.",
-    "post-rebuild:hint": "echo To open the site, run: yarn site.",
+    "post-rebuild:hint": "echo To open the site, run: yarn site",
     "clean": "run-s -s clean-site && run-s clean:*",
     "clean-site": "echo Clean up site files .. && bundle exec jekyll clean",
     "clean:start": "echo Clean up projects files ..",

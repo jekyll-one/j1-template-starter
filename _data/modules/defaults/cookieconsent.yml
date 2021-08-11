@@ -1,0 +1,137 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/modules/defaults/cookieconsent.yml
+#  Default configuration settings for J1 Cookie Consent module
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2021 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+  title:                                CookieConsent
+  scope:                                Default settings
+  location:                             _data/modules/defaults/cookieconsent.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+
+  enabled:                              false
+
+  autoShowDialog:                       true                                    # show consent dialog if NO consent cookie found
+  languages:                            [en, de]                                # supported languages, defaults to FIRST language defined by languages
+  contentURL:                           /assets/data/cookieconsent              # dialogs content for all languages
+  cookieName:                           j1.user.consent                         # name of the consent cookie
+  cookieStorageDays:                    365                                     # duration the consent cookie is stored
+  postSelectionCallback:                j1.adapter.cookieConsent.cbCookie       # currently hardcoded
+
+  reloadPageOnChange:                   false                                   # reload current page if user settings has been changed
+  sameSite:                             Strict                                  # restrict consent cookie to first-party, do NOT send cookie to other domains
+  xhr_data_element:                     consent-data                            # container for the language-specific consent modal (taken from /assets/data/cookieconsent.html)
+  whitelisted:                          [ /pages/public/legal/en/privacy ]      # pages NO consent issued, currently NOT supported
+
+  consent_modal_title:
+    de:                                 Ihre Privatsphäre
+    en:                                 Your Privacy
+
+  body_text:
+    en: >
+                                        This website is using cookies and similar technologies that
+                                        are required for operation. You are free to decide to give,
+                                        refuse or withdraw your consent at any time by clicking
+                                        the <code>My Settings</code> button. Subsequent changes are
+                                        possible at any time by clicking on the <code>cookie icon</code>
+                                        in the menu bar.
+                                        <br><br>
+                                        Extended cookies are only used with your consent. Additional
+                                        cookies are used to analyze the usage of this website.
+                                        Analysis of the use of this website help gives you a better
+                                        user experience of the website to offer. More information
+                                        about what data is collected and how they may be passed on
+                                        to partners can be found in the <code>Privacy Policy</code>.
+                                        <br><br>
+                                        Visiting this website, you consent to the use of by clicking the
+                                        <code>I agree</code> button.
+    de: >
+                                        Diese Website nutzt Cookies und ähnliche Technologien, die
+                                        zum Betrieb erforderlich sind. Es steht Ihnen frei, Ihre
+                                        Zustimmung jederzeit zu geben, zu verweigern oder zurückzuziehen,
+                                        indem Sie auf die Schaltfläche <code>Meine Einstellungen</code>
+                                        klicken. Nachträgliche Änderungen sind jederzeit möglich, indem Sie
+                                        auf das <code>Cookie-Icon</code> in der Menüleiste klicken.
+                                        <br><br>
+                                        Erweiterte Cookies werden nur mit Ihrer Zustimmung verwendet.
+                                        Zusätzliche Cookies werden eingesetzt, um Analysen der Nutzung
+                                        dieser Website durchzuführen. Analysen der Nutzung dieser Website
+                                        helfen dabei, Ihnen ein besseres Nutzungserlebnis der Website
+                                        zu bieten. Weitere Informationen welche Daten gesammelt und
+                                        wie sie ggf. an Partner weitergegeben werden finden Sie in der
+                                        <code>Datenschutzerklärung</code>.
+                                        <br><br>
+                                        Für den Besuch dieser Webseite stimmen Sie der Verwendung zu,
+                                        indem Sie auf die Schaltfläche <code>Einverstanden</code> klicken.
+
+  privacy_notice:
+    en: >
+                                        The operators of this website take the protection of your personal data
+                                        seriously. We treat your data confidential and comply with the
+                                        General Data Protection Regulation (GDPR) of the European Union to
+                                        protect your privacy.
+                                        A small set of data is stored in persistent cookies, e.g. what data
+                                        you agree to be stored in cookies. Persistent cookies have a lifespan
+                                        of 365 days (a year). We and our partners make use of persistent cookies.
+                                        Those additional cookies are only used with your consent.
+                                        <br><br>
+                                        <code>Necessary</code> data is stored to run base services of this site.
+                                        This website is based on static content, and no database is used behind it.
+                                        All information (data) needed to control this site is stored in
+                                        so-called session cookies. Session cookies are automatically removed by your
+                                        browser if you close all windows.
+                                        <br><br>
+                                        <code>Analysis</code> of the use of this website helps us to optimize your
+                                        user experience of the website. For analysis, Google Analytics (GA) is used.
+                                        This website does <b>not</b> transfer any personal data to GA. Implicit
+                                        personal information, like IP addresses, is anonymized to protect your privacy.
+                                        <br><br>
+                                        <code>Personalization</code> is used e.g. to provide personal themes, collect
+                                        visitors feedback or running advertising campaigns to provide you a website
+                                        free of charge. Partners like Bootswatch, Disqus or Google enables us to provide
+                                        you excellent personalized services and enables us to finance the costs for
+                                        running this site.
+    de: >
+                                        Die Betreiber dieser Website nehmen den Schutz Ihrer persönlichen Daten ernst.
+                                        Wir behandeln Ihre Daten vertraulich und halten uns zum Schutz Ihrer Privatsphäre
+                                        an die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union. In persistenten
+                                        Cookies wird ein kleiner Datensatz gespeichert, z.B. mit welchen Daten Sie
+                                        einverstanden sind, in Cookies gespeichert zu werden. Dauerhafte Cookies haben
+                                        eine Lebensdauer von 365 Tagen (ein Jahr). Wir und unsere Partner verwenden
+                                        dauerhafte Cookies. Diese zusätzlichen Cookies werden nur mit Ihrer Zustimmung
+                                        verwendet.
+                                        <br><br>
+                                        <code>Notwendige</code> Daten werden gespeichert, um Basisdienste dieser Site zu
+                                        betreiben. Diese Website basiert auf statischen Inhalten und es wird keine
+                                        Datenbank dahinter verwendet. Alle Informationen (Daten), die zur Steuerung dieser
+                                        Seite benötigt werden, werden in sogenannten Session-Cookies gespeichert. Sitzungscookies
+                                        werden von Ihrem Browser automatisch entfernt, wenn Sie alle Fenster schließen.
+                                        <br><br>
+                                        <code>Analysen</code> der Nutzung dieser Website hilft uns, Ihr Nutzungserlebnis der
+                                        Website zu optimieren. Zur Analyse wird Google Analytics (GA) verwendet. Diese Website
+                                        übermittelt keine personenbezogenen Daten an GA. Implizite personenbezogene Daten wie
+                                        IP-Adressen werden zum Schutz Ihrer Privatsphäre anonymisiert.
+                                        <br><br>
+                                        <code>Personalisierung</code> wird eingesetzt um Ihnen z.B. personalierte Ansichten der
+                                        Webseite (Themen) anzubieten, Benutzerfeedback zu sammeln oder Werbekampagnen durchzuführen,
+                                        um Ihnen diese Website kostenlos zur Verfügung zu stellen. Partner wie Bootswatch, Disqus
+                                        oder Google ermöglichen es uns, Ihnen exzellente personalisierte Dienste anzubieten sowie
+                                        die Kosten für den Betrieb dieser Website zu finanzieren.
+
+# ------------------------------------------------------------------------------
+# END config

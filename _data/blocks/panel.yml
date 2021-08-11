@@ -39,6 +39,7 @@ settings:
         comment:                        Home Intro Panel
         type:                           intro
         animate:
+        properties:                     mt-3 mr-3 mb-5 ml-3
 
         title:                          All in One
         tagline:                        top features
@@ -70,7 +71,7 @@ settings:
               icon:                     responsive
               icon_family:              MDI
               icon_size:                3x
-              icon_color:               md-white
+              icon_color:
               text: >
                                         The Web is everywhere. J1 Template supports modern web browsers
                                         on all devices for best results on PCs, Tablets, and SmartPhones.
@@ -80,23 +81,23 @@ settings:
                 - name:                 Read More
                   button:
                     type:               text
-                    text:               Read · Follow Your Visitors
+                    text:               Follow Your Visitors
                     class:
                     icon:
                     icon_size:
                     icon_color:
                     href:               /pages/public/panels/intro_panel#responsive-design
 
-          - name:                       HTML5
+          - name:                       Technology
             card:
               enabled:                  true
               type:                     text
-              title:                    HTML &#xB7; CSS &#xB7; JS
+              title:                    Technology
               tagline:                  J1 Template
-              icon:                     language-html5
+              icon:                     tools
               icon_family:              MDI
               icon_size:                3x
-              icon_color:               md-white
+              icon_color:
               text: >
                                         Current Technology and Design. Excellent performance in running
                                         a website. Use Jekyll One to present your content at its best.
@@ -105,7 +106,7 @@ settings:
                 - name:                 Read More
                   button:
                     type:               text
-                    text:               Read · Make your Web Site unique
+                    text:               Make your Web Site unique
                     class:
                     icon:
                     icon_size:
@@ -122,7 +123,7 @@ settings:
               icon:                     clock
               icon_family:              MDI
               icon_size:                3x
-              icon_color:               md-white
+              icon_color:
               text: >
                                         No programming is needed to start using J1. The Template
                                         provides a large number of building blocks to create
@@ -132,7 +133,7 @@ settings:
                 - name:                 Read More
                   button:
                     type:               text
-                    text:               Read · Configure whats to be done
+                    text:               Configure whats to be done
                     class:
                     icon:
                     icon_size:
@@ -305,9 +306,10 @@ settings:
         comment:                        Home News Panel
         type:                           news
         animate:
+        properties:                     mt-5 mr-3 mb-5 ml-3
+
         title:                          Creators Blog
         tagline:                        latest news
-
         description: >
                                         Explore the blog and find interesting articles around Jekyll and
                                         website creation processes in general. And this blog is an excellent
@@ -323,7 +325,7 @@ settings:
               category:                 featured
 #             truncatewords:            30                                      # currently NOT used
               max_posts:                3
-              readmore_text:            Read
+#             readmore_text:            Read
 
   # # ----------------------------------------------------------------------------
   # # STEP Panel

@@ -28,11 +28,14 @@ settings:
   enabled:                              true
   placement:                            navbar
   target:                               _blank
-  rebuild:                              false
+  rebuild:                              true
   full_index:                           false
 
   stopwords_locale:                     en
   min_length:                           3
+
+  # currently NOT supported, use pagewise exclude_from_search: true|false
+  # excludes:                             [ /pages/public/blog/*, /pages/public/skeleton/* ]
 
 # ------------------------------------------------------------------------------
 # END config

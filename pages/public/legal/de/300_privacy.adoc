@@ -1,0 +1,322 @@
+---
+title:                                  Privatheit
+tagline:                                ihre privatsphäre
+date:                                   2023-01-01 01:00:00 +100
+description: >
+                                        Description has to be placed here
+
+categories:                             [ Site ]
+tags:                                   [ Privatsphäre ]
+
+robots:
+  index:                                false
+  follow:                               false
+
+sitemap:                                false
+exclude_from_search:                    true
+
+fam_menu_id:                            page_ctrl_simple
+scrollbar:                              false
+comments:                               false
+toc:                                    true
+
+permalink:                              /pages/public/legal/de/privacy/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/markus-spiske-1920x1280.jpg
+          alt:                          Photo by Markus Spiske on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Markus Spiske
+            href:                       https://unsplash.com/@markusspiske
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:legal-warning:                         false
+
+// Attribute settings for section control
+//
+:cookies:                               true
+:cookie-consent:                        true
+:logs-files:                            false
+:google-analytics:                      true
+:facebook:                              false
+:twitter:                               false
+:instagram:                             false
+:youtube:                               false
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ifeval::[{legal-warning} == true]
+WARNING: This document *does not* constitute any *legal advice*. It is
+highly recommended to verify legal aspects and implications.
+endif::[]
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+Die Betreiber dieser Website nehmen den Schutz Ihrer persönlichen Daten ernst.
+Wir behandeln Ihre Daten vertraulich und halten uns zum Schutz Ihrer
+Privatsphäre an die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union.
+
+ifeval::[{cookies} == true]
+== Cookies
+
+Diese Website verwendet Cookies und ähnliche Technologien, die für den Betrieb
+diese Angebots. Es steht Ihnen frei, Ihre Einwilligung zu erteilen, zu
+verweigern oder zu widerrufen, indem Sie im Datenschutzdialog auf
+die Schaltfläche *Einstellungen* klicken. Nachträgliche Änderungen sind
+*jederzeit* durch Klick auf das `Cookie-Icon` in der *Menüleiste* möglich.
+
+*Erweiterte* Cookies werden nur mit Ihrer Zustimmung verwendet. Diese
+zusätzlichen Cookies werden verwendet, um die Nutzung dieser Website zu
+analysieren oer personalisierte Inhalte anzubieten. Analyse der Nutzung dieser
+Website-Hilfe bietet Ihnen eine bessere Benutzererfahrung der angebotenen
+Website. Mehr Informationen darüber, welche Daten erhoben und wie diese
+weitergegeben werden können zu Partnern finden Sie im Datenschutzdialog durch
+Anklicken der Schaltfläche *Datenschutzerklärung*.
+
+Notwendig::
+Notwendige Daten werden gespeichert, um Basisdienste dieser Site zu betreiben.
+Diese Website basiert auf statischen Inhalten und es wird keine Datenbank
+dahinter verwendet. Alle Informationen (Daten), die zur Steuerung dieser Seite
+benötigt werden, werden in sogenannten Session-Cookies gespeichert.
+Sitzungscookies werden von Ihrem Browser automatisch entfernt, wenn Sie alle
+Fenster schließen.
+
+Analysen::
+Analysen der Nutzung dieser Website hilft uns, Ihr Nutzungserlebnis der Website
+zu optimieren. Zur Analyse wird Google Analytics (GA) verwendet. Diese Website
+übermittelt keine personenbezogenen Daten an GA. Implizite personenbezogene
+Daten wie IP-Adressen werden zum Schutz Ihrer Privatsphäre anonymisiert.
+
+Personalisierung::
+Personalisierung wird z.B. um Benutzerfeedback zu sammeln oder Werbekampagnen
+durchzuführen, um Ihnen eine Website kostenlos zur Verfügung zu stellen.
+Partner wie Disqus oder Google ermöglichen es uns, Ihnen exzellente
+personalisierte Dienste anzubieten und die Kosten für den Betrieb dieser
+ebsite zu finanzieren.
+endif::[]
+
+
+ifeval::[{cookie-consent} == true]
+== Cookie Zustimmung
+
+Wenn Sie konfigurieren möchten, welche *Cookies* von *dieser Site* verwendet
+werden, können Sie Ihre Einwilligungseinstellungen für bereits erteilte Cookies
+anpassen. Außerdem Sie können Sie Cookies ablehnen, indem Sie Ihre *Browser*
+Einstellungen entsprechend anpassen. Bitte seien Sie vorsichtig, wenn Sie Ihre
+Browsereinstellungen ändern. Die Ablehnung von Cookies kann zu schwerwiegenden
+Problemen beim Besuch von Websites führen, die von Gebrauch von Cookies
+abhängen.
+
+CAUTION: Haben Sie zuvor unsere Website besucht und der Verwendung
+von Cookies zugestimmt, können sich die zudem Zeitpunkt erstellten Cookies noch
+auf Ihrem System befinden. In diesem Fall sind möglicherweise bereits
+vorhandene Cookies manuell durch Ihren Browser zu löschen.
+
+++++
+<div class="mt-4 mb-3">
+  <a  href="javascript:j1.cookieConsent.showDialog()"
+      class="btn btn-primary btn-lg btn-block btn-raised btn-flex mb-3"
+      aria-label="Cookie Consent"
+      style="min-width: 25rem">
+      <i class="mdi mdi-cookie mdi-2x mr-2"></i>
+      Cookie Consent
+  </a>
+</div>
+++++
+endif::[]
+
+ifeval::[{logs-files} == true]
+== Log files
+
+Wir sammeln bestimmte Informationen automatisch von unseren Webservern und
+speichern sie in Protokolldateien. Diese Informationen können Internet Protocol
+(IP)-Adressen, Browsertyp, Internet Service Provider (ISP), Verweis- und
+Ausstiegsseiten, Betrieb System-, Zeitstempel und/oder Clickstream-Daten.
+
+Diese sind
+
+* Browsertyp und -Version
+* Betriebssystem
+* Referrer-URL
+* Hostname
+* Zeitstempel der Seitenaufrufe
+
+Wir können diese Protokollinformationen mit anderen Informationen kombinieren.
+Wir tun dies, um die von uns angebotenen Dienstleistungen zu verbessern, um das
+Marketing zu verbessern. Wir verwenden Speicherverfahren wie *Local Storage*,
+um Inhaltsinformationen und Präferenzen speichern.
+endif::[]
+
+ifeval::[{google-analytics} == true]
+== Verwendung von Google Analytics
+
+Diese Website benutzt Google Analytics (GA), einen Webanalysedienst der:
+
+----
+   Google Inc.
+   1600 Amphitheatre Parkway Mountain View
+   CA 94043
+   USA
+----
+
+Google Analytics verwendet sogenannte Cookies, das sind Textdateien, die auf
+Ihres Computers, um der Website zu helfen, die Nutzung der Website durch die
+Benutzer zu analysieren. Das Die durch den Cookie erzeugten Informationen
+über Ihre Benutzung der Website werden übermittelt und von Google auf Servern
+in den USA gespeichert. Im
+
+Falls auf dieser Website die IP-Anonymisierung aktiviert ist, wird Ihre
+IP-Adresse im Bereich der Mitgliedsstaaten der Europäischen Union gekürzt oder
+anderen Vertragsparteien des Abkommens über den Europäischen Wirtschaftsraum.
+Nur im In Ausnahmefällen wird die volle IP-Adresse an eine Google-Adresse
+übertragen Server in den USA und dort gekürzt.
+
+Im Auftrag des Betreibers dieser Website wird Google diese Informationen
+benutzen um Ihre Nutzung der Website auszuwerten, um Reports über
+Website-Aktivität für Website-Betreiber und Bereitstellung anderer
+Dienstleistungen in Bezug auf Website-Aktivitäten und Internetnutzung. Die
+übermittelte IP-Adresse Ihr Browser im Rahmen von Google Analytics, wird
+nicht verknüpft mit anderen Daten von Google.
+
+Sie können der Verwendung von Cookies widersprechen, indem Sie die
+entsprechenden Einstellungen auswählen in Ihrem Browser. Beachten Sie jedoch
+bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
+um die volle Funktionalität dieser Website zu nutzen.
+
+endif::[]
+
+ifeval::[{facebook} == true]
+== Verwendung von Facebook Plug-ins
+
+We have integrated plug-ins (Like-Button) by the social network *Facebook*,
+provided by:
+
+----
+  Facebook Inc.
+  1 Hacker Way
+  Menlo Park
+  California 94025
+  USA
+----
+
+into our website.
+
+When you visit our website, the plug-in will establish a direct connection
+between your browser and the Facebook server. Thereby Facebook will be informed
+about your visit on our website with your IP address. If you click the Facebook
+"Like" button while you are logged into your Facebook account, you can link
+the contents of our website to your Facebook profile. Facebook can thereby
+associate your visit to our website with your user account.
+
+We would like to point out that, as the website provider, we possess no
+knowledge of the contents of the transmitted data or its use by Facebook. You
+can find further information on this topic in the Facebook privacy policy at
+link:{url-facebook--privacy-policy-en}[Privacy Police, {browser-window--new}].
+If you do not want Facebook to be able to associate your visit to our website
+with your Facebook user account, please log out of your Facebook account
+before visiting our website.
+endif::[]
+
+ifeval::[{twitter} == true]
+== Verwendung von Twitter
+
+We have integrated functions by the service provider Twitter into our website.
+These functions are offered by:
+
+----
+  Twitter Inc.
+  1355 Market Street
+  Suite 900, San Francisco
+  CA 94103
+  USA
+----
+
+When using Twitter and the "re-tweet" function, the websites you have visited
+will be linked to your Twitter account and made available to other users.
+Data will also be transmitted to Twitter.
+
+We would like to point out that as provider of the website we possess no
+knowledge of the contents of the data transmitted or its use by Twitter.
+You can find further information on this topic in the Twitter privacy
+policy at link:{url-twitter--privacy-en}[Privacy Police, {browser-window--new}].
+You can change your Twitter privacy
+settings in your account settings at
+link:{url-twitter--login}[Login, {browser-window--new}].
+endif::[]
+
+ifeval::[{instagram} == true]
+== Verwendung von Instagram
+
+Auf unseren Seiten sind Funktionen des Dienstes Instagram eingebunden. Diese
+Funktionen werden angeboten durch die
+
+----
+  Instagram Inc.
+  1601 Willow Road
+  Menlo Park
+  CA 94025
+  USA
+----
+
+integriert. Wenn Sie in Ihrem Instagram Account eingeloggt sind können Sie
+durch Anklicken des *Instagram Buttons* die Inhalte unserer Seiten mit
+Ihrem *Instagram Profil* verlinken. Dadurch kann Instagram den Besuch unserer
+Seiten Ihrem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als
+Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie
+deren Nutzung durch Instagram erhalten.
+
+Weitere Informationen hierzu finden Sie in der
+link:{url-instagram--privacy-policy}[Privacy Police Instagram, {browser-window--new}].
+endif::[]
+
+ifeval::[{youtube} == true]
+== Verwendung von YouTube
+
+We have integrated functions by the service provider *YouTube* into our
+website on selected pages. These functions are offered by:
+
+----
+  YouTube LLC,
+  901 Cherry Ave San Bruno
+  CA 94066
+  USA
+----
+
+If you use one of our pages equipped with a *YouTube plugin* visit, a
+connection to the YouTube servers is established. There the YouTube server
+is informed which of our pages you have visited.
+
+If you are logged into your YouTube account, you enable YouTube to assign
+your surfing behavior directly to your personal profile. You can prevent this
+by logging out of your YouTube account.
+
+Further information on the handling of user data can be found in the
+link:{url-google--privacy-policy-en}[Privacy Police Google/YouTube, {browser-window--new}].
+endif::[]

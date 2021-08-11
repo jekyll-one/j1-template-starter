@@ -5,18 +5,22 @@ date:                                   2020-10-23 00:00:00 +100
 description: >
                                         Impressum
 
-categories:                             [ Legal ]
-tags:                                   [ Impressum, Info ]
+categories:                             [ Site ]
+tags:                                   [ Impressum ]
 
-sitemap:                                false
 robots:
   index:                                false
   follow:                               false
 
+sitemap:                                false
+exclude_from_search:                    true
+
 fam_menu_id:                            page_ctrl_simple
 scrollbar:                              false
-comments:                               false
 toc:                                    false
+
+advertising:                            false
+comments:                               false
 
 permalink:                              /pages/public/legal/en/impress/
 regenerate:                             false
@@ -65,7 +69,7 @@ endif::[]
 ifeval::[{eu-region} == true]
 .Postal address
 ----
-<your-postal-address>
+  <your-postal-address>
 ----
 endif::[]
 
@@ -77,6 +81,6 @@ endif::[]
 ifeval::[{eu-region} == true]
 .Responsible for the content according to § 55 Abs. 2 RStV:
 ----
-<responsbile-postal-address>
+  <responsbile-postal-address>
 ----
 endif::[]
