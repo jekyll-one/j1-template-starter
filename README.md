@@ -38,6 +38,15 @@ The template combines the best free software for the web. Jekyll One Template
 is OpenSource and the modules included are free to use as well. No license
 issues for private or professional use.
 
+* Fully Responsive. J1 Template supports modern web browsers on all
+  devices for best results on PCs, Tablets, and SmartPhones.
+* Full Bootstpap V4 support. Current Technology and Design. Excellent
+  performance running desktop and mobile websites. Use Jekyll One to
+  present your content at its best.
+* Start in no time. No programming is needed to start using J1. The
+  Template provides a large number of building blocks to create modern
+  web pages in minutes.
+
 ## General
 
 * Jekyll 4.2 support
@@ -55,7 +64,7 @@ issues for private or professional use.
 * Themeable source code highlighting (Rouge)
 * Desktop and Mobile Web and Navigation ready
 * Fully configurable
-* 100/100 Google Lighthouse scores (at e.g. Netlify|Github)
+* 100/100/100 Google Lighthouse scores
 
 ## Modules and Extensions
 
@@ -64,6 +73,7 @@ issues for private or professional use.
 * Smooth-srcoll support
 * Full-text search engine included (Lunr)
 * Blog Post navigation included
+* GDPR compatible cookie consent module included
 * Clipboard module included
 * Floating Action Buttons included
 * Navigation modules included
@@ -76,10 +86,9 @@ issues for private or professional use.
 
 * Featured example content included
 * Royalty free images included
-* Disqus support
+* Comment provider support for Hyvor and Disqus
 * Google Analytics support
-* Deploy to Github Pages, Netlify and Heroku ready
-
+* Deploy on Github Pages (source only), Netlify and Heroku ready
 
 # Supported platforms
 
@@ -90,7 +99,7 @@ J1 is supported on all current x64-based OS:
 * Linux, kernel version >= 4.15 (e.g. Ubuntu  18.x LTS)
 * OSX, version >= 10.10.5 (Yosemite)
 
-Note that 32-bit versions (x32) are generally NOT supported for all
+Note that 32-bit versions (x32) are generally **not** supported for all
 platforms.
 
 # Development languages and tools
@@ -99,7 +108,7 @@ To run the project for J1 Template Web, the following languages and
 tools expected to be in place with your OS:
 
 *   Ruby language, version >= 2.6 < 3.x
-*   Javascript language (NodeJS), version >= 12.x < 14.x
+*   Javascript language (NodeJS), version >= 12.x < 13.x
 
 ## Update the package managers for _NodeJS_
 
