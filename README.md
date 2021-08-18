@@ -110,6 +110,9 @@ tools expected to be in place with your OS:
 *   Ruby language, version >= 2.6 < 3.x
 *   Javascript language (NodeJS), version >= 12.x < 13.x
 
+Note, Ruby **3.x** versions are **not** supported for Jekyll and J1 either.
+More current or older versions of **NodeJS** may work, but not tested.
+
 ## Update the package managers for _NodeJS_
 
 NodeJS comes with the package manager *NPM* pre-installed. The native CLI for
