@@ -11,10 +11,11 @@ tags:                                   [ Navigator ]
 pagination:
   enabled:                              true
   permalink:                            /page:num/
+  per_page:                             2
 
 sort:                                   date
 toc:                                    true
-fam_menu_id:                            open_toc
+fam_menu_id:                            default
 
 analytics:                              true
 advertising:                            false
@@ -22,7 +23,7 @@ comments:                               false
 
 regenerate:                             true                                    # needed to update pagination pages
 
-resources:                              []
+resources:                              [ animate, j1scroll ]
 resource_options:
   - attic:
       padding_top:                      400

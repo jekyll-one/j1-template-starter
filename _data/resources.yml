@@ -1031,8 +1031,8 @@ resources:
                                         ]
         files:                          []
         js:                             [
-                                          modules/lightGallery/js/core/lightgallery,
-                                          modules/lightGallery/js/modules/j1/j1-video,
+                                          modules/lightGallery/js/core/j1/lightgallery-x,
+                                          modules/lightGallery/js/modules/j1/j1-x-video,
                                           modules/lightGallery/js/modules/lg-autoplay,
                                           modules/lightGallery/js/modules/lg-fullscreen,
                                           modules/lightGallery/js/modules/lg-hash,
@@ -1186,7 +1186,6 @@ resources:
                                           adapter/js/fam.js                     # adapter adopted from ssm module
                                         ]
         js:                             []
-        init_function:                  []
         init_function:                  [ j1.adapter.fam.init ]
 
   # ----------------------------------------------------------------------------
@@ -1238,6 +1237,72 @@ resources:
         files:                          [ modules/datatables/css/theme/uno.css ]
         js:                             [ modules/datatables/js/datatables ]
         init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # rtextResizer
+  # NOTE: This module is in state EXPERIMENTAL
+  #
+  - name:                               rtextResizer
+    resource:
+      id:                               rtextresizer
+      enabled:                          false
+      comment:                          J1 rtextResizer
+      region:                           head
+      layout:                           [ home, page, post, collection ]
+      required:                         always                                  # always | ondemand
+      preload:                          false                                   # property currently unused
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          [ adapter/js/rtextResizer.js ]
+        js:                             []
+        init_function:                  [ j1.adapter.rtextResizer.init ]
+
+  # ----------------------------------------------------------------------------
+  # showOnScroll
+  #
+  #
+  - name:                               showOnScroll
+    resource:
+      id:                               showonscroll
+      enabled:                          true
+      comment:                          J1 showOnScroll
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand                                # always | ondemand
+      preload:                          false                                   # property currently unused
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          []
+        js:                             [ modules/showOnScroll/js/showOnScroll ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # j1Scroll
+  # NOTE: https://github.com/jquery-boilerplate/jquery-boilerplate
+  #
+  - name:                               j1Scroll
+    resource:
+      id:                               j1scroll
+      enabled:                          true
+      comment:                          j1Scroll
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand                                # always | ondemand
+      preload:                          false                                   # property currently unused
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            [ modules/j1Scroll/css/theme/uno ]
+        files:                          [ adapter/js/j1scroll.js ]
+        js:                             [ modules/j1Scroll/js/j1scroll ]
+        init_function:                  [ j1.adapter.j1Scroll.init ]
 
 # ------------------------------------------------------------------------------
 # END config

@@ -591,13 +591,13 @@ link:{url-bs-docs--content-typography}[Bootstrap Docs {char-middot} Typography, 
 ++++
 <div class="doc-example mb-3">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 p-0">
       <blockquote class="blockquote">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
         <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
       </blockquote>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 p-0">
       <blockquote class="blockquote blockquote-reverse">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
         <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
@@ -843,7 +843,7 @@ Take that same HTML as Tabs, but use .nav-pills class instead.
 <div class="doc-example mb-3">
   <div class="row mb-5">
 
-    <div class="col-md-6">
+    <div class="col-md-6 p-0">
       <h4 class="notoc">Standard Pills</h4>
       <ul class="nav nav-pills">
         <li class="nav-item mr-1 mb-2">
@@ -867,7 +867,7 @@ Take that same HTML as Tabs, but use .nav-pills class instead.
         </li>
       </ul>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 p-0">
       <h5 class="notoc">Stacked Pills (vertical)</h5>
       <ul class="nav nav-pills flex-column mb-4">
         <li class="nav-item mb-2">
@@ -2038,14 +2038,14 @@ NOTE: Popovers and Tooltips require the BS tooltip plugin as a dependency.
 ++++
 <div class="doc-example mb-3">
   <div class="row mb-5">
-    <div class="col-md-6">
+    <div class="col-md-6 p-0">
       <h5 class="mb-5 notoc">Popovers</h5>
       <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top</button>
       <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Bottom</button>
       <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right</button>
       <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left</button>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 p-0">
       <h5 class="mb-5 notoc">Tooltips</h5>
       <button type="button" class="btn btn-primary btn-raised" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Top</button>
       <button type="button" class="btn btn-primary btn-raised" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Bottom</button>
@@ -2060,7 +2060,7 @@ NOTE: Popovers and Tooltips require the BS tooltip plugin as a dependency.
 [source, html, role="noclip"]
 ----
   <div class="row mb-5">
-    <div class="col-md-6">
+    <div class="col-md-6 p-0">
       <h5 class="mb-5 notoc">Popovers</h5>
       <button type="button" class="btn btn-primary btn-raised"
         title="Popover Title" data-container="body"
@@ -2069,7 +2069,7 @@ NOTE: Popovers and Tooltips require the BS tooltip plugin as a dependency.
       </button>
       ...
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 p-0">
       <h5 class="mb-5 notoc">Tooltips</h5>
       <button type="button" class="btn btn-primary btn-raised"
               data-toggle="tooltip" data-placement="top"

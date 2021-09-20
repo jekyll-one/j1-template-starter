@@ -19,6 +19,7 @@ analytics:                              true
 advertising:                            false
 comments:                               false
 
+exclude_from_search:                    true
 regenerate:                             true
 
 resources:                              []
@@ -177,7 +178,8 @@ site_category_word_list:    {{site_category_word_list | debug}}
     {% endfor %}
 
     {% capture link %}
-      {% assign excerpt = post.excerpt|truncatewords:truncate_words|replace:'...',' ...'|strip_html|strip_newlines|strip %}
+      {% comment %} {% assign excerpt = post.excerpt|truncatewords: truncate_words|replace:'...',' ...'|strip_html %} {% endcomment %}
+      {% assign excerpt = post.excerpt|truncatewords: truncate_words|replace:'...',' ...' %}
       <li>
         <article class="card raised-z3 mb-5">
           <h3 id="{{100000|rand}}" class="card-header bg-primary">{{post.title}}</h3>
@@ -187,20 +189,20 @@ site_category_word_list:    {{site_category_word_list | debug}}
             {% if post.image %}
             <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Post image is available] -->
             <div class="col-md-6 img-bg--fill px-0"
-              style="background-image: url({{post.image}});">
+              style="border-right: 1px dotted rgba(0, 0, 0, 0.25); background-image: url({{post.image}});">
             </div>
             {% else %}
             <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Post image missing, using configured default image] -->
             <div class="col-md-6 img-bg--fill px-0"
-              style="background-image: url({{blog_navigator_options.post_image}});">
+              style="border-right: 1px dotted rgba(0, 0, 0, 0.25); background-image: url({{blog_navigator_options.post_image}});">
             </div>
             {% endif %}
 
-            <div class="col-md-6">
-              <div class="card-body r-text-300">{{excerpt}}</div>
+            <div class="col-md-6 p-0">
+              <div class="card-body r-text-300 mt-4">{{excerpt}}</div>
               <div class="card-footer r-text-200">
                 <div class="card-footer-text">
-                  <hr class="my-3">
+
                   {% if post.date %}
                     {% if language == "en" %}
                       <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>{{post.date|localize: "%Y %B, %e"}}

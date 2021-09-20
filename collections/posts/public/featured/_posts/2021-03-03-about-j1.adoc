@@ -39,12 +39,12 @@ resource_options:
 
 // Place an excerpt at the most top position
 // -----------------------------------------------------------------------------
+[role="dropcap"]
 The template system was initially developed to create a simple but fully
 configurable website creation toolset for document servers. Document servers
 provide websites or other content formats like PDF, projects, software
 documentation, or similar approaches.
 
-[role="clearfix mb-3"]
 excerpt__end
 
 //  Load Liquid procedures
@@ -66,7 +66,6 @@ ifeval::[{badges-enabled} == true]
 {badge-j1--license} {badge-j1--version-latest} {badge-j1-gh--last-commit} {badge-j1--downloads}
 endif::[]
 
-// [[readmore]]
 Many large today's companies like {url-docker--docs}[Docker, {browser-window--new}]
 are using template-based systems to create their documentation sites. Or like
 {url-oreilly-atlas--home}[O'Reilly Atlas, {browser-window--new}],

@@ -3,9 +3,10 @@ title:                                  Quickstart
 tagline:                                an amazing site in 15 minutes
 date:                                   2021-03-07 00:00:00
 description: >
-                                        Welcome to the pages of J1 Template. If your here
-                                        first time, a good decision you get on that page first.
-                                        For sure, there is no better place to go.
+                                        The template comes with a Web included, a skeleton for
+                                        a new website created with J1 Template. This Web is called
+                                        the "Starter web", a general-purpose scaffold to be modified
+                                        for your needs.
 
 categories:                             [ Knowledge ]
 tags:                                   [ J1, Template, Quickstart ]
@@ -55,24 +56,14 @@ resource_options:
 // Include sub-documents
 // -----------------------------------------------------------------------------
 
-*All you need for your new amazing site.*
-
-Jekyll meets Bootstrap - and makes a lot of friends. J1 Template combines
-the best of OpenSource software for the Web and the Web site generator
-`Jekyll`. J1 is OpenSource, and so are the packaged modules. No pain for
-private or professional use. Check J1 Template today to learn what's possible
-if you go to the Jekyll Way.
-
-*Create powerful modern Static Webs: Secure, Flexible and Fast.*
-
-The template comes with a Web included, a skeleton for new website created
-with J1 Template. This Web is called the *Starter Web*, a general-purpose
-Website scaffold to be modified for your needs. The built-in Starter Web
-can be visited live at https://publish.jekyll.one/[J1 Publish, {browser-window--new}].
-This site show live pages deployed on the Internet on _Github_, _Netlify_
+The template comes with a Web included, a skeleton for new a website created
+using J1 Template. This Web is called the *Starter web*, a general-purpose
+scaffold to be modified for your needs. The built-in Starter web  is available
+live at https://publish.jekyll.one/[J1 Publish, {browser-window--new}]. This
+site show live pages deployed on the Internet on _Github_, _Netlify_
 and _Heroku_.
 
-*Have fun exploring what a modern static web, a Jekyll site can do*!
+A *Starter web* is created in minutes. This section
 
 == The Software needed
 
@@ -98,9 +89,9 @@ NOTE: More current or older versions may work, but not tested.
 
 === Software upgrades needed for all platforms
 
-If _Ruby_ and _NodeJS_ are in place, some packages are to be upgraded to
+If _Ruby_ and _NodeJS_ are in place, some packages needs to be upgraded to
 more *current* versions. Install all packages system-wide with their
-respective product installation pathes.
+respective product installation paths.
 
 ==== Upgrades needed for Ruby < v2.7
 
@@ -201,7 +192,7 @@ If a *project* (a website) is generated, all development tasks are managed
 by *NPM scripts* (NodeJS). Development *tasks* are defined as *scripts*
 with the project config file `package.json`.
 
-First, create a projects folder for all website to be generated J1. For the
+First, create a projects folder for all websites to be generated J1. For the
 following examples, a project is generated on _Windows_ using *C:\Temp*
 for the project's folder.
 
@@ -278,7 +269,7 @@ as below:
 The first step, done only once, is to initialize a project. What means to
 download and install all resources for your new website followed by an
 initial creation process for the new site. Initializing a project is managed
-by the (NPM) *task* `setup`. A bunch of sub-tasks get fired, all of them
+by the (NPM) *task* `setup`. A bunch of sub-tasks gets fired, all of them
 managed by NPM.
 
 Let's start ...
@@ -326,12 +317,11 @@ To open the site, run: yarn site
 Done in 88.03s.
 ----
 
-The `setup` process will take a while - typically some minutes for the
-*first* run (depending on the performances of your Internet connection
-and your workstation). A bunch of NPM modules and Ruby Gems are downloaded
-and linked for the components part of the project. See `setup` as an extended
-*install* and *build* process to manage an initial setup for your new
-website.
+The `setup` process will take a while. Typically some minutes for the *first*
+run, depending on your Internet connection bandwidth and the workstation
+performance. Many NPM modules and Ruby Gems are downloaded and linked for
+the components part of the project. See `setup` as an extended *install* and
+*build* process to manage your new website's initial setup.
 
 === Run and develop a starter web
 
@@ -373,10 +363,11 @@ Go, go, go ..
 === Rebuild a site
 
 A project runs Jekyll in *incremental* mode with *auto-regeneration* enabled.
-All changes made to the pages (posts) of your web at runtime are automatically
-detected and the affected are rebuild and (live) reloaded.
+All changes made to your web's pages and posts at runtime are automatically
+detected, and the affected pages are rebuilt  and automatically reloaded with
+your browser.
 
-To rebuild the *site* from the scratch, a web can be completely rebuild by
+For rebuilding a *site* from scratch, a web can be completely rebuilt by
 running the task `rebuild`:
 
 [source, sh]

@@ -176,6 +176,17 @@ lanes:
       properties:                       elevated-z0
 
   # ----------------------------------------------------------------------------
+  # SERVICE panel
+  #
+  - lane:
+      enabled:                          false
+      id:                               home_service_panel
+      region:                           body-main
+      type:                             async
+      properties:                       elevated-z2 mb-6
+
+
+  # ----------------------------------------------------------------------------
   # DIVIDER banner
   #
   - lane:
@@ -215,15 +226,11 @@ lanes:
       type:                             async
       properties:                       mb-3
 
-  # ----------------------------------------------------------------------------
-  # SERVICE panel
-  #
-  - lane:
-      enabled:                          false
-      id:                               home_service_panel
-      region:                           body-main
-      type:                             async
-      properties:                       mt-5 mr-5 mb-4 ml-3
+
+
+
+
+
 
   # ----------------------------------------------------------------------------
   # DIVIDER banner

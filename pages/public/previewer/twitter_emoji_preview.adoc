@@ -89,12 +89,12 @@ and *no* `modifier` is used for an Emoji.
 
 .Click on `view result` to see the nice turtle ...
 ----
-You're faster than a emoji:turtle[2x] - for sure emoji:heart[pulsed] !
+You're faster than a emoji:turtle[2x] - for sure emoji:heart[pulsed]!
 ----
 
 [.result]
 ====
-You're faster than a emoji:turtle[2x] - for sure emoji:heart[pulsed] !
+You're faster than a emoji:turtle[2x] - for sure emoji:heart[pulsed]!
 ====
 
 Writing complex Asciidoc Macros for documents are not fun. For the `emoji:`
@@ -176,7 +176,7 @@ Simple like that!
 <script>
   $('#twemoji-picker').twemojiPicker({
     init: '',
-    placeholder: 'Click on button Picker to select Emoji\'s from a Category',
+    language: "{{site.language}}",
     size: '3.5rem',
     iconSize: '2rem',
     height: '100px',

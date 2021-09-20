@@ -134,11 +134,12 @@ settings:
               enabled:                  true
               width:                    12
               type:                     text
-              animate:                  fadeInUp
+              animate:                  false
               title:                    Jekyll One Template
               tagline:                  <b>powerful modern static websites</b>
+              description_properties:   mt-3 mr-3 mb-3
               description: >
-                                        <p>
+                                        <p class="dropcap">
                                           Jekyll One Template is the first toolbox to create modern webs and a
                                           learning platform to experience what is behind current Internet
                                           Technologies for the World Wide Web. J1 provides creative people
@@ -160,9 +161,8 @@ settings:
                   button:
                     title:              Roundtrip
                     tagline:            learn top features
-                    class:              btn btn-raised btn-xl btn-primary text-uppercase mr-2 mb-2
-#                   style:              "min-width: 370px"
-                    style:
+                    class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
+                    style:              "min-width: 250px"
                     icon:               briefcase-search-outline
                     icon_color:
                     icon_size:          3x
@@ -173,8 +173,8 @@ settings:
                   button:
                     title:              Download
                     tagline:            get on rubygems
-                    class:              btn btn-raised btn-xl btn-primary text-uppercase mr-2 mb-2
-                    style:
+                    class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
+                    style:              "min-width: 250px"
                     icon:               briefcase-download-outline
                     icon_color:
                     icon_size:          3x
@@ -185,8 +185,8 @@ settings:
                   button:
                     title:              Quickstart
                     tagline:            finished in 15 minutes
-                    class:              btn btn-raised btn-xl btn-primary text-uppercase mr-2 mb-2
-                    style:
+                    class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
+                    style:              "min-width: 250px"
                     icon:               briefcase-check-outline
                     icon_color:
                     icon_size:          3x
@@ -298,7 +298,7 @@ settings:
         id:                               home_parallax_banner
         enabled:                          true
         type:                             parallax
-        properties:                       mt-5 mb-5
+        properties:                       mt-6 mb-6
         comment:                          Main parallax banner shown on home page
 
         style:                            dark
@@ -313,9 +313,9 @@ settings:
               cite_text_size:             300%
               cite_text_quotes:           false
               cite_text: >
-                                          <span style="color: #2196f3">Making is</span>
+                                          <strong><span style="color: #2196f3">Making is</span>
                                           like Wanting, <br> but even
-                                          <span style="color: #2196f3">Better</span>
+                                          <span style="color: #2196f3">Better</span></strong>
               cite_size:                  200%
 #             cite:                       J1 Team
               text_color:                 rgba_lighten_900

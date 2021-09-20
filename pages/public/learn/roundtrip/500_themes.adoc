@@ -17,7 +17,7 @@ fam_menu_id:                            page_ctrl_simple
 permalink:                              /pages/public/learn/roundtrip/themes/
 regenerate:                             false
 
-resources:                              [ rouge, clipboard ]
+resources:                              [ rouge, clipboard, lightbox ]
 resource_options:
   - attic:
       padding_top:                      400
@@ -67,10 +67,11 @@ framework to J1 is to provide a general standard for colors, sizes, fonts,
 and the overall layout of a J1-based site. Bootstrap provides basic style
 definitions for all commonly used HTML elements.
 
-This results in a uniform appearance for the content in terms of the overall
-layout, text, tables, and form elements across all modern web browsers available
-on the market. In addition, developers can take advantage of CSS classes
-defined in Bootstrap to customize content individually.
+Using Bootstrap base style only results in a uniform appearance for the
+content in terms of the overall layout, text, tables, and form elements
+across all modern web browsers available on the market. In addition,
+developers can take advantage of CSS classes defined in Bootstrap to
+customize content individually.
 
 The themes feature for J1 is in an experimental state for the template
 system. Anyway, it makes sense to present what is possible using different
@@ -78,15 +79,15 @@ versions of Bootstrap's CSS styles for a website.
 
 == Template themes
 
-Themes step in the framework to further adjust the appearance of a website
+Themes step in the framework to further adjust the website's appearance
 based on the core CSS rules and definitions of Bootstrap. Themes do not
-change the functionality of the framework but modify rule-based, e.g., the
-color scheme, fonts, sizes or the appearance of more complex elements like
-forms,or tables. Additionally, a theme may add additional components but in
+change the framework's functionality but modify rule-based, e.g., the
+color scheme, fonts, sizes, or the appearance of more complex elements like
+forms or tables. Additionally, a theme may add additional components but in
 the *sense* of Bootstrap's framework rules and philosophy.
 
 It is expected that many people will change the template for their needs. To
-really create unique websites. Fundamental to do this is are CSS styles
+create unique websites. Fundamental to do this is are CSS styles
 defined by Bootstrap.
 
 Modifying the CSS styles of link:{bootstrap-home}[Bootstrap, {browser-window--new}]
@@ -96,10 +97,13 @@ some time first on learning CSS. To learn what is the
 link:{w3schools-css-tutorial}[design base, {browser-window--new}] of each and
 every website.
 
+.Themes menu (Bootswatch)
+lightbox::images--themes-menu[ 1024, {data-images--themes-menu} ]
+
 Thanks to the people at link:{bootswatch-home}[Bootswatch, {browser-window--new}],
 a great set of already prepared Bootstrap stylesheets in various designs are
-available on their website. No need to start from scratch, to re-define all
-the Bootstrap variables and rebuild the framework files to create a new
+available on their website. There is no need to start from scratch, re-define all
+the Bootstrap variables, and rebuild the framework files to create a new
 theme. Many different styles are available. What is already available at
 Bootswatch is at least a good base for your modifications; your unique design.
 
@@ -111,29 +115,30 @@ navigation system for easy use.
 
 === Apply a template theme
 
+
 The base for designing pages using the J1 Template is the theme Uno, a modern
-light theme that can be used for many types of websites. And what we mentioned
+light theme used for many types of websites. And what we mentioned
 already, web design is not: one size fits all. The theme Uno can be seen as
-a good base, a starting point. Combining Uno and a different theme may a fast
+a good base, a starting point. Combining Uno and a different theme may be a fast
 solution for your site!?
 
-You can find all available themes, all stylesheets to be applied to your pages
+You can find all available themes and stylesheets on your pages
 from the menu Themes. You're invited to check how a page is changing for
 its design if other stylesheets, other ideas of web design are used.
 
 NOTE: Changing BS-based styles is one thing. Changing from one theme to the
-next at runtime a bit more challenging. For the first version of the J1
-Template, many styles are automatically changed for J1 specific components
-as well, but not all of them for now.
+next at runtime is a bit more challenging. For the first version of the J1
+Template, many styles are automatically changed for J1 specific components,
+but not all of them for now.
 
-Simply select a theme from this menu, and a new BS-based stylesheet is
+Select a theme from this menu, and a new BS-based stylesheet is
 automatically applied to your pages.
 
 == Code Highlighter Rouge
 
 _Rouge_ is a pure Ruby and themeable syntax highlighter. It can highlight
-100+ different languages and output HTML or ANSI 256-color text. Find with
-this section all available themes and examples for several languages how
+100+ different languages and output HTML or ANSI 256-color text. Find all
+available themes and examples for several languages of how
 highlighting works using _Rouge_.
 
 For the default theme `Uno` of J1 Template, the following _Rouge_ themes
@@ -241,11 +246,11 @@ end
 <1> don't miss to load the Asciidoctor ruby
 
 
-== Whats next
+== What next
 
 Using a theme, the character of a website can change a lot. If you don't want
 to support multiple themes with your site, a theme is a good base to create
-your own theme, anyway.
+your theme, anyway.
 
 An important feature for larger webs is searching. The visitors should be able
 to search your site to find pages and posts they are interested in. Check what

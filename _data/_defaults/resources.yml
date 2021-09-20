@@ -362,9 +362,7 @@ resources:
 
                                         ]
         files:                          [
-                                          modules/util/js/js.cookie.js,
-                                          modules/util/js/lite-url.js,
-                                          modules/util/js/platform.js,
+                                          modules/util/js/gtag-opt-in.js,
                                           adapter/js/j1.js
                                         ]
         js:                             [
@@ -460,9 +458,9 @@ resources:
         init_function:                  [ j1.adapter.navigator.init ]
 
   # ----------------------------------------------------------------------------
-  # MMenu Light
+  # Mobile Menu (Light)
   #
-  - name:                               Mobile Menu
+  - name:                               MMenu
     resource:
       id:                               mmenu
       enabled:                          true
@@ -476,8 +474,8 @@ resources:
       pass_init_data:                   false
       data:
         css:                            [
-                                          modules/mmenuLight/css/mmenu,
-                                          modules/mmenuLight/css/theme/uno
+                                          modules/mmenuLight/css/mmenu-light,
+                                          modules/mmenuLight/css/theme/uno/mmenu
                                         ]
         files:                          [
                                           modules/mmenuLight/js/mmenu.js,
@@ -676,7 +674,7 @@ resources:
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            [ modules/rtable/css/theme/uno ]
+        css:                            [ modules/rtable/css/theme/uno/rtable ]
         files:                          [ adapter/js/rtable.js ]
         js:                             [ modules/rtable/js/rtable ]
         init_function:                  [ j1.adapter.rtable.init ]
@@ -1180,16 +1178,14 @@ resources:
       dependencies:                     false
       pass_init_data:                   true
       data:
-        css:                            []
+        css:                            [ modules/fam/css/theme/uno/fam ]             # styles for (J1) theme Uno]
         files:                          [
-                                          modules/fam/css/uno/fam.css,          # styles for (J1) theme Uno
 #                                         modules/cash/js/cash.js,              # current version|s of Cash NOT usable
                                           modules/materialize/js/cash.js,       # adapted|old (1.3.5) version from Materialize
                                           modules/fam/js/fam.js,                # modified version for J1 (former: button.js)
                                           adapter/js/fam.js                     # adapter adopted from ssm module
                                         ]
         js:                             []
-        init_function:                  []
         init_function:                  [ j1.adapter.fam.init ]
 
   # ----------------------------------------------------------------------------
@@ -1241,6 +1237,28 @@ resources:
         files:                          [ modules/datatables/css/theme/uno.css ]
         js:                             [ modules/datatables/js/datatables ]
         init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # rtextResizer
+  # NOTE: This module is in state EXPERIMENTAL
+  #
+  - name:                               rtextResizer
+    resource:
+      id:                               rtextresizer
+      enabled:                          false
+      comment:                          J1 rtextResizer
+      region:                           head
+      layout:                           [ home, page, post, collection ]
+      required:                         always                                  # always | ondemand
+      preload:                          false                                   # property currently unused
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          [ adapter/js/rtextResizer.js ]
+        js:                             []
+        init_function:                  [ j1.adapter.rtextResizer.init ]
 
 # ------------------------------------------------------------------------------
 # END config

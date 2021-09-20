@@ -1,0 +1,250 @@
+# ------------------------------------------------------------------------------
+# ~/_data/components/j1_panel.yml
+# Template specific configuration data to configure panel lanes
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# DEFAULT settings
+#
+defaults:
+  # ----------------------------------------------------------------------------
+  # Global settings
+  #
+  data_path:                            /assets/data/panel/index.html
+
+  # ----------------------------------------------------------------------------
+  # INTRO panel
+  #
+  intro:
+    # --------------------------------------------------------------------------
+    # INTRO panel properties
+    #
+    enabled:                          false
+    id:                               intro_panel_id
+    type:                             intro
+    icon_family:                      MDI
+
+    style:                            flat
+    raised:
+    lane_span:                        fixed
+
+    cards:
+
+      - card:
+          enabled:                    false
+          type:                       text
+          title:                      J1 Template
+          tagline:                    tagline-text-1
+          icon:                       responsive
+          icon_size:                  8x
+          icon_color:                 md-grey-800
+          text:                       card-text-1
+
+          buttons:
+
+            - button:
+                text:                 button-text-1
+                class:                btn-primary btn-raised btn-flex
+                icon:                 image
+                icon_size:            lg
+                icon_color:           md-grey-50
+                href:                 javascript:void(0)
+
+      - card:
+          enabled:                    false
+          type:                       text
+          title:                      J1 Template
+          tagline:                    tagline-text-2
+          icon:                       responsive
+          icon_size:                  8x
+          icon_color:                 md-grey-800
+          text:                       card-text-2
+
+          buttons:
+
+            - button:
+                text:                 button-text-2
+                class:                btn-primary btn-raised btn-flex
+                icon:                 image
+                icon_size:            lg
+                icon_color:           md-grey-50
+                href:                 javascript:void(0)
+
+      - card:
+          enabled:                    false
+          type:                       text
+          title:                      J1 Template
+          tagline:                    tagline-text-3
+          icon:                       responsive
+          icon_size:                  8x
+          icon_color:                 md-grey-800
+          text:                       card-text-3
+
+          buttons:
+
+            - button:
+                text:                 button-text-3
+                class:                btn-primary btn-raised btn-flex
+                icon:                 image
+                icon_size:            lg
+                icon_color:           md-grey-50
+                href:                 javascript:void(0)
+
+
+  # ----------------------------------------------------------------------------
+  # SERVICE panel
+  #
+  service:
+    # --------------------------------------------------------------------------
+    # SERVICE panel properties
+    #
+    enabled:                          false
+    id:                               service_panel_id
+    type:                             service_panel
+    icon_family:                      MDI
+
+    style:                            flat
+    lane_span:                        fixed
+
+    cards:
+
+      - card:
+          enabled:                    false
+          type:                       header
+          title:                      title
+          tagline:                    service-panel header text
+
+      - card:
+          enabled:                    false
+          type:                       service
+          icon:                       image
+          icon_size:                  8x
+          icon_color:                 md-grey-800
+          href:                       javascript:void(0)
+          title:                      service-panel title-1
+          tagline:                    service-panel tagline-1
+          text:                       card text 1
+
+          services:
+            - service:
+                title:                service 1-1
+                href:                 javascript:void(0)
+            - service:
+                title:                service 1-2
+                href:                 javascript:void(0)
+            - service:
+                title:                service 1-3
+                href:                 javascript:void(0)
+
+      - card:
+          enabled:                    false
+          type:                       service
+          icon:                       image
+          icon_size:                  8x
+          icon_color:                 md-grey-800
+          href:                       javascript:void(0)
+          title:                      service-panel title-2
+          tagline:                    service-panel tagline-2
+          text:                       service-panel card text 2
+
+          services:
+            - service:
+                title:                service 2-1
+                href:                 javascript:void(0)
+            - service:
+                title:                service 2-2
+                href:                 javascript:void(0)
+            - service:
+                title:                service 2-3
+                href:                 javascript:void(0)
+
+      - card:
+          enabled:                    false
+          type:                       service
+          icon:                       image
+          icon_size:                  8x
+          icon_color:                 md-grey-800
+          href:                       javascript:void(0)
+          title:                      service-panel title-3
+          tagline:                    service-panel tagline-3
+          text:                       service-panel card text 3
+
+          services:
+            - service:
+                title:                service 3-1
+                href:                 javascript:void(0)
+            - service:
+                title:                service 3-2
+                href:                 javascript:void(0)
+            - service:
+                title:                service 3-3
+                href:                 javascript:void(0)
+
+  news:
+    # --------------------------------------------------------------------------
+    # NEWS panel properties
+    #
+    - name:                          News Panel
+      panel:
+      enabled:                       false
+      type:                          news
+      animate:                       fadeInUp
+      properties:                    mt-5 mr-3 mb-5 ml-3
+
+      cards:
+        - name:                      Recent Posts
+          card:
+            enabled:                 false
+            block:                   card-deck                                  # card-deck | card-list
+            num_per_row:             2                                          # card-list only: [1 .. 4]
+            category:                featured
+            truncatewords:           30                                         # currently NOT used
+            max_posts:               4
+
+  # # ----------------------------------------------------------------------------
+  # # STEP panel
+  # #
+  # step:
+  #   # --------------------------------------------------------------------------
+  #   # STEP panel properties
+  #   #
+  #   enabled:                          false
+  #   id:                               step_panel_id
+  #   type:                             step_panel
+  #   style:                            dark
+  #   lane_span:                        fixed
+  #
+  #   cards:
+  #     - card:
+  #         title:                      step-panel-title
+  #         tagline:                    step-panel-tagline
+
+  # ----------------------------------------------------------------------------
+  # EXCEPTION panel
+  #
+  #   NOTE:
+  #   The EXCEPTION panel is used to place additional information to the
+  #   (default) exception CONTAINER if processing of a panel has failed
+  #
+  exception:
+    # --------------------------------------------------------------------------
+    # EXCEPTION panel properties
+    #
+    id:                                 exception_container
+    enabled:                            true
+    type:                               exception
+    comment:                            Default Exception Panel
+
+    lane_span:                          fixed
+
+# ------------------------------------------------------------------------------
+# END config

@@ -6,7 +6,7 @@ description: >
                                         J1 Template supports popular icons font sets out-of-the-box.
                                         The icon sets MDI and FA are very good in design and have a rich set of
                                         different icons for many categories used for the Web.
-                                        Iconify icons is not a locally stored icon-set like MDI or FA. All icons are
+                                        Iconify icons are not a locally stored icon-set like MDI or FA. All icons are
                                         loaded over the Internet using the so-called Unified OpenSource Icon
                                         Framework.
 
@@ -67,7 +67,7 @@ The icon sets MDI and FA are very good in design and have a rich set of
 different icons for many categories used for the Web. See below for some
 details for <<Material Design Icons>> and <<FontAwesome Icons>>.
 
-Iconify icons is not a locally stored icon-set like MDI or FA. All icons are
+Iconify icons are not a locally stored icon-set like MDI or FA. All icons are
 loaded over the Internet using the so-called *Unified OpenSource Icon
 Framework*. See section <<Iconify Icons>> for more information.
 
@@ -225,25 +225,25 @@ mdi:heart[5x md-red-900 mdi-pulsed]
 |===============================================================================
 
 NOTE: Using Material Design Icons with Asciidoc is easy as an inline
-macro `mdi:` is available to place icons whereever you want. See more about
+macro `mdi:` is available to place icons wherever you want. See more about
 this in section
 link:{roundtrip-asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
 
 _MDI_ is a growing collection to allow designers and developers targeting
 various platforms to download icons in the format, color, and size they need
-for any project. The repo contains today 2100+ icons plus converted icons from
-the official set created by _Google_.
+for any project. The repo today contains 6000+ icons (v5.4.55) including
+converted icons from the official set created by _Google_.
 
 _J1 Template_ supports the full set of _MDI_ for the Web (Webfont, WOFF). The
 icon set is fully integrated and can be used out-of-the-box.
 
 == FontAwesome Icons
 
-_FontAwesome_ is a font and icon toolkit based on CSS. It was initially created
-by _Dave Gandy_. The previous *version 4* was mainly for the use of Twitter
-Bootstrap *V3*. The new version *V5*, released in December 2017, focuses on
-all frameworks used for web development. Today, the *free FA* icon set comes
-with 1400+ icons included.
+_FontAwesome_ is a font and icon toolkit based on CSS, initially
+created by  _Dave Gandy_. The previous *version 4* was mainly for the use
+of Twitter Bootstrap *V3*. The new version *V5*, released in December 2017,
+focuses on all frameworks used for web development. Today, the *free FA*
+icon set comes with 1400+ icons included.
 
 Since version 5, the icon set comes in two packages: FontAwesome *Free*
 and the proprietary, commercial FontAwesome *Pro* version but requires a
@@ -271,7 +271,7 @@ noticed.
 
 If you haven't used V5 yet, it is highly recommended to visit the
 link:{fontawesome-get-started}[Get started, {browser-window--new}] pages to
-learn the basics and features, and styles.
+learn the basics and features and styles.
 
 With version V5 of _FontAwesome_, the icon set is split into two general
 parts:
@@ -279,10 +279,10 @@ parts:
 * standard icons (symbols) indicated by *FAS*
 * brand icons (icons for companies and brands) indicated by *FAB*
 
-NOTE: Using FontAwesome with Asciidoc is quite easy as two inline macros,
-`fab:` and `fas:`, are available to place icons where ever you want. See more
-about this in section
-link:{roundtrip-asciidoc-extensions}#icon-fonts[Asciidoc Extensions]
+NOTE: Using FontAwesome with Asciidoc is quite easy to use as two inline
+macros `fab:` and `fas:` are available to place icons where ever you want.
+See more about this in section
+link:{roundtrip-asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
 
 Find below examples of both and the use with J1 Template.
 
@@ -451,7 +451,7 @@ different icon sets using one (unified) syntax.
 
 To access that framework, a Javascript client is needed. For the J1 Template,
 the client is build-in and is loaded if Iconify is requested as a resource.
-To see what icon sets available with that framework, check the page
+To see what icon sets are available with that framework, check the page
 link:{iconify-icon-sets}[Iconify Icon Sets, {browser-window--new}].
 
 NOTE: Using Iconify icons with J1 Template is quite easy. An Asciidoctor
@@ -525,12 +525,11 @@ iconify:medical-icon:i-ear-nose-throat[5x md-red-900]
 |===============================================================================
 
 
-== Whats next
+== What next
 
 Have you've enjoyed the possibilities J1 offers for managing and
-manipulating Font Icons. Do you think these Icons sets can fit your needs?
-Using Iconify, for all topics an icon font should be found. And it's simple,
-isn't it?
+manipulating font icons. Do you think these icon sets can fit your needs?
+Using Iconify, for all topics, you will find a suitable icon. And it's simple.
 
 To check more features of the template, go for the link:{roundtrip-asciidoc-extensions}[
 Asciidoc extensions] made for J1!

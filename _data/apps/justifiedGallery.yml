@@ -374,5 +374,45 @@ settings:
           videojs:                      true
           videojsOptions:               {}
 
+    # --------------------------------------------------------------------------
+    # TikTok
+    #
+    - gallery:
+        enabled:                        true
+        type:                           video-online
+        id:                             jg_tiktok
+        show_delay:                     300
+        title:                          false
+        css_classes:
+        image_path:                     /assets/videos/tiktok
+        thumb_path:                     /assets/videos/tiktok
+        videos:                         [
+                                          "https://www.tiktok.com/@octaviaegon/video/6983746143356292357/",
+                                          "https://www.tiktok.com/@waluschka.w59/video/6984680288114756870/",
+                                          "https://www.tiktok.com/@octaviaegon/video/6983746143356292357/",
+                                        ]
+        captions_gallery:               [
+                                        "Egon - Einhorn",
+                                        "Valentina - Mahlzeit!",
+                                        "Egon - Einhorn",
+                                        ]
+        captions_lightbox:              [
+                                          "<p>Egon - Einhorn</p>",
+                                          "<p>Valentina - Mahlzeit!</p>",
+                                          "<p>Egon - Einhorn</p>"
+                                        ]
+        poster:                         [                                       # thumbnails taken from https://www.tiktok.com/oembed?url=xxx (thumbnail_url)
+                                          einhorn.jpg,                          # https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/dd93b5e1036b47f88ecd38fdc7305c4c~tplv-dmt-logom:tos-maliva-p-0000/a6315c6d8268486c931480b6fb1e3836.image?x-expires=1629579600&x-signature=lWUMEMNw%2Byf3tTX4YOdEGRrh1%2BQ%3D
+                                          waluschka.jpg,                        # https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/03a05accd4ec443aba51f4ec8a07d3a0?x-expires=1629583200&x-signature=t%2FvV5z4I9mdjtwAzH4FOF%2Fkm9fs%3D
+                                          einhorn.jpg
+                                        ]
+        gallery_options:
+          rowHeight:                    400
+          margins:                      5
+
+        lightbox_options:
+          lightbox:                     lg
+
+
 # ------------------------------------------------------------------------------
 # END config

@@ -1,5 +1,5 @@
 ---
-title:                                  Privatheit
+title:                                  Persönliche Daten
 tagline:                                ihre privatsphäre
 date:                                   2023-01-01 01:00:00 +100
 description: >
@@ -54,10 +54,12 @@ resource_options:
 :cookie-consent:                        true
 :logs-files:                            false
 :google-analytics:                      true
+:hyvor:                                 true
 :facebook:                              false
 :twitter:                               false
 :instagram:                             false
-:youtube:                               false
+:youtube:                               true
+:vimeo:                                 true
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -86,58 +88,62 @@ Privatsphäre an die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union
 ifeval::[{cookies} == true]
 == Cookies
 
-Diese Website verwendet Cookies und ähnliche Technologien, die für den Betrieb
-diese Angebots. Es steht Ihnen frei, Ihre Einwilligung zu erteilen, zu
-verweigern oder zu widerrufen, indem Sie im Datenschutzdialog auf
+Diese Website verwendet Cookies und ähnliche Technologien für den Betrieb
+dieses Angebots. Es steht Ihnen frei Ihre Einwilligung zu erteilen, zu
+verweigern oder zu widerrufen indem Sie im Datenschutzdialog auf
 die Schaltfläche *Einstellungen* klicken. Nachträgliche Änderungen sind
-*jederzeit* durch Klick auf das `Cookie-Icon` in der *Menüleiste* möglich.
+*jederzeit* durch Klick auf die Ikone mdi:cookie[18px, md-blue]
+in der *Menüleiste* möglich.
 
-*Erweiterte* Cookies werden nur mit Ihrer Zustimmung verwendet. Diese
-zusätzlichen Cookies werden verwendet, um die Nutzung dieser Website zu
-analysieren oer personalisierte Inhalte anzubieten. Analyse der Nutzung dieser
-Website-Hilfe bietet Ihnen eine bessere Benutzererfahrung der angebotenen
-Website. Mehr Informationen darüber, welche Daten erhoben und wie diese
-weitergegeben werden können zu Partnern finden Sie im Datenschutzdialog durch
-Anklicken der Schaltfläche *Datenschutzerklärung*.
+*Erweiterte* Cookies von Drittanbietern werden nur mit Ihrer Zustimmung
+verwendet. Diese zusätzlichen Cookies werden verwendet, um die Nutzung dieser
+Website zu analysieren oder personalisierte Inhalte anzubieten. Die Auswertung
+dieser Informationen bietet Ihnen eine bessere Benutzererfahrung der angebotenen
+Seiten wie zusätzliche Funktionen der jeweiligen Anbieter. Mehr Informationen
+finden Sie im Datenschutzdialog durch Anklicken der Schaltfläche
+*Datenschutzerklärung* oder in den folgenden Abschnitten der jeweiligen
+Anbieter.
 
 Notwendig::
-Notwendige Daten werden gespeichert, um Basisdienste dieser Site zu betreiben.
-Diese Website basiert auf statischen Inhalten und es wird keine Datenbank
-dahinter verwendet. Alle Informationen (Daten), die zur Steuerung dieser Seite
-benötigt werden, werden in sogenannten Session-Cookies gespeichert.
-Sitzungscookies werden von Ihrem Browser automatisch entfernt, wenn Sie alle
-Fenster schließen.
+Notwendige Daten werden in Cookies gespeichert, um die Basisdienste dieser Site
+zu betreiben. Diese Website führt *keine Aufzeichnungen* über deren Nutzung.
+Alle Informationen (Daten) die zur Steuerung dieser Seite notwendig sind,
+werden in sogenannten *Sitzungscookies* (Session Cookies) gespeichert.
+Sitzungscookies werden von Ihrem Browser *automatisch* entfernt, wenn Sie alle
+Fenster in Ihrem Browser *schließen*.
 
 Analysen::
 Analysen der Nutzung dieser Website hilft uns, Ihr Nutzungserlebnis der Website
 zu optimieren. Zur Analyse wird Google Analytics (GA) verwendet. Diese Website
-übermittelt keine personenbezogenen Daten an GA. Implizite personenbezogene
-Daten wie IP-Adressen werden zum Schutz Ihrer Privatsphäre anonymisiert.
+übermittelt keine personenbezogenen Daten. Implizite personenbezogene
+Daten wie IP-Adressen werden zum Schutz Ihrer Privatsphäre *anonymisiert*.
 
 Personalisierung::
-Personalisierung wird z.B. um Benutzerfeedback zu sammeln oder Werbekampagnen
-durchzuführen, um Ihnen eine Website kostenlos zur Verfügung zu stellen.
-Partner wie Disqus oder Google ermöglichen es uns, Ihnen exzellente
-personalisierte Dienste anzubieten und die Kosten für den Betrieb dieser
-ebsite zu finanzieren.
+Personalisierung wird verwendet um beispielsweise Benutzerfeedback zu sammeln,
+zusätzliche Funktionen anzubieten oder Werbekampagnen durchzuführen. Einnahmen
+aus Werbekampagnen erlauben es uns Ihnen diese Website kostenlos zur Verfügung
+zu stellen. Partner ermöglichen es uns, Ihnen exzellente personalisierte
+Dienste anzubieten sowie die Kosten für den Betrieb dieser Website zu
+finanzieren.
+
 endif::[]
 
 
 ifeval::[{cookie-consent} == true]
-== Cookie Zustimmung
+== Datenschutz und Ihre Einstellungen
 
-Wenn Sie konfigurieren möchten, welche *Cookies* von *dieser Site* verwendet
-werden, können Sie Ihre Einwilligungseinstellungen für bereits erteilte Cookies
-anpassen. Außerdem Sie können Sie Cookies ablehnen, indem Sie Ihre *Browser*
+Wenn Sie einstellen möchten welche *Cookies* und ähnliche Technologien
+über *diese Site* verwendet werden, können Sie Ihre Einwilligung anpassen.
+Außerdem Sie können Sie Cookies ablehnen, indem Sie Ihre *Browser*
 Einstellungen entsprechend anpassen. Bitte seien Sie vorsichtig, wenn Sie Ihre
 Browsereinstellungen ändern. Die Ablehnung von Cookies kann zu schwerwiegenden
 Problemen beim Besuch von Websites führen, die von Gebrauch von Cookies
-abhängen.
+abhängen. Dies betrifft nicht nur die Seiten dieses Angebots.
 
-CAUTION: Haben Sie zuvor unsere Website besucht und der Verwendung
-von Cookies zugestimmt, können sich die zudem Zeitpunkt erstellten Cookies noch
-auf Ihrem System befinden. In diesem Fall sind möglicherweise bereits
-vorhandene Cookies manuell durch Ihren Browser zu löschen.
+NOTE: Haben Sie zuvor unsere Website besucht und der Verwendung von Cookies
+zugestimmt, können sich die zudem Zeitpunkt erstellten Cookies noch auf Ihrem
+System befinden. In diesem Fall sind möglicherweise bereits vorhandene Cookies
+*manuell* über Funktionen Ihres Browsers zu löschen.
 
 ++++
 <div class="mt-4 mb-3">
@@ -146,7 +152,7 @@ vorhandene Cookies manuell durch Ihren Browser zu löschen.
       aria-label="Cookie Consent"
       style="min-width: 25rem">
       <i class="mdi mdi-cookie mdi-2x mr-2"></i>
-      Cookie Consent
+      Ihre Einstellungen
   </a>
 </div>
 ++++
@@ -160,7 +166,7 @@ speichern sie in Protokolldateien. Diese Informationen können Internet Protocol
 (IP)-Adressen, Browsertyp, Internet Service Provider (ISP), Verweis- und
 Ausstiegsseiten, Betrieb System-, Zeitstempel und/oder Clickstream-Daten.
 
-Diese sind
+Diese sind:
 
 * Browsertyp und -Version
 * Betriebssystem
@@ -169,15 +175,18 @@ Diese sind
 * Zeitstempel der Seitenaufrufe
 
 Wir können diese Protokollinformationen mit anderen Informationen kombinieren.
-Wir tun dies, um die von uns angebotenen Dienstleistungen zu verbessern, um das
-Marketing zu verbessern. Wir verwenden Speicherverfahren wie *Local Storage*,
-um Inhaltsinformationen und Präferenzen speichern.
+Wir tun dies, um die von uns angebotenen Dienstleistungen zu verbessern und das
+Angebot auf unseren Seiten zu verbessern.
+
 endif::[]
 
 ifeval::[{google-analytics} == true]
-== Verwendung von Google Analytics
+== Verwendung von Analysen (GA)
 
-Diese Website benutzt Google Analytics (GA), einen Webanalysedienst der:
+Diese Website benutzt Google Analytics (GA), ein Datendienst zur Auswertung
+von Benutzeraktivitäten. Diese Funktion wird nur verwendet, falls Sie in den
+Einstellungen zu Ihrer Privatsphäre *Analysen* zugestimmt haben.
+Dieser Dienst wird angeboten durch:
 
 ----
    Google Inc.
@@ -186,137 +195,274 @@ Diese Website benutzt Google Analytics (GA), einen Webanalysedienst der:
    USA
 ----
 
-Google Analytics verwendet sogenannte Cookies, das sind Textdateien, die auf
-Ihres Computers, um der Website zu helfen, die Nutzung der Website durch die
-Benutzer zu analysieren. Das Die durch den Cookie erzeugten Informationen
-über Ihre Benutzung der Website werden übermittelt und von Google auf Servern
-in den USA gespeichert. Im
+Der Service verwendet sogenannte Cookies. Das sind Textdateien, die auf
+Ihrem Computer gespeichert werden, um die Nutzung der Website durch die
+Benutzer auszuwerten. Die durch Cookies erzeugten Informationen werden
+übermittelt und auf Servern des Unternehmens gespeichert.
 
-Falls auf dieser Website die IP-Anonymisierung aktiviert ist, wird Ihre
-IP-Adresse im Bereich der Mitgliedsstaaten der Europäischen Union gekürzt oder
-anderen Vertragsparteien des Abkommens über den Europäischen Wirtschaftsraum.
-Nur im In Ausnahmefällen wird die volle IP-Adresse an eine Google-Adresse
-übertragen Server in den USA und dort gekürzt.
+Diese Webseite verwendet die *Anonymisierung* von *IP-Adressen*. Damit wird
+Ihre Netzwerk-Adresse im Bereich der Mitgliedsstaaten der Europäischen Union
+sowie anderen Vertragsparteien des Abkommens über den Europäischen
+Wirtschaftsraum *gekürzt* und eine *persönliche* Zuordnung der erfassten Daten
+ist *nicht* möglich.
 
-Im Auftrag des Betreibers dieser Website wird Google diese Informationen
-benutzen um Ihre Nutzung der Website auszuwerten, um Reports über
-Website-Aktivität für Website-Betreiber und Bereitstellung anderer
-Dienstleistungen in Bezug auf Website-Aktivitäten und Internetnutzung. Die
-übermittelte IP-Adresse Ihr Browser im Rahmen von Google Analytics, wird
-nicht verknüpft mit anderen Daten von Google.
+Weitere Informationen hierzu finden Sie in den Richtlinen zum
+link:{url-google--privacy-policy-de}[Datenschutz, {browser-window--new}].
 
-Sie können der Verwendung von Cookies widersprechen, indem Sie die
-entsprechenden Einstellungen auswählen in Ihrem Browser. Beachten Sie jedoch
-bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
-um die volle Funktionalität dieser Website zu nutzen.
+NOTE: Sie können der Verwendung jederzeit widersprechen, indem Sie die
+entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
+jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
+die volle Funktionalität dieser Website zu nutzen.
 
 endif::[]
 
-ifeval::[{facebook} == true]
-== Verwendung von Facebook Plug-ins
+ifeval::[{hyvor} == true]
+== Verwendung von Kommentaren (HT)
 
-We have integrated plug-ins (Like-Button) by the social network *Facebook*,
-provided by:
+Auf unseren Seiten *können* Funktionen des Dienstes *Hyvor Talk* (HT)
+eingebunden sein. Diese Funktionen (Kommentare/Chats) stehen zur Verfügung,
+falls Sie in den Einstellungen zu Ihrer Privatsphäre der *Personalisierung*
+zugestimmt haben.
+Dieser Dienst wird angeboten durch:
+
+----
+Green Mount State
+Madawa, Pilessa No 130
+Kurunegala
+Sri Lanka
+----
+
+Die *Kosten* für die Bereitstellung des Dienstes werden durch den *Betreiber*
+dieser Website *übernommen*. Die Services von *Hyvor Talk* stellen die Sicherung
+Ihrer Privatsphäre in den Vordergrund (*Privacy First*). Wenn Sie unsere Website
+besuchen, wird die Kommentarplattform eine direkte Verbindung zwischen Ihrem
+Browser und den Servern  des Unternehmens *Hyvor* herstellen.
+
+Über die Kommentar-Funktion werden *keine* Tracking-, Werbe-, Affiliate-
+oder sonstige Kodes von *Drittanbietern* plaziert. Personenbezogene Daten
+werden zu *keiner Zeit* an Dritte weitergegeben.
+
+Der Service verwendet sogenannte Cookies. Das sind Textdateien, die auf
+Ihrem Computer gespeichert werden um die Nutzung des Dienstes durch die
+Benutzer auszuwerten. Die durch Cookies erzeugten Informationen werden
+übermittelt und auf Servern des Unternehmens gespeichert.
+
+Weitere Informationen hierzu finden Sie in den Richtlinen zum
+https://hyvor.com/privacy-policy[Datenschutz, {browser-window--new}].
+
+NOTE: Sie können der Verwendung jederzeit widersprechen, indem Sie die
+entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
+jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
+die volle Funktionalität dieser Website zu nutzen.
+
+endif::[]
+
+
+ifeval::[{facebook} == true]
+== Verwendung der Facebook-Integration
+
+Auf unseren Seiten *können* Funktionen des sozialen Netzwerks *Facebook*
+eingebunden sein. Diese Funktionen stehen zur Verfügung, falls Sie in den
+Einstellungen zu Ihrer Privatsphäre der *Personalisierung* zugestimmt haben.
+Diese Funktionen werden angeboten durch:
 
 ----
   Facebook Inc.
-  1 Hacker Way
-  Menlo Park
-  California 94025
-  USA
-----
-
-into our website.
-
-When you visit our website, the plug-in will establish a direct connection
-between your browser and the Facebook server. Thereby Facebook will be informed
-about your visit on our website with your IP address. If you click the Facebook
-"Like" button while you are logged into your Facebook account, you can link
-the contents of our website to your Facebook profile. Facebook can thereby
-associate your visit to our website with your user account.
-
-We would like to point out that, as the website provider, we possess no
-knowledge of the contents of the transmitted data or its use by Facebook. You
-can find further information on this topic in the Facebook privacy policy at
-link:{url-facebook--privacy-policy-en}[Privacy Police, {browser-window--new}].
-If you do not want Facebook to be able to associate your visit to our website
-with your Facebook user account, please log out of your Facebook account
-before visiting our website.
-endif::[]
-
-ifeval::[{twitter} == true]
-== Verwendung von Twitter
-
-We have integrated functions by the service provider Twitter into our website.
-These functions are offered by:
-
-----
-  Twitter Inc.
-  1355 Market Street
-  Suite 900, San Francisco
-  CA 94103
-  USA
-----
-
-When using Twitter and the "re-tweet" function, the websites you have visited
-will be linked to your Twitter account and made available to other users.
-Data will also be transmitted to Twitter.
-
-We would like to point out that as provider of the website we possess no
-knowledge of the contents of the data transmitted or its use by Twitter.
-You can find further information on this topic in the Twitter privacy
-policy at link:{url-twitter--privacy-en}[Privacy Police, {browser-window--new}].
-You can change your Twitter privacy
-settings in your account settings at
-link:{url-twitter--login}[Login, {browser-window--new}].
-endif::[]
-
-ifeval::[{instagram} == true]
-== Verwendung von Instagram
-
-Auf unseren Seiten sind Funktionen des Dienstes Instagram eingebunden. Diese
-Funktionen werden angeboten durch die
-
-----
-  Instagram Inc.
-  1601 Willow Road
-  Menlo Park
+  1 Hacker Way Menlo Park
   CA 94025
   USA
 ----
 
-integriert. Wenn Sie in Ihrem Instagram Account eingeloggt sind können Sie
+Wenn Sie unsere Website besuchen, wird über eine Integration (*Like-Button*)
+eine direkte Verbindung zwischen Ihrem Browser und den Servern des Unternehmens
+Facebook aufgebaut. Dadurch werden persönliche Daten an die Server des
+Unternehmens *Facebook* übertragen. Voraussetzung hierzu ist, dass Sie während
+des Besuchs unserer Seiten *bereits* mit Ihrem persönlichen Benutzer-Konto
+des sozialen Netzwerks *eingeloggt sind*.
+
+Durch klicken auf den *Like-Button* können Sie die Inhalte unserer Seiten mit
+Ihrem Benutzer-Profil verbinden und damit den Besuch unserer Seiten Ihrem
+Benutzerkonto zuordnen.
+
+Die Integration der Inhalte verwendet sogenannte Cookies. Das sind Textdateien,
+die auf Ihrem Computer gespeichert werden um die Nutzung des Dienstes durch die
+Benutzer auszuwerten. Die durch Cookies erzeugten Informationen werden
+übermittelt und auf Servern des Unternehmens gespeichert.
+
+Wir weisen darauf hin, dass wir als Anbieter keine Kenntnis von Inhalt der
+übermittelten Daten sowie deren Nutzung haben. Weitere Informationen zu diesem
+Thema finden Sie in der Datenschutzerklärung des Anbieters unter
+link:{url-facebook--privacy-policy-en}[Datenschutz, {browser-window--new}].
+
+Wenn Sie *nicht* möchten, dass das Unternehmen Facebook den Besuch
+unserer Website mit Ihrem Benutzerkonto zuordnen kann, loggen Sie sich bitte
+aus Ihrem Benutzer-Konto aus *bevor* Sie unsere Website besuchen.
+
+NOTE: Sie können der Verwendung jederzeit widersprechen, indem Sie die
+entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
+jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
+die volle Funktionalität dieser Website zu nutzen.
+
+endif::[]
+
+ifeval::[{twitter} == true]
+== Verwendung der Twitter-Integration
+
+Auf unseren Seiten *können* Funktionen des Nachrichten-Netzwerks *Twitter*
+eingebunden sein. Diese Funktionen stehen zur Verfügung, falls Sie in den
+Einstellungen zu Ihrer Privatsphäre der *Personalisierung* zugestimmt haben.
+Diese Funktionen werden angeboten durch:
+
+----
+  Twitter Inc.
+  1355 Market Street Suite 900
+  CA 94103
+  USA
+----
+
+Wenn Sie unsere Website besuchen, wird über eine Integration (*Re-Tweet*)
+eine direkte Verbindung zwischen Ihrem Browser und dem Servern des Unternehmens
+*Twitter* aufgebaut. Dadurch werden persönliche Daten an die Server des
+Unternehmens *Twitter* übertragen. Voraussetzung hierzu ist, dass Sie während
+des Besuchs unserer Seiten bereits mit Ihrem persönlichen Benutzer-Konto
+des Nachrichten-Netzwerks eingeloggt sind.
+
+Die Integration der Inhalte verwendet sogenannte Cookies. Das sind Textdateien,
+die auf Ihrem Computer gespeichert werden um die Nutzung des Dienstes durch die
+Benutzer auszuwerten. Die durch Cookies erzeugten Informationen werden
+übermittelt und auf Servern des Unternehmens gespeichert.
+
+Wir weisen darauf hin, dass wir als Anbieter keine Kenntnis von Inhalt der
+übermittelten Daten sowie deren Nutzung haben. Weitere Informationen zu diesem
+Thema finden Sie in der Datenschutzerklärung des Abieters unter
+link:{url-twitter--privacy-policy-en}[Datenschutz, {browser-window--new}].
+
+NOTE: Sie können der Verwendung jederzeit widersprechen, indem Sie die
+entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
+jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
+die volle Funktionalität dieser Website zu nutzen.
+
+endif::[]
+
+ifeval::[{instagram} == true]
+== Verwendung der Instagram-Integration
+
+Auf unseren Seiten *können* Funktionen des sozialen Netzwerks *Instagram*
+eingebunden sein. Diese Funktionen stehen zur Verfügung, falls Sie in den
+Einstellungen zu Ihrer Privatsphäre der *Personalisierung* zugestimmt haben.
+Diese Funktionen werden angeboten durch:
+
+----
+  Instagram Inc.
+  1601 Willow Road Menlo Park
+  CA 94025
+  USA
+----
+
+Wenn Sie unsere Website besuchen, wird über eine Integration (*Instagram Button*)
+eine direkte Verbindung zwischen Ihrem Browser und dem Servern des Unternehmens
+*Instagram* aufgebaut. Dadurch werden persönliche Daten an die Server des
+Unternehmens *Instagram* übertragen. Voraussetzung hierzu ist, dass Sie während
+des Besuchs unserer Seiten bereits mit Ihrem persönlichen Benutzer-Konto
+des Nachrichten-Netzwerks eingeloggt sind.
+
+Wenn Sie in Ihrem Instagram Benutzer-Konto eingeloggt sind können Sie
 durch Anklicken des *Instagram Buttons* die Inhalte unserer Seiten mit
 Ihrem *Instagram Profil* verlinken. Dadurch kann Instagram den Besuch unserer
 Seiten Ihrem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als
 Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie
 deren Nutzung durch Instagram erhalten.
 
-Weitere Informationen hierzu finden Sie in der
-link:{url-instagram--privacy-policy}[Privacy Police Instagram, {browser-window--new}].
+Die Integration der Inhalte verwendet sogenannte Cookies. Das sind Textdateien,
+die auf Ihrem Computer gespeichert werden um die Nutzung des Dienstes durch die
+Benutzer auszuwerten. Die durch Cookies erzeugten Informationen werden
+übermittelt und auf Servern des Unternehmens gespeichert.
+
+Weitere Informationen hierzu finden Sie in den Richtlinen zum
+link:{url-instagram--privacy-policy}[Datenschutz, {browser-window--new}].
+
+Wenn Sie *nicht* möchten, dass das Unternehmen Instagram den Besuch
+unserer Website mit Ihrem Benutzerkonto zuordnen kann, loggen Sie sich bitte
+aus Ihrem Benutzer-Konto aus *bevor* Sie unsere Website besuchen.
+
+NOTE: Sie können der Verwendung jederzeit widersprechen, indem Sie die
+entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
+jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
+die volle Funktionalität dieser Website zu nutzen.
+
 endif::[]
 
-ifeval::[{youtube} == true]
-== Verwendung von YouTube
 
-We have integrated functions by the service provider *YouTube* into our
-website on selected pages. These functions are offered by:
+ifeval::[{youtube} == true]
+== Verwendung von Videos (YT)
+
+Auf unseren Seiten *können* Funktionen (Player) der Video-Plattform *YouTube*
+(YT) eingebunden sein. Diese Funktionen stehen zur Verfügung, falls Sie in den
+Einstellungen zu Ihrer Privatsphäre der *Personalisierung* zugestimmt haben.
+Diese Funktionen werden angeboten durch:
 
 ----
-  YouTube LLC,
-  901 Cherry Ave San Bruno
-  CA 94066
+  Google Ireland Limited
+  Gordon House, Barrow Street
+  Dublin 4
+  Irland
+----
+
+Wenn Sie unsere Website besuchen, wird über eine Integration (*Player*)
+eine direkte Verbindung zwischen Ihrem Browser und dem Servern des Unternehmens
+*YouTube* aufgebaut. Dadurch werden neben Inhalten (Videos) auch persönliche
+Daten an die Server des Unternehmens *YouTube* übertragen.
+
+Die Integration der Inhalte verwendet sogenannte Cookies. Das sind Textdateien,
+die auf Ihrem Computer gespeichert werden um die Nutzung des Dienstes durch die
+Benutzer auszuwerten. Die durch Cookies erzeugten Informationen werden
+übermittelt und auf Servern des Unternehmens gespeichert.
+
+Wir weisen darauf hin, dass wir als Anbieter keine Kenntnis von Inhalt der
+übermittelten Daten sowie deren Nutzung haben. Weitere Informationen zu diesem
+Thema finden Sie in der Datenschutzerklärung des Anbieters unter
+link:{url-google--privacy-policy-de}[Datenschutz, {browser-window--new}].
+
+NOTE: Sie können der Verwendung jederzeit widersprechen, indem Sie die
+entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
+jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
+die volle Funktionalität dieser Website zu nutzen.
+
+endif::[]
+
+ifeval::[{vimeo} == true]
+== Verwendung von Videos (VI)
+
+Auf unseren Seiten *können* Funktionen (Player) der Video-Plattform *Vimeo*
+(VI) eingebunden sein. Diese Funktionen stehen zur Verfügung, falls Sie in den
+Einstellungen zu Ihrer Privatsphäre der *Personalisierung* zugestimmt haben.
+Diese Funktionen werden angeboten durch:
+
+----
+  Vimeo Inc.
+  555 West 18th Street
+  NY 10011
   USA
 ----
 
-If you use one of our pages equipped with a *YouTube plugin* visit, a
-connection to the YouTube servers is established. There the YouTube server
-is informed which of our pages you have visited.
+Wenn Sie unsere Website besuchen, wird über eine Integration (*Player*)
+eine direkte Verbindung zwischen Ihrem Browser und dem Servern des Unternehmens
+*Vimeo* aufgebaut. Dadurch werden neben Inhalten (Videos) auch persönliche
+Daten an die Server des Unternehmens *Vimeo* übertragen.
 
-If you are logged into your YouTube account, you enable YouTube to assign
-your surfing behavior directly to your personal profile. You can prevent this
-by logging out of your YouTube account.
+Die Integration der Inhalte verwendet sogenannte Cookies. Das sind Textdateien,
+die auf Ihrem Computer gespeichert werden um die Nutzung des Dienstes durch die
+Benutzer auszuwerten. Die durch Cookies erzeugten Informationen werden
+übermittelt und auf Servern des Unternehmens gespeichert.
 
-Further information on the handling of user data can be found in the
-link:{url-google--privacy-policy-en}[Privacy Police Google/YouTube, {browser-window--new}].
+Wir weisen darauf hin, dass wir als Anbieter keine Kenntnis von Inhalt der
+übermittelten Daten sowie deren Nutzung haben. Weitere Informationen zu diesem
+Thema finden Sie in der Datenschutzerklärung des Anbieters unter
+link:{url-vimeo--privacy-policy}[Datenschutz, {browser-window--new}].
+
+NOTE: Sie können der Verwendung jederzeit widersprechen, indem Sie die
+entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
+jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
+die volle Funktionalität dieser Website zu nutzen.
+
 endif::[]

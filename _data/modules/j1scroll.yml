@@ -1,0 +1,57 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/j1Scroll.yml
+# User configuration for J1 infiniteScroll
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# About this configuration (used for J1 CC only)
+#
+about_config:
+
+  title:
+  scope:                                User settings
+  location:                             _data/modules/j1Scroll.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+  enabled:                              true
+
+  scrollers:
+    # --------------------------------------------------------------------------
+    # News Panel
+    #
+    - scroller:
+        enabled:                        true
+        id:                             home_news_panel
+        container:                      home_news_panel-scroll-group
+        path:                           /assets/data/news_panel_posts/page
+        elementScroll:                  true                                    # false = window, true = container
+        scrollOffset:                   100
+        lastPage:                       4
+        infoLastPage:                   true
+
+    # --------------------------------------------------------------------------
+    # Blog Navigator Preview
+    #
+    - scroller:
+        enabled:                        true
+        id:                             blog_navigator_preview
+        container:                      timeline
+        path:                           /pages/public/blog/navigator/page
+        elementScroll:                  true
+        scrollOffset:                   200
+        lastPage:                       6
+        infoLastPage:                   false
+
+# ------------------------------------------------------------------------------
+# END config
