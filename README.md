@@ -71,6 +71,8 @@ issues for private or professional use.
 * Bootstrap extensions included
 * Asciidoctor extensions included
 * Smooth-srcoll support
+* Infinite srcoll support
+* View/Animate on srcoll support
 * Full-text search engine included (Lunr)
 * Blog Post navigation included
 * GDPR compatible cookie consent module included
