@@ -1,0 +1,61 @@
+---
+title:                                  Asciidoctor PDF Themes
+tagline:                                Theming Guide for the Asciidoctor PDF Converter
+description:                            Asciidoctor PDF Theming Guide
+
+categories:                             [ Knowledge ]
+tags:                                   [ Asciidoctor, PDF, Converter ]
+
+permalink:                              /pages/public/skeleton/documentation/200_themes/
+regenerate:                             false
+
+resources:                              [ lightbox, clipboard, rouge ]
+resource_options:
+  - toccer:
+      collapseDepth:                    2
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set page (local) attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+//////////
+Topics remaining to document:
+* line height and line height length (and what that all means)
+* title page layout / title page images (logo & background)
+* document that unicode escape sequences can be used inside double-quoted strings
+//////////
+
+The theming system in *Asciidoctor PDF* is used to control the layout and styling
+of the PDF file *Asciidoctor PDF* generates from AsciiDoc. This document describes
+how the theming system works, how to define a custom theme in YAML and how to
+activate the theme when running *Asciidoctor PDF*.
+
+IMPORTANT: If you're using a custom theme, you're expected to bring your own
+fonts or declare the fonts from the default theme. If you don't declare your
+own fonts, the built-in PDF (afm) fonts will be used, which only support
+WINANSI characters (similar to Basic Latin).
+
+// Include documents
+// -------------------------------------------------------------------
+include::{documentdir}/200_themes.asciidoc[]

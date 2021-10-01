@@ -64,15 +64,13 @@ issues for private or professional use.
 * Themeable source code highlighting (Rouge)
 * Desktop and Mobile Web and Navigation ready
 * Fully configurable
-* 100/100/100 Google Lighthouse scores
+* Highest Google Lighthouse scores
 
 ## Modules and Extensions
 
 * Bootstrap extensions included
 * Asciidoctor extensions included
 * Smooth-srcoll support
-* Infinite srcoll support
-* View/Animate on srcoll support
 * Full-text search engine included (Lunr)
 * Blog Post navigation included
 * GDPR compatible cookie consent module included
@@ -84,14 +82,6 @@ issues for private or professional use.
 * Carousel module included
 * Video modules included
 
-## Addons and Integrations
-
-* Featured example content included
-* Royalty free images included
-* Comment provider support for Hyvor and Disqus
-* Google Analytics support
-* Deploy on Github Pages (source only), Netlify and Heroku ready
-
 # Supported platforms
 
 J1 is supported on all current x64-based OS:
@@ -101,7 +91,7 @@ J1 is supported on all current x64-based OS:
 * Linux, kernel version >= 4.15 (e.g. Ubuntu  18.x LTS)
 * OSX, version >= 10.10.5 (Yosemite)
 
-Note that 32-bit versions (x32) are generally **not** supported for all
+Note that 32-bit versions (x32) are generally NOT supported for all
 platforms.
 
 # Development languages and tools
@@ -110,10 +100,7 @@ To run the project for J1 Template Web, the following languages and
 tools expected to be in place with your OS:
 
 *   Ruby language, version >= 2.6 < 3.x
-*   Javascript language (NodeJS), version >= 12.x < 13.x
-
-Note, Ruby **3.x** versions are **not** supported for Jekyll and J1 either.
-More current or older versions of **NodeJS** may work, but not tested.
+*   Javascript language (NodeJS), version >= 12.x < 14.x
 
 ## Update the package managers for _NodeJS_
 

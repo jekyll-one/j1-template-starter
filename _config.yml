@@ -47,13 +47,13 @@
 #   values:                             development|production
 #   default:                            production
 #
-environment:                            production
+environment:                            development
 
 # version
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2021.1.28
+version:                                2021.2.2
 
 # version
 # ------------------------------------------------------------------------------
@@ -223,8 +223,8 @@ doctype:                                html
 #   values:                             boolean (true|false)
 #   default:                            false
 #
-title:                                  J1
-slogan:                                 starter
+title:                                  Jekyll One
+slogan:                                 starter web
 description: >
                                         Made for Jekyll · Made for Your Web
 
@@ -443,7 +443,7 @@ plugins:
 # - jekyll-gist
 # - jekyll-redirect-from
 # - jekyll-sass-converter
-# - jekyll-sitemap
+  - jekyll-sitemap
   - j1-paginator
 
 # ------------------------------------------------------------------------------
@@ -594,8 +594,8 @@ defaults:
       author:                           J1 Team
 
       robots:
-        index:                          false
-        follow:                         false
+        index:                          true
+        follow:                         true
 
       personalization:                  false
       exclude_from_search:              false
@@ -638,8 +638,8 @@ defaults:
       author:                           J1 Team
 
       robots:
-        index:                          false
-        follow:                         false
+        index:                          true
+        follow:                         true
 
       personalization:                  false
       exclude_from_search:              false
@@ -682,8 +682,12 @@ defaults:
       author:                           J1 Team
 
       robots:
-        index:                          false
-        follow:                         false
+        index:                          true
+        follow:                         true
+
+      toc:                              true
+      fam_menu_id:                      page_ctrl_simple
+      scrollbar:                        false
 
       personalization:                  false
       exclude_from_search:              false
@@ -703,46 +707,6 @@ defaults:
       images:
         category-image:                 false                                   # img26.jpg
         dir:                            /assets/images/collections/blog/series
-
-  # ----------------------------------------------------------------------------
-  # PUBLIC - WIKIPEDIA
-  #
-  - scope:
-      type:                             posts
-      path:                             posts/public/wikipedia
-
-    values:
-      layout:                           post
-      author:                           Wikipedia
-
-      robots:
-        index:                          false
-        follow:                         false
-
-      personalization:                  false
-      exclude_from_search:              false
-
-      analytics:                        true
-      comments:                         false
-      advertising:                      false
-      youtube:                          false
-      vimeo:                            false
-
-      series:                           false
-
-      toc:                              true
-      fam_menu_id:                      page_ctrl_simple
-      scrollbar:                        false
-
-      icons:
-        category-icon:                  false                                   # wikipedia
-        family:                         MDI
-        color:                          md-indigo
-        size:                           5x
-
-      images:
-        category-image:                 false
-        dir:                            /assets/images/collections/blog/wikipedia
 
   # ----------------------------------------------------------------------------
   # Collections

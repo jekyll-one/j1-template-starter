@@ -43,7 +43,7 @@ settings:
 
         title:                          All in One
         tagline:                        top features
-        description_properties:         mt-5 mr-3 mb-3
+        description_properties:         mt-3 mr-3 mb-3
         description: >
                                         <p class="dropcap">
                                           People quite often ask if static websites make sense
@@ -165,7 +165,7 @@ settings:
 
         title:                          Creators Blog
         tagline:                        latest news
-        description_properties:         mt-3 mr-3
+        description_properties:         mt-3 mr-3 mb-3
         description: >
                                         <p class="dropcap">
                                           Explore the blog and find interesting articles around Jekyll and
@@ -185,186 +185,220 @@ settings:
               num_per_row:              2                                       # card-list only: [1 .. 4]
               max_posts:                2
 
-  # # ----------------------------------------------------------------------------
-  # # SERVICE Panel
-  # #
-  # service:
-  #   # --------------------------------------------------------------------------
-  #   # Panel properties
-  #   #
-  #   - name:                             Home Service Panel
-  #     panel:
-  #       enabled:                        true
-  #       id:                             home_service_panel
-  #       comment:                        Home Service Panel
-  #       type:                           service
-  #       animate:                        false
-  #       properties:                     mt-5 mr-3 mb-5 ml-3
+  # ----------------------------------------------------------------------------
+  # SERVICE Panel
   #
-  #       title:                          Projekte
-  #       tagline:                        selber machen
-  #       description_properties:         mt-3 mr-3 mb-4
-  #       description: >
-  #                                       <p class="dropcap">
-  #                                         Eigene Projekte zur Digitalisierung erscheinen sehr schwierig. Angesichts der
-  #                                         Tatsache, dass sich viele Unternehmenn mit der digitalen Transformation schwer
-  #                                         tun könnte man glauben: Eigene Projekte sind kaum möglich.
-  #                                       </p>
-  #                                       <p>
-  #                                         Das dem nicht so ist, sollen Beispiele zeigen.
-  #                                       </p>
-  #       cards:
-  #
-  #         - name:                       Einsteiger
-  #           card:
-  #             enabled:                  true
-  #             id:                       card_1
-  #             type:                     service
-  #             icon:                     account
-  #             icon_size:                mdi-6x
-  #             icon_color:               md-white
-  #             href:                     /pages/public/projects/beginner/all/
-  #             title:                    Projekte
-  #             tagline:                  einsteiger
-  #             text: >
-  #                                       <p class="dropcap mt-3">
-  #                                         Ein erster Zugang zur digitalisierten Welt erfordert keine besonderen
-  #                                         technischen Kenntnisse. Zusätztliche Software wird nicht gebraucht. Alle
-  #                                         Experimente erforden lediglich einen Web-Browser.
-  #                                       </p>
-  #
-  #             services:
-  #
-  #               - name:                 Digitale Spuren
-  #                 service:
-  #                   id:                 A1
-  #                   description: >
-  #                                       <p>
-  #                                         Das Internet wird vielfach unmittelbar mit dem World-Wide-Web verbunden. Das
-  #                                         WWW gehört zu den wichtigsten Diensten - keine Frage. Mit "Ich gehe mal ins
-  #                                         Internet" meint in den meisten Fällen eine Website ansurfen, sie zu besuchen.
-  #                                       </p>
-  #                                       <p>
-  #                                         Das kann man auch durchaus ganz anders verstehen: Eine eigene Website
-  #                                         veröffenlichen. Damit ist man im Internet, ein Teil dieser virtuellen
-  #                                         digitalen Welt.
-  #                                       </p>
-  #                   title:              Digitale Spuren
-  #                   href:               /pages/public/projects/beginner/cookies/
-  #
-  #               - name:                 Öffentliche Daten
-  #                 service:
-  #                   id:                 A2
-  #                   description: >
-  #                                       <p>
-  #                                         Das Internet wird vielfach unmittelbar mit dem World-Wide-Web verbunden. Das
-  #                                         WWW gehört zu den wichtigsten Diensten - keine Frage. Mit "Ich gehe mal ins
-  #                                         Internet" meint in den meisten Fällen eine Website ansurfen, sie zu besuchen.
-  #                                       </p>
-  #                                       <p>
-  #                                         Das kann man auch durchaus ganz anders verstehen: Eine eigene Website
-  #                                         veröffenlichen. Damit ist man im Internet, ein Teil dieser virtuellen
-  #                                         digitalen Welt.
-  #                                       </p>
-  #                   title:              Öffentliche Daten
-  #                   href:               /pages/public/projects/beginner/opendata/
-  #
-  #               - name:                 Öffentliche Daten 2
-  #                 service:
-  #                   id:                 A3
-  #                   description: >
-  #                                       <p>
-  #                                         Das Internet wird vielfach unmittelbar mit dem World-Wide-Web verbunden. Das
-  #                                         WWW gehört zu den wichtigsten Diensten - keine Frage. Mit "Ich gehe mal ins
-  #                                         Internet" meint in den meisten Fällen eine Website ansurfen, sie zu besuchen.
-  #                                       </p>
-  #                                       <p>
-  #                                         Das kann man auch durchaus ganz anders verstehen: Eine eigene Website
-  #                                         veröffenlichen. Damit ist man im Internet, ein Teil dieser virtuellen
-  #                                         digitalen Welt.
-  #                                       </p>
-  #                   title:              Öffentliche Daten 2
-  #                   href:               /pages/public/projects/beginner/opendata/
-  #
-  #         - name:                       Fortgeschrittene
-  #           card:
-  #             enabled:                  true
-  #             id:                       card_2
-  #             type:                     service
-  #             icon:                     account-tie
-  #             icon_size:                mdi-6x
-  #             icon_color:               md-white
-  #             href:                     /pages/public/projects/advanced/all/
-  #             title:                    Projekte
-  #             tagline:                  fortgeschrittene
-  #             text: >
-  #                                       <p class="dropcap mt-3">
-  #                                         Projekte für Fortgeschrittene richten sich an erfahrene Anwender:innen bzw.
-  #                                         Leute die mehr erfahren wollen. Die Bearbeitung wird einige Zeit brauchen.
-  #                                         Gut investierte Zeit, Einblicke die sich lohnen. Erfahrungen die man nicht
-  #                                         so leicht vergessen wird.
-  #                                       </p>
-  #             services:
-  #
-  #               - name:                 Websites
-  #                 service:
-  #                   id:                 B1
-  #                   description: >
-  #                                       <p>
-  #                                         Dank guter Werkzeuge ist die Erstellung von Webseiten einfacher geworden.
-  #                                         Nicht unbedingt simpel, aber auch keine Wissenschaft die nur wenige beherrschen.
-  #                                         Mit Generatoren für Webseiten ist ein Basisweb in wenigen Minuten  erstellt.
-  #                                         Für die vorgeschlagenen Experimente reichen solche Webs völlig aus.
-  #                                         Dazu die gute Nachricht: Die meisten dieser Tools stehen als OpenSource Allen
-  #                                         kostenlos zur Verfügung.
-  #                                       </p>
-  #                                       <p>
-  #                                         Mit dem Generator für Webseiten J1-Template ist ein Basisweb in wenigen
-  #                                         Minuten erstellt. Dieses Site ist mit J1 generiert und kann kostenlos
-  #                                         verwendet werden. Nicht schlecht, oder?
-  #                                       </p>
-  #
-  #                   title:              Websites herstellen
-  #                   href:               /pages/public/projects/advanced/web/create_websites/
-  #
-  #               - name:                 Zusammenarbeit
-  #                 service:
-  #                   id:                 B2
-  #                   description: >
-  #                                       <p>
-  #                                         Das Internet wird vielfach unmittelbar mit dem World-Wide-Web verbunden. Das
-  #                                         WWW gehört zu den wichtigsten Diensten - keine Frage. Mit "Ich gehe mal ins
-  #                                         Internet" meint in den meisten Fällen eine Website ansurfen, sie zu besuchen.
-  #                                       </p>
-  #                                       <p>
-  #                                         Das kann man auch durchaus ganz anders verstehen: Eine eigene Website
-  #                                         veröffenlichen. Damit ist man im Internet, ein Teil dieser virtuellen
-  #                                         digitalen Welt.
-  #                                       </p>
-  #                   title:              Zusammenarbeit
-  #                   href:               /pages/public/projects/advanced/web/share_code/
-  #
-  #               - name:                 Webs veröffentlichen
-  #                 service:
-  #                   id:                 B3
-  #                   description: >
-  #                                       <p>
-  #                                         Das Internet wird vielfach unmittelbar mit dem World-Wide-Web verbunden. Das
-  #                                         WWW gehört zu den wichtigsten Diensten - keine Frage. Mit "Ich gehe mal ins
-  #                                         Internet" meint in den meisten Fällen eine Website ansurfen, sie zu besuchen.
-  #                                       </p>
-  #                                       <p>
-  #                                         Das kann man auch durchaus ganz anders verstehen: Eine eigene Website
-  #                                         veröffenlichen. Damit ist man im Internet, ein Teil dieser virtuellen
-  #                                         digitalen Welt.
-  #                                       </p>
-  #                   title:              Webs veröffentlichen
-  #                   href:               /pages/public/projects/advanced/web/publishing/
+  service:
+    # --------------------------------------------------------------------------
+    # Panel properties
+    #
+    - name:                             Home Service Panel
+      panel:
+        enabled:                        false
+        id:                             home_service_panel
+        comment:                        Home Service Panel
+        type:                           service
+        animate:                        false
+        properties:                     mt-5 mr-3 mb-5 ml-3
 
+        title:                          Jekyll One
+        tagline:                        full featured template for jekyll
+        description_properties:         mt-3 mr-3 mb-3
+        description: >
+                                        <p class="dropcap">
+                                          People quite often ask if static websites make sense for
+                                          anything beyond a one-page website. Some others see in
+                                          static websites the stone age of the World Wide Web.
+                                          What's about static websites today? What's achievable?
+                                        </p>
+                                        <p>
+                                          This board highlights top features, which make static webs not
+                                          only an option, but an attractive method to create fast, secure,
+                                          and sophisticated websites for many use cases.
+                                        </p>
+                                        <ul>
+                                          <li>
+                                            Current Technology and Design. Excellent performance on all devices.
+                                          </li>
+                                          <li>
+                                            Fully Responsive. Best results on PCs, Tablets, and SmartPhones.
+                                          </li>
+                                          <li>
+                                            Start in no time. No programming is needed using J1.
+                                          </li>
+                                        <ul>
 
-  # # ----------------------------------------------------------------------------
-  # # STEP Panel
-  # #
+        cards:
+
+          - name:                       General Features
+            card:
+              enabled:                  true
+              id:                       card_1
+              type:                     service
+              icon:                     globe-model
+              icon_size:                mdi-6x
+              icon_color:               md-white
+              href:                     /pages/public/projects/beginner/all/
+              title:                    Features
+              tagline:                  general features
+              text: >
+                                        <p class="dropcap mt-3">
+                                          Ein erster Zugang zur digitalisierten Welt erfordert keine besonderen
+                                          technischen Kenntnisse. Zusätztliche Software wird nicht gebraucht. Alle
+                                          Experimente erforden lediglich einen Web-Browser.
+                                        </p>
+
+              services:
+
+                - name:                 Platforms
+                  service:
+                    id:                 A1
+                    description: >
+                                        <p>
+                                          Das Internet wird vielfach unmittelbar mit dem World-Wide-Web verbunden. Das
+                                          WWW gehört zu den wichtigsten Diensten - keine Frage. Mit "Ich gehe mal ins
+                                          Internet" meint in den meisten Fällen eine Website ansurfen, sie zu besuchen.
+                                        </p>
+                                        <p>
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-language-ruby"></i>
+                                          Ruby 2.7 support <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-language-ruby"></i>
+                                          Jekyll 4.2 support <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-nodejs"></i>
+                                          NodeJS support <br />
+                                        </p>
+                    title:              Platforms
+                    href:               "/pages/public/features/platforms/#platforms"
+
+                - name:                 Frameworks
+                  service:
+                    id:                 A2
+                    description: >
+                                        <p>
+                                          Das Internet wird vielfach unmittelbar mit dem World-Wide-Web verbunden. Das
+                                          WWW gehört zu den wichtigsten Diensten - keine Frage. Mit "Ich gehe mal ins
+                                          Internet" meint in den meisten Fällen eine Website ansurfen, sie zu besuchen.
+                                        </p>
+                                        <p>
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-bootstrap"></i>
+                                          Responsive Design, Bootstrap V4 (v4.6) support <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-language-html5"></i>
+                                          Compressed HTML, CSS and Javascript support <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-grass"></i>
+                                          Icon Font support (MDI, FA, Iconify, Twitter Emoji) <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-application-settings"></i>
+                                          Fully configurable <br />
+                                        </p>
+                    title:              Frameworks
+                    href:               /pages/public/features/platforms/#frameworks
+
+                - name:                 Devices
+                  service:
+                    id:                 A3
+                    description: >
+                                        <p>
+                                          Das Internet wird vielfach unmittelbar mit dem World-Wide-Web verbunden. Das
+                                          WWW gehört zu den wichtigsten Diensten - keine Frage. Mit "Ich gehe mal ins
+                                          Internet" meint in den meisten Fällen eine Website ansurfen, sie zu besuchen.
+                                        </p>
+                                        <p>
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-devices"></i>
+                                          Desktop and Mobile support <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-near-me"></i>
+                                          Desktop, Mobile Web Navigation ready <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-google-chrome"></i>
+                                          100/100/100 Google Lighthouse scores <br />
+                                        </p>
+                    title:              Devices
+                    href:               /pages/public/features/platforms/#devices
+
+          - name:                       Modules
+            card:
+              enabled:                  true
+              id:                       card_2
+              type:                     service
+              icon:                     gift
+              icon_size:                mdi-6x
+              icon_color:               md-white
+              href:                     /pages/public/projects/advanced/all/
+              title:                    Features
+              tagline:                  template features
+              text: >
+                                        <p class="dropcap mt-3">
+                                          Projekte für Fortgeschrittene richten sich an erfahrene Anwender:innen bzw.
+                                          Leute die mehr erfahren wollen. Die Bearbeitung wird einige Zeit brauchen.
+                                          Gut investierte Zeit, Einblicke die sich lohnen. Erfahrungen die man nicht
+                                          so leicht vergessen wird.
+                                        </p>
+              services:
+
+                - name:                 Modules
+                  service:
+                    id:                 B1
+                    description: >
+                                        <p>
+                                          Dank guter Werkzeuge ist die Erstellung von Webseiten einfacher geworden.
+                                          Nicht unbedingt simpel, aber auch keine Wissenschaft die nur wenige beherrschen.
+                                          Mit Generatoren für Webseiten ist ein Basisweb in wenigen Minuten  erstellt.
+                                          Für die vorgeschlagenen Experimente reichen solche Webs völlig aus.
+                                          Dazu die gute Nachricht: Die meisten dieser Tools stehen als OpenSource Allen
+                                          kostenlos zur Verfügung.
+                                        </p>
+                                        <p>
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-devices"></i>
+                                          Desktop and Mobile support <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-language-html5"></i>
+                                          Desktop, Mobile Web Navigation ready <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-google-chrome"></i>
+                                          100/100/100 Google Lighthouse scores <br />
+                                        </p>
+
+                    title:              Modules
+                    href:               /pages/public/features/modules/#modules
+
+                - name:                 Extensions
+                  service:
+                    id:                 B2
+                    description: >
+                                        <p>
+                                          Das Internet wird vielfach unmittelbar mit dem World-Wide-Web verbunden. Das
+                                          WWW gehört zu den wichtigsten Diensten - keine Frage. Mit "Ich gehe mal ins
+                                          Internet" meint in den meisten Fällen eine Website ansurfen, sie zu besuchen.
+                                        </p>
+                                        <p>
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-devices"></i>
+                                          Desktop and Mobile support <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-language-html5"></i>
+                                          Desktop, Mobile Web Navigation ready <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-google-chrome"></i>
+                                          100/100/100 Google Lighthouse scores <br />
+                                        </p>
+                    title:              Extensions
+                    href:               /pages/public/features/modules/#extensions
+
+                - name:                 Integrations
+                  service:
+                    id:                 B3
+                    description: >
+                                        <p>
+                                          Das Internet wird vielfach unmittelbar mit dem World-Wide-Web verbunden. Das
+                                          WWW gehört zu den wichtigsten Diensten - keine Frage. Mit "Ich gehe mal ins
+                                          Internet" meint in den meisten Fällen eine Website ansurfen, sie zu besuchen.
+                                        </p>
+                                        <p>
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-devices"></i>
+                                          Desktop and Mobile support <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-language-html5"></i>
+                                          Desktop, Mobile Web Navigation ready <br />
+                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-google-chrome"></i>
+                                          100/100/100 Google Lighthouse scores <br />
+                                        </p>
+                    title:              Integrations
+                    href:               /pages/public/features/modules/#integrations
+
+  # ----------------------------------------------------------------------------
+  # STEP Panel
+  #
   # step:
   #   # --------------------------------------------------------------------------
   #   # STEP panel properties
@@ -384,9 +418,9 @@ settings:
   #                                   Donec id elit non mi porta gravida at eget
   #                                   metus id elit mi egetine. Fusce dapibus
 
-  # # ----------------------------------------------------------------------------
-  # # SERVICE Panel
-  # #
+  # ----------------------------------------------------------------------------
+  # SERVICE Panel
+  #
   # service:
   #   # --------------------------------------------------------------------------
   #   # SERVICE panel properties

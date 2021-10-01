@@ -156,14 +156,15 @@ lanes:
 
   # ----------------------------------------------------------------------------
   # TRANSLATOR connector
-  #
-  - lane:
-      enabled:                          true
-      region:                           body-main
-      type:                             sync
-      base:                             _includes/themes/j1
-      path:                             modules/connectors
-      file:                             translator
+  # jadams, 2021-09-23: all connectors are already loaded by the >>default<<
+  #         layout. No need for 2nd-level layouts to load again!!!
+  # - lane:
+  #     enabled:                          true
+  #     region:                           body-main
+  #     type:                             sync
+  #     base:                             _includes/themes/j1
+  #     path:                             modules/connectors
+  #     file:                             translator
 
   # ----------------------------------------------------------------------------
   # TEASER banner
@@ -183,8 +184,7 @@ lanes:
       id:                               home_service_panel
       region:                           body-main
       type:                             async
-      properties:                       elevated-z2 mb-6
-
+      properties:                       elevated-z0 mb-3
 
   # ----------------------------------------------------------------------------
   # DIVIDER banner
@@ -226,12 +226,6 @@ lanes:
       type:                             async
       properties:                       mb-3
 
-
-
-
-
-
-
   # ----------------------------------------------------------------------------
   # DIVIDER banner
   #
@@ -241,6 +235,16 @@ lanes:
       region:                           body-main
       type:                             async
       properties:                       mt-4 mr-5 mb-4 ml-5
+
+  # # ----------------------------------------------------------------------------
+  # # SERVICE panel
+  # #
+  # - lane:
+  #     enabled:                          true
+  #     id:                               home_service_panel
+  #     region:                           body-main
+  #     type:                             async
+  #     properties:                       elevated-z0 mb-3
 
   # ----------------------------------------------------------------------------
   # NEWS panel

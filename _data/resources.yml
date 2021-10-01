@@ -357,6 +357,7 @@ resources:
         css:                            [
                                           core/css/themes/uno-light/bootstrap,
                                           core/css/icon-fonts/materialdesign,
+                                          core/css/icon-fonts/materialdesign-light,
                                           core/css/icon-fonts/fontawesome,
                                           core/css/vendor
 
@@ -700,7 +701,7 @@ resources:
       enabled:                          true
       comment:                          HTML modifier for Asciidoctor
       region:                           head
-      layout:                           [ page, post, collection ]
+      layout:                           [ home, page, post, collection, blog_archive, app ]
       required:                         always
       preload:                          false                                   # property currently unused
       script_load:                      defer
@@ -722,7 +723,7 @@ resources:
       enabled:                          true
       comment:                          theme rouge
       region:                           head
-      layout:                           [ page, post, collection ]
+      layout:                           [ home, page, post, collection, blog_archive, raw, app ]
       required:                         ondemand
       preload:                          false                                   # property currently unused
       script_load:                      defer
@@ -788,7 +789,7 @@ resources:
       id:                               framer
       enabled:                          true
       comment:                          module framer
-      layout:                           [ page, post, collection, app, raw ]
+      layout:                           [ home, page, post, collection, blog_archive, raw, app ]
       region:                           head
       required:                         ondemand
       preload:                          false                                   # property currently unused
@@ -811,7 +812,7 @@ resources:
       id:                               lightbox
       enabled:                          true
       comment:                          module lightbox
-      layout:                           [ home, page, post, collection ]
+      layout:                           [ home, page, post, collection, blog_archive ]
       region:                           head
       required:                         ondemand
       preload:                          false                                   # property currently unused
@@ -835,7 +836,7 @@ resources:
       id:                               twemoji
       enabled:                          true
       comment:                          module twemoji
-      layout:                           [ home, page, post, collection ]
+      layout:                           [ home, page, post, collection, blog_archive ]
       region:                           head
       required:                         ondemand
       preload:                          false                                   # property currently unused
@@ -894,6 +895,27 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
+  # MDIl Previewer (light)
+  #
+  - name:                               MDIL Previewer
+    resource:
+      id:                               mdil_previewer
+      enabled:                          true
+      comment:                          module mdil_previewer
+      layout:                           [ page ]
+      region:                           head
+      required:                         ondemand
+      preload:                          false                                   # property currently unused
+      script_load:                      deferred
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            [ modules/mdilPreviewer/css/previewer ]
+        files:                          []
+        js:                             [ modules/mdilPreviewer/js/previewer ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
   # Iconify (Icons) Framework
   #
   - name:                               Iconify Framework
@@ -902,7 +924,7 @@ resources:
       enabled:                          true
       comment:                          Iconify framework
       region:                           head
-      layout:                           [ home, page, post, collection ]
+      layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand
       preload:                          false                                   # property currently unused
       script_load:                      defer
@@ -965,7 +987,7 @@ resources:
       enabled:                          true
       comment:                          module carousel
       region:                           head
-      layout:                           [ home, page, post, collection ]
+      layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand
       preload:                          false                                   # property currently unused
       script_load:                      defer
@@ -992,7 +1014,7 @@ resources:
       enabled:                          true
       comment:                          module justifiedGallery
       region:                           head
-      layout:                           [ home, page, post, collection, raw, app ]
+      layout:                           [ home, page, post, collection, blog_archive, raw, app ]
       required:                         ondemand
       preload:                          false                                   # property currently unused
       script_load:                      defer
@@ -1016,7 +1038,7 @@ resources:
       enabled:                          true
       comment:                          module lightGallery
       region:                           head
-      layout:                           [ home, page, post, collection, raw, app ]
+      layout:                           [ home, page, post, collection, blog_archive, raw, app ]
       required:                         ondemand
       preload:                          false                                   # property currently unused
       script_load:                      defer
@@ -1052,7 +1074,7 @@ resources:
       enabled:                          true
       comment:                          module videojs
       region:                           head
-      layout:                           [ home, page, post, collection ]
+      layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand
       preload:                          false                                   # property currently unused
       script_load:                      defer
@@ -1081,7 +1103,7 @@ resources:
       enabled:                          true
       comment:                          module vimeo_froogaloop
       region:                           head
-      layout:                           [ home, page, post, collection ]
+      layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand
       preload:                          false                                   # property currently unused
       script_load:                      defer
@@ -1102,7 +1124,7 @@ resources:
       enabled:                          true
       comment:                          module vimeo_player
       region:                           head
-      layout:                           [ home, page, post, collection ]
+      layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand
       preload:                          false                                   # property currently unused
       script_load:                      defer
@@ -1146,7 +1168,7 @@ resources:
       enabled:                          false                                   # currently NOT used
       comment:                          module stacker
       region:                           head
-      layout:                           [ page, post, collection, app, raw ]
+      layout:                           [ home, page, post, collection, blog_archive, app, raw ]
       required:                         ondemand
       preload:                          false                                   # property currently unused
       script_load:                      sync
@@ -1248,7 +1270,7 @@ resources:
       enabled:                          false
       comment:                          J1 rtextResizer
       region:                           head
-      layout:                           [ home, page, post, collection ]
+      layout:                           [ home, page, post, collection, blog_archive ]
       required:                         always                                  # always | ondemand
       preload:                          false                                   # property currently unused
       script_load:                      defer
@@ -1270,7 +1292,7 @@ resources:
       enabled:                          true
       comment:                          J1 showOnScroll
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand                                # always | ondemand
       preload:                          false                                   # property currently unused
       script_load:                      defer
@@ -1292,7 +1314,7 @@ resources:
       enabled:                          true
       comment:                          j1Scroll
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand                                # always | ondemand
       preload:                          false                                   # property currently unused
       script_load:                      defer

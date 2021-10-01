@@ -205,22 +205,22 @@ site_category_word_list:    {{site_category_word_list | debug}}
 
                   {% if post.date %}
                     {% if language == "en" %}
-                      <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>{{post.date|localize: "%Y %B, %e"}}
+                      <i class="mdi mdi-calendar-blank md-grey-900 mr-1"></i>{{post.date|localize: "%Y %B, %e"}}
                     {% endif %}
                     {% if language == "de" %}
-                      <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>{{post.date|localize: "%-d. %B %Y"}}
+                      <i class="mdi mdi-calendar-blank md-grey-900 mr-1"></i>{{post.date|localize: "%-d. %B %Y"}}
                     {% endif %}
                   {% endif %}
                   {% if likes_count %}
                   <span class="font-weight-bold"> · </span>
-                  <i class="mdi mdi-heart mr-1"></i> {{likes_count}}
+                  <i class="mdi mdi-heart md-grey-900 mr-1"></i> {{likes_count}}
                   {% endif %}
                   {% if comment_count %}
                   <span class="font-weight-bold"> · </span>
-                  <i class="mdi mdi-comment mr-1"></i> {{comment_count}}
+                  <i class="mdi mdi-comment md-grey-900 mr-1"></i> {{comment_count}}
                   {% endif %}
                 </div>
-                <a class="card-link text-muted text-lowercase"
+                <a class="card-link md-grey-900 text-lowercase"
                    href="{{post.url}}#readmore">
                    {{readmore_text}} · {{post.tagline}}
                 </a>

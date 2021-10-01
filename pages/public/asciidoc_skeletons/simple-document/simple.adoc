@@ -22,7 +22,7 @@ robots:
 permalink:                              /pages/public/skeleton/simple/
 regenerate:                             false
 
-resources:                              []
+resources:                              [ clipboard, rouge ]
 resource_options:
   - toccer:
       collapseDepth:                    4
@@ -64,6 +64,7 @@ resource_options:
 :url-roundtrip--fontawesome-icons:      /pages/public/learn/roundtrip/mdi_icon_font/#fontawesome-icons
 :url-roundtrip--iconify-icons:          /pages/public/learn/roundtrip/mdi_icon_font/#iconify-icons
 :url-roundtrip--asciidoc-extensions:    /pages/public/learn/roundtrip/asciidoc_extensions/
+
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
 {% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
@@ -75,9 +76,8 @@ resource_options:
 
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Asciidoc *skeleton simple-document* a helper for setting up a base file and
-folder structure for simple-document AsciiDoc pages based on _Jekyll_ and
+The Asciidoc skeleton *simple-document* a helper for setting up a base file
+and folder structure for simple-document AsciiDoc pages based on _Jekyll_ and
 _J1 Template_. You need *both* to use this skeleton creating AsciiDoc
 documents from it.
 
@@ -94,151 +94,344 @@ All J1 Asciidoc Skeletons are fully *relocateable* and can be placed in any
 subfolder of your Jekyll site.
 ====
 
-[role="mb-5"]
-*Happy Jekylling!*
+// Content
+// -----------------------------------------------------------------------------
+== Synopsis
 
-== Chapter
+_Jekyll_ is a *robot*, an *engine* to generate a site from a site *scaffold*.
+The _Jekyll_ Ruby *Gem* provides an  *executable*  named `jekyll` to be used
+at the commandline.
 
-J1 Template support popular icons font sets out-of-the-box:
+Several *commands* and related *options* are available to control how the
+*engine* `jekyll` generates a *site*.
 
-* link:{url-mdi--home}[Material Design Icons, {browser-window--new}] (MDI)
-* link:{url-fontawesome--home}[FontAwesome Icons V5, {browser-window--new}] (FA)
-* link:{url-iconify--home}[Iconify Icons, {browser-window--new}] (II)
+[source, sh]
+----
+jekyll <command> [options]
+----
 
-The icon sets MDI and FA are very good in design and have a rich set of
-different icons for many categories used for the Web. See below some details
-for link:{url-roundtrip--mdi-icons}[Material Design Icons, {browser-window--new}]
-and link:{url-roundtrip--fontawesome-icons}[FontAwesome Icons, {browser-window--new}].
+Find all commands available for the  *executable*  `jekyll` with the following
+sections below.
 
-Iconify icons is not a locally stored icon-set like MDI or FA. All icons are
-loaded over the Internet using the so-called *Unified OpenSource Icon
-Framework*. See section link:{url-roundtrip--iconify-icons}[Iconify Icons, {browser-window--new}]
-for more information.
+== Commands
 
-=== Section
+To change Jekyll’s default behavior generating *sites*, have a look through
+the configuration options. All *general* options can be found with the section
+<<General commands>>. All specific commands and options to control *build*
+and *serve* processes for a *site*, see the sections for the <<Build command>>
+and the <<Serve command>>.
 
-The primary icon-set for J1 Template is link:{url-mdi--home}[Material Design Icons, {browser-window--new}],
-because it is extremely rich set providing more than 5900+ icons for the
-current version (v5.9.55). From a design perspective, _MDI_ has an excellen
-*Material Design* support an comes with the original icon set created by
-_Google_ build-in.
 
-_Material Design Icons_ (MDI) is a beneficial design resource for Web Design
-that is based on _Google_'s Material Design. _MDI_ is a community-driven
-project to create an increased number of icons based on _Google_'s official repository
-and MD style specification.
+=== General commands
 
-==== Subsection
+The *executable* `jekyll` provides some *general* commands to create e.g. a
+new site *scaffold* from the scratch (based on the default gem-based theme
+*Minima*) or some *support* commands like `doctor` to check the configuration
+of a site or `clean` to reset an existing, already generated *site*.
 
-_MDI_ is a growing collection to allow designers and developers targeting
-various platforms to download icons in the format, color and size they need
-for any project. The repo contains today 2100+ icons plus converted icons from
-the official set created by _Google_.
+Have a look through the commands and options available this section.
 
-.Material Design Icons
-[cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
+[cols="2a,2a,8a", width="100%", options="header", role="table-responsive mt-3"]
 |===============================================================================
-|Size |Modifier |Markup |Render
+|Command |Options and Flags |Description
 
-|1x
-|no modifier set
-|All `icon_name` can be found on the Preview page for MDI Icon Previewer +
-[source, adoc, role="noclip"]
-----
-mdi:account[1x]
-----
-|mdi:account[1x]
+|`docs`
+|
+|To be clarified
 
-|3x
-|no modifier set
-|All `icon_name` can be found on the Preview page for MDI Icon Previewer +
-[source, adoc, role="noclip"]
-----
-mdi:account[3x]
-----
-|mdi:account[3x]
+|`import`
+|
+|To be clarified
 
-|5x
-|no modifier set
-|All `icon_name` can be found on the Preview page for MDI Icon Previewer
-[source, adoc, role="noclip"]
-----
-mdi:account[5x]
-----
-|mdi:account[5x]
+|`new`
+|
+|Creates a new Jekyll site with default gem-based theme. Using *optional* `--blank`,
+creates a new *blank* Jekyll site *scaffold*
 
-|5x
-|`mdi-rotate-45`
-|Rotate 45 degrees
-[source, adoc, role="noclip"]
-----
-mdi:account[5x mdi-rotate-45]
-----
-|mdi:account[5x mdi-rotate-45]
+|`new`
+|`--blank` +
+|Using *optional* `--blank`,
+creates a new *blank* Jekyll site *scaffold*
 
-|5x
-|`mdi-rotate-315`
-|Rotate 315 degrees
-[source, adoc, role="noclip"]
-----
-mdi:account[5x mdi-rotate-315]
-----
-|mdi:account[5x mdi-rotate-315]
+|`doctor` \| `hyde`
+|
+|Outputs any deprecation or configuration issues
 
-|5x
-|`mdi-light` +
-`mdi-flip-v`
-|Colour set to MDI Light (Grey) and flipped vertical
-[source, adoc, role="noclip"]
-----
-mdi:alert[5x mdi-light mdi-flip-v]
-----
-|mdi:alert[5x mdi-light mdi-flip-v]
+|`new-theme`
+|
+|Creates a new Jekyll theme scaffold
 
-|5x
-|`md-indigo`
-|Colour set to MDI Indigo
-[source, adoc, role="noclip"]
-----
-mdi:alert[5x md-indigo]
-----
-|mdi:account[5x md-indigo]
+|`clean`
+|
+|Removes the generated site and metadata file
 
-|5x
-|`md-pink`
-|Colour set to MDI Pink
-[source, adoc, role="noclip"]
-----
-mdi:alert[5x md-pink]
-----
-|mdi:account[5x md-pink]
-
-|5x
-|`mdi-spin`
-|Added animation of type Rotate (Spin)
-[source, adoc, role="noclip"]
-----
-mdi:loading[5x mdi-spin]
-----
-|mdi:loading[5x mdi-spin]
-
-|5x
-|`md-red-900` +
-`mdi-pulsed`
-|Colour  set to MDI Dark Red and added animation of type Pulsed
-[source, adoc, role="noclip"]
-----
-mdi:heart[5x md-red-900 mdi-pulsed]
-----
-|mdi:heart[5x md-red-900 mdi-pulsed]
+|`help`
+|
+|Shows help, optionally for a given subcommand, e.g. `jekyll help build`
 
 |===============================================================================
 
 
-NOTE: Using Material Design Icons with Asciidoc is quite easy as an inline
-macro `mdi:` is available to place icons where ever you want. See more about
-this in section
-link:{url-roundtrip--asciidoc-extensions}#icon-fonts[Asciidoc Extensions, {browser-window--new}]
+=== Build command
 
-_J1 Template_ supports the full set of _MDI_ for the Web (Webfont, WOFF). The
-icon set is fully integrated and can be used out-of-the-box.
+Performs a one off build your site. For default, site pages gets written
+to the folder *./_site*
+
+.Synopsis
+[source, sh]
+----
+jekyll build | b [options]
+----
+
+NOTE: Typically you’ll use `jekyll serve` while developing locally and
+`jekyll build` when you need to generate the site for production.
+
+[cols="6a,6a", width="100%", options="header", role="table-responsive mt-3"]
+|===============================================================================
+|Options |Description
+
+|`-c`, `--config` {hs} *CONFIG_FILE [,CONFIG_FILE2, ..]*
+|Use custom configuration file. +
+lorem:sentences[2]
+
+|`-d, --destination` {hs} *DESTINATION*
+|The current folder will be generated into DESTINATION
+
+|`-s` \| `--source` {hs} *SOURCE*
+|Custom source directory
+
+|`--future`
+|Publishes posts with a future date
+
+|`--limit_posts` {hs} *MAX_POSTS*
+|Limits the number of posts to parse and publish
+
+|`-w` \| `--[no-]watch`
+|Watch for changes and rebuild
+
+|`-b` \| `--baseurl` {hs} *URL*
+|Serve the website from the given base URL
+
+|`--force_polling`
+|Force watch to use polling
+
+|`--lsi`
+|Use LSI for improved related posts
+
+|`-D` \| `--drafts`
+|Render posts in the _drafts folder
+
+|`--unpublished`
+|Render posts that were marked as unpublished
+
+|`-q` \| `--quiet`
+|Silence output
+
+|`-V` \| `--verbose`
+|Print verbose output
+
+|`-i` \| `--incremental`
+|Enable incremental rebuild
+
+|`--strict_front_matter`
+|Fail if errors are present in front matter
+
+|`-h` \| `--help`
+|Show detailed options an flags
+
+|`-s` \| `--source` {hs} *DIR*
+|Source directory. Defaults to current directory `./`
+
+|`-d` \| `--destination` {hs} *DIR*
+|Destination directory. Defaults to `./_site`
+
+|`--safe`
+|Safe mode. Defaults to `false`
+
+|`-p` \| `--plugins` {hs} *PLUGINS_DIR1[,PLUGINS_DIR2[,...]]*
+|Plugins directory. Defaults to `./_plugins`
+
+|`--layouts` {hs} *DIR*
+|Layouts directory. Defaults to `./_layouts`
+
+|`--profile`
+|Generate a Liquid rendering profile
+
+|`-t` \| `--trace`
+|Show the full backtrace when an error occurs
+
+|`-v` \| `--version`
+|Print the name and version
+
+|===============================================================================
+
+
+=== Serve command
+
+Create your site any time a source file changes and serves it locally using
+builtin web server *WEBRick*.
+
+For default, site pages gets writen to *./_site*
+
+.Synopsis
+[source, sh]
+----
+jekyll serve | s [options]
+----
+
+NOTE: Typically you’ll use `jekyll serve` while developing locally and
+`jekyll build` when you need to generate the site for production.
+
+[cols="6a,6a", width="100%", options="header", role="table-responsive mt-3"]
+|===============================================================================
+|Options |Description
+
+|`-c`, `--config` {hs} CONFIG_FILE [,CONFIG_FILE2, ..]
+|Use custom configuration file. +
+lorem:sentences[2]
+
+|`-d, --destination` {hs} *DESTINATION*
+|The current folder will be generated into DESTINATION
+
+|`-s` \| `--source` {hs} *SOURCE*
+|Custom source directory
+
+|`--future`
+|Publishes posts with a future date
+
+|`--limit_posts` {hs} *MAX_POSTS*
+|Limits the number of posts to parse and publish
+
+|`-w` \| `--[no-]watch`
+|Watch for changes and rebuild
+
+|`-b` \| `--baseurl` {hs} *URL*
+|Serve the website from the given base URL
+
+|`--force_polling`
+|Force watch to use polling
+
+|`--lsi`
+|Use LSI for improved related posts
+
+|`-D` \| `--drafts`
+|Render posts in the _drafts folder
+
+|`--unpublished`
+|Render posts that were marked as unpublished
+
+|`-q` \| `--quiet`
+|Silence output
+
+|`-V` \| `--verbose`
+|Print verbose output
+
+|`-i` \| `--incremental`
+|Enable incremental rebuild
+
+|`--strict_front_matter`
+|Fail if errors are present in front matter
+
+|`--ssl-cert` {hs} *CERT*
+|X.509 (SSL) certificate
+
+|`--ssl-key` {hs} *KEY*
+|X.509 (SSL) Private Key
+
+|`-H` \| `--host` {hs} *HOST*
+|Host to bind to
+
+|`-o` \| `--open-url`
+|Launch your site in a browser
+
+|`-B` \| `--detach`
+|Run the server in the background
+
+|`-P` \| `--port` {hs} *PORT*
+|Port to listen on
+
+|`--show-dir-listing`
+|Show a directory listing instead of loading your index file
+
+|`--skip-initial-build`
+|Skips the initial site build which occurs before the server is started
+
+|`-l` \| `--livereload`
+|Use LiveReload to automatically refresh browsers
+
+|`--livereload-ignore` {hs} *GLOB1[,GLOB2[,...]]*
+|Files for LiveReload to ignore. Remember to quote the values so your
+shell won't expand them
+
+|`--livereload-min-delay` {hs} *SECONDS*
+|Minimum reload delay
+
+|`--livereload-max-delay` {hs} *SECONDS*
+|Maximum reload delay
+
+|`--livereload-port` {hs} *PORT*
+|Port for LiveReload to listen on
+
+|`-h` \| `--help`
+|Show detailed options an flags
+
+|`-s` \| `--source` {hs} *DIR*
+|Source directory. Defaults to current directory `./`
+
+|`-d` \| `--destination` {hs} *DIR*
+|Destination directory. Defaults to `./_site`
+
+|`--safe`
+|Safe mode. Defaults to `false`
+
+|`-p` \| `--plugins` {hs} *PLUGINS_DIR1[,PLUGINS_DIR2[,...]]*
+|Plugins directory. Defaults to `./_plugins`
+
+|`--layouts` {hs} *DIR*
+|Layouts directory. Defaults to `./_layouts`
+
+|`--profile`
+|Generate a Liquid rendering profile
+
+|`-t` \| `--trace`
+|Show the full backtrace when an error occurs
+
+|`-v` \| `--version`
+|Print the name and version
+
+|===============================================================================
+
+
+== Examples
+
+Find some typical use case running Jekyll from commandline below.
+
+=== Build a site from custom configuration
+
+Typically you’ll use `jekyll serve` while developing locally and
+`jekyll build` when you need to generate the site for production.
+
+[source, sh]
+----
+jekyll b -c ./site_configs/_config.yml
+----
+
+=== Build a site in mode incremental
+
+Typically you’ll use `jekyll serve` while developing locally and
+`jekyll build` when you need to generate the site for production.
+
+[source, sh]
+----
+jekyll b --incremental
+----
+
+=== Run a site in mode incremental
+
+Typically you’ll use `jekyll serve` while developing locally and
+`jekyll build` when you need to generate the site for production.
+
+[source, sh]
+----
+jekyll s --incremental
+----

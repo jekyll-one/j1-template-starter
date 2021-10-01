@@ -1,0 +1,122 @@
+== Language Overview
+
+The theme language in *Asciidoctor PDF* is based on the {uri-wikipedia-yaml}[YAML, {browser-window--new}]
+data format and incorporates many concepts from CSS and SASS. Therefore, if you
+have a background in web design, the theme language should be immediately
+familiar to you.
+
+Like CSS, themes have both selectors and properties. Selectors are the component
+you want to style. The properties are the style elements of that component that
+can be styled. All selector names are implicit (e.g., `heading`), so you
+customize the theme primarily by manipulating pre-defined property values
+(e.g., `font_size`).
+
+[NOTE]
+====
+The theme language in *Asciidoctor PDF* supports a limited subset of the
+properties from CSS. Some of these properties have different names from
+those found in CSS.
+
+* Underscores (`_`) can be used in place of hyphens (`-`) for all property names in the theme language.
+* Instead of separate properties for font weight and font style, the theme language combines these settings in the `font_style` property (allowed values: `normal`, `bold`, `italic` and `bold_italic`).
+* The `text_align` property from CSS is the `align` property in the theme language.
+* The `color` property from CSS is the `font_color` property in the theme language.
+====
+
+A theme (or style) is described in a YAML-based data format and stored in a
+dedicated theme file. YAML is a human-friendly data format that resembles CSS
+and helps to describe the theme. The theme language adds some extra features
+to YAML, such as variables, basic math, measurements and color values. These
+enhancements will be explained in detail in later sections.
+
+The theme file must be named _<name>-theme.yml_, where `<name>` is the name
+of the theme. Here's an example of a basic theme file:
+
+.basic-theme.yml
+[source,yaml]
+----
+page:
+  layout: portrait
+  margin: [0.75in, 1in, 0.75in, 1in]
+  size: Letter
+base:
+  font_color: #333333
+  font_family: Times-Roman
+  font_size: 12
+  line_height_length: 17
+  line_height: $base_line_height_length / $base_font_size
+vertical_spacing: $base_line_height_length
+heading:
+  font_color: #262626
+  font_size: 17
+  font_style: bold
+  line_height: 1.2
+  margin_bottom: $vertical_spacing
+link:
+  font_color: #002FA7
+outline_list:
+  indent: $base_font_size * 1.5
+----
+
+When creating a new theme, you only have to define the keys you want to
+override from the base theme, which is loaded prior to loading your custom
+theme. All the available keys are documented in section *Keys*. The converter
+uses the information from the theme map to help construct the PDF.
+
+[TIP]
+====
+Instead of creating a theme from scratch, another option is to download the
+{uri-asciidoctor-pdf-default-theme}[default-theme.yml, {browser-window--new}] file from the source
+repository. Save the file using a unique name (e.g. _custom-theme.yml_) and
+start hacking on it.
+
+Alternatively, you can snag the file from your local installation using the
+following command:
+
+ $ ASCIIDOCTOR_PDF_DIR=`gem contents asciidoctor-pdf --show-install-dir`;\
+   cp "$ASCIIDOCTOR_PDF_DIR/data/themes/default-theme.yml" custom-theme.yml
+====
+
+Keys may be nested to an arbitrary depth to eliminate redundant prefixes (an
+approach inspired by SASS). Once the theme is loaded, all keys are flattened
+into a single map of qualified keys. Nesting is simply a shorthand way of
+organizing the keys. In the end, a theme is just a map of key/value pairs.
+
+Nested keys are adjoined to their parent key with an underscore (`_`).
+This means the selector part (e.g., `link`) is combined with the property
+name (e.g., `font_color`) into a single, qualified key (e.g., `link_font_color`).
+
+For example, let's assume we want to set the base (i.e., global) font size
+and color. These keys may be written longhand:
+
+[source,yaml]
+----
+base_font_color: #333333
+base_font_family: Times-Roman
+base_font_size: 12
+----
+
+Or, to avoid having to type the prefix `base_` multiple times, the keys may
+be written hierarchically:
+
+[source,yaml]
+----
+base:
+  font_color: #333333
+  font_family: Times-Roman
+  font_size: 12
+----
+
+Or even:
+
+[source,yaml]
+----
+base:
+  font:
+    color: #333333
+    family: Times-Roman
+    size: 12
+----
+
+Each level of nesting must be indented by two more spaces of indentation than
+the parent level. Also note the presence of the colon after each key name.

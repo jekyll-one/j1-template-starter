@@ -1,0 +1,261 @@
+== Fonts
+
+You can select from built-in PDF fonts, bundled-fonts, fonts bundled with
+Asciidoctor PDF or custom fonts loaded from TrueType font (TTF) files.
+If you want to use custom fonts, you must first declare them in your theme
+file.
+
+IMPORTANT: _Asciidoctor_ has no challenge working with Unicode. In fact, it
+prefers Unicode and considers the entire range. However, once you convert
+to PDF, you have to meet the font requirements of PDF in order to preserve
+Unicode characters. There's nothing _Asciidoctor_ can do to convince PDF to
+work with extended characters without the right fonts in play.
+
+=== Built-In (AFM) Fonts
+
+The names of the built-in fonts (for general-purpose text) are as follows:
+
+[width="100%", cols="50%,50%", options="header", role="table-responsive mt-3"]
+|===
+|Font Name |Font Family
+
+|Helvetica
+|sans-serif
+
+|Times-Roman
+|serif
+
+|Courier
+|monospace
+
+|===
+
+Using a built-in font requires no additional files. You can use the key
+anywhere a `font_family` property is accepted in the theme file.
+For example:
+
+[source,yaml]
+----
+base:
+  font_family: Times-Roman
+----
+
+However, when you use a built-in font, the characters you can use in your
+document are limited to the characters in the WINANSI code set
+({uri-wikipedia-codepage-windows-1252}[Windows-1252, {browser-window--new}]). WINANSI
+includes most of the characters needed for writing in Western languages
+(English, French, Spanish, etc). For anything outside of that, PDF is BYOF
+(Bring Your Own Font).
+
+Even though the built-in fonts require the content to be encoded in WINANSI,
+_you still type your AsciiDoc document in UTF-8_. *Asciidoctor PDF* encodes
+the content into WINANSI when building the PDF.
+
+==== WINANSI Encoding Behavior
+
+When using the built-in PDF (AFM) fonts on a block of content in your AsciiDoc
+document, any character that cannot be encoded to WINANSI is replaced with a
+logic "`not`" glyph (`&#172;`) and you'll see the following warning in your
+console:
+
+ The following text could not be fully converted to the Windows-1252 character set:
+ | <string with unknown glyph>
+
+This behavior differs from the default behavior in Prawn, which simply crashes.
+For more information about how Prawn handles character encodings for built-in
+fonts, see {uri-prawn-improved-handling-of-encodings}[this note in the Prawn
+CHANGELOG, {browser-window--new}].
+
+
+=== Bundled Fonts
+
+*Asciidoctor PDF* bundles several fonts that are used by the default theme.
+You can also use these fonts in your custom theme by simply declaring them.
+These fonts provide more characters than the built-in PDF fonts, but still
+only a subset of UTF-8 (to reduce the size of the gem).
+
+The family name of the fonts bundled with *Asciidoctor PDF* are as follows:
+
+{uri-font-noto-serif}[Noto Serif, {browser-window--new}]::
+A serif font that can be styled as normal, italic, bold or bold_italic.
+
+{uri-font-m-plus-fonts}[M+ 1mn, {browser-window--new}]::
+A monospaced font that maps different thicknesses to the styles normal, italic,
+bold and bold_italic. Also provides the circuled numbers used in callouts.
+
+{uri-font-m-plus-fonts}[M+ 1p Fallback, {browser-window--new}]::
+A sans-serif font that provides a very complete set of Unicode glyphs. Cannot
+be styled as italic, bold or bold_italic. Used as the fallback font.
+
+CAUTION: At the time of this writing, you cannot use the bundled fonts if you
+change the value of the `pdf-fontsdir` attribute (and thus define your own
+custom fonts). This limitation may be lifted in the future.
+
+=== Custom Fonts
+
+The limited character set of WINANSI, or the bland look of the built-in fonts,
+may motivate you to load your own font. Custom fonts can enhance the look of
+your PDF theme substantially.
+
+To start, you need to find a collection of TTF file of the font you want to use.
+A collection typically consists of all four styles of a font:
+
+* normal
+* italic
+* bold
+* bold_italic
+
+You'll need all four styles to support AsciiDoc content properly. _Asciidoctor
+PDF cannot italicize a font dynamically like a browser can, so you need the
+italic style._
+
+Once you've obtained the TTF files, put them into a directory in your project
+where you want to store the fonts. It's recommended that you name them
+ consistently so it's easier to type the names in the theme file.
+
+Let's assume the name of the font is {uri-font-roboto-ttf}[Roboto, {browser-window--new}].
+Name the files as follows:
+
+* roboto-normal.ttf (_originally Roboto-Regular.ttf_)
+* roboto-italic.ttf (_originally Roboto-Italic.ttf_)
+* roboto-bold.ttf (_originally Roboto-Bold.ttf_)
+* roboto-bold_italic.ttf (_originally Roboto-BoldItalic.ttf_)
+
+Next, declare the font under the `font_catalog` key at the top of your theme
+file, giving it a unique key (e.g., `Roboto`).
+
+[source,yaml]
+----
+font:
+  catalog:
+    Roboto:
+      normal: roboto-normal.ttf
+      italic: roboto-italic.ttf
+      bold: roboto-bold.ttf
+      bold_italic: roboto-bold_italic.ttf
+----
+
+You can use the key that you assign to the font in the font catalog anywhere
+the `font_family` property is accepted in the theme file. For instance, to use
+the Roboto font for all headings, you'd use:
+
+[source,yaml]
+----
+heading:
+  font_family: Roboto
+----
+
+When you execute *Asciidoctor PDF*, you need to specify the directory where the
+fonts reside using the `pdf-fontsdir` attribute:
+
+ $ asciidoctor-pdf -a pdf-style=basic-theme.yml -a pdf-fontsdir=path/to/fonts document.adoc
+
+WARNING: Currently, all fonts referenced by the theme need to be present in
+the directory specified by the `pdf-fontsdir` attribute.
+
+When *Asciidoctor PDF* creates the PDF, it only embeds the glyphs from the font
+that are needed to render the characters present in the document. In other
+words, *Asciidoctor PDF* automatically subsets the font. However, if you're
+storing the fonts in a repository, you may want to subset the font (for
+instance, by using FontForge) to reduce the space the font occupies in that
+storage. This is simply a personal preference.
+
+You can add any number of fonts to the catalog. Each font must be assigned
+a unique key, as shown here:
+
+[source,yaml]
+----
+font:
+  catalog:
+    Roboto:
+      normal: roboto-normal.ttf
+      italic: roboto-italic.ttf
+      bold: roboto-bold.ttf
+      bold_italic: roboto-bold_italic.ttf
+    Roboto Light:
+      normal: roboto-light-normal.ttf
+      italic: roboto-light-italic.ttf
+      bold: roboto-light-bold.ttf
+      bold_italic: roboto-light-bold_italic.ttf
+----
+
+TIP: Text in SVGs will use the font catalog from your theme. We recommend
+that you match the font key to the name of the font seen by the operating
+system. This will allow you to use the same font names (aka families) in
+both your graphics program and *Asciidoctor PDF*.
+
+=== Fallback Fonts
+
+If a TrueType font is missing a character needed to render the document,
+such as a special symbol, you can have *Asciidoctor PDF* look for the character
+in a fallback font. You only need to specify a single fallback font, typically
+one that provides a full set of symbols.
+
+IMPORTANT: The fallback font is only used when the primary font is a
+TrueType font (i.e., TTF, DFont, TTC). Any glyph missing from an AFM font
+is simply replaced with the "`not`" glyph (`&#172;`).
+
+CAUTION: Using the fallback font slows down PDF generation slightly because
+it has to analyze every single character. It's use is not recommended for
+large documents. Instead, it's best to select primary fonts that have all
+the characters you need. Keep in mind that the default theme currently uses
+a fallback font, though this may change in the future.
+
+Like with other custom fonts, you first need to declare the fallback font.
+Let's choose {uri-font-droid-sans-fallback-ttf}[Droid Sans Fallback, {browser-window--new}].
+You can map all the styles to a single font file (since bold and italic don't
+usually make sense for symbols).
+
+[source,yaml]
+----
+font:
+  catalog:
+    Roboto:
+      normal: roboto-normal.ttf
+      italic: roboto-italic.ttf
+      bold: roboto-bold.ttf
+      bold_italic: roboto-bold_italic.ttf
+    DroidSansFallback:
+      normal: droid-sans-fallback.ttf
+      italic: droid-sans-fallback.ttf
+      bold: droid-sans-fallback.ttf
+      bold_italic: droid-sans-fallback.ttf
+----
+
+Next, add the key name to the `fallbacks` key under the `font_catalog` key.
+The `fallbacks` key accepts an array of values, meaning you can specify more
+than one fallback font. However, we recommend using a single fallback font,
+if possible, as shown here:
+
+[source,yaml]
+----
+font:
+  catalog:
+    Roboto:
+      normal: roboto-normal.ttf
+      italic: roboto-italic.ttf
+      bold: roboto-bold.ttf
+      bold_italic: roboto-bold_italic.ttf
+    DroidSansFallback:
+      normal: droid-sans-fallback.ttf
+      italic: droid-sans-fallback.ttf
+      bold: droid-sans-fallback.ttf
+      bold_italic: droid-sans-fallback.ttf
+  fallbacks:
+    - DroidSansFallback
+----
+
+TIP: If you are using more than one fallback font, add additional lines
+to the `fallbacks` key.
+
+Of course, make sure you've configured your theme to use your custom font:
+
+[source,yaml]
+----
+base:
+  font_family: Roboto
+----
+
+That's it! Now you're covered. If your custom font is missing a glyph,
+*Asciidoctor PDF* will look in your fallback font. You don't need to reference
+the fallback font anywhere else in your theme file.

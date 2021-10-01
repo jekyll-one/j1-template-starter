@@ -1,0 +1,43 @@
+---
+title:                                  Asciidoctor PDF Converter
+tagline:                                A native PDF converter for AsciiDoc
+description:                            Native PDF Converter for Asciidoctor
+
+categories:                             [ Knowledge ]
+tags:                                   [ Asciidoctor, PDF, Converter ]
+
+
+permalink:                              /pages/public/skeleton/documentation/100_converter/
+regenerate:                             false
+
+resources:                              [ lightbox, clipboard, rouge ]
+resource_options:
+  - toccer:
+      collapseDepth:                    2
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set page (local) attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents
+// -----------------------------------------------------------------------------
+
+include::{documentdir}/100_converter.asciidoc[]

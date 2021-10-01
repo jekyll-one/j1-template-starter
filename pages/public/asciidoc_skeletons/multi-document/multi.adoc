@@ -23,7 +23,7 @@ robots:
 permalink:                              /pages/public/skeleton/multi/
 regenerate:                             false
 
-resources:                              [ lightbox, lightGallery, justifiedGallery ]
+resources:                              [ lightbox, clipboard, rouge ]
 resource_options:
   - toccer:
       collapseDepth:                    4
@@ -58,11 +58,9 @@ resource_options:
 // -----------------------------------------------------------------------------
 {% include {{load_attributes}} scope="all" %}
 
-
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Asciidoc *skeleton multi-document* a helper for setting up a base file and
+The Asciidoc skeleton *multi-document* a helper for setting up a base file and
 folder structure for multi-chapter AsciiDoc projects based on _Jekyll_
 and _J1 Template_. You need *both* to use this skeleton creating AsciiDoc
 documents from it.
@@ -80,9 +78,6 @@ global) Asciidoc include files and attributes.
 All Asciidoc Document Skeletons are fully *relocateable* and can be placed in
 any subfolder of your Jekyll site.
 ====
-
-[role="mb-5"]
-*Happy Jekylling!*
 
 
 // Include Sublevel Documents

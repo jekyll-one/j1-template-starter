@@ -1,0 +1,54 @@
+// ~/document_base_folder/000_includes/documents
+// Intro document: 000_intro.asciidoc
+// -----------------------------------------------------------------------------
+
+== Introduction
+
+The skeleton of type *documentation* (book) can be used to create HTML output
+(backend *html5*) for websites and *PDF* output (backend *pdf*) for offline
+reading as well. _J1 Template_ comes with the full support of _Asciidoctor PDF_,
+a Ruby-based add-on for _Asciidoctor_ using the Ruby PDF writer _Prawn_.
+
+[IMPORTANT]
+====
+If you have plans to convert documents of type type documentation (book)
+into PDF, make sure you have enabled the Ruby *Gem* `asciidoctor-pdf` with
+your projects's Gemfile. To make the converter usable, the plugin has to be
+enabled with your site config file `_config.yml` in section
+*PLUGIN configuration* as well.
+====
+
+Prawn is a pure Ruby PDF generation library that provides a lot of great
+functionality while trying to remain simple by providing a reasonable
+performance.
+
+Some of the important features of the *PDF* writer _Prawn_ are:
+
+* Vector drawing support, including lines, polygons, curves,
+  ellipses, etc.
+* Extensive text rendering support, including flowing text
+  nd limited inline formatting options.
+* Support for both PDF builtin fonts as well as embedded TrueType
+  fonts
+* A variety of low level tools for basic layout needs, including a
+  simple grid system
+* PNG and JPG image embedding, with flexible scaling options
+* Security features including encryption and password protection
+* Tools for rendering repeatable content (i.e headers, footers, and
+  page numbers)
+* Comprehensive internationalization features, including full support
+  for UTF-8 based fonts, right-to-left text rendering, fallback font support,
+  and extension points for customizable text wrapping.
+* Support for PDF outlines for document navigation
+
+[NOTE]
+====
+.Converting the Skeleton
+
+The Asciidoc skeleton *documentation* (book) is fully *relocateable* and can
+be placed in any subfolder of your Jekyll site for *HTML* output. For *PDF*
+output, a single variable `BASE_PATH` has to be set for your environment.
+
+See the *batch* files `a2p.bat` for _Windows_ (`cmd.exe`) or `a2p.sh` used
+on _Unix_ or _Linux_ OS for the shell (bash).
+====

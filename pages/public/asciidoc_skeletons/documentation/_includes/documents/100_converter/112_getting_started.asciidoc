@@ -1,0 +1,95 @@
+== Getting Started
+
+You can get _Asciidoctor PDF_ by installing the published gem or running th
+ code from source.
+
+=== Install the Published Gem
+
+_Asciidoctor PDF_ is published as a pre-release on RubyGems.org.
+First, make sure you have satisfied the prerequisites.
+Then, you can install the published gem using the following command:
+
+ $ gem install asciidoctor-pdf --pre
+
+If you want to syntax highlight source listings, you'll also want to install
+Rouge, Pygments, or CodeRay. Choose one (or more) of the following:
+
+.Rouge (preferred)
+ $ gem install rouge
+
+.Pygments
+ $ gem install pygments.rb
+
+.CodeRay
+ $ gem install coderay
+
+You then activate syntax highlighting for a given document by adding the
+`source-highlighter` attribute to the document header (Rouge shown):
+
+[source,asciidoc]
+----
+:source-highlighter: rouge
+----
+
+Assuming all the required gems install properly, verify you can run the
+`asciidoctor-pdf` script:
+
+ $ asciidoctor-pdf -v
+
+If you see the version of _Asciidoctor PDF_ printed, you're ready to use
+_Asciidoctor PDF_.
+
+Let's grab an AsciiDoc document to distill and start putting _Asciidoctor PDF_
+to use!
+
+=== An Example AsciiDoc Document
+
+If you don't already have an AsciiDoc document, you can use the
+*basic_example.adoc* file found in the examples directory of this
+project.
+
+ifeval::[{safe-mode-level} < 20]
+.000_basic_example.adoc
+[source,asciidoc]
+....
+include::000_basic_example.asciidoc[]
+....
+endif::[]
+
+It's time to convert the AsciiDoc document directly to PDF.
+
+=== Convert AsciiDoc to PDF
+
+IMPORTANT: You'll need the `rouge` gem installed to run this example since
+it uses the `source-highlighter` attribute with the value of `rouge`.
+
+Converting to PDF is a simple as running the `asciidoctor-pdf` script using
+_Ruby_ and passing our AsciiDoc document as the first argument.
+
+ $ asciidoctor-pdf 000_basic_example.adoc
+
+This command is just a shorthand way of running:
+
+ $ asciidoctor -r asciidoctor-pdf -b pdf 000_basic_example.adoc
+
+The `asciidoctor-pdf` command just saves you from having to remember all those
+flags. That's why we created it.
+
+When the script completes, you should see the file *000_basic_example.pdf*
+in the same directory. Open the *000_basic_example.pdf* file with a PDF
+viewer to see the result.
+
+ifdef::backend-html5[]
+.Example PDF document rendered in a PDF viewer
+image::/assets/images/pages/asciidoc_skeletons/example-pdf-screenshot.png[Screenshot of PDF document,width=800,scaledwidth=100%]
+endif::[]
+
+ifdef::backend-pdf[]
+.Example PDF document rendered in a PDF viewer
+image::/assets/images/pages/asciidoc_skeletons/example-pdf-screenshot.png[Screenshot of PDF document,width=800,scaledwidth=100%]
+endif::[]
+
+You're also encouraged to try converting the documents in the examples
+directory to see more of what _Asciidoctor PDF_ can do.
+
+The pain of the DocBook toolchain should be melting away about now.

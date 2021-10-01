@@ -1,0 +1,86 @@
+---
+# Master Document HTML conversion:      book.adoc
+#
+title:                                  Skeleton
+tagline:                                documentation
+date:                                   2021-01-01 00:00:00 +100
+description: >
+                                        A document of type documentation (book) typically consists in a large
+                                        number of chapters and sections. To make this manageable, book-type
+                                        documents are splitted in multiple files placed in a nested folder
+                                        structure. Complex AsciiDoc projects of type documentation can be
+                                        easily worked on by multiple authors.
+
+categories:                             [ Knowledge ]
+tags:                                   [ Asciidoc, Skeleton, Documentation, PDF ]
+
+sitemap:                                false
+advertising:                            false
+comments:                               false
+
+robots:
+  index:                                false
+  follow:                               false
+
+permalink:                              /pages/public/skeleton/documentation/
+regenerate:                             false
+
+resources:                              [ clipboard, lightbox, rouge ]
+resource_options:
+  - toccer:
+      collapseDepth:                    4
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/humble-lamb-1920x1280.jpg
+          alt:                          Photo by Humble Lamb on Unsplash
+          alignY:                       top
+          badge:
+            type:                       unsplash
+            author:                     Humble Lamb
+            href:                       https://unsplash.com/@humblelamb
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Asciidoc skeleton *documentation* (book) a helper for setting up a base
+file and folder structure for *complex* multi-chapter AsciiDoc projects of
+type *book* based on _Jekyll_ and _J1 Template_.
+
+A document of type  documentation typically consists in a large number
+of chapters and sections. To make this manageable, book-type documents are
+splitted in multiple files placed in a *nested* folder structure. Complex
+AsciiDoc projects of type documentation (book) can be easily worked on by
+*multiple* authors.
+
+
+// Include Intro
+// -----------------------------------------------------------------------------
+include::{documentdir}/000_intro.asciidoc[]
+
+
+// Include Sublevel Entry Documents
+// -----------------------------------------------------------------------------
+include::{documentdir}/100_converter.asciidoc[]
+
+include::{documentdir}/200_themes.asciidoc[]
