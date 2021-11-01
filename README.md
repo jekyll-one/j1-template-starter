@@ -89,7 +89,7 @@ issues for private or professional use.
 * Royalty free images included
 * Support of comment provider APIs (Disqus, Hyvor)
 * Google Analytics support (includes GDPR compatible OptIn/OptOut support)
-* Deploy on Github Pages, Netlify and Heroku ready
+* Deploy on Github Pages (source only), Netlify and Heroku ready
 
 # Supported platforms
 
