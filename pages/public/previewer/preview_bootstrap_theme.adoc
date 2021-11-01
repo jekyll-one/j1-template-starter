@@ -22,7 +22,7 @@ flowtext:                               false
 permalink:                              /pages/public/previewer/theme/
 regenerate:                             false
 
-resources:                              [ rouge, clipboard ]
+resources:                              [ clipboard, rouge ]
 resource_options:
   - attic:
       padding_top:                      400
@@ -59,7 +59,6 @@ resource_options:
 
 // Include sub-documents
 // -----------------------------------------------------------------------------
-
 ++++
   <!-- Prepend H1 tag here -->
   <div id="theme" class="row ml-0 mb-3">
@@ -123,7 +122,7 @@ colors. Then, customize with `.bg-*` utilities.
 ++++
 <div class="doc-example mb-3">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-1">
-    <a href="#" class="navbar-brand">Navbar<div class="ripple-container"></div></a>
+    <a href="#void" class="navbar-brand">Navbar<div class="ripple-container"></div></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -131,16 +130,16 @@ colors. Then, customize with `.bg-*` utilities.
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
+          <a href="#void" class="nav-link">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Features</a>
+          <a href="#void" class="nav-link">Features</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Pricing</a>
+          <a href="#void" class="nav-link">Pricing</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">About</a>
+          <a href="#void" class="nav-link">About</a>
         </li>
       </ul>
       <form class="form-inline">
@@ -151,7 +150,7 @@ colors. Then, customize with `.bg-*` utilities.
   </nav>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-1">
-    <a href="#" class="navbar-brand">Navbar</a>
+    <a href="#void" class="navbar-brand">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -159,16 +158,16 @@ colors. Then, customize with `.bg-*` utilities.
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
+          <a href="#void" class="nav-link">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Features</a>
+          <a href="#void" class="nav-link">Features</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Pricing</a>
+          <a href="#void" class="nav-link">Pricing</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">About</a>
+          <a href="#void" class="nav-link">About</a>
         </li>
       </ul>
       <form class="form-inline">
@@ -179,7 +178,7 @@ colors. Then, customize with `.bg-*` utilities.
   </nav>
 
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-    <a href="#" class="navbar-brand">Navbar</a>
+    <a href="#void" class="navbar-brand">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -187,16 +186,16 @@ colors. Then, customize with `.bg-*` utilities.
     <div class="collapse navbar-collapse" id="navbarColor03">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a>
+          <a href="#void" class="nav-link">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Features</a>
+          <a href="#void" class="nav-link">Features</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Pricing</a>
+          <a href="#void" class="nav-link">Pricing</a>
         </li>
         <li class="nav-item">
-          <a  href="#" class="nav-link">About</a>
+          <a  href="#void" class="nav-link">About</a>
         </li>
       </ul>
       <form class="form-inline">
@@ -567,7 +566,7 @@ link:{url-bs-docs--content-typography}[Bootstrap Docs {char-middot} Typography, 
     </div>
     <div class="col-md-4">
       <h3 class="notoc">Example body text</h2>
-      <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+      <p>Nullam quis risus eget <a href="#void">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
       <p><small>This line of text is meant to be treated as fine print.</small></p>
       <p>The following is <strong>rendered as bold text</strong>.</p>
       <p>The following is <em>rendered as italicized text</em>.</p>
@@ -800,21 +799,21 @@ JavaScript plugin.
       <a class="nav-link" data-toggle="tab" href="#profile">Profile</a>
     </li>
     <li class="nav-item dropdown">
-      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+      <a href="#void" class="nav-link dropdown-toggle" data-toggle="dropdown"
         role="button"
         aria-haspopup="true" aria-expanded="false">
         Dropdown
       </a>
       <div class="dropdown-menu">
-        <a href="#" class="dropdown-item">Action</a>
-        <a href="#" class="dropdown-item">Another action</a>
-        <a href="#" class="dropdown-item">Something else here</a>
+        <a href="#void" class="dropdown-item">Action</a>
+        <a href="#void" class="dropdown-item">Another action</a>
+        <a href="#void" class="dropdown-item">Something else here</a>
         <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">Separated link</a>
+        <a href="#void" class="dropdown-item">Separated link</a>
       </div>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link disabled">Disabled</a>
+      <a href="#void" class="nav-link disabled">Disabled</a>
     </li>
   </ul>
   <div id="myTabContent" class="tab-content">
@@ -847,23 +846,23 @@ Take that same HTML as Tabs, but use .nav-pills class instead.
       <h4 class="notoc">Standard Pills</h4>
       <ul class="nav nav-pills">
         <li class="nav-item mr-1 mb-2">
-          <a href="#" class="nav-link active">Active</a>
+          <a href="#void" class="nav-link active">Active</a>
         </li>
         <li class="nav-item dropdown mr-1">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <a href="#void" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Action</a>
-            <a href="#" class="dropdown-item">Another action</a>
-            <a href="#" class="dropdown-item">Something else here</a>
+            <a href="#void" class="dropdown-item">Action</a>
+            <a href="#void" class="dropdown-item">Another action</a>
+            <a href="#void" class="dropdown-item">Something else here</a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">Separated link</a>
+            <a href="#void" class="dropdown-item">Separated link</a>
           </div>
         </li>
         <li class="nav-item mr-1 mb-2">
-          <a href="#" class="nav-link">Link</a>
+          <a href="#void" class="nav-link">Link</a>
         </li>
         <li class="nav-item mr-1 mb-2">
-          <a href="#" class="nav-link disabled">Disabled</a>
+          <a href="#void" class="nav-link disabled">Disabled</a>
         </li>
       </ul>
     </div>
@@ -871,23 +870,23 @@ Take that same HTML as Tabs, but use .nav-pills class instead.
       <h5 class="notoc">Stacked Pills (vertical)</h5>
       <ul class="nav nav-pills flex-column mb-4">
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link active">Active</a>
+          <a href="#void" class="nav-link active">Active</a>
         </li>
         <li class="nav-item dropdown mb-1">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <a href="#void" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">Action</a>
-            <a href="#" class="dropdown-item">Another action</a>
-            <a href="#" class="dropdown-item">Something else here</a>
+            <a href="#void" class="dropdown-item">Action</a>
+            <a href="#void" class="dropdown-item">Another action</a>
+            <a href="#void" class="dropdown-item">Something else here</a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">Separated link</a>
+            <a href="#void" class="dropdown-item">Separated link</a>
           </div>
         </li>
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link">Link</a>
+          <a href="#void" class="nav-link">Link</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link disabled">Disabled</a>
+          <a href="#void" class="nav-link disabled">Disabled</a>
         </li>
       </ul>
     </div>
@@ -908,12 +907,12 @@ Separators are automatically added in CSS through ::before and content.
     <li class="breadcrumb-item active">Home</li>
   </ol>
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#void">Home</a></li>
     <li class="breadcrumb-item active">Library</li>
   </ol>
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Library</a></li>
+    <li class="breadcrumb-item"><a href="#void">Home</a></li>
+    <li class="breadcrumb-item"><a href="#void">Library</a></li>
     <li class="breadcrumb-item active">Data</li>
   </ol>
 </div>
@@ -932,75 +931,75 @@ it as a navigation section to screen readers and other assistive technologies.
   <div>
     <ul class="pagination">
       <li class="page-item disabled">
-        <a href="#" class="page-link">&laquo;</a>
+        <a href="#void" class="page-link">&laquo;</a>
       </li>
       <li class="page-item active">
-        <a href="#" class="page-link">1</a>
+        <a href="#void" class="page-link">1</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">2</a>
+        <a href="#void" class="page-link">2</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">3</a>
+        <a href="#void" class="page-link">3</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">4</a>
+        <a href="#void" class="page-link">4</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">5</a>
+        <a href="#void" class="page-link">5</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">&raquo;</a>
+        <a href="#void" class="page-link">&raquo;</a>
       </li>
     </ul>
   </div>
   <div>
     <ul class="pagination pagination-lg">
       <li class="page-item disabled">
-        <a href="#" class="page-link">&laquo;</a>
+        <a href="#void" class="page-link">&laquo;</a>
       </li>
       <li class="page-item active">
-        <a href="#" class="page-link">1</a>
+        <a href="#void" class="page-link">1</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">2</a>
+        <a href="#void" class="page-link">2</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">3</a>
+        <a href="#void" class="page-link">3</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">4</a>
+        <a href="#void" class="page-link">4</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">5</a>
+        <a href="#void" class="page-link">5</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">&raquo;</a>
+        <a href="#void" class="page-link">&raquo;</a>
       </li>
     </ul>
   </div>
   <div>
     <ul class="pagination pagination-sm">
       <li class="page-item disabled">
-        <a href="#" class="page-link">&laquo;</a>
+        <a href="#void" class="page-link">&laquo;</a>
       </li>
       <li class="page-item active">
-        <a href="#" class="page-link">1</a>
+        <a href="#void" class="page-link">1</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">2</a>
+        <a href="#void" class="page-link">2</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">3</a>
+        <a href="#void" class="page-link">3</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">4</a>
+        <a href="#void" class="page-link">4</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">5</a>
+        <a href="#void" class="page-link">5</a>
       </li>
       <li class="page-item">
-        <a href="#" class="page-link">&raquo;</a>
+        <a href="#void" class="page-link">&raquo;</a>
       </li>
     </ul>
   </div>
@@ -1034,7 +1033,7 @@ link:{url-bs-docs--components-alerts}[Bootstrap Docs {char-middot} Alerts, {brow
       <div class="alert alert-dismissible alert-warning">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <h4 class="alert-heading notoc">Warning!</h4>
-        <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+        <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#void" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
       </div>
     </div>
   </div>
@@ -1042,19 +1041,19 @@ link:{url-bs-docs--components-alerts}[Bootstrap Docs {char-middot} Alerts, {brow
     <div class="col-md-4">
       <div class="alert alert-dismissible alert-danger">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+        <strong>Oh snap!</strong> <a href="#void" class="alert-link">Change a few things up</a> and try submitting again.
       </div>
     </div>
     <div class="col-md-4">
       <div class="alert alert-dismissible alert-success">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+        <strong>Well done!</strong> You successfully read <a href="#void" class="alert-link">this important alert message</a>.
       </div>
     </div>
     <div class="col-md-4">
       <div class="alert alert-dismissible alert-info">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+        <strong>Heads up!</strong> This <a href="#void" class="alert-link">alert needs your attention</a>, but it's not super important.
       </div>
     </div>
   </div>
@@ -1347,7 +1346,7 @@ link:{url-bs-docs--components-jumbotron}[Bootstrap Docs {char-middot} Jumbotron,
     <hr class="my-4">
     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
     <p class="lead">
-      <a href="#" class="btn btn-primary btn-raised btn-lg" role="button">Learn more</a>
+      <a href="#void" class="btn btn-primary btn-raised btn-lg" role="button">Learn more</a>
     </p>
   </div>
 </div>
@@ -1383,19 +1382,19 @@ link:{url-bs-docs--components-list_group}[Bootstrap Docs {char-middot} List grou
 
     <div class="col-md-4">
       <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action active">
+        <a href="#void" class="list-group-item list-group-item-action active">
           Describe item #1
         </a>
-        <a href="#" class="list-group-item list-group-item-action">Describe item #2
+        <a href="#void" class="list-group-item list-group-item-action">Describe item #2
         </a>
-        <a href="#" class="list-group-item list-group-item-action disabled">Describe item #3
+        <a href="#void" class="list-group-item list-group-item-action disabled">Describe item #3
         </a>
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+        <a href="#void" class="list-group-item list-group-item-action flex-column align-items-start active">
           <div class="d-flex w-100 justify-content-between">
             <h4 class="mb-1 notoc">List group item heading</h4>
             <small>3 days ago</small>
@@ -1403,7 +1402,7 @@ link:{url-bs-docs--components-list_group}[Bootstrap Docs {char-middot} List grou
           <p class="mb-1">Some quick example text to build on a list and make up the bulk of the list group's content.</p>
           <small>Summarize whats all about.</small>
         </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <a href="#void" class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1 notoc">List group item heading</h5>
             <small class="text-muted">3 days ago</small>
@@ -1449,8 +1448,8 @@ link:{url-bs-docs--components-cards}[Bootstrap Docs {char-middot} Card, {browser
           <h4 class="card-title notoc">Card title</h4>
           <h5 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <a href="#void" class="card-link">Card link</a>
+          <a href="#void" class="card-link">Another link</a>
         </div>
       </div>
     </div>
@@ -1460,8 +1459,8 @@ link:{url-bs-docs--components-cards}[Bootstrap Docs {char-middot} Card, {browser
           <h4 class="card-title notoc">Card title</h4>
           <h6 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h6>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <a href="#void" class="card-link">Card link</a>
+          <a href="#void" class="card-link">Another link</a>
         </div>
       </div>
     </div>
@@ -1471,8 +1470,8 @@ link:{url-bs-docs--components-cards}[Bootstrap Docs {char-middot} Card, {browser
           <h4 class="card-title notoc">Card title</h4>
           <h6 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h6>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <a href="#void" class="card-link">Card link</a>
+          <a href="#void" class="card-link">Another link</a>
         </div>
       </div>
     </div>
@@ -1526,7 +1525,7 @@ link:{url-bs-docs--components-cards}[Bootstrap Docs {char-middot} Card, {browser
         </div>
         <div class="card-footer r-text-200">
           <a class="card-link bs-info font-weight-bold g-font-size-12 text-uppercase"
-             href="#">Action · Footer Link
+             href="#void">Action · Footer Link
           </a>
         </div>
       </div>
@@ -1542,7 +1541,7 @@ link:{url-bs-docs--components-cards}[Bootstrap Docs {char-middot} Card, {browser
         </div>
         <div class="card-footer r-text-200">
           <a class="card-link bs-warning font-weight-bold g-font-size-12 text-uppercase"
-             href="#">Action · Footer Link
+             href="#void">Action · Footer Link
           </a>
         </div>
       </div>
@@ -1557,7 +1556,7 @@ link:{url-bs-docs--components-cards}[Bootstrap Docs {char-middot} Card, {browser
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
         <div class="card-footer r-text-200">
-          <a href="#" class="card-link bs-danger font-weight-bold g-font-size-12 text-uppercase">
+          <a href="#void" class="card-link bs-danger font-weight-bold g-font-size-12 text-uppercase">
           Action · Footer Link
           </a>
         </div>
@@ -1617,8 +1616,8 @@ link:{url-bs-docs--components-cards}[Bootstrap Docs {char-middot} Card, {browser
         </div>
 
         <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <a href="#void" class="card-link">Card link</a>
+          <a href="#void" class="card-link">Another link</a>
         </div>
         <div class="card-footer text-muted">
           2 days ago
@@ -1957,10 +1956,10 @@ closed, any tooltips and popovers within are also automatically dismissed.
       </div>
       <div class="modal-body">
         <h4 class="notoc">Popover in a modal</h4>
-        <p>This <a href="#" role="button" class="btn btn-primary btn-raised popover-test" data-toggle="popover" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on hover or click.</p>
+        <p>This <a href="#void" role="button" class="btn btn-primary btn-raised popover-test" data-toggle="popover" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on hover or click.</p>
         <hr>
         <h4 class="notoc">Tooltips in a modal</h4>
-        <p><a href="#" class="tooltip-test" data-toggle="tooltip" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" data-toggle="tooltip" title="Tooltip">that link</a> have tooltips on hover.</p>
+        <p><a href="#void" class="tooltip-test" data-toggle="tooltip" title="Tooltip">This link</a> and <a href="#void" class="tooltip-test" data-toggle="tooltip" title="Tooltip">that link</a> have tooltips on hover.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>

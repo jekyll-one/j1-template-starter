@@ -189,7 +189,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
       --------------------------------------------------------------------------
       <!-- jadams, 2018-01-17: logic seems NOT work. Disabled. -->
       {% if letter_group_written == false %}
-        <h2 id="id_{{letter_group}}" class="toc-link mt-5 mb-5"><a alt="Back to top" href="#"><i class="fa fa-tags mr-2"></i></a>{{letter_group | upcase}}</h2>
+        <h2 id="id_{{letter_group}}" class="toc-link mt-5 mb-5"><a alt="Back to top" href="#void"><i class="fa fa-tags mr-2"></i></a>{{letter_group | upcase}}</h2>
         {% assign letter_group_written = true %}
       {% endif %}
       -------------------------------------------------------------------------- {% endcomment %}
@@ -202,7 +202,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
       -------------------------------------------------------------------------- {% endcomment %}
       {% if letter_group %}
       <h2 id="id_{{letter_group}}" class="toc-link mb-3">
-        <a alt="Back to top" href="#">
+        <a alt="Back to top" href="#void">
           <i class="fa fa-tags mr-2"></i>
         </a>{{letter_group | upcase}}
       </h2>
@@ -216,7 +216,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
     first_letter: {{first_letter | debug}}
     {% endcomment %}
 
-    <h3 id="{{this_word | replace: '+','_' | replace: ' ','_' | downcase}}" class="toc-link"><a alt="Back to top" href="#"><i class="fa fa-tag mr-2"></i></a>{{this_word}}</h3>
+    <h3 id="{{this_word | replace: '+','_' | replace: ' ','_' | downcase}}" class="toc-link"><a alt="Back to top" href="#void"><i class="fa fa-tag mr-2"></i></a>{{this_word}}</h3>
 
     {% for post in site.tags[this_word] %}{% if post.title != null %}
       {% include {{get_category}} post=post %}
@@ -281,23 +281,3 @@ site_category_word_list:    {{site_category_word_list | debug}}
     {% endif %}{% endfor %}
   {% endunless %}{% endfor %}
 </div>
-
-<!-- [INFO   ] [j1.page.{{page.title}}                   ] [Save the current page to cookieUserState cookie: {{browser_page_url}}] -->
-<script type="text/javascript">
-  function setLastPage() {
-    var logger = log4javascript.getLogger('j1.BlogNavigator');
-    var cookie_names                = j1.getCookieNames();
-    const user_state_cookie_name    = cookie_names.user_session;
-    var user_state                  = j1.readCookie(user_state_cookie_name);
-    var user_state_last_page        = "{{browser_page_url}}";
-    user_state.last_page            = user_state_last_page;
-
-    j1.writeCookie({
-      name: user_state_cookie_name,
-      data: user_state,
-      samesite: 'Strict'
-    });
-    logger.info('Saved current Post Browser page to cookie: {{browser_page_url}}');
-  }
-  window.onload = setLastPage();
-</script>

@@ -74,6 +74,7 @@ issues for private or professional use.
 * Full-text search engine included (Lunr)
 * Blog Post navigation included
 * GDPR compatible cookie consent module included
+* Translator module (Google, Deepl) included
 * Clipboard module included
 * Floating Action Buttons included
 * Navigation modules included
@@ -81,6 +82,14 @@ issues for private or professional use.
 * Gallery modules included
 * Carousel module included
 * Video modules included
+
+## Addons and Integrations
+
+* Featured example content included
+* Royalty free images included
+* Support of comment provider APIs (Disqus, Hyvor)
+* Google Analytics support (includes GDPR compatible OptIn/OptOut support)
+* Deploy on Github Pages, Netlify and Heroku ready
 
 # Supported platforms
 

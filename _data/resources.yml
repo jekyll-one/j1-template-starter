@@ -328,7 +328,6 @@ globals:
     js_dev:                             js
     js_prod:                            min.js
 
-
 # ------------------------------------------------------------------------------
 # RESOURCE configuration settings
 #
@@ -339,7 +338,7 @@ resources:
 # ------------------------------------------------------------------------------
 
   # ----------------------------------------------------------------------------
-  # J1 Core
+  # J1 Core, Main JS API for J1 Template
   #
   - name:                               J1 Template Core
     resource:
@@ -375,7 +374,7 @@ resources:
         init_function:                  [ j1.init ]
 
   # ----------------------------------------------------------------------------
-  # J1 Logger
+  # J1 Logger, JS API for all logs used by J1 Template
   #
   - name:                               Logger
     resource:
@@ -396,7 +395,7 @@ resources:
         init_function:                  [ j1.adapter.logger.init ]
 
   # ----------------------------------------------------------------------------
-  # Backstretch
+  # Backstretch, JS API to add responsive image|video content to J1 Top Headers
   #
   - name:                               Backstretch
     resource:
@@ -417,7 +416,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Top Header
+  # Top Header, JS API to create top headers for J1 Template
   #
   - name:                               J1 Attic
     resource:
@@ -438,7 +437,7 @@ resources:
         init_function:                  [ j1.adapter.attic.init ]
 
   # ----------------------------------------------------------------------------
-  # Navigator
+  # Navigator, JS API to create the naviagtion for J1 Template
   #
   - name:                               J1 Navigator
     resource:
@@ -459,7 +458,7 @@ resources:
         init_function:                  [ j1.adapter.navigator.init ]
 
   # ----------------------------------------------------------------------------
-  # Mobile Menu (Light)
+  # Mobile Menu (Light), JS API to create TOCs for mobile devices
   #
   - name:                               MMenu
     resource:
@@ -485,7 +484,7 @@ resources:
         init_function:                  [ j1.adapter.mmenu.init ]
 
   # ----------------------------------------------------------------------------
-  # Themer
+  # Themer, JS API to use themes from Bootswatch
   #
   - name:                               J1 Themer
     resource:
@@ -506,7 +505,7 @@ resources:
         init_function:                  [ j1.adapter.themer.init ]
 
   # ----------------------------------------------------------------------------
-  # Toccer
+  # Toccer, JS API to create TOCs from HTML headine elements
   #
   - name:                               J1 Toccer
     resource:
@@ -527,28 +526,7 @@ resources:
         init_function:                  [ j1.adapter.toccer.init ]
 
   # ----------------------------------------------------------------------------
-  # Back2Top
-  #
-  - name:                               J1 Back2Top
-    resource:
-      id:                               back2top
-      enabled:                          false
-      comment:                          module back2top
-      region:                           head
-      layout:                           [ all ]
-      required:                         ondemand
-      preload:                          false                                   # property currently unused
-      script_load:                      sync
-      dependencies:                     false
-      pass_init_data:                   false
-      data:
-        css:                            []
-        files:                          [ adapter/js/back2top.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.back2top.init ]
-
-  # ----------------------------------------------------------------------------
-  #  GDPR compatible Cookie Consent for J1 Template
+  #  CookieConsent, JS API to create GDPR compatible cookie consent
   #
   - name:                               J1 CookieConsent
     resource:
@@ -569,8 +547,7 @@ resources:
         init_function:                  [ j1.adapter.cookieConsent.init ]
 
   # ----------------------------------------------------------------------------
-  # jqMouseWheel, jQuery plugin to add cross-browser mouse wheel support
-  # https://github.com/jquery/jquery-mousewheel
+  # jqMouseWheel, cross-browser mouse wheel support  (currently NOT used)
   #
   - name:                               jqMouseWheel
     resource:
@@ -591,8 +568,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # themeSwitcher, JS API for switching Bootstrap themes
-  # https://github.com/jguadagno/bootstrapThemeSwitcher
+  # Theme Switcher, JS API for switching Bootstrap Themes (Bootswatch)
   #
   - name:                               themeSwitcher
     resource:
@@ -613,8 +589,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Bootstrap Material Design (BMD), responsive UI framework for Bootstrap
-  # https://mdbootstrap.github.io/bootstrap-material-design/
+  # BMD, responsive UI framework for Bootstrap
   #
   - name:                               Bootstrap Material Design
     resource:
@@ -635,8 +610,7 @@ resources:
         init_function:                  [ j1.adapter.bmd.init ]
 
   # ----------------------------------------------------------------------------
-  # Materialize, responsive UI framework
-  # https://materializecss.com/
+  # Materialize, responsive UI framework (Vanilla JS)
   #
   - name:                               Materialize
     resource:
@@ -660,7 +634,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Responsive HTML tables for J1 Template (rtable)
+  # Responsive Tables, JS API to create responsive HTML tables
   #
   - name:                               Responsive Tables
     resource:
@@ -693,13 +667,13 @@ resources:
 # ------------------------------------------------------------------------------
 
   # ----------------------------------------------------------------------------
-  # HTML modifier for Asciidoctor
+  # Asciidoctor, JS API to create HTML output from Asciidoc pages
   #
   - name:                               Asciidoctor
     resource:
       id:                               asciidoctor
       enabled:                          true
-      comment:                          HTML modifier for Asciidoctor
+      comment:                          HTML writer for Asciidoctor
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive, app ]
       required:                         always
@@ -715,7 +689,6 @@ resources:
 
   # ----------------------------------------------------------------------------
   # Rouge, pure Ruby themeable code highlighter
-  # https://github.com/rouge-ruby/rouge
   #
   - name:                               Rouge Highlighter
     resource:
@@ -739,7 +712,7 @@ resources:
         init_function:                  [ j1.adapter.rouge.init ]
 
   # ----------------------------------------------------------------------------
-  # Animate CSS
+  # Animate CSS, styles for CSS-based animations
   #
   - name:                               Animate CSS
     resource:
@@ -760,7 +733,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Gallery Customizer
+  # Gallery Customizer, Customizer UI for Justifie dGallery
   #
   - name:                               J1 Gallery Customizer
     resource:
@@ -781,8 +754,7 @@ resources:
         init_function:                  [ j1.adapter.justifiedGalleryCustomizer.init ]
 
   # ----------------------------------------------------------------------------
-  # iFrameResizer, creates dynamic, configurable, client|server
-  # based HTML iframes
+  # iFrameResizer, client|server based HTML iframes
   #
   - name:                               J1 Framer
     resource:
@@ -805,7 +777,7 @@ resources:
         init_function:                  [ j1.adapter.framer.init ]
 
   # ----------------------------------------------------------------------------
-  # Lightbox V2
+  # Lightbox V2, the main lightbox for J1 Template
   #
   - name:                               J1 Lightbox
     resource:
@@ -829,7 +801,7 @@ resources:
         init_function:                  [ j1.adapter.lightbox.init ]
 
   # ----------------------------------------------------------------------------
-  # Twitter Emoji Icons
+  # Twitter Emoji Icons, CSS compinet for Twitter Emojis
   #
   - name:                               Twitter Emoji Icons
     resource:
@@ -850,7 +822,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Twitter Emoji (Picker)
+  # Twitter Emoji Picker, selection UI for Twitter Emojis
   #
   - name:                               Twitter Emoji Picker
     resource:
@@ -867,14 +839,11 @@ resources:
       data:
         css:                            [ modules/twemoji/css/picker/twemoji-picker ]
         files:                          []
-        js:                             [
-#                                         modules/twemoji/js/twemoji,
-                                          modules/twemoji/js/picker/twemoji-picker
-                                        ]
+        js:                             [ modules/twemoji/js/picker/twemoji-picker ]
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # MDI Previewer
+  # MDI Previewer, preview page (UI) for MDI icons
   #
   - name:                               MDI Previewer
     resource:
@@ -895,7 +864,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # MDIl Previewer (light)
+  # MDIl Previewer, preview page (UI) for MDI icons (light)
   #
   - name:                               MDIL Previewer
     resource:
@@ -916,7 +885,28 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Iconify (Icons) Framework
+  # CSS Flags Previewer, preview page (UI) for country flags
+  #
+  - name:                               CSS Flags Previewer
+    resource:
+      id:                               css_flags_previewer
+      enabled:                          true
+      comment:                          module css_flags_previewer
+      layout:                           [ all ]
+      region:                           head
+      required:                         always
+      preload:                          false                                   # property currently unused
+      script_load:                      deferred
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          [ core/country-flags/css/theme/uno.css ]
+        js:                             []
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # Iconify Framework, JS API to use Iconify icons
   #
   - name:                               Iconify Framework
     resource:
@@ -937,7 +927,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Algolia
+  # Algolia, JS API (wrapper) to use Algolia Search
   #
   - resource:
       enabled:                          true
@@ -958,7 +948,7 @@ resources:
         init_function:                  [ j1.adapter.algolia.init ]
 
   # ----------------------------------------------------------------------------
-  # Clipboard
+  # Clipboard, JS API to add clipboard functionality
   #
   - name:                               Clipboard
     resource:
@@ -979,7 +969,7 @@ resources:
         init_function:                  [ j1.adapter.clipboard.init ]
 
   # ----------------------------------------------------------------------------
-  # Carousel
+  # Carousel, JS API for the main carousel used by J1 Template
   #
   - name:                               Carousel
     resource:
@@ -1006,7 +996,7 @@ resources:
         init_function:                  [ j1.adapter.carousel.init ]
 
   # ----------------------------------------------------------------------------
-  # Justified Gallery
+  # Justified Gallery, JS API for full-featured image galleries
   #
   - name:                               Justified Gallery
     resource:
@@ -1030,7 +1020,7 @@ resources:
         init_function:                  [ j1.adapter.justifiedGallery.init ]
 
   # ----------------------------------------------------------------------------
-  # LightGallery
+  # LightGallery, JS API for full-featured lightboxes
   #
   - name:                               LightGallery
     resource:
@@ -1066,7 +1056,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # VideoJS Player
+  # VideoJS Player, JS API|Player for HTML5 video content
   #
   - name:                               VideoJS Player
     resource:
@@ -1095,7 +1085,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Vimeo Froogaloop API
+  # Vimeo Player Froogaloop, JS API|Player for Vimeo video content
   #
   - name:                               VimeoFroogaloopAPI
     resource:
@@ -1116,7 +1106,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Vimeo Player
+  # Vimeo Player, JS API|Player for Vimeo video content
   #
   - name:                               Vimeo Player
     resource:
@@ -1137,8 +1127,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # noUiSlider, creates responsive input sliders
-  # NOTE: This module is in state EXPERIMENTAL
+  # noUiSlider, responsive input sliders (currently NOT used)
   #
   - name:                               noUiSlider
     resource:
@@ -1159,30 +1148,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Stacker, transforms HTML tables into a responsive, stacked representaion
-  # NOTE: This module is in state EXPERIMENTAL
-  #
-  - name:                               stacker
-    resource:
-      id:                               stacker
-      enabled:                          false                                   # currently NOT used
-      comment:                          module stacker
-      region:                           head
-      layout:                           [ home, page, post, collection, blog_archive, app, raw ]
-      required:                         ondemand
-      preload:                          false                                   # property currently unused
-      script_load:                      sync
-      dependencies:                     false
-      pass_init_data:                   false
-      data:
-        css:                            [ modules/stacker/css/stacker]
-        files:                          []
-        js:                             [ modules/stacker/js/stacker ]
-        init_function:                  []
-
-  # ----------------------------------------------------------------------------
-  # Floating Button Menu (FAM)
-  # NOTE: This module is in state EXPERIMENTAL
+  # Floating Button Menu, JS API to create FAM buttons for J1 Template
   #
   - name:                               FAM
     resource:
@@ -1211,8 +1177,7 @@ resources:
         init_function:                  [ j1.adapter.fam.init ]
 
   # ----------------------------------------------------------------------------
-  # QuickSearch (lunr for J1 Template)
-  # NOTE: This module is in state EXPERIMENTAL
+  # lunr search engine, JS API used for the QuickSearch feature of J1 Template
   #
   - name:                               QuickSearch
     resource:
@@ -1240,7 +1205,7 @@ resources:
         init_function:                  [ j1.adapter.quicksearch.init ]
 
   # ----------------------------------------------------------------------------
-  # Data tables for J1 Template
+  # Data tables for J1 Template (currently NOT used)
   #
   - name:                               Data Tables
     resource:
@@ -1261,8 +1226,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # rtextResizer
-  # NOTE: This module is in state EXPERIMENTAL
+  # rtextResizer (currently NOT used)
   #
   - name:                               rtextResizer
     resource:
@@ -1283,8 +1247,7 @@ resources:
         init_function:                  [ j1.adapter.rtextResizer.init ]
 
   # ----------------------------------------------------------------------------
-  # showOnScroll
-  #
+  # showOnScroll, JS API to animate container elements
   #
   - name:                               showOnScroll
     resource:
@@ -1305,8 +1268,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # j1Scroll
-  # NOTE: https://github.com/jquery-boilerplate/jquery-boilerplate
+  # j1Scroll, JS API to implement smooth scrolling pages
   #
   - name:                               j1Scroll
     resource:
@@ -1325,6 +1287,69 @@ resources:
         files:                          [ adapter/js/j1scroll.js ]
         js:                             [ modules/j1Scroll/js/j1scroll ]
         init_function:                  [ j1.adapter.j1Scroll.init ]
+
+  # ----------------------------------------------------------------------------
+  # j1Deepl, JS Wrapper for the Deepl API
+  #
+  - name:                               j1Deepl
+    resource:
+      id:                               j1deepl
+      enabled:                          true
+      comment:                          j1Deepl
+      region:                           head
+      layout:                           [ home, page, post, collection, blog_archive ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          []
+        js:                             [ modules/j1Deepl/js/j1deepl ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # msDropdown, JS API to create themeable HTML <select> elements
+  #
+  - name:                               msDropdown
+    resource:
+      id:                               msDropdown
+      enabled:                          true
+      comment:                          module msDropdown
+      region:                           head
+      layout:                           [ home, page, post, collection, blog_archive ]
+      required:                         always
+      preload:                          false
+      script_load:                      async
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            [ modules/msDropdown/css/msDropdown ]
+        files:                          []
+        js:                             [ modules/msDropdown/js/msDropdown ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  #  Translator, JS API to provide translations for J1 Template
+  #
+  - name:                               Translator
+    resource:
+      id:                               translator
+      enabled:                          true
+      comment:                          module translator
+      region:                           head
+      layout:                           [ all ]
+      required:                         always
+      preload:                          false
+      script_load:                      sync
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            [ modules/translator/css/translator ]
+        files:                          [ adapter/js/translator.js ]
+        js:                             [ modules/translator/js/translator ]
+        init_function:                  [ j1.adapter.translator.init ]
 
 # ------------------------------------------------------------------------------
 # END config

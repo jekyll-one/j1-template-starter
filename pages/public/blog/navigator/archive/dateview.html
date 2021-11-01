@@ -157,9 +157,9 @@ site_category_word_list:    {{site_category_word_list | debug}}
         {% comment %}
         ------------------------------------------------------------------------
         {% if year != nyear %}
-        <a href="#" id="{{post.date|localize: "%Y"}}">
+        <a href="#void" id="{{post.date|localize: "%Y"}}">
         {% else %}
-        <a href="#" id="{{post.date|localize: "%Y-%m" }}">
+        <a href="#void" id="{{post.date|localize: "%Y-%m" }}">
         {% endif %}
         ------------------------------------------------------------------------ {% endcomment %}
         <i class="mdi mdi-calendar-blank"></i>
@@ -237,25 +237,3 @@ site_category_word_list:    {{site_category_word_list | debug}}
   {{closeList}}
 
 </div>
-
-<!-- [INFO   ] [j1.page.{{page.title}}                   ] [Save the current page to cookieUserState cookie: {{browser_page_url}}] -->
-{% comment %} Update cookie for lastpage
--------------------------------------------------------------------------------- {% endcomment %}
-<script type="text/javascript">
-  function setLastPage() {
-    var logger = log4javascript.getLogger('j1.BlogNavigator');
-    var cookie_names                = j1.getCookieNames();
-    const user_state_cookie_name    = cookie_names.user_session;
-    var user_state                  = j1.readCookie(user_state_cookie_name);
-    var user_state_last_page        = "{{browser_page_url}}";
-    user_state.last_page            = user_state_last_page;
-
-    j1.writeCookie({
-      name: user_state_cookie_name,
-      data: user_state,
-      samesite: 'Strict'
-    });
-    logger.info('Saved current Post Browser page to cookie: {{browser_page_url}}');
-  }
-  window.onload = setLastPage();
-</script>

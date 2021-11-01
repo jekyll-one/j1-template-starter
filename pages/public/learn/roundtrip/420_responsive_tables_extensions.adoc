@@ -53,6 +53,8 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+// Include sub-documents
+// -----------------------------------------------------------------------------
 Creating a design for responsive tables is challenging. The approach used by
 J1 Template is based on pure CSS on top of the classic Bootstrap styles for
 simplicity and portability to be viewed best on all devices and browsers.
@@ -71,7 +73,7 @@ tables are implemented:
 |J Table (default)
 |`r-text-xxx`
 |J Tables are used by J1 Template for default. Those tables are using the
-*responsive text* feature (see link:{roundtrip-typography}[Typography])
+*responsive text* feature (see link:{url-roundtrip--typography}[Typography])
 with no additional CSS classes to be applied. For smaller viewports, the text
 scales down and should fit the cells automatically. The default text size for
 J1 is `r-text-300`.
@@ -416,4 +418,4 @@ An exciting feature may be the use of themes. But much, much more can the J1
 do for your Web Site.
 
 Check out what themes can do. Have a look at the
-link:{roundtrip-themes}[BS themes] feature!
+link:{url-roundtrip--themes}[BS themes] feature!

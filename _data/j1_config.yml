@@ -54,6 +54,7 @@ typography:
   rtext:                                true
   rtext_size:                           300
 
+
 # ==============================================================================
 # URL configuration
 #
@@ -141,6 +142,7 @@ cookies:
   user_session:                         j1.user.session
   user_state:                           j1.user.state
   user_consent:                         j1.user.consent
+  user_translate:                       j1.user.translate
 
 
 # ==============================================================================
@@ -283,33 +285,13 @@ rouge:
 #   https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content
 #   https://github.com/GoogleChromeLabs/critters/issues/18 (crossorigin)
 # ------------------------------------------------------------------------------
-# font:
-#   preload:                              true
-#   cors:                                 crossorigin
-#   fonts:                                [
-#                                           /assets/themes/j1/core/fonts/roboto/fonts/Roboto-Thin.woff,
-#                                           /assets/themes/j1/core/fonts/roboto/fonts/Roboto-Thin.woff2,
-#                                           /assets/themes/j1/core/fonts/roboto/fonts/Roboto-Light.woff,
-#                                           /assets/themes/j1/core/fonts/roboto/fonts/Roboto-Light.woff2,
-#                                           /assets/themes/j1/core/fonts/roboto/fonts/Roboto-Regular.woff,
-#                                           /assets/themes/j1/core/fonts/roboto/fonts/Roboto-Regular.woff2,
-#                                           /assets/themes/j1/core/fonts/roboto/fonts/Roboto-Medium.woff,
-#                                           /assets/themes/j1/core/fonts/roboto/fonts/Roboto-Medium.woff2,
-#                                           /assets/themes/j1/core/fonts/roboto/fonts/Roboto-Bold.woff,
-#                                           /assets/themes/j1/core/fonts/roboto/fonts/Roboto-Bold.woff2,
-#                                           /assets/themes/j1/core/fonts/material_design_icons/fonts/materialdesignicons-webfont.woff,
-#                                           /assets/themes/j1/core/fonts/material_design_icons/fonts/materialdesignicons-webfont.woff2
-#                                         ]
 preload:
 
   font:
     preload:                              false
     cors:                                 crossorigin
     fonts:                                []
-    # fonts:                              [
-    #                                         /assets/themes/j1/core/fonts/roboto/fonts/Roboto-Regular.woff,
-    #                                         /assets/themes/j1/core/fonts/material_design_icons/fonts/materialdesignicons-webfont.woff
-    #                                     ]
+
   css:
     preload:                              true
     css:                                  [
@@ -348,7 +330,6 @@ preload:
 preconnect:
   enabled:                              true
   urls:                                 [ "https://bootswatch.com" ]
-
 
 # ------------------------------------------------------------------------------
 # Font AweSome settings
@@ -390,9 +371,8 @@ body:
 # ------------------------------------------------------------------------------
 comments:
   enabled:                              false
-
   provider:                             hyvor                                   # disqus | hyvor | commento | just-comments
-  xhr_data_path:                        /assets/data
+
   comments_headline:
     en:                                 Leave a comment
     de:                                 Kommentieren
@@ -427,7 +407,6 @@ comments:
 # ------------------------------------------------------------------------------
 analytics:
   enabled:                              false
-
   provider:                             google
 
   google:
@@ -445,7 +424,6 @@ analytics:
 # ------------------------------------------------------------------------------
 advertising:
   enabled:                              false
-
   provider:                             google
 
   google:
@@ -462,13 +440,12 @@ advertising:
 # Set 'provider' to the provider you want to use.
 # ------------------------------------------------------------------------------
 translation:
-  enabled:                              false
-
+  enabled:                              true
   provider:                             google
 
   google:
     layout:                             default
-    meta_data:                          [google-translate-customization]
+    meta_data:                          [google-translate]
     page_language:                      en
     translation_languages:              [all]
 
