@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/j1Scroll.yml
-# User configuration for J1 infiniteScroll
+# ~/_data/modules/scroller.yml
+# User configuration for J1 Scroller API
 #
 # Product/Info:
 # https://jekyll.one
@@ -18,7 +18,7 @@ about_config:
 
   title:
   scope:                                User settings
-  location:                             _data/modules/j1Scroll.yml
+  location:                             _data/modules/scroller.yml
 
 # ------------------------------------------------------------------------------
 # User configuration settings
@@ -27,14 +27,38 @@ settings:
   enabled:                              true
 
   scrollers:
+
+    # --------------------------------------------------------------------------
+    # Intro Panel
+    #
+    - scroller:
+        enabled:                        true
+        type:                           showOnScroll
+        id:                             home_intro_panel
+        container:                      home_intro_panel
+        showDelay:                      700
+        scrollOffset:                   500
+
+    # --------------------------------------------------------------------------
+    # Service Panel
+    #
+    - scroller:
+        enabled:                        false
+        type:                           showOnScroll
+        id:                             home_service_panel
+        container:                      home_service_panel
+        showDelay:                      700
+        scrollOffset:                   200
+
     # --------------------------------------------------------------------------
     # News Panel
     #
     - scroller:
         enabled:                        true
+        type:                           infiniteScroll
         id:                             home_news_panel
         container:                      home_news_panel-scroll-group
-        path:                           /assets/data/news_panel_posts/page
+        pagePath:                       /assets/data/news_panel_posts/page
         elementScroll:                  true                                    # false = window, true = container
         scrollOffset:                   100
         lastPage:                       3
@@ -52,9 +76,10 @@ settings:
     #
     - scroller:
         enabled:                        true
+        type:                           infiniteScroll
         id:                             blog_navigator_preview
         container:                      timeline
-        path:                           /pages/public/blog/navigator/page
+        pagePath:                       /pages/public/blog/navigator/page
         elementScroll:                  true
         scrollOffset:                   200
         lastPage:                       4

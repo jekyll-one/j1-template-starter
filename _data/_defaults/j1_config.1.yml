@@ -1,0 +1,478 @@
+# ------------------------------------------------------------------------------
+# ~/_data/j1_config.yml
+# J1 Template settings
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# For details, see https://jekyll.one
+# ------------------------------------------------------------------------------
+
+# environment
+# ------------------------------------------------------------------------------
+# Sets the build environment of the website
+#
+#   values:                             development|production
+#   default:                            production
+#
+environment:                            production
+
+
+# ==============================================================================
+# THEME configuration
+#
+# ------------------------------------------------------------------------------
+#   Sets the default theme used for J1 Template for default
+#
+#   Note: Themes from Bootswatch cannot used currently as default theme
+#
+# ------------------------------------------------------------------------------
+#   theme.name
+#
+#   values                              Uno light|Uno dark
+#   default:                            Uno light
+# ------------------------------------------------------------------------------
+#   theme.author
+#
+#   values                              <string>
+#   default:                            J1 Team
+# ------------------------------------------------------------------------------
+#   theme.url
+#
+#   values                              <url>
+#   default:                            https://jekyll.one/
+# ------------------------------------------------------------------------------
+theme:
+  name:                                 Uno light
+  author:                               J1 Team
+  author_url:                           https://jekyll.one/
+
+# ------------------------------------------------------------------------------
+# CSS and SASS settings
+#
+css:
+  custom_scss:                          false
+  custom_css:                           false
+
+# ------------------------------------------------------------------------------
+# Typography settings
+#
+typography:
+  rtext:                                true
+  rtext_size:                           300
+
+
+# ==============================================================================
+# URL configuration
+#
+# ------------------------------------------------------------------------------
+#
+# All links will be name-spaced by base_path if defined.
+# Links in your website should always be prefixed with {{base_path}}
+# however this value will be dynamically changed depending on your
+# deployment situation.
+#
+# CNAME (http://yourcustomdomain.com)
+#   DO NOT SET base_path
+#   (url's will be prefixed with "/" and work relatively)
+#
+# GitHub Pages (http://username.github.io)
+#   DO NOT SET base_path
+#   (url's will be prefixed with "/" and work relatively)
+#
+# GitHub Project Pages (http://username.github.io/project-name)
+#
+#   A GitHub Project site exists in the `gh-pages` branch of one of
+#   your repositories.
+#  REQUIRED! Set base_path to: http://username.github.io/project-name
+#
+# CAUTION:
+#   - When in localhost, your site will run from root "/" regardless
+#     of base_path
+#   - Only the following values are falsy: ["", null, false]
+#   - When setting base_path it must be a valid url.
+#     This means always setting the protocol (http|https) or
+#     prefixing with "/"
+#
+#base_path:
+
+# By default, the asset_path is automatically defined relative to
+# base_path plus the enabled theme, e.g
+#
+#     [base_path]/assets/themes/[THEME-NAME]
+#
+#     e.g. /assets/themes/bootstrap
+#
+# Override this by defining an absolute path to assets here.
+# ex:
+#   http://s3.amazonaws.com/yoursite/themes/watermelon/assets
+#
+asset_path:                             /assets/themes/j1
+app_path:                               /assets/apps
+image_path:                             /assets/images
+
+# These paths are to the main pages J1 ships with.
+# Some template helpers refer to these paths
+#
+#pages_path:                            /builder/pages
+archive_path:                           /builder/posts/timeline
+categories_path:                        /builder/categories
+tags_path:                              /builder/tags
+#atom_path:                             /atom.xml
+#rss_path:                              /rss.xml
+
+# ------------------------------------------------------------------------------
+# Common site URLs
+#
+about-site-url:                         /pages/public/about/site/
+user_info_url:                          /pages/public/legal/en/privacy/
+theme_author_url:                       https://jekyll.one
+
+
+# ==============================================================================
+# DATA path configuration settings
+#
+# ------------------------------------------------------------------------------
+runtime_data_path:                      /assets/data/runtime-data.yml
+message_catalog_data_path:              /assets/data/messages.yml
+colors_data_path:                       /assets/data/colors.json
+font_size_data_path:                    /assets/data/font_sizes.json
+country_data_path:                      /assets/data/countries.json
+
+
+# ==============================================================================
+# COOKIE configuration settings
+#
+# ------------------------------------------------------------------------------
+cookies:
+  app_session:                          j1.app.session
+  user_session:                         j1.user.session
+  user_state:                           j1.user.state
+  user_consent:                         j1.user.consent
+  user_translate:                       j1.user.translate
+
+
+# ==============================================================================
+# PAGE configuration settings
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+#   flicker_timeout
+#   ----------------------------------------------------------------------------
+#   Number of milliseconds (ms) the current page is hidden (display: none)
+#   to prevent "DOM flicker" (aka "FOUC": Flash of unstyled content)
+#
+#   TODO: To be checked if needed
+#
+#   prettify
+#   ----------------------------------------------------------------------------
+#   If set to true, all generated HTML pages (by Liquid|Jekyll) get
+#   formatted "pretty" by layout "default".
+#
+#   NOTE: Used for developent mode ONLY
+#   NOTE: See ~/packages/300_template_src/_layouts/default.html
+# ------------------------------------------------------------------------------
+flicker_timeout:                        150
+
+# ------------------------------------------------------------------------------
+# HTML PrettyPrint
+#
+prettify:                               true
+
+
+# ==============================================================================
+# USER configuration settings
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Default
+#
+user:
+  provider:                             j1
+  provider_site_url:                    https://jekyll.one
+  provider_home_url:                    https://jekyll.one
+  provider_blog_url:                    /pages/public/blog/navigator/
+  provider_member_url:                  /pages/public/learn/whats_up/
+  provider_privacy_url:                 /pages/public/legal/en/privacy/
+  user_name:                            guest
+  status:                               active
+  provider_membership:                  guest
+  provider_permissions:                 [ 'public' ]
+
+
+# ==============================================================================
+# FRAMEWORK configuration settings
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# cards.card-deck (responsive card decks)
+#
+#   Bootstrap card decks are NOT responsive by default. Additional breakpoint
+#   classes for J1 Template introduce support on card decks for responsiveness.
+#   With the values for `break_on_XX`, the number of cards can be specified
+#   to be shown on a deck per *row*.
+#
+#   default:                          no defaults
+#   values:                           integer (num of cards)
+#
+# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# popovers.trigger (tooltips.trigger)
+#
+#   How a popover is triggered. You may pass multiple triggers.
+#   Separate them with a space. Trigger `manual` cannot be combined
+#   with any other trigger. 'manual' indicates that the popover will
+#   be triggered programmatically via the .popover('show'), .popover('hide')
+#   and .popover('toggle') methods.
+#
+#   default:                          hover
+#   values:                           click | hover | focus | manual
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# BOOTSTRAP framework settings
+#
+bootstrap:
+  default_theme:                        bootstrap
+
+  cards:
+     card_deck:
+      break_on_sm:                      1
+      break_on_md:                      2
+      break_on_lg:                      3
+      break_on_xl:                      3
+
+
+  tooltips:
+    enabled:                            true
+    trigger:                            hover
+
+  popovers:
+    enabled:                            true
+    trigger:                            hover
+
+# ------------------------------------------------------------------------------
+# HIGHLIGHTER settings
+#
+rouge:
+  theme_light:                          igorpro
+
+  # may github, pastie
+  theme_dark:                           monokai.sublime
+
+# ------------------------------------------------------------------------------
+# SEO settings (optimization)
+#
+
+# ------------------------------------------------------------------------------
+# PRELOAD settings
+# ------------------------------------------------------------------------------
+# NOTE:
+#   Specify resources that your page will need very soon, which you want
+#   to start loading early in the page lifecycle, before browsers' main
+#   rendering machinery starts. This may improve the performace for the RENDER
+#   phase to improve the FCP (First Contentful Paint). FCP marks the time
+#   at which the first text or image is shown to the user.
+# ------------------------------------------------------------------------------
+# NOTE:
+#   Preloading fonts,the crossorigin attribute is needed to handle
+#   CORS issues.
+# ------------------------------------------------------------------------------
+# NOTE:
+#   Preloading applies ONLY if the requested resource is NOT cached (304).
+#   If a resource is already cached (by the browser OR the web server), some
+#   browser (e.g. Chrome) issue WARNINGS, but can be ignored.
+# ------------------------------------------------------------------------------
+# INFO:
+#   https://stackoverflow.com/questions/1330825/preloading-font-face-fonts
+#   https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content
+#   https://github.com/GoogleChromeLabs/critters/issues/18 (crossorigin)
+# ------------------------------------------------------------------------------
+preload:
+
+  font:
+    preload:                              false
+    cors:                                 crossorigin
+    fonts:                                []
+
+  css:
+    preload:                              true
+    css:                                  [
+                                            /assets/themes/j1/core/css/themes/uno-light/bootstrap,
+                                            /assets/themes/j1/core/css/vendor
+                                          ]
+    files:                                []
+
+  js:
+    preload:                              true
+    js:                                   [
+                                            /assets/themes/j1/modules/bmd/js/bootstrap-material-design,
+                                            /assets/themes/j1/modules/backstretch/js/backstretch,
+                                            /assets/themes/j1/core/js/template
+                                          ]
+    files:                                [
+                                            /assets/themes/j1/adapter/js/attic.js,
+                                            /assets/themes/j1/adapter/js/logger.js,
+                                            /assets/themes/j1/adapter/js/bmd.js,
+                                            /assets/themes/j1/adapter/js/navigator.js
+                                          ]
+  image:
+    preload:                              false
+    files:                                [ /assets/images/modules/icons/j1/j1-512x512.png ]
+
+# ------------------------------------------------------------------------------
+# PRECONNECT settings
+# ------------------------------------------------------------------------------
+# NOTE:
+#   Improve page load speed with preconnect|dns-prefetch for 3rd party
+#   origins. Establishing connections often involves significant time in
+#   slow networks (e.g. mobile 2|3G), particularly when it comes to secure
+#   connections (HTTPS), as it may involve DNS lookups, redirects, and
+#   several round trips to the final server that handles the user's request.
+# ------------------------------------------------------------------------------
+preconnect:
+  enabled:                              true
+  urls:                                 [ "https://bootswatch.com" ]
+
+# ------------------------------------------------------------------------------
+# Font AweSome settings
+#
+fa:
+  color:                                default
+
+# ------------------------------------------------------------------------------
+# Body style settings
+#
+body:
+  scrollbar:                            false
+  background-color:                     md_gray_50
+  font-color:                           md_gray_900
+  font-size:                            1em
+  font-weight:                          400
+  line-height:                          1.5
+
+
+# ==============================================================================
+# CONNECTOR configuration settings
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# COMMENTS settings
+#
+# Set 'enabled' to false to turn off globally. Affects all pages independently
+# from what is set pagewise!
+# Set 'provider' to the provider you want to use.
+# ------------------------------------------------------------------------------
+# hyvor
+#
+#   site_id: your-website-id
+# ------------------------------------------------------------------------------
+# disqus
+#
+#   site_id: your-disqus-short-name
+# ------------------------------------------------------------------------------
+comments:
+  enabled:                              false
+  provider:                             hyvor                                   # disqus | hyvor | commento | just-comments
+
+  comments_headline:
+    en:                                 Leave a comment
+    de:                                 Kommentieren
+
+  hyvor:
+    site_id:                            'hyvor-site-id'
+
+  disqus:
+    site_id:                            '<your-site-short-name>'
+
+  # commento:                                                                   # currently NOT supported
+  #   site_id:                          'commento-site-id'
+  #
+  # just-comments:                                                              # currently NOT supported
+  #   site_id:                          'just-comments-site-id'
+
+  # facebook:                                                                   # currently NOT supported
+  #   appid:                            'facebook-app-id'
+  #   num_posts:                        5
+  #   width:                            580
+  #   colorscheme:                      light
+
+  # custom:                                                                     # currently NOT supported
+  #   custom_data:
+
+# ------------------------------------------------------------------------------
+# ANALYTICS settings
+#
+# Set 'enabled' to false to turn off globally. Affects all pages independently
+# from what is set pagewise!
+# Set 'provider' to the provider you want to use.
+# ------------------------------------------------------------------------------
+analytics:
+  enabled:                              false
+  provider:                             google
+
+  google:
+    tracking_id:                        '<your-tracking-id>'
+
+  custom:
+    custom_data:
+
+# ------------------------------------------------------------------------------
+# ADVERTISING settings
+#
+# Set 'enabled' to false to turn off globally. Affects all pages independently
+# from what is set pagewise!
+# Set 'provider' to the provider you want to use.
+# ------------------------------------------------------------------------------
+advertising:
+  enabled:                              false
+  provider:                             google
+
+  google:
+    publisher_id:                       '<your-publisher-id>'
+
+  custom:
+    custom_data:
+
+# ------------------------------------------------------------------------------
+# TRANSLATOR settings
+#
+# Set 'enabled' to false to turn off globally. Affects all pages independently
+# from what is set pagewise!
+# Set 'provider' to the provider you want to use.
+# ------------------------------------------------------------------------------
+translation:
+  enabled:                              true
+  provider:                             google
+
+  google:
+    layout:                             default
+    meta_data:                          [google-translate]
+    page_language:                      en
+    translation_languages:              [all]
+
+# ------------------------------------------------------------------------------
+# SHARING settings (currently NOT supported)
+#
+# Settings for sharing helper. Sharing is for things like tweet, plusone,
+# like, reddit buttons etc. Set 'provider' to the sharing provider you
+# want to use. Set 'provider' to false to turn sharing off globally.
+#
+# Set 'enabled' to false to turn off globally. Affects all pages independently
+# from what is set pagewise!
+# Set 'provider' to the provider you want to use.
+# ------------------------------------------------------------------------------
+# sharing:
+#   enabled:                            false
+#   provider:
+
+# ------------------------------------------------------------------------------
+# END config

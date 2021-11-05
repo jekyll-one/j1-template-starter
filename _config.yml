@@ -47,13 +47,13 @@
 #   values:                             development|production
 #   default:                            production
 #
-environment:                            production
+environment:                            development
 
 # version
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2021.2.12
+version:                                2021.3.1
 
 # version
 # ------------------------------------------------------------------------------
@@ -592,6 +592,7 @@ defaults:
     values:
       layout:                           page
       author:                           J1 Team
+      compress:                         true
 
       robots:
         index:                          true
@@ -636,6 +637,7 @@ defaults:
     values:
       layout:                           post
       author:                           J1 Team
+      compress:                         true
 
       robots:
         index:                          true
@@ -680,6 +682,7 @@ defaults:
     values:
       layout:                           post
       author:                           J1 Team
+      compress:                         true
 
       robots:
         index:                          true
@@ -722,6 +725,7 @@ defaults:
     values:
       layout:                           page
       sitemap:                          false
+      compress:                         true
 
       robots:
         index:                          false
@@ -735,7 +739,7 @@ defaults:
       advertising:                      false
       youtube:                          false
       vimeo:                            false
-
+      
 
 # ==============================================================================
 # 6. LAYOUT configuration

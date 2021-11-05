@@ -1247,13 +1247,13 @@ resources:
         init_function:                  [ j1.adapter.rtextResizer.init ]
 
   # ----------------------------------------------------------------------------
-  # showOnScroll, JS API to animate container elements
+  # scroller, JS API to implement infinite scroll
   #
-  - name:                               showOnScroll
+  - name:                               scroller
     resource:
-      id:                               showonscroll
+      id:                               scroller
       enabled:                          true
-      comment:                          J1 showOnScroll
+      comment:                          scroller
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand                                # always | ondemand
@@ -1262,40 +1262,19 @@ resources:
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            []
-        files:                          []
-        js:                             [ modules/showOnScroll/js/showOnScroll ]
-        init_function:                  []
+        css:                            [ modules/scroller/css/theme/uno ]
+        files:                          [ adapter/js/scroller.js ]
+        js:                             [ modules/scroller/js/scroller ]
+        init_function:                  [ j1.adapter.scroller.init ]
 
   # ----------------------------------------------------------------------------
-  # j1Scroll, JS API to implement smooth scrolling pages
+  # deeplAPI, JS Wrapper for the DeepL API
   #
-  - name:                               j1Scroll
+  - name:                               deeplAPI
     resource:
-      id:                               j1scroll
+      id:                               deeplAPI
       enabled:                          true
-      comment:                          j1Scroll
-      region:                           head
-      layout:                           [ home, page, post, collection, blog_archive ]
-      required:                         ondemand                                # always | ondemand
-      preload:                          false                                   # property currently unused
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
-      data:
-        css:                            [ modules/j1Scroll/css/theme/uno ]
-        files:                          [ adapter/js/j1scroll.js ]
-        js:                             [ modules/j1Scroll/js/j1scroll ]
-        init_function:                  [ j1.adapter.j1Scroll.init ]
-
-  # ----------------------------------------------------------------------------
-  # j1Deepl, JS Wrapper for the Deepl API
-  #
-  - name:                               j1Deepl
-    resource:
-      id:                               j1deepl
-      enabled:                          true
-      comment:                          j1Deepl
+      comment:                          deeplAPI
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand
@@ -1306,11 +1285,11 @@ resources:
       data:
         css:                            []
         files:                          []
-        js:                             [ modules/j1Deepl/js/j1deepl ]
+        js:                             [ modules/deeplAPI/js/deeplAPI ]
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # msDropdown, JS API to create themeable HTML <select> elements
+  # msDropdown, JS API to create themeable HTML <select> elements (dropdowns)
   #
   - name:                               msDropdown
     resource:
