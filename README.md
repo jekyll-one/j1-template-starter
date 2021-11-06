@@ -288,6 +288,7 @@ LiveReload address: http://localhost:40001    <5>
 Your *default* web browser is automatically started, and the website gets
 loaded.
 
+
 ## Reset the Project
 
 To start from the beginning, you can reset the project to the factory state.
