@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "j1_starter",
-  "version": "2021.3.1",
+  "version": "2021.3.2",
   "description": "J1 Template Starter Web",
   "homepage": "https://your.site",
   "author": {
@@ -57,7 +57,7 @@
     "app": "run-p -s app:*",
     "app:rackup": "cross-env SINATRA_ACTIVESUPPORT_WARNING=false WEBSERVER=$npm_package_jekyll_opt_webserver INTERFACE=$npm_package_jekyll_opt_interface PORT=$npm_package_jekyll_opt_app_port j1 rackup",
     "app:jekyll": "cross-var cross-env JEKYLL_ENV=$npm_package_config_mode BUNDLE_GEMFILE=$npm_package_ruby_gemfile bundle exec jekyll b -c $npm_package_jekyll_configfile $npm_package_jekyll_opt_incremental --watch",
-    "app:open": "npm run delay-3s && cross-var opn $npm_package_jekyll_opt_app_url",
+    "app:open": "npm run delay-3s && cross-var open-cli $npm_package_jekyll_opt_app_url",
     "delay-1s": "node ./node_modules/npm-delay 1000",
     "delay-2s": "node ./node_modules/npm-delay 2000",
     "delay-3s": "node ./node_modules/npm-delay 3000",
@@ -103,7 +103,7 @@
     "reset:finished": "echo done.",
     "setup": "npm --silent run setup-start && npm --silent run setup-base && run-s -s setup:*",
     "setup-start": "echo Setup project for first use ..",
-    "setup-base": "echo Bootstrap base modules .. && echo J1 Project Base modules: > install.log && npm --silent i lnk-cli shx npm-run-all cross-var cross-env -D >> install.log && echo done.",
+    "setup-base": "echo Bootstrap base modules .. && echo J1 Project Base modules: > install.log && npm --silent install shx npm-run-all cross-var cross-env >> install.log && echo done.",
     "setup:env": "echo Configure environment .. && run-s -s set-env:*",
     "set-env:loglevel": "cross-var cross-env npm config set jekyll_one_com:loglevel  $npm_package_config_loglevel",
     "set-env:mode": "cross-var cross-env npm config set jekyll_one_com:mode $npm_package_config_mode && echo done.",
@@ -113,6 +113,7 @@
     "setup:create-etc-folder": "echo Create etc folder .. && shx mkdir ./etc && echo done.",
     "setup:node-modules-base": "echo Bootstrap project modules .. && echo J1 Project modules: >> install.log && npm --silent install >> install.log",
     "setup:node-modules-utilsrv": "echo Bootstrap utility server modules .. && echo J1 Utility Server modules: >> install.log && cd utilsrv && npm --silent install >> ../install.log && cd .. && echo done.",
+    "setup:private-config": "shx cp -f _data/_defaults/private.yml _data/private.yml",
     "setup:detect-os": "echo Detect OS .. && cross-env if-env OS=Windows_NT && cross-var echo \"OS detected: $OS\" || OS=$(echo $(getos)) && echo \"OS detected: $OS\" && echo done.",
     "setup:site": "run-s -s build",
     "site": "run-p -s site:*",
@@ -126,18 +127,15 @@
     "get_version:jekyll": "cross-var cross-env JEKYLL_ENV=$npm_package_config_mode BUNDLE_GEMFILE=$npm_package_jekyll_gemfile bundle exec jekyll --version"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "cross-var": "^1.1.0",
     "getos": "^3.2.1",
     "getos-cli": "^1.0.0",
     "if-env": "^1.0.4",
     "j1-cli": "^2019.0.3",
     "npm-delay": "^1.0.4",
-    "opn-cli": "^5.0.0"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.3",
-    "cross-var": "^1.1.0",
-    "lnk-cli": "^1.0.1",
     "npm-run-all": "^4.1.5",
+    "opn-cli": "^5.0.0",
     "shx": "^0.3.3"
   }
 }

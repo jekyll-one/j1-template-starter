@@ -53,7 +53,7 @@ gem 'jekyll', '~> 4.2'
 
 # Theme Rubies, default: J1 Template (NOT used for the development system)
 #
-gem 'j1-template', '~> 2021.3.1'
+gem 'j1-template', '~> 2021.3.2'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -166,7 +166,7 @@ end
 # running # tasks defined by a Rakefile prior running the app|web.
 #
 # gem 'passenger', '>= 5.3'
-gem 'puma', '>= 4.3.1'
+gem 'puma', '>= 5.5.2'
 
 # ------------------------------------------------------------------------------
 # If J1 is transformed into a (Rack and Sinatra based) Web
