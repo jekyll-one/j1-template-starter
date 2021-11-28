@@ -354,18 +354,16 @@ resources:
       pass_init_data:                   true
       data:
         css:                            [
-                                          core/css/themes/uno-light/bootstrap,
-                                          core/css/icon-fonts/materialdesign,
-                                          core/css/icon-fonts/materialdesign-light,
+                                          core/css/themes/unolight/bootstrap,
+                                          core/css/icon-fonts/mdi,
+                                          core/css/icon-fonts/mdil,
                                           core/css/icon-fonts/fontawesome,
                                           core/css/vendor
 
                                         ]
-        files:                          [
-                                          modules/util/js/gtag-opt-in.js,
-                                          adapter/js/j1.js
-                                        ]
+        files:                          [ adapter/js/j1.js ]
         js:                             [
+                                          modules/gtag-opt-in/js/gtag-opt-in,
                                           modules/jquery/js/jquery,
                                           modules/jquery/js/jqueryUI,
                                           modules/popper/js/popper,
@@ -477,10 +475,8 @@ resources:
                                           modules/mmenuLight/css/mmenu-light,
                                           modules/mmenuLight/css/theme/uno/mmenu
                                         ]
-        files:                          [
-                                          modules/mmenuLight/js/mmenu.js,
-                                          adapter/js/mmenu.js ]
-        js:                             []
+        files:                          [adapter/js/mmenu.js]
+        js:                             [modules/mmenuLight/js/mmenu]
         init_function:                  [ j1.adapter.mmenu.init ]
 
   # ----------------------------------------------------------------------------
@@ -589,13 +585,35 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
+  # Bootstrap JS (V5)
+  #
+  - name:                               Bootstrap JS
+    resource:
+      id:                               bs5
+      enabled:                          true
+      comment:                          Bootstrap JS
+      region:                           head
+      layout:                           [ all ]
+      required:                         always
+      preload:                          false
+      script_load:                      sync
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          []
+        js:                             [ modules/bootstrap/js/bootstrap ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
   # BMD, responsive UI framework for Bootstrap
+  # https://github.com/mdbootstrap/bootstrap-material-design/tree/4.1.3
   #
   - name:                               Bootstrap Material Design
     resource:
       id:                               bmd
       enabled:                          true
-      comment:                          Material Design for Bootstrap
+      comment:                          Bootstrap Material Design
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -606,11 +624,12 @@ resources:
       data:
         css:                            []
         files:                          [ adapter/js/bmd.js ]
-        js:                             [ modules/bmd/js/bootstrap-material-design ]
+        js:                             [ modules/bmd/js/bmd ]
         init_function:                  [ j1.adapter.bmd.init ]
 
   # ----------------------------------------------------------------------------
   # Materialize, responsive UI framework (Vanilla JS)
+  # https://materializecss.com/
   #
   - name:                               Materialize
     resource:
@@ -627,10 +646,9 @@ resources:
       data:
         css:                            []
         files:                          [
-                                          modules/materialize/js/cash.js,
                                           modules/materialize/js/fam.js
                                         ]
-        js:                             []
+        js:                             [ modules/materialize/js/cash ]
         init_function:                  []
 
   # ----------------------------------------------------------------------------
@@ -900,8 +918,8 @@ resources:
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            []
-        files:                          [ core/country-flags/css/theme/uno.css ]
+        css:                            [ core/country-flags/css/theme/uno ]
+        files:                          []
         js:                             []
         init_function:                  []
 
@@ -1148,33 +1166,29 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Floating Button Menu, JS API to create FAM buttons for J1 Template
+  # Floating Action Button Menu. JS API to create FAB menus
   #
-  - name:                               FAM
+  - name:                               FABM
     resource:
-      id:                               fam
+      id:                               fabm
       enabled:                          true
-      comment:                          Floating Button Menu
+      comment:                          FAB Menus
       region:                           head
-      layout:                           [                                       # TODO: check if FAM makes sense for layout app
-                                          home, page, post, collection,
-                                          blog_archive
-                                        ]
+      layout:                           [ all ]
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:                      sync
       dependencies:                     false
       pass_init_data:                   true
       data:
-        css:                            [ modules/fam/css/theme/uno/fam ]             # styles for (J1) theme Uno]
+        css:                            []                                      # styles moved to Template CSS
         files:                          [
-#                                         modules/cash/js/cash.js,              # current version|s of Cash NOT usable
-                                          modules/materialize/js/cash.js,       # adapted|old (1.3.5) version from Materialize
-                                          modules/fam/js/fam.js,                # modified version for J1 (former: button.js)
-                                          adapter/js/fam.js                     # adapter adopted from ssm module
+                                          modules/fab/js/cash.js,               # adapted|old (1.3.5) version from Materialize
+                                          modules/fab/js/fab.js,                # modified version for J1 (former: button.js)
+                                          adapter/js/fab.js                     # adapter adopted from ssm module
                                         ]
         js:                             []
-        init_function:                  [ j1.adapter.fam.init ]
+        init_function:                  [ j1.adapter.fab.init ]
 
   # ----------------------------------------------------------------------------
   # lunr search engine, JS API used for the QuickSearch feature of J1 Template
@@ -1304,8 +1318,8 @@ resources:
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            [ modules/msDropdown/css/msDropdown ]
-        files:                          []
+        css:                            []
+        files:                          [ modules/msDropdown/css/themes/uno/msDropdown.css ]
         js:                             [ modules/msDropdown/js/msDropdown ]
         init_function:                  []
 

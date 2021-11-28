@@ -12,7 +12,7 @@ categories:                             [ Roundtrip ]
 tags:                                   [ Introduction, Module, Themes ]
 
 scrollbar:                              false
-fam_menu_id:                            page_ctrl_simple
+fab_menu_id:                            page_ctrl_simple
 
 permalink:                              /pages/public/learn/roundtrip/themes/
 regenerate:                             false
@@ -53,11 +53,11 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// Include sub-documents
+// Include sub-documents (if any)
 // -----------------------------------------------------------------------------
 Themes for the template system J1 are based on the free and open-source CSS
 front-end framework {url-bs--home}[Bootstrap, {browser-window--new}] of
-version V4.
+version V5.
 
 Bootstrap is an HTML, CSS & JS Library that focuses on simplifying the
 development of modern web pages. The primary purpose of applying the
@@ -158,7 +158,7 @@ Make a selection of a theme below to preview.
   <!-- See: https://stackoverflow.com/questions/47242702/force-bootstrap-dropdown-menu-to-always-display-at-the-bottom-and-allow-it-go-of -->
   <!-- NOTE: control the behaviour of popper.js for positioning -->
   <!-- NOTE: set attribute data-flip="false" to open the SELECT list at the BOTTOM of the BUTTON -->
-  <button class="btn btn-primary btn-raised btn-flex btn-lg dropdown-toggle" data-flip="false" type="button" data-toggle="dropdown" data-target="#navbarDropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="btn btn-primary btn-flex btn-lg dropdown-toggle" data-flip="false" type="button" data-bs-toggle="dropdown" data-bs-target="#navbarDropdown" aria-haspopup="true" aria-expanded="false">
   Select Theme<span class="caret"></span>
   </button>
   <ul class="dropdown-menu scrollable-menu" role="menu">

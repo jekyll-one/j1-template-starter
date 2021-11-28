@@ -1,0 +1,96 @@
+---
+title:                                  J1
+tagline:                                Cookie Consent
+date:                                   2021-06-24 00:00:00 +100
+description: >
+                                        Bootstrap Cookie Consent Module
+                                        for J1 Template
+
+categories:                             [ Testpages ]
+tags:                                   [ Example ]
+
+scrollbar:                              false
+fab_menu_id:                            default
+
+advertising:                            false
+comments:                               false
+
+permalink:                              /pages/public/cookieConsent/
+regenerate:                             true
+
+resources:                              [ bsCookieConsent ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/cookies-1920x1200.jpg
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:badges-enabled:                        false
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+++++
+<div class="container">
+  <h2>Usage</h2>
+  <p>Initialize the cookie consent framework with the constructor</p>
+  <p><code>var cookieSettings = new BootstrapCookieConsent()</code></p>
+  <h3>Show the Dialog</h3>
+  <p>
+    On a new visit the dialog is shown automatically. For reconfiguration
+    show the Dialog again with <code>cookieSettings.showDialog()</code>.
+  </p>
+  <p>
+    <a href="javascript:showSettingsDialog()" class="btn btn-primary">Cookie Settings</a>
+  </p>
+  <h2>Read the settings</h2>
+  <p>Read all cookie settings with <code>cookieSettings.getSettings()</code></p>
+  <div class="card mb-4">
+    <div class="card-body">
+      <pre class="mb-0" id="settingsOutput"></pre>
+    </div>
+  </div>
+  <p>Read a specific cookie setting with <code>cookieSettings.getSettings('analyses')</code></p>
+  <div class="card">
+    <div class="card-body">
+      <pre class="mb-0" id="settingsAnalysisOutput"></pre>
+    </div>
+  </div>
+</div>
+
+<script>
+
+    function showSettingsDialog() {
+      j1.cookieConsent.showDialog();
+    }
+
+    var dependencies_met_cookie_consent_ready = setInterval (function (options) {
+      if ( typeof j1.cookieConsent !== 'undefined' ) {
+        $("#settingsOutput").text(JSON.stringify(j1.cookieConsent.getSettings()))
+        $("#settingsAnalysisOutput").text(j1.cookieConsent.getSettings('analyses'))
+        clearInterval(dependencies_met_cookie_consent_ready);
+      }
+    });
+
+</script>
+++++

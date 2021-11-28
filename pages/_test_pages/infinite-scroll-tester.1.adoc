@@ -1,0 +1,236 @@
+---
+title:                                  Tester
+tagline:                                infinite scroll
+date:                                   2020-11-03 00:00:00 +100
+description: >
+                                        Welcome to the preview page focussing on the image module. This page
+                                        shows some valuable features of the J1 Template to manage your image-based
+                                        content using lightboxes, carousels (slider), and galleries.
+
+categories:                             [ Testpages ]
+tags:                                   [ Example ]
+
+comments:                               false
+fab_menu_id:                            page_ctrl_simple
+
+permalink:                              /pages/public/learn/scroller/
+regenerate:                             false
+
+resources:                              [
+                                          clipboard, rouge, carousel, lightbox,
+                                          justifiedGallery, lightGallery
+                                        ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
+          alt:                          Photo by Ricardo Gomez Angel on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Ricardo Gomez Angel
+            href:                       https://unsplash.com/@ripato/portfolio
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+== Example with cards
+++++
+<div class="row">
+	<section id="scroller">
+  <ul class="list-group list-group-horizontal align-items-stretch flex-wrap">
+      <li class="list-group-item items-2 p-0">
+        <article class="card raised-z3 p-0">
+          <img class="img-fluid img-object--cover" src="/assets/images/modules/attics/rirri-1920x1280.jpg" alt="Polaroid">
+          <h3 class="card-header bg-primary notoc">Polaroid</h3>
+          <div class="card-body r-text-300">
+            <div class="paragraph dropcap">
+              <p class="dropcap"><span class="j1-dropcap">M</span>ehr als zehn Jahre nach der Insolvenz von Polaroid ist die Sofortbildfotografie heute erfolgreicher denn je. Sofortbilder sind vorallem eines: Einzigartig. Polaroids fangen Momente ein wie sind. Nicht zu wiederholen.</p>
+            </div>
+            <div class="paragraph">
+              <p><strong>Was geht denn sofort?</strong></p>
+            </div>
+          </div>
+          <div class="card-footer r-text-200">
+            
+            <div class="card-footer-text"> <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>1. Januar 2025 </div>
+            <a class="card-link text-muted text-lowercase" href="/posts/public/featured/produkte/2025/01/01/gegenbewegung_polaroit/"> lesen · Gegenbewegung </a>
+          </div>
+        </article>
+      </li>
+      <li class="list-group-item items-2 p-0">
+        <article class="card raised-z3 p-0">
+          <img class="img-fluid img-object--cover" src="/assets/images/modules/attics/franck-1920x1280.jpg" alt="TikTok">
+          <h3 class="card-header bg-primary notoc">TikTok</h3>
+          <div class="card-body r-text-300">
+            <div class="paragraph dropcap">
+              <p class="dropcap"><span class="j1-dropcap">T</span>ikTok ist eine Social-Media Plattform mit Schwerpunkt Video-Content. Die Nutzer können kurze selbstgemachte Videos teilen. Die Plattform bietet einen Raum, in dem einfach und schnell die eigenen Inhalte veröffentlicht werden können.</p>
+            </div>
+            <div class="paragraph">
+              <p><strong>Was kann TikTok besser?</strong></p>
+            </div>
+          </div>
+          <div class="card-footer r-text-200">
+            
+            <div class="card-footer-text"> <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>1. Januar 2025 </div>
+            <a class="card-link text-muted text-lowercase" href="/posts/public/featured/produkte/2025/01/01/aufsteiger_tiktok/"> lesen · video neu gedacht </a>
+          </div>
+        </article>
+      </li>
+  </ul>
+	</section>
+  <div class="page-load-status">
+    <div class="loader-ellips infinite-scroll-request">
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+      <span class="loader-ellips__dot"></span>
+    </div>
+    <!-- p class="infinite-scroll-last">End of content</p -->
+    <!-- p class="infinite-scroll-error">Weitere Artikel finden Sie im <a href="/pages/public/blog/navigator/">Blog Navigator</a></p -->
+    <p class="infinite-scroll-last">Weitere Artikel finden Sie im <a href="/pages/public/blog/navigator/">Blog Navigator</a></p>
+  </div>
+
+  <!-- div class="last-page-indicator">
+    <p class="infinite-scroll-last">End of content</p>
+    <p class="infinite-scroll-error">Weitere Artikel finden Sie im <a href="/pages/public/blog/navigator/">Blog Navigator</a></p>
+  </div -->
+
+</div>
+
+<style>
+
+.card {
+	height: calc(100% - 1.75rem);
+}
+
+.page-load-status {
+  display: none; /* hidden by default */
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
+}
+
+.loader-ellips {
+  font-size: 20px; /* change size here */
+  position: relative;
+  width: 4em;
+  height: 1em;
+  margin: 10px auto;
+}
+
+.loader-ellips__dot {
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background: #555; /* change color here */
+  position: absolute;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.loader-ellips__dot:nth-child(1),
+.loader-ellips__dot:nth-child(2) {
+  left: 0;
+}
+.loader-ellips__dot:nth-child(3) { left: 1.5em; }
+.loader-ellips__dot:nth-child(4) { left: 3em; }
+
+@keyframes reveal {
+  from { transform: scale(0.001); }
+  to { transform: scale(1); }
+}
+
+@keyframes slide {
+  to { transform: translateX(1.5em) }
+}
+
+.loader-ellips__dot:nth-child(1) {
+  animation-name: reveal;
+}
+
+.loader-ellips__dot:nth-child(2),
+.loader-ellips__dot:nth-child(3) {
+  animation-name: slide;
+}
+
+.loader-ellips__dot:nth-child(4) {
+  animation-name: reveal;
+  animation-direction: reverse;
+}
+
+</style>
+
+<script>
+
+  $(document).ready(function() {
+
+    var dependencies_met_page_ready = setInterval (function (options) {
+      if ( j1.getState() === 'finished' ) {
+        var logger = log4javascript.getLogger("j1.infiniteScroll");
+        var log_text = '\n module infiniteScroll is being initialized';
+        logger.info(log_text);
+
+        function getPosts() {
+          var pageNumber = ( this.loadCount + 1 );
+          if ( pageNumber < 30) {
+            return `/pages/public/scroller/scroller-p${pageNumber}.html`;
+          }
+        }
+
+        //  status: '.page-load-status',
+        $('.list-group').infiniteScroll({
+          path: getPosts,
+          append: '.list-group-item',
+          history: false,
+          scrollThreshold: 10,
+          checkLastPage: true,
+          status: '.page-load-status',
+        });
+
+        $('.list-group').on( 'error.infiniteScroll', function( event, error, path, response ) {
+          var logger = log4javascript.getLogger("j1.infiniteScroll");
+          var log_text = `\n Could not load: ${path}. ${error}`;
+          logger.info(log_text);
+        });
+
+        $('.list-group').on( 'last.infiniteScroll', function( event, body, path ) {
+          var logger = log4javascript.getLogger("j1.infiniteScroll");
+          var log_text = `\n last page reached on ${path}`;
+          logger.info(log_text);
+          // console.log(`Last page hit on ${path}`);
+        });
+        clearInterval(dependencies_met_page_ready);
+      }
+    });
+   });
+
+</script>
+++++

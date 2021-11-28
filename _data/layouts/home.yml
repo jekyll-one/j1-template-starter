@@ -162,7 +162,7 @@ lanes:
       id:                               home_teaser_banner
       region:                           body-main
       type:                             async
-      properties:                       elevated-z0
+      properties:                       g-2 elevated-z0
 
   # ----------------------------------------------------------------------------
   # SERVICE panel
@@ -172,7 +172,7 @@ lanes:
       id:                               home_service_panel
       region:                           body-main
       type:                             async
-      properties:                       elevated-z0 mb-3
+      properties:                       g-2 elevated-z0
 
   # ----------------------------------------------------------------------------
   # DIVIDER banner
@@ -192,7 +192,7 @@ lanes:
       id:                               home_intro_panel
       region:                           body-main
       type:                             async
-      properties:                       elevated-z2
+      properties:                       g-2 elevated-z2
 
   # ----------------------------------------------------------------------------
   # PARALLAX banner
@@ -215,26 +215,6 @@ lanes:
       properties:                       mb-3
 
   # ----------------------------------------------------------------------------
-  # DIVIDER banner
-  #
-  - lane:
-      enabled:                          false
-      id:                               divider-2
-      region:                           body-main
-      type:                             async
-      properties:                       mt-4 mr-5 mb-4 ml-5
-
-  # # ----------------------------------------------------------------------------
-  # # SERVICE panel
-  # #
-  # - lane:
-  #     enabled:                          true
-  #     id:                               home_service_panel
-  #     region:                           body-main
-  #     type:                             async
-  #     properties:                       elevated-z0 mb-3
-
-  # ----------------------------------------------------------------------------
   # NEWS panel
   #
   - lane:
@@ -242,14 +222,14 @@ lanes:
       id:                               home_news_panel
       region:                           body-main
       type:                             async
-      properties:                       elevated-z2
+      properties:                       g-2 elevated-z2
 
   # ----------------------------------------------------------------------------
-  # FAM
+  # FAB
   #
   - lane:
       enabled:                          true
-      id:                               fam-container
+      id:                               fab-container
       region:                           body-main
       type:                             async
       properties:                       elevated-z0

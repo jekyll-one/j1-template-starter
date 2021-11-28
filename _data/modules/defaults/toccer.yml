@@ -133,8 +133,9 @@ defaults:
   #       default:                      easeInOutCubic
   #
   #     offset
-  #       Amount of space (calculated as pixels) between the top of page and the
-  #       selected table of contents item after the page has been scrolled.
+  #       Amount of space (calculated as pixels) between the top of
+  #       page and the selected table of contents item after the page
+  #       has been scrolled.
   #
   #       values:                       integer
   #       default:                      0
@@ -161,8 +162,8 @@ defaults:
   throttleTimeout:                      150
   scrollSmooth:                         true
   scrollSmoothDuration:                 300
-  scrollSmoothOffset:                   10                                      # TODO: to checked, if set dynamically with toccer adapter
-  scrollContainer:                      null                                    # TODO: to checked, what this option does
+  scrollSmoothOffset:                   0
+  scrollContainer:                      null                                    # TODO: to be checked, what this option does
 
 # ------------------------------------------------------------------------------
 # END config

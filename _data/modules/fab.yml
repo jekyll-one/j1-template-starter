@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/fam.yml
-# User Configuration of the FAM Module (Floating Action Menu)
+# ~/_data/modules/fab.yml
+# User Configuration of the FAB Module (Floating Action Button)
 #
 # Product/Info:
 # https://jekyll.one
@@ -19,9 +19,9 @@
 # About this configuration (used for J1 CC only)
 #
 about_config:
-  title:                                Floating Action Menu
+  title:                                Floating Action Button
   scope:                                User settings
-  location:                             _data/modules/fam.yml
+  location:                             _data/modules/fab.yml
 
 # ------------------------------------------------------------------------------
 # User settings
@@ -43,9 +43,9 @@ settings:
     - name:                             Scroll to top
       enabled:                          true
       id:                               default
-      icon:                             plus
-      icon_hover:                       chevron-up
-      color:                            md-blue
+      icon:                             chevron-double-up
+      icon_hover:                       chevron-double-up
+      color:                            primary
 
       # ------------------------------------------------------------------------
       # MENU items
@@ -62,8 +62,8 @@ settings:
       enabled:                          true
       id:                               open_toc
       icon:                             plus
-      icon_hover:                       cursor-pointer
-      color:                            md-blue
+      icon_hover:                       plus
+      color:                            primary
 
       # ------------------------------------------------------------------------
       # MENU items
@@ -72,27 +72,27 @@ settings:
         - item:                         To Top
           enabled:                      true
           id:                           fam_scroll_to_top
-          color:                        md-green
+          color:                        primary
           event_handler:                scroll_to_top
-          icon:                         step-backward-2
-          icon_properties:              rotate-90
+          icon:                         chevron-double-up
+          icon_properties:
 
         - item:                         Table of Contents
           enabled:                      true
           id:                           open_mmenu_toc
-          color:                        md-blue
+          color:                        info
           event_handler:                open_mmenu_toc
           icon:                         wrap
 
     # --------------------------------------------------------------------------
     # FAM for in-page navigation (simplified)
     #
-    - name:                             in-page control
+    - name:                             in-page control simple
       enabled:                          true
       id:                               page_ctrl_simple
       icon:                             plus
-      icon_hover:                       cursor-pointer
-      color:                            md-blue
+      icon_hover:                       plus
+      color:                            primary
 
       # ------------------------------------------------------------------------
       # MENU items
@@ -102,15 +102,15 @@ settings:
         - item:                         To Top
           enabled:                      true
           id:                           fam_scroll_to_top
-          color:                        md-green
+          color:                        primary
           event_handler:                scroll_to_top
-          icon:                         step-backward-2
-          icon_properties:              rotate-90
+          icon:                         chevron-double-up
+          icon_properties:
 
         - item:                         Previous Section
           enabled:                      true
           id:                           fam_previous_section
-          color:                        md-green
+          color:                        success
           event_handler:                scroll_previous_section
           icon:                         step-backward
           icon_properties:              rotate-90
@@ -118,7 +118,7 @@ settings:
         - item:                         Next Section
           enabled:                      true
           id:                           fam_next_section
-          color:                        md-green
+          color:                        success
           event_handler:                scroll_next_section
           icon:                         step-forward
           icon_properties:              rotate-90
@@ -126,7 +126,7 @@ settings:
         - item:                         Table of Contents
           enabled:                      true
           id:                           open_mmenu_toc
-          color:                        md-blue
+          color:                        info
           event_handler:                open_mmenu_toc
           icon:                         wrap
 
@@ -137,8 +137,8 @@ settings:
       enabled:                          true
       id:                               page_ctrl
       icon:                             plus
-      icon_hover:                       cursor-pointer
-      color:                            md-blue
+      icon_hover:                       plus
+      color:                            primary
 
       # ------------------------------------------------------------------------
       # MENU items
@@ -155,15 +155,15 @@ settings:
         - item:                         To Top
           enabled:                      true
           id:                           fam_scroll_to_top
-          color:                        md-green
+          color:                        primary
           event_handler:                scroll_to_top
-          icon:                         step-backward-2
-          icon_properties:              rotate-90
+          icon:                         chevron-double-up
+          icon_properties:
 
         - item:                         Previous Section
           enabled:                      true
           id:                           fam_previous_section
-          color:                        md-green
+          color:                        success
           event_handler:                scroll_previous_section
           icon:                         step-backward
           icon_properties:              rotate-90
@@ -171,7 +171,7 @@ settings:
         - item:                         Next Section
           enabled:                      true
           id:                           fam_next_section
-          color:                        md-green
+          color:                        success
           event_handler:                scroll_next_section
           icon:                         step-forward
           icon_properties:              rotate-90
@@ -179,7 +179,7 @@ settings:
         - item:                         To bottom
           enabled:                      true
           id:                           fam_scroll_to_bottom
-          color:                        md-green
+          color:                        info
           event_handler:                scroll_to_bottom
           icon:                         step-forward-2
           icon_properties:              rotate-90
@@ -187,7 +187,7 @@ settings:
         - item:                         Table of Contents
           enabled:                      true
           id:                           open_mmenu_toc
-          color:                        md-blue
+          color:                        info
           event_handler:                open_mmenu_toc
           icon:                         wrap
 

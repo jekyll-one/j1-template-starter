@@ -1,0 +1,128 @@
+---
+title:                                  Tester
+tagline:                                button
+date:                                   2020-11-03 00:00:00 +100
+description: >
+                                        Welcome to the preview page focussing on the image module. This page
+                                        shows some valuable features of the J1 Template to manage your image-based
+                                        content using lightboxes, carousels (slider), and galleries.
+
+categories:                             [ Testpages ]
+tags:                                   [ Example ]
+
+comments:                               false
+fab_menu_id:                            page_ctrl_simple
+
+permalink:                              /pages/public/learn/card_tester/
+regenerate:                             false
+
+resources:                              [
+                                          clipboard, rouge, carousel, lightbox,
+                                          justifiedGallery, lightGallery
+                                        ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
+          alt:                          Photo by Ricardo Gomez Angel on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Ricardo Gomez Angel
+            href:                       https://unsplash.com/@ripato/portfolio
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+++++
+<div>
+
+  <article class="card raised-z3 mb-5">
+    <h3 id="35983" class="card-header bg-primary">Welcome</h3>
+    <!-- h5 class="notoc card-subtitle text-muted mb-2">jekyll for everyone</h5 -->
+
+    <div class="row mx-0">
+
+      <div class="col-md-6 img-bg--fill px-0"
+        style="border-right: 1px dotted rgba(0, 0, 0, 0.25); background-image: url(/assets/images/modules/attics/katie-moum-1920x1280.jpg);">
+      </div>
+
+      <!-- div class="col-md-6 px-0">
+        <img class="img__object--cover" src="/assets/images/modules/attics/katie-moum-1920x1280.jpg" alt="Welcome">
+      </div -->
+
+      <div class="col-md-6 p-0">
+        <div class="card-body r-text-300">All you’re doing at the end of the day is writing your content, and the J1 Template does all the tricky things: putting out HTML, Javascript, and CSS. As a result, the site creation process gets out of your way.   Sounds fun, isn’t it?  ...</div>
+        <div class="card-footer r-text-200">
+          
+          <div class="card-footer-text">
+            <i class="mdi mdi-calendar-blank mdi-md-grey mr-1"></i> 2021 March, 28
+          </div>
+          <a class="card-link text-muted text-lowercase" href="/posts/public/featured/2021/03/28/welcome-to-j1/#readmore">
+          Read · jekyll for everyone
+          </a>
+        </div>
+      </div>
+
+  </div>
+
+  </article>
+
+
+  <article class="card raised-z5 mb-5">
+    <h3 id="35983" class="card-header bg-primary">Welcome</h3>
+    <!-- h5 class="notoc card-subtitle text-muted mb-2">jekyll for everyone</h5 -->
+    <div class="card-body r-text-300">All you’re doing at the end of the day is writing your content, and the J1 Template does all the tricky things: putting out HTML, Javascript, and CSS. As a result, the site creation process gets out of your way.   Sounds fun, isn’t it?  ...</div>
+    <div class="card-footer r-text-200">
+      <div class="card-footer-text">
+        <i class="mdi mdi-calendar-blank mr-1"></i> 2021 March, 28
+      </div>
+      <a class="card-link md-grey-800 font-weight-bold g-font-size-12 text-uppercase" href="/posts/public/featured/2021/03/28/welcome-to-j1/#readmore">
+      Read · jekyll for everyone
+      </a>
+    </div>
+  </article>
+
+</div>
+
+<style>
+
+
+.g-bg-img-hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.g-px-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+</style>
+
+++++

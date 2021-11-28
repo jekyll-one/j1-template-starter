@@ -9,7 +9,7 @@ tags:                                   [ Navigator, Archive ]
 
 sort:                                   date
 toc:                                    true
-fam_menu_id:                            open_toc
+fab_menu_id:                            open_toc
 
 pagination:
   enabled:                              false
@@ -172,8 +172,8 @@ site_category_word_list:    {{site_category_word_list | debug}}
         {% endif %}
 
         <div class="col-md-6 p-0">
-          <div class="card-body r-text-300  mt-4">{{excerpt}}</div>
-          <div class="card-footer r-text-200">
+          <div class="card-body r-text-300">{{excerpt}}</div>
+          <div class="card-footer not-rounded r-text-200">
             <div class="card-footer-text">
 
               {% if post.date %}

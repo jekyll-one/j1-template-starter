@@ -72,8 +72,6 @@ settings:
 
     gridify:                            true
     gridifier:                          /assets/images/modules/patterns/gridtile.png
-    text_color:                         rgba_lighten
-    cite_color:                         rgba_lighten
     darken:                             3
     background:                         /assets/images/quotes/default.png
     background_pos_x:                   50%
@@ -88,25 +86,30 @@ settings:
     #
     - name:                             Divider Banner 1
       banner:
+        enabled:                        false
+
         id:                             divider-1
-        enabled:                        true
         type:                           divider
         comment:                        Divider Banner 1
+        lane_span:                      fluid
 
     - name:                             Divider Banner 2
       banner:
+        enabled:                        false
+
         id:                             divider-2
-        enabled:                        true
         type:                           divider
         comment:                        Divider Banner 2
+        lane_span:                      fluid
 
     - name:                             Divider Banner 3
       banner:
+        enabled:                        false
+
         id:                             divider-3
-        enabled:                        true
         type:                           divider
         comment:                        Divider Banner 3
-
+        lane_span:                      fluid
 
   # ----------------------------------------------------------------------------
   # TEASER Banner
@@ -117,15 +120,14 @@ settings:
     #
     - name:                             Home Teaser Banner
       banner:
-        id:                             home_teaser_banner
         enabled:                        true
+
+        id:                             home_teaser_banner
         comment:                        Top teaser shown on home page
         type:                           teaser
-        properties:                     mt-3 mr-3 mb-5 ml-3
+        properties:                     mt-3 mb-5
         icon_family:                    MDI
-
-        style:                          light
-        lane_span:                      fixed
+        lane_span:                      fluid
 
         cards:
 
@@ -134,10 +136,9 @@ settings:
               enabled:                  true
               width:                    12
               type:                     text
-              animate:                  false
               title:                    Jekyll One Template
               tagline:                  <b>powerful modern static websites</b>
-              description_properties:   mt-3 mr-3 mb-3
+              description_properties:   mt-3 mb-3
               description: >
                                         <p class="dropcap">
                                           Jekyll One is a full-featured template for Jekyll to create
@@ -156,11 +157,25 @@ settings:
                                         </p>
               buttons:
 
+#               - name:                 Features
+#                 button:
+#                   id:                 features
+#                   title:              New
+#                   tagline:            learn top features
+#                   class:              btn btn-xl btn-primary text-uppercase text-left mr-2 mb-2
+#                   style:              "min-width: 250px"
+#                   icon:               magnify
+#                   icon_color:
+#                   icon_size:          3x
+#                   href:               '#'
+#                   target:
+
                 - name:                 Roundtrip
                   button:
+                    id:                 roundtrip
                     title:              Roundtrip
                     tagline:            learn top features
-                    class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
+                    class:              btn btn-xl btn-primary text-uppercase text-left mr-2 mb-2
                     style:              "min-width: 250px"
                     icon:               briefcase-search-outline
                     icon_color:
@@ -170,9 +185,10 @@ settings:
 
                 - name:                 Download
                   button:
+                    id:                 download
                     title:              Download
                     tagline:            get on rubygems
-                    class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
+                    class:              btn btn-xl btn-primary text-uppercase text-left mr-2 mb-2
                     style:              "min-width: 250px"
                     icon:               briefcase-download-outline
                     icon_color:
@@ -182,14 +198,15 @@ settings:
 
                 - name:                 Quickstart
                   button:
+                    id:                 quickstart
                     title:              Quickstart
                     tagline:            finished in 15 minutes
-                    class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
+                    class:              btn btn-xl btn-primary text-uppercase text-left mr-2 mb-2
                     style:              "min-width: 250px"
                     icon:               briefcase-check-outline
                     icon_color:
                     icon_size:          3x
-                    href:               https://jekyll.one/pages/public/learn/quickstart/
+                    href:               "https://jekyll.one/pages/public/learn/quickstart/"
                     target:             blank
 
     # --------------------------------------------------------------------------
@@ -197,14 +214,14 @@ settings:
     #
     - name:                             Home Welcome Banner
       banner:
+        enabled:                        false
+
         id:                             home_welcome_banner
-        enabled:                        true
         comment:                        Teaser shown on home page below the parallax
         type:                           teaser
+        properties:
         icon_family:                    MDI
-
-        style:                          light
-        lane_span:                      fixed
+        lane_span:                      fluid
 
         cards:
 
@@ -251,11 +268,11 @@ settings:
                 - name:                 Kickstarter button
                   button:
                     text:               Start creating your static web
-                    class:              btn btn-raised btn-flex btn-md btn-primary g-mr-5
+                    class:              btn btn-flex btn-md btn-primary g-mr-5
                     icon:               rocket
                     icon_color:         md-black
                     icon_size:          24px
-                    href:               /pages/public/learn/kickstarter/web_in_a_day/meet_and_greet/
+                    href:               https://jekyll.one/pages/public/learn/kickstarter/web_in_a_day/meet_and_greet/
                     target:
 
   # ----------------------------------------------------------------------------
@@ -267,11 +284,12 @@ settings:
     #
     - name:                               Home Image Banner
       banner:
-        id:                               home_image_banner
-        enabled:                          true
-        type:                             image
-        comment:                          Main image banner shown on home page
+        enabled:                          false
 
+        id:                               home_image_banner
+        type:                             image
+        properties:
+        comment:                          Main image banner shown on home page
         lane_span:                        fluid
 
         cards:
@@ -284,7 +302,6 @@ settings:
               darken:                     1
               background_image:           /assets/images/modules/attics/ideas-start-here-1920x1280-bw.jpg
 
-
   # ----------------------------------------------------------------------------
   # PARALLAX Banner
   #
@@ -292,15 +309,14 @@ settings:
     # --------------------------------------------------------------------------
     # home_parallax_banner
     #
-    - name:                               Home Parallax Banner v1
+    - name:                               Home Parallax Banner
       banner:
-        id:                               home_parallax_banner
         enabled:                          true
-        type:                             parallax
-        properties:                       mt-6 mb-6
-        comment:                          Main parallax banner shown on home page
 
-        style:                            dark
+        id:                               home_parallax_banner
+        type:                             parallax
+        properties:
+        comment:                          Main parallax banner shown on home page
         lane_span:                        fluid
 
         cards:
@@ -309,50 +325,18 @@ settings:
             card:
               enabled:                    true
               type:                       quote
+#             cite:                       J1 Team
               cite_text_size:             300%
               cite_text_quotes:           false
               cite_text: >
-                                          <strong><span style="color: #2196f3">Making is</span>
+                                          <strong><span class="text-primary">Making is</span>
                                           like Wanting, <br> but even
-                                          <span style="color: #2196f3">Better</span></strong>
-              cite_size:                  200%
-#             cite:                       J1 Team
-              text_color:                 rgba_lighten_900
-              cite_color:                 rgba_lighten
+                                          <span class="text-primary">Better</span></strong>
+              text_color:                 "#E0E0E0"
               gridify:                    true
               size_y:                     450
               darken:                     6
               background_image:           /assets/images/modules/attics/ideas-start-here-1920x1280-bw.jpg
-
-    # --------------------------------------------------------------------------
-    # parallax_banner_einstein
-    #
-    - name:                               Home Parallax Banner v2
-      banner:
-        id:                               parallax_banner_einstein
-        enabled:                          false
-        type:                             parallax
-        comment:                          Main parallax banner shown on home page
-
-        style:                            dark
-        lane_span:                        fluid
-
-        cards:
-
-          - name:                         Quote settings
-            card:
-              enabled:                    true
-              type:                       quote
-              cite_text: >
-                                          Everything should be made as <b><span class="color-red">simple</span></b>
-                                          as possible,<br>
-                                          but not <b><span class="color-red">simpler</span></b>
-              cite:                       Albert Einstein
-              text_color:                 rgba_lighten_900
-              cite_color:                 rgba_lighten
-              gridify:                    true
-              darken:                     7
-              background_image:           /assets/images/quotes/albert_einstein.png
 
   # ----------------------------------------------------------------------------
   # FOO Banner
@@ -363,10 +347,29 @@ settings:
     #
     - name:                               Foo Banner
       banner:
-        id:                               foo_banner
         enabled:                          false
+
+        id:                               foo_banner
         type:                             foo
         comment:                          Banner (type) to test config issues/exceptions
+        lane_span:                        fluid
+
+  # ----------------------------------------------------------------------------
+  # EXCEPTION banner
+  #
+  #   NOTE:
+  #   The EXCEPTION banner is used to place additional information to the
+  #   (default) exception CONTAINER if processing of a banner has failed
+  #
+  exception:
+    # --------------------------------------------------------------------------
+    # EXCEPTION banner settings
+    #
+    id:                                 exception_container
+    enabled:                            true
+    type:                               exception
+    comment:                            Default Exception Banner
+    lane_span:                        fluid
 
 # ------------------------------------------------------------------------------
 # END config

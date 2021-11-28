@@ -15,7 +15,7 @@ robots:
 sitemap:                                false
 exclude_from_search:                    true
 
-fam_menu_id:                            page_ctrl_simple
+fab_menu_id:                            page_ctrl_simple
 scrollbar:                              false
 comments:                               false
 toc:                                    true
@@ -78,7 +78,7 @@ WARNING: This document *does not* constitute any *legal advice*. It is
 highly recommended to verify legal aspects and implications.
 endif::[]
 
-// Include sub-documents
+// Include sub-documents (if any)
 // -----------------------------------------------------------------------------
 Die Betreiber dieser Website nehmen den Schutz Ihrer persönlichen Daten ernst.
 Wir behandeln Ihre Daten vertraulich und halten uns zum Schutz Ihrer
@@ -145,16 +145,16 @@ System befinden. In diesem Fall sind möglicherweise bereits vorhandene Cookies
 *manuell* über Funktionen Ihres Browsers zu löschen.
 
 ++++
-<div class="mt-4 mb-3">
+<div class="mt-4 mb-4 d-grid gap-2">
   <a  href="javascript:j1.cookieConsent.showDialog()"
-      class="btn btn-primary btn-lg btn-block btn-raised btn-flex mb-3"
-      aria-label="Cookie Consent"
-      style="min-width: 25rem">
+      class="btn btn-primary btn-flex btn-lg"
+      aria-label="Cookie Consent">
       <i class="mdi mdi-cookie mdi-2x mr-2"></i>
       Ihre Einstellungen
   </a>
 </div>
 ++++
+
 endif::[]
 
 ifeval::[{logs-files} == true]

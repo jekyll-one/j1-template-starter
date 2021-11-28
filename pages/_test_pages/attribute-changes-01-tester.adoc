@@ -1,0 +1,226 @@
+---
+title:                                  Tester
+tagline:                                listen attribute changes
+date:                                   2021-10-18 00:00:00 +100
+description: >
+                                        A simple example to demonstrate how the attrchange handler
+                                        function is triggered when a style attribute is changed.
+
+categories:                             [ Tester ]
+tags:                                   [ listen, attribute, changes ]
+
+comments:                               false
+fab_menu_id:                            default
+
+permalink:                              /pages/public/learn/attr_change/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
+          alt:                          Photo by Ricardo Gomez Angel on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Ricardo Gomez Angel
+            href:                       https://unsplash.com/@ripato/portfolio
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// https://github.com/meetselva/attrchange
+// http://meetselva.github.io/
+// https://codepen.io/meetselva/pen/EVaLmP
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+== Tester
+
+.Usage
+[source, js]
+----
+$([selector]).attrchange({
+  trackValues: true,
+  callback: function (event) {
+  	//event.attributeName - Attribute Name
+  	//event.oldValue - Prev Value
+  	//event.newValue - New Value
+    console.log("attr changed: " +event.newValue);
+  }
+});
+----
+
+++++
+<section class="row ml-0">
+
+  <p>
+    A simple example to demonstrate how the attrchange handler
+    function is triggered when a style attribute is changed.
+    Click the buttons below to move the blue box left/right 10px.
+  </p>
+
+  <div>
+    <h3 class="notoc">Demonstration Highlights</h3>
+    <ul>
+      <li>Uses the supported browser specific method to detect attribute changes.</li>
+      <li>Does not use polling to detect an attribute change</li>
+      <li>Detected DOM change: <span id="attrchange-demo-attrchange-method"></span> </li>
+    </ul>
+  </div>
+
+  <div class="container mb-3">
+
+    <div id="attrchange-demobox">
+      <div id="attrchange-buttons">
+        <div class="attrchange-demo-liner">Live Demo <span class="demo-value-name">( Event Count: <span id="attrchange-demo-event-count" class="demo-value">0</span> )</span></div>
+        <button class="attrchange-demo-button left">&lt;&lt;</button>
+        <button class="attrchange-demo-button right">&gt;&gt;</button>
+      </div>
+      <div id="attrchange-demo" class="attrchange-demo">
+        Click the buttons above to move this box left/right '10px'
+      </div>
+    </div>
+
+    <div id="attrchange-demo-logger">
+      <div class="attrchange-demo-liner">Logs</div>
+      <div id="attrchange-demo-logs"></div>
+    </div>
+
+  </div>
+</section>
+++++
+
+++++
+<script>
+  $(function () {
+    var eventCount = 0;                                                         //event counter
+    var $attrchange_logger = $('#attrchange-demo-logs');                        //cached logger
+
+    $('.attrchange-demo').attrchange({
+      trackValues: true,                                                        // enables tracking old and new values
+      callback: function (e) {                                                  //callback handler on DOM changes
+        // log the events in the panel
+        var $logs = $attrchange_logger.prepend('<p>Attribute <b>' + e.attributeName +
+            '</b> changed from <b>' + e.oldValue +
+            '</b> to <b>' + e.newValue +
+            '</b></p>')
+          .find('p');
+
+        //remove old logs, lets just keep the last 5 events
+        $logs.filter(':gt(4)').remove();
+        // highlight the last log in #333 and rest in #999
+        $logs.css('color', '#777').first().css('color', '#333');
+        //show the method used for detecting DOM changes
+        $("#attrchange-demo-attrchange-method").text($(this).attrchange("getProperties")["method"]);
+        //show the event count
+        $('#attrchange-demo-event-count').text(++eventCount);
+      }
+    });
+
+    $('.attrchange-demo-button').on('click', function () {
+      $('#attrchange-demo').css('left', ($(this).hasClass('left') ? "-=10px" : "+=10px"));
+    });
+
+  });
+</script>
+++++
+
+++++
+<style>
+#attrchange-demobox {
+  height: 230px;
+  float: left;
+  width: 33%;
+  background-color: #f2f2f2;
+  position: relative;
+}
+
+#attrchange-buttons {
+  margin: 0;
+  padding: 0;
+}
+
+.attrchange-demo-button {
+  margin: 0 5px;
+}
+
+#attrchange-demo {
+  width: 200px;
+  height: 40px;
+  overflow: hidden;
+  padding: 10px;
+  border: 1px solid #d2d2d2;
+  background-color: #C2D9EC;
+  font-size: 0.9em;
+  position: absolute;
+  top: 95px;
+  left: 5px;
+}
+
+#attrchange-demo-logger {
+  height: 230px;
+  float: left;
+  width: 33%;
+  background-color: #f2f2f2;
+  overflow: auto;
+}
+
+#attrchange-demo-logs p {
+  padding-left: 10px;
+}
+
+.attrchange-demo-liner {
+  margin: 0 0 15px;
+  font-weight: bold;
+  background-color: #d2d2d2;
+  padding: 5px;
+}
+
+.attrchange-demo-liner span {
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+.attrchange-demo-liner span.demo-value {
+  color: #7E0136;
+}
+
+#attrchange-demo-highlight {
+  float: left;
+  width: 33%;
+  background-color: #d2d2d2;
+  height: 230px;
+}
+
+#attrchange-demo-highlight ul li {
+  margin-top: 10px;
+}
+
+#attrchange-demo-attrchange-method {
+  color: #7E0136;
+  font-weight: bold;
+}
+
+</style>
+++++

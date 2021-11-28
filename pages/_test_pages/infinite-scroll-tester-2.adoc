@@ -1,0 +1,183 @@
+---
+title:                                  Tester
+tagline:                                infinite scroll
+date:                                   2020-11-03 00:00:00 +100
+description: >
+                                        Welcome to the preview page focussing on the image module. This page
+                                        shows some valuable features of the J1 Template to manage your image-based
+                                        content using lightboxes, carousels (slider), and galleries.
+
+categories:                             [ Testpages ]
+tags:                                   [ Example ]
+
+pagination:
+  enabled:                              true
+  per_page:                             2
+  permalink:                            /page:num/
+
+comments:                               false
+fab_menu_id:                            page_ctrl_simple
+
+permalink:                              /pages/public/learn/scroller-2/
+regenerate:                             false
+
+resources:                              [ j1Scroller ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
+          alt:                          Photo by Ricardo Gomez Angel on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Ricardo Gomez Angel
+            href:                       https://unsplash.com/@ripato/portfolio
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+{% comment %} language detection|i18n
+-------------------------------------------------------------------------------- {% endcomment %}
+{% if site.language == "en" %}
+  {% assign language = "en" %}
+{% elsif site.language == "de"%}
+  {% assign language = "de" %}
+{% else %}
+  {% assign language = "en" %}
+{% endif %}
+
+{% if language == "en" %}
+  {% assign readmore_text = "read" %}
+  {% assign infinite_scroll_last = "More articles can be found with the" %}
+{% endif %}
+
+{% if language == "de" %}
+  {% assign readmore_text = "lesen" %}
+  {% assign infinite_scroll_last = "Weitere Artikel finden Sie im" %}
+{% endif %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+== Infinite scroll example 2
+
+lorem:sentences[5]
+
+++++
+<div class="card--group" id="card-wrapper">
+  {% for post in site.posts %}
+    <a href="{{ post.url | relative_url }}">
+      <div class="card">
+        <div class="card__header">
+          <h3 class="card__header__title">{{ post.title | escape }}</h3>
+        </div>
+        <div class="card__body">
+          {{ post.excerpt }}
+        </div>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+++++
+
+++++
+<script>
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var j1Scroller = function () {
+    function j1Scroller(path, wrapperId) {
+        _classCallCheck(this, j1Scroller);
+
+        if (path === undefined || wrapperId === undefined) throw Error('no parameter.');
+        this.path = path;
+        this.pNum = 2;
+        this.wNode = document.getElementById(wrapperId);
+        this.wrapperId = wrapperId;
+        this.enable = true;
+
+        this.detectScroll();
+    }
+
+    _createClass(j1Scroller, [{
+        key: 'detectScroll',
+        value: function detectScroll() {
+            var _this = this;
+
+            window.onscroll = function (ev) {
+                if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) _this.getNewPost();
+            };
+        }
+    }, {
+        key: 'getNewPost',
+        value: function getNewPost() {
+            var _this2 = this;
+
+            if (this.enable === false) return false;
+            this.enable = false;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+                    if (xmlhttp.status == 200) {
+                        _this2.pNum++;
+                        var childItems = _this2.getChildItemsByAjaxHTML(xmlhttp.responseText);
+                        _this2.appendNewItems(childItems);
+                    }
+                    return _this2.enable = true;
+                }
+            };
+            xmlhttp.open("GET", location.origin + this.path + this.pNum + '/index.html', true);
+            xmlhttp.send();
+        }
+    }, {
+        key: 'getChildItemsByAjaxHTML',
+        value: function getChildItemsByAjaxHTML(HTMLText) {
+            var newHTML = document.createElement('html');
+            newHTML.innerHTML = HTMLText;
+            var childItems = newHTML.querySelectorAll('#' + this.wrapperId + ' > *');
+            return childItems;
+        }
+    }, {
+        key: 'appendNewItems',
+        value: function appendNewItems(items) {
+            var _this3 = this;
+
+            items.forEach(function (item) {
+                _this3.wNode.appendChild(item);
+            });
+        }
+    }]);
+
+    return j1Scroller;
+}();
+
+
+    var postWrapperId = 'card-wrapper';
+    var paginatePath = '/pages/public/learn/scroller-2/page'
+    new j1Scroller(paginatePath, postWrapperId);
+
+</script>
+++++

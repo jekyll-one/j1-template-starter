@@ -1,16 +1,16 @@
 ---
 layout:                                 page
 title:                                  Disruptors Blog
-tagline:                                artikel nach kategorie
+tagline:                                posts by category
 date:                                   2023-01-01 01:00:00 +100
-description:                            Artikel nach Kategorie
+description:                            Browse articles by category
 
 categories:                             [ Blog ]
 tags:                                   [ Navigator, Categories ]
 
 sort:                                   date
 toc:                                    true
-fam_menu_id:                            open_toc
+fab_menu_id:                            open_toc
 
 pagination:
   enabled:                              false
@@ -214,8 +214,8 @@ site_category_word_list:    {{site_category_word_list | debug}}
               {% endif %}
 
               <div class="col-md-6 p-0">
-                <div class="card-body r-text-300 mt-4">{{excerpt}}</div>
-                <div class="card-footer r-text-200">
+                <div class="card-body r-text-300">{{excerpt}}</div>
+                <div class="card-footer not-rounded r-text-200">
                   <div class="card-footer-text">
 
                     {% if post.date %}
@@ -247,3 +247,24 @@ site_category_word_list:    {{site_category_word_list | debug}}
       {% endfor %}
   {% endfor %}
 </div>
+
+++++
+<script>
+  $(function () {
+    var logger          = log4javascript.getLogger('j1.blog.scroller');
+    var scrollOffset    = j1.getScrollOffset();
+    var scrollDuration  = 300;
+    var anchor_id;
+
+    $('.badge-tag').on('click', function (e) {
+      e.preventDefault();
+      anchor_id = e.target.hash;
+      logger.debug('\n' + 'badge clicked: ' + anchor_id);
+
+      $('html, body').animate({
+        scrollTop: $(anchor_id).offset().top + scrollOffset
+      }, scrollDuration);
+    });
+  }); //END page ready
+</script>
+++++

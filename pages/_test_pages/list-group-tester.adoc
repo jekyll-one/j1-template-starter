@@ -1,0 +1,265 @@
+---
+title:                                  Tester
+tagline:                                list groups
+date:                                   2020-11-03 00:00:00 +100
+description: >
+                                        Welcome to the preview page focussing on the image module. This page
+                                        shows some valuable features of the J1 Template to manage your image-based
+                                        content using lightboxes, carousels (slider), and galleries.
+
+categories:                             [ Testpages ]
+tags:                                   [ Example ]
+
+comments:                               false
+fab_menu_id:                            page_ctrl_simple
+
+permalink:                              /pages/public/learn/listgroup/
+regenerate:                             false
+
+resources:                              [
+                                          clipboard, rouge, carousel, lightbox,
+                                          justifiedGallery, lightGallery
+                                        ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
+          alt:                          Photo by Ricardo Gomez Angel on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Ricardo Gomez Angel
+            href:                       https://unsplash.com/@ripato/portfolio
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+== Example with cards
+++++
+<div class="row">
+	<section id="list-group">
+		<ul class="list-group list-group-horizontal align-items-stretch flex-wrap">
+			<li class="list-group-item items-2 p-0">
+        <article class="card raised-z3 p-0">
+          <img class="img-fluid img-object--cover" src="/assets/images/modules/attics/rirri-1920x1280.jpg" alt="Polaroid">
+          <h3 class="card-header bg-primary notoc">Polaroid</h3>
+          <div class="card-body r-text-300">
+            <div class="paragraph dropcap">
+              <p class="dropcap"><span class="j1-dropcap">M</span>ehr als zehn Jahre nach der Insolvenz von Polaroid ist die Sofortbildfotografie heute erfolgreicher denn je. Sofortbilder sind vorallem eines: Einzigartig. Polaroids fangen Momente ein wie sind. Nicht zu wiederholen.</p>
+            </div>
+            <div class="paragraph">
+              <p><strong>Was geht denn sofort?</strong></p>
+            </div>
+          </div>
+          <div class="card-footer r-text-200">
+            
+            <div class="card-footer-text"> <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>1. Januar 2025 </div>
+            <a class="card-link text-muted text-lowercase" href="/posts/public/featured/produkte/2025/01/01/gegenbewegung_polaroit/"> lesen · Gegenbewegung </a>
+          </div>
+        </article>
+			</li>
+			<li class="list-group-item items-2 p-0">
+        <article class="card raised-z3 p-0">
+          <img class="img-fluid img-object--cover" src="/assets/images/modules/attics/franck-1920x1280.jpg" alt="TikTok">
+          <h3 class="card-header bg-primary notoc">TikTok</h3>
+          <div class="card-body r-text-300">
+            <div class="paragraph dropcap">
+              <p class="dropcap"><span class="j1-dropcap">T</span>ikTok ist eine Social-Media Plattform mit Schwerpunkt Video-Content. Die Nutzer können kurze selbstgemachte Videos teilen. Die Plattform bietet einen Raum, in dem einfach und schnell die eigenen Inhalte veröffentlicht werden können.</p>
+            </div>
+            <div class="paragraph">
+              <p><strong>Was kann TikTok besser?</strong></p>
+            </div>
+          </div>
+          <div class="card-footer r-text-200">
+            
+            <div class="card-footer-text"> <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>1. Januar 2025 </div>
+            <a class="card-link text-muted text-lowercase" href="/posts/public/featured/produkte/2025/01/01/aufsteiger_tiktok/"> lesen · video neu gedacht </a>
+          </div>
+        </article>
+			</li>
+			<li class="list-group-item items-2 p-0">
+        <article class="card raised-z3 p-0">
+          <img class="img-fluid img-object--cover" src="/assets/images/modules/attics/alexander-shatov-1920x1280.jpg" alt="Snapchat">
+          <h3 class="card-header bg-primary notoc">Snapchat</h3>
+          <div class="card-body r-text-300">
+            <div class="paragraph dropcap">
+              <p class="dropcap"><span class="j1-dropcap">S</span>napchat ist eine Messenger App für mobile Endgeräte um Bild- und Video- Nachrichten zu versenden. Textnachrichten sind hier Nebensache. Das besondere: Bilder und Videos können einfach mit Filtern und Linsen bearbeitet werden. Dazu Overlay-Elemente wie Audio oder Sticker. Falls gewünscht, ist der Standort auch dabei.</p>
+            </div>
+            <div class="paragraph">
+              <p><strong>Was macht Snapchat besonders?</strong></p>
+            </div>
+          </div>
+          <div class="card-footer r-text-200">
+            
+            <div class="card-footer-text"> <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>1. Januar 2025 </div>
+            <a class="card-link text-muted text-lowercase" href="/posts/public/featured/produkte/2025/01/01/aufsteiger_snapchat/"> lesen · anders chatten </a>
+          </div>
+        </article>
+			</li>
+      <li class="list-group-item items-2 p-0">
+        <article class="card raised-z3 p-0">
+          <img class="img-fluid img-object--cover" src="/assets/images/modules/attics/franck-1920x1280.jpg" alt="TikTok">
+          <h3 class="card-header bg-primary notoc">TikTok</h3>
+          <div class="card-body r-text-300">
+            <div class="paragraph dropcap">
+              <p class="dropcap"><span class="j1-dropcap">T</span>ikTok ist eine Social-Media Plattform mit Schwerpunkt Video-Content. Die Nutzer können kurze selbstgemachte Videos teilen. Die Plattform bietet einen Raum, in dem einfach und schnell die eigenen Inhalte veröffentlicht werden können.</p>
+            </div>
+            <div class="paragraph">
+              <p><strong>Was kann TikTok besser?</strong></p>
+            </div>
+          </div>
+          <div class="card-footer r-text-200">
+            
+            <div class="card-footer-text"> <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>1. Januar 2025 </div>
+            <a class="card-link text-muted text-lowercase" href="/posts/public/featured/produkte/2025/01/01/aufsteiger_tiktok/"> lesen · video neu gedacht </a>
+          </div>
+        </article>
+			</li>
+      <li class="list-group-item items-2 p-0">
+        <article class="card raised-z3 p-0">
+          <img class="img-fluid img-object--cover" src="/assets/images/modules/attics/rirri-1920x1280.jpg" alt="Polaroid">
+          <h3 class="card-header bg-primary notoc">Polaroid</h3>
+          <div class="card-body r-text-300">
+            <div class="paragraph dropcap">
+              <p class="dropcap"><span class="j1-dropcap">M</span>ehr als zehn Jahre nach der Insolvenz von Polaroid ist die Sofortbildfotografie heute erfolgreicher denn je. Sofortbilder sind vorallem eines: Einzigartig. Polaroids fangen Momente ein wie sind. Nicht zu wiederholen.</p>
+            </div>
+            <div class="paragraph">
+              <p><strong>Was geht denn sofort?</strong></p>
+            </div>
+          </div>
+          <div class="card-footer r-text-200">
+            
+            <div class="card-footer-text"> <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>1. Januar 2025 </div>
+            <a class="card-link text-muted text-lowercase" href="/posts/public/featured/produkte/2025/01/01/gegenbewegung_polaroit/"> lesen · Gegenbewegung </a>
+          </div>
+        </article>
+			</li>
+			<li class="list-group-item items-2 p-0">
+        <article class="card raised-z3 p-0">
+          <img class="img-fluid img-object--cover" src="/assets/images/modules/attics/franck-1920x1280.jpg" alt="TikTok">
+          <h3 class="card-header bg-primary notoc">TikTok</h3>
+          <div class="card-body r-text-300">
+            <div class="paragraph dropcap">
+              <p class="dropcap"><span class="j1-dropcap">T</span>ikTok ist eine Social-Media Plattform mit Schwerpunkt Video-Content. Die Nutzer können kurze selbstgemachte Videos teilen. Die Plattform bietet einen Raum, in dem einfach und schnell die eigenen Inhalte veröffentlicht werden können.</p>
+            </div>
+            <div class="paragraph">
+              <p><strong>Was kann TikTok besser?</strong></p>
+            </div>
+          </div>
+          <div class="card-footer r-text-200">
+            
+            <div class="card-footer-text"> <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>1. Januar 2025 </div>
+            <a class="card-link text-muted text-lowercase" href="/posts/public/featured/produkte/2025/01/01/aufsteiger_tiktok/"> lesen · video neu gedacht </a>
+          </div>
+        </article>
+			</li>
+      <li class="list-group-item items-2 p-0">
+        <article class="card raised-z3 p-0">
+          <img class="img-fluid img-object--cover" src="/assets/images/modules/attics/rirri-1920x1280.jpg" alt="Polaroid">
+          <h3 class="card-header bg-primary notoc">Polaroid</h3>
+          <div class="card-body r-text-300">
+            <div class="paragraph dropcap">
+              <p class="dropcap"><span class="j1-dropcap">M</span>ehr als zehn Jahre nach der Insolvenz von Polaroid ist die Sofortbildfotografie heute erfolgreicher denn je. Sofortbilder sind vorallem eines: Einzigartig. Polaroids fangen Momente ein wie sind. Nicht zu wiederholen.</p>
+            </div>
+            <div class="paragraph">
+              <p><strong>Was geht denn sofort?</strong></p>
+            </div>
+          </div>
+          <div class="card-footer r-text-200">
+            
+            <div class="card-footer-text"> <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>1. Januar 2025 </div>
+            <a class="card-link text-muted text-lowercase" href="/posts/public/featured/produkte/2025/01/01/gegenbewegung_polaroit/"> lesen · Gegenbewegung </a>
+          </div>
+        </article>
+			</li>
+			<li class="list-group-item items-2 p-0">
+        <article class="card raised-z3 p-0">
+          <img class="img-fluid img-object--cover" src="/assets/images/modules/attics/franck-1920x1280.jpg" alt="TikTok">
+          <h3 class="card-header bg-primary notoc">TikTok</h3>
+          <div class="card-body r-text-300">
+            <div class="paragraph dropcap">
+              <p class="dropcap"><span class="j1-dropcap">T</span>ikTok ist eine Social-Media Plattform mit Schwerpunkt Video-Content. Die Nutzer können kurze selbstgemachte Videos teilen. Die Plattform bietet einen Raum, in dem einfach und schnell die eigenen Inhalte veröffentlicht werden können.</p>
+            </div>
+            <div class="paragraph">
+              <p><strong>Was kann TikTok besser?</strong></p>
+            </div>
+          </div>
+          <div class="card-footer r-text-200">
+            
+            <div class="card-footer-text"> <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>1. Januar 2025 </div>
+            <a class="card-link text-muted text-lowercase" href="/posts/public/featured/produkte/2025/01/01/aufsteiger_tiktok/"> lesen · video neu gedacht </a>
+          </div>
+        </article>
+			</li>
+      <li class="list-group-item items-2 p-0">
+        <article class="card raised-z3 p-0">
+          <img class="img-fluid img-object--cover" src="/assets/images/modules/attics/rirri-1920x1280.jpg" alt="Polaroid">
+          <h3 class="card-header bg-primary notoc">Polaroid</h3>
+          <div class="card-body r-text-300">
+            <div class="paragraph dropcap">
+              <p class="dropcap"><span class="j1-dropcap">M</span>ehr als zehn Jahre nach der Insolvenz von Polaroid ist die Sofortbildfotografie heute erfolgreicher denn je. Sofortbilder sind vorallem eines: Einzigartig. Polaroids fangen Momente ein wie sind. Nicht zu wiederholen.</p>
+            </div>
+            <div class="paragraph">
+              <p><strong>Was geht denn sofort?</strong></p>
+            </div>
+          </div>
+          <div class="card-footer r-text-200">
+            
+            <div class="card-footer-text"> <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>1. Januar 2025 </div>
+            <a class="card-link text-muted text-lowercase" href="/posts/public/featured/produkte/2025/01/01/gegenbewegung_polaroit/"> lesen · Gegenbewegung </a>
+          </div>
+        </article>
+			</li>
+			<li class="list-group-item items-2 p-0">
+        <article class="card raised-z3 p-0">
+          <img class="img-fluid img-object--cover" src="/assets/images/modules/attics/franck-1920x1280.jpg" alt="TikTok">
+          <h3 class="card-header bg-primary notoc">TikTok</h3>
+          <div class="card-body r-text-300">
+            <div class="paragraph dropcap">
+              <p class="dropcap"><span class="j1-dropcap">T</span>ikTok ist eine Social-Media Plattform mit Schwerpunkt Video-Content. Die Nutzer können kurze selbstgemachte Videos teilen. Die Plattform bietet einen Raum, in dem einfach und schnell die eigenen Inhalte veröffentlicht werden können.</p>
+            </div>
+            <div class="paragraph">
+              <p><strong>Was kann TikTok besser?</strong></p>
+            </div>
+          </div>
+          <div class="card-footer r-text-200">
+            
+            <div class="card-footer-text"> <i class="mdi mdi-calendar-blank md-grey-600 mr-1"></i>1. Januar 2025 </div>
+            <a class="card-link text-muted text-lowercase" href="/posts/public/featured/produkte/2025/01/01/aufsteiger_tiktok/"> lesen · video neu gedacht </a>
+          </div>
+        </article>
+			</li>
+		</ul>
+	</section>
+</div>
+
+<style>
+.card {
+	height: calc(100% - 1.75rem);
+}
+</style>
+++++

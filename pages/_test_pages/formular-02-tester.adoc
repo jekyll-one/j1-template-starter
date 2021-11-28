@@ -1,0 +1,727 @@
+---
+title:                                  Tester
+tagline:                                JotForm
+date:                                   2020-11-03 00:00:00 +100
+description: >
+                                        Welcome to the preview page focussing on the image module. This page
+                                        shows some valuable features of the J1 Template to manage your image-based
+                                        content using lightboxes, carousels (slider), and galleries.
+
+categories:                             [ Testpages ]
+tags:                                   [ Example ]
+
+comments:                               false
+fab_menu_id:                            page_ctrl_simple
+
+permalink:                              /pages/public/jotform-2/
+regenerate:                             false
+
+resources:                              []
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
+          alt:                          Photo by Ricardo Gomez Angel on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Ricardo Gomez Angel
+            href:                       https://unsplash.com/@ripato/portfolio
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+{% comment %} language detection|i18n
+-------------------------------------------------------------------------------- {% endcomment %}
+{% if site.language == "en" %}
+  {% assign language = "en" %}
+{% elsif site.language == "de"%}
+  {% assign language = "de" %}
+{% else %}
+  {% assign language = "en" %}
+{% endif %}
+
+{% if language == "en" %}
+  {% assign readmore_text = "read" %}
+  {% assign infinite_scroll_last = "More articles can be found with the" %}
+{% endif %}
+
+{% if language == "de" %}
+  {% assign readmore_text = "lesen" %}
+  {% assign infinite_scroll_last = "Weitere Artikel finden Sie im" %}
+{% endif %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+== BS Accordion 1
+
+lorem:sentences[5]
+
+++++
+
+<form class="jotform-form" action="https://submit.jotformeu.com/submit/212574301669356/" method="post" name="form_212574301669356" id="212574301669356" accept-charset="utf-8" autocomplete="on">
+  <input type="hidden" name="formID" value="212574301669356" />
+  <input type="hidden" id="JWTContainer" value="" />
+  <input type="hidden" id="cardinalOrderNumber" value="" />
+  <div role="main" class="form-all">
+    <link type="text/css" rel="stylesheet" media="all" href="https://cdn.jotfor.ms/wizards/languageWizard/custom-dropdown/css/lang-dd.css?3.3.27670" />
+    <div class="cont">
+      <input type="text" id="input_language" name="input_language" style="display:none" />
+      <div class="language-dd" id="langDd" style="display:none">
+        <div class="dd-placeholder lang-emp">
+          Language
+        </div>
+        <ul class="lang-list dn" id="langList">
+          <li data-lang="de" class="de">
+            Deutsch
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jotfor.ms/js/formTranslation.v2.js?3.3.27670"></script>
+    <div class="formLogoWrapper Left">
+      <img loading="lazy" class="formLogoImg" src="https://www.jotform.com/uploads/juergen.adams/form_files/d1-512x512.61420d09848425.45295317.png" height="140" width="140">
+    </div>
+    <style>
+      .formLogoWrapper { display:inline-block; position: absolute; width: 100%;} .form-all:before { background: none !important;} .formLogoWrapper.Left { top: -150px; left: 0; text-align: left;}
+    </style>
+    <ul class="form-section page-section">
+      <li id="cid_1" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-large">
+          <div class="header-text httal htvam">
+            <h1 id="header_1" class="form-header" data-component="header">
+              Website-Umfragefragebogen
+            </h1>
+            <div id="subHeader_1" class="form-subHeader">
+              Vielen Dank, dass Sie sich die Zeit nehmen haben, diese Fragen zu beantworten. Die folgenden Fragen sollen Aufschluss darüber geben, wie bekannt und erfolgreich [Name der Website] ist.
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_radio" id="id_6">
+        <label class="form-label form-label-top form-label-auto" id="label_6" for="input_6"> 1. Haben Sie jemals von [Name der Website] gehört? </label>
+        <div id="cid_6" class="form-input-wide" data-layout="full">
+          <div class="form-single-column" role="group" aria-labelledby="label_6" data-component="radio">
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_6" class="form-radio" id="input_6_0" name="q6_1Haben" value="Ja" />
+              <label id="label_input_6_0" for="input_6_0"> Ja </label>
+            </span>
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_6" class="form-radio" id="input_6_1" name="q6_1Haben" value="Nein" />
+              <label id="label_input_6_1" for="input_6_1"> Nein </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_7">
+        <label class="form-label form-label-top form-label-auto" id="label_7" for="input_7"> 2. Wie haben Sie von [Name der Website] erfahren? </label>
+        <div id="cid_7" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_7" name="q7_2Wie" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Freund oder Verwandter"> Freund oder Verwandter </option>
+            <option value="Web-Suchmaschine"> Web-Suchmaschine </option>
+            <option value="Bannerwerbung"> Bannerwerbung </option>
+            <option value="Zeitschrift"> Zeitschrift </option>
+            <option value="E-Mail"> E-Mail </option>
+            <option value="Pop-up-Anzeige"> Pop-up-Anzeige </option>
+            <option value="Andere"> Andere </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_radio" id="id_8">
+        <label class="form-label form-label-top form-label-auto" id="label_8" for="input_8"> 3. Kaufen Sie Waren von [Name der Website]? </label>
+        <div id="cid_8" class="form-input-wide" data-layout="full">
+          <div class="form-single-column" role="group" aria-labelledby="label_8" data-component="radio">
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_8" class="form-radio" id="input_8_0" name="q8_3Kaufen" value="Ja" />
+              <label id="label_input_8_0" for="input_8_0"> Ja </label>
+            </span>
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_8" class="form-radio" id="input_8_1" name="q8_3Kaufen" value="Nein" />
+              <label id="label_input_8_1" for="input_8_1"> Nein </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_radio" id="id_9">
+        <label class="form-label form-label-top form-label-auto" id="label_9" for="input_9"> 4. Wie alt sind Sie? </label>
+        <div id="cid_9" class="form-input-wide" data-layout="full">
+          <div class="form-single-column" role="group" aria-labelledby="label_9" data-component="radio">
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_9" class="form-radio" id="input_9_0" name="q9_4Wie" value="Unter 18 Jahren" />
+              <label id="label_input_9_0" for="input_9_0"> Unter 18 Jahren </label>
+            </span>
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_9" class="form-radio" id="input_9_1" name="q9_4Wie" value="18 - 25" />
+              <label id="label_input_9_1" for="input_9_1"> 18 - 25 </label>
+            </span>
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_9" class="form-radio" id="input_9_2" name="q9_4Wie" value="25 - 45" />
+              <label id="label_input_9_2" for="input_9_2"> 25 - 45 </label>
+            </span>
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_9" class="form-radio" id="input_9_3" name="q9_4Wie" value="45 oder älter." />
+              <label id="label_input_9_3" for="input_9_3"> 45 oder älter. </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_13">
+        <label class="form-label form-label-top form-label-auto" id="label_13" for="input_13"> 5. Geschlecht? </label>
+        <div id="cid_13" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_13" name="q13_5Geschlecht" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Männlich"> Männlich </option>
+            <option value="Weiblich"> Weiblich </option>
+            <option value="Divers"> Divers </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_10">
+        <label class="form-label form-label-top form-label-auto" id="label_10" for="input_10"> 6. Wie oft besuchen Sie unsere Website? </label>
+        <div id="cid_10" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_10" name="q10_6Wie" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Täglich"> Täglich </option>
+            <option value="Einmal pro Woche"> Einmal pro Woche </option>
+            <option value="Einmal im Monat"> Einmal im Monat </option>
+            <option value="Einmal im Jahr"> Einmal im Jahr </option>
+            <option value="Niemals"> Niemals </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_11">
+        <label class="form-label form-label-top form-label-auto" id="label_11" for="input_11"> 7. Wie zufrieden sind Sie insgesamt mit unserer Website? </label>
+        <div id="cid_11" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_11" name="q11_7Wie" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Sehr zufrieden"> Sehr zufrieden </option>
+            <option value="Zufrieden"> Zufrieden </option>
+            <option value="Ausgezeichnet"> Ausgezeichnet </option>
+            <option value="Mäßig"> Mäßig </option>
+            <option value="Unzufrieden"> Unzufrieden </option>
+            <option value="Sehr unzufrieden"> Sehr unzufrieden </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_14">
+        <label class="form-label form-label-top form-label-auto" id="label_14" for="input_14"> 8. Wie wahrscheinlich ist es, dass Sie [Ihren Website-Namen] an Ihre Freunde oder Kollegen weiterempfehlen? </label>
+        <div id="cid_14" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_14" name="q14_8Wie" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Sehr unwahrscheinlich"> Sehr unwahrscheinlich </option>
+            <option value="Neutral"> Neutral </option>
+            <option value="Sehr wahrscheinlich"> Sehr wahrscheinlich </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_textarea" id="id_15">
+        <label class="form-label form-label-top form-label-auto" id="label_15" for="input_15"> 9. Welche(r) besondere(n) Aspekt(e) unserer Website gefällt Ihnen? </label>
+        <div id="cid_15" class="form-input-wide" data-layout="full">
+          <textarea id="input_15" class="form-textarea" name="q15_9Welcher" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_15"></textarea>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_textarea" id="id_16">
+        <label class="form-label form-label-top form-label-auto" id="label_16" for="input_16"> 10. Welche(r) besondere(n) Aspekt(e) unserer Website gefällt Ihnen nicht? </label>
+        <div id="cid_16" class="form-input-wide" data-layout="full">
+          <textarea id="input_16" class="form-textarea" name="q16_10Welcher" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_16"></textarea>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_17">
+        <label class="form-label form-label-top form-label-auto" id="label_17" for="input_17"> 11. Welche Faktoren haben Sie zum Kauf auf unserer Website motiviert? </label>
+        <div id="cid_17" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_17" name="q17_11Welche" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Preis"> Preis </option>
+            <option value="Beschreibung des Objekts"> Beschreibung des Objekts </option>
+            <option value="Markenname"> Markenname </option>
+            <option value="Empfehlung"> Empfehlung </option>
+            <option value="Versandoptionen"> Versandoptionen </option>
+            <option value="Zahlungsoptionen"> Zahlungsoptionen </option>
+            <option value="Andere"> Andere </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_18">
+        <label class="form-label form-label-top form-label-auto" id="label_18" for="input_18"> 12. Warum ist unsere Website Ihrer Meinung nach so erfolgreich? </label>
+        <div id="cid_18" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_18" name="q18_12Warum" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Image"> Image </option>
+            <option value="Ansehen"> Ansehen </option>
+            <option value="Leicht zu bedienen"> Leicht zu bedienen </option>
+            <option value="Spaß"> Spaß </option>
+            <option value="Große Auswahl an Artikeln"> Große Auswahl an Artikeln </option>
+            <option value="Zahlungsoptionen (Paypal)"> Zahlungsoptionen (Paypal) </option>
+            <option value="Sicherheit"> Sicherheit </option>
+            <option value="Kostenlose Registrierung"> Kostenlose Registrierung </option>
+            <option value="Website Design"> Website Design </option>
+            <option value="Website-Werbung"> Website-Werbung </option>
+            <option value="Feedback des Verkäufers"> Feedback des Verkäufers </option>
+            <option value="Erfahrung des Käufers"> Erfahrung des Käufers </option>
+            <option value="Andere"> Andere </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_19">
+        <label class="form-label form-label-top form-label-auto" id="label_19" for="input_19"> 13. Was ist der Hauptgrund für Ihren Besuch unserer Website? </label>
+        <div id="cid_19" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_19" name="q19_13Was" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Browsen auf"> Browsen auf </option>
+            <option value="Besonderer Artikel"> Besonderer Artikel </option>
+            <option value="Preisvergleiche"> Preisvergleiche </option>
+            <option value="Andere"> Andere </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_20">
+        <label class="form-label form-label-top form-label-auto" id="label_20" for="input_20"> 14. Wie einfach ist die Navigation auf unserer Website? </label>
+        <div id="cid_20" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_20" name="q20_14Wie" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Sehr leicht"> Sehr leicht </option>
+            <option value="Ziemlich einfach"> Ziemlich einfach </option>
+            <option value="Einfach"> Einfach </option>
+            <option value="Etwas schwierig"> Etwas schwierig </option>
+            <option value="Sehr schwierig"> Sehr schwierig </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_21">
+        <label class="form-label form-label-top form-label-auto" id="label_21" for="input_21"> 15. Wie oft kaufen Sie auf unserer Website? </label>
+        <div id="cid_21" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_21" name="q21_15Wie" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Täglich"> Täglich </option>
+            <option value="Einmal pro Woche"> Einmal pro Woche </option>
+            <option value="Zweimal wöchentlich"> Zweimal wöchentlich </option>
+            <option value="Einmal im Monat"> Einmal im Monat </option>
+            <option value="Zweimal im Monat"> Zweimal im Monat </option>
+            <option value="Einmal im Jahr"> Einmal im Jahr </option>
+            <option value="Niemals"> Niemals </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_22">
+        <label class="form-label form-label-top form-label-auto" id="label_22" for="input_22"> 16. War dies ein persönlicher Kauf für Sie, ein Geschenk, ein Geschäftskauf oder etwas anderes? </label>
+        <div id="cid_22" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_22" name="q22_16War" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Persönlich"> Persönlich </option>
+            <option value="Geschenk"> Geschenk </option>
+            <option value="Firmeneinkauf"> Firmeneinkauf </option>
+            <option value="Andere"> Andere </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_radio" id="id_30">
+        <label class="form-label form-label-top form-label-auto" id="label_30" for="input_30"> 17. Wie bezahlen Sie Ihren Einkauf? </label>
+        <div id="cid_30" class="form-input-wide" data-layout="full">
+          <div class="form-single-column" role="group" aria-labelledby="label_30" data-component="radio">
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_30" class="form-radio" id="input_30_0" name="q30_17Wie" value="Kreditkarte online" />
+              <label id="label_input_30_0" for="input_30_0"> Kreditkarte online </label>
+            </span>
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_30" class="form-radio" id="input_30_1" name="q30_17Wie" value="Scheck per Post" />
+              <label id="label_input_30_1" for="input_30_1"> Scheck per Post </label>
+            </span>
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_30" class="form-radio" id="input_30_2" name="q30_17Wie" value="Paypal" />
+              <label id="label_input_30_2" for="input_30_2"> Paypal </label>
+            </span>
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_30" class="form-radio" id="input_30_3" name="q30_17Wie" value="Nochex" />
+              <label id="label_input_30_3" for="input_30_3"> Nochex </label>
+            </span>
+            <span class="form-radio-item formRadioOther" style="clear:left">
+              <input type="radio" class="form-radio-other form-radio" name="q30_17Wie" id="other_30" value="other" aria-label="Anderes" />
+              <label id="label_other_30" style="text-indent:0" for="other_30"> Anderes </label>
+              <span id="other_30_input" class="other-input-container" style="display:none">
+                <input type="text" class="form-radio-other-input form-textbox" name="q30_17Wie[other]" data-otherhint="Anderes" size="15" id="input_30" data-placeholder="Please type another option here" placeholder="Please type another option here" />
+              </span>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_24">
+        <label class="form-label form-label-top form-label-auto" id="label_24" for="input_24"> 18. Wie zufrieden waren Sie mit der verfügbaren Versandoption? </label>
+        <div id="cid_24" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_24" name="q24_18Wie" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Sehr zufrieden"> Sehr zufrieden </option>
+            <option value="Etwas zufrieden"> Etwas zufrieden </option>
+            <option value="Zufrieden"> Zufrieden </option>
+            <option value="Etwas unzufrieden"> Etwas unzufrieden </option>
+            <option value="Sehr unzufrieden"> Sehr unzufrieden </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_25">
+        <label class="form-label form-label-top form-label-auto" id="label_25" for="input_25"> 19. War Ihre Bestellung vollständig, als Sie sie erhalten haben? </label>
+        <div id="cid_25" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_25" name="q25_19War" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Ja"> Ja </option>
+            <option value="Nein"> Nein </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_26">
+        <label class="form-label form-label-top form-label-auto" id="label_26" for="input_26"> 20. Haben Sie Artikel, die Sie bei uns gekauft haben, zurückgeschickt? </label>
+        <div id="cid_26" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_26" name="q26_20Haben" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Ja"> Ja </option>
+            <option value="Nein"> Nein </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_radio" id="id_29">
+        <label class="form-label form-label-top form-label-auto" id="label_29" for="input_29"> 21. Was war der Hauptgrund für Ihre Rückgabe? </label>
+        <div id="cid_29" class="form-input-wide" data-layout="full">
+          <div class="form-single-column" role="group" aria-labelledby="label_29" data-component="radio">
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_29" class="form-radio" id="input_29_0" name="q29_21Was" value="Falsche Größe" />
+              <label id="label_input_29_0" for="input_29_0"> Falsche Größe </label>
+            </span>
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_29" class="form-radio" id="input_29_1" name="q29_21Was" value="Falsche Farbe" />
+              <label id="label_input_29_1" for="input_29_1"> Falsche Farbe </label>
+            </span>
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_29" class="form-radio" id="input_29_2" name="q29_21Was" value="Nicht das, was ich bestellt habe" />
+              <label id="label_input_29_2" for="input_29_2"> Nicht das, was ich bestellt habe </label>
+            </span>
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_29" class="form-radio" id="input_29_3" name="q29_21Was" value="Beschädigt" />
+              <label id="label_input_29_3" for="input_29_3"> Beschädigt </label>
+            </span>
+            <span class="form-radio-item" style="clear:left">
+              <span class="dragger-item">
+              </span>
+              <input type="radio" aria-describedby="label_29" class="form-radio" id="input_29_4" name="q29_21Was" value="Nicht zufrieden mit dem Punkt" />
+              <label id="label_input_29_4" for="input_29_4"> Nicht zufrieden mit dem Punkt </label>
+            </span>
+            <span class="form-radio-item formRadioOther" style="clear:left">
+              <input type="radio" class="form-radio-other form-radio" name="q29_21Was" id="other_29" value="other" aria-label="Other" />
+              <label id="label_other_29" style="text-indent:0" for="other_29"> Other </label>
+              <span id="other_29_input" class="other-input-container" style="display:none">
+                <input type="text" class="form-radio-other-input form-textbox" name="q29_21Was[other]" data-otherhint="Other" size="15" id="input_29" data-placeholder="Please type another option here" placeholder="Please type another option here" />
+              </span>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_28">
+        <label class="form-label form-label-top form-label-auto" id="label_28" for="input_28"> 22. Wie zufrieden waren Sie mit dem Rückgabeprozess? </label>
+        <div id="cid_28" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_28" name="q28_22Wie" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Sehr zufrieden"> Sehr zufrieden </option>
+            <option value="Etwas zufrieden"> Etwas zufrieden </option>
+            <option value="Zufrieden"> Zufrieden </option>
+            <option value="Etwas unzufrieden"> Etwas unzufrieden </option>
+            <option value="Sehr unzufrieden "> Sehr unzufrieden </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_matrix" id="id_31">
+        <label class="form-label form-label-top" id="label_31" for="input_31"> 23. Bitte ordnen Sie bei der Auswahl der Produkte auf [Name der Website] das, was Sie suchen, in der Reihenfolge ihrer Wichtigkeit ein. </label>
+        <div id="cid_31" class="form-input-wide" data-layout="full">
+          <table summary="" aria-labelledby="label_31" cellPadding="4" cellSpacing="0" class="form-matrix-table" data-component="matrix">
+            <tr class="form-matrix-tr form-matrix-header-tr">
+              <th class="form-matrix-th" style="border:none">
+                 
+              </th>
+              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
+                <label id="label_31_col_0"> 1 - Nicht wichtig </label>
+              </th>
+              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_1">
+                <label id="label_31_col_1"> 2 </label>
+              </th>
+              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_2">
+                <label id="label_31_col_2"> 3 - Vielleicht </label>
+              </th>
+              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_3">
+                <label id="label_31_col_3"> 4 </label>
+              </th>
+              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_4">
+                <label id="label_31_col_4"> 5 - Sehr wichtig </label>
+              </th>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_31 label_31_row_0">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
+                <label id="label_31_row_0"> Qualität </label>
+              </th>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_0_0" class="form-radio" name="q31_23Bitte[0]" value="1 - Nicht wichtig" aria-labelledby="label_31_col_0 label_31_row_0" />
+                <label for="input_31_0_0" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_0_1" class="form-radio" name="q31_23Bitte[0]" value="2" aria-labelledby="label_31_col_1 label_31_row_0" />
+                <label for="input_31_0_1" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_0_2" class="form-radio" name="q31_23Bitte[0]" value="3 - Vielleicht" aria-labelledby="label_31_col_2 label_31_row_0" />
+                <label for="input_31_0_2" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_0_3" class="form-radio" name="q31_23Bitte[0]" value="4" aria-labelledby="label_31_col_3 label_31_row_0" />
+                <label for="input_31_0_3" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_0_4" class="form-radio" name="q31_23Bitte[0]" value="5 - Sehr wichtig" aria-labelledby="label_31_col_4 label_31_row_0" />
+                <label for="input_31_0_4" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_31 label_31_row_1">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
+                <label id="label_31_row_1"> Kosten </label>
+              </th>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_1_0" class="form-radio" name="q31_23Bitte[1]" value="1 - Nicht wichtig" aria-labelledby="label_31_col_0 label_31_row_1" />
+                <label for="input_31_1_0" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_1_1" class="form-radio" name="q31_23Bitte[1]" value="2" aria-labelledby="label_31_col_1 label_31_row_1" />
+                <label for="input_31_1_1" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_1_2" class="form-radio" name="q31_23Bitte[1]" value="3 - Vielleicht" aria-labelledby="label_31_col_2 label_31_row_1" />
+                <label for="input_31_1_2" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_1_3" class="form-radio" name="q31_23Bitte[1]" value="4" aria-labelledby="label_31_col_3 label_31_row_1" />
+                <label for="input_31_1_3" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_1_4" class="form-radio" name="q31_23Bitte[1]" value="5 - Sehr wichtig" aria-labelledby="label_31_col_4 label_31_row_1" />
+                <label for="input_31_1_4" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_31 label_31_row_2">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
+                <label id="label_31_row_2"> Anzahl </label>
+              </th>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_2_0" class="form-radio" name="q31_23Bitte[2]" value="1 - Nicht wichtig" aria-labelledby="label_31_col_0 label_31_row_2" />
+                <label for="input_31_2_0" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_2_1" class="form-radio" name="q31_23Bitte[2]" value="2" aria-labelledby="label_31_col_1 label_31_row_2" />
+                <label for="input_31_2_1" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_2_2" class="form-radio" name="q31_23Bitte[2]" value="3 - Vielleicht" aria-labelledby="label_31_col_2 label_31_row_2" />
+                <label for="input_31_2_2" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_2_3" class="form-radio" name="q31_23Bitte[2]" value="4" aria-labelledby="label_31_col_3 label_31_row_2" />
+                <label for="input_31_2_3" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_2_4" class="form-radio" name="q31_23Bitte[2]" value="5 - Sehr wichtig" aria-labelledby="label_31_col_4 label_31_row_2" />
+                <label for="input_31_2_4" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_31 label_31_row_3">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
+                <label id="label_31_row_3"> Markenname </label>
+              </th>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_3_0" class="form-radio" name="q31_23Bitte[3]" value="1 - Nicht wichtig" aria-labelledby="label_31_col_0 label_31_row_3" />
+                <label for="input_31_3_0" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_3_1" class="form-radio" name="q31_23Bitte[3]" value="2" aria-labelledby="label_31_col_1 label_31_row_3" />
+                <label for="input_31_3_1" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_3_2" class="form-radio" name="q31_23Bitte[3]" value="3 - Vielleicht" aria-labelledby="label_31_col_2 label_31_row_3" />
+                <label for="input_31_3_2" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_3_3" class="form-radio" name="q31_23Bitte[3]" value="4" aria-labelledby="label_31_col_3 label_31_row_3" />
+                <label for="input_31_3_3" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_3_4" class="form-radio" name="q31_23Bitte[3]" value="5 - Sehr wichtig" aria-labelledby="label_31_col_4 label_31_row_3" />
+                <label for="input_31_3_4" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_31 label_31_row_4">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
+                <label id="label_31_row_4"> Vertrautheit </label>
+              </th>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_4_0" class="form-radio" name="q31_23Bitte[4]" value="1 - Nicht wichtig" aria-labelledby="label_31_col_0 label_31_row_4" />
+                <label for="input_31_4_0" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_4_1" class="form-radio" name="q31_23Bitte[4]" value="2" aria-labelledby="label_31_col_1 label_31_row_4" />
+                <label for="input_31_4_1" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_4_2" class="form-radio" name="q31_23Bitte[4]" value="3 - Vielleicht" aria-labelledby="label_31_col_2 label_31_row_4" />
+                <label for="input_31_4_2" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_4_3" class="form-radio" name="q31_23Bitte[4]" value="4" aria-labelledby="label_31_col_3 label_31_row_4" />
+                <label for="input_31_4_3" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+              <td class="form-matrix-values">
+                <input type="radio" id="input_31_4_4" class="form-radio" name="q31_23Bitte[4]" value="5 - Sehr wichtig" aria-labelledby="label_31_col_4 label_31_row_4" />
+                <label for="input_31_4_4" class="matrix-choice-label matrix-radio-label">  </label>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_32">
+        <label class="form-label form-label-top form-label-auto" id="label_32" for="input_32"> 24. Wie konkurrenzfähig finden Sie die Preise auf [Name der Website]? </label>
+        <div id="cid_32" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_32" name="q32_24Wie" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Sehr konkurrenzfähig"> Sehr konkurrenzfähig </option>
+            <option value="Teilweise konkurrenzfähig."> Teilweise konkurrenzfähig. </option>
+            <option value="Nicht wettbewerbsfähig"> Nicht wettbewerbsfähig </option>
+            <option value="Weiß nicht."> Weiß nicht. </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown" id="id_33">
+        <label class="form-label form-label-top form-label-auto" id="label_33" for="input_33"> 25. Bitte bewerten Sie [die Webseite] anhand des Gesamtinhalts. </label>
+        <div id="cid_33" class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" id="input_33" name="q33_25Bitte" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="Ausgezeichnet"> Ausgezeichnet </option>
+            <option value="Gut"> Gut </option>
+            <option value="Durchschnitt"> Durchschnitt </option>
+            <option value="Armselig"> Armselig </option>
+            <option value="Unentschieden"> Unentschieden </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_36">
+        <div id="cid_36" class="form-input-wide" data-layout="full">
+          <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+            <button id="input_36" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+              Absenden
+            </button>
+          </div>
+        </div>
+      </li>
+      <li style="display:none">
+        Should be Empty:
+        <input type="text" name="website" value="" />
+      </li>
+    </ul>
+  </div>
+  <script>
+  JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <script>
+  JotForm.poweredByText = "Powered by JotForm";
+  </script>
+  <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="212574301669356" />
+  <script type="text/javascript">
+  var all_spc = document.querySelectorAll("form[id='212574301669356'] .si" + "mple" + "_spc");
+for (var i = 0; i < all_spc.length; i++)
+{
+  all_spc[i].value = "212574301669356-212574301669356";
+}
+  </script>
+  <div class="formFooter-heightMask">
+  </div>
+  <div class="formFooter f6">
+    <div class="formFooter-wrapper formFooter-leftSide">
+      <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=212574301669356&utm_content=jotform_logo&utm_campaign=powered_by_jotform_le" target="_blank" class="formFooter-logoLink"><img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo/logo-new@1x.png" alt="Jotform Logo"></a>
+    </div>
+    <div class="formFooter-wrapper formFooter-rightSide">
+      <span class="formFooter-text">
+        Now create your own JotForm - It's free!
+      </span>
+      <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=212574301669356&utm_content=jotform_button&utm_campaign=powered_by_jotform_le" target="_blank">Create your own JotForm</a>
+    </div>
+  </div>
+</form>
+
+
+<script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+<script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.27670" type="text/javascript"></script>
+<script type="text/javascript">	JotForm.newDefaultTheme = true;
+	JotForm.extendsNewTheme = false;
+	JotForm.newPaymentUIForNewCreatedForms = false;
+	JotForm.newPaymentUI = true;
+
+	JotForm.init(function(){
+	/*INIT-START*/
+if (window.JotForm && JotForm.accessible) $('input_15').setAttribute('tabindex',0);
+if (window.JotForm && JotForm.accessible) $('input_16').setAttribute('tabindex',0);
+      JotForm.alterTexts({"ageVerificationError":"Sie müssen älter als {minAge} Jahre sein, um dieses Formular absenden zu können.","alphabetic":"Dieses Feld darf nur Buchstaben enthalten","alphanumeric":"Dieses Feld darf nur Buchstaben und Zahlen enthalten.","appointmentSelected":"Sie haben {time} am {date} ausgewählt","ccDonationMinLimitError":"Der Minimalbetrag ist {minAmount}{currency}","ccInvalidCVC":"Kartenprüfnummer (CVC) ist ungültig.","ccInvalidExpireDate":"Gültigkeitsdatum ist ungültig.","ccInvalidExpireMonth":"Expiration month is invalid.","ccInvalidExpireYear":"Expiration year is invalid.","ccInvalidNumber":"Kreditkartennummer ist ungültig.","ccMissingDetails":"Please fill up the credit card details.","ccMissingDonation":"Bitte geben Sie einen Zahlenwert als Spendenbetrag ein.","ccMissingProduct":"Bitte wählen Sie mindestens ein Produkt.","characterLimitError":"Zu viele Zeichen. Das Maximum beträgt","characterMinLimitError":"Zu wenige Zeichen. Das Minimum beträgt","confirmClearForm":"Sind Sie sicher, dass Sie das Formular leeren wollen?","confirmEmail":"E-Mail-Adresse stimmt nicht überein","currency":"Dieses Feld darf nur Währungswerte enthalten.","cyrillic":"Dieses Feld darf nur kyrillische Zeichen enthalten.","dateInvalid":"Dieses Datum ist ungültig. Das Datumsformat ist {format}","dateInvalidSeparate":"Dieses Datum ist ungültig. Geben Sie ein gültiges {element} ein.","dateLimited":"Dieses Datum ist nicht verfügbar.","disallowDecimals":"Bitte geben Sie eine ganze Zahl ein.","doneButton":"Erledigt","doneMessage":"Sehr gut! Alle Fehler sind behoben.","dragAndDropFilesHere_infoMessage":"Dateien hierher ziehen","email":"Geben Sie eine gültige E-Mail-Adresse ein","fillMask":"Wert muss der Maske entsprechen.","freeEmailError":"Kostenlose E-Mail-Adressen sind nicht erlaubt.","generalError":"Ihr Formular enthält Fehler. Bitte korrigieren Sie diese, bevor Sie fortfahren.","generalPageError":"Diese Seite enthält Fehler. Bitte korrigieren Sie diese, bevor Sie fortfahren.","geoNotAvailableDesc":"Location provider not available. Please enter the address manually.","geoNotAvailableTitle":"Position Unavailable","geoPermissionDesc":"Check your browser's privacy settings.","geoPermissionTitle":"Permission Denied","geoTimeoutDesc":"Please check your internet connection and try again.","geoTimeoutTitle":"Timeout","gradingScoreError":"Ihr Wert sollte nur weniger oder gleich sein zu","incompleteFields":"Es gibt unvollständige Pflichtfelder. Bitte füllen Sie diese aus.","inputCarretErrorA":"Eingabe sollte nicht kleiner als der Minimalwert sein:","inputCarretErrorB":"Eingabe sollte nicht größer als der Maximalwert sein:","justSoldOut":"Gerade ausverkauft","lessThan":"Ihr Wert sollte kleiner oder gleich sein zu","maxDigitsError":"Bitte geben Sie nicht mehr Ziffern ein als","maxFileSize_infoMessage":"Max. Dateigröße","maxSelectionsError":"The maximum number of selections allowed is ","minSelectionsError":"Die kleinste erforderliche Auswahl ist","multipleError":"Auf dieser Seite sind {count} Fehler aufgetreten. Bitte korrigieren Sie diese, bevor Sie fortfahren.","multipleFileUploads_emptyError":"{file} ist leer. Bitte wählen Sie eine andere Datei.","multipleFileUploads_fileLimitError":"Nur {fileLimit} Dateiuploads sind erlaub!","multipleFileUploads_minSizeError":"{file} ist zu klein. Die minimale Dateigröße ist {minSizeLimit}.","multipleFileUploads_onLeave":"Dateien werden hochgeladen. Bitte verlassen Sie die Seite nicht, bis der Upload abgeschlossen ist.","multipleFileUploads_sizeError":"{file} ist zu groß. Die maximale Dateigröße ist {sizeLimit}.","multipleFileUploads_typeError":"{file} ist ein ungültiges Dateiformat. Nur {extensions} sind erlaubt.","multipleFileUploads_uploadFailed":"File upload failed, please remove it and upload the file again.","noSlotsAvailable":"Keine Termine verfügbar","notEnoughStock":"Nicht genug Bestand für die jetzige Auswahl","notEnoughStock_remainedItems":"Nicht genug Bestand für die jetzige Auswahl ({count} verbleibende Artikel)","noUploadExtensions":"File has no extension file type (e.g. .txt, .png, .jpeg)","numeric":"Dieses Feld darf nur Zahlen enthalten","oneError":"Auf dieser Seite ist {count} Fehler aufgetreten. Bitte korrigieren Sie diesen, bevor Sie fortfahren.","pastDatesDisallowed":"Datum darf nicht in der Vergangenheit liegen.","pleaseWait":"Bitte warten Sie...","required":"Dies ist ein Pflichtfeld.","requiredLegend":"Alle mit * gekennzeichneten Felder sind Pflichtfelder und müssen ausgefüllt werden.","requireEveryCell":"Jede Zelle ist erforderlich.","requireEveryRow":"Jede Zeile ist erforderlich.","requireOne":"Mindestens ein Feld ist erforderlich.","restrictedDomain":"This domain is not allowed","seeErrorsButton":"Fehler anzeigen","selectionSoldOut":"Auswahl ausverkauft","slotUnavailable":"{time} on {date} has been selected is unavailable. Please select another slot.","soldOut":"Ausverkauft","subProductItemsLeft":"({count} verbleibende Artikel)","uploadExtensions":"Sie k&amp;ouml;nnen nur folgende Dateien hochladen:","uploadFilesize":"Die Dateigröße kann nicht größer sein als:","uploadFilesizemin":"Die Dateigröße darf nicht tiefer sein als:","url":"Dieses Feld muss eine gültige URL enthalten.","validateEmail":"You need to validate this e-mail","wordLimitError":"Zu viele Worte. Das Maximum beträgt","wordMinLimitError":"Zu wenige Worte. Das Minimum beträgt"});
+      FormTranslation.init({"detectUserLanguage":"1","firstPageOnly":"0","options":"Deutsch","originalLanguage":"de","primaryLanguage":"de","saveUserLanguage":"1","showStatus":"flag-with-nation","theme":"light-theme","version":"2"});
+	/*INIT-END*/
+	});
+
+   JotForm.prepareCalculationsOnTheFly([null,{"name":"websiteumfragefragebogen","qid":"1","text":"Website-Umfragefragebogen","type":"control_head"},null,null,null,null,{"name":"1Haben","qid":"6","text":"1. Haben Sie jemals von [Name der Website] gehort?","type":"control_radio"},{"name":"2Wie","qid":"7","text":"2. Wie haben Sie von [Name der Website] erfahren?","type":"control_dropdown"},{"name":"3Kaufen","qid":"8","text":"3. Kaufen Sie Waren von [Name der Website]?","type":"control_radio"},{"name":"4Wie","qid":"9","text":"4. Wie alt sind Sie?","type":"control_radio"},{"name":"6Wie","qid":"10","text":"6. Wie oft besuchen Sie unsere Website?","type":"control_dropdown"},{"name":"7Wie","qid":"11","text":"7. Wie zufrieden sind Sie insgesamt mit unserer Website?","type":"control_dropdown"},null,{"name":"5Geschlecht","qid":"13","text":"5. Geschlecht?","type":"control_dropdown"},{"name":"8Wie","qid":"14","text":"8. Wie wahrscheinlich ist es, dass Sie [Ihren Website-Namen] an Ihre Freunde oder Kollegen weiterempfehlen?","type":"control_dropdown"},{"name":"9Welcher","qid":"15","text":"9. Welche(r) besondere(n) Aspekt(e) unserer Website gefallt Ihnen?","type":"control_textarea"},{"name":"10Welcher","qid":"16","text":"10. Welche(r) besondere(n) Aspekt(e) unserer Website gefallt Ihnen nicht?","type":"control_textarea"},{"name":"11Welche","qid":"17","text":"11. Welche Faktoren haben Sie zum Kauf auf unserer Website motiviert?","type":"control_dropdown"},{"name":"12Warum","qid":"18","text":"12. Warum ist unsere Website Ihrer Meinung nach so erfolgreich?","type":"control_dropdown"},{"name":"13Was","qid":"19","text":"13. Was ist der Hauptgrund fur Ihren Besuch unserer Website?","type":"control_dropdown"},{"name":"14Wie","qid":"20","text":"14. Wie einfach ist die Navigation auf unserer Website?","type":"control_dropdown"},{"name":"15Wie","qid":"21","text":"15. Wie oft kaufen Sie auf unserer Website?","type":"control_dropdown"},{"name":"16War","qid":"22","text":"16. War dies ein personlicher Kauf fur Sie, ein Geschenk, ein Geschaftskauf oder etwas anderes?","type":"control_dropdown"},null,{"name":"18Wie","qid":"24","text":"18. Wie zufrieden waren Sie mit der verfugbaren Versandoption?","type":"control_dropdown"},{"name":"19War","qid":"25","text":"19. War Ihre Bestellung vollstandig, als Sie sie erhalten haben?","type":"control_dropdown"},{"name":"20Haben","qid":"26","text":"20. Haben Sie Artikel, die Sie bei uns gekauft haben, zuruckgeschickt?","type":"control_dropdown"},null,{"name":"22Wie","qid":"28","text":"22. Wie zufrieden waren Sie mit dem Ruckgabeprozess?","type":"control_dropdown"},{"name":"21Was","qid":"29","text":"21. Was war der Hauptgrund fur Ihre Ruckgabe?","type":"control_radio"},{"name":"17Wie","qid":"30","text":"17. Wie bezahlen Sie Ihren Einkauf?","type":"control_radio"},{"name":"23Bitte","qid":"31","text":"23. Bitte ordnen Sie bei der Auswahl der Produkte auf [Name der Website] das, was Sie suchen, in der Reihenfolge ihrer Wichtigkeit ein.","type":"control_matrix"},{"name":"24Wie","qid":"32","text":"24. Wie konkurrenzfahig finden Sie die Preise auf [Name der Website]?","type":"control_dropdown"},{"name":"25Bitte","qid":"33","text":"25. Bitte bewerten Sie [die Webseite] anhand des Gesamtinhalts.","type":"control_dropdown"},null,null,{"name":"absenden","qid":"36","text":"Absenden","type":"control_button"}]);
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,{"name":"websiteumfragefragebogen","qid":"1","text":"Website-Umfragefragebogen","type":"control_head"},null,null,null,null,{"name":"1Haben","qid":"6","text":"1. Haben Sie jemals von [Name der Website] gehort?","type":"control_radio"},{"name":"2Wie","qid":"7","text":"2. Wie haben Sie von [Name der Website] erfahren?","type":"control_dropdown"},{"name":"3Kaufen","qid":"8","text":"3. Kaufen Sie Waren von [Name der Website]?","type":"control_radio"},{"name":"4Wie","qid":"9","text":"4. Wie alt sind Sie?","type":"control_radio"},{"name":"6Wie","qid":"10","text":"6. Wie oft besuchen Sie unsere Website?","type":"control_dropdown"},{"name":"7Wie","qid":"11","text":"7. Wie zufrieden sind Sie insgesamt mit unserer Website?","type":"control_dropdown"},null,{"name":"5Geschlecht","qid":"13","text":"5. Geschlecht?","type":"control_dropdown"},{"name":"8Wie","qid":"14","text":"8. Wie wahrscheinlich ist es, dass Sie [Ihren Website-Namen] an Ihre Freunde oder Kollegen weiterempfehlen?","type":"control_dropdown"},{"name":"9Welcher","qid":"15","text":"9. Welche(r) besondere(n) Aspekt(e) unserer Website gefallt Ihnen?","type":"control_textarea"},{"name":"10Welcher","qid":"16","text":"10. Welche(r) besondere(n) Aspekt(e) unserer Website gefallt Ihnen nicht?","type":"control_textarea"},{"name":"11Welche","qid":"17","text":"11. Welche Faktoren haben Sie zum Kauf auf unserer Website motiviert?","type":"control_dropdown"},{"name":"12Warum","qid":"18","text":"12. Warum ist unsere Website Ihrer Meinung nach so erfolgreich?","type":"control_dropdown"},{"name":"13Was","qid":"19","text":"13. Was ist der Hauptgrund fur Ihren Besuch unserer Website?","type":"control_dropdown"},{"name":"14Wie","qid":"20","text":"14. Wie einfach ist die Navigation auf unserer Website?","type":"control_dropdown"},{"name":"15Wie","qid":"21","text":"15. Wie oft kaufen Sie auf unserer Website?","type":"control_dropdown"},{"name":"16War","qid":"22","text":"16. War dies ein personlicher Kauf fur Sie, ein Geschenk, ein Geschaftskauf oder etwas anderes?","type":"control_dropdown"},null,{"name":"18Wie","qid":"24","text":"18. Wie zufrieden waren Sie mit der verfugbaren Versandoption?","type":"control_dropdown"},{"name":"19War","qid":"25","text":"19. War Ihre Bestellung vollstandig, als Sie sie erhalten haben?","type":"control_dropdown"},{"name":"20Haben","qid":"26","text":"20. Haben Sie Artikel, die Sie bei uns gekauft haben, zuruckgeschickt?","type":"control_dropdown"},null,{"name":"22Wie","qid":"28","text":"22. Wie zufrieden waren Sie mit dem Ruckgabeprozess?","type":"control_dropdown"},{"name":"21Was","qid":"29","text":"21. Was war der Hauptgrund fur Ihre Ruckgabe?","type":"control_radio"},{"name":"17Wie","qid":"30","text":"17. Wie bezahlen Sie Ihren Einkauf?","type":"control_radio"},{"name":"23Bitte","qid":"31","text":"23. Bitte ordnen Sie bei der Auswahl der Produkte auf [Name der Website] das, was Sie suchen, in der Reihenfolge ihrer Wichtigkeit ein.","type":"control_matrix"},{"name":"24Wie","qid":"32","text":"24. Wie konkurrenzfahig finden Sie die Preise auf [Name der Website]?","type":"control_dropdown"},{"name":"25Bitte","qid":"33","text":"25. Bitte bewerten Sie [die Webseite] anhand des Gesamtinhalts.","type":"control_dropdown"},null,null,{"name":"absenden","qid":"36","text":"Absenden","type":"control_button"}]);}, 20);
+</script>
+
+++++

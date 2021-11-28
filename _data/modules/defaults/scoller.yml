@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/fam.yml
-# Default Configuration of the FAM Module (Floating Action Menu)
+# ~/_data/modules/defaults/scroller.yml
+# User configuration for J1 Scroller API
 #
 # Product/Info:
 # https://jekyll.one
@@ -19,29 +19,15 @@
 # About this configuration (used for J1 CC only)
 #
 about_config:
-  title:                                Floating Action Menu
+  title:                                Scroller API
   scope:                                Default settings
-  location:                             _data/modules/defaults/fam.yml
+  location:                             _data/modules/defaults/rtable.yml
 
 # ------------------------------------------------------------------------------
 # Default settings
 #
 defaults:
   enabled:                              false
-  mode:                                 icon
-
-  xhr_container_id:                     fam-container
-  xhr_data_path:                        /assets/data/fam/index.html
-
-  icon_family:                          MDI
-  icon_color:                           mdi-md-grey
-  icon_size:                            mdi-2x
-  raised_level:                         5
-
-  menu_options:
-    direction:                          top
-    hoverEnabled:                       false
-    toolbarEnabled:                     false
 
 # ------------------------------------------------------------------------------
 # END config

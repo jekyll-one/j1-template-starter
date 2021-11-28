@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # ~/_config.yml
-# Global Jekyll site configuration (runtime)
+# Global Jekyll site configuration (development)
 #
 # Product/Info:
 # https://jekyll.one
@@ -53,7 +53,7 @@ environment:                            development
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2021.3.2
+version:                                2022.0.2
 
 # version
 # ------------------------------------------------------------------------------
@@ -117,7 +117,6 @@ theme:                                  j1-template
 template:
   name:                                 j1
   config:                               j1_config
-
 
 # ==============================================================================
 # 3. SITE configuration
@@ -229,8 +228,8 @@ description: >
                                         Made for Jekyll · Made for Your Web
 
 keywords:                               Jekyll, One, Template, Ruby, Asciidoctor,
-                                        Asciidoc, Bootstrap, Javascript,
-                                        JS, JS3, CSS, CSS3, HTML5, Material, Design
+                                        Asciidoc, Bootstrap, Javascript, JS, JS3,
+                                        CSS, CSS3, HTML5, Material, Design
 author:
   name:                                 username
   email:                                username@email.domain
@@ -241,17 +240,17 @@ author:
 webmaster:
   email:                                webmaster@example.domain
 
-# crawling/indexing DISABLED for default. Settings managed page-wise using
-# frontmatter defaults or by page settings to make sure that only WANTED
-# pages gets crawled.
+# Crawling/Indexing ENABLED for default. Settings managed page-wise using
+# frontmatter defaults or by page default settings to make sure that only
+# WANTED pages gets crawled.
 #
 robots:
-  index:                                false
-  follow:                               false
+  index:                                true
+  follow:                               true
 
 # ------------------------------------------------------------------------------
 # BRAND configuration
-# Set the brand image and favicon
+# Set the brand image and favicon (located in /asset/images)
 
 brand:
   image:                                modules/icons/j1/j1-512x512.png
@@ -259,12 +258,11 @@ brand:
   text:                                 Starter Web
   text_color:                           "#9E9E9E"
 
-# Set the favicon (located in the asset_path/images) and type
+# Set the favicon and type
 #
 favicon:
   image:                                modules/icons/j1/j1-32x32.ico
   type:                                 image/ico
-
 
 # ==============================================================================
 # 4. JEKYLL specific site configuration
@@ -338,7 +336,7 @@ base_path:                              ""
 #  Defaults:
 #   protocol:                           http
 #   host:                               localhost
-#   port:                               40000
+#   port:                               4000
 #   timezone:                           Europe/Berlin
 #   encoding:                           UTF-8
 #
@@ -348,9 +346,8 @@ port:                                   40000
 timezone:                               Europe/Berlin
 encoding:                               UTF-8
 
-detach:                                 false
-show_dir_listing:                       false
-
+# detach:                               false
+# show_dir_listing:                     true
 
 # ------------------------------------------------------------------------------
 # PATH configuration
@@ -418,7 +415,7 @@ sass:
 
 # ------------------------------------------------------------------------------
 # POSTS Management
-# Set the post articles to include, exclude and ignore
+# Control how post articles are generated
 #
 future:                                 true                                    # workaround (non US) TZ issues (of April 2021)
 show_drafts:                            false
@@ -608,7 +605,7 @@ defaults:
       vimeo:                            true
 
       toc:                              true
-      fam_menu_id:                      page_ctrl_simple
+      fab_menu_id:                      page_ctrl_simple
       scrollbar:                        false
 
       icons:
@@ -655,7 +652,7 @@ defaults:
       series:                           false
 
       toc:                              true
-      fam_menu_id:                      page_ctrl_simple
+      fab_menu_id:                      page_ctrl_simple
       scrollbar:                        false
 
       icons:
@@ -689,7 +686,7 @@ defaults:
         follow:                         true
 
       toc:                              true
-      fam_menu_id:                      page_ctrl_simple
+      fab_menu_id:                      page_ctrl_simple
       scrollbar:                        false
 
       personalization:                  false
@@ -739,7 +736,7 @@ defaults:
       advertising:                      false
       youtube:                          false
       vimeo:                            false
-      
+
 
 # ==============================================================================
 # 6. LAYOUT configuration
@@ -874,8 +871,8 @@ compress_html:
   startings:                            []
   clippings:                            []
   endings:                              []
-  ignore:
-    envs:                               []
+  ignore:                               []
+  envs:                                 []
 
 # ------------------------------------------------------------------------------
 # END config

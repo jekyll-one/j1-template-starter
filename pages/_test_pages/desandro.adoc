@@ -1,0 +1,147 @@
+---
+title:                                  Tester
+tagline:                                infinite scroll
+date:                                   2020-11-03 00:00:00 +100
+description: >
+                                        Welcome to the preview page focussing on the image module. This page
+                                        shows some valuable features of the J1 Template to manage your image-based
+                                        content using lightboxes, carousels (slider), and galleries.
+
+categories:                             [ Testpages ]
+tags:                                   [ Example ]
+
+comments:                               false
+fab_menu_id:                            page_ctrl_simple
+
+permalink:                              /pages/public/learn/desandro/
+regenerate:                             false
+
+resources:                              [
+                                          clipboard, rouge, carousel, lightbox,
+                                          justifiedGallery, lightGallery
+                                        ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
+          alt:                          Photo by Ricardo Gomez Angel on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Ricardo Gomez Angel
+            href:                       https://unsplash.com/@ripato/portfolio
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+== Infinite Scroll v4 - button
+++++
+<div class="post-container">
+  <article class="post">
+    <h1>1a - Lorem ipsum dolor sit amet</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique mauris nec sapien efficitur, sit amet varius est interdum. Curabitur quis sem felis. Curabitur at quam sit amet mi tempor tristique quis in lorem. Cras id felis sit amet erat accumsan ornare.</p>
+    <p><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" alt="orange-tree" /></p>
+    <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+    <p>Nullam vel odio nec turpis consequat iaculis at ut nibh. Nulla interdum lacus vitae sapien porttitor congue sagittis ac felis.Curabitur in ligula porttitor, varius purus sed, elementum nibh. Nunc ut libero posuere.</p>
+  </article>
+  <article class="post">
+    <h1>1b - Ullamcorper quam at</h1>
+    <p>Ullamcorper quam at, hendrerit eros. Mauris quis vehicula enim.</p>
+    <p><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" alt="cat nose"></p>
+    <p>Duis elementum nisi tortor, ut elementum quam mattis condimentum. Aenean vitae massa sit amet ligula sollicitudin venenatis. Praesent ultrices laoreet hendrerit. Duis tempus ullamcorper enim, ac volutpat augue faucibus sit amet.</p>
+    <p>Donec at consequat elit. Suspendisse dignissim ante vitae urna rutrum cursus. Morbi finibus semper facilisis. In varius sem ut turpis molestie volutpat. Duis ut posuere est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis malesuada placerat luctus. In eget feugiat sapien. Sed gravida ultrices accumsan.</p>
+    <p>In nec ex at mi scelerisque malesuada.</p>
+    <p>Nullam arcu diam, mollis sit amet condimentum et, finibus in ex. Morbi bibendum magna vel tortor fringilla efficitur. Aliquam sed lectus lacus.</p>
+  </article>
+  <article class="post">
+    <h1>1c - Orci varius natoque penatibus et magnis dis parturient montes</h1>
+    <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In varius turpis ipsum, et porta eros eleifend ullamcorper. Sed arcu nisl, rhoncus porta fermentum in, eleifend non dolor.</p>
+    <p>Mauris sagittis a lectus eu fringilla. Maecenas varius cursus aliquam.</p>
+    <p>Suspendisse maximus congue augue eu venenatis. Aliquam urna purus, suscipit ut purus vel, iaculis rhoncus nulla. Donec a velit elementum, pellentesque metus blandit, lacinia erat. Fusce pulvinar mattis erat ac efficitur. Pellentesque aliquam eleifend ligula, eu ullamcorper elit pretium sit amet.</p>
+    <p>Praesent placerat eros sem, vel pretium libero pharetra nec. Morbi hendrerit eleifend commodo. Morbi sodales nunc purus, consequat eleifend nulla dignissim non.</p>
+  </article>
+  <article class="post">
+    <h1>1d - Donec a urna in turpis maximus</h1>
+    <p>Donec a urna in turpis maximus faucibus a nec mauris.</p>
+    <p>Donec iaculis, justo a egestas venenatis, dui nisl faucibus urna, sit amet condimentum quam dui ut libero. Etiam aliquet urna quis nisi aliquam, vitae tincidunt est feugiat.</p>
+    <p>Integer viverra at arcu quis faucibus. Praesent nec venenatis odio. Donec non mattis massa, quis vestibulum leo. Etiam eleifend diam ac magna egestas aliquam. Sed vulputate risus eget efficitur auctor. Mauris aliquam ac purus at semper. Praesent vulputate hendrerit eros, vitae semper turpis venenatis et. Proin et est felis. Etiam sem risus, elementum id cursus quis, laoreet quis orci. Cras eget fermentum lorem, vitae pharetra augue. Etiam tincidunt nulla faucibus, egestas lacus sed, semper metus.</p>
+  </article>
+</div>
+
+
+<style>
+.post {
+  border-top: 1px solid #DDD;
+  margin: 60px 0;
+}
+
+.post img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #CCC;
+  border: none;
+}
+
+.page-load-status {
+  display: none; /* hidden by default */
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
+}
+
+/* loader ellips in separate pen CSS */
+
+</style>
+
+<script>
+
+  $(document).ready(function() {
+
+    function getPenPath() {
+      var pageNumber = ( this.loadCount + 1 );
+      if ( pageNumber < 3) {
+        return `/pages/public/scroller/desandro-p${pageNumber}.html`;
+      }
+    }
+
+    $('.post-container').infiniteScroll({
+      path: getPenPath,
+      append: '.post',
+      history: false,
+      scrollThreshold: 100,
+    });
+   });
+
+</script>
+++++

@@ -30,9 +30,9 @@ settings:
   #
   # enabled
   # ----------------------------------------------------------------------------
-  #   Enables|Disables the use of J1 TocManager
+  #   Enables|Disables the use of J1 Toccer module
   #
-  #   values:                           boolean (true|false)
+  #   values:                           boolean: [true|false]
   #   default:                          false
   #
   #   log
@@ -40,13 +40,11 @@ settings:
   #   Setting the log option to true enables the current option settings to
   #   be written to the JavaScript console so you can inspect the settings.
   #
-  #     values:                         boolean (true|false)
+  #     values:                         boolean: [true|false]
   #     default:                        false
   # ----------------------------------------------------------------------------
   enabled:                              true
   log:                                  false
-  delay:                                400
-
 
 # ------------------------------------------------------------------------------
 # END config

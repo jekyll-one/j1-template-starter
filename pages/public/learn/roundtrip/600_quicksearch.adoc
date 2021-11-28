@@ -15,7 +15,7 @@ tags:                                   [ Introduction, Module, Lunr, QuickSearc
 
 toc:                                    true
 scrollbar:                              false
-fam_menu_id:                            page_ctrl_simple
+fab_menu_id:                            page_ctrl_simple
 
 permalink:                              /pages/public/learn/roundtrip/quicksearch/
 regenerate:                             false
@@ -53,7 +53,7 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// Include sub-documents
+// Include sub-documents (if any)
 // -----------------------------------------------------------------------------
 QuickSearch is based on the search engine Lunr, fully integrated with the J1
 Template. Lunr is designed to be lightweight yet full-featured to provide a
@@ -124,19 +124,21 @@ A document data set might look like this:
 [source, json, role="noclip"]
 ----
 {
-  "title": "Web in a Day",
-  "tagline": "meet & greet jekyll",
-  "url": "/pages/public/learn/kickstarter/web_in_a_day/meet_and_greet/",
-  "date": "2018-05-01 00:00:00 +0000",
+  "id": 3,
+  "title": "Roundtrip",
+  "tagline": "present images",
+  "url": "/pages/public/learn/roundtrip/present_images/",
+  "date": "2020-11-03 00:00:00 +0100",
   "tags": [
-    "Introduction"
+    "Introduction",
+    "Module",
+    "Image"
   ],
   "categories": [
-    "Jekyll",
-    "Knowledge",
-    "Tutorial"
+    "Roundtrip"
   ],
-  "description": "Web in a Day is the first in a series of tutorials ..."
+  "description": "Welcome to the preview page ... and galleries.\n",
+  "is_post": false
 }
 ----
 

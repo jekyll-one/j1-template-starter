@@ -1,0 +1,258 @@
+---
+title:                                  Tester
+tagline:                                deepl
+date:                                   2020-11-03 00:00:00 +100
+description: >
+                                        Welcome to the preview page focussing on the image module. This page
+                                        shows some valuable features of the J1 Template to manage your image-based
+                                        content using lightboxes, carousels (slider), and galleries.
+
+categories:                             [ Testpages ]
+tags:                                   [ Example ]
+
+comments:                               false
+fab_menu_id:                            page_ctrl_simple
+
+permalink:                              /pages/public/learn/deepl-0/
+regenerate:                             false
+
+resources:                              [ clipboard, rouge ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
+          alt:                          Photo by Ricardo Gomez Angel on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Ricardo Gomez Angel
+            href:                       https://unsplash.com/@ripato/portfolio
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// https://github.com/EdwardBalaj/Simple-DeepL-API-Integration
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+== Deepl API V2
+
+An integration of the DeepL API that translates a given text from one language
+(default:English) to another language and outputs the translation.
+
+++++
+<div>
+	<!-- Keeps all elements in a well laid out form. -->
+	<form id="layout">
+		<!-- Source language part, also kept in its own element. -->
+		<div id="source">
+			<!-- Since English is the only option, it will default to it. -->
+			<select id="source-language" name="source-language">
+      <option value="DE">Auto</option>
+				<option value="EN">English</option>
+        <option value="DE">German</option>
+			</select>
+
+			<textarea type="text" id="original-text"></textarea>
+		</div>
+
+		<!-- Uses the translateText() function in the API-DeepL.js file to parse the input, s
+			 end it for translation, and then parse the response. -->
+		<input type="button" id="translate" onclick="translateText()" value="Translate">
+		</br>
+
+		<!-- Destination language part, also kept in its own element. -->
+		<div id="destination">
+			<!-- Since there are more destination languages, and they are all sorted in alphabetical order,
+			     Bulgarian is the default one. -->
+			<select id="destination-language" name="destination-language">
+				<option value="BG">Bulgarian</option>
+				<option value="ZH">Chinese</option>
+				<option value="CS">Czech</option>
+				<option value="DA">Danish</option>
+				<option value="NL">Dutch</option>
+				<option value="EN-US">English (American)</option>
+				<option value="EN-GB">English (British)</option>
+				<option value="EN">English (Others)</option>
+				<option value="ET">Estonian</option>
+				<option value="FI">Finnish</option>
+				<option value="FR">French</option>
+				<option selected value="DE">German</option>
+				<option value="EL">Greek</option>
+				<option value="HU">Hungarian</option>
+				<option value="IT">Italian</option>
+				<option value="JA">Japanese</option>
+				<option value="LV">Latvian</option>
+				<option value="LT">Lithuanian</option>
+				<option value="PL">Polish</option>
+				<option value="PT-PT">Portuguese (Portugal)</option>
+				<option value="PT-BR">Portuguese (Brazilian)</option>
+				<option value="PT">Portuguese (Others)</option>
+				<option value="RO">Romanian</option>
+				<option value="RU">Russian</option>
+				<option value="SK">Slovak</option>
+				<option value="SL">Slovenian</option>
+				<option value="ES">Spanish</option>
+				<option value="SV">Swedish</option>
+			</select>
+
+			<textarea type="text" id="translated-text"></textarea>
+		</div>
+
+	</form>
+</div>
+++++
+
+++++
+<style>
+
+textarea {
+	word-wrap: break-word;
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 10em;
+}
+
+select {
+	display: block;
+	width: 10em;
+	margin: 1em 0;
+}
+
+</style>
+++++
+
+++++
+<script>
+
+/*
+	Author: Alexandru Edward Balaj
+	Date: 15/07/2021
+	Project: Simple DeepL API Integration
+	License: MIT License
+	File name: API-DeepL.js
+	File description: JavaScript algorithm that parses the input, sends it using the DeepL API,
+					  and then parses the output to display it.
+*/
+
+/*
+	The aim of the algorithm design laid out here,
+	was to create a module oriented way,
+	to help with futures updates and allow for easier error tracking.
+*/
+
+/*
+	Authentication key given in the specifications.
+*/
+// var AUTH_KEY = "5652c0b9-adcf-7f2e-f6a2-3a577f700dc9:fx";
+var AUTH_KEY = "fe1c56dc-1342-9899-26db-c5d701791e2d:fx";
+
+var TAG_HANDLING = "xml";
+/*
+	Since the specifications required for the website,
+	to accept only English text, the source language is coded here,
+	so that in the future, if required this could be easily changed.
+*/
+var SOURCE_LANG = "auto";
+
+/*
+	According to XMLHttpRequest specifications, when the request is done,
+	it returns a code ("4"), and when the status of the request is ok,
+	it returns another code ("200");
+*/
+var READYSTATE_DONE = 4;
+var STATUS_OK = 200;
+
+/*
+	Creates an xmlHttpRequest object as soon as the page has loaded.
+*/
+var xhr = new XMLHttpRequest();
+
+/*
+	Setup function for creating a request, designed as a module, according to DeepL API specifications.
+*/
+function setup() {
+	xhr.open("POST", "https://api-free.deepl.com/v2/translate", true);
+
+	xhr.setRequestHeader("Accept", "*/*");
+	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  // xhr.setRequestHeader("tag_handling", "xml");
+	// xhr.setRequestHeader("User-Agent", "DeepL API Implementation");
+	// xhr.setRequestHeader("Content-Length", null);
+}
+
+/*
+	Prepare text function used to parse, or arrange text, designed as a module.
+	Currently it splits all text whenever a newline ("\n") is met,
+	so that it preserves the original layout of the text,
+	which would have otherwise been lost because of the way DeepL accepts multiple sentences.
+*/
+function prepareText(original_text) {
+	return original_text.split("\n");
+}
+
+/*
+	Translate text function which uses all the other modules, in order to create a request,
+	which is sent to the DeepL API to translate, and then display the result, designed as a module.
+*/
+function translateText() {
+	setup();
+
+	var target_language = document.getElementById("destination-language").value;
+
+	var original_text = document.getElementById("original-text").value;
+
+	original_text_lines = prepareText(original_text);
+
+	// Makes a request with every line, as a new text to translate.
+	var request = "";
+	for(var i = 0; i < original_text_lines.length; i++) {
+		request += "&text=" + original_text_lines[i];
+	}
+
+	xhr.onload = function () {
+		if (xhr.readyState === xhr.DONE) {
+			if (xhr.status === 200) {
+				// Uses JSON to parse the response.
+				var result = JSON.parse(xhr.responseText);
+
+				// Recreates the response as one text, which kept its original layout.
+				var translated_text = "";
+				for(var i = 0; i < result.translations.length; i++) {
+					translated_text += result.translations[i].text;
+					translated_text += "\n";
+				}
+
+				document.getElementById("translated-text").value = translated_text;
+			}
+		}
+	};
+
+	// Send the request to the server for translation.
+	//xhr.send("auth_key=" + AUTH_KEY + request + "&source_lang=" + SOURCE_LANG + "&target_lang=" + target_language);
+  xhr.send("auth_key=" + AUTH_KEY + request + "&target_lang=" + target_language + "&tag_handling=xml&ignore_tags=em");
+  //xhr.send("auth_key=" + AUTH_KEY + request + "&source_lang=" + SOURCE_LANG + "&target_lang=" + target_language + "tag_handling=" + TAG_HANDLING);
+}
+</script>
+++++

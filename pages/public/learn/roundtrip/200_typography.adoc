@@ -11,7 +11,7 @@ description: >
 categories:                             [ Roundtrip ]
 tags:                                   [ Introduction, Module, Typography ]
 
-fam_menu_id:                            page_ctrl_simple
+fab_menu_id:                            page_ctrl_simple
 
 permalink:                              /pages/public/learn/roundtrip/typography/
 regenerate:                             false
@@ -56,7 +56,7 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-// Include sub-documents
+// Include sub-documents (if any)
 // -----------------------------------------------------------------------------
 == Typography
 
@@ -67,9 +67,8 @@ as something like images.
 
 == Responsive Text
 
-Sadly, one common flaw is seen in many templates and frameworks (sadly to say:
-the same to Bootstrap, including V4{fn-bootstrap-v5--responsive-text}) is a
-lack of support for genuinely responsive text. While elements on a page resize
+Sadly, one common flaw is seen in many templates and frameworks: a lack of
+support for genuinely responsive text. While elements on a page resize
 fluidly, the text still resizes on a fixed basis. To avoid this issue,
 especially for heavily text-focused pages, J1 Template supports styles that
 fluidly scale text size and line height to optimize readability for the user.
@@ -80,7 +79,7 @@ what will happen in terms of responsiveness.
 
 ++++
 <div>
-  <button type="button" name="toggle-r-text" class="btn btn-primary btn-raised btn-flex mt-3 mb-3">
+  <button type="button" name="toggle-r-text" class="btn btn-primary btn-flex mt-3 mb-3">
     <i class="toggle-button mdi mdi-toggle-switch-off mdi-lg mdi-md-bg-primary-50 mr-1"></i>
     Toggle rtext
   </button>
@@ -137,7 +136,7 @@ responsiveness in action.
 
 ++++
 <div>
-  <button type="button" name="scale-r-text" class="btn btn-primary btn-raised btn-flex mt-3 mb-3">
+  <button type="button" name="scale-r-text" class="btn btn-primary btn-flex mt-3 mb-3">
     <i class="scale-button mdi mdi-arrow-up mdi-lg mdi-md-bg-primary-50 mr-1"></i>
     Scale rtext
   </button>
