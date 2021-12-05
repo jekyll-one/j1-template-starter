@@ -95,7 +95,7 @@ issues for private or professional use.
 
 J1 is supported on all current x64-based OS:
 
-* Windows 10, build >= 1903
+* Windows 10|11
 * Windows WSL 2
 * Linux, kernel version >= 4.15 (e.g. Ubuntu  18.x LTS)
 * OSX, version >= 10.10.5 (Yosemite)
@@ -108,8 +108,8 @@ platforms.
 To run the project for J1 Template Web, the following languages and
 tools expected to be in place with your OS:
 
-*   Ruby language, version >= 2.6 < 3.x
-*   Javascript language (NodeJS), version >= 12.x < 14.x
+*   Ruby language, version >= 2.6 < 3.x (v2.7.x recommended)
+*   Javascript language (NodeJS), version >= 12.x < 14.x (v12.22.x recommended)
 
 ## Update the package managers for _NodeJS_
 
