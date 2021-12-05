@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-# ~/_plugins/minifyJSON.rb
-# Liquid filter for J1 Template to minify a JSON string
+# ~/_plugins/encodeBase64.rb
+# Liquid filter for J1 Template to Base64 encode
 #
 # Product/Info:
 # http://jekyll.one
@@ -9,8 +9,6 @@
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
-# ------------------------------------------------------------------------------
-# => Uglifier.compile(File.read(input))
 # ------------------------------------------------------------------------------
 #  NOTE:
 #  CustomFilters cannot be used in SAFE mode (e.g not usable for
@@ -22,7 +20,8 @@
 #      liquid code to generate HTML output goes here
 #
 #    {% endcapture %}
-#    {{ cache_name | uglify }}
+#    {{ cache_name | encode64 }}
+#
 # ------------------------------------------------------------------------------
 # noinspection SpellCheckingInspection
 # rubocop:disable Lint/UnneededDisable
@@ -33,15 +32,15 @@
 # rubocop:disable Layout/ExtraSpacing
 # rubocop:disable Metrics/AbcSize
 # ------------------------------------------------------------------------------
-require 'json/minify'
+require 'base64'
 
 module Jekyll
-  module MinifyJSON
-    def minifyJSON(input)
-      minified = JSON.minify(input)
-      input = minified
+  module EncodeBase64
+    def encodeBase64(input)
+      encoded = Base64.encode64(input)
+      input = encoded
     end
   end
 end
 
-Liquid::Template.register_filter(Jekyll::MinifyJSON)
+Liquid::Template.register_filter(Jekyll::EncodeBase64)

@@ -361,7 +361,11 @@ resources:
                                           core/css/vendor
 
                                         ]
-        files:                          [ adapter/js/j1.js ]
+        files:                          [
+                                          adapter/js/j1.js,
+#                                         modules/cryptoJS/js/aes.js,
+#                                         "https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"
+                                        ]
         js:                             [
                                           modules/gtag-opt-in/js/gtag-opt-in,
                                           modules/jquery/js/jquery,
@@ -1299,7 +1303,28 @@ resources:
       data:
         css:                            []
         files:                          []
-        js:                             [ modules/deeplAPI/js/deeplAPI ]
+        js:                             [ modules/cryptoJS/js/aes, modules/deeplAPI/js/deeplAPI ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # cryptoJS, JavaScript implementations of standard and secure cryptographic algorithms
+  #
+  - name:                               cryptoJS
+    resource:
+      id:                               cryptoJS
+      enabled:                          true
+      comment:                          cryptoJS
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          []
+        js:                             [ modules/cryptoJS/js/aes ]
         init_function:                  []
 
   # ----------------------------------------------------------------------------

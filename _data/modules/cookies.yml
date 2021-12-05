@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-#  ~/_data/modules/google_translate.yml
-#  User configuration settings for J1 Google Translate module
+#  ~/_data/modules/cookies.yml
+#  User configuration settings for J1 Cookie module
 #
 #  Product/Info:
 #  https://jekyll.one
@@ -16,20 +16,15 @@
 #
 description:
 
-  title:                                J1 Translator
+  title:                                Cookies
   scope:                                User settings
-  location:                             _data/modules/translator.yml
+  location:                             _data/modules/cookies.yml
 
 # ------------------------------------------------------------------------------
 # User configuration settings
 #
 settings:
-
-  enabled:                              true
-  translatorName:                       google
-  contentLanguage:                      en                                      # [auto|any supported language], auto: language set by site config
-  dialogLanguage:                       auto                                    # [auto|en|de], auto: language set by site config
-  translationLanguage:                  de                                      # any supported language
+  expires:                              365
 
 # ------------------------------------------------------------------------------
 # END config

@@ -23,8 +23,9 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 global:
 
-  # used by J1 for encryption
-  session_secret:                       <your-secret-string>
+  # used for OpenSSL AES encryption
+  # secretkey MUST be 32 bytes (AES|CBC)
+  secretkey:                            <your-secret-string>
 
 
 # ==============================================================================

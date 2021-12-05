@@ -53,7 +53,7 @@ environment:                            development
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2022.0.2
+version:                                2022.0.7
 
 # version
 # ------------------------------------------------------------------------------
@@ -729,14 +729,13 @@ defaults:
         follow:                         false
 
       personalization:                  false
-      exclude_from_search:              false
+      exclude_from_search:              true
 
       analytics:                        false
       comments:                         false
       advertising:                      false
       youtube:                          false
       vimeo:                            false
-
 
 # ==============================================================================
 # 6. LAYOUT configuration

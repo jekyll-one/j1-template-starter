@@ -1,6 +1,6 @@
 ---
 layout:                                 page
-title:                                  Disruptors Blog
+title:                                  Starter Blog
 tagline:                                posts by category
 date:                                   2023-01-01 01:00:00 +100
 description:                            Browse articles by category
@@ -247,24 +247,3 @@ site_category_word_list:    {{site_category_word_list | debug}}
       {% endfor %}
   {% endfor %}
 </div>
-
-++++
-<script>
-  $(function () {
-    var logger          = log4javascript.getLogger('j1.blog.scroller');
-    var scrollOffset    = j1.getScrollOffset();
-    var scrollDuration  = 300;
-    var anchor_id;
-
-    $('.badge-tag').on('click', function (e) {
-      e.preventDefault();
-      anchor_id = e.target.hash;
-      logger.debug('\n' + 'badge clicked: ' + anchor_id);
-
-      $('html, body').animate({
-        scrollTop: $(anchor_id).offset().top + scrollOffset
-      }, scrollDuration);
-    });
-  }); //END page ready
-</script>
-++++

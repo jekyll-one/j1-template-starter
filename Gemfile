@@ -53,7 +53,7 @@ gem 'jekyll', '~> 4.2'
 
 # Theme Rubies, default: J1 Template (NOT used for the development system)
 #
-gem 'j1-template', '~> 2022.0.2'
+gem 'j1-template', '~> 2022.0.7'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -167,6 +167,12 @@ end
 #
 # gem 'passenger', '>= 5.3'
 gem 'puma', '>= 5.5.2'
+
+# ------------------------------------------------------------------------------
+# OpenSSL provides SSL, TLS and general purpose cryptography. Used to
+# encrypt 'private' data
+#
+gem 'openssl'
 
 # ------------------------------------------------------------------------------
 # If J1 is transformed into a (Rack and Sinatra based) Web

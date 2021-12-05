@@ -166,33 +166,53 @@ defaults:
     icon_color_hover:                   rgba(255, 255, 255, 0.9)                # rgba-lighten-900
     icon_size:                          mdi-2x
 
-    cookies_icon:                       cookie
-    top_search_icon:                    magnify
-    translate_icon:                     google-translate
-
-    translator_icon:                    flag-variant
-
-    toc_icon:                           wrap
-
+    # Link buttons
+    # --------------------------------------------------------------------------
     home_icon:                          home-variant
     home_url:                           none
-
-    r_text_sizer:                       false
-    r_text_icon:                        format-text                             # format-color-text format-annotation-plus
+    home_label:                         Home
 
     back_icon:                          subdirectory-arrow-left
     back_url:                           none
+    back_label:                         Page back
 
     disqus_icon:                        disqus
     disqus_url:                         none
+    disqus_label:                       Disqus
+
     github_icon:                        github-circle
     github_url:                         none
+    github_label:                       Github
+
     patreon_icon:                       patreon
     patreon_url:                        none
+    patreon_label:                      Patreon
+
     facebook_icon:                      facebook
     facebook_url:                       none
+    facebook_label:                     Facebook
+
     twitter_icon:                       twitter
     twitter_url:                        none
+    twitter_label:                      Twitter
+
+    # Action buttons
+    # --------------------------------------------------------------------------
+    quicksearch_icon:                   magnify
+    quicksearch_action:                 quicksearch
+    quicksearch_label:                  Search
+
+    cookies_icon:                       cookie
+    cookies_action:                     cookie-consent
+    cookies_label:                      Cookie Consent
+
+    translate_icon:                     google-translate
+    translate_action:                   translate
+    translate_label:                    Google Translate
+
+    r_text_icon:                        false                                   # format-text
+    r_text_action:                      rtext
+    r_text_label:                       Text Resizer
 
   # ----------------------------------------------------------------------------
   # NavTopsearch

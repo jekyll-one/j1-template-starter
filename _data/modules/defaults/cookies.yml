@@ -1,0 +1,39 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/modules/defaults/cookies.yml
+#  Default configuration settings for J1 Cookie module
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2021 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+# See:
+#   https://datatracker.ietf.org/doc/html/rfc6265
+#   https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+#
+
+# ------------------------------------------------------------------------------
+# Description (used for J1 CC only)
+#
+description:
+
+  title:                                Cookies
+  scope:                                Default settings
+  location:                             _data/modules/defaults/cookies.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+  path:                                 /                                       # path attribute indicates a URL PATH that must exist in the requested URL in order to send the Cookie header
+  domain:                               localhost                               # specifies which hosts can receive a cookie. If not set, the attribute defaults to the same host that set the cookie (excluding subdomain)
+  expires:                              0                                       # lifetime of a cookie [0..365], 0: session cookie
+  same_site:                            Lax                                     # [Strict|Lax], Lax: sent for all requests
+  http_only:                            false                                   # prevent access to cookie values via JavaScript
+  secure:                               false                                   # only sent to the server with an encrypted request over the HTTPS protocol
+
+# ------------------------------------------------------------------------------
+# END config

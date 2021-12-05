@@ -47,7 +47,8 @@ module Jekyll
   module J1_Filters
 
     EMPTY = ''
-    EMPTY_LINE = /^\s*\n/
+#   EMPTY_LINE = /^\s*\n/
+    EMPTY_LINE = /^\s*$\n/
     MULTIPLE_SPACES = / +/
     ALL_SPACES = /\s+/
     COMMENT_LINE = /^\s*#.*\n|\s*#.*\n/
