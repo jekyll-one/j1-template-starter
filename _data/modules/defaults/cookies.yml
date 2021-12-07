@@ -28,12 +28,76 @@ description:
 # Default settings
 #
 defaults:
-  path:                                 /                                       # path attribute indicates a URL PATH that must exist in the requested URL in order to send the Cookie header
-  domain:                               localhost                               # specifies which hosts can receive a cookie. If not set, the attribute defaults to the same host that set the cookie (excluding subdomain)
-  expires:                              0                                       # lifetime of a cookie [0..365], 0: session cookie
-  same_site:                            Lax                                     # [Strict|Lax], Lax: sent for all requests
-  http_only:                            false                                   # prevent access to cookie values via JavaScript
-  secure:                               false                                   # only sent to the server with an encrypted request over the HTTPS protocol
+
+  # ----------------------------------------------------------------------------
+  # Settings/Attributes
+  #
+  #   path
+  #   --------------------------------------------------------------------------
+  #   Attribute 'path' indicates a URL PATH that must exist in the requested
+  #   URL in order to send the Cookie header
+  #
+  #   values:                           string
+  #   default:                          '/'
+  #
+  #   domain
+  #   --------------------------------------------------------------------------
+  #   Switch 'domain' controls if the value for the attribute 'domain' is
+  #   (automatically) set to hostname (false) or domain (true) for the host
+  #   set the cookie.
+  #   If set to 'false', the attribute defaults to the same host that set the
+  #   cookie. If the host is set, all subdomains are EXCLUDED (restricted).
+  #   If set to 'true', the attribute defaults to the domain which hosts can
+  #   receive a cookie. This setting allows ALL subdomains to receive a cookie.
+  #
+  #   NOTE: Be carefull setting switch 'domain' to true. For sites deployed
+  #         to hosts of (public domain) providers like Netlify, this will open
+  #         cookie access to hosts! See 'same_site'.
+  #
+  #   values:                           [false|true]
+  #   default:                          false
+  #
+  #   expires
+  #   --------------------------------------------------------------------------
+  #   lifetime of a cookie [0..365] days. The value of 0 results in a
+  #   SESSION cookie. For all otrher values >0, the cookie results in a
+  #   PERMANENT cookie.
+  #
+  #   values:                           [0..365]
+  #   default:                          0
+  #
+  #   same_site
+  #   --------------------------------------------------------------------------
+  #   Lax: sent for all requests (including subdomains).
+  #   Strict: the cookie is only sent to the site where it originated
+  #   (excluding subdomains)
+  #
+  #   values:                           [Strict|Lax]
+  #   default:                          Strict
+  #
+  #   http_only
+  #   --------------------------------------------------------------------------
+  #   prevent access to cookie values via JavaScript
+  #
+  #   values:                           [false|true]
+  #   default:                          false
+
+  #   secure
+  #   --------------------------------------------------------------------------
+  #   Cookies are only sent to the server with an encrypted request over
+  #   the HTTPS protocol
+  #
+  #   values:                           [false|true]
+  #   default:                          false
+  #
+  # ----------------------------------------------------------------------------
+  #
+  path:                                 /
+  domain:                               true
+  expires:                              0
+  same_site:                            Strict
+  http_only:                            false
+  secure:                               false
 
 # ------------------------------------------------------------------------------
 # END config
