@@ -43,18 +43,19 @@ defaults:
   #   domain
   #   --------------------------------------------------------------------------
   #   Switch 'domain' controls if the value for the attribute 'domain' is
-  #   (automatically) set to hostname (false) or domain (true) for the host
-  #   set the cookie.
-  #   If set to 'false', the attribute defaults to the same host that set the
-  #   cookie. If the host is set, all subdomains are EXCLUDED (restricted).
-  #   If set to 'true', the attribute defaults to the domain which hosts can
-  #   receive a cookie. This setting allows ALL subdomains to receive a cookie.
+  #   used (= auto|domain) or NOT used (false). If 'auto' is given, the domain
+  #   is calculated from the hostname. Otherwise domain is treates as domain
+  #   to be used.
+  #   If the switch 'domain' is to 'false', the attribute 'domain' is
+  #   automatically set to the (fully qualified) hostname and all subdomains
+  #   are EXCLUDED from accessing the cookies.
   #
-  #   NOTE: Be carefull setting switch 'domain' to true. For sites deployed
-  #         to hosts of (public domain) providers like Netlify, this will open
-  #         cookie access to hosts! See 'same_site'.
+  #   NOTE: Be carefull setting switch 'domain' to auto. For sites deployed
+  #         to hosts of public domain providers like Netlify (netlify.app),
+  #         this will open the access on cookies to ALL hosts (subdomains)!
+  #         See 'same_site'.
   #
-  #   values:                           [false|true]
+  #   values:                           [false|auto|domain]
   #   default:                          false
   #
   #   expires
@@ -81,7 +82,7 @@ defaults:
   #
   #   values:                           [false|true]
   #   default:                          false
-
+  #
   #   secure
   #   --------------------------------------------------------------------------
   #   Cookies are only sent to the server with an encrypted request over
@@ -90,11 +91,19 @@ defaults:
   #   values:                           [false|true]
   #   default:                          false
   #
+  #   check_cookies
+  #   --------------------------------------------------------------------------
+  #   Check if cookies created/available
+  #
+  #   values:                           [false|true]
+  #   default:                          true
+  #
   # ----------------------------------------------------------------------------
   #
+  check_cookies:                        false
   path:                                 /
-  domain:                               true
-  expires:                              0
+  domain:                               false
+  expires:                              365
   same_site:                            Strict
   http_only:                            false
   secure:                               false
