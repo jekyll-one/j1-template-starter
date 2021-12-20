@@ -126,6 +126,18 @@ lanes:
       properties:                       mb-0
 
   # ----------------------------------------------------------------------------
+  # Top Advertisment
+  #
+  - lane:
+      enabled:                          false
+      region:                           body-header
+      id:                               google_ad_top_home
+      type:                             sync
+      base:                             _includes/themes/j1
+      path:                             modules/ads
+      file:                             google_ad_top_home.html
+
+  # ----------------------------------------------------------------------------
   #   PAGE CONTENT (region body-main)
   #
   #   NOTE:
@@ -183,6 +195,18 @@ lanes:
       region:                           body-main
       type:                             async
       properties:                       mt-4 mr-5 mb-4 ml-5
+
+  # ----------------------------------------------------------------------------
+  # Page Advertisment
+  #
+  - lane:
+      enabled:                          false
+      region:                           body-main
+      id:                               google_ad_content_home
+      type:                             sync
+      base:                             _includes/themes/j1
+      path:                             modules/ads
+      file:                             google_ad_content_home.html
 
   # ----------------------------------------------------------------------------
   # INTRO panel

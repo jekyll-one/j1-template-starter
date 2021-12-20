@@ -1369,5 +1369,29 @@ resources:
         js:                             [ modules/translator/js/translator ]
         init_function:                  [ j1.adapter.translator.init ]
 
+  # ----------------------------------------------------------------------------
+  #  Advertising, JS API to provide Ads for J1 Template
+  #
+  - name:                               Advertising
+    resource:
+      id:                               advertising
+      enabled:                          true
+      comment:                          module advertising
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      sync
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          [
+                                          modules/advertising/js/google/adInitializer.js,
+                                          adapter/js/advertising.js
+                                        ]
+        js:                             []
+        init_function:                  [ j1.adapter.advertising.init ]
+
 # ------------------------------------------------------------------------------
 # END config

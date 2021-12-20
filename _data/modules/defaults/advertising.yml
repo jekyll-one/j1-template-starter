@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/advertising.yml
-# User Configuration of the Ad Module
+# ~/_data/modules/default/advertising.yml
+# Default configuration settings of the Ad Module
 #
 # Product/Info:
 # https://jekyll.one
@@ -20,13 +20,13 @@
 #
 about_config:
   title:                                Advertising
-  scope:                                User settings
-  location:                             _data/modules/advertising.yml
+  scope:                                Default settings
+  location:                             _data/modules/default/advertising.yml
 
 # ------------------------------------------------------------------------------
 # User settings
 #
-settings:
+defaults:
 
   # ----------------------------------------------------------------------------
   # Settings
@@ -49,7 +49,8 @@ settings:
   #
   # ----------------------------------------------------------------------------
   #
-  enabled:                              true
+  enabled:                              false
+  provider:                             google
 
   google:
 
@@ -94,81 +95,11 @@ settings:
     #
     # --------------------------------------------------------------------------
     #
-    publisherID:                        ca-pub-xxxx..xxx
-    autoHideOnUnfilled:                 false
+    autoHideOnUnfilled:                 true
     addBorderOnUnfilled:                true
-    checkTrackingProtection:            true
-    showErrorPageOnBlocked:             true
+    checkTrackingProtection:            false
+    showErrorPageOnBlocked:             false
     addBorderOnUnfilled:                true
-
-    ads:
-
-      # ------------------------------------------------------------------------
-      # Attributes
-      #
-      #   enabled
-      #   ----------------------------------------------------------------------
-      #   Enables or disables an ad unit (container). If an container is
-      #   disabled, this unit get NOT initialized for ads on any page.
-      #
-      #   values:                       [true|false]
-      #   default:                      true
-      #
-      #   placement (currently NOT supported)
-      #   ----------------------------------------------------------------------
-      #   Defines the placements of the unit container specified. For default
-      #   (manual), all ad units are placed on (home/content) pages manually
-      #   by adding the <ins>-code.
-      #
-      #   values:                       [manual|auto|content-top|content-bottom]
-      #   default:                      manual
-      #
-      #   adSlot (currently NOT supported)
-      #   ----------------------------------------------------------------------
-      #   Defines the slot-id of the unit container specified.
-      #
-      #   values:                       string
-      #   default:                      none
-      #
-      #   adTest (currently NOT supported)
-      #   ------------------------------------------------------------------------
-      #   For testing only. If adTest is enabled (true), clicks and impressions
-      #   aren't recorded by the ad service and advertisers aren't charged.
-      #
-      #   values:                       [true|false]
-      #   default:                      false
-      #
-      # --------------------------------------------------------------------------
-
-      # ------------------------------------------------------------------------
-      # Google Ad resposive full-width
-      #
-#     - name:                           display-ad-horizontal-1
-#       ad:
-#         enabled:                      true
-#         placement:                    manual
-#         adSlot:                       xxxx..xxx
-#         adTest:                       false
-
-      # ------------------------------------------------------------------------
-      # Google Ad resposive full-width
-      #
-#     - name:                           display-ad-horizontal-2
-#       ad:
-#         enabled:                      false
-#         placement:                    manual
-#         adSlot:                       xxxx..xxx
-#         adTest:                       false
-
-      # ------------------------------------------------------------------------
-      # Google Ad resposive full-width
-      #
-#     - name:                           in-article-ad-1
-#       ad:
-#         enabled:                      false
-#         placement:                    manual
-#         adSlot:                       xxxx..xxx
-#         adTest:                       false
 
 # ------------------------------------------------------------------------------
 # END config
