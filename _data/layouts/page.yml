@@ -123,13 +123,13 @@ lanes:
   # ----------------------------------------------------------------------------
   # Ad Block
   #
-  - lane:
-      enabled:                          false
-      region:                           body-header
-      type:                             sync
-      base:                             _includes/themes/j1
-      path:                             blocks/ads
-      file:                             ad.html
+  # - lane:
+  #     enabled:                          false
+  #     region:                           body-header
+  #     type:                             sync
+  #     base:                             _includes/themes/j1
+  #     path:                             blocks/ads
+  #     file:                             ad.html
 
   # ----------------------------------------------------------------------------
   # PAGE CONTENT (region body-main)
@@ -169,17 +169,6 @@ lanes:
       base:                             _includes/themes/j1
       path:                             layouts
       file:                             content_generator_page.html
-
-  # ----------------------------------------------------------------------------
-  # COMMENT connector (e.g. for DISQUS as part of the CONTENT section)
-  #
-  - lane:
-      enabled:                          true
-      region:                           body-main
-      type:                             sync
-      base:                             _includes/themes/j1
-      path:                             modules/connectors
-      file:                             comments
 
   # ----------------------------------------------------------------------------
   # FAM

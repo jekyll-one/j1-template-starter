@@ -13,125 +13,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Themer settings
+# Description (used for J1 CC only)
 #
-#   enabled
-#   ----------------------------------------------------------------------------
-#   Enables|Disables the use of J1 Themer
-#
-#     values:                           boolean (true|false)
-#     default:                          false
-#
-#   debug
-#   ----------------------------------------------------------------------------
-#   Enables|Disables the console log
-#
-#     values:                           boolean (true|false)
-#     default:                          false
-#
-#   cssThemeLink
-#   ----------------------------------------------------------------------------
-#   The ID used for the bootstrap theme css file
-#
-#     values:                           string
-#     default:                          bootstrapTheme
-#
-#   saveToCookie
-#   ----------------------------------------------------------------------------
-#   If true, a cookie will be saved with the currently selected theme
-#
-#     values:                           boolean (true|false)
-#     default:                          true
-#
-# cookieThemeName
-#   The name of the cookie to be used to store the theme name
-#
-#   values:                             string
-#   default:                            bootstrapTheme.name
-#
-#   cookieDefaultThemeName
-#   ----------------------------------------------------------------------------
-#   The name of the cookie to be used to store the default theme name
-#
-#     values:                           string
-#     default:                          bootstrapDefaultTheme.name
-#
-#   cookieThemeCss
-#   ----------------------------------------------------------------------------
-#   The name of the cookie to be used to store the css file name
-#   used for the theme
-#
-#     values:                           string
-#     default:                          bootstrapTheme.css
-#
-#   cookieExpiration
-#   ----------------------------------------------------------------------------
-#   The number of days the cookies should expire
-#
-#     values:                           integer
-#     default:                          7
-#
-#   cookiePath
-#   ----------------------------------------------------------------------------
-#   The path the cookie should be stored
-#
-#     values:                           string (path)
-#     default:                          /
-#
-#   defaultCssFile
-#   ----------------------------------------------------------------------------
-#   The default css file the plugin should use if it can not load
-#   the themes from Bootswatch
-#
-#     values:                           string (URI)
-#     default:                          https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
-#
-#   bootswatchApiUrl
-#   ----------------------------------------------------------------------------
-#   The url for the bootswatch api
-#
-#     values:                           string (URI)
-#     default:                          http://api.bootswatch.com
-#
-#   bootswatchApiVersion
-#   ----------------------------------------------------------------------------
-#   The version of the bootswatch api to use
-#
-#     values:                           integer
-#     default:                          3
-#
-#   localFeed
-#   ----------------------------------------------------------------------------
-#   The path to a JSON file that contains the themes you want to use.
-#   If this parameter is used, the control will be loaded the themes
-#   from here and not go to the bootswatchApiUrl. A sample of the json
-#   file can be found at themes.json
-#
-#     values:                           string
-#     default:                          empty string
-#
-#   excludeBootswatch
-#   ----------------------------------------------------------------------------
-#   Comma separated list of BootSwatch names (e.g. Slate,Yeti) that
-#   should be excluded from the rendered <ul> or <select>
-#
-#     values:                           string
-#     default:                          empty string
-#
-#   hideOnReload
-#   ----------------------------------------------------------------------------
-#   Number of milliseconds (msec) the current page is hidden (display: none)
-#   to prevent "DOM flicker" aka "FOUC" (Flash of unstyled content)  while
-#   the css file is loaded|activated
-#
-#     values:                           integer
-#     default:                          150
-# ------------------------------------------------------------------------------
-
-# ------------------------------------------------------------------------------
-# About this configuration (used for J1 CC only)
-#
-about_config:
+description:
 
   title:                                Themer
   scope:                                Default settings
@@ -142,6 +26,123 @@ about_config:
 #
 defaults:
 
+  # ----------------------------------------------------------------------------
+  # Themer settings
+  #
+  #   enabled
+  #   --------------------------------------------------------------------------
+  #   Enables|Disables the use of J1 Themer
+  #
+  #     values:                         boolean (true|false)
+  #     default:                        false
+  #
+  #   debug
+  #   --------------------------------------------------------------------------
+  #   Enables|Disables the console log
+  #
+  #     values:                         boolean (true|false)
+  #     default:                        false
+  #
+  #   cssThemeLink
+  #   --------------------------------------------------------------------------
+  #   The ID used for the bootstrap theme css file
+  #
+  #     values:                         string
+  #     default:                        bootstrapTheme
+  #
+  #   saveToCookie
+  #   --------------------------------------------------------------------------
+  #   If true, a cookie will be saved with the currently selected theme
+  #
+  #     values:                         boolean (true|false)
+  #     default:                        true
+  #
+  # cookieThemeName
+  #   The name of the cookie to be used to store the theme name
+  #
+  #   values:                           string
+  #   default:                          bootstrapTheme.name
+  #
+  #   cookieDefaultThemeName
+  #   --------------------------------------------------------------------------
+  #   The name of the cookie to be used to store the default theme name
+  #
+  #     values:                         string
+  #     default:                        bootstrapDefaultTheme.name
+  #
+  #   cookieThemeCss
+  #   --------------------------------------------------------------------------
+  #   The name of the cookie to be used to store the css file name
+  #   used for the theme
+  #
+  #     values:                         string
+  #     default:                        bootstrapTheme.css
+  #
+  #   cookieExpiration
+  #   --------------------------------------------------------------------------
+  #   The number of days the cookies should expire
+  #
+  #     values:                         integer
+  #     default:                        7
+  #
+  #   cookiePath
+  #   --------------------------------------------------------------------------
+  #   The path the cookie should be stored
+  #
+  #     values:                         string (path)
+  #     default:                        /
+  #
+  #   defaultCssFile
+  #   --------------------------------------------------------------------------
+  #   The default css file the plugin should use if it can not load
+  #   the themes from Bootswatch
+  #
+  #     values:                         string (URI)
+  #     default:                        https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
+  #
+  #   bootswatchApiUrl
+  #   --------------------------------------------------------------------------
+  #   The url for the bootswatch api
+  #
+  #     values:                         string (URI)
+  #     default:                        http://api.bootswatch.com
+  #
+  #   bootswatchApiVersion
+  #   --------------------------------------------------------------------------
+  #   The version of the bootswatch api to use
+  #
+  #     values:                         integer
+  #     default:                        3
+  #
+  #   localFeed
+  #   --------------------------------------------------------------------------
+  #   The path to a JSON file that contains the themes you want to use.
+  #   If this parameter is used, the control will be loaded the themes
+  #   from here and not go to the bootswatchApiUrl. A sample of the json
+  #   file can be found at themes.json
+  #
+  #     values:                         string
+  #     default:                        empty string
+  #
+  #   excludeBootswatch
+  #   --------------------------------------------------------------------------
+  #   Comma separated list of BootSwatch names (e.g. Slate,Yeti) that
+  #   should be excluded from the rendered <ul> or <select>
+  #
+  #     values:                         string
+  #     default:                        empty string
+  #
+  #   hideOnReload
+  #   --------------------------------------------------------------------------
+  #   Number of milliseconds (msec) the current page is hidden (display: none)
+  #   to prevent "DOM flicker" aka "FOUC" (Flash of unstyled content)  while
+  #   the css file is loaded|activated
+  #
+  #     values:                         integer
+  #     default:                        150
+  #
+  # ----------------------------------------------------------------------------
+  #
   enabled:                              false
 
   reloadPageOnChange:                   false                                   # reload current page, if theme has been changed

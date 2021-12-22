@@ -1,0 +1,99 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/modules/analytics.yml
+#  User configuration settings for J1 Analytics module
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2021 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description (used for J1 CC only)
+#
+description:
+
+  title:                                J1 Analytics
+  scope:                                User settings
+  location:                             _data/modules/analytics.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # Settings
+  #
+  #   enabled
+  #   --------------------------------------------------------------------------
+  #   Enables or disables the Analytics services. If disabled, the services
+  #   won't be enabled on any page.
+  #
+  #   values:                           [true|false]
+  #   default:                          false
+  #
+  #   provider
+  #   --------------------------------------------------------------------------
+  #   Currently, only Google Analytics (google) is available as an provider
+  #   for Analytics services.
+  #
+  #   values:                           [google]
+  #   default:                          google
+  #
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
+
+  provider:                             google
+  google:
+    # --------------------------------------------------------------------------
+    # Provider settings
+    #
+    #   trackingID
+    #   ------------------------------------------------------------------------
+    #   Your tracking id (G-XXX..XX) connected with your Analytices
+    #   Account the for the domain registered.
+    #
+    #   values:                         string
+    #   default:                        none
+    #
+    #   optInOut
+    #   ------------------------------------------------------------------------
+    #   Google Analytics Opt In. GA will be enabled by default and at a
+    #   later point it can be disabled based on the visitor's privacy
+    #   settings (Analytics) with the cookie consent dialog.
+    #
+    #   values:                         [true|false]
+    #   default:                        true
+    #
+    #   anonymizeIP
+    #   ------------------------------------------------------------------------
+    #   For the use of Google Analytics to comply with the GDPR, the processed
+    #   IP address at GA can be anonymized (set option 'anonymizeIp' to 'true').
+    #   The IP anonymization function at Google GA holds the data "in memeory"
+    #   and sets the last octet for the user's IPv4 addresses and the last
+    #   80 bits for IPv6 addresses to zero.
+    #   That happens at GA shortly after they are sent to Google Analytics.
+    #   This way, the full IP address is NEVER written to disk or stored
+    #   permanenty anyway. Geographically dimensions are later derived from
+    #   the anonymized IP address NOT affected by anonymization.
+    #
+    #   See:
+    #     https://support.google.com/analytics/answer/2763052
+    #     https://developers.google.com/analytics/devguides/collection/analyticsjs/ip-anonymization?hl=en
+    #
+    #   values:                         [true|false]
+    #   default:                        true
+    #
+    # --------------------------------------------------------------------------
+    #
+    trackingID:                         G-299QGW5RJH                            # '<your-tracking-id>'
+    optInOut:                           true
+    anonymizeIP:                        true
+
+# ------------------------------------------------------------------------------
+# END config

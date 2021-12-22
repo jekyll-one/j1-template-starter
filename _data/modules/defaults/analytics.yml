@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/default/advertising.yml
-# Default configuration settings of the Ad Module
+# ~/_data/modules/default/analytics.yml
+# Default configuration settings of the Analytics Module (GAD)
 #
 # Product/Info:
 # https://jekyll.one
@@ -20,12 +20,12 @@
 #
 description:
 
-  title:                                Advertising
+  title:                                Analytics
   scope:                                Default settings
-  location:                             _data/modules/default/advertising.yml
+  location:                             _data/modules/default/analytics.yml
 
 # ------------------------------------------------------------------------------
-# User settings
+# Default settings
 #
 defaults:
 
@@ -58,49 +58,36 @@ defaults:
     # --------------------------------------------------------------------------
     # Provider settings
     #
-    #   publisherID
+    #   optInOut
     #   ------------------------------------------------------------------------
-    #   Your publisher id (ca-pub-xxxx..xxx) connected with your Adsense
-    #   Account the for the domain registered.
-    #
-    #   values:                         string
-    #   default:                        none
-    #
-    #   autoHideOnUnfilled
-    #   ------------------------------------------------------------------------
-    #   For several reasons, the placed ad (unit) containers get unfilled (no
-    #   ad placed inside). Unfilled unit containers results in blank areas
-    #   instead. Using the setting autoHideOnUnfilled, unfilled containers
-    #   can be hidden automatically.
+    #   Google Analytics Opt In. GA will be enabled by default and at a
+    #   later point it can be disabled based on the visitor's privacy
+    #   settings (Analytics) with the cookie consent dialog.
     #
     #   values:                         [true|false]
     #   default:                        true
     #
-    #   checkTrackingProtection (currently NOT supported)
+    #   anonymizeIP
     #   ------------------------------------------------------------------------
-    #   Modern browsers in their current versions (e.g. FireFox) provide
-    #   Tracking Protection build-in. If Tracking Protection is enabled
-    #   for a browser, showing ads may blocked automatically. All unit
-    #   containers affected by Tracking Protection are hidden automatically.
+    #   For the use of Google Analytics to comply with the GDPR, the processed
+    #   IP address at GA can be anonymized. The IP anonymization function in
+    #   analytics sets the last octet for user's IPv4 addresses and the last
+    #   80 bits for IPv6 addresses to zero. That happens at GA shortly after
+    #   they are sent to Google Analytics.
+    #   This way, the full IP address is never written. Geographically
+    #   Dimensions are later derived from anonymized IP addresses.
+    #
+    #   See:
+    #     https://support.google.com/analytics/answer/2763052
+    #     https://developers.google.com/analytics/devguides/collection/analyticsjs/ip-anonymization?hl=en
     #
     #   values:                         [true|false]
-    #   default:                        false
-    #
-    #   showErrorPageOnBlocked (currently NOT supported)
-    #   ------------------------------------------------------------------------
-    #   If Tracking Protection is detected for a browser, no content is
-    #   presented to the visitor and an error page is shown (HTML 447).
-    #
-    #   values:                         [true|false]
-    #   default:                        false
+    #   default:                        true
     #
     # --------------------------------------------------------------------------
     #
-    autoHideOnUnfilled:                 true
-    addBorderOnUnfilled:                true
-    checkTrackingProtection:            false
-    showErrorPageOnBlocked:             false
-    addBorderOnUnfilled:                true
+    optInOut:                           true
+    anonymizeIP:                        true
 
 # ------------------------------------------------------------------------------
 # END config

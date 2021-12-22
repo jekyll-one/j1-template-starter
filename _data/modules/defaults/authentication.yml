@@ -13,63 +13,66 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Authentication (j1_auth)
+# Description (used for J1 CC only)
 #
-# If a site is started as an app, this transforms the web into an
-# Web Application based on Rack and Sinatra using the Omniauth
-# software stack for authentication to enable User Management
-# and Authentication services for secured private web sites.
-#
-# enabled
-# ------------------------------------------------------------------------------
-#   Enables or disables the Auth Manager services for the web.
-#   If disabled, all pages are accessible without authentication.
-#
-#   values:                           true|false
-#   default:                          false
-#
-# ssl
-# ------------------------------------------------------------------------------
-#   Enforce SSL communication for the app. If you've got SSL
-#   set up, ensure SSL is enforced.
-#
-#   values:                           true|false
-#   default:                          false
-#
-# provider
-# ------------------------------------------------------------------------------
-#   List of enabled OAuth providers to be used for the auth
-#   service for authentication. The first provider in a list
-#   is used for default.
-#
-#   values:                           [disqus|github|facebook|patreon|twitter]
-#   default:                          none
-#
-# whitelist
-# ------------------------------------------------------------------------------
-#   List of pages (and assets) skipped for authentication.
-#   Values can be given as regular expressions.
-#
-#   values:                           string
-#   default:                          none
-#
-# ------------------------------------------------------------------------------
-
-
-# ------------------------------------------------------------------------------
-# About this configuration (used for J1 CC only)
-#
-about_config:
+description:
 
   title:                                Authentication
   scope:                                Default settings
   location:                             _data/modules/defaults/authentication.yml
 
 # ------------------------------------------------------------------------------
-# Default configuration settings
+# Default settings
 #
 defaults:
+  enabled:                              true
 
+  # ----------------------------------------------------------------------------
+  # Authentication (j1_auth)
+  #
+  # If a site is started as an app, this transforms the web into an
+  # Web Application based on Rack and Sinatra using the Omniauth
+  # software stack for authentication to enable User Management
+  # and Authentication services for secured private web sites.
+  #
+  # enabled
+  # ----------------------------------------------------------------------------
+  #   Enables or disables the Auth Manager services for the web.
+  #   If disabled, all pages are accessible without authentication.
+  #
+  #   values:                           true|false
+  #   default:                          false
+  #
+  # ssl
+  # ----------------------------------------------------------------------------
+  #   Enforce SSL communication for the app. If you've got SSL
+  #   set up, ensure SSL is enforced.
+  #
+  #   values:                           true|false
+  #   default:                          false
+  #
+  # provider
+  # ----------------------------------------------------------------------------
+  #   List of enabled OAuth providers to be used for the auth
+  #   service for authentication. The first provider in a list
+  #   is used for default.
+  #
+  #   values:                           [disqus|github|facebook|patreon|twitter]
+  #   default:                          none
+  #
+  # whitelist
+  # ----------------------------------------------------------------------------
+  #   List of pages (and assets) skipped for authentication.
+  #   Values can be given as regular expressions.
+  #
+  #   values:                           string
+  #   default:                          none
+  #
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # Provider settings
+  #
   j1_auth:
     enabled:                            false
     ssl:                                false
@@ -196,7 +199,7 @@ defaults:
       #         blacklist:                []
 
   # ----------------------------------------------------------------------------
-  # Auth CLIENT
+  # Auth CLIENT settings
   #
   auth_client:
     enabled:                            false

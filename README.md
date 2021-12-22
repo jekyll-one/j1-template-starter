@@ -62,26 +62,28 @@ issues for private or professional use.
 * Themes support (Bootswatch)
 * Icon Font support (MDI, FA, Iconify, Twitter Emoji)
 * Themeable source code highlighting (Rouge)
-* Desktop and Mobile Web and Navigation ready
+* Desktop and Mobile navigation ready
 * Fully configurable
 * Highest Google Lighthouse scores
 
 ## Modules and Extensions
 
-* Bootstrap extensions included
-* Asciidoctor extensions included
-* Smooth-srcoll support
+* Bootstrap V5 extensions included
+* Asciidoctor extensions|plugins included
+* Smooth-Scroll support on all pages
 * Full-text search engine included (Lunr)
 * Blog Post navigation included
-* GDPR compatible cookie consent module included
-* Translator module (Google, Deepl) included
+* Cookie Consent module included (includes GDPR compatible OptIn/OptOut support)
+* Translator module included
+* Advertising module included
+* Analytics module included
 * Clipboard module included
-* Floating Action Buttons included
-* Navigation modules included
+* Floating Action Buttons|Menus included
+* Navigation module (multi purpose) included
 * Lightbox modules included
 * Gallery modules included
 * Carousel module included
-* Video modules included
+* Video modules included (HTML5 Video, YouTube, Vimeo)
 
 ## Addons and Integrations
 
@@ -89,7 +91,8 @@ issues for private or professional use.
 * Royalty free images included
 * Support of comment provider APIs (Disqus, Hyvor)
 * Google Analytics support (includes GDPR compatible OptIn/OptOut support)
-* Google Adsense support (includes GDPR compatible OptIn/OptOut support)
+* Google Addsense support (includes GDPR compatible OptIn/OptOut support)
+* Google Translate support (includes GDPR compatible OptIn/OptOut support)
 * Deploy on Github Pages (source only), Netlify and Heroku ready
 
 # Supported platforms

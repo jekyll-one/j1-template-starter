@@ -1,0 +1,114 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/modules/default/comments.yml
+#  Default configuration settings for the J1 Comments Module
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2021 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description (used for J1 CC only)
+#
+description:
+
+  title:                                J1 Comments
+  scope:                                Default settings
+  location:                             _data/modules/default/comments.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # Base settings
+  #
+  #   enabled
+  #   --------------------------------------------------------------------------
+  #   Enables or disable comments services. If disabled, the service
+  #   won't be enabled on any page.
+  #
+  #   values:                           [true|false]
+  #   default:                          false
+  #
+  #   comments_headline
+  #   --------------------------------------------------------------------------
+  #   A comment block is prepended by a headline (<h2> HTML element).
+  #   The text for headline is automatically chosen based on the language
+  #   detected for the site.
+  #
+  #   values:                           iso-639 language code
+  #   default:                          en
+  #
+  #   provider
+  #   --------------------------------------------------------------------------
+  #   Specifies the provider to be used for commenting
+  #
+  #   values:                           [disqus|hyvor|commento|just-comments]
+  #   default:                          disqus
+  #
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
+
+  # ----------------------------------------------------------------------------
+  # Base settings
+  # ----------------------------------------------------------------------------
+  provider:                             disqus
+  comments_headline:
+    "en":                               Leave a comment
+    "bg":                               Оставите коментар
+    "de":                               Kommentieren
+    "dk":                               Efterlad en kommentar
+    "nl":                               Laat een reactie achter
+    "fr":                               Laissez un commentaire
+    "gr":                               Αφήστε ένα σχόλιο
+    "hr":                               Ostavite komentar
+    "es":                               Deja un comentario
+    "it":                               Lascia un commento
+    "pt":                               Deixe um comentário
+    "se":                               Lämna en kommentar
+    "si":                               Zanechať komentár
+    "fi":                               Jätä kommentti
+    "no":                               Legg igjen en kommentar
+    "hu":                               Szólj hozzá
+    "cz":                               Zanechat komentář
+    "tr":                               Yorum yap
+    "ee":                               Jäta kommentaar
+    "lv":                               Atstājiet savu komentāru
+    "lt":                               Palikite komentarą
+    "pl":                               Zostaw komentarz
+    "ro":                               Lasa un comentariu
+    "ru":                               Оставить комментарий
+
+  # ----------------------------------------------------------------------------
+  # Provider settings
+  # ----------------------------------------------------------------------------
+  hyvor:
+    site_id:                            'hyvor-site-id'
+
+  disqus:
+    site_id:                            '<your-site-short-name>'
+
+  # currently NOT supported
+  commento:
+    site_id:                            '<commento-site-id>'
+
+  # currently NOT supported
+  just-comments:
+    site_id:                            '<just-comments-site-id>'
+
+  # currently NOT supported
+  facebook:
+    appid:                              '<facebook-app-id>'
+    num_posts:                          5
+    width:                              580
+    colorscheme:                        light
+
+# ------------------------------------------------------------------------------
+# END config

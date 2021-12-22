@@ -28,6 +28,7 @@ description:
 # Default settings
 #
 defaults:
+  enabled:                              true
 
   # ----------------------------------------------------------------------------
   # Settings/Attributes
@@ -69,12 +70,22 @@ defaults:
   #
   #   same_site
   #   --------------------------------------------------------------------------
-  #   Lax: sent for all requests (including subdomains).
-  #   Strict: the cookie is only sent to the site where it originated
-  #   (excluding subdomains)
+  #   Lax:  	 	Sent cookie for all requests (including subdomains) but NOT
+  #             in cross-site requests.
+  #   Strict:   The cookie is only sent to the site where it originated
+  #             (excluding subdomains) but NOT in cross-site requests.
+  #   None:     Send cookies in cross-site requests if Secure=true is
+  #             enabled (HTTPS requests only)
   #
-  #   values:                           [Strict|Lax]
-  #   default:                          Strict
+  #   NOTE:
+  #     Specify SameSite=Strict or SameSite=Lax if the cookie should
+  #     NOT be sent in cross-site requests.
+  #   NOTE:
+  #   	Specify SameSite=None and Secure=true if the cookie should be sent
+  #     in cross-site requests. This enables third-party use.
+  #
+  #   values:                           [Strict|Lax|None]
+  #   default:                          Lax
   #
   #   http_only
   #   --------------------------------------------------------------------------
@@ -100,11 +111,11 @@ defaults:
   #
   # ----------------------------------------------------------------------------
   #
-  check_cookies:                        false
+  check_cookies:                        true
   path:                                 /
   domain:                               false
   expires:                              365
-  same_site:                            Strict
+  same_site:                            Lax
   http_only:                            false
   secure:                               false
 

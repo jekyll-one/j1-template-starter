@@ -161,17 +161,6 @@ lanes:
       file:                             content_generator_post.html
 
   # ----------------------------------------------------------------------------
-  # COMMENT connector
-  #
-  - lane:
-      enabled:                          true
-      region:                           body-main
-      type:                             sync
-      base:                             _includes/themes/j1
-      path:                             modules/connectors
-      file:                             comments
-
-  # ----------------------------------------------------------------------------
   # FAM
   #
   - lane:
