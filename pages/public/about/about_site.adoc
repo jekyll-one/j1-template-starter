@@ -1,21 +1,67 @@
 ---
-title:                                  J1
+title:                                  J1 Template
 tagline:                                about
-date:                                   2021-01-01 00:00:00
+date:                                   2021-02-01 00:00:00
 description: >
                                         Things you should know about this site,
-                                        the people and the software and/or
-                                        services provided.
+                                        about the software used. Read a bit what
+                                        people, what companies has contributed
+                                        to make a project like J1 Template real.
+
+keywords: >
+                                        overview, software, platforms, contributers, licenses,
+                                        Creative Commons, CC BY, MIT, SIL Open_Font_License,
+                                        hall of fame, Google, Translate, Analytics, Adsense,
+                                        AnimateCSS, Anime, Asciidoctor, Asciidoctor PDF,
+                                        Asciidoctor Rouge, Babel JS, Backstretch, Bootstrap,
+                                        Bootstrap Cookie Banner, Bootstrap ThemeSwitcher,
+                                        Bootswatch, Bootswatch API, Bump, Builder, Cash,
+                                        Clipboard, Cors, CrossEnv, CrossVar, Dart Sass,
+                                        Datatables, OptIn, OptOut, ESlint,
+                                        ExecJS, FontAwesome, GetOS, Git, Github, Heroku,
+                                        Iconify, IframeResizer, jQuery, Jekyll Asciidoc,
+                                        Jekyll Compress, Jekyll Feed, Jekyll Paginator V2,
+                                        Jekyll Sitemap, JS YAML, JSON Minify, JustifiedGallery,
+                                        Lerna, LightGallery, Lightbox V2, Liquid, Log4Javascript,
+                                        Log4r, Lunr, Material Design for Bootstrap, MDB,
+                                        Material Design Icons, Materialize, MobileMenu Light,
+                                        MsDropdown, Netlify, NodeJS Language, Node Sass,
+                                        Nokogiri, Nokogiri Pretty, NPM, Npm Run All, Omniauth,
+                                        Oauth2, OwlCarousel, ParseURL, Platform JS, Popper,
+                                        Puma Webserver, Rack, Rack Protection, Rack SSL Enforcer,
+                                        Roboto Font, Rouge Highlighter, Ruby Language, RubyGems,
+                                        Tablesaw, Terser, ThemeSwitcher, TocBot, Twemoji,
+                                        Twemoji Picker, Uglifier, VideoJS, Vimeo, Warden,
+                                        Webpack, Yarn, YouTube,
+                                        opensource, free, load, download, start, starter, example,
+                                        high, easy, use, secure, encrypt, standard, popular,
+                                        generate, develop, create, learn, distribute, publish, deploy,
+                                        beginner, advanced, expert, student, learner, writer, reader, visitor
+                                        framework, toolkit, integration, extension, module, api,
+                                        dynamic, static, generator, client, server, internet, local, localhost
+                                        page, web, website, webdesign, material, design, responsive,
+                                        javascript, nodejs, ruby, windows, linux, osx, mac, os,
+                                        http, https, html, html5, css, scss, style,
+                                        browser, firefox, chrome, edge, opera, safari,
+                                        configuration, generator, navigation, menu, dropdown, fab, action, button
+                                        application, interface, provider, api, repository,
+                                        cookie, language, translation, gdpr, dsgvo, privacy,
+                                        asciidoc, aciidoctor, bootstrap, jekyll, liquid,
+                                        hyvor, disqus, git, github, netlify, heroku, apple, microsoft,
+                                        provider, service, internet, support,
+                                        google, analytics, advertising, search, console, silverlight, score,
+                                        j1, template, jekyllone, comment
 
 tags:                                   [ Overview ]
 categories:                             [ Software, Platforms, Contributers ]
 
 scrollbar:                              false
+comments:                               false
 
 permalink:                              /pages/public/about/site/
-regenerate:                             false
+regenerate:                             true
 
-resources:                              []
+resources:                              [ animate, lightbox ]
 resource_options:
   - attic:
       padding_top:                      400
@@ -23,6 +69,8 @@ resource_options:
       opacity:                          0.5
       slides:
         - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
+          alt:                          Runner
+
 ---
 
 // Page Initializer
@@ -33,7 +81,8 @@ resource_options:
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
 // :page--attr:                         <attr-value>
-:badges-enabled:                        false
+:badges-enabled:                        true
+:legal-warning:                         true
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -51,12 +100,1891 @@ ifeval::[{badges-enabled} == true]
 {badge-j1--license} {badge-j1--version-latest} {badge-j1-gh--last-commit} {badge-j1--downloads}
 endif::[]
 
-// Include sub-documents (if any)
+// Include sub-documents
 // -----------------------------------------------------------------------------
 
-== About this site
+== The Template System
 
-Whether you work solo or as part of a team, it’s always a great idea to
-help visitors put a face to the name. The best place to include a bit of
-information about you and your team is on your homepage with *About*, so
-no one misses it.
+The template system was initially developed to create a simple but fully
+configurable website creation toolset for document servers. Document servers
+provide websites or other content formats like PDF, projects, software
+documentation, or similar approaches.
+
+Many large today's companies like {url-docker--docs}[Docker, {browser-window--new}]
+are using template-based systems to create their documentation sites. Or like
+{url-oreilly-atlas--home}[O'Reilly Atlas, {browser-window--new}],
+to provide a fully-featured writers platform for writing books or extensive
+documentation.
+
+All these platforms are technically different, but they share common ideas:
+
+* the layout of all content (pages) is based on a standard skeleton but
+  separated from the content
+* content is written using a neutral meta-language
+* the final output is not predefined
+* the result is automatically generated by engines (robots)
+
+To make these ideas real, a lot of things are needed. You can imagine. The
+approaches of Docker or O'Reilly points to a possible solution: a template
+system based on _Bootstrap_ for the CCS framework, _Jekyll_ and _Liquid_ for
+the core engines, and _Asciidoc_ (Asciidoctor) for a neutral meta-language
+writing content.
+
+The next thought comes to my mind. Why developing a toolset for only document
+servers? Documentation webs of today are complex websites. Some features used
+for general web design may not need for documentation systems, but a lot of
+components are wanted that are generally required:
+
+* a powerful CSS and Javascript framework
+* a modular approach for dynamic content and apps
+* a configuration system to separate content from the layout and to automate
+  creation processes following the development pattern *MVC*
+  (https://blog.codinghorror.com/understanding-model-view-controller/[Model–View–Controller, {browser-window--new}])
+
+A plan was made in 2016, based on Jekyll V3 and Bootstrap V3, to create a
+template-based robot system that can be used for all types of websites for
+all standard formats to create digital content.
+
+I was too optimistic about how long it would take to build such a system:
+
+* easy to use by developers and non-technical people
+* modular, powerful, and stable
+* supporting modern content design
+* usable on common computer hardware, available to the public
+* less in components, using well-known software
+* fully functional on small PC's locally as well as on powerful remote systems
+  on the Internet
+
+It took me nearly four years. In early 2021, I can present the first version
+of the J1 Template for the public. Hopefully, most of the objectives are
+achieved.
+
+Have fun!
+
+== Common licenses
+
+Find a list of all standard licenses used by the J1 Template and the Products
+build-in. The following descriptions give an overview of what is licensed
+and granted. Note that some products using standard licenses may have
+additional restrictions for use. Therefore, if there doubts in use,
+check the product licenses individually.
+
+ifeval::[{legal-warning} == true]
+WARNING: This document *does not* constitute any *legal advice*. If the
+software used licensed by others, especially for commercial use, it is highly
+recommended to verify legal aspects and implications.
+endif::[]
+
+[cols="4a,8a, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Licence |Description\|Authority
+
+|{url-license--creative-commons}[Creative Commons (CC BY 4.0), {browser-window--new}]
+|Products using the license can be used *free of charge*. Users are *free*
+to share, copy and redistribute the material in any medium or format, and
+are granted to adapt in terms of remix, transform, and build upon the material
+for any purpose, even commercially.
+
+|{url-license--mit}[MIT, {browser-window--new}]
+|Products using the license can be used *free of charge*. Users are *free*
+in using the in the Software *without* restriction. This includes the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software without any limitation.
+
+|{url-license--sil}[SIL Open_Font_License, {browser-window--new}]
+|Products using the license can be used *free of charge*.
+The Open Font License permits the fonts to be used, modified, and distributed
+*freely*, as long as the resulting fonts *remain* under the Open Font License.
+However, the copyright holder may declare the font's name as being a
+*Reserved Font Name*, which modified versions then cannot bear; this includes
+*subsetting* for web fonts. The License permits covered fonts to be freely
+embedded in documents under any terms, but it requires that fonts be
+*packaged* with software if they used commercially.
+
+|===============================================================================
+
+== Hall of fame
+
+A bunch of software and systems are needed to create or publish websites. I've
+no idea how many people all over the world are working hard each and every day
+to manage this. A huge number of companies, thousands and thousands of private
+persons and projects contribute by their tools and software freely available
+to all of us on the Internet.
+
+Thanks a lot to all the committed developers that make it possible to get
+such excellent software for free, available for all that are interested.
+Thanks a lot to all the companies providing free software. Or giving free
+access to their platforms to make it possible for individuals, private
+initiatives, small companies, and startups to take the first steps into the
+digital world of today.
+
+NOTE: The *Hall of fame* is a section work-in-progress. I'll limit the number
+of entries for this section to hundred items to not get blown up.
+
+J1 Template is using *100+* main software products and platforms. And these
+100+ products are using uncountable second-level components under the
+hood. For sure, all of them contributed to my project J1 Template, and many,
+many others as well.
+
+Again. Thanks to all individuals and organizations for making this possible.
+
+Find the main software products and platforms listed below in alphabetical
+order - not by size. No doubts, all are important to make things real.
+
+=== A - B
+
+[cols="2a,2a,2a,6a, subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Product |Producer |Platform |Description
+
+|{url-animate-css--home}[AnimateCSS, {browser-window--new}]
+|Daniel Eden and Friends
+|CSS
+|_Animate.css_ is a CSS library for cross-browser animations to be used in web
+projects. Great for emphasis, home pages, sliders, and attention-guiding hints.
+
+NOTE: J1 Template is using Animate.css for all CSS based animations.
+
+.Product details
+----
+License:        MIT
+Used version:   4.1.1
+Year:           2020
+----
+
+|{url-anime--home}[Anime, {browser-window--new}]
+|Julian Garnier
+|JS
+|_Anime.js_ is a Javascript library for complex, cross-browser animations to
+be used in web projects.
+
+NOTE:  Anime.js is used by J1 for all complex, JS based animations.
+
+.Product details
+----
+License:        MIT
+Used version:   3.2.0
+Year:           2020
+----
+
+|{url-asciidoctor--home}[Asciidoctor, {browser-window--new}]
+|Dan Allen, Sarah White, Ryan Waldron, and Friends
+|Ruby
+|_Asciidoctor_ is a open source text processor and publishing toolchain for
+converting AsciiDoc-based content to HTML5, DocBook, PDF, and other formats.
+
+NOTE: _AsciiDoctor_ provides a modern version of the neutral meta-language
+Asciidoc, used by J1 for writing content pages to be converted to HTML5,
+PDF and other formats.
+
+.Product details
+----
+License:        MIT
+Used version:   1.5.8
+Year:           2018
+----
+
+|{url-asciidoctor-pdf--home}[Asciidoctor PDF, {browser-window--new}]
+|OpenDevise Inc. and the Asciidoctor Project
+|Ruby
+|_Asciidoctor PDF_ is a native PDF converter for AsciiDoc. It bypasses the
+requirement to generate an intermediary format such as DocBook, Apache FO,
+or LaTeX. Instead, the _Asciidoctor PDF_ extension convert documents directly
+from AsciiDoc to PDF.
+
+NOTE: J1 uses _Asciidoctor PDF_ to convert large content pages of a website
+(e.g documentation) to PDF.
+
+.Product details
+----
+License:        MIT, CC BY 3.0
+Used version:   2.0.12
+Year:           2020
+----
+
+|{url-asciidoctor-rouge--home}[Asciidoctor Rouge, {browser-window--new}]
+|Jakub Jirutka
+|Ruby
+|_Asciidoctor Rouge_ provides an Asciidoctor extension for highlighting source
+listing blocks using Rouge, a pure-ruby code highlighter (compatible with the
+Python Pygments highlighter). The extension supports all Asciidoctor features
+such as callouts, highlighting of specified lines (attribute highlight),
+passthroughs inside a code and all other substitutions.
+
+NOTE: _Asciidoctor Rouge_ is used by the template system for highlighting all
+listing blocks placed in content pages.
+
+.Product details
+----
+License:        MIT license
+Used version:   0.4.0
+Year:           2018
+----
+
+|{url-babel-js--home}[Babel JS, {browser-window--new}]
+|Sebastian McKenzie and Friends
+|JS
+|_Babel JS_ is a modular and plugable JavaScript compiler/transpiler.
+Babel (pronounced: babble) is a community-driven project used by many
+companies and projects, and is maintained by a group of volunteers.
+
+NOTE: _Babel JS_ is used by the J1 development system to transpile modern,
+ES5 Javascript code (written for NodeJS) for the use with web browsers that
+does't or cannot (technically) support all ES5 language features.
+
+.Product details
+----
+License:        MIT license
+Used version:   7.12.12
+Year:           2021
+----
+
+|{url-backstretch--home}[Backstretch, {browser-window--new}]
+|Daniel Cohen Gindi, Scott Robbin
+|JS, jQuery
+|_Backstretch_ is a jQuery plugin that allows to add dynamically resized,
+slideshow capable background images to any page or HTML element. Images are
+recalculated in size to stretch and fit the page or element. Backstretch
+supports responsivness by automatically resizing images as the size of the
+window in a browser changes.
+
+NOTE: _Backstretch_ for J1 is mainly used for the top-level Headers (Attics)
+for all content pages. Images, or videos, gets automatically resized to fill
+a page header full-size.
+
+.Product details
+----
+License:        MIT license
+Used version:   2.1.18
+Year:           2019
+----
+
+|{url-bs--home}[Bootstrap, {browser-window--new}]
+|Bootstrap Authors, Twitter Inc. and Friends
+|CSS, JS
+|_Bootstrap_ is a free and open-source CSS framework directed at responsive,
+mobile-first front-end web development. It contains CSS- and JavaScript-based
+design templates for typography, forms, buttons, navigation, and other
+interface components.
+
+NOTE: _Bootstrap_ (BS@5) is the core CSS framework to create standardized,
+fully responsive HTML5 code from the content pages. A selected number of JS
+components of Bootstrap are build-in the template. BS4 is the base for the
+theming feature of J1.
+
+.Product details
+----
+License:        MIT license
+Used version:   5.1.3
+Year:           2021
+----
+
+|{url-bs-cookie-banner--gh-repo}[Bootstrap Cookie Banner, {browser-window--new}]
+|Stefan Haack
+|JS
+|A modal dialog (cookie banner) and framework to handle the German and EU
+law (as written by EuGH link:{url-gdpr--C-673-17}[C-673/17, {browser-window--new}])
+about cookies in a website. Based on Bootstrap 5.
+
+NOTE: For the background of the privacy regulations introduces by
+{url-gdpr-eu--home}[GDPR, {browser-window--new}] in Europe and associated
+countries, cookie consent dialogs are required to inform your vistors to
+comply legal requirements. The API of _Bootstrap Cookie Banner_ is fully
+integrated with J1 Template.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.1.2
+Year:           2020
+----
+
+|{url-bs-theme-switcher--gh-repo}[Bootstrap ThemeSwitcher, {browser-window--new}]
+|Joseph Guadagno
+|CSS, JS
+|_BS ThemeSwitcher_ is a jQuery plugin to dynamically download BS themes
+from Bootswatch. This plugin supports the automated population of Bootswatch
+themes for menus and selections. The plugin provides functions to switch a
+theme, and save the selected theme to a cookie as well as the load of a
+selected theme from cookies.
+
+NOTE: _BS ThemeSwitcher_ is one of the core components for the theming feature
+of J1. The plugin helps to access the (JSON) API at Bootswatch, to generate
+the menu items for selecting themes.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.1.5
+Year:           2014
+----
+
+|{url-bootswatch--home}[Bootswatch, {browser-window--new}]
+|Thomas Park
+|CSS
+|_Bootswatch_ provides a rich collection of free themes for Bootstrap. The
+platform provides a large number of diffent themes (pre-compiled BS@5 CSS files)
+to be directly used for websites using Bootstrap V5.
+
+NOTE: _Bootswatch_ is fully interated with template to support the theming
+feature of J1 by pre-Compiled CSS files of BS@5. A wide range of light and
+dark themes are provided by Bootswatch. It's worth to check what can be done.
+
+.Product details
+----
+License:        MIT license
+Used version:   5
+Year:           2021
+----
+
+|{url-bootswatch--api}[Bootswatch API, {browser-window--new}]
+|Thomas Park
+|(JSON) API
+|A simple JSON API to request theme data, to integrate Bootswatch themes
+into websites.
+
+NOTE: The _Bootswatch API_ is used by the J1 theming component to collect
+themes data for all themes available at the Bootswatch platform.
+
+.Product details
+----
+License:        MIT license
+Used version:   5
+Year:           2021
+----
+
+|{url-bump--gh-repo}[Bump, {browser-window--new}]
+|Gregory Marcil Hacy
+|Ruby
+|_Bump_ is a gem to simplify the processes to build gems, to generate new
+versions and helps to integrate the gem creation process into Rake.
+
+NOTE: _Bump_ is used by the J1 Template development system to ease the process
+of versioning the J1 Template Rubie, to populate the Gem to RubyGems for
+public access.
+
+.Product details
+----
+License:        MIT license
+Used version:   0.10.0
+Year:           2020
+----
+
+|{url-builder--gh-repo}[Builder, {browser-window--new}]
+|Jim Weirich
+|Ruby
+|The gem builder provide a simple way to create XML markup and data structures.
+
+NOTE: _Builder_ is a very helpful library (Ruby Gem) for generating XML or
+HTML code. The gem is used by several Asciidoctor extentions, like the lightbox
+block extention. _Builder_ creates the HTML-portion to integrate the Javascipt
+Lightbox plugin by an Asciidoc (block) tag.
+
+.Product details
+----
+License:        MIT license
+Used version:   3.2.0
+Year:           2013
+----
+
+|===============================================================================
+
+
+=== C - D
+
+[cols="2a,2a,2a,6a, subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Product |Producer |Platform |Description
+
+|{url-cash--gh-repo}[Cash, {browser-window--new}]
+|Ken Wheeler, Fabio Spampinato
+|JS
+|_Cash_ is a lightweight alternative to _jQuery_ (`$`) for modern browsers.
+The library provides a jQuery-style syntax for manipulating the DOM. Cash
+supports only a subset of features in compare to jQuery but will minimize the
+codebase. Developers can use the familiar chainable methods at a fraction of
+the file size.
+
+NOTE: A small number of modules, integrated with J1, is using _Cash_ instead of
+_jQuery_. If only base functions for manipulating the DOM is needed, _Cash_
+may an alternative to _jQuery_ to speedup processing time and the amount of
+data loaded.
+
+.Product details
+----
+License:        MIT license
+Used version:   8.1.0
+Year:           2020
+----
+
+|{url-clipboard--gh-repo}[Clipboard, {browser-window--new}]
+|Zeno Rocha
+|JS
+|_Clipboard_ is a quite small and easy to use Javascript library that
+implements a modern copy-to-clipboard functionality. Copying text to the OS
+clipboard shouldn't be hard, it shouldn't require dozens of steps to configure
+or hundreds of KBs to load. That's why _clipboard.js_ exists.
+
+NOTE: _Clipboard_ is widely used for J1. It's automatically attached to all
+code listing blocks of a page to make it easy to copy commands or code
+snippets.
+
+.Product details
+----
+License:        MIT license
+Used version:   2.0.6
+Year:           2020
+----
+
+|{url-cors--gh-repo}[Cors, {browser-window--new}]
+|Troy Goode
+|JS
+|_Cors_ is a NodeHS package for providing a CORS secured Express middleware.
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism
+that allows a web server to indicate a requester (origin) to allow or
+reject from loading of (web) resources. For security reasons, browsers
+restrict so-called cross-origin HTTP requests initiated from scripts.
+
+NOTE: The J1 development system is accompanied by a small NodeJS-based
+utilliy server - based on the Express middleware (Webserver). J1 Utilliy
+Server helps to collect log data from the webbrowser's console to write
+them to files on disk. The JS module _Cors_ is used to control cross-origin
+HTTP requests initiated by a browser.
+
+.Product details
+----
+License:        MIT license
+Used version:   2.8.5
+Year:           2020
+----
+
+|{url-cross-env--gh-repo}[CrossEnv, {browser-window--new}]
+|Kent C. Dodds
+|JS
+|The JS module _cross-env_ supports the cross-platform use of environment
+variables. On Windows systems, a variable is written like %ENV_VAR%, on
+Unix-like systems (POSIX), variables looks like $ENV_VAR.
+
+NOTE: The J1 Development Systems is controlled by NodeJS project files
+package.json. All project files contain scripts to run base tasks to e.g.
+setup a J1-based project. To make this possible cross-platform, the module
+allows to use *environment* variables on all platform J1 is supported.
+
+.Product details
+----
+License:        MIT license
+Used version:   7.0.3
+Year:           2020
+----
+
+|{url-cross-var--gh-repo}[CrossVar, {browser-window--new}]
+|Elijah Manor
+|JS
+|The JS module _cross-var_ supports the cross-platform use of variables of
+the shell. On Windows systems, a variable is written like %VAR%, on
+Unix-like systems (POSIX), variables looks like $VAR.
+
+NOTE: The J1 Development Systems is controlled by NodeJS project files
+package.json. All project files contain scripts to run base tasks to e.g.
+setup a J1-based project. To make this possible cross-platform, the module
+allows to use *shell* variables on all platform J1 is supported.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.1.0
+Year:           2017
+----
+
+|{url-sass-lang--home}[Dart Sass, {browser-window--new}]
+|Google LLC
+|JS
+|_Dart Sass_ is the current and primary implementation of *Sass*, which means
+it gets new features before any other implementation. It's fast, easy to
+install, and it compiles to pure JavaScript which makes it easy to integrate
+into modern web development workflow
+
+NOTE: _Dart Sass_ is current *NOT* used by the J1 Template development system.
+For the next versions of J1, the CSS package will be re-written to use the
+current *Sass* _Dart Sass_ implemetation instead of _Node Sass_.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.32.6
+Year:           2021
+----
+
+|{url-datatables--home}[Datatables, {browser-window--new}]
+|SpryMedia Ltd.
+|JS (jQuery)
+|_DataTables_ is a _jQuery_ plug-in to construct HTM tables read from data
+like CSV files from disk or other data sources. It is a highly flexible tool,
+that adds advanced features, as e.g. searching, to any HTML table.
+
+NOTE: _DataTables_ is fully integrated for the *free version* with J1 to create
+Bootstrap styled HTML tables from data sources. The _jQuery_ plug-in  is used
+by the J1 Docummentation to create searchable Bottstrap tables from CSV files.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.10.16
+Year:           2019
+----
+
+|{url-ga-optin--home}[Google Analytics Opt In, {browser-window--new}]
+|Lucio Martinez
+|JS
+|_Google Analytics Opt In_ is a browser library to opt-in in Google
+Analytics. As a plus, it configures Analytics to *anonymize* IP addresses.
+
+NOTE: _Google Analytics Opt In_ is integrated with the CookieConsent module
+of J1 to enable the cookie consent fully compatible with the General Data
+Protection Regulation (GDPR) of the European Union.
+
+.Product details
+----
+License:        MIT license
+Used version:   2.0.0
+Year:           2020
+----
+
+|===============================================================================
+
+=== E - G
+
+[cols="2a,2a,2a,6a, subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Product |Producer |Platform |Description
+
+|{url-eslint--home}[ESlint, {browser-window--new}]
+|JS Foundation and Friends
+|JS
+|A linter is a code analysis tool used to flag programming errors, bugs,
+stylistic errors, and suspicious constructs. _ESLint_ is a linter for
+identifying and reporting on incorrect patterns found in ECMAScript/JavaScript
+code.
+
+NOTE: To make JS code consistency sure for all components using JavaScript used
+by J1, the Development System is using _ESlint_ to inspect JS based modules for
+correctness.
+
+.Product details
+----
+License:        MIT license
+Used version:   7.19.0
+Year:           2021
+----
+
+|{url-execjs--gh-repo}[ExecJS, {browser-window--new}]
+|Sam Stephenson, Josh Peek
+|JS
+|_ExecJS_ let run JavaScript code from Ruby. The gem automatically picks the
+best runtime available to evaluate a JavaScript program, and returns the
+result as a Ruby object.
+
+NOTE: Some libraries needed for J1 are not available as pure Ruby code. For
+the search engine Lunr, used by J1 QuickSearch, the code base available is
+written in Javascript. To create index data for Lunr from the Ruby/Jekyll
+plugin lunr_index.rb, _ExecJS_ is used to run the JS portion.
+
+.Product details
+----
+License:        MIT license
+Used version:   2.7.0
+Year:           2016
+----
+
+|{url-fontawesome--home}[Font Awesome, {browser-window--new}]
+|Fonticons, Inc.
+|CSS
+|_Font Awesome_ is a popular icon library. Font Awesome *Free* is free,
+open source, and GPL friendly. It can be for commercial projects, open
+source projects, or really almost whatever you want.
+
+Icons::
+{url-license--creative-commons}[CC BY 4.0 License, {browser-window--new}].
+In the Font Awesome Free download, the CC BY 4.0 license applies to all icons
+packaged as SVG and JS file types.
+
+Fonts::
+{url-license--sil}[SIL OFL 1.1 License, {browser-window--new}].
+In the Font Awesome Free download, the SIL OFL license applies to all icons
+packaged as web and desktop font files.
+
+NOTE: _Font Awesome Free_ is an alternative to the J1's default icon font set
+provided by _Material Design Icons_ (MDI). Font Awesome icons are used for
+default by Asciidoctor for several block elements like admonitions (see *this*
+element).
+
+.Product details
+----
+License:        Font Awesome Free License
+Used version:   5.15.2
+Year:           2021
+----
+
+|{url-getos--gh-repo}[GetOS, {browser-window--new}]
+|William Blankenship
+|JS
+|GetOS is a NodeJS module to collect OS and Distribution details of the
+current environment.
+
+NOTE: The module _GetOS_ is used by the J1 Development System to identify the
+current OS to run OS specific commands from project scripts (package.json).
+
+.Product details
+----
+License:        MIT license
+Used version:   3.2.1
+Year:           2020
+----
+
+|{url-git--home}[Git, {browser-window--new}]
+|Software Freedom Conservancy
+|Application
+|_Git_ is a free and open source distributed version control system designed
+to handle everything from small to very large projects with speed and
+efficiency.
+
+NOTE: J1 based web projects should be tracked under control of _Git_. This
+enables developers to manage code changes by the power of a modern version
+control system
+
+.Product details
+----
+License:        GPL v2
+Used version:   2.30.0
+Year:           2021
+----
+
+|{url-git--home}[Github, {browser-window--new}]
+|GitHub, Inc.
+|Platform
+|_GitHub_ is a code hosting platform for version control and collaboration using
+the version control system _Git_. It lets programmers and others work together
+on projects from anywhere. Millions of developers and companies build, ship,
+and maintain their software on _GitHub_.
+
+NOTE: J1 based web projects should be tracked under control of _Git_. To place
+such a *Git repo* at _GitHub_, for single projects or small groups could this
+be done for free.
+
+|{url-wikipedia-en--google}[Google LLC, {browser-window--new}]
+|Google LLC
+|Platform
+|_Google LLC_ is an American multinational technology company that specializes
+in Internet-related services and products. This include online advertising
+technologies (Google Ads), online monitoring services (Google Analytics), a
+search engine, cloud computing, hardware and a huge number of large software
+projects like the operating system Android for mobile computing.
+
+NOTE: The company _Google_ is omnipresent in the digital world. It is very
+unlikely, that an Internet-related project does not use products, services or
+concepts (originally) created by Google. J1 Template supports for example
+*Google Ads*, *Google Analytics* by J1 Connectors and adapts concepts
+from *Google Material Design* for Web Design.
+
+|===============================================================================
+
+
+=== H - J
+
+[cols="2a,2a,2a,6a, subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Product |Producer |Platform |Description
+
+|{url-heroku--home}[Heroku, {browser-window--new}]
+|Salesforce, Inc.
+|Platform
+|_Heroku_ is a commercial Internet platform. The company offers a container-based
+cloud Platform as a Service (PaaS). Developers use _Heroku_ to deploy, manage,
+and scale modern (web) apps. The platform is flexible, and easy to use, offering
+developers a simple path to getting their products to market.
+
+NOTE: J1-based websites can be run as (web) apps as well. The number of companies
+that offers a managed platform for web applications is quite limited. _Heroku_
+is one of these providers, another one is _Digital Ocean_ (but using *Heroku*
+services under the hood).
+
+|{url-iconify--home}[Iconify, {browser-window--new}]
+|Iconify OÜ
+|Platform
+|_Iconify_ is a unified open source icon *framework* that makes it possible to
+use icons from different icon sets on same page or in same application using
+one syntax. _Iconify_ combines pixel perfect rendering of SVG with ease of use
+of glyph fonts, while offering more choice than any glyph font or SVG framework.
+
+NOTE: Icon sets are ever growing. No font icon set can provide all possible
+icons. If a icon for a social network or a company is missing in the current
+font icon set, _Iconify_ can help. The template integrates _Iconify_ by an
+Asciidoctor extention easy to use.
+
+|{url-iframe-resizer--gh-repo}[IframeResizer, {browser-window--new}]
+|David J. Bradshaw
+|JS
+|_IframeResizer_ is a library to manage iFrames on a client-server-basis.
+It enables the automatic resizing of the height and width to fit their
+contained content, and add control to iFrames loaded cross domain. The library
+provides a wide range of features to address the most common issues with using
+iFrames for HTML contents.
+
+NOTE: For J1 Template, _IframeResizer_ is fully integrated as a module. The
+template use the library for example to block cross domain request for iFrames.
+
+.Product details
+----
+License:        MIT license
+Used version:   4.2.9
+Year:           2020
+----
+
+|{url-jquery--home}[jQuery, {browser-window--new}]
+|OpenJS Foundation and jQuery contributors
+|JS
+|_jQuery_ is a fast, small, and rich JavaScript library for DOM manpipulation.
+It makes things like HTML document traversal and manipulation, event handling,
+animation, and Ajax much simpler across most modern browsers. With a combination
+of versatility and extensibility, jQuery has changed the way of people write
+JavaScript.
+
+NOTE: Many modules implemented with J1 are wriiten as _jQuery plugins_, and J1
+use _jQuery_ to write JavaScript code as well.
+
+.Product details
+----
+License:        MIT license
+Used version:   3.5.1
+Year:           2020
+----
+
+|{url-jekyll-asciidoc--gh-repo}[Jekyll Asciidoc, {browser-window--new}]
+|Dan Allen, Paul Rayner, and the Asciidoctor Project
+|Ruby
+|_Jekyll Asciidoc_, a plugin for Jekyll that converts AsciiDoc source files
+to HTML pages using Asciidoctor.
+
+NOTE: _Jekyll Asciidoc_ is a core component of J1 to convert the Asciidoc
+source code of source pages to HTML5.
+
+.Product details
+----
+License:        MIT license
+Used version:   3.0.0
+Year:           2019
+----
+
+|{url-jekyll-compress--gh-repo}[Jekyll Compress, {browser-window--new}]
+|Anatol Broder
+|Liquid
+|_Jekyll Compress_ is a *Jekyll Layout* that compresses HTML. Its used to
+remove all unnecessary characters, like whitespaces or optional start and end
+tags, from the generated HTML code of a content page.
+
+NOTE: Jekyll Compress is used by J1 in production mode to reduce the size of
+the generated HTML code by Jekyll to a minimum. The helps to minimize the load
+time of a web page. As a side effect, compressing will do an obfuscation for
+the HTML source code
+
+.Product details
+----
+License:        MIT license
+Used version:   2.0.6
+Year:           2020
+----
+
+|{url-jekyll-feed--gh-repo}[Jekyll Feed, {browser-window--new}]
+|Ben Balter and Friends
+|Ruby
+|_Jekyll Feed_ is a Jekyll plugin to generate an Atom (RSS-like) feed of
+your Jekyll posts.
+
+.Product details
+----
+License:        MIT license
+Used version:   0.15.1
+Year:           2020
+----
+
+|{url-jekyll-paginate-v2--gh-repo}[Jekyll Paginator V2, {browser-window--new}]
+|Sverrir Sigmundarson, Juergen Adams
+|JS
+|The _Jekyll Paginator V2_ gem built specially for Jekyll 3 and newer that is
+fully backwards compatible and serves as an enhanced replacement for the
+previously built-in jekyll-paginate gem.
+
+NOTE: To make _Jekyll Paginator V2_ usable for all *current* (V4) versions of
+_Jekyll_, this Rubie has been modified and pubslished as gem *j1-paginate*
+to be downloaded from _RubyGems_ as usual. The Rubie *j1-paginate* is loaded
+by the J1 Gemfile as a replacement for the original gem.
+
+.Product details
+----
+License:        MIT license
+Used version:   2021.1.1
+Year:           2021
+----
+
+
+|{url-jekyll-sitemap--gh-repo}[Jekyll Sitemap, {browser-window--new}]
+|GitHub Inc. and Contributors
+|Ruby
+|_Jekyll Sitemap_, a Jekyll plugin to silently generate a sitemaps.org
+compliant sitemap for a Jekyll site.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.4.0
+Year:           2019
+----
+
+|{url-js-yaml--gh-repo}[JS YAML, {browser-window--new}]
+|Vitaly Puzrin
+|JS
+|The *NodeJS* module _JS YAML_ implements a YAML (v1.2) parser-writer for
+JavaScript.
+
+NOTE:  _JS YAML_ is used by the J1 Utility Server to read Jekyll (YAML)
+configuration files for several modules.
+
+.Product details
+----
+License:        MIT license
+Used version:   4.0.0
+Year:           2021
+----
+
+|{url-js-json-minify--gh-repo}[JSON Minify, {browser-window--new}]
+|Kei Funagayama
+|JS
+|Simple *NodeJS* library that implements a minifier for JSON based objects
+and documents (files) to remove unnessesary comments and whitespaces.
+
+NOTE: For *production* mode, J1 *compress* all files of all types used in a
+project. JSON-based files (documents) may huge in size. To load JSON-based
+files by a browser efficiently, all JSON files used by the J1 Template are
+compressed using the module _JSON Minify_ for production.
+
+.Product details
+----
+License:        MIT license
+Used version:   0.4.1
+Year:           2015
+----
+
+|{url-justified-gallery--home}[Justified Gallery, {browser-window--new}]
+|Miro Mannino
+|JS
+|_Justified Gallery_ is a JavaScript library that allows you to create an
+high quality gallery of images. The gallery is using a so-called masonry grid
+layout. It works by placing elements in an optimal position based on
+available horizontal and vertical space. Sort of like mason fitting stones
+in a wall.
+
+NOTE: Pictures made are typically not even in size. Images may have the same
+size (resolution), but some of them are orientated landscape or other may
+portrait. For that reason, J1 provides the more powerful _Justified Gallery_
+fully integrated as a module to create justified views.
+
+.Product details
+----
+License:        MIT license
+Used version:   3.8.1
+Year:           2020
+----
+
+|===============================================================================
+
+
+=== K - L
+
+[cols="2a,2a,2a,6a, subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Product |Producer |Platform |Description
+
+|{url-lerna--home}[Lerna, {browser-window--new}]
+|Lerna Contributors
+|JS
+|_Lerna_ is a tool for managing large (JavaScript) projects splitted in
+multiple packages but using a single repository; a so-called Mono-repo.
+Splitting up a large codebase into separate packages is extremely useful for
+code sharing. However, making changes across many repositories is messy and
+difficult to track, and testing across repositories becomes complicated very
+quickly.
+
+NOTE: The development system of J1 is a _Lerna_ driven Mono-repo, splitted
+into six packages. All packages are managed by Javascript using independed
+project files (package.json), but - managed by _Lerna_ - they work very
+closely together.
+
+.Product details
+----
+License:        MIT license
+Used version:   3.22.1
+Year:           2020
+----
+
+|{url-light-gallery--home}[LightGallery, {browser-window--new}]
+|Sachin N
+|JS
+|_LightGallery_ is a customizable, modular, responsive, lightbox gallery
+plugin for jQuery. The name is a bit confusing, because _LightGallery_ is
+a *lightbox* not a *gallery*. The lightbox *behaves* like a *gallery* as
+_LightGallery_ is able to load multiple images displayed as (image) icons
+to select images like a *gallery* very handy.
+
+NOTE: _LightGallery_ is a powerful free jQuery plugin for open-source projects.
+_LightGallery_ is fully integrated with J1 for all image (and video) related
+modules as a lighbox.
+
+WARNING: _LightGallery_ is free to use for open-source projects for free use.
+If the library is used for business, commercial sites, or projects to be paid
+for the *Commercial license* of _LightGallery_ is required.
+
+.Product details
+----
+License:        GPLv3, Commercial license
+Used version:   1.6.12
+Year:           2019
+----
+
+|{url-lightbox-v2--home}[Lightbox V2, {browser-window--new}]
+|Lokesh Dhakar
+|JS
+|_Lightbox V2_ is small javascript library used to overlay images on top
+of the current page. It's a snap to setup and works on all modern browsers.
+
+NOTE: J1 integrates _Lightbox V2_ as a lightweight alternative to the lightbox
+_LightGallery_. The library is integrated as an Asciidoc Extension - really
+easy to use on images or group of images.
+
+.Product details
+----
+License:        MIT license
+Used version:   2.11.3
+Year:           2020
+----
+
+|{url-liquid--home}[Liquid, {browser-window--new}]
+|Tobias Luetke
+|Ruby
+|_Liquid_ is an open-source template language (for websites and HTML code
+generation) created by *Tobias Luetke*. The template language is the backbone
+of {url-shopify--home}[Shopify, {browser-window--new}] themes and is used
+to load dynamic content on storefronts. The static site generator _Jekyll_
+use _Liquid_ build-in as a core component for layouts and general (web page)
+templating.
+
+NOTE: J1 is using _Liquid_ to generate CSS, JS and HTML code to integrate
+3rd party modules into the template system like _Lightbox V2_ or
+_LightGallery_. In combination with (YAML-based) configuration files, the
+template engine generates the code needed for a webpage and no complex
+programming is needed.
+
+.Product details
+----
+License:        MIT license
+Used version:   4.0.3
+Year:           2019
+----
+
+|{url-log4javascript--home}[Log4Javascript, {browser-window--new}]
+|Tim Down
+|JS
+|_Log4Javascript_ (log4js) is a JavaScript *logging library* inspired by the
+Java logging framework {url-apache-log4j-v2--home}[Apache Log4j, {browser-window--new}].
+The framework implements a subset of _Log4j_; primarily loggers, appenders and
+layouts.
+
+NOTE: Logging is a important feature to track the run-time of software and
+systems. To provide industry-standard logs for a J1 based website, the template
+system is using *log4js* to generate logs for the web browser console.
+
+.Product details
+----
+License:        Apache V2 license
+Used version:   1.4.13
+Year:           2015
+----
+
+|{url-log4r--gh-repo}[Log4r, {browser-window--new}]
+|Colby Gutierrez-Kraybill, Leon Torres
+|Ruby
+|_Log4r_ is a comprehensive and flexible logging library inspired by the
+Java logging framework {url-apache-log4j-v2--home}[Apache Log4j, {browser-window--new}]
+written in Ruby for use in Ruby programs. It features a hierarchical logging
+system of any number of levels, custom level names, logger inheritance,
+multiple output destinations per log event, execution tracing, custom
+formatting, thread safteyness, XML and YAML configuration, and more.
+
+NOTE: _Log4r_ is used for all Ruby based components (Ruby Gems and Jekyll
+Plugins) of J1 for run-time tracking. The log format of _Log4r_ is the same
+as for _Log4Javascript_ to make loglines 100% comparable.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.1.11
+Year:           2014
+----
+
+|{url-lunr--home}[Lunr, {browser-window--new}]
+|Oliver Nightingale
+|JS
+|_Lunr_ is a small, full-text search library for use in the browser. It indexes
+JSON documents and provides a simple search interface for retrieving documents
+that best match text queries. The search library enables website creators to
+provide a great search experience on their content.
+
+NOTE: _Lunr_ is used for J1 *QuickSearch*, the build-in search engine for J1
+Template based websites. J1 *QuickSearch* enables a powerfull search
+functionality without the need for commercial, internet-based search services
+like _Google_.
+
+.Product details
+----
+License:        MIT license
+Used version:   2.3.9
+Year:           2020
+----
+
+|===============================================================================
+
+
+=== M - O
+
+[cols="2a,2a,2a,6a, subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Product |Producer |Platform |Description
+
+|{url-bs-material-design--home}[MDB, {browser-window--new}]
+|Federico Zivolo and Friends
+|CSS, JS
+|Material Design for Bootstrap supports the Material Design guidelines of
+Google for Bootstrap based webs and web applications. MDB is an open source
+toolkit based on Bootstrap V4/V5 for developing Material Design apps with HTML,
+CSS, JS, and powerful plugins built on jQuery.
+
+NOTE: Material Design for Bootstrap (MDB) is used by J1 to extend the BS4 based
+template system for forms and inputs that follow the Material Design (MD)
+guidelines defined by Google. MDB is used only for a selected number of CSS
+components.
+
+.Product details
+----
+License:        MIT license
+Used version:   4.1.3
+Year:           2020
+----
+
+|link:{url-mdi--home}[Material Design Icons, {browser-window--new}]
+|Austin Andrews and Friends
+|CSS
+|_Material Design Icons_ (*MDI*) is a community-driven project to create an
+increased number of icons based on Google's official repository and the Material
+Design style specified by _Google_.
+
+NOTE: The primary icon-set for J1 Template is *MDI* because it is extremely
+rich set providing more than 5900+ icons for the current version (v5.9.55).
+From a design perspective, _MDI_ has an excellent *Material Design* support and
+comes build-in with the original icon set created by _Google_.
+
+.Product details
+----
+License:        Pictogrammers Free License
+Used version:   5.9.55
+Year:           2021
+----
+
+|{url-materialize--home}[Materialize, {browser-window--new}]
+|Materialize and Friends
+|CSS, JS
+|_Materialize_ is a CSS Framework following the prinziples of _Goolgle's_
+Material Design.
+
+NOTE: J1 Template is inspired by _Materialize_ for the implementation of some
+Javascript based on Material Design. For example, the FAM button is based on
+the JS code of _Materialize_.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.0.0
+Year:           2020
+----
+
+|{url-mobile-menu-light--home}[MobileMenu Light, {browser-window--new}]
+|Fred Heusschen
+|JS
+|_MobileMenu Light_ is the extremely small and lightweight library to
+create menus to be used on mobile devices. It creates a beautiful, intuitive
+off-canvas menu for mobile websites and web-apps.
+
+NOTE: J1 use _MobileMenu Light_ to transform the menus provided by the
+navigation bar into menus usable on mobile devices. With the help of this
+library, menus can be displayed on small displays or small window-sizes in
+a browser.
+
+.Product details
+----
+License:        CC-BY-4.0 license
+Used version:   3.0.8
+Year:           2021
+----
+
+|{url-msdropdown--home}[MsDropdown, {browser-window--new}]
+|Marghoob Suleman
+|JS
+|_MsDropdown_ is a quite handy JS library for enhanced HTML <select>
+elements (dropdowns). Up to now, it is *not* possible to use e.g. images
+inside a <select> element. With the help of _MsDropdown_, standard HTML
+dropdowns base on <select> elements are tranformed into powerful dropdowns.
+
+.Product details
+----
+License:        MIT
+Used version:   4.0.3
+Year:           2021
+----
+
+
+|{url-netlify--home}[Netlify, {browser-window--new}]
+|Netlify Inc.
+|Platform
+|_Netlify_ provides everything you need to build fast, modern websites based
+on modern static site generators like Jekyll (and many others). Powerful
+features like continuous deployment and serverless functions support your
+website for the better.
+
+NOTE: _Netlify_ is an option to deploy, to place a J1-base static web on
+the Internet. Running a web on this platform is easy to manage, very fast and
+can be done *for free*.
+
+|{url-nodejs--home}[NodeJS Language, {browser-window--new}]
+|OpenJS Foundation
+|JS
+|_NodeJS_ is an open-source, cross-platform, back-end JavaScript runtime
+environment that runs on the Chrome V8 engine and executes JavaScript code
+*outside* a web browser.
+
+NOTE: All Javascript resources running *outside* the browser are based on
+_NodeJS_. The J1 package management and control is using _NodeJS_, the J1
+Utility Server is based on this runtime environment.
+
+.Product details
+----
+License:        MIT license
+Used version:   12.19.0
+Year:           2020
+----
+
+|{url-node-sass--home}[Node Sass, {browser-window--new}]
+|OpenJS Foundation
+|JS
+|_Node Sass_ is a library that provides binding for _NodeJS_ to *LibSass*,
+the C version of the popular stylesheet preprocessor *Sass*. It allows to
+natively compile `.scss` files to css at incredible speed.
+
+NOTE: The J1 Development system is using _Node Sass_ to process *Sass*
+sources into *CSS* files. Because *LibSass* is not longer maintained by the
+makers of _Sass_, J1 will move from _Node Sass_ to _Dart Sass_ for upcoming
+releases.
+
+.Product details
+----
+License:        MIT license
+Used version:   5.0.0
+Year:           2020
+----
+
+|{url-nokogiri--home}[Nokogiri, {browser-window--new}]
+|Mike Dalessio, Aaron Patterson, Yoko Harada, Akinori MUSHA,
+John Shahid, Karol Bucek, Lars Kanis, Sergio Arbeo,
+Timothy Elliott, Nobuyoshi Nakada, Charles Nutter, Patrick Mahoney
+|Ruby
+|_Nokogiri_ is an open source software library to parse HTML and XML in Ruby.
+The library (鋸) makes it easy and painless to work with XML and HTML from Ruby.
+It provides a sensible, easy-to-understand API for reading, writing, modifying,
+and querying documents. It is fast and standards-compliant by relying on native
+parsers.
+
+NOTE: _Nokogiri_ is the base (Ruby) library for HTMl processing and
+manipulation.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.11.1
+Year:           2021
+----
+
+|{url-nokogiri-pretty--gh-repo}[Nokogiri Pretty, {browser-window--new}]
+|Toby Matejovsky
+|Ruby
+|_Nokogiri Pretty_ pretty-prints the contents of Nokogiri documents (XML/HTML).
+
+NOTE: _Nokogiri Pretty_ is used by J1 to check code consistency and prettifies
+all HTML pages generated by _Jekyll_ for better human readability.
+
+.Product details
+----
+License:        MIT license
+Used version:   0.1.0
+Year:           2013
+----
+
+|{url-npm--home}[NPM, {browser-window--new}]
+|npm Inc. and Contributors (CLI)
+|Plattform (JS), CLI (JS)
+|_NPM_ is two things: first and foremost, it is an online *repository* for the
+publishing of open-source _NodeJS_ projects. Second, it is a *command-line*
+utility/interface (*CLI*) for interacting with said repository that aids in
+package installation, version and dependency management and project control.
+
+NOTE: J1 is using _NPM_ both ways: as an online *repository* to downlad all JS
+modules online needed for the project and as a *command-line interface* (CLI)
+to run the project (offline).
+
+.Product details (CLI)
+----
+License:        The Artistic License 2.0
+Used version:   6.14.8
+Year:           2020
+----
+
+|{url-npm-run-all--gh-repo}[Npm Run All, {browser-window--new}]
+|Toru Nagashima
+|JS
+|_Npm Run All_ is a command-line tool (CLI) to run multiple npm scripts in
+parallel or sequential.
+
+NOTE: The J1 project is using the _npm_ CLI to run all *tasks* to create and
+run a website. _Npm Run All_ helps to run project *tasks* efficiently; if
+possible *in parallel*.
+
+.Product details
+----
+License:        MIT license
+Used version:   4.1.5
+Year:           2018
+----
+
+|{url-omniauth--gh-repo}[Omniauth, {browser-window--new}]
+|
+|
+|_OmniAuth_ is a library that standardizes multi-provider authentication for
+web applications. It was created to be powerful, flexible, and do as little
+as possible. Any developer can create strategies (*plugins*) for OmniAuth that
+can authenticate users via disparate systems.
+
+NOTE: _OmniAuth_ is the core library for J1 for *authentication* if a site is
+run as a *web application*. Several *plugins* are used to implement
+*authentication* for e.g. *Oauth* or *Basic Authentication*.
+
+.Product details
+----
+License:        MIT license
+Used version:   2.0.2
+Year:           2021
+----
+
+|{url-omniauth-oauth-v2--gh-repo}[Omniauth Oauth2, {browser-window--new}]
+|Michael Bleigh, Erik Michaels-Ober and Intridea Inc.
+|Ruby
+|_Omniauth Oauth2_ provides a generic OAuth2 strategy for _OmniAuth_. It is
+meant to serve as a building block strategy for other strategies and not to
+be used independently (since it has no inherent way to gather uid and user
+info).
+
+NOTE: _Omniauth Oauth2_ is used by J1 to implement a _OmniAuth_ (authentication)
+strategy for *Oauth2* to access providers like _Github_, _Disqus_, or
+_Facebook_ if a J1 site is run as an web *application*.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.7.1
+Year:           2021
+----
+
+|OwlCarousel (V1)
+|Bartosz Wojciechowski
+|JS
+|_OwlCarousel (V1)_ provides a touch enabled (e.g mobile devices) jQuery plugin
+that lets create beautiful responsive carousel slider.
+
+NOTE: OWL Carousel V1 is no longer available on the Internet; for an unknown
+reasons. Anyway, J1 Template is using this version of OWL Carousel as a
+build-in carousel module because the software does a excellent job.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.23
+Year:           2016
+----
+
+|===============================================================================
+
+
+=== P - R
+
+[cols="2a,2a,2a,6a, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Product |Producer |Platform |Description
+
+|{url-parseurl--gh-repo}[ParseURL, {browser-window--new}]
+|Jonathan Ong, Douglas Christopher Wilson
+|JS
+|Parse a URL (unified resource locator) with memoization.
+
+NOTE: _ParseURL_ is a small library that provides a parser for all types of
+internet addresses (*URLs*) to split them into their components. J1 uses the
+parser to split and extract data from URLs.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.3.3
+Year:           2019
+----
+
+|{url-platform--gh-repo}[Platform, {browser-window--new}]
+|Benjamin Tan, John-David Dalton
+|JS
+|_Platform_ is a platform detection library that works on nearly all
+JavaScript platforms.
+
+NOTE: The detection library _Platform_ is a useful helper to detect and
+collect all relevant details of the operating system (platform) a J1
+based site is running.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.7.1
+Year:           2021
+----
+
+|{url-popper--home}[Popper, {browser-window--new}]
+|Federico Zivolo
+|JS
+|_Popper_ is a Tooltip and Popover positioning engine to support a better
+web design for user notification. Given an element, such as a button, and a
+tooltip element describing it, Popper will automatically put the tooltip
+in the right place near the button.
+
+NOTE: _Popper_ is one of the core JS components of _Bootstrap V5_ and used
+by J1 for easier positioning of *UI* (user interface) components. Note that
+the older version *1.x* is used for _Bootstrap_ compatibility.
+
+.Product details
+----
+License:        MIT license
+Used version:   2.10.2
+Year:           2021
+----
+
+|{url-puma--home}[Puma, {browser-window--new}]
+|Evan Phoenix, Zed Shaw
+|Ruby
+|_Puma_ is a Ruby *Web Server* built for concurrency. The Web Server is a
+simple, fast, multi-threaded, and highly concurrent HTTP 1.1 server made for
+Ruby and Rack-based (web) applications.
+
+NOTE: If a J1-based website in run as an *web application*, _Puma_ used for the
+Web Server.
+
+.Product details
+----
+License:        BSD-3-Clause license
+Used version:   5.2.1
+Year:           2021
+----
+
+|{url-rack--home}[Rack, {browser-window--new}]
+|Leah Neukirchen
+|Ruby
+|_Rack_ is a modular interface between web servers and web applications
+developed in the Ruby programming language. With Rack, application programming
+interfaces (APIs) for web frameworks and middleware are wrapped into a
+single method call handling HTTP requests and responses.
+
+NOTE: Rack is used by many Ruby web frameworks and libraries, such as
+_Ruby on Rails_ and _Sinatra_. J1 Template transforms a website into an
+web application using the framework _Sinatra_.
+
+.Product details
+----
+License:        MIT license
+Used version:   2.2.2
+Year:           2021
+----
+
+|{url-rack-protection--home}[Rack Protection, {browser-window--new}]
+|Konstantin Haase, Zachary Scott
+|Ruby
+|_Rack Protection_ is part of the Ruby web framework _Sinatra_, but work
+for all Rack apps, including Rails. It protect against typical web attacks
+like Cross Site Request Forgery (CSRF), Cross Site Scripting, Clickjacking,
+Session Hijacking, etc.
+
+NOTE: J1 Template use this Ruby Gem to protect a website, that is run as an
+web application, against typical web attacks.
+
+.Product details
+----
+License:        MIT license
+Used version:   2.1.0
+Year:           2021
+----
+
+|{url-rack-ssl-enforcer--gh-repo}[Rack SSL Enforcer, {browser-window--new}]
+|Tobias Matthies
+|Ruby
+|_Rack SSL Enforcer_ is an add-on, a middleware for _Rack_ to enforce SSL
+connections.
+
+NOTE: For J1 websites running as web applications, the (*Rack*) middleware
+_Rack SSL Enforcer_ can be used to establish secure, encrpyted HTTPS
+connections using SSL.
+
+.Product details
+----
+License:        MIT license
+Used version:   0.2.9
+Year:           2017
+----
+
+|{url-roboto--home}[Roboto, {browser-window--new}]
+|Google, Christian Robertson
+|Font
+|_Roboto_ is a chararcter font used by _Google_ *Material Design* for the
+default. For J1 Template, _Roboto_ is the default font as well for non-serif
+characters.
+
+NOTE: The font _Roboto_ is non-serif, has a mechanical skeleton and the forms
+are largely geometric. At the same time, the font features friendly and open
+curves. The font excellent readable in all sizes and gives a quite harmonic
+and natural text flow.
+
+.Product details
+----
+License:        Apache License, Version 2.0
+Used version:   1.7.1
+Year:           2021
+----
+
+|{url-ruby-rouge--gh-repo}[Rouge, {browser-window--new}]
+|Jeanine Adkisson, Drew Blessing, Goro Fuji and Friends
+|Ruby
+|_Rouge_ is a pure Ruby syntax highlighter. It can highlight 100+ different
+languages, and output HTML or ANSI 256-color text.
+
+NOTE: For J1 Template, _Rouge_ is used for highlightning all (Asciidoc) code
+blocks placed in the sources of a web page.
+
+.Product details
+----
+License:        MIT license
+Used version:   3.26.0
+Year:           2020
+----
+
+|{url-ruby-lang--home}[Ruby Language, {browser-window--new}]
+|Yukihiro Matsumoto and Contributors
+|Ruby
+|_Ruby_ is a dynamic, open source programming language with a focus on
+simplicity and productivity. It has an elegant syntax that is natural to
+read and easy to write.
+
+NOTE: J1 Template is based on _Jekyll_, a static site generator written in
+_Ruby_.
+
+.Product details
+----
+License:        2-clause BSDL license
+Used version:   2.6.6
+Year:           2020
+----
+
+|{url-rubygems--home}[RubyGems, {browser-window--new}]
+|Nick Quaranto and Contributers
+|Platform (Ruby)
+|RubyGems.org is the Ruby community’s gem hosting service. The interface
+for RubyGems is a command-line tool called `gem` which can install and
+manage _Ruby_ *libraries* (the gems, the Rubies).
+
+NOTE: All _Ruby_ *libraries* (gems) used by the project J1 Template are
+available for free at _RubyGems_.
+
+|===============================================================================
+
+
+//////////
+=== S
+
+[cols="2a,2a,2a,6a, subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Product |Producer |Platform |Description
+
+|{}[ScrollSmooth, {browser-window--new}]
+|
+|
+|
+
+NOTE: bla
+
+.Product details
+----
+License:        MIT license
+Used version:   1.7.1
+Year:           2021
+----
+
+|{}[ScssLint, {browser-window--new}]
+|
+|
+|
+
+NOTE: bla
+
+.Product details
+----
+License:        MIT license
+Used version:   1.7.1
+Year:           2021
+----
+
+|{}[SeeMe, {browser-window--new}]
+|
+|
+|
+
+NOTE: bla
+
+.Product details
+----
+License:        MIT license
+Used version:   1.7.1
+Year:           2021
+----
+
+|{}[SeeMe Client, {browser-window--new}]
+|
+|
+|
+
+NOTE: bla
+
+.Product details
+----
+License:        MIT license
+Used version:   1.7.1
+Year:           2021
+----
+
+|===============================================================================
+//////////
+
+
+=== S - T
+
+[cols="2a,2a,2a,6a, subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Product |Producer |Platform |Description
+
+|{url-tablesaw-rtables--gh-repo}[Tablesaw, {browser-window--new}]
+|Filament Group
+|JS
+|_Tablesaw_ provides a set of Javascript plugins to support *responsive* HTML
+tables easy to use in web pages.
+
+NOTE: The people at {url-filamentgroup--home}[Filament Group, {browser-window--new}]
+collected a set of well-known strategies to make *HTML tables* usable for
+responsive Web Design. J1 template make use of the *Stack Mode* plugin to make
+larger, multi-column (HTML) tables readable on small (mobile) devices or browser
+windows.
+
+.Product details
+----
+License:        BSD license
+Used version:   3.1.0
+Year:           2018
+----
+
+|{url-terser--home}[Terser, {browser-window--new}]
+|Mihai Bazon and Friends
+|JS
+|_Terser_ is a JavaScript parser and mangler/compressor toolkit for Javasript
+ES6+ code.
+
+NOTE: To compress (*uglify*) Javascript files, J1 is using _Terser_ to create
+the *minified* versions for all JS components (of the JS package) used by a
+website running in *production* mode.
+
+.Product details
+----
+License:        BSD license
+Used version:   5.5.1
+Year:           2020
+----
+
+|{url-theme-switcher--gh-repo}[ThemeSwitcher, {browser-window--new}]
+|Joseph Guadagno
+|JS
+|_ThemeSwitcher_ is a jQuery plugin for dynamically loading Twitter Bootstrap
+themes from Bootswatch. The plugin allows for the automatic populating of UL
+and SELECT elements with the names of themes available. The plugin can switch
+a theme, save the selected theme to a cookie and load the selected theme from
+a cookie vice-versa.
+
+NOTE: _ThemeSwitcher_ is one of the core components for the *theming* feature
+of J1 Template to select and load themes from _BootSwatch_.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.15
+Year:           2015
+----
+
+|{url-tocbot--home}[TocBot, {browser-window--new}]
+|Tim Scanlin
+|JS
+|_Tocbot_ builds a table of contents (TOC) from headings in an HTML document.
+This is useful for documentation websites or long markdown pages because it
+makes them easier to navigate. Tocbot uses native DOM methods and avoids any
+jQuery and jQuery UI dependencies.
+
+NOTE: For J1, _Tocbot_ is the core library to create dynamic table-of-content
+menus (*TOC*) availabe for all content pages (if enabled). The library is
+fully configurable, fast and support *smooth* scrolling out of the box.
+
+.Product details
+----
+License:        MIT license
+Used version:   4.12.0
+Year:           2020
+----
+
+|{url-twitter-emoji--gh-repo}[Twemoji, {browser-window--new}]
+|Twitter, Inc and contributors
+|JS
+|Emoji (絵文字) are ideograms and smileys used in electronic messages
+and web pages. _Twemoji_ is a simple library that provides standard Unicode
+for _Twitter's_  emoji support across all platforms.
+
+NOTE: J1 implements _Twitter_ emoji's based on a standrad font icon set.
+Emoji's can be used in a web page using an AsciiDoc extention like all all
+other font icons provided by _Font Awesome_ or _Material Design Icons_.
+
+.Product details
+----
+License:        MIT license
+Used version:   13.0.1
+Year:           2020
+----
+
+|{url-twitter-emoji-picker--gh-repo}[Twemoji Picker, {browser-window--new}]
+|Jordan Gillet (xLs51)
+|JS
+|_Twemoji Picker_ is a jQuery plugin that adds support for twemoji to select
+icons from a HTML textarea element.
+
+NOTE: For easier use for _Twitter_ emoji's, a previewer is provided. The core
+component for previewer is _Twemoji Picker_ to select easily icons with the
+mouse.
+
+.Product details
+----
+License:        MIT license
+Used version:   2017
+Year:           2017
+----
+
+|===============================================================================
+
+
+=== U - V
+
+[cols="2a,2a,2a,6a, subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Product |Producer |Platform |Description
+
+|{url-uglifier--gh-repo}[Uglifier, {browser-window--new}]
+|Ville Lautanala
+|Ruby
+|_Uglifier_ is a Ruby-based wrapper for the JavaScript _UglifyJS_ compressor.
+
+NOTE: To compress (*uglify*) so-called Javascript module *adapter*, J1
+compress all JS adapters by _Uglifier_ for webs run in production mode.
+
+.Product details
+----
+License:        MIT license
+Used version:   4.2.0
+Year:           2019
+----
+
+|{url-videojs--home}[VideoJS, {browser-window--new}]
+|Brightcove, Inc.
+|JS
+|_VideoJS_ is a web video player built from the ground up for an HTML5 world.
+It supports HTML5 video and modern streaming formats, as well as YouTube, or
+Vimeo. It supports video playback on desktop and mobile devices as well.
+
+NOTE: J1 Template support video content by native HTML5 and players like
+_VideoJS_ as an alternative to use.
+
+.Product details
+----
+License:        Apache V2 license
+Used version:   7.11.4
+Year:           2021
+----
+
+|{url-vimeo--home}[Vimeo, {browser-window--new}]
+|Vimeo Inc.
+|Platform (video content)
+|Vimeo is an video hosting, sharing, and services platform. Vimeo operates on
+an ad-free basis, and instead derives revenue by providing commercial
+subscription plans for businesses and video content producers and offering
+software as a service (SaaS).
+
+NOTE: _Vimeo_ provides video content created by professionals. In compare
+to _YouTube_ the contents are quite professional, made primarely for business
+use. J1 is using some video streams for examples using *video content* with
+J1 websites.
+
+|===============================================================================
+
+
+=== W - Z
+
+[cols="2a,2a,2a,6a, subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Product |Producer |Platform |Description
+
+|{url-ruby-warden--home}[Warden, {browser-window--new}]
+|Daniel Neighman, Justin Smestad and Friends
+|Ruby
+|_Warden_ provides a mechanism for authentication in Rack based Ruby
+applications. It’s made with multiple applications sharing within the
+same rack instance in mind.
+
+NOTE: _Warden_ is used by J1 if a website is run as a *web application* based
+on _Rack_ and _Sinatra_. The library is the core component to transform a
+*visit* (instance) of a website into a *session* for the *visitor*. If a J1
+website uses *authentication*, _Warden_ takes care of the authentication
+*state* of the visitor to provide *access* for all pages, the user is already
+authenticated for.
+
+.Product details
+----
+License:        MIT license
+Used version:   1.2.9
+Year:           2020
+----
+
+|{url-webpack--home}[Webpack, {browser-window--new}]
+|JS Foundation and Contributers
+|JS
+|_Webpack_ is a module bundler for Javascript. The main purpose of the bundler
+is to take all code from an application and makes it usable in a web browser.
+
+NOTE: _Webpack_ is used by the J1 Development System to dynamically compile
+JavaScript sources on changes at run-time and compile static JS code of all
+core components makes usable in a web browser.
+
+|{url-yarn--home}[Yarn, {browser-window--new}]
+|Facebook Inc.
+|JS
+|_Yarn_ is a new package manager that replaces the existing workflow for the
+*npm* client (CLI) while remaining compatible with the npm registry. It has
+the same feature set as existing workflows while operating faster, more
+securely, and more reliably.
+
+NOTE: _Yarn_ is the favorite package manager *CLI* (over npm) managing a
+J1 project.
+
+.Product details
+----
+License:        BSD license
+Used version:   1.22.10
+Year:           2020
+----
+
+|{url-youtube--home}[YouTube, {browser-window--new}]
+|Google LLC
+|Platform (video streams)
+|_YouTube_ is an online video-sharing platform for the public and for business
+use. The platform allows users and customers to upload, view, rate, share,
+add to playlists, report, comment on videos, and subscribe to other users.
+On _YouTube_, all type of content is available.
+
+NOTE: _YouTube_ provides video content of all type. J1 is using some video
+streams for examples using *video content* with J1 websites.
+
+|===============================================================================
+
+/////
+=== W - Z
+
+[cols="2a,2a,2a,6a, subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===============================================================================
+|Product |Producer |Platform |Description
+
+.Product details
+----
+License:        MIT license
+Used version:   4.42.0
+Year:           2020
+----
+
+|{url-webpack-cli--home}[Webpack CLI, {browser-window--new}]
+|
+|JS
+|
+
+NOTE: bla
+
+.Product details
+----
+License:        MIT license
+Used version:   1.7.1
+Year:           2021
+----
+
+|{}[WDM, {browser-window--new}]
+|
+|
+|
+
+NOTE: bla
+
+.Product details
+----
+License:        MIT license
+Used version:   1.7.1
+Year:           2021
+----
+
+|{}[Webhooks, {browser-window--new}]
+|
+|
+|
+
+NOTE: bla
+
+.Product details
+----
+License:        MIT license
+Used version:   1.7.1
+Year:           2021
+----
+
+|===============================================================================
+/////
