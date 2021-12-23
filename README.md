@@ -23,7 +23,13 @@ you go to the Jekyll Way.
 
 Have fun!
 
-# Live Demo
+# J1 Home
+
+The template J1 can do a lot for you and maybe the base for your next web
+project. To experience more, welcome to visit the homepage of the template
+project at [jekyll.one](https://jekyll.one/).
+
+# J1 Live Demo
 
 The template comes with a Web included, a skeleton for your new Web site.
 This Web is called the **Starter Web**, a general-purpose Website scaffold to
@@ -32,7 +38,7 @@ at Netlify](https://j1-template-starter.netlify.app/).
 
 **Have fun exploring what a modern static web, a Jekyll site can do**!
 
-# Features
+# J1 Features
 
 The template combines the best free software for the web. Jekyll One Template
 is OpenSource and the modules included are free to use as well. No license
@@ -74,9 +80,9 @@ issues for private or professional use.
 * Full-text search engine included (Lunr)
 * Blog Post navigation included
 * Cookie Consent module included (includes GDPR compatible OptIn/OptOut support)
-* Translator module included
-* Advertising module included
-* Analytics module included
+* Translator module included (includes GDPR compatible OptIn/OptOut support)
+* Advertising module included (includes GDPR compatible OptIn/OptOut support)
+* Analytics module included (includes GDPR compatible OptIn/OptOut support)
 * Clipboard module included
 * Floating Action Buttons|Menus included
 * Navigation module (multi purpose) included
@@ -107,7 +113,7 @@ J1 is supported on all current x64-based OS:
 Note that 32-bit versions (x32) are generally NOT supported for all
 platforms.
 
-# Development languages and tools
+# J1 Development languages and tools
 
 To run the project for J1 Template Web, the following languages and
 tools expected to be in place with your OS:
