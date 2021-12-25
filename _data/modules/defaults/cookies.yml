@@ -31,7 +31,76 @@ defaults:
   enabled:                              true
 
   # ----------------------------------------------------------------------------
-  # Settings/Attributes
+  # Switches
+  #
+  #   checkCookies
+  #   --------------------------------------------------------------------------
+  #   Check if cookies are created and available to the browser. If the cookie
+  #   attributes does NOT allow to create and|or access on cookies,
+  #   setting-up a page will fail. It is recommended to enable checks on
+  #   cookies to issue an error page (HTML 445) if access on cookies has
+  #   failed for some reason. This will prevent severe failures and|or endless
+  #   loops accessing a page on missing cookies or invalid cookie settings.
+  #
+  #   values:                           [false|true]
+  #   default:                          true
+  #
+  #   encryptCookiesOnHttp (currently NOT supported)
+  #   --------------------------------------------------------------------------
+  #   If a website does not use encryption over the HTTPS protocol, the
+  #   content written by J1 to cookies can be (AES) encrypted to prevent
+  #   unwanted manipulation.
+  #
+  #   NOTE: For sites deployed on the Internet, it is highly recommended
+  #         to use encryption (HTTPS protocol) for all sites to prevent
+  #         (man-in-the-middle) attacks. If this is NOT possible, at least
+  #         cookies should be encrypted to prevent attacks based on manipulated
+  #         contents.
+  #
+  #   NOTE: Encrpytion on cookies is only enabled, if an unsecure connection
+  #         over the HTTP protocol is detected. This is for performance reasons
+  #         to not do time consuming calculations if a site is already
+  #         encrypted.
+  #
+  #   values:                           [false|true]
+  #   default:                          false
+  #
+  #   expireCookiesOnRequiredOnly
+  #   --------------------------------------------------------------------------
+  #   J1 uses permanent cookies to store user-related data and process stored
+  #   data on subsequent visits. permanent cookies require consent, which is
+  #   automatically displayed as a cookie banner on the first visit.
+  #
+  #   If the switch 'expireCookiesOnRequiredOnly' is set to 'true', all
+  #   permanent cookies created by J1 are rewritten to session cookies if
+  #   the consent for advanced cookies (type personalization or analysis) has
+  #   been denied.
+  #   The browser automatically deletes all session cookies when all browser
+  #   sessions (windows/tabs) are closed. Since all session cookies are deleted
+  #   automatically, this will result in a cookie consent dialog being
+  #   displayed again on visitors next visit.
+  #
+  #   NOTE: It is recommended that permanent J1 cookies be rewritten to
+  #         session cookies for visitors who reject advanced cookies. In
+  #         addition, session cookies improve privacy policy compliance and
+  #         increase the chance all cookies are accepted on return.
+  #
+  #   NOTE: Make sure that your website complies with applicable privacy
+  #         regulations, such as the GDPR (DSGVO) or California California
+  #         Consumer Privacy Act (CCPA) by using the cookie banner provided
+  #         by J1 Template.
+  #
+  #   values:                           [false|true]
+  #   default:                          true
+  #
+  # ----------------------------------------------------------------------------
+  #
+  checkCookies:                         true
+  encryptCookiesOnHttp:                 false
+  expireCookiesOnRequiredOnly:          true
+
+  # ----------------------------------------------------------------------------
+  # Attributes
   #
   #   path
   #   --------------------------------------------------------------------------
@@ -44,19 +113,19 @@ defaults:
   #   domain
   #   --------------------------------------------------------------------------
   #   Switch 'domain' controls if the value for the attribute 'domain' is
-  #   used (= auto|domain) or NOT used (false). If 'auto' is given, the domain
-  #   is calculated from the hostname. Otherwise domain is treates as domain
-  #   to be used.
-  #   If the switch 'domain' is to 'false', the attribute 'domain' is
-  #   automatically set to the (fully qualified) hostname and all subdomains
-  #   are EXCLUDED from accessing the cookies.
+  #   used (= auto|domain_string) or NOT used (false). If 'auto' is given,
+  #   the domain is calculated from the hostname found in URL of the current
+  #   page. Otherwise 'domain_string' is treates as domain to be used.
+  #   If the switch 'domain' is set to 'false', the attribute 'domain' is
+  #   not set, but automatically set by the browser to the (fully qualified)
+  #   hostname and all subdomains are excluded from accessing the cookies.
   #
   #   NOTE: Be carefull setting switch 'domain' to auto. For sites deployed
   #         to hosts of public domain providers like Netlify (netlify.app),
   #         this will open the access on cookies to ALL hosts (subdomains)!
   #         See 'same_site'.
   #
-  #   values:                           [false|auto|domain]
+  #   values:                           [false|auto|domain_string]
   #   default:                          false
   #
   #   expires
@@ -70,54 +139,53 @@ defaults:
   #
   #   same_site
   #   --------------------------------------------------------------------------
-  #   Lax:  	 	Sent cookie for all requests (including subdomains) but NOT
-  #             in cross-site requests.
-  #   Strict:   The cookie is only sent to the site where it originated
-  #             (excluding subdomains) but NOT in cross-site requests.
-  #   None:     Send cookies in cross-site requests if Secure=true is
-  #             enabled (HTTPS requests only)
-  #
-  #   NOTE:
-  #     Specify SameSite=Strict or SameSite=Lax if the cookie should
-  #     NOT be sent in cross-site requests.
-  #   NOTE:
-  #   	Specify SameSite=None and Secure=true if the cookie should be sent
-  #     in cross-site requests. This enables third-party use.
+  #   Lax:      Sent cookie for all requests, including subdomains, but
+  #             not in cross-site requests.
+  #   Strict:   The cookie is only sent to the site where it originated,
+  #             excluding subdomains, but not in cross-site requests.
+  #   None:     Send cookies in cross-site requests if the attribute
+  #             'secure' is enabled. Note, the value 'None' can be only
+  #             used for HTTPS requests.
   #
   #   values:                           [Strict|Lax|None]
-  #   default:                          Lax
+  #   default:                          Strict
   #
   #   http_only
   #   --------------------------------------------------------------------------
-  #   prevent access to cookie values via JavaScript
+  #   Prevent access on cookies via JavaScript (client-side). Note, for
+  #   client-side processing of cookies, like J1 Modules, never change
+  #   the attribute to 'true'.
+  #
+  #   NOTE: The attribute 'http_only' is only used for web applications to
+  #         store sensitive private user data (like passwords, account data) to
+  #         to cookies. Only 'server-sided' web applications will be able to
+  #         read cookies secured by 'http_only'.
   #
   #   values:                           [false|true]
   #   default:                          false
   #
   #   secure
   #   --------------------------------------------------------------------------
-  #   Cookies are only sent to the server with an encrypted request over
-  #   the HTTPS protocol
+  #   If set to 'true', cookies are only sent to the server with an encrypted
+  #   request over the HTTPS protocol. If set to 'auto', the attribute is
+  #   ENABLED (set to 'true') automatically, if a secure connection (HTTPS)
+  #   is detected.
   #
-  #   values:                           [false|true]
-  #   default:                          false
+  #   NOTE: For sites deployed on the Internet, it is highly recommended
+  #         to use encryption (HTTPS protocol) for all sites to prevent
+  #         (man-in-the-middle) attacks (and manipulation on cookies).
   #
-  #   check_cookies
-  #   --------------------------------------------------------------------------
-  #   Check if cookies created/available
-  #
-  #   values:                           [false|true]
-  #   default:                          true
+  #   values:                           [auto|false|true]
+  #   default:                          auto
   #
   # ----------------------------------------------------------------------------
   #
-  check_cookies:                        true
   path:                                 /
   domain:                               false
   expires:                              365
-  same_site:                            Lax
+  same_site:                            Strict
+  secure:                               auto
   http_only:                            false
-  secure:                               false
 
 # ------------------------------------------------------------------------------
 # END config
