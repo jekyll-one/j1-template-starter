@@ -27,17 +27,9 @@ settings:
   enabled:                              true
 
   # ----------------------------------------------------------------------------
-  # Attributes
-  #
-  #   same_site
-  #   --------------------------------------------------------------------------
-  #   Changed to 'None' to allow 'cross-site' requests for the site
-  #   https://jamstackthemes.dev as the preview is using an 'iframe'
-  #
-  #   NOTE: Should be removed for all other sites
-  #
+  # Switches
   # ----------------------------------------------------------------------------
-  same_site:                            None
-
+  checkCookies:                         true
+  
 # ------------------------------------------------------------------------------
 # END config

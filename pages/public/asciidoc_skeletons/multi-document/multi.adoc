@@ -12,9 +12,6 @@ description: >
 categories:                             [ Knowledge ]
 tags:                                   [ Asciidoc, Skeleton, Document ]
 
-sitemap:                                false
-comments:                               false
-
 robots:
   index:                                false
   follow:                               false
@@ -22,7 +19,7 @@ robots:
 permalink:                              /pages/public/skeleton/multi/
 regenerate:                             false
 
-resources:                              [ lightbox, clipboard, rouge, animate ]
+resources:                              [ animate, clipboard, lightbox, rouge ]
 resource_options:
   - toccer:
       collapseDepth:                    4

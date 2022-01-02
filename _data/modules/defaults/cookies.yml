@@ -35,15 +35,17 @@ defaults:
   #
   #   checkCookies
   #   --------------------------------------------------------------------------
-  #   Check if cookies are created and available to the browser. If the cookie
-  #   attributes does NOT allow to create and|or access on cookies,
-  #   setting-up a page will fail. It is recommended to enable checks on
-  #   cookies to issue an error page (HTML 445) if access on cookies has
-  #   failed for some reason. This will prevent severe failures and|or endless
-  #   loops accessing a page on missing cookies or invalid cookie settings.
+  #   Check if cookies are created and available to the browser. If the
+  #   cookie attributes does NOT allow to create and|or access on cookies,
+  #   setting-up a page will fail.
+  #   For testing sites deplayed on the Internet, it is recommended to enable
+  #   checks on cookies to issue an error page (HTML 445) if access on cookies
+  #   has failed for some reason. This will prevent severe failures and|or
+  #   endless loops accessing a page on missing cookies or invalid cookie
+  #   settings.
   #
   #   values:                           [false|true]
-  #   default:                          true
+  #   default:                          false
   #
   #   encryptCookiesOnHttp (currently NOT supported)
   #   --------------------------------------------------------------------------
@@ -95,7 +97,7 @@ defaults:
   #
   # ----------------------------------------------------------------------------
   #
-  checkCookies:                         true
+  checkCookies:                         false
   encryptCookiesOnHttp:                 false
   expireCookiesOnRequiredOnly:          true
 

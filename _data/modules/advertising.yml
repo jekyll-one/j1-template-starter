@@ -32,14 +32,6 @@ settings:
   # ----------------------------------------------------------------------------
   # Settings
   #
-  #   enabled
-  #   --------------------------------------------------------------------------
-  #   Enables or disables the Ad services. If disabled, no ads services are
-  #   enabled and no unit container get initialized on any page.
-  #
-  #   values:                           [true|false]
-  #   default:                          false
-  #
   #   provider
   #   --------------------------------------------------------------------------
   #   Currently, only Google adsense (google) is available as an provider
@@ -50,8 +42,6 @@ settings:
   #
   # ----------------------------------------------------------------------------
   #
-  enabled:                              false
-
   google:
 
     # --------------------------------------------------------------------------
@@ -95,12 +85,11 @@ settings:
     #
     # --------------------------------------------------------------------------
     #
-    publisherID:                        ca-pub-xxxx..xxx
+    publisherID:                        '<your-publisher-id>'
     autoHideOnUnfilled:                 false
     addBorderOnUnfilled:                true
     checkTrackingProtection:            true
     showErrorPageOnBlocked:             true
-    addBorderOnUnfilled:                true
 
     ads:
 

@@ -9,18 +9,42 @@ description: >
                                         The Themes Previewer provides an overview of common components of a selected
                                         theme. Find base Bootstrap features and styles for the current theme selected.
 
+keywords: >
+                                        previewer, tool, preview, overview, themeable, sizes, common, component,
+                                        nav, navbar, button, active, disabled, outline, flat, pulsed, blocklevel,
+                                        selection, checkbox, radio-button, switch, fab, typography, heading,
+                                        blockquote, table, form, tabs, pills, nav-tab, nav-pill, breadcrumb,
+                                        pagination, indicator, alert, badge, scrollbar, progress, list, card,
+                                        dialog, modal, popover, tooltip,
+                                        opensource, free, load, download, start, starter, example,
+                                        high, easy, use, secure, encrypt, standard, popular,
+                                        generate, develop, create, learn, distribute, publish, deploy,
+                                        beginner, advanced, expert, student, learner, writer, reader, visitor
+                                        framework, toolkit, integration, extension, module, api,
+                                        dynamic, static, generator, client, server, internet, local, localhost
+                                        page, web, website, webdesign, material, design, responsive,
+                                        javascript, nodejs, ruby, windows, linux, osx, mac, os,
+                                        http, https, html, html5, css, scss, style,
+                                        browser, firefox, chrome, edge, opera, safari,
+                                        configuration, generator, navigation, menu, dropdown, fab, action, button
+                                        application, interface, provider, api, repository,
+                                        cookie, language, translation, gdpr, dsgvo, privacy,
+                                        asciidoc, aciidoctor, bootstrap, jekyll, liquid,
+                                        hyvor, disqus, git, github, netlify, heroku, apple, microsoft,
+                                        provider, service, internet, support,
+                                        google, analytics, advertising, search, console, silverlight, score,
+                                        j1, template, jekyllone, comment
+
 categories:                             [ Previewer ]
 tags:                                   [ Bootstrap, Themes ]
 
 scrollbar:                              false
-scrollInPageHashes:                     false
-flowtext:                               false
 fab_menu_id:                            page_ctrl_simple
 
 permalink:                              /pages/public/previewer/theme/
 regenerate:                             false
 
-resources:                              [ animate, clipboard, rouge ]
+resources:                              [ animate, comments, clipboard, rouge ]
 resource_options:
   - attic:
       padding_top:                      400
@@ -84,9 +108,7 @@ resource_options:
 :progress_multiple_bars:                true
 :progress_striped:                      true
 :progress_animated:                     true
-:list_group:                            true
-:list_group_basic:                      true
-:list_group_action:                     true
+:lists:                                 true
 :cards:                                 true
 :cards_simple:                          true
 :cards_image:                           false
@@ -363,25 +385,25 @@ a *ripple* effect is shown for feedback.
 
 ++++
 <div class="doc-example mb-3">
-  <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-secondary">Secondary</button>
-  <button type="button" class="btn btn-success">Success</button>
-  <button type="button" class="btn btn-info">Info</button>
-  <button type="button" class="btn btn-warning">Warning</button>
-  <button type="button" class="btn btn-danger">Danger</button>
-  <button type="button" class="btn btn-link">Link</button>
+  <button type="button" class="btn btn-primary btn-raised">Primary</button>
+  <button type="button" class="btn btn-secondary btn-raised">Secondary</button>
+  <button type="button" class="btn btn-success btn-raised">Success</button>
+  <button type="button" class="btn btn-info btn-raised">Info</button>
+  <button type="button" class="btn btn-warning btn-raised">Warning</button>
+  <button type="button" class="btn btn-danger btn-raised">Danger</button>
+  <button type="button" class="btn btn-link btn-raised">Link</button>
 </div>
 ++++
 
 [source, html]
 ----
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-link">Link</button>
+<button type="button" class="btn btn-primary btn-raised">Primary</button>
+<button type="button" class="btn btn-secondary btn-raised">Secondary</button>
+<button type="button" class="btn btn-success btn-raised">Success</button>
+<button type="button" class="btn btn-info btn-raised">Info</button>
+<button type="button" class="btn btn-warning btn-raised">Warning</button>
+<button type="button" class="btn btn-danger btn-raised">Danger</button>
+<button type="button" class="btn btn-link btn-raised">Link</button>
 ----
 endif::[]
 
@@ -573,17 +595,17 @@ Beside the *default* size, small and large buttons are available.
 
 ++++
 <div class="doc-example mb-3">
-  <button type="button" class="btn btn-primary btn-lg">Large button</button>
-  <button type="button" class="btn btn-primary">Default button</button>
-  <button type="button" class="btn btn-primary btn-sm">Small button</button>
+  <button type="button" class="btn btn-primary btn-raised btn-lg">Large button</button>
+  <button type="button" class="btn btn-primary btn-raised">Default button</button>
+  <button type="button" class="btn btn-primary btn-raised btn-sm">Small button</button>
 </div>
 ++++
 
 [source, html]
 ----
-<button type="button" class="btn btn-primary btn-lg">Large button</button>
-<button type="button" class="btn btn-primary">Default button</button>
-<button type="button" class="btn btn-primary btn-sm">Small button</button>
+<button type="button" class="btn btn-primary btn-raised btn-lg">Large button</button>
+<button type="button" class="btn btn-primary btn-raised">Default button</button>
+<button type="button" class="btn btn-primary btn-raised btn-sm">Small button</button>
 ----
 endif::[]
 
@@ -594,13 +616,13 @@ Draw attention to a button, e.g for a *recommended* action.
 
 ++++
 <div class="doc-example mb-3">
-  <button type="button" class="btn btn-primary pulsed-z2">Recommend</button>
+  <button type="button" class="btn btn-primary btn-raised pulsed-z2">Recommend</button>
 </div>
 ++++
 
 [source, html]
 ----
-  <button type="button" class="btn btn-primary pulsed-z2">Primary</button>
+  <button type="button" class="btn btn-primary btn-raised pulsed-z2">Primary</button>
 ----
 endif::[]
 
@@ -615,8 +637,8 @@ and responsive behaviors.
 ++++
 <div class="doc-example mb-3">
   <div class="d-grid gap-2">
-    <button type="button" class="btn btn-primary btn-lg">Block level button</button>
-    <button type="button" class="btn btn-secondary">Block level button</button>
+    <button type="button" class="btn btn-primary btn-lg btn-raised">Block level button</button>
+    <button type="button" class="btn btn-secondary btn-raised">Block level button</button>
   </div>
 </div>
 ++++
@@ -624,8 +646,8 @@ and responsive behaviors.
 [source, html]
 ----
 <div class="d-grid gap-2">
-  <button type="button" class="btn btn-primary btn-lg">Block level button</button>
-  <button type="button" class="btn btn-secondary">Block level button</button>
+  <button type="button" class="btn btn-primary btn-lg btn-raised">Block level button</button>
+  <button type="button" class="btn btn-secondary btn-raised">Block level button</button>
 </div>
 ----
 endif::[]
@@ -1394,7 +1416,7 @@ link:{url-bs-docs--components-forms}[Bootstrap Docs {char-middot} Forms, {browse
         </label>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    <button type="submit" class="btn btn-primary btn-raised mt-3">Submit</button>
   </form>
 </div>
 ++++
@@ -2201,20 +2223,11 @@ ifeval::[{progress_animated} == true]
 endif::[]
 endif::[]
 
-ifeval::[{list_group} == true]
-== List Group
+ifeval::[{lists} == true]
+== Lists
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
-link:{url-bs-docs--components-badges}[Bootstrap Docs {char-middot} List group, {browser-window--new}]
-
-List groups are a flexible and powerful component for displaying a *series*
-of content within an *single* HTML element.
-
-ifeval::[{list_group_basic} == true]
-=== Basic
-
-The most basic list group is an unordered list with simple list items. Build
-upon it with the options that follow, or with your own CSS as needed.
+Lists are a flexible and powerful component for displaying a series of content
+within an single HTML element.
 
 ++++
 <div class="doc-example mb-3">
@@ -2227,85 +2240,6 @@ upon it with the options that follow, or with your own CSS as needed.
   </ul>
 </div>
 ++++
-
-.Basic list group
-[source, html]
-----
-  <div>
-    <ul class="list-group">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-      <li class="list-group-item">A fourth item</li>
-      <li class="list-group-item">And a fifth one</li>
-    </ul>
-  </div>
-----
-endif::[]
-
-ifeval::[{list_group_action} == true]
-=== Actionable
-
-Use `<a>` or `<button>` elements to create *actionable* list group items with
-hover, disabled, and active states by adding `.list-group-item-action`.
-We separate these pseudo-classes to ensure list groups made of non-interactive
-elements (like `<li>` or `<div>` elements) don’t provide a click or tap
-affordance.
-
-++++
-<div class="doc-example mb-3">
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action active" aria-current="true"> The current link item </a>
-    <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-    <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-    <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-    <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">A disabled link item</a>
-  </div>
-</div>
-++++
-
-.Actionable list group
-[source, html]
-----
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action active"
-      aria-current="true"> The current link item </a>
-    <a href="#" class="list-group-item list-group-item-action">
-      A second link item</a>
-    <a href="#" class="list-group-item list-group-item-action">
-      A third link item</a>
-    <a href="#" class="list-group-item list-group-item-action">
-      A fourth link item</a>
-    <a href="#" class="list-group-item list-group-item-action
-      disabled" tabindex="-1"
-      aria-disabled="true">
-      A disabled link item</a>
-  </div>
-----
-endif::[]
-
-// === Numbered
-//
-// Add the .list-group-numbered modifier class (and optionally use an
-// <ol> element) to opt into numbered list group items. Numbers are
-// generated via CSS (as opposed to a <ol>s default browser styling) for
-// better placement inside list group items and to allow for better
-// customization.
-//
-// Numbers are generated by counter-reset on the <ol>, and then styled
-// and placed with a ::before pseudo-element on the <li> with counter-increment
-// and content.
-
-// === With badges
-//
-// Add badges to any list group item to show unread counts, activity, and more
-// with the help of some utilities.
-
-// === Custom content
-//
-// Add nearly any HTML within, even for linked list groups like the one below,
-// with the help of flexbox utilities.
-
 endif::[]
 
 ifeval::[{cards} == true]
@@ -2555,7 +2489,7 @@ from the top of the page.
 <div class="ml-0">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary"
+    class="btn btn-primary btn-raised"
     data-bs-toggle="modal"
     data-bs-target="#exampleSimpleModal">
     Launch Example
@@ -2580,8 +2514,8 @@ from the top of the page.
         <p>Modal body text goes here.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-flex mr-2">Do nothing</button>
-        <button type="button" class="btn btn-secondary btn-flex" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2596,7 +2530,7 @@ it (the backdrop).
 <div class="ml-0">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary"
+    class="btn btn-primary btn-raised"
     data-bs-toggle="modal"
     data-bs-target="#exampleStaticModal">
     Launch Example
@@ -2623,8 +2557,8 @@ it (the backdrop).
         <p>Modal body text goes here.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-flex mr-2">Do nothing</button>
-        <button type="button" class="btn btn-secondary btn-flex" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2640,7 +2574,7 @@ the height.
 <div class="ml-0">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary"
+    class="btn btn-primary btn-raised"
     data-bs-toggle="modal"
     data-bs-target="#exampleModalLong">
     Launch Example
@@ -2699,8 +2633,8 @@ the height.
         </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-flex mr-2">Do nothing</button>
-        <button type="button" class="btn btn-secondary btn-flex" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2715,7 +2649,7 @@ modal body. Try the demo and scroll the content.
 <div class="ml-0">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary"
+    class="btn btn-primary btn-raised"
     data-bs-toggle="modal"
     data-bs-target="#exampleModalLongScrollable">
     Launch Example
@@ -2774,8 +2708,8 @@ modal body. Try the demo and scroll the content.
         </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-flex mr-2">Do nothing</button>
-        <button type="button" class="btn btn-secondary btn-flex" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2789,7 +2723,7 @@ modal body. Try the demo and scroll the content.
 <div class="ml-0">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary"
+    class="btn btn-primary btn-raised"
     data-bs-toggle="modal" data-bs-target="#exampleModalVerticalCenter">
     Launch Example
   </button>
@@ -2815,8 +2749,8 @@ modal body. Try the demo and scroll the content.
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-flex mr-2">Do nothing</button>
-        <button type="button" class="btn btn-secondary btn-flex" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2831,7 +2765,7 @@ closed, any tooltips and popovers within are also automatically dismissed.
 <div class="ml-0">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary"
+    class="btn btn-primary btn-raised"
     data-bs-toggle="modal"
     data-bs-target="#exampleModalTooltip">
     Launch Example
@@ -2854,14 +2788,14 @@ closed, any tooltips and popovers within are also automatically dismissed.
       </div>
       <div class="modal-body">
         <h4 class="notoc">Popover in a modal</h4>
-        <p>This <a href="#" role="button" class="btn btn-primary popover-test" data-bs-toggle="popover" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on hover or click.</p>
+        <p>This <a href="#" role="button" class="btn btn-primary btn-raised popover-test" data-bs-toggle="popover" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on hover or click.</p>
         <hr>
         <h4 class="notoc">Tooltips in a modal</h4>
         <p><a href="#" class="tooltip-test" data-bs-toggle="tooltip" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" data-bs-toggle="tooltip" title="Tooltip">that link</a> have tooltips on hover.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-flex mr-2">Do nothing</button>
-        <button type="button" class="btn btn-secondary btn-flex" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2875,7 +2809,7 @@ closed, any tooltips and popovers within are also automatically dismissed.
 <!-- Trigger Button (modal) -->
 <div class="ml-0">
   <button type="button"
-    class="btn btn-primary"
+    class="btn btn-primary btn-raised"
     data-bs-toggle="modal"
     data-bs-target="#exampleSimpleModal">
     Launch Example
@@ -2906,11 +2840,11 @@ closed, any tooltips and popovers within are also automatically dismissed.
       </div>
       <div class="modal-footer">
         <button type="button"
-          class="btn btn-primary btn-flex mr-2"> Do nothing
+          class="btn btn-primary btn-flex btn-raised mr-2"> Do nothing
         </button>
         <button
           type="button"
-          class="btn btn-secondary btn-flex"
+          class="btn btn-secondary btn-flex btn-raised"
           data-bs-dismiss="modal"> Close
         </button>
       </div>
@@ -2938,10 +2872,10 @@ link:{url-bs-docs--components-tooltips}[Bootstrap Docs {char-middot} Tooltips, {
 <div class="doc-example mb-3">
   <div class="row d-flex justify-content-center">
     <div class="col-md-6 p-0">
-      <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">Left</button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">Top</button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">Bottom</button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">Right</button>
+      <button type="button" class="btn btn-primary btn-raised" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">Left</button>
+      <button type="button" class="btn btn-primary btn-raised" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">Top</button>
+      <button type="button" class="btn btn-primary btn-raised" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">Bottom</button>
+      <button type="button" class="btn btn-primary btn-raised" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">Right</button>
     </div>
   </div>
 </div>
@@ -2950,22 +2884,22 @@ link:{url-bs-docs--components-tooltips}[Bootstrap Docs {char-middot} Tooltips, {
 .Examples for Tooltips
 [source, html]
 ----
-  <button type="button" class="btn btn-primary"
+  <button type="button" class="btn btn-primary btn-raised"
     data-bs-toggle="tooltip"
     data-bs-placement="top"
     title="Tooltip on top">Top
   </button>
-  <button type="button" class="btn btn-primary"
+  <button type="button" class="btn btn-primary btn-raised"
     data-bs-toggle="tooltip"
     data-bs-placement="bottom"
     title="Tooltip on bottom">Bottom
   </button>
-  <button type="button" class="btn btn-primary"
+  <button type="button" class="btn btn-primary btn-raised"
     data-bs-toggle="tooltip"
     data-bs-placement="right"
     title="Tooltip on right">Right
   </button>
-  <button type="button" class="btn btn-primary"
+  <button type="button" class="btn btn-primary btn-raised"
     data-bs-toggle="tooltip"
     data-bs-placement="left"
     title="Tooltip on left">Left
@@ -2983,10 +2917,10 @@ link:{url-bs-docs--components-popovers}[Bootstrap Docs {char-middot} Popovers, {
 <div class="doc-example mb-3">
   <div class="row d-flex justify-content-center">
     <div class="col-md-6 p-0">
-      <button type="button" class="btn btn-primary" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left</button>
-      <button type="button" class="btn btn-primary" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top</button>
-      <button type="button" class="btn btn-primary" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Bottom</button>
-      <button type="button" class="btn btn-primary" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right</button>
+      <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left</button>
+      <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top</button>
+      <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Bottom</button>
+      <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right</button>
     </div>
   </div>
 </div>
@@ -2995,7 +2929,7 @@ link:{url-bs-docs--components-popovers}[Bootstrap Docs {char-middot} Popovers, {
 .Examples for Popovers
 [source, html]
 ----
-  <button type="button" class="btn btn-primary"
+  <button type="button" class="btn btn-primary btn-raised"
     title="Popover Title"
     data-container="body"
     data-bs-toggle="popover"
@@ -3004,7 +2938,7 @@ link:{url-bs-docs--components-popovers}[Bootstrap Docs {char-middot} Popovers, {
     data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
     Top
   </button>
-  <button type="button" class="btn btn-primary"
+  <button type="button" class="btn btn-primary btn-raised"
     title="Popover Title"
     data-container="body"
     data-bs-toggle="popover"
@@ -3013,7 +2947,7 @@ link:{url-bs-docs--components-popovers}[Bootstrap Docs {char-middot} Popovers, {
     data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
     Bottom
   </button>
-  <button type="button" class="btn btn-primary"
+  <button type="button" class="btn btn-primary btn-raised"
     title="Popover Title" data-container="body"
     data-bs-toggle="popover"
     data-bs-placement="right"
@@ -3021,7 +2955,7 @@ link:{url-bs-docs--components-popovers}[Bootstrap Docs {char-middot} Popovers, {
     data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
     Right
   </button>
-  <button type="button" class="btn btn-primary"
+  <button type="button" class="btn btn-primary btn-raised"
     title="Popover Title"
     data-container="body"
     data-bs-toggle="popover"
@@ -3071,9 +3005,9 @@ endif::[]
   theme_slogans.Yeti      = 'A friendly foundation';
   theme_slogans.Zephyr    = 'Breezy and beautiful';
 
-  themeName               = user_state.theme_name;
-  theme_slogan            = theme_slogans[themeName];
-  themeNameHeadline       = '<h1 id="theme_name" class="mb-0">Theme ' +themeName+ '</h1>';
+  themeName         = user_state.theme_name;
+  theme_slogan      = theme_slogans[themeName];
+  themeNameHeadline = '<h1 id="theme_name" class="mb-0">Theme ' +themeName+ '</h1>';
 
   $('#theme').prepend(themeNameHeadline);
   $('#theme').append('<p class="tagline mb-2"><b>'  + theme_slogan + '</b></p>');

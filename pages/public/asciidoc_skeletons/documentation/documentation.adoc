@@ -14,9 +14,6 @@ description: >
 categories:                             [ Knowledge ]
 tags:                                   [ Asciidoc, Skeleton, Documentation, PDF ]
 
-sitemap:                                false
-comments:                               false
-
 robots:
   index:                                false
   follow:                               false
@@ -24,7 +21,7 @@ robots:
 permalink:                              /pages/public/skeleton/documentation/
 regenerate:                             false
 
-resources:                              [ clipboard, lightbox, rouge, animate ]
+resources:                              [ animate, clipboard, lightbox, rouge ]
 resource_options:
   - toccer:
       collapseDepth:                    4

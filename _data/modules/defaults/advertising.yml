@@ -34,11 +34,12 @@ defaults:
   #
   #   enabled
   #   --------------------------------------------------------------------------
-  #   Enables or disables the Ad services. If disabled, no ads services are
-  #   enabled and no unit container get initialized on any page.
+  #   Enables or disables the Ad services. If disabled, ad services is NOT
+  #   initialized and no unit container get initialized on any page even the
+  #   module is loaded.
   #
   #   values:                           [true|false]
-  #   default:                          false
+  #   default:                          true
   #
   #   provider
   #   --------------------------------------------------------------------------
@@ -50,13 +51,12 @@ defaults:
   #
   # ----------------------------------------------------------------------------
   #
-  enabled:                              false
-
+  enabled:                              true
   provider:                             google
-  google:
 
+  google:
     # --------------------------------------------------------------------------
-    # Provider settings
+    # Provider settings (Google)
     #
     #   publisherID
     #   ------------------------------------------------------------------------
