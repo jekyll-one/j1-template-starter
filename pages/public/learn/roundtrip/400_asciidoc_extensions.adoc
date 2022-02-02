@@ -1,7 +1,7 @@
 ---
 title:                                  Roundtrip
 tagline:                                asciidoc extensions
-date:                                   2020-11-07 00:00:00 +100
+date:                                   2020-11-07 00:00:00
 description: >
                                         J1 Template implements some incubating Ruby-based
                                         extensions for Asciidoctor. Most extensions are based
@@ -72,7 +72,7 @@ valuable extensions to the Markup language Asciidoc to the Markup language
 Asciidoc is made especially for documents of the Jekyll content type pages
 (but can be used for posts or collections as well).
 
-== Asciidoc Code
+== Asciidoc Result Extension
 
 J1 Template adds a simple Javascript based on the `View Result Extension` to
 any `listingblock`. The extension adds an interactive toggle button `VIEW`
@@ -92,7 +92,7 @@ Asciidoc code and how the resulting (HTML) code would look alike.
 
 [.result]
 ====
- displayed till clicked, but closed on second click
+ displayed till clicked, but closed on second click (toggle)
 ====
 
 == Asciidoc Admonitions
@@ -268,7 +268,7 @@ flag:country[style, size, modifier] <1> <2> <3> <4>
 <4> The `modifier` can be used to add individual CSS classes e.g. for
     BS styles for margin setting and other
 
-.Click on _view result_ to see how it's looks alike
+.Click on button `VIEW` to see how it's looks alike
 [source, prometheus, role="noclip"]
 ----
 flag:de[rectangle, 2x, ml-3 mr-2 mb-2] Germany (rectangle) +
@@ -367,7 +367,7 @@ mdi:icon_name[icon_size, modifier] <1> <2> <3>
 <3> The `modifier` can be used to set the e.g the color (md-blue), an
     animation (fa-pulsed) or the orientation (fa-rotate-45)
 
-.Click on _view result_ to see how it's looks alike
+.Click on button `VIEW` to see how it's looks alike
 [source, prometheus, role="noclip"]
 ----
 mdi:home[2x, mdi-pulsed ml-3 mr-2 mb-2] Symbol icon (pulsed) +
@@ -401,7 +401,7 @@ fas:icon_name[icon_size, modifier] <1> <2> <3>
 <3> The `modifier` can be used to set e.g the color (md-blue), an
     animation (fa-pulsed) or the orientation (fa-rotate-45) of an icon
 
-.Click on _view result_ to see how it's looks alike
+.Click on button `VIEW` to see how it's looks alike
 [source, prometheus, role="noclip"]
 ----
 fas:home[2x, fa-pulsed ml-2 mr-2 mb-2] Solid icon (pulsed) +
@@ -436,7 +436,7 @@ iconify:icon_name[icon_size, modifier] <1> <2> <3>
 <3> The `modifier` can be used to set e.g the color (md-blue) or additional
 positioning classes for margings and padding
 
-.Click on _view result_ to see how it's looks alike
+.Click on button `VIEW` to see how it's looks alike
 [source, prometheus, role="noclip"]
 ----
 iconify:logos:opensource[2x, ml-4 mr-2 mb-2] Brand icon OpenSource  +
@@ -478,7 +478,7 @@ emoji:icon_name[icon_size] <1> <2>
     link:{url-previewer--emoji}[Twitter Emoji's]
 <2> The `icon_size` attribute can be one of: `xs`, `sm`, `lg` and `1x` to `5x`
 
-.Click on _view result_ to see how it's look alike
+.Click on button `VIEW` to see how it's look alike
 [source, prometheus, role="noclip"]
 ----
 This is an example of how you can emoji:heart[2x, pulsed mt-1] Asciidoctor

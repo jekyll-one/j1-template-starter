@@ -145,10 +145,11 @@ defaults:
   #
   enabled:                              false
 
+  debug:                                false
+  saveToCookie:                         true
+
   reloadPageOnChange:                   false                                   # reload current page, if theme has been changed
   retries:                              30                                      # retry to load theme list from API
-  saveToCookie:                         true
-  debug:                                false
   preview_page:                         /pages/public/previewer/theme/
   menu_icon_family:                     MDI
   menu_icon_color:                      "#9E9E9E"

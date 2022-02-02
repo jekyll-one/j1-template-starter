@@ -1,0 +1,294 @@
+---
+title:                                  Manuals
+tagline:                                J1 Dropdowns
+date:                                   2022-01-15 00:00:00
+description: >
+                                        Welcome to the preview page focussing on the J1 Dropdowns module. This page
+                                        shows some valuable features of the J1 Template to manage featured
+                                        dropdown menus bound to any button in a page
+
+keywords: >
+                                        dropdown, j1dropdowns, manual, usage, attribute, callback, option,
+                                        opensource, free, load, download, start, starter, example,
+                                        high, easy, use, secure, encrypt, standard, popular,
+                                        generate, develop, create, learn, distribute, publish, deploy,
+                                        beginner, advanced, expert, student, learner, writer, reader, visitor
+                                        framework, toolkit, integration, extension, module, api,
+                                        dynamic, static, generator, client, server, internet, local, localhost
+                                        page, web, website, webdesign, material, design, responsive,
+                                        javascript, nodejs, ruby, windows, linux, osx, mac, os,
+                                        http, https, html, html5, css, scss, style,
+                                        browser, firefox, chrome, edge, opera, safari,
+                                        configuration, generator, navigation, menu, dropdown, fab, action, button
+                                        application, interface, provider, api, repository,
+                                        cookie, language, translation, gdpr, dsgvo, privacy,
+                                        asciidoc, aciidoctor, bootstrap, jekyll, liquid,
+                                        hyvor, disqus, git, github, netlify, heroku, apple, microsoft,
+                                        provider, service, internet, support,
+                                        google, analytics, advertising, search, console, silverlight, score,
+                                        j1, template, jekyllone, comment
+
+categories:                             [ Manuals ]
+tags:                                   [ J1Dropdowns ]
+
+
+comments:                               false
+fab_menu_id:                            page_ctrl_simple
+
+permalink:                              /pages/public/manuals/j1Dropdowns/
+regenerate:                             false
+
+resources:                              [ dropdowns, rouge ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
+          alt:                          Photo by Ricardo Gomez Angel on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Ricardo Gomez Angel
+            href:                       https://unsplash.com/@ripato/portfolio
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// See: https://materializecss.com/dropdown.html
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+== Demo
+
+Dropdown connected to an icon element.
+
+++++
+<div class="mt-3 mb-4">
+  <a class="dropdowns" href="#" data-target="icon-dropdown" aria-label="Google Translate"><i class="nav-icon mdi mdi-google-translate mdi-2x"></i></a>
+</div>
+
+<!-- Dropdown content -->
+<ul id="icon-dropdown" class="dropdown-content">
+  <li data-target="de"><a href="#"><i class="flag-icon flag-icon-de squared size-1x"></i></a></li>
+  <li class="divider" tabindex="-1"></li>
+  <li data-target="be"><a href="#"><i class="flag-icon flag-icon-be squared size-1x"></i></a></li>
+  <li data-target="dk"><a href="#"><i class="flag-icon flag-icon-dk squared size-1x"></i></a></li>
+  <li data-target="es"><a href="#"><i class="flag-icon flag-icon-es squared size-1x"></i></a></li>
+</ul>
+
+++++
+
+Dropdown connected to an button element.
+
+++++
+<!-- Dropdown trigger -->
+<a class="dropdowns btn btn-info mt-3 mb-4" href="#" data-target="button-dropdown">Dropdown MyFlags</a>
+
+<ul id="button-dropdown" class="dropdown-content">
+  <li data-target="de"><a href="#"><i class="flag-icon flag-icon-de rectangle size-2x"></i>Germany</a></li>
+  <li class="divider" tabindex="-1"></li>
+  <li data-target="be"><a href="#"><i class="flag-icon flag-icon-be rectangle size-2x"></i>Belgium</a></li>
+  <li data-target="dk"><a href="#"><i class="flag-icon flag-icon-dk rectangle size-2x"></i>Denmark</a></li>
+  <li data-target="es"><a href="#"><i class="flag-icon flag-icon-es rectangle size-2x"></i>Spain</a></li>
+</ul>
+++++
+
+== Configuration
+
+Add a dropdown list to any button. Make sure that the `data-target`
+attribute matches the id in the `<ul>` tag. You can add a divider with
+the `<li class="divider"></li>` tag. You can also add icons. Just add
+the icon inside the `anchor` tag.
+
+[source, html]
+----
+<!-- Dropdown trigger -->
+<a class="dropdowns btn btn-info" href="#" data-target="my-dropdown">Dropdown MyFlags</a>
+
+<!-- Dropdown content -->
+<ul id="my-dropdown" class="dropdown-content">
+  <li data-target="de"><a href="#"><i class="flag-icon flag-icon-de squared size-1x"></i></a></li>
+  <li class="divider" tabindex="-1"></li>
+  <li data-target="be"><a href="#"><i class="flag-icon flag-icon-be squared size-1x"></i></a></li>
+  <li data-target="dk"><a href="#"><i class="flag-icon flag-icon-dk squared size-1x"></i></a></li>
+  <li data-target="es"><a href="#"><i class="flag-icon flag-icon-es squared size-1x"></i></a></li>
+</ul>
+----
+
+== Initialization
+
+
+[source, js]
+----
+document.addEventListener('DOMContentLoaded', function() {
+  var elms      = document.querySelectorAll('.dropdowns');
+  var instances = j1.dropdowns.init(elms, options);
+});
+----
+
+== Options
+
+[cols=",,,", options="header",]
+|===
+|Name |Type |Default |Description
+|alignment
+|String |'left'
+|Defines the edge the menu is aligned to.
+
+|autoTrigger
+|Boolean
+|true
+|If true, automatically focus dropdown el for keyboard.
+
+|constrainWidth
+|Boolean
+|true
+|If true, constrainWidth to the size ofthe dropdown activator
+
+|container
+|Element
+|null
+|Provide an element that will be the bounding container of the dropdown
+
+|coverTrigger
+|Boolean
+|true
+|If false, the dropdown will show below the trigger element
+
+|closeOnClick
+|Boolean
+|true
+|If true, close dropdown on item click
+
+|hover
+|Boolean
+|false
+|If true, the dropdown will open on hover
+
+|inDuration
+|Number
+|150
+|The duration of the transition enter in milliseconds
+
+|outDuration
+|Number
+|250
+|The duration of the transition out in milliseconds
+
+|onItemClick
+|Function name
+|j1.adapter.dropdowns.cbOnItemClick
+|Function called when dropdown element is clicked
+
+|onOpen
+|Function name
+|j1.adapter.dropdowns.cbOnOpen
+|Function called when dropdown is opened
+
+|onClose
+|Function name
+|j1.adapter.dropdowns.cbOnClose
+|Function called when dropdown is closed
+|===
+
+== Methods
+
+Because jQuery is no longer a dependency, all the methods are called on
+the plugin instance. You can get the plugin instance like this:
+
+[source, js]
+----
+var instance = j1.dropdowns.getInstance(elem);
+----
+
+=== open
+
+Open dropdown.
+
+[source, js]
+----
+instance.open();
+----
+
+=== close
+
+Close dropdown.
+
+[source, js]
+----
+instance.close();
+----
+
+=== recalculateDimensions
+
+While dropdown is open, you can recalculate its dimensions if its
+contents have changed.
+
+[source, js]
+----
+instance.recalculateDimensions();
+----
+
+=== destroy
+
+Destroy plugin instance and teardown
+
+[source, js]
+----
+instance.destroy();
+----
+
+== Properties
+
+[cols=",,",options="header",]
+|===
+|Name |Type |Description
+|el
+|Elemen
+|The DOM element the plugin was initialized with.
+
+|options
+|Object
+|The options the instance was initialized with.
+
+|id
+|String
+|ID of the dropdown element.
+
+|dropdownEl
+|Element
+|The DOM element of the dropdown.
+
+|isOpen
+|Boolean
+|Returns `true` if the dropdown is open.
+
+|isScrollable
+|Boolean
+|If the dropdown content is scrollable.
+
+|focusedIndex
+|Number
+|The index of the item focused.
+
+|===

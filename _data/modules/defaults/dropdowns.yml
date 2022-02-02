@@ -1,0 +1,164 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/dropdowns.yml
+# Default Configuration of the Dropdowns Module
+#
+# Product/Info:
+# https://jekyll.one
+# https://materializecss.com/dropdown.html
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# Materialize is licensed under the MIT License.
+# See: https://github.com/Dogfalo/materialize/blob/v1-dev/LICENSE
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+# NOTE:
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description (used for J1 CC only)
+#
+description:
+
+  title:                                Dropdowns Module
+  scope:                                Default settings
+  location:                             _data/modules/defaults/dropdowns.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+  enabled:                              false
+
+  # ----------------------------------------------------------------------------
+  # DROPDOWN options
+  # ----------------------------------------------------------------------------
+  #
+  # enabled
+  # ----------------------------------------------------------------------------
+  #   Enables|Disables the use of the Dropdowns
+  #
+  #   values:                           boolean (true|false)
+  #   default:                          false
+  #
+  # alignment
+  # ----------------------------------------------------------------------------
+  #  Defines the edge the menu is aligned to.
+  #
+  #   values:                           String (top|right|bottom|left)
+  #   default:                          left
+  #
+  # autoTrigger
+  # ----------------------------------------------------------------------------
+  #  If true, automatically focus dropdown el for keyboard.
+  #
+  #   values:                           boolean (true|false)
+  #   default:                          true
+  #
+  # constrainWidth
+  # ----------------------------------------------------------------------------
+  #  If true, constrainWidth to the size of the dropdown activator.
+  #
+  #   values:                           boolean (true|false)
+  #   default:                          true
+  #
+  # container
+  # ----------------------------------------------------------------------------
+  #  Defines the edge the menu is aligned to.
+  #
+  #   values:                           Element (HTML element|false)
+  #   default:                          false
+  #
+  # coverTrigger
+  # ----------------------------------------------------------------------------
+  #  If false, the dropdown will show below the trigger.
+  #
+  #   values:                           boolean (true|false)
+  #   default:                          true
+  #
+  # closeOnClick
+  # ----------------------------------------------------------------------------
+  #  If true, close dropdown on item click.
+  #
+  #   values:                           boolean (true|false)
+  #   default:                          true
+  #
+  # hover
+  # ----------------------------------------------------------------------------
+  #  If true, the dropdown will open on hover.
+  #
+  #   values:                           boolean (true|false)
+  #   default:                          false
+  #
+  # inDuration
+  # ----------------------------------------------------------------------------
+  #  The duration of the transition enter in milliseconds.
+  #
+  #   values:                           Number
+  #   default:                          150
+  #
+  # maxLenght
+  # ----------------------------------------------------------------------------
+  #  The max length of the dropdown menu in pixels. If the menu exeeds
+  #  the limit, scrollbars are shown to browse the menu.
+  #
+  #   values:                           Number
+  #   default:                          350
+  #
+  # outDuration
+  # ----------------------------------------------------------------------------
+  #  The duration of the transition out in milliseconds.
+  #
+  #   values:                           Number
+  #   default:                          250
+  #
+  # cbOnOpen
+  # ----------------------------------------------------------------------------
+  #  Function called when dropdown starts entering.
+  #
+  #   values:                           Function|false
+  #   default:                          false
+  #
+  # cbOnOpenEnd
+  # ----------------------------------------------------------------------------
+  #  Function called when dropdown finishes entering.
+  #
+  #   values:                           Function|false
+  #   default:                          false
+  #
+  # cbOnClose
+  # ----------------------------------------------------------------------------
+  #  Function called when dropdown starts exiting.
+  #
+  #   values:                           Function|false
+  #   default:                          false
+  #
+  # cbOnCloseEnd
+  # ----------------------------------------------------------------------------
+  #  Function called when dropdown finishes exiting.
+  #
+  #   values:                           Function|false
+  #   default:                          false
+  #
+  # ----------------------------------------------------------------------------
+  #
+  options:
+    alignment:                          left
+    autoTrigger:                        true
+    constrainWidth:                     true
+    container:                          false
+    coverTrigger:                       true
+    closeOnClick:                       true
+    hover:                              false
+    inDuration:                         150
+    outDuration:                        250
+    maxLenght:                          350
+    cbOnOpen:                           j1.adapter.dropdowns.cbOnOpen
+    cbOnClose:                          j1.adapter.dropdowns.cbOnClose
+    cbOnItemClick:                      false                                   # j1.adapter.dropdowns.cbOnItemClick
+
+# ------------------------------------------------------------------------------
+# END config

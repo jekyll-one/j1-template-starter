@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "j1_starter",
-  "version": "2022.0.15",
+  "name": "j1",
+  "version": "2022.0.18",
   "description": "J1 Template Starter Web",
   "homepage": "https://your.site",
   "author": {
@@ -119,6 +119,9 @@
     "site": "run-p -s site:*",
     "site:jekyll": "echo Startup the site .. && cross-env SINATRA_ACTIVESUPPORT_WARNING=false bundle exec jekyll s --incremental --livereload --livereload-port $npm_package_jekyll_opt_livereload_port --open",
     "site:utilsrv": "npm --prefix ./utilsrv --silent run utilsrv",
+    "j1-site": "run-p -s j1-site:*",
+    "j1-site:jekyll": "bundle exec jekyll s --incremental --livereload --open",
+    "j1-site:utilsrv": "npm --prefix ./utilsrv --silent run utilsrv",
     "bump": "run-s -s ver && run-s -s bump:* && run-s -s ver",
     "ver": "cross-var cross-env echo \"Project version: $npm_package_version\"",
     "bump:project": "cross-var cross-env npm version $npm_package_config_bumplevel",
@@ -136,6 +139,6 @@
     "npm-delay": "^1.0.4",
     "npm-run-all": "^4.1.5",
     "opn-cli": "^5.0.0",
-    "shx": "^0.3.3"
+    "shx": "^0.3.4"
   }
 }

@@ -777,11 +777,10 @@ resources:
         files:                          [
                                           modules/fab/js/cash.js,               # adapted|old (1.3.5) version from Materialize
                                           modules/fab/js/fab.js,                # modified version for J1 (former: button.js)
-                                          adapter/js/fab.js                     # adapter adopted from ssm module
+                                          adapter/js/fab.js
                                         ]
         js:                             []
         init_function:                  [ j1.adapter.fab.init ]
-
 
   # ----------------------------------------------------------------------------
   # lunr search engine, JS API used for the QuickSearch feature
@@ -910,6 +909,50 @@ resources:
   # ============================================================================
   # J1 Resources loaded ONDEMAND
   # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # Custom module
+  #
+  - name:                               CustomModule
+    resource:
+      enabled:                          false
+
+      id:                               CustomModule
+      comment:                          Custom module
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      async
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          [ adapter/js/customModule.js ]
+        js:                             []
+        init_function:                  [ j1.adapter.customModule.init ]
+
+  # ----------------------------------------------------------------------------
+  # Custom functions
+  #
+  - name:                               CustomFunctions
+    resource:
+      enabled:                          false
+
+      id:                               customFunctions
+      comment:                          Custom functions
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      async
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          [ adapter/js/customFunctions.js ]
+        js:                             []
+        init_function:                  [ j1.adapter.customFunctions.init ]
 
   # ----------------------------------------------------------------------------
   # Rouge, pure Ruby themeable code highlighter
@@ -1161,6 +1204,8 @@ resources:
       required:                         ondemand
       preload:                          false
       script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
       data:
         files:                          [
                                           adapter/js/algolia.js,
@@ -1525,6 +1570,32 @@ resources:
         files:                          [ adapter/js/comments.js ]
         js:                             []
         init_function:                  [ j1.adapter.comments.init ]
+
+  # ----------------------------------------------------------------------------
+  # Dropdowns. JS API to create simple dropdown menus
+  #
+  - name:                               Dropdowns
+    resource:
+      enabled:                          true
+
+      id:                               dropdowns
+      comment:                          Dropdown Menus
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      sync
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            [ modules/dropdowns/css/theme/uno/dropdowns ]
+        files:                          [
+                                          modules/dropdowns/js/cash.js,         # adapted|old (1.3.5) version from Materialize
+                                          modules/dropdowns/js/dropdowns.js,    # modified version for J1
+                                          adapter/js/dropdowns.js
+                                        ]
+        js:                             []
+        init_function:                  [ j1.adapter.dropdowns.init ]
 
 # ------------------------------------------------------------------------------
 # END config

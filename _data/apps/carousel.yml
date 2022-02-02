@@ -47,148 +47,146 @@ settings:
   enabled:                              true
 
   # ----------------------------------------------------------------------------
-  # CAROUSEL configurations
+  # CAROUSEL options
   # ----------------------------------------------------------------------------
-
-    # ----------------------------------------------------------------------------
-    # CAROUSEL options
-    # ----------------------------------------------------------------------------
-    #
-    # enabled
-    # ----------------------------------------------------------------------------
-    #   Enables|Disables the use of the OwlCarousel
-    #
-    #   values:                           boolean (true|false)
-    #   default:                          false
-    #
-    # carousel
-    # ----------------------------------------------------------------------------
-    #  All shows are configured as elements of the carousel
-    #  array
-    #
-    #   enabled:
-    # ----------------------------------------------------------------------------
-    #   If enabled, show data (JSON) is generated
-    #
-    #       values:                       boolean (false|true)
-    #       default:                      no default
-    #
-    #   lightbox:
-    #   ---------------------------------------------------
-    #   If set to true, J1 Lightbox is enabled for all images
-    #   of that carousel|show
-    #
-    #   NOTE:
-    #   To use Lightbox with Owl Carousel, lazyLoad needs to
-    #   be enabled for the show to delay the load of images.
-    #   If lightbox is detected as ENABLED, lazyLoad is
-    #   automatically ENABLED as well.
-    #
-    #       values:                       boolean (false|true)
-    #       default:                      false
-    #
-    #   id
-    #   --------------------------------------------------------------------------
-    #   A unique id used to create and initialize a
-    #   (specific) carousel|show.
-    #
-    #       values:                       string
-    #       default:                      no defaults
-    #
-    #
-    #   item_type
-    #   --------------------------------------------------------------------------
-    #   For a slide show, images or text (HTML code) can be
-    #   used as items.
-    #
-    #       values:                       image|text
-    #       default:                      image
-    #
-    #   images
-    #   --------------------------------------------------------------------------
-    #   The images array specifies all images used by a
-    #   carousel as items. All images are to be configured
-    #   as a comma separated list (of image names with NO path).
-    #
-    #   NOTE:
-    #   Because NO individual path for images can be configured,
-    #   all image files are to be located in the SAME directory.
-    #
-    #       values:                       array|string (image names)
-    #       default:                      no defaults
-    #
-    #   slide_height
-    #   --------------------------------------------------------------------------
-    #   The images are scaled to 100 percent of height per
-    #   default. To reduce the height of the images of a
-    #   show, slide_height reduce the (viewport) height of
-    #   a show down to 10vh (vh, view height).
-    #
-    #   IMPORTANT:
-    #   This option can be used ONLY for SINGLE image shows
-    #   with option "singleItem" set to "true".
-    #
-    #   NOTE:
-    #   The view port units VH and VW are supported for
-    #   browsers supporting CSS3, only. The view port units
-    #   scale the view port of an HTML element (e.g DIV)
-    #   in relation to the current (window) size of the
-    #   browser.
-    #
-    #       values:                       integer [10 .. 100] (vh)
-    #       default:                      100
-    #
-    #   lb_caption
-    #   --------------------------------------------------------------------------
-    #   The lb_caption array specifies all CAPTION TEXT
-    #   used by the LIGHTBOX configured (if a lightbox is
-    #   enabled).
-    #
-    #   Caption text elements are to be configured as a
-    #   comma separated list of the SAME number as IMAGES
-    #   configured for a show.
-    #
-    #       values:                       array|string (caption text)
-    #       default:                      no defaults
-    #
-    #   images_path
-    #   --------------------------------------------------------------------------
-    #   Path to the IMAGES configured with the 'images'
-    #   sequence (array ).
-    #
-    #       values:                       string (path)
-    #       default:                      no defaults
-    #
-    #   text
-    #   --------------------------------------------------------------------------
-    #   If the slide show items are of type TEXT (item_type),
-    #   the text array specifies all text blocks (plain text
-    #   of HTML code) used by a carousel as show items. Text
-    #   items are configured as a comma separated list of
-    #   strings.
-    #
-    #       values:                       array|string (plain text OR HTML code)
-    #       default:                      no defaults
-    #
-    #   links
-    #   --------------------------------------------------------------------------
-    #   On all carousel items, links (URLs) can be specified.
-    #
-    #   NOTE:
-    #   The number of elements of the 'links' array has to be
-    #   the same as the images or text array. The links are
-    #   bound to the items the same order. The first link is
-    #   bound to the first image|text block, the second link
-    #   to the second image|text etc.
-    #
-    #       values:                       array|string (url)
-    #       default:                      no defaults
-    #
-    #
-    # ----------------------------------------------------------------------------
-
+  #
+  # enabled
+  # ----------------------------------------------------------------------------
+  #   Enables|Disables the use of the OwlCarousel
+  #
+  #   values:                           boolean (true|false)
+  #   default:                          false
+  #
+  # carousel
+  # ----------------------------------------------------------------------------
+  #  All shows are configured as elements of the carousel
+  #  array
+  #
+  #   enabled:
+  # ----------------------------------------------------------------------------
+  #   If enabled, show data (JSON) is generated
+  #
+  #       values:                       boolean (false|true)
+  #       default:                      no default
+  #
+  #   lightbox:
+  #   ---------------------------------------------------
+  #   If set to true, J1 Lightbox is enabled for all images
+  #   of that carousel|show
+  #
+  #   NOTE:
+  #   To use Lightbox with Owl Carousel, lazyLoad needs to
+  #   be enabled for the show to delay the load of images.
+  #   If lightbox is detected as ENABLED, lazyLoad is
+  #   automatically ENABLED as well.
+  #
+  #       values:                       boolean (false|true)
+  #       default:                      false
+  #
+  #   id
+  #   --------------------------------------------------------------------------
+  #   A unique id used to create and initialize a
+  #   (specific) carousel|show.
+  #
+  #       values:                       string
+  #       default:                      no defaults
+  #
+  #
+  #   item_type
+  #   --------------------------------------------------------------------------
+  #   For a slide show, images or text (HTML code) can be
+  #   used as items.
+  #
+  #       values:                       image|text
+  #       default:                      image
+  #
+  #   images
+  #   --------------------------------------------------------------------------
+  #   The images array specifies all images used by a
+  #   carousel as items. All images are to be configured
+  #   as a comma separated list (of image names with NO path).
+  #
+  #   NOTE:
+  #   Because NO individual path for images can be configured,
+  #   all image files are to be located in the SAME directory.
+  #
+  #       values:                       array|string (image names)
+  #       default:                      no defaults
+  #
+  #   slide_height
+  #   --------------------------------------------------------------------------
+  #   The images are scaled to 100 percent of height per
+  #   default. To reduce the height of the images of a
+  #   show, slide_height reduce the (viewport) height of
+  #   a show down to 10vh (vh, view height).
+  #
+  #   IMPORTANT:
+  #   This option can be used ONLY for SINGLE image shows
+  #   with option "singleItem" set to "true".
+  #
+  #   NOTE:
+  #   The view port units VH and VW are supported for
+  #   browsers supporting CSS3, only. The view port units
+  #   scale the view port of an HTML element (e.g DIV)
+  #   in relation to the current (window) size of the
+  #   browser.
+  #
+  #       values:                       integer [10 .. 100] (vh)
+  #       default:                      100
+  #
+  #   lb_caption
+  #   --------------------------------------------------------------------------
+  #   The lb_caption array specifies all CAPTION TEXT
+  #   used by the LIGHTBOX configured (if a lightbox is
+  #   enabled).
+  #
+  #   Caption text elements are to be configured as a
+  #   comma separated list of the SAME number as IMAGES
+  #   configured for a show.
+  #
+  #       values:                       array|string (caption text)
+  #       default:                      no defaults
+  #
+  #   images_path
+  #   --------------------------------------------------------------------------
+  #   Path to the IMAGES configured with the 'images'
+  #   sequence (array ).
+  #
+  #       values:                       string (path)
+  #       default:                      no defaults
+  #
+  #   text
+  #   --------------------------------------------------------------------------
+  #   If the slide show items are of type TEXT (item_type),
+  #   the text array specifies all text blocks (plain text
+  #   of HTML code) used by a carousel as show items. Text
+  #   items are configured as a comma separated list of
+  #   strings.
+  #
+  #       values:                       array|string (plain text OR HTML code)
+  #       default:                      no defaults
+  #
+  #   links
+  #   --------------------------------------------------------------------------
+  #   On all carousel items, links (URLs) can be specified.
+  #
+  #   NOTE:
+  #   The number of elements of the 'links' array has to be
+  #   the same as the images or text array. The links are
+  #   bound to the items the same order. The first link is
+  #   bound to the first image|text block, the second link
+  #   to the second image|text etc.
+  #
+  #       values:                       array|string (url)
+  #       default:                      no defaults
+  #
+  #
+  # ----------------------------------------------------------------------------
+  #
   carousel:
-
+    # --------------------------------------------------------------------------
+    # CAROUSEL configurations
+    # --------------------------------------------------------------------------
 
     # --------------------------------------------------------------------------
     # demo_text_carousel

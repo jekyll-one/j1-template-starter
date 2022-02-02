@@ -1,0 +1,77 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/dropdowns.yml
+# User Configuration of the Dropdowns Module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2021 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# ------------------------------------------------------------------------------
+# NOTE:
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description (used for J1 CC only)
+#
+description:
+
+  title:                                Dropdowns Module
+  scope:                                User settings
+  location:                             _data/modules/dropdowns.yml
+
+# ------------------------------------------------------------------------------
+# User settings
+#
+settings:
+  enabled:                              true
+
+  dropdowns:
+    # --------------------------------------------------------------------------
+    # DROPDOWN configurations
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # icon dropdown
+    #
+    - dropdown:
+        enabled:                        true
+
+        id:                             icon-dropdown
+        items: >
+                                        <li><a href="#"><i class="flag-icon flag-icon-de squared size-1x"></i></a></li>
+                                        <li class="divider" tabindex="-1"></li>
+                                        <li><a href="#"><i class="flag-icon flag-icon-be squared size-1x"></i></a></li>
+                                        <li><a href="#"><i class="flag-icon flag-icon-dk squared size-1x"></i></a></li>
+                                        <li><a href="#"><i class="flag-icon flag-icon-es squared size-1x"></i></a></li>
+
+        options:
+          alignment:                    bottom
+          hover:                        true
+          inDuration:                   300
+          outDuration:                  300
+
+    # --------------------------------------------------------------------------
+    # button dropdown
+    #
+    - dropdown:
+        enabled:                        true
+
+        id:                             button-dropdown
+        items: >
+                                        <li><a href="#"><i class="flag-icon flag-icon-de squared size-1x"></i></a></li>
+                                        <li class="divider" tabindex="-1"></li>
+                                        <li><a href="#"><i class="flag-icon flag-icon-be squared size-1x"></i></a></li>
+                                        <li><a href="#"><i class="flag-icon flag-icon-dk squared size-1x"></i></a></li>
+                                        <li><a href="#"><i class="flag-icon flag-icon-es squared size-1x"></i></a></li>
+
+        options:
+          alignment:                    left
+          hover:                        false
+
+# ------------------------------------------------------------------------------
+# END config
