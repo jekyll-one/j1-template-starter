@@ -175,7 +175,6 @@ gem 'puma', '>= 5.5.2'
 #
 # gem 'openssl'
 
-
 # ------------------------------------------------------------------------------
 # If J1 is transformed into a (Rack and Sinatra based) Web
 # application, the site can be secured using user authentication
