@@ -171,8 +171,10 @@ gem 'puma', '>= 5.5.2'
 # ------------------------------------------------------------------------------
 # OpenSSL provides SSL, TLS and general purpose cryptography. Used to
 # encrypt 'private' data
+# NOTE: currently NOT used
 #
-gem 'openssl'
+# gem 'openssl'
+
 
 # ------------------------------------------------------------------------------
 # If J1 is transformed into a (Rack and Sinatra based) Web
