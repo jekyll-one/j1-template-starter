@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2021 Juergen Adams
+# Copyright (C) 2022 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -104,7 +104,11 @@
 lanes:
 
   # ----------------------------------------------------------------------------
-  # META data
+  # HEAD region
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # META data loader
   #
   - lane:
       enabled:                          true
@@ -113,39 +117,6 @@ lanes:
       base:                             _includes/themes/j1
       path:                             layouts
       file:                             layout_metadata_generator.html
-
-  # ----------------------------------------------------------------------------
-  # CONNECTORS (analytics)
-  #
-  # - lane:
-  #     enabled:                          true
-  #     region:                           head
-  #     type:                             sync
-  #     base:                             _includes/themes/j1
-  #     path:                             modules/connectors
-  #     file:                             analytics
-
-  # ----------------------------------------------------------------------------
-  # CONNECTORS (translation)
-  #
-  # - lane:
-  #     enabled:                          true
-  #     region:                           head
-  #     type:                             sync
-  #     base:                             _includes/themes/j1
-  #     path:                             modules/connectors
-  #     file:                             translator
-
-  # ----------------------------------------------------------------------------
-  # CONNECTORS (advertising)
-  #
-  # - lane:
-  #     enabled:                          true
-  #     region:                           head
-  #     type:                             sync
-  #     base:                             _includes/themes/j1
-  #     path:                             modules/connectors
-  #     file:                             ads
 
   # ----------------------------------------------------------------------------
   # RESOURCE loader
@@ -159,7 +130,11 @@ lanes:
       file:                             layout_resource_generator.html
 
   # ----------------------------------------------------------------------------
-  # NAVIGATION
+  # BODY region
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # NAVIGATION loader
   #
   - lane:
       enabled:                          true
@@ -194,7 +169,7 @@ lanes:
       class:
 
   # ----------------------------------------------------------------------------
-  # MODULE generator
+  # MODULE loader
   #
   - lane:
       enabled:                          true

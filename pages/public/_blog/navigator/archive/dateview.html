@@ -1,0 +1,238 @@
+---
+layout:                                 page
+title:                                  Starter Blog
+tagline:                                posts by date
+description:                            Browse articles by date
+
+categories:                             [ Blog ]
+tags:                                   [ Navigator, Date ]
+
+sort:                                   date
+toc:                                    true
+fab_menu_id:                            open_toc
+
+pagination:
+  enabled:                              false
+  permalink:                            /page:num/
+
+analytics:                              true
+comments:                               false
+
+exclude_from_search:                    true
+regenerate:                             true                                    # needed to update pages
+
+resources:                              [ animate ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
+          alt:                          Photo by Matthaeus
+          alignY:                       top
+          badge:
+            type:                       unsplash
+            author:                     Matthaeus
+            href:                       https://unsplash.com/@matthaeus123
+---
+
+{% comment %} Liquid procedures
+-------------------------------------------------------------------------------- {% endcomment %}
+{% capture get_page_path %}themes/{{site.template.name}}/procedures/global/get_page_path.proc{% endcapture %}
+{% capture select_icon_size %}themes/{{site.template.name}}/procedures/global/select_icon_size.proc{% endcapture %}
+{% capture get_category_item %}themes/{{site.template.name}}/procedures/global/get_category_item.proc{% endcapture %}
+
+{% comment %} Set config files
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign template_config               = site.data.j1_config %}
+{% assign blocks                        = site.data.blocks %}
+{% assign modules                       = site.data.modules %}
+{% assign builder                       = site.data.builder %}
+{% assign plugins                       = site.data.plugins %}
+
+{% comment %} Set config data
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign blog_navigator_defaults       = builder.defaults.blog_navigator.defaults %}
+{% assign blog_navigator_settings       = builder.blog_navigator.settings %}
+
+{% comment %} Set config options
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign blog_navigator_options        = blog_navigator_defaults | merge: blog_navigator_settings %}
+
+{% comment %} Variables
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign truncate_words                = site.excerpt_truncate_words %}
+
+{% if site.permalink == 'none' %}
+  {% capture browser_page_url %}{{page.url}}.html{% endcapture %}
+{% else %}
+  {% capture browser_page_url %}{{page.url}}{% endcapture %}
+{% endif %}
+
+{% include {{get_page_path}} mode='absolute' %}
+{% assign navigator_path = page_path|remove_first:'archive' %}
+
+{% capture navigator %}{{navigator_path}}{% endcapture %}
+{% capture date_view %}{{page_path}}/dateview/{% endcapture %}
+{% capture category_view %}{{page_path}}/categoryview/{% endcapture %}
+{% capture tag_view %}{{page_path}}/tagview/{% endcapture %}
+{% capture all_view %}{{page_path}}/{% endcapture %}
+
+
+{% comment %} language detection
+-------------------------------------------------------------------------------- {% endcomment %}
+{% if site.language == "en" %}
+  {% assign language = "en" %}
+{% elsif site.language == "de"%}
+  {% assign language = "de" %}
+{% else %}
+  {% assign language = "en" %}
+{% endif %}
+
+{% if language == "en" %}
+  {% assign readmore_text               = "read" %}
+
+  {% assign category_view_button_text = blog_navigator_options.button_text.view_selector.category_view.en %}
+  {% assign date_view_button_text     = blog_navigator_options.button_text.view_selector.date_view.en %}
+  {% assign archive_view_button_text  = blog_navigator_options.button_text.view_selector.archive_view.en %}
+  {% assign tag_view_button_text      = blog_navigator_options.button_text.view_selector.tag_view.en %}
+
+  {% assign view_headline             = blog_navigator_options.date_view.page_text.en.headline %}
+  {% assign view_description_text     = blog_navigator_options.date_view.page_text.en.description %}
+{% endif %}
+
+{% if language == "de" %}
+  {% assign readmore_text               = "lesen" %}
+
+  {% assign category_view_button_text = blog_navigator_options.button_text.view_selector.category_view.de %}
+  {% assign date_view_button_text     = blog_navigator_options.button_text.view_selector.date_view.de %}
+  {% assign archive_view_button_text  = blog_navigator_options.button_text.view_selector.archive_view.de %}
+  {% assign tag_view_button_text      = blog_navigator_options.button_text.view_selector.tag_view.de %}
+
+  {% assign view_headline             = blog_navigator_options.date_view.page_text.de.headline %}
+  {% assign view_description_text     = blog_navigator_options.date_view.page_text.de.description %}
+{% endif %}
+
+{% comment %} Debugging
+--------------------------------------------------------------------------------
+skip_categories:            {{skip_categories | debug}}
+site_category_word_list:    {{site_category_word_list | debug}}
+--------------------------------------------------------------------------------
+{% endcomment %}
+
+
+{% comment %} Main
+-------------------------------------------------------------------------------- {% endcomment %}
+<!-- [INFO   ] [ {{page.url}} ] [Generate HTML}] -->
+<div class="paginator ml-3">
+  <ul class="pagination raised-z0">
+    <li class="page-item"><a class="page-link" href="{{navigator|prepend: site.baseurl}}" alt="Blog Navigator">Navigator</a></li>
+    <li class="page-item"><a class="page-link" href="{{category_view|prepend: site.baseurl}}" alt="View by Category">{{category_view_button_text}}</a></li>
+    <li class="page-item"><a class="page-link" href="{{all_view}}" alt="View All">{{archive_view_button_text}}</a></li>
+  </ul>
+</div>
+
+<div id="index" class="post-search-results ml-3">
+
+  {% if blog_navigator_options.date_view.page_text.enabled %}
+  <div class="view-description">{{view_description_text}}</div>
+  {% endif %}
+
+  <div class="post-headline">
+    <h1 id="post-headline notoc" class="mt-5">{{view_headline}}</h1>
+  </div>
+  {% assign openList = '<ul class="list-unstyled link-news">' %}
+  {% assign closeList = '</ul>' %}
+
+  {% for post in site.posts %}
+
+    {% capture month %}{{post.date|date:'%m%Y'}}{% endcapture %}
+    {% capture nmonth %}{{post.next.date|date:'%m%Y'}}{% endcapture %}
+    {% capture monthHead %}
+      {% if month != nmonth %}
+      {% if forloop.index != 1  %}{{closeList}}{%endif %}
+      <h2 id="{{100000|rand}}" class="toc-link mt-5 mb-3">
+        {% comment %}
+        ------------------------------------------------------------------------
+        {% if year != nyear %}
+        <a href="#void" id="{{post.date|localize: "%Y"}}">
+        {% else %}
+        <a href="#void" id="{{post.date|localize: "%Y-%m" }}">
+        {% endif %}
+        ------------------------------------------------------------------------ {% endcomment %}
+        <i class="mdi mdi-calendar-blank"></i>
+        {{post.date|localize:'%B %Y'}}
+        </a>
+      </h2>
+      {{openList}}
+      {% endif %}
+    {% endcapture %}
+
+    <!-- Collect comment provider details -->
+    {% for sharing in builder_config.sharing_provider %}
+      {% assign provider      = sharing.provider %}
+      {% assign likes_count   = sharing.likes_count %}
+      {% assign comment_count = sharing.comment_count %}
+    {% endfor %}
+
+    {% capture link %}
+      {% comment %} {% assign excerpt = post.excerpt|truncatewords: truncate_words|replace:'...',' ...'|strip_html %} {% endcomment %}
+      {% assign excerpt = post.excerpt|truncatewords: truncate_words|replace:'...',' ...' %}
+      <li>
+        <article class="card raised-z3 mb-5">
+          <h3 id="{{100000|rand}}" class="card-header bg-primary">{{post.title}}</h3>
+          <div class="row mx-0">
+
+            <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Check if post image is available] -->
+            {% if post.image %}
+            <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Post image is available] -->
+            <div class="col-md-6 img-bg--fill px-0"
+              style="border-right: 1px dotted rgba(0, 0, 0, 0.25); background-image: url({{post.image}});">
+            </div>
+            {% else %}
+            <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Post image missing, using configured default image] -->
+            <div class="col-md-6 img-bg--fill px-0"
+              style="border-right: 1px dotted rgba(0, 0, 0, 0.25); background-image: url({{blog_navigator_options.post_image}});">
+            </div>
+            {% endif %}
+
+            <div class="col-md-6 p-0">
+              <div class="card-body r-text-300">{{excerpt}}</div>
+              <div class="card-footer not-rounded r-text-200">
+                <div class="card-footer-text">
+
+                  {% if post.date %}
+                    {% if language == "en" %}
+                      <i class="mdi mdi-calendar-blank md-grey-900 mr-1"></i>{{post.date|localize: "%Y %B, %e"}}
+                    {% endif %}
+                    {% if language == "de" %}
+                      <i class="mdi mdi-calendar-blank md-grey-900 mr-1"></i>{{post.date|localize: "%-d. %B %Y"}}
+                    {% endif %}
+                  {% endif %}
+                  {% if likes_count %}
+                  <span class="font-weight-bold"> · </span>
+                  <i class="mdi mdi-heart md-grey-900 mr-1"></i> {{likes_count}}
+                  {% endif %}
+                  {% if comment_count %}
+                  <span class="font-weight-bold"> · </span>
+                  <i class="mdi mdi-comment md-grey-900 mr-1"></i> {{comment_count}}
+                  {% endif %}
+                </div>
+                <a class="card-link md-grey-900 text-lowercase"
+                   href="{{post.url}}#readmore">
+                   {{readmore_text}} · {{post.tagline}}
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </li>
+    {% endcapture %}
+
+    {{monthHead}}{{link}}
+
+  {% endfor %}
+  {{closeList}}
+
+</div>

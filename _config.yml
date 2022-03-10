@@ -53,7 +53,7 @@ environment:                            development
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2022.0.18
+version:                                2022.1.1
 
 # version
 # ------------------------------------------------------------------------------
@@ -223,22 +223,38 @@ doctype:                                html
 #   default:                            false
 #
 title:                                  Jekyll One
-slogan:                                 starter web
+slogan:                                 template for jekyll
 description: >
                                         Made for Jekyll · Made for Your Web
+keywords: >
+                                        opensource, free, load, download, start, starter, example,
+                                        high, easy, use, secure, encrypt, standard, popular,
+                                        generate, create, learn, distribute, publish, deploy,
+                                        beginner, advanced, expert, student, learner, writer, reader, visitor
+                                        framework, toolkit, integration, extension, module, api,
+                                        dynamic, static, generator, client, server, internet, local, localhost
+                                        page, web, website, webdesign, material, design, responsive,
+                                        javascript, nodejs, ruby, windows, linux, osx, mac, os,
+                                        http, https, html, html5, css, scss, style,
+                                        browser, firefox, chrome, edge, opera, safari,
+                                        configuration, generator, navigation, menu, dropdown, fab, action, button
+                                        application, interface, provider, api, repository,
+                                        cookie, language, translation, gdpr, dsgvo, privacy,
+                                        asciidoc, aciidoctor, bootstrap, jekyll, liquid,
+                                        hyvor, disqus, git, github, netlify, heroku, apple, microsoft,
+                                        provider, service, internet, support,
+                                        google, analytics, advertising, search, console, silverlight, score,
+                                        j1, template, jekyllone, comment
 
-keywords:                               Jekyll, One, Template, Ruby, Asciidoctor,
-                                        Asciidoc, Bootstrap, Javascript, JS, JS3,
-                                        CSS, CSS3, HTML5, Material, Design
 author:
-  name:                                 username
-  email:                                username@email.domain
+  name:                                 Juergen Adams
+  email:                                juergen@jekyll.one
   github:                               username
   twitter:                              username
   feedburner:                           feedname
 
 webmaster:
-  email:                                webmaster@example.domain
+  email:                                webmaster@jekyll.one
 
 # Crawling/Indexing ENABLED for default. Settings managed page-wise using
 # frontmatter defaults or by page default settings to make sure that only
@@ -255,7 +271,7 @@ robots:
 brand:
   image:                                modules/icons/j1/j1-512x512.png
   image_height:                         48
-  text:                                 Starter Web
+  text:                                 Jekyll One
   text_color:                           "#9E9E9E"
 
 # Set the favicon and type
@@ -316,7 +332,7 @@ permalink:                              pretty
 # if you are running jekyll serve in a development environment,
 # site.url will be set to the value of host, port.
 #
-url:                                    "http://localhost:40000"
+url:                                  "http://localhost:40000"
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -520,32 +536,6 @@ excerpt_separator:                      excerpt__end
 excerpt_truncate_words:                 100
 
 # ------------------------------------------------------------------------------
-# COLLECTION settings
-# See: https://jekyllrb.com/docs/collections/#collections
-#
-collections:
-
-  # ----------------------------------------------------------------------------
-  # Featured articles
-  #
-  featured:
-    output:                             true
-    permalink:                          /collections/:collection/:name/
-
-  # ----------------------------------------------------------------------------
-  # Book shelf
-  #
-  biography:
-    output:                             true
-    permalink:                          /collections/public/:collection/:name/
-  fantasy:
-    output:                             true
-    permalink:                          /collections/public/:collection/:name/
-  romance:
-    output:                             true
-    permalink:                          /collections/public/:collection/:name/
-
-# ------------------------------------------------------------------------------
 # FRONTMATTER defaults
 #
 
@@ -580,7 +570,7 @@ defaults:
       sitemap:                          false
 
   # ----------------------------------------------------------------------------
-  # Pages
+  # PAGES
   #
   - scope:
       path:                             pages
@@ -618,8 +608,37 @@ defaults:
             collapseDepth:              3
 
   # ----------------------------------------------------------------------------
-  # Posts
+  # POSTS
   #
+
+  # ----------------------------------------------------------------------------
+  # PUBLIC - SIMPLE POST
+  #
+  # - scope:
+  #     path:                             posts/public/simple-post
+  #     type:                             posts
+  #
+  #   values:
+  #     layout:                           post
+  #     author:                           J1 Team
+  #     compress:                         true
+  #     image:                            /assets/images/modules/attics/joanna-kosinska-1920x1280.jpg
+  #
+  #     robots:
+  #       index:                          true
+  #       follow:                         true
+  #
+  #     personalization:                  false
+  #     exclude_from_search:              false
+  #     series:                           false
+  #
+  #     toc:                              true
+  #     fab_menu_id:                      page_ctrl_simple
+  #     scrollbar:                        false
+  #
+  #     resource_options:
+  #       - toccer:
+  #           collapseDepth:              3
 
   # ----------------------------------------------------------------------------
   # PUBLIC - FEATURED
@@ -639,25 +658,11 @@ defaults:
 
       personalization:                  false
       exclude_from_search:              false
-
-      youtube:                          true
-      vimeo:                            true
-
       series:                           false
 
       toc:                              true
       fab_menu_id:                      page_ctrl_simple
       scrollbar:                        false
-
-      icons:
-        category-icon:                  false                                   # comment-text-outline
-        family:                         MDI
-        color:                          md-blue
-        size:                           5x
-
-      images:
-        category-image:                 false                                   # img26.jpg
-        dir:                            /assets/images/collections/blog/featured
 
       resource_options:
         - toccer:
@@ -679,51 +684,16 @@ defaults:
         index:                          true
         follow:                         true
 
+      personalization:                  false
+      exclude_from_search:              false
+
       toc:                              true
       fab_menu_id:                      page_ctrl_simple
       scrollbar:                        false
 
-      personalization:                  false
-      exclude_from_search:              false
-
-      youtube:                          true
-      vimeo:                            true
-
-      icons:
-        category-icon:                  false                                   # dots-horizontal-circle
-        family:                         MDI
-        color:                          md-indigo
-        size:                           5x
-
-      images:
-        category-image:                 false                                   # img26.jpg
-        dir:                            /assets/images/collections/blog/series
-
-  # ----------------------------------------------------------------------------
-  # Collections
-  #
-
-  # ----------------------------------------------------------------------------
-  # Featured Articles
-  #
-  - scope:
-      type:                             featured
-      path:                             collections/_featured
-
-    values:
-      layout:                           page
-      sitemap:                          false
-      compress:                         true
-
-      robots:
-        index:                          false
-        follow:                         false
-
-      personalization:                  false
-      exclude_from_search:              true
-
-      youtube:                          false
-      vimeo:                            false
+      resource_options:
+        - toccer:
+            collapseDepth:              3
 
 # ==============================================================================
 # 6. LAYOUT configuration
@@ -849,6 +819,8 @@ defaults:
 #
 #   values:                             HTML optional end tags
 #   default:                            empty array
+#
+# ------------------------------------------------------------------------------
 #
 compress_html:
   enabled:                              true

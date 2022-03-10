@@ -1387,13 +1387,13 @@ link:{url-bs-docs--components-forms}[Bootstrap Docs {char-middot} Forms, {browse
     <div class="form-group">
       <input type="email" class="form-control" id="exampleInputEmail1" autocomplete="none">
       <label for="exampleInputEmail1" class="bmd-label-floating">Email address</label>
-      <span class="form-clear d-none"><i class="mdi mdi-2x mdi-format-clear"></i></span>
+      <!-- span class="form-clear d-none"><i class="mdi mdi-2x mdi-format-clear"></i></span-->
       <span class="bmd-help">We'll never share your email with anyone else.</span>
     </div>
     <div class="form-group">
       <input type="password" class="form-control" id="exampleInputPassword1">
       <label for="exampleInputPassword1" class="bmd-label-floating">Password</label>
-      <span class="form-clear d-none"><i class="mdi mdi-2x mdi-format-clear"></i></span>
+      <!-- span class="form-clear d-none"><i class="mdi mdi-2x mdi-format-clear"></i></span -->
     </div>
     <div class="form-group">
       <div class="checkbox">
@@ -1474,8 +1474,31 @@ For file inputs, swap the `.form-control` for `.form-control-file`.
 ++++
 <div class="doc-example mb-3">
   <div class="form-group">
-    <label for="formFile" class="form-label mt-4">Default file input example</label>
+    <label for="formFile" class="form-label ml-0">Default file input example</label>
     <input class="form-control" type="file" id="formFile">
+  </div>
+</div>
+++++
+
+++++
+<div class="doc-example mb-3">
+  <div class="form-group">
+    <div class="mb-3">
+      <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+      <input class="form-control" type="file" id="formFileMultiple" multiple>
+    </div>
+    <div class="mb-3">
+      <label for="formFileDisabled" class="form-label">Disabled file input example</label>
+      <input class="form-control" type="file" id="formFileDisabled" disabled>
+    </div>
+    <div class="mb-3">
+      <label for="formFileSm" class="form-label">Small file input example</label>
+      <input class="form-control form-control-sm" id="formFileSm" type="file">
+    </div>
+    <div>
+      <label for="formFileLg" class="form-label">Large file input example</label>
+      <input class="form-control form-control-lg" id="formFileLg" type="file">
+    </div>
   </div>
 </div>
 ++++

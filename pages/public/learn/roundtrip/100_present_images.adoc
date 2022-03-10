@@ -16,9 +16,8 @@ permalink:                              /pages/public/learn/roundtrip/present_im
 regenerate:                             false
 
 resources:                              [
-                                          animate, clipboard,
-                                          carousel, justifiedGallery,
-                                          lightbox, lightGallery,
+                                          animate, clipboard, carousel,
+                                          justifiedGallery, lightbox, lightGallery,
                                           rouge
                                         ]
 resource_options:
@@ -61,12 +60,11 @@ resource_options:
 [role="dropcap"]
 Welcome to the first preview page focussing on the image module. This page
 shows some valuable features of the J1 Template to manage your image-based
-content using lightboxes, carousels (slider), and galleries.
-
-The image module offers complex functionality based on powerful OpenSource
-libraries like JustifiedGallery for high-end, masonry-styled preview maps.
-J1 Template uses the jQuery plugin Owl Carousel as a base for image sliders.
-A carousel app (slider) lets you present your images as shows.
+content using lightboxes, carousels (slider), and galleries. The image module
+offers complex functionality based on powerful OpenSource libraries like
+JustifiedGallery for high-end, masonry-styled preview maps. J1 Template uses
+the jQuery plugin Owl Carousel as a base for image sliders. A carousel
+app (slider) lets you present your images as shows.
 
 Lightboxes like LightGallery or Lightbox V2 support your web for enlarged
 image views of your picture or video content. Have a look, a quick tour
@@ -105,13 +103,13 @@ Find below an example of using the lightbox Lightbox standalone. See how
 single (individual) images are linked for use with Lightbox.
 
 .Lightbox block for standalone images
-lightbox::example-standalone[ 400, {data-images-standalone} ]
+lightbox::example-standalone[ 800, {data-images-standalone}, role="mb-4" ]
 
 Lightbox supports image groups (image sets). Click on the images below to
 see how Lightbox manages a group of images.
 
 .Lightbox block for grouped images
-lightbox::example-group[ 400, {data-images-group}, group ]
+lightbox::example-group[ 395, {data-images-group}, group, role="mb-4 wm-800" ]
 
 === LightGallery Example
 
@@ -120,7 +118,7 @@ supports a gallery-style thumbnail preview plus image resizing, a download
 dialog, sharing provider support, and more helpful. Check what
 LightGallery can do this by the following example.
 
-gallery::jg_old_times[]
+gallery::jg_old_times[ role="mb-4 wm-800" ]
 
 == J1 Carousel App
 
@@ -209,21 +207,18 @@ carousel::demo_oneslide[role="mb-3"]
 
 JustifiedGallery is a great jQuery plugin to create responsive, infinite,
 and high-quality justified image galleries. J1 Template combines the Gallery
-with the lightboxes supported to enlarge the images of a gallery.
-
-See JustifiedGallery in action - and for sure, all that you see is even
-responsive. Change the size of your current browser window, by width or height,
-to see what will happen!
+with the lightboxes supported to enlarge the images of a gallery. See the
+gallery in action; and for sure, all that you see is even responsive. Change
+the size of your current browser window, by width or height to see what will
+happen!
 
 Pictures you've made are typically not even in size. Images may have the
 same size (resolution), but some are orientated landscapes, or others
 may be portraits. For that reason, a more powerful gallery is needed to create
-so-called justified views.
-
-JustifiedGallery uses a so-called masonry grid layout. It works by
-placing elements in an optimal position based on available horizontal and
-vertical space. Sort of like mason fitting stones in a wall. You'll have
-seen it in use all over the Internet!
+so-called justified views. JustifiedGallery uses a so-called masonry grid
+layout. It works by placing elements in an optimal position based on available
+horizontal and vertical space. Sort of like mason fitting stones in a wall.
+You'll have seen it in use all over the Internet!
 
 .Masonry grid layout of JustifiedGallery
 gallery::jg_customizer[]

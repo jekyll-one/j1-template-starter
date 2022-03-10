@@ -1,11 +1,11 @@
 # ------------------------------------------------------------------------------
 # ~/_plugins/lunr_index.rb
-# Creates an lunr index file (json) to be used by J1LunrSearch
+# Creates an Lunr index file (json) to be used by J1 Lunr
 #
 # Product/Info:
 # http://jekyll.one
 #
-# Copyright (C) 2021 Juergen Adams
+# Copyright (C) 2022 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -28,11 +28,14 @@ module Jekyll
         @template = config['theme']
 
         @module_path = File.join(File.dirname(__FILE__))
-        @module_path.slice! "_plugins"
+        @module_path.slice! '_plugins'
         @module_config_path = File.join(@module_path, config['data_dir'], 'modules')
+        @j1_config_path = config['data_dir']
 
-        @module_config_default = YAML::load(File.open(File.join(@module_config_path, 'defaults', 'quicksearch.yml')))
-        @module_config_user = YAML::load(File.open(File.join(@module_config_path,'quicksearch.yml')))
+        @j1_config = YAML::load(File.open(File.join(@j1_config_path, 'j1_config.yml')))
+
+        @module_config_default = YAML::load(File.open(File.join(@module_config_path, 'defaults', 'lunr.yml')))
+        @module_config_user = YAML::load(File.open(File.join(@module_config_path,'lunr.yml')))
 
         @module_config_default_settings = @module_config_default['defaults']
         @module_config_user_settings = @module_config_user['settings']
@@ -52,6 +55,8 @@ module Jekyll
             'body' => 1
           }
         }.merge!(@module_config || {})
+
+        @lunr_config.merge!(@j1_config['posts'])
 
         @module_dir = @lunr_config['module_dir']
         @index_dir  = @lunr_config['index_dir']
@@ -85,7 +90,7 @@ module Jekyll
 
         # @strip_categories configuration
         #
-        @strip_categories = @lunr_config['strip_categories']
+        @strip_categories = @lunr_config['category_blacklist']
         @stripped_categories = @strip_categories.join(',').gsub!(',', ' ')
 
         # stop word exclusion configuration
@@ -364,6 +369,6 @@ end
 
 module Jekyll
   module J1LunrSearch
-    VERSION = '2022.0.18'
+    VERSION = '2022.1.1'
   end
 end

@@ -55,12 +55,12 @@ resource_options:
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
+[role="dropcap"]
 J1 Template implements some incubating Ruby-based extensions for Asciidoctor.
 Most extensions are based on the examples given with the
 link:{url-asciidoctor--extensions-lab}[Asciidoctor Extensions Lab, {browser-window--new}].
 If you simply want to use the extensions from this repository, go ahead to
 link:{url-asciidoctor--extensions-use}[Using an extension, {browser-window--new}].
-
 To create Asciidoc extensions on your own, it is highly recommended to read the
 link:{url-asciidoctor--extensions-manual}[extensions section, {browser-window--new}] in
 the Asciidoctor user manual.
@@ -85,7 +85,7 @@ The `View Result Extension` is quite helpful for sections discussing
 Asciidoc code and how the resulting (HTML) code would look alike.
 
 .This example place a button `VIEW` top right of the example box
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 * displayed always
 ----
@@ -115,76 +115,46 @@ WARNING: Icon background-color: yellow
 .CAUTION block
 CAUTION: Icon background-color: red
 
-/////
-== Q&A Blocks
-
-Q&A sections are used quite often to answer popular questions. To make
-such a Q&A section more eye-minded. The additional Admonition Blocks
-`[QUESTION]` and `[ANSWER]` are available through the J1 Template Asciidoctor
-extensions.
-
-=== Question block
-
-The admonition Question block is an extension to the Asciidoc admonition
-block types that introduce an admonition of type question.
-
-.Example of a question block
-[source, prometheus, role="noclip"]
-----
-[QUESTION]
-What's the main tool for selecting colors?
-----
-
-[.result]
-====
-.QUESTION
-[QUESTION]
-What's the main tool for selecting colors used for J1 Template?
-====
-
-===  Answer block
-
-The Admonition Answer block is an extension to the Asciidoc admonition
-block types that introduce an admonition type of answer in conjunction
-with the type question's admonition.
-
-.Example of a answer block
-[source, prometheus, role="noclip"]
-----
-[ANSWER]
-For J1 Template, go for for the Core documentation section. You'll
-find the full color scheme for Material Design.
-----
-
-[.result]
-====
-.ANSWER
-[ANSWER]
-For J1 Template, go for the {jekyll-one-core-doc-color-scheme}[Core documentation, window="blank"] section.
-You'll find the full color scheme for Material Design.
-====
-/////
-
 == Lightboxes
 
-To make the use of the built-in Lightbox easier, the J1 Template offers an
-Asciidoc extension: the LightBox block macro. The `lightbox::` block macro
+A Lightbox is, in general, a helper which displays enlarged, almost
+screen-filling versions of images (or videos) while dimming the remainder
+of the page. The technique, introduced by Lightbox V2, gained widespread
+popularity thanks to its simple style. The term lightbox has been employed
+since then for Javascript libraries to support such functionality.
+
+To make the use of the built-in lightbox easier, the J1 Template offers an
+Asciidoc extension: the lightBox block macro. The block macro `lightbox::`
 embeds one or more images into the output document and puts the default
 lightbox for J1 automatically on. The images `size` (width) and additional
-`caption text` are configurable for all images using this macro.
+`caption text` and additional CSS styles are configurable for all images
+using this macro.
 
-.Lightbox Block
-[source, prometheus, role="noclip"]
+.Lightbox block for single images
+[source, no_template, role="noclip"]
 ----
 .block_title
-lightbox::block_id[ images_width, images_data [, group_name] ]
+lightbox::<block_id>[ <images_width>, <images_data_id>, <role="<additional CSS styles>"> ]
 ----
 
-NOTE: For a `lightbox::` block, images are placed in the output document
+.Lightbox block for image groups
+[source, no_template, role="noclip"]
+----
+.block_title
+lightbox::<block_id>[ <images_width>, <images_data_id>, <group_name>, <role="<additional CSS styles>"> ]
+----
+
+[NOTE]
+====
+The `role` parameter to specify additional CSS styles is for all `lightbox::`
+macros *optional* and can be omitted.
+
+For a `lightbox::` block, images are placed in the output document
 without any other scaling than in width - they are placed using simple
 HTML `img` tags. This technique is fine for images that are even in size.
 For images in different sizes, a gallery should be used as a J1 Gallery Apps
 to rearrange images and make them fit at their best for the available space.
+====
 
 === Standalone Images
 
@@ -193,13 +163,13 @@ defined as Asciidoc attributes. The image data is given as a string
 of data pairs:
 
 .Paired attributes
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 "path/to/image-1, image-caption-1, ..."
 ----
 
 .Example of an data attribute for a lightbox block
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 :data-images: "pages/image-1.jpg, Description 1, "pages/image-2.jpg, Description 2"
 ----
@@ -220,9 +190,9 @@ The parameter `group` for the `lightbox::` block is an option. If no
 standalone.
 
 .Lightbox block for standalone images
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
-lightbox::images-standalone[ 400, {data-images-standalone} ]
+lightbox::<block_id>[ 400, {<data-images-id>} ]
 ----
 
 .Lightbox block for standalone images
@@ -236,13 +206,43 @@ of related images. Enabling this function, the option `group` needs to be
 configured for the block.
 
 .Lightbox block for grouped images
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
-lightbox::images-group[ 400, {data-images-group}, group_name ]
+lightbox::<block_id>[ 400, {<data-images-group_id>}, <group_name> ]
 ----
 
 .Lightbox block for grouped images
 lightbox::images-group[ 400, {data-images-group}, group_name ]
+
+== Galleries
+
+JustifiedGallery, the default gallery for J1, is a great jQuery plugin to
+create responsive, infinite, and high-quality justified image galleries.
+J1 Template combines the Gallery with the lightboxes supported to enlarge
+the images of a gallery.
+
+Pictures you’ve made are typically not even in size. Images may have the same
+size (resolution), but some are orientated landscapes, or others may be
+portrait. For that reason, a more powerful gallery is needed to create
+a so-called masonry grid layout. It works by placing elements in an optimal
+position based on available horizontal and vertical space. Sort of like mason
+fitting stones in a wall.
+
+.Gallerie macro for images and videos
+[source, no_template]
+----
+.block_title
+gallery::<gallery_id>[role="<additional CSS styles>"]
+----
+
+=== Image galleries
+
+lorem:sentences[5]
+
+=== Video galleries
+
+lorem:sentences[5]
+
 
 == Country flags
 
@@ -256,7 +256,7 @@ documents included.
 
 Country flags can be used as inline icons by using the `flag:` inline macro:
 
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 flag:country[style, size, modifier] <1> <2> <3> <4>
 ----
@@ -269,7 +269,7 @@ flag:country[style, size, modifier] <1> <2> <3> <4>
     BS styles for margin setting and other
 
 .Click on button `VIEW` to see how it's looks alike
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 flag:de[rectangle, 2x, ml-3 mr-2 mb-2] Germany (rectangle) +
 flag:de[squared, 2x, ml-3 mr-3 mb-2] Germany (square)
@@ -357,7 +357,7 @@ All icon fonts are supported:
 Material Designs Icons can be used as inline icons by using
 the `mdi:` inline macro:
 
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 mdi:icon_name[icon_size, modifier] <1> <2> <3>
 ----
@@ -368,7 +368,7 @@ mdi:icon_name[icon_size, modifier] <1> <2> <3>
     animation (fa-pulsed) or the orientation (fa-rotate-45)
 
 .Click on button `VIEW` to see how it's looks alike
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 mdi:home[2x, mdi-pulsed ml-3 mr-2 mb-2] Symbol icon (pulsed) +
 mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
@@ -391,7 +391,7 @@ settings for the `modifier` are applied.
 Font Awesome Icons can be used as inline icons by using
 the `fas:` (solid icons) or `fab` (brand icons) inline macro:
 
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 fas:icon_name[icon_size, modifier] <1> <2> <3>
 ----
@@ -402,7 +402,7 @@ fas:icon_name[icon_size, modifier] <1> <2> <3>
     animation (fa-pulsed) or the orientation (fa-rotate-45) of an icon
 
 .Click on button `VIEW` to see how it's looks alike
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 fas:home[2x, fa-pulsed ml-2 mr-2 mb-2] Solid icon (pulsed) +
 fab:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
@@ -426,7 +426,7 @@ settings for the `modifier` are applied.
 Iconify Icons can be used as inline icons by using the `iconify:`
 inline macro:
 
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 iconify:icon_name[icon_size, modifier] <1> <2> <3>
 ----
@@ -437,7 +437,7 @@ iconify:icon_name[icon_size, modifier] <1> <2> <3>
 positioning classes for margings and padding
 
 .Click on button `VIEW` to see how it's looks alike
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 iconify:logos:opensource[2x, ml-4 mr-2 mb-2] Brand icon OpenSource  +
 iconify:logos:netlify[2x, ml-4 mr-2 mb-2] Brand icon Netlify +
@@ -470,7 +470,7 @@ applied, the color settings will have no effect.
 Twitter Emoji's can be used as inline icons by using the `emoji:`
 inline macro:
 
-[source, prometheus]
+[source, no_template]
 ----
 emoji:icon_name[icon_size] <1> <2>
 ----
@@ -479,7 +479,7 @@ emoji:icon_name[icon_size] <1> <2>
 <2> The `icon_size` attribute can be one of: `xs`, `sm`, `lg` and `1x` to `5x`
 
 .Click on button `VIEW` to see how it's look alike
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 This is an example of how you can emoji:heart[2x, pulsed mt-1] Asciidoctor
 and Twitter Emoji emoji:smile[].
@@ -506,14 +506,14 @@ finished yet.
 Placeholders for blind text comes in several flavors given by `macro`. The
 syntax for the `lorem:` inline macro is simple like this:
 
-[source, prometheus]
+[source, no_template]
 ----
 lorem:macro[]
 lorem:macro[size]
 ----
 
 .Example of a lorem sentences macro
-[source, prometheus, role="noclip"]
+[source, no_template, role="noclip"]
 ----
 lorem:sentences[5]
 ----
@@ -530,7 +530,7 @@ found with the following table below.
 
 //.Tabelle
 [cols="5,2,5a", options="header", role="rtable mb-2"]
-|===============================================================================
+|===
 |Macro | Type |Example
 
 |`word[]`
@@ -583,7 +583,7 @@ lorem:last_name[]
 |
 lorem:email[]
 
-|===============================================================================
+|===
 
 // Include documents
 // -----------------------------------------------------------------------------

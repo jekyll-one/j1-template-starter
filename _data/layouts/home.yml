@@ -6,7 +6,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2021 Juergen Adams
+# Copyright (C) 2022 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -105,7 +105,17 @@
 lanes:
 
   # ----------------------------------------------------------------------------
-  # MASTER header
+  # HEADER region (region body-header)
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # MASTER header (attic)
+  #
+  # NOTE:
+  #   All pages are using a specific header to display a title and a
+  #   tagline. Title and tagline are to be configured with the FRONTMATTER
+  #   of a page for individual data (text).
+  # ----------------------------------------------------------------------------
   #
   - lane:
       enabled:                          true
@@ -116,29 +126,7 @@ lanes:
       file:                             generator.html
 
   # ----------------------------------------------------------------------------
-  # MASTER slider
-  #
-  - lane:
-      enabled:                          false
-      id:                               master_slider
-      region:                           body-header
-      type:                             async
-      properties:                       mb-0
-
-  # ----------------------------------------------------------------------------
-  # Top Advertisment
-  #
-  - lane:
-      enabled:                          true
-      region:                           body-header
-      id:                               google_ad_top_home
-      type:                             sync
-      base:                             _includes/themes/j1
-      path:                             modules/ads
-      file:                             google_ad_top_home.html
-
-  # ----------------------------------------------------------------------------
-  #   PAGE CONTENT (region body-main)
+  # CONTENT region (region body-main)
   #
   #   NOTE:
   #     The CONTENT of a post or page may already rendered (page contains HTML
@@ -165,6 +153,10 @@ lanes:
   #     system with the data you provided).
   #
   # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # CONTENT
+  #
 
   # ----------------------------------------------------------------------------
   # TEASER banner

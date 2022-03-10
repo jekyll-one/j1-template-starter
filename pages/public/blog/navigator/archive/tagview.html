@@ -1,6 +1,6 @@
 ---
 layout:                                 page
-title:                                  Starter Blog
+title:                                  Creators Blog
 tagline:                                posts by tag
 description: >
                                         Browse articles by tag
@@ -17,10 +17,11 @@ pagination:
   permalink:                            /page:num/
 
 analytics:                              true
+advertising:                            false
 comments:                               false
 
 exclude_from_search:                    true
-regenerate:                             false
+regenerate:                             false                                   # page currently NOT used
 
 resources:                              [ animate ]
 resource_options:
@@ -51,24 +52,24 @@ resource_options:
 
 {% comment %} Set config files
 -------------------------------------------------------------------------------- {% endcomment %}
-{% assign template_config               = site.data.j1_config %}
-{% assign blocks                        = site.data.blocks %}
-{% assign modules                       = site.data.modules %}
-{% assign builder                       = site.data.builder %}
-{% assign plugins                       = site.data.plugins %}
+{% assign template_config         = site.data.j1_config %}
+{% assign blocks                  = site.data.blocks %}
+{% assign modules                 = site.data.modules %}
+{% assign plugins                 = site.data.plugins %}
 
 {% comment %} Set config data
 -------------------------------------------------------------------------------- {% endcomment %}
-{% assign blog_navigator_defaults       = builder.defaults.blog_navigator.defaults %}
-{% assign blog_navigator_settings       = builder.blog_navigator.settings %}
+{% assign blog_navigator_defaults = modules.defaults.blog_navigator.defaults %}
+{% assign blog_navigator_settings = modules.blog_navigator.settings %}
 
 {% comment %} Set config options
 -------------------------------------------------------------------------------- {% endcomment %}
-{% assign blog_navigator_options        = blog_navigator_defaults | merge: blog_navigator_settings %}
+{% assign blog_navigator_options  = blog_navigator_defaults | merge: blog_navigator_settings %}
 
 {% comment %} Variables
 -------------------------------------------------------------------------------- {% endcomment %}
-{% assign truncate_words                 = site.excerpt_truncate_words %}
+{% assign truncate_words          = site.excerpt_truncate_words %}
+{% assign category_blacklist      = template_config.posts.category_blacklist %}
 
 {% if site.permalink == 'none' %}
   {% capture browser_page_url %}{{page.url}}.html{% endcapture %}
@@ -268,6 +269,22 @@ site_category_word_list:    {{site_category_word_list | debug}}
                 <span class="font-weight-bold"> · </span>
                 <i class="mdi mdi-comment mr-1"></i> {{comment_count}}
                 {% endif %}
+
+                <!-- Cleanup categories by given blacklist -->
+                {% assign my_categories = post.categories | difference: category_blacklist %}
+
+                <!-- Build element strings -->
+                {% assign categories    = my_categories |join: " · "  %}
+                {% assign tags          = post.tags | join: " · "  %}
+
+                <p class="result-item-text small text-muted mb-3">
+                  <i class="mdi mdi-tag-text-outline mdi-18px mr-1"></i>
+                  <span class="sr-categories">{{categories}}</span>
+                  <br>
+                  <i class="mdi mdi-tag mdi-18px mr-1"></i>
+                  <span class="sr-tags">{{tags}}</span>
+              </p>
+
               </div>
               <a class="card-link text-muted text-lowercase"
                  href="{{post.url}}#readmore">

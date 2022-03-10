@@ -135,6 +135,7 @@ resource_options:
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
+[role="dropcap"]
 Playing video on web pages seems not that special since you can already
 watch videos on web pages through plugins like _Flash Player_, _Quicktime_,
 or _Silverlight_. A new standard goes to HTML5 Video, a pure HTML way to
@@ -166,38 +167,120 @@ license is needed for business use. See
 link:{url-light-gallery--license}[LightGallery licenses, {browser-window--new}]
 how to use LightGallery for commercial websites and projects.
 
-== Local video content
+== Local Video content
 
-Digital image content, simple pictures or videos, are easy to make. Today, every mobile has a camera - not that bad! Presenting a bunch
-of (digital) pictures is done very easily by using Justified Gallery, for example.
-Videos created by a digicam or a mobile can be played by J1 Template using the
-HTML5 Video support of LightGallery.
+Digital image content, simple pictures or videos, are easy to make. Today,
+every mobile has a camera. Presenting a bunch of (digital) pictures is done
+very easily by using Justified Gallery. Videos created by a digicam or a mobile
+can be played by J1 Template using the HTML5 Video support. Present videos you
+have made at it's best.
 
 Two players are available with LightGallery:
 
 . an internal player used by default
 . {url-videojs--home}[video.js, {browser-window--new}], a excellent
-  Javascript video library
+  Javascript video library including a great player
 
-NOTE: The HTML5 specification does _not_ define which video and audio formats
-browsers _should_ support. J1 LightGallery can play all types of standard
+NOTE: The HTML5 specification does *not* define which video and audio formats
+browsers *should* support. J1 LightGallery can play all types of standard
 HTML5 Video formats on modern browsers today (MP4, WebM, and Ogg).
 
+.MP4 Videos - VideoJS Player
 gallery::jg_video_html5[role="mb-5"]
 
-== Online video content
+== Online Video content
 
-The Internet is full of inspiring content. Video content is popular,
-the number of channels on _YouTube_ is enormous. If you want to present
-video content from the Internet, e.g., your channel, the online video
-support of J1 Template may be the right choice. Find some enjoyable videos
-from James Cordon's channel: Carpool Karaoke.
+The Internet is full of inspiring content. If you want to present video
+content from the Internet, the online video support of J1 Template is the
+right choice.
 
-.YouTube Video Gallery - Carpool Karaoke
+=== YouTube
+
+The community at link:{url-youtube--home}[YouTube, {browser-window--new}] is
+large, with over 1 billion users that watch hundreds of millions of hours of
+content every day. The
+link:{url-alexa-scores--youtube}[Alexa Internet, {browser-window--new}]
+scores are impressive. For good reasons: the number of channels on YouTube
+is enormous. For TV-Stations, it's a must to publish videos of their shows
+on YouTube. Find below a current gallery from *The Voice Kids* (SAT.1)
+Germany and a real classic channel *Carpool Karaoke* from the frontman James
+Corden of *The Late Late Show* at CBS, Los Angeles.
+
+.The Voice Kids, Germany 2021
+gallery::jg_video_online_youtube_2[role="mb-5"]
+
+.James Cordon's Carpool Karaoke
 gallery::jg_video_online_youtube[role="mb-5"]
+
+=== Vimeo
+
+link:{url-vimeo--home}[Vimeo, {browser-window--new}] is a video-sharing
+platform that includes features such as live-streaming and customization.
+Vimeo provides many tools for video creation, editing, and broadcasting.
+The platform provides you with an excellent channel to present high-quality,
+professional videos and reach audiences worldwide.
+
+Vimeo does offer a basic, free membership, but it limits you to 500MB maximum
+storage per week. Alternately, you can book on paid plans: Plus, PRO, Business.
+Each membership has varied storage limits, but the free plan offers sufficient
+space for private projects to present video content without advertising.
+
+NOTE: A great plus using Vimeo is that *no advertising* is used on that
+platform. Find the current
+link:{url-alexa-scores--vimeo}[Alexa Internet, {browser-window--new}]
+ranking from here.
 
 .Vimeo Video Gallery - Fashion
 gallery::jg_video_online_vimeo[role="mb-5"]
+
+=== DailyMotion
+
+link:{url-dailymotion--home}[Dailymotion, {browser-window--new}] is a French
+video-sharing technology platform primarily owned by
+link:{url-vivendi--home}[Vivendi, {browser-window--new}]. The platform is
+available worldwide in 183 languages and 43 localised versions featuring local
+home pages and local content.
+
+The platform is a monetization solution that allows allows to directly connect
+to high-quality advertisers through a proprietary Advertising Solution. Like
+YouTube, videos cav be watched for free, but ads are shown on each and every
+video.
+
+Dailymotion allows users to search videos by *tags*, topic *channels*, or
+user-created *groups*. Users can upload videos of up to 2 gigabytes and a
+length of 60 minutes. If a user is a MotionMaker or MotionPartner, a program
+for particularly creative users or partners, they can upload videos of
+unlimited length. Check the ranking at
+link:{url-alexa-scores--dailymotion}[Alexa Internet, {browser-window--new}].
+
+NOTE: Like YouTube, DailyMotion is a commercial platform using *advertising*
+on all video content. On every video, an ad clip is presented of 15 to
+30 seconds in length.
+
+.DailyMotion Video Gallery - SELF Magazine (Channel)
+gallery::jg_video_online_dailymotion[role="mb-5"]
+
+=== VK
+
+link:{url-vk--home}[VK, {browser-window--new}], former Vkontakte.ru until
+January 2012, is a multilingual social network operated from Russia.
+Registered users can create a profile on VK and exchange information with
+other users.
+
+According to the operator, the platform has over 100 million active users,
+but mainly in Russia, Ukraine, and other Russian spoken countries. According
+to link:{url-alexa-scores--vk}[Alexa Internet, {browser-window--new}]
+VK is among the most popular websites in Russia.
+
+NOTE: VK is accused of insufficient protection of personal data. The platform
+is also openly criticized by neo-Nazi and neo-fascist Groups used without
+there being a handle against them so far. To date, the Russian investigative
+authorities (especially the FSB) have not made any efforts to identify
+right-wing extremists or to suppress racist currents on the platform.
+
+.VK Video Gallery - Wildlife
+gallery::jg_video_online_vk[role="mb-5"]
+
 
 == What next
 
@@ -206,4 +289,5 @@ But the most visual component is the text for all pages, for all sites on the
 Internet. To see how text could be presented great for modern responsive
 websites, check the section Typography next.
 
-What? Please find out how it works. Go for: link:{url-roundtrip--typography}[Typography], then.
+What? Please find out how it works.
+Go for: link:{url-roundtrip--typography}[Typography], then.

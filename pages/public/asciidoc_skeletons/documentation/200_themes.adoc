@@ -1,7 +1,9 @@
 ---
 title:                                  Asciidoctor PDF Themes
 tagline:                                Theming Guide for the Asciidoctor PDF Converter
-description:                            Asciidoctor PDF Theming Guide
+date:                                   2022-01-01 00:00:00
+description: >
+                                        Asciidoctor PDF Theming Guide
 
 categories:                             [ Knowledge ]
 tags:                                   [ Asciidoctor, PDF, Converter ]
@@ -11,8 +13,18 @@ regenerate:                             false
 
 resources:                              [ animate, clipboard, lightbox, rouge ]
 resource_options:
-  - toccer:
-      collapseDepth:                    2
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/sigmund-1920x1280.jpg
+          alt:                          Photo by Sigmund on Unsplash
+          alignY:                       0.3
+          badge:
+            type:                       unsplash
+            author:                     Sigmund
+            href:                       https://unsplash.com/@sigmund
 ---
 
 // Page Initializer

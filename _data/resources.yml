@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2021 Juergen Adams
+# Copyright (C) 2022 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -787,31 +787,30 @@ resources:
   # of J1 Template based on the Lunr JS API
   # See: https://lunrjs.com/
   #
-  - name:                               QuickSearch
+  - name:                               Lunr
     resource:
       enabled:                          true
 
-      id:                               quicksearch
-      comment:                          J1 QuickSearch
+      id:                               lunr
+      comment:                          J1 Lunr
       region:                           head
       layout:                           [ all ]
-      required:                         always                                  # always | ondemand
-      preload:                          false                                   # property currently unused
+      required:                         always
+      preload:                          false
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            [ modules/lunrSearch/css/quicksearch ]
-        files:                          [ adapter/js/quicksearch.js ]
+        css:                            [ modules/lunr/css/j1 ]
+        files:                          [ adapter/js/lunr.js ]
         js:                             [
-                                          modules/lunrSearch/js/lunr,
-                                          modules/lunrSearch/js/mustache,
-                                          modules/lunrSearch/js/dateformat,
-                                          modules/lunrSearch/js/uri,
-#                                         modules/jquery/js/require,            # require.js currently unused, but conflicts with some modules
-                                          modules/lunrSearch/js/quicksearch
+                                          modules/lunr/js/lunr,
+                                          modules/lunr/js/mustache,
+                                          modules/lunr/js/dateformat,
+                                          modules/lunr/js/uri,
+                                          modules/lunr/js/j1
                                         ]
-        init_function:                  [ j1.adapter.quicksearch.init ]
+        init_function:                  [ j1.adapter.lunr.init ]
 
   # ----------------------------------------------------------------------------
   # rtextResizer (currently NOT used)
@@ -836,11 +835,11 @@ resources:
         init_function:                  [ j1.adapter.rtextResizer.init ]
 
   # ----------------------------------------------------------------------------
-  # Dropdowns, JS implementation to create themeable HTML <select>
+  # MsDropdowns, JS implementation to create themeable HTML <select>
   # elements (dropdowns) based on the msDropdown API
   # See: https://github.com/marghoobsuleman/ms-Dropdown
   #
-  - name:                               Dropdowns
+  - name:                               MsDropdowns
     resource:
       enabled:                          true
 
@@ -1343,9 +1342,9 @@ resources:
       id:                               video_js
       comment:                          module videojs
       region:                           head
-      layout:                           [ home, page, post, collection, blog_archive ]
+      layout:                           [ all ]
       required:                         ondemand
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
@@ -1358,9 +1357,7 @@ resources:
                                           modules/videojs/css/themes/sea
                                         ]
         files:                          []
-        js:                             [
-                                          modules/videojs/js/video
-                                        ]
+        js:                             [ modules/videojs/js/video ]
         init_function:                  []
 
   # ----------------------------------------------------------------------------
@@ -1373,9 +1370,9 @@ resources:
       id:                               vimeo_froogaloop
       comment:                          module vimeo_froogaloop
       region:                           head
-      layout:                           [ home, page, post, collection, blog_archive ]
+      layout:                           [ all ]
       required:                         ondemand
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
@@ -1395,9 +1392,9 @@ resources:
       id:                               vimeo_player
       comment:                          module vimeo_player
       region:                           head
-      layout:                           [ home, page, post, collection, blog_archive ]
+      layout:                           [ all ]
       required:                         ondemand
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
@@ -1408,28 +1405,27 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Slider, responsive input sliders based on the JS implementation
-  # of noUiSlider API (currently NOT used)
+  # Range Slider, based on the JS implementation of the noUiSlider API
   # See: https://github.com/leongersen/noUiSlider
   #
-  - name:                               Slider
+  - name:                               rangeSlider
     resource:
-      enabled:                          false
+      enabled:                          true
 
-      id:                               nouislider
-      comment:                          module nouislider
+      id:                               rangeslider
+      comment:                          module rangeSlider
       region:                           head
-      layout:                           [ page, post, collection ]
+      layout:                           [ all ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            [ modules/noUISlider/css/noUISlider ]
-        files:                          []
-        js:                             [ modules/noUISlider/js/noUISlider ]
-        init_function:                  []
+        css:                            [ modules/rangeSlider/css/theme/uno/nouislider ]
+        files:                          [ adapter/js/rangeSlider.js ]
+        js:                             [ modules/rangeSlider/js/nouislider ]
+        init_function:                  [ j1.adapter.rangeSlider.init ]
 
   # ----------------------------------------------------------------------------
   # Data tables for J1 Template (currently NOT used)

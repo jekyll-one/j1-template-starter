@@ -6,7 +6,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2021 Juergen Adams
+# Copyright (C) 2022 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -105,23 +105,28 @@
 lanes:
 
   # ----------------------------------------------------------------------------
-  # Page HEADER (region body-header)
-  #
-  # NOTE:
-  #   All pages are using a specific banner to display a title and a
-  #   tagline. Title and tagline are to be configured with the FRONTMATTER
-  #   of a page for individual data (text).
-  #
-  - lane:
-      enabled:                      true
-      region:                       body-header
-      type:                         sync
-      base:                         _includes/themes/j1
-      path:                         modules/attics
-      file:                         generator.html
+  # HEADER region (region body-header)
+  # ----------------------------------------------------------------------------
 
   # ----------------------------------------------------------------------------
-  # COLLECTION CONTENT (region body-main)
+  # MASTER header (attic)
+  #
+  # NOTE:
+  #   All pages are using a specific header to display a title and a
+  #   tagline. Title and tagline are to be configured with the FRONTMATTER
+  #   of a page for individual data (text).
+  # ----------------------------------------------------------------------------
+  #
+  - lane:
+      enabled:                          true
+      region:                           body-header
+      type:                             sync
+      base:                             _includes/themes/j1
+      path:                             modules/attics
+      file:                             generator.html
+
+  # ----------------------------------------------------------------------------
+  # CONTENT region (region body-main)
   #
   # NOTE:
   #   The CONTENT of a post or page may already rendered (page contains HTML
@@ -161,17 +166,6 @@ lanes:
       file:                             content_generator_collection.html
 
   # ----------------------------------------------------------------------------
-  # COMMENT connector
-  #
-  - lane:
-      enabled:                          true
-      region:                           body-main
-      type:                             sync
-      base:                             _includes/themes/j1
-      path:                             modules/connectors
-      file:                             comments
-
-  # ----------------------------------------------------------------------------
   # FAM
   #
   - lane:
@@ -179,7 +173,6 @@ lanes:
       id:                               fab-container
       region:                           body-main
       type:                             async
-
 
 # ------------------------------------------------------------------------------
 # END config

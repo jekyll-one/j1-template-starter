@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2021 Juergen Adams
+# Copyright (C) 2022 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -161,6 +161,7 @@ settings:
         id:                             home_news_panel
         comment:                        Home News Panel
         type:                           news
+        category_blacklist:             [ posts, public, private, protected, featured, series ]
         animate:                        false
         properties:                     mt-5 mb-5
 
@@ -176,6 +177,7 @@ settings:
                                         <p>
                                           Have fun!
                                         </p>
+
         cards:
 
           - name:                       Recent Posts

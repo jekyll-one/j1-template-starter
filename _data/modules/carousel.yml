@@ -1,0 +1,333 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/carousel.yml
+# Default configuration for J1 Carousel (based on Owl Carousel V1)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2022 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description (used for J1 CC only)
+#
+description:
+
+  title:                                Carousel
+  scope:                                User settings
+  location:                             _data/apps/carousel.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL Carousel settings
+  #
+  # enabled
+  # ----------------------------------------------------------------------------
+  #   Enables|Disables the use of a carousel|slider
+  #
+  # xhr_data_path
+  # ----------------------------------------------------------------------------
+  #   All data items displayed by a slider are being read from a
+  #   JSON file automatically generated from that configuration.
+  #   AJAX get method is used to supply the slider with respective
+  #   the HTML code at the time the slider is initialized (by the
+  #   J1 Adapter for J1 Owl Sliders).
+  #
+  #   values:                             string
+  #   default:                            /assets/data/carousel.json
+  #
+  # ----------------------------------------------------------------------------
+  enabled:                              true
+
+  # ----------------------------------------------------------------------------
+  # CAROUSEL options
+  # ----------------------------------------------------------------------------
+  #
+  # enabled
+  # ----------------------------------------------------------------------------
+  #   Enables|Disables the use of the OwlCarousel
+  #
+  #   values:                           boolean (true|false)
+  #   default:                          false
+  #
+  # carousel
+  # ----------------------------------------------------------------------------
+  #  All shows are configured as elements of the carousel
+  #  array
+  #
+  #   enabled:
+  # ----------------------------------------------------------------------------
+  #   If enabled, show data (JSON) is generated
+  #
+  #       values:                       boolean (false|true)
+  #       default:                      no default
+  #
+  #   lightbox:
+  #   ---------------------------------------------------
+  #   If set to true, J1 Lightbox is enabled for all images
+  #   of that carousel|show
+  #
+  #   NOTE:
+  #   To use Lightbox with Owl Carousel, lazyLoad needs to
+  #   be enabled for the show to delay the load of images.
+  #   If lightbox is detected as ENABLED, lazyLoad is
+  #   automatically ENABLED as well.
+  #
+  #       values:                       boolean (false|true)
+  #       default:                      false
+  #
+  #   id
+  #   --------------------------------------------------------------------------
+  #   A unique id used to create and initialize a
+  #   (specific) carousel|show.
+  #
+  #       values:                       string
+  #       default:                      no defaults
+  #
+  #
+  #   item_type
+  #   --------------------------------------------------------------------------
+  #   For a slide show, images or text (HTML code) can be
+  #   used as items.
+  #
+  #       values:                       image|text
+  #       default:                      image
+  #
+  #   images
+  #   --------------------------------------------------------------------------
+  #   The images array specifies all images used by a
+  #   carousel as items. All images are to be configured
+  #   as a comma separated list (of image names with NO path).
+  #
+  #   NOTE:
+  #   Because NO individual path for images can be configured,
+  #   all image files are to be located in the SAME directory.
+  #
+  #       values:                       array|string (image names)
+  #       default:                      no defaults
+  #
+  #   slide_height
+  #   --------------------------------------------------------------------------
+  #   The images are scaled to 100 percent of height per
+  #   default. To reduce the height of the images of a
+  #   show, slide_height reduce the (viewport) height of
+  #   a show down to 10vh (vh, view height).
+  #
+  #   IMPORTANT:
+  #   This option can be used ONLY for SINGLE image shows
+  #   with option "singleItem" set to "true".
+  #
+  #   NOTE:
+  #   The view port units VH and VW are supported for
+  #   browsers supporting CSS3, only. The view port units
+  #   scale the view port of an HTML element (e.g DIV)
+  #   in relation to the current (window) size of the
+  #   browser.
+  #
+  #       values:                       integer [10 .. 100] (vh)
+  #       default:                      100
+  #
+  #   lb_caption
+  #   --------------------------------------------------------------------------
+  #   The lb_caption array specifies all CAPTION TEXT
+  #   used by the LIGHTBOX configured (if a lightbox is
+  #   enabled).
+  #
+  #   Caption text elements are to be configured as a
+  #   comma separated list of the SAME number as IMAGES
+  #   configured for a show.
+  #
+  #       values:                       array|string (caption text)
+  #       default:                      no defaults
+  #
+  #   images_path
+  #   --------------------------------------------------------------------------
+  #   Path to the IMAGES configured with the 'images'
+  #   sequence (array ).
+  #
+  #       values:                       string (path)
+  #       default:                      no defaults
+  #
+  #   text
+  #   --------------------------------------------------------------------------
+  #   If the slide show items are of type TEXT (item_type),
+  #   the text array specifies all text blocks (plain text
+  #   of HTML code) used by a carousel as show items. Text
+  #   items are configured as a comma separated list of
+  #   strings.
+  #
+  #       values:                       array|string (plain text OR HTML code)
+  #       default:                      no defaults
+  #
+  #   links
+  #   --------------------------------------------------------------------------
+  #   On all carousel items, links (URLs) can be specified.
+  #
+  #   NOTE:
+  #   The number of elements of the 'links' array has to be
+  #   the same as the images or text array. The links are
+  #   bound to the items the same order. The first link is
+  #   bound to the first image|text block, the second link
+  #   to the second image|text etc.
+  #
+  #       values:                       array|string (url)
+  #       default:                      no defaults
+  #
+  #
+  # ----------------------------------------------------------------------------
+  #
+  carousel:
+
+    # --------------------------------------------------------------------------
+    # CAROUSEL configurations
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # demo_text_carousel
+    #
+    - show:
+        enabled:                        true
+        id:                             demo_text_carousel
+        lightbox:                       false
+        type:                           text
+
+        text:                           [
+                                          "<big>Jekyll One Template</big>         </br> <i>Clean, responsive and fully featured Template made for Jekyll</i>",
+                                          "<big>Jekyll meets Bootstrap</big>      </br> <i>Best of OpenSource and commercial software for the Web</i>",
+                                          "<big>J1 is Open Source</big>           </br> <i>No pain for private or professional use</i>",
+                                          "<big>Explore this site</big>           </br> <i>Learn what's possible if you go the Jekyll Way</i>",
+                                          "<big>Create modern static sites</big>  </br> <i>Secure, powerful and fast<i>"
+                                        ]
+        options:
+          autoPlay:                     5000
+          singleItem:                   true
+          pagination:                   false
+
+    # --------------------------------------------------------------------------
+    # demo_text_carousel_parallax
+    #
+    - show:
+        enabled:                        true
+        id:                             demo_text_carousel_parallax
+        lightbox:                       false
+        type:                           text
+        parallax:                       true
+        padding:                        75px 0 75px 75px
+        text_color:                     md-grey-100
+        font_size:                      1.5rem
+        font_weight:                    500
+        background:                     /assets/images/quotes/default.jpg       # /assets/images/modules/attics/ideas-start-here-1920x1280-bw.jpg
+        cover:                          true
+        darken:                         1
+        gridify:                        true
+
+        text:                           [
+                                          "<big>Jekyll One Template</big>         </br> <i>Clean, responsive and fully featured Template made for Jekyll</i>",
+                                          "<big>Jekyll meets Bootstrap</big>      </br> <i>Best of OpenSource and commercial software for the Web</i>",
+                                          "<big>J1 is Open Source</big>           </br> <i>No pain for private or professional use</i>",
+                                          "<big>Explore this site</big>           </br> <i>Learn what's possible if you go the Jekyll Way</i>",
+                                          "<big>Create modern static sites</big>  </br> <i>Secure, powerful and fast<i>"
+                                        ]
+        options:
+          autoPlay:                     5000
+          singleItem:                   true
+          pagination:                   false
+
+    # --------------------------------------------------------------------------
+    # demo_cats
+    #
+    - show:
+        enabled:                        true
+        id:                             demo_cats
+  #     title:                          Nice cats
+        slide_space_between:            3
+        slide_border:                   true
+        lightbox:                       true
+        type:                           image
+        images_path:                    /assets/images/modules/carousel/cats
+        images:                         [
+                                          cat-1.jpg, cat-2.jpg,
+                                          cat-3.jpg, cat-4.jpg
+                                        ]
+        links:                          [
+                                          "#void", "#void",
+                                          "#void", "#void"
+                                        ]
+        lb_caption:                     [
+                                          "You see cat #1",
+                                          "You see cat #2",
+                                          "You see cat #3",
+                                          "You see cat #4"
+                                        ]
+        options:
+          navigation:                   false
+          itemsCustom:                  [
+                                          [0, 1], [400, 1], [700, 2],
+                                          [1000, 2], [1200, 2], [1600, 2]
+                                        ]
+          slideSpeed:                   300
+          paginationSpeed:              400
+          items:                        2
+
+    # --------------------------------------------------------------------------
+    # demo_simple
+    #
+    - show:
+        enabled:                        true
+        provider:                       j1
+        id:                             demo_simple
+        type:                           image
+        images_path:                    /assets/images/modules/carousel/mega_cities
+        images:                         [
+                                          andreas-brucker_b.jpg,
+                                          denys-nevozhai-1_b.jpg,
+                                          denys-nevozhai-2_b.jpg,
+                                          luca-bravo_b.jpg,
+                                          thomas-tucker_b.jpg
+                                        ]
+        links:                          [
+                                          "#void", "#void", "#void", "#void",
+                                          "#void", "#void", "#void", "#void"
+                                        ]
+        options:
+          autoPlay:                     3000
+          items:                        3
+          autoHeight :                  true
+          pagination:                   false
+          paginationNumbers:            false
+          itemsDesktop:                 "[1199,3]"
+          itemsDesktopSmall:            "[979,3]"
+
+    # --------------------------------------------------------------------------
+    # demo_oneslide
+    #
+    - show:
+        enabled:                        true
+        provider:                       j1
+        id:                             demo_oneslide
+        type:                           image
+        lightbox:                       true
+        images_path:                    /assets/images/modules/carousel/mega_cities
+        images:                         [
+                                          andreas-brucker_b.jpg,
+                                          denys-nevozhai-1_b.jpg,
+                                          denys-nevozhai-2_b.jpg,
+                                          luca-bravo_b.jpg,
+                                          thomas-tucker_b.jpg
+                                        ]
+        options:
+          navigation:                   true
+          slideSpeed:                   300
+          paginationSpeed:              400
+          singleItem:                   true
+          transitionStyle:              goDown
+
+# ------------------------------------------------------------------------------
+# END config

@@ -57,6 +57,13 @@ resource_options:
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
+[role="dropcap"]
+J1 Template supports popular icons font sets out-of-the-box. The icon sets MDI
+and FA are very good in design and have a rich set of different icons for many
+categories used for the Web. Iconify icons are not a locally stored icon-set
+like MDI or FA. All icons are loaded over the Internet using the so-called
+Unified OpenSource Icon Framework.
+
 == Icon Fonts
 
 J1 Template supports popular icons font sets out-of-the-box:
@@ -73,7 +80,6 @@ Iconify icons are not a locally stored icon-set like MDI or FA. All icons are
 loaded over the Internet using the so-called *Unified OpenSource Icon
 Framework*. See section <<Iconify Icons>> for more information.
 
-
 == Material Design Icons
 
 The primary icon-set for the J1 Template is
@@ -89,13 +95,13 @@ repository and MD style specification.
 
 .Material Design Icons
 [cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
-|===============================================================================
+|===
 |Size |Modifier |Markup |Render
 
 |1x
 |no modifier set
 |All icons can be found for preview at the
-link:{url-material-design-icons--cheatsheet}[MDI Cheatsheet, {browser-window--new}]
+link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
 No modifiers +
@@ -108,7 +114,7 @@ mdi:account[1x]
 |3x
 |no modifier set
 |All icons can be found for preview at the
-link:{url-material-design-icons--cheatsheet}[MDI Cheatsheet, {browser-window--new}]
+link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
 No modifiers +
@@ -121,7 +127,7 @@ mdi:account[3x]
 |5x
 |no modifier set
 |All icons can be found for preview at the
-link:{url-material-design-icons--cheatsheet}[MDI Cheatsheet, {browser-window--new}]
+link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
 No modifiers +
@@ -134,7 +140,7 @@ mdi:account[5x]
 |5x
 |`mdi-rotate-45`
 |All icons can be found for preview at the
-link:{url-material-design-icons--cheatsheet}[MDI Cheatsheet, {browser-window--new}]
+link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
 Rotate 45 degrees +
@@ -147,7 +153,7 @@ mdi:account[5x mdi-rotate-45]
 |5x
 |`mdi-rotate-315`
 |All icons can be found for preview at the
-link:{url-material-design-icons--cheatsheet}[MDI Cheatsheet, {browser-window--new}]
+link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
 Rotate 315 degrees +
@@ -161,7 +167,7 @@ mdi:account[5x mdi-rotate-315]
 |`mdi-light` +
 `mdi-flip-v`
 |All icons can be found for preview at the
-link:{url-material-design-icons--cheatsheet}[MDI Cheatsheet, {browser-window--new}]
+link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
 Colour set to (md) light-grey and flipped vertical +
@@ -174,7 +180,7 @@ mdi:alert[5x mdi-light mdi-flip-v]
 |5x
 |`md-indigo`
 |All icons can be found for preview at the
-link:{url-material-design-icons--cheatsheet}[MDI Cheatsheet, {browser-window--new}]
+link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
 Colour set to (md) indigo +
@@ -187,7 +193,7 @@ mdi:alert[5x md-indigo]
 |5x
 |`md-pink`
 |All icons can be found for preview at the
-link:{url-material-design-icons--cheatsheet}[MDI Cheatsheet, {browser-window--new}]
+link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
 Colour set to (md) pink +
@@ -200,7 +206,7 @@ mdi:alert[5x md-pink]
 |5x
 |`mdi-spin`
 |All icons can be found for preview at the
-link:{url-material-design-icons--cheatsheet}[MDI Cheatsheet, {browser-window--new}]
+link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
 Added animation of type rotate (spin) +
@@ -214,7 +220,7 @@ mdi:loading[5x mdi-spin]
 |`md-red-900` +
 `mdi-pulsed`
 |All icons can be found for preview at the
-link:{url-material-design-icons--cheatsheet}[MDI Cheatsheet, {browser-window--new}]
+link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
 Colour  set to (md) color dark-red and added animation of type pulsed +
@@ -224,7 +230,7 @@ mdi:heart[5x md-red-900 mdi-pulsed]
 ----
 |mdi:heart[5x md-red-900 mdi-pulsed]
 
-|===============================================================================
+|===
 
 NOTE: Using Material Design Icons with Asciidoc is easy as an inline
 macro `mdi:` is available to place icons wherever you want. See more about
@@ -292,7 +298,7 @@ Find below examples of both and the use with J1 Template.
 
 .FontAwesome Icons (FAB)
 [cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
-|===============================================================================
+|===
 |Size |Modifier |Markup |Render
 
 |2x
@@ -319,14 +325,14 @@ fab:blogger[5x md-blue]
 ----
 |fab:blogger[5x md-blue]
 
-|===============================================================================
+|===
 
 
 === Standard icons
 
 .FontAwesome Icons (FAS)
 [cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
-|===============================================================================
+|===
 |Size |Modifier |Markup |Render
 
 |1x
@@ -439,7 +445,7 @@ fas:heart[5x md-red-900 fa-pulsed]
 ----
 ^|fas:heart[5x md-red-900 fa-pulsed]
 
-|===============================================================================
+|===
 
 
 == Iconify Icons
@@ -466,7 +472,7 @@ Find some examples below.
 
 .Brand Icons
 [cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
-|===============================================================================
+|===
 |Size |Modifier |Markup |Render
 
 |3x
@@ -493,11 +499,11 @@ iconify:logos:asciidoctor[3x]
 ----
 ^|iconify:logos:asciidoctor[3x]
 
-|===============================================================================
+|===
 
 .Medical Icons
 [cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
-|===============================================================================
+|===
 |Size |Modifier |Markup |Render
 
 |3x
@@ -524,7 +530,7 @@ iconify:medical-icon:i-ear-nose-throat[5x md-red-900]
 ----
 ^|iconify:medical-icon:i-ear-nose-throat[5x md-red-900]
 
-|===============================================================================
+|===
 
 
 == What next

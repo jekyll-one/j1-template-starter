@@ -16,7 +16,7 @@ fab_menu_id:                            page_ctrl_simple
 permalink:                              /pages/public/learn/roundtrip/responsive_tables/
 regenerate:                             false
 
-resources:                              [ animate, rtable, rouge ]
+resources:                              [ animate, rouge ]
 resource_options:
   - attic:
       padding_top:                      400
@@ -55,6 +55,7 @@ resource_options:
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
+[role="dropcap"]
 Creating a design for responsive tables is challenging. The approach used by
 J1 Template is based on pure CSS on top of the classic Bootstrap styles for
 simplicity and portability to be viewed best on all devices and browsers.
@@ -67,7 +68,7 @@ tables are implemented:
 
 .Types of responsive tables
 [cols="3a,3a,6a", options="header", width="100%", role="table-responsive mt-3"]
-|===============================================================================
+|===
 |Type |Style |Description
 
 |J Table (default)
@@ -102,7 +103,7 @@ all columns get vertically *stacked as rows*. The rebuild of responsive
 tables takes effect if the viewport (window size) is smaller than 992px for
 the width (x-axis); typical for small devices like tablets or mobiles.
 
-|===============================================================================
+|===
 
 To see the transformation on a table in action, resize for desktop devices the
 browser window or use a device the viewport is smaller than 768px (mobiles or
@@ -121,18 +122,18 @@ viewports. From a specified breakpoint and up, the table will behave normally
 and do not scroll horizontally.
 
 .Example, Bootstrap using fixed text size `no-rtext`
-[source, prometheus, role="r-text-200 noclip"]
+[source, no_theme, role="noclip"]
 ----
 [cols="6,6", options="header", width="100%", role="table-responsive no-rtext"]
-|=============================================================================
+|===
 |Variable |Description
 ...
-|=============================================================================
+|===
 ----
 
 .Bootstrap, fixed text size `no-rtext`
 [cols="6a,6a", options="header", width="100%", role="table-responsive no-rtext mt-3"]
-|===============================================================================
+|===
 |Variable |Description
 
 |`page.content`
@@ -149,21 +150,21 @@ Post's front matter by specifying a new date/time in the format
 (to specify a time zone using an offset from UTC. e.g.
 `2008-12-14 10:30:00 +0900`).
 
-|===============================================================================
+|===
 
 .Example, Bootstrap using responsive text size
-[source, prometheus, role="r-text-200 noclip"]
+[source, no_theme, role="noclip"]
 ----
 [cols="6,6", options="header", width="100%", role="table-responsive"]
-|====================================================================
+|===
 |Variable |Description
 ...
-|====================================================================
+|===
 ----
 
 .Bootstrap, responsive text size
 [cols="6a,6a", options="header", width="100%", role="table-responsive mt-3"]
-|===============================================================================
+|===
 |Variable |Description
 
 |`page.content`
@@ -180,7 +181,7 @@ Post's front matter by specifying a new date/time in the format
 (to specify a time zone using an offset from UTC. e.g.
 `2008-12-14 10:30:00 +0900`).
 
-|===============================================================================
+|===
 
 
 === Responsive tables
@@ -189,18 +190,18 @@ Responsive tables *rebuild* a table. The header is set to invisible, and
 all columns get vertically *stacked as rows*.
 
 .Example, R Table using responsive text size
-[source, prometheus, role="r-text-200 noclip"]
+[source, no_theme, role="noclip"]
 ----
 [cols="6,6", options="header", width="100%", role="rtable"]
-|==========================================================
+|===
 |Variable |Description
 ...
-|==========================================================
+|===
 ----
 
 .R Table, responsive text size
 [cols="6a,6a", options="header", width="100%", role="rtable mt-3"]
-|===============================================================================
+|===
 |Variable |Description
 
 |`page.content`
@@ -217,21 +218,21 @@ Post's front matter by specifying a new date/time in the format
 (to specify a time zone using an offset from UTC. e.g.
 `2008-12-14 10:30:00 +0900`).
 
-|===============================================================================
+|===
 
 .Example, R Table using fixed font size
-[source, prometheus, role="r-text-200 noclip"]
+[source, no_theme, role="noclip"]
 ----
 [cols="6,6", options="header", width="100%", role="rtable no-rtext"]
-|===================================================================
+|===
 |Variable |Description
 ...
-|===================================================================
+|===
 ----
 
 .R Table, stacked, fixed text size `no-rtext`
 [cols="6a,6a", options="header", width="100%", role="rtable no-rtext mt-3"]
-|===============================================================================
+|===
 |Variable |Description
 
 |`page.content`
@@ -248,7 +249,7 @@ Post's front matter by specifying a new date/time in the format
 (to specify a time zone using an offset from UTC. e.g.
 `2008-12-14 10:30:00 +0900`).
 
-|===============================================================================
+|===
 
 
 == Tables multi-column
@@ -269,18 +270,18 @@ In particular, this can clip off dropdown menus and other third-party
 widgets.
 
 .Example, Bootstrap using fixed text size `no-rtext`
-[source, prometheus, role="r-text-200 noclip"]
+[source, no_theme, role="noclip"]
 ----
 [cols=",,,,", options="header", width="100%", role="table-responsive no-rtext"]
-|===============================================================================
+|===
 |Parameter |Type |Default |Description |Example
 ...
-|===============================================================================
+|===
 ----
 
 .Bootstrap, fixed text size `no-rtext`
 [cols="2,2,2,3,3", options="header", width="100%", role="table-responsive no-rtext mt-3"]
-|===============================================================================
+|===
 |Parameter |Type |Default |Description |Example
 
 |`color`
@@ -301,21 +302,21 @@ the form `#RRGGBB`
 Alternatively, the color can be configured as (hexadecimal) RGB valuess of
 the form `#RRGGBB`
 
-|===============================================================================
+|===
 
 .Example, Bootstrap using responsive text size
-[source, prometheus, role="r-text-200 noclip"]
+[source, no_theme, role="noclip"]
 ----
 [cols=",,,,", options="header", width="100%", role="table-responsive"]
-|=====================================================================
+|===
 |Parameter |Type |Default |Description |Example
 ...
-|=====================================================================
+|===
 ----
 
 .Bootstrap, responsive text size
 [cols="2,2,2,3,3", options="header", width="100%", role="table-responsive mt-3"]
-|===============================================================================
+|===
 |Parameter |Type |Default |Description |Example
 
 |`color`
@@ -336,23 +337,23 @@ the form `#RRGGBB`
 Alternatively, the color can be configured as (hexadecimal) RGB valuess of
 the form `#RRGGBB`
 
-|===============================================================================
+|===
 
 === Responsive tables
 
 .Example, R Table using fixed text size `no-rtext`
-[source, prometheus, role="r-text-200 noclip"]
+[source, no_theme, role="noclip"]
 ----
 [cols=",,,,", options="header", width="100%", role="rtable no-rtext"]
-|====================================================================
+|===
 |Parameter |Type |Default |Description |Example
 ...
-|====================================================================
+|===
 ----
 
 .R Table, fixed text size `no-rtext`
 [cols="2,2,2,3,3", options="header", width="100%", role="rtable no-rtext mt-3"]
-|===============================================================================
+|===
 |Parameter |Type |Default |Description |Example
 
 |`color`
@@ -373,21 +374,21 @@ the form `#RRGGBB`
 Alternatively, the color can be configured as (hexadecimal) RGB valuess of
 the form `#RRGGBB`
 
-|===============================================================================
+|===
 
 .Example, R Table using fixed text size `no-rtext`
-[source, prometheus, role="r-text-200 noclip"]
+[source, no_theme, role="noclip"]
 ----
 [cols=",,,,", options="header", width="100%", role="rtable no-rtext"]
-|====================================================================
+|===
 |Parameter |Type |Default |Description |Example
 ...
-|====================================================================
+|===
 ----
 
 .R Table, responsive text size
 [cols="2,2,2,3,3", options="header", width="100%", role="rtable mt-3"]
-|===============================================================================
+|===
 |Parameter |Type |Default |Description |Example
 
 |`color`
@@ -408,7 +409,7 @@ the form `#RRGGBB`
 Alternatively, the color can be configured as (hexadecimal) RGB valuess of
 the form `#RRGGBB`
 
-|===============================================================================
+|===
 
 
 == What next

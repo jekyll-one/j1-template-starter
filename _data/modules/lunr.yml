@@ -1,0 +1,38 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/modules/lunr.yml
+#  User configuration settings for J1 Lunr (search) module
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2022 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description (used for J1 CC only)
+#
+description:
+
+  title:                                J1 Lunr
+  scope:                                User settings
+  location:                             _data/modules/lunr.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+  enabled:                              true
+
+  placement:                            navbar
+  target:                               _blank
+  rebuild:                              true
+  full_index:                           false
+
+  stopwords_locale:                     en
+  min_length:                           3
+
+# ------------------------------------------------------------------------------
+# END config

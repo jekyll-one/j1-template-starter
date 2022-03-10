@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2021 Juergen Adams
+# Copyright (C) 2022 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
@@ -25,20 +25,187 @@ description:
 #
 defaults:
 
-  enabled:                              true
-  title:                                Customizer
+  # ----------------------------------------------------------------------------
+  # GENERAL gallery settings
+  #
+  # enabled
+  # ----------------------------------------------------------------------------
+  #   Enables|Disables the use of a gallery.
+  #
+  #   values:                           boolean [true|false]
+  #   default:                          false
+  #
+  # xhr_container_id
+  # ----------------------------------------------------------------------------
+  #   All data items displayed by a gallery are being read from a
+  #   JSON file automatically generated from that configuration.
+  #   AJAX get method is used to supply the gallery with respective
+  #   the HTML code at the time the gallery is initialized (by the
+  #   J1 Adapter for J1 Justified Gallery).
+  #
+  #   values:                           string
+  #   default:                          /assets/data/galleries.json
+  #
+  # xhr_data_element
+  # ----------------------------------------------------------------------------
+  #   All data items ...
+  #
+  #   values:                           string
+  #   default:                          galleryCustomizer
+  #
+  # xhr_data_path
+  # ----------------------------------------------------------------------------
+  #   All data items ...
+  #
+  #   values:                           string
+  #   default:                          /assets/data/galleries.json
+  #
+  # max_gallery_width
+  # ----------------------------------------------------------------------------
+  #   Total width (px) of an gallery element displayed in a page.
+  #
+  #   values:                           integer
+  #   default:                          1024
+  #
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
+  title:                                JustfiedGallery Customizer
 
   xhr_container_id:                     customizer
   xhr_data_element:                     galleryCustomizer
   xhr_data_path:                        /assets/data/gallery_customizer/index.html
+  max_gallery_width:                    1024
 
+  # ----------------------------------------------------------------------------
+  # GALLERY options
+  # ----------------------------------------------------------------------------
+  #
+  # rowHeight
+  # ----------------------------------------------------------------------------
+  #   The preferred rows height measured in pixel (px)
+  #
+  #   values:                           integer
+  #   default:                          200
+  #
+  # maxRowHeight
+  # ----------------------------------------------------------------------------
+  #  This option could be a false or negative value to keep it disabled.
+  #  Could be a number (e.g 200) which specifies the maximum row height in pixel.
+  #  Alternatively, a string which specifies a percentage (e.g. "200%" means
+  #  that the row height can't exceed 2 * rowHeight). Note that with this
+  #  option can crop the images if they need to be higher to be justified.
+  #
+  #   values:                           boolean [true|false] or integer
+  #   default:                          false
+  #
+  # maxRowsCount
+  # ----------------------------------------------------------------------------
+  #  This parameter limits the number of rows to show. Justified Gallery
+  #  hides the unwanted rows, and if the page is resized more (or less)
+  #  images are shown. Note that this this option doesn't limit the number
+  #  of rows by making images smaller. A value 0 means disabled.
+  #
+  #   values:                           integer
+  #   default:                          0
+  #
+  # justifyLastRow
+  # ----------------------------------------------------------------------------
+  #  Decide to justify the last row (using 'justify') or not (using
+  #  'nojustify')
+  #
+  #   values:                           value [justify|nojustify]
+  #   default:                          nojustify
+  #
+  # hideLastRow
+  # ----------------------------------------------------------------------------
+  #  Hide the last row.
+  #
+  #   values:                           boolean [true|false]
+  #   default:                          false
+  #
+  # margins
+  # ----------------------------------------------------------------------------
+  #  The margins between the images.
+  #
+  #   values:                           integer
+  #   default:                          1
+  #
+  # border
+  # ----------------------------------------------------------------------------
+  #  The border size of the gallery.
+  #
+  #   values:                           integer
+  #   default:                          0
+  #
+  # randomize
+  # ----------------------------------------------------------------------------
+  #  Automatically randomize or not the order of the images.
+  #
+  #   values:                           boolean [true|false]
+  #   default:                          false
+  #
+  # sort
+  # ----------------------------------------------------------------------------
+  #  Can be false to do not sort.
+  #
+  #   values:                           boolean [true|false]
+  #   default:                          false
+  #
+  # rtl
+  # ----------------------------------------------------------------------------
+  #  Right to left mode.
+  #
+  #   values:                           boolean [true|false]
+  #   default:                          false
+  #
+  # refreshTime
+  # ----------------------------------------------------------------------------
+  #  The waited time (ms) before checking the page size. If the page width
+  #  has changed the gallery layout is rebuilt.
+  #
+  #   values:                           integer
+  #   default:                          250
+  #
+  # refreshSensitivity
+  # ----------------------------------------------------------------------------
+  #  Change in width allowed (in px) without re-building the gallery.
+  #
+  #   values:                           integer
+  #   default:                          0
+  #
+  # cssAnimation
+  # ----------------------------------------------------------------------------
+  #  Use or not css animations. With CSS animations it's easier to change
+  #  them by overriding the rules defined by Justified Gallery.
+  #
+  #   values:                           boolean [true|false]
+  #   default:                          true
+  #
+  # imagesAnimationDuration
+  # ----------------------------------------------------------------------------
+  #  Image fadeIn duration (in milliseconds). This is ignored if CSS
+  #  animations are used.
+  #
+  #   values:                           integer
+  #   default:                          500
+  #
+    # captions
+  # ----------------------------------------------------------------------------
+  #  Decide if you want to show the captions that appears when your
+  #  mouse is over the image.
+  #
+  #   values:                           boolean [true|false]
+  #   default:                          true
+  #
+  # ----------------------------------------------------------------------------
+  #
   gallery_settings:
-    rowHeight:                          150
-    maxRowHeight:                       -1
+    rowHeight:                          200
     justifyLastRow:                     false
     hideLastRow:                        false
-    margins:                            1
-    border:                             0
+    margins:                            0
+    border:                             10
     randomize:                          false
     sort:                               false
     refreshTime:                        200

@@ -7,7 +7,7 @@
 # Product/Info:
 # http://jekyll.one
 #
-# Copyright (C) 2021 Juergen Adams
+# Copyright (C) 2022 Juergen Adams
 # Copyright (c) 2018 Ulrich Wolf
 #
 # J1 Template is licensed under the MIT License.

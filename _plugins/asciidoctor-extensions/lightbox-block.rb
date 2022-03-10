@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2021 Juergen Adams
+# Copyright (C) 2022 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # For details, see https://jekyll.one
@@ -45,11 +45,13 @@ Asciidoctor::Extensions.register do
       images_hash   = Hash[*attrs['image_data'].split(',')]
 
       title_html    = (attrs.has_key? 'title') ? %(<div class="title">#{attrs['title']}</div>\n) : nil
-      role          = (attrs.has_key? 'role') ? role : 'mb-3'
+      role          = (attrs.has_key? 'role') ? role : ''
       grouped       = (attrs.has_key? 'group') ? true : false
 
+      # {attrs['role']}
+
       if grouped
-        html_block.div(:class=>"content") {
+        html_block.div(:class=>"content #{attrs['role']}", :style=>"margin-bottom: .75rem;") {
           images_hash.each do |i,d|
             image = i.strip
             descr = d.strip
@@ -59,7 +61,7 @@ Asciidoctor::Extensions.register do
           end
         }
       else
-        html_block.div(:class=>"content") {
+        html_block.div(:class=>"content #{attrs['role']}", :style=>"margin-bottom: .75rem;") {
           images_hash.each do |i,d|
             image = i.strip
             descr = d.strip
@@ -72,7 +74,7 @@ Asciidoctor::Extensions.register do
       content = html_block.target! # See: https://stackoverflow.com/questions/4961609/extra-to-s-when-using-builder-to-generate-xml
 
       html = %(
-        <div id="lb-#{target}" class="imageblock #{role}">
+        <div id="lb-#{target}" class="imageblock">
           #{title_html}
           #{content}
         </div>
