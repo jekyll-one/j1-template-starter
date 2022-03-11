@@ -112,7 +112,7 @@ module Jekyll
 
         if @module_config['rebuild'] == false
           if File.exist?(index_file)
-            Jekyll.logger.info 'J1 QuickSearch:', 'recreate index disabled.'
+            Jekyll.logger.info 'J1 Lunr:', 'recreate index disabled.'
             # Keep the index file from being cleaned by Jekyll
             #
             site.static_files << SearchIndexFile.new(site, site.dest, '/', @module_config['index_file'])
@@ -120,7 +120,7 @@ module Jekyll
           end
         end
 
-        Jekyll.logger.info 'J1 QuickSearch:', 'creating search index ...'
+        Jekyll.logger.info 'J1 Lunr:', 'creating search index ...'
 
         # gather posts and pages
         #
@@ -186,7 +186,7 @@ module Jekyll
         #
         FileUtils.mkdir_p(File.dirname(filepath))
         File.open(filepath, 'w') { |f| f.write(JSON.dump(total)) }
-        Jekyll.logger.info 'J1 QuickSearch:', "finished, index ready."
+        Jekyll.logger.info 'J1 Lunr:', "finished, index ready."
         added_files = [filename]
 
         # Keep the written files from being cleaned by Jekyll
