@@ -360,21 +360,64 @@ resources:
                                           core/css/icon-fonts/mdil,
                                           core/css/icon-fonts/fontawesome,
                                           core/css/vendor
-
                                         ]
-        files:                          [
-                                          adapter/js/j1.js,
-#                                         modules/cryptoJS/js/aes.js,
-#                                         "https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"
-                                        ]
+        files:                          [ adapter/js/j1.js ]
         js:                             [
-                                          modules/gtag-opt-in/js/gtag-opt-in,
                                           modules/jquery/js/jquery,
-                                          modules/jquery/js/jqueryUI,
-                                          modules/popper/js/popper,
+                                          modules/popper/js/popper,             # required for BS
                                           core/js/template
                                         ]
         init_function:                  [ j1.init ]
+
+  # ----------------------------------------------------------------------------
+  # Google Analytics OptIn, a browser library to opt-in in Google Analytics
+  # See: https://github.com/luciomartinez/gtag-opt-in
+  #
+  - name:                               gaOptIn
+    resource:
+      enabled:                          true
+
+      id:                               ga-opt-in
+      comment:                          gaOptIn
+      region:                           head
+      layout:                           [ all ]
+      required:                         always
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          []
+        js:                             [ modules/gtag-opt-in/js/gtag-opt-in ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # jQueryUI, curated set of user interface interactions, effects, widgets,
+  # and themes built on top of jQuery
+  # See: https://jqueryui.com/
+  #
+  - name:                               jQueryUI
+    resource:
+      enabled:                          true
+
+      id:                               jquery-ui
+      comment:                          jQueryUI
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            [
+                                          modules/jquery/css/jquery-ui/jquery-ui,
+                                          modules/jquery/css/jquery-ui/jquery-ui.theme
+                                        ]
+        files:                          []
+        js:                             [ modules/jquery/js/jquery-ui ]
+        init_function:                  []
 
   # ----------------------------------------------------------------------------
   # J1 Logger, JS API for all logs used by J1 Template based on the
@@ -1003,7 +1046,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Gallery Customizer, Customizer UI for Justified dGallery
+  # Gallery Customizer, Customizer UI for JustifiedGallery
   #
   - name:                               J1 Gallery Customizer
     resource:
