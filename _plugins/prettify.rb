@@ -34,7 +34,6 @@ module Jekyll
       parsed_content = content.to_html
       # 2nd_stage cleanup
       pretty = HtmlBeautifier.beautify(parsed_content)
-      pretty = pretty.sub('\s*<!DOCTYPE html>.*','<!DOCTYPE html>')
     end
   end
 end

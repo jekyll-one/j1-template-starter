@@ -1,0 +1,227 @@
+---
+title:                                  Jupyter
+tagline:                                JupyterHub
+date:                                   2022-03-28 00:00:00
+description: >
+                                        JupyterHub brings the power of notebooks to groups of users. It
+                                        gives users access to computational environments and resources without
+                                        burdening the users with installation and maintenance tasks. Users, including
+                                        students, researchers, and data scientists, can get their work done in
+                                        their own workspaces on shared resources which can be managed efficiently
+                                        by system administrators.
+
+categories:                             [ Software, Python ]
+tags:                                   [ JupyterLab, API ]
+
+scrollbar:                              true
+
+permalink:                              /pages/public/jupyter/docs/jupyterlab-api/
+regenerate:                             false
+
+resources:                              [
+                                          animate, clipboard, lightbox, rouge
+                                        ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:badges-enabled:                        false
+:binder-badge-enabled:                  false
+:url-jupyter-server-api--swagger:       https://petstore.swagger.io/?url=https://raw.githubusercontent.com/jupyter/jupyter_server/master/jupyter_server/services/api/api.yaml#/
+
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ifeval::[{badges-enabled} == true]
+{badge-j1--license} {badge-j1--version-latest} {badge-j1-gh--last-commit} {badge-j1--downloads}
+endif::[]
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+ifeval::[{binder-badge-enabled} == true]
+image:/assets/images/badges/myBinder.png[[Binder, link="https://mybinder.org/", {browser-window--new}]
+image:/assets/images/badges/docsBinder.png[[Binder, link="https://mybinder.readthedocs.io/en/latest/", {browser-window--new}]
+endif::[]
+
+*JupyterLab* is the latest web-based interactive development environment
+for notebooks, code, and data. Its flexible interface allows users to
+configure and arrange workflows in data science, scientific computing,
+computational journalism, and machine learning. A modular design invites
+extensions to expand and enrich functionality.
+
+== JupyterHub
+// See: https://jupyter.org/hub
+
+*JupyterHub* brings the power of notebooks to *groups* of users. It
+gives users access to *computational environments* and resources without
+burdening the users with installation and maintenance tasks. Users, including
+students, researchers, and data scientists, can get their work done in
+their own workspaces on shared resources which can be managed efficiently
+by system administrators.
+
+JupyterHub runs in the cloud or on your own hardware, and makes it possible
+to serve a pre-configured data science environment to any user in the world.
+It is customizable and scalable, and is suitable for small and large teams,
+academic courses, and large-scale infrastructure.
+
+== Jupyter Services (REST API)
+
+Javascript client for the Jupyter services REST APIs. All functions and
+classes using the REST API allow a serverSettings parameter to configure
+requests. Requests are made using the *fetch API*, which is available in
+modern browsers or via npm install fetch for node users. The whatwg-fetch
+npm package can be used to polyfill browsers that do not support the
+fetch API.
+
+=== Overview
+
+This package introduces a number of concepts, such as session context, etc.
+Here we give a brief overview of some of the top-level concepts in this
+package.
+
+==== Clients
+
+A *client* is a single entity connected to a kernel. Since kernel messages
+include the client id, it is easy for a client to filter kernel messages for
+just messages between it and the kernel. In JupyterLab, different activities,
+such as a console and a notebook, are usually considered separate clients
+when connected to the same kernel.
+
+==== Kernel specs
+
+A kernel spec is the data about an available kernel on the system. We can
+retrieve a current list of kernel specs from the server.
+
+==== Kernels
+
+A kernel represents a running process on the server that implements the
+Jupyter kernel messaging protocol.
+
+==== Kernel model
+
+A *kernel model* mirrors the server kernel models, and represents a single
+running kernel on the server. A kernel can be created, restarted, shut down,
+etc., through calls to the server. A kernel model's lifecycle mirrors the
+server kernel model's lifecycle, and it will be disposed when the server
+kernel is shut down.
+
+==== Kernel connection
+
+A kernel connection represents a single client connecting to a kernel over
+a *websocket*. Typically only one kernel connection handles comms for any
+given kernel. The kernel connection is disposed when the client no longer
+has a need for the connection. Disposing a kernel connection does not cause
+the kernel to shut down. However, if a kernel is shut down, (eventually)
+all of its kernel connections should be disposed if they were initiated
+from a kernel manager. If the kernel connections were instantiated outside
+of a manager, you are responsible for cleaning them up.
+
+A kernel connection has a number of signals, such as kernel status,
+kernel connection status, etc.
+
+==== Kernel manager
+
+A kernel manager is an object that maintains a list of kernel models by
+regular polling. The kernel manager can instantiate a kernel connection
+and will manage its lifecycle.E.g., when the kernel is shut down, the
+connections will be disposed.
+
+The manager provides some minimal bookkeeping around kernels and their
+connections. Generally, it is easiest to interact with kernels on a server
+through a manager.
+
+==== Sessions
+
+A session is a mapping on the server from an identifying string (the
+session's path) to a kernel. A session has a few other pieces of information
+to allow for easy categorization and searching of sessions.
+
+The primary usecase of a session is to enable persisting a connection to a
+kernel. For example, a notebook viewer may start a session with session path
+of the notebook's file path. When a browser is refreshed, the notebook viewer
+can connect to the same kernel by asking the server for the session
+corresponding with the notebook file path.
+
+==== Session model
+
+A session model mirrors a server session. The session models can be refreshed
+from the server, created, changed (including creating a new session kernel),
+and shut down (which implies that the kernel will be shut down). A session
+model's lifecycle mirrors the server session's lifecycle, and it will be
+disposed when the server session is shut down.
+
+==== Session connection
+
+A session connection represents a single client connected to a session's
+kernel. A session's kernel connection can change and may be null to signify
+no current kernel connection. A session connection owns the kernel connection,
+meaning the kernel connection is created and disposed by the session
+connection as needed. The session connection proxies signals from the kernel
+connection for convenience. E.g. you can listen to the session's status
+signal to get status changes for whatever the current kernel is, without
+having to disconnect and reconnect your signal handlers every time the session
+kernel changes.
+
+The session connection can be disposed when the client no longer is connected
+to that session's kernel, and disposal will not cause the session model to be
+deleted.
+
+==== Session manager
+
+A session manager is an object that maintains a list of session models by
+regular polling. The session manager can instantiate a session connection
+and will manage its lifecycle. E.g. when the session is shut down, the
+connections will be disposed.
+
+The manager provides some minimal bookkeeping around sessions and their
+connections. Generally, it is easiest to interact with sessions on a server
+through a manager.
+
+==== Session Context
+
+A session context is an object which has the same lifecycle as the client.
+The session context owns a session connection, which may be null if the
+client is not currently associated with a session. The session context
+proxies the current session connection's signals for convenience. The
+session context primarily serves as a stable object for a client to keep
+track of the current session connection. The session context also contains
+some convenience functionality, such as preferences for whether a kernel
+should be started and a user-friendly kernel name and status.
+
+Here is a diagram that provides an overview of the different components:
+
+.JupyterLab Architecture
+lightbox::jupyterlab--architecture[ 800, {data-jupyterlab--architecture}, role="mt-3 mb-4" ]
+
+
+
+== Rest API
+
+// See:
+// https://jupyter-server.readthedocs.io/en/latest/developers/rest-api.html
+// https://petstore.swagger.io/?url=https://raw.githubusercontent.com/jupyter/jupyter_server/master/jupyter_server/services/api/api.yaml#/
+
+Find an selectable bla at swagger.io with
+link:{url-jupyter-server-api--swagger}[Jupyter Server API, {browser-window--new}].

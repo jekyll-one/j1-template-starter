@@ -369,6 +369,6 @@ end
 
 module Jekyll
   module J1LunrSearch
-    VERSION = '2022.1.3'
+    VERSION = '2022.2.1'
   end
 end

@@ -1,0 +1,527 @@
+---
+title:                                  J1 NBI
+tagline:                                textbook integration
+date:                                   2022-04-17 00:00:00
+description: >
+                                        The package nbinteract aims to enable authors and educators to create and
+                                        share interactive web pages easily. Interactive explanations of concepts are
+                                        useful for communicating and explaining tricky concepts.
+
+categories:                             [ J1, Integration ]
+tags:                                   [ NBI, nbinteract ]
+
+scrollbar:                              false
+fab_menu_id:                            page_ctrl_simple
+personalization:                        true
+
+permalink:                              /pages/public/jupyter/docs/j1-nbinteract-docs/
+regenerate:                             true
+
+resources:                              [ animate, clipboard, lightbox, nbinteract, rouge ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/kirklai-1920x1280.jpg
+          alt:                          Photo by 𝓴𝓘𝓡𝓚 𝕝𝔸𝕀 on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     𝓴𝓘𝓡𝓚 𝕝𝔸𝕀
+            href:                       https://unsplash.com/@kirklai
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:binder-badge-enabled:                  false
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ifeval::[{binder-badge-enabled} == true]
+image:/assets/images/badges/myBinder.png[[Binder, link="https://mybinder.org/", {browser-window--new}]
+image:/assets/images/badges/docsBinder.png[[Binder, link="https://mybinder.readthedocs.io/en/latest/", {browser-window--new}]
+endif::[]
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+// tut:         https://www.dataquest.io/blog/jupyter-notebook-tutorial/
+// tut:         https://reproducible-science-curriculum.github.io/publication-RR-Jupyter/01-documentation/index.html
+
+// integration: https://code.visualstudio.com/docs/datascience/jupyter-notebooks
+// intro:       https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/index.html
+// Books:       https://jupyterbook.org/intro.html
+// 2HTML:       https://stackoverflow.com/questions/35896866/how-to-export-current-notebook-in-html-on-jupyter
+
+// info:        https://en.wikipedia.org/wiki/Galileo_Galilei
+
+The Template system J1 integrates the Javascript (core) library
+`nbinteract-core.js` from NBI (nbinteract). The integration is a J1 module
+that requires *no programming* to integrate interactive textbooks in
+your webpages.
+
+WARNING: The (core) library integrated with J1 can *only* used with the
+Template System J1. The library `nbinteract-core` is modified for the use
+with J1, allowing seamless integration between NBI and the pages of a J1 Web.
+
+The integration of NBI consists of the following components:
+
+* the (modified) JS and CSS files of the library *nbinteract-core* specified
+  as resource record `nbinteract` (see: `~/_data/resources.yml`)
+* an J1 adapter `nbinteract.js` for integration
+* a module configuration `nbinteract.yml`
+* an Asciidoc Extension `textbook::` to integrate textbooks (in webpages)
+
+The built-in Starter Web of the template comes with a suitable J1 NBI
+configuration and documents for testing. You can find examples of pages that
+contain interactive textbooks under the menu `Lern` underneath the submenu
+`Experimental|Textbooks`.
+
+WARNING: To develop your *Jupyter Notebooks*, a *local* installation of the
+*Python* programming language is required. For the development of Jupyter
+Notebooks, the *Jupyter* package and the installation of the library
+*nbinteract* are expected.
+
+== J1 NBI Integration
+
+The module for J1 NBI integration is available as a stable version. However,
+it is still in an experimental state. The main reason for that experimental
+status is the *age* of the underlying library `nbinteract-core`.
+
+NOTE: Recent library updates are more than a year ago, and the current
+version of the Jupyter Notebook *JupyterLab* application, unfortunately,
+*not* supported (yet).
+
+=== Notebooks vs Textbooks
+
+Jupyter Notebooks with the extension `.ipynb` are (data) files in JSON
+format and can only be run using the *App* of Jupyter Notebook. On the
+other hand, Textbooks are HTML exports with the extension `.html` from
+Jupyter Notebooks to be viewed in a web browser.
+
+For integrating textbooks in webpages, the notebooks with the extension
+`.ipynb` are to be *exported* to HTML (text) files using the
+(Python) program nbinteract. Textbooks that have already been exported
+can be found for the *Starter Web* in the folder
+`~/pages/public/jupyter/notebooks/textbooks`.
+
+=== Modul configuration
+
+As with all modules available with J1, *no programming* is required. An
+adapter for the template system takes the necessary steps for integration,
+so easy integration into your website is possible using the module
+configuration.
+
+==== Default settings
+
+Find all parameters used for the default settings below. The configuration
+file is `~/_data/default/nbinteract.yml`.
+
+.Default settings
+[cols="3a,4a,5a", subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===
+|Paramter |Value |Description
+
+|`spec`
+|`<user>/<repo>/<branch>`
+|Defines the *public* repo the configuration data is available to be read
+by the *Binder* service.
+
+|`baseUrl`
+|`https://mybinder.org`
+|Base URL of the *Binder* service.
+
+|`provider`
+|gh\|gist\|gl
+|Provider of the *public* repo. +
+`gh`, GitHub +
+`gist`, GitHub Gist +
+`gl`, GitLab
+
+|`button_styles`
+|CSS styles
+|For *Bootstrap*, styles like `btn btn-primary btn-raised ` can be used.
+
+|`show_nbi_messages`
+|`true`\|`false`
+|Show info\|progress\|error messages while nbinteract is being initialized.
+Messges are shown in (Bootstrap) modals. +
+Default: `false`
+
+|`indicate_nbi_activity`
+|`true`\|`false`
+|Show a spinner while nbinteract in being initialized.
+Default: `true`
+
+|`nbi_messages_auto_close`
+|`true`\|`false`
+|Close the nbi messages modals automatically. +
+Default: `true`
+
+|`nbi_init_timeout`
+|`integer`
+|Time (ms) textbooks on a page are to be finally initialized. If the
+init phase tooks longer, an error is issued. +
+Default: `180000` (3 min)
+
+|`nbi_messages_auto_close_delay`
+|`integer`
+|Delay (ms) to auto-close nbi messages modal. +
+Default: `3500` (3.5 sec)
+
+|`nbi_init_mathjax`
+|`true`\|`false`
+|Load and initialize the MathJax JS library. +
+Default: `true`
+
+|===
+
+WARNING: In the current implementation of NBI for J1, the JS library *MathJax*
+*may* interfere with the HTML output of other pages of a J1 website. Integrating
+the MatJax JS library may result in *strange outcomes* for other contents.
+For that reason, the MathJax library should be used *carefully* for the
+time being.
+
+.Example settings (`~/_data/default/nbinteract.yml`)
+[source, yaml]
+----
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+
+  spec:                                 jekyll-one/nbinteract-notebooks/main
+  baseUrl:                              'https://mybinder.org'
+  provider:                             gh
+
+  button_styles:                        btn btn-primary btn-raised hidden
+
+  show_nbi_messages:                    true
+  indicate_nbi_activity:                false
+  nbi_messages_auto_close:              true
+
+  nbi_init_timeout:                     180000
+  nbi_messages_auto_close_delay:        3500
+
+  nbi_init_mathjax:                     true
+----
+
+==== Textbook settings
+
+Find all parameters used for the textbook settings below. The configuration
+file is `~/_data/nbinteract.yml`.
+
+.Textbook settings
+[cols="3a,4a,5a", options="header", width="100%", role="rtable mt-3"]
+|===
+|Paramter |Value |Description
+
+|`enabled`
+|`true`\|`false`
+|Enables\|Disables the use of a notebook. If disabled, *no* J1 adapter
+setting are generated for this Jupyter Notebook. +
+Default: `true`
+
+|`id`
+|`string`
+|The id of a notebook that is used by the *Asciidoc Extension*
+`textbook::<id>[]` to place the HTML portion for the HTML code
+of an exported Jupyter Notebook. +
+Default: `no default`
+
+|`xhr_data`
+|`string`
+|The name of the exported HTML data file of a Jupyter Notebook. +
+Default: `no default`
+
+|`xhr_data_path`
+|`path`
+|The (data) path the Jupyter Notebook is exported. +
+Default: `no default`
+
+|`use_mathjax`
+|`true`\|`false`
+|This is a per notebook setting to enable mathjax processing. In general
+`nbi_init_mathjax` from *default* settings are be set to `true` (enabled). +
+Default: `false`
+
+|===
+
+.Example settings (~/_data/nbinteract.yml)
+[source, yaml]
+----
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  textbooks:
+
+    # --------------------------------------------------------------------------
+    # J1 NBI Textbooks J1 NBI Docs
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # Demo notebook 'selected ODEs'
+    #
+    - textbook:
+        enabled:                        true
+
+        id:                             j1_docs_example_dynamic
+        xhr_data:                       j1_docs_example_dynamic.html
+        xhr_data_path:                  /pages/public/jupyter/notebooks/textbooks
+        use_mathjax:                    false
+
+----
+
+=== Binder configuration
+
+The use of J1 NBI requires a valid Binder configuration. The binder
+configuration is to be provided via a public Git repo. An example of such a
+Git repo you find on Github at
+https://github.com/jekyll-one/nbinteract-notebooks[Binder Repo, {browser-window--new}].
+The configuration settings are described in the <<Default settings>> section.
+
+=== Textbook configuration
+
+Besides the default settings for J1 NBI (`~/_data/default/nbinteract.yml`),
+*individual* settings for each textbook (nbinteract HTML textebook) are
+required to include textbooks in webpages. You find examples in the
+configuration file `~/_data/nbinteract.yml`, a description of the parameters
+used in the <<Textbook settings>> section.
+
+=== Textbook integration
+
+For integrating textbooks (nbinteract HTML notebook) into web pages, the
+resource of J1 NBI Module is required. The `ID` of the module of the J1 NBI
+integration is: `nbinteract`.
+
+.Example Frontmatter of a page using Textbooks
+[source, yaml, role="noclip"]
+----
+title:                                  J1 NbInteract
+tagline:                                nbi integration
+date:                                   2022-04-17 00:00:00
+description: >
+                                        Things you should know about this site,
+                                        the people and the software and/or
+                                        services provided.
+
+categories:                             [ J1, Integration ]
+tags:                                   [ NBI, nbinteract ]
+
+scrollbar:                              false
+fab_menu_id:                            page_ctrl_simple
+personalization:                        true <1>
+
+permalink:                              /pages/public/jupyter/docs/j1-nbinteract-docs/
+regenerate:                             true
+
+resources:                              [ nbinteract, rouge ] <2>
+----
+<1> Die Dienste von Binder erfordern personalisierte Einstellungen in den
+    verwendeten *Cookies*. Um Schwierigkeiten mit den Regeln der Privatssphäre
+    zu vermeiden, sollte explizit darauf hingewiesen sowie in geeigneter Form
+    reagiert werden, falls die aktuellen Cookieeinstellungen des Besuchers
+    dies nicht erlauben.
+<2> Falls Highlightning der Sourecode Anteile in einem Textbook gewünscht
+    ist, muss zusätzlich das Modul `rouge` eingebunden werden.
+
+Sind die Konfigurationsschritte für den Einsatz von J1 NBI erledigt, ist das
+Einbinden von Textbooks sehr einfach. Über die die Asciidoc-Erweiterung
+`textbook::` kann ein Textbooks (nbinteract HTML Notebook) an jeder beliebigen
+Stelle eingebunden
+werden
+
+.General syntax
+[source, conf, role="noclip"]
+----
+textbook::<notebook-id>[]
+----
+
+Einbinden des Textbooks mit der ID `j1_docs_example_dynamic` in eine Webseite.
+
+.Example
+[source, conf, role="noclip"]
+----
+textbook::j1_docs_example_dynamic[]
+----
+
+
+== Textbook Examples
+
+For the J1 template, textbooks are typically integrated as *dynamic* HTML
+pages. In addition to the dynamic pages, textbooks can also be integrated as
+*static* HTML code. You can find examples for both variants in the following
+sections.
+
+=== Static Textbook
+
+The `nbconvert` tool converts *Jupyter Notebooks* to various other formats via
+Jinja templates. The tool allows you to convert an .ipynb notebook file into
+various *static* formats. For more details, refer to
+link:{url-nbconvert--doc}[nbconvert - usage, {browser-window--new}].
+
+.Generate a static Textbook
+[source, bash]
+----
+jupyter nbconvert --execute --to html <full_path_to>/<notebook.ipynb>
+----
+
+Below you find an static HTML output (Textbook) generated via `nbconvert`.
+
+include::{documentdir}/j1_docs_example_static.asciidoc[]
+
+=== Dynamic Textbook
+
+*Dynamic* Textbooks are generated using `nbinteract`:
+
+.Generate a dynamic Textbook (J1 Version)
+[source, bash]
+----
+nbinteract <full_path_to>/<notebook.ipynb> -t plain -s fake/fake
+----
+
+textbook::j1_docs_example_dynamic[]
+
+=== Conclusion
+
+Compare both textbook versions, dynamic versus static, in terms of
+*interactivity*. Again, compare the _Evaluation_ section at section
+<<Dynamic Textbook>> with the static conterpart at <<Static Textbook>>.
+
+
+
+
+
+
+/////
+== Backgrounds
+
+lorem:sentences[5]
+
+=== Jupyter
+
+Das Jupyter Projekt ist eine Non-Profit-Organisation, gegründet im Jahr 2014
+von *Fernando Pérez*. Das Projekt Jupyter unterstützt interaktive wissenschaftliche
+Datenauswertungen und wissenschaftliche Berechnungen.
+
+Der Name Jupyter bezieht sich auf die drei wesentlichen Programmiersprachen
+Julia, Python und R die von der Anwendung <<Jupyter Notebook App>> unterstützt
+werden. Die Bezeichnung *Jupyter* ist eine Hommage an die *Notizbucheinträge*
+von Galileo Galilei zur Entdeckung der Jupitermonde, bei denen er seine
+Beobachtungen und die Messdaten zusammen aufgeschrieben hatte.
+
+==== Jupyter Notebook App
+
+Die App *Jupyter Notebook* ist eine Server-Client-Anwendung, mit der
+Notebook-Dokumente über einen Webbrowser bearbeitet und ausgeführt werden
+können. Jupyter Notebook  kann auf einem lokalen Desktop ausgeführt
+werden der keinen Internetzugang erfordert. Alternativ kann die Anwendung auf
+einem Remote-Server installiert und über das Internet aufgerufen werden, die
+dann *keine* Installation erforderlich macht.
+
+==== Notebook documents
+
+Notebook-Dokumente (oder kurz: *notebooks*) sind Dokumente, die von der Notebook
+App erstellt wurden und sowohl Computercode (z. B. Python) als auch Rich-Text
+Elemente (Absätze, Gleichungen, Abbildungen, Links usw.) enthalten können.
+Notebook Dokumente sind menschenlesbare Dokumente, die neben Code Beschreibungen
+und deren Ergebnisse (Abbildungen, Tabellen usw.) enthalten.
+
+==== Kernels
+
+Ein Notebook Kernel ist ganz allgemein eine *Rechenmaschine*, die den in einem
+Notebook-Dokument enthaltenen Code ausführt. Der *Ipython* Kernel, der für die
+NBI Integration verwendet wird, führt Python-Code aus erzeugt die Ergebnisse.
+
+=== nbinteract
+
+Der Name der Library `nbinteract` deutet zwei generelle Funktionen für
+Jupyter Notebooks  an:
+
+`nb`, textbook::
+Verarbeitung von Notebooks
+// (als HTML Darstellung)
+
+`interact`::
+Ausführen von Notebooks in Zusammenarbeit mit einem (remoten) Verarbeitungs
+System und Darstellung der Ergebnisse
+
+
+==== Requirements
+
+Für die Entwicklung eigener Jupyter Notebooks ist eine *lokale*
+Installation der Programmiersprache *Python* erforderlich. Zur Entwicklung
+von Notebooks wird zusätzlich das Paket *Jupyter* sowie die Installation der
+Python Library *nbinteract* erwartet.
+
+==== Widgets
+
+Ein Widget ist ein Element einer grafischen Benutzeroberfläche (GUI), das
+Informationen anzeigt oder einem Benutzer eine bestimmte Möglichkeit bietet,
+mit dem Betriebssystem oder einer Anwendung zu interagieren.
+
+Zu den Widgets gehören Symbole, Pulldown-Menüs, Schaltflächen, Auswahlfelder,
+Fortschrittsanzeigen, Ein-Aus-Häkchen, Bildlaufleisten, Fenster, Fensterränder
+(mit denen Sie die Größe des Fensters ändern können), Umschaltflächen,
+Formulare und viele andere Geräte zum Anzeigen von Informationen und zum
+Einladen, Akzeptieren und Reagieren auf Benutzeraktionen.
+
+
+==== BinderHub
+
+// UserGuide: https://mybinder.readthedocs.io/en/latest/about/about.html
+
+Mit Binder (myBinder) können Sie benutzerdefinierte (virtuelle) Computerumgebungen
+erstellen, die von vielen Benutzern remote aus einer Cloud gemeinsam genutzt
+werden können.
+
+// erzeugt Docker Container
+// installiert Python Software
+// installiert Jupyter Lab als Notebook App
+
+.Binderhub Architecture
+lightbox::binderhub--architecture[ 800, {data-binderhub--architecture}, role="mt-3 mb-4" ]
+
+////
+Ein Binder-Dienst wird von BinderHub
+unterstützt, einem Open-Source-Tool, das auf Kubernetes ausgeführt wird,
+einer tragbaren, erweiterbaren Open-Source-Plattform zum Verwalten von
+containerisierten Diensten. Eine solche Bereitstellung befindet sich auf
+mybinder.org und kann kostenlos verwendet werden.
+////
+
+==== JupyterHub
+
+JupyterHub bringt die Leistung von Notebooks für Benutzergruppen. Es gibt
+Benutzern Zugriff auf Rechenumgebungen und Ressourcen, ohne die Benutzer mit
+Installations- und Wartungsaufgaben zu belasten. Benutzer, einschließlich
+Studenten, Forscher und Datenwissenschaftler, können ihre Arbeit in ihren
+eigenen Arbeitsbereichen auf gemeinsam genutzten Ressourcen erledigen, die
+von Systemadministratoren effizient verwaltet werden können.
+
+.JupyterLab Architecture
+lightbox::jupyterlab--architecture[ 800, {data-jupyterlab--architecture}, role="mt-3 mb-4" ]
+
+JupyterHub läuft in der Cloud oder auf Ihrer eigenen Hardware und ermöglicht
+es, jedem Benutzer weltweit eine vorkonfigurierte Data-Science-Umgebung
+bereitzustellen. Es ist anpassbar und skalierbar und eignet sich für kleine
+und große Teams, akademische Kurse und große Infrastrukturen.
+/////

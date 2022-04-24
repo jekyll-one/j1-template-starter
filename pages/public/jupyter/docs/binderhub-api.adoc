@@ -1,0 +1,522 @@
+---
+title:                                  Binder
+tagline:                                BinderHub
+date:                                   2022-03-28 00:00:00
+description: >
+                                        Binder allows you to create custom computing environments that can be
+                                        shared and used by many remote users. A Binder service is powered by
+                                        BinderHub, an open-source tool that runs on Kubernetes, a portable,
+                                        extensible, open-source platform for managing containerized services.
+
+categories:                             [ Software, Python ]
+tags:                                   [ Binder, API ]
+
+scrollbar:                              true
+personalization:                        true
+
+permalink:                              /pages/public/jupyter/docs/binderhub-api/
+regenerate:                             false
+
+resources:                              [
+                                          animate, clipboard, lightbox, rouge
+                                        ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:badges-enabled:                        false
+:binder-badge-enabled:                  false
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ifeval::[{badges-enabled} == true]
+{badge-j1--license} {badge-j1--version-latest} {badge-j1-gh--last-commit} {badge-j1--downloads}
+endif::[]
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+ifeval::[{binder-badge-enabled} == true]
+image:/assets/images/badges/myBinder.png[[Binder, link="https://mybinder.org/", {browser-window--new}]
+image:/assets/images/badges/docsBinder.png[[Binder, link="https://mybinder.readthedocs.io/en/latest/", {browser-window--new}]
+endif::[]
+
+Binder allows you to create custom *computing environments* that can be
+shared and used by many remote users. You can use many open source languages,
+<<Configure the user interface>>, and more. A Binder service is powered by
+https://github.com/jupyterhub/binderhub[BinderHub, {browser-window--new}],
+an open-source tool that runs on *Kubernetes*, a portable, extensible,
+open-source platform for managing containerized services. One
+such deployment lives at https://mybinder.org/[mybinder.org, {browser-window--new}],
+and is *free* to use.
+
+For more information about the mybinder.org deployment and the team
+that runs it, see https://mybinder.readthedocs.io/en/latest/about/about.html[About mybinder.org, {browser-window--new}].
+
+== Configuration Files
+
+The `repo2docker` CLI looks for configuration files in the repository being
+built to determine how to build it. In general, repo2docker uses the same
+configuration files as other software installation tools, rather than
+creating new custom configuration files. A number of repo2docker configuration
+files can be combined to compose more complex setups.
+
+The https://github.com/binder-examples[binder examples, {{browser-window--new}}]
+organization on GitHub contains a list of sample repositories for common
+configurations that repo2docker can build with various configuration files
+such as Python and R installation in a repository.
+
+Binder examples:
+
+* https://github.com/jupyterlab/jupyterlab-demo[JupyterLab Demonstration, {browser-window--new}]
+* https://github.com/binder-examples/jupyterlab[JupyterLab + Binder, {browser-window--new}]
+// * https://github.com/binder-examples/remote_storage[Remote Storage with Binder, {browser-window--new}]
+* https://github.com/binder-examples/python-conda_pip[Using conda with pip in the same build, {browser-window--new}]
+* https://github.com/binder-examples/pipfile[Python environment with Pipfile, {browser-window--new}]
+
+A list of supported
+configuration files (roughly in the order of build priority) can be found
+below.
+
+=== environment.yml
+
+The `environment.yml` configuration is the standard configuration file used
+by *Conda* that lets you install any kind of package, including Python, R,
+and C/C++ packages. The `repo2docker` does *not* use your environment.yml
+to create and activate a new conda environment. Rather, it updates a base
+conda environment defined here with the packages listed in your
+`environment.yml`. This means that the environment will always have the
+same default name, not the name specified in your `environment.yml`.
+
+[source, yaml]
+----
+dependencies:
+  - ipywidgets
+  - matplotlib
+  - numpy
+  - scipy
+  - pandas
+  - seaborn
+  - statsmodels
+----
+
+If you use `environment.yml`, then Binder will use a *Miniconda* distribution
+to install your packages. However, you may still want to use *pip*. In this
+case, you should *not* use a `requirements.txt` file, but instead use a pip
+*section* in `environment.yml`. This repository is an example of how to
+construct your configuration to accomplish this.
+
+[source, yaml]
+----
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - numpy
+  - pip
+  - pip:
+    - nbgitpuller
+    - sphinx-gallery
+    - pandas
+    - matplotlib
+----
+
+=== requirements.txt
+
+This configuration specifies a list of *Python packages* that should be
+installed in your environment. Our requirements.txt example on GitHub shows
+a typical requirements file.
+
+For Binder, the requirements.txt file should list all Python libraries that
+your notebooks depend on, and they will be installed using:
+
+  pip install -r requirements.txt
+
+The base Binder image contains *no extra* dependencies, so be as explicit
+as possible in defining the packages that you need. This includes specifying
+explicit versions wherever possible.
+
+WARNING: If you do specify *strict versions*, it is important to do so
+for all your dependencies, not just direct dependencies. Strictly specifying
+only some dependencies is a recipe for environments breaking over time.
+
+You can also specify which Python *version* to install in your built
+environment with `environment.yml`. By default, repo2docker installs
+*default_python* (Python 3.7) with your `environment.yml` unless you
+include the version of Python in this file. The package manager *conda*
+supports all versions of Python, though repo2docker support is best with
+Python `3.7`, `3.6`, `3.5` and `2.7`.
+
+WARNING: If you include a Python version in a `runtime.txt` file in
+*addition* to your `environment.yml`, your `runtime.txt` will be
+*ignored*.
+
+=== runtime.txt
+
+Sometimes you want to specify the *version* of the runtime (e.g. the version
+of Python), but the environment specification format will not let you
+specify this information (e.g. requirements.txt). For these cases, we have a
+special file, runtime.txt.
+
+NOTE: runtime.txt is only supported when used with environment specifications
+that do not already support specifying the runtime. If using environment.yml
+for conda, runtime.txt will be ignored.
+
+
+== Configure the user interface
+
+You can build several user interfaces into the resulting Docker image. This
+is controlled with various <<Configuration Files>>.
+
+=== JupyterLab
+
+JupyterLab is the *default* interface for repo2docker. The following
+Binder URL will open the pyTudes repository and begin a JupyterLab session
+in the ipynb folder:
+
+  https://mybinder.org/v2/gh/norvig/pytudes/HEAD?urlpath=lab/tree/ipynb
+
+The /tree/ipynb above is how JupyterLab directs you to a specific file or
+folder. To learn more about URLs in JupyterLab and Jupyter Notebook, visit
+http://jupyterlab.readthedocs.io/en/latest/getting_started/starting.html[starting JupyterLab, {{browser-window--new}}].
+
+=== Classic Notebook Interface
+
+The classic notebook is also available without any configuration. To switch
+to the classic notebook, You do not need any extra configuration in order
+to allow the use of the classic notebook interface. You can launch the
+classic notebook interface from within a user session by opening JupyterLab
+and replacing `/lab/` with `/tree/` in the default juptyerlab URL like so:
+
+  http(s)://<server:port>/tree/
+
+And you can switch back to JupyterLab by replacing `/tree/` with` /lab/`:
+
+  http(s)://<server:port>/lab/
+
+/////
+=== nteract
+
+nteract is a notebook interface built with *React*. It is similar to a
+more feature-filled version of the traditional Jupyter Notebook interface.
+*nteract* comes pre-installed in any session that has been built from a
+Python repository.
+
+You can launch nteract from within a user session by replacing `/tree` with
+`/nteract` at the end of a notebook server’s URL like so:
+
+  http(s)://<server:port>/nteract
+
+For example, the following Binder URL will open the pyTudes repository and
+begin an nteract session in the ipynb folder:
+
+  https://mybinder.org/v2/gh/norvig/pytudes/HEAD?urlpath=nteract/tree/ipynb
+
+The `/tree/ipynb` above is how nteract directs you to a specific file
+or folder. To learn more about nteract, visit the
+https://nteract.io/about[nteract website, {{browser-window--new}}].
+
+
+=== Use different repositories for content and environment
+
+// See: https://mybinder.readthedocs.io/en/latest/howto/external_binder_setup.html
+
+Separating your Binder setup files from your repository content can be
+useful for a variety of reasons. Maybe they need different access permissions
+or you manage your working environment external to your code repository.
+Whatever the reason, with a custom Binder URL you can store your environment
+independent of your content.
+
+The form on the mybinder.org home page only allows you to select a repository
+branch to build from. To create a BinderHub deployment link for situations
+where the environment and content are housed in separate repositories or on
+different branches of the same repository, you can use the
+https://jupyterhub.github.io/nbgitpuller/link?tab=binder[nbgitpuller link generator, {{browser-window--new}}]
+to generate a formatted URL. Note that `nbgitpuller` must be included in your
+hub environment for this to work.
+
+For some background on this how-to guide, see this
+https://discourse.jupyter.org/t/improve-documentation-for-new-users-not-working-on-the-master-branch/5509[community forum post, {{browser-window--new}}].
+Here is an example repository using a JupyterHub environment configuration
+stored in a https://github.com/ICESAT-2HackWeek/jupyter-image-2020[separate repository, {{browser-window--new}}].
+The environment was set up for a community workshop and the tutorial content
+was compiled and released after the workshop.
+/////
+
+=== Speed up repository launch time
+
+People often ask how they can speed up the launches for their Binder
+repositories. Binder is a bit different from other cloud services because
+it builds and launches arbitrary environments that are defined in Git
+repositories, rather than only serving a single environment for launches.
+The extra time it takes to launch is often a result of these extra steps.
+
+For some background and tips about how you can speed up your repository
+launch times, see this
+https://discourse.jupyter.org/t/how-to-reduce-mybinder-org-repository-startup-time/4956[community forum post, {{browser-window--new}}].
+
+=== Track repository data on `mybinder.org`
+
+The mybinder.org team runs a service that provides repository-level data
+about all of the binders that run each day. This is called the mybinder.org
+event analytics archive. You can use this to track how often people are
+clicking your Binder links and launching your Binder repository (or, for
+aggregating activity across many repositories).
+
+=== Access the event analytics archive
+
+You can access the event analytics archive at `archive.analytics.mybinder.org`.
+For information about the structure of this dataset, and a description of
+how you can read-in the data in order to analyze it, see the
+https://mybinder-sre.readthedocs.io/en/latest/analytics/events-archive.html[mybinder SRE guide, {{browser-window--new}}]
+instructions.
+
+
+==== Example repository to show off analyses
+
+To give you a little inspiration, check out the
+https://mybinder.org/v2/gh/betatim/binderlyzer/master[binderlyzer binder, {{browser-window--new}}].
+This is a Binder that goes through a simple analysis of Binder repositories
+using the events archive. It shows how to access it, and gives an idea for
+questions you can ask with this data!
+
+If you do something interesting or fun with the event analytics archive,
+please let us know! We provide this resource in the hopes that it gives
+people insight into the activity going on in Binder land, and would love
+to hear about anything interesting you find.
+
+
+== Binder API Reference
+
+// https://binderhub.readthedocs.io/en/latest/developer/index.html
+
+BinderHub connects several services together to provide on-the-fly
+creation and registry of Docker images. It utilizes the following
+tools:
+
+* A cloud provider such Google Cloud, Microsoft Azure, Amazon EC2,
+  and others
+* Kubernetes to manage resources on the cloud
+* Helm to configure and control Kubernetes
+* Docker to use containers that standardize computing environments
+* A BinderHub UI that users can access to specify Git repos they want built
+  repo2docker to generate Docker images using the URL of a Git repository
+* A Docker registry (such as gcr.io) that hosts container images
+* JupyterHub to deploy temporary containers for users
+
+After a user clicks a Binder link, the following chain of events happens:
+
+. BinderHub resolves the link to the repository.
+. BinderHub determines whether a Docker image already exists for the
+  repository at the latest ref (git commit hash, branch, or tag).
+. If the image *doesn’t* exist, BinderHub creates a build pod that uses
+  repo2docker to do the following:
+
+  ..  Fetch the repository associated with the link
+  ..  Build a Docker container image containing the *environment*
+      specified in configuration files in the repository.
+  ..  Push that image to a *Docker registry*, and send the registry
+      information to the BinderHub for future reference.
+
+. BinderHub sends the Docker image registry to *JupyterHub*.
+. JupyterHub creates a *Kubernetes pod* for the user that serves
+  the *built* Docker image for the repository.
+. JupyterHub *monitors* the user’s pod for activity, and *destroys*
+  it after a short period of inactivity.
+
+// See: https://www.vmware.com/topics/glossary/content/kubernetes-pods.html
+//
+NOTE: *Pods* (smallest compute unit that can be defined, deployed,
+and managed in Kubernetes) are the rough equivalent of a machine instance
+(physical or virtual) to a container. Each pod is allocated its own internal
+IP address, therefore owning its entire port space, and containers within
+pods can share their local storage and networking.
+
+.Binderhub Architecture
+lightbox::binderhub--architecture[ 800, {data-binderhub--architecture}, role="mt-3 mb-4" ]
+
+
+=== API Endpoint
+
+There’s one API endpoint, which is:
+
+  /build/<provider_prefix>/<spec>
+
+Even though it says build it actually performs launch.
+
+* provider_prefix identifies the provider
+* spec defines the source of the computing environment to be built
+  and served using the given provider.
+
+NOTE: The provider_prefix can be any of the supported repository providers
+in BinderHub, see the Repository Providers section for supported inputs.
+
+To use this endpoint, construct an appropriate URL and send a request.
+You’ll get back an Event Stream. It’s pretty much just a long-lived HTTP
+connection with a well known JSON based data protocol. It’s one-way
+communication only (server to client) and is straightforward to implement
+across multiple languages.
+
+When the request is received, the following happens:
+
+. Check if this image exists in our cached image registry. If so,
+  launch it.
+. If it doesn’t exist in the image registry, we check if a build
+  is currently running. If it is, we attach to it and start streaming
+  logs from it to the user.
+. If there is no build in progress, we start a build and start streaming
+  logs from it to the user.
+. If the build succeeds, we contact the JupyterHub API and start launching
+  the server.
+
+=== Events
+
+This section catalogs the different events you might receive.
+
+.Events
+[cols="2,4a,6a", options="header", width="100%", role="rtable mt-3"]
+|===
+|Event |Response |Description
+
+|*Failed*
+|`{"phase": "failed", "message": "Reason"}`
+|Emitted whenever a build or launch fails. You must *close* your
+*EventStream* when you receive this event.
+
+|*Built*
+|`{"phase": "built", "message": "Human readable message", "imageName": "Full name of the image that is in the cached docker registry"}`
+|Emitted after the image has been built, before launching begins.
+This is emitted in the start if the image has been found in the cache
+registry, or after build completes successfully if we had to do a build.
+
+Note that clients shouldn’t rely on the imageName field for anything
+specific. It should be considered an internal implementation detail.
+
+|*Waiting*
+|`{"phase": "waiting", "message": "Human readable message"}`
+|Emitted when we started a build pod and are waiting for it to start.
+
+|*Building*
+|`{"phase": "building", "message": "Log message"}`
+|Emitted during the actual building process. Direct stream of logs
+from the build pod from *repo2docker*, in the same form as logs from
+a normal *docker build*.
+
+
+|`Fetching`
+|`{"phase": "fetching", "message": "log messages from fetching process"}`
+|Emitted when fetching the repository to be built from its source (GitHub, GitLab, wherever).
+
+|*Pushing*
+|`{"phase": "pushing", "message": "Human readable message", "progress": {"layer1":  {"current": <bytes-pushed>, "total": <full-bytes>}, "layer2": {"current": <bytes-pushed>, "total": <full-bytes>}, "layer3": "Pushed", "layer4": "Layer already exists"}}`
+|Emitted when the image is being pushed to the cache registry. This
+provides structured status info that could be in a progressbar. It’s
+structured similar to the output of *docker push*.
+
+|*Launching*
+|`{"phase": "launching", "message": "user friendly message"}`
+|When the repo has been built, and we’re in the process of waiting
+for the hub to launch. This could end up succeeding and emitting a
+*ready* event or failing and emitting a *failed* event.
+
+|*Ready*
+|`{"phase": "ready", "message": "Human readable message", "url": "full-url-of-notebook-server", "token": "notebook-server-token"}`
+|When your notebook is ready! You get a endpoint URL and a token
+used to access it. You can access the notebook\|API by using the
+token in one of the ways the notebook accepts security tokens.
+
+|===
+
+=== Heartbeat
+
+In EventSource, all lines beginning with `:` are considered comments.
+We send a `:heartbeat` every 30s to make sure that we can pass through
+proxies without our request being killed.
+
+=== Repository Providers
+
+Repository Providers (or RepoProviders) are locations where repositories
+are stored (e.g., GitHub). BinderHub supports a number of providers out
+of the box, and can be extended to support new providers. For a complete
+listing of the provider classes, see table below.
+
+.Provider
+[cols="1,1a,6a,4a", options="header", width="100%", role="rtable mt-3"]
+|===
+|Provider |Prefix |Spec |Description
+
+|GitHub
+|*gh*
+|`<user>/<repo>/<commit-sha-or-tag-or-branch>`
+|GitHub is a website for hosting and sharing git repositories.
+
+|GitLab
+|*gl*
+|`<url-escaped-namespace>/<unresolved_ref>`
+(e.g. group%2Fproject%2Frepo/master)
+|GitLab offers hosted as well as self-hosted git repositories.
+
+|Gist
+|*gist*
+|`<github-username>/<gist-id><commit-sha-or-tag>`
+|Gists are small collections of files stored on GitHub. They behave
+like lightweight *repositories*.
+
+|Zenodo
+|*zenodo*
+|`<zenodo-DOI>`
+|Zenodo is a non-profit provider of scholarly artifacts (such as code
+  repositories) run in partnership with CERN.
+
+|Figshare
+|*figshare*
+|`<figshare-DOI>`
+|FigShare is a company that offers hosting for scholarly artifacts
+(such as code repositories).
+
+|HydroShare
+|*hydroshare*
+|`<hydroshare-DOI-or-ResourceID>`
+|HydroShare is a hydrologic information system for users to share
+and publish data and models.
+
+|Dataverse
+|*dataverse*
+|`<dataverse-DOI>`
+|Dataverse is open source research data repository software installed
+all over the world.
+
+|Git
+|*git*
+|`<url-escaped-url>/<commit-sha>`
+|A generic repository provider for URLs that point directly to
+a git repository.
+
+|===
+
+=== Configuration and Source Code Reference
+
+Find details for all *code references* on
+https://binderhub.readthedocs.io/en/latest/reference/ref-index.html[BinderHub, {browser-window--new}]

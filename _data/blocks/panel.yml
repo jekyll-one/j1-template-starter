@@ -43,6 +43,7 @@ settings:
         properties:                     mt-5 mb-5
 
         title:                          All in One
+        title_translate:                notranslate                             # translate|notranslate
         tagline:                        top features
         description_properties:         mt-3 mr-3 mb-3
         description: >
@@ -64,11 +65,40 @@ settings:
 
         cards:
 
-          - name:                       Full Responsive
+          - name:                       Technology
             card:
               enabled:                  true
               type:                     text
-              title:                    Full Responsive
+              title:                    Technology
+              title_translate:          notranslate                             # translate|notranslate
+              tagline:                  J1 Template
+              icon:                     tools
+              icon_family:              MDI
+              icon_size:                3x
+              icon_color:
+              text: >
+                                        <p class="dropcap mt-3">
+                                          Current Technology and Design. Excellent performance in running
+                                          a website. Use Jekyll One to present your content at its best.
+                                        </p>
+
+              buttons:
+                - name:                 Read More
+                  button:
+                    type:               text
+                    text:               Make your Web Site unique
+                    class:
+                    icon:
+                    icon_size:
+                    icon_color:
+                    href:               /pages/public/panels/intro_panel#current-technology
+
+          - name:                       Design
+            card:
+              enabled:                  true
+              type:                     text
+              title:                    Design
+              title_translate:          notranslate                             # translate|notranslate
               tagline:                  J1 Template
               icon:                     responsive
               icon_family:              MDI
@@ -92,39 +122,12 @@ settings:
                     icon_color:
                     href:               /pages/public/panels/intro_panel#responsive-design
 
-          - name:                       Technology
+          - name:                       Development
             card:
               enabled:                  true
               type:                     text
-              title:                    Technology
-              tagline:                  J1 Template
-              icon:                     tools
-              icon_family:              MDI
-              icon_size:                3x
-              icon_color:
-              text: >
-                                        <p class="dropcap mt-3">
-                                          Current Technology and Design. Excellent performance in running
-                                          a website. Use Jekyll One to present your content at its best.
-                                        </p>
-
-              buttons:
-                - name:                 Read More
-                  button:
-                    type:               text
-                    text:               Make your Web Site unique
-                    class:
-                    icon:
-                    icon_size:
-                    icon_color:
-                    href:               /pages/public/panels/intro_panel#current-technology
-
-
-          - name:                       Start in No Time
-            card:
-              enabled:                  true
-              type:                     text
-              title:                    Start in No Time
+              title:                    Create
+              title_translate:          notranslate                             # translate|notranslate
               tagline:                  J1 Template
               icon:                     clock
               icon_family:              MDI
@@ -133,7 +136,7 @@ settings:
               text: >
                                         <p class="dropcap mt-3">
                                           No programming is needed to start using J1. The Template
-                                          provides a large number of building blocks to create
+                                          provides a large number of building blocks to develop
                                           modern web pages in minutes.
                                         </p>
 

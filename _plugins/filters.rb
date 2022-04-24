@@ -37,8 +37,11 @@
 #      or
 #       {{ page.content | strip_html_comments }}
 #
-#     Remove surrounding round brackets () of any WORD from page content:
+#     Remove surrounding round brackets () of any WORD
 #       {{ page.content | regex_replace: '\s!!(\w+)!!\s', ' \1 ' }}
+#
+#     Replace all <h1> headings by <h2> in the page content:
+#       {{ page.content | regex_replace: '<h[1-2].*?>(.*?)<\/h[1-2]>', '<h2>\1</h2>'
 #
 # ------------------------------------------------------------------------------
 require 'json'

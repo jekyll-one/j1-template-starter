@@ -57,6 +57,51 @@ settings:
           event_handler:                scroll_to_top
 
     # --------------------------------------------------------------------------
+    # FAM for scrolling to the page top position (default)
+    #
+    - name:                             Default Plus
+      enabled:                          true
+      id:                               default-plus
+      icon:                             plus
+      icon_hover:                       plus
+      color:                            primary
+
+      # ------------------------------------------------------------------------
+      # MENU items
+      #
+      items:
+        - item:                         To Top
+          enabled:                      true
+          id:                           fam_scroll_to_top
+          color:                        primary
+          event_handler:                scroll_to_top
+          icon:                         chevron-double-up
+          icon_properties:
+
+        # - item:                         Previous Section
+        #   enabled:                      true
+        #   id:                           fam_previous_section
+        #   color:                        success
+        #   event_handler:                scroll_previous_section
+        #   icon:                         step-backward
+        #   icon_properties:              rotate-90
+        #
+        # - item:                         Next Section
+        #   enabled:                      true
+        #   id:                           fam_next_section
+        #   color:                        success
+        #   event_handler:                scroll_next_section
+        #   icon:                         step-forward
+        #   icon_properties:              rotate-90
+
+        - item:                         Reload Page
+          enabled:                      true
+          id:                           fam_reload_page
+          color:                        md-red
+          event_handler:                reload_page
+          icon:                         reload
+
+    # --------------------------------------------------------------------------
     # FAM to open sidebar-based (Mmenu Drawer) table of contents (toccer)
     #
     - name:                             Open TOC
@@ -84,6 +129,44 @@ settings:
           color:                        info
           event_handler:                open_mmenu_toc
           icon:                         wrap
+
+    # --------------------------------------------------------------------------
+    # FAM to open sidebar-based (Mmenu Drawer) table of contents (toccer)
+    #
+    - name:                             Open TOC Reload
+      enabled:                          true
+      id:                               open_toc_reload
+      icon:                             plus
+      icon_hover:                       plus
+      color:                            primary
+
+      # ------------------------------------------------------------------------
+      # MENU items
+      #
+      items:
+        - item:                         To Top
+          enabled:                      true
+          id:                           fam_scroll_to_top
+          color:                        primary
+          event_handler:                scroll_to_top
+          icon:                         chevron-double-up
+          icon_properties:
+
+        - item:                         Reload Page
+          enabled:                      true
+          id:                           fam_reload_page
+          color:                        md-red
+          event_handler:                reload_page
+          icon:                         reload
+
+        - item:                         Table of Contents
+          enabled:                      true
+          id:                           open_mmenu_toc
+          color:                        info
+          event_handler:                open_mmenu_toc
+          icon:                         wrap
+
+
 
     # --------------------------------------------------------------------------
     # FAM for in-page navigation (simplified)
@@ -124,6 +207,13 @@ settings:
           icon:                         step-forward
           icon_properties:              rotate-90
 
+        - item:                         Reload Page
+          enabled:                      true
+          id:                           fam_reload_page
+          color:                        md-red
+          event_handler:                reload_page
+          icon:                         reload
+
         - item:                         Table of Contents
           enabled:                      true
           id:                           open_mmenu_toc
@@ -145,13 +235,6 @@ settings:
       # MENU items
       #
       items:
-
-        - item:                         Reload Page
-          enabled:                      true
-          id:                           fam_reload_page
-          color:                        md-red
-          event_handler:                reload_page
-          icon:                         reload
 
         - item:                         To Top
           enabled:                      true
@@ -177,13 +260,20 @@ settings:
           icon:                         step-forward
           icon_properties:              rotate-90
 
-        - item:                         To bottom
+        # - item:                         To bottom
+        #   enabled:                      true
+        #   id:                           fam_scroll_to_bottom
+        #   color:                        info
+        #   event_handler:                scroll_to_bottom
+        #   icon:                         step-forward-2
+        #   icon_properties:              rotate-90
+
+        - item:                         Reload Page
           enabled:                      true
-          id:                           fam_scroll_to_bottom
-          color:                        info
-          event_handler:                scroll_to_bottom
-          icon:                         step-forward-2
-          icon_properties:              rotate-90
+          id:                           fam_reload_page
+          color:                        md-red
+          event_handler:                reload_page
+          icon:                         reload
 
         - item:                         Table of Contents
           enabled:                      true

@@ -70,7 +70,8 @@ Lightboxes like LightGallery or Lightbox V2 support your web for enlarged
 image views of your picture or video content. Have a look, a quick tour
 of what J1 can do for image data. Have fun!
 
-== J1 Lightboxes
+// [role="notranslate"]
+== J1 Lightbox blocks
 
 A Lightbox is, in general, a helper which displays enlarged, almost
 screen-filling versions of images (or videos) while dimming the remainder
@@ -97,7 +98,7 @@ Both lightboxes are fully integrated to be used as standalone modules or
 used as helpers *under-the-hood* by other apps or modules focussing on
 image-data like gallery or carousel, the build-in carousel module.
 
-== Lightbox Examples
+== Lightbox block Examples
 
 Find below an example of using the lightbox Lightbox standalone. See how
 single (individual) images are linked for use with Lightbox.
@@ -138,7 +139,7 @@ A slider or carousel is typically used for displaying images. Still, the
 implementation for the J1 Template supports a lot more sources to be
 displayed as a slide show: simple text, for example.
 
-.Simple text carousel
+.Carousel Example
 carousel::demo_text_carousel[role="mb-3"]
 
 Important statements or topics can be placed, e.g., on top of an article or
@@ -154,7 +155,7 @@ slide show may be interesting. Image-based slide shows may draw off the
 reader's attention from the text, therefore a pure text-based presentation
 maybe the better choice.
 
-.Parallax text carousel
+.Carousel Example
 carousel::demo_text_carousel_parallax[role="mb-3"]
 
 Parallax text shows can be placed as banners on a page. For text shows,
@@ -175,7 +176,7 @@ data.
 A simple image show is useful, for example, as an animated (or not animated)
 banner presenting exciting things about your site or the products offered.
 
-.Simple Image Carousel
+.Carousel Example
 carousel::demo_simple[role="mb-3"]
 
 === Carousel + Caption + Lightbox
@@ -185,7 +186,7 @@ This example shows some pictures having individual caption text and supports
 a lightbox to enlarge images full size. For the example below, an almost simple
 lightbox is used: Lightbox V2; or short: lightbox.
 
-.Nice cats
+.Carousel Example
 carousel::demo_cats[role="mb-3"]
 
 The J1 module lightbox is a simple Lightbox but offers a bunch of impressive
@@ -200,7 +201,7 @@ Here you find an example of a single image slide show with controls enabled
 to browse all images back and forth. An indicator below the slider shows how
 many images the show contains.
 
-.Single Slide Carousel and a Lightbox
+.Carousel Example
 carousel::demo_oneslide[role="mb-3"]
 
 == JustifiedGallery
@@ -220,8 +221,8 @@ layout. It works by placing elements in an optimal position based on available
 horizontal and vertical space. Sort of like mason fitting stones in a wall.
 You'll have seen it in use all over the Internet!
 
-.Masonry grid layout of JustifiedGallery
-gallery::jg_customizer[]
+.JustifiedGallery Example
+gallery::jg_customizer[role="mb-4"]
 
 == What next
 

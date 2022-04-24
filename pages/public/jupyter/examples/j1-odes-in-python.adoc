@@ -1,0 +1,74 @@
+---
+title:                                  ODEs in Python
+tagline:                                interactive evaluation
+date:                                   2022-03-28 00:00:00
+description: >
+                                        The package nbinteract aims to enable authors and educators to create and
+                                        share interactive web pages easily. Interactive explanations of concepts are
+                                        useful for communicating and explaining tricky concepts.
+
+categories:                             [ Software, Python ]
+tags:                                   [ Binder, Jupyter, Notebooks ]
+
+scrollbar:                              false
+fab_menu_id:                            open_toc_reload
+personalization:                        true
+
+
+permalink:                              /pages/public/jupyter/textbooks/odes-in-python/
+regenerate:                             false
+
+resources:                              [ nbinteract, rouge ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:binder-badge-enabled:                  true
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// image:/assets/images/badges/myBinder.png[Binder, link="https://mybinder.org/", {browser-window--new}]
+// image:/assets/images/badges/docsBinder.png[Binder, link="https://mybinder.readthedocs.io/en/latest/", {browser-window--new}]
+// See: https://towardsdatascience.com/ordinal-differential-equation-ode-in-python-8dc1de21323b
+
+ifeval::[{binder-badges-enabled} == true]
+image:https://mybinder.org/badge_logo.svg[Binder, link="https://mybinder.org/v2/gh/jekyll-one/nbinteract-notebooks/main", {browser-window--new}]
+endif::[]
+
+== ODEs in Python
+
+An ordinary differential equation (often abbreviated to ODE) is one
+Differential equation where only derivatives of the desired function
+occur after exactly one variable.
+
+Many physical, chemical and biological processes in nature are described
+mathematically with such equations. Examples are the radioactive decay,
+motion processes of bodies, many types of Oscillation processes or the growth
+behavior of animal populations.
+
+In scientific models, ordinary differential equations are used, therefore
+often used to analyze, simulate, or to be able to make predictions.
+
+textbook::j1_odes_in_python[]

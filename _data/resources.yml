@@ -355,14 +355,16 @@ resources:
       pass_init_data:                   true
       data:
         css:                            [
-                                          core/css/themes/unolight/bootstrap,
+                                          modules/spinner/css/spin,
                                           core/css/icon-fonts/mdi,
                                           core/css/icon-fonts/mdil,
                                           core/css/icon-fonts/fontawesome,
+                                          core/css/themes/unolight/bootstrap,
                                           core/css/vendor
                                         ]
         files:                          [ adapter/js/j1.js ]
         js:                             [
+                                          modules/spinner/js/spin,
                                           modules/jquery/js/jquery,
                                           modules/popper/js/popper,             # required for BS
                                           core/js/template
@@ -1635,6 +1637,50 @@ resources:
                                         ]
         js:                             []
         init_function:                  [ j1.adapter.dropdowns.init ]
+
+  # ----------------------------------------------------------------------------
+  # nbInteract, implement nbInteract Core JS API for J1
+  #
+  - name:                               nbInteract
+    resource:
+      enabled:                          true
+
+      id:                               nbinteract
+      comment:                          nbInteract
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand                                # always | ondemand
+      preload:                          false                                   # property currently unused
+      script_load:                      sync
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            [ modules/nbInteract/css/theme/uno/nbinteract-core ]
+        files:                          [ adapter/js/nbinteract.js ]
+        js:                             [ modules/nbInteract/js/nbinteract/nbinteract-core ]
+        init_function:                  [ j1.adapter.nbinteract.init ]
+
+  # ----------------------------------------------------------------------------
+  # scheduler
+  #
+  - name:                               scheduler
+    resource:
+      enabled:                          false
+
+      id:                               scheduler
+      comment:                          scheduler
+      region:                           head
+      layout:                           [ all ]
+      required:                         always                                  # always | ondemand
+      preload:                          false                                   # property currently unused
+      script_load:                      sync
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          []
+        js:                             [ modules/later/js/later, modules/later/js/schedule ]
+        init_function:                  []
 
 # ------------------------------------------------------------------------------
 # END config

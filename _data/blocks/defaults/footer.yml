@@ -69,39 +69,66 @@ defaults:
       - name:                           Copyright
         legal:
           enabled:                      true
+
           type:                         copyright
-          statement:                    J1 · Copyright © 2019 · All rights reserved
+          statement:                    © 2021 J1 · All rights reserved
+          translate_statement:          notranslate                             # translate|notranslate
           href:                         /pages/public/legal/en/copyright/
+
       - name:                           Impress
         legal:
           enabled:                      true
+
           type:                         impress
           statement:                    Impress
+          translate_statement:          notranslate                             # translate|notranslate
           href:                         /pages/public/legal/en/impress/
-      - name:                           Terms Of Use
-        legal:
-          enabled:                      true
-          type:                         terms
-          statement:                    Terms Of Use
-          href:                         /pages/public/legal/en/terms_of_use/
+
       - name:                           Privacy
         legal:
           enabled:                      true
+
           type:                         privacy
           statement:                    Privacy
+          translate_statement:          notranslate                             # translate|notranslate
           href:                         /pages/public/legal/en/privacy/
+
+      - name:                           Comments
+        legal:
+          enabled:                      true
+
+          type:                         comments
+          statement:                    Comments
+          translate_statement:          notranslate                             # translate|notranslate
+          href:                         /pages/public/legal/en/comment_policy/
+
       - name:                           License
         legal:
           enabled:                      false
+
           type:                         license
           statement:                    License
+          translate_statement:          notranslate                             # translate|notranslate
           href:                         /pages/public/legal/en/license_agreement/
+
+      - name:                           Terms Of Use
+        legal:
+          enabled:                      false
+
+          type:                         terms
+          statement:                    Terms Of Use
+          translate_statement:          notranslate                             # translate|notranslate
+          href:                         /pages/public/legal/en/terms_of_use/
+
       - name:                           Support
         legal:
           enabled:                      false
+
           type:                         support
           statement:                    Support
+          translate_statement:          notranslate                             # translate|notranslate
           href:                         /pages/public/legal/en/terms_of_use/
+
 
     # --------------------------------------------------------------------------
     # BOXES
@@ -114,8 +141,9 @@ defaults:
       - name:                           About
         type:                           about
         enabled:                        true
-        justify:                        true
+
         title:                          J1 Template
+        title_translation:              notranslate
         text: >
                                         Jekyll meets Bootstrap - and makes a lot of friends.
                                         J1 Template combines the best of OpenSource software for
@@ -125,6 +153,7 @@ defaults:
                                         <br/><br/>
                                         <b>Create powerful modern static sites.<br/>
                                         Secure, flexible and fast.</b>
+        justify:                        true
 
       # ------------------------------------------------------------------------
       # NEWS box
@@ -133,43 +162,50 @@ defaults:
         type:                           news
         enabled:                        true
         title:                          Recent News
+        title_translation:              notranslate                             # translate|notranslate
         category:                       featured
         max_posts:                      3
 
       # ------------------------------------------------------------------------
-      # REFERENCES box
+      # LINKS box
       #
-      - name:                           References
+      - name:                           Links
         type:                           references
         enabled:                        true
         title:                          Useful Links
+        title_translation:              notranslate                             # translate|notranslate
+
         links:
 
           - name:                       Jekyll Home
             link:
               title:                    Jekyll Home
+              title_translation:        notranslate                             # translate|notranslate
               tagline:                  First addresss for latest news
               href:                     http://jekyllrb.com/
 
           - name:                       Jekyll Tips
             link:
               title:                    Jekyll Tips
+              title_translation:        notranslate                             # translate|notranslate
               tagline:                  Learn from experts
               href:                     http://jekyll.tips/
 
           - name:                       Stackoverflow
             link:
               title:                    Stackoverflow
+              title_translation:        notranslate                             # translate|notranslate
               tagline:                  Get help from the community
               href:                     http://stackoverflow.com/questions/tagged/jekyll
 
       # ------------------------------------------------------------------------
       # CONTACT box
       #
-      - name:                           Contact
+      - name:                           Contacts
         type:                           contact
         enabled:                        false
         title:                          Contacts
+        title_translation:              notranslate                             # translate|notranslate
         address:
           enabled:                      false
           address_1:                    JekyllOne Ltd.

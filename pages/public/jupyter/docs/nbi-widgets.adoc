@@ -1,0 +1,284 @@
+---
+title:                                  J1 NBI
+tagline:                                nbinteract widgets
+date:                                   2022-03-28 00:00:00
+description: >
+                                        The package nbinteract aims to enable authors and educators to create and
+                                        share interactive web pages easily. Interactive explanations of concepts are
+                                        useful for communicating and explaining tricky concepts.
+
+categories:                             [ Software, Python ]
+tags:                                   [ Binder, API ]
+
+scrollbar:                              true
+
+permalink:                              /pages/public/jupyter/docs/nbi-widgets/
+regenerate:                             false
+
+resources:                              [
+                                          animate, clipboard, lightbox, rouge
+                                        ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:binder-badge-enabled:                  false
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ifeval::[{binder-badge-enabled} == true]
+image:/assets/images/badges/myBinder.png[[Binder, link="https://mybinder.org/", {browser-window--new}]
+image:/assets/images/badges/docsBinder.png[[Binder, link="https://mybinder.readthedocs.io/en/latest/", {browser-window--new}]
+endif::[]
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+== Histogram
+
+The widget `nbinteract.hist` generates an interactive histogram that allows users to change the
+parameters of the input hist_function.
+
+[source, python, role="noclip"]
+----
+hist_function (Array | (*args -> Array int | Array float)):
+    Function that takes in parameters to interact with and returns an
+    array of numbers. These numbers will be plotted in the resulting
+    histogram.
+----
+
+=== Options
+
+[source, python, role="noclip"]
+----
+options (dict): Options for the plot. Available options:
+
+    title: Title of the plot
+    aspect_ratio: Aspect ratio of plot figure (float)
+    animation_duration: Duration of transition on change of data, in milliseconds.
+    xlabel: Label of the x-axis
+    ylabel: Label of the y-axis
+    xlim: Tuple containing (lower, upper) for x-axis
+    ylim: Tuple containing (lower, upper) for y-axis
+    bins: Non-negative int for the number of bins (default 10)
+    normalized: Normalize histogram area to 1 if True. If False, plot unmodified counts. (default True)
+
+interact_params (dict): Keyword arguments in the same format as
+    `ipywidgets.interact`. One argument is required for each argument
+    of `hist_function`.
+----
+
+== Bar chart
+
+The widget `nbinteract.bar` generates an interactive bar chart that allows
+users to change the parameters of the inputs x_fn and y_fn.
+
+[source, python, role="noclip"]
+----
+x_fn (Array | (*args -> Array str | Array int | Array float)):
+    If array, uses array values for categories of bar chart.
+
+    If function, must take parameters to interact with and return an
+    array of strings or numbers. These will become the categories on
+    the x-axis of the bar chart.
+
+y_fn (Array | (Array, *args -> Array int | Array float)):
+    If array, uses array values for heights of bars.
+
+    If function, must take in the output of x_fn as its first parameter
+    and optionally other parameters to interact with. Must return an
+    array of numbers. These will become the heights of the bars on the
+    y-axis.
+----
+
+=== Options
+
+[source, python, role="noclip"]
+----
+options (dict): Options for the plot. Available options:
+
+    title: Title of the plot
+    aspect_ratio: Aspect ratio of plot figure (float)
+    animation_duration: Duration of transition on change of data, in milliseconds.
+    xlabel: Label of the x-axis
+    ylabel: Label of the y-axis
+    ylim: Tuple containing (lower, upper) for y-axis
+
+interact_params (dict): Keyword arguments in the same format as
+    `ipywidgets.interact`. One argument is required for each argument
+    of both `x_fn` and `y_fn`. If `x_fn` and `y_fn` have conflicting
+    parameter names, prefix the corresponding kwargs with `x__` and
+    `y__`.
+----
+
+
+== Scatter plot
+
+The widget `nbinteract.scatter_drag` generates an interactive scatter plot
+with the best fit line plotted over the points. The points can be dragged by
+the user and the line will automatically update.
+
+[source, python, role="noclip"]
+----
+x_points (Array Number): x-values of points to plot
+y_points (Array Number): y-values of points to plot
+----
+
+=== Options
+
+[source, python, role="noclip"]
+----
+show_eqn (bool): If True (default), displays the best fit line's
+    equation above the scatterplot.
+
+options (dict): Options for the plot. Available options:
+
+    title: Title of the plot
+    aspect_ratio: Aspect ratio of plot figure (float)
+    animation_duration: Duration of transition on change of data, in milliseconds.
+    xlabel: Label of the x-axis
+    ylabel: Label of the y-axis
+    xlim: Tuple containing (lower, upper) for x-axis
+    ylim: Tuple containing (lower, upper) for y-axis
+----
+
+== Scatter
+
+The widget `nbinteract.scatter` generates an interactive scatter chart that
+allows users to change the parameters of the inputs x_fn and y_fn.
+
+[source, python, role="noclip"]
+----
+x_fn (Array | (*args -> Array str | Array int | Array float)):
+    If array, uses array values for x-coordinates.
+
+    If function, must take parameters to interact with and return an
+    array of strings or numbers. These will become the x-coordinates
+    of the scatter plot.
+
+y_fn (Array | (Array, *args -> Array int | Array float)):
+    If array, uses array values for y-coordinates.
+
+    If function, must take in the output of x_fn as its first parameter
+    and optionally other parameters to interact with. Must return an
+    array of numbers. These will become the y-coordinates of the
+    scatter plot.
+----
+
+=== Options
+
+[source, python, role="noclip"]
+----
+options (dict): Options for the plot. Available options:
+
+    title: Title of the plot
+    aspect_ratio: Aspect ratio of plot figure (float)
+    animation_duration: Duration of transition on change of data, in milliseconds.
+    xlabel: Label of the x-axis
+    ylabel: Label of the y-axis
+    xlim: Tuple containing (lower, upper) for x-axis
+    ylim: Tuple containing (lower, upper) for y-axis
+    marker: Shape of marker plots.
+    Possible values:
+    {"circle", "cross", "diamond", "square", "triangle-down", "triangle-up", "arrow", "rectangle", "ellipse"}
+
+interact_params (dict): Keyword arguments in the same format as
+    `ipywidgets.interact`. One argument is required for each argument
+    of both `x_fn` and `y_fn`. If `x_fn` and `y_fn` have conflicting
+    parameter names, prefix the corresponding kwargs with `x__` and
+    `y__`.
+----
+
+== Line
+
+Generates an interactive line chart that allows users to change the
+parameters of the inputs `x_fn` and `y_fn`. The first two arguments of
+`line` are *response functions* that return the x and y-axis coordinates.
+
+Either argument can be *arrays* themselves. Arguments for the response
+functions must be passed in as keyword arguments to line in the format
+expected by interact. The response function for the y-coordinates will
+be called with the x-coordinates as its first argument.
+
+.Example
+[source, python, role="noclip"]
+----
+import nbinteract as nbi
+import numpy as np
+
+def x_values(max): return np.arange(0, max)
+def y_values(xs, sd):
+    return xs + np.random.normal(0, scale=sd, size=len(xs))
+
+opts = {
+    'xlim': (0, 50),
+    'ylim': (0, 55),
+    'animation_duration': 250,
+}
+
+nbi.line(x_values, y_values, max=(10, 50), sd=(1, 10), options=opts)
+----
+
+
+[source, python, role="noclip"]
+----
+nbinteract.line(x_fn, y_fn, *, options={}, **interact_params)
+
+x_fn (Array | (*args -> Array str | Array int | Array float)):
+    If array, uses array values for x-coordinates.
+
+    If function, must take parameters to interact with and return an
+    array of strings or numbers. These will become the x-coordinates
+    of the line plot.
+
+y_fn (Array | (Array, *args -> Array int | Array float)):
+    If array, uses array values for y-coordinates.
+
+    If function, must take in the output of x_fn as its first parameter
+    and optionally other parameters to interact with. Must return an
+    array of numbers. These will become the y-coordinates of the line
+    plot.
+----
+
+=== Options
+
+[source, python, role="noclip"]
+----
+options (dict): Options for the plot. Available options:
+
+    title: Title of the plot
+    aspect_ratio: Aspect ratio of plot figure (float)
+    animation_duration: Duration of transition on change of data, in milliseconds.
+    xlabel: Label of the x-axis
+    ylabel: Label of the y-axis
+    xlim: Tuple containing (lower, upper) for x-axis
+    ylim: Tuple containing (lower, upper) for y-axis
+
+interact_params (dict): Keyword arguments in the same format as
+    `ipywidgets.interact`. One argument is required for each argument
+    of both `x_fn` and `y_fn`. If `x_fn` and `y_fn` have conflicting
+    parameter names, prefix the corresponding kwargs with `x__` and
+    `y__`.
+----

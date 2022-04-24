@@ -1,0 +1,63 @@
+---
+title:                                  Climate Change
+tagline:                                static notebook
+date:                                   2022-03-28 00:00:00
+description: >
+                                        The package nbinteract aims to enable authors and educators to create and
+                                        share interactive web pages easily. Interactive explanations of concepts are
+                                        useful for communicating and explaining tricky concepts.
+
+categories:                             [ Software, Python ]
+tags:                                   [ Binder, Jupyter, Notebooks ]
+
+scrollbar:                              false
+fab_menu_id:                            open_toc_reload
+personalization:                        true
+
+permalink:                              /pages/public/jupyter/textbooks/climate-change-forecast/
+regenerate:                             false
+
+resources:                              [ nbinteract, rouge ]
+resource_options:
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:binder-badge-enabled:                  true
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// image:/assets/images/badges/myBinder.png[Binder, link="https://mybinder.org/", {browser-window--new}]
+// image:/assets/images/badges/docsBinder.png[Binder, link="https://mybinder.readthedocs.io/en/latest/", {browser-window--new}]
+
+ifeval::[{binder-badges-enabled} == true]
+image:https://mybinder.org/badge_logo.svg[Binder, link="https://mybinder.org/v2/gh/jekyll-one/nbinteract-notebooks/main", {browser-window--new}]
+endif::[]
+
+== Climate change forecasting
+
+The textbook is an example of a *static* Jupyter notebook. Jupyter
+Notebooks don't need to contain *interactive* widgets.
+
+textbook::j1_climate_change_forecast[]

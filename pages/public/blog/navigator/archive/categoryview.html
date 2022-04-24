@@ -201,7 +201,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
           {% endfor %}
 
           <article class="card raised-z3 mb-5">
-            <h3 id="{{100000|rand}}" class="card-header bg-primary">{{post.title}}</h3>
+            <h3 id="{{100000|rand}}" class="card-header bg-primary notranslate">{{post.title}}</h3>
             <div class="row mx-0">
 
               <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Check if post image is available] -->
@@ -246,7 +246,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
                     {% assign categories    = my_categories |join: " · "  %}
                     {% assign tags          = post.tags | join: " · "  %}
 
-                    <p class="result-item-text small text-muted mb-3">
+                    <p class="result-item-text small text-muted mb-3 notranslate">
                       <i class="mdi mdi-tag-text-outline mdi-18px mr-1"></i>
                       <span class="sr-categories">{{categories}}</span>
                       <br>
