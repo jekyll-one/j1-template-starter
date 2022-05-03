@@ -6,6 +6,27 @@ description: >
                                         The package nbinteract aims to enable authors and educators to create and
                                         share interactive web pages easily. Interactive explanations of concepts are
                                         useful for communicating and explaining tricky concepts.
+keywords: >
+                                        opensource, free, load, download, start, starter, example,
+                                        high, easy, use, secure, encrypt, standard, popular,
+                                        generate, create, learn, distribute, publish, deploy,
+                                        beginner, advanced, expert, student, learner, writer, reader, visitor
+                                        framework, toolkit, integration, extension, module, api,
+                                        dynamic, static, generator, client, server, internet, local, localhost
+                                        page, web, website, webdesign, material, design, responsive,
+                                        javascript, nodejs, ruby, windows, linux, osx, mac, os,
+                                        http, https, html, html5, css, scss, style,
+                                        browser, firefox, chrome, edge, opera, safari,
+                                        configuration, generator, navigation, menu, dropdown, fab, action, button
+                                        application, interface, provider, api, repository,
+                                        cookie, language, translation, gdpr, dsgvo, privacy,
+                                        asciidoc, aciidoctor, bootstrap, jekyll, liquid,
+                                        hyvor, disqus, git, github, netlify, heroku, apple, microsoft,
+                                        provider, service, internet, support,
+                                        google, analytics, advertising, search, console, silverlight, score,
+                                        j1, template, jekyllone, comment,
+                                        python, jupyter, notebook, textbook, api, app, nbinteract,
+                                        nbi, integration, binder, binderhub, jupyterhub
 
 categories:                             [ J1, Integration ]
 tags:                                   [ NBI, nbinteract ]
@@ -39,8 +60,11 @@ resource_options:
 
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
-// :page--attr:                         <attr-value>
-:binder-badge-enabled:                  false
+// :page--attr:                                   <attr-value>
+:binder-badges-enabled:                           true
+:binder--home:                                    https://mybinder.org/
+:binder--docs:                                    https://mybinder.readthedocs.io/en/latest/
+:binder-app-launch--tree:                         https://mybinder.org/v2/gh/jekyll-one/nbinteract-notebooks/main?urlpath=/tree
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -50,12 +74,11 @@ resource_options:
 // -----------------------------------------------------------------------------
 {% include {{load_attributes}} scope="all" %}
 
-
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ifeval::[{binder-badge-enabled} == true]
-image:/assets/images/badges/myBinder.png[[Binder, link="https://mybinder.org/", {browser-window--new}]
-image:/assets/images/badges/docsBinder.png[[Binder, link="https://mybinder.readthedocs.io/en/latest/", {browser-window--new}]
+ifeval::[{binder-badges-enabled} == true]
+image:/assets/images/badges/configBinder.png[Binder, link="{binder--home}", {browser-window--new}]
+image:/assets/images/badges/docsBinder.png[Binder, link="{binder--docs}", {browser-window--new}]
 endif::[]
 
 // Include sub-documents (if any)
@@ -71,14 +94,6 @@ endif::[]
 
 // info:        https://en.wikipedia.org/wiki/Galileo_Galilei
 
-The Template system J1 integrates the Javascript (core) library
-`nbinteract-core.js` from NBI (nbinteract). The integration is a J1 module
-that requires *no programming* to integrate interactive textbooks in
-your webpages.
-
-WARNING: The (core) library integrated with J1 can *only* used with the
-Template System J1. The library `nbinteract-core` is modified for the use
-with J1, allowing seamless integration between NBI and the pages of a J1 Web.
 
 The integration of NBI consists of the following components:
 
@@ -98,8 +113,6 @@ WARNING: To develop your *Jupyter Notebooks*, a *local* installation of the
 Notebooks, the *Jupyter* package and the installation of the library
 *nbinteract* are expected.
 
-== J1 NBI Integration
-
 The module for J1 NBI integration is available as a stable version. However,
 it is still in an experimental state. The main reason for that experimental
 status is the *age* of the underlying library `nbinteract-core`.
@@ -108,7 +121,7 @@ NOTE: Recent library updates are more than a year ago, and the current
 version of the Jupyter Notebook *JupyterLab* application, unfortunately,
 *not* supported (yet).
 
-=== Notebooks vs Textbooks
+== Notebooks vs. Textbooks
 
 Jupyter Notebooks with the extension `.ipynb` are (data) files in JSON
 format and can only be run using the *App* of Jupyter Notebook. On the
@@ -120,6 +133,17 @@ For integrating textbooks in webpages, the notebooks with the extension
 (Python) program nbinteract. Textbooks that have already been exported
 can be found for the *Starter Web* in the folder
 `~/pages/public/jupyter/notebooks/textbooks`.
+
+== J1 NBI Configuration
+
+The Template system J1 integrates the Javascript (core) library
+`nbinteract-core.js` from NBI (nbinteract). The integration is a J1 module
+that requires *no programming* to integrate interactive textbooks in
+your webpages.
+
+WARNING: The (core) library integrated with J1 can *only* used with the
+Template System J1. The library `nbinteract-core` is modified for the use
+with J1, allowing seamless integration between NBI and the pages of a J1 Web.
 
 === Modul configuration
 
@@ -335,19 +359,16 @@ regenerate:                             true
 
 resources:                              [ nbinteract, rouge ] <2>
 ----
-<1> Die Dienste von Binder erfordern personalisierte Einstellungen in den
-    verwendeten *Cookies*. Um Schwierigkeiten mit den Regeln der Privatssphäre
-    zu vermeiden, sollte explizit darauf hingewiesen sowie in geeigneter Form
-    reagiert werden, falls die aktuellen Cookieeinstellungen des Besuchers
-    dies nicht erlauben.
-<2> Falls Highlightning der Sourecode Anteile in einem Textbook gewünscht
-    ist, muss zusätzlich das Modul `rouge` eingebunden werden.
+<1> Binder's services require personalized settings in the *cookies* used.
+    Difficulties with the rules of privacy should be explicitly pointed out
+    and responded to in a suitable form if the cookie settings of the
+    visitor do not allow this.
+<2> If highlighting the source code parts is desired in a textbook, the
+    `rouge` module must included as well.
 
-Sind die Konfigurationsschritte für den Einsatz von J1 NBI erledigt, ist das
-Einbinden von Textbooks sehr einfach. Über die die Asciidoc-Erweiterung
-`textbook::` kann ein Textbooks (nbinteract HTML Notebook) an jeder beliebigen
-Stelle eingebunden
-werden
+Once the configuration steps for using J1 NBI have been completed, integrating
+textbooks is very easy. The Asciidoc extension `textbook::` can include a
+textbook (nbinteract HTML Notebook) anywhere.
 
 .General syntax
 [source, conf, role="noclip"]

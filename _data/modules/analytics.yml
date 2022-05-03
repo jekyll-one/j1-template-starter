@@ -46,12 +46,21 @@ settings:
   #
   # ----------------------------------------------------------------------------
   #
-  enabled:                              false
-
+  enabled:                              true
   provider:                             google
+
   google:
     # --------------------------------------------------------------------------
     # Provider settings
+    #
+    #   skipAllHosts
+    #   ------------------------------------------------------------------------
+    #   All hosts skipped for Google Analytics (GA script NOT installed).
+    #   Prevent counting of page views (for e.g. development), even GA is
+    #   'enabled' and a valid trackingID is configured.
+    #
+    #   values:                         comma separated string
+    #   default:                        localhost, 127.0.0.1
     #
     #   trackingID
     #   ------------------------------------------------------------------------
@@ -61,6 +70,7 @@ settings:
     #   values:                         string
     #   default:                        none
     #
+
     #   optInOut
     #   ------------------------------------------------------------------------
     #   Google Analytics Opt In. GA will be enabled by default and at a
@@ -91,7 +101,9 @@ settings:
     #
     # --------------------------------------------------------------------------
     #
-    trackingID:                         '<your-tracking-id>'
+    skipAllHosts:                       localhost, 127.0.0.1
+
+    trackingID:                         '<your-tracking-id>'                    # set a vaild your-tracking-id
     optInOut:                           true
     anonymizeIP:                        true
 

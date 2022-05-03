@@ -60,6 +60,7 @@
           href:                         /pages/public/learn/roundtrip/quicksearch/
           icon:                         magnify
 
+
     # --------------------------------------------------------------------------
     # Experimental
     #
@@ -67,35 +68,46 @@
       icon:                             test-tube
       dropdown:
 
-        - title:                        Textbooks
+        # ----------------------------------------------------------------------
+        # Examples
+        #
+        - title:                        Textbook Examples
           icon:                         book-open-page-variant
           dropdown:
 
-            - title:                    Widget Examples
-              href:                     /pages/public/jupyter/textbooks/j1-nb-test/
+            - title:                    Interactive Widgets
+              href:                     /pages/public/jupyter/textbooks/interactive-widgets/
               icon:                     script-text-play-outline
-
             - title:                    Interactive Evaluation
               href:                     /pages/public/jupyter/textbooks/odes-in-python/
               icon:                     script-text-play-outline
-            - title:                    Climate Change
+            - title:                    Non-Interactive Notebook
               href:                     /pages/public/jupyter/textbooks/climate-change-forecast/
               icon:                     script-text-play-outline
 
-        - title:                        Docs
+        # ----------------------------------------------------------------------
+        # Documentation
+        #
+        - title:                        Documentation
           icon:                         book-open-page-variant
           dropdown:
 
-            - title:                    J1 NBI Docs
+            - title:                    J1 NBI Integration
               href:                     /pages/public/jupyter/docs/j1-nbinteract-docs/
               icon:                     alpha-j-box
-
-            - title:                    NBI Docs
-              href:                     /pages/public/jupyter/textbooks/nbinteract-docs/
-              icon:                     alpha-j-box
-            - title:                    NBI Widgets
+            - title:                    NBI Widgets Manual
               href:                     /pages/public/jupyter/docs/nbi-widgets/
               icon:                     book
+            - title:                    NBI Tutorial (Sam Lau)
+              href:                     /pages/public/jupyter/textbooks/nbinteract-docs/
+              icon:                     alpha-j-box
+
+        # ----------------------------------------------------------------------
+        # NBI APIs
+        #
+        - title:                        NBI APIs
+          icon:                         book-open-page-variant
+          dropdown:
             - title:                    BinderHub API
               href:                     /pages/public/jupyter/docs/binderhub-api/
               icon:                     book

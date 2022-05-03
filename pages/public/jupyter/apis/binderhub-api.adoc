@@ -7,6 +7,27 @@ description: >
                                         shared and used by many remote users. A Binder service is powered by
                                         BinderHub, an open-source tool that runs on Kubernetes, a portable,
                                         extensible, open-source platform for managing containerized services.
+keywords: >
+                                        opensource, free, load, download, start, starter, example,
+                                        high, easy, use, secure, encrypt, standard, popular,
+                                        generate, create, learn, distribute, publish, deploy,
+                                        beginner, advanced, expert, student, learner, writer, reader, visitor
+                                        framework, toolkit, integration, extension, module, api,
+                                        dynamic, static, generator, client, server, internet, local, localhost
+                                        page, web, website, webdesign, material, design, responsive,
+                                        javascript, nodejs, ruby, windows, linux, osx, mac, os,
+                                        http, https, html, html5, css, scss, style,
+                                        browser, firefox, chrome, edge, opera, safari,
+                                        configuration, generator, navigation, menu, dropdown, fab, action, button
+                                        application, interface, provider, api, repository,
+                                        cookie, language, translation, gdpr, dsgvo, privacy,
+                                        asciidoc, aciidoctor, bootstrap, jekyll, liquid,
+                                        hyvor, disqus, git, github, netlify, heroku, apple, microsoft,
+                                        provider, service, internet, support,
+                                        google, analytics, advertising, search, console, silverlight, score,
+                                        j1, template, jekyllone, comment,
+                                        python, jupyter, notebook, textbook, api, app, nbinteract,
+                                        nbi, integration, binder, binderhub, jupyterhub
 
 categories:                             [ Software, Python ]
 tags:                                   [ Binder, API ]
@@ -39,6 +60,18 @@ resource_options:
 // :page--attr:                         <attr-value>
 :badges-enabled:                        false
 :binder-badge-enabled:                  false
+:binder-app-launch--tree:               https://mybinder.org/v2/gh/jekyll-one/nbinteract-notebooks/main?urlpath=/tree
+:jupyterlab-docs--getting-started:      https://jupyterlab.readthedocs.io/en/latest/getting_started/starting.html
+:jupyter-discourse--startup-time:       https://discourse.jupyter.org/t/how-to-reduce-mybinder-org-repository-startup-time/4956
+
+:binder--home:                          https://mybinder.org/
+:binder-sre--analytics:                 https://mybinder-sre.readthedocs.io/en/latest/analytics/events-archive.html
+:binder--binderlyzer:                   {binder--home}v2/gh/betatim/binderlyzer/master
+
+:binderhub-docs--reference:             https://binderhub.readthedocs.io/en/latest/reference/ref-index.html
+
+:github-repo--binderhub:                https://github.com/jupyterhub/binderhub
+:github-repo--binderlyzer:              https://github.com/betatim/binderlyzer
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -58,21 +91,18 @@ endif::[]
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
 ifeval::[{binder-badge-enabled} == true]
-image:/assets/images/badges/myBinder.png[[Binder, link="https://mybinder.org/", {browser-window--new}]
+image:/assets/images/badges/myBinder.png[[Binder, link="{binder--home}", {browser-window--new}]
 image:/assets/images/badges/docsBinder.png[[Binder, link="https://mybinder.readthedocs.io/en/latest/", {browser-window--new}]
 endif::[]
 
-Binder allows you to create custom *computing environments* that can be
+Binder allows you to create custom computing environments that can be
 shared and used by many remote users. You can use many open source languages,
 <<Configure the user interface>>, and more. A Binder service is powered by
-https://github.com/jupyterhub/binderhub[BinderHub, {browser-window--new}],
-an open-source tool that runs on *Kubernetes*, a portable, extensible,
-open-source platform for managing containerized services. One
-such deployment lives at https://mybinder.org/[mybinder.org, {browser-window--new}],
-and is *free* to use.
-
-For more information about the mybinder.org deployment and the team
-that runs it, see https://mybinder.readthedocs.io/en/latest/about/about.html[About mybinder.org, {browser-window--new}].
+link:{github-repo--binderhub}[BinderHub Repo on Github, {browser-window--new}],
+an open-source tool that runs on Kubernetes, a portable, extensible,
+open-source platform for managing containerized services. One such deployment
+lives at link:{binder--home}[Binder Home, {browser-window--new}], and is free
+to use.
 
 == Configuration Files
 
@@ -152,7 +182,10 @@ a typical requirements file.
 For Binder, the requirements.txt file should list all Python libraries that
 your notebooks depend on, and they will be installed using:
 
+[source, sh, role="noclip"]
+----
   pip install -r requirements.txt
+----
 
 The base Binder image contains *no extra* dependencies, so be as explicit
 as possible in defining the packages that you need. This includes specifying
@@ -190,31 +223,40 @@ for conda, runtime.txt will be ignored.
 You can build several user interfaces into the resulting Docker image. This
 is controlled with various <<Configuration Files>>.
 
-=== JupyterLab
+=== JupyterLab Interface
 
 JupyterLab is the *default* interface for repo2docker. The following
-Binder URL will open the pyTudes repository and begin a JupyterLab session
-in the ipynb folder:
+Binder URL will open the *jekyll-one* repository and begin a JupyterLab
+session opening the path `notebooks`:
 
-  https://mybinder.org/v2/gh/norvig/pytudes/HEAD?urlpath=lab/tree/ipynb
+[source, txt]
+----
+  https://mybinder.org/v2/gh/jekyll-one/nbinteract-notebooks/main?filepath=notebooks
+----
 
-The /tree/ipynb above is how JupyterLab directs you to a specific file or
-folder. To learn more about URLs in JupyterLab and Jupyter Notebook, visit
-http://jupyterlab.readthedocs.io/en/latest/getting_started/starting.html[starting JupyterLab, {{browser-window--new}}].
+The filepath notebooks above is how JupyterLab directs you to a specific file
+or folder. To learn more about URLs in JupyterLab and Jupyter Notebook, visit
+link:{jupyterlab-docs--getting-started}[Starting JupyterLab, {{browser-window--new}}].
 
 === Classic Notebook Interface
 
 The classic notebook is also available without any configuration. To switch
-to the classic notebook, You do not need any extra configuration in order
-to allow the use of the classic notebook interface. You can launch the
-classic notebook interface from within a user session by opening JupyterLab
-and replacing `/lab/` with `/tree/` in the default juptyerlab URL like so:
+to the classic notebook interface, you do not need any extra configuration
+in order to allow the use of the classic notebook interface. You can launch
+the classic notebook interface from within a user session by opening
+JupyterLab and replacing the path `/lab/` with `/tree/` in the JuptyerLab URL
+like so:
 
-  http(s)://<server:port>/tree/
+----
+  https://mybinder.org/v2/<repo-provider>/<repo>/<branch>?urlpath=/tree
+----
 
-And you can switch back to JupyterLab by replacing `/tree/` with` /lab/`:
+.Example
+[source, txt]
+----
+  https://mybinder.org/v2/gh/jekyll-one/nbinteract-notebooks/main?urlpath=/tree
+----
 
-  http(s)://<server:port>/lab/
 
 /////
 === nteract
@@ -275,9 +317,9 @@ The extra time it takes to launch is often a result of these extra steps.
 
 For some background and tips about how you can speed up your repository
 launch times, see this
-https://discourse.jupyter.org/t/how-to-reduce-mybinder-org-repository-startup-time/4956[community forum post, {{browser-window--new}}].
+link:{jupyter-discourse--startup-time}[community forum post, {{browser-window--new}}].
 
-=== Track repository data on `mybinder.org`
+=== Track repository data on Binder
 
 The mybinder.org team runs a service that provides repository-level data
 about all of the binders that run each day. This is called the mybinder.org
@@ -290,14 +332,14 @@ aggregating activity across many repositories).
 You can access the event analytics archive at `archive.analytics.mybinder.org`.
 For information about the structure of this dataset, and a description of
 how you can read-in the data in order to analyze it, see the
-https://mybinder-sre.readthedocs.io/en/latest/analytics/events-archive.html[mybinder SRE guide, {{browser-window--new}}]
+link:{binder-sre--analytics}[Binder Site Reliability Guide (SRE), {{browser-window--new}}]
 instructions.
 
 
 ==== Example repository to show off analyses
 
 To give you a little inspiration, check out the
-https://mybinder.org/v2/gh/betatim/binderlyzer/master[binderlyzer binder, {{browser-window--new}}].
+link:{binder--binderlyzer}[binderlyzer binder, {{browser-window--new}}].
 This is a Binder that goes through a simple analysis of Binder repositories
 using the events archive. It shows how to access it, and gives an idea for
 questions you can ask with this data!
@@ -362,7 +404,10 @@ lightbox::binderhub--architecture[ 800, {data-binderhub--architecture}, role="mt
 
 There’s one API endpoint, which is:
 
+[source, text]
+----
   /build/<provider_prefix>/<spec>
+----
 
 Even though it says build it actually performs launch.
 
@@ -518,5 +563,5 @@ a git repository.
 
 === Configuration and Source Code Reference
 
-Find details for all *code references* on
-https://binderhub.readthedocs.io/en/latest/reference/ref-index.html[BinderHub, {browser-window--new}]
+Find details for all code references on:
+link:{binderhub-docs--reference}[BinderHub Docs - Reference, {browser-window--new}]

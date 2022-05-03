@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "utls",
-  "version": "2022.2.1",
+  "version": "2022.2.2",
   "description": "J1 Template Utility Server",
   "homepage": "https://jekyll.one",
   "author": {
@@ -22,6 +22,7 @@
     "enabled": "true"
   },
   "scripts": {
+    "audit": "npm audit",
     "clean": "shx rm -f *.lock && shx rm -f package-lock.json",
     "start": "run-p -s utilsrv-run",
     "app": "run-p -s utilsrv",

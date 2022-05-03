@@ -17,7 +17,7 @@ fab_menu_id:                            page_ctrl_simple
 permalink:                              /pages/public/learn/roundtrip/asciidoc_extensions/
 regenerate:                             false
 
-resources:                              [ animate, lightbox, iconify, twemoji, rouge ]
+resources:                              [ animate, clipboard, lightbox, iconify, twemoji, rouge ]
 resource_options:
   - attic:
       padding_top:                      400
@@ -65,8 +65,6 @@ To create Asciidoc extensions on your own, it is highly recommended to read the
 link:{url-asciidoctor--extensions-manual}[extensions section, {browser-window--new}] in
 the Asciidoctor user manual.
 
-== Asciidoc Extensions
-
 All already implemented Asciidoctor Extensions you'll find below. Additional
 valuable extensions to the Markup language Asciidoc to the Markup language
 Asciidoc is made especially for documents of the Jekyll content type pages
@@ -97,8 +95,76 @@ Asciidoc code and how the resulting (HTML) code would look alike.
 
 == Asciidoc Admonitions
 
-All colors for all default admonition blocks set to the standard MD color
-set. Find available block types an their colors below.
+Admonition blocks draw attention to certain statements by taking them out
+of the content’s flow and labeling them as priorities. These types of
+(Asciidoc) blocks are called admonitions. The AsciiDoc language provides
+five admonition types represented by the following labels:
+
+.Admonition labels
+[cols="3a,9a", subs=+macros, options="header", width="100%", role="rtable mt-3"]
+|===
+|Name |Description
+
+|`NOTE`
+|Additional information on the currently discussed topic that may help
+the reader
+
+|`TIP`
+|Additional information on the currently discussed topic that may help the
+reader *to go further* or describe *additional options* available
+
+|`IMPORTANT`
+|Emphasis on what is currently being discussed and facts that should
+be kept in mind
+
+|`CAUTION`
+|Advise the reader to act carefully and point to potential tripping
+
+|`WARNING`
+|inform the reader of danger, harm, or consequences that exist
+
+|===
+
+NOTE: All colors for all default admonition blocks set to the standard
+MD color set. Find available block types and their colors below.
+
+
+When you want to call attention to a single paragraph, start the first
+line of the paragraph with the label you want to use. The label must be
+uppercase and followed by a colon (:).
+
+.Admonition paragraph syntax
+[source, config]
+----
+NOTE: Followed by the paragraph text
+----
+
+Set the label as a style attribute on a block when you want to apply an
+admonition to complex content. The next example shows that admonition
+labels are commonly set on example blocks. The label must be uppercase
+when set as an attribute on a block.
+
+.Admonition block syntax
+[source, config]
+----
+[NOTE]
+====
+The block text (multiline)
+====
+----
+
+To add an *additional* title element on an admonition, place a dot (.)
+markup directly followed (no spaces) by the text of the title.
+
+.Admonition block syntax and additional title
+[source, config]
+----
+.title text
+[NOTE]
+====
+The block text (multiline)
+====
+----
 
 .NOTE block
 NOTE: Icon background-color: indigo
@@ -114,6 +180,87 @@ WARNING: Icon background-color: yellow
 
 .CAUTION block
 CAUTION: Icon background-color: red
+
+
+== Asciidoc Quote elements
+
+Quote elements cite a passage or phrase from a book, speech, or the like,
+such as authority, illustration, etc. the quote elements are controlled by
+the following *attributes*:
+
+attribution::
+The attribute `attribution` specifies the name of *who* the content
+is attributed to
+
+information::
+The attribute `information` is optional and specifies the general or
+bibliographical information of the book, speech, play, poem, etc.,
+where the content was *drawn from*
+
+=== Quoted paragraph
+
+If the text element to be quoted is a single line or paragraph, the attribute
+list `[quote, attribution, information]` can be placed directly *above* the
+text.
+
+.Synopsis
+[source, text]
+----
+[quote, attribution, information]
+Quote or excerpt text
+----
+
+After landing the cloaked Klingon bird of prey in Golden Gate park:
+
+[quote, Captain James T. Kirk, Star Trek IV: The Voyage Home]
+Everybody remember where we parked.
+
+A *single* paragraph can be turned into a blockquote by:
+
+. surrounding the quoted paragraph with double-quotes (")
+. adding an (optional) `attribution`, prefixed by two dashes (--)
+  *below* the quoted text
+
+.Synopsis
+[source, text]
+----
+"quoted paragraph"
+-- attribution
+----
+
+"I hold it that a little rebellion now and then is a good thing,
+and as necessary in the political world as storms in the physical."
+-- Thomas Jefferson, Papers of Thomas Jefferson: Volume 11
+
+
+=== Quote block
+
+If the text element (or excerpt) to be quoted is more than one paragraph,
+place the (multine) text between delimiter lines consisting of four
+*underscores* (____).
+
+.Synopsis
+
+[source, text]
+----
+[quote, attribution]
+____
+paragraph text (multiline)
+____
+----
+
+[quote, Monty Python and the Holy Grail]
+____
+Dennis: Come and see the violence inherent in the system.
+Help! Help! I'm being repressed!
+
+King Arthur: Bloody peasant!
+
+Dennis: Oh, what a giveaway! Did you hear that? Did you hear that, eh?
+That's what I'm on about! Did you see him repressing me? You saw him,
+Didn't you?
+____
+
 
 == Lightboxes
 

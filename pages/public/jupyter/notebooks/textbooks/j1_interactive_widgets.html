@@ -8,7 +8,11 @@
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Interactive-widgets-from-ipywidgets">Interactive widgets from ipywidgets<a class="anchor-link" href="#Interactive-widgets-from-ipywidgets">&#182;</a></h3>
+<h2 id="Widgets-from-ipywidgets">Widgets from ipywidgets<a class="anchor-link" href="#Widgets-from-ipywidgets">&#182;</a></h2><p>The library <em>ipywidgets</em>, also known as <em>jupyter-widgets</em>, are interactive
+HTML widgets for Jupyter notebooks and the IPython kernel. Notebooks come
+alive when interactive widgets are used. Users gain control of their data
+and can visualize changes in the data.</p>
+
 </div>
 </div>
 </div>
@@ -34,6 +38,12 @@
 </div>
 
   </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Base-slider">Base slider<a class="anchor-link" href="#Base-slider">&#182;</a></h3>
+</div>
+</div>
+</div>
 
   
 
@@ -76,6 +86,12 @@
 </div>
 
   </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Slider-for-widget-control">Slider for widget control<a class="anchor-link" href="#Slider-for-widget-control">&#182;</a></h3>
+</div>
+</div>
+</div>
 
   
 
@@ -120,6 +136,12 @@
 </div>
 
   </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Select-box">Select box<a class="anchor-link" href="#Select-box">&#182;</a></h3>
+</div>
+</div>
+</div>
 
   
 
@@ -164,6 +186,12 @@
 </div>
 
   </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Combined-widgets">Combined widgets<a class="anchor-link" href="#Combined-widgets">&#182;</a></h3>
+</div>
+</div>
+</div>
 
   
 
@@ -253,49 +281,12 @@
 </div>
 
   </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Print the current widget value in short sentence</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Slider says: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Complex-widget-configs">Complex widget configs<a class="anchor-link" href="#Complex-widget-configs">&#182;</a></h3>
 </div>
 </div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    
-
-
-
-  <div class="output_subarea output_widget_view ">
-    <button class="js-nbinteract-widget">
-      Loading widgets...
-    </button>
-  </div>
-
 </div>
-
-</div>
-</div>
-
-  </div>
 
   
 
@@ -380,6 +371,12 @@
 </div>
 
   </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Connected-sliders">Connected sliders<a class="anchor-link" href="#Connected-sliders">&#182;</a></h3>
+</div>
+</div>
+</div>
 
   
 
@@ -429,13 +426,16 @@
   </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Interactive-widgets-from-nbinteract">Interactive widgets from nbinteract<a class="anchor-link" href="#Interactive-widgets-from-nbinteract">&#182;</a></h3>
+<h2 id="Widgets-from-nbinteract">Widgets from nbinteract<a class="anchor-link" href="#Widgets-from-nbinteract">&#182;</a></h2><p>The library <em>nbinteract</em> comes with a set of functions that produce Javascript-based plots designed for interaction. The package combines the <em>ipywidgets</em> library and the <em>bqplot</em>
+plotting library to implement function-driven interfaces to interactive plotting.</p>
+<p>The nbinteract plotting methods use <strong>ipywidgets</strong> to generate and display widgets, inferring the widget type as needed. When a user interacts with a widget, a Python callback updates the visualization <strong>without</strong> a complete rerender. This noticeably lowers visualization update time compared to using ipywidgets alone to render static images.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="nbinteract.hist"><code>nbinteract.hist</code><a class="anchor-link" href="#nbinteract.hist">&#182;</a></h4><p>The  widget hist generates a histogram that allows interaction with the parameters for the response function. The widget takes in a single response function. The response function returns the array of numerical values that will be shown in the histogram. The hist function allows interaction with the response function's parameters by specifying them as keyword arguments in the same format as ipywidgets.interact. Any argument that can be used for ipywidgets.interact can be used for hist.</p>
+<h3 id="nbinteract.hist"><code>nbinteract.hist</code><a class="anchor-link" href="#nbinteract.hist">&#182;</a></h3><p>The  widget hist generates a histogram that allows interaction with the parameters for the response function. The widget takes in a single response function. The response function returns the array of numerical values that will be shown in the histogram. The hist function allows interaction with the response function's parameters by specifying them as keyword arguments in the same format as ipywidgets.interact. Any argument that can be used for ipywidgets.interact can be used for hist.</p>
 
 </div>
 </div>
@@ -487,7 +487,7 @@
   </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="nbinteract.bar"><code>nbinteract.bar</code><a class="anchor-link" href="#nbinteract.bar">&#182;</a></h4><p>The widgetr bar generates an bar plot that allows interaction with the parameters for the response functions.</p>
+<h3 id="nbinteract.bar"><code>nbinteract.bar</code><a class="anchor-link" href="#nbinteract.bar">&#182;</a></h3><p>The widgetr bar generates an bar plot that allows interaction with the parameters for the response functions.</p>
 <p>The first two arguments of bar are response functions that return the x and y-axis data arrays, respectively. Either argument can be arrays themselves. Arguments for the response functions must be passed in as keyword arguments to bar in the format expected by interact. The response function for the y-axis data will be called with the x-axis data as its first argument.</p>
 <p>For example, in the bar plot below categories generates the categories to plot on the x-axis and heights generates the y-axis heights. The heights function uses the parameter xs which is the array of x-axis data points.</p>
 
@@ -544,7 +544,7 @@
   </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="nbinteract.scatter_drag">nbinteract.scatter_drag<a class="anchor-link" href="#nbinteract.scatter_drag">&#182;</a></h4><p>The widget scatter_drag generates a scatter plot that allows interaction through clicking and dragging the points on the graph.</p>
+<h3 id="nbinteract.scatter_drag">nbinteract.scatter_drag<a class="anchor-link" href="#nbinteract.scatter_drag">&#182;</a></h3><p>The widget scatter_drag generates a scatter plot that allows interaction through clicking and dragging the points on the graph.</p>
 <p>scatter_drag takes in two lists/arrays consisting of the x-coordinates and y-coordinates of the points to plot. It generates an interactive scatter plot where the points can be dragged by the user and a best fit line is updated automatically according to the placement of the points.</p>
 <p>scatter_drag does not allow response functions as inputs.</p>
 
@@ -596,7 +596,7 @@
   </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="nbinteract.scatter"><code>nbinteract.scatter</code><a class="anchor-link" href="#nbinteract.scatter">&#182;</a></h4><p>The scatter widgetr generates a scatter plot that allows interaction with the parameters to the response functions. This is different from scatter_drag which facilitates interaction using click and drag actions.</p>
+<h3 id="nbinteract.scatter"><code>nbinteract.scatter</code><a class="anchor-link" href="#nbinteract.scatter">&#182;</a></h3><p>The scatter widgetr generates a scatter plot that allows interaction with the parameters to the response functions. This is different from scatter_drag which facilitates interaction using click and drag actions.</p>
 <p>The first two arguments of scatter are response functions that return the x and y-axis coordinates, respectively. Either argument can be arrays themselves. Arguments for the response functions must be passed in as keyword arguments to scatter in the format expected by interact. The response function for the y-coordinates will be called with the x-coordinates as its first argument.</p>
 
 </div>
@@ -645,7 +645,7 @@
   </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="nbinteract.line"><code>nbinteract.line</code><a class="anchor-link" href="#nbinteract.line">&#182;</a></h4><p>The line widget generates a line plot that allows interaction with the parameters to the response functions.</p>
+<h3 id="nbinteract.line"><code>nbinteract.line</code><a class="anchor-link" href="#nbinteract.line">&#182;</a></h3><p>The line widget generates a line plot that allows interaction with the parameters to the response functions.</p>
 <p>The first two arguments of line are response functions that return the x and y-axis coordinates, respectively. Either argument can be arrays themselves. Arguments for the response functions must be passed in as keyword arguments to line in the format expected by interact. The response function for the y-coordinates will be called with the x-coordinates as its first argument.</p>
 
 </div>

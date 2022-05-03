@@ -1,6 +1,6 @@
 ---
 title:                                  QuickSearch
-tagline:                                full index search based on lunr
+tagline:                                full text search based on lunr
 date:                                   2020-11-08 00:00:00
 description: >
                                         QuickSearch is based on the search engine Lunr,
@@ -287,8 +287,6 @@ the following query can be used:
 +title:jek* +coll*
 ----
 
-==== Available fields
-
 Besides the document *body*, an intrinsic field to create the full-text index
 out of the document *content*, some more specific fields are available for
 searches.
@@ -419,9 +417,12 @@ To simulate a logical *AND* search of documents that contain the word `jekyll`
 == What next
 
 You reached the end of the roundtrip. Hopefully you enjoyed exploring what J1
-can do for your new website. To make things real for your new site, go for
-*J1 in a Day*. This tutorial guides you through all the steps on how to
-build a website. Your site using Jekyll and the template system J1.
+can do for your new website. To make things real for your site, go for
+_J1 in a Day_. This tutorial guides you through all the steps on how to
+setup your environment, manage and build a website and how to create content.
 
 It's a pleasant journey to learn what  modern static webs can offer today.
-Start your journey from here: link:{url-j1-kickstarter--web-in-a-day}[J1 in a Day, {browser-window--new}].
+Start your journey from here:
+link:{url-j1-kickstarter--web-in-a-day}[J1 in a Day, {browser-window--new}].
+
+Have fun!

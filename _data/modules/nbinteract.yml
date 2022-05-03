@@ -84,6 +84,42 @@ settings:
     # --------------------------------------------------------------------------
 
     # --------------------------------------------------------------------------
+    # altair-base
+    #
+    - textbook:
+        enabled:                        false
+
+        id:                             j1_altair_base
+        xhr_data:                       j1_altair_visualization.html
+        xhr_data_path:                  /pages/public/jupyter/notebooks/textbooks
+        use_mathjax:                    false
+        altair_cleanups:                true
+
+    # --------------------------------------------------------------------------
+    # altair-interactive
+    #
+    - textbook:
+        enabled:                        false
+
+        id:                             j1_altair_interactive
+        xhr_data:                       j1_altair_interactive.html
+        xhr_data_path:                  /pages/public/jupyter/notebooks/textbooks
+        use_mathjax:                    false
+        altair_cleanups:                true
+
+    # --------------------------------------------------------------------------
+    # altair-interactive-test
+    #
+    - textbook:
+        enabled:                        false
+
+        id:                             j1_altair_interactive_test
+        xhr_data:                       j1_altair_interactive_test.html
+        xhr_data_path:                  /pages/public/jupyter/notebooks/textbooks
+        use_mathjax:                    false
+        altair_cleanups:                true
+
+    # --------------------------------------------------------------------------
     # climate-change-forecast (static notebook)
     #
     - textbook:
@@ -95,10 +131,21 @@ settings:
         use_mathjax:                    true
 
     # --------------------------------------------------------------------------
-    # odes_in_python
+    # interactive widget types
     #
     - textbook:
         enabled:                        true
+
+        id:                             j1_interactive_widgets
+        xhr_data:                       j1_interactive_widgets.html
+        xhr_data_path:                  /pages/public/jupyter/notebooks/textbooks
+        use_mathjax:                    false
+
+    # --------------------------------------------------------------------------
+    # odes_in_python
+    #
+    - textbook:
+        enabled:                        false
 
         id:                             j1_odes_in_python
         xhr_data:                       j1_odes_in_python.html
@@ -106,21 +153,10 @@ settings:
         use_mathjax:                    false
 
     # --------------------------------------------------------------------------
-    # interactive widget types
-    #
-    - textbook:
-        enabled:                        true
-
-        id:                             j1_interactive
-        xhr_data:                       j1_interactive.html
-        xhr_data_path:                  /pages/public/jupyter/notebooks/textbooks
-        use_mathjax:                    false
-
-    # --------------------------------------------------------------------------
     # ode_selected
     #
     - textbook:
-        enabled:                        false
+        enabled:                        true
 
         id:                             j1_ode_selected
         xhr_data:                       j1_ode_selected.html

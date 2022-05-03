@@ -1660,27 +1660,5 @@ resources:
         js:                             [ modules/nbInteract/js/nbinteract/nbinteract-core ]
         init_function:                  [ j1.adapter.nbinteract.init ]
 
-  # ----------------------------------------------------------------------------
-  # scheduler
-  #
-  - name:                               scheduler
-    resource:
-      enabled:                          false
-
-      id:                               scheduler
-      comment:                          scheduler
-      region:                           head
-      layout:                           [ all ]
-      required:                         always                                  # always | ondemand
-      preload:                          false                                   # property currently unused
-      script_load:                      sync
-      dependencies:                     false
-      pass_init_data:                   false
-      data:
-        css:                            []
-        files:                          []
-        js:                             [ modules/later/js/later, modules/later/js/schedule ]
-        init_function:                  []
-
 # ------------------------------------------------------------------------------
 # END config

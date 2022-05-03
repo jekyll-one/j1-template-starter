@@ -80,7 +80,7 @@ defaults:
   #   Show info|progress|error messages while nbinteract is being initialized.
   #
   #   values:                           boolean (true|false)
-  #   default:                          true
+  #   default:                          false
   #
   # ----------------------------------------------------------------------------
   #
@@ -89,7 +89,7 @@ defaults:
   #   Show a spinner while nbinteract in being initialized.
   #
   #   values:                           boolean (true|false)
-  #   default:                          false
+  #   default:                          true
   #
   # ----------------------------------------------------------------------------
   #
@@ -130,14 +130,15 @@ defaults:
   #
   # ----------------------------------------------------------------------------
   #
-  spec:                                 jekyll-one/nbinteract-notebooks/main
+  # spec:                               jekyll-one/nbinteract-notebooks/main
+  spec:                                 jekyll-one/j1-binder-repo/main
   baseUrl:                              'https://mybinder.org'
   provider:                             gh
 
   button_styles:                        btn btn-primary btn-raised hidden
 
-  show_nbi_messages:                    true
-  indicate_nbi_activity:                false
+  show_nbi_messages:                    false
+  indicate_nbi_activity:                true
   nbi_messages_auto_close:              true
 
   nbi_init_timeout:                     180000

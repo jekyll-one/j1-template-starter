@@ -6,6 +6,27 @@ description: >
                                         The package nbinteract aims to enable authors and educators to create and
                                         share interactive web pages easily. Interactive explanations of concepts are
                                         useful for communicating and explaining tricky concepts.
+keywords: >
+                                        opensource, free, load, download, start, starter, example,
+                                        high, easy, use, secure, encrypt, standard, popular,
+                                        generate, create, learn, distribute, publish, deploy,
+                                        beginner, advanced, expert, student, learner, writer, reader, visitor
+                                        framework, toolkit, integration, extension, module, api,
+                                        dynamic, static, generator, client, server, internet, local, localhost
+                                        page, web, website, webdesign, material, design, responsive,
+                                        javascript, nodejs, ruby, windows, linux, osx, mac, os,
+                                        http, https, html, html5, css, scss, style,
+                                        browser, firefox, chrome, edge, opera, safari,
+                                        configuration, generator, navigation, menu, dropdown, fab, action, button
+                                        application, interface, provider, api, repository,
+                                        cookie, language, translation, gdpr, dsgvo, privacy,
+                                        asciidoc, aciidoctor, bootstrap, jekyll, liquid,
+                                        hyvor, disqus, git, github, netlify, heroku, apple, microsoft,
+                                        provider, service, internet, support,
+                                        google, analytics, advertising, search, console, silverlight, score,
+                                        j1, template, jekyllone, comment,
+                                        python, jupyter, notebook, textbook, api, app, nbinteract,
+                                        nbi, integration, binder, binderhub, jupyterhub
 
 categories:                             [ Software, Python ]
 tags:                                   [ Binder, API ]
@@ -34,8 +55,12 @@ resource_options:
 
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
-// :page--attr:                         <attr-value>
-:binder-badge-enabled:                  false
+// :page--attr:                                   <attr-value>
+:badges-enabled:                                  false
+:binder-badge-enabled:                            false
+:binder--home:                                    https://mybinder.org/
+:binder--docs:                                    https://mybinder.readthedocs.io/en/latest/
+:binder-app-launch--tree:                         https://mybinder.org/v2/gh/jekyll-one/nbinteract-notebooks/main?urlpath=/tree
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -49,12 +74,23 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ifeval::[{binder-badge-enabled} == true]
-image:/assets/images/badges/myBinder.png[[Binder, link="https://mybinder.org/", {browser-window--new}]
-image:/assets/images/badges/docsBinder.png[[Binder, link="https://mybinder.readthedocs.io/en/latest/", {browser-window--new}]
+image:/assets/images/badges/myBinder.png[[Binder, link="{binder--home}", {browser-window--new}]
+image:/assets/images/badges/docsBinder.png[[Binder, link="{binder--docs}", {browser-window--new}]
 endif::[]
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
+
+The library *nbinteract* comes with a set of functions that produce
+Javascript-based plots designed for interaction. The package combines the
+_ipywidgets_ library and the _bqplot_ plotting library to implement
+function-driven interfaces to interactive plotting.
+
+The nbinteract plotting methods use _ipywidgets_ to generate and display
+widgets, inferring the widget type as needed. When a user interacts with a
+widget, a Python callback updates the visualization *without* a complete
+rerender. This noticeably lowers visualization update time compared to using
+ipywidgets alone to render static images.
 
 == Histogram
 
