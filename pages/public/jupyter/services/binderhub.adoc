@@ -32,15 +32,13 @@ keywords: >
 categories:                             [ Software, Python ]
 tags:                                   [ Binder, API ]
 
-scrollbar:                              true
+scrollbar:                              false
 personalization:                        true
 
-permalink:                              /pages/public/jupyter/docs/binderhub-api/
+permalink:                              /pages/public/jupyter/docs/binderhub/
 regenerate:                             false
 
-resources:                              [
-                                          animate, clipboard, lightbox, rouge
-                                        ]
+resources:                              [ animate, clipboard, lightbox, rouge ]
 resource_options:
   - attic:
       padding_top:                      400
@@ -60,7 +58,7 @@ resource_options:
 // :page--attr:                         <attr-value>
 :badges-enabled:                        false
 :binder-badge-enabled:                  false
-:binder-app-launch--tree:               https://mybinder.org/v2/gh/jekyll-one/nbinteract-notebooks/main?urlpath=/tree
+:binder-app-launch--tree:               https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
 :jupyterlab-docs--getting-started:      https://jupyterlab.readthedocs.io/en/latest/getting_started/starting.html
 :jupyter-discourse--startup-time:       https://discourse.jupyter.org/t/how-to-reduce-mybinder-org-repository-startup-time/4956
 
@@ -112,7 +110,7 @@ configuration files as other software installation tools, rather than
 creating new custom configuration files. A number of repo2docker configuration
 files can be combined to compose more complex setups.
 
-The https://github.com/binder-examples[binder examples, {{browser-window--new}}]
+The https://github.com/binder-examples[binder examples, {browser-window--new}]
 organization on GitHub contains a list of sample repositories for common
 configurations that repo2docker can build with various configuration files
 such as Python and R installation in a repository.
@@ -231,12 +229,12 @@ session opening the path `notebooks`:
 
 [source, txt]
 ----
-  https://mybinder.org/v2/gh/jekyll-one/nbinteract-notebooks/main?filepath=notebooks
+  https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks
 ----
 
 The filepath notebooks above is how JupyterLab directs you to a specific file
 or folder. To learn more about URLs in JupyterLab and Jupyter Notebook, visit
-link:{jupyterlab-docs--getting-started}[Starting JupyterLab, {{browser-window--new}}].
+link:{jupyterlab-docs--getting-started}[Starting JupyterLab, {browser-window--new}].
 
 === Classic Notebook Interface
 
@@ -254,7 +252,7 @@ like so:
 .Example
 [source, txt]
 ----
-  https://mybinder.org/v2/gh/jekyll-one/nbinteract-notebooks/main?urlpath=/tree
+  https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
 ----
 
 
@@ -278,7 +276,7 @@ begin an nteract session in the ipynb folder:
 
 The `/tree/ipynb` above is how nteract directs you to a specific file
 or folder. To learn more about nteract, visit the
-https://nteract.io/about[nteract website, {{browser-window--new}}].
+https://nteract.io/about[nteract website, {browser-window--new}].
 
 
 === Use different repositories for content and environment
@@ -295,29 +293,29 @@ The form on the mybinder.org home page only allows you to select a repository
 branch to build from. To create a BinderHub deployment link for situations
 where the environment and content are housed in separate repositories or on
 different branches of the same repository, you can use the
-https://jupyterhub.github.io/nbgitpuller/link?tab=binder[nbgitpuller link generator, {{browser-window--new}}]
+https://jupyterhub.github.io/nbgitpuller/link?tab=binder[nbgitpuller link generator, {browser-window--new}]
 to generate a formatted URL. Note that `nbgitpuller` must be included in your
 hub environment for this to work.
 
 For some background on this how-to guide, see this
-https://discourse.jupyter.org/t/improve-documentation-for-new-users-not-working-on-the-master-branch/5509[community forum post, {{browser-window--new}}].
+https://discourse.jupyter.org/t/improve-documentation-for-new-users-not-working-on-the-master-branch/5509[community forum post, {browser-window--new}].
 Here is an example repository using a JupyterHub environment configuration
-stored in a https://github.com/ICESAT-2HackWeek/jupyter-image-2020[separate repository, {{browser-window--new}}].
+stored in a https://github.com/ICESAT-2HackWeek/jupyter-image-2020[separate repository, {browser-window--new}].
 The environment was set up for a community workshop and the tutorial content
 was compiled and released after the workshop.
 /////
 
-=== Speed up repository launch time
-
-People often ask how they can speed up the launches for their Binder
-repositories. Binder is a bit different from other cloud services because
-it builds and launches arbitrary environments that are defined in Git
-repositories, rather than only serving a single environment for launches.
-The extra time it takes to launch is often a result of these extra steps.
-
-For some background and tips about how you can speed up your repository
-launch times, see this
-link:{jupyter-discourse--startup-time}[community forum post, {{browser-window--new}}].
+// === Speed up repository launch time
+//
+// People often ask how they can speed up the launches for their Binder
+// repositories. Binder is a bit different from other cloud services because
+// it builds and launches arbitrary environments that are defined in Git
+// repositories, rather than only serving a single environment for launches.
+// The extra time it takes to launch is often a result of these extra steps.
+//
+// For some background and tips about how you can speed up your repository
+// launch times, see this
+// link:{jupyter-discourse--startup-time}[community forum post, {browser-window--new}].
 
 === Track repository data on Binder
 
@@ -332,14 +330,13 @@ aggregating activity across many repositories).
 You can access the event analytics archive at `archive.analytics.mybinder.org`.
 For information about the structure of this dataset, and a description of
 how you can read-in the data in order to analyze it, see the
-link:{binder-sre--analytics}[Binder Site Reliability Guide (SRE), {{browser-window--new}}]
+link:{binder-sre--analytics}[Binder Site Reliability Guide (SRE), {browser-window--new}].
 instructions.
-
 
 ==== Example repository to show off analyses
 
 To give you a little inspiration, check out the
-link:{binder--binderlyzer}[binderlyzer binder, {{browser-window--new}}].
+link:{binder--binderlyzer}[binderlyzer binder, {browser-window--new}].
 This is a Binder that goes through a simple analysis of Binder repositories
 using the events archive. It shows how to access it, and gives an idea for
 questions you can ask with this data!

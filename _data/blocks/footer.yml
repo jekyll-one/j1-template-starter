@@ -70,68 +70,68 @@ settings:
         #
         legals:
 
-          - name:                           Copyright
+          - name:                       Copyright
             legal:
-              enabled:                      true
+              enabled:                  true
 
-              type:                         copyright
-              statement:                    © 2021 J1 · All rights reserved
-              translate_statement:          notranslate                             # translate|notranslate
-              href:                         /pages/public/legal/en/copyright/
+              type:                     copyright
+              statement:                © 2021 J1 · All rights reserved
+              translate_statement:      notranslate                             # translate|notranslate
+              href:                     /pages/public/legal/en/copyright/
 
-          - name:                           Impress
+          - name:                       Impress
             legal:
-              enabled:                      true
+              enabled:                  true
 
-              type:                         impress
-              statement:                    Impress
-              translate_statement:          notranslate                             # translate|notranslate
-              href:                         /pages/public/legal/en/impress/
+              type:                     impress
+              statement:                Impress
+              translate_statement:      notranslate                             # translate|notranslate
+              href:                     /pages/public/legal/en/impress/
 
-          - name:                           Privacy
+          - name:                       Privacy
             legal:
-              enabled:                      true
+              enabled:                  true
 
-              type:                         privacy
-              statement:                    Privacy
-              translate_statement:          notranslate                             # translate|notranslate
-              href:                         /pages/public/legal/en/privacy/
+              type:                     privacy
+              statement:                Privacy
+              translate_statement:      notranslate                             # translate|notranslate
+              href:                     /pages/public/legal/en/privacy/
 
-          - name:                           Comments
+          - name:                       Comments
             legal:
-              enabled:                      true
+              enabled:                  true
 
-              type:                         comments
-              statement:                    Comments
-              translate_statement:          notranslate                             # translate|notranslate
-              href:                         /pages/public/legal/en/comment_policy/
+              type:                     comments
+              statement:                Comments
+              translate_statement:      notranslate                             # translate|notranslate
+              href:                     /pages/public/legal/en/comment_policy/
 
-          - name:                           License
+          - name:                       License
             legal:
-              enabled:                      false
+              enabled:                  false
 
-              type:                         license
-              statement:                    License
-              translate_statement:          notranslate                             # translate|notranslate
-              href:                         /pages/public/legal/en/license_agreement/
+              type:                     license
+              statement:                License
+              translate_statement:      notranslate                             # translate|notranslate
+              href:                     /pages/public/legal/en/license_agreement/
 
-          - name:                           Terms Of Use
+          - name:                       Terms Of Use
             legal:
-              enabled:                      false
+              enabled:                  false
 
-              type:                         terms
-              statement:                    Terms Of Use
-              translate_statement:          notranslate                             # translate|notranslate
-              href:                         /pages/public/legal/en/terms_of_use/
+              type:                     terms
+              statement:                Terms Of Use
+              translate_statement:      notranslate                             # translate|notranslate
+              href:                     /pages/public/legal/en/terms_of_use/
 
-          - name:                           Support
+          - name:                       Support
             legal:
-              enabled:                      false
+              enabled:                  false
 
-              type:                         support
-              statement:                    Support
-              translate_statement:          notranslate                             # translate|notranslate
-              href:                         /pages/public/legal/en/terms_of_use/
+              type:                     support
+              statement:                Support
+              translate_statement:      notranslate                             # translate|notranslate
+              href:                     /pages/public/legal/en/terms_of_use/
 
         # ----------------------------------------------------------------------
         # BOXES
@@ -141,20 +141,22 @@ settings:
           # --------------------------------------------------------------------
           # ABOUT box
           #
-          - name:                        About
-            type:                        about
-            enabled:                     true
+          - name:                       About
+            type:                       about
+            enabled:                    true
 
-            title:                       J1 Template
-            title_translation:           notranslate
+            title:                      J1 Template
+            title_translation:          notranslate
+            tagline:                    featured template for jekyll
             text: >
-                                         Jekyll meets Bootstrap - and makes a lot of friends.
-                                         J1 Template combines the best of OpenSource software for
-                                         the Web and the Web site generator Jekyll. J1 is Open
-                                         Source and the modules packed as well - no pain for private
-                                         or professional use.
+                                        Jekyll meets Bootstrap - and makes a lot of friends.
+                                        J1 Template combines the best of OpenSource software for
+                                        the Web and the Web site generator Jekyll. J1 is Open
+                                        Source and the modules packed as well.
+                                        <br><br>
+                                        <b>No pain for private or professional use.</b>
 
-            justify:                     true
+            justify:                    true
 
           # --------------------------------------------------------------------
           # NEWS box
@@ -162,6 +164,7 @@ settings:
           - name:                       News
             type:                       news
             enabled:                    true
+
             title:                      Creators Blog
             title_translation:          notranslate                             # translate|notranslate
             tagline:                    latest news
@@ -174,8 +177,10 @@ settings:
           - name:                       Links
             type:                       references
             enabled:                    true
+
             title:                      Links
             title_translation:          notranslate
+            tagline:                    top sites
 
             links:
 
@@ -183,7 +188,7 @@ settings:
                 link:
                   title:                Jekyll Home
                   title_translation:    notranslate
-                  tagline:              First addresss for latest news
+                  tagline:              First for latest news
                   href:                 http://jekyllrb.com/
 
               - name:                   Jekyll Tips
@@ -197,7 +202,7 @@ settings:
                 link:
                   title:                Stackoverflow
                   title_translation:    notranslate
-                  tagline:              Get help from the community
+                  tagline:              Get help
                   href:                 http://stackoverflow.com/questions/tagged/jekyll
 
           # --------------------------------------------------------------------
@@ -206,21 +211,29 @@ settings:
           - name:                       Contact
             type:                       contact
             enabled:                    false
-            title:                      Contacts
+
+            title:                      Contact
             title_translation:          notranslate                             # translate|notranslate
+            tagline:                    welcome
+
             address:
-              enabled:                  false
+              enabled:                  true
               address_1:                JekyllOne Ltd.
-              address_2:                795 Folsom Ave, Suite 600
-              address_3:                San Francisco, CA 94107
+              address_2:                789 Folsom Ave, Suite 456
+              address_3:                San Francisco, CA 98765
+
             phone:
-              enabled:                  false
-              phone_1:                  (+123) 456 7890
-              phone_2:                  (+123) 456 7891
+              enabled:                  true
+              office_hours:             9am - 7pm
+              phone_1:                  (+123) 456 789-0
+              phone_2:                  (+123) 456 789-1
+
             internet:
-              enabled:                  false
-              mail:                     contact@jekyll.one
-              href:                     www.jekyll.one
+              enabled:                  true
+              home_text:                JekyllOne
+              home_link:                'https://jekyll.one/'
+              mail_1:                   contact@jekyll.one
+              mail_2:                   webmaster@jekyll.one
 
 # ------------------------------------------------------------------------------
 # END config

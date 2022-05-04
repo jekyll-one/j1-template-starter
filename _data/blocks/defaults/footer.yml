@@ -148,11 +148,10 @@ defaults:
                                         Jekyll meets Bootstrap - and makes a lot of friends.
                                         J1 Template combines the best of OpenSource software for
                                         the Web and the Web site generator Jekyll. J1 is Open
-                                        Source and the modules packed as well - no pain for private
-                                        or professional use.
-                                        <br/><br/>
-                                        <b>Create powerful modern static sites.<br/>
-                                        Secure, flexible and fast.</b>
+                                        Source and the modules packed as well.
+                                        <br><br>
+                                        <b>No pain for private or professional use.</b>
+
         justify:                        true
 
       # ------------------------------------------------------------------------
@@ -174,6 +173,7 @@ defaults:
         enabled:                        true
         title:                          Useful Links
         title_translation:              notranslate                             # translate|notranslate
+        tagline:                        top sites
 
         links:
 
@@ -198,27 +198,35 @@ defaults:
               tagline:                  Get help from the community
               href:                     http://stackoverflow.com/questions/tagged/jekyll
 
-      # ------------------------------------------------------------------------
+      # --------------------------------------------------------------------
       # CONTACT box
       #
-      - name:                           Contacts
+      - name:                           Contact
         type:                           contact
         enabled:                        false
-        title:                          Contacts
+
+        title:                          Contact
         title_translation:              notranslate                             # translate|notranslate
+        tagline:                        welcome
+
         address:
-          enabled:                      false
+          enabled:                      true
           address_1:                    JekyllOne Ltd.
-          address_2:                    795 Folsom Ave, Suite 600
-          address_3:                    San Francisco, CA 94107
+          address_2:                    789 Folsom Ave, Suite 456
+          address_3:                    San Francisco, CA 98765
+
         phone:
-          enabled:                      false
-          phone_1:                      (+123) 456 7890
-          phone_2:                      (+123) 456 7891
+          enabled:                      true
+          office_hours:                 9am - 7pm
+          phone_1:                      (+123) 456 789-0
+          phone_2:                      (+123) 456 789-1
+
         internet:
-          enabled:                      false
-          mail:                         contact@jekyll.one
-          href:                         www.jekyll.one
+          enabled:                      true
+          home_text:                    JekyllOne
+          home_link:                    'https://jekyll.one/'
+          mail_1:                       contact@jekyll.one
+          mail_2:                       webmaster@jekyll.one
 
 # ------------------------------------------------------------------------------
 # END config

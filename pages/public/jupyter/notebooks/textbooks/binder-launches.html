@@ -83,6 +83,130 @@
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">HTTPError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-3-dc969cf0de9b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">      9</span> <span class="ansi-green-intense-fg ansi-bold">for</span> idx<span class="ansi-yellow-intense-fg ansi-bold">,</span> day <span class="ansi-green-intense-fg ansi-bold">in</span> index<span class="ansi-yellow-intense-fg ansi-bold">.</span>sort_index<span class="ansi-yellow-intense-fg ansi-bold">(</span>ascending<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-green-intense-fg ansi-bold">False</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>iterrows<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">     10</span>     df = pd.read_json(&#34;https://archive.analytics.mybinder.org/{}&#34;.format(day[&#39;name&#39;]),
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 11</span><span class="ansi-yellow-intense-fg ansi-bold">                       lines=True, )
+</span><span class="ansi-green-fg">     12</span>     frames<span class="ansi-yellow-intense-fg ansi-bold">.</span>append<span class="ansi-yellow-intense-fg ansi-bold">(</span>df<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     13</span>     <span class="ansi-green-intense-fg ansi-bold">if</span> len<span class="ansi-yellow-intense-fg ansi-bold">(</span>frames<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-yellow-intense-fg ansi-bold">&gt;</span> n<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\site-packages\pandas\util\_decorators.py</span> in <span class="ansi-cyan-fg">wrapper</span><span class="ansi-blue-intense-fg ansi-bold">(*args, **kwargs)</span>
+<span class="ansi-green-fg">    197</span>                 <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    198</span>                     kwargs<span class="ansi-yellow-intense-fg ansi-bold">[</span>new_arg_name<span class="ansi-yellow-intense-fg ansi-bold">]</span> <span class="ansi-yellow-intense-fg ansi-bold">=</span> new_arg_value
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 199</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-green-intense-fg ansi-bold">return</span> func<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    200</span> 
+<span class="ansi-green-fg">    201</span>         <span class="ansi-green-intense-fg ansi-bold">return</span> cast<span class="ansi-yellow-intense-fg ansi-bold">(</span>F<span class="ansi-yellow-intense-fg ansi-bold">,</span> wrapper<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\site-packages\pandas\util\_decorators.py</span> in <span class="ansi-cyan-fg">wrapper</span><span class="ansi-blue-intense-fg ansi-bold">(*args, **kwargs)</span>
+<span class="ansi-green-fg">    297</span>                 )
+<span class="ansi-green-fg">    298</span>                 warnings<span class="ansi-yellow-intense-fg ansi-bold">.</span>warn<span class="ansi-yellow-intense-fg ansi-bold">(</span>msg<span class="ansi-yellow-intense-fg ansi-bold">,</span> FutureWarning<span class="ansi-yellow-intense-fg ansi-bold">,</span> stacklevel<span class="ansi-yellow-intense-fg ansi-bold">=</span>stacklevel<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 299</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-green-intense-fg ansi-bold">return</span> func<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    300</span> 
+<span class="ansi-green-fg">    301</span>         <span class="ansi-green-intense-fg ansi-bold">return</span> wrapper
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\site-packages\pandas\io\json\_json.py</span> in <span class="ansi-cyan-fg">read_json</span><span class="ansi-blue-intense-fg ansi-bold">(path_or_buf, orient, typ, dtype, convert_axes, convert_dates, keep_default_dates, numpy, precise_float, date_unit, encoding, lines, chunksize, compression, nrows, storage_options)</span>
+<span class="ansi-green-fg">    554</span>         compression<span class="ansi-yellow-intense-fg ansi-bold">=</span>compression<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-fg">    555</span>         nrows<span class="ansi-yellow-intense-fg ansi-bold">=</span>nrows<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 556</span><span class="ansi-yellow-intense-fg ansi-bold">         </span>storage_options<span class="ansi-yellow-intense-fg ansi-bold">=</span>storage_options<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-fg">    557</span>     )
+<span class="ansi-green-fg">    558</span> 
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\site-packages\pandas\io\json\_json.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-intense-fg ansi-bold">(self, filepath_or_buffer, orient, typ, dtype, convert_axes, convert_dates, keep_default_dates, numpy, precise_float, date_unit, encoding, lines, chunksize, compression, nrows, storage_options)</span>
+<span class="ansi-green-fg">    620</span>                 <span class="ansi-green-intense-fg ansi-bold">raise</span> ValueError<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#34;nrows can only be passed if lines=True&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    621</span> 
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 622</span><span class="ansi-yellow-intense-fg ansi-bold">         </span>data <span class="ansi-yellow-intense-fg ansi-bold">=</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_get_data_from_filepath<span class="ansi-yellow-intense-fg ansi-bold">(</span>filepath_or_buffer<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    623</span>         self<span class="ansi-yellow-intense-fg ansi-bold">.</span>data <span class="ansi-yellow-intense-fg ansi-bold">=</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_preprocess_data<span class="ansi-yellow-intense-fg ansi-bold">(</span>data<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    624</span> 
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\site-packages\pandas\io\json\_json.py</span> in <span class="ansi-cyan-fg">_get_data_from_filepath</span><span class="ansi-blue-intense-fg ansi-bold">(self, filepath_or_buffer)</span>
+<span class="ansi-green-fg">    662</span>                 encoding<span class="ansi-yellow-intense-fg ansi-bold">=</span>self<span class="ansi-yellow-intense-fg ansi-bold">.</span>encoding<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-fg">    663</span>                 compression<span class="ansi-yellow-intense-fg ansi-bold">=</span>self<span class="ansi-yellow-intense-fg ansi-bold">.</span>compression<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 664</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span>storage_options<span class="ansi-yellow-intense-fg ansi-bold">=</span>self<span class="ansi-yellow-intense-fg ansi-bold">.</span>storage_options<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-fg">    665</span>             )
+<span class="ansi-green-fg">    666</span>             filepath_or_buffer <span class="ansi-yellow-intense-fg ansi-bold">=</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>handles<span class="ansi-yellow-intense-fg ansi-bold">.</span>handle
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\site-packages\pandas\io\common.py</span> in <span class="ansi-cyan-fg">get_handle</span><span class="ansi-blue-intense-fg ansi-bold">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="ansi-green-fg">    561</span>         compression<span class="ansi-yellow-intense-fg ansi-bold">=</span>compression<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-fg">    562</span>         mode<span class="ansi-yellow-intense-fg ansi-bold">=</span>mode<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 563</span><span class="ansi-yellow-intense-fg ansi-bold">         </span>storage_options<span class="ansi-yellow-intense-fg ansi-bold">=</span>storage_options<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-fg">    564</span>     )
+<span class="ansi-green-fg">    565</span> 
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\site-packages\pandas\io\common.py</span> in <span class="ansi-cyan-fg">_get_filepath_or_buffer</span><span class="ansi-blue-intense-fg ansi-bold">(filepath_or_buffer, encoding, compression, mode, storage_options)</span>
+<span class="ansi-green-fg">    287</span>                 <span class="ansi-blue-intense-fg ansi-bold">&#34;storage_options passed with file object or non-fsspec file path&#34;</span>
+<span class="ansi-green-fg">    288</span>             )
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 289</span><span class="ansi-yellow-intense-fg ansi-bold">         </span>req <span class="ansi-yellow-intense-fg ansi-bold">=</span> urlopen<span class="ansi-yellow-intense-fg ansi-bold">(</span>filepath_or_buffer<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    290</span>         content_encoding <span class="ansi-yellow-intense-fg ansi-bold">=</span> req<span class="ansi-yellow-intense-fg ansi-bold">.</span>headers<span class="ansi-yellow-intense-fg ansi-bold">.</span>get<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#34;Content-Encoding&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-green-intense-fg ansi-bold">None</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    291</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> content_encoding <span class="ansi-yellow-intense-fg ansi-bold">==</span> <span class="ansi-blue-intense-fg ansi-bold">&#34;gzip&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\site-packages\pandas\io\common.py</span> in <span class="ansi-cyan-fg">urlopen</span><span class="ansi-blue-intense-fg ansi-bold">(*args, **kwargs)</span>
+<span class="ansi-green-fg">    193</span>     <span class="ansi-green-intense-fg ansi-bold">import</span> urllib<span class="ansi-yellow-intense-fg ansi-bold">.</span>request
+<span class="ansi-green-fg">    194</span> 
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 195</span><span class="ansi-yellow-intense-fg ansi-bold">     </span><span class="ansi-green-intense-fg ansi-bold">return</span> urllib<span class="ansi-yellow-intense-fg ansi-bold">.</span>request<span class="ansi-yellow-intense-fg ansi-bold">.</span>urlopen<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    196</span> 
+<span class="ansi-green-fg">    197</span> 
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\urllib\request.py</span> in <span class="ansi-cyan-fg">urlopen</span><span class="ansi-blue-intense-fg ansi-bold">(url, data, timeout, cafile, capath, cadefault, context)</span>
+<span class="ansi-green-fg">    220</span>     <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    221</span>         opener <span class="ansi-yellow-intense-fg ansi-bold">=</span> _opener
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 222</span><span class="ansi-yellow-intense-fg ansi-bold">     </span><span class="ansi-green-intense-fg ansi-bold">return</span> opener<span class="ansi-yellow-intense-fg ansi-bold">.</span>open<span class="ansi-yellow-intense-fg ansi-bold">(</span>url<span class="ansi-yellow-intense-fg ansi-bold">,</span> data<span class="ansi-yellow-intense-fg ansi-bold">,</span> timeout<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    223</span> 
+<span class="ansi-green-fg">    224</span> <span class="ansi-green-intense-fg ansi-bold">def</span> install_opener<span class="ansi-yellow-intense-fg ansi-bold">(</span>opener<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\urllib\request.py</span> in <span class="ansi-cyan-fg">open</span><span class="ansi-blue-intense-fg ansi-bold">(self, fullurl, data, timeout)</span>
+<span class="ansi-green-fg">    529</span>         <span class="ansi-green-intense-fg ansi-bold">for</span> processor <span class="ansi-green-intense-fg ansi-bold">in</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>process_response<span class="ansi-yellow-intense-fg ansi-bold">.</span>get<span class="ansi-yellow-intense-fg ansi-bold">(</span>protocol<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    530</span>             meth <span class="ansi-yellow-intense-fg ansi-bold">=</span> getattr<span class="ansi-yellow-intense-fg ansi-bold">(</span>processor<span class="ansi-yellow-intense-fg ansi-bold">,</span> meth_name<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 531</span><span class="ansi-yellow-intense-fg ansi-bold">             </span>response <span class="ansi-yellow-intense-fg ansi-bold">=</span> meth<span class="ansi-yellow-intense-fg ansi-bold">(</span>req<span class="ansi-yellow-intense-fg ansi-bold">,</span> response<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    532</span> 
+<span class="ansi-green-fg">    533</span>         <span class="ansi-green-intense-fg ansi-bold">return</span> response
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\urllib\request.py</span> in <span class="ansi-cyan-fg">http_response</span><span class="ansi-blue-intense-fg ansi-bold">(self, request, response)</span>
+<span class="ansi-green-fg">    639</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> <span class="ansi-green-intense-fg ansi-bold">not</span> <span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-cyan-intense-fg ansi-bold">200</span> <span class="ansi-yellow-intense-fg ansi-bold">&lt;=</span> code <span class="ansi-yellow-intense-fg ansi-bold">&lt;</span> <span class="ansi-cyan-intense-fg ansi-bold">300</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    640</span>             response = self.parent.error(
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 641</span><span class="ansi-yellow-intense-fg ansi-bold">                 &#39;http&#39;, request, response, code, msg, hdrs)
+</span><span class="ansi-green-fg">    642</span> 
+<span class="ansi-green-fg">    643</span>         <span class="ansi-green-intense-fg ansi-bold">return</span> response
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\urllib\request.py</span> in <span class="ansi-cyan-fg">error</span><span class="ansi-blue-intense-fg ansi-bold">(self, proto, *args)</span>
+<span class="ansi-green-fg">    567</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> http_err<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    568</span>             args <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-yellow-intense-fg ansi-bold">(</span>dict<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;default&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;http_error_default&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-yellow-intense-fg ansi-bold">+</span> orig_args
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 569</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-green-intense-fg ansi-bold">return</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_call_chain<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    570</span> 
+<span class="ansi-green-fg">    571</span> <span class="ansi-red-intense-fg ansi-bold"># XXX probably also want an abstract factory that knows when it makes</span>
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\urllib\request.py</span> in <span class="ansi-cyan-fg">_call_chain</span><span class="ansi-blue-intense-fg ansi-bold">(self, chain, kind, meth_name, *args)</span>
+<span class="ansi-green-fg">    501</span>         <span class="ansi-green-intense-fg ansi-bold">for</span> handler <span class="ansi-green-intense-fg ansi-bold">in</span> handlers<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    502</span>             func <span class="ansi-yellow-intense-fg ansi-bold">=</span> getattr<span class="ansi-yellow-intense-fg ansi-bold">(</span>handler<span class="ansi-yellow-intense-fg ansi-bold">,</span> meth_name<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 503</span><span class="ansi-yellow-intense-fg ansi-bold">             </span>result <span class="ansi-yellow-intense-fg ansi-bold">=</span> func<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    504</span>             <span class="ansi-green-intense-fg ansi-bold">if</span> result <span class="ansi-green-intense-fg ansi-bold">is</span> <span class="ansi-green-intense-fg ansi-bold">not</span> <span class="ansi-green-intense-fg ansi-bold">None</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    505</span>                 <span class="ansi-green-intense-fg ansi-bold">return</span> result
+
+<span class="ansi-green-intense-fg ansi-bold">c:\devtools\python-3.7.9\lib\urllib\request.py</span> in <span class="ansi-cyan-fg">http_error_default</span><span class="ansi-blue-intense-fg ansi-bold">(self, req, fp, code, msg, hdrs)</span>
+<span class="ansi-green-fg">    647</span> <span class="ansi-green-intense-fg ansi-bold">class</span> HTTPDefaultErrorHandler<span class="ansi-yellow-intense-fg ansi-bold">(</span>BaseHandler<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    648</span>     <span class="ansi-green-intense-fg ansi-bold">def</span> http_error_default<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">,</span> req<span class="ansi-yellow-intense-fg ansi-bold">,</span> fp<span class="ansi-yellow-intense-fg ansi-bold">,</span> code<span class="ansi-yellow-intense-fg ansi-bold">,</span> msg<span class="ansi-yellow-intense-fg ansi-bold">,</span> hdrs<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 649</span><span class="ansi-yellow-intense-fg ansi-bold">         </span><span class="ansi-green-intense-fg ansi-bold">raise</span> HTTPError<span class="ansi-yellow-intense-fg ansi-bold">(</span>req<span class="ansi-yellow-intense-fg ansi-bold">.</span>full_url<span class="ansi-yellow-intense-fg ansi-bold">,</span> code<span class="ansi-yellow-intense-fg ansi-bold">,</span> msg<span class="ansi-yellow-intense-fg ansi-bold">,</span> hdrs<span class="ansi-yellow-intense-fg ansi-bold">,</span> fp<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    650</span> 
+<span class="ansi-green-fg">    651</span> <span class="ansi-green-intense-fg ansi-bold">class</span> HTTPRedirectHandler<span class="ansi-yellow-intense-fg ansi-bold">(</span>BaseHandler<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-red-intense-fg ansi-bold">HTTPError</span>: HTTP Error 503: Service Unavailable</pre>
+</div>
+</div>
+
+</div>
+</div>
+
   </div>
 
   
