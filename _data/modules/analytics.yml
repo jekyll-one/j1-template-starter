@@ -25,33 +25,18 @@ description:
 #
 settings:
 
-  # ----------------------------------------------------------------------------
-  # Settings
-  #
-  #   enabled
-  #   --------------------------------------------------------------------------
-  #   Enables or disables the Analytics services. If disabled, the services
-  #   won't be enabled on any page.
-  #
-  #   values:                           [true|false]
-  #   default:                          false
-  #
-  #   provider
-  #   --------------------------------------------------------------------------
-  #   Currently, only Google Analytics (google) is available as an provider
-  #   for Analytics services.
-  #
-  #   values:                           [google]
-  #   default:                          google
-  #
-  # ----------------------------------------------------------------------------
-  #
-  enabled:                              true
   provider:                             google
-
   google:
     # --------------------------------------------------------------------------
     # Provider settings
+    #
+    #   provider
+    #   --------------------------------------------------------------------------
+    #   Currently, only Google Analytics (google) is available as an provider
+    #   for Analytics services.
+    #
+    #   values:                           [google]
+    #   default:                          google
     #
     #   skipAllHosts
     #   ------------------------------------------------------------------------

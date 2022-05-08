@@ -38,7 +38,7 @@ personalization:                        true
 permalink:                              /pages/public/jupyter/docs/j1-nbinteract-docs/
 regenerate:                             true
 
-resources:                              [ animate, clipboard, nbinteract, rouge ]
+resources:                              [ animate, clipboard, lightbox, nbinteract, rouge ]
 resource_options:
   - attic:
       padding_top:                      400
@@ -190,8 +190,8 @@ not preserve the interactive elements of the notebook. The resulting web
 page only contains text and images.
 
 .NBI textbook (excerpt)
-// lightbox::nbi-textbook--excerpt[ 800, {data-nbi-textbook--excerpt}, role="mt-3 mb-4" ]
-image::pages/nbinteract/nbi-textbook-example.jpg["NBI textbook (excerpt)", 800]
+lightbox::nbi-textbook--excerpt[ 800, {data-nbi-textbook--excerpt}, role="mt-3 mb-4" ]
+// image::pages/nbinteract/nbi-textbook-example.jpg["NBI textbook (excerpt)", 800]
 
 The Python package `nbinteract` allows authors to convert Jupyter notebooks
 into *interactive*, standalone HTML pages: the textbooks. The interactive
@@ -457,7 +457,7 @@ For integrating textbooks (nbinteract HTML notebook) into web pages, the
 resource of J1 NBI Module is required. The `ID` of the module of the J1 NBI
 integration is: `nbinteract`.
 
-.Example Frontmatter of a page using Textbooks
+.Example of a Frontmatter for a page using Textbooks
 [source, yaml, role="noclip"]
 ----
 title:                                  J1 NbInteract
@@ -480,10 +480,10 @@ regenerate:                             true
 
 resources:                              [ nbinteract, rouge ] <2>
 ----
-<1> Binder's services require personalized settings in the *cookies* used.
-    Difficulties with the rules of privacy should be explicitly pointed out
-    and responded to in a suitable form if the cookie settings of the
-    visitor do not allow this.
+<1> Binder's services require *Personalization* accepted in the users 
+    *cookie* settings. Difficulties with the rules of privacy should be
+    explicitly pointed out and responded to in a suitable form if the cookie
+    settings of the visitor do not allow this.
 <2> If highlighting the source code parts is desired in a textbook, the
     `rouge` module must included as well.
 
@@ -506,7 +506,7 @@ textbook::j1_docs_example_dynamic[]
 ----
 
 
-== NBI Textbook Examples
+== NBI Textbook examples
 
 For the J1 template, textbooks are typically integrated as *dynamic* HTML
 pages. In addition to the dynamic pages, textbooks can also be integrated as
@@ -520,7 +520,7 @@ Jinja templates. The tool allows you to convert an .ipynb notebook file into
 various *static* formats. For more details, refer to
 link:{url-nbconvert--doc}[nbconvert - usage, {browser-window--new}].
 
-.Generate a static Textbook
+.Generate a static textbook
 [source, sh]
 ----
 jupyter nbconvert --execute --to html <full_path_to>/<notebook.ipynb>
@@ -530,11 +530,11 @@ Below you find an static HTML output (Textbook) generated via `nbconvert`.
 
 include::{documentdir}/j1_docs_example_static.asciidoc[]
 
-=== Dynamic Textbook
+=== Interactive Textbook
 
-*Dynamic* Textbooks are generated using `nbinteract`:
+*Interactive* Textbooks are generated using `nbinteract`:
 
-.Generate a dynamic Textbook (J1 Version)
+.Generate an interactive textbook
 [source, sh]
 ----
 nbinteract <full_path_to>/<notebook.ipynb> -t plain -s fake/fake
@@ -546,4 +546,4 @@ textbook::j1_docs_example_dynamic[]
 
 Compare both textbook versions, dynamic versus static, in terms of
 *interactivity*. Again, compare the _Evaluation_ section at section
-<<Dynamic Textbook>> with the static conterpart at <<Static Textbook>>.
+<<Interactive Textbook>> with the static conterpart at <<Static Textbook>>.

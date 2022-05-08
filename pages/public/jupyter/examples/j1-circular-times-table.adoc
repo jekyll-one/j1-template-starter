@@ -1,6 +1,6 @@
 ---
-title:                                  J1 NBI
-tagline:                                interactive widgets
+title:                                  Time Tables
+tagline:                                visualize patterns
 date:                                   2022-03-28 00:00:00
 description: >
                                         The package nbinteract aims to enable authors and educators to create and
@@ -35,7 +35,7 @@ scrollbar:                              false
 fab_menu_id:                            open_toc_reload
 personalization:                        true
 
-permalink:                              /pages/public/jupyter/textbooks/interactive-widgets/
+permalink:                              /pages/public/jupyter/textbooks/j1-circular-times-table/
 regenerate:                             false
 
 resources:                              [ nbinteract, rouge ]
@@ -45,12 +45,7 @@ resource_options:
       padding_bottom:                   50
       opacity:                          0.5
       slides:
-        - url:                          /assets/images/modules/attics/john-schnobrich-2-1920x1280.jpg
-          alt:                          Photo by John Schnobrich on Unsplash
-          badge:
-            type:                       unsplash
-            author:                     John Schnobrich
-            href:                       https://unsplash.com/@johnschno
+        - url:                          /assets/images/pages/nbinteract/mandelbrot-menge-1920x1200.jpg
 ---
 
 // Page Initializer
@@ -63,8 +58,9 @@ resource_options:
 // :page--attr:                                   <attr-value>
 :binder-badges-enabled:                           true
 :binder-app-launch--tree:                         https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
-:binder-app-launch--notebook:                     https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1/j1_interactive_widgets.ipynb
+:binder-app-launch--notebook:                     https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1/j1_circular_times_table.ipynb
 
+:time-tables-visualization:                       https://elc.github.io/posts/times-tables/
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -77,25 +73,65 @@ resource_options:
 
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Include sub-documents (if any)
-// -----------------------------------------------------------------------------
 // image:/assets/images/badges/myBinder.png[Binder, link="https://mybinder.org/", {browser-window--new}]
 // image:/assets/images/badges/docsBinder.png[Binder, link="https://mybinder.readthedocs.io/en/latest/", {browser-window--new}]
+// See: https://towardsdatascience.com/ordinal-differential-equation-ode-in-python-8dc1de21323b
 
 ifeval::[{binder-badges-enabled} == true]
 image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--notebook}", {browser-window--new}]
 image:https://mybinder.org/badge_logo.svg[Binder, link="{binder-app-launch--tree}", {browser-window--new}]
 endif::[]
 
-Widgets are eventful python objects that have a representation in the browser,
-often as a control like a slider, textbox, etc. Widgets are used to build
-interactive GUIs for your notebooks, and to synchronize stateful and stateless
-information between the (IPython-)Kernel and JavaScript.
+NOTE: All examples are taken from
+link:{time-tables-visualization}[Time Tables Visualization - Finding Patterns, {browser-window--new}],
+and re-written for the use of module J1 NBI. Some text is used from the
+original post but re-written for clarity and simplicity.
 
-Find with that page a commonly used set of widgets for interactive textbooks.
-Some more options are available for interactivity, but this selection shows
-the most used. Interactive widgets are provided natively by Jupyter Notebooks
-using the library `ipywidgets`. Some more widgets are provided by `nbinteract`.
-Find common examples in the textbooks below.
+First, let's introduce the video from _Mathologer_. This video creates very
+nice patterns from _Times Tables_. Everybody knows them from primary school.
+It's something like this:
 
-textbook::j1_interactive_widgets[]
+.Table of *Two* (excerpt)
+[cols="6a,6a", options="header", width="100%", role="rtable mt-3"]
+|===
+|Factor |Value
+
+|`1 x 2`
+|2
+
+|`2 x 2`
+|4
+
+|`3 x 2`
+|6
+
+|`4 x 2`
+|8
+
+|===
+
+The idea, in general, is surprisingly simple, but the results are surprising.
+Please go for the video from _Mathologer_ first to catch the idea behind it.
+
+In this document, several scenarios using _Times Tables_ as a base to
+calculate plotted images are presented similar to the approach of
+what _Mathologer_ is doing:
+
+* a static but parametric version: you can change with sliders the values
+  and experiment by yourself.
+* an animated version to construct the image Line by Line: the factor
+  and the number of points is fixed, but each line is plotted per iteration
+* an animated version to construct the image Point by Point: the factor
+  and the lines are fixed, but each iteration increases the number of points
+* an animated version to construct the image Factor by Factor: the lines
+  and the number of points is fixed, but the factor increases per iteration.
+
+WARNING: Each scenario presented on this page uses *time-consuming*
+operations that take a while to finish. The images and the interactive
+elements are built through a backend in the cloud. Please be patient
+to see the results.
+
+Start your journey on the power of Mathematics!
+
+// textbook::circular_times_table[]
+textbook::j1_circular_times_table[]

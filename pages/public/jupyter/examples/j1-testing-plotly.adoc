@@ -1,6 +1,6 @@
 ---
-title:                                  J1 NBI
-tagline:                                interactive widgets
+title:                                  Testing Plotly
+tagline:                                interactive evaluation
 date:                                   2022-03-28 00:00:00
 description: >
                                         The package nbinteract aims to enable authors and educators to create and
@@ -35,22 +35,17 @@ scrollbar:                              false
 fab_menu_id:                            open_toc_reload
 personalization:                        true
 
-permalink:                              /pages/public/jupyter/textbooks/interactive-widgets/
-regenerate:                             false
+permalink:                              /pages/public/jupyter/textbooks/j1-testing-plotly/
+regenerate:                             true
 
-resources:                              [ nbinteract, rouge ]
+resources:                              [ nbinteract, require, rouge ]
 resource_options:
   - attic:
       padding_top:                      400
       padding_bottom:                   50
       opacity:                          0.5
       slides:
-        - url:                          /assets/images/modules/attics/john-schnobrich-2-1920x1280.jpg
-          alt:                          Photo by John Schnobrich on Unsplash
-          badge:
-            type:                       unsplash
-            author:                     John Schnobrich
-            href:                       https://unsplash.com/@johnschno
+        - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
 ---
 
 // Page Initializer
@@ -63,8 +58,7 @@ resource_options:
 // :page--attr:                                   <attr-value>
 :binder-badges-enabled:                           true
 :binder-app-launch--tree:                         https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
-:binder-app-launch--notebook:                     https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1/j1_interactive_widgets.ipynb
-
+:binder-app-launch--notebook:                     https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1/j1_odes_in_python.ipynb
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -77,25 +71,16 @@ resource_options:
 
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Include sub-documents (if any)
-// -----------------------------------------------------------------------------
 // image:/assets/images/badges/myBinder.png[Binder, link="https://mybinder.org/", {browser-window--new}]
 // image:/assets/images/badges/docsBinder.png[Binder, link="https://mybinder.readthedocs.io/en/latest/", {browser-window--new}]
+// See: https://towardsdatascience.com/ordinal-differential-equation-ode-in-python-8dc1de21323b
 
 ifeval::[{binder-badges-enabled} == true]
 image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--notebook}", {browser-window--new}]
 image:https://mybinder.org/badge_logo.svg[Binder, link="{binder-app-launch--tree}", {browser-window--new}]
 endif::[]
 
-Widgets are eventful python objects that have a representation in the browser,
-often as a control like a slider, textbox, etc. Widgets are used to build
-interactive GUIs for your notebooks, and to synchronize stateful and stateless
-information between the (IPython-)Kernel and JavaScript.
 
-Find with that page a commonly used set of widgets for interactive textbooks.
-Some more options are available for interactivity, but this selection shows
-the most used. Interactive widgets are provided natively by Jupyter Notebooks
-using the library `ipywidgets`. Some more widgets are provided by `nbinteract`.
-Find common examples in the textbooks below.
+== Plotly
 
-textbook::j1_interactive_widgets[]
+textbook::j1_testing_plotly[]

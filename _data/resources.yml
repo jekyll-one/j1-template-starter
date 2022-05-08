@@ -1660,5 +1660,61 @@ resources:
         js:                             [ modules/nbInteract/js/nbinteract/nbinteract-core ]
         init_function:                  [ j1.adapter.nbinteract.init ]
 
+
+  # ----------------------------------------------------------------------------
+  # Plotly Open Source Graphing Library
+  # Interactive charts and maps for Python, R, Julia, Javascript,
+  # ggplot2, F#, MATLAB®, and Dash.
+  # See: https://plotly.com/graphing-libraries/
+  #      https://plotly.com/javascript/getting-started/
+  #
+  - name:                               Plotly
+    resource:
+      enabled:                          false
+
+      id:                               plotly
+      comment:                          Plotly Open Source JS
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          []
+        js:                             [
+                                          modules/plotly/js/plotly
+                                        ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # RequireJS
+  # RequireJS loads plain JavaScript files as well as more defined modules.
+  # See: https://github.com/requirejs/requirejs
+  #      https://plotly.com/javascript/getting-started/
+  #
+  - name:                               RequireJS
+    resource:
+      enabled:                          true
+
+      id:                               require
+      comment:                          RequireJS
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          []
+        js:                             [
+                                          modules/requirejs/js/require
+                                        ]
+        init_function:                  []
+
 # ------------------------------------------------------------------------------
 # END config

@@ -103,6 +103,25 @@ hist_function (Array | (*args -> Array int | Array float)):
     histogram.
 ----
 
+.Example
+[source, python, role="noclip"]
+----
+import nbinteract as nbi
+import numpy as np
+
+def hist_response_function(mean, sd, size=1000):
+    '''
+    Returns 1000 values picked at random from the normal
+    distribution with the mean and SD given.
+    '''
+    return np.random.normal(loc=mean, scale=sd, size=1000)
+
+nbi.hist(hist_response_function, mean=(0, 10), sd=(0, 2.0, 0.2))
+----
+
+.Rendered Histogram
+lightbox::nbi-widget--hist[800, {data-nbi-widget--hist}, role="mt-3 mb-4"]
+
 === Options
 
 [source, python, role="noclip"]
@@ -147,6 +166,28 @@ y_fn (Array | (Array, *args -> Array int | Array float)):
     y-axis.
 ----
 
+.Example
+[source, python, role="noclip"]
+----
+import nbinteract as nbi
+import numpy as np
+
+def categories(n):
+    return np.arange(n)
+
+def heights(xs, offset):
+    return xs + offset
+
+opts = {
+    'ylim': (0, 20),
+}
+
+nbi.bar(categories, heights, n=(0, 10), offset=(1, 10), options=opts)
+----
+
+.Rendered Barchart
+lightbox::nbi-widget--bar[800, {data-nbi-widget--bar}, role="mt-3 mb-4"]
+
 === Options
 
 [source, python, role="noclip"]
@@ -168,7 +209,7 @@ interact_params (dict): Keyword arguments in the same format as
 ----
 
 
-== Scatter plot
+== Interactive Scatter plot
 
 The widget `nbinteract.scatter_drag` generates an interactive scatter plot
 with the best fit line plotted over the points. The points can be dragged by
@@ -179,6 +220,23 @@ the user and the line will automatically update.
 x_points (Array Number): x-values of points to plot
 y_points (Array Number): y-values of points to plot
 ----
+
+.Example
+[source, python, role="noclip"]
+----
+import nbinteract as nbi
+import numpy as np
+
+x_coords = np.arange(10)
+y_coords = np.arange(10) + np.random.rand(10)
+
+opts = {'xlim': (0, 9), 'ylim': (0, 11), 'animation_duration': 250}
+
+nbi.scatter_drag(x_coords, y_coords, options=opts)
+----
+
+.Rendered interactive Scatter Plot
+lightbox::nbi-widget--scatter-drag[800, {data-nbi-widget--scatter-drag}, role="mt-3 mb-4"]
 
 === Options
 
@@ -220,6 +278,21 @@ y_fn (Array | (Array, *args -> Array int | Array float)):
     array of numbers. These will become the y-coordinates of the
     scatter plot.
 ----
+
+.Example
+[source, python, role="noclip"]
+----
+import nbinteract as nbi
+import numpy as np
+
+def x_values(n): return np.random.choice(100, n)
+def y_values(xs): return np.random.choice(100, len(xs))
+
+nbi.scatter(x_values, y_values, n=(0,200))
+----
+
+.Rendered Scatter Plot
+lightbox::nbi-widget--scatter[800, {data-nbi-widget--scatter}, role="mt-3 mb-4"]
 
 === Options
 
@@ -275,6 +348,8 @@ opts = {
 nbi.line(x_values, y_values, max=(10, 50), sd=(1, 10), options=opts)
 ----
 
+.Rendered Line Plot
+lightbox::nbi-widget--line[800, {data-nbi-widget--line}, role="mt-3 mb-4"]
 
 [source, python, role="noclip"]
 ----
@@ -315,4 +390,76 @@ interact_params (dict): Keyword arguments in the same format as
     of both `x_fn` and `y_fn`. If `x_fn` and `y_fn` have conflicting
     parameter names, prefix the corresponding kwargs with `x__` and
     `y__`.
+----
+
+== Multiple Choice
+
+Generates a multiple choice question that allows the user to select an
+answer choice and shows whether choice was correct.
+
+[source, python, role="noclip"]
+----
+nbinteract.multiple_choice(question, choices, answers)
+----
+
+.Example
+[source, python, role="noclip"]
+----
+import nbinteract as nbi
+
+nbi.multiple_choice(question="Select all prime numbers.",
+                    choices=['12', '3', '31'],
+                    answers=[1, 2])
+----
+
+.Rendered Multiple Choice
+lightbox::nbi-widget--multiple-choice[800, {data-nbi-widget--multiple-choice}, role="mt-3 mb-4"]
+
+=== Options
+
+[source, python, role="noclip"]
+----
+question (str): Question text displayed above choices.
+
+choices (list str): Answer choices that user can select.
+
+answers (int | iterable int): Either an integer or iterable of
+    integers. Each integer in answers corresponds to the index of the
+    correct choice in `choices`.
+----
+
+== Short Answer
+
+Generates a short answer question that allows user to input an answer in
+a textbox and a submit button to check the answer.
+
+[source, python, role="noclip"]
+----
+nbinteract.short_answer(question, answers, explanation=None)
+----
+
+.Example
+[source, python, role="noclip"]
+----
+import nbinteract as nbi
+
+nbi.short_answer('What is 1+1?', answers='2', explanation='1+1 is 2')
+----
+
+.Rendered Short Answer
+lightbox::nbi-widget--short-answer[800, {data-nbi-widget--short-answer}, role="mt-3 mb-4"]
+
+=== Options
+
+[source, python, role="noclip"]
+----
+question (str):  The question being asked.
+
+answers (str | list str | func): If a string, only that string will be
+    marked correct. If a list of string, any string in the list will be
+    marked correct. If a function, any input that causes the function
+    to return True will be marked correct.
+
+explanation (str):  The explanation to the question is displayed when
+    the user inputs the correct answer.
 ----

@@ -1,5 +1,5 @@
 ---
-title:                                  ODEs in Python
+title:                                  ODEs with Python
 tagline:                                interactive evaluation
 date:                                   2022-03-28 00:00:00
 description: >
@@ -59,7 +59,7 @@ resource_options:
 :binder-badges-enabled:                           true
 :binder-app-launch--tree:                         https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
 :binder-app-launch--notebook:                     https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1/j1_odes_in_python.ipynb
-
+:odes-in-python:                                  https://elc.github.io/posts/ordinary-differential-equations-with-python/
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
 {% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
@@ -81,7 +81,10 @@ image:https://mybinder.org/badge_logo.svg[Binder, link="{binder-app-launch--tree
 endif::[]
 
 
-== ODEs in Python
+// See: https://elc.github.io/posts/ordinary-differential-equations-with-python/
+
+NOTE: All examples are taken from
+link:{odes-in-python}[Ordinary Differential Equations (ODE) with Python, {browser-window--new}]
 
 An ordinary differential equation (often abbreviated to ODE) is one
 Differential equation where only derivatives of the desired function
@@ -96,4 +99,6 @@ describing the dynamics of the population of rabbits and foxes. Check how
 the animals depend on each other. Manipulate some parameters to see the
 influences on the rabbits and foxes population.
 
-textbook::j1_ode_selected[]
+// textbook::j1_ode_selected[]
+
+textbook::j1_odes_in_python[]
