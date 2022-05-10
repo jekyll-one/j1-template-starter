@@ -60,12 +60,12 @@ resource_options:
 
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
-// :page--attr:                                   <attr-value>
-:badges-enabled:                                  true
-:binder-badge-enabled:                            false
-:binder--home:                                    https://mybinder.org/
-:binder--docs:                                    https://mybinder.readthedocs.io/en/latest/
-:binder-app-launch--tree:                         https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
+// :page--attr:                         <attr-value>
+:badges-enabled:                        true
+:binder-badge-enabled:                  false
+:binder--home:                          https://mybinder.org/
+:binder--docs:                          https://mybinder.readthedocs.io/en/latest/
+:binder-app-launch--tree:               https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -122,6 +122,11 @@ using `nbinteract`.
 In addition, `nbinteract` provides a Python package. Once imported, the package
 provides helper methods that allow users to create simple interactive
 visualizations with single function calls.
+
+CAUTION: Each interactive element presented on this page uses *time-consuming*
+operations that take a while to finish. The images and the interactive
+elements are built through a backend in the cloud. Please be patient
+to see the results.
 
 == Getting Started
 

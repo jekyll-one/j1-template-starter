@@ -60,11 +60,10 @@ resource_options:
 
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
-// :page--attr:                                   <attr-value>
-:binder-badges-enabled:                           true
-:binder-app-launch--tree:                         https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
-:binder-app-launch--notebook:                     https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1/j1_interactive_widgets.ipynb
-
+// :page--attr:                         <attr-value>
+:binder-badges-enabled:                 true
+:binder-app-launch--tree:               https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
+:binder-app-launch--notebook:           https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1/j1_interactive_widgets.ipynb
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -97,5 +96,10 @@ Some more options are available for interactivity, but this selection shows
 the most used. Interactive widgets are provided natively by Jupyter Notebooks
 using the library `ipywidgets`. Some more widgets are provided by `nbinteract`.
 Find common examples in the textbooks below.
+
+CAUTION: Each interactive element presented on this page uses *time-consuming*
+operations that take a while to finish. The images and the interactive
+elements are built through a backend in the cloud. Please be patient
+to see the results.
 
 textbook::j1_interactive_widgets[]

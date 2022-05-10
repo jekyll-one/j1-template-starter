@@ -35,7 +35,10 @@ defaults:
 #  cookieStorageDays:                   365                                     # duration the consent cookie is stored
 #  cookieSameSite:                      Strict                                  # restrict consent cookie to first-party, do NOT send cookie to other domains
   reloadPageOnChange:                   true                                    # reload current page if user settings has been changed
-  whitelisted:                          [ '/pages/public/legal/en/privacy' ]    # pages NO consent issued, currently NOT supported
+  whitelisted:                          [                                       # pages NO consent issued
+                                          '/pages/public/legal/en/privacy/',
+                                          '/pages/public/se-fake/',
+                                        ]
   xhrDataElement:                       consent-data                            # container for all language-specific consent modals (taken from contentURL)
   dialogContainerID:                    consent-dialog                          # container, the dialog modal is (dynamically) loaded
   postSelectionCallback:                j1.adapter.cookieConsent.cbCookie       # called after the user has made his selection

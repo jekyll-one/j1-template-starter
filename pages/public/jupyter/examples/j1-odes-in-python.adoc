@@ -55,11 +55,12 @@ resource_options:
 
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
-// :page--attr:                                   <attr-value>
-:binder-badges-enabled:                           true
-:binder-app-launch--tree:                         https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
-:binder-app-launch--notebook:                     https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1/j1_odes_in_python.ipynb
-:odes-in-python:                                  https://elc.github.io/posts/ordinary-differential-equations-with-python/
+// :page--attr:                         <attr-value>
+:binder-badges-enabled:                 true
+:binder-app-launch--tree:               https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
+:binder-app-launch--notebook:           https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1/j1_odes_in_python.ipynb
+:odes-in-python:                        https://elc.github.io/posts/ordinary-differential-equations-with-python/
+
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
 {% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
@@ -99,6 +100,9 @@ describing the dynamics of the population of rabbits and foxes. Check how
 the animals depend on each other. Manipulate some parameters to see the
 influences on the rabbits and foxes population.
 
-// textbook::j1_ode_selected[]
+CAUTION: Each interactive element presented on this page uses *time-consuming*
+operations that take a while to finish. The images and the interactive
+elements are built through a backend in the cloud. Please be patient
+to see the results.
 
 textbook::j1_odes_in_python[]

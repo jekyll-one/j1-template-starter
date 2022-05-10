@@ -60,11 +60,12 @@ resource_options:
 
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
-// :page--attr:                                   <attr-value>
-:binder-badges-enabled:                           true
-:binder--home:                                    https://mybinder.org/
-:binder--docs:                                    https://mybinder.readthedocs.io/en/latest/
-:binder-app-launch--tree:                         https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
+// :page--attr:                         <attr-value>
+:binder-badges-enabled:                 true
+:binder--home:                          https://mybinder.org/
+:binder--docs:                          https://mybinder.readthedocs.io/en/latest/
+:github-repo--binderhub:                https://github.com/jupyterhub/binderhub
+:binder-app-launch--tree:               https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -93,6 +94,11 @@ endif::[]
 // 2HTML:       https://stackoverflow.com/questions/35896866/how-to-export-current-notebook-in-html-on-jupyter
 
 // info:        https://en.wikipedia.org/wiki/Galileo_Galilei
+
+CAUTION: Each interactive element presented on this page uses *time-consuming*
+operations that take a while to finish. The images and the interactive
+elements are built through a backend in the cloud. Please be patient
+to see the results.
 
 The Jupyter Project is a non-profit organization founded in 2014 by
 _Fernando Perez_. The Jupyter project supports interactive scientific
@@ -163,6 +169,15 @@ It is customizable and scalable and is suitable for small and large teams,
 academic courses, and large-scale infrastructure (for example like the
 Binder service).
 
+== Binder
+
+Binder allows you to create custom computing environments that can be
+shared and used by many remote users. A Binder service is powered by
+link:{github-repo--binderhub}[BinderHub Repo on Github, {browser-window--new}],
+an open-source tool that runs on Kubernetes, a portable, extensible,
+open-source platform for managing containerized services. One such deployment
+lives at link:{binder--home}[Binder Home, {browser-window--new}], and is free
+to use.
 
 == The Package nbInteract (NBI)
 
@@ -480,7 +495,7 @@ regenerate:                             true
 
 resources:                              [ nbinteract, rouge ] <2>
 ----
-<1> Binder's services require *Personalization* accepted in the users 
+<1> Binder's services require *Personalization* accepted in the users
     *cookie* settings. Difficulties with the rules of privacy should be
     explicitly pointed out and responded to in a suitable form if the cookie
     settings of the visitor do not allow this.
