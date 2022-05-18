@@ -80,14 +80,14 @@ image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch-
 image:https://mybinder.org/badge_logo.svg[Binder, link="{binder-app-launch--tree}", {browser-window--new}]
 endif::[]
 
+CAUTION: If the J1 NBI module detects *non-interactive* textbooks, the
+NBI module adapter does *not* start a Binder service for an external
+computational environment.
+
 This textbook is an example of a *non-interactive* Jupyter notebook (JN).
 Jupyter Notebooks don't necessarily need to contain *interactive* widgets.
 The CLI `nbinteract` can export all types of (Python-based) notebooks to
 an (HTML) textbooks.
-
-NOTE: If the J1 NBI module detects non-interactive textbooks, the module
-adapter does *not* start the Binder service for an external computational
-environment.
 
 == Climate change forecasting
 

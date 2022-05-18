@@ -87,19 +87,9 @@ ifeval::[{binder-badges-enabled} == true]
 image:https://mybinder.org/badge_logo.svg[Binder, link="{binder-app-launch--tree}", {browser-window--new}]
 endif::[]
 
-[NOTE]
-====
-This document is a port for J1 Template of the original document pages
-at link:{url-nbinteract--docs}[nbinteract Docs, {browser-window--new}].
-Some sections are rewritten for the text to improve clarity and simplify the
-language for future translation.
-
-Meanwhile, a lot of changes were done for the services at
-link:{url-binder--home}[Binder, {browser-window--new} ], which causes the
-original pages doesn't work anymore. On clicking the NBI button `Show Widgets`,
-you'll encounter that all interactive pages never change their state and
-get stuck in `Initializing widgets...` for an infinite initializing loop.
-====
+CAUTION: Each interactive element presented on this page uses *time-consuming*
+operations that take a while to finish. The elements are built through a
+backend in the cloud. Please be patient to see the results.
 
 The package *nbinteract* aims to enable authors and educators to create and
 share interactive web pages easily. Interactive explanations of concepts are
@@ -123,10 +113,20 @@ In addition, `nbinteract` provides a Python package. Once imported, the package
 provides helper methods that allow users to create simple interactive
 visualizations with single function calls.
 
-CAUTION: Each interactive element presented on this page uses *time-consuming*
-operations that take a while to finish. The images and the interactive
-elements are built through a backend in the cloud. Please be patient
-to see the results.
+[NOTE]
+====
+This document is a port for J1 Template of the original document pages
+at link:{url-nbinteract--docs}[nbinteract Docs, {browser-window--new}].
+Some sections are rewritten for the text to improve clarity and simplify the
+language for future translation.
+
+Meanwhile, a lot of changes were done for the services at
+link:{url-binder--home}[Binder, {browser-window--new} ], which causes the
+original pages doesn't work anymore. On clicking the NBI button `Show Widgets`,
+you'll encounter that all interactive pages never change their state and
+get stuck in `Initializing widgets...` for an infinite initializing loop.
+====
+
 
 == Getting Started
 

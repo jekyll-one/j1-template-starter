@@ -36,13 +36,46 @@ settings:
     # --------------------------------------------------------------------------
 
     # --------------------------------------------------------------------------
+    # example slider
+    #
+    - slider:
+        enabled:                        true
+        id:                             example_slider_asciidoc
+
+        options:
+          title:                        "Title of the Example Slider"
+          label:                        "Example Slider (Asciidoc), range: [5,50], start at: 25, step: 5"
+          start:                        25
+          step:                         5
+          range:
+            min:                        5
+            max:                        50
+
+    # --------------------------------------------------------------------------
+    # example slider (controled)
+    #
+    - slider:
+        enabled:                        true
+        id:                             example_slider_html
+
+        options:
+          title:                        "Title of the Example Slider (controlled)"
+          label:                        "Example Slider (HTML), range: [5,50], start at: 25, step: 5"
+          start:                        25
+          step:                         5
+          range:
+            min:                        5
+            max:                        50
+
+    # --------------------------------------------------------------------------
     # example slider 1
     #
     - slider:
         enabled:                        true
-        id:                             example_slider
+        id:                             example_slider_1
 
         options:
+          title:                        ""
           label:                        "Slider 1, range: [0,100], start at: 20"
           start:                        20
           range:
@@ -57,6 +90,7 @@ settings:
         id:                             example_slider_2
 
         options:
+          title:                        ""
           label:                        "Slider 2, range: [0,200], start at: 80"
           start:                        80
           range:
@@ -71,6 +105,7 @@ settings:
         id:                             jgSlider_row_heigth
 
         options:
+          title:                        ""
           label:                        Image Row Height [px]
           start:                        150
           range:
@@ -85,6 +120,7 @@ settings:
         id:                             jgSlider_thumb_spacing
 
         options:
+          title:                        ""
           label:                        Thumb Image Spacing [px]
           start:                        1
           range:
@@ -99,6 +135,7 @@ settings:
         id:                             jgSlider_gallery_padding
 
         options:
+          title:                        ""
           label:                        Gallery Padding [px]
           start:                        0
           range:

@@ -31,6 +31,33 @@ defaults:
   # GENERAL settings
   # ----------------------------------------------------------------------------
 
+  # contentURL (source)
+  # ----------------------------------------------------------------------------
+  #   Dialog modal source.
+  #
+  #   values:                           data path
+  #   default:                          /assets/data/nbinteract
+  #
+  # ----------------------------------------------------------------------------
+  #
+  # xhrDataElement (HTML portion)
+  # ----------------------------------------------------------------------------
+  #   Top level container for ALL NBI modals configured
+  #
+  #   values:                           ID
+  #   default:                          nbi-modal-data
+  #
+  # ----------------------------------------------------------------------------
+  #
+  # dialogContainerID (HTML portion)
+  # ----------------------------------------------------------------------------
+  #   Container ID, the dialog modal is (dynamically) loaded
+  #
+  #   values:                           ID
+  #   default:                          nbi-dialog
+  #
+  # ----------------------------------------------------------------------------
+  #
   # spec
   # ----------------------------------------------------------------------------
   #   Defines the (public) repo the configuration data available
@@ -130,7 +157,77 @@ defaults:
   #
   # ----------------------------------------------------------------------------
   #
-  # spec:                               jekyll-one/nbinteract-notebooks/main
+  # notebook_ready
+  # ----------------------------------------------------------------------------
+  #   Flag that indicates if a notebook is ready (fully rendered).
+  #   For default, the signal 'notebook_ready' is set if the 'first'
+  #   widget in a notebook is rendered. For larger notebooks having
+  #   many headlines, the TOC provided by the FAB in a page may
+  #   incomplete. To indicate all resources of a page fully available,
+  #   the option 'last_widget' may a better choice.
+  #
+  #   values:                           first_widget | last_widget
+  #   default:                          first_widget
+  #
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              true
+
+  contentURL:                           /assets/data/nbinteract
+  xhrDataElement:                       nbi-modal-data
+  dialogContainerID:                    nbi-dialog
+
+  dialogTitle:                          NBI Settings
+  dialogBodyText: >
+
+                                        This website uses the <b>free</b> service <em>Binder</em> to process
+                                        <b>interactive</b> widgets from content containing textbooks
+                                        (HTML exported Jupyter Notebooks).
+
+                                        The Binder Service allows you to create custom computing environments
+                                        that can be shared and used by many remote users. A Binder service is
+                                        powered by
+                                        <a href="https://github.com/jupyterhub/binderhub" target="_blank" rel="noopener">BinderHub Repo on Github</a>,
+                                        an open-source tool that runs on Kubernetes, a portable, extensible,
+                                        open-source platform for managing containerized services. One such deployment
+                                        lives at
+                                        <a href="https://mybinder.org/" target="_blank" rel="noopener">Binder Home</a>,
+                                        and is free to use.
+
+                                        <div class="admonitionblock caution">
+                                          <table style="background: rgb(255, 255, 255);font-size: 100%">
+                                            <tbody><tr>
+                                              <td class="icon">
+                                                <i class="fa icon-caution" title="Caution"></i>
+                                              </td>
+                                              <td class="content">
+                                                Each interactive element presented on this page uses <strong>time-consuming</strong>
+                                                operations that take a while to finish. The images and the interactive
+                                                elements are built through a backend in the cloud. Please be patient
+                                                to see the results.
+                                              </td>
+                                            </tr></tbody>
+                                          </table>
+                                        </div>
+  dialogPrivacyNotice: >
+                                        The service provided by<em>Binder</em> uses <b>cookies</b> to provide
+                                        its service. Your consent on using cookies is required. Find more
+                                        information about at the Binder at the
+                                        <a href="https://mybinder.readthedocs.io/en/latest/about/user-guidelines.html#security-and-privacy" target="_blank" rel="noopener">Privacy Policy.</a>
+                                        of Binder.
+                                        <br><br>
+                                        Required Cookie Settings:
+                                        <ul>
+                                          <li>
+                                            <code>Analysis</code> For translations, your consent on
+                                            <b>Analysis</b> with your <b>Privacy Settings</b> is required.
+                                          </li>                                        
+                                          <li>
+                                          <code>Personalization</code> For processing textbooks, your consent on
+                                          <b>Personalization</b> with your <b>Privacy Settings</b> (Cookie Settings) is required.
+                                          </li>
+                                        </ul>
+
   spec:                                 jekyll-one/j1-binder-repo/main
   baseUrl:                              'https://mybinder.org'
   provider:                             gh
@@ -145,6 +242,7 @@ defaults:
   nbi_messages_auto_close_delay:        3500
 
   nbi_init_mathjax:                     true
+  notebook_ready:                       first_widget
 
 # ------------------------------------------------------------------------------
 # END config
