@@ -41,7 +41,7 @@ settings:
   #
   nav_menu:
     enabled:                            true
-    delay_open_menu:                    250
+    delay_open_menu:                    150
 
   # ----------------------------------------------------------------------------
   # NavMenu (MMobile)
@@ -100,7 +100,7 @@ settings:
       # DRAWER Sidebar
       #
       - menu:
-          enabled:                      false
+          enabled:                      true
 
           xhr_container_id:             navigator_sidebar_mmenu
           xhr_data_element:             sidebar_mmenu
@@ -118,38 +118,6 @@ settings:
             button_activated:           always
 
             boxes:
-
-              - box:
-                  enabled:              true
-                  type:                 user_info
-                  title:                User
-
-                  links:
-                    - title:            Provider
-                      value:            ??provider
-                      href:             ??provider-site-url
-                      target:           _blank
-                      icon:             domain
-                    - title:            User
-                      icon:             account
-                      value:            ??user-name
-                      href:             ??provider_member_url
-                      target:           none
-                    - title:            Permissions
-                      icon:             account-check
-                      value:            ??provider-permissions
-                      href:             ??provider_member_url
-                      target:           none
-                    - title:            Membership
-                      icon:             account-settings
-                      value:            ??provider-membership
-                      href:             ??provider_member_url
-                      target:           none
-                    - title:            Cookies
-                      icon:             cookie
-                      value:            ??cookie-state
-                      href:             ??provider_privacy_url
-                      target:           none
 
               - box:
                   enabled:              true
@@ -174,7 +142,7 @@ settings:
                       target:           none
 
               - box:
-                  enabled:              true
+                  enabled:              false
                   type:                 site_info
                   title:                Site
 
@@ -206,6 +174,38 @@ settings:
 #                     icon:             contact-mail
 #                     href:             mailto:contact@jekyll.one
 #                     target:           none
+
+              - box:
+                  enabled:              false
+                  type:                 user_info
+                  title:                User
+
+                  links:
+                    - title:            Provider
+                      value:            ??provider
+                      href:             ??provider-site-url
+                      target:           _blank
+                      icon:             domain
+                    - title:            User
+                      icon:             account
+                      value:            ??user-name
+                      href:             ??provider_member_url
+                      target:           none
+                    - title:            Permissions
+                      icon:             account-check
+                      value:            ??provider-permissions
+                      href:             ??provider_member_url
+                      target:           none
+                    - title:            Membership
+                      icon:             account-settings
+                      value:            ??provider-membership
+                      href:             ??provider_member_url
+                      target:           none
+                    - title:            Cookies
+                      icon:             cookie
+                      value:            ??cookie-state
+                      href:             ??provider_privacy_url
+                      target:           none
 
   # ----------------------------------------------------------------------------
   # NavQuicklinks

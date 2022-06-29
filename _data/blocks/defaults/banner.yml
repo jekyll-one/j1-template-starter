@@ -13,7 +13,7 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
 
@@ -30,7 +30,7 @@ defaults:
   #
   data_path:                            /assets/data/banner/index.html
 
-  # ------------------------------------------------------------------------------
+  # ----------------------------------------------------------------------------
   # General parallax settings
   #
   # Global configuration for parallax|banner quotes. These settings are
@@ -41,7 +41,7 @@ defaults:
   # with the panels configuration (j1_panels.yml).
   #
   #   gridify
-  #   ----------------------------------------------------------------------------
+  #   --------------------------------------------------------------------------
   #   If enabled, a grit pattern is placed over the background image. This
   #   puts some "noise" on the image to focus more on the quote|text rather
   #   than the image.
@@ -50,14 +50,14 @@ defaults:
   #   default:                        true
   #
   #   gridifier
-  #   ----------------------------------------------------------------------------
+  #   --------------------------------------------------------------------------
   #   Pixel image used to gridify the background image of the banner.
   #
   #   values:                         image path|name (string)
   #   default:                        /assets/images/modules/patterns/gridtile.png
   #
   #   darken
-  #   ----------------------------------------------------------------------------
+  #   --------------------------------------------------------------------------
   #   Sets the lightning for the banner|background image. As higher the value
   #   for darken as less is the (background) light. Values are out of the
   #   range from 1 (light) to 9 (dark). Useful to focus on the quote|text
@@ -67,13 +67,14 @@ defaults:
   #   default:                        3
   #
   #   background
-  #   ----------------------------------------------------------------------------
+  #   --------------------------------------------------------------------------
   #   Default background image of the banner if no other image is specified with
   #   the panels configuration (j1_panels.yml).
   #
   #   values:                         image path|name (string)
   #   default:                        /assets/images/quotes/default.png
-  # ------------------------------------------------------------------------------
+  # ----------------------------------------------------------------------------
+  #
   parallax_settings:
 
     gridify:                          true
@@ -86,38 +87,48 @@ defaults:
     background_pos_y:                 0
 
   # ----------------------------------------------------------------------------
+  # General image (banner) settings
+  #
+  # ----------------------------------------------------------------------------
+  #
+  image_settings:
+    gridifier:                        /assets/images/modules/patterns/gridtile.png
+
+
+  # ----------------------------------------------------------------------------
   # DIVIDER banner
   #
+  #   Place a (dotted) line as a simple divider.
+  #
+  # ----------------------------------------------------------------------------
+  #
   divider:
-    # --------------------------------------------------------------------------
-    # DIVIDER banner settings
-    #
-    id:                                 divider
     enabled:                            false
-    type:                               divider
-    comment:                            Default Divider Banner
 
-    lane_span:                          fixed
+    id:                                 divider
+    comment:                            Default Divider Banner
+    type:                               divider
 
 
   # ----------------------------------------------------------------------------
   # TEASER banner
   #
+  #   Simple intro element for a page to give an overview on the contents
+  #   provided. Find the configuration with
+  #
+  # ----------------------------------------------------------------------------
+  #
   teaser:
-    # --------------------------------------------------------------------------
-    # TEASER banner settings
-    #
     enabled:                            false
+
     id:                                 teaser_banner
-    type:                               teaser
     comment:                            Default Teaser Banner
+    type:                               teaser
 
     icon_family:                        MDI
     style:                              light
     background_color_1:                 md_gray_50
     background_color_2:                 md_gray_50
-
-    lane_span:                          fixed
 
     cards:
       card:
@@ -158,60 +169,51 @@ defaults:
               icon_size:                lg
               href:                     javascript:void(0)
               target:                   _blank
+
+
   # ----------------------------------------------------------------------------
   # IMAGE banner
   #
+  #   Places an image (full width) on a page. Can be used as a more
+  #   eye-minded divider element.
+  #
+  # ----------------------------------------------------------------------------
+  #
   image:
-    # --------------------------------------------------------------------------
-    # IMAGE banner settings
-    #
     enabled:                            false
+
     id:                                 image_banner
-    type:                               image
     comment:                            Default Image Banner
+    type:                               image
 
-    background_color_1:                 md_gray_300
-    background_color_2:                 md_gray_50
+    image:
+      gridify:                          false                                   # place a gridifier true|false
+      height:                           350                                     # image height in pixels (px)
+      justify:                          false                                    # center if banner height < pysical height of the image
+      brightness:                       100                                     # false or int [0 .. 100]
+      opacity:                          100                                     # false or int [0 .. 100]
+      picture:
 
-    lane_span:                          fluid
-
-    cards:
-
-      card:
-        enabled:                        false
-        gridify:                        false
-        size_y:                         450
-        darken:                         1
-        background_image:               /assets/images/modules/attics/ideas-start-here-1920x1200.png
-
-        buttons:
-
-          button:
-            text:                       Button
-            class:                      btn-primary btn-flex
-            icon:                       image
-            icon_color:                 md_white
-            icon_size:                  lg
-            href:                       javascript:void(0)
-            target:                     _blank
 
   # ----------------------------------------------------------------------------
   # PARALLAX banner
   #
+  #   Places an image (full width) with a parallax effect. Additionally,
+  #   a quotation text is configurable and placed centered on top of
+  #   the image.
+  #
+  # ----------------------------------------------------------------------------
+  #
   parallax:
-    # --------------------------------------------------------------------------
-    # PARALLAX banner settings
-    #
     enabled:                            false
+
     id:                                 parallax_banner
-    type:                               parallax
     comment:                            Default Parallax Banner
+    type:                               parallax
 
     style:                              dark
     background_color_1:                 md_gray_300
     background_color_2:                 md_gray_50
-
-    lane_span:                          fluid
 
     cards:
 
@@ -240,23 +242,21 @@ defaults:
             href:                       javascript:void(0)
             target:                     _blank
 
+
   # ----------------------------------------------------------------------------
   # EXCEPTION banner
   #
-  #   NOTE:
-  #   The EXCEPTION banner is used to place additional information to the
-  #   (default) exception CONTAINER if processing of a banner has failed
+  #   The EXCEPTION banner is used (internally) to place additional
+  #   information to the (default) exception CONTAINER if processing
+  #   of a banner has failed.
+  # ----------------------------------------------------------------------------
   #
   exception:
-    # --------------------------------------------------------------------------
-    # EXCEPTION banner settings
-    #
-    id:                                 exception_container
     enabled:                            true
-    type:                               exception
-    comment:                            Default Exception Banner
 
-    lane_span:                          fixed
+    id:                                 exception_container
+    comment:                            Default Exception Banner
+    type:                               exception
 
 # ------------------------------------------------------------------------------
 # END config

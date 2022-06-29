@@ -1,0 +1,733 @@
+---
+title:                                  Features
+tagline:                                Modules, Extensions and Integrations
+date:                                   2021-01-01 00:00:00 +100
+description: >
+                                        For Jekyll, a huge number of templates are available that cover
+                                        all typical use cases for websites. The bad story: most of them
+                                        require programming and low-level customization. Deep knowledge
+                                        of Jekyll and valuable experience using HTML, CSS, and Javascript
+                                        is required. J1 is different: easy to use, no programming is needed.
+
+keywords: >
+                                        features, modules, extensions, integrations,
+                                        Infinite srcoll, Animate on srcoll, Floating Action Buttons,
+                                        full-text search engine, cookie consent, translator, clipboard,
+                                        smooth-srcoll, enhanced navigation, lightboxes, image and video galleries,
+                                        text and image carousels, bootstrap extensions, asciidoctor extensions,
+                                        advanced banners and panels, blog post navigation, featured example content,
+                                        royalty free images, bootstrap themes, comment providers, google analytics,
+                                        google ads, youtube video, vimeo video,
+                                        opensource, free, load, download, start, starter, example,
+                                        high, easy, use, secure, encrypt, standard, popular,
+                                        generate, develop, create, learn, distribute, publish, deploy,
+                                        beginner, advanced, expert, student, learner, writer, reader, visitor
+                                        framework, toolkit, integration, extension, module, api,
+                                        dynamic, static, generator, client, server, internet, local, localhost
+                                        page, web, website, webdesign, material, design, responsive,
+                                        javascript, nodejs, ruby, windows, linux, osx, mac, os,
+                                        http, https, html, html5, css, scss, style,
+                                        browser, firefox, chrome, edge, opera, safari,
+                                        configuration, generator, navigation, menu, dropdown, fab, action, button
+                                        application, interface, provider, api, repository,
+                                        cookie, language, translation, gdpr, dsgvo, privacy,
+                                        asciidoc, aciidoctor, bootstrap, jekyll, liquid,
+                                        hyvor, disqus, git, github, netlify, heroku, apple, microsoft,
+                                        provider, service, internet, support,
+                                        google, analytics, advertising, search, console, silverlight, score,
+                                        j1, template, jekyllone, comment
+
+categories:                             [ Features ]
+tags:                                   [ Module, Extension, Integration ]
+
+sitemap:                                true
+advertising:                            false
+comments:                               false
+
+robots:
+  index:                                true
+  follow:                               true
+
+permalink:                              /pages/public/features/template_features/
+regenerate:                             false
+
+resources:                              [
+                                          animate, clipboard, rouge, lightbox, carousel,
+                                          lightGallery, justifiedGallery,
+                                          video_js, vimeo_player, vimeo_froogaloop
+                                        ]
+resource_options:
+  - toccer:
+      collapseDepth:                    3
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/christina-1920x1280.jpg
+          alt:                          Photo by Christina on Unsplash
+          alignY:                       top
+          badge:
+            type:                       unsplash
+            author:                     Christina
+            href:                       https://unsplash.com/@wocintechchat
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:url-fontawesome--home:                 https://fontawesome.com/
+:url-roundtrip--mdi-icons:              /pages/public/learn/roundtrip/mdi_icon_font/#material-design-icons
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+For Jekyll, a huge number of templates are available that cover all typical
+use cases for websites. The bad story: most of them require programming and
+low-level customization. Deep knowledge of Jekyll and valuable experience
+using HTML, CSS, and Javascript is required.
+
+J1 is different: easy to use, no programming is needed.
+
+== Modules
+
+The Template provides a large number of building blocks to create modern
+web pages in minutes. The base idea of the J1 Template is to give all people
+a toolset at their hands to create a website with no need to start web
+development or web design from the beginning.
+
+mdi:mouse-move-down[24px, md-blue ml-3 mr-2]
+Infinite scroll +
+mdi:mouse-move-down[24px, md-blue ml-3 mr-2]
+Animate on scroll +
+mdi:animation[24px, md-blue ml-3 mr-2]
+Floating Action Buttons +
+mdi:magnify[24px, md-blue ml-3 mr-2]
+Full-text search engine (Lunr) +
+mdi:cookie[24px, md-blue ml-3 mr-2]
+Cookie consent (GDPR compatible) +
+mdi:translate[24px, md-blue ml-3 mr-2]
+Translator (Google, Deepl) +
+mdi:clipboard[24px, md-blue ml-3 mr-2]
+Clipboard +
+mdi:forwardburger[24px, md-blue mdi-rotate-90 ml-3 mr-2]
+Smooth-scroll +
+mdi:near-me[24px, md-blue ml-3 mr-2]
+Enhanced Navigation +
+mdi:lightbulb-on[24px, md-blue ml-3 mr-2]
+Lightboxes +
+mdi:view-carousel[24px, md-blue ml-3 mr-2]
+Text and Image Carousels +
+mdi:folder-multiple-image[24px, md-blue ml-3 mr-2]
+Image and Video Galleries
+
+=== Infinite scroll (IS)
+
+Infinite scrolling (IS), or known as endless scrolling, is a technique that
+loads more content as a user scrolls down the page. It allows visitors to
+continue reading the content by scrolling seamlessly and not by loading
+additional pages.
+
+J1 Template supports infinite scrolling and is used, for example, for loading
+previews of blog articles.
+
+=== Animate on scroll (AOS)
+
+Scroll-triggered animation (AOS) is an effective way to animate website
+elements such as text, graphics, photos, and video, bringing them to life
+as users scroll down a page. Scroll animations are more likely to grab the
+user's attention, making websites look and feel more dynamic and
+interesting.
+
+=== Floating Action Buttons (FAB)
+
+The *Floating Action Button* (FAB) is an element of Google's Material Design.
+A FAB represents the primary action in an application, or triggers additional
+functions for a webpage. FABs are increasingly used on the web and serves to
+enable important actions for a page, but separated from the main navigation.
+
+.FAB (Menu)
+lightbox::images--fab[ 800, {data-images--fab} ]
+
+The template system supports Floating Action Buttons for in-page navigation.
+When the FAB is pressed, it provides more related actions like showing the
+content table or scrolling a page chapter-wise up and down.
+
+=== Full-text search engine (FTS)
+
+Full-text search (FTS) for a website is an advanced method of searching
+through all documents. FTS promises fast retrieval of data with advanced
+indexing and more intuitive search results based on relevance.
+
+.Full-text search
+lightbox::images--full-text-search[ 800, {data-images--full-text-search} ]
+
+J1 implements Lunr for indexing the whole website. The engine is designed
+to be small but full-featured. Lunr enables developers to provide visitors
+with a great search experience without the need for external, server-sided
+search services like Google on the internet.
+
+=== Cookie Consent (CC)
+
+Running websites in the EU and many other countries, implementing the
+*General Data Protection Regulation* (GDPR) is required to make a website
+compliant with the *ePrivacy* regulations of the European Unions and
+associated countries.
+
+.Cookie Consent
+lightbox::images--cookie-consent[ 800, {data-images--cookie-consent} ]
+
+Under the GDPR, *most cookies* will fall into the category of *personal data*
+because they can identify visitors and can be used to provide website
+personalization and even profiling of individuals. As a result, you will
+need a *legal basis* for processing the data contained within those cookies.
+That legal basis is most likely going to be the CONSENT of your visitors on
+accepting the use of cookies.
+
+The Template system provides a configurable GDPR compliant module to manage
+the consent of your visitors on cookies.
+
+=== Translator
+
+A Website translation service is useful in a wide range of situations.
+In today’s interconnected and global world English is no longer enough.
+Most online content is still written in English, while the language is
+just ranked 3rd in terms of the highest number of native speakers among all
+languages worldwide.
+
+.Native speakers by language
+lightbox::lingohub--speakers-by-language[ 600, {data-lingohub--speakers-by-language} ]
+
+Source: link:{url-lingohub--speakers-by-language}[lingohub.com, {browser-window--new}]
+
+In 2015 it was necessary to support 25 languages to reach 90 percent of the
+entire Internet population in their native language. By 2020, a website will
+require localization into 48 languages to reach the same proportion of the
+global Internet audience.
+
+Localization adapts a website to cultural backgrounds and local languages.
+Translation makes it easier for users to browse content and find what they’re
+looking for. An excellent user experience and understanding the language are
+key for building trust in the content you provide.
+
+.Translator configuration (j1_config.yml)
+[source, yaml, role="noclip"]
+----
+translation:
+  enabled:                     true
+  provider:                    google
+
+  google:
+    layout:                    default
+    sourcelanguage:            en
+    translationlanguages:      [auto]
+----
+
+J1 integrates the *free* translation service provided by Google Translate
+(GT) and the *professional* translation services of Deepl (DT). If you want
+to get a larger number of international audiences, translating your site can
+help target your global audience more easily and quickly.
+
+.Google Translator
+lightbox::images--translator[ 800, {data-images--translator} ]
+
+GT is fully integrated with the GDPR-compatible Cookie Consent module. If your
+visitors do not agree on cookies required to use Google Translate, GT gets
+automatically disabled, and all cookies from Google are deleted from the
+user's system.
+
+=== Clipboard
+
+The clipboard is a special function of the operating system of desktop or
+mobile computers that temporarily stores copied text or other data in memory.
+Once something is stored in the clipboard, the user can paste the data to a
+new location.
+
+.Clipboard
+[source, javascript, linenums, highlight='3-7']
+----
+// ---------------------------------------------------------------
+// helper functions
+// ---------------------------------------------------------------
+function styleSheetLoaded(styleSheet) {
+  var sheets     = document.styleSheets,
+      stylesheet = sheets[(sheets.length - 1)];
+
+  // find CSS file 'styleSheetName' in document
+  for(var i in document.styleSheets) {
+    if(sheets[i].href && sheets[i].href.indexOf(styleSheet) > -1) {
+      return true;;
+    }
+  }
+}
+----
+
+J1 integrates the clipboard functionality of your computer system to copy and
+paste examples or code elements from a webpage. A clipboard will help your
+users a lot to manage the code snippets you’ve provided.
+
+=== Smooth-scroll (SSR)
+
+Smooth scrolling (SSR) is an enhanced feature of J1 designed to improve
+scrolling and positioning on anchor links. If SSR is enabled, an animated
+transition is done for scrolling to headlines (anchor links) and gets
+exactly positioned.
+
+=== Enhanced Navigation (NAV module)
+
+When it comes to the usability of a website, your visitors' focus is on one
+important component: the Navigation System. The Navigation System used by
+J1 Template is a multi-purpose navigation builder based on the Bootstrap V5
+Framework.
+
+.Navigation Module (NAV)
+lightbox::images--nav-module[ 800, {data-images--nav-module} ]
+
+The NAV module for J1 consists of four configurable sub-modules:
+
+* Navigation Bar
+* MainMenu
+* Quicklinks
+* TopSearch
+
+All features are available by configuration, and no programming is needed.
+
+.Configuration example for main menu entry  (navigator_menu.yml)
+[source, yaml, role="noclip"]
+----
+  # ------------------------------------------------------------------------------
+  # Menu MANUALS
+  #
+  - item:                                 Manuals
+    sublevel:
+
+      # --------------------------------------------------------------------------
+      # Resources
+      #
+      - title:                            Resources
+        icon:                             bread-slice
+        dropdown:
+          - title:                        Country Flags
+            href:                         /pages/public/manuals/resources/country_flags/
+            icon:                         flag
+          - title:                        MD Color Palette
+            href:                         /pages/public/manuals/resources/color_palette/
+            icon:                         format-color-fill
+----
+
+
+=== Lightboxes
+
+A Lightbox is, in general, a helper which displays enlarged, almost
+screen-filling versions of images (or videos) while dimming the remainder
+of the page. For the J1 Template, two different lightboxes are available:
+
+* Lightbox V2
+* LightGallery
+
+The default tool employed by J1 Template is Lightbox V2, a Javascript library
+written by Lokesh Dhakar.
+
+.Markup to place a Lightbox V2 (Asciidoc)
+[source, apib, role="noclip"]
+----
+.Lightbox V2
+lightbox::lb-example--template-features[ 300, {data-lb-example--template-features}, group ]
+----
+
+.Lightbox V2
+lightbox::lb-example--template-features[ 300, {data-lb-example--template-features}, group ]
+
+For more complex use cases, like thumbnail gallery previews or video support,
+LightGallery can be used alternatively.
+
+.Markup to place a LightGallery (Asciidoc)
+[source, apib, role="noclip"]
+----
+.LightGallery
+gallery::lg-example--template-features[]
+----
+
+.LightGallery
+gallery::lg-example--template-features[]
+
+=== Image and Text Carousels
+
+J1 Carousel is based on OWL Carousel, a clean and neat jQuery slider plugin
+for creating fully responsive and touch-enabled carousel sliders. Carousels
+are mostly used for pictures data to animate the images as a series.
+
+.Markup to place a Image carousel (Asciidoc)
+[source, apib, role="noclip"]
+----
+.Image carousel
+carousel::image--template-features[role="mb-3"]
+----
+
+.Image carousel
+carousel::image--template-features[role="mb-3"]
+
+In general, J1 Carousel supports many more sources to be displayed as a
+slide show: simple text, for example.
+
+.Markup to place a Text carousel (Asciidoc)
+[source, apib, role="noclip"]
+----
+.Text carousel
+carousel::text--template-features[role="mb-3"]
+----
+
+.Text carousel
+carousel::text--template-features[role="mb-3"]
+
+A more eye-minded type of text-based slide show is a parallax text slider.
+If you want to emphasize your statements focussing on the meaning, this kind
+of slide show may be interesting.
+
+.Markup to place a Parallax carousel (Asciidoc)
+[source, apib, role="noclip"]
+----
+.Parallax carousel
+carousel::text--template-features[role="mb-3"]
+----
+
+.Parallax text carousel
+carousel::parallax--template-features[role="mb-3"]
+
+=== Image and Video Galleries
+
+Image and Video Galleries allow you to lay out groups of images or videos
+in very different ways. J1 supports JustifiedGallery is a great jQuery plugin
+to create responsive, infinite, and high-quality justified image galleries.
+The gallery uses a so-called masonry grid layout. It works by placing
+elements in an optimal position based on available horizontal and vertical
+space. Sort of like mason fitting stones in a wall.
+
+.Markup to place the Image Gallery (Asciidoc)
+[source, apib, role="noclip"]
+----
+.Image Gallery
+gallery::jg-image--template-features[role="mb-5"]
+----
+
+.Image Gallery
+gallery::jg-image--template-features[role="mb-5"]
+
+A JustifiedGallery provides not only images. See the next example of a gallery
+for HTML5 video content.
+
+.Markup to place the Video Gallery (Asciidoc)
+[source, apib, role="noclip"]
+----
+.Video Gallery (HTML5)
+gallery::video-html5--template-features[role="mb-5"]
+----
+
+.Video Gallery (HTML5)
+gallery::video-html5--template-features[role="mb-5"]
+
+== Extensions
+
+Frameworks like Bootstrap and Asciidoc are enormously flexible and customizable.
+Changing or adding components to frameworks requires a lot of experience. That
+is not the idea of J1. Customizations for the base frameworks are prepared,
+simple to use, and usable out-of-the-box.
+
+Make your site unique.
+
+mdi:bootstrap[24px, md-blue ml-3 mr-2]
+Bootstrap extensions +
+mdi:format-annotation-plus[24px, md-blue ml-3 mr-2]
+Asciidoctor extensions +
+mdi:group[24px, md-blue ml-3 mr-2]
+Banners and panels +
+mdi:near-me[24px, md-blue ml-3 mr-2]
+Blog Post navigation +
+mdi:content-duplicate[24px, md-blue ml-3 mr-2]
+Featured example content +
+mdi:image[24px, md-blue ml-3 mr-2]
+Royalty free images +
+
+=== Bootstrap extensions
+
+A set of Advanced Bootstrap Modals (ABM), based on the free package of Material
+Design for Bootstrap, is integrated with the template system. Bootstrap
+modals are used to add dialogues to your web pages for user notifications.
+
+To improve your visitor’s experience on important information that shouldn’t
+be missed. ABMs are a great choice to bring the user’s attention. Using the
+J1 Template predefined modal styles, some emotional weight is added to the
+information displayed. Ranging from an info level, a simple warning to
+critical messages.
+
+Creating a design for responsive HTML tables is challenging. J1 integrates
+responsible HTML tables for Bootstrap to be used for Mobile Devices.
+
+.Responsible HTML table (RTable)
+[cols="6a,6a", options="header", width="100%", role="rtable mt-3"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+|`page.title`
+|The title of the Page.
+
+|`page.date`
+|The Date assigned to the Post. This can be overridden in a
+Post's front matter by specifying a new date/time in the format
+`YYYY-MM-DD HH:MM:SS` (assuming UTC), or `YYYY-MM-DD HH:MM:SS +/-TTTT`
+(to specify a time zone using an offset from UTC. e.g.
+`2008-12-14 10:30:00 +0900`).
+|===
+
+=== Asciidoctor extensions
+
+J1 Template implements a bunch of incubating Ruby-based extensions for
+Asciidoctor. Using Asciidoctor extensions, it's easy to integrate lightboxes,
+galleries, icon fonts, and other complex elements using Asciidoc tags with
+your content pages.
+
+.MDI Icons, click on view to see how it's looks alike
+[source, prometheus, role="noclip"]
+----
+mdi:home[2x, mdi-pulsed ml-3 mr-2 mb-2] Symbol icon (pulsed) +
+mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
+mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
+----
+
+[.result]
+====
+mdi:home[2x, mdi-pulsed ml-3 mr-2 mb-2] Symbol icon (pulsed) +
+mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
+mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
+====
+
+=== Banners and Panels
+
+Banners and panels are complex but configurable building blocks, typically used
+for home and landing pages. Examples how to use banners and panels can be found
+with the included starter web for the homepage.
+
+.Teaser Banner
+lightbox::images--teaser-banner[ 600, {data-images--teaser-banner} ]
+
+.Intro Panel
+lightbox::images--intro-panel[ 600, {data-images--intro-panel} ]
+
+=== Featured example content
+
+All pages from the roundtrip section are provided by the starter web
+included with the J1 Template. Many real-world examples for your content
+could be taken from these pages and are easy to use with your website.
+
+.Example Content (Present Videos)
+lightbox::images--example-content[ 600, {data-images--example-content} ]
+
+=== Royalty Free images
+
+All images for a *Starter Web*, for example, from the roundtrip section, are
+included with J1 Template. All images are taken from Unsplash.com as
+*Royalty Free* images and can be used without paying any license fees.
+
+== Integrations
+
+The Internet of today has changed a lot. The new digital world is called the cloud.
+Services out of the cloud is a fast-growing business. J1 Template integrates cloud
+services to extend the functionality of a web for commenting features or Bootstrap
+themes, for example.
+
+mdi:theme-light-dark[2x, md-blue ml-3 mr-2]
+<<Bootstrap Themes (Bootswatch)>> +
+mdi:comment[2x, md-blue ml-3 mr-2]
+<<Comment providers>> +
+// iconify:logos:jupyter[2x, ml-3 mr-2]
+mdi:language-python[2x, md-blue ml-3 mr-2]
+<<Jupyter Notebook>> +
+mdi:google-analytics[2x, md-blue ml-3 mr-2]
+<<Google Analytics>> +
+mdi:google-ads[2x, md-blue ml-3 mr-2]
+<<Google Ads>> +
+mdi:youtube[2x, md-blue ml-3 mr-2]
+<<YouTube Video>> +
+mdi:vimeo[2x, md-blue ml-3 mr-2]
+<<Vimeo Video>>
+
+=== Bootstrap Themes (Bootswatch)
+
+The Themes for the template system J1 are based on the free and open-source
+CSS front-end framework Bootstrap of version V5. Using Bootstrap base style
+only results in a uniform appearance for the content in terms of the overall
+layout, text, tables, and form elements across all modern web browsers
+available on the market.
+
+Thanks to the people at Bootswatch, a great set of already prepared
+Bootstrap stylesheets in various designs are available on their website. There
+is no need to start from scratch. Re-define all the Bootstrap variables, and
+rebuild the framework files to create a new theme.
+
+.Bootswatch Themes (Minty)
+lightbox::images--bootswatch-themes[ 600, {data-images--bootswatch-themes} ]
+
+Many different styles are available. What is already available at Bootswatch
+is at least a good base for your modifications: your unique design. J1
+integrates all available themes from Bootswatch with the navigator module.
+
+=== Comment providers
+
+Comments became an integral part of almost each website on the web. People
+want to talk about what they currently read on your web, listen to or see.
+And they want it right there, under what they’ve read or seen, not on their
+social networks.
+
+J1 template supports currently two comment providers: Disqus (DQC) and
+Hyvor (HVC). The comment interfaces from the supported providers can be
+integrated by pure configuration.
+
+.Comments by Hyvor Talk (HVC)
+lightbox::images--comments-hyvor[ 800, {data-images--comments-hyvor} ]
+
+Enable the provider you want to use and add your access credentials to the
+configuration, and you're done. On all posts or pages you want to use for
+comments, the comment interface is shown automatically and can be used by
+your visitors.
+
+.Comments configuration for Hyvor (j1_config.yml)
+[source, yaml, role="noclip"]
+----
+  comments:
+    enabled:                              true
+    provider:                             hyvor
+
+    comments_headline:
+      en:                                 Leave a comment
+      de:                                 Kommentieren
+
+    hyvor:
+      site_id:                           'hyvor-site-id'
+
+    disqus:
+      site_id:                           '<your-site-short-name>'
+----
+
+DQC is fully integrated with the GDPR-compatible Cookie Consent module. If
+your visitors do not agree on cookies needed for Diqus, DQC gets
+automatically disabled, and all related cookies are deleted from the user's
+system.
+
+=== Jupyter Notebook
+
+Jupyter Notebook (JN) is an open source web application that allows data
+scientists to create and share documents that include live code, equations,
+and other multimedia resources. JN combines two components:
+
+A web application::
+a browser-based tool for interactive authoring of documents which combine
+explanatory text, mathematics, computations and their rich media output.
+
+Notebook documents::
+a representation of all content visible in the web application, including
+inputs and outputs of the computations, explanatory text, mathematics,
+images, and rich media representations of objects.
+
+The Jupyter Notebook *App* is a server-client application that allows editing
+and running notebook documents via a web browser. The Notebook App can be
+executed on a local desktop requiring no internet access or can be installed
+on a remote server and accessed through the internet.
+
+Notebook *documents* are used for all sorts of data science tasks such as
+exploratory data analysis (EDA), data cleaning and transformation,
+data visualization, statistical modeling, machine learning, and deep
+learning. Jupyter notebooks are especially useful for *showing the work*
+that your data team has done through a combination of code, markdown, links,
+and images.
+
+.NBI textbook example (excerpt)
+// lightbox::nbi-textbook--excerpt[ 800, {data-nbi-textbook--excerpt}, role="mt-3 mb-4" ]
+image::pages/nbinteract/nbi-textbook-example.jpg["NBI textbook example", 1024]
+
+HTML exported Jupyter Notebooks (so-called Textbooks) can be integrated
+with every webpage of a J1 website using the J1 NBI module.
+
+=== Google Analytics
+
+Google Analytics (GAL) provides access to a massive amount of data related
+to how users find and interact with your site. For example, you can see how
+many people visited a specific page, how long they remained there, where your
+users live, how certain keywords perform, and so forth.
+
+Google Analytics is integrated by pure configuration. Simply enable the
+provider and set your your access credentials to the configuration, and
+you're done.
+
+.Google Analytics configuration (j1_config.yml)
+[source, yaml, role="noclip"]
+----
+  analytics:
+    enabled:                              true
+    provider:                             google
+
+    google:
+      tracking_id:                        '<your-tracking-id>'
+----
+
+GAL is fully integrated with the GDPR-compatible Cookie Consent module.
+If your visitors do not agree on cooies for *Analysis*, Google Analytics gets
+automatically disabled and all cookies from Google are deleted from the
+user's system.
+
+=== Google Ads
+
+Google Ads (GAD) is integrated by pure configuration. Simply enable the
+provider and set your your access credentials to the configuration, and
+you're done.
+
+=== YouTube Video
+
+J1 Template supports YouTube and Vimeo video content out-of-the-box.
+The type of content is *automatically detected* with your video galleries
+configured, and the player is started as needed.
+
+.Markup to place the YouTube Video (Asciidoc)
+[source, apib, role="noclip"]
+----
+.YouTube Video (YTV)
+gallery::jg_video_online_youtube_2[role="mb-5"]
+----
+
+.YouTube Video (YTV)
+gallery::jg_video_online_youtube_2[role="mb-5"]
+
+=== Vimeo Video
+
+J1 Template supports Vimeo video content out-of-the-box. The type of content
+is *automatically detected* with your video galleries configured, and the
+player is started as needed.
+
+.Markup to place the Vimeo Video (Asciidoc)
+[source, apib, role="noclip"]
+----
+.Vimeo Video (VMV)
+gallery::jg_video_online_vimeo[role="mb-5"]
+----
+
+.Vimeo Video (VMV)
+gallery::jg_video_online_vimeo[role="mb-5"]

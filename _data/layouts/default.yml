@@ -104,11 +104,25 @@
 lanes:
 
   # ----------------------------------------------------------------------------
-  # HEAD region
+  # HEAD region (head)
+  #   The head region contains the metadata for a page and all CSS and
+  #   JS resources are required. The contents are configured ether by the
+  #   Jekyll configuration (_config.yml) or for modules by the resources
+  #   configuration (resources.yml).
+  #
+  #   NOTE:
+  #     Do NOT add any HTML CONTENT here (directly).
+  #     For the J1 Template GEM (J1 run-time version), ONLY the building
+  #     blocks already prepared can be used to generate the contents of
+  #     a page. To change the content for a 'lane', find the configuration
+  #     for 'metadata' and 'resources' with:
+  #
+  #     metadata:   ~/_config.yml (Jekyll configuration for the site)
+  #     resources:  ~/_data/resources.yml (all modules used for the site)
+  #
   # ----------------------------------------------------------------------------
 
-  # ----------------------------------------------------------------------------
-  # META data loader
+  # METADATA loader
   #
   - lane:
       enabled:                          true
@@ -130,11 +144,21 @@ lanes:
       file:                             layout_resource_generator.html
 
   # ----------------------------------------------------------------------------
-  # BODY region
+  # NAVIGATION region (body-navigation)
+  #   The navigation region contains the NAV module that generates e.g., the
+  #   menu bar or the quick links section.
+  #
+  #   NOTE:
+  #     Do NOT add any HTML CONTENT here (directly).
+  #     For the J1 Template GEM (J1 run-time version), ONLY the building
+  #     blocks already prepared can be used to generate the contents of
+  #     a page. To change the content for a 'lane', find the configuration
+  #     for 'metadata' and 'resources' with:
+  #
+  #     general settings:   ~/_data/modules/navigator.yml
+  #     menu bar:           ~/_data/modules/navigator_menu.yml
+  #
   # ----------------------------------------------------------------------------
-
-  # ----------------------------------------------------------------------------
-  # NAVIGATION loader
   #
   - lane:
       enabled:                          true
@@ -144,12 +168,32 @@ lanes:
       path:                             modules/navigator
       file:                             generator.html
 
+
   # ----------------------------------------------------------------------------
-  # EXCEPTION container
+  # FOOTER region (body-footer)
+  #   The footer region contains visible data (the page footer) and NOT
+  #   visible data to place all initializers for the JS componets specified.
   #
   #   NOTE:
-  #   The EXCEPTION container is used to place additional information
-  #   if processing of a component (e.g. a panel) has failed
+  #     Do NOT add any HTML CONTENT here (directly).
+  #     For the J1 Template GEM (J1 run-time version), ONLY the building
+  #     blocks already prepared can be used to generate the contents of
+  #     a page. To change the content for a 'lane', find the configuration
+  #     for the 'page footer' and 'resources' with:
+  #
+  #     page footer:  ~/_data/blocks/footer.yml
+  #     resources:    ~/_data/resources.yml
+  #
+  #   NOTE:
+  #     The exception container is a placeholder (above the page footer)
+  #     for displaying error messages in case something went wrong.
+  #
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # EXCEPTION container
+  # The exception container is used to place additional information
+  # if processing of a component (e.g. a panel) has failed.
   #
   - lane:
       enabled:                          true
@@ -159,7 +203,8 @@ lanes:
       class:                            container-fluid no-padding
 
   # ----------------------------------------------------------------------------
-  # FOOTER
+  # FOOTER container
+  # The page footer displayed on all pages
   #
   - lane:
       enabled:                          true
@@ -169,7 +214,8 @@ lanes:
       class:
 
   # ----------------------------------------------------------------------------
-  # MODULE loader
+  # MODULE container
+  # Generate all initializers for the JS components specified for a page.
   #
   - lane:
       enabled:                          true

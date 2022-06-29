@@ -88,7 +88,6 @@ issues for private or professional use.
 * Featured example content included
 * Royalty free images included
 * Support of comment provider APIs (Disqus, Hyvor)
-* Jupyter Notebook support
 * Google Analytics support (includes GDPR compatible OptIn/OptOut support)
 * Deploy on Github Pages (source only), Netlify and Heroku ready
 

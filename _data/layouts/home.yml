@@ -28,76 +28,111 @@
 #   of the component that is loaded into a lane and their specific
 #   (placement) parameters.
 #
-#   region
+#   enabled (required)
+#   ----------------------------------------------------------------------------
+#   Enables|Disables the placement of a lane. If disabled, the lane
+#   disappears and no data (whether exists) is being placed.
+#
+#     values:                           boolean (true|false)
+#     default:                          no default
+#
+#   id (required)
+#   ----------------------------------------------------------------------------
+#   Identifies the HTML container of a lane. Used by generators and for AJAX
+#   load calls (see parameter type) to place the HTML data. The id is used
+#   twice. First, id references a HTML fragment as part of the (HTML) data
+#   file (see parameter data below). Second, the id is used to identify the
+#   placeholder (div) element where the AJAX call puts the data on.
+#
+#     values:                           string
+#     default:                          no default
+#
+#   region (required)
 #   ----------------------------------------------------------------------------
 #   J1 templates defines, based on the general structure of a HTML page
 #   (head|body), more specific REGIONS based on HTML5 semantic elements
 #   to place HTML data:
 #
-#   head              <head> section. Contains (site-wide) meta data and
-#                     all CSS and JS files are to be loaded for a page.
-#   body-navigation   <body> NAV section. Contains the main navigation bar.
-#                     Placed a the BEGINNING of the <body> section.
-#   body-header       <body> HEADER section. Contains the page banner (header).
-#                     Placed AFTER the page navigation but BEFORE the main
-#                     content (body-main) of a page.
-#   body-main         <body> MAIN section. J1 template puts a <main> container
-#                     element in the <body> section to place the (main) content.
-#                     All content related elements are loaded into the region
-#                     'body-main'. Content may components like boxes, panels,
-#                     quotes etc. and the document content like sections and
-#                     articles.
-#   body-footer       <body> FOOTER section. J1 template puts a <footer> element
-#                     at the end of the <BODY> section. The body-footer region
-#                     contains all elements that should be loaded at the end
-#                     of a page; typically the page footer.
+#     head              <head> section. Contains (site-wide) meta data and
+#                       all CSS and JS files are to be loaded for a page.
+#     body-navigation   <body> NAV section. Contains the main navigation bar.
+#                       Placed a the BEGINNING of the <body> section.
+#     body-header       <body> HEADER section. Contains the page banner (header).
+#                       Placed AFTER the page navigation but BEFORE the main
+#                       content (body-main) of a page.
+#     body-main         <body> MAIN section. J1 template puts a <main>
+#                       container element in the <body> section to place
+#                       the content. All CONTENT related elements are loaded
+#                       into the region 'body-main'. Content may generated
+#                       by HTML teplates like banners and panels or by J1
+#                       modules.
+#     body-footer       <body> FOOTER section. J1 template puts a <footer>
+#                       element at the end of the <BODY> section. The
+#                       body-footer region contains all elements (visible
+#                       HTML data or not visible coomponents like JS scripts)
+#                       that should be loaded at the end of a page.
 #
-#   values:           head|body-navigation|body-header|body-main|body-footer
-#   default:          no defaults
+#     values:           head|body-navigation|body-header|body-main|body-footer
+#     default:          no default
 #
-#   type
+#   type (required)
 #   ----------------------------------------------------------------------------
-#   The (HTML) content of a lane can be included (from an include file) or
-#   loaded asychronously from a HTML data file by AJAX (get|load) calls.
-#   J1 template is using jQuery as an interface to AJAX calls.
+#   The (HTML) content of a lane can be passed from an included HTML template
+#   file or loaded asychronously at runtime from HTML data files by AJAX
+#   calls for dynamic HTML pages.
 #
-#   values:           include|load
-#   default:          no defaults
+#     values:                           sync|async
+#     default:                          no default
 #
-#   source
+#   base (required for lanes of type 'sync')
 #   ----------------------------------------------------------------------------
-#   The parameter source defines a (site root relativ) path to the data
-#   source to be included or loaded.
+#   The parameter 'base' defines a path, relativ to the site root, where HTML
+#   template files are located.
 #
-#   values:           string (path)
-#   default:          no defaults
+#     values:                           string (path)
+#     default:                          no default
 #
-#   file
+#   NOTE:
+#     For 'base', only includes from folder '~/_includes' are accepted to
+#     load data from.
+#   NOTE:
+#     Used only for HTML template files executed (syncronously) while a
+#     page is being generated by Jekyll for the STATIC HTML portions.
+#
+#   path (required for lanes of type 'sync')
 #   ----------------------------------------------------------------------------
-#   Defines the data file to be included or loaded.
+#   The parameter 'path' defines a path, relativ to 'base', where HTML
+#   template files of a component are located.
 #
-#   values:           string
-#   default:          no defaults
+#     values:                           string (path)
+#     default:                          no default
 #
-#   id
+#   NOTE:
+#     Used only for HTML template files executed (syncronously) while a
+#     page is being generated by Jekyll for the STATIC HTML portions.
+#
+#   file (required for lanes of type 'sync')
 #   ----------------------------------------------------------------------------
-#   Used for AJAX load calls (see parameter type). The id is used twice. First,
-#   id references a HTML fragment as part of the (HTML) data file (see parameter
-#   data below). Second, the id is used to identify the placeholder (div)
-#   element where the AJAX call puts the data on.
+#   The parameter 'file' specifies the NAME of the HTML template file
+#   executed by Jekyll to generate and place the STATIC HTML code.
 #
-#   values:           string
-#   default:          no defaults
+#     values:                           string (filename)
+#     default:                          no default
 #
-#   class
+#   NOTE:
+#     Used only for HTML template files executed (syncronously) while a
+#     page is being generated by Jekyll for the STATIC HTML portions.
+#
+#   properties (optional for lanes of type 'async')
 #   ----------------------------------------------------------------------------
 #   Additional CSS classes that are put on the placeholder (div) element.
-#   Can be used for type 'load', only.
+#   Can be used only for lanes of type 'async' (dynamic AJAX loads).
 #
-#   values:           string (CSS class name)
-#   default:          no defaults
+#     values:                           string (CSS class name)
+#     default:                          no default
 #
 # ------------------------------------------------------------------------------
+
 
 # ------------------------------------------------------------------------------
 # Layout configuration settings
@@ -105,20 +140,36 @@
 lanes:
 
   # ----------------------------------------------------------------------------
-  # HEADER region (region body-header)
-  # ----------------------------------------------------------------------------
-
-  # ----------------------------------------------------------------------------
+  # HEADER region (body-header)
+  #
   # MASTER header (attic)
   #
+  #   All pages are using a specific (master) header placed at the top
+  #   postion of a page (if enabled). Attics are fully configurable and
+  #   can provide text information and|or image-related data like pictures
+  #   or videos. Find the configuration for 'attics' with:
+  #
+  #     attics:  ~/_data/modules/attics.yml
+  #
   # NOTE:
-  #   All pages are using a specific header to display a title and a
-  #   tagline. Title and tagline are to be configured with the FRONTMATTER
-  #   of a page for individual data (text).
+  #   Master headers (attics) are specified on a per LAYOUT basis for
+  #   GENERAL settings. Individual settings like 'title' and 'tagline' or
+  #   the background image are to be configured with the FRONTMATTER of
+  #   a page (per PAGE basis). Individual configurations are set by the
+  #   resource option record 'resource_options' by the key 'attic'.
+  # NOTE:
+  #   The property 'id' of a master header is set on a per LAYOUT basis
+  #   defined in the attics configuration file 'attics.yml'.
+  # NOTE:
+  #   The property 'enabled' of the lane in region 'body-header is ALWAYS
+  #   set to 'true to generate the required placeholder. The property
+  #   'enabled' of a master header to switch on|off an attic is set on a
+  #   per LAYOUT basis defined in the attics configuration file 'attics.yml'.
   # ----------------------------------------------------------------------------
   #
   - lane:
       enabled:                          true
+      id:                               header
       region:                           body-header
       type:                             sync
       base:                             _includes/themes/j1
@@ -128,38 +179,33 @@ lanes:
   # ----------------------------------------------------------------------------
   # CONTENT region (region body-main)
   #
-  #   NOTE:
-  #     The CONTENT of a post or page may already rendered (page contains HTML
-  #     data) or unrendered (page contains MARKUP data). In both cases, rendered
-  #     or unrendered content, a valid FRONTMATTER is needed to pass the data.
+  #  For the J1 Template GEM (J1 run-time version), ONLY the building
+  #  blocks already prepared can be used to generate the contents of
+  #  a home page. To change the content for a 'lane', find the configuration
+  #  for 'banners', 'panels' and FABs (floting action button) with:
   #
-  #     The CONTENT generation for posts and pages depends on the data type,
-  #     the MARKUP language (Markdown, Asciidoc) the page is using. The data
-  #     type is specified by the file EXTENSION (e.g. ".md" for Markdown or
-  #     ".adoc" for Asciidoc formatted content).
-  #
-  #     To enable Jekyll running the render phase, the respective processor
-  #     (e.g.kramdown for MARKDOWN or asciidoctor for ASCIIDOC) needs to be
-  #     loaded and configured (Gemfile and the side-wide configuration file
-  #     _config.yml).
+  #     banners:  ~/_data/blocks/banner.yml
+  #     panels:   ~/_data/blocks/panel.yml
+  #     fab:      ~/_data/modules/fab.yml
   #
   #   NOTE:
-  #     The CONTENT of a PAGE is passed trough a (Liquid) wrapper procedure
-  #     (page_content.html) to add or inject specific ADDITIONAL data like
-  #     a TOC etc. that influences the resulting page.
-  #
-  #     To modify the wrapper, DO NOT CHANGE the template files. See with
-  #     ***URL*** how to create your own wrapper (and OVERLOAD the J1 template
-  #     system with the data you provided).
+  #     Do NOT add any HTML CONTENT here (directly).
   #
   # ----------------------------------------------------------------------------
-
-  # ----------------------------------------------------------------------------
-  # CONTENT
-  #
 
   # ----------------------------------------------------------------------------
   # TEASER banner
+  #
+  #   Simple intro element for a page to give an overview on the contents
+  #   provided. Find the configuration with:
+  #
+  #     banners:  ~/_data/blocks/banner.yml
+  #
+  # NOTE:
+  #   The property 'id' of a banner element MUST be the same as specified
+  #   the configuration for banners (banner.yml).
+  #
+  # ----------------------------------------------------------------------------
   #
   - lane:
       enabled:                          true
@@ -169,7 +215,80 @@ lanes:
       properties:                       g-2 elevated-z0
 
   # ----------------------------------------------------------------------------
+  # DIVIDER banner
+  #
+  #   Place a (dotted) line as a simple divider. Find the configuration
+  #   with:
+  #
+  #     banners:  ~/_data/blocks/banner.yml
+  #
+  # NOTE:
+  #   The property 'id' of a banner element MUST be the same as specified
+  #   the configuration for banners (banner.yml).
+  # ----------------------------------------------------------------------------
+  #
+  - lane:
+      enabled:                          false
+      id:                               divider-1
+      region:                           body-main
+      type:                             async
+      properties:                       mt-4 mr-0 mb-4 ml-0
+
+  # ----------------------------------------------------------------------------
+  # IMAGE banner
+  #
+  #   Places an image (full width) on a page. Can be used as a more
+  #   eye-minded divider element. Find the configuration with:
+  #
+  #     banners:  ~/_data/blocks/banner.yml
+  #
+  # NOTE:
+  #   The property 'id' of a banner element MUST be the same as specified
+  #   the configuration for banners (banner.yml).
+  #
+  # ----------------------------------------------------------------------------
+  #
+  - lane:
+      enabled:                          true
+      id:                               home_image_banner
+      region:                           body-main
+      type:                             async
+
+  # ----------------------------------------------------------------------------
+  # CUSTOM content
+  #
+  #   Load custom rendered static HTML data files or custom HTML templates
+  #   using LIQUID processing.
+  #
+  #   NOTE:
+  #     Only includes from folder '~/_includes' are accepted to load
+  #     HTML data (include) files from.
+  #
+  # ----------------------------------------------------------------------------
+  #
+  - lane:
+      enabled:                          true
+      id:                               custom_content
+      region:                           body-main
+      type:                             sync
+      base:                             _includes/custom
+      path:                             static
+      file:                             custom_teaser.html
+
+  # ----------------------------------------------------------------------------
   # SERVICE panel
+  #
+  #   Complex, but fully configurake display element (mainly used on landing
+  #   pages) to give a detailed inside view on the services provided by
+  #   the website. Find the configuration with:
+  #
+  #     panels:  ~/_data/blocks/panel.yml
+  #
+  # NOTE:
+  #   The property 'id' of a panel element MUST be the same as specified
+  #   the configuration for panels (panel.yml).
+  #
+  # ----------------------------------------------------------------------------
   #
   - lane:
       enabled:                          false
@@ -179,29 +298,19 @@ lanes:
       properties:                       g-2 elevated-z0
 
   # ----------------------------------------------------------------------------
-  # DIVIDER banner
-  #
-  - lane:
-      enabled:                          false
-      id:                               divider-1
-      region:                           body-main
-      type:                             async
-      properties:                       mt-4 mr-5 mb-4 ml-5
-
-  # ----------------------------------------------------------------------------
-  # Page Advertisment
-  #
-  - lane:
-      enabled:                          false
-      region:                           body-main
-      id:                               google_ad_content_home
-      type:                             sync
-      base:                             _includes/themes/j1
-      path:                             modules/ads
-      file:                             google_ad_content_home.html
-
-  # ----------------------------------------------------------------------------
   # INTRO panel
+  #
+  #   Fully configurake display element, mainly used on landing
+  #   pages, to give a overview on the services provided by
+  #   the website. Find the configuration with:
+  #
+  #     panels:  ~/_data/blocks/panel.yml
+  #
+  # NOTE:
+  #   The property 'id' of a panel element MUST be the same as specified
+  #   the configuration for panels (panel.yml).
+  #
+  # ----------------------------------------------------------------------------
   #
   - lane:
       enabled:                          true
@@ -213,6 +322,18 @@ lanes:
   # ----------------------------------------------------------------------------
   # PARALLAX banner
   #
+  #   Places an image (full width) with a parallax effect. Additionally,
+  #   a quotation text is configurable and placed centered on top of
+  #   the image. Find the configuration with:
+  #
+  #     banners:  ~/_data/blocks/banner.yml
+  #
+  # NOTE:
+  #   The property 'id' of a banner element MUST be the same as specified
+  #   the configuration for banners (banner.yml).
+  #
+  # ----------------------------------------------------------------------------
+  #
   - lane:
       enabled:                          true
       id:                               home_parallax_banner
@@ -221,34 +342,65 @@ lanes:
       properties:                       elevated-z0
 
   # ----------------------------------------------------------------------------
-  # IMAGE banner
+  # PLAN panel
+  #
+  #   Displays a fully configurable pricing plan. For commercial use or
+  #   for collecting donations, e.g. via GitHub Sponsors. Find the related
+  #   configuration with:
+  #
+  #     panels:  ~/_data/blocks/panel.yml
+  #
+  # NOTE:
+  #   The property 'id' of a panel element MUST be the same as specified
+  #   the configuration for panels (panel.yml).
+  #
+  # ----------------------------------------------------------------------------
   #
   - lane:
       enabled:                          false
-      id:                               home_image_banner
+      id:                               home_plan_panel
       region:                           body-main
       type:                             async
-      properties:                       mb-3
+      properties:                       g-2 elevated-z0
 
   # ----------------------------------------------------------------------------
   # NEWS panel
+  #
+  #   The news panel displays a configurable number of available posts
+  #   (excerpts) using infinite scroll. Find the configuration with:
+  #
+  #     panels:  ~/_data/blocks/panel.yml
+  #
+  # NOTE:
+  #   The property 'id' of a panel element MUST be the same as specified
+  #   the configuration for panels (panel.yml).
+  #
+  # ----------------------------------------------------------------------------
   #
   - lane:
       enabled:                          true
       id:                               home_news_panel
       region:                           body-main
       type:                             async
-      properties:                       g-2 elevated-z2
+      properties:                       g-2 elevated-z0
 
   # ----------------------------------------------------------------------------
-  # FAB
+  # FAB (floating action button)
+  #
+  #   Place an floating action button on a page. FABs are used for in-page
+  #   navigation for faster scrolling to headlines (TOC) or other important
+  #   positions in a document. FABs are fully configurable. Find the
+  #   configuration with:
+  #
+  #     fab:      ~/_data/modules/fab.yml
+  #
+  # ----------------------------------------------------------------------------
   #
   - lane:
       enabled:                          true
       id:                               fab-container
       region:                           body-main
       type:                             async
-      properties:                       elevated-z0
 
 # ------------------------------------------------------------------------------
 # END config

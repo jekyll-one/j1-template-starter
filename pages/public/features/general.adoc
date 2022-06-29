@@ -1,0 +1,246 @@
+---
+title:                                  General Features
+tagline:                                platforms, frameworks, and devices
+date:                                   2021-01-01 00:00:00 +100
+description: >
+                                        Current software counts. Excellent tools in their latest versions
+                                        make the rocket engine for each and every website. Jekyll One
+                                        is using current software in their latest versions. All of them
+                                        are OpenSource and free to use. No license issues for private or
+                                        professional use.
+
+keywords: >
+                                        features, platforms, frameworks, components, devices,
+                                        opensource, free, load, download, start, starter, example,
+                                        high, easy, use, secure, encrypt, standard, popular,
+                                        generate, develop, create, learn, distribute, publish, deploy,
+                                        beginner, advanced, expert, student, learner, writer, reader, visitor
+                                        framework, toolkit, integration, extension, module, api,
+                                        dynamic, static, generator, client, server, internet, local, localhost
+                                        page, web, website, webdesign, material, design, responsive,
+                                        javascript, nodejs, ruby, windows, linux, osx, mac, os,
+                                        http, https, html, html5, css, scss, style,
+                                        browser, firefox, chrome, edge, opera, safari,
+                                        configuration, generator, navigation, menu, dropdown, fab, action, button
+                                        application, interface, provider, api, repository,
+                                        cookie, language, translation, gdpr, dsgvo, privacy,
+                                        asciidoc, aciidoctor, bootstrap, jekyll, liquid,
+                                        hyvor, disqus, git, github, netlify, heroku, apple, microsoft,
+                                        provider, service, internet, support,
+                                        google, analytics, advertising, search, console, silverlight, score,
+                                        j1, template, jekyllone, comment
+
+categories:                             [ Features ]
+tags:                                   [ General, Features ]
+
+sitemap:                                true
+advertising:                            false
+comments:                               false
+
+robots:
+  index:                                true
+  follow:                               true
+
+permalink:                              /pages/public/features/general_features/
+regenerate:                             false
+
+resources:                              [ animate, clipboard, rouge, lightbox, iconify ]
+resource_options:
+  - toccer:
+      collapseDepth:                    4
+  - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+      slides:
+        - url:                          /assets/images/modules/attics/christina-1920x1280.jpg
+          alt:                          Photo by Christina on Unsplash
+          alignY:                       top
+          badge:
+            type:                       unsplash
+            author:                     Christina
+            href:                       https://unsplash.com/@wocintechchat
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:url-fontawesome--home:                 https://fontawesome.com/
+
+:url-roundtrip--mdi-icons:              /pages/public/learn/roundtrip/mdi_icon_font/#material-design-icons
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+Current software counts. Excellent tools in their latest versions make the
+rocket engine for each and every website. Jekyll One is using current software
+in their latest versions. All of them are OpenSource and free to use.
+No license issues for private or professional use.
+
+== Platforms
+
+J1 Template is based on these popular software platforms:
+
+mdi:language-ruby[24px, md-blue ml-3 mr-2]
+Ruby 2.7 +
+mdi:language-ruby[24px, md-blue ml-3 mr-2]
+Jekyll 4.2 +
+mdi:nodejs[24px, md-blue ml-3 mr-2]
+NodeJS 12.x
+
+All software-platforms are OpenSource, free to use and available on all
+common operating systems like Windows, Linux, and OSX.
+
+=== Ruby and Jekyll
+
+The template system J1 is based on the Ruby language of version
+2.x. For sure, not the latest language version for Ruby but the
+supported platform for the latest Jekyll software.
+
+=== NodeJS
+
+Websites created by Jekyll One are projects managed by NodeJS. The
+built-in script engine provided by the package manager `npm` of NodeJS
+simplifies the management of J1 projects a lot. Well-known commands
+typically used to manage software projects are at your fingertips.
+Easy to learn, easy to remember. Commands support creators to
+concentrate on the content.
+
+== Frameworks
+
+To no reinvent wheels, J1 Template is based on ready-to-use frameworks,
+extensions, and modules. All build-in frameworks are industry standard,
+well known, and accepted worldwide.
+
+mdi:bootstrap[24px, md-blue ml-3 mr-2]
+Bootstrap V5 +
+mdi:language-html5[24px, md-blue ml-3 mr-2]
+HTML5, CSS and Javascript +
+mdi:grass[24px, md-blue ml-3 mr-2]
+Icon Fonts +
+mdi:application-settings[24px, md-blue ml-3 mr-2]
+Fully configurable components +
+
+=== Bootstrap V5
+
+For current webs, a must: responsiveness and modern design. Jekyll One is
+based on Bootstrap V5, the leading platform to create today's responsive webs.
+
+=== HTML5, CSS and Javascript
+
+Professional websites on the internet define standards. All
+current sites support dynamic, fast loading, and some more features.
+For fastest loading, all HTML, CSS, and Javascript have been compressed
+automatically for production. Going further for dynamic, AJAX loading
+for J1 webs is supported as well.
+
+=== Icon Fonts
+
+No question, icons and icon fonts are essentially required to make a site
+better understandable. Icons are used for navigation, extensions, modules,
+and last but not least for the content.
+
+J1 Template supports popular icons font sets out-of-the-box:
+
+* link:{url-mdi--home}[Material Design Icons, {browser-window--new}] (MDI)
+* link:{url-fontawesome--home}[FontAwesome Icons V5, {browser-window--new}] (FAI)
+* link:{url-iconify--home}[Iconify Icons, {browser-window--new}] (ICI)
+
+All the icon sets are excellent in design and have a rich set of icons in
+various categories typically used for the Web.
+
+=== Fully configurable components
+
+Software products of today are not easy to manage. To get the complexity
+out of your way, J1 is fully configurable. No need to dive in the deep.
+
+.Example of a text slider configuration (carousel.yml)
+[source, yaml, role="noclip"]
+----
+# --------------------------------------------------------------------------
+# text--template-features (features page)
+#
+- show:
+    enabled:          true
+    id:               text--template-features
+    lightbox:         false
+    type:             text
+
+    text:             [
+                        "<big>Jekyll One Template</big>         </br> <i>Clean, ..</i>",
+                        "<big>Jekyll meets Bootstrap</big>      </br> <i>Best of OpenSource ..</i>",
+                        "<big>J1 is Open Source</big>           </br> <i>No pain ..</i>",
+                        "<big>Explore this site</big>           </br> <i>Learn what's possible ..</i>",
+                        "<big>Create modern static sites</big>  </br> <i>Secure, ..<i>"
+                      ]
+    options:
+      autoPlay:       5000
+      singleItem:     true
+      pagination:     false
+----
+
+Configure what is to be done.
+
+== Devices
+
+The Web is everywhere. J1 Template supports modern web browsers on all devices
+for best results on PCs, Tablets, and SmartPhones.
+
+mdi:devices[24px, md-blue ml-3 mr-2]
+Desktop and Mobile support +
+mdi:near-me[24px, md-blue ml-3 mr-2]
+Mobile Web Navigation +
+mdi:lighthouse[24px, md-blue ml-3 mr-2]
+Highest Google Lighthouse scores
+
+=== Desktop and Mobile support
+
+The internet has shifted from almost exclusively desktop-driven to mostly
+mobile-driven nowadays. Just a decade ago, in 2010, over 90 percent of all
+global web traffic came from desktop computers. The percentage of global web
+traffic on mobile phones has surged over the past decade. As of July 2021,
+more than 50 percent of all web traffic came through mobile devices.
+
+.Global mobile traffic, 2011-2021
+lightbox::broadbandsearch--global-mobile-traffic[ 800, {data-broadbandsearch--global-mobile-traffic} ]
+
+Source: link:{url-broadbandsearch--mobile-internet-usage}[broadbandsearch.net, {browser-window--new}]
+
+As of 2021, more than 50 percent of the total web visits are currently mobile.
+For this reason, it is very important to provide good useability of your
+website for mobile devices.
+
+=== Mobile Web Navigation
+
+Mobile devices are great for Apps designed for these platforms. Using a web
+browser to surf websites is often frustrating on mobiles. Jekyll One provides
+navigation systems that cover both worlds: desktops and mobiles.
+
+.Mobile Web Navigation
+lightbox::images--mobile-navigation[ 400, {data-images--mobile-navigation} ]
+
+=== Google Lighthouse scores
+
+Performance is a key factor for all users. To not get visitors lost, J1 webs
+are highly optimized. All Websites will achieve the  best Google Lighthouse
+scores for performance, accessibility, best practices, and SEO at the green
+level.
+
+.Google Lighthouse Scores
+lightbox::images--google-lighthouse[ 800, {data-images--google-lighthouse} ]

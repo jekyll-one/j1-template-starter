@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 #  ~/_data/blocks/banner.yml
-#  User configuration settings for BANNER lanes
+#  User configuration settings for BANNERS
 #
 #  Product/Info:
 #  https://jekyll.one
@@ -13,7 +13,7 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
 
@@ -25,95 +25,42 @@ description:
 # SETTINGS
 #
 settings:
-  # ----------------------------------------------------------------------------
-  # General parallax settings
-  #
-  # Global configuration for parallax|banner quotes. These settings are
-  # side-wide and should match your theme not individual images. Be careful
-  # for the selection of banner images.
-  #
-  # Individual settings (e.g. page placement, cite, source) are configured
-  # with the panels configuration (j1_panels.yml).
-  #
-  #   gridify
-  #   --------------------------------------------------------------------------
-  #   If enabled, a grit pattern is placed over the background image. This
-  #   puts some "noise" on the image to focus more on the quote|text rather
-  #   than the image.
-  #
-  #   values:                         boolean (true|false)
-  #   default:                        true
-  #
-  #   gridifier
-  #   --------------------------------------------------------------------------
-  #   Pixel image used to gridify the background image of the banner.
-  #
-  #   values:                         image path|name (string)
-  #   default:                        /assets/images/modules/patterns/gridtile.png
-  #
-  #   darken
-  #   --------------------------------------------------------------------------
-  #   Sets the lightning for the banner|background image. As higher the value
-  #   for darken as less is the (background) light. Values are out of the
-  #   range from 1 (light) to 9 (dark). Useful to focus on the quote|text
-  #   rather than the background image.
-  #
-  #   values:                         number [1 .. 9]
-  #   default:                        3
-  #
-  #   background
-  #   --------------------------------------------------------------------------
-  #   Default background image of the banner if no other image is specified with
-  #   the panels configuration (j1_panels.yml).
-  #
-  #   values:                         image path|name (string)
-  #   default:                        /assets/images/quotes/default.png
-  # ----------------------------------------------------------------------------
-  parallax_settings:
-
-    gridify:                            true
-    gridifier:                          /assets/images/modules/patterns/gridtile.png
-    darken:                             3
-    background:                         /assets/images/quotes/default.png
-    background_pos_x:                   50%
-    background_pos_y:                   0
 
   # ----------------------------------------------------------------------------
-  # DIVIDER Banner
+  # DIVIDER banner
+  #
+  #   Place a (dotted) line as a simple divider.
+  #
+  # ----------------------------------------------------------------------------
   #
   divider:
     # --------------------------------------------------------------------------
-    # DIVIDER banner properties
+    # DIVIDER properties
     #
     - name:                             Divider Banner 1
       banner:
-        enabled:                        false
+        enabled:                        true
 
         id:                             divider-1
-        type:                           divider
         comment:                        Divider Banner 1
-        lane_span:                      fluid
+        type:                           divider
 
     - name:                             Divider Banner 2
       banner:
-        enabled:                        false
+        enabled:                        true
 
         id:                             divider-2
-        type:                           divider
         comment:                        Divider Banner 2
-        lane_span:                      fluid
-
-    - name:                             Divider Banner 3
-      banner:
-        enabled:                        false
-
-        id:                             divider-3
         type:                           divider
-        comment:                        Divider Banner 3
-        lane_span:                      fluid
+
 
   # ----------------------------------------------------------------------------
-  # TEASER Banner
+  # TEASER banner
+  #
+  #   Simple intro element for a page to give an overview on the contents
+  #   provided. Find the configuration with
+  #
+  # ----------------------------------------------------------------------------
   #
   teaser:
     # --------------------------------------------------------------------------
@@ -126,9 +73,9 @@ settings:
         id:                             home_teaser_banner
         comment:                        Top teaser shown on home page
         type:                           teaser
-        properties:                     mt-3 mb-5
+        badges:                         false
         icon_family:                    MDI
-        lane_span:                      fluid
+        properties:                     mt-3 mb-5
 
         cards:
 
@@ -158,19 +105,6 @@ settings:
                                           Explore what's possible if you go for static websites.
                                         </p>
               buttons:
-
-#               - name:                 Features
-#                 button:
-#                   id:                 features
-#                   title:              New
-#                   tagline:            learn top features
-#                   class:              btn btn-xl btn-primary text-uppercase text-left mr-2 mb-2
-#                   style:              "min-width: 250px"
-#                   icon:               magnify
-#                   icon_color:
-#                   icon_size:          3x
-#                   href:               '#'
-#                   target:
 
                 - name:                 Roundtrip
                   button:
@@ -214,101 +148,15 @@ settings:
                     href:               "https://jekyll.one/pages/public/learn/rocketstart/"
                     target:             blank
 
-    # --------------------------------------------------------------------------
-    # Home Welcome Banner
-    #
-    - name:                             Home Welcome Banner
-      banner:
-        enabled:                        false
-
-        id:                             home_welcome_banner
-        comment:                        Teaser shown on home page below the parallax
-        type:                           teaser
-        properties:
-        icon_family:                    MDI
-        lane_span:                      fluid
-
-        cards:
-
-          - name:                       Welcome Content
-            card:
-              enabled:                  true
-              width:                    12
-              type:                     text
-              animate:                  fadeInUp
-              title:                    Are you corious?
-              tagline:                  <large><b>creating websites</b></large>
-              description: >
-                                        It is not a secret that many options are available today to create
-                                        and present websites. Content Management Systems (CMS) like WordPress,
-                                        or Online Services like Wix, can be used to manage and deliver a website.
-                                        Using Content Management Systems is reasonably complex because of their
-                                        nature. A CMS creates dynamic pages based on data stored in database systems.
-                                        And they are using quite complex programming interfaces like PHP to generate
-                                        each and every page.
-                                        On the other hand, an Online Service simplifies the process of creating a
-                                        website a lot, but you're quite limited in what a Service Provider is giving
-                                        you at your hands.
-                                        <br/><br/>
-                                        To learn what is behind the scenes will be a quite challenging job if you go for a CMS.
-                                        For Content Management Systems, expect a really steep learning curve to get
-                                        an insight view. If you have plans using an Online Service, forget about learning.
-                                        A provider won't get you any insight view what's happening in behind.
-                                        <br/><br/>
-                                        J1 is created to flatten the learning curve for learning how modern websites
-                                        are being made. Using Jekyll One, people can start on a beginner level but
-                                        simultaneously achieve good results. That's important for all users but especially
-                                        for learners. The website generator Jekyll plus the template system J1 enables
-                                        all to reach the next level and always having fun what they're doing.
-                                        <br/><br/>
-                                        Jekyll One is meant to be a useful site for creators, for makers, for learners.
-                                        For all people having this on their minds: creating unique websites by getting
-                                        their hands dirty and to keep control over what's happening.
-                                        <br/><br/>
-                                        Willing for a try?
-
-
-              buttons:
-
-                - name:                 Kickstarter button
-                  button:
-                    text:               Start creating your static web
-                    class:              btn btn-flex btn-md btn-primary g-mr-5
-                    icon:               rocket
-                    icon_color:         md-black
-                    icon_size:          24px
-                    href:               https://jekyll.one/pages/public/learn/kickstarter/web_in_a_day/meet_and_greet/
-                    target:
 
   # ----------------------------------------------------------------------------
-  # IMAGE Banner
+  # PARALLAX banner
   #
-  image:
-    # --------------------------------------------------------------------------
-    # home_image_banner
-    #
-    - name:                               Home Image Banner
-      banner:
-        enabled:                          false
-
-        id:                               home_image_banner
-        type:                             image
-        properties:
-        comment:                          Main image banner shown on home page
-        lane_span:                        fluid
-
-        cards:
-
-          - name:                         Image settings
-            card:
-              enabled:                    true
-              gridify:                    false
-              size_y:                     450
-              darken:                     1
-              background_image:           /assets/images/modules/attics/ideas-start-here-1920x1280-bw.jpg
-
+  #   Places an image (full width) with a parallax effect. Additionally,
+  #   a quotation text is configurable and placed centered on top of
+  #   the image.
+  #
   # ----------------------------------------------------------------------------
-  # PARALLAX Banner
   #
   parallax:
     # --------------------------------------------------------------------------
@@ -319,10 +167,9 @@ settings:
         enabled:                          true
 
         id:                               home_parallax_banner
+        comment:                          Main parallax banner shown on home page
         type:                             parallax
         properties:
-        comment:                          Main parallax banner shown on home page
-        lane_span:                        fluid
 
         cards:
 
@@ -343,38 +190,35 @@ settings:
               darken:                     6
               background_image:           /assets/images/modules/attics/ideas-start-here-1920x1280-bw.jpg
 
+
   # ----------------------------------------------------------------------------
-  # FOO Banner
+  # IMAGE banner
   #
-  foo:
+  #   Place an image (full width).
+  #
+  # ----------------------------------------------------------------------------
+  #
+  image:
     # --------------------------------------------------------------------------
-    # foo_banner
+    # home_image_banner
     #
-    - name:                               Foo Banner
+    - name:                               Home Image Banner
       banner:
-        enabled:                          false
+        enabled:                          true
 
-        id:                               foo_banner
-        type:                             foo
-        comment:                          Banner (type) to test config issues/exceptions
-        lane_span:                        fluid
+        id:                               home_image_banner
+        comment:                          Image banner shown on home page
+        type:                             image
+        properties:                       mt-6 mb-6
 
-  # ----------------------------------------------------------------------------
-  # EXCEPTION banner
-  #
-  #   NOTE:
-  #   The EXCEPTION banner is used to place additional information to the
-  #   (default) exception CONTAINER if processing of a banner has failed
-  #
-  exception:
-    # --------------------------------------------------------------------------
-    # EXCEPTION banner settings
-    #
-    id:                                 exception_container
-    enabled:                            true
-    type:                               exception
-    comment:                            Default Exception Banner
-    lane_span:                        fluid
+        image:
+          gridify:                        false
+          height:                         450
+          justify:                        true
+          brightness:                     80
+          opacity:                        false
+          picture:                        /assets/images/modules/attics/ideas-start-here-1920x1280-bw.jpg
+
 
 # ------------------------------------------------------------------------------
 # END config

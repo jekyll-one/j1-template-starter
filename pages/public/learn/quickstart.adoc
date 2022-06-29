@@ -20,9 +20,6 @@ regenerate:                             false
 resources:                              [ animate, clipboard, rouge ]
 resource_options:
   - attic:
-      padding_top:                      400
-      padding_bottom:                   50
-      opacity:                          0.5
       slides:
         - url:                          /assets/images/modules/attics/matthew-dockery-1920x1280.jpg
           alt:                          Photo by Matthew Dockery on Unsplash
@@ -57,10 +54,10 @@ resource_options:
 // -----------------------------------------------------------------------------
 The template comes with a Web included, a skeleton for new a website created
 using J1 Template. This Web is called the *Starter web*, a general-purpose
-scaffold to be modified for your needs. The built-in Starter web  is available
-live at https://publish.jekyll.one/[J1 Publish, {browser-window--new}]. This
-site show live pages deployed on the Internet on _Github_, _Netlify_
-and _Heroku_.
+scaffold to be modified for your needs. The built-in Starter web is available
+live at link:{url-j1--home}/[J1 Home, {browser-window--new}] under the menu
+*Live*. These sites show live pages deployed on the Internet on _Github_ and
+_Netlify_.
 
 A *Starter web* is created in minutes. This section
 
@@ -303,8 +300,8 @@ Configuration file: c:/Temp/starter/_config.yml
        Destination: c:/Temp/starter/_site
  Incremental build: enabled
       Generating...
-    J1 QuickSearch: creating search index ...
-    J1 QuickSearch: finished, index ready.
+           J1 Lunr: creating search index ...
+           J1 Lunr: finished, index ready.
       J1 Paginator: autopages, disabled|not configured
       J1 Paginator: pagination enabled, start processing ...
       J1 Paginator: finished, processed 5 pagination page|s
@@ -342,8 +339,8 @@ Configuration file: c:/Temp/starter/_config.yml
        Destination: c:/Temp/starter/_site
  Incremental build: enabled
       Generating...
-    J1 QuickSearch: creating search index ...
-    J1 QuickSearch: finished, index ready.
+           J1 Lunr: creating search index ...
+           J1 Lunr: finished, index ready.
       J1 Paginator: autopages, disabled|not configured
       J1 Paginator: pagination enabled, start processing ...
       J1 Paginator: finished, processed 5 pagination page|s
@@ -387,8 +384,8 @@ Configuration file: c:/Temp/starter/_config.yml
        Destination: c:/Temp/starter/_site
  Incremental build: enabled
       Generating...
-    J1 QuickSearch: creating search index ...
-    J1 QuickSearch: finished, index ready.
+           J1 Lunr: creating search index ...
+           J1 Lunr: finished, index ready.
       J1 Paginator: autopages, disabled|not configured
       J1 Paginator: pagination enabled, start processing ...
       J1 Paginator: finished, processed 5 pagination page|s

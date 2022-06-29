@@ -103,18 +103,31 @@
 # Layout configuration settings
 #
 lanes:
-
   # ----------------------------------------------------------------------------
-  # HEADER region (region body-header)
+  # HEADER region (body-header)
+  #   The header region contains the 'master' header displayed on all pages.
+  #
+  #   NOTE:
+  #     Do NOT add any HTML CONTENT here (directly).
+  #     For the J1 Template GEM (J1 run-time version), ONLY the building
+  #     blocks already prepared can be used to generate the contents of
+  #     a home page. To change the content for a 'attic', find the
+  #     configuration with:
+  #
+  #     attic:  ~/_data/modules/attics.yml
+  #
+  #   NOTE:
+  #    individual settings like 'title' or 'tagline' can be configured with
+  #    the FRONTMATTER of a page.
+  #
   # ----------------------------------------------------------------------------
 
   # ----------------------------------------------------------------------------
   # MASTER header (attic)
+  # All pages are using a specific header to display a title and a
+  # tagline. Title and tagline are to be configured with the FRONTMATTER
+  # of a page for individual data (text).
   #
-  # NOTE:
-  #   All pages are using a specific header to display a title and a
-  #   tagline. Title and tagline are to be configured with the FRONTMATTER
-  #   of a page for individual data (text).
   # ----------------------------------------------------------------------------
   #
   - lane:
@@ -126,35 +139,37 @@ lanes:
       file:                             generator.html
 
   # ----------------------------------------------------------------------------
-  # MAIN region (region body-main)
+  # CONTENT region (region body-main)
   #
-  # NOTE:
-  #   The CONTENT of a post or page may already rendered (page contains HTML
-  #   data) or unrendered (page contains MARKUP data). In both cases, rendered
-  #   or unrendered content, a valid FRONTMATTER is needed to pass the data.
+  #   NOTE:
+  #     The CONTENT of a post or page may already rendered (page contains HTML
+  #     data) or unrendered (page contains MARKUP data). In both cases, rendered
+  #     or unrendered content, a valid FRONTMATTER is needed to pass the data.
   #
-  #   The CONTENT generation for posts and pages depends on the data type,
-  #   the MARKUP language (Markdown, Asciidoc) the page is using. The data
-  #   type is specified by the file EXTENSION (e.g. ".md" for Markdown or
-  #   ".adoc" for Asciidoc formatted content).
+  #     The CONTENT generation for posts and pages depends on the data type,
+  #     the MARKUP language (Markdown, Asciidoc) the page is using. The data
+  #     type is specified by the file EXTENSION (e.g. ".md" for Markdown or
+  #     ".adoc" for Asciidoc formatted content).
   #
-  #   To enable Jekyll running the render phase, the respective processor
-  #   (e.g.kramdown for MARKDOWN or asciidoctor for ASCIIDOC) needs to be
-  #   loaded and configured (Gemfile and the side-wide configuration file
-  #   _config.yml).
+  #     To enable Jekyll running the render phase, the respective processor
+  #     (e.g.kramdown for MARKDOWN or asciidoctor for ASCIIDOC) needs to be
+  #     loaded and configured (Gemfile and the side-wide configuration file
+  #     _config.yml).
   #
-  # NOTE:
-  #   The CONTENT of a PAGE is passed trough a (Liquid) wrapper procedure
-  #   (page_content.html) to add or inject specific ADDITIONAL data like
-  #   a TOC etc. that influences the resulting page.
+  #   NOTE:
+  #     Do NOT add any HTML CONTENT here (directly).
+  #     For the J1 Template GEM (J1 run-time version), ONLY the building
+  #     blocks already prepared can be used to generate the contents of
+  #     a home page. To change the content for a 'lane', find the configuration
+  #     for page|post content and FABs (floting action button) with:
   #
-  #   To modify the wrapper, DO NOT CHANGE the template files. See with
-  #   ***URL*** howto create your own wrapper (and OVERLOAD the J1 template
-  #   system with the data you provided).
+  #     page|post content:  ~/pages
+  #     fab:                ~/_data/modules/fab.yml
+  #
   # ----------------------------------------------------------------------------
 
   # ----------------------------------------------------------------------------
-  # CONTENT
+  # PAGE content
   #
   - lane:
       enabled:                          true
@@ -165,7 +180,7 @@ lanes:
       file:                             content_generator_page.html
 
   # ----------------------------------------------------------------------------
-  # FAM
+  # PAGE fab
   #
   - lane:
       enabled:                          true

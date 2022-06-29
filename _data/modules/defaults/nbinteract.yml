@@ -74,6 +74,10 @@ defaults:
   #   values:                           URL
   #   default:                          https://mybinder.org
   #
+  # NOTE: DIRECT access to (GESIS) 'https://notebooks.gesis.org/binder/'
+  # is restricted to private access (isTrusted == true). Registration at
+  # GESIS is required.
+  #
   # ----------------------------------------------------------------------------
   #
   # provider
@@ -173,6 +177,53 @@ defaults:
   #
   enabled:                              true
 
+  # ----------------------------------------------------------------------------
+  # Binder access
+  # ----------------------------------------------------------------------------
+
+  # Binder baseUrls (all members of the Binder Org Federation)
+  # ----------------------------------------------------------------------------
+  #
+  baseUrls:
+    preferred:                          mybinder
+    mybinder:                           'https://mybinder.org'                  # Binder Org
+    gke:                                'https://gke.mybinder.org'              # Google Cloud
+    ovh:                                'https://ovh.mybinder.org'              # OVH Cloud
+    gesis:                              'https://gesis.mybinder.org'            # GESIS Notebooks
+    turing:                             'https://turing.mybinder.org'           # Alan Turing Institute
+
+  # Provider specs
+  # ----------------------------------------------------------------------------
+  #
+  providers:
+    preferred:                          github                                  # github
+    github:
+      provider_id:                      gh
+      provider_spec:                    jekyll-one/j1-binder-repo/main          # config: requirements.txt
+#     provider_spec:                    jekyll-one/j1-binder-nbinteract/main    # config: environment.yml
+    zenodo:
+      provider_id:                      zenodo
+      provider_spec:                    10.5281/zenodo.6721479                  # 2nd version, config: requirements.txt
+#     provider_spec:                    10.5281/zenodo.6705036                  # 1st version, config: requirements.txt
+
+  # ----------------------------------------------------------------------------
+  # Module settings
+  # ----------------------------------------------------------------------------
+
+  show_nbi_messages:                    false
+  indicate_nbi_activity:                true
+  nbi_messages_auto_close:              true
+
+  nbi_init_timeout:                     180000
+  nbi_messages_auto_close_delay:        3500
+
+  nbi_init_mathjax:                     true
+  notebook_ready:                       first_widget
+
+  # ----------------------------------------------------------------------------
+  # Dialog settings (modal)
+  # ----------------------------------------------------------------------------
+
   contentURL:                           /assets/data/nbinteract
   xhrDataElement:                       nbi-modal-data
   dialogContainerID:                    nbi-dialog
@@ -221,28 +272,13 @@ defaults:
                                           <li>
                                             <code>Analysis</code> For translations, your consent on
                                             <b>Analysis</b> with your <b>Privacy Settings</b> is required.
-                                          </li>                                        
+                                          </li>
                                           <li>
                                           <code>Personalization</code> For processing textbooks, your consent on
                                           <b>Personalization</b> with your <b>Privacy Settings</b> (Cookie Settings) is required.
                                           </li>
                                         </ul>
-
-  spec:                                 jekyll-one/j1-binder-repo/main
-  baseUrl:                              'https://mybinder.org'
-  provider:                             gh
-
   button_styles:                        btn btn-primary btn-raised hidden
-
-  show_nbi_messages:                    false
-  indicate_nbi_activity:                true
-  nbi_messages_auto_close:              true
-
-  nbi_init_timeout:                     180000
-  nbi_messages_auto_close_delay:        3500
-
-  nbi_init_mathjax:                     true
-  notebook_ready:                       first_widget
 
 # ------------------------------------------------------------------------------
 # END config

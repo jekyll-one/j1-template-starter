@@ -33,17 +33,16 @@ description:
 # Default configuration settings
 #
 defaults:
-  enabled:                              true
 
   # ----------------------------------------------------------------------------
   # Global settings for text- and image-based header
   #
   debug:                                false
   icon_family:                          MDI
-  icon_color:                           "#9E9E9E"                               # md-grey
+  icon_color:                           "#9E9E9E"                               # md-gray
   icon_size:                            default
 
-  raised_level:                         0                                       # was: 15
+  raised_level:                         0
   r_text:                               enabled
   text_emphasis:                        stronger
   padding_top:                          200
@@ -52,7 +51,7 @@ defaults:
 
   title_size:                           3em
   title_color:                          rgba(255, 255, 255, 0.8)                # rgba_lighten_800
-  title_animate:                        fadeInLeft
+  title_animate:                        bounceInDown                            # fadeInDown fadeInLeft
   title_align:                          left
 
   tagline_size:                         1.5em
@@ -60,11 +59,8 @@ defaults:
   tagline_animate:                      fadeInRight
   tagline_align:                        left
 
-  # background_color_1:                   "#546E7A"                               # md_bluegrey_600
-  # background_color_2:                   "#78909C"                               # md_bluegrey_400
-
-  background_color_1:                   "#384d68"                                # blue
-  background_color_2:                   "#b9c5cc"                               # grey
+  background_color_1:                   "#000"                                  # black
+  background_color_2:                   "#78909C"                               # md-bluegray-400
 
   action_enabled:                       false
   action_url:                           "#void"
@@ -72,7 +68,6 @@ defaults:
   action_icon:                          download                                # cloud-action
   action_icon_family:                   MDI                                     # FontAweSome
   action_text:                          Download Now
-
 
   logo_enabled:                         false
   logo_url:                             /assets/images/modules/icons/j1/j1-512x512.png
@@ -96,7 +91,7 @@ defaults:
 
   # Sets the opacity for all header images. Can be
   #  any number between 0.0 and 1.0
-  opacity:                              1
+  opacity:                              1.0
   # alignX, the x-alignment for the image, can be
   # 'left'|'center'|'right' or any number between 0.0 and 1.0
   alignX:                               0.5
@@ -170,55 +165,31 @@ defaults:
   attics:
 
     # --------------------------------------------------------------------------
-    # Home (page) attic (image-based)
+    # layout home (Home page)
     #
-    - name:                             Home attic
+    - name:                             Home
       attic:
-        enabled:                        true
-        id:                             home_attic
+        enabled:                        false
+        id:                             attic_home
         layout:                         home
-        raised_level:                   0                                       # was: 15
-        padding_top:                    300
-        margin_bottom:                  0
-        title:
-          align:                        center
-        tagline:
-          align:                        center
 
     # --------------------------------------------------------------------------
-    # Image attic (used for layouts posts|pages, image-based)
+    # layout page|post
     #
-    - name:                             Image attic
+    - name:                             Page_Post
       attic:
-        enabled:                        true
-        id:                             image_attic
+        enabled:                        false
+        id:                             attic_page_post
         layout:                         [ page, post ]
-        raised_level:                   0                                       # was: 15
-        text_emphasis:                  strong
-        title:
-          color:                        rgba(255, 255, 255, 0.8)                # rgba-lighten-800
-        tagline:
-          color:                        rgba(255, 255, 255, 0.8)                # rgba-lighten-800
-        image_attic:
-         duration:                      3000
-         transitionDuration:            2500
-         animateFirst:                  false
-         slides:
-           - url:                       "/assets/images/modules/attics/pagehead-default-1200.jpg"
-             alt:                       "Image attic - Default image for Layout PAGE"
-             caption:                   "Caption for the header image with a link"
-             caption_href:              "#void"
-             caption_color:             rgba(255, 255, 255, 0.8)                # rgba-lighten-800
 
     # --------------------------------------------------------------------------
-    #  Text attic (used for layouts collection|app|raw|blog, text-based)
+    #  layouts collection|app|raw
     #
     - name:                             Text attic
       attic:
-        enabled:                        true
-        id:                             text_attic
-        layout:                         [ collection, app, raw, blog_archive ]
-        raised_level:                   0                                     # was: 15
+        enabled:                        false
+        id:                             attic_text
+        layout:                         [ collection, app, raw ]
 
 # ------------------------------------------------------------------------------
 # END config

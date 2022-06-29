@@ -26,9 +26,6 @@ regenerate:                             false                                   
 resources:                              [ animate ]
 resource_options:
   - attic:
-      padding_top:                      400
-      padding_bottom:                   50
-      opacity:                          0.5
       slides:
         - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
           alt:                          Photo by Matthaeus
@@ -277,7 +274,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
                 {% assign categories    = my_categories |join: " · "  %}
                 {% assign tags          = post.tags | join: " · "  %}
 
-                <p class="result-item-text small text-muted mb-3 notranslate">
+                <p class="result-item-text small mb-3 notranslate">
                   <i class="mdi mdi-tag-text-outline mdi-18px mr-1"></i>
                   <span class="sr-categories">{{categories}}</span>
                   <br>
@@ -286,7 +283,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
               </p>
 
               </div>
-              <a class="card-link text-muted text-lowercase"
+              <a class="card-link text-lowercase"
                  href="{{post.url}}#readmore">
                  {{readmore_text}} · {{post.tagline}}
               </a>

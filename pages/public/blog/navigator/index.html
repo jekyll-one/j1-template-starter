@@ -17,18 +17,17 @@ sort:                                   date
 toc:                                    true
 fab_menu_id:                            default
 
+scrollDynamicPagesTopOnChange:          false                                   # do NOT scroll the page to top on content changes 
+
 analytics:                              true
 advertising:                            false
 comments:                               false
 
-regenerate:                             true                                    # needed to update pagination pages
+regenerate:                             true                                    # needed to update the pagination pages
 
 resources:                              [ animate, scroller ]
 resource_options:
   - attic:
-      padding_top:                      400
-      padding_bottom:                   50
-      opacity:                          0.5
       slides:
         - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
           alt:                          Photo by Matthaeus
@@ -50,5 +49,18 @@ resource_options:
   Check the  contents   of folder _layouts. Verify  if the base
   layout  "{{ page.layout }}" exists  and the  referring  chain
   (inheritance) is correct.
+
+  If you see this page within the J1 Template DEVELOPMENT system,
+  re-run a site built running:
+
+    yarn rebuild site
+
+  If you're on a RUNTIME system run a built like so:
+
+    yarn rebuild
+
+  and open the website again by:
+
+    yarn site
 
 </pre>

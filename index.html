@@ -1,9 +1,9 @@
 ---
 layout:                                 home
-compress:                               true
 
 title:                                  Jekyll One
 tagline:                                starter web
+date:                                   2022-01-01 00:00:00
 description: >
                                         Jekyll One Template. Gem-based template made for Jekyll.
                                         J1 meets Jekyll and Bootstrap. And makes a lot of friends.
@@ -20,25 +20,26 @@ robots:
   follow:                               true
 
 personalization:                        false
-exclude_from_search:                    false
+exclude_from_search:                    true
 
 fab_menu_id:                            default
 scrollbar:                              false
 toc:                                    false
+compress:                               true
 
 regenerate:                             true
 
 resources:                              [ animate, scroller ]
 resource_options:
   - attic:
-      padding_top:                      400
-      padding_bottom:                   50
-      opacity:                          0.5
+#     opacity:                          0.5
       slides:
         - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
 ---
 
+
 <pre>
+
   This page is created by the layout: {{ page.layout }}.
 
   If this text is displayed (instead of the home page expected),
@@ -49,16 +50,4 @@ resource_options:
   layout  "{{ page.layout }}" exists  and the  referring  chain
   (inheritance) is correct.
 
-  If you see this page within the J1 Template DEVELOPMENT system,
-  re-run a site built running:
-
-    yarn rebuild site
-
-  If you're on a RUNTIME system run a built like so:
-
-    yarn rebuild
-
-  and open the website again by:
-
-    yarn site
 </pre>

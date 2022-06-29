@@ -41,9 +41,6 @@ regenerate:                             false
 resources:                              [ animate, comments ]
 resource_options:
   - attic:
-      padding_top:                      400
-      padding_bottom:                   50
-      opacity:                          0.5
       slides:
         - url:                          /assets/images/modules/attics/tldr-1920x800.jpg
           alt:                          Photo by Alexander Redl on Unsplash
@@ -61,6 +58,7 @@ resource_options:
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
 // :page--attr:                         <attr-value>
+:url-j1-jupyter-notebooks--where-to-go: /pages/public/jupyter/where-to-go/
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -89,15 +87,31 @@ what J1 can do in general. The roundtrip is a visual tour, no technical stuff,
 nothing academic. See what you will get as an overview of some of the top
 features of J1.
 
-If you like, continue by walking through the roundtrip examples by starting
-the link:{url-j1-roundtrip--present-images}[tour here].
+If you're interested what J1 Template can do, continue by walking through the
+roundtrip examples by starting an inspiring tour
+link:{url-j1-roundtrip--present-images}[from here].
+
+////
+Jupyter Notebooks::
+In section *Jupyter Notebooks*, you'll find a tour through the J1 Implementation
+of the integration of Python's Jupyter Notebooks in J1 Websites for *Data Science*
+and *Data Analysis*. Data Science is fundamental for all projects related to
+all *Digitization* concepts of the 21st century. If you're interested, what
+tools are available with J1 Template and Jupyter to discuss (your) *Data Analysis*
+projects go for this section.
+
+To learn more about the toolset for presenting *Data Analysis* projects supported
+by J1 Template start the tour link:{url-j1-jupyter-notebooks--where-to-go}[from here].
+////
 
 Rocketstart::
 J1-Template is fully JAM-Stack ready. If you're interested in creating and
 deploying an amazing J1 based site on the Internet in minutes without
 installing any software locally on your PC, go for Netlify's One-Click-Deploy.
-The tutorial link:{url-j1--rocketstart}[Rocketstart, {browser-window--new}] will take
-about fifteen minutes and guides you through this easy 3-step-process.
+
+Rocketstart took about fifteen minutes and guides you through this easy
+3-step-process. Fire your rocket now at
+link:{url-j1--rocketstart}[Rocketstart, {browser-window--new}].
 
 J1 in a Day::
 J1 in a Day is a tutorial learning to create modern websites using the J1
@@ -115,7 +129,8 @@ tutorials present what you need to know:
 * Create Content
 
 It sounds much, spending a whole day to get Jekyll and J1 to know. Yes, it is
-much. But it makes sense to get a full overview of what can be achieved by modern
-static websites.
+much. But it makes sense to get a full overview of what can be achieved by
+modern static websites.
 
-Go for link:{url-j1-web-in-a-day--meet-and-greet}[J1 in a Day, {browser-window--new}]!
+To experience what's possible today using modern websites static webs, go for
+link:{url-j1-web-in-a-day--meet-and-greet}[J1 in a Day, {browser-window--new}].
