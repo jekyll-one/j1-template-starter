@@ -165,7 +165,7 @@ mdi:account[5x mdi-rotate-315]
 link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
-Colour set to (md) light-grey and flipped vertical +
+Color set to (md) light-grey and flipped vertical +
 [source, adoc, role="noclip"]
 ----
 mdi:alert[5x mdi-light mdi-flip-v]
@@ -178,7 +178,7 @@ mdi:alert[5x mdi-light mdi-flip-v]
 link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
-Colour set to (md) indigo +
+Color set to (md) indigo +
 [source, adoc, role="noclip"]
 ----
 mdi:alert[5x md-indigo]
@@ -191,7 +191,7 @@ mdi:alert[5x md-indigo]
 link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
-Colour set to (md) pink +
+Color set to (md) pink +
 [source, adoc, role="noclip"]
 ----
 mdi:alert[5x md-pink]
@@ -218,7 +218,7 @@ mdi:loading[5x mdi-spin]
 link:{url-material-design-icons--cheatsheet}[MDI Icons, {browser-window--new}]
 page online. +
 
-Colour  set to (md) color dark-red and added animation of type pulsed +
+Color  set to (md) color dark-red and added animation of type pulsed +
 [source, adoc, role="noclip"]
 ----
 mdi:heart[5x md-red-900 mdi-pulsed]
@@ -379,27 +379,14 @@ fas:user[5x fa-rotate-90]
 ^|fas:user[5x fa-rotate-90]
 
 |5x
-|`mdi-light` +
-`fa-flip-v`
-|All icons can be found for preview at the
-link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
-
-Colour set to MDI Light (Grey) and flipped vertical +
-[source, adoc, role="noclip"]
-----
-fas:exclamation-triangle[5x mdi-light fa-flip-v]
-----
-^|fas:exclamation-triangle[5x mdi-light fa-flip-v]
-
-|5x
 |`md-indigo`
 |All icons can be found for preview at the
 link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
 
-Colour set to MDI Indigo +
+Color set to MD Indigo +
 [source, adoc, role="noclip"]
 ----
-fas:alert[5x md-indigo]
+fas:user[5x md-indigo]
 ----
 ^|fas:user[5x md-indigo]
 
@@ -408,19 +395,60 @@ fas:alert[5x md-indigo]
 |All icons can be found for preview at the
 link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
 
-Colour set to MDI Pink +
+Color set to MD Pink +
 [source, adoc, role="noclip"]
 ----
-fas:alert[5x md-pink]
+fas:user[5x md-pink]
 ----
 ^|fas:user[5x md-pink]
+
+|5x
+|`mdi-light`
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+Color set to MD Light (Grey) +
+[source, adoc, role="noclip"]
+----
+fas:exclamation-triangle[5x mdi-light]
+----
+^|fas:exclamation-triangle[5x mdi-light]
+
+|5x
+|`fa-flip-v`
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+Orientation is set to *flipped vertical* +
+
+[source, adoc, role="noclip"]
+----
+fas:exclamation-triangle[5x fa-flip-v]
+----
+^|fas:exclamation-triangle[5x fa-flip-v]
+
+|5x
+|`md-red-900` +
+`fa-flip-v`
+
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+Color set to MD *dark red* and *flipped* vertical +
+
+[source, adoc, role="noclip"]
+----
+fas:exclamation-triangle[5x md-red-900 fa-flip-v]
+----
+^|fas:exclamation-triangle[5x md-red-900 fa-flip-v]
 
 |5x
 |`fa-spin`
 |All icons can be found for preview at the
 link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
 
-Added animation of type Rotate (Spin) +
+Added animation of type *spin* (rotate) +
+
 [source, adoc, role="noclip"]
 ----
 fas:circle-notch[5x fa-spin]
@@ -429,11 +457,12 @@ fas:circle-notch[5x fa-spin]
 
 |5x
 |`md-red-900` +
-`md-red-900` `fa-pulsed`
+`fa-pulsed`
 |All icons can be found for preview at the
 link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
 
-Colour set to MDI Dark Red and added animation of type Pulsed +
+Color set to MD *dark red* and added animation of type *pulsed* +
+
 [source, adoc, role="noclip"]
 ----
 fas:heart[5x md-red-900 fa-pulsed]
