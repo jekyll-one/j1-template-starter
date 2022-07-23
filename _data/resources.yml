@@ -345,7 +345,7 @@ resources:
       enabled:                          true
 
       id:                               core
-      comment:                          template core
+      comment:                          Module J1 Template Core
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -376,12 +376,12 @@ resources:
   #
   # See: https://github.com/luciomartinez/gtag-opt-in
   #
-  - name:                               gaOptIn
+  - name:                               GA OptIn
     resource:
       enabled:                          true
 
       id:                               ga-opt-in
-      comment:                          gaOptIn
+      comment:                          Module GA OptIn
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -406,7 +406,7 @@ resources:
       enabled:                          true
 
       id:                               jquery-ui
-      comment:                          jQueryUI
+      comment:                          Module jQueryUI
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -429,12 +429,12 @@ resources:
   #
   # See: http://log4javascript.org
   #
-  - name:                               Logger
+  - name:                               J1 Logger
     resource:
       enabled:                          true
 
       id:                               logger
-      comment:                          module logger
+      comment:                          Module J1 Logger
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -459,7 +459,7 @@ resources:
       enabled:                          true
 
       id:                               backstretch
-      comment:                          Backstretch
+      comment:                          Module Backstretch
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -484,7 +484,7 @@ resources:
       enabled:                          true
 
       id:                               attic
-      comment:                          module attic
+      comment:                          Module Attic
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -509,7 +509,7 @@ resources:
       enabled:                          true
 
       id:                               navigator
-      comment:                          module navigator
+      comment:                          Module Navigator
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -533,7 +533,7 @@ resources:
       enabled:                          true
 
       id:                               mmenu
-      comment:                          module mmenu
+      comment:                          Module MMenu
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -561,7 +561,7 @@ resources:
       enabled:                          true
 
       id:                               themer
-      comment:                          module themer
+      comment:                          Module Themer
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -586,7 +586,7 @@ resources:
       enabled:                          true
 
       id:                               toccer
-      comment:                          module toccer
+      comment:                          Module Toccer
       layout:                           [ page, post, collection, blog_archive ]
       region:                           head
       required:                         always
@@ -611,7 +611,7 @@ resources:
       enabled:                          true
 
       id:                               cookieConsent
-      comment:                          module cookieConsent
+      comment:                          Module J1 CookieConsent
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -635,7 +635,7 @@ resources:
       enabled:                          false
 
       id:                               jq_mouse_wheel
-      comment:                          module jqMouseWheel
+      comment:                          Module jqMouseWheel
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -659,7 +659,7 @@ resources:
       enabled:                          true
 
       id:                               theme_switcher
-      comment:                          module theme_switcher
+      comment:                          Module Theme Switcher
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -683,7 +683,7 @@ resources:
       enabled:                          true
 
       id:                               bs5
-      comment:                          Bootstrap JS
+      comment:                          Module Bootstrap JS
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -698,16 +698,16 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # BMD, responsive UI framework for Bootstrap
+  # Bootstrap Material Design (BMD), responsive UI framework for Bootstrap
   #
   # See: https://github.com/mdbootstrap/bootstrap-material-design/tree/4.1.3
   #
-  - name:                               Bootstrap Material Design
+  - name:                               BMD
     resource:
       enabled:                          true
 
       id:                               bmd
-      comment:                          Bootstrap Material Design
+      comment:                          Module BMD
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -731,7 +731,7 @@ resources:
       enabled:                          false
 
       id:                               materialze
-      comment:                          Materialize
+      comment:                          Module Materialize
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -753,12 +753,12 @@ resources:
   #
   # See: https://github.com/filamentgroup/tablesaw
   #
-  - name:                               Responsive Tables
+  - name:                               J1 Responsive Tables
     resource:
       enabled:                          true
 
       id:                               rtable
-      comment:                          module rtable
+      comment:                          Module J1 Responsive Tables
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -772,14 +772,14 @@ resources:
         js:                             [ modules/rtable/js/rtable ]
         init_function:                  [ j1.adapter.rtable.init ]
   # ----------------------------------------------------------------------------
-  # Asciidoctor, JS functions to (dynamically) modify Asciidoctor HTML elements
+  # J1 Asciidoctor, JS functions to (dynamically) modify Asciidoctor HTML elements
   #
-  - name:                               Asciidoctor
+  - name:                               J1 Asciidoctor
     resource:
       enabled:                          true
 
       id:                               asciidoctor
-      comment:                          HTML writer for Asciidoctor
+      comment:                          Module J1 Asciidoctor
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive, app ]
       required:                         always
@@ -804,12 +804,12 @@ resources:
       enabled:                          true
 
       id:                               css_flags_previewer
-      comment:                          module css_flags_previewer
+      comment:                          Module CSS Flags Previewer
       layout:                           [ all ]
       region:                           head
       required:                         always
       preload:                          false
-      script_load:                      deferred
+      script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
       data:
@@ -819,14 +819,14 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Floating Action Button Menu. JS API to create FAB menus
+  # Floating Action Buttons, JS API to create FABs
   #
-  - name:                               FABM
+  - name:                               J1 Floating Action Buttons
     resource:
       enabled:                          true
 
-      id:                               fabm
-      comment:                          FAB Menus
+      id:                               fab
+      comment:                          Module J1 Floating Action Buttons
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -855,7 +855,7 @@ resources:
       enabled:                          true
 
       id:                               lunr
-      comment:                          J1 Lunr
+      comment:                          Module Lunr
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -878,12 +878,12 @@ resources:
   # ----------------------------------------------------------------------------
   # rtextResizer (currently NOT used)
   #
-  - name:                               rtextResizer
+  - name:                               J1 RText Resizer
     resource:
       enabled:                          false
 
       id:                               rtextresizer
-      comment:                          J1 rtextResizer
+      comment:                          Module J1 RText Resizer
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive ]
       required:                         always                                  # always | ondemand
@@ -903,12 +903,12 @@ resources:
   #
   # See: https://github.com/marghoobsuleman/ms-Dropdown
   #
-  - name:                               MsDropdowns
+  - name:                               J1 MsDropdown
     resource:
       enabled:                          true
 
       id:                               msDropdown
-      comment:                          module msDropdown
+      comment:                          Module J1 MsDropdown
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -927,12 +927,12 @@ resources:
   #
   # See: https://translate.google.com/intl/en/about/
   #
-  - name:                               Translator
+  - name:                               J1 Translator
     resource:
       enabled:                          true
 
       id:                               translator
-      comment:                          module translator
+      comment:                          Module J1 Translator
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -956,7 +956,7 @@ resources:
       enabled:                          true
 
       id:                               analytics
-      comment:                          module analytics
+      comment:                          Module Analytics
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -978,17 +978,17 @@ resources:
   # ----------------------------------------------------------------------------
   # Custom module
   #
-  - name:                               CustomModule
+  - name:                               J1 Custom Module
     resource:
       enabled:                          false
 
       id:                               CustomModule
-      comment:                          Custom module
+      comment:                          Module J1 Custom Module
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
       preload:                          false
-      script_load:                      async
+      script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
       data:
@@ -1000,17 +1000,17 @@ resources:
   # ----------------------------------------------------------------------------
   # Custom functions
   #
-  - name:                               CustomFunctions
+  - name:                               Custom Functions
     resource:
       enabled:                          false
 
       id:                               customFunctions
-      comment:                          Custom functions
+      comment:                          Module Custom Functions
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
       preload:                          false
-      script_load:                      async
+      script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
       data:
@@ -1023,12 +1023,12 @@ resources:
   # Rouge, pure Ruby themeable code highlighter
   # See: http://rouge.jneen.net/
   #
-  - name:                               Rouge Highlighter
+  - name:                               Rouge Highlighter Themes
     resource:
       enabled:                          true
 
       id:                               rouge
-      comment:                          theme rouge
+      comment:                          Module Rouge Highlighter Themes
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive, raw, app ]
       required:                         ondemand
@@ -1050,12 +1050,12 @@ resources:
   #
   # See: https://animate.style/
   #
-  - name:                               Animate CSS
+  - name:                               AnimateCSS
     resource:
       enabled:                          true
 
       id:                               animate
-      comment:                          Animate
+      comment:                          Module AnimateCSS
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1077,7 +1077,7 @@ resources:
       enabled:                          true
 
       id:                               justifiedGalleryCustomizer
-      comment:                          Justified Gallery Customizer
+      comment:                          Module J1 Gallery Customizer
       layout:                           [ app, raw ]
       region:                           head
       required:                         ondemand
@@ -1102,7 +1102,7 @@ resources:
       enabled:                          true
 
       id:                               framer
-      comment:                          module framer
+      comment:                          Module J1 Framer
       layout:                           [ home, page, post, collection, blog_archive, raw, app ]
       region:                           head
       required:                         ondemand
@@ -1121,12 +1121,12 @@ resources:
   #
   # See: ttp://lokeshdhakar.com/projects/lightbox2/
   #
-  - name:                               J1 Lightbox
+  - name:                               J1 Lightbox V2
     resource:
       enabled:                          true
 
       id:                               lightbox
-      comment:                          module lightbox
+      comment:                          Module Lightbox V2
       layout:                           [ home, page, post, collection, blog_archive ]
       region:                           head
       required:                         ondemand
@@ -1153,12 +1153,12 @@ resources:
       enabled:                          true
 
       id:                               twemoji
-      comment:                          module twemoji
+      comment:                          Module Twitter Emoji Icons
       layout:                           [ home, page, post, collection, blog_archive ]
       region:                           head
       required:                         ondemand
       preload:                          false
-      script_load:                      deferred
+      script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
       data:
@@ -1177,12 +1177,12 @@ resources:
       enabled:                          true
 
       id:                               twemoji_picker
-      comment:                          module twemoji_picker
+      comment:                          Module Twitter Emoji Picker
       layout:                           [ page ]
       region:                           head
       required:                         ondemand
       preload:                          false
-      script_load:                      deferred
+      script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
       data:
@@ -1201,12 +1201,12 @@ resources:
       enabled:                          true
 
       id:                               mdi_previewer
-      comment:                          module mdi_previewer
+      comment:                          Module MDI Previewer
       layout:                           [ page ]
       region:                           head
       required:                         ondemand
       preload:                          false
-      script_load:                      deferred
+      script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
       data:
@@ -1225,12 +1225,12 @@ resources:
       enabled:                          true
 
       id:                               mdil_previewer
-      comment:                          module mdil_previewer
+      comment:                          Module MDIL Previewer
       layout:                           [ page ]
       region:                           head
       required:                         ondemand
       preload:                          false
-      script_load:                      deferred
+      script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
       data:
@@ -1249,7 +1249,7 @@ resources:
       enabled:                          true
 
       id:                               iconify
-      comment:                          Iconify framework
+      comment:                          Module Iconify framework
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand
@@ -1268,10 +1268,11 @@ resources:
   #
   # See: https://www.algolia.com/doc/
   #
-  - resource:
+  - name:                               Algolia API (JS)
+    resource:
       enabled:                          true
 
-      id:                               algolia
+      id:                               Module Algolia API
       comment:                          Resources used by Algolia Instantsearch
       region:                           head
       layout:                           [ home, page, post, collection ]
@@ -1295,12 +1296,12 @@ resources:
   #
   # See: https://clipboardjs.com/
   #
-  - name:                               Clipboard
+  - name:                               J1 Clipboard
     resource:
       enabled:                          true
 
       id:                               clipboard
-      comment:                          module clipboard
+      comment:                          Module J1 Clipboard
       region:                           head
       layout:                           [ page, post, collection ]
       required:                         ondemand
@@ -1317,12 +1318,12 @@ resources:
   # ----------------------------------------------------------------------------
   # Carousel, JS API for the main carousel used by J1 Template
   #
-  - name:                               Carousel
+  - name:                               J1 Carousel
     resource:
       enabled:                          true
 
       id:                               carousel
-      comment:                          module carousel
+      comment:                          Module J1 Carousel
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand
@@ -1342,18 +1343,88 @@ resources:
         js:                             []
         init_function:                  [ j1.adapter.carousel.init ]
 
+
+  # ----------------------------------------------------------------------------
+  # MasterSlider, lite|free version 2.85.13 - Feb 2022
+  #
+  - name:                               Master Slider Lite
+    resource:
+      enabled:                          true
+
+      id:                               masterslider
+      comment:                          Module Master Slider Lite
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      sync
+      dependencies:                     false
+      pass_init_data:                   true
+      data:
+        css:                            [
+                                          modules/masterslider/css/masterslider,
+                                          modules/masterslider/css/theme/uno
+                                        ]
+        files:                          [ adapter/js/masterslider.js ]
+        js:                             [
+                                          modules/masterslider/js/plugins/jquery.easing,
+                                          modules/masterslider/js/masterslider
+                                        ]
+        init_function:                  [ j1.adapter.masterslider.init ]
+
+  # ----------------------------------------------------------------------------
+  # MasterSlider Pro
+  #
+  - name:                               Master Slider Professional
+    resource:
+      enabled:                          true
+
+      id:                               mastersliderpro
+      comment:                          Module Master Slider Pro
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      sync
+      dependencies:                     false
+      pass_init_data:                   true
+      data:
+        css:                            [
+                                          modules/masterslider_pro/css/masterslider,
+                                          modules/masterslider_pro/css/theme/uno
+                                        ]
+        files:                          [
+                                          modules/masterslider_pro/css/style/masterslider.css,
+                                          modules/masterslider_pro/css/skins/black-1/style.css,
+                                          modules/masterslider_pro/css/skins/black-2/style.css,
+                                          modules/masterslider_pro/css/skins/light-1/style.css,
+                                          modules/masterslider_pro/css/skins/light-2/style.css,
+                                          modules/masterslider_pro/css/skins/light-3/style.css,
+                                          modules/masterslider_pro/css/skins/light-4/style.css,
+                                          modules/masterslider_pro/css/skins/light-5/style.css,
+                                          modules/masterslider_pro/css/skins/light-6/style.css,
+                                          modules/masterslider_pro/css/skins/contrast/style.css,
+                                          modules/masterslider_pro/css/skins/default/style.css,
+                                          modules/masterslider_pro/css/skins/metro/style.css,
+                                          modules/masterslider_pro/css/skins/minimal/style.css,
+                                          adapter/js/masterslider.js
+                                        ]
+        js:                             [ modules/masterslider_pro/js/masterslider ]
+        init_function:                  [ j1.adapter.masterslider.init ]
+
+
   # ----------------------------------------------------------------------------
   # Justified Gallery, JS implementation for full-featured image galleries
   # based on the Justified Gallery API
   #
   # See: https://miromannino.github.io/Justified-Gallery/
   #
-  - name:                               Justified Gallery
+  - name:                               J1 Justified Gallery
     resource:
       enabled:                          true
 
       id:                               justifiedGallery
-      comment:                          module justifiedGallery
+      comment:                          Module J1 JustifiedGallery
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive, raw, app ]
       required:                         ondemand
@@ -1376,12 +1447,12 @@ resources:
   #
   # See: https://www.lightgalleryjs.com/
   #
-  - name:                               LightGallery
+  - name:                               J1 LightGallery
     resource:
       enabled:                          true
 
       id:                               lightGallery
-      comment:                          module lightGallery
+      comment:                          Module J1 LightGallery
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive, raw, app ]
       required:                         ondemand
@@ -1418,7 +1489,7 @@ resources:
       enabled:                          true
 
       id:                               video_js
-      comment:                          module videojs
+      comment:                          Module VideoJS Player
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1441,12 +1512,12 @@ resources:
   # ----------------------------------------------------------------------------
   # Vimeo Player Froogaloop, JS API|Player for Vimeo video content
   #
-  - name:                               VimeoFroogaloopAPI
+  - name:                               Vimeo Froogaloop API
     resource:
       enabled:                          true
 
       id:                               vimeo_froogaloop
-      comment:                          module vimeo_froogaloop
+      comment:                          Module Vimeo Froogaloop
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1468,7 +1539,7 @@ resources:
       enabled:                          true
 
       id:                               vimeo_player
-      comment:                          module vimeo_player
+      comment:                          Module Vimeo Player
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1487,12 +1558,12 @@ resources:
   #
   # See: https://github.com/leongersen/noUiSlider
   #
-  - name:                               rangeSlider
+  - name:                               J1 Range Slider
     resource:
       enabled:                          true
 
       id:                               rangeslider
-      comment:                          module rangeSlider
+      comment:                          Module J1 Range Slider
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1511,17 +1582,17 @@ resources:
   #
   # See: https://datatables.net/
   #
-  - name:                               Data Tables
+  - name:                               Datatables
     resource:
       enabled:                          false
 
       id:                               datatables
-      comment:                          module datatables
+      comment:                          Module Datatables
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
       preload:                          false                                   # property currently unused
-      script_load:                      async
+      script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
       data:
@@ -1533,12 +1604,12 @@ resources:
   # ----------------------------------------------------------------------------
   # scroller, JS API to implement infinite scroll
   #
-  - name:                               scroller
+  - name:                               J1 Scroller
     resource:
       enabled:                          true
 
       id:                               scroller
-      comment:                          scroller
+      comment:                          Module J1 Scroller
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand                                # always | ondemand
@@ -1557,12 +1628,12 @@ resources:
   #
   # See: https://www.deepl.com/docs-api/
   #
-  - name:                               deeplAPI
+  - name:                               Deepl API
     resource:
       enabled:                          true
 
       id:                               deeplAPI
-      comment:                          deeplAPI
+      comment:                          Module Deepl API
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand
@@ -1587,7 +1658,7 @@ resources:
       enabled:                          true
 
       id:                               crypto
-      comment:                          crypto
+      comment:                          Module Crypto
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1611,7 +1682,7 @@ resources:
       enabled:                          true
 
       id:                               advertising
-      comment:                          module advertising
+      comment:                          Module Advertising
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1636,7 +1707,7 @@ resources:
       enabled:                          true
 
       id:                               comments
-      comment:                          module comments
+      comment:                          Module Comments
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1658,7 +1729,7 @@ resources:
       enabled:                          true
 
       id:                               dropdowns
-      comment:                          Dropdown Menus
+      comment:                          Module Dropdown Menus
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1679,12 +1750,12 @@ resources:
   # ----------------------------------------------------------------------------
   # J1 NBI, implement nbinteract core JS for J1 Template
   #
-  - name:                               j1-nbinteract
+  - name:                               J1 NBinteract
     resource:
       enabled:                          true
 
       id:                               nbinteract
-      comment:                          module j1-nbinteract
+      comment:                          Module J1 NBinteract
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1714,7 +1785,7 @@ resources:
       enabled:                          false
 
       id:                               plotly
-      comment:                          Plotly Open Source JS
+      comment:                          Module Plotly Open Source JS
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1742,7 +1813,7 @@ resources:
       enabled:                          false
 
       id:                               bokeh
-      comment:                          BokehJS
+      comment:                          Module BokehJS
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1772,7 +1843,7 @@ resources:
       enabled:                          false
 
       id:                               vega
-      comment:                          Vega Visualization Grammar Bundle
+      comment:                          Module Vega Visualization Grammar Bundle
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1803,7 +1874,7 @@ resources:
       enabled:                          true
 
       id:                               require
-      comment:                          RequireJS
+      comment:                          Module RequireJS
       region:                           head
       layout:                           [ all ]
       required:                         ondemand

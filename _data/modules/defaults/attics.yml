@@ -51,16 +51,23 @@ defaults:
 
   title_size:                           3em
   title_color:                          rgba(255, 255, 255, 0.8)                # rgba_lighten_800
-  title_animate:                        bounceInDown                            # fadeInDown fadeInLeft
+  title_animate:                        animate__bounceInDown                            # fadeInDown fadeInLeft
   title_align:                          left
 
   tagline_size:                         1.5em
   tagline_color:                        rgba(255, 255, 255, 0.8)                # rgba_lighten_800
-  tagline_animate:                      fadeInRight
+  tagline_animate:                      animate__fadeInRight
   tagline_align:                        left
 
-  background_color_1:                   "#000"                                  # black
-  background_color_2:                   "#78909C"                               # md-bluegray-400
+  # gradient effect (all image color typas)
+  #
+# background_color_1:                   "#000"                                  # black
+# background_color_2:                   "#78909C"                               # md-bluegray-400
+
+  # duo-color effect, base color 'blue' (requires gray-scaled images)
+  #
+  background_color_1:                   "#0D47A1"                               # md-blue-900
+  background_color_2:                   "#0D47A1"                               # md-blue-900
 
   action_enabled:                       false
   action_url:                           "#void"
@@ -73,7 +80,7 @@ defaults:
   logo_url:                             /assets/images/modules/icons/j1/j1-512x512.png
   logo_alt:                             Jekyll-One-Template
   logo_height:                          196
-  logo_animate:                         slideInDown
+  logo_animate:                         animate__slideInDown
 
   # ----------------------------------------------------------------------------
   # Global settings for image-based attics only

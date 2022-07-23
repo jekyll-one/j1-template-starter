@@ -1,7 +1,7 @@
 ---
 title:                                  Theme Previewer
-tagline:                                bs themes
-date:                                   2020-11-08 00:00:00
+tagline:                                bootstrap v5 themes
+date:                                   2020-01-01 00:00:00
 description: >
                                         Bootstrap is a HTML, CSS and JS Library that focuses on simplifying the
                                         development of modern web pages. The primary purpose of applying a theme
@@ -39,13 +39,15 @@ categories:                             [ Previewer ]
 tags:                                   [ Bootstrap, Themes ]
 
 scrollbar:                              false
-fab_menu_id:                            page_ctrl_simple
+fab_menu_id:                            page_ctrl
 
 permalink:                              /pages/public/previewer/theme/
 regenerate:                             false
 
 resources:                              [ animate, comments, clipboard, rouge ]
 resource_options:
+  - toccer:
+      collapseDepth:                    3
   - attic:
       slides:
         - url:                          /assets/images/pages/roundtrip/themes-1920x1280-bw.jpg
@@ -154,7 +156,7 @@ A navbar is an elementary page element, usually integrated at the top of
 your page for navigation. Bootstrap offers many navigation functions that
 are minimized on smartphones and thus always remain easy to use.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-navbar}[Bootstrap Docs {char-middot} Navbar, {browser-window--new}]
 
 Theming the navbar has never been easier thanks to the combination of
@@ -166,44 +168,44 @@ colors. Then, customize with `.bg-*` utilities.
 <div class="doc-example mb-3">
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="link-no-decoration navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarColor01" aria-controls="navbarColor01"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarColor01">
+      <div class="collapse navbar-collapse ml-2" id="navbarColor01">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home
+            <a class="link-no-decoration nav-link active" href="#">Home
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="link-no-decoration nav-link" href="#">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="link-no-decoration nav-link" href="#">Pricing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="link-no-decoration nav-link" href="#">About</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+            <a class="link-no-decoration nav-link dropdown-toggle" data-bs-toggle="dropdown"
               href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="link-no-decoration dropdown-item" href="#">Action</a>
+              <a class="link-no-decoration dropdown-item" href="#">Another action</a>
+              <a class="link-no-decoration dropdown-item" href="#">Something else here</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
+              <a class="link-no-decoration dropdown-item" href="#">Separated link</a>
             </div>
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          <input class="form-control mt-1" type="text" placeholder="Search">
+          <button class="btn btn-secondary btn-sm ml-1" type="submit">Search</button>
         </form>
       </div>
     </div>
@@ -211,93 +213,95 @@ colors. Then, customize with `.bg-*` utilities.
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="link-no-decoration navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarColor02" aria-controls="navbarColor02"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarColor02">
+      <div class="collapse navbar-collapse ml-2" id="navbarColor02">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home
+            <a class="link-no-decoration nav-link active" href="#">Home
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="link-no-decoration nav-link" href="#">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="link-no-decoration nav-link" href="#">Pricing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="link-no-decoration nav-link" href="#">About</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+            <a class="link-no-decoration nav-link dropdown-toggle" data-bs-toggle="dropdown"
               href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="link-no-decoration dropdown-item" href="#">Action</a>
+              <a class="link-no-decoration dropdown-item" href="#">Another action</a>
+              <a class="link-no-decoration dropdown-item" href="#">Something else here</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
+              <a class="link-no-decoration dropdown-item" href="#">Separated link</a>
             </div>
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          <input class="form-control mt-1" type="text" placeholder="Search">
+          <button class="btn btn-secondary btn-sm ml-1" type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <nav class="navbar navbar-expand-lg navbar-light md-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="link-no-decoration navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarColor03" aria-controls="navbarColor03"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarColor03">
+      <div class="collapse navbar-collapse ml-2" id="navbarColor03">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home
+            <a class="link-no-decoration nav-link active" href="#">Home
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="link-no-decoration nav-link" href="#">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="link-no-decoration nav-link" href="#">Pricing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="link-no-decoration nav-link" href="#">About</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+            <a class="link-no-decoration nav-link dropdown-toggle" data-bs-toggle="dropdown"
               ref="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="link-no-decoration dropdown-item" href="#">Action</a>
+              <a class="link-no-decoration dropdown-item" href="#">Another action</a>
+              <a class="link-no-decoration dropdown-item" href="#">Something else here</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
+              <a class="link-no-decoration dropdown-item" href="#">Separated link</a>
             </div>
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          <input class="form-control mt-1" type="text" placeholder="Search">
+          <button class="btn btn-secondary btn-sm ml-1" type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
+
 </div>
 ++++
 
@@ -305,44 +309,44 @@ colors. Then, customize with `.bg-*` utilities.
 ----
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="link-no-decoration navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarColor01" aria-controls="navbarColor01"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
+    <div class="collapse navbar-collapse ml-2" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Home
+          <a class="link-no-decoration nav-link active" href="#">Home
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="link-no-decoration nav-link" href="#">Features</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="link-no-decoration nav-link" href="#">Pricing</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="link-no-decoration nav-link" href="#">About</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+          <a class="link-no-decoration nav-link dropdown-toggle" data-bs-toggle="dropdown"
             href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="link-no-decoration dropdown-item" href="#">Action</a>
+            <a class="link-no-decoration dropdown-item" href="#">Another action</a>
+            <a class="link-no-decoration dropdown-item" href="#">Something else here</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
+            <a class="link-no-decoration dropdown-item" href="#">Separated link</a>
           </div>
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mt-1" type="text" placeholder="Search">
+        <button class="btn btn-secondary btn-sm ml-1" type="submit">Search</button>
       </form>
     </div>
   </div>
@@ -371,7 +375,7 @@ Defining a standard button in Bootstrap is very simple: assign the CSS class
 `.btn` to an HTML element. The following sections describe the different
 types of available buttons and how they are to be defined.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-buttons}[Bootstrap Docs {char-middot} Buttons, {browser-window--new}]
 
 ifeval::[{buttons_active} == true]
@@ -388,6 +392,8 @@ a *ripple* effect is shown for feedback.
   <button type="button" class="btn btn-info btn-raised">Info</button>
   <button type="button" class="btn btn-warning btn-raised">Warning</button>
   <button type="button" class="btn btn-danger btn-raised">Danger</button>
+  <button type="button" class="btn btn-light btn-raised">Light</button>
+  <button type="button" class="btn btn-dark btn-raised">Dark</button>
   <button type="button" class="btn btn-link btn-raised">Link</button>
 </div>
 ++++
@@ -400,6 +406,8 @@ a *ripple* effect is shown for feedback.
 <button type="button" class="btn btn-info btn-raised">Info</button>
 <button type="button" class="btn btn-warning btn-raised">Warning</button>
 <button type="button" class="btn btn-danger btn-raised">Danger</button>
+<button type="button" class="btn btn-light btn-raised">Light</button>
+<button type="button" class="btn btn-dark btn-raised">Dark</button>
 <button type="button" class="btn btn-link btn-raised">Link</button>
 ----
 endif::[]
@@ -455,6 +463,7 @@ background images and colors on any button.
   <button type="button" class="btn btn-outline-danger">Danger</button>
   <button type="button" class="btn btn-outline-light">Light</button>
   <button type="button" class="btn btn-outline-dark">Dark</button>
+  <button type="button" class="btn btn-outline-link">Link</button>
 </div>
 ++++
 
@@ -468,6 +477,7 @@ background images and colors on any button.
 <button type="button" class="btn btn-outline-danger">Danger</button>
 <button type="button" class="btn btn-outline-light">Light</button>
 <button type="button" class="btn btn-outline-dark">Dark</button>
+<button type="button" class="btn btn-outline-link">Link</button>
 ----
 endif::[]
 
@@ -484,10 +494,10 @@ In need of a button having a little menu, buttons with a (nested)
     <div class="btn-group" role="group">
       <button id="btnGroupDrop1" type="button"
         class="btn btn-primary dropdown-toggle"
-        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu</button>
       <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="link-no-decoration dropdown-item" href="#">Dropdown link</a>
+        <a class="link-no-decoration dropdown-item" href="#">Dropdown link</a>
       </div>
     </div>
   </div>
@@ -497,10 +507,10 @@ In need of a button having a little menu, buttons with a (nested)
     <div class="btn-group" role="group">
       <button id="btnGroupDrop2" type="button"
         class="btn btn-success dropdown-toggle"
-        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu</button>
       <div class="dropdown-menu" aria-labelledby="btnGroupDrop2" style="">
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="link-no-decoration dropdown-item" href="#">Dropdown link</a>
+        <a class="link-no-decoration dropdown-item" href="#">Dropdown link</a>
       </div>
     </div>
   </div>
@@ -510,10 +520,10 @@ In need of a button having a little menu, buttons with a (nested)
     <div class="btn-group" role="group">
       <button id="btnGroupDrop3" type="button"
         class="btn btn-info dropdown-toggle"
-        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu</button>
       <div class="dropdown-menu" aria-labelledby="btnGroupDrop3" style="">
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="link-no-decoration dropdown-item" href="#">Dropdown link</a>
+        <a class="link-no-decoration dropdown-item" href="#">Dropdown link</a>
       </div>
     </div>
   </div>
@@ -523,10 +533,10 @@ In need of a button having a little menu, buttons with a (nested)
     <div class="btn-group" role="group">
       <button id="btnGroupDrop4" type="button"
         class="btn btn-danger dropdown-toggle"
-        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu</button>
       <div class="dropdown-menu" aria-labelledby="btnGroupDrop4" style="">
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="link-no-decoration dropdown-item" href="#">Dropdown link</a>
+        <a class="link-no-decoration dropdown-item" href="#">Dropdown link</a>
       </div>
     </div>
   </div>
@@ -542,11 +552,11 @@ In need of a button having a little menu, buttons with a (nested)
         class="btn btn-primary dropdown-toggle"
         data-bs-toggle="dropdown"
         aria-haspopup="true"
-        aria-expanded="false">
+        aria-expanded="false">menu
       </button>
       <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="link-no-decoration dropdown-item" href="#">Dropdown link</a>
+        <a class="link-no-decoration dropdown-item" href="#">Dropdown link</a>
       </div>
     </div>
 </div>
@@ -562,7 +572,7 @@ or inline. They do not lift, but *hightlighted* on mouse *hover* and *focussed*
 on press.
 
 ++++
-<div class="doc-example">
+<div class="doc-example mt-2 mb-4">
   <button type="button" class="btn btn-primary">Primary</button>
   <button type="button" class="btn btn-secondary">Secondary</button>
   <button type="button" class="btn btn-success">Success</button>
@@ -858,11 +868,11 @@ Floating Action Buttons are adopted navigation elements from mobile devices
 buttons (FABs) for the web typically provide *additional* actions for a page,
 for example, in-page navigation.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 https://material.io/components/buttons-floating-action-button/android#using-fabs[Google Material Design {char-middot} Floating action buttons, {browser-window--new}]
 
 ++++
-<div class="doc-example">
+<div class="doc-example mt-2 mb-4">
   <button type="button" class="btn btn-fab btn-primary" aria-label="fab-button">
     <i class="mdi mdi-plus"></i>
   </button>
@@ -884,7 +894,7 @@ adding the additional CSS class `raised-zX`. J1 supports 25 levels of
 raising HTML elements ranging from 0 to 24.
 
 ++++
-<div class="doc-example">
+<div class="doc-example mt-2 mb-4">
   <button type="button" class="btn btn-fab btn-primary raised-z5 mr-3" aria-label="fab-button">
     <i class="mdi mdi-plus"></i>
   </button>
@@ -918,7 +928,7 @@ Draw *attention* to floating action buttons (FAB) with this subtle but
 captivating effect.
 
 ++++
-<div class="doc-example">
+<div class="doc-example mt-2 mb-4">
   <button type="button" class="btn btn-fab btn-primary pulsed-z3" aria-label="fab-button">
     <i class="mdi mdi-plus"></i>
   </button>
@@ -939,7 +949,7 @@ ifeval::[{fab_mini} == true]
 A smaller sized, *mini* floating action button (FAB) is also available.
 
 ++++
-<div class="doc-example">
+<div class="doc-example mt-2 mb-4">
   <button type="button" class="btn btn-fab btn-fab-sm btn-primary" aria-label="fab-button-small">
     <i class="mdi mdi-plus"></i>
   </button>
@@ -962,7 +972,7 @@ Mini FAB buttons can be *raised* as well by adding the additional CSS class
 to 24.
 
 ++++
-<div class="doc-example">
+<div class="doc-example mt-2 mb-4">
   <button type="button" class="btn btn-fab btn-fab-sm btn-primary raised-z5 mr-3" aria-label="fab-button">
     <i class="mdi mdi-plus"></i>
   </button>
@@ -991,7 +1001,7 @@ For floating action buttons (FAB), all Bootstrap button *color classes* can
 be applied.
 
 ++++
-<div class="doc-example">
+<div class="doc-example mt-2 mb-4">
   <button type="button" class="btn btn-fab btn-primary" aria-label="fab-button-primary">
     <i class="mdi mdi-plus"></i>
   </button>
@@ -1048,7 +1058,7 @@ be applied.
 ----
 
 ++++
-<div class="doc-example">
+<div class="doc-example mt-2 mb-4">
   <button type="button" class="btn btn-fab btn-fab-sm btn-primary" aria-label="fab-button-primary">
     <i class="mdi mdi-plus"></i>
   </button>
@@ -1112,7 +1122,7 @@ FAB Buttons look inactive by adding the `disabled` boolean attribute to the
 `<button>` element.
 
 ++++
-<div class="doc-example">
+<div class="doc-example mt-2 mb-4">
   <button type="button" class="btn btn-fab btn-primary disabled" aria-label="fab-button-primary">
     <i class="mdi mdi-plus"></i>
   </button>
@@ -1148,7 +1158,7 @@ FAB Buttons look inactive by adding the `disabled` boolean attribute to the
 ----
 
 ++++
-<div class="doc-example">
+<div class="doc-example mt-2 mb-4">
   <button type="button" class="btn btn-fab btn-fab-sm btn-primary disabled" aria-label="fab-button-primary">
     <i class="mdi mdi-plus"></i>
   </button>
@@ -1197,7 +1207,7 @@ The base for all typography features is the default *font family*. J1 is using
 different from the standard Bootstrap configuration using the font family of
 *Helvetica* for the default.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--content-typography}[Bootstrap Docs {char-middot} Typography, {browser-window--new}]
 
 ifeval::[{typography_headings} == true]
@@ -1278,7 +1288,7 @@ Creating a design for tables is challenging. The approach used by J1 Template
 is based on pure CSS on top of the classic Bootstrap styles for simplicity
 and portability to be viewed best on all devices and browsers.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--content-tables}[Bootstrap Docs {char-middot} Tables, {browser-window--new}]
 
 ++++
@@ -1375,7 +1385,7 @@ for the email address or the number for numerical information) to take
 advantage of newer input controls like email verification, number selection,
 and more.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-forms}[Bootstrap Docs {char-middot} Forms, {browser-window--new}]
 
 ++++
@@ -1427,7 +1437,7 @@ focus state, sizing, and more.
   <form>
     <div class="form-group">
       <input type="email" class="form-control" id="exampleFormControlInput1">
-      <label for="exampleInputEmail1" class="bmd-label-floating">Email address</label>
+      <label for="exampleFormControlInput1" class="bmd-label-floating">Email address</label>
     </div>
     <div class="form-group">
       <select class="form-control" id="exampleFormControlSelect1">
@@ -1700,7 +1710,7 @@ for building all navigation components. It includes some style
 overrides (for working with lists), link padding for larger hit areas,
 and basic disabled styling.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-navs}[Bootstrap Docs {char-middot} Navs, {browser-window--new}]
 
 ifeval::[{navs_tabs} == true]
@@ -1714,10 +1724,10 @@ JavaScript plugin.
 <div class="doc-example mb-3">
   <ul class="nav nav-tabs mb-3">
     <li class="nav-item">
-      <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+      <a class="link-no-decoration nav-link active" data-bs-toggle="tab" href="#home">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#profile">Profile</a>
+      <a class="link-no-decoration nav-link" data-bs-toggle="tab" href="#profile">Profile</a>
     </li>
     <li class="nav-item dropdown">
       <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
@@ -1831,12 +1841,12 @@ Separators are automatically added in CSS through ::before and content.
     <li class="breadcrumb-item active">Home</li>
   </ol>
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a class="link-no-decoration" href="#">Home</a></li>
     <li class="breadcrumb-item active">Library</li>
   </ol>
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Library</a></li>
+    <li class="breadcrumb-item"><a class="link-no-decoration" href="#">Home</a></li>
+    <li class="breadcrumb-item"><a class="link-no-decoration" href="#">Library</a></li>
     <li class="breadcrumb-item active">Data</li>
   </ol>
 </div>
@@ -1953,11 +1963,11 @@ button. For proper styling, use one of the eight required contextual classes
 (e.g., .alert-success). For inline dismissal, use the alerts
 https://getbootstrap.com/docs/4.0/components/alerts/#dismissing[jQuery plugin].
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-alerts}[Bootstrap Docs {char-middot} Alerts, {browser-window--new}]
 
 ++++
-<div class="doc-example">
+<div class="doc-example mt-2 mb-4">
   <div class="row">
     <div class="col-md-12">
       <div class="alert alert-warning alert-dismissible" role="alert">
@@ -1971,20 +1981,20 @@ link:{url-bs-docs--components-alerts}[Bootstrap Docs {char-middot} Alerts, {brow
   <div class="row">
     <div class="col-md-4">
       <div class="alert alert-danger alert-dismissible" role="alert">
-        <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-        <button type="button" class="btn-close" data-bs-dismiss="alert"</button>
+        <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few</a> things up and try submitting again.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"</button>
       </div>
     </div>
     <div class="col-md-4">
       <div class="alert alert-success alert-dismissible" role="alert">
-        <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
-        <button type="button" class="btn-close" data-bs-dismiss="alert"</button>
+        <strong>Well done!</strong> You successfully read this important <a href="#" class="alert-link">alert message</a>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"</button>
       </div>
     </div>
     <div class="col-md-4">
       <div class="alert alert-info alert-dismissible" role="alert">
-        <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
-        <button type="button" class="btn-close" data-bs-dismiss="alert"</button>
+        <strong>Heads up!</strong> This alert needs your <a href="#" class="alert-link">attention</a>, but it's not super important.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"</button>
       </div>
     </div>
   </div>
@@ -2005,11 +2015,11 @@ be presented with the content of the badge. Depending on the specific
 situation, these badges may seem like random additional words or numbers
 at the end of a sentence, link, or button.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-badges}[Bootstrap Docs {char-middot} Badge, {browser-window--new}]
 
 ++++
-<div class="doc-example">
+<div class="doc-example mt-2 mb-4">
   <div class="bs-component mb-3">
     <span class="badge bg-primary">Primary</span>
     <span class="badge bg-secondary">Secondary</span>
@@ -2130,7 +2140,7 @@ elements, some CSS to set the width, and a few attributes. We don’t use the
 HTML5 <progress> element, ensuring you can stack progress bars, animate them,
 and place text labels over them.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-progress}[Bootstrap Docs {char-middot} Progress, {browser-window--new}]
 
 ifeval::[{progress_basic} == true]
@@ -2139,7 +2149,7 @@ ifeval::[{progress_basic} == true]
 ++++
 <div class="doc-example mb-3">
   <div class="progress">
-    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
   </div>
 </div>
 ++++
@@ -2152,7 +2162,8 @@ ifeval::[{progress_basic} == true]
           style="width: 25%;"
           aria-valuenow="25"
           aria-valuemin="0"
-          aria-valuemax="100">
+          aria-valuemax="100"
+          aria-label="Progress Bar">
     </div>
   </div>
 ----
@@ -2164,16 +2175,16 @@ ifeval::[{progress_contextual_alternatives} == true]
 ++++
 <div class="doc-example mb-3">
   <div class="progress mb-1">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
   </div>
   <div class="progress mb-1">
-    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
   </div>
   <div class="progress mb-1">
-    <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
   </div>
   <div class="progress">
-    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
   </div>
 </div>
 ++++
@@ -2186,7 +2197,7 @@ ifeval::[{progress_contextual_alternatives} == true]
           style="width: 25%;"
           aria-valuenow="25"
           aria-valuemin="0"
-          aria-valuemax="100">
+          aria-valuemax="100" aria-label="Progress Bar">
     </div>
   </div>
 ----
@@ -2198,9 +2209,9 @@ ifeval::[{progress_multiple_bars} == true]
 ++++
 <div class="doc-example mb-3">
   <div class="progress">
-    <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-    <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-    <div class="progress-bar bg-danger"  role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
+    <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
+    <div class="progress-bar bg-danger"  role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
   </div>
 </div>
 ++++
@@ -2212,19 +2223,19 @@ ifeval::[{progress_striped} == true]
 ++++
 <div class="doc-example mb-3">
   <div class="progress mb-1">
-    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
   </div>
   <div class="progress mb-1">
-    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
   </div>
   <div class="progress mb-1">
-    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
   </div>
   <div class="progress mb-1">
-    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
   </div>
   <div class="progress">
-    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar"></div>
   </div>
 </div>
 ++++
@@ -2236,7 +2247,7 @@ ifeval::[{progress_animated} == true]
 ++++
 <div class="doc-example mb-3">
   <div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%" aria-label="Progress Bar"></div>
   </div>
 </div>
 ++++
@@ -2279,7 +2290,7 @@ manage to deliver a ton of control and customization. Built with flexbox,
 they offer easy alignment and mix well with other Bootstrap components.
 They have no margin by default, so use spacing utilities as needed.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-cards}[Bootstrap Docs {char-middot} Card, {browser-window--new}]
 
 ifeval::[{cards_simple} == true]
@@ -2303,7 +2314,7 @@ ifeval::[{cards_simple} == true]
       <div class="card mb-3" style="max-width: 20rem;">
         <div class="card-body">
           <h4 class="card-title notoc">Card title</h4>
-          <h6 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h6>
+          <h5 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h6>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="card-link">Card link</a>
           <a href="#" class="card-link">Another link</a>
@@ -2314,7 +2325,7 @@ ifeval::[{cards_simple} == true]
       <div class="card mb-3" style="max-width: 20rem;">
         <div class="card-body">
           <h4 class="card-title notoc">Card title</h4>
-          <h6 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h6>
+          <h5 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h6>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="card-link">Card link</a>
           <a href="#" class="card-link">Another link</a>
@@ -2370,7 +2381,7 @@ ifeval::[{cards_simple} == true]
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
         <div class="card-footer r-text-200">
-          <a class="card-link bs-info font-weight-bold g-font-size-12 text-uppercase"
+          <a class="link-no-decoration card-link bs-info font-weight-bold g-font-size-12 text-uppercase"
              href="#">Action · Footer Link
           </a>
         </div>
@@ -2386,7 +2397,7 @@ ifeval::[{cards_simple} == true]
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
         <div class="card-footer r-text-200">
-          <a class="card-link bs-warning font-weight-bold g-font-size-12 text-uppercase"
+          <a class="link-no-decoration card-link bs-warning font-weight-bold g-font-size-12 text-uppercase"
              href="#">Action · Footer Link
           </a>
         </div>
@@ -2424,7 +2435,7 @@ ifeval::[{cards_image} == true]
         <img src="/assets/images/modules/attics/building-blocks-1920x1280-bw.jpg" alt="Free site generators">
         <div class="card-body">
           <h5 class="card-title notoc">Card title</h5>
-          <h6 class="card-subtitle text-muted notoc">Image card subtitle</h6>
+          <h5 class="card-subtitle text-muted notoc">Image card subtitle</h6>
         </div>
 
         <div class="card-body">
@@ -2438,7 +2449,7 @@ ifeval::[{cards_image} == true]
         <img src="/assets/images/modules/attics/building-blocks-1920x1280-bw.jpg" alt="Free site generators">
         <div class="card-body">
           <h5 class="card-title notoc">Card title</h5>
-          <h6 class="card-subtitle text-muted notoc">Image card subtitle</h6>
+          <h5 class="card-subtitle text-muted notoc">Image card subtitle</h6>
         </div>
 
         <div class="card-body">
@@ -2456,7 +2467,7 @@ ifeval::[{cards_image} == true]
         <img src="/assets/images/modules/attics/building-blocks-1920x1280-bw.jpg" alt="Free site generators">
         <div class="card-body">
           <h5 class="card-title notoc">Card title</h5>
-          <h6 class="card-subtitle text-muted notoc">Image card subtitle</h6>
+          <h5 class="card-subtitle text-muted notoc">Image card subtitle</h6>
         </div>
 
         <div class="card-body">
@@ -2493,7 +2504,7 @@ built with HTML, CSS, and JavaScript. They’re positioned over everything
 else in the document and remove scroll from the <body> so that modal
 content scrolls instead.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-modal}[Bootstrap Docs {char-middot} Modal, {browser-window--new}]
 
 .Modal types
@@ -2885,7 +2896,7 @@ be included before `bootstrap.js` in order to make popovers and tooltips to work
 
 Bla bla blu.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-tooltips}[Bootstrap Docs {char-middot} Tooltips, {browser-window--new}]
 
 ++++
@@ -2930,7 +2941,7 @@ link:{url-bs-docs--components-tooltips}[Bootstrap Docs {char-middot} Tooltips, {
 
 Bla bla blu.
 
-mdi:bootstrap[24px, mdi-md-deep-purple]
+mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-popovers}[Bootstrap Docs {char-middot} Popovers, {browser-window--new}]
 
 ++++

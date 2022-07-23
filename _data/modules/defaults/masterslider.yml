@@ -1,0 +1,235 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/masterslider.yml
+# User configuration for J1 MasterSlider
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2022 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 MasterSlider
+  scope:                                Default settings
+  location:                             _data/modules/defaults/masterslider.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+
+  xhr_data_path:                        /assets/data/masterslider
+  module_version:                       lite                                    # lite | pro
+  save_slider_config:                   true
+  slider_manager:                       false
+
+  icon_family:                          MDI
+  icon_class:                           false                                   # false | fas | fab (Fontawsesome only)
+  icon_color:                           '#1E88E5'                               # md-blue-600
+  icon_size:                            2x
+
+  skin:                                 default
+  lightbox:
+    enabled:                            false
+    type:                               lb                                      # lb | lg
+
+
+  # ----------------------------------------------------------------------------
+  # DEFAULT  settings
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # Slider controls
+  #
+  # SLIDER control properties
+  #
+  # ----------------------------------------------------------------------------
+  # enabled
+  # ----------------------------------------------------------------------------
+  #   Enables|Disables the use of a notebook. If disabled, no J1 adapter
+  #   setting are generated for this Jupyter Notebook.
+  #
+  #   values:                           boolean (true|false)
+  #   default:                          true
+  #
+  # ----------------------------------------------------------------------------
+  #
+  # id
+  # ----------------------------------------------------------------------------
+  #   The id of a notebook that is used by the Asciidoc extension
+  #   notebook::<id>[] to place the HTML portion for the HTML code
+  #   of an exported Jupyter Notebook.
+  #
+  #   values:                           string
+  #   default:                          no default
+  #
+  # ----------------------------------------------------------------------------
+  #
+  controls:
+
+    arrows:
+      enabled:                          false
+      autohide:                         false
+      overVideo:                        true
+      hideUnder:                        null
+
+    bullets:
+      enabled:                          false
+      autohide:                         false
+      overVideo:                        true
+      dir:                              h
+      hideUnder:                        null
+      align:                            bottom
+      margin:                           10
+
+    thumblist:
+      enabled:                          false
+      width:                            100
+      height:                           80
+      autohide:                         true
+      overVideo:                        true
+      dir:                              h
+      speed:                            17
+      hideUnder:                        null
+      inset:                            false
+      arrows:                           false
+      hover:                            false
+      customClass:                      ''
+      align:                            right
+      type:                             thumbs
+      margin:                           1
+      space:                            1
+      fillMode:                         fill
+
+    scrollbar:
+      enabled:                          false
+      autohide:                         false
+      overVideo:                        true
+      dir:                              h
+      inset:                            false
+      align:                            bottom
+      color:                            '#3D3D3D'
+      hideUnder:                        null
+      margin:                           10
+      width:                            4
+
+    circletimer:
+      enabled:                          false
+      autohide:                         false
+      overVideo:                        true
+      color:                            '#A2A2A2'
+      radius:                           4
+      stroke:                           10
+      hideUnder:                        null
+
+    timebar:
+      enabled:                          false
+      autohide:                         false
+      overVideo:                        true
+      color:                            '#FFFFFF'
+      hideUnder:                        null
+      align:                            bottom
+      inset:                            false
+      margin:                           0
+
+    slideinfo:
+      enabled:                          false
+      autohide:                         false
+      overVideo:                        true
+      insertTo:                         ''
+      size:                             100
+      hideUnder:                        null
+      align:                            bottom
+      inset:                            false
+      margin:                           10
+
+  # ----------------------------------------------------------------------------
+  # Slider options
+  #
+  # SLIDER option properties
+  #
+  # ----------------------------------------------------------------------------
+  # enabled
+  # ----------------------------------------------------------------------------
+  #   Enables|Disables the use of a notebook. If disabled, no J1 adapter
+  #   setting are generated for this Jupyter Notebook.
+  #
+  #   values:                           boolean (true|false)
+  #   default:                          true
+  #
+  # ----------------------------------------------------------------------------
+  #
+  # id
+  # ----------------------------------------------------------------------------
+  #   The id of a notebook that is used by the Asciidoc extension
+  #   notebook::<id>[] to place the HTML portion for the HTML code
+  #   of an exported Jupyter Notebook.
+  #
+  #   values:                           string
+  #   default:                          no default
+  #
+  # ----------------------------------------------------------------------------
+  #
+  options:
+
+    width:                                300
+    height:                               150
+    minHeight:                            0
+    space:                                0
+    start:                                1
+    grabCursor:                           true
+    swipe:                                true
+    mouse:                                true
+    keyboard:                             false
+    layout:                               boxed                                 # default: boxed | fullwidth | fullscreen | fillwidth | autofill | partialview
+    wheel:                                false
+    autoplay:                             false
+    instantStartLayers:                   false
+    mobileBGVideo:                        false
+    loop:                                 false
+    shuffle:                              false
+    preload:                              0
+    heightLimit:                          true
+    autoHeight:                           false
+    smoothHeight:                         true
+    endPause:                             false
+    overPause:                            true
+    fillMode:                             fill                                  # default: fill | fit | stretch | center | tile
+    centerControls:                       true
+    startOnAppear:                        false
+    layersMode:                           center                                # default: center | full
+    autofillTarget:                       ''
+    hideLayers:                           false
+    fullscreenMargin:                     0
+    speed:                                20                                    # default: 17, [0 .. 100]
+    dir:                                  h                                     # default: h | v
+    responsive:                           true
+    tabletWidth:                          768
+    tabletHeight:                         null
+    phoneWidth:                           480
+    phoneHeight:                          null
+    sizingReference:                      window
+    parallaxMode:                         mouse                                 # default: mouse | swipe | mouse:x-only | mouse:y-only
+    filters:                              null
+    view:                                 basic                                 # default: basic | fade | mask | wave | flow | stack | scale | focus | parallaxMask | partialWave | fadeBasic | fadeWave | fadeFlow
+
+  plugins:
+
+    MSScrollParallax:
+      enabled:                            false
+      layers_parallax_depth:              50
+      background_parallax_depth:          40
+      fade_layers:                        false
+
+
+
+
+
+# ------------------------------------------------------------------------------
+# END config

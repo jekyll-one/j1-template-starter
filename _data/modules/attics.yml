@@ -56,7 +56,7 @@ settings:
         padding_top:                    400
         padding_bottom:                 50
         opacity:                        0.5
-#       title_animate:                  fadeInDown
+#       title_animate:                  animate__fadeInDown
 #       raised_level:                   15
 #       background_color_1:             "#512DA8"                               # deep-purple-700
 #       background_color_2:             "#B39DDB"                               # deep-purple-200
@@ -64,7 +64,7 @@ settings:
     # --------------------------------------------------------------------------
     # layouts posts|pages
     #
-    - name:                             Page_Post
+    - name:                             Pages and Posts
       attic:
         enabled:                        true
         id:                             attic_page_post
@@ -74,13 +74,25 @@ settings:
         opacity:                        0.5
 
     # --------------------------------------------------------------------------
+    # layouts raw
+    #
+    - name:                             Raw pages
+      attic:
+        enabled:                        true
+        id:                             attic_raw
+        layout:                         [ raw ]
+        padding_top:                    400
+        padding_bottom:                 50
+        opacity:                        0.5
+
+    # --------------------------------------------------------------------------
     #  layouts collection|app|raw
     #
-    - name:                             Text attic
+    - name:                             Text pages
       attic:
         enabled:                        true
         id:                             attic_text
-        layout:                         [ collection, app, raw ]
+        layout:                         [ collection, app ]
 
 # ------------------------------------------------------------------------------
 # END config

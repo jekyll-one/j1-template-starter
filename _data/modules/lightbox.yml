@@ -32,6 +32,8 @@ settings:
   # screen, and dimming out the rest of the web page. Enables gallery views
   # for individual images, images sets and images are part of a carousel
   # (e.g. Owl Carousel).
+  #
+  # See: https://lokeshdhakar.com/projects/lightbox2/#options
 
   # GENERAL settings
   # ------------------------------------------------------------------------------
@@ -165,13 +167,13 @@ settings:
 
   alwaysShowNavOnTouchDevices:          false
   albumLabel:                           Image %1 of %2
-  disableScrolling:                     false
+  disableScrolling:                     true
   fadeDuration:                         600
   fitImagesInViewport:                  true
   imageFadeDuration:                    600
   maxWidth:
   maxHeight:
-  positionFromTop:                      50
+  positionFromTop:                      120
   resizeDuration:                       250
   showImageNumberLabel:                 true
   wrapAround:                           true

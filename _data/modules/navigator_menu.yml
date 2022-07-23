@@ -99,11 +99,11 @@
               href:                     /pages/public/jupyter/examples/localized/climate-change-forecast/
               icon:                     notebook-outline
             - title:                    Visualizations using Altair
-              href:                     https://jekyll.one/pages/public/jupyter/examples/localized/j1-altair-visualizations/
+              href:                     "https://jekyll.one/pages/public/jupyter/examples/localized/j1-altair-visualizations/"
               target:                   _blank
               icon:                     notebook-outline
             - title:                    Visualizations using Bokeh
-              href:                     https://jekyll.one/pages/public/jupyter/examples/localized/j1-bokeh-visualizations/
+              href:                     "https://jekyll.one/pages/public/jupyter/examples/localized/j1-bokeh-visualizations/"
               target:                   _blank
               icon:                     notebook-outline
 
@@ -115,15 +115,19 @@
           dropdown:
 
             - title:                    J1 NBI Integration
-              href:                     https://jekyll.one/pages/public/jupyter/docs/j1-nbinteract-docs/
+              href:                     "https://jekyll.one/pages/public/jupyter/docs/j1-nbinteract-docs/"
               target:                   _blank
               icon:                     alpha-j-box
+            - title:                    NBI Wigets
+              href:                     "https://jekyll.one/pages/public/jupyter/docs/nbi-widgets/"
+              icon:                     alpha-j-box
+              target:                   _blank
             - title:                    BinderHub API
-              href:                     https://jekyll.one/pages/public/jupyter/docs/binderhub/
+              href:                     "https://jekyll.one/pages/public/jupyter/docs/binderhub/"
               target:                   _blank
               icon:                     book
             - title:                    JupyterHub API
-              href:                     https://jekyll.one/pages/public/jupyter/docs/jupyterhub/
+              href:                     "https://jekyll.one/pages/public/jupyter/docs/jupyterhub/"
               target:                   _blank
               icon:                     book
 
@@ -313,6 +317,231 @@
       title:                            Previewer
       href:                             /pages/public/previewer/theme/
       icon:                             eye
+
+# ------------------------------------------------------------------------------
+# Menu TOOLS
+#
+- item:                                 Tools
+  sublevel:
+
+    # --------------------------------------------------------------------------
+    # Previewers
+    #
+    - title:                            Previewers
+      icon:                             eye
+      dropdown:
+
+      - title:                          Master Slider
+        href:                           "https://jekyll.one/pages/public/previewer/masterslider/"
+        icon:                           gesture-swipe
+        target:                         _blank
+      - title:                          Country Flags
+        href:                           "https://jekyll.one/pages/public/previewer/country_flags/"
+        icon:                           flag
+        target:                         _blank
+      - title:                          MDI Icons (regular)
+        href:                           "https://jekyll.one/pages/public/previewer/mdi_font/"
+        icon:                           alarm-light
+        target:                         _blank
+      - title:                          MDI Icons (light)
+        href:                           "https://jekyll.one/pages/public/previewer/mdil_font/"
+        icon:                           alarm-light-outline
+        target:                         _blank
+      - title:                          Rouge Themes
+        href:                           "https://jekyll.one/pages/public/previewer/rouge/"
+        icon:                           code-parentheses
+        target:                         _blank
+      - title:                          Justified Gallery
+        href:                           "https://jekyll.one/pages/public/previewer/justified_gallery/"
+        icon:                           view-dashboard
+        target:                         _blank
+
+    # --------------------------------------------------------------------------
+    # CheatSheets
+    #
+    - title:                            CheatSheets
+      icon:                             bookshelf
+      dropdown:
+
+        - title:                        Asciidoc
+          href:                         "https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/"
+          icon:                         format-color-text
+          target:                       _blank
+        - title:                        Atom
+          href:                         "https://jekyll.one/pages/public/cheatsheets/atom/"
+          icon:                         atom
+          target:                       _blank
+
+# ------------------------------------------------------------------------------
+# Menu MANUALS
+#
+- item:                                 Manuals
+  sublevel:
+
+    - title:                            Pandoc
+      href:                             "https://jekyll.one/pages/public/manuals/pandoc/"
+      icon:                             cog-transfer
+      target:                           _blank
+
+    # --------------------------------------------------------------------------
+    # Modules
+    #
+    - title:                            Modules
+      icon:                             view-module
+      dropdown:
+
+        - title:                        Master Slider
+          href:                         "https://jekyll.one/pages/public/manuals/modules/masterslider/"
+          icon:                         gesture-swipe
+          target:                       _blank
+        - title:                        Range Sliders
+          href:                         "https://jekyll.one/pages/public/manuals/modules/rangeslider/"
+          icon:                         view-module-outline
+          target:                       _blank
+        - title:                        Rouge
+          href:                         "https://jekyll.one/pages/public/manuals/rouge/user_guide/"
+          icon:                         format-color-fill
+          target:                       _blank
+        - title:                        msDropdown
+          href:                         "https://jekyll.one/pages/public/manuals/msdropdown/"
+          icon:                         form-dropdown
+          target:                       _blank
+        - title:                        Mobile Menu
+          href:                         "https://jekyll.one/pages/public/manuals/mmenu/"
+          icon:                         menu
+          target:                       _blank
+        - title:                        Platform
+          href:                         "https://jekyll.one/pages/public/manuals/platform/"
+          icon:                         folder-information
+          target:                       _blank
+
+        # ----------------------------------------------------------------------
+        # Documentation
+        #
+        - title:                        NBI Documentation
+          icon:                         head-lightbulb
+          dropdown:
+
+            - title:                    NBI Integration
+              href:                     "https://jekyll.one/pages/public/jupyter/docs/j1-nbinteract-docs/"
+              icon:                     alpha-j-box
+              target:                   _blank
+            - title:                    NBI Wigets
+              href:                     "https://jekyll.one/pages/public/jupyter/docs/nbi-widgets/"
+              icon:                     alpha-j-box
+              target:                   _blank
+            - title:                    BinderHub API
+              href:                     "https://jekyll.one/pages/public/jupyter/docs/binderhub/"
+              icon:                     book
+              target:                   _blank
+            - title:                    JupyterHub API
+              href:                     "https://jekyll.one/pages/public/jupyter/docs/jupyterhub/"
+              icon:                     book
+              target:                   _blank
+
+    # --------------------------------------------------------------------------
+    # Resources
+    #
+    - title:                            Resources
+      icon:                             video-input-component
+      dropdown:
+
+        - title:                        MD Color Palette
+          href:                         "https://jekyll.one/pages/public/manuals/resources/color_palette/"
+          icon:                         format-color-fill
+          target:                       _blank
+
+    # --------------------------------------------------------------------------
+    # Jekyll
+    #
+    - title:                            Jekyll
+      icon:                             flask
+      dropdown:
+
+        - title:                        Liquid User Guide
+          href:                         "https://jekyll.one/pages/public/manuals/liquid/user_guide/"
+          icon:                         trello
+          target:                       _blank
+
+        - title:                        Jekyll User Guide
+          icon:                         book-open-page-variant
+          dropdown:
+
+            - title:                    Commandline
+              href:                     "https://jekyll.one/pages/public/manuals/jekyll/user_guide/commandline/"
+              icon:                     console-line
+              target:                   _blank
+            - title:                    Configuration
+              href:                     "https://jekyll.one/pages/public/manuals/jekyll/user_guide/configuration/"
+              icon:                     code-braces
+              target:                   _blank
+            - title:                    Managing Pages
+              href:                     "https://jekyll.one/pages/public/manuals/jekyll/user_guide/managing_pages/"
+              icon:                     book-open-page-variant
+              target:                   _blank
+            - title:                    Managing Posts
+              href:                     "https://jekyll.one/pages/public/manuals/jekyll/user_guide/managing_posts/"
+              icon:                     blogger
+              target:                   _blank
+            - title:                    Managing Collections
+              href:                     "https://jekyll.one/pages/public/manuals/jekyll/user_guide/managing_collections/"
+              icon:                     collage
+              target:                   _blank
+            - title:                    Jekyll Date formats
+              href:                     "https://jekyll.one/pages/public/manuals/jekyll/user_guide/date_formats/"
+              icon:                     calendar-blank
+              target:                   _blank
+
+        - title:                        Jekyll Plugins
+          icon:                         power-plug
+          dropdown:
+
+            - title:                    Asciidoctor
+              href:                     "https://jekyll.one/pages/public/manuals/jekyll/plugin/asciidoctor/"
+              icon:                     hospital
+              target:                   _blank
+            - title:                    Paginator V2
+              href:                     "https://jekyll.one/pages/public/manuals/jekyll/plugins/paginator_v2/"
+              icon:                     page-last
+              target:                   _blank
+
+    # --------------------------------------------------------------------------
+    # AsciiDoc
+    #
+    - title:                            AsciiDoc
+      icon:                             format-color-text
+      dropdown:
+
+        - title:                        AsciiDoc Language
+          href:                         "https://docs.asciidoctor.org/asciidoc/latest/"
+          icon:                         alert-outline
+          target:                       _blank
+
+        - title:                        Asciidoctor User Guide
+          href:                         "https://docs.asciidoctor.org/asciidoctor/latest/"
+          icon:                         book-open-page-variant
+          target:                       _blank
+
+        - title:                        Asciidoctor CLI
+          href:                         "https://docs.asciidoctor.org/asciidoctor/latest/cli/"
+          icon:                         keyboard-variant
+          target:                       _blank
+
+    # --------------------------------------------------------------------------
+    # YAML
+    #
+    - title:                            YAML
+      icon:                             format-align-right
+      dropdown:
+
+        - title:                        User Guide
+          href:                         "https://jekyll.one/pages/public/manuals/yaml/user_guide/"
+          icon:                         book-open-page-variant
+          target:                       _blank
+        - title:                        YAML Reference Guide
+          href:                         "https://jekyll.one/pages/public/manuals/yaml/quick_reference/"
+          icon:                         book-open
+          target:                       _blank
 
 # ------------------------------------------------------------------------------
 # Menu ABOUT

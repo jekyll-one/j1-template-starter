@@ -112,7 +112,7 @@ settings:
                     translate:          notranslate                             # translate|notranslate
                     title:              Roundtrip
                     tagline:            learn top features
-                    class:              btn btn-xl btn-primary text-uppercase text-left mr-2 mb-2
+                    class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
                     style:              "min-width: 270px"
                     icon:               briefcase-search-outline
                     icon_color:
@@ -126,7 +126,7 @@ settings:
                     translate:          notranslate                             # translate|notranslate
                     title:              Download
                     tagline:            get on rubygems
-                    class:              btn btn-xl btn-primary text-uppercase text-left mr-2 mb-2
+                    class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
                     style:              "min-width: 270px"
                     icon:               briefcase-download-outline
                     icon_color:
@@ -181,9 +181,12 @@ settings:
               cite_text_size:             300%
               cite_text_quotes:           false
               cite_text: >
-                                          <strong><span class="text-primary">Making is</span>
-                                          like Wanting, <br> but even
-                                          <span class="text-primary">Better</span></strong>
+                                          <strong>
+                                            <span class="text-primary">Making is</span>
+                                            <span class="text-light">like Wanting, <br> but even</span>
+                                            <span class="text-primary">Better</span>
+                                          </strong>
+
               text_color:                 "#E0E0E0"
               gridify:                    true
               size_y:                     450

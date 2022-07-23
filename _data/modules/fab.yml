@@ -34,17 +34,19 @@ settings:
     hoverEnabled:                       true
 
   # ----------------------------------------------------------------------------
-  # User defined FAM buttons
+  # User defined FAB buttons
   #
   menus:
 
     # --------------------------------------------------------------------------
-    # FAM for scrolling to the page top position (default)
+    # FAB for scrolling to the page top position (default)
     #
     - name:                             Scroll to top
       enabled:                          true
       id:                               default
       icon:                             chevron-double-up
+      icon_family:                      MDI
+      icon_color:                       md-gray-900
       icon_hover:                       chevron-double-up
       color:                            primary
 
@@ -57,13 +59,15 @@ settings:
           event_handler:                scroll_to_top
 
     # --------------------------------------------------------------------------
-    # FAM for scrolling to the page top position (default)
+    # FAB for scrolling to the page top position (default)
     #
-    - name:                             Default Plus
+    - name:                             Top and Reload
       enabled:                          true
-      id:                               default-plus
+      id:                               top-reload
       icon:                             plus
-      icon_hover:                       plus
+      icon_family:                      MDI
+      icon_color:                       md-gray-900
+      icon_hover:                       chevron-up
       color:                            primary
 
       # ------------------------------------------------------------------------
@@ -73,26 +77,10 @@ settings:
         - item:                         To Top
           enabled:                      true
           id:                           fam_scroll_to_top
-          color:                        primary
+          color:                        md-green
           event_handler:                scroll_to_top
           icon:                         chevron-double-up
           icon_properties:
-
-        # - item:                         Previous Section
-        #   enabled:                      true
-        #   id:                           fam_previous_section
-        #   color:                        success
-        #   event_handler:                scroll_previous_section
-        #   icon:                         step-backward
-        #   icon_properties:              rotate-90
-        #
-        # - item:                         Next Section
-        #   enabled:                      true
-        #   id:                           fam_next_section
-        #   color:                        success
-        #   event_handler:                scroll_next_section
-        #   icon:                         step-forward
-        #   icon_properties:              rotate-90
 
         - item:                         Reload Page
           enabled:                      true
@@ -100,15 +88,18 @@ settings:
           color:                        md-red
           event_handler:                reload_page
           icon:                         reload
+          icon_properties:
 
     # --------------------------------------------------------------------------
-    # FAM to open sidebar-based (Mmenu Drawer) table of contents (toccer)
+    # FAB to open sidebar-based (Mmenu Drawer) table of contents (toccer)
     #
     - name:                             Open TOC
       enabled:                          true
       id:                               open_toc
       icon:                             plus
-      icon_hover:                       plus
+      icon_family:                      MDI
+      icon_color:                       md-gray-900
+      icon_hover:                       chevron-up
       color:                            primary
 
       # ------------------------------------------------------------------------
@@ -118,7 +109,7 @@ settings:
         - item:                         To Top
           enabled:                      true
           id:                           fam_scroll_to_top
-          color:                        primary
+          color:                        md-green
           event_handler:                scroll_to_top
           icon:                         chevron-double-up
           icon_properties:
@@ -126,18 +117,21 @@ settings:
         - item:                         Table of Contents
           enabled:                      true
           id:                           open_mmenu_toc
-          color:                        info
+          color:                        md-green
           event_handler:                open_mmenu_toc
           icon:                         wrap
+          icon_properties:
 
     # --------------------------------------------------------------------------
-    # FAM to open sidebar-based (Mmenu Drawer) table of contents (toccer)
+    # FAB to open sidebar-based (Mmenu Drawer) table of contents (toccer)
     #
     - name:                             Open TOC Reload
       enabled:                          true
       id:                               open_toc_reload
       icon:                             plus
-      icon_hover:                       plus
+      icon_family:                      MDI
+      icon_color:                       md-gray-900
+      icon_hover:                       chevron-up
       color:                            primary
 
       # ------------------------------------------------------------------------
@@ -147,7 +141,7 @@ settings:
         - item:                         To Top
           enabled:                      true
           id:                           fam_scroll_to_top
-          color:                        primary
+          color:                        md-green
           event_handler:                scroll_to_top
           icon:                         chevron-double-up
           icon_properties:
@@ -158,77 +152,26 @@ settings:
           color:                        md-red
           event_handler:                reload_page
           icon:                         reload
-
-        - item:                         Table of Contents
-          enabled:                      true
-          id:                           open_mmenu_toc
-          color:                        info
-          event_handler:                open_mmenu_toc
-          icon:                         wrap
-
-
-
-    # --------------------------------------------------------------------------
-    # FAM for in-page navigation (simplified)
-    #
-    - name:                             in-page control simple
-      enabled:                          true
-      id:                               page_ctrl_simple
-      icon:                             plus
-      icon_hover:                       plus
-      color:                            primary
-
-      # ------------------------------------------------------------------------
-      # MENU items
-      #
-      items:
-
-        - item:                         To Top
-          enabled:                      true
-          id:                           fam_scroll_to_top
-          color:                        primary
-          event_handler:                scroll_to_top
-          icon:                         chevron-double-up
           icon_properties:
 
-        - item:                         Previous Section
-          enabled:                      true
-          id:                           fam_previous_section
-          color:                        success
-          event_handler:                scroll_previous_section
-          icon:                         step-backward
-          icon_properties:              rotate-90
-
-        - item:                         Next Section
-          enabled:                      true
-          id:                           fam_next_section
-          color:                        success
-          event_handler:                scroll_next_section
-          icon:                         step-forward
-          icon_properties:              rotate-90
-
-        - item:                         Reload Page
-          enabled:                      true
-          id:                           fam_reload_page
-          color:                        md-red
-          event_handler:                reload_page
-          icon:                         reload
-
         - item:                         Table of Contents
           enabled:                      true
           id:                           open_mmenu_toc
-          color:                        info
+          color:                        md-green
           event_handler:                open_mmenu_toc
           icon:                         wrap
+          icon_properties:
 
     # --------------------------------------------------------------------------
-    # FAM for in-page navigation
+    # FAB for in-page navigation
     #
-    - name:                             in-page control
+    - name:                             page control
       enabled:                          true
       id:                               page_ctrl
       icon:                             plus
-      icon_hover:                       plus
+      icon_family:                      MDI
+      icon_color:                       md-gray-900
+      icon_hover:                       chevron-up
       color:                            primary
 
       # ------------------------------------------------------------------------
@@ -239,7 +182,7 @@ settings:
         - item:                         To Top
           enabled:                      true
           id:                           fam_scroll_to_top
-          color:                        primary
+          color:                        md-green
           event_handler:                scroll_to_top
           icon:                         chevron-double-up
           icon_properties:
@@ -247,26 +190,18 @@ settings:
         - item:                         Previous Section
           enabled:                      true
           id:                           fam_previous_section
-          color:                        success
+          color:                        md-green
           event_handler:                scroll_previous_section
           icon:                         step-backward
-          icon_properties:              rotate-90
+          icon_properties:              mdi-rotate-90
 
         - item:                         Next Section
           enabled:                      true
           id:                           fam_next_section
-          color:                        success
+          color:                        md-green
           event_handler:                scroll_next_section
           icon:                         step-forward
-          icon_properties:              rotate-90
-
-        # - item:                         To bottom
-        #   enabled:                      true
-        #   id:                           fam_scroll_to_bottom
-        #   color:                        info
-        #   event_handler:                scroll_to_bottom
-        #   icon:                         step-forward-2
-        #   icon_properties:              rotate-90
+          icon_properties:              mdi-rotate-90
 
         - item:                         Reload Page
           enabled:                      true
@@ -274,29 +209,15 @@ settings:
           color:                        md-red
           event_handler:                reload_page
           icon:                         reload
+          icon_properties:
 
         - item:                         Table of Contents
           enabled:                      true
           id:                           open_mmenu_toc
-          color:                        info
+          color:                        md-green
           event_handler:                open_mmenu_toc
           icon:                         wrap
-
-      # - item:                         Leave a Comment
-      #   enabled:                      false
-      #   id:                           fam_scroll_to_comments
-      #   properties:
-      #   event_handler:                scroll_to_comments
-      #   icon:                         comment
-      #   icon_properties:
-      #
-      # - item:                         Tester
-      #   enabled:                      false
-      #   id:                           fam_test
-      #   properties:
-      #   event_handler:                alert_me
-      #   icon:                         alert
-      #   icon_properties:
+          icon_properties:
 
 # ------------------------------------------------------------------------------
 # END config
