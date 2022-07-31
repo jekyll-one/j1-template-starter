@@ -16,8 +16,8 @@ keywords: >
                                         smooth-srcoll, enhanced navigation, lightboxes, image and video galleries,
                                         text and image carousels, bootstrap extensions, asciidoctor extensions,
                                         advanced banners and panels, blog post navigation, featured example content,
-                                        royalty free images, bootstrap themes, comment providers, google analytics,
-                                        google ads, youtube video, vimeo video,
+                                        royalty free images, bootswatch, bootstrap, themes, comment providers,
+                                        google analytics, google ads, youtube video, vimeo video,
                                         opensource, free, load, download, start, starter, example,
                                         high, easy, use, secure, encrypt, standard, popular,
                                         generate, develop, create, learn, distribute, publish, deploy,
@@ -48,12 +48,14 @@ robots:
   index:                                true
   follow:                               true
 
+fab_menu_id:                            page_ctrl
+
 permalink:                              /pages/public/features/template_features/
-regenerate:                             false
+regenerate:                             true
 
 resources:                              [
-                                          animate, clipboard, rouge, lightbox, carousel,
-                                          lightGallery, justifiedGallery,
+                                          animate, clipboard, comments, rouge, lightbox, carousel,
+                                          masterslider, lightGallery, justifiedGallery,
                                           video_js, vimeo_player, vimeo_froogaloop
                                         ]
 resource_options:
@@ -113,31 +115,35 @@ a toolset at their hands to create a website with no need to start web
 development or web design from the beginning.
 
 mdi:mouse-move-down[24px, md-blue ml-3 mr-2]
-Infinite scroll +
+<<Infinite scroll>> +
 mdi:mouse-move-down[24px, md-blue ml-3 mr-2]
-Animate on scroll +
+<<Animate on scroll>> +
 mdi:animation[24px, md-blue ml-3 mr-2]
-Floating Action Buttons +
+<<Floating Action Buttons>> +
 mdi:magnify[24px, md-blue ml-3 mr-2]
-Full-text search engine (Lunr) +
+<<Full-text search engine>> +
 mdi:cookie[24px, md-blue ml-3 mr-2]
-Cookie consent (GDPR compatible) +
+<<Cookie Consent>> +
 mdi:translate[24px, md-blue ml-3 mr-2]
-Translator (Google, Deepl) +
+<<Translator>> +
+mdi:window-shutter[24px, md-blue ml-3 mr-2]
+<<Master Header>> +
 mdi:clipboard[24px, md-blue ml-3 mr-2]
-Clipboard +
+<<Clipboard>> +
 mdi:forwardburger[24px, md-blue mdi-rotate-90 ml-3 mr-2]
-Smooth-scroll +
+<<Smooth Scroll>> +
 mdi:near-me[24px, md-blue ml-3 mr-2]
-Enhanced Navigation +
+<<Enhanced Navigation>> +
 mdi:lightbulb-on[24px, md-blue ml-3 mr-2]
-Lightboxes +
+<<Lightboxes>> +
 mdi:view-carousel[24px, md-blue ml-3 mr-2]
-Text and Image Carousels +
+<<Text and Image Carousels>> +
+mdi:gesture-swipe[24px, md-blue ml-3 mr-2]
+<<Text and Image Sliders>> +
 mdi:folder-multiple-image[24px, md-blue ml-3 mr-2]
-Image and Video Galleries
+<<Image and Video Galleries>>
 
-=== Infinite scroll (IS)
+=== Infinite scroll
 
 Infinite scrolling (IS), or known as endless scrolling, is a technique that
 loads more content as a user scrolls down the page. It allows visitors to
@@ -147,7 +153,7 @@ additional pages.
 J1 Template supports infinite scrolling and is used, for example, for loading
 previews of blog articles.
 
-=== Animate on scroll (AOS)
+=== Animate on scroll
 
 Scroll-triggered animation (AOS) is an effective way to animate website
 elements such as text, graphics, photos, and video, bringing them to life
@@ -155,7 +161,7 @@ as users scroll down a page. Scroll animations are more likely to grab the
 user's attention, making websites look and feel more dynamic and
 interesting.
 
-=== Floating Action Buttons (FAB)
+=== Floating Action Buttons
 
 The *Floating Action Button* (FAB) is an element of Google's Material Design.
 A FAB represents the primary action in an application, or triggers additional
@@ -169,7 +175,7 @@ The template system supports Floating Action Buttons for in-page navigation.
 When the FAB is pressed, it provides more related actions like showing the
 content table or scrolling a page chapter-wise up and down.
 
-=== Full-text search engine (FTS)
+=== Full-text search engine
 
 Full-text search (FTS) for a website is an advanced method of searching
 through all documents. FTS promises fast retrieval of data with advanced
@@ -183,7 +189,7 @@ to be small but full-featured. Lunr enables developers to provide visitors
 with a great search experience without the need for external, server-sided
 search services like Google on the internet.
 
-=== Cookie Consent (CC)
+=== Cookie Consent
 
 Running websites in the EU and many other countries, implementing the
 *General Data Protection Regulation* (GDPR) is required to make a website
@@ -252,6 +258,18 @@ visitors do not agree on cookies required to use Google Translate, GT gets
 automatically disabled, and all cookies from Google are deleted from the
 user's system.
 
+=== Master Header
+
+The most-top position of a web page is important; this postion is presented to
+your vistors very first. The Master Header (Attic) give your reader a fist
+impression of what is presented on a page.
+
+Attics may contains (dynamic) *Text*, *Images* or *Videos* to support a page
+for the content presented.
+
+.Master Header (image-based)
+lightbox::images--master-header[ 800, {data-images--master-header} ]
+
 === Clipboard
 
 The clipboard is a special function of the operating system of desktop or
@@ -259,8 +277,11 @@ mobile computers that temporarily stores copied text or other data in memory.
 Once something is stored in the clipboard, the user can paste the data to a
 new location.
 
+TIP: Click on the *COPY* button (top-right) in the following source code
+section.
+
 .Clipboard
-[source, javascript, linenums, highlight='3-7']
+[source, js]
 ----
 // ---------------------------------------------------------------
 // helper functions
@@ -282,18 +303,18 @@ J1 integrates the clipboard functionality of your computer system to copy and
 paste examples or code elements from a webpage. A clipboard will help your
 users a lot to manage the code snippets you’ve provided.
 
-=== Smooth-scroll (SSR)
+=== Smooth Scroll
 
 Smooth scrolling (SSR) is an enhanced feature of J1 designed to improve
 scrolling and positioning on anchor links. If SSR is enabled, an animated
 transition is done for scrolling to headlines (anchor links) and gets
 exactly positioned.
 
-=== Enhanced Navigation (NAV module)
+=== Enhanced Navigation
 
 When it comes to the usability of a website, your visitors' focus is on one
 important component: the Navigation System. The Navigation System used by
-J1 Template is a multi-purpose navigation builder based on the Bootstrap V5
+J1 Template is a multi-purpose navigation builder based on the _Bootstrap_ V5
 Framework.
 
 .Navigation Module (NAV)
@@ -331,7 +352,6 @@ All features are available by configuration, and no programming is needed.
             icon:                         format-color-fill
 ----
 
-
 === Lightboxes
 
 A Lightbox is, in general, a helper which displays enlarged, almost
@@ -361,13 +381,13 @@ LightGallery can be used alternatively.
 [source, apib, role="noclip"]
 ----
 .LightGallery
-gallery::lg-example--template-features[]
+gallery::jg_old_times[ role="mb-4 wm-800" ]
 ----
 
 .LightGallery
-gallery::lg-example--template-features[]
+gallery::jg_old_times[ role="mb-4 wm-800" ]
 
-=== Image and Text Carousels
+=== Text and Image Carousels
 
 J1 Carousel is based on OWL Carousel, a clean and neat jQuery slider plugin
 for creating fully responsive and touch-enabled carousel sliders. Carousels
@@ -377,11 +397,11 @@ are mostly used for pictures data to animate the images as a series.
 [source, apib, role="noclip"]
 ----
 .Image carousel
-carousel::image--template-features[role="mb-3"]
+carousel::demo_simple[role="mb-3"]
 ----
 
 .Image carousel
-carousel::image--template-features[role="mb-3"]
+carousel::demo_simple[role="mb-3"]
 
 In general, J1 Carousel supports many more sources to be displayed as a
 slide show: simple text, for example.
@@ -390,11 +410,11 @@ slide show: simple text, for example.
 [source, apib, role="noclip"]
 ----
 .Text carousel
-carousel::text--template-features[role="mb-3"]
+carousel::demo_text_carousel[role="mb-3"]
 ----
 
 .Text carousel
-carousel::text--template-features[role="mb-3"]
+carousel::demo_text_carousel[role="mb-3"]
 
 A more eye-minded type of text-based slide show is a parallax text slider.
 If you want to emphasize your statements focussing on the meaning, this kind
@@ -404,11 +424,25 @@ of slide show may be interesting.
 [source, apib, role="noclip"]
 ----
 .Parallax carousel
-carousel::text--template-features[role="mb-3"]
+carousel::demo_text_carousel_parallax[role="mb-3"]
 ----
 
 .Parallax text carousel
-carousel::parallax--template-features[role="mb-3"]
+carousel::demo_text_carousel_parallax[role="mb-3"]
+
+
+=== Text and Image Sliders
+
+Master Slider is a premium image and content slider for any purposes, with
+super smooth hardware accelerated transitions. MS is a well-known Slider Plugin
+for _WordPress_. J1 implements the *free* version MS Lite of version v2.85.13
+(Feb 2022).
+
+masterslider::ms_00005[role="mt-4 mb-5"]
+
+masterslider::ms_00006[role="mt-4 mb-5"]
+
+masterslider::ms_00009[role="mt-4 mb-5"]
 
 === Image and Video Galleries
 
@@ -423,11 +457,11 @@ space. Sort of like mason fitting stones in a wall.
 [source, apib, role="noclip"]
 ----
 .Image Gallery
-gallery::jg-image--template-features[role="mb-5"]
+gallery::jg_example[role="mb-5"]
 ----
 
 .Image Gallery
-gallery::jg-image--template-features[role="mb-5"]
+gallery::jg_customizer[role="mb-5"]
 
 A JustifiedGallery provides not only images. See the next example of a gallery
 for HTML5 video content.
@@ -436,15 +470,15 @@ for HTML5 video content.
 [source, apib, role="noclip"]
 ----
 .Video Gallery (HTML5)
-gallery::video-html5--template-features[role="mb-5"]
+gallery::jg_video_html5[role="mb-5"]
 ----
 
 .Video Gallery (HTML5)
-gallery::video-html5--template-features[role="mb-5"]
+gallery::jg_video_html5[role="mb-5"]
 
 == Extensions
 
-Frameworks like Bootstrap and Asciidoc are enormously flexible and customizable.
+Frameworks like _Bootstrap_ and Asciidoc are enormously flexible and customizable.
 Changing or adding components to frameworks requires a lot of experience. That
 is not the idea of J1. Customizations for the base frameworks are prepared,
 simple to use, and usable out-of-the-box.
@@ -452,22 +486,22 @@ simple to use, and usable out-of-the-box.
 Make your site unique.
 
 mdi:bootstrap[24px, md-blue ml-3 mr-2]
-Bootstrap extensions +
+<<Bootstrap extensions>> +
 mdi:format-annotation-plus[24px, md-blue ml-3 mr-2]
-Asciidoctor extensions +
+<<Asciidoctor extensions>> +
 mdi:group[24px, md-blue ml-3 mr-2]
-Banners and panels +
+<<Banners and Panels>> +
 mdi:near-me[24px, md-blue ml-3 mr-2]
-Blog Post navigation +
+<<Blog Post Navigation>> +
 mdi:content-duplicate[24px, md-blue ml-3 mr-2]
-Featured example content +
+Featured Example Content +
 mdi:image[24px, md-blue ml-3 mr-2]
-Royalty free images +
+Royalty Free Images +
 
 === Bootstrap extensions
 
 A set of Advanced Bootstrap Modals (ABM), based on the free package of Material
-Design for Bootstrap, is integrated with the template system. Bootstrap
+Design for Bootstrap, is integrated with the template system. _Bootstrap_
 modals are used to add dialogues to your web pages for user notifications.
 
 To improve your visitor’s experience on important information that shouldn’t
@@ -477,7 +511,7 @@ information displayed. Ranging from an info level, a simple warning to
 critical messages.
 
 Creating a design for responsive HTML tables is challenging. J1 integrates
-responsible HTML tables for Bootstrap to be used for Mobile Devices.
+responsible HTML tables for _Bootstrap_ to be used for Mobile Devices.
 
 .Responsible HTML table (RTable)
 [cols="6a,6a", options="header", width="100%", role="rtable mt-3"]
@@ -533,13 +567,23 @@ lightbox::images--teaser-banner[ 600, {data-images--teaser-banner} ]
 .Intro Panel
 lightbox::images--intro-panel[ 600, {data-images--intro-panel} ]
 
+=== Blog Post Navigation
+
+To make your Blog Articles available to your vistors, J1 offers an easy to use
+navigation module for all your posts. The Blog Post Navigator automatically
+generates different views to explore articles by Categoy, Date, or all posts
+from an Archive View.
+
+.Blog Post Navigator
+lightbox::images--blog-post-navigator[ 600, {data-images--blog-post-navigator} ]
+
 === Featured example content
 
 All pages from the roundtrip section are provided by the starter web
 included with the J1 Template. Many real-world examples for your content
 could be taken from these pages and are easy to use with your website.
 
-.Example Content (Present Videos)
+.Example Content (Icon Fonts)
 lightbox::images--example-content[ 600, {data-images--example-content} ]
 
 === Royalty Free images
@@ -555,41 +599,45 @@ Services out of the cloud is a fast-growing business. J1 Template integrates clo
 services to extend the functionality of a web for commenting features or Bootstrap
 themes, for example.
 
+/////
+mdi:google-ads[2x, md-blue ml-3 mr-2]
+<<Google Ads>> +
+/////
+
 mdi:theme-light-dark[2x, md-blue ml-3 mr-2]
-<<Bootstrap Themes (Bootswatch)>> +
+<<Bootstrap Themes>> (Bootswatch) +
 mdi:comment[2x, md-blue ml-3 mr-2]
 <<Comment providers>> +
-// iconify:logos:jupyter[2x, ml-3 mr-2]
 mdi:language-python[2x, md-blue ml-3 mr-2]
 <<Jupyter Notebook>> +
 mdi:google-analytics[2x, md-blue ml-3 mr-2]
 <<Google Analytics>> +
-mdi:google-ads[2x, md-blue ml-3 mr-2]
-<<Google Ads>> +
 mdi:youtube[2x, md-blue ml-3 mr-2]
 <<YouTube Video>> +
 mdi:vimeo[2x, md-blue ml-3 mr-2]
 <<Vimeo Video>>
 
-=== Bootstrap Themes (Bootswatch)
+=== Bootstrap Themes
 
 The Themes for the template system J1 are based on the free and open-source
-CSS front-end framework Bootstrap of version V5. Using Bootstrap base style
+CSS front-end framework _Bootstrap_ of version V5. Using _Bootstrap_ base style
 only results in a uniform appearance for the content in terms of the overall
 layout, text, tables, and form elements across all modern web browsers
 available on the market.
 
-Thanks to the people at Bootswatch, a great set of already prepared
-Bootstrap stylesheets in various designs are available on their website. There
-is no need to start from scratch. Re-define all the Bootstrap variables, and
-rebuild the framework files to create a new theme.
+Thanks to the people at link:{url-bootswatch--home}[Bootswatch, {browser-window--new}],
+a great set of already prepared _Bootstrap_ stylesheets in various designs are
+available on their website. There is no need to start from scratch. Re-define
+all the _Bootstrap_ variables, and rebuild the framework files to create a new
+theme.
 
 .Bootswatch Themes (Minty)
 lightbox::images--bootswatch-themes[ 600, {data-images--bootswatch-themes} ]
 
-Many different styles are available. What is already available at Bootswatch
-is at least a good base for your modifications: your unique design. J1
-integrates all available themes from Bootswatch with the navigator module.
+Many different styles are available. What is already available at
+link:{url-bootswatch--home}[Bootswatch, {browser-window--new}] is at least a
+good base for your modifications: your unique design. J1 integrates all
+available themes from _Bootswatch_ with the navigator module.
 
 === Comment providers
 
@@ -602,7 +650,7 @@ J1 template supports currently two comment providers: Disqus (DQC) and
 Hyvor (HVC). The comment interfaces from the supported providers can be
 integrated by pure configuration.
 
-.Comments by Hyvor Talk (HVC)
+.Comments by Hyvor Talk
 lightbox::images--comments-hyvor[ 800, {data-images--comments-hyvor} ]
 
 Enable the provider you want to use and add your access credentials to the
@@ -660,9 +708,49 @@ learning. Jupyter notebooks are especially useful for *showing the work*
 that your data team has done through a combination of code, markdown, links,
 and images.
 
-.NBI textbook example (excerpt)
-// lightbox::nbi-textbook--excerpt[ 800, {data-nbi-textbook--excerpt}, role="mt-3 mb-4" ]
-image::pages/nbinteract/nbi-textbook-example.jpg["NBI textbook example", 1024]
+.NBI Textbook Example (excerpt)
+[source, python]
+----
+import nbinteract as nbi
+import numpy as np
+----
+
+[source, python]
+----
+def x_fn(n):
+    return np.arange(n)
+
+def y_fn(xs, offset):
+    return xs + offset
+
+
+options = {
+    'title': 'Bar chart',
+    'xlabel': 'Number of bars (n)',
+    'ylabel': 'Offset  value',
+    'animation_duration': 500,
+    'aspect_ratio': 1.778,
+    'ylim': (0, 20)
+}
+
+layouts = {
+    'plot_height': '480px',
+    'plot_width': '800px',
+}
+
+bar_chart = nbi.bar(
+    x_fn,
+    y_fn,
+    n=(3, 10),
+    offset=(1, 10),
+    options=options,
+    layouts=layouts
+)
+
+bar_chart
+----
+
+lightbox::nbi-textbook-example[ 800, {data-images--nbi-textbook-example} ]
 
 HTML exported Jupyter Notebooks (so-called Textbooks) can be integrated
 with every webpage of a J1 website using the J1 NBI module.
@@ -694,11 +782,13 @@ If your visitors do not agree on cooies for *Analysis*, Google Analytics gets
 automatically disabled and all cookies from Google are deleted from the
 user's system.
 
+/////
 === Google Ads
 
 Google Ads (GAD) is integrated by pure configuration. Simply enable the
 provider and set your your access credentials to the configuration, and
 you're done.
+/////
 
 === YouTube Video
 
@@ -710,11 +800,11 @@ configured, and the player is started as needed.
 [source, apib, role="noclip"]
 ----
 .YouTube Video (YTV)
-gallery::jg_video_online_youtube_2[role="mb-5"]
+gallery::jg_video_online_youtube_2_short[role="mb-5"]
 ----
 
-.YouTube Video (YTV)
-gallery::jg_video_online_youtube_2[role="mb-5"]
+.YouTube Video
+gallery::jg_video_online_youtube_2_short[role="mb-5"]
 
 === Vimeo Video
 
@@ -726,8 +816,8 @@ player is started as needed.
 [source, apib, role="noclip"]
 ----
 .Vimeo Video (VMV)
-gallery::jg_video_online_vimeo[role="mb-5"]
+gallery::jg_video_online_vimeo_short[role="mb-5"]
 ----
 
-.Vimeo Video (VMV)
-gallery::jg_video_online_vimeo[role="mb-5"]
+.Vimeo Video
+gallery::jg_video_online_vimeo_short[role="mb-5"]

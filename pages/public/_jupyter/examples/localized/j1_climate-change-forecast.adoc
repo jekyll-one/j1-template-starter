@@ -1,0 +1,106 @@
+---
+title:                                  Localized Notebook
+tagline:                                climate change forecast
+date:                                   2022-03-28 00:00:00
+description: >
+                                        The package nbinteract aims to enable authors and educators to create and
+                                        share interactive web pages easily. Interactive explanations of concepts are
+                                        useful for communicating and explaining tricky concepts.
+
+keywords: >
+                                        opensource, free, load, download, start, starter, example,
+                                        high, easy, use, secure, encrypt, standard, popular,
+                                        generate, create, learn, distribute, publish, deploy,
+                                        beginner, advanced, expert, student, learner, educator,
+                                        writer, reader, visitor,
+                                        framework, toolkit, integration, extension, module, api,
+                                        dynamic, static, generator, client, server, internet, local, localhost,
+                                        page, web, website, webdesign, material, design, responsive,
+                                        javascript, nodejs, ruby, windows, linux, osx, mac, os,
+                                        http, https, html, html5, css, scss, style,
+                                        browser, firefox, chrome, edge, opera, safari,
+                                        configuration, generator, navigation, menu, dropdown, fab, action, button,
+                                        application, interface, provider, api, repository,
+                                        cookie, language, translation, gdpr, dsgvo, privacy,
+                                        asciidoc, aciidoctor, bootstrap, jekyll, liquid,
+                                        hyvor, disqus, git, github, netlify, heroku, apple, microsoft,
+                                        provider, service, internet, support,
+                                        google, analytics, advertising, search, console, silverlight, score,
+                                        j1, nbi, j1-nbinteract, nbinteract, template, integration,
+                                        python, jupyter, notebook, textbook, api, app,
+                                        binder, binderhub, jupyterhub
+
+categories:                             [ Software, Python ]
+tags:                                   [ Jupyter, Notebooks, Localized ]
+
+scrollbar:                              false
+fab_menu_id:                            open_toc_reload
+personalization:                        true
+
+permalink:                              /pages/public/jupyter/examples/localized/climate-change-forecast/
+regenerate:                             false
+
+resources:                              [ animate, nbinteract, rouge ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/images/modules/attics/yellow-cactus-1920x1280.jpg
+          alt:                          Photo by Yellow Cactus on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Yellow Cactus
+            href:                       https://unsplash.com/@yellowcactus
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:binder-badges-enabled:                 true
+:binder-app-launch--lab:                https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main
+:binder-app-launch--tree:               https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
+:binder-app-launch--notebook:           https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1/j1_climate_change_forecast.ipynb
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// image:/assets/images/badges/myBinder.png[Binder, link="https://mybinder.org/", {browser-window--new}]
+// image:/assets/images/badges/docsBinder.png[Binder, link="https://mybinder.readthedocs.io/en/latest/", {browser-window--new}]
+
+ifeval::[{binder-badges-enabled} == true]
+image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--notebook}", {browser-window--new}]
+image:https://mybinder.org/badge_logo.svg[Binder, link="{binder-app-launch--lab}", {browser-window--new}]
+endif::[]
+
+CAUTION: If the J1 NBI module detects *non-interactive* textbooks, the
+NBI module adapter does *not* start a Binder service for an external
+computational environment.
+
+This textbook is an example of a *non-interactive* Jupyter notebook (JN).
+Jupyter Notebooks don't necessarily need to contain *interactive* widgets.
+The CLI `nbinteract` can export all types of (Python-based) notebooks to
+an (HTML) textbooks.
+
+== Climate change forecasting
+
+Predicting climate change is a very difficult business. The calculations are
+certainly not easy to understand, and a solid knowledge of mathematics and
+statistics is required.
+
+Still, complex but well-annotated ones can provide insight for all readers.
+Graphic representations of the results clearly show the results of mathematical
+calculations and allow (interested) laypeople to gain a basic understanding.
+
+textbook::j1_climate_change_forecast[]

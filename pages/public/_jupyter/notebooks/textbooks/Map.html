@@ -1,0 +1,229 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">bqplot.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">bqplot</span> <span class="kn">import</span> <span class="n">Orthographic</span><span class="p">,</span> <span class="n">ColorScale</span><span class="p">,</span> <span class="n">Mercator</span><span class="p">,</span> <span class="n">AlbersUSA</span><span class="p">,</span> <span class="n">Tooltip</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Basic-Map">Basic Map<a class="anchor-link" href="#Basic-Map">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Basic Map&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">geo</span><span class="p">(</span><span class="n">map_data</span><span class="o">=</span><span class="s2">&quot;WorldMap&quot;</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Advanced-Map-and-Projection">Advanced Map and Projection<a class="anchor-link" href="#Advanced-Map-and-Projection">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Advanced Map&quot;</span><span class="p">)</span>
+<span class="n">geo_scale</span> <span class="o">=</span> <span class="n">Orthographic</span><span class="p">(</span><span class="n">scale_factor</span><span class="o">=</span><span class="mi">375</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span> <span class="n">rotate</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scales</span><span class="p">(</span><span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="n">geo_scale</span><span class="p">})</span>
+<span class="n">map_mark</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">geo</span><span class="p">(</span>
+    <span class="n">map_data</span><span class="o">=</span><span class="s2">&quot;WorldMap&quot;</span><span class="p">,</span>
+    <span class="n">colors</span><span class="o">=</span><span class="p">{</span><span class="mi">682</span><span class="p">:</span> <span class="s2">&quot;Green&quot;</span><span class="p">,</span> <span class="mi">356</span><span class="p">:</span> <span class="s2">&quot;Red&quot;</span><span class="p">,</span> <span class="mi">643</span><span class="p">:</span> <span class="s2">&quot;#0000ff&quot;</span><span class="p">,</span> <span class="s2">&quot;default_color&quot;</span><span class="p">:</span> <span class="s2">&quot;DarkOrange&quot;</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">geo_scale</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mi">350</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Choropleth">Choropleth<a class="anchor-link" href="#Choropleth">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Choropleth&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scales</span><span class="p">(</span><span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="n">Mercator</span><span class="p">(),</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">ColorScale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">)})</span>
+<span class="n">chloro_map</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">geo</span><span class="p">(</span>
+    <span class="n">map_data</span><span class="o">=</span><span class="s2">&quot;WorldMap&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="p">{</span><span class="mi">643</span><span class="p">:</span> <span class="mf">105.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mf">21.0</span><span class="p">,</span> <span class="mi">398</span><span class="p">:</span> <span class="mf">23.0</span><span class="p">,</span> <span class="mi">156</span><span class="p">:</span> <span class="mf">42.0</span><span class="p">,</span> <span class="mi">124</span><span class="p">:</span> <span class="mf">78.0</span><span class="p">,</span> <span class="mi">76</span><span class="p">:</span> <span class="mf">98.0</span><span class="p">},</span>
+    <span class="n">colors</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;default_color&quot;</span><span class="p">:</span> <span class="s2">&quot;Grey&quot;</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="USA-State-Map">USA State Map<a class="anchor-link" href="#USA-State-Map">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;US States Map&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scales</span><span class="p">(</span><span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="n">AlbersUSA</span><span class="p">()})</span>
+<span class="n">states_map</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">geo</span><span class="p">(</span><span class="n">map_data</span><span class="o">=</span><span class="s2">&quot;USStatesMap&quot;</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Europe-Country-Map">Europe Country Map<a class="anchor-link" href="#Europe-Country-Map">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Europe Countries Map&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scales</span><span class="p">(</span><span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="n">Mercator</span><span class="p">(</span><span class="n">scale_factor</span><span class="o">=</span><span class="mi">450</span><span class="p">)})</span>
+<span class="n">euro_map</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">geo</span><span class="p">(</span><span class="n">map_data</span><span class="o">=</span><span class="s2">&quot;EuropeMap&quot;</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Interactions">Interactions<a class="anchor-link" href="#Interactions">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Interactions&quot;</span><span class="p">)</span>
+<span class="n">def_tt</span> <span class="o">=</span> <span class="n">Tooltip</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">])</span>
+<span class="n">map_mark</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">geo</span><span class="p">(</span>
+    <span class="n">map_data</span><span class="o">=</span><span class="s2">&quot;WorldMap&quot;</span><span class="p">,</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="n">def_tt</span><span class="p">,</span>
+    <span class="n">interactions</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;click&quot;</span><span class="p">:</span> <span class="s2">&quot;select&quot;</span><span class="p">,</span> <span class="s2">&quot;hover&quot;</span><span class="p">:</span> <span class="s2">&quot;tooltip&quot;</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># clicking on any country will update the &#39;selected&#39; attribute of map_mark</span>
+<span class="n">map_mark</span><span class="o">.</span><span class="n">selected</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+

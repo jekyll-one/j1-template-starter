@@ -1,0 +1,96 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nbinteract</span> <span class="k">as</span> <span class="nn">nbi</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arange</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">x_fn</span><span class="p">(</span><span class="nb">max</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">y_fn</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">noise</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">xs</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">noise</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">))</span>
+
+
+<span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Line chart&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;xlabel&#39;</span><span class="p">:</span> <span class="s1">&#39;x-values (max)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ylabel&#39;</span><span class="p">:</span> <span class="s1">&#39;y-values (noise)&#39;</span><span class="p">,</span>    
+    <span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+    <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span>
+    <span class="s1">&#39;animation_duration&#39;</span><span class="p">:</span> <span class="mi">500</span>
+<span class="p">}</span>
+
+<span class="n">layouts</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;plot_height&#39;</span><span class="p">:</span> <span class="s1">&#39;480px&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;plot_width&#39;</span><span class="p">:</span> <span class="s1">&#39;800px&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">line_chart</span> <span class="o">=</span> <span class="n">nbi</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">x_fn</span><span class="p">,</span>
+    <span class="n">y_fn</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+    <span class="n">noise</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">,</span>
+    <span class="n">layouts</span><span class="o">=</span><span class="n">layouts</span>
+<span class="p">)</span>
+
+<span class="n">line_chart</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+

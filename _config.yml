@@ -10,6 +10,8 @@
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
 # ------------------------------------------------------------------------------
+# WARNING: This configuration can only be used for Ruby V3
+# ------------------------------------------------------------------------------
 
 # ==============================================================================
 # 1. BUILD configuration
@@ -53,7 +55,7 @@ environment:                            development
 # ------------------------------------------------------------------------------
 #   Sets the build version of J1 Template Gem
 #
-version:                                2022.4.10
+version:                                2022.5.0
 
 # version
 # ------------------------------------------------------------------------------
@@ -74,15 +76,10 @@ copyright:                              © 2022 J1 · All rights reserved
 # components are available public at RubyGems.org.
 #
 #
-# theme (NOT set for development system)
+# theme
 # ------------------------------------------------------------------------------
 #   Sets the name of the (gem-based) theme used for Jekyll
 #   serve and build
-#
-#   Note: Do not change anything here because (gem-based) theme name
-#   information is bumped-in by the build process automatically
-#
-#   default:                            j1-template
 #
 theme:                                  j1-template
 
@@ -269,7 +266,7 @@ robots:
 # Set the brand image and favicon (located in /asset/images)
 
 brand:
-  image:                                modules/icons/j1/j1-512x512.png
+  image:                                icons/j1/j1-512x512.png
   image_height:                         48px
   text:                                 Jekyll One
   text_color:                           "#9E9E9E"
@@ -277,7 +274,7 @@ brand:
 # Set the favicon and type
 #
 favicon:
-  image:                                modules/icons/j1/j1-32x32.ico
+  image:                                icons/j1/j1-32x32.ico
   type:                                 image/ico
 
 # ==============================================================================
@@ -332,7 +329,7 @@ permalink:                              pretty
 # if you are running jekyll serve in a development environment,
 # site.url will be set to the value of host, port.
 #
-url:                                  "http://localhost:40000"
+url:                                  "http://localhost:20000"
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -358,7 +355,7 @@ base_path:                              ""
 #
 protocol:                               http
 host:                                   localhost
-port:                                   40000
+port:                                   20000
 timezone:                               Europe/Berlin
 encoding:                               UTF-8
 
@@ -417,19 +414,29 @@ sass:
   style:                                expanded
 
 # ------------------------------------------------------------------------------
-# WEBRICK customizations
+# WEBRICK Customizations
 # You can provide custom headers for your site
+# See: https://jekyllrb.com/docs/configuration/webrick/
+#      https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 #
-# Note: Jekyll provides by default Content-Type and Cache-Control
+# NOTE:
+# Jekyll provides by default Content-Type and Cache-Control
 # response headers: one dynamic in order to specify the nature of
 # the data being served, the other static in order to disable
 # caching so that you don’t have to fight with Chrome’s aggressive
 # caching when you are in development mode.
 #
-#webrick:
-#  headers:
-#    My-Header: My-Value
-#    My-Other-Header: My-Other-Value
+# webrick:
+#   headers:
+#     My-Header: My-Value
+#     My-Other-Header: My-Other-Value
+#
+# ------------------------------------------------------------------------------
+#
+webrick:
+  headers:
+    X-Builder-Template:                 J1 Template
+    X-Builder-Engine:                   Jekyll
 
 # ------------------------------------------------------------------------------
 # POSTS Management

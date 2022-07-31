@@ -1,0 +1,171 @@
+---
+title:                                  Bokeh
+tagline:                                data visualizations
+date:                                   2022-05-27 00:00:00
+description: >
+                                        Bokeh is an interactive visualization library for modern web browsers. It
+                                        provides elegant, concise construction of versatile graphics, and affords
+                                        high-performance interactivity over large or streaming datasets. Bokeh can
+                                        help anyone who would like to quickly and easily make interactive plots,
+                                        dashboards, and data applications.
+keywords: >
+                                        opensource, free, load, download, start, starter, example,
+                                        high, easy, use, secure, encrypt, standard, popular,
+                                        generate, create, learn, distribute, publish, deploy,
+                                        beginner, advanced, expert, student, learner, educator,
+                                        writer, reader, visitor,
+                                        framework, toolkit, integration, extension, module, api,
+                                        dynamic, static, generator, client, server, internet, local, localhost,
+                                        page, web, website, webdesign, material, design, responsive,
+                                        javascript, nodejs, ruby, windows, linux, osx, mac, os,
+                                        http, https, html, html5, css, scss, style,
+                                        browser, firefox, chrome, edge, opera, safari,
+                                        configuration, generator, navigation, menu, dropdown, fab, action, button,
+                                        application, interface, provider, api, repository,
+                                        cookie, language, translation, gdpr, dsgvo, privacy,
+                                        asciidoc, aciidoctor, bootstrap, jekyll, liquid,
+                                        hyvor, disqus, git, github, netlify, heroku, apple, microsoft,
+                                        provider, service, internet, support,
+                                        google, analytics, advertising, search, console, silverlight, score,
+                                        j1, nbi, j1-nbinteract, nbinteract, template, integration,
+                                        python, jupyter, notebook, textbook, api, app,
+                                        binder, binderhub, jupyterhub,
+                                        bokeh
+
+categories:                             [ Software, Python ]
+tags:                                   [ Bokeh, Jupyter, Notebooks, Localized ]
+
+scrollbar:                              false
+fab_menu_id:                            open_toc_reload
+personalization:                        false
+
+permalink:                              /pages/public/jupyter/examples/localized/j1-bokeh-visualizations/
+
+resources:                              [ animate, nbinteract, rouge ]
+resource_options:
+  - toccer:
+      collapseDepth:                    2
+  - attic:
+      slides:
+        - url:                          /assets/images/modules/attics/john-schnobrich-2-1920x1280.jpg
+          alt:                          Photo by John Schnobrich on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     John Schnobrich
+            href:                       https://unsplash.com/@johnschno
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:url-bokeh--docs:                       https://docs.bokeh.org/en/latest/index.html
+
+:binder-badges-enabled:                 false
+:binder-app-launch--lab:                https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main
+:binder-app-launch--tree:               https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
+:binder-app-launch--bokeh-tutorial:     https://mybinder.org/v2/gh/bokeh/bokeh-notebooks/master?filepath=tutorial%2F00%20-%20Introduction%20and%20Setup.ipynb
+
+:binder-app-launch--notebook-01:        https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1-bokeh-tutorial/j1_bokeh_01_basic_plotting.ipynb
+:binder-app-launch--notebook-02:        https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1-bokeh-tutorial/j1_bokeh_02_styling_and_theming.ipynb
+:binder-app-launch--notebook-03:        https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1-bokeh-tutorial/j1_bokeh_03_data_sources_and_transformations.ipynb
+:binder-app-launch--notebook-04:        https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1-bokeh-tutorial/j1_bokeh_04_adding_annotations.ipynb
+:binder-app-launch--notebook-05:        https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1-bokeh-tutorial/j1_bokeh_05_presentation_layouts.ipynb
+:binder-app-launch--notebook-06:        https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1-bokeh-tutorial/j1_bokeh_06_linking_and_interactions.ipynb
+:binder-app-launch--notebook-07:        https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1-bokeh-tutorial/j1_bokeh_07_bar_and_categorical_data_plots.ipynb
+:binder-app-launch--notebook-08:        https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1-bokeh-tutorial/j1_bokeh_08_graph_and_network_plots.ipynb
+:binder-app-launch--notebook-09:        https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1-bokeh-tutorial/j1_bokeh_09_geographic_plots.ipynb
+
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// See: https://docs.bokeh.org/en/latest/index.html
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+ifeval::[{binder-badges-enabled} == true]
+image:https://mybinder.org/badge_logo.svg[Binder, link="{binder-app-launch--tree}", {browser-window--new}]
+endif::[]
+
+[NOTE]
+====
+This document is a port for J1 Template of the original document pages
+at Bokeh link:{url-bokeh--docs}[Docs, {browser-window--new}].
+Some sections of the *tutorial* are rewritten for the text to improve
+clarity and simplify the language for (machine) translation.
+====
+
+Bokeh is an *interactive* visualization library for modern web browsers. It
+provides elegant, concise construction of versatile graphics, and affords
+high-performance interactivity over large or streaming datasets. Bokeh can
+help anyone who would like to quickly and easily make interactive plots,
+dashboards, and data applications.
+
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+link:{url-bokeh--docs}[Bokeh Dokumentation, {browser-window--new}] +
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+link:{binder-app-launch--bokeh-tutorial}[Bokeh Tutorial (at Binder), {browser-window--new}]
+
+CAUTION: To use all featues of _Bokeh_, reasonable knowlegde of Javascript
+programming is reqired.
+
+lorem:sentences[5]
+
+Find all Notebooks at *Binder* from below:
+
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--notebook-01}", {browser-window--new}] -- 1. Basic Plotting +
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--notebook-02}", {browser-window--new}] -- 2. Styles and Themes +
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--notebook-03}", {browser-window--new}] -- 3. Data Sources and Transformations +
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--notebook-04}", {browser-window--new}] -- 4. Adding Annotations +
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--notebook-05}", {browser-window--new}] -- 5. Presentation and Layout +
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--notebook-06}", {browser-window--new}] -- 6. Linking and Interactions +
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--notebook-07}", {browser-window--new}] -- 7. Bar and Categorical Data Plots +
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--notebook-08}", {browser-window--new}] -- 8. Graph and Network Plots +
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--notebook-09}", {browser-window--new}] -- 9. Geographic Plots
+
+// load all bokeh (tutorial) textbooks
+// -----------------------------------------------------------------------------
+textbook::j1_bokeh_01_basic_plotting[]
+
+textbook::j1_bokeh_02_styling_and_theming[]
+
+textbook::j1_bokeh_03_data_sources_and_transformations[]
+
+textbook::j1_bokeh_04_adding_annotations[]
+
+textbook::j1_bokeh_05_presentation_layouts[]
+
+textbook::j1_bokeh_06_linking_and_interactions[]
+
+textbook::j1_bokeh_07_bar_and_categorical_data_plots[]
+
+textbook::j1_bokeh_08_graph_and_network_plots[]
+
+textbook::j1_bokeh_09_geographic_plots[]
+
+// failing textbooks
+// -----------------------------------------------------------------------------
+// textbook::j1_bokeh_10_exporting_and_embedding[]
+// textbook::j1_bokeh_11_running_bokeh_applications[]

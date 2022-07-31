@@ -1,0 +1,514 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ColorScale">ColorScale<a class="anchor-link" href="#ColorScale">&#182;</a></h2><p>The colors for the <code>ColorScale</code> can be defined one of two ways:</p>
+<ul>
+<li>Manually, by setting the scale's <code>colors</code> attribute to a list of css colors. They can be either:<ul>
+<li>html colors (link) <code>'white'</code></li>
+<li>hex <code>'#000000'</code></li>
+<li>rgb <code>'rgb(0, 0, 0)'</code>.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">col_sc</span> <span class="o">=</span> <span class="n">ColorScale</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">])</span>
+</pre></div>
+<ul>
+<li>Using one of <code>bqplot</code>'s color-schemes. As of now we support all the colorbrewer schemes (link), as well as the matplotlib schemes 'viridis', 'magma', 'inferno' and 'plasma'.<div class="highlight"><pre><span></span><span class="n">col_sc</span> <span class="o">=</span> <span class="n">ColorScale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;viridis&#39;</span><span class="p">])</span>
+</pre></div>
+</li>
+</ul>
+<p>The color scale then linearly interpolates between its colors.</p>
+<h3 id="ColorAxis">ColorAxis<a class="anchor-link" href="#ColorAxis">&#182;</a></h3><p>A <code>ColorAxis</code>, like other <code>Axis</code> types, takes a color scale as input. It can then be displayed in a <code>Figure</code>.</p>
+<div class="highlight"><pre><span></span><span class="n">ax_col</span> <span class="o">=</span> <span class="n">ColorAxis</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">col_sc</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">bqplot.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">bqplot</span> <span class="kn">import</span> <span class="n">ColorScale</span><span class="p">,</span> <span class="n">DateColorScale</span><span class="p">,</span> <span class="n">OrdinalColorScale</span><span class="p">,</span> <span class="n">ColorAxis</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># setup data for plotting</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">x_data</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">y_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="mf">100.0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create_fig</span><span class="p">(</span><span class="n">color_scale</span><span class="p">,</span> <span class="n">color_data</span><span class="p">,</span> <span class="n">fig_margin</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="c1"># allow some margin on right for color bar</span>
+    <span class="k">if</span> <span class="n">fig_margin</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fig_margin</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Up and Down&quot;</span><span class="p">,</span> <span class="n">fig_margin</span><span class="o">=</span><span class="n">fig_margin</span><span class="p">)</span>
+
+    <span class="c1"># setup color scale</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scales</span><span class="p">(</span><span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">color_scale</span><span class="p">})</span>
+
+    <span class="c1"># show color bar on right</span>
+    <span class="n">axes_options</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="s2">&quot;vertical&quot;</span><span class="p">,</span> <span class="s2">&quot;side&quot;</span><span class="p">:</span> <span class="s2">&quot;right&quot;</span><span class="p">}}</span>
+    <span class="n">scat</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+        <span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color_data</span><span class="p">,</span> <span class="n">stroke</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">axes_options</span><span class="o">=</span><span class="n">axes_options</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">create_fig</span><span class="p">(</span><span class="n">ColorScale</span><span class="p">(),</span> <span class="n">y_data</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Attributes">Attributes<a class="anchor-link" href="#Attributes">&#182;</a></h3><p><code>ColorScales</code> share attributes with the other <code>Scale</code> types:</p>
+<ul>
+<li>Their domain can be manually constrained with the <code>min</code> and <code>max</code> attributes</li>
+<li>They can be inversed by setting the <code>reverse</code> attribute to <code>True</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">color_scale</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">marks</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span>
+<span class="n">color_scale</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">color_scale</span><span class="o">.</span><span class="n">reverse</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Mid">Mid<a class="anchor-link" href="#Mid">&#182;</a></h4><p>In addition they also have a <code>mid</code> attribute, a value that will be mapped to the middle color. This is especially suited to diverging color schemes.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">color_scale</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">color_scale</span><span class="o">.</span><span class="n">mid</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DateColorScale">DateColorScale<a class="anchor-link" href="#DateColorScale">&#182;</a></h2><p>The <code>DateColorScale</code> is a color scale for dates. It works in every way like the regular <code>ColorScale</code>, except that its <code>min</code>, <code>mid</code> and <code>max</code> attributes — if defined — must be date elements (<code>datetime</code>, <code>numpy</code> or <code>pandas</code>).</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">fig_margin</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">date_col_sc</span> <span class="o">=</span> <span class="n">DateColorScale</span><span class="p">()</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;2015-01-01&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">create_fig</span><span class="p">(</span><span class="n">date_col_sc</span><span class="p">,</span> <span class="n">dates</span><span class="p">,</span> <span class="n">fig_margin</span><span class="o">=</span><span class="n">fig_margin</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">date_col_sc</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Color-Schemes">Color Schemes<a class="anchor-link" href="#Color-Schemes">&#182;</a></h2><p>Use the following widgets to browse through the available color schemes</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bqplot.market_map</span> <span class="kn">import</span> <span class="n">MarketMap</span>
+
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">IntSlider</span><span class="p">,</span> <span class="n">SelectionSlider</span><span class="p">,</span> <span class="n">Dropdown</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">HBox</span><span class="p">,</span> <span class="n">Layout</span>
+<span class="kn">from</span> <span class="nn">traitlets</span> <span class="kn">import</span> <span class="n">link</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Diverging-schemes">Diverging schemes<a class="anchor-link" href="#Diverging-schemes">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">div_schemes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Spectral&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RdYlGn&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RdBu&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PiYG&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PRGn&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RdYlBu&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BrBG&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RdGy&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PuOr&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">scheme_inspector</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">schemes</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Takes a Figure and a list of schemes and returns the Figure along with</span>
+<span class="sd">    dropdown to go through the different schemes</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Get the color scale</span>
+    <span class="n">col_sc</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">marks</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span>
+
+    <span class="c1"># Create the widgets to select the colorscheme</span>
+    <span class="n">scheme_dd</span> <span class="o">=</span> <span class="n">Dropdown</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Scheme&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">schemes</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update_scheme</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">col_sc</span><span class="o">.</span><span class="n">scheme</span> <span class="o">=</span> <span class="n">scheme_dd</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="n">scheme_dd</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_scheme</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+    <span class="n">update_scheme</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">VBox</span><span class="p">([</span><span class="n">scheme_dd</span><span class="p">,</span> <span class="n">fig</span><span class="p">])</span>
+
+
+<span class="n">scheme_inspector</span><span class="p">(</span><span class="n">create_fig</span><span class="p">(</span><span class="n">ColorScale</span><span class="p">(),</span> <span class="n">y_data</span><span class="p">),</span> <span class="n">div_schemes</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Non-diverging-schemes">Non-diverging schemes<a class="anchor-link" href="#Non-diverging-schemes">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lin_schemes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;OrRd&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PuBu&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BuPu&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Oranges&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BuGn&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;YlOrBr&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;YlGn&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Reds&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;RdPu&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Greens&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;YlGnBu&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Purples&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GnBu&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Greys&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;YlOrRd&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PuRd&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Blues&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PuBuGn&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;viridis&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;plasma&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;inferno&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;magma&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">scheme_inspector</span><span class="p">(</span>
+    <span class="n">create_fig</span><span class="p">(</span><span class="n">ColorScale</span><span class="p">(),</span> <span class="n">y_data</span><span class="p">),</span> <span class="n">lin_schemes</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Non-diverging schemes&quot;</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="OrdinalColorScale">OrdinalColorScale<a class="anchor-link" href="#OrdinalColorScale">&#182;</a></h2><p>The <code>OrdinalColorScale</code> is a color scale for categorical data, i.e. data that does not have an intrinsic order.</p>
+<p>The scale colors may be specified by the user, or chosen from a set scheme. As of now, the supported color schemes are the colorbrewer categorical schemes, listed here along with their maximum number of colors.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ord_schemes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Set2&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">&quot;Accent&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">&quot;Set1&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="s2">&quot;Set3&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s2">&quot;Dark2&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">&quot;Paired&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="s2">&quot;Pastel2&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s2">&quot;Pastel1&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">n_groups</span><span class="p">):</span>
+    <span class="n">n_elements</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n_groups</span> <span class="o">&gt;</span> <span class="n">n_elements</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_elements</span><span class="p">)</span>
+    <span class="n">n_per_group</span> <span class="o">=</span> <span class="n">n_elements</span> <span class="o">//</span> <span class="n">n_groups</span> <span class="o">+</span> <span class="p">(</span><span class="n">n_elements</span> <span class="o">%</span> <span class="n">n_groups</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_groups</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">n_per_group</span><span class="p">)[:</span><span class="n">n_elements</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define the control widgets</span>
+<span class="n">n_groups_slider</span> <span class="o">=</span> <span class="n">IntSlider</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;n colors&quot;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">scheme_dd</span> <span class="o">=</span> <span class="n">Dropdown</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Scheme&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">ord_schemes</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">update_scheme</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">col_sc</span><span class="o">.</span><span class="n">scheme</span> <span class="o">=</span> <span class="n">scheme_dd</span><span class="o">.</span><span class="n">label</span>
+    <span class="n">ax_c</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">scheme_dd</span><span class="o">.</span><span class="n">label</span>
+    <span class="n">n_groups_slider</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="n">scheme_dd</span><span class="o">.</span><span class="n">value</span>
+
+
+<span class="k">def</span> <span class="nf">update_categories</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">n_groups_slider</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">market_map</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">groups</span>
+    <span class="n">market_map</span><span class="o">.</span><span class="n">groups</span> <span class="o">=</span> <span class="n">groups</span>
+
+
+<span class="n">n_groups_slider</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_categories</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+<span class="n">scheme_dd</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_scheme</span><span class="p">)</span>
+
+<span class="c1"># Define the bqplot marketmap</span>
+<span class="n">names</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">col_sc</span> <span class="o">=</span> <span class="n">OrdinalColorScale</span><span class="p">()</span>
+<span class="n">ax_c</span> <span class="o">=</span> <span class="n">ColorAxis</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">col_sc</span><span class="p">)</span>
+
+<span class="n">market_map</span> <span class="o">=</span> <span class="n">MarketMap</span><span class="p">(</span>
+    <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span>
+    <span class="n">display_text</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">names</span><span class="p">],</span>
+    <span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">col_sc</span><span class="p">},</span>
+    <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="n">ax_c</span><span class="p">],</span>
+    <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span><span class="n">min_width</span><span class="o">=</span><span class="s2">&quot;800px&quot;</span><span class="p">,</span> <span class="n">min_height</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">update_scheme</span><span class="p">()</span>
+<span class="n">update_categories</span><span class="p">()</span>
+
+<span class="n">VBox</span><span class="p">([</span><span class="n">HBox</span><span class="p">([</span><span class="n">scheme_dd</span><span class="p">,</span> <span class="n">n_groups_slider</span><span class="p">]),</span> <span class="n">market_map</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+

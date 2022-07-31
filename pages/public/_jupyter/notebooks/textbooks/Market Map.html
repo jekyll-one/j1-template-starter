@@ -1,0 +1,413 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">Label</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">Layout</span>
+<span class="kn">from</span> <span class="nn">bqplot.market_map</span> <span class="kn">import</span> <span class="n">MarketMap</span>
+<span class="kn">from</span> <span class="nn">bqplot</span> <span class="kn">import</span> <span class="n">ColorScale</span><span class="p">,</span> <span class="n">ColorAxis</span><span class="p">,</span> <span class="n">DateScale</span><span class="p">,</span> <span class="n">LinearScale</span><span class="p">,</span> <span class="n">Axis</span><span class="p">,</span> <span class="n">Lines</span><span class="p">,</span> <span class="n">Figure</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Get-Data">Get Data<a class="anchor-link" href="#Get-Data">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../data_files/country_codes.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">country_codes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+<span class="n">country_names</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Basic-Market-Map">Basic Market Map<a class="anchor-link" href="#Basic-Market-Map">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">market_map</span> <span class="o">=</span> <span class="n">MarketMap</span><span class="p">(</span>
+    <span class="n">names</span><span class="o">=</span><span class="n">country_codes</span><span class="p">,</span>
+    <span class="c1"># basic data which needs to set for each map</span>
+    <span class="n">ref_data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+    <span class="c1"># Data frame which can be used for different properties of the map</span>
+    <span class="c1"># Axis and scale for color data</span>
+    <span class="n">tooltip_fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">],</span>
+    <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;800px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">market_map</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">market_map</span><span class="o">.</span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;MediumSeaGreen&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">market_map</span><span class="o">.</span><span class="n">font_style</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;font-size&quot;</span><span class="p">:</span> <span class="s2">&quot;16px&quot;</span><span class="p">,</span> <span class="s2">&quot;fill&quot;</span><span class="p">:</span> <span class="s2">&quot;white&quot;</span><span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">market_map</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Country Map&quot;</span>
+<span class="n">market_map</span><span class="o">.</span><span class="n">title_style</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;fill&quot;</span><span class="p">:</span> <span class="s2">&quot;Red&quot;</span><span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="GDP-data-with-grouping-by-continent">GDP data with grouping by continent<a class="anchor-link" href="#GDP-data-with-grouping-by-continent">&#182;</a></h2><p>World Bank national accounts data, and OECD National Accounts data files. (The World Bank: GDP per capita (current US$))</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gdp_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s2">&quot;../../data_files/gdp_per_capita.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">gdp_data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;backfill&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">gdp_data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;ffill&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">col</span> <span class="o">=</span> <span class="n">ColorScale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;Greens&quot;</span><span class="p">)</span>
+<span class="n">continents</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Continent&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">ax_c</span> <span class="o">=</span> <span class="n">ColorAxis</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GDP per Capita&quot;</span><span class="p">,</span> <span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s2">&quot;GDP&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdp_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">market_map</span> <span class="o">=</span> <span class="n">MarketMap</span><span class="p">(</span>
+    <span class="n">names</span><span class="o">=</span><span class="n">country_codes</span><span class="p">,</span>
+    <span class="n">groups</span><span class="o">=</span><span class="n">continents</span><span class="p">,</span>  <span class="c1"># Basic data which needs to set for each map</span>
+    <span class="n">cols</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+    <span class="n">row_groups</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>  <span class="c1"># Properties for the visualization</span>
+    <span class="n">ref_data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>  <span class="c1"># Data frame used for different properties of the map</span>
+    <span class="n">tooltip_fields</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;Name&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Continent&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;GDP&quot;</span><span class="p">,</span>
+    <span class="p">],</span>  <span class="c1"># Columns from data frame to be displayed as tooltip</span>
+    <span class="n">tooltip_formats</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;.1f&quot;</span><span class="p">],</span>
+    <span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">col</span><span class="p">},</span>
+    <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="n">ax_c</span><span class="p">],</span>
+    <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span><span class="n">min_width</span><span class="o">=</span><span class="s2">&quot;800px&quot;</span><span class="p">,</span> <span class="n">min_height</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">),</span>
+<span class="p">)</span>  <span class="c1"># Axis and scale for color data</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">deb_output</span> <span class="o">=</span> <span class="n">Label</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">selected_index_changed</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+    <span class="n">deb_output</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">)</span>
+
+
+<span class="n">market_map</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">selected_index_changed</span><span class="p">,</span> <span class="s2">&quot;selected&quot;</span><span class="p">)</span>
+<span class="n">VBox</span><span class="p">([</span><span class="n">deb_output</span><span class="p">,</span> <span class="n">market_map</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attribute to show the names of the groups, in this case the continents</span>
+<span class="n">market_map</span><span class="o">.</span><span class="n">show_groups</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setting the selected countries</span>
+<span class="n">market_map</span><span class="o">.</span><span class="n">show_groups</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">market_map</span><span class="o">.</span><span class="n">selected</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;PAN&quot;</span><span class="p">,</span> <span class="s2">&quot;FRA&quot;</span><span class="p">,</span> <span class="s2">&quot;PHL&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># changing selected stroke and hovered stroke variable</span>
+<span class="n">market_map</span><span class="o">.</span><span class="n">selected_stroke</span> <span class="o">=</span> <span class="s2">&quot;yellow&quot;</span>
+<span class="n">market_map</span><span class="o">.</span><span class="n">hovered_stroke</span> <span class="o">=</span> <span class="s2">&quot;violet&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Setting-the-color-based-on-data">Setting the color based on data<a class="anchor-link" href="#Setting-the-color-based-on-data">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Adding data for color and making color axis visible</span>
+<span class="n">market_map</span><span class="o">.</span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#ccc&quot;</span><span class="p">]</span>
+<span class="n">market_map</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;GDP&quot;</span><span class="p">]</span>
+<span class="n">ax_c</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Adding-a-widget-as-tooltip">Adding a widget as tooltip<a class="anchor-link" href="#Adding-a-widget-as-tooltip">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating the figure to be displayed as the tooltip</span>
+<span class="n">sc_x</span> <span class="o">=</span> <span class="n">DateScale</span><span class="p">()</span>
+<span class="n">sc_y</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">()</span>
+
+<span class="n">ax_x</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">sc_x</span><span class="p">,</span> <span class="n">grid_lines</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+<span class="n">ax_y</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span>
+    <span class="n">scale</span><span class="o">=</span><span class="n">sc_y</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span>
+    <span class="n">grid_lines</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;GDP&quot;</span><span class="p">,</span>
+    <span class="n">label_location</span><span class="o">=</span><span class="s2">&quot;end&quot;</span><span class="p">,</span>
+    <span class="n">label_offset</span><span class="o">=</span><span class="s2">&quot;-1em&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">line</span> <span class="o">=</span> <span class="n">Lines</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">gdp_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[],</span> <span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">sc_x</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">sc_y</span><span class="p">},</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">fig_tooltip</span> <span class="o">=</span> <span class="n">Figure</span><span class="p">(</span><span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">line</span><span class="p">],</span> <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="n">ax_x</span><span class="p">,</span> <span class="n">ax_y</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">market_map</span> <span class="o">=</span> <span class="n">MarketMap</span><span class="p">(</span>
+    <span class="n">names</span><span class="o">=</span><span class="n">country_codes</span><span class="p">,</span>
+    <span class="n">groups</span><span class="o">=</span><span class="n">continents</span><span class="p">,</span>
+    <span class="n">cols</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+    <span class="n">row_groups</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;GDP&quot;</span><span class="p">],</span>
+    <span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">col</span><span class="p">},</span>
+    <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="n">ax_c</span><span class="p">],</span>
+    <span class="n">ref_data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+    <span class="n">tooltip_widget</span><span class="o">=</span><span class="n">fig_tooltip</span><span class="p">,</span>
+    <span class="n">freeze_tooltip_location</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#ccc&quot;</span><span class="p">],</span>
+    <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span><span class="n">min_width</span><span class="o">=</span><span class="s2">&quot;900px&quot;</span><span class="p">,</span> <span class="n">min_height</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="c1"># Update the tooltip chart</span>
+<span class="n">hovered_symbol</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">hover_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">hovered_symbol</span>
+    <span class="n">symbol</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">symbol</span> <span class="o">!=</span> <span class="n">hovered_symbol</span><span class="p">:</span>
+        <span class="n">hovered_symbol</span> <span class="o">=</span> <span class="n">symbol</span>
+        <span class="k">if</span> <span class="n">gdp_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">hovered_symbol</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">line</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">gdp_data</span><span class="p">[</span><span class="n">hovered_symbol</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+            <span class="n">fig_tooltip</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ref_data&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Custom msg sent when a particular cell is hovered on</span>
+<span class="n">market_map</span><span class="o">.</span><span class="n">on_hover</span><span class="p">(</span><span class="n">hover_handler</span><span class="p">)</span>
+<span class="n">market_map</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This notebook uses data derived from the World Bank dataset.</p>
+<ul>
+<li>The World Bank: GDP per capita (current US$)</li>
+<li>The World Bank: Country Codes</li>
+</ul>
+<p>See the LICENSE file for more information.</p>
+
+</div>
+</div>
+</div>
+

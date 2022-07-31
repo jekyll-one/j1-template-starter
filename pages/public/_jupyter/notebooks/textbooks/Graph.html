@@ -1,0 +1,484 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">bqplot</span> <span class="kn">import</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">LinearScale</span><span class="p">,</span> <span class="n">ColorScale</span><span class="p">,</span> <span class="n">Figure</span><span class="p">,</span> <span class="n">Tooltip</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">Layout</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Nodes and Links should be supplied to the Graph mark.</p>
+<p><p>Node attributes</p>
+<table>
+<thead><tr>
+<th style="text-align:center">Attribute</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">label</td>
+<td style="text-align:center">str</td>
+<td style="text-align:center">node label</td>
+<td>mandatory attribute</td>
+</tr>
+<tr>
+<td style="text-align:center">label_display</td>
+<td style="text-align:center">{center, outside, none}</td>
+<td style="text-align:center">label display options</td>
+<td>center</td>
+</tr>
+<tr>
+<td style="text-align:center">shape</td>
+<td style="text-align:center">{circle, ellipse, rect}</td>
+<td style="text-align:center">node shape</td>
+<td>circle</td>
+</tr>
+<tr>
+<td style="text-align:center">shape_attrs</td>
+<td style="text-align:center">dict</td>
+<td style="text-align:center"><a href="https://www.w3.org/TR/SVG/shapes.html">node SVG attributes</a></td>
+<td>{'r': 15}</td>
+</tr>
+</tbody>
+</table>
+<p><p> Link Attributes</p>
+<table>
+<thead><tr>
+<th style="text-align:center">Attribute</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">source</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">source node index</td>
+<td>mandatory attribute</td>
+</tr>
+<tr>
+<td style="text-align:center">target</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">target node index</td>
+<td>mandatory attribute</td>
+</tr>
+<tr>
+<td style="text-align:center">value</td>
+<td style="text-align:center">float</td>
+<td style="text-align:center">value of the link. Use np.nan if you do not want a link</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><p> Link data can also be supplied using a link_matrix which is a numpy array of shape (n, n) where n is the number of nodes in the graph</p>
+<p><p> Link Data can be passed in through 3 data attributes -</p>
+<ol>
+<li>link_data - list of dicts (e.g. [{'source': 0, 'target': 1, 'value': 10}, {'source': 2, 'target': 1, 'value': 20},...]</li>
+<li>link_matrix - 2-d numpy array of shape (n, n) where n is the number of nodes</li>
+<li>link_color - 2-d numpy array of shape (n, n) where n is the number of nodes. This attribute can be used to encode the link_color by passing in a link_color scale</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig_layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;960px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;500px&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Directed-Graph">Directed Graph<a class="anchor-link" href="#Directed-Graph">&#182;</a></h3><p>If we dont specify the x and y location for nodes then the force layout will set the location of nodes</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">node_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s2">&quot;rect&quot;</span><span class="p">),</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s2">&quot;ellipse&quot;</span><span class="p">),</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s2">&quot;ellipse&quot;</span><span class="p">),</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s2">&quot;rect&quot;</span><span class="p">),</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s2">&quot;ellipse&quot;</span><span class="p">),</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s2">&quot;circle&quot;</span><span class="p">),</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s2">&quot;ellipse&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">link_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">t</span><span class="p">}</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="k">if</span> <span class="n">s</span> <span class="o">!=</span> <span class="n">t</span>
+<span class="p">]</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span>
+    <span class="n">node_data</span><span class="o">=</span><span class="n">node_data</span><span class="p">,</span> <span class="n">link_data</span><span class="o">=</span><span class="n">link_data</span><span class="p">,</span> <span class="n">charge</span><span class="o">=-</span><span class="mi">600</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">7</span>
+<span class="p">)</span>
+<span class="n">Figure</span><span class="p">(</span><span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">graph</span><span class="p">],</span> <span class="n">layout</span><span class="o">=</span><span class="n">fig_layout</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">link_type</span> <span class="o">=</span> <span class="s2">&quot;line&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Explicitly-setting-x-and-y-location-for-nodes-using-x-and-y-scales.">Explicitly setting x and y location for nodes using x and y scales.<a class="anchor-link" href="#Explicitly-setting-x-and-y-location-for-nodes-using-x-and-y-scales.">&#182;</a></h3><p>Force layout animation is disabled in this case</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">node_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;ABCDEFG&quot;</span><span class="p">)</span>
+
+<span class="c1"># using link matrix to set links</span>
+<span class="n">link_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">()</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span>
+    <span class="n">node_data</span><span class="o">=</span><span class="n">node_data</span><span class="p">,</span>
+    <span class="n">link_matrix</span><span class="o">=</span><span class="n">link_matrix</span><span class="p">,</span>
+    <span class="n">link_type</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span>
+    <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="n">scales</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">xs</span><span class="p">,</span>
+        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">ys</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+    <span class="n">directed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">Figure</span><span class="p">(</span><span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">graph</span><span class="p">],</span> <span class="n">layout</span><span class="o">=</span><span class="n">fig_layout</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Color-code-nodes-using-'color'-data-attribute">Color code nodes using 'color' data attribute<a class="anchor-link" href="#Color-code-nodes-using-'color'-data-attribute">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">node_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;ABCDEFG&quot;</span><span class="p">)</span>
+
+<span class="c1"># using link matrix to set links</span>
+<span class="n">link_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">ColorScale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;Reds&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span>
+    <span class="n">node_data</span><span class="o">=</span><span class="n">node_data</span><span class="p">,</span>
+    <span class="n">link_matrix</span><span class="o">=</span><span class="n">link_matrix</span><span class="p">,</span>
+    <span class="n">link_type</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span>
+    <span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">xs</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">ys</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">cs</span><span class="p">},</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+    <span class="n">directed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">Figure</span><span class="p">(</span><span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">graph</span><span class="p">],</span> <span class="n">layout</span><span class="o">=</span><span class="n">fig_layout</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Color-code-links-using-link_color-scale">Color code links using link_color scale<a class="anchor-link" href="#Color-code-links-using-link_color-scale">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">node_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;ABCDEFG&quot;</span><span class="p">)</span>
+
+<span class="n">link_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()}</span>
+    <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="p">]</span>
+
+<span class="n">xs</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">()</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">()</span>
+<span class="n">lcs</span> <span class="o">=</span> <span class="n">ColorScale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;Greens&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span>
+    <span class="n">node_data</span><span class="o">=</span><span class="n">node_data</span><span class="p">,</span>
+    <span class="n">link_data</span><span class="o">=</span><span class="n">link_data</span><span class="p">,</span>
+    <span class="n">link_type</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span>
+    <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">],</span>
+    <span class="n">directed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">xs</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">ys</span><span class="p">,</span> <span class="s2">&quot;link_color&quot;</span><span class="p">:</span> <span class="n">lcs</span><span class="p">},</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">Figure</span><span class="p">(</span><span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">graph</span><span class="p">],</span> <span class="n">layout</span><span class="o">=</span><span class="n">fig_layout</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Custom-node-attributes">Custom node attributes<a class="anchor-link" href="#Custom-node-attributes">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">node_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="s2">&quot;circle&quot;</span><span class="p">,</span> <span class="s2">&quot;shape_attrs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Node B&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="s2">&quot;rect&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;shape_attrs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;rx&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;ry&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
+        <span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="s2">&quot;ellipse&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="s2">&quot;rect&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;shape_attrs&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span>
+        <span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">]</span>
+
+<span class="n">link_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">s</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()}</span>
+    <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="p">]</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">(</span><span class="n">node_data</span><span class="o">=</span><span class="n">node_data</span><span class="p">,</span> <span class="n">link_data</span><span class="o">=</span><span class="n">link_data</span><span class="p">,</span> <span class="n">link_distance</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">Figure</span><span class="p">(</span><span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">graph</span><span class="p">],</span> <span class="n">layout</span><span class="o">=</span><span class="n">fig_layout</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Add-tooltips-on-nodes">Add tooltips on nodes<a class="anchor-link" href="#Add-tooltips-on-nodes">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tooltip</span> <span class="o">=</span> <span class="n">Tooltip</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">],</span> <span class="n">formats</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">])</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">tooltip</span> <span class="o">=</span> <span class="n">tooltip</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Add-a-line-chart-as-a-tooltip">Add a line chart as a tooltip<a class="anchor-link" href="#Add-a-line-chart-as-a-tooltip">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">bqplot.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">20</span><span class="p">)))</span>
+<span class="c1"># hover on nodes to see the plot</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">tooltip</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">current_figure</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Custom-styling-of-hovered-and-selected-nodes">Custom styling of hovered and selected nodes<a class="anchor-link" href="#Custom-styling-of-hovered-and-selected-nodes">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">hovered_style</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;stroke&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">}</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">unhovered_style</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="s2">&quot;0.4&quot;</span><span class="p">}</span>
+
+<span class="n">graph</span><span class="o">.</span><span class="n">selected_style</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;stroke&quot;</span><span class="p">:</span> <span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="s2">&quot;stroke-width&quot;</span><span class="p">:</span> <span class="s2">&quot;2.5&quot;</span><span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># click on any node to select it (selected attribute gets populated with the index of the selected node)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">selected</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Add-element-click-and-background-click-handlers">Add element click and background click handlers<a class="anchor-link" href="#Add-element-click-and-background-click-handlers">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+
+
+<span class="n">graph</span><span class="o">.</span><span class="n">on_background_click</span><span class="p">(</span><span class="n">print_event</span><span class="p">)</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">on_element_click</span><span class="p">(</span><span class="n">print_event</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+

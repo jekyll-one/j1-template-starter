@@ -1,0 +1,489 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Selectors">Selectors<a class="anchor-link" href="#Selectors">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Index">Index<a class="anchor-link" href="#Index">&#182;</a></h2><ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#brushselectors">Brush Selectors</a></li>
+<li><a href="#fastintervalselector">FastIntervalSelector</a></li>
+<li><a href="#lassoselector">LassoSelector</a></li>
+<li><a href="#indexselector">IndexSelector</a></li>
+<li><a href="#multiselector">MultiSelector</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">symbol</span> <span class="o">=</span> <span class="s2">&quot;Security 1&quot;</span>
+<span class="n">symbol2</span> <span class="o">=</span> <span class="s2">&quot;Security 2&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">price_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">([[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">symbol</span><span class="p">,</span> <span class="n">symbol2</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;01-01-2007&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">150</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">dates_actual</span> <span class="o">=</span> <span class="n">price_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="n">price_data</span><span class="p">[</span><span class="n">symbol</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bqplot</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">bqplot.interacts</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">FastIntervalSelector</span><span class="p">,</span>
+    <span class="n">IndexSelector</span><span class="p">,</span>
+    <span class="n">BrushIntervalSelector</span><span class="p">,</span>
+    <span class="n">BrushSelector</span><span class="p">,</span>
+    <span class="n">MultiSelector</span><span class="p">,</span>
+    <span class="n">LassoSelector</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">ToggleButtons</span><span class="p">,</span> <span class="n">VBox</span><span class="p">,</span> <span class="n">HTML</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction-">Introduction <a class="anchor" id="introduction" /><a class="anchor-link" href="#Introduction-">&#182;</a></h2><p>Selectors are part of the Interaction Layer (link).
+They are used to select subparts of Marks, that correspond to different regions on the Figure canvas. Different types of selectors select different types of regions:</p>
+<ul>
+<li><code>BrushSelector</code>, <code>FastIntervalSelector</code> and <code>MultiSelector</code> select rectangular regions</li>
+<li><code>IndexSelector</code> selects the elements closest to an abcissa</li>
+<li><code>LassoSelector</code> selects elements in a region drawn by the user</li>
+</ul>
+<h2 id="How-they-work">How they work<a class="anchor-link" href="#How-they-work">&#182;</a></h2><p>bqplot Selectors need to be tied to two other widgets:</p>
+<ul>
+<li>One or several marks. Their <code>selected</code> attribute, a list of data indices, will be set by the <code>Selector</code> instance.</li>
+<li>One (1d selection) or two (2d selection) <code>Scales</code>. These are the scales that the <code>Selector</code> operates on. The <code>Selector</code>'s <code>selected</code> attribute will be expressed as values of those scales.</li>
+</ul>
+<p>The <code>Selector</code> must then be passed to the desired <code>Figure</code>, as its <code>interaction</code> attribute.</p>
+<p>Hopefully this will be clear in the following examples.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define scales for the rest of the notebook</span>
+<span class="n">scales</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">DateScale</span><span class="p">(),</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">LinearScale</span><span class="p">()}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Brush-Selectors-">Brush Selectors <a class="anchor" id="brushselectors" /><a class="anchor-link" href="#Brush-Selectors-">&#182;</a></h2><p>Selects a rectangular region of the <code>Figure</code>.</p>
+<h4 id="Usage:">Usage:<a class="anchor-link" href="#Usage:">&#182;</a></h4><ul>
+<li>Click and drag to create a new brush</li>
+<li>Drag the edge of the brush to change its width</li>
+<li>Drag the inside of the brush to translate it</li>
+<li>Clicking and dragging outside of the brush deletes it and creates a new one.</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The Mark we want to select subsamples of</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">dates_actual</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">prices</span><span class="p">,</span>
+    <span class="n">scales</span><span class="o">=</span><span class="n">scales</span><span class="p">,</span>
+    <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">],</span>
+    <span class="n">selected_style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">},</span>
+    <span class="n">unselected_style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="s2">&quot;0.2&quot;</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="c1"># Create the brush selector, passing it its corresponding scale.</span>
+<span class="c1"># Notice that we do not pass it any marks for now</span>
+<span class="n">brushintsel</span> <span class="o">=</span> <span class="n">BrushIntervalSelector</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+
+<span class="n">x_ax</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Index&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+<span class="n">x_ay</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="p">(</span><span class="n">symbol</span> <span class="o">+</span> <span class="s2">&quot; Price&quot;</span><span class="p">),</span> <span class="n">scale</span><span class="o">=</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">)</span>
+<span class="c1"># Pass the Selector instance to the Figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">Figure</span><span class="p">(</span>
+    <span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">scatter</span><span class="p">],</span>
+    <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="n">x_ax</span><span class="p">,</span> <span class="n">x_ay</span><span class="p">],</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;Brush Interval Selector Example. Click and drag on the Figure to action.&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="n">interaction</span><span class="o">=</span><span class="n">brushintsel</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># The following text widgets are used to display the `selected` attributes</span>
+<span class="n">text_brush</span> <span class="o">=</span> <span class="n">HTML</span><span class="p">()</span>
+<span class="n">text_scatter</span> <span class="o">=</span> <span class="n">HTML</span><span class="p">()</span>
+
+<span class="c1"># This function updates the text, triggered by a change in the selector</span>
+<span class="k">def</span> <span class="nf">update_brush_text</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">text_brush</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;The Brush&#39;s selected attribute is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">brushintsel</span><span class="o">.</span><span class="n">selected</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">update_scatter_text</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">text_scatter</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;The scatter&#39;s selected indices are </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">scatter</span><span class="o">.</span><span class="n">selected</span>
+    <span class="p">)</span>
+
+
+<span class="n">brushintsel</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_brush_text</span><span class="p">,</span> <span class="s2">&quot;selected&quot;</span><span class="p">)</span>
+<span class="n">scatter</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_scatter_text</span><span class="p">,</span> <span class="s2">&quot;selected&quot;</span><span class="p">)</span>
+
+<span class="n">update_brush_text</span><span class="p">()</span>
+<span class="n">update_scatter_text</span><span class="p">()</span>
+
+<span class="c1"># Display</span>
+<span class="n">VBox</span><span class="p">([</span><span class="n">fig</span><span class="p">,</span> <span class="n">text_brush</span><span class="p">,</span> <span class="n">text_scatter</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Linking-the-brush-to-the-scatter">Linking the brush to the scatter<a class="anchor-link" href="#Linking-the-brush-to-the-scatter">&#182;</a></h4><p>Passing a mark (or several) to the selector, will link the mark's selected indices to the selector.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">brushintsel</span><span class="o">.</span><span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="n">scatter</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From now on we will stop printing out the selected indices, but rather use the <code>selected_style</code> and <code>unselected_style</code> attributes of the Marks to check which elements are selected.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create_figure</span><span class="p">(</span><span class="n">selector</span><span class="p">,</span> <span class="o">**</span><span class="n">selector_kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns a Figure with a Scatter and a Selector.</span>
+
+<span class="sd">    Arguments</span>
+<span class="sd">    ---------</span>
+<span class="sd">    selector: The type of Selector, one of</span>
+<span class="sd">        {&#39;BrushIntervalSelector&#39;, &#39;BrushSelector&#39;, &#39;FastIntervalSelector&#39;, &#39;IndexSelector&#39;, &#39;LassoSelector&#39;}</span>
+<span class="sd">    selector_kwargs: Arguments to be passed to the Selector</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">scatter</span> <span class="o">=</span> <span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">dates_actual</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">prices</span><span class="p">,</span>
+        <span class="n">scales</span><span class="o">=</span><span class="n">scales</span><span class="p">,</span>
+        <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">],</span>
+        <span class="n">selected_style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">},</span>
+        <span class="n">unselected_style</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="s2">&quot;0.2&quot;</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">sel</span> <span class="o">=</span> <span class="n">selector</span><span class="p">(</span><span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">scatter</span><span class="p">],</span> <span class="o">**</span><span class="n">selector_kwargs</span><span class="p">)</span>
+
+    <span class="n">text_brush</span> <span class="o">=</span> <span class="n">HTML</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">selector</span> <span class="o">!=</span> <span class="n">LassoSelector</span><span class="p">:</span>
+
+        <span class="k">def</span> <span class="nf">update_text</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+            <span class="n">text_brush</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">.selected = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">selector</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">sel</span><span class="o">.</span><span class="n">selected</span>
+            <span class="p">)</span>
+
+        <span class="n">sel</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_text</span><span class="p">,</span> <span class="s2">&quot;selected&quot;</span><span class="p">)</span>
+        <span class="n">update_text</span><span class="p">()</span>
+
+    <span class="n">x_ax</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Index&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+    <span class="n">x_ay</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="p">(</span><span class="n">symbol</span> <span class="o">+</span> <span class="s2">&quot; Price&quot;</span><span class="p">),</span> <span class="n">scale</span><span class="o">=</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">Figure</span><span class="p">(</span>
+        <span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">scatter</span><span class="p">],</span>
+        <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="n">x_ax</span><span class="p">,</span> <span class="n">x_ay</span><span class="p">],</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> Example&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">selector</span><span class="o">.</span><span class="vm">__name__</span><span class="p">),</span>
+        <span class="n">interaction</span><span class="o">=</span><span class="n">sel</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">VBox</span><span class="p">([</span><span class="n">fig</span><span class="p">,</span> <span class="n">text_brush</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="BrushIntervalSelector-on-the-y-axis">BrushIntervalSelector on the y-axis<a class="anchor-link" href="#BrushIntervalSelector-on-the-y-axis">&#182;</a></h3><p>The attribute <code>orientation</code> can be set to 'vertical' to select on the y-axis. Be careful to pass the corresponding y-scale.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">create_figure</span><span class="p">(</span><span class="n">BrushIntervalSelector</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2d-BrushSelector">2d BrushSelector<a class="anchor-link" href="#2d-BrushSelector">&#182;</a></h3><p>The <code>BrushSelector</code> is 2d, and must be fed 2 scales, <code>x_scale</code> and <code>y_scale</code>.</p>
+<p>Note that <code>BrushSelector.selected</code> is now 2x2. It is the coordinates of the lower left-hand and upper right-hand corners of the rectangle.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">create_figure</span><span class="p">(</span><span class="n">BrushSelector</span><span class="p">,</span> <span class="n">x_scale</span><span class="o">=</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">y_scale</span><span class="o">=</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="FastIntervalSelector-">FastIntervalSelector <a class="anchor" id="fastintervalselector" /><a class="anchor-link" href="#FastIntervalSelector-">&#182;</a></h2><p>The FastIntervalSelector is functionally like a BrushIntervalSelector, but provides a more fluid and rapid interaction.</p>
+<h4 id="Usage:">Usage:<a class="anchor-link" href="#Usage:">&#182;</a></h4><ul>
+<li>The first click creates the selector.</li>
+<li>Moving the mouse up and down widens and narrows the interval width.</li>
+<li>Moving the mouse left and right translates the interval left and right.</li>
+<li>Subsequent clicks will freeze/unfreeze the interval width</li>
+<li>A double-click will freeze both the width and the translation</li>
+</ul>
+<p>Experiment and get a feel for it in the example below.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">create_figure</span><span class="p">(</span><span class="n">FastIntervalSelector</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As of the latest version, <code>FastIntervalSelector</code> is only supported for 1d interaction along the x-axis</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="LassoSelector-">LassoSelector <a class="anchor" id="lassoselector" /><a class="anchor-link" href="#LassoSelector-">&#182;</a></h2><p>This 2-D selector enables the user to select multiple sets of data points
+by drawing lassos on the figure.</p>
+<h4 id="Usage:">Usage:<a class="anchor-link" href="#Usage:">&#182;</a></h4><ul>
+<li>Click and drag to draw a new lasso</li>
+<li>Click a lasso to select (de-select) it. Mult</li>
+<li>Press the 'Delete' button to delete the selected lassos</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">create_figure</span><span class="p">(</span><span class="n">LassoSelector</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="IndexSelector-">IndexSelector <a class="anchor" id="indexselector" /><a class="anchor-link" href="#IndexSelector-">&#182;</a></h2><p>This 1-D selector selects a unique value on its scale. The attached Mark's selected element is the closest element to that value.</p>
+<h4 id="Usage:">Usage:<a class="anchor-link" href="#Usage:">&#182;</a></h4><ul>
+<li>First click creates and activates the selector</li>
+<li>Moving the mouse translates the selector</li>
+<li>Subsequent clicks freeze/unfreeze the selector</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">create_figure</span><span class="p">(</span><span class="n">IndexSelector</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As of the latest version, <code>IndexSelector</code> is only supported for interaction along the x-axis.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="MultiSelector-">MultiSelector <a class="anchor" id="multiselector" /><a class="anchor-link" href="#MultiSelector-">&#182;</a></h2><p>This 1-D selector is equivalent to multiple brush selectors.</p>
+<h4 id="Usage:">Usage:<a class="anchor-link" href="#Usage:">&#182;</a></h4><ul>
+<li>The first brush works like a regular brush.</li>
+<li><code>Ctrl + click</code> creates a new brush, which works like the regular brush.</li>
+<li>The <code>active</code> brush has a Green border while all the <code>inactive</code> brushes have a Red border.</li>
+<li><code>Shift + click</code> deactivates the current <code>active</code> brush. Now, click on any <code>inactive</code> brush to make it <code>active</code>.</li>
+<li><code>Ctrl + Shift + click</code> clears and resets all the brushes.</li>
+</ul>
+<p>Each brush has a name (0, 1, 2, ... by default), and the <code>selected</code> attribute is a dict <code>{brush_name: brush_extent}</code></p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">create_figure</span><span class="p">(</span><span class="n">MultiSelector</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scales</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+

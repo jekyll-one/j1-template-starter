@@ -25,6 +25,7 @@ resource_options:
           alt:                          puzzle-1920x1280-bw
 ---
 
+
 // Page Initializer
 // =============================================================================
 // Enable the Liquid Preprocessor
@@ -332,11 +333,11 @@ standalone.
 .Lightbox block for standalone images
 [source, no_template, role="noclip"]
 ----
-lightbox::<block_id>[ 400, {<data-images-id>} ]
+lightbox::<block_id>[ 800, {<data-images-id>} ]
 ----
 
 .Lightbox block for standalone images
-lightbox::images-standalone[ 400, {data-images-standalone} ]
+lightbox::images-standalone[ 800, {data-images-standalone} ]
 
 === Grouped Images
 
@@ -490,7 +491,6 @@ All icon fonts are supported:
 * FA (FontAwesome)
 * MDI (MaterialDesign icons)
 * Iconify
-* Twitter Emoji
 
 == Material Designs Icons
 
@@ -604,32 +604,6 @@ Not all icon sets support the color settings for the `modifier`. If
 applied, the color settings will have no effect.
 ====
 
-
-== Twitter Emoji Icons
-
-Twitter Emoji's can be used as inline icons by using the `emoji:`
-inline macro:
-
-[source, no_template]
-----
-emoji:icon_name[icon_size] <1> <2>
-----
-<1> All `icon_name` can be found on the preview page for
-    link:{url-previewer--emoji}[Twitter Emoji's]
-<2> The `icon_size` attribute can be one of: `xs`, `sm`, `lg` and `1x` to `5x`
-
-.Click on button `VIEW` to see how it's look alike
-[source, no_template, role="noclip"]
-----
-This is an example of how you can emoji:heart[2x, pulsed mt-1] Asciidoctor
-and Twitter Emoji emoji:smile[].
-----
-
-[.result]
-====
-This is an example of how you can emoji:heart[2x, pulsed mt-1] Asciidoctor
-and Twitter Emoji emoji:smile[].
-====
 
 == Blind Text (Lorem)
 

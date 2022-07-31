@@ -1,0 +1,277 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">bqplot.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+
+<span class="n">y_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span>
+        <span class="mf">160.10</span><span class="p">,</span>
+        <span class="mf">162.34</span><span class="p">,</span>
+        <span class="mf">161.82</span><span class="p">,</span>
+        <span class="mf">162.24</span><span class="p">,</span>
+        <span class="mf">161.44</span><span class="p">,</span>
+        <span class="mf">158.51</span><span class="p">,</span>
+        <span class="mf">157.68</span><span class="p">,</span>
+        <span class="mf">151.93</span><span class="p">,</span>
+        <span class="mf">151.41</span><span class="p">,</span>
+        <span class="mf">153.06</span><span class="p">,</span>
+        <span class="mf">155.38</span><span class="p">,</span>
+        <span class="mf">161.07</span><span class="p">,</span>
+        <span class="mf">160.51</span><span class="p">,</span>
+        <span class="mf">162.99</span><span class="p">,</span>
+        <span class="mf">161.86</span><span class="p">,</span>
+        <span class="mf">163.27</span><span class="p">,</span>
+        <span class="mf">164.05</span><span class="p">,</span>
+        <span class="mf">164.52</span><span class="p">,</span>
+        <span class="mf">162.67</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+        <span class="mf">161.54</span><span class="p">,</span>
+        <span class="mf">162.17</span><span class="p">,</span>
+        <span class="mf">161.95</span><span class="p">,</span>
+        <span class="mf">161.76</span><span class="p">,</span>
+        <span class="mf">162.15</span><span class="p">,</span>
+        <span class="mf">160.92</span><span class="p">,</span>
+        <span class="mf">160.64</span><span class="p">,</span>
+        <span class="mf">161.43</span><span class="p">,</span>
+        <span class="mf">161.89</span><span class="p">,</span>
+        <span class="mf">164.16</span><span class="p">,</span>
+        <span class="mf">164.16</span><span class="p">,</span>
+        <span class="mf">162.79</span><span class="p">,</span>
+        <span class="mf">161.92</span><span class="p">,</span>
+        <span class="mf">163.30</span><span class="p">,</span>
+        <span class="mf">163.49</span><span class="p">,</span>
+        <span class="mf">162.07</span><span class="p">,</span>
+        <span class="mf">161.46</span><span class="p">,</span>
+        <span class="mf">161.82</span><span class="p">,</span>
+        <span class="mf">162.65</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+        <span class="mf">164.40</span><span class="p">,</span>
+        <span class="mf">164.35</span><span class="p">,</span>
+        <span class="mf">163.46</span><span class="p">,</span>
+        <span class="mf">163.60</span><span class="p">,</span>
+        <span class="mf">161.87</span><span class="p">,</span>
+        <span class="mf">162.08</span><span class="p">,</span>
+        <span class="mf">162.18</span><span class="p">,</span>
+        <span class="mf">161.79</span><span class="p">,</span>
+        <span class="mf">163.23</span><span class="p">,</span>
+        <span class="mf">169.10</span><span class="p">,</span>
+        <span class="mf">182.05</span><span class="p">,</span>
+        <span class="mf">179.84</span><span class="p">,</span>
+        <span class="mf">181.75</span><span class="p">,</span>
+        <span class="mf">183.80</span><span class="p">,</span>
+        <span class="mf">183.52</span><span class="p">,</span>
+        <span class="mf">185.93</span><span class="p">,</span>
+        <span class="mf">186.42</span><span class="p">,</span>
+        <span class="mf">189.36</span><span class="p">,</span>
+        <span class="mf">185.71</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+        <span class="mf">188.67</span><span class="p">,</span>
+        <span class="mf">186.91</span><span class="p">,</span>
+        <span class="mf">187.17</span><span class="p">,</span>
+        <span class="mf">189.83</span><span class="p">,</span>
+        <span class="mf">189.64</span><span class="p">,</span>
+        <span class="mf">190.06</span><span class="p">,</span>
+        <span class="mf">189.01</span><span class="p">,</span>
+        <span class="mf">192.31</span><span class="p">,</span>
+        <span class="mf">191.62</span><span class="p">,</span>
+        <span class="mf">193.11</span><span class="p">,</span>
+        <span class="mf">194.00</span><span class="p">,</span>
+        <span class="mf">193.75</span><span class="p">,</span>
+        <span class="mf">192.80</span><span class="p">,</span>
+        <span class="mf">192.96</span><span class="p">,</span>
+        <span class="mf">191.81</span><span class="p">,</span>
+        <span class="mf">191.28</span><span class="p">,</span>
+        <span class="mf">191.72</span><span class="p">,</span>
+        <span class="mf">191.20</span><span class="p">,</span>
+        <span class="mf">190.68</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+        <span class="mf">191.95</span><span class="p">,</span>
+        <span class="mf">191.56</span><span class="p">,</span>
+        <span class="mf">192.30</span><span class="p">,</span>
+        <span class="mf">192.00</span><span class="p">,</span>
+        <span class="mf">192.25</span><span class="p">,</span>
+        <span class="mf">192.99</span><span class="p">,</span>
+        <span class="mf">191.16</span><span class="p">,</span>
+        <span class="mf">190.41</span><span class="p">,</span>
+        <span class="mf">191.23</span><span class="p">,</span>
+        <span class="mf">190.10</span><span class="p">,</span>
+        <span class="mf">190.07</span><span class="p">,</span>
+        <span class="mf">189.36</span><span class="p">,</span>
+        <span class="mf">187.38</span><span class="p">,</span>
+        <span class="mf">187.88</span><span class="p">,</span>
+        <span class="mf">191.81</span><span class="p">,</span>
+        <span class="mf">191.28</span><span class="p">,</span>
+        <span class="mf">191.72</span><span class="p">,</span>
+        <span class="mf">189.99</span><span class="p">,</span>
+        <span class="mf">190.14</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+        <span class="mf">187.95</span><span class="p">,</span>
+        <span class="mf">187.34</span><span class="p">,</span>
+        <span class="mf">187.47</span><span class="p">,</span>
+        <span class="mf">186.63</span><span class="p">,</span>
+        <span class="mf">184.30</span><span class="p">,</span>
+        <span class="mf">185.97</span><span class="p">,</span>
+        <span class="mf">187.10</span><span class="p">,</span>
+        <span class="mf">189.64</span><span class="p">,</span>
+        <span class="mf">189.15</span><span class="p">,</span>
+        <span class="mf">191.67</span><span class="p">,</span>
+        <span class="mf">194.00</span><span class="p">,</span>
+        <span class="mf">194.57</span><span class="p">,</span>
+        <span class="mf">195.78</span><span class="p">,</span>
+        <span class="mf">194.40</span><span class="p">,</span>
+        <span class="mf">195.24</span><span class="p">,</span>
+        <span class="mf">193.63</span><span class="p">,</span>
+        <span class="mf">190.85</span><span class="p">,</span>
+        <span class="mf">192.5</span><span class="p">,</span>
+        <span class="mf">192.49</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="p">[</span>
+        <span class="mf">192.36</span><span class="p">,</span>
+        <span class="mf">188.49</span><span class="p">,</span>
+        <span class="mf">189.86</span><span class="p">,</span>
+        <span class="mf">188.00</span><span class="p">,</span>
+        <span class="mf">187.70</span><span class="p">,</span>
+        <span class="mf">188.42</span><span class="p">,</span>
+        <span class="mf">187.22</span><span class="p">,</span>
+        <span class="mf">188.04</span><span class="p">,</span>
+        <span class="mf">188.53</span><span class="p">,</span>
+        <span class="mf">188.39</span><span class="p">,</span>
+        <span class="mf">186.35</span><span class="p">,</span>
+        <span class="mf">181.27</span><span class="p">,</span>
+        <span class="mf">181.71</span><span class="p">,</span>
+        <span class="mf">180.37</span><span class="p">,</span>
+        <span class="mf">180.72</span><span class="p">,</span>
+        <span class="mf">180.88</span><span class="p">,</span>
+        <span class="mf">182.14</span><span class="p">,</span>
+        <span class="mf">181.55</span><span class="p">,</span>
+        <span class="mf">182.82</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="c1"># add x and y labels using axes_options</span>
+<span class="n">axes_options</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;X&quot;</span><span class="p">},</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Y&quot;</span><span class="p">}}</span>
+<span class="n">boxes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span>
+    <span class="n">x_data</span><span class="p">,</span>
+    <span class="n">y_data</span><span class="p">,</span>
+    <span class="n">box_fill_color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span>
+    <span class="n">outlier_fill_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="n">axes_options</span><span class="o">=</span><span class="n">axes_options</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## setting the stroke and fill_color of the boxes and the outliers</span>
+<span class="n">boxes</span><span class="o">.</span><span class="n">stroke</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+<span class="n">boxes</span><span class="o">.</span><span class="n">box_fill_color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+<span class="n">boxes</span><span class="o">.</span><span class="n">outlier_fill_color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## changing the opacities of some of the boxes</span>
+<span class="n">boxes</span><span class="o">.</span><span class="n">opacities</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## changing the width of the boxes</span>
+<span class="n">boxes</span><span class="o">.</span><span class="n">box_width</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+

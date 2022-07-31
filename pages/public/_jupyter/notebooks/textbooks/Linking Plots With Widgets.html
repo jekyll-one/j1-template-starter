@@ -1,0 +1,389 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Building-interactive-plots-using-bqplot-and-ipywidgets">Building interactive plots using <code>bqplot</code> and <code>ipywidgets</code><a class="anchor-link" href="#Building-interactive-plots-using-bqplot-and-ipywidgets">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><code>bqplot</code> is built on top of the <code>ipywidgets</code> framework</li>
+<li><code>ipwidgets</code> and <code>bqplot</code> widgets can be seamlessly integrated to build interactive plots</li>
+<li><code>bqplot</code> figure widgets can be stacked with UI controls available in <code>ipywidgets</code> by using <code>Layout</code> classes (Box, HBox, VBox) in <code>ipywidgets</code>
+(Note that <em>only</em> <code>Figure</code> objects (not <code>Mark</code> objects) inherit from <code>DOMWidget</code> class and can be combined with other widgets from <code>ipywidgets</code>)</li>
+<li>Trait attributes of widgets can be linked using callbacks. Callbacks should be registered using the <code>observe</code> method</li>
+</ul>
+<p>Please follow these links for detailed documentation on:</p>
+<ol>
+<li><a href="https://ipywidgets.readthedocs.io/en/stable/examples/Widget%20Styling.html">Layout and Styling of Jupyter Widgets</a></li>
+</ol>
+<ul>
+<li><a href="https://ipywidgets.readthedocs.io/en/stable/examples/Widget%20Events.html">Linking Widgets</a></li>
+</ul>
+<p><br>Let's look at examples of linking plots with UI controls</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">Layout</span><span class="p">,</span> <span class="n">IntSlider</span><span class="p">,</span> <span class="n">FloatSlider</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">bqplot.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Update the plot on a button click</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>  <span class="c1"># simple random walk</span>
+
+<span class="c1"># create a button</span>
+<span class="n">update_btn</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Update&quot;</span><span class="p">,</span> <span class="n">button_style</span><span class="o">=</span><span class="s2">&quot;success&quot;</span><span class="p">)</span>
+
+<span class="c1"># create a figure widget</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">animation_duration</span><span class="o">=</span><span class="mi">750</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># define an on_click function</span>
+<span class="k">def</span> <span class="nf">on_btn_click</span><span class="p">(</span><span class="n">btn</span><span class="p">):</span>
+    <span class="c1"># update the y attribute of line mark</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>  <span class="c1"># another random walk</span>
+
+
+<span class="c1"># register the on_click function</span>
+<span class="n">update_btn</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_btn_click</span><span class="p">)</span>
+
+<span class="c1"># stack button and figure using VBox</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">fig1</span><span class="p">,</span> <span class="n">update_btn</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's look at an example where we link a plot to a dropdown menu</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># create a dummy time series for 5 dummy stock tickers</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;20180101&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;20181231&quot;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
+<span class="n">tickers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;ABCDE&quot;</span><span class="p">)</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">tickers</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create a dropdown menu for tickers</span>
+<span class="n">dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Ticker&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">tickers</span><span class="p">)</span>
+
+<span class="c1"># create figure for plotting time series</span>
+<span class="n">current_ticker</span> <span class="o">=</span> <span class="n">dropdown</span><span class="o">.</span><span class="n">value</span>
+<span class="n">fig_title_tmpl</span> <span class="o">=</span> <span class="s1">&#39;&quot;</span><span class="si">{}</span><span class="s1">&quot; Time Series&#39;</span>  <span class="c1"># string template for title of the figure</span>
+<span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">fig_title_tmpl</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">current_ticker</span><span class="p">))</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s2">&quot;900px&quot;</span>
+<span class="n">time_series</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">prices</span><span class="p">[</span><span class="n">current_ticker</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Price&quot;</span><span class="p">)</span>
+
+<span class="c1"># 1. create a callback which updates the plot when dropdown item is selected</span>
+<span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">selected_ticker</span> <span class="o">=</span> <span class="n">dropdown</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="c1"># update the y attribute of the mark by selecting</span>
+    <span class="c1"># the column from the price data frame</span>
+    <span class="n">time_series</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">selected_ticker</span><span class="p">]</span>
+
+    <span class="c1"># update the title of the figure</span>
+    <span class="n">fig2</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">fig_title_tmpl</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">selected_ticker</span><span class="p">)</span>
+
+
+<span class="c1"># 2. register the callback by using the &#39;observe&#39; method</span>
+<span class="n">dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+<span class="c1"># stack the dropdown and fig widgets using VBox</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">dropdown</span><span class="p">,</span> <span class="n">fig2</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's now create a scatter plot where we select X and Y data from the two dropdown menus</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create two dropdown menus for X and Y attributes of scatter</span>
+<span class="n">x_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">tickers</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">y_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">tickers</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+
+<span class="c1"># create figure for plotting the scatter</span>
+<span class="n">x_ticker</span> <span class="o">=</span> <span class="n">x_dropdown</span><span class="o">.</span><span class="n">value</span>
+<span class="n">y_ticker</span> <span class="o">=</span> <span class="n">y_dropdown</span><span class="o">.</span><span class="n">value</span>
+
+<span class="c1"># set up fig_margin to allow space to display color bar</span>
+<span class="n">fig_margin</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">fig3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">animation_duration</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">fig_margin</span><span class="o">=</span><span class="n">fig_margin</span><span class="p">)</span>
+
+<span class="c1"># custom axis options for color data</span>
+<span class="n">axes_options</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;tick_format&quot;</span><span class="p">:</span> <span class="s2">&quot;%m/%y&quot;</span><span class="p">,</span> <span class="s2">&quot;side&quot;</span><span class="p">:</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="s2">&quot;num_ticks&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}}</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">prices</span><span class="p">[</span><span class="n">x_ticker</span><span class="p">],</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">prices</span><span class="p">[</span><span class="n">y_ticker</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">dates</span><span class="p">,</span>  <span class="c1"># represent chronology using color scale</span>
+    <span class="n">stroke</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">],</span>
+    <span class="n">default_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">axes_options</span><span class="o">=</span><span class="n">axes_options</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">x_ticker</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">y_ticker</span><span class="p">)</span>
+
+<span class="c1"># 1. create a callback which updates the plot when dropdown item is selected</span>
+<span class="k">def</span> <span class="nf">update_scatter</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">x_ticker</span> <span class="o">=</span> <span class="n">x_dropdown</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">y_ticker</span> <span class="o">=</span> <span class="n">y_dropdown</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="c1"># update the x and y attributes of the mark by selecting</span>
+    <span class="c1"># the column from the price data frame</span>
+    <span class="k">with</span> <span class="n">scatter</span><span class="o">.</span><span class="n">hold_sync</span><span class="p">():</span>
+        <span class="n">scatter</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">x_ticker</span><span class="p">]</span>
+        <span class="n">scatter</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">y_ticker</span><span class="p">]</span>
+
+    <span class="c1"># update the title of the figure</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">x_ticker</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">y_ticker</span><span class="p">)</span>
+
+
+<span class="c1"># 2. register the callback by using the &#39;observe&#39; method</span>
+<span class="n">x_dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_scatter</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+<span class="n">y_dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_scatter</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+<span class="c1"># stack the dropdown and fig widgets using VBox</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">widgets</span><span class="o">.</span><span class="n">HBox</span><span class="p">([</span><span class="n">x_dropdown</span><span class="p">,</span> <span class="n">y_dropdown</span><span class="p">]),</span> <span class="n">fig3</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the example below, we'll look at plots of trigonometic functions</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">funcs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sin</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">,</span> <span class="n">tan</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">,</span> <span class="n">sinh</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">,</span> <span class="n">tanh</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">)</span>
+<span class="n">dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">funcs</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Function&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;sin(x)&quot;</span><span class="p">,</span> <span class="n">animation_duration</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># create x and y data attributes for the line chart</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">line</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">update_line</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">dropdown</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(x)&quot;</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+
+
+<span class="n">dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_line</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+<span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">dropdown</span><span class="p">,</span> <span class="n">fig</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+

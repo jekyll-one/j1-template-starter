@@ -1,0 +1,193 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Object-Model">Object Model<a class="anchor-link" href="#Object-Model">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>bqplot</code> is based on <strong>Grammar of Graphics</strong> paradigm. The <em>Object Model</em> in <code>bqplot</code> gives the user the full flexibility to build custom plots. This means the API is verbose but fully customizable.</p>
+<p>The following are the steps to build a <code>Figure</code> in <code>bqplot</code> using the Object Model:</p>
+<ul>
+<li>Build the scales for <code>x</code> and <code>y</code> quantities using the <code>Scale</code> classes (Scales map the data into pixels in the figure)</li>
+<li>Build the marks using the <code>Mark</code> classes. Marks represent the core plotting objects (lines, scatter, bars, pies etc.). Marks take the scale objects created in step 1 as arguments</li>
+<li>Build the <code>axes</code> for <code>x</code> and <code>y</code> scales</li>
+<li>Finally create a figure using <code>Figure</code> class. <code>Figure</code> takes marks and axes as inputs. <code>Figure</code> object is a widget (it inherits from <code>DOMWidget</code>) and can be rendered like any other jupyter widget</li>
+</ul>
+<p>Let's look a simple example to understand these concepts:</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">bqplot</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LinearScale</span><span class="p">,</span>
+    <span class="n">Axis</span><span class="p">,</span>
+    <span class="n">Figure</span><span class="p">,</span>
+    <span class="n">OrdinalScale</span><span class="p">,</span>
+    <span class="n">LinearScale</span><span class="p">,</span>
+    <span class="n">Bars</span><span class="p">,</span>
+    <span class="n">Lines</span><span class="p">,</span>
+    <span class="n">Scatter</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># first, let&#39;s create two vectors x and y to plot using a Lines mark</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># 1. Create the scales</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">()</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">()</span>
+
+<span class="c1"># 2. Create the axes for x and y</span>
+<span class="n">xax</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">yax</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">ys</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3. Create a Lines mark by passing in the scales</span>
+<span class="c1"># note that Lines object is stored in `line` which can be used later to update the plot</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">Lines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">xs</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">ys</span><span class="p">})</span>
+
+<span class="c1"># 4. Create a Figure object by assembling marks and axes</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">Figure</span><span class="p">(</span><span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">line</span><span class="p">],</span> <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="n">xax</span><span class="p">,</span> <span class="n">yax</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Simple Line Chart&quot;</span><span class="p">)</span>
+
+<span class="c1"># 5. Render the figure using display or just as is</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For creating other marks (like scatter, pie, bars, etc.), only step 3 needs to be changed. Lets look a simple example to create a bar chart:</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># first, let&#39;s create two vectors x and y to plot a bar chart</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;ABCDE&quot;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># 1. Create the scales</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">OrdinalScale</span><span class="p">()</span>  <span class="c1"># note the use of ordinal scale to represent categorical data</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">()</span>
+
+<span class="c1"># 2. Create the axes for x and y</span>
+<span class="n">xax</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">grid_lines</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>  <span class="c1"># no grid lines needed for x</span>
+<span class="n">yax</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span>
+    <span class="n">scale</span><span class="o">=</span><span class="n">ys</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="n">tick_format</span><span class="o">=</span><span class="s2">&quot;.0%&quot;</span>
+<span class="p">)</span>  <span class="c1"># note the use of tick_format to format ticks</span>
+
+<span class="c1"># 3. Create a Bars mark by passing in the scales</span>
+<span class="c1"># note that Bars object is stored in `bar` object which can be used later to update the plot</span>
+<span class="n">bar</span> <span class="o">=</span> <span class="n">Bars</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">xs</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">ys</span><span class="p">},</span> <span class="n">padding</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># 4. Create a Figure object by assembling marks and axes</span>
+<span class="n">Figure</span><span class="p">(</span><span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">bar</span><span class="p">],</span> <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="n">xax</span><span class="p">,</span> <span class="n">yax</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Simple Bar Chart&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Multiple marks can be rendered in a figure. It's as easy as passing a list of marks when constructing the <code>Figure</code> object</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># first, let&#39;s create two vectors x and y</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="n">y_noise</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>  <span class="c1"># add some random noise to y</span>
+
+<span class="c1"># 1. Create the scales</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">()</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">LinearScale</span><span class="p">()</span>
+
+<span class="c1"># 2. Create the axes for x and y</span>
+<span class="n">xax</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">yax</span> <span class="o">=</span> <span class="n">Axis</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">ys</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3. Create a Lines and Scatter marks by passing in the scales</span>
+<span class="c1"># additional attributes (stroke_width, colors etc.) can be passed as attributes to the mark objects as needed</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">Lines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">xs</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">ys</span><span class="p">},</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;green&quot;</span><span class="p">],</span> <span class="n">stroke_width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_noise</span><span class="p">,</span> <span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">xs</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">ys</span><span class="p">},</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">],</span> <span class="n">stroke</span><span class="o">=</span><span class="s2">&quot;black&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># 4. Create a Figure object by assembling marks and axes</span>
+<span class="c1"># pass both the marks (line and scatter) as a list to the marks attribute</span>
+<span class="n">Figure</span><span class="p">(</span><span class="n">marks</span><span class="o">=</span><span class="p">[</span><span class="n">line</span><span class="p">,</span> <span class="n">scatter</span><span class="p">],</span> <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="n">xax</span><span class="p">,</span> <span class="n">yax</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter and Line&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This introduction should be sufficient to get started with the <em>Object Model</em>. For detailed examples of rendering individual marks (with all their attributes) please look at the <em>Object Model</em> <a href="../Marks/Object Model">examples</a></p>
+
+</div>
+</div>
+</div>
+

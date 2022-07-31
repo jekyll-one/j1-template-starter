@@ -1,0 +1,512 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">Layout</span><span class="p">,</span> <span class="n">IntSlider</span><span class="p">,</span> <span class="n">FloatSlider</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arange</span><span class="p">,</span><span class="n">sin</span><span class="p">,</span><span class="n">pi</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="IntSlider-for-interactive-calculation">IntSlider for interactive calculation<a class="anchor-link" href="#IntSlider-for-interactive-calculation">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">printf</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span> <span class="o">%</span> <span class="n">args</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define the square function</span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+
+    <span class="c1"># print short notice above the result value</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Result of square(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">) is:&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Simple interact widget from ipywidgets</span>
+<span class="c1">#</span>
+<span class="n">interact</span> <span class="o">=</span> <span class="n">interact</span><span class="p">(</span>
+    <span class="n">square</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">IntSlider</span><span class="p">(</span>
+        <span class="n">value</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Slider value:&#39;</span><span class="p">,</span>
+        <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s1">&#39;99%&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+
+<span class="c1"># the semicolon &#39;;&#39; suppress the output</span>
+<span class="c1"># of the code execution</span>
+<span class="c1">#</span>
+<span class="n">interact</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="FloatSlider-for-interactive-plotting">FloatSlider for interactive plotting<a class="anchor-link" href="#FloatSlider-for-interactive-plotting">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define the plot function  </span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">myplot</span><span class="p">(</span><span class="n">xv</span><span class="p">):</span>
+    <span class="c1"># calculate x as evenly spaced values within a interval 0 .. xv</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">xv</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+    <span class="c1"># the plot function</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="c1"># NOTE: Matplotlib doesn&#39;t work with pixels directly, but rather</span>
+    <span class="c1"># physical sizes (inch) and DPI. To use pixels for the figures</span>
+    <span class="c1"># figsize, the DPI of the monitor must be used for re-calculation</span>
+    <span class="c1">#</span>
+    <span class="c1"># See: https://www.infobyip.com/detectmonitordpi.php</span>
+    
+    <span class="c1"># DPI of common monitors</span>
+    <span class="n">my_dpi</span><span class="o">=</span><span class="mi">96</span>
+    
+    <span class="c1"># figsize: width|height recalculated from inch to pixels</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">800</span><span class="o">/</span><span class="n">my_dpi</span><span class="p">,</span> <span class="mi">400</span><span class="o">/</span><span class="n">my_dpi</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="n">my_dpi</span><span class="p">)</span>
+    
+    <span class="c1"># set the grid lines (light-gray)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#E0E0E0&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#E0E0E0&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    
+    <span class="c1"># set the axis labels</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x-values&#39;</span><span class="p">),</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y-values&#39;</span><span class="p">),</span>
+    
+    <span class="c1"># set the plot title</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Simple plot function based on sin(x)&#39;</span><span class="p">),</span>
+
+    <span class="c1"># define the plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+
+<span class="c1"># Create an interactive widget for the plot using interact</span>
+<span class="c1">#</span>
+<span class="n">interact</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span>
+    <span class="n">myplot</span><span class="p">,</span>
+    <span class="n">xv</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">pi</span><span class="p">,</span>
+        <span class="nb">min</span><span class="o">=</span><span class="p">(</span><span class="n">pi</span><span class="p">),</span>
+        <span class="nb">max</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span>
+        <span class="n">step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Value (x):&#39;</span><span class="p">,</span>
+        <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s1">&#39;99%&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># the semicolon &#39;;&#39; suppress the output</span>
+<span class="c1"># of the code execution</span>
+<span class="c1">#</span>
+<span class="n">interact</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Select-box">Select box<a class="anchor-link" href="#Select-box">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">say_my_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Print the current widget value in short sentence</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+<span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span>
+    <span class="n">say_my_name</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Jim&quot;</span><span class="p">,</span> <span class="s2">&quot;Emma&quot;</span><span class="p">,</span> <span class="s2">&quot;Bond&quot;</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Combined-widgets">Combined widgets<a class="anchor-link" href="#Combined-widgets">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">widget_says</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Print the current widget value in short sentence</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Widget says: </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+<span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">widget_says</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">widget_says</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">widget_says</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">.5</span><span class="p">))</span>
+
+<span class="c1"># the variable underscore (&#39;_&#39;)) returns the output</span>
+<span class="c1"># of the latest code execution</span>
+<span class="c1">#</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">widget_says</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Complex-widget-configs">Complex widget configs<a class="anchor-link" href="#Complex-widget-configs">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">int_slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Slider&#39;</span><span class="p">,</span>
+    <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s1">&#39;99%&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">int_range_slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntRangeSlider</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> 
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">step</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Range Slider&#39;</span><span class="p">,</span>
+    <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s1">&#39;99%&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Feb&#39;</span><span class="p">,</span> 
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span> <span class="s1">&#39;Feb&#39;</span><span class="p">,</span> <span class="s1">&#39;Mar&#39;</span><span class="p">,</span> <span class="s1">&#39;Apr&#39;</span><span class="p">],</span> 
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Dropdown&#39;</span>
+<span class="p">)</span>
+
+<span class="n">radiobuttons</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtons</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Feb&#39;</span><span class="p">,</span> 
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span> <span class="s1">&#39;Feb&#39;</span><span class="p">,</span> <span class="s1">&#39;Mar&#39;</span><span class="p">,</span> <span class="s1">&#39;Apr&#39;</span><span class="p">],</span> 
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Radio Buttons&#39;</span>
+<span class="p">)</span>
+
+<span class="n">combobox</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Combobox</span><span class="p">(</span>
+    <span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;start typing... (e.g. L or o)&#39;</span><span class="p">,</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Amsterdam&#39;</span><span class="p">,</span> <span class="s1">&#39;Athens&#39;</span><span class="p">,</span> <span class="s1">&#39;Lisbon&#39;</span><span class="p">,</span> <span class="s1">&#39;London&#39;</span><span class="p">,</span> <span class="s1">&#39;Ljubljana&#39;</span><span class="p">],</span> 
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Combo Box&#39;</span>
+<span class="p">)</span>
+
+<span class="n">checkbox</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Checkbox&#39;</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+ 
+ 
+<span class="c1"># VBox container to pack all widgets vertically</span>
+<span class="c1">#</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span>
+    <span class="n">int_slider</span><span class="p">,</span> 
+    <span class="n">int_range_slider</span><span class="p">,</span> 
+    <span class="n">dropdown</span><span class="p">,</span> 
+    <span class="n">radiobuttons</span><span class="p">,</span>
+    <span class="n">checkbox</span><span class="p">,</span>
+    <span class="n">combobox</span><span class="p">,</span>
+<span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Connected-sliders">Connected sliders<a class="anchor-link" href="#Connected-sliders">&#182;</a></h3>
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sl1</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Slider 1&#39;</span><span class="p">,</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s1">&#39;99%&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">sl2</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Slider 2&#39;</span><span class="p">,</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s1">&#39;99%&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">link</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">link</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">sl1</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">),</span> 
+    <span class="p">(</span><span class="n">sl2</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">sl1</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span>
+    <span class="n">sl1</span><span class="p">,</span> <span class="n">sl2</span>
+<span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+

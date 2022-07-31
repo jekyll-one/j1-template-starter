@@ -100,7 +100,7 @@ settings:
       # DRAWER Sidebar
       #
       - menu:
-          enabled:                      true
+          enabled:                      false
 
           xhr_container_id:             navigator_sidebar_mmenu
           xhr_data_element:             sidebar_mmenu
@@ -128,7 +128,7 @@ settings:
                     - title:            Name
                       icon:             face
                       value:            ??theme-name
-                      href:             /pages/public/previewer/theme/
+                      href:             /pages/public/previewer/current_theme/
                       target:           none
                     - title:            Author
                       icon:             grease-pencil
@@ -138,7 +138,7 @@ settings:
                     - title:            Version
                       icon:             numeric
                       value:            ??theme-version
-                      href:             /pages/public/previewer/theme/
+                      href:             /pages/public/previewer/current_theme/
                       target:           none
 
               - box:

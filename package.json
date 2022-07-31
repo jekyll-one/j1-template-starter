@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "j1",
-  "version": "2022.4.10",
+  "version": "2022.5.0",
   "description": "J1 Template Starter Web",
   "homepage": "https://your.site",
   "author": {
@@ -11,7 +11,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://your.site"
+    "url": "https://github.com/jekyll-one/j1-template-starter/issues"
   },
   "config": {
     "bumplevel": "patch",
@@ -41,20 +41,20 @@
     "opt_skip_initial_build": "--skip-initial-build",
     "opt_webserver": "puma",
     "opt_interface": "0.0.0.0",
-    "opt_web_port": "40000",
-    "opt_web_url": "http://localhost:40000/",
-    "opt_app_port": "40010",
-    "opt_app_url": "http://localhost:40010/",
+    "opt_web_port": "20000",
+    "opt_web_url": "http://localhost:20000/",
+    "opt_app_port": "20010",
+    "opt_app_url": "http://localhost:20010/",
     "opt_profile": "",
     "opt_watch": "--watch",
     "opt_livereload": "--livereload",
-    "opt_livereload_port": "40001"
+    "opt_livereload_port": "20001"
   },
   "nbi": {
-    "opt_output_type": "plain",
-    "opt_credentials": "fake/fake",
-    "opt_nbi_input_folder": "FULL_PATH_TBD",
-    "opt_nbi_output_folder": "FULL_PATH_TBD"
+  "opt_output_type": "plain",
+  "opt_credentials": "fake/fake",
+  "opt_nbi_input_folder": "FULL_PATH_TBD",
+  "opt_nbi_output_folder": "FULL_PATH_TBD"
   },
   "algolia": {
     "admin_key": "your-algolia-admin-key"

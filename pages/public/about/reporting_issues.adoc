@@ -1,0 +1,74 @@
+---
+title:                                  J1
+tagline:                                reporting issues
+date:                                   2022-01-01 00:00:00
+description: >
+                                        Although I endeavor to keep this site as up-to-date as possible, even the
+                                        best sites will have some bugs. If you spot any typos, factually outdated
+                                        or incorrect information, formatting errors, or similar problems, please
+                                        report issues so I can correct them.
+
+categories:                             [ About ]
+tags:                                   [ Issues ]
+
+scrollbar:                              false
+regenerate:                             false
+
+permalink:                              /pages/public/about/reporting_issues/
+
+resources:                              [ animate ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+// Attribute settings for section control
+//
+:badges-enabled:                        false
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+// Page content
+// {badge-j1--license} {badge-j1--version-latest} {badge-j1-gh--last-commit} {badge-j1--downloads}
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ifeval::[{badges-enabled} == true]
+{badge-j1--version-latest} {badge-j1--downloads}
+endif::[]
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+Although I endeavor to keep this site as up-to-date as possible, even the
+best sites will have some bugs. If you spot any typos, factually outdated
+or incorrect information, formatting errors, or similar problems, please
+report issues so I can correct them.
+
+IMPORTANT: A link:{url-github--join}[free account, {browser-window--new}]
+at GitHub_ is required in order to open new issues.
+
+
+== Report an issue
+
+The source pages for the J1 Template Starter are maintained in a _GitHub_
+repository. _GitHub_ provides both an issue tracker and a history of changes.
+To report problems with the content and display, simply open a new issue and
+describe the problem and what page(s) it occurs on.
+
+To report issues, please go on _Github_ for the repo
+link:{url-j1--reporting-issues}[J1 Template Starter, {browser-window--new}].

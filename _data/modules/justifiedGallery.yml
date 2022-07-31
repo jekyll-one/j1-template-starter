@@ -348,6 +348,46 @@ settings:
           videojsOptions:               {}
 
     # --------------------------------------------------------------------------
+    # Online VIDEO 2a (YouTube)
+    #
+    - gallery:
+        enabled:                        true
+        type:                           video-online
+        id:                             jg_video_online_youtube_2_short
+        show_delay:                     300
+        title:                          false
+        css_classes:
+        image_path:                     /assets/videos/gallery/voice_kids_de_2021
+        thumb_path:                     /assets/videos/gallery/voice_kids_de_2021
+        videos:                         [
+                                          "//youtube.com/watch?v=GuiOYCv9NTI",
+                                          "//youtube.com/watch?v=1bvE2mgJ22I"
+                                        ]
+        player_params:                  [
+                                          "start: 0, end: 104",
+                                          "start: 10, end: 173"
+                                        ]
+
+        captions_gallery:               [
+                                          "The Voice Kids Germany 2021 - Ben",
+                                          "The Voice Kids Germany 2021 - The Battle"
+                                        ]
+        captions_lightbox:              [
+                                          "<p>14-year-old Ben pours all of his emotions into his performance of Maroon 5's Sunday Morning. He wants to show what he's made of.</p>",
+                                          "<p>The battle of the three young people is a real emotional battle. Elisa's husky voice, Constanze's unbelievable power, and Ben's rhythm come into their own in Adele's James Bond theme song Skyfall.</p>"
+                                        ]
+        poster:                         [ ben.jpg, battle.jpg ]
+        gallery_options:
+          rowHeight:                    200
+          margins:                      5
+
+        lightbox_options:
+          lightbox:                     lg
+          videojs:                      true
+          videojsOptions:               {}
+
+
+    # --------------------------------------------------------------------------
     # Online VIDEO 3 (Vimeo)
     #
     - gallery:
@@ -391,6 +431,48 @@ settings:
 
         lightbox_options:
           lightbox:                     lg
+
+    # --------------------------------------------------------------------------
+    # Online VIDEO 3a (Vimeo, shortend)
+    #
+    - gallery:
+        enabled:                        true
+        type:                           video-online
+        id:                             jg_video_online_vimeo_short
+        show_delay:                     300
+        title:                          false
+        thumb_items:                    2
+        thumb_spacing:                  5
+        thumb_bordered:                 true
+        thumb_animate:                  true
+        css_classes:
+        image_path:                     /assets/videos/gallery
+        thumb_path:                     /assets/videos/gallery
+        videos:                         [
+                                          "//vimeo.com/179528528",
+                                          "//vimeo.com/202117650"
+                                        ]
+        captions_gallery:               [
+                                          "Forever 21 - Kick It Old School",
+                                          "Forever 21 - Stay Colorful, Babe!"
+
+                                        ]
+        captions_lightbox:              [
+                                          "<p>Kick It Old School on Vimeo</p>",
+                                          "<p>Stay Colorful on Vimeo</p>"
+
+                                        ]
+        poster:                         [
+                                          kick-it-old-school-poster.jpg,
+                                          stay-colorful-poster.jpg
+                                        ]
+        gallery_options:
+          rowHeight:                    200
+          margins:                      5
+
+        lightbox_options:
+          lightbox:                     lg
+
 
     # --------------------------------------------------------------------------
     # Online VIDEO (DailyMotion)

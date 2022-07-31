@@ -53,13 +53,19 @@ settings:
         enabled:                        true
         id:                             attic_home
         layout:                         home
+#       title_animate:                  animate__fadeInDown
+#       raised_level:                   15
         padding_top:                    400
         padding_bottom:                 50
         opacity:                        0.5
-#       title_animate:                  animate__fadeInDown
-#       raised_level:                   15
-#       background_color_1:             "#512DA8"                               # deep-purple-700
-#       background_color_2:             "#B39DDB"                               # deep-purple-200
+#       background_color_1:             transparent
+#       background_color_2:             transparent
+        background_color_1:             "#0D47A1"                               # md-blue-900
+        background_color_2:             "#0D47A1"                               # md-blue-900
+        filters:
+          grayscale:                    1
+          contrast:                     0.8
+          brightness:                   0.8
 
     # --------------------------------------------------------------------------
     # layouts posts|pages
@@ -72,6 +78,9 @@ settings:
         padding_top:                    400
         padding_bottom:                 50
         opacity:                        0.5
+        filters:
+          grayscale:                    0.5
+          sepia:                        0.5
 
     # --------------------------------------------------------------------------
     # layouts raw

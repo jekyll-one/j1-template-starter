@@ -1,0 +1,142 @@
+---
+title:                                  Altair
+tagline:                                data visualizations
+date:                                   2022-03-28 00:00:00
+description: >
+                                        With Altair, you can spend more time understanding your data and
+                                        its meaning. Altair’s API is simple, friendly and consistent and
+                                        built on top of the powerful Vega-Lite visualization grammar.
+                                        This elegant simplicity produces beautiful and effective visualizations
+                                        with a minimal amount of code. One of the unique features of Altair,
+                                        inherited from Vega-Lite, is a declarative grammar of not just
+                                        visualization, but interaction.
+keywords: >
+                                        opensource, free, load, download, start, starter, example,
+                                        high, easy, use, secure, encrypt, standard, popular,
+                                        generate, create, learn, distribute, publish, deploy,
+                                        beginner, advanced, expert, student, learner, educator,
+                                        writer, reader, visitor,
+                                        framework, toolkit, integration, extension, module, api,
+                                        dynamic, static, generator, client, server, internet, local, localhost,
+                                        page, web, website, webdesign, material, design, responsive,
+                                        javascript, nodejs, ruby, windows, linux, osx, mac, os,
+                                        http, https, html, html5, css, scss, style,
+                                        browser, firefox, chrome, edge, opera, safari,
+                                        configuration, generator, navigation, menu, dropdown, fab, action, button,
+                                        application, interface, provider, api, repository,
+                                        cookie, language, translation, gdpr, dsgvo, privacy,
+                                        asciidoc, aciidoctor, bootstrap, jekyll, liquid,
+                                        hyvor, disqus, git, github, netlify, heroku, apple, microsoft,
+                                        provider, service, internet, support,
+                                        google, analytics, advertising, search, console, silverlight, score,
+                                        j1, nbi, j1-nbinteract, nbinteract, template, integration,
+                                        python, jupyter, notebook, textbook, api, app,
+                                        binder, binderhub, jupyterhub,
+                                        altair
+
+categories:                             [ Software, Python ]
+tags:                                   [ Altair, Jupyter, Notebooks, Localized ]
+
+scrollbar:                              false
+fab_menu_id:                            open_toc_reload
+personalization:                        false
+
+permalink:                              /pages/public/jupyter/examples/localized/j1-altair-visualizations/
+regenerate:                             false
+
+resources:                              [ animate, nbinteract, rouge ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/images/modules/attics/john-schnobrich-2-1920x1280.jpg
+          alt:                          Photo by John Schnobrich on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     John Schnobrich
+            href:                       https://unsplash.com/@johnschno
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:binder-badges-enabled:                 false
+:binder-app-launch--lab:                https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main
+:binder-app-launch--tree:               https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?urlpath=/tree
+
+:binder-app-launch--non-interactive:    https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1-altair-tutorial/j1_altair_non_interactive.ipynb
+:binder-app-launch--interactive:        https://mybinder.org/v2/gh/jekyll-one/j1-binder-repo/main?filepath=notebooks/j1-altair-tutorial/j1_altair_interactive.ipynb
+
+:url-altair-docs:                       https://altair-viz.github.io/
+:url-altair-docs--interactions:         https://altair-viz.github.io/user_guide/interactions.html
+
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// See: https://altair-viz.github.io/
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+ifeval::[{binder-badges-enabled} == true]
+image:https://mybinder.org/badge_logo.svg[Binder, link="{binder-app-launch--lab}", {browser-window--new}]
+endif::[]
+
+With Altair, you can spend more time understanding your data and its meaning.
+Altair’s API is simple, friendly and consistent and built on top of the
+powerful Vega-Lite visualization grammar. This elegant simplicity produces
+beautiful and effective visualizations with a minimal amount of code. Find
+more on Docs at Altair:
+
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+link:{url-altair-docs}[Altair Dokumentation, {browser-window--new}] +
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+link:{url-altair-docs--interactions}[Altair Interactive Visualization, {browser-window--new}]
+
+Find all Notebooks at *Binder* from below:
+
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--non-interactive}", {browser-window--new}] -- 1. Basic Visualisations +
+mdi:link-variant[24px, md-blue mr-2 ml-3]
+image:/assets/images/badges/notebookBinder.png[Binder, link="{binder-app-launch--interactive}", {browser-window--new}] -- 2. Interactive Visualisations
+
+== 1. Basic Visualisations
+
+textbook::j1_altair_non_interactive[]
+
+== 2. Interactive Visualisations
+
+One of the unique features of Altair, inherited from _Vega-Lite_, is a
+declarative grammar of not just visualization, but *interaction*. There are
+three core concepts of this grammar:
+
+* the `selection()` object which captures interactions from the mouse or
+  through other inputs to effect the chart. Inputs can either be events
+  like mouse clicks or drags. Inputs can also be elements like a drop-down,
+  radio button or slider. Selections can be used alone but if you want to
+  change any element of your chart you will need to connect them to a condition.
+
+* the `condition()` function takes the selection input and changes an element
+  of the chart based on that input.
+
+* the `bind` property of a selection which establishes a two-way binding between
+  the selection and an input element of your chart.
+
+Interactive charts can use one or more of these elements to create rich
+interactivity between the viewer and the data. Find more about
+*interactive visualizations* on Altair Docs at
+link:{url-altair-docs--interactions}[Making Charts Interactive, {browser-window--new}].
+
+textbook::j1_altair_interactive[]

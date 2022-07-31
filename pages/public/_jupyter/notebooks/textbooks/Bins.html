@@ -1,0 +1,259 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">bqplot.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bins-Mark">Bins Mark<a class="anchor-link" href="#Bins-Mark">&#182;</a></h2><p>This <code>Mark</code> is essentially the same as the <code>Hist</code> <code>Mark</code> from a user point of view, but is actually a <code>Bars</code> instance that bins sample data.</p>
+<p>The difference with <code>Hist</code> is that the binning is done in the backend, so it will work better for large data as it does not have to ship the whole data back and forth to the frontend.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a sample of Gaussian draws</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Give the <code>Hist</code> mark the data you want to perform as the <code>sample</code> argument, and also give 'x' and 'y' scales.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">padding_y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">hist</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bin</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The midpoints of the resulting bins and their number of elements can be recovered via the read-only traits <code>x</code> and <code>y</code>:</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hist</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">hist</span><span class="o">.</span><span class="n">y</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tuning-the-bins">Tuning the bins<a class="anchor-link" href="#Tuning-the-bins">&#182;</a></h2><p>Under the hood, the <code>Bins</code> mark is really a <code>Bars</code> mark, with some additional magic to control the binning. The data in <code>sample</code> is binned into equal-width bins. The parameters controlling the binning are the following traits:</p>
+<ul>
+<li><p><code>bins</code> sets the number of bins. It is either a fixed integer (10 by default), or the name of a method to determine the number of bins in a smart way ('auto', 'fd', 'doane', 'scott', 'rice', 'sturges' or 'sqrt').</p>
+</li>
+<li><p><code>min</code> and <code>max</code> set the range of the data (<code>sample</code>) to be binned</p>
+</li>
+<li><p><code>density</code>, if set to <code>True</code>, normalizes the heights of the bars.</p>
+</li>
+</ul>
+<p>For more information, see the documentation of <code>numpy</code>'s <code>histogram</code></p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">padding_y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">hist</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bin</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Changing the number of bins</span>
+<span class="n">hist</span><span class="o">.</span><span class="n">bins</span> <span class="o">=</span> <span class="s2">&quot;sqrt&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Changing the range</span>
+<span class="n">hist</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Histogram-Styling">Histogram Styling<a class="anchor-link" href="#Histogram-Styling">&#182;</a></h2><p>The styling of <code>Hist</code> is identical to the one of <code>Bars</code></p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Normalizing the count</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">padding_y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">hist</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bin</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># changing the color</span>
+<span class="n">hist</span><span class="o">.</span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orangered&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># stroke and opacity update</span>
+<span class="n">hist</span><span class="o">.</span><span class="n">stroke</span> <span class="o">=</span> <span class="s2">&quot;orange&quot;</span>
+<span class="n">hist</span><span class="o">.</span><span class="n">opacities</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Laying the histogram on its side</span>
+<span class="n">hist</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="s2">&quot;horizontal&quot;</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="s2">&quot;vertical&quot;</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="s2">&quot;horizontal&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+

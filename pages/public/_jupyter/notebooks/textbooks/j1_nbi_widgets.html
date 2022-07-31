@@ -1,0 +1,629 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Widgets-from-j1-nbinteract">Widgets from j1-nbinteract<a class="anchor-link" href="#Widgets-from-j1-nbinteract">&#182;</a></h2><p>The library <em>j1-nbinteract</em> comes with a set of functions that produce Javascript-based plots designed for interaction. The package combines the <em>ipywidgets</em> library and the <em>bqplot</em>
+plotting library to implement function-driven interfaces to interactive plotting.</p>
+<p>The nbinteract plotting methods use <strong>ipywidgets</strong> to generate and display widgets, inferring the widget type as needed. When a user interacts with a widget, a Python callback updates the visualization <strong>without</strong> a complete rerender. This noticeably lowers visualization update time compared to using ipywidgets alone to render static images.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nbinteract</span> <span class="k">as</span> <span class="nn">nbi</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">arange</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Histogram">Histogram<a class="anchor-link" href="#Histogram">&#182;</a></h3><p>The widget <code>nbinteract.nbinteract.hist</code> generates a histogram that allows interaction with the parameters for the response function. The widget takes in a single response function. The response function returns the array of numerical values that will be shown in the histogram. The hist function allows interaction with the response function's parameters by specifying them as keyword arguments in the same format as ipywidgets.interact. Any argument that can be used for ipywidgets.interact can be used for hist.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">hist_function</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">sd</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Returns 1000 values picked at random from the normal</span>
+<span class="sd">    distribution with the Mean value and SD given.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sd</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+
+<span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Histogram&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;xlabel&#39;</span><span class="p">:</span> <span class="s1">&#39;Mean value (mean)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ylabel&#39;</span><span class="p">:</span> <span class="s1">&#39;Standard Deviation (sd)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;bins&#39;</span><span class="p">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+
+<span class="n">layouts</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;plot_height&#39;</span><span class="p">:</span> <span class="s1">&#39;480px&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;plot_width&#39;</span><span class="p">:</span> <span class="s1">&#39;800px&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">hist_chart</span> <span class="o">=</span> <span class="n">nbi</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+    <span class="n">hist_function</span><span class="p">,</span>
+    <span class="n">mean</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">sd</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">,</span>
+    <span class="n">layouts</span><span class="o">=</span><span class="n">layouts</span>
+<span class="p">)</span>
+
+<span class="n">hist_chart</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Barchart">Barchart<a class="anchor-link" href="#Barchart">&#182;</a></h3><p>The widget <code>nbinteract.nbinteract.bar</code> generates an bar plot that allows interaction with the parameters for the response functions.</p>
+<p>The first two arguments of bar are response functions that return the x and y-axis data arrays, respectively. Either argument can be arrays themselves. Arguments for the response functions must be passed in as keyword arguments to bar in the format expected by interact. The response function for the y-axis data will be called with the x-axis data as its first argument.</p>
+<p>For example, in the bar plot below categories generates the categories to plot on the x-axis and heights generates the y-axis heights. The heights function uses the parameter xs which is the array of x-axis data points.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">x_fn</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">y_fn</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">offset</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">xs</span> <span class="o">+</span> <span class="n">offset</span>
+
+
+<span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Barchart&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;xlabel&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of bars (n)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ylabel&#39;</span><span class="p">:</span> <span class="s1">&#39;Offset  value&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;animation_duration&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="s1">&#39;aspect_ratio&#39;</span><span class="p">:</span> <span class="mf">1.778</span><span class="p">,</span>
+    <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">layouts</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;plot_height&#39;</span><span class="p">:</span> <span class="s1">&#39;480px&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;plot_width&#39;</span><span class="p">:</span> <span class="s1">&#39;800px&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">bar_chart</span> <span class="o">=</span> <span class="n">nbi</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">x_fn</span><span class="p">,</span>
+    <span class="n">y_fn</span><span class="p">,</span>
+    <span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">offset</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">,</span>
+    <span class="n">layouts</span><span class="o">=</span><span class="n">layouts</span>
+<span class="p">)</span>
+
+<span class="n">bar_chart</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Interactive-Scatter-chart">Interactive Scatter chart<a class="anchor-link" href="#Interactive-Scatter-chart">&#182;</a></h3><p>The widget <code>nbinteract.scatter_drag</code> generates a scatter plot that allows interaction through clicking and dragging the points on the graph.</p>
+<p>scatter_drag takes in two lists/arrays consisting of the x-coordinates and y-coordinates of the points to plot. It generates an interactive scatter plot where the points can be dragged by the user and a best fit line is updated automatically according to the placement of the points.</p>
+<p>scatter_drag does not allow response functions as inputs.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">y_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+
+<span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Interactive Scatter Plot&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;animation_duration&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="s1">&#39;xlabel&#39;</span><span class="p">:</span> <span class="s1">&#39;x-values&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ylabel&#39;</span><span class="p">:</span> <span class="s1">&#39;y-values&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">layouts</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;plot_height&#39;</span><span class="p">:</span> <span class="s1">&#39;480px&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;plot_width&#39;</span><span class="p">:</span> <span class="s1">&#39;800px&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">show_eqn</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">scatter_drag</span> <span class="o">=</span> <span class="n">nbi</span><span class="o">.</span><span class="n">scatter_drag</span><span class="p">(</span>
+    <span class="n">x_points</span><span class="p">,</span>
+    <span class="n">y_points</span><span class="p">,</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">,</span>
+    <span class="n">layouts</span><span class="o">=</span><span class="n">layouts</span>
+<span class="p">)</span>
+
+<span class="n">scatter_drag</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Scatter-chart">Scatter chart<a class="anchor-link" href="#Scatter-chart">&#182;</a></h3><p>The scatter widget <code>nbinteract.scatter</code> generates a scatter plot that allows interaction with the parameters to the response functions. This is different from scatter_drag which facilitates interaction using click and drag actions.</p>
+<p>The first two arguments of scatter are response functions that return the x and y-axis coordinates, respectively. Either argument can be arrays themselves. Arguments for the response functions must be passed in as keyword arguments to scatter in the format expected by interact. The response function for the y-coordinates will be called with the x-coordinates as its first argument.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">x_fn</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">y_fn</span><span class="p">(</span><span class="n">xs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">))</span>
+
+
+<span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Scatter Plot&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;marker&#39;</span><span class="p">:</span> <span class="s1">&#39;circle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;animation_duration&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>    
+    <span class="s1">&#39;xlabel&#39;</span><span class="p">:</span> <span class="s1">&#39;x-values&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ylabel&#39;</span><span class="p">:</span> <span class="s1">&#39;y-values&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">layouts</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;plot_height&#39;</span><span class="p">:</span> <span class="s1">&#39;480px&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;plot_width&#39;</span><span class="p">:</span> <span class="s1">&#39;800px&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">scatter_chart</span> <span class="o">=</span> <span class="n">nbi</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">x_fn</span><span class="p">,</span>
+    <span class="n">y_fn</span><span class="p">,</span>
+    <span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">,</span>
+    <span class="n">layouts</span><span class="o">=</span><span class="n">layouts</span>
+<span class="p">)</span>
+
+<span class="n">scatter_chart</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Line-chart">Line chart<a class="anchor-link" href="#Line-chart">&#182;</a></h3><p>The line widget <code>nbinteract.line</code> generates a line plot that allows interaction with the parameters to the response functions.</p>
+<p>The first two arguments of line are response functions that return the x and y-axis coordinates, respectively. Either argument can be arrays themselves. Arguments for the response functions must be passed in as keyword arguments to line in the format expected by interact. The response function for the y-coordinates will be called with the x-coordinates as its first argument.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">x_fn</span><span class="p">(</span><span class="nb">max</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">y_fn</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">sd</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">xs</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sd</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">))</span>
+
+
+<span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Line chart&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;xlabel&#39;</span><span class="p">:</span> <span class="s1">&#39;x-values (max)&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ylabel&#39;</span><span class="p">:</span> <span class="s1">&#39;y-values (sd)&#39;</span><span class="p">,</span>    
+    <span class="s1">&#39;xlim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+    <span class="s1">&#39;ylim&#39;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span>
+    <span class="s1">&#39;animation_duration&#39;</span><span class="p">:</span> <span class="mi">500</span>
+<span class="p">}</span>
+
+<span class="n">layouts</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;plot_height&#39;</span><span class="p">:</span> <span class="s1">&#39;480px&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;plot_width&#39;</span><span class="p">:</span> <span class="s1">&#39;800px&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">line_chart</span> <span class="o">=</span> <span class="n">nbi</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+    <span class="n">x_fn</span><span class="p">,</span>
+    <span class="n">y_fn</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+    <span class="n">sd</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">,</span>
+    <span class="n">layouts</span><span class="o">=</span><span class="n">layouts</span>
+<span class="p">)</span>
+
+<span class="n">line_chart</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Interactive-Questions">Interactive Questions<a class="anchor-link" href="#Interactive-Questions">&#182;</a></h2><p>nbinteract also provides built-in methods to easily create multiple choice and short answer questions.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Multiple-choice">Multiple choice<a class="anchor-link" href="#Multiple-choice">&#182;</a></h3><p>The widget <code>nbinteract.multiple_choice</code> takes a question, a list of possible answer choices, and the correct answer. Clicking the buttons shows whether the choice was correct.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nbi</span><span class="o">.</span><span class="n">multiple_choice</span><span class="p">(</span><span class="n">question</span><span class="o">=</span><span class="s2">&quot;What is 10 + 2 * 5?&quot;</span><span class="p">,</span>
+                    <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="s1">&#39;60&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">],</span>
+                    <span class="n">answers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nbi</span><span class="o">.</span><span class="n">multiple_choice</span><span class="p">(</span><span class="n">question</span><span class="o">=</span><span class="s2">&quot;Select all prime numbers.&quot;</span><span class="p">,</span>
+                    <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;31&#39;</span><span class="p">],</span>
+                    <span class="n">answers</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Short-answer">Short answer<a class="anchor-link" href="#Short-answer">&#182;</a></h3><p>The widget <code>nbinteract.short_answer</code> takes a question and an answer. The answer can either be a string, a list of strings, or a function that returns <code>True</code> when called with the user's input. If the function errors, an error message will be displayed.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nbi</span><span class="o">.</span><span class="n">short_answer</span><span class="p">(</span><span class="s1">&#39;What is 1+1?&#39;</span><span class="p">,</span> <span class="n">answers</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">explanation</span><span class="o">=</span><span class="s1">&#39;1+1 is 2&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nbi</span><span class="o">.</span><span class="n">short_answer</span><span class="p">(</span><span class="s1">&#39;Enter the first name of a member of the Beatles.&#39;</span><span class="p">,</span>
+                 <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Paul&#39;</span><span class="p">,</span> <span class="s1">&#39;George&#39;</span><span class="p">,</span> <span class="s1">&#39;Ringo&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nbi</span><span class="o">.</span><span class="n">short_answer</span><span class="p">(</span><span class="s1">&#39;Enter an even number.&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+

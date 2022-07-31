@@ -1,0 +1,170 @@
+  <div class="cell text_cell">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Heatmap">Heatmap<a class="anchor-link" href="#Heatmap">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>HeatMap</code> mark represents a 2d matrix of values as a color image. It can be used to visualize a 2d function, or a grayscale image for instance.</p>
+<p><code>HeatMap</code> is very similar to the <code>GridHeatMap</code>, but should be preferred for a greater number of points (starting at around 100x100), to avoid overloading the browser. <code>GridHeatMap</code> offers more control (interactions, selections), and is better suited for a smaller number of points.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">Layout</span>
+<span class="kn">import</span> <span class="nn">bqplot.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">bqplot</span> <span class="kn">import</span> <span class="n">ColorScale</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Data-Input">Data Input<a class="anchor-link" href="#Data-Input">&#182;</a></h3><ul>
+<li><code>x</code> is a 1d array, corresponding to the abscissas of the points (size N)</li>
+<li><code>y</code> is a 1d array, corresponding to the ordinates of the points (size M)</li>
+<li><code>color</code> is a 2d array, $\text{color}_{ij}$ is the intensity of the point $(x_i, y_j)$ (size (N, M))</li>
+</ul>
+<p>Scales must be defined for each attribute:</p>
+<ul>
+<li>a <code>LinearScale</code>, <code>LogScale</code> or <code>OrdinalScale</code> for <code>x</code> and <code>y</code></li>
+<li>a <code>ColorScale</code> for <code>color</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">color</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">X</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">Y</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Plotting-a-2-dimensional-function">Plotting a 2-dimensional function<a class="anchor-link" href="#Plotting-a-2-dimensional-function">&#182;</a></h2><p>This is a visualization of the function $f(x, y) = \text{cos}(x^2+y^2)$</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Cosine&quot;</span><span class="p">,</span>
+    <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;650px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;650px&quot;</span><span class="p">),</span>
+    <span class="n">min_aspect_ratio</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">max_aspect_ratio</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">padding_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">heatmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Displaying-an-image">Displaying an image<a class="anchor-link" href="#Displaying-an-image">&#182;</a></h2><p>The <code>HeatMap</code> can be used as is to display a 2d grayscale image, by feeding the matrix of pixel intensities to the <code>color</code> attribute</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">ascent</span>
+
+<span class="n">Z</span> <span class="o">=</span> <span class="n">ascent</span><span class="p">()</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">aspect_ratio</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">Z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Ascent&quot;</span><span class="p">,</span>
+    <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s2">&quot;650px&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;650px&quot;</span><span class="p">),</span>
+    <span class="n">min_aspect_ratio</span><span class="o">=</span><span class="n">aspect_ratio</span><span class="p">,</span>
+    <span class="n">max_aspect_ratio</span><span class="o">=</span><span class="n">aspect_ratio</span><span class="p">,</span>
+    <span class="n">padding_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scales</span><span class="p">(</span><span class="n">scales</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">ColorScale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;Greys&quot;</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)})</span>
+<span class="n">axes_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+<span class="p">}</span>
+<span class="n">ascent</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">axes_options</span><span class="o">=</span><span class="n">axes_options</span><span class="p">)</span>
+<span class="n">img</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+

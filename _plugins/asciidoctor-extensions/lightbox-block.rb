@@ -51,21 +51,21 @@ Asciidoctor::Extensions.register do
       # {attrs['role']}
 
       if grouped
-        html_block.div(:class=>"content #{attrs['role']}", :style=>"margin-bottom: .75rem;") {
+        html_block.div(:class=>"content #{attrs['role']}", :style=>"margin-bottom: 1.75rem;") {
           images_hash.each do |i,d|
             image = i.strip
             descr = d.strip
-            html_block.a(:class=>"notoc",:href=>"#{imagesdir}/#{image}", :"data-lightbox"=>"lb-#{target}", :"data-title"=>"#{descr}"){
+            html_block.a(:class=>"notoc link-no-decoration",:href=>"#{imagesdir}/#{image}", :"data-lightbox"=>"lb-#{target}", :"data-title"=>"#{descr}"){
               html_block.img(:class=>"img-fluid", :src=>"#{imagesdir}/#{image}", :alt=>"#{attrs['title']}", :width=>"#{attrs['size']}")
             }
           end
         }
       else
-        html_block.div(:class=>"content #{attrs['role']}", :style=>"margin-bottom: .75rem;") {
+        html_block.div(:class=>"content #{attrs['role']}", :style=>"margin-bottom: 1.75rem;") {
           images_hash.each do |i,d|
             image = i.strip
             descr = d.strip
-            html_block.a(:class=>"notoc", :href=>"#{imagesdir}/#{image}", :"data-lightbox"=>"#{image}", :"data-title"=>"#{descr}"){
+            html_block.a(:class=>"notoc link-no-decoration", :href=>"#{imagesdir}/#{image}", :"data-lightbox"=>"#{image}", :"data-title"=>"#{descr}"){
               html_block.img(:class=>"img-fluid", :src=>"#{imagesdir}/#{image}", :alt=>"#{attrs['title']}", :width=>"#{attrs['size']}")
             }
           end
