@@ -228,6 +228,30 @@
               target:                   _blank
 
     # --------------------------------------------------------------------------
+    # Jekyll
+    #
+    - title:                            Jekyll
+      icon:                             flask
+      dropdown:
+
+        - title:                        Liquid
+          href:                         "https://jekyll.one/pages/public/manuals/liquid/user_guide/"
+          icon:                         layers
+          target:                       _blank
+        - title:                        Commandline
+          href:                         "https://jekyll.one/pages/public/manuals/jekyll/user_guide/commandline/"
+          icon:                         console-line
+          target:                       _blank
+        - title:                        Configuration
+          href:                         "https://jekyll.one/pages/public/manuals/jekyll/user_guide/configuration/"
+          icon:                         code-braces
+          target:                       _blank
+        - title:                        Date formats
+          href:                         "https://jekyll.one/pages/public/manuals/jekyll/user_guide/date_formats/"
+          icon:                         calendar-blank
+          target:                       _blank
+
+    # --------------------------------------------------------------------------
     # Modules
     #
     - title:                            J1 Modules
@@ -419,30 +443,6 @@
         - title:                        J1 Paginator
           href:                         "https://jekyll.one/pages/public/manuals/j1/plugins/j1_paginator/"
           icon:                         page-last
-          target:                       _blank
-
-    # --------------------------------------------------------------------------
-    # Jekyll
-    #
-    - title:                            Jekyll
-      icon:                             flask
-      dropdown:
-
-        - title:                        Liquid
-          href:                         "https://jekyll.one/pages/public/manuals/liquid/user_guide/"
-          icon:                         layers
-          target:                       _blank
-        - title:                        Commandline
-          href:                         "https://jekyll.one/pages/public/manuals/jekyll/user_guide/commandline/"
-          icon:                         console-line
-          target:                       _blank
-        - title:                        Configuration
-          href:                         "https://jekyll.one/pages/public/manuals/jekyll/user_guide/configuration/"
-          icon:                         code-braces
-          target:                       _blank
-        - title:                        Date formats
-          href:                         "https://jekyll.one/pages/public/manuals/jekyll/user_guide/date_formats/"
-          icon:                         calendar-blank
           target:                       _blank
 
 
@@ -671,10 +671,13 @@
   sublevel:
     - title:                            This site
       icon:                             home-variant-outline
-      href:                             /pages/public/about/site
+      href:                             /pages/public/about/site/
     - title:                            Reporting issues
       icon:                             bug
       href:                             /pages/public/about/reporting_issues/
+    - title:                            Features
+      icon:                             wrench
+      href:                             /pages/public/about/features/
     - title:                            Privacy
       icon:                             heart
       href:                             /pages/public/legal/en/privacy/

@@ -1,0 +1,119 @@
+---
+title:                                  J1 Template
+tagline:                                features
+date:                                   2021-04-13 00:00:00
+description: >
+                                        Things you should know about this site,
+                                        about the software used. Read a bit what
+                                        people, what companies has contributed
+                                        to make a project like J1 Template real.
+
+categories:                             [ About ]
+tags:                                   [ J1, Template, Features ]
+
+scrollbar:                              false
+comments:                               true
+
+permalink:                              /pages/public/about/features/
+regenerate:                             false
+
+resources:                              [ animate, lightbox ]
+resource_options:
+  - attic:
+
+      slides:
+        - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
+          alt:                          runner-1920x1200.jpg
+          title:                        J1 Template
+          tagline:                      features
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:badges-enabled:                        true
+:legal-warning:                         true
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// {badge-j1--license} {badge-j1--version-latest} {badge-j1-gh--last-commit} {badge-j1--downloads}
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ifeval::[{badges-enabled} == true]
+{badge-j1--version-latest} {badge-j1--downloads}
+endif::[]
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+== Features
+
+J1 Template is a **gem**-based website *template* to be used with the static
+site generator _Jekyll_. The Template System cannot operate on its own.
+A Ruby development environment is needed to run J1. If you're an experienced
+user of _Jekyll_, the latest version is available at
+{url-j1--download}[RubyGems, {browser-window--new}].
+
+=== General
+
+* _Windows_, _Linux_ and _MacOS_ supported
+* _Jekyll_ v4.2 Support
+* _Ruby_ v3 Support
+* Asciidoc and Markdown Support
+* _Asciidoctor_ plugins included
+* _Bootstrap_ V5 Support
+* Responsive Design
+* Material Design
+* Responsive Text
+* Responsive HTML Tables
+* Compressed HTML, CSS and Javascript Support
+* Bootstrap Themes from _Bootswatch_ supported
+* Icon Font Support for _MDI_, _FA_, _Iconify_ and _Twitter Emojis_
+* Themeable source code highlighting (_Rouge_)
+* Desktop and Mobile Web Navigation ready
+* Fully configurable, no programming needed
+* Near 100/100/100 _Google Lighthouse_ Scores
+
+=== Modules and Extensions
+
+* _Bootstrap_ extensions included
+* _Asciidoctor_ extensions included
+* Infinite Scoll Support
+* Animate on Scroll Support
+* Smooth-Scoll Support
+* Full-text Search Engine (Lunr) included
+* Master Header Module included
+* Cookie Consent Module (GDPR compatible OptIn/Out) included
+* Clipboard Module included
+* Floating Action Buttons (FABs) included
+* Navigation Modules included
+* Desktop Web Navigation included
+* Mobile Web Navigation included
+* Blog Post Navigation included
+* Lightbox Modules included
+* Gallery Module included
+* Carousel Module included
+* Slider Module included
+* Video Player Modules included
+
+=== Addons and Integrations
+
+* *Starter Web* including featured Example Content
+* *Royalty free* Images included
+* Comment Provider Support for _Disqus_ and _Hyvor_
+* _Jupyter Notebook_ Support
+* _Github Sponsors_ Support
+* _Google_ Translation Support
+* _Google Analytics_ Support (includes OptIn/OptOut support)
+* Deploy on _Github Pages_, _Netlify_ and _Heroku_ ready

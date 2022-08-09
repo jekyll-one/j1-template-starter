@@ -1,0 +1,67 @@
+---
+title:                                  J1 Template
+tagline:                                about
+date:                                   2022-01-01 00:00:00
+description: >
+                                        Things you should know about this site,
+                                        the people and the software and/or
+                                        services provided.
+
+categories:                             [ About ]
+tags:                                   [ Software, Platforms, Contributers ]
+
+scrollbar:                              false
+regenerate:                             false
+
+permalink:                              /pages/public/about/site/
+
+resources:                              [ animate ]
+resource_options:
+  - attic:
+
+      slides:
+        - url:                          /assets/images/modules/attics/runner-1920x1200.jpg
+          alt:                          runner-1920x1200.jpg
+          title:                        J1 Template
+          tagline:                      about
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+// Attribute settings for section control
+//
+:badges-enabled:                        true
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+// Page content
+// {badge-j1--license} {badge-j1--version-latest} {badge-j1-gh--last-commit} {badge-j1--downloads}
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ifeval::[{badges-enabled} == true]
+{badge-j1--version-latest} {badge-j1--downloads}
+endif::[]
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+== About this site
+
+Whether you work solo or as part of a team, it’s always a great idea to
+help visitors put a face to the names behind a website. The best place to
+include a bit of information about you and your team is on your homepage with
+an About page so that no one will miss it.
+
+Good luck presenting your site to the world!

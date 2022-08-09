@@ -51,17 +51,25 @@ settings:
     - name:                             Home
       attic:
         enabled:                        true
+
         id:                             attic_home
         layout:                         home
+
 #       title_animate:                  animate__fadeInDown
+#       title_animate_duration:         animate__slower
+#       title_animate_delay:            animate__delay-2s
 #       raised_level:                   15
+
         padding_top:                    400
         padding_bottom:                 50
         opacity:                        0.5
+
 #       background_color_1:             transparent
 #       background_color_2:             transparent
+
         background_color_1:             "#0D47A1"                               # md-blue-900
         background_color_2:             "#0D47A1"                               # md-blue-900
+
         filters:
           grayscale:                    1
           contrast:                     0.8
@@ -73,11 +81,13 @@ settings:
     - name:                             Pages and Posts
       attic:
         enabled:                        true
+
         id:                             attic_page_post
         layout:                         [ page, post, blog_archive ]
         padding_top:                    400
         padding_bottom:                 50
         opacity:                        0.5
+
         filters:
           grayscale:                    0.5
           sepia:                        0.5
@@ -88,6 +98,7 @@ settings:
     - name:                             Raw pages
       attic:
         enabled:                        true
+
         id:                             attic_raw
         layout:                         [ raw ]
         padding_top:                    400
@@ -100,6 +111,7 @@ settings:
     - name:                             Text pages
       attic:
         enabled:                        true
+
         id:                             attic_text
         layout:                         [ collection, app ]
 

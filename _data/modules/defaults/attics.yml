@@ -38,6 +38,11 @@ defaults:
   # Global settings for text- and image-based header
   #
   debug:                                false
+
+  circuit:                              false
+  notranslate:                          true
+  pauseOnHover:                         false
+
   icon_family:                          MDI
   icon_color:                           "#9E9E9E"                               # md-gray
   icon_size:                            default
@@ -52,11 +57,15 @@ defaults:
   title_size:                           3em
   title_color:                          rgba(255, 255, 255, 0.8)                # rgba_lighten_800
   title_animate:                        animate__bounceInDown                   # fadeInDown fadeInLeft
+  title_animate_duration:               animate__slower
+# title_animate_delay:                  animate__delay-2s
   title_align:                          left
 
   tagline_size:                         1.5em
   tagline_color:                        rgba(255, 255, 255, 0.8)                # rgba_lighten_800
   tagline_animate:                      animate__fadeInRight
+  tagline_animate_duration:             animate__slower
+# tagline_animate_delay:                animate__delay-2s
   tagline_align:                        left
 
   # gradient effect (all image color typas)
@@ -124,7 +133,7 @@ defaults:
 
   # animateFirst, if set to true, the first image will
   # transition in like all the others (slideshows only)
-  animateFirst:                         true
+  animateFirst:                         false
 
   # start, index of the first image to show
   start:                                0
@@ -177,8 +186,10 @@ defaults:
     - name:                             Home
       attic:
         enabled:                        false
+
         id:                             attic_home
         layout:                         home
+        notranslate:                    true
 
     # --------------------------------------------------------------------------
     # layout page|post
@@ -186,8 +197,10 @@ defaults:
     - name:                             Page_Post
       attic:
         enabled:                        false
+
         id:                             attic_page_post
         layout:                         [ page, post ]
+        notranslate:                    true
 
     # --------------------------------------------------------------------------
     #  layouts collection|app|raw
@@ -195,8 +208,10 @@ defaults:
     - name:                             Text attic
       attic:
         enabled:                        false
+
         id:                             attic_text
         layout:                         [ collection, app, raw ]
+        notranslate:                    true
 
 # ------------------------------------------------------------------------------
 # END config

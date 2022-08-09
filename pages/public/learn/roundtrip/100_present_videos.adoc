@@ -1,7 +1,7 @@
 ---
 title:                                  Roundtrip
-tagline:                                present videos
-date:                                   2020-11-04 00:00:00  +100
+tagline:                                present video content
+date:                                   2020-11-04 00:00:00 +100
 description: >
                                         Playing video on web pages seems not that special since you can already
                                         watch videos on web pages through plugins like Flash Player, Quicktime
@@ -24,21 +24,32 @@ resources:                              [
                                         ]
 resource_options:
   - attic:
+
       slides:
+
         # Broadway Underground - still image (animate default)
-        - url:                          /assets/videos/headers/still/underground-broadway.jpg
+        - url:                          /assets/videos/headers/present_videos/still/underground-broadway.jpg
           alt:                          Broadway Underground
+          title:                        Roundtrip
+          tagline:                      present video content
           alignY:                       top
           animateFirst:                 false
+
         # Broadway Underground - FAYETTE ST, moved file to Github/LFS
-        - url:                          https://github.com/jekyll-one-org/jekyll-one-lfs/raw/master/videos/underground-broadway.mp4
+        - url:                          /assets/videos/headers/present_videos/underground-broadway.mp4
+          alt:                          Broadway Underground Video
+          title:                        Roundtrip
+          tagline:                      Broadway Underground
           alignY:                       0
           isVideo:                      true
           loop:                         false
           duration:                     12000
+
         # Broadway Underground - still image (animate random)
-        - url:                          /assets/videos/headers/still/underground-broadway.jpg
+        - url:                          /assets/videos/headers/present_videos/still/underground-broadway.jpg
           alt:                          Broadway Underground
+          title:                        Roundtrip
+          tagline:                      manage video content for your site
           alignY:                       top
           transition:                   push_left|push_right|cover_up|cover_down|fade|fadeInOut
 ---

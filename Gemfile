@@ -70,7 +70,7 @@ end
 # ------------------------------------------------------------------------------
 # Specify the THEME GEM used for the project
 #
-gem 'j1-template', '~> 2022.5.0'
+gem 'j1-template', '~> 2022.5.1.rc0.rc0'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
