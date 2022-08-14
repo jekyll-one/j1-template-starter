@@ -52,8 +52,10 @@ resource_options:
 //
 :cookies:                               true
 :cookie-consent:                        true
+:themes:                                true
 :logs-files:                            false
 :google-analytics:                      true
+:google-translator:                     true
 :google-ads:                            false
 :hyvor:                                 true
 :facebook:                              false
@@ -151,6 +153,28 @@ functions of your browser.
 ++++
 endif::[]
 
+
+ifeval::[{themes} == true]
+== Themes
+
+Themes for Bootstrap are used to customize the appearance of a website
+based on the basic rules and definitions of Bootstrap’s (CSS) styles. The
+use or change of a theme does not alter the functionality of the underlying
+Bootstrap framework but modifies, for example, the color scheme, fonts, or
+font sizes. Furthermore, the appearance of selected predefined HTML elements
+like buttons, forms, or navigation elements may be adapted by a theme.
+
+The underlying *Themer* Module uses the free themes for Bootstrap
+provided by _Bootswatch_. The platform provides a large number of different
+themes (pre-compiled BS@5 CSS files) to be directly used for websites using
+Bootstrap V5.
+
+The services at _Bootswatch_ use *permanent* Cookies to store relevant theme
+information. Therefore, to use the themes feature of J1 Template, you must
+agree on *permanent* Cookies for *personalization*.
+endif::[]
+
+
 ifeval::[{logs-files} == true]
 == Log files
 
@@ -170,6 +194,7 @@ These are:
 We can combine this log information with other information. We do this to
 improve the services we offer and to improve the content on our website.
 endif::[]
+
 
 ifeval::[{google-analytics} == true]
 == Google Traffic analytics (GA)
@@ -204,6 +229,7 @@ settings with your privacy settings. Notice, however, that you may not be able
 to use the full functionality of this website in this case.
 endif::[]
 
+
 ifeval::[{google-ads} == true]
 == Google Advertising (GAA)
 
@@ -228,6 +254,35 @@ This website uses *anonymization* of IP addresses. Network addresses of
 visitors out of the area of the European Union as well as other countries
 were contracting to the privacy regulations on the European Economic area
 shortened. Personal assignment of the data recorded is *not* possible.
+
+For more information, see the companies guidelines of the
+link:{url-google--privacy-policy-en}[Privacy Settings, {browser-window--new}].
+
+NOTE: You can object to its use at any time by selecting the appropriate
+settings with your privacy settings. Notice, however, that you may not be able
+to use the full functionality of this website in this case.
+endif::[]
+
+
+ifeval::[{google-translator} == true]
+== Google Translation (GT)
+
+This website uses Google Google Translator (GT), a service to translate the
+content of websites. This functionality is only available if you have given
+your consent on privacy settings for *personalization*.
+This service is offered by:
+
+----
+   Google Inc.
+   1600 Amphitheatre Parkway Mountain View
+   CA 94043
+   USA
+----
+
+The service uses so-called cookies. These are text files saved *permanent*
+on your system process the website for translation. The information generated
+by cookies will be transmitted to the provider and stored on the company's
+servers.
 
 For more information, see the companies guidelines of the
 link:{url-google--privacy-policy-en}[Privacy Settings, {browser-window--new}].
@@ -276,7 +331,7 @@ endif::[]
 
 
 ifeval::[{facebook} == true]
-== Use of Facebook
+== Use of the Facebook Integration
 
 On our pages, *functions* of the social network *Facebook* (HT) may be embedded.
 This functionality is only available if you have given your consent on privacy
@@ -310,8 +365,9 @@ settings with your privacy settings. Notice, however, that you may not be able
 to use the full functionality of this website in this case.
 endif::[]
 
+
 ifeval::[{twitter} == true]
-== Use of Twitter
+== Use of the Twitter Integration
 
 On our pages, *functions* of the news network *Twitter* may be embedded.
 This functionality is only available if you have given your consent on
@@ -345,8 +401,9 @@ settings with your privacy settings. Notice, however, that you may not be able
 to use the full functionality of this website in this case.
 endif::[]
 
+
 ifeval::[{instagram} == true]
-== Use of Instagram
+== Use of the Instagram Integration
 
 On our pages, *functions* of the social network *Instagram* may be embedded.
 This functionality is only available if you have given your consent on
@@ -415,6 +472,7 @@ settings with your privacy settings. Notice, however, that you may not be able
 to use the full functionality of this website in this case.
 endif::[]
 
+
 ifeval::[{vimeo} == true]
 == Use of Vimeo Videos (VIV)
 
@@ -449,6 +507,7 @@ settings with your privacy settings. Notice, however, that you may not be able
 to use the full functionality of this website in this case.
 endif::[]
 
+
 ifeval::[{dailymotion} == true]
 == Use of DailyMotion Videos (DMV)
 
@@ -482,6 +541,7 @@ NOTE: You can object to its use at any time by selecting the appropriate
 settings with your privacy settings. Notice, however, that you may not be able
 to use the full functionality of this website in this case.
 endif::[]
+
 
 ifeval::[{vk} == true]
 == Use of VK Videos (VKV)

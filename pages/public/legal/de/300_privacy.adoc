@@ -52,14 +52,18 @@ resource_options:
 //
 :cookies:                               true
 :cookie-consent:                        true
+:themes:                                true
 :logs-files:                            false
 :google-analytics:                      true
+:google-translator:                     true
 :hyvor:                                 true
 :facebook:                              false
 :twitter:                               false
 :instagram:                             false
 :youtube:                               true
 :vimeo:                                 true
+:dailymotion:                           true
+:vk:                                    true
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -155,6 +159,32 @@ System befinden. In diesem Fall sind möglicherweise bereits vorhandene Cookies
 ++++
 endif::[]
 
+
+ifeval::[{themes} == true]
+== Themes
+
+Themes für Bootstrap werden verwendet, um das Erscheinungsbild einer Website
+basierend auf den grundlegenden Regeln und Definitionen der Stile von
+Bootstrap (CSS) anzupassen. Die Verwendung oder Änderung eines Designs
+verändert nicht die Funktionalität des zugrunde liegenden Bootstrap-Frameworks,
+sondern modifiziert beispielsweise das Farbschema, Schriftarten oder
+Schriftgrößen. Darüber hinaus kann das Aussehen ausgewählter vordefinierter
+HTML-Elemente wie Buttons, Formulare oder Navigationselemente durch ein Theme
+angepasst werden.
+
+Das zugrunde liegende **Themer**-Modul verwendet die kostenlosen Themes für
+Bootstrap, die von dem Anbieter _Bootswatch_ bereitgestellt werden. Die
+Plattform stellt eine Vielzahl verschiedener Themes (vorkompilierte BS@5
+CSS-Dateien) bereit, die direkt für Websites mit Bootstrap V5 verwendet
+werden können.
+
+Die Dienste von _Bootswatch_ verwenden *permanente* Cookies, um relevante
+Themeninformationen zu speichern. Um die Themenfunktion von J1 Template
+verwenden zu können, müssen Sie daher permanenten Cookies zur *Personalisierung*
+zustimmen.
+endif::[]
+
+
 ifeval::[{logs-files} == true]
 == Log files
 
@@ -175,6 +205,7 @@ Wir können diese Protokollinformationen mit anderen Informationen kombinieren.
 Wir tun dies, um die von uns angebotenen Dienstleistungen zu verbessern und das
 Angebot auf unseren Seiten zu verbessern.
 endif::[]
+
 
 ifeval::[{google-analytics} == true]
 == Verwendung von Analysen (GA)
@@ -210,6 +241,37 @@ entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
 jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
 die volle Funktionalität dieser Website zu nutzen.
 endif::[]
+
+
+ifeval::[{google-translator} == true]
+== Verwendung von Übersetzungen (GT)
+
+Diese Website benutzt Google Translator (GT), einne Dienst zur Übersetzung
+von Webseiten. Diese Funktion wird nur verwendet, falls Sie in den
+Einstellungen zu Ihrer Privatsphäre der *Personalisierung* zugestimmt haben.
+Dieser Dienst wird angeboten durch:
+
+----
+   Google Inc.
+   1600 Amphitheatre Parkway Mountain View
+   CA 94043
+   USA
+----
+
+Der Service verwendet sogenannte Cookies. Das sind Textdateien, die auf
+Ihrem Computer gespeichert werden, um die Nutzung der Website durch die
+Benutzer auszuwerten. Die durch Cookies erzeugten Informationen werden
+übermittelt und auf Servern des Unternehmens gespeichert.
+
+Weitere Informationen hierzu finden Sie in den Richtlinen zum
+link:{url-google--privacy-policy-de}[Datenschutz, {browser-window--new}].
+
+NOTE: Sie können der Verwendung jederzeit widersprechen, indem Sie die
+entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
+jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
+die volle Funktionalität dieser Website zu nutzen.
+endif::[]
+
 
 ifeval::[{hyvor} == true]
 == Verwendung von Kommentaren (HT)
@@ -298,6 +360,7 @@ jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
 die volle Funktionalität dieser Website zu nutzen.
 endif::[]
 
+
 ifeval::[{twitter} == true]
 == Verwendung der Twitter-Integration
 
@@ -335,6 +398,7 @@ entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
 jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
 die volle Funktionalität dieser Website zu nutzen.
 endif::[]
+
 
 ifeval::[{instagram} == true]
 == Verwendung der Instagram-Integration
@@ -420,6 +484,7 @@ jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
 die volle Funktionalität dieser Website zu nutzen.
 endif::[]
 
+
 ifeval::[{vimeo} == true]
 == Verwendung von Vimeo Videos (VIV)
 
@@ -449,6 +514,80 @@ Wir weisen darauf hin, dass wir als Anbieter keine Kenntnis von Inhalt der
 übermittelten Daten sowie deren Nutzung haben. Weitere Informationen zu diesem
 Thema finden Sie in der Datenschutzerklärung des Anbieters unter
 link:{url-vimeo--privacy-policy}[Datenschutz, {browser-window--new}].
+
+NOTE: Sie können der Verwendung jederzeit widersprechen, indem Sie die
+entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
+jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
+die volle Funktionalität dieser Website zu nutzen.
+endif::[]
+
+
+ifeval::[{dailymotion} == true]
+== Use of DailyMotion Videos (DMV)
+
+Auf unseren Seiten *können* Funktionen (Player) der Video-Plattform *DailyMotion*
+(YT) eingebunden sein. Diese Funktionen stehen zur Verfügung, falls Sie in den
+Einstellungen zu Ihrer Privatsphäre der *Personalisierung* zugestimmt haben.
+Diese Funktionen werden angeboten durch:
+
+----
+  Dailymotion
+  bd Malesherbes
+  75017 Paris
+  France
+----
+
+Wenn Sie unsere Website besuchen, wird über eine Integration (*Player*)
+eine direkte Verbindung zwischen Ihrem Browser und dem Servern des Unternehmens
+*DailyMotion* aufgebaut. Dadurch werden neben Inhalten (Videos) auch persönliche
+Daten an die Server des Unternehmens *DailyMotion* übertragen.
+
+Die Integration der Inhalte verwendet sogenannte Cookies. Das sind Textdateien,
+die auf Ihrem Computer gespeichert werden um die Nutzung des Dienstes durch die
+Benutzer auszuwerten. Die durch Cookies erzeugten Informationen werden
+übermittelt und auf Servern des Unternehmens gespeichert.
+
+Wir weisen darauf hin, dass wir als Anbieter keine Kenntnis von Inhalt der
+übermittelten Daten sowie deren Nutzung haben. Weitere Informationen zu diesem
+Thema finden Sie in der Datenschutzerklärung des Anbieters unter
+link:{url-dailymotion--privacy-policy}[Datenschutz, {browser-window--new}].
+
+NOTE: Sie können der Verwendung jederzeit widersprechen, indem Sie die
+entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
+jedoch bitte, dass Sie in diesem Fall möglicherweise nicht in der Lage sind
+die volle Funktionalität dieser Website zu nutzen.
+endif::[]
+
+
+ifeval::[{vk} == true]
+== Use of VK Videos (VKV)
+
+Auf unseren Seiten *können* Funktionen (Player) der Video-Plattform *VK* (VKV)
+eingebunden sein. Diese Funktionen stehen zur Verfügung, falls Sie in den
+Einstellungen zu Ihrer Privatsphäre der *Personalisierung* zugestimmt haben.
+Diese Funktionen werden angeboten durch:
+
+----
+  Vkontakte LLC
+  5 Nevskiy Ave, 5th Floor
+  191186 Saint Petersburg
+  Russia
+----
+
+Wenn Sie unsere Website besuchen, wird über eine Integration (*Player*)
+eine direkte Verbindung zwischen Ihrem Browser und dem Servern des Unternehmens
+*VK* aufgebaut. Dadurch werden neben Inhalten (Videos) auch persönliche
+Daten an die Server des Unternehmens *VK* übertragen.
+
+Die Integration der Inhalte verwendet sogenannte Cookies. Das sind Textdateien,
+die auf Ihrem Computer gespeichert werden um die Nutzung des Dienstes durch die
+Benutzer auszuwerten. Die durch Cookies erzeugten Informationen werden
+übermittelt und auf Servern des Unternehmens gespeichert.
+
+Wir weisen darauf hin, dass wir als Anbieter keine Kenntnis von Inhalt der
+übermittelten Daten sowie deren Nutzung haben. Weitere Informationen zu diesem
+Thema finden Sie in der Datenschutzerklärung des Anbieters unter
+link:{url-vk--privacy-policy}[Datenschutz, {browser-window--new}].
 
 NOTE: Sie können der Verwendung jederzeit widersprechen, indem Sie die
 entsprechenden Einstellungen zu Ihrer Privatsphäre auswählen. Beachten Sie
