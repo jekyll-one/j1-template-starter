@@ -10,17 +10,22 @@ The value of a key may be one of the following types:
   - Image path
   - Enumerated type (where specified)
   - Text content (where specified)
+
 * Null (clears any previously assigned value)
   - _empty_ (i.e., no value specified)
   - null
   - ~
+
 * Number (integer or float) with optional units (default unit is points)
+
 * Array
   - Color as RGB array (e.g., [51, 51, 51])
   - Color CMYK array (e.g., [50, 100, 0, 0])
   - Margin (e.g., [1in, 1in, 1in, 1in])
   - Padding (e.g., [1in, 1in, 1in, 1in])
-* Variable reference (e.g., $base_font_color)
+
+* Variable reference (e.g. `$base_font_color`)
+
 * Math expression
 
 Note that keys almost always require a value of a specific type, as documented
@@ -42,7 +47,7 @@ The following keys are inherited:
 * font_style
 * text_transform
 * line_height (currently some exceptions)
-* margin_bottom (if not specified, defaults to $vertical_spacing)
+* margin_bottom (if not specified, defaults to `$vertical_spacing`)
 
 ==== Heading Inheritance
 
@@ -50,7 +55,6 @@ Headings inherit starting from a specific heading level (e.g.,
 `heading_h2_font_size`), then to the heading category (e.g.,
 `heading_font_size`), then directly to the base value (e.g., `base_font_size`).
 Any setting from an enclosing context, such as a sidebar, is skipped.
-
 
 === Variables
 
@@ -67,10 +71,10 @@ the path the variable refers to must be *above* the usage of that variable.
 
 For example, once the following line is processed,
 
-[source,yaml]
+[source, yaml]
 ----
 base:
-  font_color: #333333
+  font_color:         '#333333'
 ----
 
 the variable `$base_font_color` will be available for use in subsequent lines
@@ -78,25 +82,25 @@ and will resolve to `#333333`. Let's say you want to make the font color of the
 sidebar title the same as the heading font color. Just assign the value
 `$heading_font_color` to the `$sidebar_title_font_color`.
 
-[source,yaml]
+[source, yaml]
 ----
 heading:
-  font_color: #191919
+  font_color:         '#191919'
 sidebar:
   title:
-    font_color: $heading_font_color
+    font_color:       $heading_font_color
 ----
 
 You can also use variables in math expressions to use one value to build
 another. This is commonly done to set font sizes proportionally.It also makes
 it easy to test different values very quickly.
 
-[source,yaml]
+[source, yaml]
 ----
 base:
-  font_size: 12
-  font_size_large: $base_font_size * 1.25
-  font_size_small: $base_font_size * 0.85
+  font_size:          12
+  font_size_large:    $base_font_size * 1.25
+  font_size_small:    $base_font_size * 0.85
 ----
 
 We'll cover more about math expressions later.
@@ -113,9 +117,9 @@ For instance, here's how you can define your brand colors:
 [source,yaml,subs=attributes+]
 ----
 brand:
-  primary: #E0162B <1>
-  secondary: '#FFFFFF' <2>
-  alert: '0052A5' <3>
+  primary:            '#E0162B' <1>
+  secondary:          '#FFFFFF' <2>
+  alert:              '0052A5'  <3>
 ----
 <1> To align with CSS, you may add a `+#+` in front of the hex color value.
 A YAML preprocessor is used to ensure the value is not treated as a comment
@@ -130,13 +134,13 @@ recommend that you always use either a leading `+#+` or surrounding quotes
 
 You can now use these custom variables later in the theme file:
 
-[source,yaml]
+[source, yaml]
 ----
 base:
-  font_color: $brand_primary
+  font_color:         $brand_primary
 ----
 
-=== Math Expressions & Functions
+=== Math Expressions
 
 The theme language supports basic math operations to support calculated values.
 Like programming languages, multiple and divide take precedence over add and
@@ -145,42 +149,26 @@ subtract.
 The following table lists the supported operations and the corresponding
 operator for each.
 
-[width="100%", cols="50%,50%", options="header", role="table-responsive mt-3"]
-|===
-|Operation |Operator
-
-|multiply
-|*
-
-|divide
-|/
-
-|add
-|+
-
-|subtract
-|-
-
-|===
+include::../../tables/math_expressions.asciidoc[]
 
 IMPORTANT: Operators must always be surrounded by a space on either side
 (e.g., 2 + 2, not 2+2).
 
 Here's an example of a math expression with fixed values.
 
-[source,yaml]
+[source, yaml]
 ----
 conum:
-  line_height: 4 / 3
+  line_height:        4 / 3
 ----
 
 Variables may be used in place of numbers anywhere in the expression:
 
-[source,yaml]
+[source, yaml]
 ----
 base:
-  font_size: 12
-  font_size_large: $base_font_size * 1.25
+  font_size:          12
+  font_size_large:    $base_font_size * 1.25
 ----
 
 Values used in a math expression are automatically coerced to a float value
@@ -201,11 +189,11 @@ ceil(...):: Rounds the number down the previous integer.
 You might use these functions in font size calculations so that you get more
 exact values.
 
-[source,yaml]
+[source, yaml]
 ----
 base:
-  font_size: 12.5
-  font_size_large: ceil($base_font_size * 1.25)
+  font_size:          12.5
+  font_size_large:    ceil($base_font_size * 1.25)
 ----
 
 === Measurement Units
@@ -220,25 +208,7 @@ conversion for you automatically by adding a unit notation next to any number.
 
 The following units are supported:
 
-[width="100%", cols="50%,50%", options="header", role="table-responsive mt-3"]
-|===
-|Unit |Suffix
-
-|Centimeter
-|cm
-
-|Inches
-|in
-
-|Millimeter
-|mm
-
-|Percentage^[1]^
-|%, vw, or vh
-
-|Points
-|pt (default)
-|===
+include::../../tables/measurement_units.asciidoc[]
 
 A percentage with the % unit is calculated relative to the width or height
 of the content area. Viewport-relative percentages (vw or vh units) are
@@ -253,10 +223,10 @@ could cause the converter to crash.
 
 Here's an example of how you can use inches to define the page margins:
 
-[source,yaml]
+[source, yaml]
 ----
 page:
-  margin: [0.75in, 1in, 0.75in, 1in]
+  margin:             [0.75in, 1in, 0.75in, 1in]
 ----
 
 The order of elements in a measurement array is the same as it is in CSS:
@@ -317,11 +287,18 @@ to transform contains characters beyond the Basic Latin character set (e.g.,
 an accented character), you must install either the `activesupport` or the
 `unicode` gem in order for those characters to be transformed.
 
- $ gem install activesupport
+[source, sh]
+----
+gem install activesupport
+----
 
 or
 
- $ gem install unicode
+[source, sh]
+----
+gem install unicode
+----
+
 ====
 
 // Additional transforms, such as capitalize, may be added in the future.
@@ -352,26 +329,28 @@ value is entirely optional.
 Regardless, we recommend that you always use either a leading `+#+` or
 surrounding quotes (or both) to prevent YAML from mangling the value.
 
-The following are all equivalent values for the color red:
+The following are all *equivalent* values for the color *red*:
 
-[cols="8*m"]
+[cols="8*.^"]
 |===
+
 |#ff0000
 |#FF0000
-|'ff0000'
-|'FF0000'
+|ff0000
+|FF0000
 |#f00
 |#F00
-|'f00'
-|'F00'
+|f00
+|F00
+
 |===
 
 Here's how a hex color value appears in the theme file:
 
-[source,yaml]
+[source, yaml]
 ----
 base:
-  font_color: #ff0000
+  font_color:         '#ff0000'
 ----
 
 ==== RGB
@@ -388,10 +367,10 @@ Here's how to specify the color red in RGB:
 
 Here's how a RGB color value appears in the theme file:
 
-[source,yaml]
+[source, yaml]
 ----
 base:
-  font_color: [255, 0, 0]
+  font_color:         [255, 0, 0]
 ----
 
 ==== CMYK
@@ -411,10 +390,10 @@ Here's how to specify the color red in CMYK:
 
 Here's how a CMYK color value appears in the theme file:
 
-[source,yaml]
+[source, yaml]
 ----
 base:
-  font_color: [0, 0.99, 1, 0]
+  font_color:         [0, 0.99, 1, 0]
 ----
 
 ==== Transparent
@@ -422,10 +401,10 @@ base:
 It's possible to specify no color by assigning the special value
 `transparent`, as shown here:
 
-[source,yaml]
+[source, yaml]
 ----
 base:
-  background_color: transparent
+  background_color:   transparent
 ----
 
 === Images
@@ -444,27 +423,27 @@ CAUTION: The GIF format (.gif) is not supported.
 
 Here's how an image is specified in the theme file as a bare image path:
 
-[source,yaml]
+[source, yaml]
 ----
 title_page:
-  background_image: title-cover.png
+  background_image:   title-cover.png
 ----
 
 Here's how the image is specified using the inline image macro:
 
-[source,yaml]
+[source, yaml]
 ----
 title_page:
-  background_image: image:title-cover.png[]
+  background_image:   'image:title-cover.png[]'
 ----
 
 Like in the AsciiDoc syntax, the inline image macro allows you to supply
 set the width of the image and the alignment:
 
-[source,yaml]
+[source, yaml]
 ----
 title_page:
-  logo_image: image:logo.png[width=250,align=center]
+  logo_image:         'image:logo.png[width=250,align=center]'
 ----
 
 === Quoted String
@@ -488,9 +467,9 @@ element.
 
 Here's an example of using formatting in the content of the menu caret:
 
-[source,yaml]
+[source, yaml]
 ----
-menu_caret_content: " <font size=\"1.15em\"><color rgb=\"#b12146\">\u203a</color></font> "
+menu_caret_content:   '<font size=\"1.15em\"><color rgb=\"#b12146\">\u203a</color></font>'
 ----
 
 NOTE: The string must be double quoted in order to use a Unicode escape

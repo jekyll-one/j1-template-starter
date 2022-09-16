@@ -33,29 +33,29 @@ The theme file must be named _<name>-theme.yml_, where `<name>` is the name
 of the theme. Here's an example of a basic theme file:
 
 .basic-theme.yml
-[source,yaml]
+[source, yaml]
 ----
 page:
-  layout: portrait
-  margin: [0.75in, 1in, 0.75in, 1in]
-  size: Letter
+  layout:             portrait
+  margin:             [0.75in, 1in, 0.75in, 1in]
+  size:               Letter
 base:
-  font_color: #333333
-  font_family: Times-Roman
-  font_size: 12
+  font_color:         '#333333'
+  font_family:        Times-Roman
+  font_size:          12
   line_height_length: 17
-  line_height: $base_line_height_length / $base_font_size
-vertical_spacing: $base_line_height_length
+  line_height:        $base_line_height_length / $base_font_size
+vertical_spacing:     $base_line_height_length
 heading:
-  font_color: #262626
-  font_size: 17
-  font_style: bold
-  line_height: 1.2
-  margin_bottom: $vertical_spacing
+  font_color:         '#262626'
+  font_size:          17
+  font_style:         bold
+  line_height:        1.2
+  margin_bottom:      $vertical_spacing
 link:
-  font_color: #002FA7
+  font_color:         '#002FA7'
 outline_list:
-  indent: $base_font_size * 1.5
+  indent:             $base_font_size * 1.5
 ----
 
 When creating a new theme, you only have to define the keys you want to
@@ -73,8 +73,12 @@ start hacking on it.
 Alternatively, you can snag the file from your local installation using the
 following command:
 
- $ ASCIIDOCTOR_PDF_DIR=`gem contents asciidoctor-pdf --show-install-dir`;\
+[source, sh]
+----
+ASCIIDOCTOR_PDF_DIR=`gem contents asciidoctor-pdf --show-install-dir`; \
    cp "$ASCIIDOCTOR_PDF_DIR/data/themes/default-theme.yml" custom-theme.yml
+----
+
 ====
 
 Keys may be nested to an arbitrary depth to eliminate redundant prefixes (an
@@ -89,33 +93,33 @@ name (e.g., `font_color`) into a single, qualified key (e.g., `link_font_color`)
 For example, let's assume we want to set the base (i.e., global) font size
 and color. These keys may be written longhand:
 
-[source,yaml]
+[source, yaml]
 ----
-base_font_color: #333333
-base_font_family: Times-Roman
-base_font_size: 12
+base_font_color:      '#333333'
+base_font_family:     Times-Roman
+base_font_size:       12
 ----
 
 Or, to avoid having to type the prefix `base_` multiple times, the keys may
 be written hierarchically:
 
-[source,yaml]
+[source, yaml]
 ----
 base:
-  font_color: #333333
-  font_family: Times-Roman
-  font_size: 12
+  font_color:         '#333333'
+  font_family:        Times-Roman
+  font_size:          12
 ----
 
 Or even:
 
-[source,yaml]
+[source, yaml]
 ----
 base:
   font:
-    color: #333333
-    family: Times-Roman
-    size: 12
+    color:            '#333333'
+    family:           Times-Roman
+    size:             12
 ----
 
 Each level of nesting must be indented by two more spaces of indentation than

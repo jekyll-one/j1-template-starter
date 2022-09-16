@@ -1,0 +1,72 @@
+
+.Build Command Options
+[cols="2a,2a,2a,6a", width="100%", options="header", role="rtable mt-4"]
+|===
+|Setting |Option |Flag |Description
+
+|*Regeneration*
+|`na`
+|`-w, --[no-]watch`
+|Enable auto-regeneration of the site when files are modified.
+
+|*Configuration*
+|`na`
+|`--config FILE1 [,FILE2, ..]`
+|Specify config files instead of using `_config.yml` automatically.
+Settings in later files override settings in earlier files.
+
+|*Drafts*
+|`show_drafts: BOOL`
+|`--drafts`
+|Process and render draft posts.
+
+|*Environment*
+|`na`
+|`na`
+|Use a specific environment value `JEKYLL_ENV=production` in the build.
+
+|*Future*
+|`future: BOOL`
+|`--future`
+|Publish posts or collection documents with a future date.
+
+|*LSI*
+|`lsi: BOOL`
+|`--lsi`
+|Produce an index for related posts.
+
+|*Limit Posts*
+|`limit_posts: NUM`
+|`--limit_posts NUM`
+|Limit the number of posts to parse and publish.
+
+|*Force polling*
+|`na`
+|`--force_polling`
+|Force watch to use polling.
+
+|*Verbose output*
+|`na`
+|`-V, --verbose`
+|Print verbose output.
+
+|*Silence Output*
+|`na`
+|`-q, --quiet`
+|Silence the normal output from Jekyll during a build
+
+|*Incremental build*
+|`incremental: BOOL`
+|`-I, --incremental`
+|Enable the experimental incremental build feature. Incremental build
+only re-builds posts and pages that have changed, resulting in
+significant performance improvements for large sites, but may also break
+site generation in certain cases.
+
+|*Liquid profiler*
+|`profile: BOOL`
+|`--profile`
+|Generate a Liquid rendering profile to help you identify performance
+bottlenecks.
+
+|===

@@ -17,6 +17,25 @@
 # NOTE:
 #   Theme is based on Asciidoctor default theme (default-theme.yml).
 # ------------------------------------------------------------------------------
+# NOTE:
+#   asciidoctor-pdf, Version 2.3.0 (2022-08-16)
+#   jadams, 2022-08-31: Fixed theme for the warnings:
+#
+#     asciidoctor: WARNING: the literal theme category is deprecated; use the codespan category instead
+#     asciidoctor: WARNING: the key theme category is deprecated; use the kbd category instead
+#     asciidoctor: WARNING: the blockquote theme category is deprecated; use the quote category instead
+#     asciidoctor: WARNING: the outline-list theme category is deprecated; use the list category instead
+#
+# ------------------------------------------------------------------------------
+
+# See: https://docs.asciidoctor.org/pdf-converter/latest/theme/covers/
+#
+# cover:
+#   front:
+#     image:                              ../images/cover/<cover-image>
+#   back:
+#     image:                              ./images/cover/<background-image>[fit=fill]
+
 font:
   catalog:
     # Noto Serif supports Latin, Latin-1 Supplement, Latin Extended-A,
@@ -106,8 +125,8 @@ horizontal_rhythm:                      $base_line_height_length
 link:
   font_color:                           428BCA
 
-# literal is currently used for inline monospaced in prose and table cells
-literal:
+# codespan is used for inline monospaced in prose and table cells
+codespan:
   font_color:                           B12146
   font_family:                          M+ 1mn
 
@@ -115,7 +134,7 @@ button:
   content:                              "[\u2009%s\u2009]"
   font_style:                           bold
 
-key:
+kbd:
   background_color:                     F5F5F5
   border_color:                         CCCCCC
   border_offset:                        2
@@ -212,7 +231,7 @@ admonition:
     text_transform:                     uppercase
     font_style:                         bold
 
-blockquote:
+quote:
   font_size:                            $base_font_size_large
   border_color:                         $base_border_color
   border_width:                         0
@@ -295,7 +314,7 @@ description_list:
   term_spacing:                         $vertical_rhythm / 4
   description_indent:                   $horizontal_rhythm * 1.25
 
-outline_list:
+list:
   indent:                               $horizontal_rhythm * 1.5
   #marker_font_color: 404040
   # NOTE outline_list_item_spacing applies to list items that

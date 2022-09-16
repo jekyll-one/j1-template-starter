@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "j1",
-  "version": "2022.5.1",
+  "version": "2022.5.2",
   "description": "J1 Template Starter Web",
   "homepage": "https://your.site",
   "author": {
@@ -51,19 +51,20 @@
     "opt_livereload_port": "20001"
   },
   "nbi": {
-  "opt_output_type": "plain",
-  "opt_credentials": "fake/fake",
-  "opt_nbi_input_folder": "FULL_PATH_TBD",
-  "opt_nbi_output_folder": "FULL_PATH_TBD"
+    "opt_output_type": "plain",
+    "opt_credentials": "fake/fake",
+    "opt_nbi_input_folder": "FULL_PATH_TBD",
+    "opt_nbi_output_folder": "FULL_PATH_TBD"
   },
   "algolia": {
     "admin_key": "your-algolia-admin-key"
   },
   "scripts": {
     "app": "run-p -s app:*",
-    "app:rackup": "cross-env SINATRA_ACTIVESUPPORT_WARNING=false WEBSERVER=$npm_package_jekyll_opt_webserver INTERFACE=$npm_package_jekyll_opt_interface PORT=$npm_package_jekyll_opt_app_port j1 rackup",
-    "app:jekyll": "cross-var cross-env JEKYLL_ENV=$npm_package_config_mode BUNDLE_GEMFILE=$npm_package_ruby_gemfile bundle exec jekyll b -c $npm_package_jekyll_configfile $npm_package_jekyll_opt_incremental --watch",
-    "app:open": "npm run delay-3s && cross-var open-cli $npm_package_jekyll_opt_app_url",
+    "j1-app": "run-p -s app:*",
+    "app:rackup": "cross-var cross-env INTERFACE=$npm_package_jekyll_opt_interface PORT=$npm_package_jekyll_opt_app_port bundle exec puma -C _data/puma/config.rb",
+    "_app:jekyll": "cross-var cross-env JEKYLL_ENV=$npm_package_config_mode BUNDLE_GEMFILE=$npm_package_ruby_gemfile bundle exec jekyll b -c $npm_package_jekyll_configfile $npm_package_jekyll_opt_incremental --watch",
+    "_app:open": "npm run delay-3s && cross-var open-cli $npm_package_jekyll_opt_app_url",
     "delay-1s": "node ./node_modules/npm-delay 1000",
     "delay-2s": "node ./node_modules/npm-delay 2000",
     "delay-3s": "node ./node_modules/npm-delay 3000",

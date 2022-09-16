@@ -1,0 +1,39 @@
+== Covers
+
+You can specify an image or a PDF page to use as either cover of the
+document directly in your theme.
+
+=== Front and back covers
+
+The front cover image is assigned using the front-image key, and the
+back cover image using the back-image key. Specifying the path as the
+target of an inline image macro allows you to specify parameters for
+that image, as shown here:
+
+.Example
+----
+cover:
+  front:
+    image: image:cover.pdf[page=2]
+  back:
+    image: image:splash.png[fit=fill]
+----
+
+A cover image is handled like a background image, so the fit, width, and
+position attributes can be specified.
+
+=== Fit, width, and position
+
+By default, background images are automatically scaled to fit the bounds of
+the page (i.e., fit=contain) and centered (i.e., position=center). Wrapping
+the value in the image macro allows you to customize an image’s size and
+position. The size of the image assigned with an image macro can be
+controlled using the sizing attributes, fit, pdfwidth, scaledwidth, or
+width, when fit=none. The position of the image can be controlled using
+the position attribute.
+
+.Example
+----
+page:
+  background-image: image:page-bg.png[fit=none,position=top center]
+----

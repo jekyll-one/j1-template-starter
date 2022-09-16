@@ -21,13 +21,13 @@ resources:                              [
                                           masterslider, rouge
                                         ]
 resource_options:
+
   - attic:
+
       slides:
 
         - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
           alt:                          Photo by Ricardo Gomez Angel on Unsplash
-          title:                        Roundtrip
-          tagline:                      present images
           badge:
             type:                       unsplash
             author:                     Ricardo Gomez Angel
@@ -100,7 +100,7 @@ Both lightboxes are fully integrated to be used as standalone modules or
 used as helpers *under-the-hood* by other apps or modules focussing on
 image-data like gallery or carousel, the build-in carousel module.
 
-== Lightbox block Examples
+== Lightbox block examples
 
 Find below an example of using the lightbox Lightbox standalone. See how
 single (individual) images are linked for use with Lightbox.
@@ -114,7 +114,7 @@ see how Lightbox manages a group of images.
 .Lightbox block for grouped images
 lightbox::example-group[ 395, {data-images-group}, group, role="mb-4 wm-800" ]
 
-=== LightGallery Example
+=== LightGallery example
 
 LightGallery provides more complex functions on image data. The module
 supports a gallery-style thumbnail preview plus image resizing, a download
@@ -141,7 +141,7 @@ A slider or carousel is typically used for displaying images. Still, the
 implementation for the J1 Template supports a lot more sources to be
 displayed as a slide show: simple text, for example.
 
-.Carousel Example
+.Carousel example
 carousel::demo_text_carousel[role="mb-3"]
 
 Important statements or topics can be placed, e.g., on top of an article or
@@ -157,7 +157,7 @@ slide show may be interesting. Image-based slide shows may draw off the
 reader's attention from the text, therefore a pure text-based presentation
 maybe the better choice.
 
-.Carousel Example
+.Carousel example
 carousel::demo_text_carousel_parallax[role="mb-3"]
 
 Parallax text shows can be placed as banners on a page. For text shows,
@@ -178,7 +178,7 @@ data.
 A simple image show is useful, for example, as an animated (or not animated)
 banner presenting exciting things about your site or the products offered.
 
-.Carousel Example
+.Carousel example
 carousel::demo_simple[role="mb-3"]
 
 === Carousel + Caption + Lightbox
@@ -188,7 +188,7 @@ This example shows some pictures having individual caption text and supports
 a lightbox to enlarge images full size. For the example below, an almost simple
 lightbox is used: Lightbox V2; or short: lightbox.
 
-.Carousel Example
+.Carousel example
 carousel::demo_cats[role="mb-3"]
 
 The J1 module lightbox is a simple Lightbox but offers a bunch of impressive
@@ -203,7 +203,7 @@ Here you find an example of a single image slide show with controls enabled
 to browse all images back and forth. An indicator below the slider shows how
 many images the show contains.
 
-.Carousel Example
+.Carousel example
 carousel::demo_oneslide[role="mb-3"]
 
 == J1 Master Slider
@@ -305,7 +305,7 @@ layout. It works by placing elements in an optimal position based on available
 horizontal and vertical space. Sort of like mason fitting stones in a wall.
 You'll have seen it in use all over the Internet!
 
-.JustifiedGallery Example
+.JustifiedGallery example
 gallery::jg_customizer[role="mb-4"]
 
 == What next

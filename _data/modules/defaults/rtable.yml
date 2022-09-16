@@ -30,7 +30,18 @@ description:
 defaults:
   enabled:                              false
 
-  breakpoint:                           992
+  rtable:
+    breakpoint:                           lg                                    # sm | md | lg | xl
+    type:                                 default                               # default | light | dark
+    hover:                                false
+    mode:                                 stack                                 # stack | swipe | toggle
+    sort:                                 false
+    minimap :                             false
+
+  table-responsive:
+    breakpoint:                           lg                                    # sm | md | lg | xl
+    type:                                 default                               # default | light | dark
+    hover:                                false
 
 # ------------------------------------------------------------------------------
 # END config

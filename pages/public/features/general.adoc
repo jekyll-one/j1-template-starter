@@ -48,20 +48,20 @@ regenerate:                             false
 
 resources:                              [ animate, clipboard, rouge, lightbox, iconify ]
 resource_options:
+
   - toccer:
       collapseDepth:                    3
 
   - attic:
+      alignY:                           top
       padding_top:                      400
       padding_bottom:                   50
       opacity:                          0.5
+
       slides:
 
         - url:                          /assets/images/modules/attics/christina-1920x1280.jpg
           alt:                          Photo by Christina on Unsplash
-          title:                        General Features
-          tagline:                      platforms, frameworks, and devices
-          alignY:                       top
           badge:
             type:                       unsplash
             author:                     Christina
@@ -114,7 +114,7 @@ common operating systems like Windows, Linux, and OSX.
 
 === Ruby
 
-For the latest versions of J1 Template (>= *2022.5.1*), Ruby V3 is recommended.
+For the latest versions of J1 Template (>= *2022.5.2*), Ruby V3 is recommended.
 The latest Ruby versions offer much better run-time performance. Ruby 3 will
 be up to three times faster compared to Ruby 2.0. This will definively
 speed-up the development processes for your new website.

@@ -1,0 +1,66 @@
+
+.Files and Folders
+[cols="4a,8a", width="100%", options="header", role="rtable mt-4"]
+|===
+|File\|Folder |Description
+
+|`_config.yml`
+|Stores all *side-wide* used configuration data. Many of these options can
+be specified from the command line executable but it's easier to specify
+them in a file so you don't have to remember them.
+
+|`_drafts`
+|Drafts are unpublished posts. The format of these files is without a
+date: `title.MARKUP`.
+
+|`_includes`
+|These are the partials that can be mixed and matched by your layouts and
+posts to facilitate reuse. The liquid tag `{% include file.ext %}` can be
+used to include the partial in `_includes/file.ext`.
+
+|`_layouts`
+|This folder contains the templates that wrap posts and pages. Layouts
+are chosen on a file-by-file basis in the YAML Front Matter, which is
+described in the next section. The liquid tag `{{content}}` is used to
+inject content into the web page.
+
+|`_posts`
+|The folder contains your blog post content. The naming convention of
+these files is important, and must follow the format: `YEAR-MONTH-DAY-title.ext`.
+The *permalinks* can be customized for each post, but the date and markup
+language are determined solely by the file name.
+
+|`_data`
+|Well-formatted site data should be placed in that folder. The Jekyll
+engine will autoload all YAML files in this directory (using either the
+`.yml`, `.yaml`, `.json` or `.csv` formats and extensions) and they will
+be accessible via `site.data`. If there's a file e.g. `members.yml` under
+the directory, then you can access contents of the file through
+`site.data.members`.
+
+|`_site`
+|This folder is where the generated site will be placed (by default)
+once Jekyll is done transforming it. It's probably a good idea to add
+this to your `.gitignore` file if you're using _Git_ for version control.
+
+|`.jekyll-metadata`
+|This file helps Jekyll keep track of which files have not been modified
+since the site was last built, and which files will need to be regenerated
+on the next build. This file will not be included in the generated site.
+It's probably a good idea to add this to your `.gitignore` file if you're
+using _Git_ for version control.
+
+|`index.html`
+|`index.html` and other HTML, Asciidoc, Markdown, Textile files. If the
+file contains a YAML *Front Matter* section, it will be transformed by
+Jekyll. The same will happen for any `.html`, `.adoc`, `.markdown`, `.md`,
+or `.textile` file in your site's root directory or directories not
+listed above.
+
+|Other Files or Folders
+|Every other directory and file except for those listed above such as
+`css` and `images` folders, `favicon.ico` files, and so forth will be
+copied verbatim to the generated site. There are plenty of sites already
+using Jekyll if you're curious to see how they're laid out.
+
+|===

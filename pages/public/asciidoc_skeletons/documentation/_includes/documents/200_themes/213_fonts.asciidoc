@@ -15,7 +15,8 @@ work with extended characters without the right fonts in play.
 
 The names of the built-in fonts (for general-purpose text) are as follows:
 
-[width="100%", cols="50%,50%", options="header", role="table-responsive mt-3"]
+.Built-In Fonts
+[cols="6a,6a", width="100%", options="header", role="rtable mt-4"]
 |===
 |Font Name |Font Family
 
@@ -34,10 +35,10 @@ Using a built-in font requires no additional files. You can use the key
 anywhere a `font_family` property is accepted in the theme file.
 For example:
 
-[source,yaml]
+[source, yaml]
 ----
 base:
-  font_family: Times-Roman
+  font_family:        Times-Roman
 ----
 
 However, when you use a built-in font, the characters you can use in your
@@ -124,25 +125,25 @@ Name the files as follows:
 Next, declare the font under the `font_catalog` key at the top of your theme
 file, giving it a unique key (e.g., `Roboto`).
 
-[source,yaml]
+[source, yaml]
 ----
 font:
   catalog:
     Roboto:
-      normal: roboto-normal.ttf
-      italic: roboto-italic.ttf
-      bold: roboto-bold.ttf
-      bold_italic: roboto-bold_italic.ttf
+      normal:         roboto-normal.ttf
+      italic:         roboto-italic.ttf
+      bold:           roboto-bold.ttf
+      bold_italic:    roboto-bold_italic.ttf
 ----
 
 You can use the key that you assign to the font in the font catalog anywhere
 the `font_family` property is accepted in the theme file. For instance, to use
 the Roboto font for all headings, you'd use:
 
-[source,yaml]
+[source, yaml]
 ----
 heading:
-  font_family: Roboto
+  font_family:        Roboto
 ----
 
 When you execute *Asciidoctor PDF*, you need to specify the directory where the
@@ -163,20 +164,20 @@ storage. This is simply a personal preference.
 You can add any number of fonts to the catalog. Each font must be assigned
 a unique key, as shown here:
 
-[source,yaml]
+[source, yaml]
 ----
 font:
   catalog:
     Roboto:
-      normal: roboto-normal.ttf
-      italic: roboto-italic.ttf
-      bold: roboto-bold.ttf
-      bold_italic: roboto-bold_italic.ttf
+      normal:         roboto-normal.ttf
+      italic:         roboto-italic.ttf
+      bold:           roboto-bold.ttf
+      bold_italic:    roboto-bold_italic.ttf
     Roboto Light:
-      normal: roboto-light-normal.ttf
-      italic: roboto-light-italic.ttf
-      bold: roboto-light-bold.ttf
-      bold_italic: roboto-light-bold_italic.ttf
+      normal:         roboto-light-normal.ttf
+      italic:         roboto-light-italic.ttf
+      bold:           roboto-light-bold.ttf
+      bold_italic:    roboto-light-bold_italic.ttf
 ----
 
 TIP: Text in SVGs will use the font catalog from your theme. We recommend
@@ -206,20 +207,20 @@ Let's choose {uri-font-droid-sans-fallback-ttf}[Droid Sans Fallback, {browser-wi
 You can map all the styles to a single font file (since bold and italic don't
 usually make sense for symbols).
 
-[source,yaml]
+[source, yaml]
 ----
 font:
   catalog:
     Roboto:
-      normal: roboto-normal.ttf
-      italic: roboto-italic.ttf
-      bold: roboto-bold.ttf
-      bold_italic: roboto-bold_italic.ttf
+      normal:         roboto-normal.ttf
+      italic:         roboto-italic.ttf
+      bold:           roboto-bold.ttf
+      bold_italic:    roboto-bold_italic.ttf
     DroidSansFallback:
-      normal: droid-sans-fallback.ttf
-      italic: droid-sans-fallback.ttf
-      bold: droid-sans-fallback.ttf
-      bold_italic: droid-sans-fallback.ttf
+      normal:         droid-sans-fallback.ttf
+      italic:         droid-sans-fallback.ttf
+      bold:           droid-sans-fallback.ttf
+      bold_italic:    droid-sans-fallback.ttf
 ----
 
 Next, add the key name to the `fallbacks` key under the `font_catalog` key.
@@ -227,20 +228,20 @@ The `fallbacks` key accepts an array of values, meaning you can specify more
 than one fallback font. However, we recommend using a single fallback font,
 if possible, as shown here:
 
-[source,yaml]
+[source, yaml]
 ----
 font:
   catalog:
     Roboto:
-      normal: roboto-normal.ttf
-      italic: roboto-italic.ttf
-      bold: roboto-bold.ttf
-      bold_italic: roboto-bold_italic.ttf
+      normal:         roboto-normal.ttf
+      italic:         roboto-italic.ttf
+      bold:           roboto-bold.ttf
+      bold_italic:    roboto-bold_italic.ttf
     DroidSansFallback:
-      normal: droid-sans-fallback.ttf
-      italic: droid-sans-fallback.ttf
-      bold: droid-sans-fallback.ttf
-      bold_italic: droid-sans-fallback.ttf
+      normal:         droid-sans-fallback.ttf
+      italic:         droid-sans-fallback.ttf
+      bold:           droid-sans-fallback.ttf
+      bold_italic:    droid-sans-fallback.ttf
   fallbacks:
     - DroidSansFallback
 ----
@@ -250,10 +251,10 @@ to the `fallbacks` key.
 
 Of course, make sure you've configured your theme to use your custom font:
 
-[source,yaml]
+[source, yaml]
 ----
 base:
-  font_family: Roboto
+  font_family:        Roboto
 ----
 
 That's it! Now you're covered. If your custom font is missing a glyph,

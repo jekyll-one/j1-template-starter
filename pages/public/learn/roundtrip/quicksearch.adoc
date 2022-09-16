@@ -20,18 +20,17 @@ fab_menu_id:                            page_ctrl
 permalink:                              /pages/public/learn/roundtrip/quicksearch/
 regenerate:                             false
 
-resources:                              [ animate, lunr, rouge, lightbox, clipboard ]
+resources:                              [ animate, clipboard, lightbox, rouge ]
 resource_options:
+
   - toccer:
       collapseDepth:                    3
 
   - attic:
-      slides:
 
-        - url:                          /assets/images/modules/attics/banner/lunr-banner-1280x800.jpg
+      slides:
+        - url:                          /assets/images/modules/attics/lunr-1280x800.jpg
           alt:                          Lunr
-          title:                        Roundtrip
-          tagline:                      full text search
 ---
 
 // Page Initializer
@@ -294,7 +293,7 @@ searches.
 
 .Available fields (all documents)
 [cols="3a,3a,6a, options="header", width="100%", role="rtable mt-3"]
-|===============================================================================
+|===
 |Name |Value |Description\|Example\|s
 
 |`title`
@@ -333,7 +332,7 @@ summary what the document is all about.
 Example\|s: QuickSearch is based on the search engine Lunr, fully integrated
 with J1 Template  ...
 
-|===============================================================================
+|===
 
 
 ////

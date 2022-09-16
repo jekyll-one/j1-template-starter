@@ -366,7 +366,9 @@ resources:
         js:                             [
                                           modules/spinner/js/spin,
                                           modules/jquery/js/jquery,
-                                          modules/popper/js/popper,             # required for BS
+                                          modules/jquery/js/extensions/hasClass,
+                                          modules/jquery/js/extensions/removeClass,
+                                          modules/popper/js/popper,
                                           core/js/template
                                         ]
         init_function:                  [ j1.init ]
@@ -771,6 +773,7 @@ resources:
         files:                          [ adapter/js/rtable.js ]
         js:                             [ modules/rtable/js/rtable ]
         init_function:                  [ j1.adapter.rtable.init ]
+
   # ----------------------------------------------------------------------------
   # J1 Asciidoctor, JS functions to (dynamically) modify Asciidoctor HTML elements
   #
@@ -792,7 +795,6 @@ resources:
         files:                          [ adapter/js/asciidoctor.js ]
         js:                             []
         init_function:                  [ j1.adapter.asciidoctor.init ]
-
 
   # ----------------------------------------------------------------------------
   # CSS Flags Previewer, preview page (UI) for country flags

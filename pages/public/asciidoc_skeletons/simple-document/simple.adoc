@@ -8,25 +8,39 @@ description: >
                                         is small in size. This document type does not use any
                                         (local) Asciidoc include files or attributes.
 
-categories:                             [ Knowledge ]
-tags:                                   [ Asciidoc, Skeleton, Document ]
+categories:                             [ Knowledge, Asciidoc ]
+tags:                                   [ Skeleton, SimpleDocument ]
 
 robots:
   index:                                false
   follow:                               false
+
+personalization:                        false
+comments:                               false
+exclude_from_search:                    false
+
+fab_menu_id:                            page_ctrl                               # default
+scrollbar:                              false
+toc:                                    true
 
 permalink:                              /pages/public/skeleton/simple/
 regenerate:                             false
 
 resources:                              [ animate, clipboard, lightbox, rouge ]
 resource_options:
+
+  - toccer:
+      collapseDepth:                    3
+
   - attic:
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
+
       slides:
 
         - url:                          /assets/images/modules/attics/sigmund-1920x1280.jpg
           alt:                          Photo by Sigmund on Unsplash
-          title:                        Skeleton
-          tagline:                      simple document
           alignY:                       0.3
           badge:
             type:                       unsplash
@@ -125,46 +139,34 @@ of a site or `clean` to reset an existing, already generated *site*.
 
 Have a look through the commands and options available this section.
 
-[cols="2a,2a,8a", width="100%", options="header", role="table-responsive mt-3"]
-|===============================================================================
-|Command |Options and Flags |Description
-
-|`docs`
-|
-|To be clarified
-
-|`import`
-|
-|To be clarified
+.General commands
+[cols="2a,2a,8a", width="100%", options="header", role="rtable mt-4"]
+|===
+|Command |Options |Description
 
 |`new`
-|
-|Creates a new Jekyll site with default gem-based theme. Using *optional* `--blank`,
-creates a new *blank* Jekyll site *scaffold*
-
-|`new`
-|`--blank` +
-|Using *optional* `--blank`,
-creates a new *blank* Jekyll site *scaffold*
+|`--blank`
+|Creates a new Jekyll site with default gem-based theme. Using option
+`--blank` to create a new blank Jekyll site scaffold.
 
 |`doctor` \| `hyde`
-|
-|Outputs any deprecation or configuration issues
+|`na`
+|Outputs any deprecation or configuration issues.
 
 |`new-theme`
-|
-|Creates a new Jekyll theme scaffold
+|`na`
+|Creates a new Jekyll theme scaffold.
 
 |`clean`
-|
-|Removes the generated site and metadata file
+|`na`
+|Removes the generated site (folder `_site`) and all Jekyll metadata files.
 
 |`help`
-|
-|Shows help, optionally for a given subcommand, e.g. `jekyll help build`
+|`<subcommand>`
+|Shows help, optionally for a given subcommand like *build*.
+Example: `jekyll help build`.
 
-|===============================================================================
-
+|===
 
 === Build command
 
@@ -179,86 +181,84 @@ jekyll build | b [options]
 
 NOTE: Typically you’ll use `jekyll serve` while developing locally and
 `jekyll build` when you need to generate the site for production.
+Build Commands
+[cols="4a,8a", width="100%", options="header", role="rtable mt-4"]
+|===
+|Option |Description
 
-[cols="6a,6a", width="100%", options="header", role="table-responsive mt-3"]
-|===============================================================================
-|Options |Description
+|`-c`, `--config` *CONFIG_FILE [,CONFIG_FILE2, ..]*
+|Use custom configuration file.
 
-|`-c`, `--config` {hs} *CONFIG_FILE [,CONFIG_FILE2, ..]*
-|Use custom configuration file. +
-lorem:sentences[2]
+|`-d, --destination` *DESTINATION*
+|The current folder will be generated into DESTINATION.
 
-|`-d, --destination` {hs} *DESTINATION*
-|The current folder will be generated into DESTINATION
-
-|`-s` \| `--source` {hs} *SOURCE*
-|Custom source directory
+|`-s` \| `--source` *SOURCE*
+|Custom source directory.
 
 |`--future`
-|Publishes posts with a future date
+|Publishes posts with a future date.
 
-|`--limit_posts` {hs} *MAX_POSTS*
-|Limits the number of posts to parse and publish
+|`--limit_posts` *MAX_POSTS*
+|Limits the number of posts to parse and publish.
 
 |`-w` \| `--[no-]watch`
 |Watch for changes and rebuild
 
-|`-b` \| `--baseurl` {hs} *URL*
-|Serve the website from the given base URL
+|`-b` \| `--baseurl` *URL*
+|Serve the website from the given base URL.
 
 |`--force_polling`
-|Force watch to use polling
+|Force watch to use polling.
 
 |`--lsi`
-|Use LSI for improved related posts
+|Use LSI for improved related posts.
 
 |`-D` \| `--drafts`
-|Render posts in the _drafts folder
+|Render posts in the _drafts folder.
 
 |`--unpublished`
-|Render posts that were marked as unpublished
+|Render posts that were marked as unpublished.
 
 |`-q` \| `--quiet`
-|Silence output
+|Silence output.
 
 |`-V` \| `--verbose`
 |Print verbose output
 
 |`-i` \| `--incremental`
-|Enable incremental rebuild
+|Enable incremental rebuild.
 
 |`--strict_front_matter`
-|Fail if errors are present in front matter
+|Fail if errors are present in front matter.
 
 |`-h` \| `--help`
-|Show detailed options an flags
+|Show detailed options an flags.
 
-|`-s` \| `--source` {hs} *DIR*
-|Source directory. Defaults to current directory `./`
+|`-s` \| `--source` *DIR*
+|Source directory. Defaults to current directory `./`.
 
-|`-d` \| `--destination` {hs} *DIR*
-|Destination directory. Defaults to `./_site`
+|`-d` \| `--destination` *DIR*
+|Destination directory. Defaults to `./_site`.
 
 |`--safe`
 |Safe mode. Defaults to `false`
 
-|`-p` \| `--plugins` {hs} *PLUGINS_DIR1[,PLUGINS_DIR2[,...]]*
+|`-p` \| `--plugins` *PLUGINS_DIR1[,PLUGINS_DIR2[,...]]*
 |Plugins directory. Defaults to `./_plugins`
 
-|`--layouts` {hs} *DIR*
-|Layouts directory. Defaults to `./_layouts`
+|`--layouts` *DIR*
+|Layouts directory. Defaults to `./_layouts`.
 
 |`--profile`
-|Generate a Liquid rendering profile
+|Generate a Liquid rendering profile.
 
 |`-t` \| `--trace`
-|Show the full backtrace when an error occurs
+|Show the full backtrace when an error occurs.
 
 |`-v` \| `--version`
-|Print the name and version
+|Print the name and version.
 
-|===============================================================================
-
+|===
 
 === Serve command
 
@@ -276,124 +276,126 @@ jekyll serve | s [options]
 NOTE: Typically you’ll use `jekyll serve` while developing locally and
 `jekyll build` when you need to generate the site for production.
 
-[cols="6a,6a", width="100%", options="header", role="table-responsive mt-3"]
-|===============================================================================
+
+.Serve Commands
+[cols="6a,6a", width="100%", options="header", role="rtable mt-4"]
+|===
 |Options |Description
 
-|`-c`, `--config` {hs} CONFIG_FILE [,CONFIG_FILE2, ..]
-|Use custom configuration file. +
-lorem:sentences[2]
+|`-c`, `--config` CONFIG_FILE [,CONFIG_FILE2, ..]
+|Use custom configuration file.
 
-|`-d, --destination` {hs} *DESTINATION*
+|`-d, --destination` *DESTINATION*
 |The current folder will be generated into DESTINATION
 
-|`-s` \| `--source` {hs} *SOURCE*
-|Custom source directory
+|`-s` \| `--source` *SOURCE*
+|Custom source directory.
 
 |`--future`
 |Publishes posts with a future date
 
-|`--limit_posts` {hs} *MAX_POSTS*
-|Limits the number of posts to parse and publish
+|`--limit_posts` *MAX_POSTS*
+|Limits the number of posts to parse and publish.
 
 |`-w` \| `--[no-]watch`
-|Watch for changes and rebuild
+|Watch for changes and rebuild.
 
-|`-b` \| `--baseurl` {hs} *URL*
-|Serve the website from the given base URL
+|`-b` \| `--baseurl` *URL*
+|Serve the website from the given base URL.
 
 |`--force_polling`
-|Force watch to use polling
+|Force watch to use polling.
 
 |`--lsi`
-|Use LSI for improved related posts
+|Use `LSI` for improved related posts.
 
 |`-D` \| `--drafts`
 |Render posts in the _drafts folder
 
 |`--unpublished`
-|Render posts that were marked as unpublished
+|Render posts that were marked as unpublished.
 
 |`-q` \| `--quiet`
-|Silence output
+|Silence the output.
 
 |`-V` \| `--verbose`
 |Print verbose output
 
 |`-i` \| `--incremental`
-|Enable incremental rebuild
+|Enable incremental rebuild.
 
 |`--strict_front_matter`
-|Fail if errors are present in front matter
+|Fail if errors are present in front matter.
 
-|`--ssl-cert` {hs} *CERT*
-|X.509 (SSL) certificate
+|`--ssl-cert` *CERT*
+|X.509 (SSL) certificate neede for HTTPS connections.
 
-|`--ssl-key` {hs} *KEY*
-|X.509 (SSL) Private Key
+|`--ssl-key` *KEY*
+|X.509 (SSL) Private Key needed for HTTPS connections.
 
-|`-H` \| `--host` {hs} *HOST*
-|Host to bind to
+|`-H` \| `--host` *HOST*
+|Host to bind to.
 
 |`-o` \| `--open-url`
-|Launch your site in a browser
+|Launch your site in a browser.
 
 |`-B` \| `--detach`
-|Run the server in the background
+|Run the server in the background. *Not* available for the Windows operating
+system.
 
-|`-P` \| `--port` {hs} *PORT*
-|Port to listen on
+|`-P` \| `--port` *PORT*
+|Port to listen on.
 
 |`--show-dir-listing`
-|Show a directory listing instead of loading your index file
+|Show a directory listing instead of loading your index file.
 
 |`--skip-initial-build`
 |Skips the initial site build which occurs before the server is started
 
 |`-l` \| `--livereload`
-|Use LiveReload to automatically refresh browsers
+|Use LiveReload to automatically refresh browsers.
 
-|`--livereload-ignore` {hs} *GLOB1[,GLOB2[,...]]*
+|`--livereload-ignore` *GLOB1[,GLOB2[,...]]*
 |Files for LiveReload to ignore. Remember to quote the values so your
-shell won't expand them
+shell won't expand them.
 
-|`--livereload-min-delay` {hs} *SECONDS*
-|Minimum reload delay
+|`--livereload-min-delay` *SECONDS*
+|Minimum reload delay.
 
-|`--livereload-max-delay` {hs} *SECONDS*
-|Maximum reload delay
+|`--livereload-max-delay` *SECONDS*
+|Maximum reload delay.
 
-|`--livereload-port` {hs} *PORT*
-|Port for LiveReload to listen on
+|`--livereload-port` *PORT*
+|Port for LiveReload to listen on.
 
 |`-h` \| `--help`
-|Show detailed options an flags
+|Show detailed options an flags.
 
-|`-s` \| `--source` {hs} *DIR*
-|Source directory. Defaults to current directory `./`
+|`-s` \| `--source` *DIR*
+|Source directory. Defaults to current directory `./`.
 
-|`-d` \| `--destination` {hs} *DIR*
-|Destination directory. Defaults to `./_site`
+|`-d` \| `--destination` *DIR*
+|Destination directory. Defaults to `./_site`.
 
 |`--safe`
-|Safe mode. Defaults to `false`
+|Safe mode. Defaults to `false`.
 
-|`-p` \| `--plugins` {hs} *PLUGINS_DIR1[,PLUGINS_DIR2[,...]]*
-|Plugins directory. Defaults to `./_plugins`
+|`-p` \| `--plugins` *PLUGINS_DIR1[,PLUGINS_DIR2[,...]]*
+|Plugins directory. Defaults to `./_plugins`.
 
-|`--layouts` {hs} *DIR*
-|Layouts directory. Defaults to `./_layouts`
+|`--layouts` *DIR*
+|Layouts directory. Defaults to `./_layouts`.
 
 |`--profile`
-|Generate a Liquid rendering profile
+|Generate a Liquid rendering profile.
 
 |`-t` \| `--trace`
-|Show the full backtrace when an error occurs
+|Show the full backtrace when an error occurs.
 
 |`-v` \| `--version`
-|Print the name and version
+|Print the name and version.
 
-|===============================================================================
+|===
 
 
 == Examples
