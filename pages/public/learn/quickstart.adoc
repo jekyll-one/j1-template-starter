@@ -7,11 +7,16 @@ description: >
                                         a new website created with J1 Template. This Web is called
                                         the "Starter web", a general-purpose scaffold to be modified
                                         for your needs.
-
 categories:                             [ Knowledge ]
 tags:                                   [ J1, Template, Quickstart ]
 
-comments:                               true
+image:
+  path:                                 /assets/images/modules/attics/matthew-dockery-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Matthew Dockery on Unsplash
+
+comments:                               false
 fab_menu_id:                            page_ctrl
 
 permalink:                              /pages/public/learn/quickstart/
@@ -19,11 +24,8 @@ regenerate:                             false
 
 resources:                              [ animate, clipboard, rouge ]
 resource_options:
-
   - attic:
-
       slides:
-
         - url:                          /assets/images/modules/attics/matthew-dockery-1920x1280.jpg
           alt:                          Photo by Matthew Dockery on Unsplash
           badge:
@@ -119,7 +121,7 @@ available: *Yarn*.
 The CLI `yarn` is developed at Facebook and can be used as a replacement
 for `npm`. From a top-level perspective, both package management clients behave
 pretty much the same. The syntax `yarn` uses is shorter in writing, making
-the command-line look a bit more natural. Therefore, we prefer to use `yarn`.
+the command line look a bit more natural. Therefore, we prefer to use `yarn`.
 
 NOTE: Yarn adds some additional features to the NodeJS package management
 implemented for the needs at Facebook. Regarding the J1 development system,

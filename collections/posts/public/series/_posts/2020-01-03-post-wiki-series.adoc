@@ -2,29 +2,36 @@
 title:                                  Columbia River
 tagline:                                largest river in the pacific northwest
 
-categories:                             [ Examples, Series ]
+categories:                             [ Series ]
 tags:                                   [ USA, Rivers ]
 
 series:                                 wiki-series
-image:                                  /assets/images/collections/blog/wikipedia/columbia-river.1200x400.jpg
-fab_menu_id:                            open_toc_reload
 
+image:                                  /assets/images/collections/blog/wikipedia/columbia-river.1200x400.jpg
+
+# image:
+#   path:                               /assets/images/collections/blog/wikipedia/columbia-river.1200x400.jpg
+#   width:                              1280
+#   height:                             400
+#   alt:                                Columbia River
+
+fab_menu_id:                            open_toc_reload
 regenerate:                             false
 
 resources:                              [ animate ]
 resource_options:
+
   - toccer:
       collapseDepth:                    3
+
   - attic:
       padding_top:                      400
       padding_bottom:                   50
       opacity:                          0.5
-      slides:
 
+      slides:
         - url:                          /assets/images/collections/blog/wikipedia/columbia-river.1200x400.jpg
           alt:                          Columbia River
-          title:                        Columbia River
-          tagline:                      largest river in the pacific northwest
 ---
 
 // Page Initializer

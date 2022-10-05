@@ -19,7 +19,13 @@ personalization:                        false
 comments:                               false
 exclude_from_search:                    false
 
-fab_menu_id:                            page_ctrl                               # default
+image:
+  path:                                 /assets/images/modules/attics/sigmund-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Sigmund on Unsplash
+
+fab_menu_id:                            page_ctrl
 scrollbar:                              false
 toc:                                    true
 
@@ -28,20 +34,15 @@ regenerate:                             false
 
 resources:                              [ animate, clipboard, lightbox, rouge ]
 resource_options:
-
   - toccer:
       collapseDepth:                    3
-
   - attic:
       padding_top:                      400
       padding_bottom:                   50
       opacity:                          0.5
-
       slides:
-
         - url:                          /assets/images/modules/attics/sigmund-1920x1280.jpg
           alt:                          Photo by Sigmund on Unsplash
-          alignY:                       0.3
           badge:
             type:                       unsplash
             author:                     Sigmund

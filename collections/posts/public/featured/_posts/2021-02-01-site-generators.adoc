@@ -5,22 +5,28 @@ tagline:                                top open source tools
 categories:                             [ Featured ]
 tags:                                   [ Jekyll, Static, Site, Generators ]
 
-image:                                  /assets/images/modules/attics/machine-generator-1920x1280.jpg
+# image:                                /assets/images/modules/attics/machine-generator-1920x1280.jpg
+
+image:
+  path:                                 /assets/images/modules/attics/machine-generator-1920x1280.jpg
+  width:                                1920
+  height:                              1280
+  alt:                                 Site Generators
 
 fab_menu_id:                            page_ctrl
 regenerate:                             false
 
 resources:                              [ animate, lightbox ]
 resource_options:
+
   - attic:
       padding_top:                      400
       padding_bottom:                   50
       opacity:                          0.5
+
       slides:
         - url:                          /assets/images/modules/attics/machine-generator-1920x1280.jpg
           alt:                          Photo by Isis Françal on Unsplash
-          title:                        Site Generators
-          tagline:                      top open source tools
           badge:
             type:                       unsplash
             author:                     Isis França

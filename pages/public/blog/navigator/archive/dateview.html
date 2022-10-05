@@ -2,7 +2,13 @@
 layout:                                 page
 title:                                  Starter Blog
 tagline:                                posts by date
-description:                            Browse articles by date
+description: >
+                                        When it comes to the usability of a website, the focus of your
+                                        visitors is on one important component: The Navigation System
+                                        of the site. To make all posts easy accessible to the visitors,
+                                        the Navigation System provides a Blog Explorer module. The explorer
+                                        module supports the users for browsing articles by sorting criteria
+                                        like category and date or browsing the archive for all articles.
 
 categories:                             [ Blog ]
 tags:                                   [ Navigator, Date ]
@@ -15,6 +21,12 @@ pagination:
   enabled:                              false
   permalink:                            /page:num/
 
+image:
+  path:                                 /assets/images/modules/attics/matthaeus-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Matthaeus on Unsplash
+
 analytics:                              true
 advertising:                            false
 comments:                               false
@@ -26,12 +38,10 @@ resources:                              [ animate ]
 resource_options:
 
   - attic:
-
       alignY:                           top
       slides:
-
         - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
-          alt:                          Photo by Matthaeus
+          alt:                          Photo by Matthaeus on Unsplash
           badge:
             type:                       unsplash
             author:                     Matthaeus
@@ -81,6 +91,16 @@ resource_options:
 {% capture tag_view %}{{page_path}}/tagview/{% endcapture %}
 {% capture all_view %}{{page_path}}/{% endcapture %}
 
+{% comment %} Collect CSS image filters
+-------------------------------------------------------------------------------- {% endcomment %}
+{% if blog_navigator_options.filters %}
+  {% for filter in blog_navigator_options.filters %}
+    {% capture css_filters %}{{css_filters}} {{filter[0]}}({{filter[1]}}){% endcapture %}
+  {% endfor %}
+  {% capture image_filters %}filter:{{css_filters}}{% endcapture %}
+{% else %}
+  {% assign image_filters = '' %}
+{% endif %}
 
 {% comment %} language detection
 -------------------------------------------------------------------------------- {% endcomment %}
@@ -183,19 +203,27 @@ site_category_word_list:    {{site_category_word_list | debug}}
       {% assign excerpt = post.excerpt|truncatewords: truncate_words|replace:'...',' ...' %}
       <li>
         <article class="card raised-z3 mb-5">
-          <h3 id="{{100000|rand}}" class="card-header bg-primary notranslate">{{post.title}}</h3>
+          <div class="card-header bg-primary">
+            <h3 id="{{100000|rand}}" class="card-header bg-primary notranslate">{{post.title}}</h3>
+          </div>
           <div class="row mx-0">
-
-            <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Check if post image is available] -->
+            <!-- [INFO   ] [j1.pages.blog.navigator.dateview         ] [Check if post image is available] -->
             {% if post.image %}
-            <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Post image is available] -->
+            <!-- [INFO   ] [j1.pages.blog.navigator.dateview         ] [Post image is available] -->
+            {% if post.image.path %}
+            <!-- [INFO   ] [j1.pages.blog.navigator.dateview         ] [use full post image data] -->
             <div class="col-md-6 img-bg--fill px-0"
-              style="border-right: 1px dotted rgba(0, 0, 0, 0.25); background-image: url({{post.image}});">
+              style="border-right: 1px dotted rgba(0, 0, 0, 0.25); {{image_filters}}; background-image: url({{post.image.path}});">
             </div>
             {% else %}
-            <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Post image missing, using configured default image] -->
             <div class="col-md-6 img-bg--fill px-0"
-              style="border-right: 1px dotted rgba(0, 0, 0, 0.25); background-image: url({{blog_navigator_options.post_image}});">
+              style="border-right: 1px dotted rgba(0, 0, 0, 0.25); {{image_filters}}; background-image: url({{post.image}});">
+            </div>
+            {% endif %}
+            {% else %}
+            <!-- [INFO   ] [j1.pages.blog.navigator.dateview         ] [Post image missing, using configured default image] -->
+            <div class="col-md-6 img-bg--fill px-0"
+              style="border-right: 1px dotted rgba(0, 0, 0, 0.25); {{image_filters}}; background-image: url({{blog_navigator_options.post_image}});">
             </div>
             {% endif %}
 

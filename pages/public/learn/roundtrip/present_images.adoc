@@ -7,11 +7,16 @@ description: >
                                         shows some valuable features of the J1 Template to manage your image-based
                                         content using lightboxes, carousels (slider), and galleries.
 
-categories:                             [ Roundtrip ]
-tags:                                   [ Introduction, Module, Image ]
+categories:                             [ Roundtrip, Module, Preview ]
+tags:                                   [ Image, Slider, Carousel, Lightbox ]
+
+image:
+  path:                                 /assets/images/modules/attics/1920x1280/quino-al-2.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Quino Al Angel on Unsplash
 
 fab_menu_id:                            page_ctrl
-
 permalink:                              /pages/public/learn/roundtrip/present_images/
 regenerate:                             false
 
@@ -21,17 +26,14 @@ resources:                              [
                                           masterslider, rouge
                                         ]
 resource_options:
-
   - attic:
-
       slides:
-
-        - url:                          /assets/images/pages/roundtrip/images-1920x1280-bw.jpg
-          alt:                          Photo by Ricardo Gomez Angel on Unsplash
+        - url:                          /assets/images/modules/attics/1920x1280/quino-al-2.jpg
+          alt:                          Photo by Quino Al Angel on Unsplash
           badge:
             type:                       unsplash
-            author:                     Ricardo Gomez Angel
-            href:                       https://unsplash.com/@ripato/portfolio
+            author:                     Quino Al Angel
+            href:                       https://unsplash.com/@quinoal
 ---
 
 

@@ -1,0 +1,66 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/pluins/defaults/sitemap.yml
+#  Default configuration settings for the J1 Sitemap plugin
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2022 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description (used for J1 CC only)
+#
+description:
+
+  title:                                J1 Sitemap
+  scope:                                Default settings
+  location:                             _data/modules/defaults/sitemap.yml
+
+# ------------------------------------------------------------------------------
+# Default configuration settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # Plugin settings
+  #
+  #   enabled
+  #   --------------------------------------------------------------------------
+  #   Enables|Disables the plugin. If set to false, no files are being
+  #   generated.
+  #
+  #     values:                         boolean (true|false)
+  #     default:                        false
+  #
+  #   template_source_folder
+  #   --------------------------------------------------------------------------
+  #    folder of the sitemap template files
+  #
+  #     values:                         string (path)
+  #     default:                        _data
+  #
+  #   robots_template_name
+  #   --------------------------------------------------------------------------
+  #   The name of the robots template
+  #
+  #     values:                         string
+  #     default:                        robots.txt
+  #
+  #   sitemap_template_name
+  #   --------------------------------------------------------------------------
+  #   The name of the XML sitemap template
+  #
+  #     values:                         string
+  #     default:                        sitemap.xml
+  #
+  #   --------------------------------------------------------------------------
+  #
+  enabled:                              false
+
+  template_source_folder:               _data/templates
+  robots_template_name:                 robots.txt
+  sitemap_template_name:                sitemap.xml

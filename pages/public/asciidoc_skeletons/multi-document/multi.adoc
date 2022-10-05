@@ -17,7 +17,13 @@ robots:
   follow:                               false
 
 permalink:                              /pages/public/skeleton/multi/
-regenerate:                             treu
+regenerate:                             false
+
+image:
+  path:                                 /assets/images/modules/attics/sigmund-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Sigmund on Unsplash
 
 personalization:                        false
 comments:                               false
@@ -29,20 +35,15 @@ toc:                                    true
 
 resources:                              [ animate, clipboard, lightbox, rouge ]
 resource_options:
-
   - toccer:
       collapseDepth:                    3
-
   - attic:
       padding_top:                      400
       padding_bottom:                   50
       opacity:                          0.5
-
       slides:
-
         - url:                          /assets/images/modules/attics/sigmund-1920x1280.jpg
           alt:                          Photo by Sigmund on Unsplash
-          alignY:                       0.3
           badge:
             type:                       unsplash
             author:                     Sigmund

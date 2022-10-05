@@ -70,7 +70,7 @@ end
 # ------------------------------------------------------------------------------
 # Specify the THEME GEM used for the project
 #
-gem 'j1-template', '~> 2022.5.2'
+gem 'j1-template', '~> 2022.5.3'
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -143,8 +143,6 @@ group :jekyll_plugins do
   #
   # Additional Jekyll Plugins  (optional)
   #
-  gem 'jekyll-sitemap', '>= 1.2.0'                                              # Create XML sitemap (recommended)
-  # gem 'jekyll-feed', ">= 0.15.1"
   # gem 'jekyll-gist', '>= 1.5.0'
   # gem 'jekyll-redirect-from', '>= 0.16.0'
 end

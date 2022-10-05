@@ -16,6 +16,12 @@ pagination:
   enabled:                              false
   permalink:                            /page:num/
 
+image:
+  path:                                 /assets/images/modules/attics/matthaeus-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Matthaeus on Unsplash
+
 analytics:                              true
 comments:                               false
 
@@ -26,12 +32,10 @@ resources:                              [ animate ]
 resource_options:
 
   - attic:
-
       alignY:                           top
       slides:
-
         - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
-          alt:                          Photo by Matthaeus
+          alt:                          Photo by Matthaeus on Unsplash
           badge:
             type:                       unsplash
             author:                     Matthaeus
@@ -44,6 +48,7 @@ resource_options:
 {% capture select_icon_size %}themes/{{site.template.name}}/procedures/global/select_icon_size.proc{% endcapture %}
 {% capture get_category_item %}themes/{{site.template.name}}/procedures/global/get_category_item.proc{% endcapture %}
 {% capture create_word_cloud %}themes/{{site.template.name}}/procedures/global/create_word_cloud.proc{% endcapture %}
+
 
 {% comment %} Set config files
 -------------------------------------------------------------------------------- {% endcomment %}
@@ -114,6 +119,17 @@ by processing of categories
   {% capture category_list %}{{category_list|append: category}}{% unless forloop.last %},{% endunless %}{% endcapture %}
 {% endfor %}
 
+{% comment %} Collect CSS image filters
+-------------------------------------------------------------------------------- {% endcomment %}
+{% if blog_navigator_options.filters %}
+  {% for filter in blog_navigator_options.filters %}
+    {% capture css_filters %}{{css_filters}} {{filter[0]}}({{filter[1]}}){% endcapture %}
+  {% endfor %}
+  {% capture image_filters %}filter:{{css_filters}}{% endcapture %}
+{% else %}
+  {% assign image_filters = '' %}
+{% endif %}
+
 {% comment %} language detection
 -------------------------------------------------------------------------------- {% endcomment %}
 {% if site.language == "en" %}
@@ -154,7 +170,6 @@ site_category_word_list:    {{site_category_word_list | debug}}
 --------------------------------------------------------------------------------
 {% endcomment %}
 
-
 {% comment %} Main
 -------------------------------------------------------------------------------- {% endcomment %}
 <!-- [INFO   ] [ {{page.url}} ] [Generate HTML}] -->
@@ -176,8 +191,9 @@ site_category_word_list:    {{site_category_word_list | debug}}
   {% endif %}
 
   <div class="post-headline">
-    <h1 id="post-headline notoc" class="mt-5">{{view_headline}}</h1>
+    <h2 id="post-headline notoc" class="mt-5">{{view_headline}}</h2>
   </div>
+
   {% assign tags = site.categories|sort %}
   {% for tag in tags %}
     {% assign category = tag|first %}
@@ -201,19 +217,27 @@ site_category_word_list:    {{site_category_word_list | debug}}
           {% endfor %}
 
           <article class="card raised-z3 mb-5">
-            <h3 id="{{100000|rand}}" class="card-header bg-primary notranslate">{{post.title}}</h3>
+            <div class="card-header bg-primary">
+              <h3 id="{{100000|rand}}" class="card-header bg-primary notranslate">{{post.title}}</h3>
+            </div>
             <div class="row mx-0">
-
-              <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Check if post image is available] -->
+              <!-- [INFO   ] [j1.pages.blog.navigator.categoryview     ] [Check if post image is available] -->
               {% if post.image %}
-              <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Post image is available] -->
+              <!-- [INFO   ] [j1.pages.blog.navigator.categoryview     ] [Post image is available] -->
+              {% if post.image.path %}
+              <!-- [INFO   ] [j1.pages.blog.navigator.categoryview     ] [use full post image data] -->
               <div class="col-md-6 img-bg--fill px-0"
-                style="border-right: 1px dotted rgba(0, 0, 0, 0.25); background-image: url({{post.image}});">
+                style="border-right: 1px dotted rgba(0, 0, 0, 0.25); {{image_filters}}; background-image: url({{post.image.path}});">
               </div>
               {% else %}
-              <!-- [INFO   ] [j1.pages.blog.navigator.archive          ] [Post image missing, using configured default image] -->
               <div class="col-md-6 img-bg--fill px-0"
-                style="border-right: 1px dotted rgba(0, 0, 0, 0.25); background-image: url({{blog_navigator_options.post_image}});">
+                style="border-right: 1px dotted rgba(0, 0, 0, 0.25); {{image_filters}}; background-image: url({{post.image}});">
+              </div>
+              {% endif %}
+              {% else %}
+              <!-- [INFO   ] [j1.pages.blog.navigator.categoryview     ] [Post image missing, using configured default image] -->
+              <div class="col-md-6 img-bg--fill px-0"
+                style="border-right: 1px dotted rgba(0, 0, 0, 0.25); {{image_filters}}; background-image: url({{blog_navigator_options.post_image}});">
               </div>
               {% endif %}
 

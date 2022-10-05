@@ -14,6 +14,12 @@ robots:
   index:                                false
   follow:                               false
 
+image:
+  path:                                 /assets/images/modules/attics/leon-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Leon on Unsplash
+
 sitemap:                                false
 exclude_from_search:                    true
 
@@ -28,14 +34,12 @@ regenerate:                             false
 
 resources:                              [ animate ]
 resource_options:
-
   - attic:
-      padding_top:                      550
-
       slides:
-
         - url:                          /assets/images/modules/attics/leon-1920x1280.jpg
           alt:                          Photo by Leon on Unsplash
+          title:                        Comment Policy
+          tagline:                      discuss with respect
           badge:
             type:                       unsplash
             author:                     Leon

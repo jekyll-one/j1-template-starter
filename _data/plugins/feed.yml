@@ -1,0 +1,35 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/pluins/feed.yml
+#  User configuration settings for the J1 Feed plugin
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2022 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description (used for J1 CC only)
+#
+description:
+
+  title:                                J1 Feed
+  scope:                                User settings
+  location:                             _data/modules/feed.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+  enabled:                              true                                    # enable|disable feed generation
+
+  tags:
+    enabled:                            false                                    # enable|disable feeds each tag
+    path:                               /assets/data/feeds/for_tags/            # location of generated tag feeds
+    except:                             [ USA, Minnesota ]                      # exclude tags for generated tag feeds
+
+# ------------------------------------------------------------------------------
+# END config

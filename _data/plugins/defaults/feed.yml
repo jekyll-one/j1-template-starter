@@ -1,0 +1,82 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/pluins/defaults/feed.yml
+#  Default configuration settings for the J1 Feed plugin
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2022 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description (used for J1 CC only)
+#
+description:
+
+  title:                                J1 Feed
+  scope:                                Default settings
+  location:                             _data/modules/defaults/feed.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # Feed settings
+  #
+  #   enabled
+  #   --------------------------------------------------------------------------
+  #   Enables|Disables the use of J1 Themer
+  #
+  #     values:                         boolean (true|false)
+  #     default:                        false
+  #
+  #   debug
+  #   --------------------------------------------------------------------------
+  #   Enables|Disables the console log
+  #
+  #     values:                         boolean (true|false)
+  #     default:                        false
+  #
+  #   cssThemeLink
+  #   --------------------------------------------------------------------------
+  #   The ID used for the bootstrap theme css file
+  #
+  #     values:                         string
+  #     default:                        bootstrapTheme
+  #
+  #   saveToCookie
+  #   --------------------------------------------------------------------------
+  #   If true, a cookie will be saved with the currently selected theme
+  #
+  #     values:                         boolean (true|false)
+  #     default:                        true
+  #   --------------------------------------------------------------------------
+  #
+  enabled:                              false                                   # enable|disable the plugin for feeds generation
+
+  path:                                 /assets/data/feeds/feed.xml             # full output path/file of the generated feed XML data for all posts
+  template_source_folder:               _data/templates                         # folder of the XML template
+  template_name:                        feed.xml                                # name of the XML template
+
+  posts_limit:                          1000000                                 # Limit number of posts processed to 'unlimited'
+  rebuild_feed:                         true                                    # rebuild feed XML output file if exists: [true|false]
+  excerpt_only:                         true                                    # if 'true', data in feed XML is generated without the '<content>' tag
+  categories:                           []                                      # generate feeds each category
+
+  tags:                                                                         # generate feeds each tag
+    enabled:                            false                                   # enable|disable tag feeds
+    path:                               /assets/data/feeds/tags/                # location of generated tag feeds
+    except:                             []                                      # exclude tags for generated tag feeds
+
+  # articles:
+  #   enabled:                            false                                   # enable|disable feeds for articles
+  #   path:                               /assets/data/feeds/articles/            # output path/file of the generated feed XML
+  #   categories:                         []
+
+# ------------------------------------------------------------------------------
+# END config

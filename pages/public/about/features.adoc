@@ -9,21 +9,26 @@ description: >
                                         to make a project like J1 Template real.
 
 categories:                             [ About ]
-tags:                                   [ J1, Template, Features ]
+tags:                                   [ J1, Features ]
 
 scrollbar:                              false
 comments:                               true
-fab_menu_id:                            page_ctrl
 
 permalink:                              /pages/public/about/features/
 regenerate:                             false
 
-resources:                              [ animate, lightbox ]
+image:
+  path:                                 /assets/images/modules/attics/1920x1280/alexander-redl.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Alexander Redl on Unsplash
+
+resources:                              [ animate, comments, lightbox ]
 resource_options:
-
   - attic:
-      padding_top:                      550
-
+      padding_top:                      400
+      padding_bottom:                   50
+      opacity:                          0.5
       slides:
         - url:                          /assets/images/modules/attics/1920x1280/alexander-redl.jpg
           alt:                          Photo by Alexander Redl on Unsplash

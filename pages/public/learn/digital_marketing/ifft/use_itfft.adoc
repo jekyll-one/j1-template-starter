@@ -1,0 +1,86 @@
+---
+title:                                  If-This-Than-That
+tagline:                                sychronize RSS feeds with social media
+date:                                   2020-11-03 00:00:00
+description: >
+                                        Welcome to the pages of J1 Template. If your here
+                                        first time, a good decision you get on that page first.
+                                        For sure, there is no better place to go.
+
+categories:                             [ Info ]
+tags:                                   [ Guidance, Start Places, Introduction ]
+
+fab_menu_id:                            default
+
+image:
+  path:                                 /assets/images/modules/attics/tldr-1920x800.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Alexander Redl on Unsplash
+
+permalink:                              /pages/public/learn/use_itfft/
+regenerate:                             false
+
+resources:                              [ animate, comments ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/images/modules/attics/tldr-1920x800.jpg
+          alt:                          Photo by Alexander Redl on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Alexander Redl
+            href:                       https://unsplash.com/@alexanderredl
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:url-j1-jupyter-notebooks--where-to-go: /pages/public/jupyter/where-to-go/
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any) (if any)
+// -----------------------------------------------------------------------------
+Thankfully there is a sweet service called IFTTT (which stands for If This Then That). IFTTT is a great service to automate actions between two different apps using recipes that follow the simple statement of, if this then that. I’ve created a couple of recipes that helps automate some of my social networking.
+
+Prior to discovering IFTTT, after I published a post, I would grab the URL and
+the title and open Twitter and LinkedIn and publish my new post there. Although
+it’d take me but five minutes or less to do this, I wanted to remove that step
+altogether from my posting workflow.
+
+To accomplish this, I use recipes that are made up of watching my site’s RSS feed for new items, since Jekyll automatically creates a RSS file. When a new item is found, then IFTTT creates a new update using the title and URL and post it up to their respective social media accounts.
+
+Here’s step-by-step how I’ve created the Twitter IFTTT recipe
+
+RSS Feed integrations
+The RSS Feed service lets you turn on and make Applets for RSS and Atom web feeds. When the content you care about goes live, stay up-to-date with notifications, emails, and
+
+
+1. Choose a service --> RSS
+
+2. Choose a trigger (If) --> New feed item
+
+* Feed URL https://jekyll.one/assets/data/feeds/feed.xml
+
+3. Then That (add) --> Twitter --> Post a tweet
+
+* Add Twitter account details
+
+4. Continue to Review and finish
+
+If New feed item from https://jekyll.one/assets/data/feeds/feed.xml, then Post a tweet to @jurgen_adams

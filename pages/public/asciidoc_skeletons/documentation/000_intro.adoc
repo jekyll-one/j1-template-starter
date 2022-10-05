@@ -5,14 +5,24 @@ title:                                  Skeleton Book
 tagline:                                introduction
 date:                                   2022-01-01 00:00:00
 description: >
-                                        Prawn is a pure Ruby PDF generation library that provides
-                                        a lot of great functionality while trying to remain simple
-                                        by providing a reasonable performance.
+                                        Asciidoctor PDF is a native PDF converter for AsciiDoc that plugs
+                                        into the pdf backend. It bypasses the requirement to generate an
+                                        intermediary format such as DocBook, Apache FO, or LaTeX. Instead,
+                                        you can use Asciidoctor PDF to convert your documents directly
+                                        from AsciiDoc to PDF. The aim of this library is to take the pain
+                                        out of creating PDF documents from AsciiDoc.
 
 categories:                             [ Knowledge ]
 tags:                                   [ Asciidoctor, PDF, Converter ]
 
+image:
+  path:                                 /assets/images/modules/attics/sigmund-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Sigmund on Unsplash
+
 sitemap:                                false
+
 robots:
   index:                                false
   follow:                               false
@@ -22,14 +32,11 @@ regenerate:                             false
 
 resources:                              [ animate, clipboard, lightbox, rouge ]
 resource_options:
-
   - attic:
-
+      alignY:                             0.3
       slides:
-
         - url:                          /assets/images/modules/attics/sigmund-1920x1280.jpg
           alt:                          Photo by Sigmund on Unsplash
-          alignY:                       0.3
           badge:
             type:                       unsplash
             author:                     Sigmund
