@@ -141,8 +141,8 @@ module Jekyll
       def twitter
         return @twitter if defined? @twitter
 
-        twitter   = author_hash["twitter"] || author_hash["name"]
-        @twitter  = twitter.is_a?(String) ? twitter.sub(%r!^@!, "") : nil
+        twitter = author_hash["twitter"] || author_hash["name"]
+        @twitter = twitter.is_a?(String) ? twitter.sub(%r!^@!, "") : nil
       end
 
       private
@@ -267,6 +267,10 @@ module Jekyll
         @page_title ||= format_string(page["title"]) || site_title
       end
 
+      def page_tagline
+        @site_tagline ||= format_string page["tagline"]
+      end
+
       def site_tagline_or_description
         site_tagline || site_description
       end
@@ -276,7 +280,8 @@ module Jekyll
       def title
         @title ||= begin
           if site_title && page_title != site_title
-            page_title + TITLE_SEPARATOR + site_title
+#           page_title + TITLE_SEPARATOR + site_title
+            page_title + TITLE_SEPARATOR +  page_tagline
           elsif site_description && site_title
             site_title + TITLE_SEPARATOR + site_tagline_or_description
           else

@@ -60,94 +60,6 @@
           href:                         /pages/public/learn/roundtrip/quicksearch/
           icon:                         magnify
 
-    # --------------------------------------------------------------------------
-    # Jupyter Notebooks
-    #
-    - title:                            Jupyter Notebooks
-      icon:                             notebook-outline
-      dropdown:
-
-        - title:                        Where to go
-          href:                         /pages/public/jupyter/where-to-go/
-          icon:                         paw
-
-        # ----------------------------------------------------------------------
-        # Interactive Notebooks
-        #
-        - title:                        Distributed Notebooks
-          icon:                         notebook-outline
-          dropdown:
-
-            - title:                    Time Tables Visualization
-              href:                     /pages/public/jupyter/examples/distributed/j1-circular-times-table/
-              icon:                     notebook-outline
-            - title:                    ODEs in Python
-              href:                     /pages/public/jupyter/examples/distributed/odes-in-python/
-              icon:                     notebook-outline
-            - title:                    Common Used Widgets
-              href:                     /pages/public/jupyter/examples/distributed/common-used-widgets/
-              icon:                     notebook-outline
-
-        # ----------------------------------------------------------------------
-        # Static Notebooks
-        #
-        - title:                        Localized Notebooks
-          icon:                         notebook-outline
-          dropdown:
-
-            - title:                    Climate Change Forecast
-              href:                     /pages/public/jupyter/examples/localized/climate-change-forecast/
-              icon:                     notebook-outline
-            - title:                    Visualizations using Altair
-              href:                     "https://jekyll.one/pages/public/jupyter/examples/localized/j1-altair-visualizations/"
-              target:                   _blank
-              icon:                     notebook-outline
-            - title:                    Visualizations using Bokeh
-              href:                     "https://jekyll.one/pages/public/jupyter/examples/localized/j1-bokeh-visualizations/"
-              target:                   _blank
-              icon:                     notebook-outline
-
-        # ----------------------------------------------------------------------
-        # Documentation
-        #
-        - title:                        NBI Documentation
-          icon:                         head-lightbulb
-          dropdown:
-
-            - title:                    J1 NBI Integration
-              href:                     "https://jekyll.one/pages/public/jupyter/docs/j1-nbinteract-docs/"
-              target:                   _blank
-              icon:                     alpha-j-box
-            - title:                    NBI Wigets
-              href:                     "https://jekyll.one/pages/public/jupyter/docs/nbi-widgets/"
-              icon:                     alpha-j-box
-              target:                   _blank
-            - title:                    BinderHub API
-              href:                     "https://jekyll.one/pages/public/jupyter/docs/binderhub/"
-              target:                   _blank
-              icon:                     book
-            - title:                    JupyterHub API
-              href:                     "https://jekyll.one/pages/public/jupyter/docs/jupyterhub/"
-              target:                   _blank
-              icon:                     book
-
-    # --------------------------------------------------------------------------
-    # Asciidoc Skeletons
-    #
-    - title:                            Asciidoc Skeletons
-      icon:                             application-settings
-      dropdown:
-        - title:                        Simple-Document
-          href:                         /pages/public/skeleton/simple/
-          icon:                         file-document-outline
-        - title:                        Multi-Document
-          href:                         /pages/public/skeleton/multi/
-          icon:                         file-document-multiple-outline
-        - title:                        Documentation
-          href:                         /pages/public/skeleton/documentation/
-          icon:                         book-open-blank-variant
-
-
 # ------------------------------------------------------------------------------
 # Menu BLOG
 #
@@ -459,38 +371,55 @@
       icon:                             eye
       dropdown:
 
-      - title:                          Current Theme
-        href:                           /pages/public/previewer/current_theme/
-        icon:                           theme-light-dark
-        target:                         _blank
-      - title:                          MD Color Palette
-        href:                           "https://jekyll.one/pages/public/previewer/color_palette/"
-        icon:                           format-color-fill
-        target:                         _blank
-      - title:                          Master Slider
-        href:                           "https://jekyll.one/pages/public/previewer/masterslider/"
-        icon:                           gesture-swipe
-        target:                         _blank
-      - title:                          Country Flags
-        href:                           "https://jekyll.one/pages/public/previewer/country_flags/"
-        icon:                           flag
-        target:                         _blank
-      - title:                          MDI Icons (regular)
-        href:                           "https://jekyll.one/pages/public/previewer/mdi_font/"
-        icon:                           alarm-light
-        target:                         _blank
-      - title:                          MDI Icons (light)
-        href:                           "https://jekyll.one/pages/public/previewer/mdil_font/"
-        icon:                           alarm-light-outline
-        target:                         _blank
-      - title:                          Rouge Themes
-        href:                           "https://jekyll.one/pages/public/previewer/rouge/"
-        icon:                           code-parentheses
-        target:                         _blank
-      - title:                          Justified Gallery
-        href:                           "https://jekyll.one/pages/public/previewer/justified_gallery/"
-        icon:                           view-dashboard
-        target:                         _blank
+        # --------------------------------------------------------------------------
+        # Asciidoc Skeletons
+        #
+        - title:                        Asciidoc Skeletons
+          icon:                         application-settings
+          dropdown:
+            - title:                    Simple-Document
+              href:                     /pages/public/skeleton/simple/
+              icon:                     file-document-outline
+            - title:                    Multi-Document
+              href:                     /pages/public/skeleton/multi/
+              icon:                     file-document-multiple-outline
+            - title:                    Documentation
+              href:                     /pages/public/skeleton/documentation/
+              icon:                     book-open-blank-variant
+
+        - title:                        Current Theme
+          href:                         /pages/public/previewer/current_theme/
+          icon:                         theme-light-dark
+          target:                       _blank
+        - title:                        MD Color Palette
+          href:                         "https://jekyll.one/pages/public/previewer/color_palette/"
+          icon:                         format-color-fill
+          target:                       _blank
+        - title:                        Master Slider
+          href:                         "https://jekyll.one/pages/public/previewer/masterslider/"
+          icon:                         gesture-swipe
+          target:                       _blank
+        - title:                        Country Flags
+          href:                         "https://jekyll.one/pages/public/previewer/country_flags/"
+          icon:                         flag
+          target:                       _blank
+        - title:                        MDI Icons (regular)
+          href:                         "https://jekyll.one/pages/public/previewer/mdi_font/"
+          icon:                         alarm-light
+          target:                       _blank
+        - title:                        MDI Icons (light)
+          href:                         "https://jekyll.one/pages/public/previewer/mdil_font/"
+          icon:                         alarm-light-outline
+          target:                       _blank
+        - title:                        Rouge Themes
+          href:                         "https://jekyll.one/pages/public/previewer/rouge/"
+          icon:                         code-parentheses
+          target:                       _blank
+        - title:                        Justified Gallery
+          href:                         "https://jekyll.one/pages/public/previewer/justified_gallery/"
+          icon:                         view-dashboard
+          target:                       _blank
+
 
     # --------------------------------------------------------------------------
     # CheatSheets

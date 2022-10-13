@@ -1,14 +1,19 @@
 ---
 layout:                                 post
 
-title:                                  Your title
-tagline:                                your tagline
+title:                                  Your Title
+tagline:                                Your Awesome Tagline
 
 categories:                             [ Template ]
 tags:                                   [ Simple Post ]
 
-image:                                  /assets/images/modules/attics/sigmund-1920x1280.jpg
+image:
+  path:                                 /assets/images/modules/attics/sigmund-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Sigmund on Unsplash
 
+#comments:                               false
 #personalization:                       false
 #exclude_from_search:                   false
 #series:                                false
@@ -18,21 +23,18 @@ image:                                  /assets/images/modules/attics/sigmund-19
 
 regenerate:                             false
 
-resources:                              []
+resources:                              [ animate ]
 resource_options:
+  - toccer:
+      collapseDepth:                    3
   - attic:
-
       padding_top:                      400
       padding_bottom:                   50
       opacity:                          0.5
-
+      alignY:                           0.3
       slides:
-
         - url:                          /assets/images/modules/attics/sigmund-1920x1280.jpg
           alt:                          Photo by Sigmund on Unsplash
-          title:                        Your title
-          tagline:                      your tagline
-          alignY:                       0.3
           badge:
             type:                       unsplash
             author:                     Sigmund

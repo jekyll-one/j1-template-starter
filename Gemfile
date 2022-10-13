@@ -41,7 +41,7 @@ source 'https://rubygems.org'
 # web application. This makes sure to use identical Ruby runtime environments
 # for BUILD and RUN (e.g. for Docker images or a Dyno on Heroku).
 #
-# ruby '3.1'
+# ruby '3.1.2'
 
 # ------------------------------------------------------------------------------
 # Jekyll
@@ -68,9 +68,11 @@ install_if -> { RUBY_VERSION =~ /3/ } do
 end
 
 # ------------------------------------------------------------------------------
-# Specify the THEME GEM used for the project
+# Specify the THEME GEM used for the project (loaded from gem.fury.io)
 #
-gem 'j1-template', '~> 2022.5.3'
+source 'https://gem.fury.io/jekyll-one-org/' do
+  gem 'j1-template', '~> 2022.6.0'
+end
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
