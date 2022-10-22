@@ -1,0 +1,84 @@
+<!--
+# -----------------------------------------------------------------------------
+#  ~/assets/custom/content/static/bs5_accordion.html
+#
+#  Product/Info:
+#  http://jekyll.one
+#
+#  Copyright (C) 2022 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+#
+# -----------------------------------------------------------------------------
+# NOTE:
+# Find the accordion example @BS5:
+#    https://getbootstrap.com/docs/5.2/components/accordion/
+# -----------------------------------------------------------------------------
+-->
+<!-- Panel container settings  -->
+<section id="panel_custom_panel" class="g-2 elevated-z2">
+ <section id="custom_panel" class="container">
+   <div class="row mt-5 mb-5">
+     <!-- Panel Header -->
+     <div class="noclass">
+       <div>
+         <h2 class="g-font-weight-500 mb-0">Custom Panel</h2>
+         <p class="tagline mb-0"><b>creating dynamic content</b></p>
+         <div class="d-inline-block g-width-50 g-height-2 bg-primary mb-2"></div>
+       </div>
+       <div class="mt-3 mb-3">
+         <p class="dropcap">
+           This is an example for a Custom Panel based on Bootstrap V5. The example
+           code for the <b>dynamic content</b> is taken from the Bootstrap V5 Doc
+           pages at:
+         </p>
+        <a class="ml-3 mb-5" href="https://getbootstrap.com/docs/5.2/components/accordion/" target="_blank" rel="noopener noreferrer">
+           Accordion · Bootstrap v5.2
+         </a>
+       </div>
+     </div>
+     <!-- End Header  -->
+     <!-- Dynamic Content -->
+     <div id="bs5_accordion" class="accordion mt-3">
+       <div class="accordion-item">
+         <h2 id="heading-1" class="accordion-header">
+           <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse_1" aria-expanded="true" aria-controls="collapse_1">
+             Accordion Item #1
+           </button>
+         </h2>
+         <div id="collapse_1" class="accordion-collapse collapse show" aria-labelledby="heading_1" data-bs-parent="#bs5_accordion">
+           <div class="accordion-body">
+             <p><strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
+           </div>
+         </div>
+       </div>
+       <div class="accordion-item">
+         <h2 id="heading-2" class="accordion-header">
+           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_2" aria-expanded="false" aria-controls="collapse_2">
+             Accordion Item #2
+           </button>
+         </h2>
+         <div id="collapse_2" class="accordion-collapse collapse" aria-labelledby="heading_2" data-bs-parent="#bs5_accordion">
+           <div class="accordion-body">
+             <p><strong>This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
+           </div>
+         </div>
+       </div>
+       <div class="accordion-item">
+         <h2 id="heading-3" class="accordion-header">
+           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_3" aria-expanded="false" aria-controls="collapse_3">
+             Accordion Item #3
+           </button>
+         </h2>
+         <div id="collapse_3" class="accordion-collapse collapse" aria-labelledby="heading_3" data-bs-parent="#bs5_accordion">
+           <div class="accordion-body">
+             <p><strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</p>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- End Dynamic Content -->
+   </div>
+ </section>
+</section>

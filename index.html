@@ -32,11 +32,59 @@ fab_menu_id:                            default
 scrollbar:                              false
 toc:                                    false
 
+accordion:
+  debug:                                false
+  name:                                 custom_panel
+  id:                                   bs5_accordion
+
+  header:
+    title:                              Custom Panel
+    tagline:                            creating dynamic content
+    description: >
+                                        <p class="dropcap">
+                                          This is an example for a Custom Panel based on Bootstrap V5. The example
+                                          code for the <b>dynamic content</b> is taken from the Bootstrap V5 Doc
+                                          pages at:
+                                        </p>
+                                        <a class="ml-3 mb-5"
+                                           href="https://getbootstrap.com/docs/5.2/components/accordion/"
+                                           target="_blank" rel="noopener noreferrer">
+                                          Accordion · Bootstrap v5.2
+                                        </a>
+  elements:
+    - element:
+      expanded:                         true
+      title:                            "Accordion Item #1"
+      content: >
+                                        <strong>This is the first item's accordion body.</strong> It is shown by default,
+                                        until the collapse plugin adds the appropriate classes that we use to style each element.
+                                        These classes control the overall appearance, as well as the showing and hiding via CSS
+                                        transitions. You can modify any of this with custom CSS or overriding our default variables.
+                                        It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>,
+                                        though the transition does limit overflow.
+    - element:
+      title:                            "Accordion Item #2"
+      content: >
+                                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until
+                                        the collapse plugin adds the appropriate classes that we use to style each element. These
+                                        classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                                        You can modify any of this with custom CSS or overriding our default variables. It's also worth
+                                        noting that just about any HTML can go within the <code>.accordion-body</code>, though the
+                                        transition does limit overflow.
+    - element:
+      title:                            "Accordion Item #3"
+      content: >
+                                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until
+                                        the collapse plugin adds the appropriate classes that we use to style each element. These
+                                        classes control the overall appearance, as well as the showing and hiding via CSS transitions.
+                                        You can modify any of this with custom CSS or overriding our default variables. It's also worth
+                                        noting that just about any HTML can go within the <code>.accordion-body</code>, though the
+                                        transition does limit overflow.
+
 regenerate:                             false
 
 resources:                              [ animate, iconify, scroller ]
 resource_options:
-
   - attic:
       circuit:                          true
       pauseOnHover:                     true
@@ -48,15 +96,15 @@ resource_options:
         - url:                          /assets/images/modules/attics/1920x1280/kristopher-roller.jpg
           alt:                          Photo by Kristopher Roller on Unsplash
           title:                        Jekyll One Template
-          tagline:                      explore what j1 template can do
+          tagline:                      Explore What J1 Can Do
           badge:
             type:                       unsplash
             author:                     Kristopher Roller
             href:                       https://unsplash.com/@krisroller
         - url:                          /assets/images/modules/attics/1920x1280/brad-neathery.jpg
           alt:                          Photo by Brad Neathery on Unsplash
-          title:                        Setup a site in no time
-          tagline:                      ready to use build-in web available
+          title:                        Setup A Site In No Time
+          tagline:                      Ready-to-use Build-in Web Available
           badge:
             type:                       unsplash
             author:                     Brad Neathery
@@ -64,19 +112,20 @@ resource_options:
         - url:                          /assets/images/modules/attics/1920x1280/fly-d.jpg
           alt:                          Photo by FLY:D on Unsplash
           title:                        Create Your Web
-          tagline:                      modern, fast and secure websites
+          tagline:                      Modern, Fast and Secure Websites
           badge:
             type:                       unsplash
             author:                     FLY:D
             href:                       https://unsplash.com/@flyd2069
         - url:                          /assets/images/modules/attics/1920x1280/nasa.jpg
           alt:                          Photo by NASA on Unsplash
-          title:                        Start using J1 Template
-          tagline:                      go for rocketstart, create a site in minutes
+          title:                        Using J1 Template Now
+          tagline:                      Go For Rocketstart And Create A Site In Minutes
           badge:
             type:                       unsplash
             author:                     NASA
             href:                       https://unsplash.com/@nasa
+
 ---
 
 <pre>

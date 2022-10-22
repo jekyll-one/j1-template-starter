@@ -1,0 +1,103 @@
+<!--
+ # -----------------------------------------------------------------------------
+ #  ~/assets/custom/content/templates/bs5_accordion.html
+ #
+ #  Product/Info:
+ #  http://jekyll.one
+ #
+ #  Copyright (C) 2022 Juergen Adams
+ #
+ #  J1 Template is licensed under the MIT License.
+ #  See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+ #
+ # -----------------------------------------------------------------------------
+ # NOTE:
+ # Find the accordion example @BS5:
+ #    https://getbootstrap.com/docs/5.2/components/accordion/
+ # -----------------------------------------------------------------------------
+ # Test data:
+ #    liquid_var:  {{liquid_var | debug}}
+ # -----------------------------------------------------------------------------
+-->
+
+{% comment %} Process YAML config data
+================================================================================ {% endcomment %}
+
+{% comment %} Set config data (page)
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign debug_enabled = page.accordion.debug %}
+{% assign name          = page.accordion.name %}
+{% assign id            = page.accordion.id %}
+{% assign title         = page.accordion.header.title %}
+{% assign tagline       = page.accordion.header.tagline %}
+{% assign description   = page.accordion.header.description %}
+
+
+{% comment %} Main
+-------------------------------------------------------------------------------- {% endcomment %}
+<!-- Panel container settings  -->
+<section id="panel_{{name}}" class="g-2 elevated-z2">
+  <section id="{{name}}" class="container">
+    <div class="row mt-5 mb-5">
+
+      <!-- Panel Header -->
+      <div class="noclass">
+        <div>
+          <h2 class="g-font-weight-500 mb-0">{{title}}</h2>
+          <p class="tagline mb-0"><b>{{tagline}}</b></p>
+          <div class="d-inline-block g-width-50 g-height-2 bg-primary mb-2"></div>
+        </div>
+        <div class="mt-3 mb-3">{{description}}</div>
+      </div>
+      <!-- End Header  -->
+
+      <!-- Dynamic Content -->
+      <div id="{{id}}" class="accordion mt-3">
+        {% for element in page.accordion.elements %}
+
+        {% if element.expanded %}
+          {% assign button_collapsed    = '' %}
+          {% assign content_collapsed   = 'collapse show' %}
+          {% assign aria_expanded       = 'true' %}
+        {% else %}
+          {% assign button_collapsed    = 'collapsed' %}
+          {% assign content_collapsed   = 'collapse' %}
+          {% assign aria_expanded       = 'false' %}
+        {% endif %}
+
+        {% if debug_enabled %}
+          button_collapsed:   {{button_collapsed|debug}}
+          content_collapsed:  {{content_collapsed|debug}}
+          aria_expanded:      {{aria_expanded|debug}}
+        {% endif %}
+
+        <div class="accordion-item">
+          <h2 id="heading-{{forloop.index}}" class="accordion-header">
+            <button
+              class="accordion-button {{button_collapsed}}"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse_{{forloop.index}}"
+              aria-expanded="{{aria_expanded}}"
+              aria-controls="collapse_{{forloop.index}}">
+              {{element.title}}
+            </button>
+          </h2>
+          <div
+            id="collapse_{{forloop.index}}"
+            class="accordion-collapse {{content_collapsed}}"
+            aria-labelledby="heading_{{forloop.index}}"
+            data-bs-parent="#{{id}}">
+              <div class="accordion-body">
+                {{element.content|markdownify}}
+              </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <!-- End Dynamic Content -->
+
+    </div>
+  </section>
+</section>
+<!-- End Panel container settings  -->

@@ -41,7 +41,7 @@ source 'https://rubygems.org'
 # web application. This makes sure to use identical Ruby runtime environments
 # for BUILD and RUN (e.g. for Docker images or a Dyno on Heroku).
 #
-# ruby '3.1.2'
+# ruby '3.1'
 
 # ------------------------------------------------------------------------------
 # Jekyll
