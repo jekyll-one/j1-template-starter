@@ -60,10 +60,6 @@
           href:                         /pages/public/learn/roundtrip/quicksearch/
           icon:                         magnify
 
-
-
-
-
 # ------------------------------------------------------------------------------
 # Menu BLOG
 #
@@ -375,54 +371,54 @@
       icon:                             eye
       dropdown:
 
-      - title:                          Current Theme
-        href:                           /pages/public/previewer/current_theme/
-        icon:                           theme-light-dark
-        target:                         _blank
-      - title:                          MD Color Palette
-        href:                           "https://jekyll.one/pages/public/previewer/color_palette/"
-        icon:                           format-color-fill
-        target:                         _blank
-      - title:                          Master Slider
-        href:                           "https://jekyll.one/pages/public/previewer/masterslider/"
-        icon:                           gesture-swipe
-        target:                         _blank
-      - title:                          Country Flags
-        href:                           "https://jekyll.one/pages/public/previewer/country_flags/"
-        icon:                           flag
-        target:                         _blank
-      - title:                          MDI Icons (regular)
-        href:                           "https://jekyll.one/pages/public/previewer/mdi_font/"
-        icon:                           alarm-light
-        target:                         _blank
-      - title:                          MDI Icons (light)
-        href:                           "https://jekyll.one/pages/public/previewer/mdil_font/"
-        icon:                           alarm-light-outline
-        target:                         _blank
-      - title:                          Rouge Themes
-        href:                           "https://jekyll.one/pages/public/previewer/rouge/"
-        icon:                           code-parentheses
-        target:                         _blank
-      - title:                          Justified Gallery
-        href:                           "https://jekyll.one/pages/public/previewer/justified_gallery/"
-        icon:                           view-dashboard
-        target:                         _blank
+        # ----------------------------------------------------------------------
+        # Asciidoc Skeletons
+        #
+        - title:                        Asciidoc Skeletons
+          icon:                         application-settings
+          dropdown:
+            - title:                    Simple-Document
+              href:                     /pages/public/skeleton/simple/
+              icon:                     file-document-outline
+            - title:                    Multi-Document
+              href:                     /pages/public/skeleton/multi/
+              icon:                     file-document-multiple-outline
+            - title:                    Documentation
+              href:                     /pages/public/skeleton/documentation/
+              icon:                     book-open-blank-variant
 
-    # --------------------------------------------------------------------------
-    # Asciidoc Skeletons
-    #
-    - title:                            Asciidoc Skeletons
-      icon:                             application-settings
-      dropdown:
-        - title:                        Simple-Document
-          href:                         /pages/public/skeleton/simple/
-          icon:                         file-document-outline
-        - title:                        Multi-Document
-          href:                         /pages/public/skeleton/multi/
-          icon:                         file-document-multiple-outline
-        - title:                        Documentation
-          href:                         /pages/public/skeleton/documentation/
-          icon:                         book-open-blank-variant
+        - title:                        Current Theme
+          href:                         /pages/public/previewer/current_theme/
+          icon:                         theme-light-dark
+          target:                       _blank
+        - title:                        MD Color Palette
+          href:                         "https://jekyll.one/pages/public/previewer/color_palette/"
+          icon:                         format-color-fill
+          target:                       _blank
+        - title:                        Master Slider
+          href:                         "https://jekyll.one/pages/public/previewer/masterslider/"
+          icon:                         gesture-swipe
+          target:                       _blank
+        - title:                        Country Flags
+          href:                         "https://jekyll.one/pages/public/previewer/country_flags/"
+          icon:                         flag
+          target:                       _blank
+        - title:                        MDI Icons (regular)
+          href:                         "https://jekyll.one/pages/public/previewer/mdi_font/"
+          icon:                         alarm-light
+          target:                       _blank
+        - title:                        MDI Icons (light)
+          href:                         "https://jekyll.one/pages/public/previewer/mdil_font/"
+          icon:                         alarm-light-outline
+          target:                       _blank
+        - title:                        Rouge Themes
+          href:                         "https://jekyll.one/pages/public/previewer/rouge/"
+          icon:                         code-parentheses
+          target:                       _blank
+        - title:                        Justified Gallery
+          href:                         "https://jekyll.one/pages/public/previewer/justified_gallery/"
+          icon:                         view-dashboard
+          target:                       _blank
 
     # --------------------------------------------------------------------------
     # CheatSheets

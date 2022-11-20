@@ -75,7 +75,23 @@ settings:
         type:                           teaser
         badges:                         false
         icon_family:                    MDI
-        properties:                     mt-3 mb-5
+        properties:                     mb-5
+
+        wave:
+          top:
+            enabled:                      false
+            height:                       3                                     # [1 .. 9]
+            style:                        wave-1                                # default
+            color:                        "#dcdcdc"
+            background_color:             "#f5f5f5"
+            transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
+          bottom:
+            enabled:                      false
+            height:                       3
+            style:                        wave-4
+            color:                        "#dcdcdc"
+            background_color:             "#f5f5f5"
+            transform:                    rotate
 
         cards:
 
@@ -113,7 +129,7 @@ settings:
 #                    id:                 new-version
 #                    image:              /assets/images/sticker/600x600/sticker-new-version.png
 #                    size:               200
-#                    title:              Get new version 2022.6.0
+#                    title:              Get new version 2022.6.1
 #                    style:              "width: 140px; height: 120px;"
 #                    href:               "https://rubygems.org/gems/j1-template"
 #                    target:             blank

@@ -96,14 +96,13 @@ resource_options:
 {% assign letter_group_written  = false %}
 
 {% include {{get_page_path}} mode='absolute' %}
-{% assign navigator_path = page_path | remove_first:'archive' %}
+{% assign navigator_path = page_path | remove_first: 'archive' %}
 
 {% capture navigator %}{{navigator_path}}{% endcapture %}
-{% capture blog_preview %}{{page_path}}/preview/{% endcapture %}
 {% capture date_view %}{{page_path}}/dateview/{% endcapture %}
 {% capture category_view %}{{page_path}}/categoryview/{% endcapture %}
 {% capture tag_view %}{{page_path}}/tagview/{% endcapture %}
-{% capture all_view %}{{page_path}}/{% endcapture %}
+{% capture all_view %}{{page_path}}/allview/{% endcapture %}
 
 {% comment %} TODO: skip_words should configured by yaml data file?
 -------------------------------------------------------------------------------- {% endcomment %}
@@ -175,10 +174,10 @@ site_category_word_list:    {{site_category_word_list | debug}}
 
 <div class="paginator ml-3">
   <ul class="pagination raised-z0">
-    <li class="page-item"><a class="page-link" href="{{navigator | prepend: site.baseurl}}" alt="Blog View">Navigator</a></li>
-    <li class="page-item"><a class="page-link" href="{{date_view | prepend: site.baseurl}}" alt="View by Date">By Date</a></li>
-    <li class="page-item"><a class="page-link" href="{{category_view | prepend: site.baseurl}}" alt="View by Category">By Category</a></li>
-    <li class="page-item"><a class="page-link" href="{{all_view | prepend: site.baseurl}}" alt="View All">All Posts</a></li>
+    <li class="page-item"><a class="page-link" href="{{navigator}}" alt="Blog View">Navigator</a></li>
+    <li class="page-item"><a class="page-link" href="{{date_view}}" alt="View by Date">By Date</a></li>
+    <li class="page-item"><a class="page-link" href="{{category_view}}" alt="View by Category">By Category</a></li>
+    <li class="page-item"><a class="page-link" href="{{all_view}}" alt="View All">All Posts</a></li>
   </ul>
 </div>
 
@@ -203,42 +202,18 @@ site_category_word_list:    {{site_category_word_list | debug}}
 
     {% if skip %} {% continue %} {% endif %}
 
-    {% assign first_letter = this_word | slice: 0, 1  %}
-    {% assign first_letter = first_letter | downcase %}
-
-    {% if letter_group contains first_letter %}
-      {% comment %} jadams, 2018-01-17: logic seems NOT work. Disabled.
-      --------------------------------------------------------------------------
-      <!-- jadams, 2018-01-17: logic seems NOT work. Disabled. -->
-      {% if letter_group_written == false %}
-        <h2 id="id_{{letter_group}}" class="toc-link mt-5 mb-5"><a alt="Back to top" href="#void"><i class="fa fa-tags mr-2"></i></a>{{letter_group | upcase}}</h2>
-        {% assign letter_group_written = true %}
-      {% endif %}
-      -------------------------------------------------------------------------- {% endcomment %}
-    {% else %}
-      {% assign letter_group_counter = letter_group_counter | plus:1 %}
-      {% assign letter_group = letter_group_array[letter_group_counter] %}
-
-      {% comment %} jadams, 2018-01-17: logic seems NOT work.
-                    Added workaround by checking if letter_group has a value
-      -------------------------------------------------------------------------- {% endcomment %}
-      {% if letter_group %}
-      <h2 id="id_{{letter_group}}" class="toc-link mb-3">
-        <a alt="Back to top" href="#void">
-          <i class="fa fa-tags mr-2"></i>
-        </a>{{letter_group | upcase}}
-      </h2>
-      {% endif %}
-      {% assign letter_group_written = true %}
-    {% endif %}
-
     {% comment %}
+    ----------------------------------------------------------------------------
     letter_group: {{letter_group | debug}}
     this_word: {{this_word | debug}}
     first_letter: {{first_letter | debug}}
+    ----------------------------------------------------------------------------
     {% endcomment %}
 
-    <h3 id="{{this_word | replace: '+','_' | replace: ' ','_' | downcase}}" class="toc-link"><a alt="Back to top" href="#void"><i class="fa fa-tag mr-2"></i></a>{{this_word}}</h3>
+    <h2 id="{{this_word | replace: '+','_' | replace: ' ','_' | downcase}}" class="toc-link mb-4">
+      <a class="link-no-decoration" alt="category headline" href="#void"><i class="fa fa-tag mr-2"></i></a>
+      {{this_word}}
+    </h2>
 
     {% for post in site.tags[this_word] %}{% if post.title != null %}
       {% include {{get_category}} post=post %}
@@ -252,7 +227,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
       {% assign excerpt = post.excerpt|truncatewords: truncate_words|replace:'...',' ...' %}
 
       <!-- place post  -->
-      <article class="card raised-z3 mb-5">
+      <article class="card raised-z0 mb-5">
         <div class="card-header bg-primary">
           <h3 id="{{100000|rand}}" class="card-header bg-primary notranslate">{{post.title}}</h3>
         </div>
@@ -278,7 +253,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
           {% endif %}
 
           <div class="col-md-6 p-0">
-            <div class="card-body r-text-300">{{excerpt}}</div>
+            <div class="card-body r-text-300 mt-0">{{excerpt}}</div>
             <div class="card-footer not-rounded r-text-200">
               <div class="card-footer-text">
 
@@ -315,7 +290,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
               </p>
 
               </div>
-              <a class="card-link text-lowercase"
+              <a class="card-link md-grey-900 text-lowercase"
                  href="{{post.url}}#readmore">
                  {{readmore_text}} · {{post.tagline}}
               </a>

@@ -41,7 +41,7 @@ source 'https://rubygems.org'
 # web application. This makes sure to use identical Ruby runtime environments
 # for BUILD and RUN (e.g. for Docker images or a Dyno on Heroku).
 #
-# ruby '3.1'
+# ruby '3.1.2'
 
 # ------------------------------------------------------------------------------
 # Jekyll
@@ -68,11 +68,15 @@ install_if -> { RUBY_VERSION =~ /3/ } do
 end
 
 # ------------------------------------------------------------------------------
-# Specify the THEME GEM used for the project (loaded from gem.fury.io)
-#
-source 'https://gem.fury.io/jekyll-one-org/' do
-  gem 'j1-template', '~> 2022.6.0'
-end
+# Specify the THEME GEM used for the project
+
+# Loaded from RubyGems
+gem 'j1-template', '~> 2022.6.0'
+
+# Loaded from gem.fury.io
+#source 'https://gem.fury.io/jekyll-one-org/' do
+#  gem 'j1-template', '~> 2022.6.0'
+#end
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -81,7 +85,7 @@ end
 # ------------------------------------------------------------------------------
 # Code Highlighter Rouge
 #
-gem 'rouge', '~> 3.3'
+gem 'rouge', '~> 4.0'
 
 # ------------------------------------------------------------------------------
 # XML|HTML processing
@@ -211,7 +215,7 @@ gem 'bump', '~> 0.10'
 # ------------------------------------------------------------------------------
 #
 # gem 'passenger', '>= 5.3'
-gem 'puma', '>= 5.5.2'
+gem 'puma', '>= 6.0'
 
 # ------------------------------------------------------------------------------
 # Data encryption (currently NOT supported)

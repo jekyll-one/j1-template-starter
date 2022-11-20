@@ -12,15 +12,15 @@ description: >
 categories:                             [ Previewer ]
 tags:                                   [ Bootstrap, Themes ]
 
-comments:                               false
-fab_menu_id:                            page_ctrl
-scrollbar:                              false
-
 image:
   path:                                 /assets/images/pages/roundtrip/themes-1920x1280-bw.jpg
   width:                                1920
   height:                               1280
   alt:                                  Photo by Clem Onojeghuo on Unsplash
+
+comments:                               false
+fab_menu_id:                            page_ctrl
+scrollbar:                              false
 
 permalink:                              /pages/public/previewer/current_theme/
 regenerate:                             false
@@ -186,7 +186,7 @@ colors. Then, customize with `.bg-*` utilities.
         </ul>
         <form class="d-flex">
           <input class="form-control mt-1" type="text" placeholder="Search">
-          <button class="btn btn-secondary btn-sm ml-1" type="submit">Search</button>
+          <button class="btn btn-secondary btn-sm ml-3" type="submit">Search</button>
         </form>
       </div>
     </div>
@@ -231,7 +231,7 @@ colors. Then, customize with `.bg-*` utilities.
         </ul>
         <form class="d-flex">
           <input class="form-control mt-1" type="text" placeholder="Search">
-          <button class="btn btn-secondary btn-sm ml-1" type="submit">Search</button>
+          <button class="btn btn-secondary btn-sm ml-3" type="submit">Search</button>
         </form>
       </div>
     </div>
@@ -277,7 +277,7 @@ colors. Then, customize with `.bg-*` utilities.
         </ul>
         <form class="d-flex">
           <input class="form-control mt-1" type="text" placeholder="Search">
-          <button class="btn btn-secondary btn-sm ml-1" type="submit">Search</button>
+          <button class="btn btn-secondary btn-sm ml-3" type="submit">Search</button>
         </form>
       </div>
     </div>
@@ -327,7 +327,7 @@ colors. Then, customize with `.bg-*` utilities.
       </ul>
       <form class="d-flex">
         <input class="form-control mt-1" type="text" placeholder="Search">
-        <button class="btn btn-secondary btn-sm ml-1" type="submit">Search</button>
+        <button class="btn btn-secondary btn-sm ml-3" type="submit">Search</button>
       </form>
     </div>
   </div>
@@ -2489,7 +2489,7 @@ mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-modal}[Bootstrap Docs {char-middot} Modal, {browser-window--new}]
 
 .Modal types
-[cols="2a,8a,2a", options="header", width="100%", role="rtable"]
+[cols="3a,7a,2a", options="header", width="100%", role="rtable"]
 |===
 |Type |Description |Launch Example
 
@@ -2873,10 +2873,6 @@ Popovers and Tooltips rely on the 3rd party library __Popper.js__ for positionin
 To make them properly positioned, the Javascript library `popper.min.js` has to
 be included before `bootstrap.js` in order to make popovers and tooltips to work.
 
-==== Tooltips
-
-Bla bla blu.
-
 mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-tooltips}[Bootstrap Docs {char-middot} Tooltips, {browser-window--new}]
 
@@ -2917,10 +2913,6 @@ link:{url-bs-docs--components-tooltips}[Bootstrap Docs {char-middot} Tooltips, {
     title="Tooltip on left">Left
   </button>
 ----
-
-==== Popovers
-
-Bla bla blu.
 
 mdi:bootstrap[18px, mdi-md-deep-purple-400]
 link:{url-bs-docs--components-popovers}[Bootstrap Docs {char-middot} Popovers, {browser-window--new}]

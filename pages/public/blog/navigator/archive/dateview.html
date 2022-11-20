@@ -84,13 +84,13 @@ resource_options:
 {% endif %}
 
 {% include {{get_page_path}} mode='absolute' %}
-{% assign navigator_path = page_path|remove_first:'archive' %}
+{% assign navigator_path = page_path|remove_first: 'archive' %}
 
 {% capture navigator %}{{navigator_path}}{% endcapture %}
 {% capture date_view %}{{page_path}}/dateview/{% endcapture %}
 {% capture category_view %}{{page_path}}/categoryview/{% endcapture %}
 {% capture tag_view %}{{page_path}}/tagview/{% endcapture %}
-{% capture all_view %}{{page_path}}/{% endcapture %}
+{% capture all_view %}{{page_path}}/allview/{% endcapture %}
 
 {% comment %} Collect CSS image filters
 -------------------------------------------------------------------------------- {% endcomment %}
@@ -150,8 +150,9 @@ site_category_word_list:    {{site_category_word_list | debug}}
 <!-- [INFO   ] [ {{page.url}} ] [Generate HTML}] -->
 <div class="paginator ml-3">
   <ul class="pagination raised-z0">
-    <li class="page-item"><a class="page-link" href="{{navigator|prepend: site.baseurl}}" alt="Blog Navigator">Navigator</a></li>
-    <li class="page-item"><a class="page-link" href="{{category_view|prepend: site.baseurl}}" alt="View by Category">{{category_view_button_text}}</a></li>
+    <!-- li class="page-item"><a class="page-link" href="{{navigator|prepend: site.baseurl}}" alt="Blog Navigator">Navigator</a></li -->
+    <li class="page-item"><a class="page-link" href="{{navigator}}" alt="Blog Navigator">Navigator</a></li>
+    <li class="page-item"><a class="page-link" href="{{category_view}}" alt="View by Category">{{category_view_button_text}}</a></li>
     <li class="page-item"><a class="page-link" href="{{all_view}}" alt="View All">{{archive_view_button_text}}</a></li>
   </ul>
 </div>
@@ -203,7 +204,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
       {% comment %} {% assign excerpt = post.excerpt|truncatewords: truncate_words|replace:'...',' ...'|strip_html %} {% endcomment %}
       {% assign excerpt = post.excerpt|truncatewords: truncate_words|replace:'...',' ...' %}
       <li>
-        <article class="card raised-z3 mb-5">
+        <article class="card raised-z0 mb-5">
           <div class="card-header bg-primary">
             <h3 id="{{100000|rand}}" class="card-header bg-primary notranslate">{{post.title}}</h3>
           </div>
@@ -229,7 +230,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
             {% endif %}
 
             <div class="col-md-6 p-0">
-              <div class="card-body r-text-300">{{excerpt}}</div>
+              <div class="card-body r-text-300 mt-0">{{excerpt}}</div>
               <div class="card-footer not-rounded r-text-200">
                 <div class="card-footer-text">
 

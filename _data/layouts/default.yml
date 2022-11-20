@@ -110,17 +110,7 @@ lanes:
   #   Jekyll configuration (_config.yml) or for modules by the resources
   #   configuration (resources.yml).
   #
-  #   NOTE:
-  #     Do NOT add any HTML CONTENT here (directly).
-  #     For the J1 Template GEM (J1 run-time version), ONLY the building
-  #     blocks already prepared can be used to generate the contents of
-  #     a page. To change the content for a 'lane', find the configuration
-  #     for 'metadata' and 'resources' with:
-  #
-  #     metadata:   ~/_config.yml (Jekyll configuration for the site)
-  #     resources:  ~/_data/resources.yml (all modules used for the site)
-  #
-  # ----------------------------------------------------------------------------
+  # ============================================================================
 
   # METADATA loader
   #
@@ -143,22 +133,16 @@ lanes:
       path:                             layouts
       file:                             layout_resource_generator.html
 
+
   # ----------------------------------------------------------------------------
   # NAVIGATION region (body-navigation)
   #   The navigation region contains the NAV module that generates e.g., the
   #   menu bar or the quick links section.
   #
-  #   NOTE:
-  #     Do NOT add any HTML CONTENT here (directly).
-  #     For the J1 Template GEM (J1 run-time version), ONLY the building
-  #     blocks already prepared can be used to generate the contents of
-  #     a page. To change the content for a 'lane', find the configuration
-  #     for 'metadata' and 'resources' with:
-  #
-  #     general settings:   ~/_data/modules/navigator.yml
-  #     menu bar:           ~/_data/modules/navigator_menu.yml
-  #
+  # ============================================================================
+
   # ----------------------------------------------------------------------------
+  # NAV Module loader
   #
   - lane:
       enabled:                          true
@@ -174,21 +158,18 @@ lanes:
   #   The footer region contains visible data (the page footer) and NOT
   #   visible data to place all initializers for the JS componets specified.
   #
-  #   NOTE:
-  #     Do NOT add any HTML CONTENT here (directly).
-  #     For the J1 Template GEM (J1 run-time version), ONLY the building
-  #     blocks already prepared can be used to generate the contents of
-  #     a page. To change the content for a 'lane', find the configuration
-  #     for the 'page footer' and 'resources' with:
-  #
-  #     page footer:  ~/_data/blocks/footer.yml
-  #     resources:    ~/_data/resources.yml
-  #
-  #   NOTE:
-  #     The exception container is a placeholder (above the page footer)
-  #     for displaying error messages in case something went wrong.
-  #
+  # ============================================================================
+
   # ----------------------------------------------------------------------------
+  # SEARCH Module loader
+  #
+  - lane:
+      enabled:                          true
+      region:                           body-navigation
+      type:                             sync
+      base:                             _includes/themes/j1
+      path:                             modules/searcher
+      file:                             generator.html
 
   # ----------------------------------------------------------------------------
   # EXCEPTION container

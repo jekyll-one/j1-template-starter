@@ -36,10 +36,21 @@ settings:
     #
     - name:                             Footer UNO light
       footer:
-        id:                             footer-en
         enabled:                        true
+
+        id:                             footer-en
         comment:                        Footer UNO EN-EN
         theme:                          footer-light-theme
+        properties:                     mt-4
+
+        wave:
+          top:
+            enabled:                      true
+            height:                       4                                     # [1 .. 9]
+            style:                        wave-4
+            transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
+            color:                        "#212121"
+            background_color:             "#f5f5f5"
 
         # ----------------------------------------------------------------------
         # ISSUE settings

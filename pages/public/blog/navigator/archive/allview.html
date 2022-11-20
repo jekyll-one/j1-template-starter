@@ -1,0 +1,258 @@
+---
+layout:                                 page
+title:                                  Blog Archive
+tagline:                                Explore All Posts
+date:                                   2022-01-01 01:00:00
+description: >
+                                        When it comes to the usability of a website, the focus of your
+                                        visitors is on one important component: The Navigation System
+                                        of the site. To make all posts easy accessible to the visitors,
+                                        the Navigation System provides a Blog Explorer module. The explorer
+                                        module supports the users for browsing articles by sorting criteria
+                                        like category and date or browsing the archive for all articles.
+
+categories:                             [ Blog ]
+tags:                                   [ Navigator, Archive ]
+
+sort:                                   date
+toc:                                    true
+fab_menu_id:                            open_toc
+
+pagination:
+  enabled:                              false
+  permalink:                            /page:num/
+
+image:
+  path:                                 /assets/images/modules/attics/matthaeus-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Matthaeus on Unsplash
+
+analytics:                              false
+advertising:                            false
+comments:                               false
+
+exclude_from_search:                    true
+regenerate:                             false                                   # set to 'true', if update posts is required
+
+resources:                              [ animate, scroller ]
+resource_options:
+
+  - attic:
+      alignY:                           top
+      slides:
+        - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
+          alt:                          Photo by Matthaeus on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Matthaeus
+            href:                       https://unsplash.com/@matthaeus123
+---
+
+{% comment %} Liquid procedures
+-------------------------------------------------------------------------------- {% endcomment %}
+{% capture get_page_path %}themes/{{site.template.name}}/procedures/global/get_page_path.proc{% endcapture %}
+{% capture select_icon_size %}themes/{{site.template.name}}/procedures/global/select_icon_size.proc{% endcapture %}
+{% capture get_category_item %}themes/{{site.template.name}}/procedures/global/get_category_item.proc{% endcapture %}
+
+{% comment %} Set config files
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign template_config         = site.data.j1_config %}
+{% assign blocks                  = site.data.blocks %}
+{% assign modules                 = site.data.modules %}
+{% assign plugins                 = site.data.plugins %}
+
+{% comment %} Set config data
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign blog_navigator_defaults = modules.defaults.blog_navigator.defaults %}
+{% assign blog_navigator_settings = modules.blog_navigator.settings %}
+
+{% comment %} Set config options
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign blog_navigator_options  = blog_navigator_defaults | merge: blog_navigator_settings %}
+
+{% comment %} Variables
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign truncate_words          = site.excerpt_truncate_words %}
+{% assign category_blacklist      = template_config.posts.category_blacklist %}
+
+
+{% if site.permalink == 'none' %}
+  {% capture browser_page_url %}{{page.url}}.html{% endcapture %}
+{% else %}
+  {% capture browser_page_url %}{{page.url}}{% endcapture %}
+{% endif %}
+
+{% include {{get_page_path}} mode='absolute' %}
+{% assign navigator_path = page_path|remove_first: '/archive' %}
+
+{% capture navigator %}{{navigator_path}}/{% endcapture %}
+{% capture date_view %}{{page_path}}/dateview/{% endcapture %}
+{% capture category_view %}{{page_path}}/categoryview/{% endcapture %}
+{% capture tag_view %}{{page_path}}/tagview/{% endcapture %}
+{% capture all_view %}{{page_path}}/{% endcapture %}
+
+{% comment %} Collect CSS image filters
+-------------------------------------------------------------------------------- {% endcomment %}
+{% if blog_navigator_options.filters %}
+  {% for filter in blog_navigator_options.filters %}
+    {% capture css_filters %}{{css_filters}} {{filter[0]}}({{filter[1]}}){% endcapture %}
+  {% endfor %}
+  {% capture image_filters %}filter:{{css_filters}}{% endcapture %}
+{% else %}
+  {% assign image_filters = '' %}
+{% endif %}
+
+{% comment %} language detection
+-------------------------------------------------------------------------------- {% endcomment %}
+{% if site.language == "en" %}
+  {% assign language = "en" %}
+{% elsif site.language == "de"%}
+  {% assign language = "de" %}
+{% else %}
+  {% assign language = "en" %}
+{% endif %}
+
+{% if language == "en" %}
+  {% assign readmore_text               = "read" %}
+
+  {% assign category_view_button_text   = blog_navigator_options.button_text.view_selector.category_view.en %}
+  {% assign date_view_button_text       = blog_navigator_options.button_text.view_selector.date_view.en %}
+  {% assign archive_view_button_text    = blog_navigator_options.button_text.view_selector.archive_view.en %}
+  {% assign tag_view_button_text        = blog_navigator_options.button_text.view_selector.tag_view.en %}
+
+  {% assign view_headline               = blog_navigator_options.archive_view.page_text.en.headline %}
+  {% assign view_description_text       = blog_navigator_options.archive_view.page_text.en.description %}
+{% endif %}
+
+{% if language == "de" %}
+  {% assign readmore_text               = "lesen" %}
+
+  {% assign category_view_button_text   = blog_navigator_options.button_text.view_selector.category_view.de %}
+  {% assign date_view_button_text       = blog_navigator_options.button_text.view_selector.date_view.de %}
+  {% assign archive_view_button_text    = blog_navigator_options.button_text.view_selector.archive_view.de %}
+  {% assign tag_view_button_text        = blog_navigator_options.button_text.view_selector.tag_view.de %}
+
+  {% assign view_headline               = blog_navigator_options.archive_view.page_text.de.headline %}
+  {% assign view_description_text       = blog_navigator_options.archive_view.page_text.de.description %}
+{% endif %}
+
+{% comment %} Debugging
+--------------------------------------------------------------------------------
+skip_categories:            {{skip_categories | debug}}
+site_category_word_list:    {{site_category_word_list | debug}}
+--------------------------------------------------------------------------------
+{% endcomment %}
+
+{% comment %} Main
+-------------------------------------------------------------------------------- {% endcomment %}
+<!-- [INFO   ] [ {{page.url}} ] [Generate HTML}] -->
+<div class="paginator ml-3">
+  <ul class="pagination raised-z0">
+    <li class="page-item"><a class="page-link" href="{{navigator}}" alt="Blog View">Navigator</a></li>
+    <li class="page-item"><a class="page-link" href="{{category_view}}" alt="View by Category">{{category_view_button_text}}</a></li>
+    <li class="page-item"><a class="page-link" href="{{date_view}}" alt="View by Date">{{date_view_button_text}}</a></li>
+    <!-- li class="page-item"><a class="page-link" href="{{tag_view}}" alt="{{tag_view_button_text}}">By Tag</a></li -->
+  </ul>
+</div>
+
+<div id="index" class="post-search-results ml-3">
+  {% if blog_navigator_options.archive_view.page_text.enabled %}
+  <div class="view-description">{{view_description_text}}</div>
+  {% endif %}
+
+  <div class="post-headline">
+    <h2 id="post-headline notoc" class="mt-5">{{view_headline}}</h2>
+  </div>
+
+  <!-- ul class="list-unstyled link-news" -->
+  {% for post in site.posts %}
+    {% comment %} {% assign excerpt = post.excerpt|truncatewords: truncate_words|replace:'...',' ...'|strip_html %} {% endcomment %}
+    {% assign excerpt = post.excerpt|truncatewords: truncate_words|replace:'...',' ...' %}
+
+    <!-- Collect comment provider details -->
+    {% for sharing in builder_config.sharing_provider %}
+      {% assign provider      = sharing.provider %}
+      {% assign likes_count   = sharing.likes_count %}
+      {% assign comment_count = sharing.comment_count %}
+    {% endfor %}
+
+    <article class="card raised-z0 mb-5">
+      <div class="card-header bg-primary">
+
+        <h3 id="{{100000|rand}}" class="card-header bg-primary notranslate">
+          {{post.title}}
+          <!-- span>{{post.tagline}}</span -->
+        </h3>
+
+      </div>
+
+      <div class="row mx-0">
+        <!-- [INFO   ] [j1.pages.blog.navigator.archive         ] [Check if post image is available] -->
+        {% if post.image %}
+        <!-- [INFO   ] [j1.pages.blog.navigator.archive         ] [Post image is available] -->
+        {% if post.image.path %}
+        <!-- [INFO   ] [j1.pages.blog.navigator.archive         ] [use full post image data] -->
+        <div class="col-md-6 img-bg--fill px-0"
+          style="border-right: 1px dotted rgba(0, 0, 0, 0.25); {{image_filters}}; background-image: url({{post.image.path}});">
+        </div>
+        {% else %}
+        <div class="col-md-6 img-bg--fill px-0"
+          style="border-right: 1px dotted rgba(0, 0, 0, 0.25); {{image_filters}}; background-image: url({{post.image}});">
+        </div>
+        {% endif %}
+        {% else %}
+        <!-- [INFO   ] [j1.pages.blog.navigator.archive         ] [Post image missing, using configured default image] -->
+        <div class="col-md-6 img-bg--fill px-0"
+          style="border-right: 1px dotted rgba(0, 0, 0, 0.25); {{image_filters}}; background-image: url({{blog_navigator_options.post_image}});">
+        </div>
+        {% endif %}
+
+        <div class="col-md-6 p-0">
+          <div class="card-body r-text-300 mt-0">{{excerpt}}</div>
+          <div class="card-footer not-rounded r-text-200">
+            <div class="card-footer-text">
+
+              {% if post.date %}
+                {% if language == "en" %}
+                  <i class="mdi mdi-calendar-blank md-grey-900 mr-1"></i>{{post.date | localize: "%Y %B, %e"}}
+                {% endif %}
+                {% if language == "de" %}
+                  <i class="mdi mdi-calendar-blank md-grey-900 mr-1"></i>{{post.date | localize: "%-d. %B %Y"}}
+                {% endif %}
+              {% endif %}
+              {% if likes_count %}
+              <span class="font-weight-bold"> · </span>
+              <i class="mdi mdi-heart md-grey-900 mr-1"></i> {{likes_count}}
+              {% endif %}
+              {% if comment_count %}
+              <span class="font-weight-bold"> · </span>
+              <i class="mdi mdi-comment md-grey-900 mr-1"></i> {{comment_count}}
+              {% endif %}
+
+              <!-- Cleanup categories by given blacklist -->
+              {% assign my_categories = post.categories | difference: category_blacklist %}
+
+              <!-- Build element strings -->
+              {% assign categories    = my_categories |join: " · "  %}
+              {% assign tags          = post.tags | join: " · "  %}
+
+              <p class="result-item-text small mb-3 notranslate">
+                <i class="mdi mdi-tag-text-outline mdi-18px mr-1"></i>
+                <span class="sr-categories">{{categories}}</span>
+                <br>
+                <i class="mdi mdi-tag mdi-18px mr-1"></i>
+                <span class="sr-tags">{{tags}}</span>
+            </p>
+
+            </div>
+            <a class="card-link md-grey-900 text-lowercase"
+               href="{{post.url}}#readmore">
+               {{readmore_text}} · {{post.tagline}}
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+</div>

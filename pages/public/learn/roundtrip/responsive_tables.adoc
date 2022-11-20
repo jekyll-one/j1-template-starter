@@ -1,0 +1,439 @@
+---
+title:                                  Responsive Tables
+tagline:                                Tables Viewed Best On All Devices
+date:                                   2020-11-09 00:00:00
+description: >
+                                        Creating a design for responsive tables is challenging. The approach used by
+                                        J1 Template is based on pure CSS styles on top of the classic Bootstrap tags for
+                                        simplicity and portability to be viewed best on all devices and browsers.
+
+categories:                             [ Roundtrip, Bootstrap ]
+tags:                                   [ Tables, Extension ]
+
+image:
+  path:                                 /assets/images/pages/roundtrip/tables-1920x1280-bw.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Markus Spiske on Unsplash
+
+flowtext:                               false
+fab_menu_id:                            page_ctrl
+scrollbar:                              true
+
+permalink:                              /pages/public/learn/roundtrip/responsive_tables/
+regenerate:                             true
+
+resources:                              [ animate, clipboard, lightbox, rouge ]
+resource_options:
+  - attic:
+      opacity:                          0.7
+      slides:
+        - url:                          /assets/images/pages/roundtrip/tables-1920x1280-bw.jpg
+          alt:                          Photo by Markus Spiske on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Markus Spiske
+            href:                       https://unsplash.com/@markusspiske/portfolio
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="dropcap"]
+Creating a design for responsive tables is challenging. The approach used by
+J1 Template is based on pure CSS styles on top of the classic Bootstrap tags
+for simplicity and portability to be best viewed on all devices and browsers.
+
+== Table types
+
+But, for sure, the solutions provided are a compromise. To fit the everyday
+needs for tables viewed on desktop and mobile devices, two types of
+*responsive* tables are implemented by J1 Template:
+
+.Types of responsive tables
+[cols="3a,3a,6a", options="header", width="100%", role="rtable mt-4"]
+|===
+|Type |Style |Description
+
+|R Table (J1)
+|`rtable`
+|J Table are used by J1 Template for default. Those tables are using the
+*responsive text* feature (see link:{url-roundtrip--typography}[Typography])
+with no additional CSS classes to be applied. For smaller viewports, the text
+scales down and should fit the cells automatically. The default text size for
+J1 is `r-text-300`.
+
+|B Table (Bootstrap)
+|`table-responsive`
+|If adding the class `table-responsive`, it creates a responsive table based
+on Bootstrap CSS styles. The table will then scroll horizontally on small
+devices. Making any table responsive across all viewports, the additional
+class `table-responsive` is to applied. For specific (Bootstrap) breakpoints,
+the classes `table-responsive-{lg \| sm \| md \| lg \| xl}` are available to
+have better control on what viewport sizes tables are being transformed.
+
+|===
+
+To see the transformation on a table in action, resize for desktop devices the
+browser window or use a device the viewport is smaller than 768px (mobiles or
+tablets).
+
+== Table 2-column
+
+Tables are widely used for documentation pages. Below, simple 2-column tables
+are used to explain some of the Jekyll variables for templating your content
+pages.
+
+=== Bootstrap table
+
+Bootstrap tables support tables to be scrolled horizontally on smaller
+viewports. From a specified breakpoint and up, the table will behave
+normally and do not scroll horizontally.
+
+.Bootstrap using fixed text size `no-rtext`
+[source, asciidoc, role="noclip"]
+----
+[cols="4a,8a", options="header", width="100%", role="table-responsive-md no-rtext"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+|`page.title`
+|The title of the Page.
+
+...
+
+|===
+----
+
+.Bootstrap, fixed text size `no-rtext`
+[cols="4a,8a", options="header", width="100%", role="table-responsive-md no-rtext mt-4"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+|`page.title`
+|The title of the Page.
+
+|`page.date`
+|The Date assigned to the Post. This can be overridden in a
+Post's front matter by specifying a new date/time in the format
+`YYYY-MM-DD HH:MM:SS` (assuming UTC), or `YYYY-MM-DD HH:MM:SS +/-TTTT`
+(to specify a time zone using an offset from UTC. e.g.
+`2008-12-14 10:30:00 +0900`).
+
+|===
+
+.Bootstrap using responsive text size
+[source, asciidoc, role="noclip"]
+----
+[cols="4a,8a", options="header", width="100%", role="table-responsive-md"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+...
+
+|===
+----
+
+.Bootstrap, responsive text size
+[cols="4a,8a", options="header", width="100%", role="table-responsive mt-4"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+|`page.title`
+|The title of the Page.
+
+|`page.date`
+|The Date assigned to the Post. This can be overridden in a
+Post's front matter by specifying a new date/time in the format
+`YYYY-MM-DD HH:MM:SS` (assuming UTC), or `YYYY-MM-DD HH:MM:SS +/-TTTT`
+(to specify a time zone using an offset from UTC. e.g.
+`2008-12-14 10:30:00 +0900`).
+
+|===
+
+
+=== Responsive table
+
+Responsive tables *rebuild* a table. The header is set to invisible, and
+all columns get vertically *stacked as rows*.
+
+.R Table using responsive text size
+[source, asciidoc, role="noclip"]
+----
+[cols="4a,8a", options="header", width="100%", role="rtable"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+...
+
+|===
+----
+
+.R Table, responsive text size
+[cols="4a,8a", options="header", width="100%", role="rtable mt-4"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+|`page.title`
+|The title of the Page.
+
+|`page.date`
+|The Date assigned to the Post. This can be overridden in a
+Post's front matter by specifying a new date/time in the format
+`YYYY-MM-DD HH:MM:SS` (assuming UTC), or `YYYY-MM-DD HH:MM:SS +/-TTTT`
+(to specify a time zone using an offset from UTC. e.g.
+`2008-12-14 10:30:00 +0900`).
+
+|===
+
+.R Table using fixed font size
+[source, asciidoc, role="noclip"]
+----
+[cols="4a,8a", options="header", width="100%", role="rtable no-rtext"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+...
+
+|===
+----
+
+.R Table, stacked, fixed text size `no-rtext`
+[cols="4a,8a", options="header", width="100%", role="rtable no-rtext mt-4"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+|`page.title`
+|The title of the Page.
+
+|`page.date`
+|The Date assigned to the Post. This can be overridden in a
+Post's front matter by specifying a new date/time in the format
+`YYYY-MM-DD HH:MM:SS` (assuming UTC), or `YYYY-MM-DD HH:MM:SS +/-TTTT`
+(to specify a time zone using an offset from UTC. e.g.
+`2008-12-14 10:30:00 +0900`).
+
+|===
+
+
+== Tables multi-column
+
+Responsive Bootstrap tables support tables to be scrolled horizontally
+on smaller viewports. Making any table responsive across all viewports,
+the additional class `table-responsive` is used. For specific (Bootstrap)
+breakpoints, the classes `table-responsive-{ sm | md | lg |xl}` are
+available to better control over what viewport sizes table are transformed.
+From a specified breakpoint and up, the table will behave normally
+and do not scroll horizontally.
+
+=== Bootstrap table
+
+Bootstrap responsive tables make use of the CSS `overflow-x: auto`, which
+clips off any content that goes beyond the bottom or top edges of the table.
+In particular, this can clip off dropdown menus and other third-party
+widgets.
+
+.Bootstrap using fixed text size `no-rtext`
+[source, asciidoc, role="noclip"]
+----
+[cols=",,,,", options="header", width="100%", role="table-responsive-lg no-rtext" mt-4"]
+|===
+|Parameter |Type |Default |Description |Example
+...
+|===
+----
+
+.Bootstrap, fixed text size `no-rtext`
+[cols="2a,2a,2a,3a,3a", options="header", width="100%", role="table-responsive-lg no-rtext mt-4"]
+|===
+|Parameter |Type |Default |Description |Example
+
+|`color`
+|Hash
+|`md_white`
+|The background_color hash contains a pair of colors to control the header
+background as a gradient.
+|The background_color hash contains a pair of colors to control the header
+background as a gradient.
+
+|`background_color_1`
+|Symbolic color \| RGB valuess
+|`md_indigo`
+|Start value (color) for the gradient used for the header box background.
+Alternatively, the color can be configured as (hexadecimal) RGB valuess of
+the form `#RRGGBB`
+|Start value (color) for the gradient used for the header box background.
+Alternatively, the color can be configured as (hexadecimal) RGB valuess of
+the form `#RRGGBB`
+
+|===
+
+.Bootstrap using responsive text size
+[source, asciidoc, role="noclip"]
+----
+[cols=",,,,", options="header", width="100%", role="table-responsive"]
+|===
+|Parameter |Type |Default |Description |Example
+...
+|===
+----
+
+.Bootstrap, responsive text size
+[cols="2a,2a,2a,3a,3a", options="header", width="100%", role="table-responsive mt-4"]
+|===
+|Parameter |Type |Default |Description |Example
+
+|`color`
+|Hash
+|`md_white`
+|The background_color hash contains a pair of colors to control the header
+background as a gradient.
+|The background_color hash contains a pair of colors to control the header
+background as a gradient.
+
+|`background_color_1`
+|Symbolic color \| RGB valuess
+|`md_indigo`
+|Start value (color) for the gradient used for the header box background.
+Alternatively, the color can be configured as (hexadecimal) RGB valuess of
+the form `#RRGGBB`
+|Start value (color) for the gradient used for the header box background.
+Alternatively, the color can be configured as (hexadecimal) RGB valuess of
+the form `#RRGGBB`
+
+|===
+
+=== Responsive table
+
+.R Table using fixed text size `no-rtext`
+[source, asciidoc, role="noclip"]
+----
+[cols="2a,2a,2a,3a,3a", options="header", width="100%", role="rtable no-rtext mt-4"]
+|===
+|Parameter |Type |Default |Description |Example
+...
+|===
+----
+
+.R Table using fixed text size `no-rtext`
+[cols="2a,2a,2a,3a,3a", options="header", width="100%", role="rtable no-rtext mt-4"]
+|===
+|Parameter |Type |Default |Description |Example
+
+|`color`
+|Hash
+|`md_white`
+|The background_color hash contains a pair of colors to control the header
+background as a gradient.
+|The background_color hash contains a pair of colors to control the header
+background as a gradient.
+
+|`background_color_1`
+|Symbolic color \| RGB valuess
+|`md_indigo`
+|Start value (color) for the gradient used for the header box background.
+Alternatively, the color can be configured as (hexadecimal) RGB valuess of
+the form `#RRGGBB`
+|Start value (color) for the gradient used for the header box background.
+Alternatively, the color can be configured as (hexadecimal) RGB valuess of
+the form `#RRGGBB`
+
+|===
+
+.R Table using responsive text size
+[source, asciidoc, role="noclip"]
+----
+[cols="2a,2a,2a,3a,3a", options="header", width="100%", role="rtable mt-4"]
+|===
+|Parameter |Type |Default |Description |Example
+...
+|===
+----
+
+.R Table, responsive text size
+[cols="2a,2a,2a,3a,3a", options="header", width="100%", role="rtable mt-4"]
+|===
+|Parameter |Type |Default |Description |Example
+
+|`color`
+|Hash
+|`md_white`
+|The background_color hash contains a pair of colors to control the header
+background as a gradient.
+|The background_color hash contains a pair of colors to control the header
+background as a gradient.
+
+|`background_color_1`
+|Symbolic color \| RGB valuess
+|`md_indigo`
+|Start value (color) for the gradient used for the header box background.
+Alternatively, the color can be configured as (hexadecimal) RGB valuess of
+the form `#RRGGBB`
+|Start value (color) for the gradient used for the header box background.
+Alternatively, the color can be configured as (hexadecimal) RGB valuess of
+the form `#RRGGBB`
+
+|===
+
+
+== What next
+
+Expectedly you've enjoyed exploring all the possibilities J1 offers so far.
+An exciting feature may be the use of themes. But much, much more can the J1
+do for your Web Site.
+
+Check out what themes can do. Have a look at the
+link:{url-roundtrip--themes}[Bootstrap Themes] feature!

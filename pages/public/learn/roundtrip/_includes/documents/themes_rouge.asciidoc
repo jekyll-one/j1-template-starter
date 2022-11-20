@@ -1,0 +1,110 @@
+== Code Highlighter Rouge
+
+_Rouge_ is a pure Ruby and themeable syntax highlighter. It can highlight
+100+ different languages and output HTML or ANSI 256-color text. Find all
+available themes and examples for several languages of how
+highlighting works using _Rouge_.
+
+For the default theme `Uno` of J1 Template, the following _Rouge_ themes
+are used:
+
+* light: `igorpro`
+* dark: `monokai.sublime`
+
+NOTE: The default themes used for the J1 Template can be configured with the
+global template config file `~/_data/j1_config.yml`.
+
+
+=== Apply a theme
+
+Make a selection of a theme below to preview.
+
+++++
+<div class="btn-group">
+  <!-- See: https://stackoverflow.com/questions/47242702/force-bootstrap-dropdown-menu-to-always-display-at-the-bottom-and-allow-it-go-of -->
+  <!-- NOTE: control the behaviour of popper.js for positioning -->
+  <!-- NOTE: set attribute data-flip="false" to open the SELECT list at the BOTTOM of the BUTTON -->
+  <button class="btn btn-primary btn-flex btn-lg dropdown-toggle" data-flip="false" type="button" data-bs-toggle="dropdown" data-bs-target="#navbarDropdown" aria-haspopup="true" aria-expanded="false">
+  Select Theme<span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu scrollable-menu" role="menu">
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>base16</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.dark')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>base16.dark</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.light')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>base16.light</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.monokai')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>base16.monokai</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.monokai.dark')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>base16.monokai.dark</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.monokai.light')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>base16.monokai.light</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.solarized')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>base16.solarized</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.solarized.dark')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>base16.solarized.dark</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.solarized.light')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>base16.solarized.light</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('colorful')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>colorful</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('github')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>github</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('gruvbox')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>gruvbox</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('gruvbox.light')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>gruvbox.light</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('igorpro')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>igorpro</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('molokai')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>molokai</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('monokai')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>monokai</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('monokai.sublime')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>monokai.sublime</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('pastie')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>pastie</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('thankful_eyes')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>thankful_eyes</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('tulip')"> <i class="mdi mdi-view-quilt mdi-18px mr-2" style="color: #9E9E9E"></i>tulip</a></li>
+  </ul>
+</div>
+<div id="selected" class="mt-1 mb-3"></div>
+++++
+
+=== Highlight Liquid code
+
+{% raw %}
+[source, liquid]
+----
+Hello {{ 'now' | date: "%Y %h" }}
+
+{% comment %} if item.quantity is 4... {% endcomment %}
+{% for i in (1..item.quantity) %}
+  {{ i }}
+{% endfor %}
+----
+{% endraw %}
+
+=== Highlight Javascript code
+
+[source, javascript]
+----
+// helper functions
+//
+function styleSheetLoaded(styleSheet) {
+  var sheets     = document.styleSheets,
+      stylesheet = sheets[(sheets.length - 1)];
+
+  // find CSS file 'styleSheetName' in document
+  for(var i in document.styleSheets) {
+    if(sheets[i].href && sheets[i].href.indexOf(styleSheet) > -1) {
+      return true;;
+    }
+  }
+}
+----
+
+=== Highlight Ruby code
+
+[source, ruby]
+----
+require 'asciidoctor/extensions' unless RUBY_ENGINE == 'opal'
+include Asciidoctor <1>
+
+Asciidoctor::Extensions.register do
+  class J1BlockMacro < Extensions::BlockMacroProcessor
+    use_dsl
+    named :banner
+    name_positional_attributes 'role'
+
+    def process parent, target, attrs
+      html = %(<div id="#{target}" class="#{attrs['role']}"></div>)
+      create_pass_block parent, html, attrs, subs: nil
+    end
+  end
+  block_macro J1BlockMacro
+end
+----
+<1> don't miss to load the Asciidoctor ruby

@@ -51,7 +51,7 @@ settings:
         comment:                        Home Intro Panel
         type:                           intro
         animate:                        false
-        properties:                     mt-5 mb-5
+        properties:                     pt-5 pb-5
 
         title:                          All in One
         title_translate:                notranslate                             # translate|notranslate
@@ -74,6 +74,22 @@ settings:
         raised:
         lane_span:                      fixed
 
+        wave:
+          top:
+            enabled:                      true
+            height:                       2                                     # [1 .. 9]
+            style:                        wave-1                                # default
+            color:                        "#c4c4c4"                             # "#dcdcdc"
+            background_color:             "#f5f5f5"                             # auto|rgb_value, "#f5f5f5"
+            transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
+          bottom:
+            enabled:                      true
+            height:                       2
+            style:                        wave-1
+            color:                        "#c4c4c4"
+            background_color:             "#f5f5f5"
+            transform:                    flip-y flip-x
+
         cards:
 
           - name:                       Tools
@@ -88,7 +104,7 @@ settings:
               icon_size:                3x
               icon_color:
               text: >
-                                        <p class="dropcap mt-3">
+                                        <p class="dropcap">
                                           Current Technology and Design. Excellent performance in running
                                           a website. Use Jekyll One to present your content at its best.
                                         </p>
@@ -116,7 +132,7 @@ settings:
               icon_size:                3x
               icon_color:
               text: >
-                                        <p class="dropcap mt-3">
+                                        <p class="dropcap">
                                           The Web is everywhere. J1 Template supports modern web browsers
                                           on all devices for best results on PCs, Tablets, and SmartPhones.
                                         </p>
@@ -145,7 +161,7 @@ settings:
               icon_size:                3x
               icon_color:
               text: >
-                                        <p class="dropcap mt-3">
+                                        <p class="dropcap">
                                           No programming is needed to start using J1. The Template
                                           provides a large number of building blocks to develop
                                           modern web pages in minutes.
@@ -175,13 +191,13 @@ settings:
 
     - name:                             Home Plan Panel
       panel:
-        enabled:                        true
+        enabled:                        false
 
         id:                             home_plan_panel
         comment:                        Plan Panel
         type:                           plan
         scroller:                       false
-        properties:                     mt-5 mb-5
+        properties:                     pt-5 pb-5
         plan_details_page:              /pages/public/plans/plan_details/
 
         provider:                       Github
@@ -203,6 +219,22 @@ settings:
                                           Fund our project that make up your web site easy to manage
                                           for excellent performance, reliability, and stability.
                                         </p>
+
+        wave:
+          top:
+            enabled:                      true
+            height:                       4                                     # [1 .. 9]
+            style:                        wave-4                                # default
+            color:                        "#c4c4c4"
+            background_color:             "#f5f5f5"
+            transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
+          bottom:
+            enabled:                      true
+            height:                       2
+            style:                        wave-4
+            color:                        "#c4c4c4"
+            background_color:             "#f5f5f5"
+            transform:                    rotate
 
         cards:
 
@@ -360,7 +392,7 @@ settings:
         comment:                        Home Service Panel
         type:                           service
         scroller:                       true
-        properties:                     mt-5 mb-5
+        properties:                     pt-5 pb-5
 
         title:                          Jekyll One
         tagline:                        featured template for jekyll
@@ -389,6 +421,22 @@ settings:
                                           </li>
                                         </ul>
 
+        wave:
+          top:
+            enabled:                      true
+            height:                       2                                     # [1 .. 9]
+            style:                        wave-1                                # default
+            color:                        "#c4c4c4"
+            background_color:             "#f5f5f5"
+            transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
+          bottom:
+            enabled:                      true
+            height:                       2
+            style:                        wave-4
+            color:                        "#c4c4c4"
+            background_color:             "#f5f5f5"
+            transform:                    rotate
+
         cards:
 
           - name:                       General Features
@@ -400,11 +448,11 @@ settings:
               icon_size:                mdi-6x
               icon_color:               md-white
               href:                     /pages/public/features/general_features/
-              title:                    Features
-              tagline:                  general features
+              title:                    Jekyll One
+              tagline:                  General Features
               header_translate:         notranslate
               text: >
-                                        <p class="dropcap mt-3">
+                                        <p class="dropcap">
                                           Current software counts. Excellent tools in their latest versions
                                           make the rocket engine for each and every website. Jekyll One
                                           is using current software in their latest versions. All of them
@@ -441,7 +489,7 @@ settings:
                                           <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-language-ruby"></i>
                                           Ruby 2.7 <br />
                                           <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-language-ruby"></i>
-                                          Jekyll 4.2 <br />
+                                          Jekyll 4.3 <br />
                                           <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-nodejs"></i>
                                           NodeJS 14.x <br />
                                         </p>
@@ -484,7 +532,7 @@ settings:
                                         </p>
                                         <p>
                                           <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-bootstrap"></i>
-                                          Bootstrap V4 <br />
+                                          Bootstrap V5 <br />
                                           <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-language-html5"></i>
                                           Enhanced HTML, CSS and Javascript <br />
                                           <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-grass"></i>
@@ -510,8 +558,8 @@ settings:
                                         </p>
                                         <p>
                                           Performance is a key factor for all users. To not get visitors  lost, J1
-                                          webs are highly optimized. All Websites will achieve  Google Lighthouse
-                                          scores for performance, accessibility, best practices, and SEO at the
+                                          webs are highly optimized. All Websites will achieve best Google Lighthouse
+                                          Scores for performance, accessibility, best practices, and SEO at a
                                           green level.
                                         </p>
                                         <p>
@@ -523,7 +571,7 @@ settings:
                                           <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-near-me"></i>
                                           Mobile Web Navigation <br />
                                           <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-lighthouse"></i>
-                                          Highest Google Lighthouse scores <br />
+                                          Highest Google Lighthouse Scores <br />
                                         </p>
 
                     title:              Devices
@@ -538,11 +586,11 @@ settings:
               icon_size:                mdi-6x
               icon_color:               md-white
               href:                     /pages/public/features/template_features/
-              title:                    Features
-              tagline:                  template features
+              title:                    Jekyll One
+              tagline:                  Template Features
               header_translate:         notranslate
               text: >
-                                        <p class="dropcap mt-3">
+                                        <p class="dropcap">
                                           For Jekyll, a huge number of templates are available that cover
                                           all typical use cases for websites. The bad story: most of them
                                           require programming and low-level customization. Deep knowledge
@@ -676,7 +724,7 @@ settings:
         comment:                        Home News Panel
         type:                           news
         category_blacklist:             [ posts, public, private, protected, featured, series ]
-        properties:                     mt-5 mb-5
+        properties:                     pt-5 pb-5
 
         title:                          Creators Blog
         tagline:                        latest news
@@ -690,6 +738,22 @@ settings:
                                         <p>
                                           Have fun!
                                         </p>
+
+        wave:
+          top:
+            enabled:                      false
+            height:                       2                                     # [1 .. 9]
+            style:                        wave-1                                # default
+            color:                        "#c4c4c4"
+            background_color:             "#f5f5f5"
+            transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
+          bottom:
+            enabled:                      false
+            height:                       2
+            style:                        wave-4
+            color:                        "#c4c4c4"
+            background_color:             "#f5f5f5"
+            transform:                    rotate
 
         cards:
 

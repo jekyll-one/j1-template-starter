@@ -1,0 +1,100 @@
+---
+title:                                  J1 Template
+tagline:                                plan details
+date:                                   2020-11-03 00:00:00
+description: >
+                                        A good user experience browsing a Web site is one of the most important
+                                        features a website offers as a must, besides excellent content. Presenting
+                                        content at its best on all devices for all window sizes makes a great Web
+                                        brilliant. J1 Template supports your Web for full responsiveness, for the
+                                        best user experience on all modern devices.
+
+
+categories:                             [ Info ]
+tags:                                   [ Plan, Template ]
+
+robots:
+  index:                                false
+  follow:                               false
+
+exclude_from_search:                    true
+
+image:
+  path:                                 /assets/images/modules/attics/gift-from-hand-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Plan Details
+
+comments:                               false
+fab_menu_id:                            page_ctrl
+
+permalink:                              /pages/public/plans/plan_details/
+regenerate:                             false
+
+resources:                              [ animate, clipboard, lightbox, rouge ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/images/modules/attics/gift-from-hand-1920x1280.jpg
+          alt:                          Plan Details
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="base" %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+== Plans
+
+lorem:sentences[5]
+
+lorem:sentences[3]
+
+=== Starter
+
+lorem:sentences[5]
+
+
+=== Base
+
+lorem:sentences[5]
+
+=== Developer
+
+lorem:sentences[5]
+
+=== Expert
+
+lorem:sentences[5]
+
+
+== Modules
+
+lorem:sentences[5]
+
+lorem:sentences[3]
+
+=== Base
+
+lorem:sentences[5]
+
+=== Extended
+
+lorem:sentences[5]

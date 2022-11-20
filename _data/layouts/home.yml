@@ -212,7 +212,7 @@ lanes:
       id:                               home_teaser_banner
       region:                           body-main
       type:                             async
-      properties:                       g-2 elevated-z0
+      properties:                       elevated-z0
 
   # ----------------------------------------------------------------------------
   # DIVIDER banner
@@ -267,7 +267,7 @@ lanes:
   # ----------------------------------------------------------------------------
   #
   - lane:
-      enabled:                          true
+      enabled:                          false
       id:                               custom_content
       region:                           body-main
       type:                             sync
@@ -304,7 +304,7 @@ lanes:
       id:                               home_service_panel
       region:                           body-main
       type:                             async
-      properties:                       g-2 elevated-z1
+      properties:                       elevated-z3
 
   # ----------------------------------------------------------------------------
   # INTRO panel
@@ -326,7 +326,7 @@ lanes:
       id:                               home_intro_panel
       region:                           body-main
       type:                             async
-      properties:                       g-2 elevated-z1
+      properties:                       elevated-z3
 
   # ----------------------------------------------------------------------------
   # PARALLAX banner
@@ -344,7 +344,7 @@ lanes:
   # ----------------------------------------------------------------------------
   #
   - lane:
-      enabled:                          true
+      enabled:                          false
       id:                               home_parallax_banner
       region:                           body-main
       type:                             async
@@ -366,11 +366,11 @@ lanes:
   # ----------------------------------------------------------------------------
   #
   - lane:
-      enabled:                          false
+      enabled:                          true
       id:                               home_plan_panel
       region:                           body-main
       type:                             async
-      properties:                       g-2 elevated-z0
+      properties:                       elevated-z3
 
   # ----------------------------------------------------------------------------
   # NEWS panel
@@ -391,25 +391,7 @@ lanes:
       id:                               home_news_panel
       region:                           body-main
       type:                             async
-      properties:                       g-2 elevated-z0
-
-  # ----------------------------------------------------------------------------
-  # FAB (floating action button)
-  #
-  #   Place an floating action button on a page. FABs are used for in-page
-  #   navigation for faster scrolling to headlines (TOC) or other important
-  #   positions in a document. FABs are fully configurable. Find the
-  #   configuration with:
-  #
-  #     fab:      ~/_data/modules/fab.yml
-  #
-  # ----------------------------------------------------------------------------
-  #
-  - lane:
-      enabled:                          true
-      id:                               fab-container
-      region:                           body-main
-      type:                             async
+      properties:                       elevated-z0
 
 # ------------------------------------------------------------------------------
 # END config

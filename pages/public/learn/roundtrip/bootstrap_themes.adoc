@@ -1,0 +1,80 @@
+---
+title:                                  Bootstrap Themes
+tagline:                                J1 Template Theming
+date:                                   2020-11-10 00:00:00
+description: >
+                                        The themes feature for J1 is in an experimental
+                                        state for the template system. Anyway, it makes
+                                        sense to present what is possible using different
+                                        versions of Bootstrap's CSS styles for a website.
+
+categories:                             [ Roundtrip, Bootstrap ]
+tags:                                   [ Module, Themes ]
+
+image:
+  path:                                 /assets/images/pages/roundtrip/themes-1920x1280-bw.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Clem Onojeghuo on Unsplash
+
+permalink:                              /pages/public/learn/roundtrip/themes/
+regenerate:                             true
+
+resources:                              [ animate, rouge, clipboard, lightbox ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/images/pages/roundtrip/themes-1920x1280-bw.jpg
+          alt:                          Photo by Clem Onojeghuo on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Clem Onojeghuo
+            href:                       https://unsplash.com/@clemono
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[role="dropcap"]
+Themes for the template system J1 are based on the free and open-source CSS
+front-end framework {url-bs--home}[Bootstrap, {browser-window--new}] of
+version V5. Bootstrap is an HTML, CSS & JS Library that focuses on simplifying
+the development of modern web pages. The primary purpose of applying the
+framework to J1 is to provide a general standard for colors, sizes, fonts,
+and the overall layout of a J1-based site.
+
+Using Bootstrap styles results in a uniform appearance for the content in
+terms of the overall layout, text, tables, and form elements across all
+modern web browsers available on the market. In addition, developers can take
+advantage of CSS classes defined in Bootstrap to customize content
+individually.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+include::{documentdir}/themes_bootstrap.asciidoc[]
+
+== What next
+
+An important feature for larger webs is searching. The visitors should be able
+to search your site to find pages and posts they are interested in. Check what
+is searching a J1 website all about at
+link:{url-roundtrip--quicksearch}[Lunr Search].

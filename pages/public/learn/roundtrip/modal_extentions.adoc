@@ -1,0 +1,93 @@
+---
+title:                                  Modal Extensions
+tagline:                                Improve Visitor Experience
+date:                                   2020-11-08 00:00:00
+description: >
+                                        Advanced Bootstrap modals are used to add dialogs to your
+                                        web pages for user notifications. To highlight important
+                                        information to your visitors. Modals are positioned over
+                                        everything else in the document so that messages get the
+                                        user's attention.
+
+categories:                             [ Roundtrip, Bootstrap ]
+tags:                                   [ Modal, Extension ]
+
+image:
+  path:                                 /assets/images/pages/roundtrip/bootstrap-1920x1000-bw.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Bootstrap Framework Logo
+
+permalink:                              /pages/public/learn/roundtrip/modals/
+regenerate:                             false
+
+# flowtext:                               false
+
+resources:                              [ animate ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/images/pages/roundtrip/bootstrap-1920x1000-bw.jpg
+          alt:                          Bootstrap Framework Logo
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:images-dir:                            {imagesdir}/pages/roundtrip/100_present_images
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[role="dropcap"]
+Enhanced Bootstrap Modals are used to add dialogues to your web pages for user
+notifications. To highlight important information to your visitors. Modals are
+positioned over everything else in the document so that messages get the
+user's attention.
+
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+== Modal Examples
+
+To improve your visitor's experience on important information that shouldn't
+be missed. Modals are a great choice to bring the user's attention. Using the
+J1 Template BS enhanced predefined modal styles, some emotional weight is
+added to the information displayed - ranging from an info level, a simple
+warning to critical messages.
+
+TIP: For more information on how to use Bootstrap’s JavaScript modal
+plugin, refer to: link:{url-bs-docs--components-modal}[Bootstrap Docs, {browser-window--new}].
+
+// include::{documentdir}/tables/bs_modal_examples.asciidoc[]
+include::{documentdir}/410_table_bs_modal_examples.asciidoc[]
+
+== What next
+
+Bootstrap is a helpful framework that offers in the current V5
+version a complete set of styles to create excellent responsive designs.
+In the sense of all can be improved, the responsive tables support of BS
+needs some enhancement to display tables on low-resolution devices or smaller
+(browser-) window sizes.
+
+The first version for improved responsive tables that scale better is available
+for the J1 Template. Check out from here what the
+link:{url-roundtrip--responsive-tables}[Responsive Tables] can do!
+
+// Include the modals HTML portion
+// -----------------------------------------------------------------------------
+include::{documentdir}/419_advanced_modals_demo.asciidoc[]
