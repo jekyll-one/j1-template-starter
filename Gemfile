@@ -1,20 +1,20 @@
 # ------------------------------------------------------------------------------
 # ~/Gemfile (runtime)
 # Provides package information to bundle all Ruby gem needed
-# for Jekyll and J1 template (managed by Ruby Gem Bundler)
+# for Jekyll and J1 Theme (managed by Ruby Gem Bundler)
 #
 # Product/Info:
 # https://jekyll.one
 #
 # Copyright (C) 2022 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
 # NOTE:
-# To install all gem needed for Jekyll and J1 Template:
+# To install all gem needed for Jekyll and J1 Theme:
 #   bundle install
 #
 # TIP:
@@ -47,7 +47,7 @@ source 'https://rubygems.org'
 # Jekyll
 # ------------------------------------------------------------------------------
 # NOTE:
-# J1 Template is using Jekyll v4.0 and above
+# J1 Theme is using Jekyll v4.0 and above
 #
 # ------------------------------------------------------------------------------
 # NOTE:
@@ -71,12 +71,12 @@ end
 # Specify the THEME GEM used for the project
 
 # Loaded from RubyGems
-gem 'j1-template', '~> 2022.6.0'
+# gem 'j1-template', '~> 2023.0.0'
 
 # Loaded from gem.fury.io
-#source 'https://gem.fury.io/jekyll-one-org/' do
-#  gem 'j1-template', '~> 2022.6.0'
-#end
+source 'https://gem.fury.io/jekyll-one-org/' do
+ gem 'j1-template', '~> 2023.0.0'
+end
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -149,6 +149,7 @@ group :jekyll_plugins do
   #
   # Additional Jekyll Plugins  (optional)
   #
+  # gem 'jekyll-admin', '~> 0.11'
   # gem 'jekyll-gist', '>= 1.5.0'
   # gem 'jekyll-redirect-from', '>= 0.16.0'
 end
@@ -157,7 +158,7 @@ end
 # GEM needed for the Jekyll and J1 dev environment
 #
 # NOTE:
-# For the build (npm|yarn), J1 Template is using scss_lint
+# For the build (npm|yarn), J1 Theme is using scss_lint
 # for linting the SCSS (Sass) components.
 #
 # ------------------------------------------------------------------------------

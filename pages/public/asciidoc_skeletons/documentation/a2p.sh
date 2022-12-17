@@ -10,7 +10,7 @@
 # ENVIRONMENT
 # set BASE_PATH=_absolute_path_jekyll_project
 # ------------------------------------------------------------------------------
-BASE_PATH=/D/j1/github/j1-template/packages/400_template_site
+BASE_PATH=/D/j1/github/j1-template/packages/400_theme_site
 
 # VARIABLES
 # ------------------------------------------------------------------------------

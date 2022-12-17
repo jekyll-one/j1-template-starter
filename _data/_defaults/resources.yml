@@ -7,11 +7,11 @@
 #
 # Copyright (C) 2022 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 # NOTE:
-#   By J1 template, "Liquid Procedures" are being used intensively. To load
+#   By J1 Theme, "Liquid Procedures" are being used intensively. To load
 #   HTML data for a layout, the loader procedure places the data based this
 #   YAML data file into the REGION specified with a LANE.
 # ------------------------------------------------------------------------------
@@ -29,7 +29,7 @@
 #
 # base_url
 # ------------------------------------------------------------------------------
-#   For J1 template, all CSS and JS resources are stored as ASSETS
+#   For J1 Theme, all CSS and JS resources are stored as ASSETS
 #   under ~/assets/themes/j1. To shorten the filenames to be configured,
 #   base_url points to the (base) asset path.
 #
@@ -52,7 +52,7 @@
 #
 # location
 # ------------------------------------------------------------------------------
-#   For J1 template, resources can be loaded from LOCAL assets folder
+#   For J1 Theme, resources can be loaded from LOCAL assets folder
 #   (~/assets/themes/j1) OR from REMOTE using e.g. a CDN. Resources
 #   are written as LOCATORS, simple JSON objects consists in two
 #   key|value pairs. The keys are "local" or "remote" to indicate
@@ -341,7 +341,7 @@ resources:
   # ----------------------------------------------------------------------------
   # J1 Core
   #
-  - name:                               J1 Template Core
+  - name:                               J1 Theme Core
     resource:
       id:                               core
       enabled:                          true
@@ -547,7 +547,7 @@ resources:
         init_function:                  [ j1.adapter.back2top.init ]
 
   # ----------------------------------------------------------------------------
-  #  GDPR compatible Cookie Consent for J1 Template
+  #  GDPR compatible Cookie Consent for J1 Theme
   #
   - name:                               J1 CookieConsent
     resource:
@@ -659,7 +659,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Responsive HTML tables for J1 Template (rtable)
+  # Responsive HTML tables for J1 Theme (rtable)
   #
   - name:                               Responsive Tables
     resource:
@@ -1189,7 +1189,7 @@ resources:
         init_function:                  [ j1.adapter.fam.init ]
 
   # ----------------------------------------------------------------------------
-  # QuickSearch (lunr for J1 Template)
+  # QuickSearch (lunr for J1 Theme)
   # NOTE: This module is in state EXPERIMENTAL
   #
   - name:                               QuickSearch
@@ -1218,7 +1218,7 @@ resources:
         init_function:                  [ j1.adapter.quicksearch.init ]
 
   # ----------------------------------------------------------------------------
-  # Data tables for J1 Template
+  # Data tables for J1 Theme
   #
   - name:                               Data Tables
     resource:

@@ -1,3 +1,25 @@
+{% capture cache %}
+
+{% comment %}
+ # -----------------------------------------------------------------------------
+ # ~/_data/templates/sitemap.xml
+ # Liquid template to generate the sitemap XML entries
+ #
+ # Product/Info:
+ # https://jekyll.one
+ #
+ # Copyright (C) 2022 Juergen Adams
+ #
+ # J1 Theme is licensed under the MIT License.
+ # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+ # -----------------------------------------------------------------------------
+ # Test data:
+ #   liquid_var: {{ liquid_var | debug }}
+ # -----------------------------------------------------------------------------
+{% endcomment %}
+
+{% comment %} main
+-------------------------------------------------------------------------------- {% endcomment %}
 <?xml version="1.0" encoding="UTF-8"?>
 {% if page.xsl %}
   <?xml-stylesheet type="text/xsl" href="{{ "/sitemap.xsl" | absolute_url }}"?>
@@ -34,3 +56,10 @@
     </url>
   {% endfor %}
 </urlset>
+
+{% endcapture %}
+
+
+{% comment %} POST processing of the generated feed XML file|s
+-------------------------------------------------------------------------------- {% endcomment %}
+{{ cache }}

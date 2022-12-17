@@ -15,35 +15,30 @@ robots:
   follow:                               false
 
 image:
-  path:                                 /assets/images/modules/attics/leon-1920x1280.jpg
+  path:                                 /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
   width:                                1920
   height:                               1280
-  alt:                                  Photo by Leon on Unsplash
+  alt:                                  J1 Themes Mockup
 
 sitemap:                                false
 exclude_from_search:                    true
-
 fab_menu_id:                            page_ctrl
 scrollbar:                              false
-toc:                                    true
-
 comments:                               false
+toc:                                    true
 
 permalink:                              /pages/public/legal/en/comment_policy/
 regenerate:                             false
 
-resources:                              [ animate ]
+resources:                              [ animate, clipboard, rouge ]
 resource_options:
   - attic:
+      padding_top:                      600
+      padding_bottom:                   50
+      opacity:                          0.5
       slides:
-        - url:                          /assets/images/modules/attics/leon-1920x1280.jpg
-          alt:                          Photo by Leon on Unsplash
-          title:                        Comment Policy
-          tagline:                      discuss with respect
-          badge:
-            type:                       unsplash
-            author:                     Leon
-            href:                       https://unsplash.com/@myleon
+        - url:                          /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
+          alt:                          J1 Themes Mockup
 ---
 
 // Page Initializer
@@ -62,7 +57,7 @@ resource_options:
 
 // Load page attributes
 // -----------------------------------------------------------------------------
-{% include {{load_attributes}} scope="global" %}
+{% include {{load_attributes}} scope="none" %}
 
 
 // Page content

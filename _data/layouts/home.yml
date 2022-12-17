@@ -8,12 +8,12 @@
 #
 # Copyright (C) 2022 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
 # NOTE:
-#   By J1 template, "Liquid Procedures" are being used intensively. To load
+#   By J1 Theme, "Liquid Procedures" are being used intensively. To load
 #   HTML data for a layout, the loader procedure places the data based this
 #   YAML data file into the REGION specified with a LANE.
 # ------------------------------------------------------------------------------
@@ -49,7 +49,7 @@
 #
 #   region (required)
 #   ----------------------------------------------------------------------------
-#   J1 templates defines, based on the general structure of a HTML page
+#   J1 Themes defines, based on the general structure of a HTML page
 #   (head|body), more specific REGIONS based on HTML5 semantic elements
 #   to place HTML data:
 #
@@ -60,13 +60,13 @@
 #     body-header       <body> HEADER section. Contains the page banner (header).
 #                       Placed AFTER the page navigation but BEFORE the main
 #                       content (body-main) of a page.
-#     body-main         <body> MAIN section. J1 template puts a <main>
+#     body-main         <body> MAIN section. J1 Theme puts a <main>
 #                       container element in the <body> section to place
 #                       the content. All CONTENT related elements are loaded
 #                       into the region 'body-main'. Content may generated
 #                       by HTML teplates like banners and panels or by J1
 #                       modules.
-#     body-footer       <body> FOOTER section. J1 template puts a <footer>
+#     body-footer       <body> FOOTER section. J1 Theme puts a <footer>
 #                       element at the end of the <BODY> section. The
 #                       body-footer region contains all elements (visible
 #                       HTML data or not visible coomponents like JS scripts)
@@ -179,7 +179,7 @@ lanes:
   # ----------------------------------------------------------------------------
   # CONTENT region (region body-main)
   #
-  #  For the J1 Template GEM (J1 run-time version), ONLY the building
+  #  For the J1 Theme GEM (J1 run-time version), ONLY the building
   #  blocks already prepared can be used to generate the contents of
   #  a home page. To change the content for a 'lane', find the configuration
   #  for 'banners', 'panels' and FABs (floting action button) with:

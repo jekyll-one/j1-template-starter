@@ -1,14 +1,14 @@
 # ------------------------------------------------------------------------------
 # ~/_plugins/minifyJSON.rb
-# Liquid filter for J1 Template to minify a JSON string
+# Liquid filter for J1 Theme to minify a JSON string
 #
 # Product/Info:
 # http://jekyll.one
 #
 # Copyright (C) 2022 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 # => Uglifier.compile(File.read(input))
 # ------------------------------------------------------------------------------

@@ -12,15 +12,14 @@ robots:
   index:                                false
   follow:                               false
 
-sitemap:                                false
-exclude_from_search:                    true
-
 image:
-  path:                                 /assets/images/modules/attics/markus-spiske-1920x1280.jpg
+  path:                                 /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
   width:                                1920
   height:                               1280
   alt:                                  Photo by Markus Spiske on Unsplash
 
+sitemap:                                false
+exclude_from_search:                    true
 fab_menu_id:                            page_ctrl
 scrollbar:                              false
 comments:                               false
@@ -29,16 +28,15 @@ toc:                                    true
 permalink:                              /pages/public/legal/en/privacy/
 regenerate:                             false
 
-resources:                              [ animate ]
+resources:                              [ animate, clipboard, rouge ]
 resource_options:
   - attic:
+      padding_top:                      600
+      padding_bottom:                   50
+      opacity:                          0.5
       slides:
-        - url:                          /assets/images/modules/attics/markus-spiske-1920x1280.jpg
-          alt:                          Photo by Markus Spiske on Unsplash
-          badge:
-            type:                       unsplash
-            author:                     Markus Spiske
-            href:                       https://unsplash.com/@markusspiske
+        - url:                          /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
+          alt:                          J1 Themes Mockup
 ---
 
 // Page Initializer
@@ -75,7 +73,7 @@ resource_options:
 
 // Load page attributes
 // -----------------------------------------------------------------------------
-{% include {{load_attributes}} scope="global" %}
+{% include {{load_attributes}} scope="none" %}
 
 
 // Page content
@@ -173,7 +171,7 @@ themes (pre-compiled BS@5 CSS files) to be directly used for websites using
 Bootstrap V5.
 
 The services at _Bootswatch_ use *permanent* Cookies to store relevant theme
-information. Therefore, to use the themes feature of J1 Template, you must
+information. Therefore, to use the themes feature of J1 Theme, you must
 agree on *permanent* Cookies for *personalization*.
 endif::[]
 

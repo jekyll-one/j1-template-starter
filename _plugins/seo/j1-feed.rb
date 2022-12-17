@@ -8,8 +8,8 @@
 # Copyright (C) 2022 Ben Balter and Contributors
 # Copyright (C) 2022 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 require 'jekyll'
 require 'fileutils'
@@ -45,29 +45,31 @@ module J1Feed
       @feed_output                      = @module_config['feed_output']
 
       if disabled_in_development?
-        Jekyll.logger.info "J1 Feed:", "generate feed skipped in mode development"
+        Jekyll.logger.info "J1 Feeds:", "skipped in mode development"
         return
       end
 
       if plugin_disabled?
-        Jekyll.logger.info "J1 Feed:", "generate feed: disabled"
+        Jekyll.logger.info "J1 Feeds:", "disabled"
         return
+      else
+        Jekyll.logger.info "J1 Feeds:", "enabled"
       end
 
       if @module_config['excerpt_only']
-        Jekyll.logger.info "J1 Feed:", "generate feed for: excerpts only"
+        Jekyll.logger.info "J1 Feeds:", "generate rss feeds for: excerpts only"
       end
 
       if @module_config['posts_limit'] < 100
-        Jekyll.logger.info "J1 Feed:", "generate feed for: #posts of #{@module_config['posts_limit']}"
+        Jekyll.logger.info "J1 Feeds:", "generate rss feeds for: #posts of #{@module_config['posts_limit']}"
       else
-        Jekyll.logger.info "J1 Feed:", "generate feed for: #posts of unlimited"
+        Jekyll.logger.info "J1 Feeds:", "generate rss feeds for: #posts of unlimited"
       end
 
       collections.each do |name, meta|
-        Jekyll.logger.info "J1 Feed:", "generate feed for: all #{name}"
+        Jekyll.logger.info "J1 Feeds:", "generate rss feeds for: all #{name}"
         (meta["categories"] + [nil]).each do |category|
-          Jekyll.logger.info "J1 Feed:", "generate feed for posts by category: #{category}" if category
+          Jekyll.logger.info "J1 Feeds:", "generate rss feeds for posts by category: #{category}" if category
           path = feed_path(:collection => name, :category => category)
 
           # rebuild the feed xml file?
@@ -75,7 +77,7 @@ module J1Feed
           unless @module_config['rebuild_feeds']
             path = feed_path(:collection => name, :category => category)
             if file_exists?(path)
-              Jekyll.logger.info "J1 Feed:", "feed already exist, skip rebuild"
+              Jekyll.logger.info "J1 Feeds:", "feed already exist, skip rebuild"
               next
             end
           end
@@ -164,7 +166,7 @@ module J1Feed
         # next if %r![^a-zA-Z0-9_]!.match?(tag)
         next if %r!\W!.match?(tag)
 
-        Jekyll.logger.info "J1 Feed:", "generate feed for posts by tag: #{tag}" if tag
+        Jekyll.logger.info "J1 Feeds:", "generate rss feeds for posts by tag: #{tag}" if tag
         path = "#{tags_path}#{tag.downcase}.xml"
         next if file_exists?(path)
 

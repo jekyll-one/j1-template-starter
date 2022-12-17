@@ -3,12 +3,14 @@ title:                                  Icon Fonts
 tagline:                                Popular Icons Sets
 date:                                   2020-11-06 00:00:00
 description: >
-                                        J1 Template supports popular icons font sets out-of-the-box.
+                                        J1 Theme supports popular icons font sets out-of-the-box.
                                         The icon sets MDI and FA are very good in design and have a rich set of
                                         different icons for many categories used for the Web.
                                         Iconify icons are not a locally stored icon-set like MDI or FA. All icons are
                                         loaded over the Internet using the so-called Unified OpenSource Icon
                                         Framework.
+keywords: >
+                                        Jekyll, Theme, step, find, project, roundtrip, trip,
 
 categories:                             [ Roundtrip, Icon Fonts ]
 tags:                                   [ Module, Icon ]
@@ -59,13 +61,13 @@ resource_options:
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
 [role="dropcap"]
-J1 Template supports popular icons font sets out-of-the-box. The icon sets MDI
+J1 Theme supports popular icons font sets out-of-the-box. The icon sets MDI
 and FA are very good in design and have a rich set of different icons for many
 categories used for the Web. Iconify icons are not a locally stored icon-set
 like MDI or FA. All icons are loaded over the Internet using the so-called
 Unified OpenSource Icon Framework.
 
-J1 Template supports popular icons font sets out-of-the-box:
+J1 Theme supports popular icons font sets out-of-the-box:
 
 * link:{url-mdi--home}[Material Design Icons, {browser-window--new}] (MDI)
 * link:{url-fontawesome--home}[FontAwesome Icons V5, {browser-window--new}] (FA)
@@ -81,7 +83,7 @@ Framework*. See section <<Iconify Icons>> for more information.
 
 == Material Design Icons
 
-The primary icon-set for the J1 Template is
+The primary icon-set for the J1 Theme is
 link:{url-mdi--home}[Material Design Icons, {browser-window--new}],
 because it is a rich set providing more than 5900+ icons for the current
 version (v5.9.55). MDI has excellent *Material Design* support from a design
@@ -241,7 +243,7 @@ various platforms to download icons in the format, color, and size they need
 for any project. The repo today contains 6000+ icons (v5.4.55) including
 converted icons from the official set created by _Google_.
 
-_J1 Template_ supports the full set of _MDI_ for the Web (Webfont, WOFF). The
+_J1 Theme_ supports the full set of _MDI_ for the Web (Webfont, WOFF). The
 icon set is fully integrated and can be used out-of-the-box.
 
 == FontAwesome Icons
@@ -265,7 +267,7 @@ to Version 4, the current version is much more than face-lifting. Version 5
 comes with more than 2300+ icons, but many are available only with the Pro
 license. For the Free version, only a subset of 900+ icons is available.
 
-NOTE: The CSS styles for FontAwesome V5 have been extended for the J1 Template
+NOTE: The CSS styles for FontAwesome V5 have been extended for the J1 Theme
 to the same classes (and their respective names) for other Font Icon sets.
 Already existing styles like `fa-flip-vertical` are available as `fa-flip-v`
 as well.
@@ -291,7 +293,7 @@ macros `fab:` and `fas:` are available to place icons where ever you want.
 See more about this in section
 link:{url-roundtrip--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
 
-Find below examples of both and the use with J1 Template.
+Find below examples of both and the use with J1 Theme.
 
 === Brand icons
 
@@ -485,12 +487,12 @@ link:{url-iconify--home}[Iconify, {browser-window--new}]. Iconify is a so-called
 unified OpenSource icon framework that makes it possible to use icons from
 different icon sets using one (unified) syntax.
 
-To access that framework, a Javascript client is needed. For the J1 Template,
+To access that framework, a Javascript client is needed. For the J1 Theme,
 the client is build-in and is loaded if Iconify is requested as a resource.
 To see what icon sets are available with that framework, check the page
 link:{url-iconify--icon-sets}[Iconify Icon Sets, {browser-window--new}].
 
-NOTE: Using Iconify icons with J1 Template is quite easy. An Asciidoctor
+NOTE: Using Iconify icons with J1 Theme is quite easy. An Asciidoctor
 inline macro `iconify:` (Asciidoctor Extension) is available to place icons
 where ever you want. See more about this in section
 link:{url-roundtrip--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
@@ -578,5 +580,5 @@ Have you've enjoyed the possibilities J1 offers for managing and
 manipulating font icons. Do you think these icon sets can fit your needs?
 Using Iconify, for all topics, you will find a suitable icon. And it's simple.
 
-To check more features of the template, go for the
+To check more features of the J1 Theme, go for the
 link:{url-roundtrip--asciidoc-extensions}[Asciidoc Extensions] made for J1!

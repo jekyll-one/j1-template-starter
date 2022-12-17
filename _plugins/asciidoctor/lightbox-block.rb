@@ -1,13 +1,13 @@
 # ------------------------------------------------------------------------------
 # ~/_plugins/asciidoctor-extensions/image-block.rb
-# Asciidoctor extension for J1 Template
+# Asciidoctor extension for J1 Theme
 #
 # Product/Info:
 # https://jekyll.one
 #
 # Copyright (C) 2022 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
+# J1 Theme is licensed under the MIT License.
 # For details, see: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------

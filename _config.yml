@@ -7,8 +7,8 @@
 #
 # Copyright (C) 2022 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 
 # ==============================================================================
@@ -32,7 +32,7 @@
 #   JEKYLL_ENV=development.
 #
 #   The  Jekyll environment variable JEKYLL_ENV is accessible via the
-#   Liquid variable "jekyll.environment". J1 template overwrites the site
+#   Liquid variable "jekyll.environment". J1 Theme overwrites the site
 #   variable "site.environment" with the value of the Liquid variable
 #   "jekyll.environment" automatically - in other words: JEKYLL_ENV takes
 #   PRECENDENCE over the site variable "site.environment" given with the
@@ -51,13 +51,13 @@ environment:                            development
 
 # version
 # ------------------------------------------------------------------------------
-# Sets the build version of J1 Template Gem
+# Sets the build version of J1 Theme Gem
 #
-version:                                2022.6.2
+version:                                2023.0.0
 
 # version
 # ------------------------------------------------------------------------------
-# Sets the build version of J1 Template
+# Sets the build version of J1 Theme
 #
 copyright:                              © 2022 J1 · All rights reserved
 
@@ -69,34 +69,34 @@ copyright:                              © 2022 J1 · All rights reserved
 #
 # Set the (gem-based) theme and the (Bootrap) theme used for the site
 #
-# J1 Template is a so-called gem-based template for Jekyll. All components
+# J1 Theme is a so-called gem-based template for Jekyll. All components
 # for the template J1 (template core and template modules) are Ruby gem
 # managed by the Ruby bundler respectively by the GEM manager "gem". All
 # components are available public at RubyGems.org.
 #
-#
 # theme
 # ------------------------------------------------------------------------------
-# Sets the name of the (gem-based) theme used for Jekyll
-# serve and build
+#   Sets the name of the (gem-based) theme used for Jekyll
+#   serve and build (currently set to old gem|name: j1-template
 #
+# theme:                                j1-theme
 theme:                                  j1-template
 
 # ------------------------------------------------------------------------------
-# J1 Template configuration
-# Sets J1 Template specific configurations
+# J1 Theme configuration
+# Sets J1 Theme specific configurations
 #
 # NOTE:
 #   Parameter "theme" is used by Jekyll >= 3.2.0 for gem-based
 #   templates. For that reason, the configuration parameter for
-#   the J1 Template was changed to "template" to not conflict with
+#   the J1 Theme was changed to "template" to not conflict with
 #   new versions of Jekyll.
 #
 # template.name
 # ------------------------------------------------------------------------------
-# Sets the theme "path" of J1 Template for the ~/assets/themes
+# Sets the theme "path" of J1 Theme for the ~/assets/themes
 # folder. To not conflict with other template systems, all
-# template assets for J1 Template are stored under the default
+# template assets for J1 Theme are stored under the default
 # path "/assets/themes/j1".
 #
 # NOTE:
@@ -106,7 +106,7 @@ theme:                                  j1-template
 #
 # template.config
 # ------------------------------------------------------------------------------
-# Sets the name of the J1 Template configuration file
+# Sets the name of the J1 Theme configuration file
 #
 #   default:                            j1_config
 #
@@ -150,7 +150,7 @@ template:
 #
 # doctype
 # ------------------------------------------------------------------------------
-# Sets the HTML standard of the website. J1 template is using
+# Sets the HTML standard of the website. J1 Theme is using
 # HTML5, therefor the doctype is: <!DOCTYPE html>
 #
 #   values:                             HTML doc types
@@ -285,7 +285,7 @@ favicon:
 # URI configuration
 
 # For default, J1 is using "pretty" links (URLs) ofr ALL types
-# of conten (pages, posts, collections). For J1 Template the
+# of conten (pages, posts, collections). For J1 Theme the
 # permalink style (pretty):
 #
 # pretty: /:categories/:year/:month/:day/:title/
@@ -328,8 +328,7 @@ permalink:                              pretty
 # if you are running jekyll serve in a development environment,
 # site.url will be set to the value of host, port.
 #
-# url:                                  "http://localhost:20000"
-# url:                                  "https://j1-template-starter.netlify.app"
+url:                                  "http://localhost:20000"
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -437,7 +436,7 @@ sass:
 #
 webrick:
   headers:
-    X-Builder-Template:                 J1 Template
+    X-Builder-Template:                 J1 Theme
     X-Builder-Engine:                   Jekyll
 
 # ------------------------------------------------------------------------------
@@ -549,7 +548,7 @@ image:
   path:                                 /assets/images/promo/home/screenshot.jpg
   width:                                1200
   height:                               800
-  alt:                                  J1 Template Home
+  alt:                                  J1 Theme Home
 
 twitter:
   username:
@@ -631,7 +630,7 @@ defaults:
         path:                           /assets/images/promo/home/screenshot.jpg
         width:                          1200
         height:                         800
-        alt:                            J1 Template Home
+        alt:                            J1 Theme Home
 
       robots:
         index:                          true
@@ -683,7 +682,7 @@ defaults:
         path:                           /assets/images/promo/home/screenshot.jpg
         width:                          1200
         height:                         800
-        alt:                            J1 Template Home
+        alt:                            J1 Theme Home
 
       robots:
         index:                          true
@@ -694,7 +693,7 @@ defaults:
       series:                           false
 
       toc:                              true
-      fab_menu_id:                      page_ctrl
+      fab_menu_id:                      default
       scrollbar:                        false
 
       resource_options:
@@ -721,7 +720,7 @@ defaults:
         path:                           /assets/images/promo/home/screenshot.jpg
         width:                          1200
         height:                         800
-        alt:                            J1 Template Home
+        alt:                            J1 Theme Home
 
       robots:
         index:                          true
@@ -731,7 +730,7 @@ defaults:
       exclude_from_search:              false
 
       toc:                              true
-      fab_menu_id:                      page_ctrl
+      fab_menu_id:                      default
       scrollbar:                        false
 
       resource_options:

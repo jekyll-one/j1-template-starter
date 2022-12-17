@@ -1,14 +1,14 @@
 # ------------------------------------------------------------------------------
 # ~/_plugins/asciidoctor-extensions/flag-icon-inline.rb
-# Asciidoctor flag icon extension for J1 Template
+# Asciidoctor flag icon extension for J1 Theme
 #
 # Product/Info:
 # https://jekyll.one
 #
 # Copyright (C) 2022 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 # <i class="flag-icon flag-icon-gr rectangle size-xs"></i>
 # <i class="flag-icon flag-icon-gr squared size-xs"></i>

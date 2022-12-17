@@ -1,6 +1,6 @@
 # All you need for your new amazing site
 
-Jekyll meets Bootstrap - and makes a lot of friends. J1 Template combines
+Jekyll meets Bootstrap - and makes a lot of friends. J1 Theme combines
 the best of OpenSource software for the Web and the Web site generator
 `Jekyll`. J1 is OpenSource, and so are the packaged modules - no pain for
 private or professional use. Explore this site to learn what's possible if
@@ -8,7 +8,7 @@ you go to the Jekyll Way.
 
 ![Screenshot](https://github.com/jekyll-one-org/j1-template/raw/main/starter-screenshot.jpg "J1 Starter Web")
 
-* Fully Responsive. J1 Template supports modern web browsers on all
+* Fully Responsive. J1 Theme supports modern web browsers on all
   devices for best results on PCs, Tablets, and SmartPhones.
 * Full Bootstpap V5 support. Current Technology and Design. Excellent
   performance running desktop and mobile websites. Use Jekyll One to
@@ -32,11 +32,11 @@ at [Netlify](https://j1-preview-netlify.netlify.app/).
 
 # Features
 
-The template combines the best free software for the web. Jekyll One Template
+The template combines the best free software for the web. Jekyll One Theme
 is OpenSource and the modules included are free to use as well. No license
 issues for private or professional use.
 
-* Fully Responsive. J1 Template supports modern web browsers on all
+* Fully Responsive. J1 Theme supports modern web browsers on all
   devices for best results on PCs, Tablets, and SmartPhones.
 * Full Bootstpap V5 support. Current Technology and Design. Excellent
   performance running desktop and mobile websites. Use Jekyll One to
@@ -119,7 +119,7 @@ Note that 32-bit versions (x32) are generally **not** supported for
 
 # Development languages and tools
 
-To run the Development System for J1 Template, the following languages and
+To run the Development System for J1 Theme, the following languages and
 tools expected to be in place with your OS:
 
 * Ruby language, version >= 2.7
@@ -241,7 +241,7 @@ making the command-line look a bit more natural. Therefore, we prefer to
 use `yarn`.
 
 **NOTE**: Yarn adds some additional features to the NodeJS package
-management implemented for the needs at Facebook. To use J1 Template, those
+management implemented for the needs at Facebook. To use J1 Theme, those
 add-ons are neither needed nor used.
 
 Install latest *NPM* and *Yarn* packages for *NodeJS*:
@@ -253,19 +253,19 @@ npm install -g yarn@latest
 
 # Managing J1 Projects
 
-Managing J1 Template projects is very simple:
+Managing J1 Theme projects is very simple:
 
-* Install J1 Template
+* Install J1 Theme
 * Setup a project
 * Initialize the project
 * Run the J1 Project
 
-## Install J1 Template
+## Install J1 Theme
 
-You can install J1 Template in two ways:
+You can install J1 Theme in two ways:
 
-* Installing the Ruby Gem of J1 Template (recommended)
-* Clone the current J1 Template Repo from *Github*
+* Installing the Ruby Gem of J1 Theme (recommended)
+* Clone the current J1 Theme Repo from *Github*
 
 The recommended method to install J1 is using the the **Ruby Gem**.
 If you're using *Git* already, cloning the Repo at *Github* may an
@@ -284,7 +284,7 @@ Ruby GEMs requires **elevated** user rights (root). *Userized* installations
 of Ruby packages can be done by all users **without** having elevated
 user rights.
 
-J1 Template uses the **user install** option internally by **default**.
+J1 Theme uses the **user install** option internally by **default**.
 All depended Ruby GEMs are installed in the user's home directory in
 folder `.gem`.
 
@@ -299,7 +299,7 @@ On *Unix/linux*, run:
 
     md $HOME/.gem
 
-The latest version of J1 Template is available at
+The latest version of J1 Theme is available at
 <a href="https://rubygems.org/gems/j1-template/" target="_blank">RubyGems</a>
 or can installed by the RubyGems CLI **gem**:
 
@@ -310,7 +310,7 @@ downloaad|install all dpended Ruby GEMs as required (userized).
 
 ### Checkout the Repo from Github
 
-The Repo for the **latest** version of J1 Template is published on Github.
+The Repo for the **latest** version of J1 Theme is published on Github.
 You can get it by **cloning** the repository using **Git**`:
 
     git clone https://github.com/jekyll-one/j1-template-starter.git
@@ -346,16 +346,16 @@ the cloned repo to a more specific (project) name.
 
 
 All development **tasks** are defined as NPM **scripts** with the project
-config file `package.json`. For your convenience, the J1 Template Gem
+config file `package.json`. For your convenience, the J1 Theme Gem
 comes with a build-in CLI **j1** run all project-related commands;
 no need to learn **npm** or how to manage **NodeJS** projects.
 
 
 ## Setup the Project
 
-The setup procedure depends on how you installed J1 Template. If you are
+The setup procedure depends on how you installed J1 Theme. If you are
 using the J1 GEM as recommended, you need to **create** a personal project
-first. If you have cloned the J1 Template Repo from *Github*, the project
+first. If you have cloned the J1 Theme Repo from *Github*, the project
 is already created by the clone's folder and you can skip the creation of
 a project; continue on section **Initialize a J1 Project**.
 
@@ -380,7 +380,7 @@ This command creates a **initial** project in folder **my-starter**.
   2022-07-30 18:12:12 - GENERATE: Resolving dependencies...
   2022-07-30 18:12:12 - GENERATE: Using bundler 2.3.7
   ...
-  2022-07-30 18:12:12 - GENERATE: Using j1-template 2022.6.2
+  2022-07-30 18:12:12 - GENERATE: Using j1-template 2023.0.0
   2022-07-30 18:12:12 - GENERATE: Bundle complete! 31 Gemfile dependencies, 78 gems now installed.
   2022-07-30 18:12:12 - GENERATE: Bundled gems are installed into `../../.gem`
   2022-07-30 18:12:12 - GENERATE:  C:/Users/xxx/.gem/ruby/3.1.0;C:/DevTools/Ruby31-x64/lib/ruby/gems/3.1.0;
@@ -399,7 +399,7 @@ On *Windows*, run the `setup` task like so:
 
     cd %HOMEDRIVE%%HOMEPATH%\j1-projects\my-starter && j1 setup
 
-**NOTE**: While initializing a project, the J1 Template Gem is downloaded as
+**NOTE**: While initializing a project, the J1 Theme Gem is downloaded as
 a dependecy (if **not** already installed). For the users **cloned** the J1
 Template repo (as a project), the J1 GEM will be installed and all **j1**
 commands are available as well.
@@ -416,7 +416,7 @@ commands are available as well.
   2022-07-30 18:17:48 - SETUP: Initialize the project ...
   2022-07-30 18:17:48 - SETUP: Be patient, this will take a while ...
   2022-07-30 18:17:49 - SETUP:
-  2022-07-30 18:17:49 - SETUP: > j1@2022.6.2 setup C:\Users\xxx\j1-projects\my-starter
+  2022-07-30 18:17:49 - SETUP: > j1@2023.0.0 setup C:\Users\xxx\j1-projects\my-starter
   2022-07-30 18:17:49 - SETUP: > npm --silent run setup-start && npm --silent run setup-base && run-s -s setup:*
   2022-07-30 18:17:49 - SETUP:
   2022-07-30 18:17:50 - SETUP: Setup project for first use ..
@@ -461,7 +461,7 @@ browser. Let's start the journey ...
   Check setup state of the J1 project ...
   2022-07-30 18:26:18 - SITE: Starting up your site ...
   2022-07-30 18:26:18 - SITE:
-  2022-07-30 18:26:18 - SITE: > j1@2022.6.2 j1-site C:\Users\jadams\j1-projects\my-starter
+  2022-07-30 18:26:18 - SITE: > j1@2023.0.0 j1-site C:\Users\jadams\j1-projects\my-starter
   2022-07-30 18:26:18 - SITE: > run-p -s j1-site:*
   2022-07-30 18:26:18 - SITE:
   2022-07-30 18:26:20 - SITE: Startup UTILSRV ..
@@ -500,7 +500,7 @@ Check setup state of the J1 project ...
 REBUILD: Rebuild the projects website ...
 REBUILD: Be patient, this will take a while ...
 2022-07-30 18:45:09 - REBUILD:
-2022-07-30 18:45:09 - REBUILD: > j1@2022.6.2 rebuild C:\Users\xxx\j1-projects\my-starter
+2022-07-30 18:45:09 - REBUILD: > j1@2023.0.0 rebuild C:\Users\xxx\j1-projects\my-starter
 2022-07-30 18:45:09 - REBUILD: > run-s -s rebuild:* && run-s -s post-rebuild:*
 2022-07-30 18:45:09 - REBUILD:
 2022-07-30 18:45:10 - REBUILD: Rebuild site incremental ..
@@ -548,7 +548,7 @@ using Lerna for all packages:
   2022-07-30 18:29:07 - RESET: Reset the project to factory state ...
   2022-07-30 18:29:07 - RESET: Be patient, this will take a while ...
   2022-07-30 18:29:08 - RESET:
-  2022-07-30 18:29:08 - RESET: > j1@2022.6.2 reset C:\Users\xxx\j1-projects\my-starter
+  2022-07-30 18:29:08 - RESET: > j1@2023.0.0 reset C:\Users\xxx\j1-projects\my-starter
   2022-07-30 18:29:08 - RESET: > run-s -s reset:*
   2022-07-30 18:29:08 - RESET:
   2022-07-30 18:29:08 - RESET: Reset project to factory state ..

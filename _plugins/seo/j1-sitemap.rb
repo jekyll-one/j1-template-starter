@@ -8,8 +8,8 @@
 # Copyright (C) 2022 Ben Balter and Contributors
 # Copyright (C) 2022 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 # frozen_string_literal: true
 
@@ -38,19 +38,20 @@ module Jekyll
       @module_config                    = @module_config_default_settings.merge!(@module_config_user_settings)
 
       @template_source_folder           = File.join(@project_path, @module_config['template_source_folder'])
-      @robots_template_name             = @module_config['robots_template_name']
-      @sitemap_template_name            = @module_config['sitemap_template_name']
+      @robots_theme_name             = @module_config['robots_theme_name']
+      @sitemap_theme_name            = @module_config['sitemap_theme_name']
 
-      @robots_source_path ||= File.expand_path @robots_template_name, @template_source_folder
-      @sitemap_source_path ||= File.expand_path @sitemap_template_name, @template_source_folder
+      @robots_source_path ||= File.expand_path @robots_theme_name, @template_source_folder
+      @sitemap_source_path ||= File.expand_path @sitemap_theme_name, @template_source_folder
 
       if plugin_disabled?
-        Jekyll.logger.info "J1 Sitemap:", "generate sitemap files: disabled"
+        Jekyll.logger.info "J1 Sitemap:", "disabled"
         return
+      else
+        Jekyll.logger.info "J1 Sitemap:", "enabled"
+        Jekyll.logger.info "J1 Sitemap:", "generate sitemap files"
       end
-
-      Jekyll.logger.info "J1 Sitemap:", "generate map files"
-
+    
       @site.pages << sitemap unless file_exists?("sitemap.xml")
       @site.pages << robots unless file_exists?("robots.txt")
     end
@@ -103,7 +104,7 @@ module Jekyll
     end
 
     def sitemap
-      site_map                      = PageWithoutAFile.new(@site, @template_source_folder, "", @sitemap_template_name)
+      site_map                      = PageWithoutAFile.new(@site, @template_source_folder, "", @sitemap_theme_name)
       site_map.content              = File.read(@sitemap_source_path).gsub(MINIFY_REGEX, "")
       site_map.data["layout"]       = nil
       site_map.data["static_files"] = static_files.map(&:to_liquid)

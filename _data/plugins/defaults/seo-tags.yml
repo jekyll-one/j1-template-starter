@@ -7,8 +7,8 @@
 #
 #  Copyright (C) 2022 Juergen Adams
 #
-#  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
+#  J1 Theme is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -43,14 +43,14 @@ defaults:
   #     values:                         string (path)
   #     default:                        _data
   #
-  #   robots_template_name
+  #   robots_theme_name
   #   --------------------------------------------------------------------------
   #   The name of the robots template
   #
   #     values:                         string
   #     default:                        robots.txt
   #
-  #   sitemap_template_name
+  #   sitemap_theme_name
   #   --------------------------------------------------------------------------
   #   The name of the XML sitemap template
   #
@@ -59,7 +59,7 @@ defaults:
   #
   #   --------------------------------------------------------------------------
   #
-  enabled:
-                                        false
+  enabled:                              false
+
   template_source_folder:               _data/templates
   template_name:                        seo-tags.html

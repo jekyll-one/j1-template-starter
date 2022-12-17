@@ -1,6 +1,6 @@
 /*
  # -----------------------------------------------------------------------------
- # ~/packages/910_template_utils/100_util_server/server.js
+ # ~/packages/910_theme_utils/100_util_server/server.js
  #
  # Provides services for e.g. an external OAuth Client used by
  # NetlifyCMS for GH authentication
@@ -12,8 +12,8 @@
  # Copyright (C) 2022 Juergen Adams
  # Copyright (C) 2020 Václav Klecanda
  #
- # J1 Template is licensed under the MIT License.
- # See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+ # J1 Theme is licensed under the MIT License.
+ # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
  # Netlify-cms-github-oauth-provider is licensed under UNKNOWN License.
  # See: https://github.com/vencax/netlify-cms-github-oauth-provider/blob/master/README.md
  # -----------------------------------------------------------------------------
@@ -90,8 +90,8 @@ moment().format('YYYY-MM-DD hh:mm:ss.SSS');
 // environment settings
 // -----------------------------------------------------------------------------
 if (environment === 'dev') {
-  project_home    = daemon_home + '/../400_template_site';
-  config_home     = daemon_home + '/../400_template_site/_data';
+  project_home    = daemon_home + '/../400_theme_site';
+  config_home     = daemon_home + '/../400_theme_site/_data';
   log_home        = daemon_home + '/../..';
 } else {
   project_home    = daemon_home + '/..';
@@ -570,7 +570,7 @@ app.get('/npm', (req, res) => {
   let projectFolder;
   let shellCmd;
   let response;
-  let devPrefix         = 'packages\\400_template_site';
+  let devPrefix         = 'packages\\400_theme_site';
   let pkgManager        = 'npm';
   let time              = moment();
 

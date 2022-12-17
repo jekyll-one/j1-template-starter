@@ -7,8 +7,8 @@
 #
 # Copyright (C) 2022 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 require 'fileutils'
 require 'net/http'
@@ -109,6 +109,14 @@ module Jekyll
         rebuild = @module_config['rebuild']
         index_file = index_dest + @module_config['index_file']
 
+        if plugin_disabled?
+          Jekyll.logger.info 'J1 Lunr:', 'disabled'
+          return
+        else
+          Jekyll.logger.info 'J1 Lunr:', 'enabled'
+          Jekyll.logger.info 'J1 Lunr:', 'generate search index'
+        end
+
         if @module_config['rebuild'] == false
           if File.exist?(index_file)
             Jekyll.logger.info 'J1 Lunr:', 'rebuild index disabled'
@@ -118,8 +126,6 @@ module Jekyll
             return
           end
         end
-
-        Jekyll.logger.info 'J1 Lunr:', 'generate search index'
 
         # gather posts and pages
         #
@@ -196,6 +202,22 @@ module Jekyll
       end
 
       private
+
+      # Returns the plugin's config or an empty hash if not set
+      #
+      def config
+        @config ||= @module_config  || {}
+      end
+
+      # Check if plugin is enabled|disabled
+      #
+      def plugin_disabled?
+        if config['enabled']
+          false
+        else
+          true
+        end
+      end
 
       # load the stopwords (file)
       #
@@ -298,20 +320,17 @@ module Jekyll
           is_post           = site.is_a?(Jekyll::Document)
           body              = renderer.render(site)
 
-          if description.nil? || description.length == 0
-            description = 'No description available.'
-          else
-            description, keywords = description.split(/~~~/)
+          # For posts, the description is taken from the excerpt
+          if site.is_a?(Jekyll::Document)
+            excerpt = extract_excerpt(site)
+            unless excerpt.nil? || excerpt.length == 0
+              description = excerpt
+            end
           end
 
-#         Previous code used  for Posts
-#
-#         if site.is_a?(Jekyll::Document)
-#           excerpt = extract_excerpt(site)
-#           unless excerpt.nil? || excerpt.length == 0
-#             description = excerpt
-#           end
-#         end
+          if description.nil? || description.length == 0
+            description = 'No description available.'
+          end
 
           SearchEntry.new(title, tagline, url, date, tags, categories, description, is_post, body, renderer)
 
@@ -372,6 +391,6 @@ end
 
 module Jekyll
   module J1LunrSearch
-    VERSION = '2022.6.2'
+    VERSION = '2023.0.0'
   end
 end

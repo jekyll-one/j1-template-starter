@@ -1,5 +1,5 @@
 ---
-title:                                  J1 Template
+title:                                  J1 Theme
 tagline:                                About This Site
 date:                                   2022-01-01 00:00:00
 description: >
@@ -10,22 +10,27 @@ description: >
 categories:                             [ About ]
 tags:                                   [ Site, Review ]
 
-scrollbar:                              false
-regenerate:                             false
+image:
+  path:                                 /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  J1 Themes Mockup
 
+comments:                               false
+scrollbar:                              false
+
+regenerate:                             false
 permalink:                              /pages/public/about/site/
 
 resources:                              [ animate ]
 resource_options:
   - attic:
-      padding_top:                      550
+      padding_top:                      600
+      padding_bottom:                   50
+      opacity:                          0.5
       slides:
-        - url:                          /assets/images/modules/attics/1920x1280/alexander-redl.jpg
-          alt:                          Photo by Alexander Redl on Unsplash
-          badge:
-            type:                       unsplash
-            author:                     Alexander Redl
-            href:                       https://unsplash.com/@alexanderredl
+        - url:                          /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
+          alt:                          J1 Themes Mockup
 ---
 
 // Page Initializer

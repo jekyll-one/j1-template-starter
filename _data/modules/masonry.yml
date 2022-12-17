@@ -1,0 +1,65 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/modules/masonry.yml
+#  User configuration settings for J1 Masonry module
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2022 Juergen Adams
+#
+#  J1 Theme is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description (used for J1 CC only)
+#
+description:
+
+  title:                                J1 Masonry
+  scope:                                User settings
+  location:                             _data/modules/masonry.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+  enabled:                              true
+
+  grids:
+    # --------------------------------------------------------------------------
+    # Example Grid 1
+    #
+    - name:                             Example Grid 1
+      grid:
+        enabled:                        true
+        hideDisabled:                   true
+
+        id:                             example_masonry
+        originTop:                      true
+        originLeft:                     true
+        initLayout:                     true
+        percentPosition:                true
+
+#       horizontalOrder:                false
+#       transitionDuration:             0.4s
+#       columnWidth:                    200
+#       itemSelector:                   '.grid-item'
+#       gutter:                         50
+
+    # --------------------------------------------------------------------------
+    # Example Grid 2
+    #
+    - name:                             Example Grid 2
+      grid:
+        enabled:                        true
+        hideDisabled:                   true
+
+        id:                             example_masonry_2
+        originTop:                      true
+        originLeft:                     true
+        initLayout:                     true
+        percentPosition:                true
+
+# ------------------------------------------------------------------------------
+# END config

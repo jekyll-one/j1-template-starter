@@ -8,14 +8,67 @@
 # Copyright (C) 2022 Ben Balter and Contributors
 # Copyright (C) 2022 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 # frozen_string_literal: true
 
 require "jekyll"
 
 module Jekyll
+
+  class J1SeoTag < Jekyll::Generator
+    safe true
+    priority :lowest
+
+    # Main plugin action, called by Jekyll-core
+    def generate(site)
+      @site = site
+
+      @mode                             = site.config['environment']
+      @template                         = site.config['theme']
+
+      @project_path                     = File.join(File.dirname(__FILE__)).sub('_plugins/seo', '')
+      @module_data_path                 = File.join(File.join(@project_path, '_data'))
+      @module_config_path               = File.join(File.join(@module_data_path, 'plugins'))
+      @module_template_path             = File.join(File.join(@module_data_path, 'templates'))
+      @module_config_default            = YAML::load(File.open(File.join(@module_config_path, 'defaults', 'seo-tags.yml')))
+      @module_config_user               = YAML::load(File.open(File.join(@module_config_path, 'seo-tags.yml')))
+
+      @module_config_default_settings   = @module_config_default['defaults']
+      @module_config_user_settings      = @module_config_user['settings']
+      @module_config                    = @module_config_default_settings.merge!(@module_config_user_settings)
+
+      if plugin_disabled?
+        Jekyll.logger.info "J1 SEO Tags:", "disabled"
+        return
+      else
+        Jekyll.logger.info "J1 SEO Tags:", "enabled"
+        Jekyll.logger.info "J1 SEO Tags:", "generate seo tags"
+      end
+
+    end
+
+    private
+
+    # Returns the plugin's config or an empty hash if not set
+    #
+    def config
+      @config ||= @module_config  || {}
+    end
+
+    # Check if plugin is enabled|disabled
+    #
+    def plugin_disabled?
+      if config['enabled']
+        false
+      else
+        true
+      end
+    end
+
+  end
+
   class SeoTag < Liquid::Tag
     attr_accessor :context
 
@@ -102,6 +155,7 @@ module Jekyll
     end
 
   end
+
 end
 
 Liquid::Template.register_tag("seo", Jekyll::SeoTag)
@@ -197,7 +251,6 @@ module Jekyll
     end
   end
 end
-
 
 module Jekyll
   class SeoTag
@@ -463,7 +516,6 @@ module Jekyll
   end
 end
 
-
 module Jekyll
   class SeoTag
     class Filters
@@ -476,7 +528,6 @@ module Jekyll
     end
   end
 end
-
 
 module Jekyll
   class SeoTag
@@ -558,7 +609,6 @@ module Jekyll
     end
   end
 end
-
 
 module Jekyll
   class SeoTag
@@ -662,56 +712,3 @@ module Jekyll
     end
   end
 end
-
-# module Jekyll
-#   class SeoTag
-#     # This module is deprecated, but is included in the Gem to avoid a breaking
-#     # change and should be removed at the next major version bump
-#     module JSONLD
-#       METHODS_KEYS = {
-#         :json_context   => "@context",
-#         :type           => "@type",
-#         :name           => "name",
-#         :page_title     => "headline",
-#         :json_author    => "author",
-#         :json_image     => "image",
-#         :date_published => "datePublished",
-#         :date_modified  => "dateModified",
-#         :description    => "description",
-#         :publisher      => "publisher",
-#         :main_entity    => "mainEntityOfPage",
-#         :links          => "sameAs",
-#         :canonical_url  => "url",
-#       }.freeze
-#
-#       # Self should be a Jekyll::SeoTag::Drop instance (when extending the module)
-#       def json_ld
-#         Jekyll.logger.warn "Jekyll::SeoTag::JSONLD is deprecated"
-#         @json_ld ||= JSONLDDrop.new(self)
-#       end
-#     end
-#   end
-# end
-
-
-# module Jekyll
-#   class SeoTag
-#     # Mixin to share common URL-related methods between class
-#     module UrlHelper
-#       private
-#
-#       # Determines if the given string is an absolute URL
-#       #
-#       # Returns true if an absolute URL
-#       # Returns false if it's a relative URL
-#       # Returns nil if it is not a string or can't be parsed as a URL
-#       def absolute_url?(string)
-#         return unless string
-#
-#         Addressable::URI.parse(string).absolute?
-#       rescue Addressable::URI::InvalidURIError
-#         nil
-#       end
-#     end
-#   end
-# end

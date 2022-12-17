@@ -1,1 +1,27 @@
+{%- capture cache %}
+
+{%- comment %}
+ # -----------------------------------------------------------------------------
+ # ~/_data/templates/robots.txt
+ # Liquid template to generate the robots file
+ #
+ # Product/Info:
+ # https://jekyll.one
+ #
+ # Copyright (C) 2022 Juergen Adams
+ #
+ # J1 Theme is licensed under the MIT License.
+ # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+ # -----------------------------------------------------------------------------
+ # Test data:
+ #   liquid_var: {{ liquid_var | debug }}
+ # -----------------------------------------------------------------------------
+{% endcomment -%}
+
 Sitemap: {{ "sitemap.xml" | absolute_url }}
+
+{% endcapture -%}
+
+{%- comment %} POST processing of the generated file (robots.txt)
+-------------------------------------------------------------------------------- {% endcomment -%}
+{{ cache }}

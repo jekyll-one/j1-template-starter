@@ -7,11 +7,11 @@
 #
 # Copyright (C) 2022 Juergen Adams
 #
-# J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/J1 Template/blob/master/LICENSE
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 # NOTE:
-#   By J1 template, "Liquid Procedures" are being used intensively. To load
+#   By J1 Theme, "Liquid Procedures" are being used intensively. To load
 #   HTML data for a layout, the loader procedure places the data based this
 #   YAML data file into the REGION specified with a LANE.
 # ------------------------------------------------------------------------------
@@ -29,7 +29,7 @@
 #
 # base_url
 # ------------------------------------------------------------------------------
-#   For J1 template, all CSS and JS resources are stored as ASSETS
+#   For J1 Theme, all CSS and JS resources are stored as ASSETS
 #   under ~/assets/themes/j1. To shorten the filenames to be configured,
 #   base_url points to the (base) asset path.
 #
@@ -52,7 +52,7 @@
 #
 # location
 # ------------------------------------------------------------------------------
-#   For J1 template, resources can be loaded from LOCAL assets folder
+#   For J1 Theme, resources can be loaded from LOCAL assets folder
 #   (~/assets/themes/j1) OR from REMOTE using e.g. a CDN. Resources
 #   are written as LOCATORS, simple JSON objects consists in two
 #   key|value pairs. The keys are "local" or "remote" to indicate
@@ -338,14 +338,14 @@ resources:
   # ----------------------------------------------------------------------------
 
   # ----------------------------------------------------------------------------
-  # J1 Core, Main JS API for J1 Template
+  # J1 Core, Main JS API for J1 Theme
   #
-  - name:                               J1 Template Core
+  - name:                               J1 Theme Core
     resource:
       enabled:                          true
 
       id:                               core
-      comment:                          Module J1 Template Core
+      comment:                          Module J1 Theme Core
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -426,7 +426,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # J1 Logger, JS API for all logs used by J1 Template based on the
+  # J1 Logger, JS API for all logs used by J1 Theme based on the
   # log4j implementation for JS (log4javascript)
   #
   # See: http://log4javascript.org
@@ -476,7 +476,7 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Top Header, JS implementaion to create top headers for J1 Template
+  # Top Header, JS implementaion to create top headers for J1 Theme
   # based on the JS API jQuery Backstretch
   #
   # See: https://github.com/jquery-backstretch/jquery-backstretch
@@ -501,7 +501,7 @@ resources:
         init_function:                  [ j1.adapter.attic.init ]
 
   # ----------------------------------------------------------------------------
-  # Navigator, JS API to create the naviagtion for J1 Template
+  # Navigator, JS API to create the naviagtion for J1 Theme
   # based on the (BS3) JS implementaion of Bootsnav.
   #
   # See: https://github.com/adamnurdin01/bootsnav
@@ -848,7 +848,7 @@ resources:
 
   # ----------------------------------------------------------------------------
   # lunr search engine, JS API used for the QuickSearch feature
-  # of J1 Template based on the Lunr JS API
+  # of J1 Theme based on the Lunr JS API
   #
   # See: https://lunrjs.com/
   #
@@ -1119,7 +1119,7 @@ resources:
         init_function:                  [ j1.adapter.framer.init ]
 
   # ----------------------------------------------------------------------------
-  # Lightbox V2, the main lightbox for J1 Template
+  # Lightbox V2, the main lightbox for J1 Theme
   #
   # See: ttp://lokeshdhakar.com/projects/lightbox2/
   #
@@ -1318,7 +1318,7 @@ resources:
         init_function:                  [ j1.adapter.clipboard.init ]
 
   # ----------------------------------------------------------------------------
-  # Carousel, JS API for the main carousel used by J1 Template
+  # Carousel, JS API for the main carousel used by J1 Theme
   #
   - name:                               J1 Carousel
     resource:
@@ -1580,7 +1580,7 @@ resources:
         init_function:                  [ j1.adapter.rangeSlider.init ]
 
   # ----------------------------------------------------------------------------
-  # Data tables for J1 Template (currently NOT used)
+  # Data tables for J1 Theme (currently NOT used)
   #
   # See: https://datatables.net/
   #
@@ -1750,7 +1750,7 @@ resources:
         init_function:                  [ j1.adapter.dropdowns.init ]
 
   # ----------------------------------------------------------------------------
-  # J1 NBI, implement nbinteract core JS for J1 Template
+  # J1 NBI, implement nbinteract core JS for J1 Theme
   #
   - name:                               J1 NBinteract
     resource:
@@ -1887,10 +1887,33 @@ resources:
       data:
         css:                            []
         files:                          []
-        js:                             [
-                                          modules/requirejs/js/require
-                                        ]
+        js:                             [ modules/requirejs/js/require ]
         init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # Masonry
+  # Cascading grid layout library
+  #
+  # See: https://github.com/desandro/masonry
+  #
+  - name:                               Masonry
+    resource:
+      enabled:                          true
+
+      id:                               masonry
+      comment:                          Module Masonry
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          [ adapter/js/masonry.js ]
+        js:                             [ modules/masonry/js/masonry.pkgd ]
+        init_function:                  [ j1.adapter.masonry.init ]
 
   # ----------------------------------------------------------------------------
   # Waves
@@ -1913,6 +1936,28 @@ resources:
         files:                          [ adapter/js/waves.js ]
         js:                             []
         init_function:                  [ j1.adapter.waves.init ]
+
+  # ----------------------------------------------------------------------------
+  # Waves
+  #
+  - name:                               Particles
+    resource:
+      enabled:                          true
+
+      id:                               particles
+      comment:                          Module Particles
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      sync
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          [ adapter/js/particles.js ]
+        js:                             [ modules/particles/js/particles ]
+        init_function:                  [ j1.adapter.particles.init ]
 
 # ------------------------------------------------------------------------------
 # END config

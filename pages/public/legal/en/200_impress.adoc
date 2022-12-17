@@ -6,7 +6,13 @@ description: >
                                         Impressum
 
 categories:                             [ Site ]
-tags:                                   [ Impressum ]
+tags:                                   [ Impress ]
+
+image:
+  path:                                 /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  J1 Themes Mockup
 
 robots:
   index:                                false
@@ -14,32 +20,23 @@ robots:
 
 sitemap:                                false
 exclude_from_search:                    true
-
-image:
-  path:                                 /assets/images/modules/attics/markus-spiske-1920x1280.jpg
-  width:                                1920
-  height:                               1280
-  alt:                                  Photo by Markus Spiske on Unsplash
-
 fab_menu_id:                            page_ctrl
 scrollbar:                              false
-toc:                                    false
-
 comments:                               false
+toc:                                    false
 
 permalink:                              /pages/public/legal/en/impress/
 regenerate:                             false
 
-resources:                              [ animate ]
+resources:                              [ animate, clipboard, rouge ]
 resource_options:
   - attic:
+      padding_top:                      600
+      padding_bottom:                   50
+      opacity:                          0.5
       slides:
-        - url:                          /assets/images/modules/attics/markus-spiske-1920x1280.jpg
-          alt:                          Photo by Markus Spiske on Unsplash
-          badge:
-            type:                       unsplash
-            author:                     Markus Spiske
-            href:                       https://unsplash.com/@markusspiske
+        - url:                          /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
+          alt:                          J1 Themes Mockup
 ---
 
 // Page Initializer
@@ -58,7 +55,7 @@ resource_options:
 
 // Load page attributes
 // -----------------------------------------------------------------------------
-{% include {{load_attributes}} scope="global" %}
+{% include {{load_attributes}} scope="none" %}
 
 
 // Page content
@@ -73,18 +70,23 @@ endif::[]
 ifeval::[{eu-region} == true]
 .Postal address
 ----
-  <your-postal-address>
+  Juergen Adams
+  Erasmusstrasse 28
+  40223 Duesseldorf
 ----
 endif::[]
 
 .Contact
+[source, text]
 ----
-  webmaster@<your-site>
+  webmaster@jekyll.one
 ----
 
 ifeval::[{eu-region} == true]
 .Responsible for the content according to § 55 Abs. 2 RStV:
 ----
-  <responsbile-postal-address>
+  Juergen Adams
+  Erasmusstrasse 28
+  40223 Duesseldorf
 ----
 endif::[]

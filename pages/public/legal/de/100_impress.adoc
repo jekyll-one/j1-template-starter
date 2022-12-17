@@ -8,13 +8,18 @@ description: >
 categories:                             [ Site ]
 tags:                                   [ Impressum ]
 
+image:
+  path:                                 /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  J1 Themes Mockup
+
 robots:
   index:                                false
   follow:                               false
 
 sitemap:                                false
 exclude_from_search:                    true
-
 fab_menu_id:                            page_ctrl
 scrollbar:                              false
 comments:                               false
@@ -23,22 +28,16 @@ toc:                                    false
 permalink:                              /pages/public/legal/de/impress/
 regenerate:                             false
 
-resources:                              [ animate ]
+resources:                              [ animate, clipboard, rouge ]
 resource_options:
-
   - attic:
-      padding_top:                      550
-
+      padding_top:                      600
+      padding_bottom:                   50
+      opacity:                          0.5
       slides:
-
-        - url:                          /assets/images/modules/attics/markus-spiske-1920x1280.jpg
-          alt:                          Photo by Markus Spiske on Unsplash
-          badge:
-            type:                       unsplash
-            author:                     Markus Spiske
-            href:                       https://unsplash.com/@markusspiske
+        - url:                          /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
+          alt:                          J1 Themes Mockup
 ---
-
 
 // Page Initializer
 // =============================================================================
