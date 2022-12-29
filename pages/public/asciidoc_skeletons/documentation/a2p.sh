@@ -3,7 +3,7 @@
 # Product/Info:
 # http://jekyll-one
 #
-# Copyright (C) 2022 Juergen Adams
+# Copyright (C) 2023 Juergen Adams
 # J1 is licensed under the MIT License
 #  -----------------------------------------------------------------------------
 

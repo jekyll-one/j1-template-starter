@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2022 Juergen Adams
+# Copyright (C) 2023 Juergen Adams
 #
 # J1 Theme is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
@@ -367,7 +367,7 @@
     # --------------------------------------------------------------------------
     # Previewers
     #
-    - title:                            Previewers
+    - title:                            Previewer
       icon:                             eye
       dropdown:
 
@@ -580,16 +580,16 @@
 #
 - item:                                 Themes
   theme_select:
+    - preview:                          enabled
+      title:                            Preview
+      href:                             /pages/public/previewer/current_theme/
+      icon:                             eye
     - local_themes:                     enabled
       title:                            Jekyll One
       icon:                             alpha-j-box
     - bootswatch_themes:                enabled
       title:                            Bootswatch
       icon:                             bootstrap
-    - preview:                          enabled
-      title:                            Preview
-      href:                             /pages/public/previewer/current_theme/
-      icon:                             theme-light-dark
 
 
 # ------------------------------------------------------------------------------

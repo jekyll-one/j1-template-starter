@@ -7,7 +7,7 @@
 # https://jekyll.one
 #
 # Copyright (C) 2002-2014 Will Norris
-# Copyright (C) 2022 Juergen Adams
+# Copyright (C) 2023 Juergen Adams
 #
 # symlink_watcher is licensed under the  MIT license
 # See: https://github.com/willnorris/willnorris.com/blob/master/LICENSE

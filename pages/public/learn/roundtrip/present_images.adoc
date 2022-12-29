@@ -3,12 +3,16 @@ title:                                  Present Images
 tagline:                                Manage Image Contents
 date:                                   2020-11-03 00:00:00
 description: >
-                                        Welcome to the preview page focussing on the image module. This page
-                                        shows some valuable features of the J1 Theme to manage your image-based
-                                        content using lightboxes, carousels (slider), and galleries.
-
+                                        J1 Theme support valuable features to manage your image-based
+                                        content using lightboxes, carousels, sliders, and galleries.
+                                        The image modules of J1 Theme offer a wide range of complex
+                                        functionality based on powerful OpenSource libraries like
+                                        Lightbox2, Master Slider, LightGallery, or JustifiedGallery
+                                        for high-end, masonry-styled preview maps.
 keywords: >
-                                        Jekyll, Theme, step, find, project, roundtrip, trip,
+                                        Jekyll, Theme, JekyllOne, Images, Lightboxes, Carousels, Sliders,
+                                        Galleries, Lightbox2, Master Slider, LightGallery, JustifiedGallery,
+                                        Roundtrip
 
 categories:                             [ Roundtrip ]
 tags:                                   [ Module, Carousel, Lightbox, Image, Slider ]
@@ -47,8 +51,18 @@ resource_options:
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
 // :page--attr:                         <attr-value>
-:ms-slider-previewer:                   https://jekyll.one/pages/public/previewer/masterslider/
-:ms-slider-module-documentation:        https://jekyll.one/pages/public/manuals/modules/masterslider/
+:url-lightbox2--home:                   https://lokeshdhakar.com/projects/lightbox2/
+:url-lightbox2--github:                 https://github.com/lokesh/lightbox2/
+
+:url-justified-gallery--home:           https://miromannino.github.io/Justified-Gallery/
+:url-justified-gallery--github:         https://github.com/miromannino/Justified-Gallery/
+
+:url-j1-docs--carousel-module:          https://jekyll.one/pages/public/manuals/modules/carousel/
+:url-j1-docs--lightbox-module:          https://jekyll.one/pages/public/manuals/modules/lightbox/
+:url-j1-docs--masterslider-module:      https://jekyll.one/pages/public/manuals/modules/masterslider/
+
+:url-j1-masterslider-slider-previewer:  https://jekyll.one/pages/public/previewer/masterslider/
+
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -60,37 +74,32 @@ resource_options:
 
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+Welcome to the preview page focussing on the image module. This page shows
+all the valuable features of the J1 Theme to manage your image-based content
+using using lightboxes, carousels, sliders, and galleries. The image modules
+of J1 Theme offer a wide range of complex functionality based on powerful
+OpenSource libraries like Lightbox2, Master Slider, LightGallery, or
+JustifiedGallery for high-end, masonry-styled preview maps.
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
-[role="dropcap"]
-Welcome to the first preview page focussing on the image module. This page
-shows some valuable features of the J1 Theme to manage your image-based
-content using lightboxes, carousels (slider), and galleries. The image module
-offers complex functionality based on powerful OpenSource libraries like
-JustifiedGallery for high-end, masonry-styled preview maps. J1 Theme uses
-the _jQuery_ Plugin Owl Carousel as a base for image sliders. A carousel
-app (slider) lets you present your images as shows.
-
-Lightboxes like LightGallery or Lightbox V2 support your web for enlarged
-image views of your picture or video content. Have a look, a quick tour
-of what J1 can do for image data. Have fun!
-
 // [role="notranslate"]
+[role="mt-4"]
 == J1 Lightbox blocks
 
 A Lightbox is, in general, a helper which displays enlarged, almost
 screen-filling versions of images (or videos) while dimming the remainder
-of the page. The technique, introduced by Lightbox V2, gained widespread
+of the page. The technique, introduced by Lightbox2, gained widespread
 popularity thanks to its simple style. The term lightbox has been employed
 since then for Javascript libraries to support such functionality.
 
 For the J1 Theme, two different lightboxes are available:
 
-* Lightbox V2 (lightbox)
+* Lightbox2 (lightbox)
 * LightGallery
 
-The default tool employed by J1 Theme is Lightbox V2, a Javascript library
+The default tool employed by J1 Theme is Lightbox2, a Javascript library
 written by _Lokesh Dhakar_. The name of that (build-in) is *lightbox*.
 For more complex use cases, like a thumbnail gallery preview or video support,
 LightGallery can be used alternatively.
@@ -98,11 +107,15 @@ LightGallery can be used alternatively.
 NOTE: The name LightGallery implies a sort of a Gallery, but the library is a
 _lightbox_. And, LightGallery provides much more functionality on image-based
 data rather than enlarged displaying of images. See the examples below to check
-for the differences in comparison to the simpler Lightbox V2 lightbox.
+for the differences in comparison to the simpler Lightbox2 lightbox.
 
 Both lightboxes are fully integrated to be used as standalone modules or
 used as helpers *under-the-hood* by other apps or modules focussing on
 image-data like gallery or carousel, the build-in carousel module.
+
+TIP: For details of the default lightbox of J1 Theme, see the documentation
+under the link:{url-j1-docs--lightbox-module}[Lightbox module, {browser-window--new}].
+
 
 == Lightbox block examples
 
@@ -133,11 +146,13 @@ J1 Carousel is based on OWL Carousel V1 in the latest (and unfortunately
 last) version of 1.3.3. OWL Carousel is a clean and neat _jQuery_ slider
 plugin for creating fully responsive and touch-enabled carousel sliders.
 
+////
 NOTE: OWL Carousel V1 is no longer available on the Internet; for an
 unknown reason. Anyway, the J1 Theme is using this version of OWL
 Carousel is a build-in carousel module because the software does an excellent
 job, is based on an MIT license with no issues using them for private and
 business use. And offers a lot of great features!
+////
 
 === Simple Text Carousel
 
@@ -168,10 +183,12 @@ Parallax text shows can be placed as banners on a page. For text shows,
 different animations are available. Internally, J1 Theme uses some of
 the great CSS styles offered by _animate.css_.
 
-TIP: Have a look a https://daneden.github.io/animate.css/[Dan Eden's home page]
-to see all the possible dynamic styles you can create based on pure CSS. Some
-of them are implemented for OWL Carousel for animation. See the documentation
-for the CAROUSEL Module for more details.
+TIP: Have a look a https://daneden.github.io/animate.css/[Dan Eden's home page, {browser-window--new}]
+to see all the possible dynamic styles you can create based on pure CSS.
+Some of them are implemented for the J1 Carousel for animation. See the
+documentation for the
+link:{url-j1-docs--carousel-module}[Carousel module, {browser-window--new}]
+for more details.
 
 === Simple Image Carousel
 
@@ -190,7 +207,7 @@ carousel::demo_simple[role="mb-3"]
 Carousels are used for an exceptionally compact form of image galleries.
 This example shows some pictures having individual caption text and supports
 a lightbox to enlarge images full size. For the example below, an almost simple
-lightbox is used: Lightbox V2; or short: lightbox.
+lightbox is used: Lightbox2; or short: lightbox.
 
 .Carousel example
 carousel::demo_cats[role="mb-3"]
@@ -238,6 +255,10 @@ other digital data sources.
 In short: Carousels are used to present images, and sliders are used to create
 complex image-based slideshows (presentations).
 
+TIP: For more details of the dimplementation of Master Slider of J1 Theme, see
+find  documentation at
+link:{url-j1-docs--masterslider-module}[Master Slider module, {browser-window--new}].
+
 === MS Slider using Controls + Filters + Lightbox
 
 The following slider uses the (CSS) filter feature of Master Slider.
@@ -283,23 +304,23 @@ slide by their neighbors on the left and the right.
 
 masterslider::ms_00009[role="mt-4"]
 
-=== More about MS Sliders
+=== More about Master Sliders
 
 If you're interested to learn more about MS Sliders, go for the following
 documents:
 
-* link:{ms-slider-previewer}[MS Slider Previewer, {browser-window--new}]
-* link:{ms-slider-module-documentation}[MS Slider module documentation, {browser-window--new}]
+* link:{url-j1-masterslider-slider-previewer}[MS Slider Previewer, {browser-window--new}]
+* link:{url-j1-docs--masterslider-module}[MS Slider module documentation, {browser-window--new}]
 
 
 == JustifiedGallery
 
-JustifiedGallery is a great _jQuery_ Plugin to create responsive, infinite,
-and high-quality justified image galleries. J1 Theme combines the Gallery
-with the lightboxes supported to enlarge the images of a gallery. See the
-gallery in action; and for sure, all that you see is even responsive. Change
-the size of your current browser window, by width or height to see what will
-happen!
+link:{url-justified-gallery--home}[JustifiedGallery, {browser-window--new}]
+is a great _jQuery_ Plugin to create responsive, infinite, and high-quality
+justified image galleries. J1 Theme combines the Gallery with the lightboxes
+supported to enlarge the images of a gallery. See the gallery in action; and
+for sure, all that you see is even responsive. Change the size of your current
+browser window, by width or height to see what will happen!
 
 Pictures you've made are typically not even in size. Images may have the
 same size (resolution), but some are orientated landscapes, or others

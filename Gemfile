@@ -6,7 +6,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2022 Juergen Adams
+# Copyright (C) 2023 Juergen Adams
 #
 # J1 Theme is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
@@ -75,7 +75,7 @@ end
 
 # Loaded from gem.fury.io
 source 'https://gem.fury.io/jekyll-one-org/' do
- gem 'j1-template', '~> 2023.0.0'
+  gem 'j1-template', '~> 2023.0.0'
 end
 
 # ------------------------------------------------------------------------------

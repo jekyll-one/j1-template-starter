@@ -3,16 +3,16 @@ title:                                  Asciidoc Enhancements
 tagline:                                Asciidoctor Extensions
 date:                                   2020-11-07 00:00:00
 description: >
-                                        J1 Theme implements some incubating Ruby-based
-                                        extensions for Asciidoctor. Most extensions are based
-                                        on the examples given with the Asciidoctor Extensions
-                                        Lab. All implemented Asciidoctor Extensions can be
-                                        found in this article.
+                                        J1 Theme implements some handy Ruby-based extensions for Asciidoctor.
+                                        Providing extensions for a Jekyll theme is a unique feature of
+                                        JekyllOne (J1) compared to other Jekyll themes and templates.
+                                        Most extensions are based on well-documented examples from the
+                                        Asciidoctor Extensions Lab.
 keywords: >
-                                        Jekyll, Theme, step, find, project, roundtrip, trip,
+                                        Jekyll, Theme, JekyllOne, Asciidoc, Asciidoctor, Ruby, Extensions, Roundtrip
 
-categories:                             [ Roundtrip, Asciidoc ]
-tags:                                   [ Extension ]
+categories:                             [ Roundtrip ]
+tags:                                   [ Asciidoc, Extension ]
 
 image:
   path:                                 /assets/images/pages/roundtrip/puzzle-1920x1280-bw.jpg
@@ -23,7 +23,7 @@ image:
 permalink:                              /pages/public/learn/roundtrip/asciidoc_extensions/
 regenerate:                             false
 
-resources:                              [ animate, clipboard, lightbox, iconify, twemoji, rouge ]
+resources:                              [ animate, clipboard, lightbox, iconify, rouge ]
 resource_options:
   - attic:
       slides:
@@ -52,24 +52,23 @@ resource_options:
 
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// Include sub-documents (if any)
-// -----------------------------------------------------------------------------
 [role="dropcap"]
-J1 Theme implements some incubating Ruby-based extensions for Asciidoctor.
-Most extensions are based on the examples given with the
+J1 Theme implements some handy Ruby-based extensions for Asciidoctor.
+Providing extensions for a Jekyll theme is a unique feature of JekyllOne
+compared to other Jekyll themes and templates. All already implemented
+Asciidoctor extensions you'll find below. Additional valuable extensions
+to the markup language Asciidoc is made especially for documents of the
+Jekyll content type pages, but can be used for posts or collections as well.
+
+TIP: Most extensions are based on well-documented examples from the
 link:{url-asciidoctor--extensions-lab}[Asciidoctor Extensions Lab, {browser-window--new}].
-If you simply want to use the extensions from this repository, go ahead to
-link:{url-asciidoctor--extensions-use}[Using an extension, {browser-window--new}].
 To create Asciidoc extensions on your own, it is highly recommended to read the
 link:{url-asciidoctor--extensions-manual}[extensions section, {browser-window--new}] in
 the Asciidoctor user manual.
 
-All already implemented Asciidoctor Extensions you'll find below. Additional
-valuable extensions to the Markup language Asciidoc to the Markup language
-Asciidoc is made especially for documents of the Jekyll content type pages
-(but can be used for posts or collections as well).
-
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-4"]
 == Asciidoc Result Extension
 
 J1 Theme adds a simple Javascript based on the `View Result Extension` to
@@ -210,7 +209,7 @@ text.
 Quote or excerpt text
 ----
 
-After landing the cloaked Klingon bird of prey in Golden Gate park:
+Example of a quoted *paragraph*:
 
 [quote, Captain James T. Kirk, Star Trek IV: The Voyage Home]
 Everybody remember where we parked.
@@ -248,6 +247,8 @@ ____
 paragraph text (multiline)
 ____
 ----
+
+Example of a quoted *block*:
 
 [quote, Monty Python and the Holy Grail]
 ____

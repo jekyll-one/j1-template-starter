@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2022 Juergen Adams
+# Copyright (C) 2023 Juergen Adams
 #
 # J1 Theme is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
@@ -70,13 +70,16 @@ settings:
         #
         icons:
           facebook:
-            enabled:                    false
+            enabled:                    true
             href:                       "#void"
           twitter:
-            enabled:                    false
+            enabled:                    true
             href:                       "#void"
+          github:
+            enabled:                    true
+            href:                       "https://github.com/jekyll-one/j1-template-starter"
 
-        # --------------------------------------------------------------------------
+        # ----------------------------------------------------------------------
         # LEGAL settings
         #
         legals:
@@ -86,7 +89,7 @@ settings:
               enabled:                  true
 
               type:                     copyright
-              statement:                © 2022 J1 · All rights reserved
+              statement:                © 2023 J1 · All rights reserved
               translate_statement:      notranslate                             # translate|notranslate
               href:                     /pages/public/legal/en/copyright/
 
@@ -165,9 +168,8 @@ settings:
                                         the Web and the Web site generator Jekyll. J1 is Open
                                         Source and the modules packed as well.
                                         <br><br>
-                                        <i>No pain for private or professional use.</i>
-
-            justify:                    true
+                                        <b>No pain for private or professional purposes.</b>
+            justify:                    false
 
           # --------------------------------------------------------------------
           # NEWS box

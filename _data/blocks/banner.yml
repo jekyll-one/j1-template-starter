@@ -5,7 +5,7 @@
 #  Product/Info:
 #  https://jekyll.one
 #
-#  Copyright (C) 2022 Juergen Adams
+#  Copyright (C) 2023 Juergen Adams
 #
 #  J1 Theme is licensed under the MIT License.
 #  See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
@@ -106,19 +106,20 @@ settings:
               description_properties:   mt-3 mb-3
               description: >
                                         <p class="dropcap">
-                                          Jekyll One Theme is a full-featured template for Jekyll to create
-                                          modern dynamic websites. J1 provides creative people with a
-                                          rich toolset to build great sites and easy-to-use project
+                                          Jekyll One Theme is a full-featured theme template for Jekyll
+                                          to create modern dynamic websites. J1 Theme provides creative people
+                                          with a rich toolset to build great sites and easy-to-use project
                                           management to simplify the build and deployment processes.
                                         </p>
                                         <p>
-                                          J1 meets Jekyll and Bootstrap and makes a lot of friends.
-                                          The template system combines the best free software for the Web.
-                                          Jekyll One Theme is OpenSource and the modules included are free
-                                          to use as well. No license issues for private or professional use.
+                                          J1 Theme meets Jekyll and Bootstrap and makes a lot of friends.
+                                          The template system of J1 Theme combines the best free software
+                                          for the Web. JekyllOne is OpenSource and the modules included are
+                                          free to use as well. No license issues for private or professional
+                                          purposes.
                                         </p>
-                                        <p>
-                                          Explore what's possible if you go for static websites.
+                                        <p class="tagline">
+                                          <b>Explore what's possible if you go for static websites.</b>
                                         </p>
 
 #              stickers:
@@ -151,21 +152,6 @@ settings:
                     href:               /pages/public/learn/roundtrip/present_images/
                     target:
 
-                - name:                 Download
-                  button:
-                    enabled:            true
-                    id:                 download
-                    translate:          notranslate                             # translate|notranslate
-                    title:              Download
-                    tagline:            get on rubygems
-                    class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
-                    style:              "min-width: 270px"
-                    icon:               briefcase-download-outline
-                    icon_color:
-                    icon_size:          3x
-                    href:               "https://rubygems.org/gems/j1-template"
-                    target:             blank
-
                 - name:                 Rocketstart
                   button:
                     enabled:            true
@@ -179,6 +165,21 @@ settings:
                     icon_color:
                     icon_size:          3x
                     href:               "https://jekyll.one/pages/public/learn/rocketstart/"
+                    target:             blank
+
+                - name:                 Download
+                  button:
+                    enabled:            true
+                    id:                 download
+                    translate:          notranslate                             # translate|notranslate
+                    title:              Download
+                    tagline:            get on rubygems
+                    class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
+                    style:              "min-width: 270px"
+                    icon:               briefcase-download-outline
+                    icon_color:
+                    icon_size:          3x
+                    href:               "https://rubygems.org/gems/j1-template"
                     target:             blank
 
 

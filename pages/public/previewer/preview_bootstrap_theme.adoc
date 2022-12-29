@@ -1,16 +1,15 @@
 ---
 title:                                  Theme Preview
-tagline:                                Explore Current Theme
-date:                                   2020-01-01 00:00:00
+tagline:                                Explore Current Styles
+date:                                   2022-12-01 00:00:00
 description: >
-                                        Bootstrap is a HTML, CSS and JS Library that focuses on simplifying the
-                                        development of modern web pages. The primary purpose of applying a theme
-                                        is to change the available standard colors, sizes, and fonts.
-                                        The Themes Previewer provides an overview of common components of a selected
-                                        theme. Find base Bootstrap features and styles for the current theme selected.
+                                        JekyllOne is a theme for multifunctional Bootstrap-based and responsive
+                                        websites, and offers various unique functionalities compared to other themes
+                                        and templates for Jekyll. Themes for Bootstrap are used to customize the appearance
+                                        of a website based on the basic rules and definitions of Bootstrap's CSS styles.
 
 categories:                             [ Previewer ]
-tags:                                   [ Bootstrap, Themes ]
+tags:                                   [ Bootstrap, CSS, Theme ]
 
 image:
   path:                                 /assets/images/pages/roundtrip/themes-1920x1280-bw.jpg
@@ -108,27 +107,30 @@ resource_options:
 // -----------------------------------------------------------------------------
 {% include {{load_attributes}} scope="global" %}
 
+
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+JekyllOne is a theme for multifunctional Bootstrap-based and responsive
+websites, and offers various unique functionalities compared to other themes
+and templates for Jekyll. Themes for Bootstrap are used to customize the appearance
+of a website based on the basic rules and definitions of Bootstrap's CSS styles.
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
 ++++
   <!-- Add H1 (document title) tag here -->
-  <div id="theme" class="document-title row g-0 mb-2"></div>
+  <div id="theme" class="document-title row g-0 mt-4 mb-3"></div>
 ++++
 
-Bootstrap is a HTML, CSS and JS Library that focuses on simplifying the
-development of modern web pages. The primary purpose of applying a theme
-is to change the available standard colors, sizes, fonts and predefined
-HTML elememts like buttons, forms, inputs, or navgation elements.
-
-Themes for Bootstrap are used to customize the appearance of a website based
+Bootstrap themes are used to customize the appearance of a website based
 on the basic rules and definitions of Bootstrap's (CSS) styles. The use or
 change of a theme does not alter the functionality of the underlying Bootstrap
 framework but modifies, for example, the color scheme, fonts, or font sizes.
-Furthermore, the appearance of selected predefined HTML elememts like buttons,
-forms or navigation elements may be adapted by a theme.
+The use or change of a style does not alter the functionality of the
+underlying Bootstrap framework but modifies, for example, the color scheme,
+fonts, or font sizes.
+
 
 ifeval::[{navbars} == true]
 == Navbars
@@ -2974,15 +2976,15 @@ endif::[]
 
 ++++
 <script>
-  var cookie_names  = j1.getCookieNames();
-  var user_state    = j1.readCookie(cookie_names.user_state);
-  var theme_slogans = {};
   var theme_slogan;
   var themeName;
   var themeNameHeadline;
+  var cookie_names        = j1.getCookieNames();
+  var user_state          = j1.readCookie(cookie_names.user_state);
+  var theme_slogans       = {};
 
-  theme_slogans.UnoLight  = 'An universial light theme';
-  theme_slogans.UnoDark   = 'An universial dark theme';
+  theme_slogans.UnoLight  = 'A touch of light';
+  theme_slogans.UnoDark   = 'A night mode style';
   theme_slogans.Bootstrap = 'Bootstrap V5 default theme';
 
   theme_slogans.Cerulean  = 'A calm blue sky';
@@ -3009,9 +3011,9 @@ endif::[]
   theme_slogans.Yeti      = 'A friendly foundation';
   theme_slogans.Zephyr    = 'Breezy and beautiful';
 
-  themeName         = user_state.theme_name;
-  theme_slogan      = theme_slogans[themeName];
-  themeNameHeadline = '<h1 id="theme_name" class="mb-0">Theme ' +themeName+ '</h1>';
+  themeName               = user_state.theme_name;
+  theme_slogan            = theme_slogans[themeName];
+  themeNameHeadline       = '<h1 id="theme_name" class="notoc mb-0" style="margin-left: -5px">Theme ' +themeName+ '</h1>';
 
   $('#theme').prepend(themeNameHeadline);
   $('#theme').append('<p class="tagline mb-2"><b>'  + theme_slogan + '</b></p>');

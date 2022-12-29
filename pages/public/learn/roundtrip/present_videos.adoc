@@ -3,14 +3,18 @@ title:                                  Present Videos
 tagline:                                Playing Video On Webpages
 date:                                   2020-11-04 00:00:00 +100
 description: >
-                                        Playing video on web pages seems not that special since you can already
-                                        watch videos on web pages through plugins like Flash Player, Quicktime
-                                        or Silverlight. A new standard goes to HTML5 Video, a pure HTML way to
-                                        show video on the web; instead of the previous de facto standard of using
-                                        proprietary software.
+                                        The J1 Theme support playing video on web pages by HTML5 Video,
+                                        the new standard of HTML. HTML5 Video implements a pure HTML way
+                                        to show video on the web. Modern browsers support the video tag
+                                        `<video>` for the HTML5 video standard. The previous proprietary
+                                        de facto standard software like Flash Player, Quicktime, or
+                                        Silverlight is no longer needed as the Jekyll theme JekyllOne
+                                        provides HTML5 Video support for local video content and from
+                                        online sources on the Internet.
 
 keywords: >
-                                        Jekyll, Theme, step, find, project, roundtrip, trip,
+                                        Jekyll, Theme, JekyllOne, HTML5, Video, Support, Flash Player,
+                                        Quicktime, Silverlight, Roundtrip
 
 categories:                             [ Roundtrip ]
 tags:                                   [ Module, Video ]
@@ -82,78 +86,20 @@ resource_options:
 
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+The J1 Theme support playing video on web pages by HTML5 Video, the new
+standard of HTML. HTML5 Video implements a pure HTML way to show video
+on the web.
 
-++++
-<!-- insert Google Ad (Displayanzeige): horizontal-2, adSlot="5128488466" -->
-<div class="5128488466 mb-5">
-  <ins class="adsbygoogle"
-    style="display: block;"
-    data-ad-client="ca-pub-3885670015316130"
-    data-ad-slot="5128488466"
-    data-ad-format="auto"
-    data-adtest="on"
-    data-full-width-responsive="true">
-  </ins>
-</div>
-++++
-
-++++
-<script>
-
-  $(document).ready(function() {
-    var logger              = log4javascript.getLogger('j1.google.ads');
-    var autoHideOnUnfilled  = true;
-
-    var dependencies_met_page_ready = setInterval (function (options) {
-      if ( j1.getState() === 'finished' ) {
-
-        // monitor for state changes on the ad
-        // ---------------------------------------------------------------------
-        $('.adsbygoogle').attrchange({
-          trackValues: true,
-          callback: function (event) {
-            if (event.newValue === 'unfilled') {
-              var elm = event.target.dataset;
-              if (elm.adClient) {
-                logger.warn('\n' + 'initialized ad detected as: ' + event.newValue);
-                if (autoHideOnUnfilled) {
-                  logger.info('\n' + ' hide ad for slot: ' + elm.adSlot);
-                  $('.' + elm.adSlot ).hide();
-                }
-              }
-            }
-          }
-        });
-
-        // manage uncaught execeptions
-        // ---------------------------------------------------------------------
-        // window.onerror = function (msg, url, line) {
-        //    alert("Message : " + msg );
-        //    alert("url : " + url );
-        //    alert("Line number : " + line );
-        // }
-
-        logger.info('\n' + 'initialize Google Ad on slot: ' + '5128488466');
-        (adsbygoogle = window.adsbygoogle || []).push({});
-
-        clearInterval(dependencies_met_page_ready);
-      }
-   });
-
-  });
-
-</script>
-++++
+Modern browsers support the video tag `<video>` for the HTML5
+video standard. The previous proprietary de facto standard software like
+_Flash Player_, _Quicktime, or _Silverlight_ is no longer needed as the
+Jekyll theme JekyllOne provides HTML5 Video support for local video content
+and from online sources on the Internet.
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
-[role="dropcap"]
-Playing video on web pages seems not that special since you can already
-watch videos on web pages through plugins like _Flash Player_, _Quicktime_,
-or _Silverlight_. A new standard goes to HTML5 Video, a pure HTML way to
-show video on the web, instead of the previous de facto standard of using
-proprietary software.
-
+[role="mt-4"]
 == Video Galleries
 
 HTML5 Video opens the doors to your way of presenting video content. Modern
