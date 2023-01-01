@@ -68,19 +68,19 @@ install_if -> { RUBY_VERSION =~ /3/ } do
 end
 
 # ------------------------------------------------------------------------------
+# PRODUCTION: Gem needed for the Jekyll and J1 prod environment
+#
+
+# ------------------------------------------------------------------------------
 # Specify the THEME GEM used for the project
 
 # Loaded from RubyGems
-# gem 'j1-template', '~> 2023.0.0'
+gem 'j1-template', '~> 2023.0.0'
 
 # Loaded from gem.fury.io
-source 'https://gem.fury.io/jekyll-one-org/' do
-  gem 'j1-template', '~> 2023.0.0'
-end
-
-# ------------------------------------------------------------------------------
-# PRODUCTION: Gem needed for the Jekyll and J1 prod environment
-#
+#source 'https://gem.fury.io/jekyll-one-org/' do
+#  gem 'j1-template', '~> 2023.0.0'
+#end
 
 # ------------------------------------------------------------------------------
 # Code Highlighter Rouge
