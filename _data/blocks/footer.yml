@@ -72,18 +72,22 @@ settings:
           facebook:
             enabled:                    true
             href:                       "#void"
+#           href:                       "https://www.facebook.com/<your_profile>/"
           twitter:
             enabled:                    true
-            href:                       "https://twitter.com/jurgen_adams"
+            href:                       "#void"
+#           href:                       "https://twitter.com/<your_profile>/"
           github:
             enabled:                    true
             href:                       "https://github.com/jekyll-one/j1-template-starter"
           xing:
             enabled:                    true
-            href:                       "https://www.xing.com/profile/Juergen_Adams"
+            href:                       "#void"
+#           href:                       "https://www.xing.com/profile/<your_profile>/"
           linkedin:
             enabled:                    true
-            href:                       "https://www.linkedin.com/in/juergenadams/"
+            href:                       "#void"
+#           href:                       "https://www.linkedin.com/in/<your_profile>/"
 
         # ----------------------------------------------------------------------
         # LEGAL settings
@@ -101,7 +105,7 @@ settings:
 
           - name:                       Impress
             legal:
-              enabled:                  true
+              enabled:                  false
 
               type:                     impress
               statement:                Impress
