@@ -30,7 +30,7 @@ toc:                                    true
 permalink:                              /pages/public/legal/en/comment_policy/
 regenerate:                             false
 
-resources:                              [ animate, clipboard, rouge ]
+resources:                              [ animate, clipboard, comments, rouge ]
 resource_options:
   - attic:
       padding_top:                      600
@@ -46,11 +46,14 @@ resource_options:
 // Enable the Liquid Preprocessor
 :page-liquid:
 
+
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
 // :page--attr:                         <attr-value>
+:j1--site-name:                         Jekyll One
 :disqus:                                false
 :hyvor:                                 true
+
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
 {% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
@@ -65,7 +68,8 @@ resource_options:
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
-We love comments and appreciate our visitor's time to share ideas and give
+[role="dropcap"]
+I love comments and appreciate our visitor's time to share ideas and give
 feedback. Thank you to everyone who places a comment on the {j1--site-name}
 website.
 

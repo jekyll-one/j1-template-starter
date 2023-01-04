@@ -48,7 +48,7 @@ resource_options:
 
 // Attribute settings for section control
 //
-:badges-enabled:                        false
+:badges-enabled:                        true
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -58,31 +58,31 @@ resource_options:
 // -----------------------------------------------------------------------------
 {% include {{load_attributes}} scope="global" %}
 
-// Page content
-// {badge-j1--license} {badge-j1--version-latest} {badge-j1-gh--last-commit} {badge-j1--downloads}
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ifeval::[{badges-enabled} == true]
+[role="mb-4"]
 {badge-j1--version-latest} {badge-j1--downloads}
 endif::[]
 
-// Include sub-documents (if any)
-// -----------------------------------------------------------------------------
 
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
 Although I endeavor to keep this site as up-to-date as possible, even the
 best sites will have some bugs. If you spot any typos, factually outdated
 or incorrect information, formatting errors, or similar problems, please
 report issues so I can correct them.
 
-IMPORTANT: A link:{url-github--join}[free account, {browser-window--new}]
-at GitHub_ is required in order to open new issues.
-
-
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
 == Report an issue
 
 The source pages for the J1 Theme Starter are maintained in a _GitHub_
 repository. _GitHub_ provides both an issue tracker and a history of changes.
 To report problems with the content and display, simply open a new issue and
 describe the problem and what page(s) it occurs on.
+
+IMPORTANT: A link:{url-github--join}[free account, {browser-window--new}]
+at GitHub_ is required in order to open new issues.
 
 To report issues, please go on _Github_ for the repo
 link:{url-j1--reporting-issues}[J1 Theme Starter, {browser-window--new}].

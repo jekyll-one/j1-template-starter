@@ -3,20 +3,23 @@ title:                                  Impress
 tagline:                                Legal Information
 date:                                   2020-10-23 00:00:00
 description: >
-                                        Legal Impress Information according § 18 Abs. 1 MStV.
+                                        The content and works published on this website are governed by the copyright
+                                        laws of Germany. Any duplication, processing, distribution, or any form of
+                                        utilization beyond the scope of copyright law shall require the prior written
+                                        consent of the author or authors in question.
 
 categories:                             [ Site ]
 tags:                                   [ Impress ]
+
+robots:
+  index:                                false
+  follow:                               false
 
 image:
   path:                                 /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
   width:                                1920
   height:                               1280
   alt:                                  J1 Themes Mockup
-
-robots:
-  index:                                false
-  follow:                               false
 
 sitemap:                                false
 exclude_from_search:                    true
@@ -28,7 +31,7 @@ toc:                                    false
 permalink:                              /pages/public/legal/en/impress/
 regenerate:                             false
 
-resources:                              [ animate, clipboard, rouge ]
+resources:                              [ animate ]
 resource_options:
   - attic:
       padding_top:                      600
@@ -57,13 +60,22 @@ resource_options:
 // -----------------------------------------------------------------------------
 {% include {{load_attributes}} scope="none" %}
 
-
-// Page content
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ifeval::[{legal-warning} == true]
 WARNING: This document *does not* constitute any *legal advice*. It is
 highly recommended to verify legal aspects and implications.
 endif::[]
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Ist ein Impressum gesetzlich vorgeschrieben?
+// Ein Impressum ist auf allen kommerziellen Websites, die im
+// deutschsprachigen Raum veröffentlicht werden, gesetzlich vorgeschrieben
+// (Deutschland, Österreich und der Schweiz). Dies gilt unabhängig davon,
+// ob die Website über eine .de-Top-Level-Domain veröffentlicht wird oder nicht.
+//
+// Wenn Sie lediglich einen persönlichen Blog ohne Werbung haben und kein
+// Geld damit verdienen, ist das Impressum nicht erforderlich.
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------

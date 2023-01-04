@@ -380,7 +380,7 @@ This command creates a **initial** project in folder **my-starter**.
   2022-07-30 18:12:12 - GENERATE: Resolving dependencies...
   2022-07-30 18:12:12 - GENERATE: Using bundler 2.3.7
   ...
-  2022-07-30 18:12:12 - GENERATE: Using j1-template 2023.0.0
+  2022-07-30 18:12:12 - GENERATE: Using j1-template 2023.0.1
   2022-07-30 18:12:12 - GENERATE: Bundle complete! 31 Gemfile dependencies, 78 gems now installed.
   2022-07-30 18:12:12 - GENERATE: Bundled gems are installed into `../../.gem`
   2022-07-30 18:12:12 - GENERATE:  C:/Users/xxx/.gem/ruby/3.1.0;C:/DevTools/Ruby31-x64/lib/ruby/gems/3.1.0;
@@ -416,7 +416,7 @@ commands are available as well.
   2022-07-30 18:17:48 - SETUP: Initialize the project ...
   2022-07-30 18:17:48 - SETUP: Be patient, this will take a while ...
   2022-07-30 18:17:49 - SETUP:
-  2022-07-30 18:17:49 - SETUP: > j1@2023.0.0 setup C:\Users\xxx\j1-projects\my-starter
+  2022-07-30 18:17:49 - SETUP: > j1@2023.0.1 setup C:\Users\xxx\j1-projects\my-starter
   2022-07-30 18:17:49 - SETUP: > npm --silent run setup-start && npm --silent run setup-base && run-s -s setup:*
   2022-07-30 18:17:49 - SETUP:
   2022-07-30 18:17:50 - SETUP: Setup project for first use ..
@@ -461,7 +461,7 @@ browser. Let's start the journey ...
   Check setup state of the J1 project ...
   2022-07-30 18:26:18 - SITE: Starting up your site ...
   2022-07-30 18:26:18 - SITE:
-  2022-07-30 18:26:18 - SITE: > j1@2023.0.0 j1-site C:\Users\jadams\j1-projects\my-starter
+  2022-07-30 18:26:18 - SITE: > j1@2023.0.1 j1-site C:\Users\jadams\j1-projects\my-starter
   2022-07-30 18:26:18 - SITE: > run-p -s j1-site:*
   2022-07-30 18:26:18 - SITE:
   2022-07-30 18:26:20 - SITE: Startup UTILSRV ..
@@ -500,7 +500,7 @@ Check setup state of the J1 project ...
 REBUILD: Rebuild the projects website ...
 REBUILD: Be patient, this will take a while ...
 2022-07-30 18:45:09 - REBUILD:
-2022-07-30 18:45:09 - REBUILD: > j1@2023.0.0 rebuild C:\Users\xxx\j1-projects\my-starter
+2022-07-30 18:45:09 - REBUILD: > j1@2023.0.1 rebuild C:\Users\xxx\j1-projects\my-starter
 2022-07-30 18:45:09 - REBUILD: > run-s -s rebuild:* && run-s -s post-rebuild:*
 2022-07-30 18:45:09 - REBUILD:
 2022-07-30 18:45:10 - REBUILD: Rebuild site incremental ..
@@ -548,7 +548,7 @@ using Lerna for all packages:
   2022-07-30 18:29:07 - RESET: Reset the project to factory state ...
   2022-07-30 18:29:07 - RESET: Be patient, this will take a while ...
   2022-07-30 18:29:08 - RESET:
-  2022-07-30 18:29:08 - RESET: > j1@2023.0.0 reset C:\Users\xxx\j1-projects\my-starter
+  2022-07-30 18:29:08 - RESET: > j1@2023.0.1 reset C:\Users\xxx\j1-projects\my-starter
   2022-07-30 18:29:08 - RESET: > run-s -s reset:*
   2022-07-30 18:29:08 - RESET:
   2022-07-30 18:29:08 - RESET: Reset project to factory state ..

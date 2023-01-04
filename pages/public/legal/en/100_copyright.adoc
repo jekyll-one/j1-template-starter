@@ -1,6 +1,6 @@
 ---
 title:                                  Copyright
-tagline:                                Software And Content
+tagline:                                Legal Right Of The Content
 date:                                   2020-10-23 00:00:00
 description: >
                                         The content and works published on this website are governed by the copyright
@@ -31,7 +31,7 @@ toc:                                    true
 permalink:                              /pages/public/legal/en/copyright/
 regenerate:                             false
 
-resources:                              [ animate, clipboard, rouge ]
+resources:                              [ animate, clipboard, comments, rouge ]
 resource_options:
   - attic:
       padding_top:                      600
@@ -60,22 +60,23 @@ resource_options:
 // -----------------------------------------------------------------------------
 {% include {{load_attributes}} scope="none" %}
 
-
-// Page content
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ifeval::[{legal-warning} == true]
 WARNING: This document *does not* constitute any *legal advice*. It is
 highly recommended to verify legal aspects and implications.
 endif::[]
 
-// Include sub-documents (if any)
-// -----------------------------------------------------------------------------
-== Copyright policy
 
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
 The content and works published on this website are governed by the copyright
 laws of Germany. Any duplication, processing, distribution, or any form of
 utilization beyond the scope of copyright law shall require the prior written
 consent of the author or authors in question.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+== Copyright policy
 
 The content provided by this site is subject to German copyright law. The
 duplication, editing, distribution, and any kind of exploitation outside

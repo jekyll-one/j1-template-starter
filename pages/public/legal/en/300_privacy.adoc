@@ -30,7 +30,7 @@ toc:                                    true
 permalink:                              /pages/public/legal/en/privacy/
 regenerate:                             false
 
-resources:                              [ animate, clipboard, rouge ]
+resources:                              [ animate, clipboard, comments, rouge ]
 resource_options:
   - attic:
       padding_top:                      600
@@ -77,20 +77,21 @@ resource_options:
 // -----------------------------------------------------------------------------
 {% include {{load_attributes}} scope="none" %}
 
-
-// Page content
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ifeval::[{legal-warning} == true]
 WARNING: This document *does not* constitute any *legal advice*. It is
 highly recommended to verify legal aspects and implications.
 endif::[]
 
-// Include sub-documents (if any)
-// -----------------------------------------------------------------------------
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
 The operators of this website take the protection of your personal data
 seriously. We treat your data confidentially and protect your data privacy to
 the General Data Protection Regulation (GDPR) of the European Union.
 
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
 ifeval::[{cookies} == true]
 == Cookies
 

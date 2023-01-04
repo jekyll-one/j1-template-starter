@@ -1,14 +1,17 @@
 ---
 title:                                  JekyllOne Theme
 tagline:                                Learn J1 Features
-date:                                   2021-04-13 00:00:00
+date:                                   2022-12-31 00:00:00
 description: >
-                                        Things you should know about this site, about the software used.
-                                        Read a bit what people, what companies has contributed to make a
-                                        project like J1 Theme real.
+                                        JekyllOne Theme is a website template for the static
+                                        site generator Jekyll. The Theme is free to use and
+                                        can be downloaded at RubyGems as a Ruby Gem. The
+                                        Theme supports a wide range of websites, from a personal
+                                        website, a blog web, a documentation site to classic
+                                        company webs.
 
 keywords: >
-                                        Jekyll, Theme, JekyllOne, J1, Project, Software, Service
+                                        Jekyll, Theme, JekyllOne, J1, Theme, Features
 
 categories:                             [ About ]
 tags:                                   [ J1, Features ]
@@ -19,9 +22,10 @@ image:
   height:                               1280
   alt:                                  J1 Theme Mockup
 
+comments:                               false
 fab_menu_id:                            page_ctrl
 scrollbar:                              false
-comments:                               false
+comments:                               true
 
 permalink:                              /pages/public/about/features/
 regenerate:                             false
@@ -46,7 +50,6 @@ resource_options:
 // -----------------------------------------------------------------------------
 // :page--attr:                         <attr-value>
 :badges-enabled:                        true
-:legal-warning:                         true
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -56,25 +59,27 @@ resource_options:
 // -----------------------------------------------------------------------------
 {% include {{load_attributes}} scope="global" %}
 
-
-// Page content
-// {badge-j1--license} {badge-j1--version-latest} {badge-j1-gh--last-commit} {badge-j1--downloads}
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ifeval::[{badges-enabled} == true]
+[role="mb-4"]
 {badge-j1--version-latest} {badge-j1--downloads}
 endif::[]
 
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+JekyllOne Theme is a website template for the static site generator Jekyll.
+The Theme is free to use and can be downloaded at
+link:{url-j1--download}[RubyGems, {browser-window--new}] as a Ruby Gem.
+The Theme supports a wide range of websites, from a personal website,
+a blog web, a documentation site to classic company webs.
+
+Read what people and companies have contributed to making a project like J1
+Theme real.
+
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
-== Features
-
-J1 Theme is a **gem**-based website *template* to be used with the static
-site generator _Jekyll_. The Template System cannot operate on its own.
-A Ruby development environment is needed to run J1. If you're an experienced
-user of _Jekyll_, the latest version is available at
-{url-j1--download}[RubyGems, {browser-window--new}].
-
-=== General
+== General Features
 
 * _Windows_, _Linux_ and _MacOS_ supported
 * _Jekyll_ v4.3 Support
@@ -95,7 +100,7 @@ user of _Jekyll_, the latest version is available at
 * Fully configurable, no programming needed
 * Near 100/100/100 _Google Lighthouse_ Scores
 
-=== Modules and Extensions
+== Modules and Extensions
 
 * _Bootstrap_ extensions included
 * _Asciidoctor_ extensions included
@@ -117,7 +122,7 @@ user of _Jekyll_, the latest version is available at
 * Slider Module included
 * Video Player Modules included
 
-=== Addons and Integrations
+== Addons and Integrations
 
 * *Starter Web* including featured Example Content
 * *Royalty free* Images included

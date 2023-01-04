@@ -34,7 +34,7 @@ permalink:                              /pages/public/features/template_features
 regenerate:                             true
 
 resources:                              [
-                                          animate, clipboard, rouge, lightbox, carousel,
+                                          animate, clipboard, comments, rouge, lightbox, carousel,
                                           masterslider, lightGallery, justifiedGallery,
                                           video_js, vimeo_player, vimeo_froogaloop
                                         ]
@@ -79,9 +79,7 @@ resource_options:
 
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// Include sub-documents (if any)
-// -----------------------------------------------------------------------------
+[role="dropcap"]
 For Jekyll, a huge number of templates are available that cover all typical
 use cases for websites. The bad story: most of them require programming and
 low-level customization. Deep knowledge of Jekyll and valuable experience
@@ -89,6 +87,8 @@ using HTML, CSS, and Javascript is required.
 
 J1 is different: easy to use, no programming is needed.
 
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
 == Modules
 
 The Template provides a large number of building blocks to create modern
@@ -256,7 +256,7 @@ lightbox::images--master-header[ 800, {data-images--master-header} ]
 
 The clipboard is a special function of the operating system of desktop or
 mobile computers that temporarily stores copied text or other data in memory.
-Once something is stored in the clipboard, the user can paste the data to a
+Once something is stored in the clipboard, comments, the user can paste the data to a
 new location.
 
 TIP: Click on the *COPY* button (top-right) in the following source code
