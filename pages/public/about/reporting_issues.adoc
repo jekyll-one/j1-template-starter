@@ -1,11 +1,11 @@
 ---
-title:                                  Help On Issues
-tagline:                                Report on JekyllOne Failures
+title:                                  Starter
+tagline:                                Report on Failures
 date:                                   2022-01-01 00:00:00
 description: >
-                                        Please report on JekyllOne failures. Although I endeavor
-                                        to keep this site as up-to-date as possible, even the best
-                                        sites will have some bugs. If you spot any typos, factually
+                                        Please report failures. Although I endeavor to keep this
+                                        site as up-to-date as possible, even the best sites will
+                                        have some bugs. If you spot any typos, factually
                                         outdated or incorrect information, formatting errors, or
                                         similar problems, please report issues so I can correct them.
 keywords: >
@@ -15,26 +15,21 @@ categories:                             [ About ]
 tags:                                   [ Issues ]
 
 image:
-  path:                                 /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
+  path:                                 /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
   width:                                1920
   height:                               1280
-  alt:                                  J1 Theme Mockup
+  alt:                                  J1 Starter Mockup
 
-comments:                               false
-scrollbar:                              false
-
+fab_menu_id:                            default
 regenerate:                             false
 permalink:                              /pages/public/about/reporting_issues/
 
 resources:                              [ animate ]
 resource_options:
   - attic:
-      padding_top:                      600
-      padding_bottom:                   50
-      opacity:                          0.5
       slides:
-        - url:                          /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
-          alt:                          J1 Themes Mockup
+        - url:                          /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
+          alt:                          J1 Starter Mockup
 ---
 
 // Page Initializer
@@ -48,7 +43,7 @@ resource_options:
 
 // Attribute settings for section control
 //
-:badges-enabled:                        true
+:badges-enabled:                        false
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -59,7 +54,7 @@ resource_options:
 {% include {{load_attributes}} scope="global" %}
 
 ifeval::[{badges-enabled} == true]
-[role="mb-4"]
+[role="mb-5"]
 {badge-j1--version-latest} {badge-j1--downloads}
 endif::[]
 
@@ -67,15 +62,13 @@ endif::[]
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-Although I endeavor to keep this site as up-to-date as possible, even the
-best sites will have some bugs. If you spot any typos, factually outdated
-or incorrect information, formatting errors, or similar problems, please
-report issues so I can correct them.
+Please report failures. Although I endeavor to keep this site as up-to-date
+as possible, even the best sites will have some bugs. If you spot any typos,
+factually outdated or incorrect information, formatting errors, or similar
+problems, please report issues so I can correct them.
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
-== Report an issue
-
 The source pages for the J1 Theme Starter are maintained in a _GitHub_
 repository. _GitHub_ provides both an issue tracker and a history of changes.
 To report problems with the content and display, simply open a new issue and
@@ -85,4 +78,4 @@ IMPORTANT: A link:{url-github--join}[free account, {browser-window--new}]
 at GitHub_ is required in order to open new issues.
 
 To report issues, please go on _Github_ for the repo
-link:{url-j1--reporting-issues}[J1 Theme Starter, {browser-window--new}].
+link:{url-j1--reporting-issues}[J1 Starter Theme, {browser-window--new}].

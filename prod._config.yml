@@ -1,0 +1,985 @@
+# ------------------------------------------------------------------------------
+# ~/_config.yml
+# Global Jekyll site configuration (runtime DEVELOPMENT)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023 Juergen Adams
+#
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# ------------------------------------------------------------------------------
+
+# ==============================================================================
+# 1. BUILD configuration
+#
+# ------------------------------------------------------------------------------
+#
+# Set the environment for the build
+#
+# NOTE:
+#   You can specify a Jekyll environment at build time. In the build
+#   (or serve) arguments, you can specify a Jekyll environment and
+#   value like:
+#
+#   *nix:     JEKYLL_ENV=production jekyll build
+#   Windows:  set JEKYLL_ENV=production & jekyll build
+#             jekyll build
+#
+#   The default value for JEKYLL_ENV is "development". Therefore if you
+#   omit JEKYLL_ENV from the build arguments, the default value will be
+#   JEKYLL_ENV=development.
+#
+#   The  Jekyll environment variable JEKYLL_ENV is accessible via the
+#   Liquid variable "jekyll.environment". J1 Theme overwrites the site
+#   variable "site.environment" with the value of the Liquid variable
+#   "jekyll.environment" automatically - in other words: JEKYLL_ENV takes
+#   PRECENDENCE over the site variable "site.environment" given with the
+#   _config.yml file.
+#
+# ------------------------------------------------------------------------------
+#
+# environment
+# ------------------------------------------------------------------------------
+# Sets the build environment of the website
+#
+#   values:                             development|production
+#   default:                            development
+#
+environment:                            production
+
+# version
+# ------------------------------------------------------------------------------
+# Sets the build version of J1 Theme Gem
+#
+version:                                2023.3.0
+
+# version
+# ------------------------------------------------------------------------------
+# Sets the build version of J1 Theme
+#
+copyright:                              © 2023 J1 · All rights reserved
+
+# noscript
+# ------------------------------------------------------------------------------
+# Enables|Disables a noscript page
+#
+noscript:                               false
+
+
+# ==============================================================================
+# 2. THEME configuration
+#
+# ------------------------------------------------------------------------------
+#
+# Set the (gem-based) theme and the (Bootrap) theme used for the site
+#
+# J1 Theme is a so-called gem-based template for Jekyll. All components
+# for the template J1 (template core and template modules) are Ruby gem
+# managed by the Ruby bundler respectively by the GEM manager "gem". All
+# components are available public at RubyGems.org.
+#
+# theme
+# ------------------------------------------------------------------------------
+#   Sets the name of the (gem-based) theme used for Jekyll
+#   serve and build (currently set to old gem|name: j1-template
+#
+# theme:                                j1-theme
+theme:                                  j1-template
+
+# ------------------------------------------------------------------------------
+# J1 Theme configuration
+# Sets J1 Theme specific configurations
+#
+# NOTE:
+#   Parameter "theme" is used by Jekyll >= 3.2.0 for gem-based
+#   templates. For that reason, the configuration parameter for
+#   the J1 Theme was changed to "template" to not conflict with
+#   new versions of Jekyll.
+#
+# template.name
+# ------------------------------------------------------------------------------
+# Sets the theme "path" of J1 Theme for the ~/assets/themes
+# folder. To not conflict with other template systems, all
+# template assets for J1 Theme are stored under the default
+# path "/assets/themes/j1".
+#
+# NOTE:
+#   Do NOT change template.name to other values.
+#
+#   default:                            j1
+#
+# template.config
+# ------------------------------------------------------------------------------
+# Sets the name of the J1 Theme configuration file
+#
+#   default:                            j1_config
+#
+template:
+  name:                                 j1
+  config:                               j1_config
+
+
+# ==============================================================================
+# 3. SITE configuration
+#
+# ------------------------------------------------------------------------------
+#
+# Set language, coding and HTML document type (DOCTYPE)
+#
+# language
+# ------------------------------------------------------------------------------
+# Sets the language used by the website. The parameter language
+# is used by Content-Language entity-header field (meta tag )
+# that describes the natural language(s) of the intended audience
+# for the enclosed entity. This might helpful for robots|search
+# engines.
+#
+# NOTE:
+#   This might not be equivalent to all the languages used within
+#   the entity-body of the website but should describe the language
+#   the language the site is using "overall".
+#   See: https://www.w3.org/Protocols/rfc2616/rfc2616-sec7.html
+#   for more details
+#
+#   values:                             Content-Language tags
+#   default:                            en
+#
+# coding
+# ------------------------------------------------------------------------------
+# Sets the content coding scheme (character encoding for the
+# HTML documents) of the website. Used for the meta tag "charset".
+#
+#   values:                             charset
+#   default:                            UTF-8
+#
+# doctype
+# ------------------------------------------------------------------------------
+# Sets the HTML standard of the website. J1 Theme is using
+# HTML5, therefor the doctype is: <!DOCTYPE html>
+#
+#   values:                             HTML doc types
+#   default:                            html
+#
+language:                               en
+coding:                                 UTF-8
+doctype:                                html
+
+# ------------------------------------------------------------------------------
+# META data
+# Mainly to set the meta tags for the document <head> section.
+
+# title
+# ------------------------------------------------------------------------------
+# Sets the ...
+#
+#   values:                             string
+#   default:                            no default
+#
+# slogan
+# ------------------------------------------------------------------------------
+# Sets the <title> tag within the <head> section.
+#
+#   values:                             string
+#   default:                            no default
+#
+# description
+# ------------------------------------------------------------------------------
+# Sets the meta tag for "description"
+#
+#   values:                             string
+#   default:                            no default
+#
+# keywords
+# ------------------------------------------------------------------------------
+# Sets the meta tag for "keywords"
+#
+#   values:                             string (comma separated)
+#   default:                            no default
+#
+# author.name
+# ------------------------------------------------------------------------------
+# Sets the meta tag for "author"
+#
+#   values:                             string (comma separated)
+#   default:                            no default
+#
+# robots.index
+# ------------------------------------------------------------------------------
+#   Controls spider|robots of search engines. Sets the meta
+#   tag for "robots". If set to "false", the meta tag robots
+#   is set to "noindex", if set to "true" the tag is set to
+#   "index"
+#
+# values:                             boolean (true|false)
+# default:                            false
+#
+# robots.follow
+# ------------------------------------------------------------------------------
+# Controls spider|robots of search engines. Sets the meta
+# tag for "robots". If set to "false", the meta tag robots
+# is set to "nofollow", if set to "true" the tag is set to
+# "follow".
+#
+#   values:                             boolean (true|false)
+#   default:                            false
+# ------------------------------------------------------------------------------
+#
+title:                                  Jekyll One
+tagline:                                Create Static Websites
+description: >
+                                        JekyllOne is a Gem-based Theme made for the Static Site
+                                        Generator (SSG) Jekyll. J1 Theme meets Jekyll and Bootstrap.
+                                        And makes a lot of friends. The template system combines
+                                        the best of free software for the web. JekyllOne gives web
+                                        developers and hobbyists a simple and clean implementation
+                                        in Jekyll for starting new projects. The theme is open source
+                                        and the modules included are free to use as well.
+webmaster:
+  email:                                webmaster@jekyll.one
+
+# Crawling/Indexing ENABLED for default. Settings managed page-wise using
+# frontmatter defaults or by page default settings to make sure that only
+# WANTED pages gets crawled.
+#
+robots:
+  index:                                true
+  follow:                               true
+
+# ------------------------------------------------------------------------------
+# BRAND configuration
+# Set the brand image and favicon (located in /asset/images)
+brand:
+  image:                                icons/j1/j1-512x512.png
+  image_height:                         48px
+  text:                                 Jekyll One
+  text_color:                           "#9E9E9E"
+
+# Set the favicon and type
+#
+favicon:
+  image:                                icons/j1/favicon.ico
+  type:                                 image/ico
+
+
+# ==============================================================================
+# 4. JEKYLL specific site configuration
+#
+# ------------------------------------------------------------------------------
+#
+# ------------------------------------------------------------------------------
+# LOCATION configuration
+# Set uri, files and path specific configurations
+
+# ------------------------------------------------------------------------------
+# URI configuration
+
+# For default, J1 is using "pretty" links (URLs) ofr ALL types
+# of conten (pages, posts, collections). For J1 Theme the
+# permalink style (pretty):
+#
+# pretty: /:categories/:year/:month/:day/:title/
+#
+# used for default. Read mor about permalinks for pages and
+# collections at:
+#
+#   https://jekyllrb.com/docs/permalinks/#pages-and-collections
+#
+# All links are using an a trailing file extension of .html
+# for best support of various Web Servers with NO addtional
+# configuration needed.
+#
+# NOTE: The build-in Web server Ruby "Webrick" for Jekyll support
+# pretty "links" out of the box. If other web servers are used to
+# serve the Web like Apache or Nginx, "extensionless" URLs are to
+# be enabled for those. See https://jekyllrb.com/docs/permalinks/
+# for more details.
+#
+# NOTE:
+#   For development, respectively "live-reload" functionality,
+#   webpack-dev-server is used. The build-in Web server "Express"
+#   for Webpack does *NOT* support "pretty links" out of the box.
+#
+# NOTE:
+#   The permalink style can individualy configured by
+#   frontmatter variables. It is highly recommended to use a
+#   "pretty style" for individual permalinks as well. For that
+#   reason, the permalink should always have a trailing backslash.
+#
+#   See: https://jekyllrb.com/docs/permalinks/#template-variables
+#
+# ------------------------------------------------------------------------------
+#
+permalink:                              pretty
+
+# If your site has set a CNAME (pages.github.com), set the custom
+# domain http|s://your-site.domain here. Accessible in Liquid as
+# "site.url". For the development environment there is an EXCEPTION:
+# if you are running jekyll serve in a development environment,
+# site.url will be set to the value of host, port.
+# NOTE: Required setting for the sitemap plugin, for example.
+#
+# Stemap file:                          https://jekyll.one/sitemap.xml
+#
+# url:                                  http://localhost:39000
+url:                                    https://j1-template-starter.netlify.app/
+
+# The subpath of your site, e.g. /blog/. Used in conjunction with
+# site.url (see above) when you want a link to something with the
+# full URL to it.
+#
+baseurl:                                ""
+
+# The production_url is only used when full-domain names are needed
+# such as sitemap.txt. For most places will/should use base_path to
+# make the URLs.
+#
+base_path:                              ""
+
+# ------------------------------------------------------------------------------
+# Base hostname and protocol for the site
+#
+#  Defaults:
+#   protocol:                           http
+#   host:                               localhost
+#   port:                               4000
+#   timezone:                           Europe/Berlin
+#   encoding:                           UTF-8
+#
+protocol:                               http
+host:                                   localhost
+port:                                   39000
+timezone:                               Europe/Berlin
+encoding:                               UTF-8
+
+# detach:                               false
+# show_dir_listing:                     true
+
+# ------------------------------------------------------------------------------
+# PATH configuration
+# Global folder configuration where Jekyll will read files from
+#
+#  Defaults:
+#   source:                             .
+#   destination:                        _site
+#
+source:                                 .
+destination:                            _site
+plugins_dir:                            _plugins
+layouts_dir:                            _layouts
+data_dir:                               _data
+includes_dir:                           _includes
+collections_dir:                        collections
+
+# ------------------------------------------------------------------------------
+# FILES configuration
+# Set the files to include, exclude and ignore (keep_files on _site)
+#
+include:                                [ .htaccess ]
+exclude:                                [
+                                          log, vendor, node_modules, utilsrv,
+                                          '.sass-cache', '.vscode', '.idea',
+                                          'pages/public/jupyter/notebooks/j1',
+                                          'pages/public/jupyter/notebooks/nbi-docs',
+                                          History.markdown, README.md,
+                                          changelog.md, Rakefile,
+                                          Gemfile, Gemfile.lock, Guardfile,
+                                          yarn.lock, config.ru,
+                                          package-lock.json, package.json,
+                                          '*.ignore', '*._config.yml',
+                                          '*.bat', '*.sh', '*.tmp', 'dot.*',
+                                          '*.txt', '*.log', '*.ppt*', '*.pdf',
+                                          '*.zip', '*.7z', '*.tgz', '*.tar',
+                                          '*.a2p', '*.asciidoc'
+                                        ]
+keep_files:                             []
+
+safe:                                   false
+strict_front_matter:                    false
+
+# ------------------------------------------------------------------------------
+# SASS conversion options
+#
+# Sets the style of the generate CSS file.
+# Possible values: compact|compressed|expanded|nested
+#
+sass:
+  sass_dir:                             _sass
+  style:                                compact                                 # possible values: nested expanded compact compressed
+
+
+# ------------------------------------------------------------------------------
+# WEBRICK Customizations
+# You can provide custom headers for your site
+#
+# See: https://jekyllrb.com/docs/configuration/webrick/
+#      https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+#
+# NOTE:
+#   Jekyll provides by default Content-Type and Cache-Control
+#   response headers: one dynamic in order to specify the nature of
+#   the data being served, the other static in order to disable
+#   caching so that you don’t have to fight with Chrome’s aggressive
+#   caching when you are in development mode.
+#
+# webrick:
+#   headers:
+#     My-Header: My-Value
+#     My-Other-Header: My-Other-Value
+#
+# ------------------------------------------------------------------------------
+#
+webrick:
+  headers:
+    X-Builder-Template:                 J1 Theme
+    X-Builder-Engine:                   Jekyll
+
+# ------------------------------------------------------------------------------
+# POSTS Management
+# Control how post articles are generated
+#
+future:                                 true                                    # workaround (non US) TZ issues (of April 2021)
+show_drafts:                            false
+unpublished:                            false
+limit_posts:                            1000000                                 # set to UNLIMITED
+
+# ------------------------------------------------------------------------------
+# LIQUID template engine
+#
+liquid:
+  error_mode:                           warn
+
+# ------------------------------------------------------------------------------
+# MARKDOWN
+#
+# NOTE:
+#   Option input/GFM turns on the recognition of Github Flavoured
+#   Markdown (GFM)
+#
+markdown:                               kramdown
+markdown_ext:                           markdown,md
+
+kramdown:
+  input:                                GFM
+  auto_ids:                             true
+  footnote_nr:                          1
+  entity_output:                        as_char
+  toc_levels:                           1..3
+  smart_quotes:                         lsquo,rsquo,ldquo,rdquo
+  syntax_highlighter:                   rouge
+
+# ------------------------------------------------------------------------------
+# PLUGIN configuration
+#
+plugins:
+# - algolia
+# - asciidoctor-pdf
+# - jekyll-gist
+# - jekyll-redirect-from
+  - asciidoctor
+  - jekyll-asciidoc
+
+# ------------------------------------------------------------------------------
+# ALGOLIA Search (Instantsearch)
+#
+algolia:
+  enabled:                              false
+  application_id:                       your_application_id
+  search_only_api_key:                  your_searchonly_api_key
+  index_name:                           your_index_name
+  extensions_to_index:                  [ adoc ]
+  files_to_exclude:                     []
+
+# ------------------------------------------------------------------------------
+# ASCIIDOCTOR (Asciidoc plugin)
+#
+asciidoc_attributes:                    &asciidoc_attributes
+  hardbreaks-option:
+  source-highlighter:                   rouge
+  icons:                                font
+  imagesdir:                            /assets/images
+  iconsdir:                             '{imagesdir}/icons/asciidoc'
+  experimental:                         true                                    # enable the UI macros, e.g kbd:[], for Asciidoctor globally
+
+asciidoc:
+  processor:                            asciidoctor
+  require_front_matter_header:          true
+  ext:                                  adoc
+
+asciidoctor:
+  safe:                                 unsafe
+  template_dir:                         _templates
+  attributes:                           *asciidoc_attributes
+
+# ------------------------------------------------------------------------------
+# SAFEMODE
+#
+# If you want to use plugins when running Jekyll in safe mode,
+# you must add the gem to the whitelist
+#
+whitelist:
+  - jekyll-asciidoc
+
+
+# ==============================================================================
+# 5. SEO ans Social Media settings (gloal)
+#
+# ------------------------------------------------------------------------------
+#
+author:
+  name:                                 Juergen Adams
+  url:                                  https://jekyll.one/
+  email:                                jadams@web.de
+  github:
+  facebook:
+  twitter:
+  feedburner:
+
+
+logo:                                   /assets/images/icons/j1/j1-512x512.png
+
+image:
+  path:                                 /assets/images/promo/home/screenshot.jpg
+  width:                                1200
+  height:                               800
+  alt:                                  J1 Theme Home
+
+twitter:
+  username:
+
+facebook:
+  author:
+  publisher:
+  app_id:
+  admins:
+
+webmaster_verifications:
+  facebook:
+  google:
+  bing:
+  yandex:
+
+
+# ==============================================================================
+# 6. PAGE configuration
+#
+# ------------------------------------------------------------------------------
+#
+# ------------------------------------------------------------------------------
+# EXCERPT settings
+#
+excerpt_separator:                      excerpt__end
+excerpt_truncate_words:                 100
+
+# ------------------------------------------------------------------------------
+# COLLECTION settings
+# See: https://jekyllrb.com/docs/collections/#collections
+#
+collections:
+
+  # ----------------------------------------------------------------------------
+  # People
+  #
+  people:
+    output:                             true
+    permalink:                          /collections/public/:collection/:name/
+
+  # ----------------------------------------------------------------------------
+  # Portfolio
+  #
+  portfolio:
+    output:                             true
+    permalink:                          /collections/public/:collection/:name/
+
+  # ----------------------------------------------------------------------------
+  # Book shelf
+  #
+  biography:
+    output:                             true
+    permalink:                          /collections/public/:collection/:name/
+
+  fantasy:
+    output:                             true
+    permalink:                          /collections/public/:collection/:name/
+
+  romance:
+    output:                             true
+    permalink:                          /collections/public/:collection/:name/
+
+# ------------------------------------------------------------------------------
+# FRONTMATTER defaults
+#
+# Using the YAML Front Matter is a way the (individual) configuration
+# for post and pages can be specified. Very often, a lot of config
+# options are repeated on each and every post or page. Setting the
+# layout for each file, adding categories to a post, etc. might be
+# the same for the majority of your content.
+#
+# Instead of repeating this configuration each time a page is being
+# created, Jekyll provides a way to set these configuration items
+# as defaults in this site configuration (_config.yml).
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # HTML partials (loaded via XHR) excluded from sitemap
+  #
+  - scope:
+      path:                             assets/data
+
+    values:
+      sitemap:                          false
+
+  # ----------------------------------------------------------------------------
+  # Module HTML docs and examples excluded from sitemap
+  #
+  - scope:
+      path:                             assets/themes/j1
+
+    values:
+      sitemap:                          false
+
+  # ----------------------------------------------------------------------------
+  # PAGES
+  #
+  - scope:
+      path:                             pages
+      type:                             pages
+
+    values:
+      layout:                           page
+      compress:                         true
+
+      author:
+        name:                           Juergen Adams
+        url:                            https://jekyll.one/
+
+      logo:                             /assets/images/icons/j1/j1-512x512.png
+      image:
+        path:                           /assets/images/promo/home/screenshot.jpg
+        width:                          1200
+        height:                         800
+        alt:                            J1 Theme Home
+
+      icons:
+        family:                         MDI
+        color:                          md-blue
+        size:                           5x
+
+      images:
+        dir:                            /assets/images/pages
+
+      robots:
+        index:                          true
+        follow:                         true
+
+      personalization:                  false
+      exclude_from_search:              false
+      fab_menu_id:                      open_toc
+      scrollbar:                        false
+      youtube:                          true
+      vimeo:                            true
+      toc:                              true
+
+      resource_options:
+        - toccer:
+            collapseDepth:              3
+
+  # ----------------------------------------------------------------------------
+  # POSTS
+  #
+
+  # ----------------------------------------------------------------------------
+  # PUBLIC - FEATURED
+  #
+  - scope:
+      path:                             posts/public/featured
+      type:                             posts
+
+    values:
+      layout:                           post
+      compress:                         true
+
+      author:
+        name:                           Juergen Adams
+        url:                            https://jekyll.one/
+
+      logo:                             /assets/images/icons/j1/j1-512x512.png
+      image:
+        path:                           /assets/images/promo/home/screenshot.jpg
+        width:                          1200
+        height:                         800
+        alt:                            J1 Theme Home
+
+      robots:
+        index:                          true
+        follow:                         true
+
+      toc:                              true
+      fab_menu_id:                      open_toc
+      scrollbar:                        false
+      personalization:                  false
+      exclude_from_search:              false
+      page_navigation:                  true
+      series:                           false
+
+      resource_options:
+        - toccer:
+            collapseDepth:              3
+
+  # ----------------------------------------------------------------------------
+  # PUBLIC - SERIES
+  #
+  - scope:
+      type:                             posts
+      path:                             posts/public/series
+
+    values:
+      layout:                           post
+      compress:                         true
+
+      author:
+        name:                           Juergen Adams
+        url:                            https://jekyll.one/
+
+      logo:                             /assets/images/icons/j1/j1-512x512.png
+      image:
+        path:                           /assets/images/promo/home/screenshot.jpg
+        width:                          1200
+        height:                         800
+        alt:                            J1 Theme Home
+
+      robots:
+        index:                          true
+        follow:                         true
+
+      toc:                              true
+      fab_menu_id:                      open_toc
+      scrollbar:                        false
+      page_navigation:                  true
+      personalization:                  false
+      exclude_from_search:              false
+
+      resource_options:
+        - toccer:
+            collapseDepth:              3
+
+  # ----------------------------------------------------------------------------
+  # PUBLIC - QA
+  #
+  - scope:
+      path:                             posts/public/qa
+      type:                             posts
+
+    values:
+      layout:                           post
+      compress:                         true
+
+      author:
+        name:                           Juergen Adams
+        url:                            https://jekyll.one/
+
+      logo:                             /assets/images/icons/j1/j1-512x512.png
+      image:
+        path:                           /assets/images/promo/home/screenshot.jpg
+        width:                          1200
+        height:                         800
+        alt:                            J1 Theme Home
+
+      robots:
+        index:                          true
+        follow:                         true
+
+      toc:                              true
+      fab_menu_id:                      open_toc
+      scrollbar:                        false
+      personalization:                  false
+      exclude_from_search:              false
+      page_navigation:                  true
+      series:                           false
+
+      resource_options:
+        - toccer:
+            collapseDepth:              3
+
+  # ----------------------------------------------------------------------------
+  # Collections
+  #
+
+  # ----------------------------------------------------------------------------
+  # Portfolio
+  #
+  - scope:
+      type:                             portfolio
+      path:                             collections/_portfolio
+
+    values:
+      layout:                           page
+
+  # ----------------------------------------------------------------------------
+  # Book Shelf
+  #
+  - scope:
+      type:                             biography
+      path:                             collections/_biography
+
+    values:
+      layout:                           page
+
+  - scope:
+      type:                             fantasy
+      path:                             collections/_fantasy
+
+    values:
+      layout:                           page
+
+  - scope:
+      type:                             romance
+      path:                             collections/_romance
+
+    values:
+      layout:                           page
+
+
+# ==============================================================================
+# 7. LAYOUT configuration
+#
+# ------------------------------------------------------------------------------
+#
+# ------------------------------------------------------------------------------
+# COMPRESS (HTML) settings
+#
+# enabled
+# ------------------------------------------------------------------------------
+# Enables|Disables the use of compress.
+# If enabled, all HTML pages generated for ALL layout
+# get compressed for production. To use compress, set
+# the ENVIRONMENT to production and the value of
+# compress_html.enable to "true".
+#
+# See http://jch.penibelst.de/ for more details.
+#
+#   values:                             boolean (true|false)
+#   default:                            false
+#
+# profile
+# ------------------------------------------------------------------------------
+# A boolean value to turn on the profile mode. If true, the
+# layout creates a HTML table after the compressed content. The
+# table contains the file size in bytes during the compressing
+# steps.
+#
+# The profile table provides attributes for styling and reading.
+# The id ends with build’s timestamp to be unique enough.
+#
+#   <table
+#     id="compress_html_profile_YYYYMMDD"
+#     class="compress_html_profile"
+#   >
+#
+# This page itself is compressed in profile mode for analysis,
+# testing or educational purposes only. The table written to
+# the end of a page.
+#
+# NOTE:
+#   Never profile pages for public use.
+#
+#   values:                             boolean (true|false)
+#   default:                            false
+#
+# blanklines
+# ------------------------------------------------------------------------------
+# A boolean value to turn on blanklines mode. This mode will
+# only remove lines consisting of whitespace and leave other
+# lines alone.
+#
+#   values:                             boolean (true|false)
+#   default:                            false
+#
+# clippings
+# ------------------------------------------------------------------------------
+# An array of elements to clip whitespace around them. The
+# following elements may be safe to clip:
+#
+#     - Metadata
+#     - Sections
+#     - Grouping content (except the pre element)
+#     - Tabular data
+#
+# Use the shortcut all to clip all safe elements.
+#
+#   Example:
+#
+#   clippings: [div, p, ul, td, h1, h2]
+#
+#   values:                             HTML tags|all
+#   default:                            empty array
+#
+# comments
+# ------------------------------------------------------------------------------
+# An array of exactly two comment tags to strip comments
+# enclosed by them. The first string must be the start tag,
+# the second must be the end tag.
+#
+#   Example:
+#
+#   comments: ["<!-- ", " -->"]
+#
+#   values:                             comment tags
+#   default:                            empty array
+#
+# startings
+# ------------------------------------------------------------------------------
+# An array of elements with optional start tags. These start
+# tags will be >>removed<<.
+#
+#   Example:
+#
+#   startings: [html, head, body]
+#
+#   values:                             HTML optional start tags
+#   default:                            empty array
+#
+# endings
+# ------------------------------------------------------------------------------
+# An array of elements with optional end tags. These end tags
+# will be >>removed<<. Use the shortcut all to remove all
+# optional endings.
+#
+#   Example:
+#
+#   endings: [p, li, td]
+#
+#   values:                             HTML optional end tags
+#   default:                            empty array
+#
+# ignore.envs
+# ------------------------------------------------------------------------------
+# An array of environments given by ENV["JEKYLL_ENV"]
+# where the compress layout is IGNORED. This is useful
+# while developing a website the content should NOT
+# compressed.
+#
+#   Example:
+#
+#   envs:                               [development, test]
+#
+#   values:                             HTML optional end tags
+#   default:                            empty array
+#
+# ------------------------------------------------------------------------------
+#
+compress_html:
+  enabled:                              true
+  profile:                              false
+  blanklines:                           false
+  comments:                             []
+  startings:                            []
+  clippings:                            []
+  endings:                              []
+  ignore:                               []
+  envs:                                 []
+
+# ------------------------------------------------------------------------------
+# END config

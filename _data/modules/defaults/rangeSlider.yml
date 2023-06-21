@@ -16,10 +16,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Range Silder Module
   scope:                                Default settings
   location:                             _data/modules/defaults/rangeSlider.yml
@@ -143,7 +142,7 @@ defaults:
   # ----------------------------------------------------------------------------
   #
   options:
-    orientation:                        horizontal                              # horizontal | vertical
+    orientation:                        vertical                                # horizontal | vertical
     connect:                            true
     step:                               1
     cbOnUpdate:                         j1.adapter.rangeSlider.cbOnUpdate

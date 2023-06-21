@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # ~/_data/modules/carousel.yml
-# Default configuration for J1 Carousel (based on Owl Carousel V1)
+# User configuration for J1 Carousel (based on Owl Carousel V1)
 #
 # Product/Info:
 # https://jekyll.one
@@ -12,10 +12,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Carousel
   scope:                                User settings
   location:                             _data/apps/carousel.yml
@@ -25,25 +24,6 @@ description:
 #
 settings:
 
-  # ----------------------------------------------------------------------------
-  # GENERAL Carousel settings
-  #
-  # enabled
-  # ----------------------------------------------------------------------------
-  #   Enables|Disables the use of a carousel|slider
-  #
-  # xhr_data_path
-  # ----------------------------------------------------------------------------
-  #   All data items displayed by a slider are being read from a
-  #   JSON file automatically generated from that configuration.
-  #   AJAX get method is used to supply the slider with respective
-  #   the HTML code at the time the slider is initialized (by the
-  #   J1 Adapter for J1 Owl Sliders).
-  #
-  #   values:                             string
-  #   default:                            /assets/data/carousel.json
-  #
-  # ----------------------------------------------------------------------------
   enabled:                              true
 
   # ----------------------------------------------------------------------------
@@ -257,8 +237,8 @@ settings:
                                           cat-3.jpg, cat-4.jpg
                                         ]
         links:                          [
-                                          "#void", "#void",
-                                          "#void", "#void"
+                                          "#", "#",
+                                          "#", "#"
                                         ]
         lb_caption:                     [
                                           "You see cat #1",
@@ -293,8 +273,8 @@ settings:
                                           thomas-tucker_b.jpg
                                         ]
         links:                          [
-                                          "#void", "#void", "#void", "#void",
-                                          "#void", "#void", "#void", "#void"
+                                          "#", "#", "#", "#",
+                                          "#", "#", "#", "#"
                                         ]
         options:
           autoPlay:                     3000

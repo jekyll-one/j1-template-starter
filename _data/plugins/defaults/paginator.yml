@@ -71,6 +71,7 @@ defaults:
       before:                           0
       after:                            0
 
+  # ----------------------------------------------------------------------------
   # AUTOPAGE settings
   #
   autopages:
@@ -79,18 +80,36 @@ defaults:
 
     tags:
       enabled:                          false
+      silent:                           false
+      permalink:                        /autopages/tags/:tag
+      title:                            Posts tagged with tag :tag
       layouts:                          [
-                                          paginator/autopage_collections_tags.html,
-                                          paginator/autopage_tags.html
+                                          autopage_collections_tags.html,
+                                          autopage_tags.html
                                         ]
+      slugify:
+        mode:                           default                                 # :tag is slugified, available modes: default|raw|pretty|ascii|latin
+        case:                           false
 
     categories:
       enabled:                          false
-      layouts:                          [ paginator/autopage_category.html ]
+      silent:                           false
+      permalink:                        /autopages/categories/:cat
+      title:                            Posts in category :cat
+      layouts:                          [ autopage_category.html ]
+      slugify:
+        mode:                           default                                 # :cat is slugified, available modes: default|raw|pretty|ascii|latin
+        case:                           false
 
     collections:
       enabled:                          false
-      layouts:                          [ paginator/autopage_collection.html ]
+      silent:                           false
+      permalink:                        /autopages/collections/:coll
+      title:                            Posts in collection :coll
+      layouts:                          [ autopage_collection.html ]
+      slugify:
+        mode:                           default                                 # :coll is slugified, available modes: default|raw|pretty|ascii|latin
+        case:                           false
 
 # ------------------------------------------------------------------------------
 # END config

@@ -103,6 +103,7 @@
 # Layout configuration settings
 #
 lanes:
+
   # ----------------------------------------------------------------------------
   # HEADER region (body-header)
   #   The header region contains the 'master' header displayed on all pages.
@@ -137,6 +138,15 @@ lanes:
       base:                             _includes/themes/j1
       path:                             modules/attics
       file:                             generator.html
+
+  - lane:
+      enabled:                          false
+      id:                               custom_header
+      region:                           body-header
+      type:                             sync
+      base:                             _includes/custom
+      path:                             templates
+      file:                             custom_header.html
 
   # ----------------------------------------------------------------------------
   # CONTENT region (region body-main)

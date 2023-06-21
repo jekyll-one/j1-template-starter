@@ -5,17 +5,16 @@
 #  Product/Info:
 #  https://jekyll.one
 #
-#  Copyright (C) 2022 Juergen Adams
+#  Copyright (C) 2023 Juergen Adams
 #
-#  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one/J1 Template/blob/master/LICENSE
+#  J1 Theme is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Cookies
   scope:                                User settings
   location:                             _data/modules/cookies.yml
@@ -25,11 +24,11 @@ description:
 #
 settings:
   enabled:                              true
+  checkCookies:                         true
 
   # ----------------------------------------------------------------------------
-  # Switches
+  # Cookie settings
   # ----------------------------------------------------------------------------
-  checkCookies:                         true
 
   # ----------------------------------------------------------------------------
   # Attributes
@@ -43,6 +42,6 @@ settings:
   #
   # ----------------------------------------------------------------------------
   same_site:                            None
-  
+
 # ------------------------------------------------------------------------------
 # END config

@@ -1,0 +1,26 @@
+
+.Global Variables
+[cols="4a,8a", width="100%", options="header", role="rtable mt-4"]
+|===
+|Variable |Description
+
+|`site`
+|Sitewide configuration settings from `_config.yml`.
+
+|`page`
+|Page specific information. Custom variables set via the YAML Front Matter
+will be available here.
+
+|`layout`
+|Layout specific information. Custom variables set via the YAML Front Matter
+in layouts will be available here.
+
+|`content`
+|In layout files, the rendered content of the Post or Page being wrapped.
+Not defined in Post or Page files.
+
+|`paginator`
+|When the `paginate` configuration option is set, this variable becomes
+available for use.
+
+|===

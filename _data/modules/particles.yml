@@ -12,10 +12,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                J1 Particle Module
   scope:                                User settings
   location:                             _data/modules/particles.yml
@@ -24,15 +23,11 @@ description:
 # User configuration settings
 #
 settings:
+  enabled:                              false
 
   # ----------------------------------------------------------------------------
-  # GENERAL settings
-  #
-  enabled:                              true
-
-  # ============================================================================
-  # Particle settings
-  #
+  # Particles
+  # ----------------------------------------------------------------------------
   particles:
 
     # --------------------------------------------------------------------------

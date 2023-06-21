@@ -25,9 +25,14 @@ description:
 settings:
 
   # ----------------------------------------------------------------------------
-  # Sliders
+  # Slider options
   # ----------------------------------------------------------------------------
-  #
+  skin:                                 default
+  slider_manager_load_timeout:          500
+
+  # ----------------------------------------------------------------------------
+  # Slider settings
+  # ----------------------------------------------------------------------------
   sliders:
 
     # --------------------------------------------------------------------------
@@ -41,7 +46,7 @@ settings:
 
       lightbox:
         enabled:                        true
-        type:                           lb                                      # lb | lg
+        type:                           lb
 
       # ------------------------------------------------------------------------
       # Slider controls
@@ -103,7 +108,7 @@ settings:
           slideinfo:                    false
 
     # --------------------------------------------------------------------------
-    # Slider 2 - Full Width + Lightbox +
+    # Slider 2 - Full Width + Lightbox
     #
     - slider:
       enabled:                          true
@@ -170,7 +175,7 @@ settings:
 
 
     # --------------------------------------------------------------------------
-    # Slider 3 - SlideInfo +  (Autoplay|Boxed|Animated)
+    # Slider 3 - SlideInfo (Autoplay|Boxed|Animated)
     #
     - slider:
       enabled:                          true
@@ -851,7 +856,7 @@ settings:
               margin:                   mt-4
               animated:                 fadeInRight
               class:                    btn btn-primary btn-sm
-              link:                     '#void'
+              link:                     '#'
               text:                     Read More
 
         # slide 2
@@ -883,7 +888,7 @@ settings:
               margin:                   mt-4
               animated:                 fadeInRight
               class:                    btn btn-primary btn-sm
-              link:                     '#void'
+              link:                     '#'
               text:                     Read More
 
         # slide 3
@@ -915,7 +920,7 @@ settings:
               margin:                   mt-4
               animated:                 fadeInRight
               class:                    btn btn-primary btn-sm
-              link:                     '#void'
+              link:                     '#'
               text:                     Read More
 
         # slide 4
@@ -947,7 +952,7 @@ settings:
               margin:                   mt-4
               animated:                 fadeInRight
               class:                    btn btn-primary btn-sm
-              link:                     '#void'
+              link:                     '#'
               text:                     Read More
 
 
@@ -1037,7 +1042,7 @@ settings:
                                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                                         sed diam nonummy nibh euismod tincidunt.
 
-            description_color:          '#9E9E9E'                               # md-gray-500
+            description_color:          '#616161'                               # md-gray-700
             description_animated:       false
 
         # slide 3
@@ -1064,7 +1069,7 @@ settings:
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                         Ut enim ad minim veniam.
 
-            description_color:          '#9E9E9E'                               # md-gray-500
+            description_color:          '#616161'                               # md-gray-700
             description_animated:       false
 
         # slide 4
@@ -1090,7 +1095,7 @@ settings:
                                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                                         sed diam nonummy nibh euismod tincidunt.
 
-            description_color:          '#9E9E9E'                               # md-gray-500
+            description_color:          '#616161'                               # md-gray-700
             description_animated:       false
 
         # slide 5
@@ -1116,7 +1121,7 @@ settings:
                                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                                         sed diam nonummy nibh euismod tincidunt.
 
-            description_color:          '#9E9E9E'                               # md-gray-500
+            description_color:          '#616161'                               # md-gray-700
             description_animated:       false
 
         # slide 6
@@ -1142,7 +1147,7 @@ settings:
                                         Lorem ipsum dolor sit amet, consec tetuer adipiscing elit,
                                         sed diam nonummy nibh euismod tincidunt.
 
-            description_color:          '#9E9E9E'                               # md-gray-500
+            description_color:          '#616161'                               # md-gray-700
             description_animated:       false
 
 # ------------------------------------------------------------------------------

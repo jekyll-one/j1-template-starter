@@ -1,0 +1,69 @@
+[source, sass]
+----
+// border-variables
+//
+$border-width:                          1px !default;
+$border-widths: (
+  1:                                    1px,
+  2:                                    2px,
+  3:                                    3px,
+  4:                                    4px,
+  5:                                    5px
+) !default;
+$border-style:                          solid !default;
+$border-color:                          $gray-300 !default;
+$border-color-translucent:              rgba($black, .175) !default;
+
+// border-radius variables
+//
+$border-radius:                         .375rem !default;
+$border-radius-sm:                      .25rem !default;
+$border-radius-lg:                      .5rem !default;
+$border-radius-xl:                      1rem !default;
+$border-radius-xxl:                     2rem !default;
+$border-radius-pill:                    50rem !default;
+
+// Deprecated in v5.3.0
+$border-radius-2xl:                     $border-radius-xxl !default;
+
+
+// box-shadow variables
+//
+$box-shadow:                            0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow-sm:                         0 .125rem .25rem rgba($black, .075) !default;
+$box-shadow-lg:                         0 1rem 3rem rgba($black, .175) !default;
+$box-shadow-inset:                      inset 0 1px 2px rgba($black, .075) !default;
+
+$component-active-color:                $white !default;
+$component-active-bg:                   $primary !default;
+
+// focus-ring variables
+//
+$focus-ring-width:                      .25rem !default;
+$focus-ring-opacity:                    .25 !default;
+$focus-ring-color:                      rgba($primary, $focus-ring-opacity) !default;
+$focus-ring-blur:                       0 !default;
+$focus-ring-box-shadow:                 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color !default;
+
+// caret variables
+//
+$caret-width:                           .3em !default;
+$caret-vertical-align:                  $caret-width * .85 !default;
+$caret-spacing:                         $caret-width * .85 !default;
+
+// transition variables
+//
+$transition-base:                       all .2s ease-in-out !default;
+$transition-fade:                       opacity .15s linear !default;
+$transition-collapse:                   height .35s ease !default;
+$transition-collapse-width:             width .35s ease !default;
+
+// aspect ratios
+//
+$aspect-ratios: (
+  "1x1":                                100%,
+  "4x3":                                calc(3 / 4 * 100%),
+  "16x9":                               calc(9 / 16 * 100%),
+  "21x9":                               calc(9 / 21 * 100%)
+) !default;
+----

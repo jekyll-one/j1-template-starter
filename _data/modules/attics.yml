@@ -20,12 +20,15 @@
 #   HTML data for a layout, the loader procedure places the data based this
 #   YAML data file into the REGION specified with a LANE.
 # ------------------------------------------------------------------------------
+# NOTE:
+#   Animations on tite|tagline are taken from 'animate.css'
+#   See: https://animate.style/
+# ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Attics
   scope:                                User settings
   location:                             _data/modules/attics.yml
@@ -34,11 +37,6 @@ description:
 # SETTINGS
 #
 settings:
-
-  # ----------------------------------------------------------------------------
-  # Global properties (all layouts)
-  #
-  debug:                                false
 
   # ----------------------------------------------------------------------------
   # Layout specific properties
@@ -54,66 +52,37 @@ settings:
 
         id:                             attic_home
         layout:                         home
+        title_animate:                  animate__bounceInDown                   # animate__bounceIn | animate__bounceInDown
+        title_animate_duration:         animate__fast                           # false | animate__slow | animate__slower | animate__fast | animate__faster
+        tagline_animate:                animate__fadeInRight
+        tagline_animate_duration:       animate__slow
 
-#       title_animate:                  animate__fadeInDown
-#       title_animate_duration:         animate__slower
-#       title_animate_delay:            animate__delay-2s
-#       raised_level:                   15
-
-        padding_top:                    400
-        padding_bottom:                 50
-        opacity:                        0.5
-
-#       background_color_1:             transparent
-#       background_color_2:             transparent
-
-        background_color_1:             "#0D47A1"                               # md-blue-900
-        background_color_2:             "#0D47A1"                               # md-blue-900
-
-        filters:
-          grayscale:                    1
-          contrast:                     0.8
-          brightness:                   0.8
+        padding_top:                    600
 
     # --------------------------------------------------------------------------
-    # layouts posts|pages
+    # Pages
     #
-    - name:                             Pages and Posts
+    - name:                             Pages
       attic:
         enabled:                        true
 
-        id:                             attic_page_post
-        layout:                         [ page, post, blog_archive ]
-        padding_top:                    400
-        padding_bottom:                 50
-        opacity:                        0.5
+        id:                             attic_page
+        layout:                         page
 
-        filters:
-          grayscale:                    0.5
-          sepia:                        0.5
+        padding_top:                    600
 
     # --------------------------------------------------------------------------
-    # layouts raw
+    # Posts
     #
-    - name:                             Raw pages
+    - name:                             Posts
       attic:
         enabled:                        true
 
-        id:                             attic_raw
-        layout:                         [ raw ]
-        padding_top:                    400
-        padding_bottom:                 50
-        opacity:                        0.5
+        id:                             attic_post
+        layout:                         [ collection, post ]
 
-    # --------------------------------------------------------------------------
-    #  layouts collection|app|raw
-    #
-    - name:                             Text pages
-      attic:
-        enabled:                        true
-
-        id:                             attic_text
-        layout:                         [ collection, app ]
+        title_animate:                  animate__fadeInDown
+        padding_top:                    600
 
 # ------------------------------------------------------------------------------
 # END config

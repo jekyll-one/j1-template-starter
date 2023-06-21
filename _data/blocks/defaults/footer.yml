@@ -25,12 +25,13 @@ description:
 # DEFAULT settings
 #
 defaults:
+  enabled:                              true
 
   # ----------------------------------------------------------------------------
   # FOOTER global settings
   #
+  active_footer:                        footer_uno                              # active footer on all pages
   data_path:                            /assets/data/footer/index.html
-  container-id:                         j1_footer
 
   # ----------------------------------------------------------------------------
   # FOOTER properties
@@ -38,10 +39,9 @@ defaults:
   footer:
     enabled:                            true
     id:                                 default-footer
+    comment:                            Default Footer
     wave:                               false
     wave_color:                         "#212121"
-    comment:                            Default Footer
-    theme:                              footer-light-theme
 
     # --------------------------------------------------------------------------
     # ISSUE settings
@@ -58,10 +58,10 @@ defaults:
     icons:
       facebook:
         enabled:                        false
-        href:                           "#void"
+        href:                           "#"
       twitter:
         enabled:                        false
-        href:                           "#void"
+        href:                           "#"
 
     # --------------------------------------------------------------------------
     # LEGAL settings

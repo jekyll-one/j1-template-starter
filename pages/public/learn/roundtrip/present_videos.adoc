@@ -1,6 +1,6 @@
 ---
-title:                                  Present Videos
-tagline:                                Playing Video On Webpages
+title:                                  Video
+tagline:                                Playing Video
 date:                                   2020-11-04 00:00:00 +100
 description: >
                                         The J1 Theme support playing video on web pages by HTML5 Video,
@@ -25,9 +25,9 @@ image:
   height:                               1280
   alt:                                  Broadway Underground
 
-permalink:                              /pages/public/learn/roundtrip/present_videos/
 regenerate:                             false
 personalization:                        true
+permalink:                              /pages/public/learn/roundtrip/present_videos/
 
 resources:                              [
                                           animate, lightGallery, justifiedGallery, video_js,
@@ -35,21 +35,20 @@ resources:                              [
                                         ]
 resource_options:
   - attic:
-
       slides:
 
         # Broadway Underground - still image (animate default)
         - url:                          /assets/videos/headers/present_videos/still/underground-broadway.jpg
           alt:                          Broadway Underground
-          title:                        Present Videos
-          tagline:                      Playing Video On Webpages
+          title:                        Video
+          tagline:                      Playing Video
           alignY:                       top
           animateFirst:                 false
 
         # Broadway Underground - FAYETTE ST, moved file to Github/LFS
         - url:                          /assets/videos/headers/present_videos/underground-broadway.mp4
           alt:                          Broadway Underground Video
-          title:                        Present Videos
+          title:                        Video
           tagline:                      Broadway Underground
           alignY:                       0
           isVideo:                      true
@@ -59,8 +58,8 @@ resource_options:
         # Broadway Underground - still image (animate random)
         - url:                          /assets/videos/headers/present_videos/still/underground-broadway.jpg
           alt:                          Broadway Underground
-          title:                        Present Videos
-          tagline:                      Manage Video Content For Your Site
+          title:                        Video
+          tagline:                      Playing Video
           alignY:                       top
           transition:                   push_left|push_right|cover_up|cover_down|fade|fadeInOut
 ---
@@ -237,9 +236,21 @@ gallery::jg_video_online_vk[role="mb-5"]
 == What next
 
 Images and videos are pretty visual. And it can be impressive, for sure.
-But the most visual component is the text for all pages, for all sites on the
-Internet. To see how text could be presented great for modern responsive
-websites, check the section Typography next.
+But the most visual component is the text for all pages, for all sites on
+the Internet.
+
+Sadly, one common flaw is seen in many templates and frameworks: a lack of
+support for genuinely responsive text. While elements on a page resize
+fluidly, the text still resizes on a fixed basis. To avoid this issue,
+especially for heavily text-focused pages, J1 Theme supports styles that
+fluidly scale text size and line height to optimize readability for the user.
+
+The Jekyll Theme JekyllOne places the character font as one of the most
+crucial branding elements for any website. Typography matters for any media
+presenting text. The text will take on an important role of acting not only
+as plain text but also as something like images. To see how text could be
+presented great for modern responsive websites, check the section
+Typography next.
 
 What? Please find out how it works.
 Go for: link:{url-roundtrip--typography}[Typography], then.

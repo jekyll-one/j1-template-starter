@@ -14,6 +14,16 @@
 require 'asciidoctor/extensions' unless RUBY_ENGINE == 'opal'
 include Asciidoctor
 
+# A inline macro that places an MDIL icon into the output document
+#
+# Usage
+#
+#   mdil:<name>[<size>, <modifier>]
+#
+# Example:
+#
+#   mdil:account[mdi-48px, <modifier>]
+#
 Asciidoctor::Extensions.register do
   class MdilIconInlineMacro < Extensions::InlineMacroProcessor
     use_dsl

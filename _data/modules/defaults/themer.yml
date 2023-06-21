@@ -13,21 +13,21 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Themer
   scope:                                Default settings
   location:                             _data/modules/defaults/themer.yml
 
 # ------------------------------------------------------------------------------
-# User configuration settings
+# Default configuration settings
 #
 defaults:
 
   # ----------------------------------------------------------------------------
-  # Themer settings
+  # Themer options
+  # ----------------------------------------------------------------------------
   #
   #   enabled
   #   --------------------------------------------------------------------------
@@ -43,6 +43,15 @@ defaults:
   #     values:                         boolean (true|false)
   #     default:                        false
   #
+  # ----------------------------------------------------------------------------
+  enabled:                              false
+  debug:                                false
+  saveToCookie:                         true
+
+  # ----------------------------------------------------------------------------
+  # Themer settings
+  # ----------------------------------------------------------------------------
+  #
   #   cssThemeLink
   #   --------------------------------------------------------------------------
   #   The ID used for the bootstrap theme css file
@@ -57,7 +66,8 @@ defaults:
   #     values:                         boolean (true|false)
   #     default:                        true
   #
-  # cookieThemeName
+  #   cookieThemeName
+  #   --------------------------------------------------------------------------
   #   The name of the cookie to be used to store the theme name
   #
   #   values:                           string
@@ -142,12 +152,6 @@ defaults:
   #     default:                        150
   #
   # ----------------------------------------------------------------------------
-  #
-  enabled:                              false
-
-  debug:                                false
-  saveToCookie:                         true
-
   reloadPageOnChange:                   false                                   # reload current page, if theme has been changed
   retries:                              30                                      # retry to load theme list from API
   preview_page:                         /pages/public/previewer/current_theme/

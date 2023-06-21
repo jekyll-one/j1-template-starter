@@ -1,0 +1,45 @@
+
+.Serve Command Options
+[cols="2a,2a,2a,6a", width="100%", options="header", role="rtable mt-4"]
+|===
+|Setting |Option |Flag |Description
+
+
+|*Local Server Port*
+|`port: PORT`
+|`--port PORT`
+|Listen on the given port.
+
+|*Local Server Hostname*
+|`host: HOSTNAME`
+|`--host HOSTNAME`
+|Listen at the given hostname.
+
+|*Base URL*
+|`baseurl: URL`
+|`--baseurl URL`
+|Serve the website from the given base URL
+
+|*Detach*
+|`detach: BOOL`
+|`-B, --detach`
+|Detach the server from the terminal to run the Jekyll executeable
+in background.
+NOTE: The parameter Detach is *not* available on _Windows_.
+
+|*Skip the initial site build*
+|`na`
+|`--skip-initial-build`
+|Skips the initial site build which occurs before the server is started
+
+|*X.509 (SSL) Private Key*
+|`na`
+|`--ssl-key`
+|SSL Private Key if HTTPS connections are used
+
+|*X.509 (SSL) Certificate*
+|`na`
+|`--ssl-cert`
+|SSL Public certificate if HTTPS connections are used
+
+|===

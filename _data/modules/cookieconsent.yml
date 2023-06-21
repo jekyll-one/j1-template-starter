@@ -12,10 +12,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                CookieConsent
   scope:                                User settings
   location:                             _data/modules/cookieconsent.yml
@@ -26,8 +25,10 @@ description:
 settings:
   enabled:                            true
 
+  # ----------------------------------------------------------------------------
+  # Cookie settings
+  # ----------------------------------------------------------------------------
   show_cookie_icon:                   true
-  expire_cookies_on_required_only:    true
 
 # ------------------------------------------------------------------------------
 # END config

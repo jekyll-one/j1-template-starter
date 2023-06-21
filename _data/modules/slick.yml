@@ -1,0 +1,562 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/carousel.yml
+# User configuration for J1 Carousel (based on Owl Carousel V1)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023 Juergen Adams
+#
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                Slick
+  scope:                                User settings
+  location:                             _data/apps/slick.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+  enabled:                              true
+
+  # ----------------------------------------------------------------------------
+  # Global Lightbox options
+  #
+  lightbox:
+    enabled:                            false
+    caption:                            caption
+    background:                         false
+
+  # ----------------------------------------------------------------------------
+  # Caption options (Carousel)
+  #
+  captions:
+    enabled:                            true
+
+  # ----------------------------------------------------------------------------
+  # Carousel settings
+  # ----------------------------------------------------------------------------
+  carousels:
+
+    # --------------------------------------------------------------------------
+    # COLLECTION Carousel (portfolio)
+    #
+    - carousel:
+      enabled:                          true
+
+      id:                               collection_carousel_portfolio
+      type:                             collection
+      gutters:                          1                                       # [0 .. 5]
+      collection:                       portfolio                               # generate grid elements (articles) for the collection specified
+      translate_links:                  false                                   # default: false
+      link_new_window:                  true                                    # default: false
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     500px
+
+      # ------------------------------------------------------------------------
+      # Carousel options
+      #
+      options:
+        autoplay:                       false
+        arrows:                         true
+        dots:                           false
+        slidesToShow:                   3
+        slidesToScroll:                 3
+        responsive:                     true                                    # enables reponsive options to generate breakpoint properties for slick()
+
+      # ------------------------------------------------------------------------
+      # Reponsive options
+      #
+      responsive:
+        - breakpoint:
+          settings:
+            breakOn:                    1024
+            slidesToShow:               2
+            slidesToScroll:             2
+        - breakpoint:
+          settings:
+            breakOn:                    600
+            slidesToShow:               1
+            slidesToScroll:             1
+            dots:                       true
+        - breakpoint:
+          settings:
+            breakOn:                    480
+            slidesToShow:               1
+            slidesToScroll:             1
+
+    # --------------------------------------------------------------------------
+    # COLLECTION Carousel (biography)
+    #
+    - carousel:
+      enabled:                          true
+
+      id:                               collection_carousel_biography
+      type:                             collection
+      gutters:                          1                                       # [0 .. 5]
+      collection:                       biography                               # generate grid elements (articles) for the collection specified
+      translate_links:                  false                                   # default: false
+      link_new_window:                  true                                    # default: false
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     500px
+
+      # ------------------------------------------------------------------------
+      # Carousel options
+      #
+      options:
+        autoplay:                       false
+        arrows:                         true
+        dots:                           true
+        slidesToShow:                   3
+        slidesToScroll:                 3
+        responsive:                     true                                    # enables reponsive options to generate breakpoint properties for slick()
+
+      # ------------------------------------------------------------------------
+      # Reponsive options
+      #
+      responsive:
+        - breakpoint:
+          settings:
+            breakOn:                    1024
+            slidesToShow:               2
+            slidesToScroll:             2
+        - breakpoint:
+          settings:
+            breakOn:                    600
+            slidesToShow:               1
+            slidesToScroll:             1
+            dots:                       true
+        - breakpoint:
+          settings:
+            breakOn:                    480
+            slidesToShow:               1
+            slidesToScroll:             1
+
+    # --------------------------------------------------------------------------
+    # COLLECTION Carousel (fantasy)
+    #
+    - carousel:
+      enabled:                          true
+
+      id:                               collection_carousel_fantasy
+      type:                             collection
+      gutters:                          1                                       # 0 .. 5
+      collection:                       fantasy                                 # generate grid elements (articles) for the collection specified
+      translate_links:                  false                                   # default: false
+      link_new_window:                  true                                    # default: false
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     500px
+
+      # ------------------------------------------------------------------------
+      # Carousel options
+      #
+      options:
+        autoplay:                       false
+        arrows:                         true
+        dots:                           false
+        slidesToShow:                   3
+        slidesToScroll:                 3
+        responsive:                     true                                    # enables reponsive options to generate breakpoint properties for slick()
+
+      # ------------------------------------------------------------------------
+      # Reponsive options
+      #
+      responsive:
+        - breakpoint:
+          settings:
+            breakOn:                    1024
+            slidesToShow:               2
+            slidesToScroll:             2
+        - breakpoint:
+          settings:
+            breakOn:                    600
+            slidesToShow:               1
+            slidesToScroll:             1
+            dots:                       true
+        - breakpoint:
+          settings:
+            breakOn:                    480
+            slidesToShow:               1
+            slidesToScroll:             1
+
+    # --------------------------------------------------------------------------
+    # COLLECTION Carousel (romance)
+    #
+    - carousel:
+      enabled:                          true
+
+      id:                               collection_carousel_romance
+      type:                             collection
+      gutters:                          1                                       # 0 .. 5
+      collection:                       romance                                 # generate grid elements (articles) for the collection specified
+      translate_links:                  false                                   # default: false
+      link_new_window:                  true                                    # default: false
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     500px
+
+      # ------------------------------------------------------------------------
+      # Carousel options
+      #
+      options:
+        autoplay:                       false
+        arrows:                         true
+        dots:                           true
+        slidesToShow:                   3
+        slidesToScroll:                 3
+        responsive:                     true                                    # enables reponsive options to generate breakpoint properties for slick()
+
+      # ------------------------------------------------------------------------
+      # Reponsive options
+      #
+      responsive:
+        - breakpoint:
+          settings:
+            breakOn:                    1024
+            slidesToShow:               2
+            slidesToScroll:             2
+        - breakpoint:
+          settings:
+            breakOn:                    600
+            slidesToShow:               1
+            slidesToScroll:             1
+            dots:                       true
+        - breakpoint:
+          settings:
+            breakOn:                    480
+            slidesToShow:               1
+            slidesToScroll:             1
+
+    # --------------------------------------------------------------------------
+    # POST Carousel (Life)
+    #
+    - carousel:
+      enabled:                          true
+
+      id:                               post_carousel_life
+      type:                             post
+      gutters:                          1                                       # 0 .. 5
+      group:                            Life                                    # generate slides only for group (specified in article/post)
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     300px
+      translate_links:                  false                                   # default: false
+      link_new_window:                  true                                    # default: false
+
+      # ------------------------------------------------------------------------
+      # Carousel options
+      #
+      options:
+        autoplay:                       false
+        arrows:                         true
+        dots:                           true
+        slidesToShow:                   3
+        slidesToScroll:                 1
+        responsive:                     true                                    # enables reponsive options to generate breakpoint properties for slick()
+
+      # ------------------------------------------------------------------------
+      # Reponsive options
+      #
+      responsive:
+        - breakpoint:
+          settings:
+            breakOn:                    1024
+            slidesToShow:               2
+            slidesToScroll:             2
+        - breakpoint:
+          settings:
+            breakOn:                    600
+            slidesToShow:               1
+            slidesToScroll:             1
+            dots:                       true
+        - breakpoint:
+          settings:
+            breakOn:                    480
+            slidesToShow:               1
+            slidesToScroll:             1
+
+    # --------------------------------------------------------------------------
+    # POST Carousel (Life | Sepia)
+    #
+    - carousel:
+      enabled:                          true
+
+      id:                               post_carousel_life_sepia
+      type:                             post
+      gutters:                          1                                       # 0 .. 5
+      group:                            Life                                    # generate slides only for group (specified in article/post)
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     300px
+      translate_links:                  false                                   # default: false
+      link_new_window:                  true                                    # default: false
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      #
+      filters:
+        enabled:                        true
+        grayscale:                      0.8
+        contrast:                       0.8
+        brightness:                     0.7
+        sepia:                          1
+
+      # ------------------------------------------------------------------------
+      # Carousel options
+      #
+      options:
+        autoplay:                       false
+        arrows:                         true
+        dots:                           true
+        slidesToShow:                   3
+        slidesToScroll:                 1
+        responsive:                     true                                    # enables reponsive options to generate breakpoint properties for slick()
+
+      # ------------------------------------------------------------------------
+      # Reponsive options
+      #
+      responsive:
+        - breakpoint:
+          settings:
+            breakOn:                    1024
+            slidesToShow:               2
+            slidesToScroll:             2
+        - breakpoint:
+          settings:
+            breakOn:                    600
+            slidesToShow:               1
+            slidesToScroll:             1
+            dots:                       true
+        - breakpoint:
+          settings:
+            breakOn:                    480
+            slidesToShow:               1
+            slidesToScroll:             1
+
+    # --------------------------------------------------------------------------
+    # EXAMPLE Carousel
+    #
+    - carousel:
+      enabled:                          true
+
+      id:                               example_carousel_arrows_dots
+      type:                             example
+      gutters:                          1
+      style:                            h3
+      height:                           200px
+      slides:                           9
+
+      # ------------------------------------------------------------------------
+      # Carousel options
+      #
+      options:
+        arrows:                         true
+        dots:                           true
+        autoplay:                       false
+        slidesToShow:                   3
+        slidesToScroll:                 3
+        responsive:                     true
+
+      # ------------------------------------------------------------------------
+      # Reponsive options
+      #
+      responsive:
+        - breakpoint:
+          settings:
+            breakOn:                    1024
+            arrows:                     true
+            dots:                       true
+            slidesToShow:               2
+            slidesToScroll:             2
+        - breakpoint:
+          settings:
+            breakOn:                    600
+            slidesToShow:               1
+            slidesToScroll:             1
+        - breakpoint:
+          settings:
+            breakOn:                    480
+            slidesToShow:               1
+            slidesToScroll:             1
+
+    # --------------------------------------------------------------------------
+    # IMAGE Carousel
+    #
+    - carousel:
+      enabled:                          true
+
+      id:                               image_carousel_simple
+      type:                             image
+      gutters:                          0                                       # 0 .. 5
+      image_base_path:                  /assets/images/modules/gallery/mega_cities
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     300px
+
+      # ------------------------------------------------------------------------
+      # Lightbox options
+      #
+      lightbox:
+        enabled:                        false
+
+      # ------------------------------------------------------------------------
+      # Caption options
+      #
+      captions:
+        enabled:                        false
+        position:                       bottom                                  # top|bottom|center
+
+      # ------------------------------------------------------------------------
+      # Carousel options
+      #
+      options:
+        autoplay:                       false
+        arrows:                         false
+        dots:                           false
+        speed:                          300
+        slidesToShow:                   2
+        slidesToScroll:                 2
+        responsive:                     true
+
+      # ------------------------------------------------------------------------
+      # Reponsive options
+      #
+      responsive:
+        - breakpoint:
+          settings:
+            breakOn:                    1024
+            slidesToShow:               2
+            slidesToScroll:             2
+        - breakpoint:
+          settings:
+            breakOn:                    800
+            slidesToShow:               1
+            slidesToScroll:             1
+        - breakpoint:
+          settings:
+            breakOn:                    480
+            dots:                       false
+            slidesToShow:               1
+            slidesToScroll:             1
+
+      # ------------------------------------------------------------------------
+      # Slides
+      #
+      slides:
+
+        - slide:                        # slide 1
+          image:                        denys-nevozhai-1_b.jpg
+          caption:                      Man posing at the rooftop of Jin Mao Tower Shanghai - China
+
+        - slide:                        # slide 2
+          image:                        thomas-tucker_b.jpg
+          caption:                      Sunset over Taipei City - Taiwan
+
+        - slide:                        # slide 3
+          image:                        emmad-mazhari_b.jpg
+          caption:                      Chicago - United States
+
+        - slide:                        # slide 4
+          image:                        johan-mouchet_b.jpg
+          caption:                      The Queen Bee at the Eureka Tower - Melbourne Southbank Australia
+
+        - slide:                        # slide 5
+          image:                        federico-rizzarelli_b.jpg
+          caption:                      Shanghai - China
+
+        - slide:                        # slide 6
+          image:                        gints-gailis_b.jpg
+          caption:                      Shangri-La Hotel Jakarta - Indonesia
+
+
+    # --------------------------------------------------------------------------
+    # IMAGE Carousel + Captions + Lightbox
+    #
+    - carousel:
+      enabled:                          true
+
+      id:                               image_carousel_full
+      type:                             image
+      gutters:                          1                                       # 0 .. 5
+      image_base_path:                  /assets/images/modules/gallery/mega_cities
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     300px
+
+      # ------------------------------------------------------------------------
+      # Lightbox options
+      #
+      lightbox:
+        enabled:                        true
+
+      # ------------------------------------------------------------------------
+      # Caption options
+      #
+      captions:
+        enabled:                        true
+        position:                       bottom                                  # top|bottom|center
+
+      # ------------------------------------------------------------------------
+      # Carousel options
+      #
+      options:
+        autoplay:                       false
+        arrows:                         true
+        dots:                           true
+        speed:                          300
+        slidesToShow:                   2
+        slidesToScroll:                 2
+        responsive:                     true
+
+      # ------------------------------------------------------------------------
+      # Reponsive options
+      #
+      responsive:
+        - breakpoint:
+          settings:
+            breakOn:                    1024
+            slidesToShow:               2
+            slidesToScroll:             2
+        - breakpoint:
+          settings:
+            breakOn:                    800
+            slidesToShow:               1
+            slidesToScroll:             1
+        - breakpoint:
+          settings:
+            breakOn:                    480
+            slidesToShow:               1
+            slidesToScroll:             1
+
+      # ------------------------------------------------------------------------
+      # Slides
+      #
+      slides:
+
+        - slide:                        # slide 1
+          image:                        denys-nevozhai-1_b.jpg
+          caption:                      Man posing at the rooftop of Jin Mao Tower Shanghai - China
+
+        - slide:                        # slide 2
+          image:                        thomas-tucker_b.jpg
+          caption:                      Sunset over Taipei City - Taiwan
+
+        - slide:                        # slide 3
+          image:                        emmad-mazhari_b.jpg
+          caption:                      Chicago - United States
+
+        - slide:                        # slide 4
+          image:                        johan-mouchet_b.jpg
+          caption:                      The Queen Bee at the Eureka Tower - Melbourne Southbank Australia
+
+        - slide:                        # slide 5
+          image:                        federico-rizzarelli_b.jpg
+          caption:                      Shanghai - China
+
+        - slide:                        # slide 6
+          image:                        gints-gailis_b.jpg
+          caption:                      Shangri-La Hotel Jakarta - Indonesia
+
+# ------------------------------------------------------------------------------
+# END config

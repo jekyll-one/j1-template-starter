@@ -1,0 +1,42 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/modules/defaults/iconPicker.yml
+#  Default configuration settings for J1 iconPicker module
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2023 Juergen Adams
+#
+#  J1 Theme is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 iconPicker
+  scope:                                Default settings
+  location:                             _data/modules/defaults/iconPicker.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+  enabled:                              false
+  picker_button_id:                     icon_picker
+
+  iconLibraries:                        [
+                                          mdi-icons-light.min.json,
+                                          mdi-icons-regular.min.json,
+                                          font-awesome.min.json
+                                        ]
+
+  iconLibrariesCss:                     [
+                                          https://cdn.jsdelivr.net/npm/@mdi/light-font@0.2.63/css/materialdesignicons-light.min.css,
+                                          https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css,
+                                          https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css
+                                        ]
+
+# ------------------------------------------------------------------------------
+# END config

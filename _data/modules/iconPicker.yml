@@ -1,0 +1,64 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/modules/iconPicker.yml
+#  User configuration settings for J1 iconPicker module
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2023 Juergen Adams
+#
+#  J1 Theme is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 iconPicker
+  scope:                                User settings
+  location:                             _data/modules/iconPicker.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+  enabled:                              true
+
+  pickers:
+
+    # --------------------------------------------------------------------------
+    # MDIL Picker
+    #
+    - picker:
+      enabled:                          true
+
+      id:                               mdil
+      picker_button_id:                 icon_picker_mdil
+      iconLibraries:                    [ mdi-icons-light.min.json ]
+      iconLibrariesCss:                 [ https://cdn.jsdelivr.net/npm/@mdi/light-font@0.2.63/css/materialdesignicons-light.min.css ]
+
+    # --------------------------------------------------------------------------
+    # MDI Picker
+    #
+    - picker:
+      enabled:                          true
+
+      id:                               mdi
+      picker_button_id:                 icon_picker_md
+      iconLibraries:                    [ mdi-icons-regular.min.json ]
+      iconLibrariesCss:                 [ https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css ]
+
+    # --------------------------------------------------------------------------
+    # FontAwesome Picker
+    #
+    - picker:
+      enabled:                          true
+
+      id:                               fontawsome
+      picker_button_id:                 icon_picker_fa
+      iconLibraries:                    [ font-awesome.min.json ]
+      iconLibrariesCss:                 [ https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css ]
+
+# ------------------------------------------------------------------------------
+# END config

@@ -13,7 +13,7 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
   title:                                J1 Blog Navigator
@@ -141,13 +141,16 @@ description:
 #
 defaults:
 
+  # ----------------------------------------------------------------------------
+  # Navigator options
+  # ----------------------------------------------------------------------------
   post_image:                           /assets/images/modules/attics/christa-dodoo-1920x1280.jpg
   previewer:                            timeline
 
   filters:
     grayscale:                          0
-    contrast:                           1
-    brightness:                         1
+    contrast:                           0.8
+    brightness:                         0.8
 
   button_text:
 
@@ -170,31 +173,31 @@ defaults:
 
     paginator:
       older_posts:
-        en:                             Older Posts
-        de:                             Ältere Beiträge
+        en:                             Older
+        de:                             Ältere
       newer_posts:
-        en:                             Newer Posts
-        de:                             Neuere Beiträge
+        en:                             Newer
+        de:                             Neuere
       first_post:
-        en:                             First Page
-        de:                             Erste Seite
+        en:                             First
+        de:                             Erste
       last_post:
-        en:                             Last Page
-        de:                             Letzte Seite
+        en:                             Last
+        de:                             Letzte
 
     view_selector:
       category_view:
-        en:                             By Category
-        de:                             Nach Kategorie
+        en:                             Category
+        de:                             Kategorie
       date_view:
-        en:                             By Date
-        de:                             Nach Datum
+        en:                             Date
+        de:                             Datum
       archive_view:
-        en:                             All Posts
-        de:                             Alle Beiträge
+        en:                             All
+        de:                             Alle
       tag_view:
-        en:                             By Tag
-        de:                             Nach Tag
+        en:                             Tag
+        de:                             Tag
 
   article_navigator:
     page_text:
@@ -204,18 +207,18 @@ defaults:
         description: >
                                         Navigate through all of the articles available on this site. To do this,
                                         use the various display pages to find the articles that interest you.
-                                        The <b>By Category</b> page lists articles on a specific <b>topic</b>.
+                                        The <b>Category</b> page lists articles on a specific <b>topic</b>.
                                         If you are looking for articles by publication date, you can use the view
-                                        Use <b>By Date</b>. All articles in reverse order of appearance can be
-                                        found in the view <b>All Posts</b>.
+                                        <b>Date</b>. All articles in reverse order of appearance can be
+                                        found in the view <b>All</b>.
       de:
         description: >
                                         Navigieren Sie durch alle auf dieser Site verfügbaren Artikel. Verenden Sie
                                         dazu die verschiedenen Anzeigeseiten um die Beitäge finden, die Sie interessieren.
-                                        Die Seite <b>Nach Kategorie</b> listet Artikel zu einem bestimmten <b>Thema</b>.
+                                        Die Seite <b>Kategorie</b> listet Artikel zu einem bestimmten <b>Thema</b>.
                                         Suchen Sie nach Artikeln nach einem Erscheinungsdatum, könne Sie die Ansicht
-                                        <b>Nach Datum</b> verwenden. Alle Artikel in umgekehrter Reihenfolge ihres
-                                        Erscheinens sind in der Ansicht <b>Alle Beiträge</b> zu finden.
+                                        <b>Datum</b> verwenden. Alle Artikel in umgekehrter Reihenfolge ihres
+                                        Erscheinens sind in der Ansicht <b>Alle</b> zu finden.
 
   article_previewer:
     page_text:
@@ -225,25 +228,25 @@ defaults:
         headline:                       Preview
         description: >
                                         All articles are reverse ordered by date. The current articles are displayed
-                                        first. From the FAB button <a href="#" class="btn-fab-floating btn-small btn-md-blue">
+                                        first. From the FAB button <a href="#" class="btn-fab-floating btn-small bg-primary">
                                         <i class="mdi mdi-plus"></i>FAB button</a> you can reach a table of contents
-                                        <a href="#" class="btn-fab-floating btn-small btn-md-blue">
+                                        <a href="#" class="btn-fab-floating btn-small bg-primary">
                                         <i class="mdi mdi-wrap mdi-"></i>open_mmenu_toc</a> of all available articles
-                                        in the same order. To preview older posts, use the button <b>Older Posts</b> from
-                                        the Preview Bar. For newer posts use the button <b>Newer Posts</b> for more recent
+                                        in the same order. To preview older posts, use the button <b>Older</b> from
+                                        the Preview Bar. For newer posts use the button <b>Newer</b> for more recent
                                         articles.
       de:
         headline:                       Vorschau
         description: >
-                                        Alle Artikel sind in umgekehrter Reihenfolge ihres Erscheinens
-                                        gruppiert. Aktuellere Beiträge werden zuerst angezeigt. Über den FAB-Button
-                                        <a href="#" class="btn-fab-floating btn-small btn-md-blue">
+                                        Alle Artikel sind in umgekehrter Reihenfolge ihres Erscheinens gruppiert.
+                                        Aktuellere Beiträge werden zuerst angezeigt. Über den FAB-Button
+                                        <a href="#" class="btn-fab-floating btn-small bg-primary">
                                         <i class="mdi mdi-plus"></i>FAB button</a> erreichen Sie ein
-                                        Inhaltsverzeichnis <a href="#" class="btn-fab-floating btn-small btn-md-blue">
+                                        Inhaltsverzeichnis <a href="#" class="btn-fab-floating btn-small bg-primary">
                                         <i class="mdi mdi-wrap mdi-"></i>open_mmenu_toc</a> über alle verfübaren Artikel
                                         in gleicher Reihenfolge. Zur Anzeige älterer Artikel, verwenden Sie die Schältfläche
-                                        <b>Ältere Beiträge</b>. Für jüngere Posts klicken Sie auf die Schältfläche
-                                        <b>Neuere Beiträge</b>.
+                                        <b>Ältere</b>. Für jüngere Posts klicken Sie auf die Schältfläche
+                                        <b>Neuere</b>.
 
   archive_view:
     page_text:
@@ -255,33 +258,33 @@ defaults:
                                         Check out <b>all</b> articles in the blog posts <b>archive</b>.
                                         Below, find articles available this site sorted from the youngest
                                         to the oldest. From the FAB button <button type="button" class="btn-fab-floating
-                                        btn-small btn-md-blue raised-z5" aria-label="fab-button">
+                                        btn-small bg-primary raised-z5" aria-label="fab-button">
                                         <i class="mdi mdi-plus"></i></button> you can reach a
                                         table of contents <button type="button" class="btn-fab-floating btn-small
-                                        btn-md-blue raised-z5" aria-label="fab-button">
+                                        bg-primary raised-z5" aria-label="fab-button">
                                         <i class="mdi mdi-wrap"></i></button> of all available
                                         articles in the same order.
                                         <br><br>
                                         From the navigation bar, <b>Navigator</b> takes you back to the
                                         <b>main page</b> of the Navigator. Articles ordered by <b>category</b>
-                                        can be found in the view <b>By Category</b>. To search for posts
-                                        in the archive by <b>date</b>, go for the view <b>By Date</b>.
+                                        can be found in the view <b>Category</b>. To search for posts
+                                        in the archive by <b>date</b>, go for the view <b>Date</b>.
       de:
         headline:                       Alle Beiträge
         description: >
                                         Auf dieser Seite finden Sie alle Artikel aus dem <b>Archiv</b> der
                                         Blog-Beiträge. Die Artikel sind in umgekehrter Reihenfolge ihres Erscheinens
                                         gruppiert. Aktuellere Beiträge werden zuerst angezeigt. Über den FAB-Button
-                                        <button type="button" class="btn-fab-floating btn-small btn-md-blue raised-z5"
+                                        <button type="button" class="btn-fab-floating btn-small bg-primary raised-z5"
                                         aria-label="fab-button"> <i class="mdi mdi-plus"></i></button> erreichen Sie ein
-                                        Inhaltsverzeichnis <button type="button" class="btn-fab-floating btn-small btn-md-blue
+                                        Inhaltsverzeichnis <button type="button" class="btn-fab-floating btn-small bg-primary
                                         raised-z5" aria-label="fab-button"> <i class="mdi mdi-wrap"></i></button>
                                         über alle verfübaren Artikel in gleicher Reihenfolge.
                                         <br><br>
                                         In der Navigationszeile gelangen Sie über <b>Navigator</b> zurück zur
                                         <b>Hauptseite</b> des Navigators. Artikel nach ihrer Kategorie sind über die Seite
-                                        <b>Nach Kategorie</b> zu finden. Um Beiträge im Archiv nach <b>Datum</b>
-                                        zu durchsuchen, rufen Sie die Anzeige <b>Nach Datum</b> auf.
+                                        <b>Kategorie</b> zu finden. Um Beiträge im Archiv nach <b>Datum</b>
+                                        zu durchsuchen, rufen Sie die Anzeige <b>Datum</b> auf.
 
   category_view:
     page_text:
@@ -293,17 +296,17 @@ defaults:
                                         On this page you will find all articles from the <b>archive</b>
                                         of the blog posts. The articles are grouped by <b>category</b>.
                                         From the FAB button <button type="button" class="btn-fab-floating
-                                        btn-small btn-md-blue raised-z5" aria-label="fab-button">
+                                        btn-small bg-primary raised-z5" aria-label="fab-button">
                                         <i class="mdi mdi-plus"></i></button> you can reach a
                                         table of contents <button type="button" class="btn-fab-floating btn-small
-                                        btn-md-blue raised-z5" aria-label="fab-button">
+                                        bg-primary raised-z5" aria-label="fab-button">
                                         <i class="mdi mdi-wrap"></i></button> of all available articles
                                         in the same order.
                                         <br><br>
                                         From the navigation bar, <b>Navigator</b> takes you back to the
                                         <b>main page</b> of the Navigator. To search for articles in the
-                                        archive by date, go for the view <b>By Date</b>. All articles in
-                                        reverse order of appearance can be found in the view <b>All Posts</b>.
+                                        archive by date, go for the view <b>Date</b>. All articles in
+                                        reverse order of appearance can be found in the view <b>All</b>.
 
       de:
         headline:                       Artikel nach Kategorie
@@ -311,18 +314,18 @@ defaults:
                                         Auf dieser Seite finden Sie alle Artikel aus dem <b>Archiv</b> der
                                         Blog-Beiträge. Die Artikel sind nach <b>Kategorie</b> gruppiert.
                                         Über den FAB-Button
-                                        <button type="button" class="btn-fab-floating btn-small btn-md-blue raised-z5"
+                                        <button type="button" class="btn-fab-floating btn-small bg-primary raised-z5"
                                         aria-label="fab-button"> <i class="mdi mdi-plus"></i></button>
                                         erreichen Sie ein Inhaltsverzeichnis
-                                        <button type="button" class="btn-fab-floating btn-small btn-md-blue
+                                        <button type="button" class="btn-fab-floating btn-small bg-primary
                                         raised-z5" aria-label="fab-button"> <i class="mdi mdi-wrap"></i></button>
                                         über alle verfübaren Artikel in gleicher Reihenfolge.
                                         <br><br>
                                         In der Navigationszeile gelangen Sie über <b>Navigator</b> zurück zur
                                         <b>Hauptseite</b> des Navigators. Um Artikel im Archiv nach <b>Datum</b>
-                                        zu durchsuchen, rufen Sie die Anzeige <b>Nach Datum</b> auf. Alle Artikel
+                                        zu durchsuchen, rufen Sie die Anzeige <b>Datum</b> auf. Alle Artikel
                                         in umgekehrter Reihenfolge ihres Erscheinens sind in der Ansicht
-                                        <b>Alle Beiträge</b> zu finden.
+                                        <b>Alle</b> zu finden.
 
   date_view:
     page_text:
@@ -334,34 +337,34 @@ defaults:
                                         On this page you will find all articles from the <b>archive</b>
                                         of the blog posts. The articles are grouped by <b>Date</b>.
                                         From the FAB button <button type="button" class="btn-fab-floating
-                                        btn-small btn-md-blue raised-z5" aria-label="fab-button">
+                                        btn-small bg-primary raised-z5" aria-label="fab-button">
                                         <i class="mdi mdi-plus"></i></button> you can reach a
                                         table of contents <button type="button" class="btn-fab-floating btn-small
-                                        btn-md-blue raised-z5" aria-label="fab-button">
+                                        bg-primary raised-z5" aria-label="fab-button">
                                         <i class="mdi mdi-wrap"></i></button> of all available articles
                                         in the same order.
                                         <br><br>
                                         From the navigation bar, <b>Navigator</b> takes you back to the
                                         <b>main page</b> of the Navigator. To search for articles in the
-                                        archive by category, go for the view <b>By Category</b>. All articles
-                                        in reverse order of appearance can be found in the view <b>All Posts</b>.
+                                        archive by category, go for the view <b>Category</b>. All articles
+                                        in reverse order of appearance can be found in the view <b>All</b>.
       de:
         headline:                       Artikel nach Datum
         description: >
                                         Auf dieser Seite finden Sie alle Artikel aus dem <b>Archiv</b> der
                                         Blog-Beiträge. Die Artikel sind nach <b>Datum</b> gruppiert.
                                         Über den FAB-Button <button type="button" class="btn-fab-floating
-                                        btn-small btn-md-blue raised-z5" aria-label="fab-button">
+                                        btn-small bg-primary raised-z5" aria-label="fab-button">
                                         <i class="mdi mdi-plus"></i></button> erreichen Sie ein
                                         Inhaltsverzeichnis <button type="button" class="btn-fab-floating btn-small
-                                        btn-md-blue raised-z5" aria-label="fab-button">
+                                        bg-primary raised-z5" aria-label="fab-button">
                                         <i class="mdi mdi-wrap"></i></button> über alle verfübaren Artikel
                                         in gleicher Reihenfolge.
                                         <br><br>
                                         In der Navigationszeile gelangen Sie über <b>Navigator</b> zurück zur
                                         <b>Hauptseite</b> des Navigators. Um Artikel im Archiv nach <b>Kategorien</b> zu durchsuchen,
-                                        rufen Sie die Anzeige <b>Nach Kategorie</b> auf. Alle Artikel in umgekehrter
-                                        Reihenfolge ihres Erscheinens sind in der Ansicht <b>Alle Beiträge</b>
+                                        rufen Sie die Anzeige <b>Kategorie</b> auf. Alle Artikel in umgekehrter
+                                        Reihenfolge ihres Erscheinens sind in der Ansicht <b>Alle</b>
                                         zu finden.
 
   tag_view:
@@ -374,34 +377,34 @@ defaults:
                                         On this page you will find all articles from the <b>archive</b>
                                         of the blog posts. The articles are grouped by <b>Tag</b>.
                                         From the FAB button <button type="button" class="btn-fab-floating
-                                        btn-small btn-md-blue raised-z5" aria-label="fab-button">
+                                        btn-small bg-primary raised-z5" aria-label="fab-button">
                                         <i class="mdi mdi-plus"></i></button> you can reach a
                                         table of contents <button type="button" class="btn-fab-floating btn-small
-                                        btn-md-blue raised-z5" aria-label="fab-button">
+                                        bg-primary raised-z5" aria-label="fab-button">
                                         <i class="mdi mdi-wrap"></i></button> of all available articles
                                         in the same order.
                                         <br><br>
                                         From the navigation bar, <b>Navigator</b> takes you back to the
                                         <b>main page</b> of the Navigator. To search for articles in the
-                                        archive by category, go for the view <b>By Category</b>. All articles
-                                        in reverse order of appearance can be found in the view <b>All Posts</b>.
+                                        archive by category, go for the view <b>Category</b>. All articles
+                                        in reverse order of appearance can be found in the view <b>All</b>.
       de:
         headline:                       Artikel nach Tag
         description: >
                                         Auf dieser Seite finden Sie alle Artikel aus dem <b>Archiv</b> der
                                         Blog-Beiträge. Die Artikel sind nach <b>Tag</b> gruppiert.
                                         Über den FAB-Button <button type="button" class="btn-fab-floating
-                                        btn-small btn-md-blue raised-z5" aria-label="fab-button">
+                                        btn-small bg-primary raised-z5" aria-label="fab-button">
                                         <i class="mdi mdi-plus"></i></button> erreichen Sie ein
                                         Inhaltsverzeichnis <button type="button" class="btn-fab-floating btn-small
-                                        btn-md-blue raised-z5" aria-label="fab-button">
+                                        bg-primary raised-z5" aria-label="fab-button">
                                         <i class="mdi mdi-wrap"></i></button> über alle verfübaren Artikel
                                         in gleicher Reihenfolge.
                                         <br><br>
                                         In der Navigationszeile gelangen Sie über <b>Navigator</b> zurück zur
                                         <b>Hauptseite</b> des Navigators. Um Artikel im Archiv nach <b>Kategorien</b> zu durchsuchen,
-                                        rufen Sie die Anzeige <b>Nach Kategorie</b> auf. Alle Artikel in umgekehrter
-                                        Reihenfolge ihres Erscheinens sind in der Ansicht <b>Alle Beiträge</b>
+                                        rufen Sie die Anzeige <b>Kategorie</b> auf. Alle Artikel in umgekehrter
+                                        Reihenfolge ihres Erscheinens sind in der Ansicht <b>Alle</b>
                                         zu finden.
 
 # ------------------------------------------------------------------------------

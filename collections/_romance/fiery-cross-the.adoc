@@ -1,0 +1,100 @@
+---
+title:                                  The Fiery Cross
+tagline:                                Unrivalled storytelling
+date:                                   2016-11-26 00:00:00
+description: >
+                                        The story of Outlander begins just after the Second World War, when a British
+                                        field nurse named Claire Randall walks through a cleft stone in the Scottish
+                                        highlands and is transported back some two hundred years to 1743. Here, now,
+                                        is The Fiery Cross, the eagerly awaited fifth volume in this remarkable,
+                                        award-winning series of historical novels. The year is 1771, and war is
+                                        approaching. Jamie Fraser s wife has told him so.
+
+categories:                             [ Books ]
+tags:                                   [ Romance ]
+
+image:
+  path:                                 https://d20eq91zdmkqd.cloudfront.net/assets/images/book/large/9780/4402/9780440221661.jpg
+
+book:
+  cover:                                https://d20eq91zdmkqd.cloudfront.net/assets/images/book/large/9780/4402/9780440221661.jpg
+  format:                               paperback
+  pages:                                1443
+  publisher:                            Random House USA Inc
+  author:                               Diana Gabaldon
+  ISBN10:                               0440221668
+  ISBN13:                               9780440221661
+  rank:                                 820
+
+toc:                                    false
+fab_menu_id:                            default
+scrollbar:                              false
+regenerate:                             false
+
+resources:                              [ animate ]
+resource_options:
+  - attic:
+      padding_top:                      600
+      slides:
+        - url:                          /assets/images/modules/attics/giammarco-boscaro-1920x1280.jpg
+          alt:                          Photo by Giammarco on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Giammarco
+            href:                       https://unsplash.com/@giamboscaro
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+// Place an excerpt at the most top position
+// -----------------------------------------------------------------------------
+In the ten years since her extraordinary debut novel, Outlander, was published,
+beloved author Diana Gabaldon has entertained scores of readers with her
+heart-stirring stories and remarkable characters. The four volumes of her
+bestselling saga, featuring eighteenth-century Scotsman James Fraser and
+his twentieth-century, time-travelling wife, Claire Randall, boasts nearly
+5 million copies in the U.S.
+
+excerpt__end
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[[readmore]]
+[role="mt-4"]
+image:{{page.book.cover}}[width=350, role="mr-4 mb-5 float-left"]
+
+Crossing the boundaries of genre with its unrivalled storytelling, Diana
+Gabaldon's new novel is a gift both to her millions of loyal fans and to
+the lucky readers who have yet to discover her.
+
+The story of Outlander begins just after the Second World War, when a British
+field nurse named Claire Randall walks through a cleft stone in the Scottish
+highlands and is transported back some two hundred years to 1743. Here, now,
+is The Fiery Cross, the eagerly awaited fifth volume in this remarkable,
+award-winning series of historical novels. The year is 1771, and war is
+approaching. Jamie Fraser s wife has told him so.
+
+Little as he wishes to, he must believe it, for hers is a gift of dreadful
+prophecy a time-traveller s certain knowledge. To break his oath to the
+Crown will brand him a traitor; to keep it is certain doom. Jamie Fraser
+stands in the shadow of the fiery cross a standard that leads nowhere but
+to the bloody brink of war.

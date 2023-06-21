@@ -17,10 +17,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Navigator
   scope:                                Default settings
   location:                             _data/modules/defaults/navigator.yml
@@ -86,12 +85,14 @@ defaults:
     fixed:                              true
     style:                              overlay
     color:                              light
+    nav_item_color:                     '#212121'                               # gray-900|rgba-lighten
+    nav_item_color_hover:               '#EEEEEE'                               # gray-200|rgba-lighten-400
+    nav_item_background_image:          'linear-gradient(#afabab, #1c1c1c 40%, #212121);'
     position:                           left
     bottom_line_height:                 1
     bottom_line_color:                  "#EEEEEE"                               # md-grey-200
-    background_color_full:              rgba(0, 0, 0, 0.8)                      # darken-600
-    background_color_collapsed:         "#2196F3"                               # md-blue
-    background_color_scrolled:          "#2196F3"                               # md-blue
+    background_color_full:              'rgba(255, 255, 255, 0.8)'              # rgba(0, 0, 0, 0.8) lighten-800
+    background_color_scrolled:          'var(--bs-primary)'                     # default: theme|bs-primary
 
   # ----------------------------------------------------------------------------
   # NavMenu (Mobile)
@@ -135,8 +136,8 @@ defaults:
     icon_style:                         mdi                                     # far regular icon
     icon_color:                         "#9E9E9E"                               # md-grey
     icon_size:                          mdi-sm
-    menu_item_color:                    rgba(255, 255, 255, 0.9)                # rgba-lighten
-    menu_item_color_hover:              rgba(255, 255, 255, 0.5)                # rgba-lighten-900
+    menu_item_color:                    '#212121'                               # gray-900 rgba-lighten
+    menu_item_color_hover:              '#EEEEEE'                               # gray-500 rgba-lighten-900
     dropdown_style:                     raised
     dropdown_color:                     '#2196f3'
     dropdown_left:                      12                                      # px
@@ -146,7 +147,7 @@ defaults:
     dropdown_animate_out:               fadeOutDown
     dropdown_animate_duration:          .75                                     # seconds
     dropdown_item_min_width:            15                                      # rem
-    dropdown_menu_max_height:           30                                      # rem
+    dropdown_menu_max_height:           35                                      # rem
     dropdown_font_size:                 small
     dropdown_padding_x:                 18                                      # rem
     dropdown_padding_y:                 10                                      # px
@@ -168,14 +169,14 @@ defaults:
     xhr_data_path:                      /assets/data/quicklinks/index.html
 
     icon_family:                        MDI
-    icon_color:                         rgba(255, 255, 255, 0.5)                # rgba-lighten
-    icon_color_hover:                   rgba(255, 255, 255, 0.9)                # rgba-lighten-900
+    icon_color:                         '#212121'                               # gray-900
+    icon_color_hover:                   '#757575'                               # gray-600
     icon_size:                          mdi-2x
 
     # Link buttons
     # --------------------------------------------------------------------------
     home_icon:                          home-variant
-    home_url:                           none
+    home_url:                           /                                       # URL | none (disables the home button)
     home_label:                         Home
 
     back_icon:                          subdirectory-arrow-left
@@ -216,9 +217,13 @@ defaults:
     translate_action:                   translate
     translate_label:                    Google Translate
 
-    notebooks_icon:                     notebook
-    notebooks_action:                   nbi-notebooks
-    notebooks_label:                    NBI Notebooks
+    theme_toggler_icon:                 lightbulb-outline
+    theme_toggler_action:               themeToggler
+    theme_toggler_label:                Theme Toggler
+
+#   notebooks_icon:                     notebook
+#   notebooks_action:                   nbi-notebooks
+#   notebooks_label:                    NBI Notebooks
 
     r_text_icon:                        false                                   # format-text
     r_text_action:                      rtext

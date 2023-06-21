@@ -165,6 +165,9 @@ lanes:
   #   set to 'true to generate the required placeholder. The property
   #   'enabled' of a master header to switch on|off an attic is set on a
   #   per LAYOUT basis defined in the attics configuration file 'attics.yml'.
+  # NOTE:
+  #   If the default header (attic) is DISABLED (enabled set to false),
+  #   the correcponding module has to be DISABLED as well
   # ----------------------------------------------------------------------------
   #
   - lane:
@@ -175,6 +178,15 @@ lanes:
       base:                             _includes/themes/j1
       path:                             modules/attics
       file:                             generator.html
+
+  - lane:
+      enabled:                          false
+      id:                               custom_header
+      region:                           body-header
+      type:                             sync
+      base:                             _includes/custom
+      path:                             templates
+      file:                             custom_header.html
 
   # ----------------------------------------------------------------------------
   # CONTENT region (region body-main)
@@ -209,7 +221,7 @@ lanes:
   #
   - lane:
       enabled:                          true
-      id:                               home_teaser_banner
+      id:                               banner_home_teaser
       region:                           body-main
       type:                             async
       properties:                       elevated-z0
@@ -229,10 +241,10 @@ lanes:
   #
   - lane:
       enabled:                          false
-      id:                               divider-1
+      id:                               banner_divider_1
       region:                           body-main
       type:                             async
-      properties:                       mt-4 mr-0 mb-4 ml-0
+      properties:                       row banner-divider mt-4 mr-0 mb-4 ml-0
 
   # ----------------------------------------------------------------------------
   # IMAGE banner
@@ -250,7 +262,7 @@ lanes:
   #
   - lane:
       enabled:                          false
-      id:                               home_image_banner
+      id:                               banner_home_image
       region:                           body-main
       type:                             async
 
@@ -262,7 +274,7 @@ lanes:
   #   NOTE:
   #
   #   For Jekyll, only includes from folder '~/_includes' are accepted
-  #   to load HTML data (include) files from.
+  #   to load|include HTML data files from.
   #
   # ----------------------------------------------------------------------------
   #
@@ -284,27 +296,23 @@ lanes:
       path:                             templates
       file:                             bs5_accordion.html
 
-  # ----------------------------------------------------------------------------
-  # SERVICE panel
-  #
-  #   Complex, but fully configurake display element (mainly used on landing
-  #   pages) to give a detailed inside view on the services provided by
-  #   the website. Find the configuration with:
-  #
-  #     panels:  ~/_data/blocks/panel.yml
-  #
-  # NOTE:
-  #   The property 'id' of a panel element MUST be the same as specified
-  #   the configuration for panels (panel.yml).
-  #
-  # ----------------------------------------------------------------------------
-  #
   - lane:
       enabled:                          false
-      id:                               home_service_panel
+      id:                               custom_content
       region:                           body-main
-      type:                             async
-      properties:                       elevated-z3
+      type:                             sync
+      base:                             _includes/custom
+      path:                             templates
+      file:                             people_panel.html
+
+  - lane:
+      enabled:                          false
+      id:                               custom_content
+      region:                           body-main
+      type:                             sync
+      base:                             _includes/custom
+      path:                             templates
+      file:                             collection_panel.html
 
   # ----------------------------------------------------------------------------
   # INTRO panel
@@ -323,10 +331,10 @@ lanes:
   #
   - lane:
       enabled:                          true
-      id:                               home_intro_panel
+      id:                               panel_home_intro
       region:                           body-main
       type:                             async
-      properties:                       elevated-z3
+      properties:                       elevated-z1
 
   # ----------------------------------------------------------------------------
   # PARALLAX banner
@@ -345,10 +353,32 @@ lanes:
   #
   - lane:
       enabled:                          false
-      id:                               home_parallax_banner
+      id:                               banner_home_parallax
       region:                           body-main
       type:                             async
       properties:                       elevated-z0
+
+  # ----------------------------------------------------------------------------
+  # SERVICE panel
+  #
+  #   Complex, but fully configurake display element (mainly used on landing
+  #   pages) to give a detailed inside view on the services provided by
+  #   the website. Find the configuration with:
+  #
+  #     panels:  ~/_data/blocks/panel.yml
+  #
+  # NOTE:
+  #   The property 'id' of a panel element MUST be the same as specified
+  #   the configuration for panels (panel.yml).
+  #
+  # ----------------------------------------------------------------------------
+  #
+  - lane:
+      enabled:                          false
+      id:                               panel_home_service
+      region:                           body-main
+      type:                             async
+      properties:                       elevated-z1
 
   # ----------------------------------------------------------------------------
   # PLAN panel
@@ -366,11 +396,11 @@ lanes:
   # ----------------------------------------------------------------------------
   #
   - lane:
-      enabled:                          true
-      id:                               home_plan_panel
+      enabled:                          false
+      id:                               panel_home_plan
       region:                           body-main
       type:                             async
-      properties:                       elevated-z3
+      properties:                       elevated-z1
 
   # ----------------------------------------------------------------------------
   # NEWS panel
@@ -388,7 +418,7 @@ lanes:
   #
   - lane:
       enabled:                          true
-      id:                               home_news_panel
+      id:                               panel_home_news
       region:                           body-main
       type:                             async
       properties:                       elevated-z0

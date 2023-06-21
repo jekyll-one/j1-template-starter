@@ -1,0 +1,96 @@
+---
+title:                                  Harry Potter and the Deathly Hallows
+tagline:                                Lord Voldemort and the Death Eaters ..
+date:                                   2016-11-17 00:00:00
+description: >
+                                        The Dark Lord is breathing fear into everything Harry loves, and to stop him
+                                        Harry will have to find and destroy the remaining Horcruxes. The final battle
+                                        must begin - Harry must stand and face his enemy. These new editions of the
+                                        classic and internationally bestselling, multi-award-winning series feature
+                                        instantly pick-up-able new jackets by Jonny Duddle, with huge child appeal,
+                                        to bring Harry Potter to the next generation of readers.
+
+categories:                             [ Books ]
+tags:                                   [ Fantasy ]
+
+image:
+  path:                                 https://d4rri9bdfuube.cloudfront.net/assets/images/book/large/9781/4088/9781408855713.jpg
+
+book:
+  cover:                                https://d4rri9bdfuube.cloudfront.net/assets/images/book/large/9781/4088/9781408855713.jpg
+  format:                               paperback
+  pages:                                640
+  publisher:                            Bloomsbury Publishing PLC
+  author:                               J. K. Rowling
+  ISBN10:                               1408855712
+  ISBN13:                               9781408855713
+  rank:                                 797
+
+toc:                                    false
+fab_menu_id:                            default
+scrollbar:                              false
+regenerate:                             false
+
+resources:                              [ animate ]
+resource_options:
+  - attic:
+      padding_top:                      600
+      slides:
+        - url:                          /assets/images/modules/attics/giammarco-boscaro-1920x1280.jpg
+          alt:                          Photo by Giammarco on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Giammarco
+            href:                       https://unsplash.com/@giamboscaro
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+// Place an excerpt at the most top position
+// -----------------------------------------------------------------------------
+As he climbs into the sidecar of Hagrid's motorbike and takes to the skies,
+leaving Privet Drive for the last time, Harry Potter knows that Lord Voldemort
+and the Death Eaters are not far behind. The protective charm that has kept
+Harry safe until now is now broken, but he cannot keep hiding.
+
+excerpt__end
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+[[readmore]]
+[role="mt-4"]
+image:{{page.book.cover}}[width=350, role="mr-4 mb-5 float-left"]
+
+The Dark Lord is breathing fear into everything Harry loves, and to stop him
+Harry will have to find and destroy the remaining Horcruxes. The final battle
+must begin - Harry must stand and face his enemy. These new editions of the
+classic and internationally bestselling, multi-award-winning series feature
+instantly pick-up-able new jackets by Jonny Duddle, with huge child appeal,
+to bring Harry Potter to the next generation of readers.
+
+The Dark Lord is breathing fear into everything Harry loves, and to stop him
+Harry will have to find and destroy the remaining Horcruxes. The final battle
+must begin - Harry must stand and face his enemy. These new editions of the
+classic and internationally bestselling, multi-award-winning series feature
+instantly pick-up-able new jackets by Jonny Duddle, with huge child appeal,
+to bring Harry Potter to the next generation of readers.

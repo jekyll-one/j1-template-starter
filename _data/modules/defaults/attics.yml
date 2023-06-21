@@ -19,12 +19,15 @@
 #   HTML data for a layout, the loader procedure places the data based this
 #   YAML data file into the REGION specified with a LANE.
 # ------------------------------------------------------------------------------
+# NOTE:
+#   Animations on tite|tagline are taken from 'animate.css'
+#   See: https://animate.style/
+# ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Attics
   scope:                                Default settings
   location:                             _data/modules/defaults/header.yml
@@ -33,58 +36,78 @@ description:
 # Default configuration settings
 #
 defaults:
+  enabled:                              true
 
   # ----------------------------------------------------------------------------
   # Global settings for text- and image-based header
   #
   debug:                                false
+  hide_page_oninit:                     true                                    # hide page on 'init' to optimze LCP (loading images ???)
 
   circuit:                              false
   notranslate:                          true
   pauseOnHover:                         false
 
-  icon_family:                          MDI
+  icon_family:                          MDI                                     # MDI | FontAweSome
   icon_color:                           "#9E9E9E"                               # md-gray
   icon_size:                            default
 
   raised_level:                         0
   r_text:                               enabled
   text_emphasis:                        stronger
-  padding_top:                          200
+
+  padding_top:                          400
   padding_bottom:                       50
   margin_bottom:                        50
 
   title_size:                           3em
   title_color:                          rgba(255, 255, 255, 0.8)                # rgba_lighten_800
-  title_animate:                        animate__bounceInDown                   # fadeInDown fadeInLeft
-  title_animate_duration:               animate__slower
-# title_animate_delay:                  animate__delay-2s
-  title_align:                          left
+  title_align:                          left                                    # left | center| right (BS text alignments text-xxx)
+  title_animate:                        animate__bounceInDown                   # all animations supported from 'animate.css'
+  title_animate_delay:                  false                                   # false | animate__delay-2s | animate__delay-3s | animate__delay-4s | animate__delay-5s
+  title_animate_duration:               animate__slow                           # false | animate__slow | animate__slower | animate__fast | animate__faster
 
   tagline_size:                         1.5em
-  tagline_color:                        rgba(255, 255, 255, 0.8)                # rgba_lighten_800
-  tagline_animate:                      animate__fadeInRight
-  tagline_animate_duration:             animate__slower
-# tagline_animate_delay:                animate__delay-2s
+  tagline_color:                        rgba(255, 255, 255, 0.8)
   tagline_align:                        left
+  tagline_animate:                      animate__fadeInRight
+  tagline_animate_delay:                false
+  tagline_animate_duration:             animate__slow
 
-  # gradient effect (all image color typas)
+  # gradient effect (all image color types)
   #
-# background_color_1:                   "#000"                                  # black
-# background_color_2:                   "#78909C"                               # md-bluegray-400
+  # background_color_1:                   "#000"                                # black
+  # background_color_2:                   "#78909C"                             # md-bluegray-400
 
   # duo-color effect, base color 'blue' (requires gray-scaled images)
   #
   background_color_1:                   "#0D47A1"                               # md-blue-900
   background_color_2:                   "#0D47A1"                               # md-blue-900
 
+  # placeholder slide, used if NO slides given in FRONTMATTER (of a page|post)
+  #
+  slides:
+    - url:                              /assets/images/modules/attics/placeholder/transparent-1920x1280.png
+      alt:                              Placeholder background image
+
+  # CSS filter setting applied on (backstretch|background) image
+  #
+  filters:
+    grayscale:                          1
+    contrast:                           0.8
+    brightness:                         0.8
+
+  # currently NOT supported
+  #
   action_enabled:                       false
-  action_url:                           "#void"
+  action_url:                           "#"
   action_button:                        btn-default
   action_icon:                          download                                # cloud-action
-  action_icon_family:                   MDI                                     # FontAweSome
+  action_icon_family:                   MDI                                     # MDI | FontAweSome
   action_text:                          Download Now
 
+  # currently NOT supported
+  #
   logo_enabled:                         false
   logo_url:                             /assets/images/modules/icons/j1/j1-512x512.png
   logo_alt:                             Jekyll-One-Template
@@ -107,7 +130,7 @@ defaults:
 
   # Sets the opacity for all header images. Can be
   #  any number between 0.0 and 1.0
-  opacity:                              1.0
+  opacity:                              0.5
   # alignX, the x-alignment for the image, can be
   # 'left'|'center'|'right' or any number between 0.0 and 1.0
   alignX:                               0.5
@@ -142,7 +165,7 @@ defaults:
   paused:                               false
 
   # preload, controls how many images preload at a time
-  preload:                              2
+  preload:                              5
 
   # preloadSize, controls how many images are preloaded
   # in parallel
@@ -176,7 +199,7 @@ defaults:
 
 
   # ----------------------------------------------------------------------------
-  # Attic properties (Layout specific settings)
+  # Attic layout properties (Layout specific)
   #
   attics:
 

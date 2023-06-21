@@ -1,0 +1,98 @@
+<!--
+ # -----------------------------------------------------------------------------
+ #  ~/assets/custom/content/templates/bs5_accordion.html
+ #
+ #  Product/Info:
+ #  http://jekyll.one
+ #
+ #  Copyright (C) 2023 Juergen Adams
+ #
+ #  J1 Theme is licensed under the MIT License.
+ #  See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+ #
+ # -----------------------------------------------------------------------------
+ # NOTE:
+ # Find the accordion example @BS5:
+ #    https://getbootstrap.com/docs/5.2/components/accordion/
+ # -----------------------------------------------------------------------------
+ # Test data:
+ #    liquid_var:  {{liquid_var | debug}}
+ # -----------------------------------------------------------------------------
+-->
+
+<!-- Custom Header -->
+<!-- [INFO   ] [~/_includes/custom/templates/custom_header.html     ] [ create attic for layout: {{page.layout}}] -->
+<header class="masthead bg-primary text-white text-center mb-4">
+  <div class="container d-flex align-items-center flex-column">
+
+    <!-- Masthead Image-->
+    <div class="row">
+      <!-- img class="masthead-avatar mb-5" src="/assets/images/custom/header/avatar.svg" alt="Avatar" aria-label="Avatar" -->
+      <!-- img class="masthead-image" src="/assets/images/custom/header/family.svg" alt="Family Cartoon" aria-label="Family Cartoon" -->
+      <!-- img class="masthead-image" src="{{page.image.path}}" alt="{{page.image.alt}}" aria-label="{{page.image.alt}}" -->
+      <img class="masthead-image" src="/assets/images/custom/header/family.svg" alt="Family Cartoon" aria-label="Family Cartoon">
+    </div>
+    <!-- /Masthead Image-->
+
+    <!-- Masthead Title|Tagline -->
+    <div class="mt-5">
+      <div id="head-title" class="animate__animated animate__fadeInLeft animate__slower">
+        <h1 class="masthead-heading text-uppercase mb-0">{{page.title}}</h1>
+      </div>
+
+      <div id="head-tagline" class="animate__animated animate__fadeInLeft animate__slower">
+        <p class="masthead-subheading font-weight-light mb-0">{{page.tagline}}</p>
+      </div>
+    </div>
+    <!-- /Masthead Title|Tagline -->
+
+  </div>
+</header>
+<!-- /Custom Header -->
+
+<!-- Custom Header CSS -->
+<style>
+.masthead {
+  padding-top: calc(6rem + 80px);
+  padding-bottom: 4rem;
+
+  .masthead-heading {
+    font-size: 2.75rem;
+    line-height: 2.75rem;
+  }
+
+  .masthead-subheading {
+    font-size: 1.25rem;
+  }
+
+  .masthead-avatar {
+    width: 15rem;
+  }
+
+  .masthead-image {
+    width: 60rem;
+  }
+
+  /* BS 'md' */
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    .masthead-image {
+      width: 40rem;
+    }
+  }
+
+  /* BS 'sm' */
+  @media only screen and (min-width: 576px) and (max-width: 768px) {
+    .masthead-image {
+      width: 30rem;
+    }
+  }
+
+  /* BS 'xs' */
+  @media only screen and (max-width: 480px)  {
+    .masthead-image {
+      width: 30rem;
+    }
+  }
+}
+</style>
+<!-- /Custom Header CSS -->

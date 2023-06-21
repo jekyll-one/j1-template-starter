@@ -2,16 +2,14 @@
 layout:                                 home
 compress:                               true
 
-title:                                  Jekyll One
-tagline:                                Explore What Jekyll Can Do
+title:                                  Starter
+tagline:                                Build-In Theme
 description: >
-                                        Jekyll One Theme. JekyllOne is a Gem-based Theme made for the
-                                        Static Site Generator (SSG) Jekyll. J1 Theme meets Jekyll and
-                                        Bootstrap. And makes a lot of friends. The template system
-                                        combines the best of free software for the web. Jekyll One
-                                        Theme is OpenSource and the modules included are free to use
-                                        as well.
-
+                                        The Jekyll One Starter theme gives web developers and
+                                        hobbyists a clean implementation in Jekyll for starting
+                                        new projects and combines the best of open source software
+                                        for the Web. Jekyll One is open source and the modules packed
+                                        as well. No pain for private or professional purposes.
 keywords: >
                                         Jekyll, Jekyll, JekyllOne, Theme, Template, Ruby, Gem
 
@@ -22,23 +20,30 @@ robots:
   index:                                true
   follow:                               true
 
+# image:
+#   path:                               /assets/images/custom/header/avatar.svg # family.svg
+#   width:                              1920
+#   height:                             1200
+#   alt:                                Avatar                                  # Family Cartoon
+
 image:
   path:                                 /assets/images/modules/attics/1920x1280/kristopher-roller.jpg
   width:                                1920
   height:                               1200
   alt:                                  Photo by Kristopher Roller on Unsplash
 
-personalization:                        false
-comments:                               false
-exclude_from_search:                    false
-
+toc:                                    false
 fab_menu_id:                            default
 scrollbar:                              false
-toc:                                    false
+comments:                               false
+personalization:                        false
+exclude_from_search:                    false
 regenerate:                             false
 
 accordion:
+  enabled:                              false
   debug:                                false
+
   name:                                 custom_panel
   id:                                   bs5_accordion
 
@@ -86,48 +91,19 @@ accordion:
                                         noting that just about any HTML can go within the <code>.accordion-body</code>, though the
                                         transition does limit overflow.
 
-resources:                              [ animate, iconify, scroller ]
+# resources:                           []
+resources:                             [ animate, scroller ]
 resource_options:
   - attic:
-      circuit:                          true
-      pauseOnHover:                     true
-      padding_top:                      550
-      duration:                         6000
-      transition:                       push_left|cover_up|cover_down|fade|fadeInOut
-      transitionDuration:               1200
+#     duration:                         100
+#     transitionDuration:               fast
       slides:
         - url:                          /assets/images/modules/attics/1920x1280/kristopher-roller.jpg
           alt:                          Photo by Kristopher Roller on Unsplash
-          title:                        Jekyll One
-          tagline:                      Explore What Jekyll Can Do
           badge:
             type:                       unsplash
             author:                     Kristopher Roller
             href:                       https://unsplash.com/@krisroller
-#        - url:                          /assets/images/modules/attics/1920x1280/brad-neathery.jpg
-#          alt:                          Photo by Brad Neathery on Unsplash
-#          title:                        Setup A Site In No Time
-#          tagline:                      Ready-to-use Build-in Web Available
-#          badge:
-#            type:                       unsplash
-#            author:                     Brad Neathery
-#            href:                       https://unsplash.com/@bradneathery
-#        - url:                          /assets/images/modules/attics/1920x1280/fly-d.jpg
-#          alt:                          Photo by FLY:D on Unsplash
-#          title:                        Create Your Web
-#          tagline:                      Modern, Fast and Secure Websites
-#          badge:
-#            type:                       unsplash
-#            author:                     FLY:D
-#            href:                       https://unsplash.com/@flyd2069
-#        - url:                          /assets/images/modules/attics/1920x1280/nasa.jpg
-#          alt:                          Photo by NASA on Unsplash
-#          title:                        Using J1 Theme Now
-#          tagline:                      Go For Rocketstart And Create A Site In Minutes
-#          badge:
-#            type:                       unsplash
-#            author:                     NASA
-#            href:                       https://unsplash.com/@nasa
 ---
 
 <pre>

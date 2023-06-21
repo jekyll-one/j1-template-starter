@@ -21,18 +21,6 @@ description:
   location:                             _data/plugins/paginator.yml
 
 # ------------------------------------------------------------------------------
-# GENERAL plugin settings
-#
-# enabled
-# ------------------------------------------------------------------------------
-#   Enables|Disables the plugin for processing
-#
-#   values:                             true|false (boolean)
-#   default:                            false
-#
-#enabled:                                true
-
-# ------------------------------------------------------------------------------
 # User configuration settings
 #
 settings:
@@ -47,11 +35,20 @@ settings:
     sort_reverse:                       true
     title:                              :title
 
+  # ----------------------------------------------------------------------------
   # AUTOPAGE settings
   #
   autopages:
     enabled:                            false
-    rebuild:                            false                                   # currently NOT used
+
+    tags:
+      enabled:                          false
+
+    categories:
+      enabled:                          false
+
+    collections:
+      enabled:                          false
 
 # ------------------------------------------------------------------------------
 # END config

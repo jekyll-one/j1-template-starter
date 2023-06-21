@@ -18,32 +18,26 @@ robots:
   index:                                false
   follow:                               false
 
-personalization:                        false
-comments:                               false
-exclude_from_search:                    false
-
 image:
   path:                                 /assets/images/modules/attics/sigmund-1920x1280.jpg
   width:                                1920
   height:                               1280
   alt:                                  Photo by Sigmund on Unsplash
 
-fab_menu_id:                            page_ctrl
+personalization:                        false
+comments:                               false
+exclude_from_search:                    false
+fab_menu_id:                            open_toc
 scrollbar:                              false
 toc:                                    true
-
+regenerate:                             false
 permalink:                              /pages/public/skeleton/documentation/
-regenerate:                             true
 
 resources:                              [ animate, clipboard, lightbox, rouge ]
 resource_options:
   - toccer:
       collapseDepth:                    3
   - attic:
-      padding_top:                      400
-      padding_bottom:                   50
-      opacity:                          0.5
-      alignY:                           0.3
       slides:
         - url:                          /assets/images/modules/attics/sigmund-1920x1280.jpg
           alt:                          Photo by Sigmund on Unsplash

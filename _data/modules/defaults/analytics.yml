@@ -16,10 +16,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Analytics
   scope:                                Default settings
   location:                             _data/modules/default/analytics.yml
@@ -53,8 +52,10 @@ defaults:
   enabled:                              false
 
   provider:                             google
-  google:
+  trackingID:                           your-tracking-id
+  skipAllHosts:                         localhost, 127.0.0.1
 
+  google:
     # --------------------------------------------------------------------------
     # Provider settings
     #
@@ -62,7 +63,8 @@ defaults:
     #   ------------------------------------------------------------------------
     #   All hosts skipped for Google Analytics (GA script NOT installed).
     #   Prevent counting of page views (for e.g. development), even GA is
-    #   'enabled' and a valid trackingID is configured.
+    #   'enabled' and a valid trackingID is configured, the default setting
+    #   is recommended.
     #
     #   values:                         comma separated string
     #   default:                        localhost, 127.0.0.1
@@ -95,10 +97,8 @@ defaults:
     #
     # --------------------------------------------------------------------------
     #
-    skipAllHosts:                       localhost, 127.0.0.1
-
     optInOut:                           true
-    anonymizeIP:                        true
+    anonymizeIP:                        false
 
 # ------------------------------------------------------------------------------
 # END config

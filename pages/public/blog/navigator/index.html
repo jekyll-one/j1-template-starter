@@ -1,16 +1,15 @@
 ---
 layout:                                 page
-title:                                  Starter Blog
+
+title:                                  Navigator
 tagline:                                Explore Posts
 date:                                   2022-01-01 01:00:00
 description: >
-                                        When it comes to the usability of a website, the focus of your
-                                        visitors is on one important component: The Navigation System
-                                        of the site. To make all posts using J1 Theme easy accessible
-                                        to the visitors, the Navigation System of the Jekyll Template
-                                        provides a Blog Explorer module. The explorer module supports
-                                        the users for browsing articles by sorting criteria like category
-                                        and date or browsing the archive for all articles.
+                                        To make all posts using J1 Theme easy accessible to the visitors,
+                                        the Navigation System of J1 Template provides a Explorer module
+                                        for Blog articles: the Navigator. The Naviagtor supports the users
+                                        for browsing articles by sorting criteria like category and date
+                                        or browsing the archive for all articles.
 
 categories:                             [ Blog ]
 tags:                                   [ Navigator, Explorer ]
@@ -21,8 +20,8 @@ pagination:
   per_page:                             2
 
 robots:
-  index:                                false
-  follow:                               false
+  index:                                true
+  follow:                               true
 
 image:
   path:                                 /assets/images/modules/attics/matthaeus-1920x1280.jpg
@@ -31,22 +30,15 @@ image:
   alt:                                  Photo by Matthaeus on Unsplash
 
 sort:                                   date
-toc:                                    true
 fab_menu_id:                            default
-
 scrollDynamicPagesTopOnChange:          false                                   # do NOT scroll the page to top on content changes
-
-analytics:                              false
-advertising:                            false
-comments:                               false
 exclude_from_search:                    true
-
 regenerate:                             false                                   # set to 'true', if update posts is required
 
 resources:                              [ animate, scroller ]
 resource_options:
   - attic:
-      alignY:                           top
+      padding_top:                      550
       slides:
         - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
           alt:                          Photo by Matthaeus on Unsplash
@@ -169,6 +161,7 @@ resource_options:
         <div class="navigator-headline">
           <nav class="paginator">
             <ul class="pagination raised-z0">
+              <li class="page-item"><a class="page-link" href="/" title="Home">Home</a></li>
               <li class="page-item"><a class="page-link" href="{{category_view}}" alt="View by Category">{{category_view_button_text}}</a></li>
               <li class="page-item"><a class="page-link" href="{{date_view}}" alt="View by Date">{{date_view_button_text}}</a></li>
               <!-- li class="page-item"><a class="page-link" href="{{tag_view}}" alt="{{tag_view_button_text}}">By Tag</a></li -->

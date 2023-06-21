@@ -75,11 +75,11 @@ end
 # Specify the THEME GEM used for the project
 
 # Loaded from RubyGems
-gem 'j1-template', '~> 2023.0.1'
+gem 'j1-template', '~> 2023.3.0'
 
 # Loaded from gem.fury.io
 #source 'https://gem.fury.io/jekyll-one-org/' do
-#  gem 'j1-template', '~> 2023.0.1'
+#  gem 'j1-template', '~> 2023.3.0'
 #end
 
 # ------------------------------------------------------------------------------
@@ -132,7 +132,7 @@ end
 
 # ------------------------------------------------------------------------------
 # Jekyll Plugins
-# If any (additional) Jekyll Plugins are used, they goes here
+# If any (additional) Jekyll Plugins are required, they goes here
 #
 group :jekyll_plugins do
   # Base Jekyll Plugins (required)
@@ -150,6 +150,7 @@ group :jekyll_plugins do
   # Additional Jekyll Plugins  (optional)
   #
   # gem 'jekyll-admin', '~> 0.11'
+  # gem 'jekyll-archives', '~> 2.2'
   # gem 'jekyll-gist', '>= 1.5.0'
   # gem 'jekyll-redirect-from', '>= 0.16.0'
 end
@@ -170,7 +171,7 @@ end
 # ------------------------------------------------------------------------------
 #
 # Required for Heroku, see support ticket: https://help.heroku.com/tickets/1198846
-gem 'sass-embedded', '~> 1.57.1'
+# gem 'sass-embedded', '~> 1.57.1'
 
 gem 'sassc', '~> 2.4'
 gem 'bump', '~> 0.10'
@@ -219,7 +220,6 @@ gem 'bump', '~> 0.10'
 #
 # ------------------------------------------------------------------------------
 #
-# gem 'passenger', '>= 5.3'
 gem 'puma', '>= 6.0'
 
 # ------------------------------------------------------------------------------
@@ -273,7 +273,7 @@ gem 'omniauth-oauth2', '~> 1.7'
 # GEM required for J1 logger based on log4r (middleware)
 # ------------------------------------------------------------------------------
 gem 'log4r', '~> 1.1', '>= 1.1.10'
-gem 'date', '~> 2.0'
+gem 'date', '~> 3.0'
 
 # ------------------------------------------------------------------------------
 # END

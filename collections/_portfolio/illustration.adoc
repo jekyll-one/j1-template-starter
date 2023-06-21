@@ -1,0 +1,106 @@
+---
+title:                                  Illustration
+tagline:                                Cartooning
+description: >
+                                        Illustration  is the art of creating visual representations of concepts,
+                                        ideas, and information through images, drawings, and other visual media. An
+                                        illustration is often used in various contexts, including books, magazines,
+                                        advertisements, websites, and other forms of media.
+purpose: >
+                                        Use this area to describe what you're doing. Describing your purpose
+                                        typically involves clearly and concisely explaining your goals,
+                                        objectives, scope, timeline, and expected outcomes.
+
+category:                               [ Illustration ]
+
+categories:                             [ Illustration ]
+tags:                                   [ Cartooning ]
+
+image:
+  path:                                 /assets/images/collections/portfolio/4.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Portfolio Image
+
+toc:                                    false
+fab_menu_id:                            default
+scrollbar:                              false
+regenerate:                             false
+
+resources:                              [ animate ]
+resource_options:
+  - attic:
+      padding_top:                      600
+      slides:
+        - url:                          /assets/images/modules/attics/giammarco-boscaro-1920x1280.jpg
+          alt:                          Photo by Giammarco on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Giammarco
+            href:                       https://unsplash.com/@giamboscaro
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+// Place an excerpt at the most top position
+// -----------------------------------------------------------------------------
+[role="dropcap mb-4"]
+Illustration  is the art of creating visual representations of concepts,
+ideas, and information through images, drawings, and other visual media. An
+illustration is often used in various contexts, including books, magazines,
+advertisements, websites, and other forms of media.
+
+excerpt__end
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Illustrators use various techniques and styles to create their work, including
+traditional mediums such as pencils, pens, and paint and digital tools such as
+graphics tablets and software. Some illustrators specialize in specific styles
+or techniques, such as cartooning, realism, or typography.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+== Describe your work
+
+Effective project management involves managing resources, schedules, budgets,
+risks, and stakeholders to deliver the desired outcomes within the specified
+timeframe and budget. The way you work should demonstrate that you've modern
+project management strategies in mind.
+
+Here are some tips to follow when describing how you're working:
+
+. Start by introducing its purpose: Give a brief overview and explain why
+  it is important or necessary. This intro gives context to your description
+  and helps your audience understand the significance.
+
+. Define what you're focussing on: Explain what it will involve and will not
+  involve. The focus ensures that everyone understands what is provided.
+
+. Discuss goals and objectives: Outline the specific goals and objectives
+  your work aims to achieve. Be clear and specific about what your intentions
+  are to accomplish.
+
+. Describe the efforts and timeline: Provide an overview of the efforts,
+  including key milestones. Describing efforts and timeline support your
+  audience in understanding expected costs and what they can expect.
+
+. Outline the expected outcomes: Finally, describe the expected outcomes
+  of your work, such as benefits and impact. Outlining the outcomes
+  demonstrates the value of your work and the benefits it will bring.

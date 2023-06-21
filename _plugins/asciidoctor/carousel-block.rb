@@ -35,7 +35,7 @@ Asciidoctor::Extensions.register do
 
     def process parent, target, attrs
 
-      title_html  = (attrs.has_key? 'title') ? %(<div class="slider-title">#{attrs['title']}</div>\n) : nil
+      title_html  = (attrs.has_key? 'title') ? %(<div class="slider-title notranslate">#{attrs['title']}</div>\n) : nil
       html = %(#{title_html} <div id="#{target}" class="#{attrs['role']}"></div>)
       create_pass_block parent, html, attrs, subs: nil
     end

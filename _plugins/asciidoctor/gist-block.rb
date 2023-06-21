@@ -34,7 +34,7 @@ Asciidoctor::Extensions.register do
 
     def process parent, target, attrs
       title_html = (attrs.has_key? 'title') ?
-          %(<div class="title">#{attrs['title']}</div>\n) : nil
+          %(<div class="title notranslate">#{attrs['title']}</div>\n) : nil
 
       html = %(<div class="openblock gist mt-4 mb-5">
                  #{title_html}

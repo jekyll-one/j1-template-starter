@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "j1",
-  "version": "2023.0.1",
+  "version": "2023.3.0",
   "description": "J1 Theme Starter Web",
   "homepage": "https://your.site",
   "author": {
@@ -41,20 +41,20 @@
     "opt_skip_initial_build": "--skip-initial-build",
     "opt_webserver": "puma",
     "opt_interface": "0.0.0.0",
-    "opt_web_port": "20000",
-    "opt_web_url": "http://localhost:20000/",
-    "opt_app_port": "20010",
-    "opt_app_url": "http://localhost:20010/",
+    "opt_web_port": "39000",
+    "opt_web_url": "http://localhost:39000/",
+    "opt_app_port": "39010",
+    "opt_app_url": "http://localhost:39010/",
     "opt_profile": "",
     "opt_watch": "--watch",
     "opt_livereload": "--livereload",
-    "opt_livereload_port": "20001"
+    "opt_livereload_port": "39001"
   },
   "nbi": {
-  "opt_output_type": "plain",
-  "opt_credentials": "fake/fake",
-  "opt_nbi_input_folder": "FULL_PATH_TBD",
-  "opt_nbi_output_folder": "FULL_PATH_TBD"
+    "opt_output_type": "plain",
+    "opt_credentials": "fake/fake",
+    "opt_nbi_input_folder": "FULL_PATH_TBD",
+    "opt_nbi_output_folder": "FULL_PATH_TBD"
   },
   "algolia": {
     "admin_key": "your-algolia-admin-key"
@@ -64,7 +64,7 @@
     "j1-app": "run-p -s app:*",
     "app:rackup": "cross-var cross-env INTERFACE=$npm_package_jekyll_opt_interface PORT=$npm_package_jekyll_opt_app_port bundle exec puma -C _data/puma/config.rb",
     "_app:jekyll": "cross-var cross-env JEKYLL_ENV=$npm_package_config_mode BUNDLE_GEMFILE=$npm_package_ruby_gemfile bundle exec jekyll b -c $npm_package_jekyll_configfile $npm_package_jekyll_opt_incremental --watch",
-    "_app:open": "npm run delay-3s && cross-var open-cli $npm_package_jekyll_opt_app_url",
+    "app:open": "npm run delay-3s && cross-var open-cli $npm_package_jekyll_opt_app_url",
     "delay-1s": "node ./node_modules/npm-delay 1000",
     "delay-2s": "node ./node_modules/npm-delay 2000",
     "delay-3s": "node ./node_modules/npm-delay 3000",
@@ -124,10 +124,10 @@
     "setup:detect-os": "echo Detect OS .. && cross-env if-env OS=Windows_NT && cross-var echo \"OS detected: $OS\" || OS=$(echo $(getos)) && echo \"OS detected: $OS\" && echo done.",
     "setup:site": "run-s -s build",
     "site": "run-p -s site:*",
-    "site:jekyll": "echo Startup the site .. && cross-env SINATRA_ACTIVESUPPORT_WARNING=false bundle exec jekyll s --incremental --livereload --livereload-port $npm_package_jekyll_opt_livereload_port --open",
+    "site:jekyll": "echo Startup the site .. && cross-env SINATRA_ACTIVESUPPORT_WARNING=false bundle exec jekyll s --incremental --livereload --skip-initial-build  --livereload-port $npm_package_jekyll_opt_livereload_port --watch --open 2>jekyll.log",
     "site:utilsrv": "npm --prefix ./utilsrv --silent run utilsrv",
     "j1-site": "run-p -s j1-site:*",
-    "j1-site:jekyll": "bundle exec jekyll s --incremental --livereload --open",
+    "j1-site:jekyll": "echo Startup the site .. && cross-env bundle exec jekyll s --incremental --livereload --skip-initial-build --livereload-port $npm_package_jekyll_opt_livereload_port --watch --open 2>jekyll.log",
     "j1-site:utilsrv": "npm --prefix ./utilsrv --silent run utilsrv",
     "bump": "run-s -s ver && run-s -s bump:* && run-s -s ver",
     "ver": "cross-var cross-env echo \"Project version: $npm_package_version\"",
@@ -138,6 +138,7 @@
     "nbi-export--all": "cross-var nbinteract -r $npm_package_nbi_opt_nbi_input_folder -o $npm_package_nbi_opt_nbi_output_folder -t $npm_package_nbi_opt_output_type -s $npm_package_nbi_opt_credentials"
   },
   "dependencies": {
+    "bootstrap": "^5.2",
     "cross-env": "^7.0.3",
     "cross-var": "^1.1.0",
     "getos": "^3.2.1",

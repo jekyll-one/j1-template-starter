@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-#  ~/_data/modules/defaults/google_translate.yml
-#  Default configuration settings for J1 Google Translate module
+#  ~/_data/modules/defaults/translator.yml
+#  Default configuration settings for J1 Translator module
 #
 #  Product/Info:
 #  https://jekyll.one
@@ -12,10 +12,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# About this configuration (used for J1 CC only)
+# Description
 #
-about_config:
-
+description:
   title:                                J1 Translator
   scope:                                Default settings
   location:                             _data/modules/defaults/translator.yml
@@ -26,6 +25,9 @@ about_config:
 defaults:
   enabled:                              false
 
+  # ----------------------------------------------------------------------------
+  # Translator options
+  # ----------------------------------------------------------------------------
   translationEnabled:                   false
   hideTranslatorIcon:                   false                                   # hide translator icon if translation not allowed (cookie consent)
   disableLanguageSelector:              false                                   # disable language dropdown for translation in dialog (modal)
@@ -74,62 +76,71 @@ defaults:
 
       body_text:
         en: >
-                                        This website uses the free service <em>Google Translate</em> to
-                                        translate the content into 100+ languages in a matter of seconds.
-                                        The <b>language</b> for translation is taken <b>automatically</b>
-                                        from the language settings of your <b>browser</b>.
-                                        If you do <b>not</b> want translation anymore, <b>disable</b> the service
-                                        in section <b>My Settings</b>.
+                                        This website uses the <b>free service</b> Google Translate to translate
+                                        the content into 100+ languages in seconds. The language for
+                                        translation is selected automatically from the language settings
+                                        of your browser.
 
         de: >
-                                        Diese Website nutzt den kostenlosen Dienst <em>Google Translate</em>,
-                                        um die Inhalte in sekundenschnelle in über 100+ Sprachen zu übersetzen.
-                                        Die <b>Sprache</b> für die Übersetzung wird <b>automatisch</b> aus den
-                                        Spracheinstellungen Ihres <b>Browsers</b> übernommen. Wenn Sie <b>keine</b>
-                                        Übersetzung mehr wünschen, <b>deaktivieren</b> Sie den Dienst im Abschnitt
-                                        <b>Meine Einstellungen</b>.
+                                        Diese Website nutzt den <b>kostenlosen</b> Dienst Google Translate, um
+                                        die Inhalte in sekundenschnelle in über 100+ Sprachen zu übersetzen.
+                                        Die Sprache für die Übersetzung wird automatisch aus den
+                                        Spracheinstellungen Ihres Browsers gewählt.
 
       language_selector_title:
 
-        en:                             "Your current language setting for translation is:"
+        en:                             "Your current language setting for the translation is:"
         de:                             "Ihre aktuelle Spracheinstellung für die Übersetzung ist:"
 
       privacy_notice:
 
         en: >
-                                        The free service from <em>Google Translate</em> uses cookies to provide
+                                        The <b>free service</b> from Google Translate uses cookies to provide
                                         its services, personalize advertising and run traffic analysis To use the
                                         service, your consent on using cookies is required. Find more information
                                         about at the Google
-                                        <a href="https://policies.google.com/" target="_blank" rel="noopener">Privacy Policy</a>
-                                        <br><br>
-                                        Required Cookie Settings:
-                                        <br>
+                                        <a href="https://policies.google.com/" target="_blank" rel="noopener">Privacy Policy</a>.
+                                        <br />Required Cookie Settings:
                                         <ul>
-                                          <li>
-                                            <code>Analysis</code> For translations, your consent on
-                                            <b>Analysis</b> with your <b>Privacy Settings</b> is required.
+                                          <li style="list-style-type: none;">
+                                            <b>Analysis</b>
+                                            <p>
+                                              For the use of Google Translations, your consent on analysis
+                                              in the privacy settings is required.
+                                            </p>
                                           </li>
-                                          <li>
-                                            <code>Personalization</code> For processing textbooks, your consent on
-                                            <b>Personalization</b> with your <b>Privacy Settings</b> (Cookie Settings) is required.
+                                          <li style="list-style-type: none;">
+                                            <b>Personalization</b>
+                                            <p>
+                                              For the use of Google Translations, your consent on personalization
+                                              in the privacy settings is required.
+                                            </p>
                                           </li>
                                         </ul>
         de: >
-                                        Der kostenlose Dienst von <em>Google Translate</em> verwendet Cookies
+                                        Der <b>kostenlose</b> Dienst von Google Translate verwendet Cookies
                                         um seine Dienste bereitzustellen, Werbung zu personalisieren und
-                                        Verkehrsanalysen durchzuführen:
-                                        <br><br>
+                                        Verkehrsanalysen durchzuführen. Mehr Information dazu finden Sie dazu in der
+                                        <a href="https://policies.google.com/" target="_blank" rel="noopener">Datenschutzerklärung</a>
+                                        von Google.
+                                        Erforderliche Cookie Einstellungen:
+                                        <br />
                                         <ul>
-                                          <li>
-                                            <code>Analysen</code> Für die Nutzung von Übersetzungen ist Ihre
-                                            Zustimmung zu <b>Analysen</b> in den Einstellungen <code>Ihre Privatsphäre</code>
-                                            erforderlich.
+                                          <li style="list-style-type: none;">
+                                            <b>Analysen</b>
+                                            <p>
+                                              Für die Nutzung von Übersetzungen ist Ihre Zustimmung zu
+                                              Analysen in den Einstellungen Ihrer Privatsphäre
+                                              erforderlich.
+                                            </p>
                                           </li>
-                                          <li>
-                                            <code>Personalisierung</code> Für die Nutzung von Übersetzungen ist Ihre
-                                            Zustimmung zur <b>Personalisierung</b> in den Einstellungen <code>Ihre Privatsphäre</code>
-                                            erforderlich.
+                                          <li style="list-style-type: none;">
+                                            <b>Personalisierung</b>
+                                            <p>
+                                              Für die Nutzung von Übersetzungen ist Ihre Zustimmung zur
+                                              Personalisierung in den Einstellungen Ihrer Privatsphäre
+                                              erforderlich.
+                                            </p>
                                           </li>
                                         </ul>
 

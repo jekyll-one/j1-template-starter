@@ -1,0 +1,95 @@
+---
+title:                                  Harry Potter and the Philosopher's Stone
+tagline:                                Full-color illustrated hardback edition
+date:                                   2016-11-18 00:00:00
+description: >
+                                        When a letter arrives for unhappy but ordinary Harry Potter, a decade-old
+                                        secret is revealed to him that apparently he's the last to know. His parents
+                                        were wizards, killed by a Dark Lord's curse when Harry was just a baby, and
+                                        which he somehow survived. Leaving his unsympathetic aunt and uncle for
+                                        Hogwarts School of Witchcraft and Wizardry, Harry stumbles upon a sinister
+                                        mystery when he finds a three-headed dog guarding a room on the third floor.
+
+categories:                             [ Books ]
+tags:                                   [ Fantasy ]
+
+image:
+  path:                                 https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/large/9781/4088/9781408845646.jpg
+
+book:
+  cover:                                https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/large/9781/4088/9781408845646.jpg
+  format:                               hardback
+  pages:                                640
+  publisher:                            Bloomsbury Publishing PLC
+  author:                               J. K. Rowling
+  ISBN10:                               1408845644
+  ISBN13:                               9781408845646
+  rank:                                 39
+
+toc:                                    false
+fab_menu_id:                            default
+scrollbar:                              false
+regenerate:                             false
+
+resources:                              [ animate ]
+resource_options:
+  - attic:
+      padding_top:                      600
+      slides:
+        - url:                          /assets/images/modules/attics/giammarco-boscaro-1920x1280.jpg
+          alt:                          Photo by Giammarco on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Giammarco
+            href:                       https://unsplash.com/@giamboscaro
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+// Place an excerpt at the most top position
+// -----------------------------------------------------------------------------
+Prepare to be spellbound by Jim Kay's dazzling depiction of the wizarding
+world and much loved characters in this full-color illustrated hardback
+edition of the nation's favourite children's book - Harry Potter and the
+Philosopher's Stone.
+
+excerpt__end
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[[readmore]]
+[role="mt-4"]
+image:{{page.book.cover}}[width=350, role="mr-4 mb-5 float-left"]
+
+Brimming with rich detail and humour that perfectly complements J.K. Rowling's
+timeless classic, Jim Kay's glorious illustrations will captivate fans and new
+readers alike.
+
+When a letter arrives for unhappy but ordinary Harry Potter, a decade-old
+secret is revealed to him that apparently he's the last to know. His parents
+were wizards, killed by a Dark Lord's curse when Harry was just a baby, and
+which he somehow survived. Leaving his unsympathetic aunt and uncle for
+Hogwarts School of Witchcraft and Wizardry, Harry stumbles upon a sinister
+mystery when he finds a three-headed dog guarding a room on the third floor.
+
+Then he hears of a missing stone with astonishing powers, which could be
+valuable, dangerous - or both. An incredible adventure is about to begin!

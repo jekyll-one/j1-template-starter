@@ -44,7 +44,7 @@ Asciidoctor::Extensions.register do
       imagesdir     = parent.attr 'imagesdir'
       images_hash   = Hash[*attrs['image_data'].split(',')]
 
-      title_html    = (attrs.has_key? 'title') ? %(<div class="title">#{attrs['title']}</div>\n) : nil
+      title_html    = (attrs.has_key? 'title') ? %(<div class="title notranslate">#{attrs['title']}</div>\n) : nil
       role          = (attrs.has_key? 'role') ? role : ''
       grouped       = (attrs.has_key? 'group') ? true : false
 

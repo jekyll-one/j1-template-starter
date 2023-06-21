@@ -1,0 +1,86 @@
+---
+title:                                  The Dressmaker
+tagline:                                Gothic tale of small-town revenge
+date:                                   2016-11-25 00:00:00
+description: >
+                                        Tilly Dunnage left her hometown of Dungatar in rural Australia under a black
+                                        cloud of accusation. Years later Tilly, now a couturier for the Paris fashion
+                                        houses, returns home to make amends with her mentally unstable mother.
+
+categories:                             [ Books ]
+tags:                                   [ Romance ]
+
+image:
+  path:                                 https://d20eq91zdmkqd.cloudfront.net/assets/images/book/large/9781/8466/9781846689949.jpg
+
+book:
+  cover:                                https://d20eq91zdmkqd.cloudfront.net/assets/images/book/large/9781/8466/9781846689949.jpg
+  format:                               paperback
+  pages:                                320
+  publisher:                            Profile Books Ltd
+  author:                               Rosalie Ham
+  ISBN10:                               1846689945
+  ISBN13:                               9781846689949
+  rank:                                 80
+
+toc:                                    false
+fab_menu_id:                            default
+scrollbar:                              false
+regenerate:                             false
+
+resources:                              [ animate ]
+resource_options:
+  - attic:
+      padding_top:                      600
+      slides:
+        - url:                          /assets/images/modules/attics/giammarco-boscaro-1920x1280.jpg
+          alt:                          Photo by Giammarco on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Giammarco
+            href:                       https://unsplash.com/@giamboscaro
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+// Place an excerpt at the most top position
+// -----------------------------------------------------------------------------
+Tilly Dunnage left her hometown of Dungatar in rural Australia under a black
+cloud of accusation. Years later Tilly, now a couturier for the Paris fashion
+houses, returns home to make amends with her mentally unstable mother.
+
+excerpt__end
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[[readmore]]
+[role="mt-4"]
+image:{{page.book.cover}}[width=350, role="mr-4 mb-5 float-left"]
+
+Mid-century Dungatar is a small town, and small towns have long memories.
+At first she wins over the suspicious locals with her extraordinary
+dressmaking skills. But when the eccentric townsfolk turn on Tilly for a
+second time, she decides to teach them a lesson and exact long-overdue
+revenge.
+
+Packed with memorable characters, acid humour and luscious clothes,
+The Dressmaker is an irresistible gothic tale of small-town revenge.

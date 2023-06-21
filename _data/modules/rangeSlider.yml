@@ -16,10 +16,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Range Slider Module
   scope:                                User settings
   location:                             _data/modules/rangeSlider.yml
@@ -30,10 +29,16 @@ description:
 settings:
   enabled:                              true
 
+  # ----------------------------------------------------------------------------
+  # Slider options
+  # ----------------------------------------------------------------------------
+  options:
+    orientation:                        horizontal
+
+  # ----------------------------------------------------------------------------
+  # Slider configurations
+  # ----------------------------------------------------------------------------
   sliders:
-    # --------------------------------------------------------------------------
-    # RANGE SLIDER configurations
-    # --------------------------------------------------------------------------
 
     # --------------------------------------------------------------------------
     # example slider
@@ -47,9 +52,12 @@ settings:
           label:                        "Example Slider (Asciidoc), range: [5,50], start at: 25, step: 5"
           start:                        25
           step:                         5
+          connect:                      true
           range:
             min:                        5
             max:                        50
+          format:
+            decimals:                   0
 
     # --------------------------------------------------------------------------
     # example slider (controled)
@@ -63,9 +71,12 @@ settings:
           label:                        "Example Slider (HTML), range: [5,50], start at: 25, step: 5"
           start:                        25
           step:                         5
+          connect:                      true
           range:
             min:                        5
             max:                        50
+          format:
+            decimals:                   0
 
     # --------------------------------------------------------------------------
     # example slider 1
@@ -78,9 +89,13 @@ settings:
           title:                        ""
           label:                        "Slider 1, range: [0,100], start at: 20"
           start:                        20
+          connect:                      true
+          step:                         1
           range:
             min:                        0
             max:                        100
+          format:
+            decimals:                   0
 
     # --------------------------------------------------------------------------
     # example slider 2
@@ -93,9 +108,13 @@ settings:
           title:                        ""
           label:                        "Slider 2, range: [0,200], start at: 80"
           start:                        80
+          connect:                      true
+          step:                         1
           range:
             min:                        0
             max:                        200
+          format:
+            decimals:                   0
 
     # --------------------------------------------------------------------------
     # jgSlider rowHeigth (galleryCustomizer)
@@ -108,9 +127,13 @@ settings:
           title:                        ""
           label:                        Image Row Height [px]
           start:                        150
+          connect:                      true
+          step:                         1
           range:
             min:                        100
             max:                        300
+          format:
+            decimals:                   0
 
     # --------------------------------------------------------------------------
     # jgSlider thumbSpacing (galleryCustomizer)
@@ -123,9 +146,13 @@ settings:
           title:                        ""
           label:                        Thumb Image Spacing [px]
           start:                        1
+          connect:                      true
+          step:                         1
           range:
             min:                        0
             max:                        10
+          format:
+            decimals:                   0
 
     # --------------------------------------------------------------------------
     # jgSlider galleryPadding (galleryCustomizer)
@@ -138,9 +165,13 @@ settings:
           title:                        ""
           label:                        Gallery Padding [px]
           start:                        0
+          connect:                      true
+          step:                         1
           range:
             min:                        0
             max:                        50
+          format:
+            decimals:                   0
 
 # ------------------------------------------------------------------------------
 # END config

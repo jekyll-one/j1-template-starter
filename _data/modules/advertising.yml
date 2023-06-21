@@ -16,10 +16,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Advertising
   scope:                                User settings
   location:                             _data/modules/advertising.yml
@@ -28,137 +27,153 @@ description:
 # User settings
 #
 settings:
+  enabled:                              true
 
-  # ----------------------------------------------------------------------------
-  # Settings
-  #
-  #   provider
-  #   --------------------------------------------------------------------------
-  #   Currently, only Google adsense (google) is available as an provider
-  #   for advertising.
-  #
-  #   values:                           [google]
-  #   default:                          google
-  #
-  # ----------------------------------------------------------------------------
-  #
   google:
+    publisherID:                        pub-123456789012345                     # fake for testing (localhost) ONLY!
+#   publisherID:                        <your-publisher-id>
+
+    autoHideOnUnfilled:                 false
+    addBorderOnUnfilled:                true
 
     # --------------------------------------------------------------------------
-    # Provider settings
+    # Container settings
+    #
+    #   enabled
+    #   ------------------------------------------------------------------------
+    #   Enables or disables the ad unit (container). If an container is
+    #   disabled, this unit get NOT initialized for ads on any page.
+    #
+    #   values:                       true|false
+    #   default:                      true
+    #
+    #   id
+    #   ------------------------------------------------------------------------
+    #   Enables or disables the ad unit (container). If an container is
+    #   disabled, this unit get NOT initialized for ads on any page.
+    #
+    #   values:                       string
+    #   default:                      none
+    #
+    #   placement (currently NOT supported)
+    #   ------------------------------------------------------------------------
+    #   Defines the placements of the unit container specified. For default
+    #   (manual), all ad units are placed on (home/content) pages manually
+    #   by adding the <ins>-code.
+    #
+    #   values:                       manual|auto|content-top|content-bottom
+    #   default:                      manual
+    #
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # Ad Properties
+    #
+    #   styles
+    #   ------------------------------------------------------------------------
+    #   Defines the CSS style|s
+    #
+    #   values:                       string
+    #   default:                      display: block
     #
     #   publisherID
     #   ------------------------------------------------------------------------
-    #   Your publisher id (ca-pub-xxxx..xxx) connected with your Adsense
-    #   Account the for the domain registered.
+    #   Defines the publisher id used for an advertising
     #
-    #   values:                         string
-    #   default:                        none
+    #   values:                       ca-pub-number|pub-number
+    #   default:                      none
     #
-    #   autoHideOnUnfilled
+    #   slot
     #   ------------------------------------------------------------------------
-    #   For several reasons, the placed ad (unit) containers get unfilled (no
-    #   ad placed inside). Unfilled unit containers results in blank areas
-    #   instead. Using the setting autoHideOnUnfilled, unfilled containers
-    #   can be hidden automatically.
+    #   Defines the slot id
     #
-    #   values:                         [true|false]
-    #   default:                        true
+    #   values:                       number
+    #   default:                      none
     #
-    #   checkTrackingProtection (currently NOT supported)
+    #   format
     #   ------------------------------------------------------------------------
-    #   Modern browsers in their current versions (e.g. FireFox) provide
-    #   Tracking Protection build-in. If Tracking Protection is enabled
-    #   for a browser, showing ads may blocked automatically. All unit
-    #   containers affected by Tracking Protection are hidden automatically.
+    #   Defines the (auto)-format settings
     #
-    #   values:                         [true|false]
-    #   default:                        false
+    #   values:                       string
+    #   default:                      auto
     #
-    #   showErrorPageOnBlocked (currently NOT supported)
+    #   responsive
     #   ------------------------------------------------------------------------
-    #   If Tracking Protection is detected for a browser, no content is
-    #   presented to the visitor and an error page is shown (HTML 447).
+    #   Enables|Disables responsive display if pages changes in width or height
     #
-    #   values:                         [true|false]
-    #   default:                        false
+    #   values:                       boolean
+    #   default:                      true
+    #
+    #   test
+    #   ------------------------------------------------------------------------
+    #   For testing only. If ad-test is enabled (on), clicks and impressions
+    #   NOT recorded by the service and advertisers are NOT charged.
+    #
+    #   values:                       on|off
+    #   default:                      off
     #
     # --------------------------------------------------------------------------
-    #
-    publisherID:                        '<your-publisher-id>'
-    autoHideOnUnfilled:                 false
-    addBorderOnUnfilled:                true
-    checkTrackingProtection:            true
-    showErrorPageOnBlocked:             true
 
+    # --------------------------------------------------------------------------
+    # All advertising container/ad available
+    # --------------------------------------------------------------------------
     ads:
 
       # ------------------------------------------------------------------------
-      # Attributes
+      # Ad on slot id "1234567890"
       #
-      #   enabled
-      #   ----------------------------------------------------------------------
-      #   Enables or disables an ad unit (container). If an container is
-      #   disabled, this unit get NOT initialized for ads on any page.
-      #
-      #   values:                       [true|false]
-      #   default:                      true
-      #
-      #   placement (currently NOT supported)
-      #   ----------------------------------------------------------------------
-      #   Defines the placements of the unit container specified. For default
-      #   (manual), all ad units are placed on (home/content) pages manually
-      #   by adding the <ins>-code.
-      #
-      #   values:                       [manual|auto|content-top|content-bottom]
-      #   default:                      manual
-      #
-      #   adSlot (currently NOT supported)
-      #   ----------------------------------------------------------------------
-      #   Defines the slot-id of the unit container specified.
-      #
-      #   values:                       string
-      #   default:                      none
-      #
-      #   adTest (currently NOT supported)
-      #   ------------------------------------------------------------------------
-      #   For testing only. If adTest is enabled (true), clicks and impressions
-      #   aren't recorded by the ad service and advertisers aren't charged.
-      #
-      #   values:                       [true|false]
-      #   default:                      false
-      #
-      # --------------------------------------------------------------------------
+      - ad:
+
+        # container settings
+        # ----------------------------------------------------------------------
+        enabled:                        true
+        id:                             ad_1234567890
+
+        # ad properties
+        # ----------------------------------------------------------------------
+        publisherID:                    pub-123456789012345
+        test:                           "on"
+        styles:                         "display: block;"
+        slot:                           1234567890
+        format:                         auto
+        responsive:                     true
 
       # ------------------------------------------------------------------------
-      # Google Ad resposive full-width
+      # Ad on slot id "1234567890" #2
       #
-#     - name:                           display-ad-horizontal-1
-#       ad:
-#         enabled:                      true
-#         placement:                    manual
-#         adSlot:                       xxxx..xxx
-#         adTest:                       false
+      - ad:
+
+        # container settings
+        # ----------------------------------------------------------------------
+        enabled:                        true
+        id:                             ad_1234567890-2
+
+        # ad properties
+        # ----------------------------------------------------------------------
+        publisherID:                    pub-123456789012345
+        test:                           "on"
+        styles:                         "display: block;"
+        slot:                           1234567890
+        format:                         auto
+        responsive:                     true
 
       # ------------------------------------------------------------------------
-      # Google Ad resposive full-width
+      # Ad on slot id "1929248609"
       #
-#     - name:                           display-ad-horizontal-2
-#       ad:
-#         enabled:                      false
-#         placement:                    manual
-#         adSlot:                       xxxx..xxx
-#         adTest:                       false
+      - ad:
+        # container settings
+        # ----------------------------------------------------------------------
+        enabled:                        false
+        id:                             ad_1929248609
 
-      # ------------------------------------------------------------------------
-      # Google Ad resposive full-width
-      #
-#     - name:                           in-article-ad-1
-#       ad:
-#         enabled:                      false
-#         placement:                    manual
-#         adSlot:                       xxxx..xxx
-#         adTest:                       false
+        # ad properties
+        # ----------------------------------------------------------------------
+        publisherID:                    <your-publisher-id>
+        test:                           "off"
+        styles:                         "display: block;"
+        slot:                           1929248609
+        format:                         auto
+        responsive:                     true
 
 # ------------------------------------------------------------------------------
 # END config

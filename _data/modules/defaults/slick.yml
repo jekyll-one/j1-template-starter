@@ -1,0 +1,502 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/carousel.yml
+# Default configuration for J1 Carousel (based on Owl Carousel V1)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023 Juergen Adams
+#
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                Slick
+  scope:                                Default settings
+  location:                             _data/apps/default/slick.yml
+
+# ------------------------------------------------------------------------------
+# Default configuration settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL slider settings
+  #
+  # enabled
+  # ----------------------------------------------------------------------------
+  #   Enables|Disables the use of a slider
+  #
+  # xhr_data_path
+  # ----------------------------------------------------------------------------
+  #   All data items displayed by a slider are being read from a
+  #   JSON file automatically generated from that configuration.
+  #   AJAX get method is used to supply the slider with respective
+  #   the HTML code at the time the slider is initialized (by the
+  #   J1 Adapter for J1 Owl Sliders).
+  #
+  #   values:                             string
+  #   default:                            /assets/data/carousel.json
+  #
+  # ----------------------------------------------------------------------------
+  enabled:                              false
+
+  # ----------------------------------------------------------------------------
+  # AJAX (JSON)
+  #
+  # The HTML portion of a slider are being read from a HTML file generated
+  # automatically from its configuration for all sliders configured.
+  # AJAX methods are used to supply the needed HTML code at the time
+  # a slider is initialized by the JS adapter.
+  # ----------------------------------------------------------------------------
+  xhr_data_path:                        /assets/data/slick
+
+  # ----------------------------------------------------------------------------
+  # Lightbox options (Slick Ligghtbox)
+  # ----------------------------------------------------------------------------
+  lightbox:
+    enabled:                            false
+    type:                               slick                                   # only type 'slick' supported
+    caption:                            false
+    useHistoryApi:                      false
+    background:                         rgba(0,0,0,.8)                          # slick lightbox options
+    closeOnEscape:                      true
+    closeOnBackdropClick:               true
+    navigateByKeyboard:                 true
+    destroyTimeout:                     500
+    imageMaxHeight:                     0.9
+    lazy:                               false
+
+  # ----------------------------------------------------------------------------
+  # CSS filter options
+  # ----------------------------------------------------------------------------
+  filters:
+    enabled:                            false
+    grayscale:                          1
+    contrast:                           1
+    brightness:                         1
+
+  # ----------------------------------------------------------------------------
+  # Slider options
+  #
+  # accessibility
+  # ----------------------------------------------------------------------------
+  #   Enables tabbing and arrow key navigation. Unless autoplay: true,
+  #   sets browser focus to current slide (or first of current slide set,
+  #   if multiple slidesToShow) after slide change. For full a11y compliance
+  #   enable focusOnChange in addition to this.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # adaptiveHeight
+  # ----------------------------------------------------------------------------
+  #   Adapts slider height to the current slide.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # appendArrows:
+  # ----------------------------------------------------------------------------
+  #  Change where the navigation arrows are attached (Selector, htmlString,
+  #  Array, Element, jQuery object)
+  #
+  #   values:                             string
+  #   default:                            $(element)
+  #
+  # appendDots
+  # ----------------------------------------------------------------------------
+  #   Change where the navigation dots are attached (Selector, htmlString,
+  #   Array, Element, jQuery object)
+  #
+  #   values:                             string
+  #   default:                            $(element)
+  #
+  # arrows
+  # ----------------------------------------------------------------------------
+  #   Enable Next/Prev arrows.
+  #
+  #   values:                             boolean
+  #   default:                            true
+  #
+  # asNavFor
+  # ----------------------------------------------------------------------------
+  #   Enables syncing of multiple sliders.
+  #
+  #   values:                             string
+  #   default:                            $(element)
+  #
+  # autoplay
+  # ----------------------------------------------------------------------------
+  #   Enables auto play of slides
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # autoplaySpeed
+  # ----------------------------------------------------------------------------
+  #   Auto play change interval
+  #
+  #   values:                             int
+  #   default:                            3000
+  #
+  # centerMode
+  # ----------------------------------------------------------------------------
+  #   Enables centered view with partial prev/next slides. Use with odd
+  #   numbered slidesToShow counts.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # centerPadding
+  # ----------------------------------------------------------------------------
+  #   Side padding when in center mode (px or %).
+  #
+  #   values:                             string
+  #   default:                            '50px'
+  #
+  # cssEase
+  # ----------------------------------------------------------------------------
+  #   CSS3 easing
+  #
+  #   values:                             string
+  #   default:                            'ease'
+  #
+  # customPaging
+  # ----------------------------------------------------------------------------
+  #   Custom paging template.
+  #
+  #   values:                             function
+  #   default:                            n/a
+  #
+  # dots
+  # ----------------------------------------------------------------------------
+  #   Enable slide indicator dots.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # dotsClass
+  # ----------------------------------------------------------------------------
+  #   Class for slide indicator dots container.
+  #
+  #   values:                             string
+  #   default:                            'slick-dots'
+  #
+  # draggable
+  # ----------------------------------------------------------------------------
+  #   Enables desktop dragging.
+  #
+  #   values:                             boolean
+  #   default:                            true
+  #
+  # easing
+  # ----------------------------------------------------------------------------
+  #   animate() fallback easing.
+  #
+  #   values:                             string
+  #   default:                            'linear'
+  #
+  # edgeFriction
+  # ----------------------------------------------------------------------------
+  #   Resistance when swiping edges of non-infinite carousels.
+  #
+  #   values:                             integer
+  #   default:                            0.15
+  #
+  # fade
+  # ----------------------------------------------------------------------------
+  #   Enables fading.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # focusOnSelect
+  # ----------------------------------------------------------------------------
+  #   Enable focus on selected element (click).
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # focusOnChange
+  # ----------------------------------------------------------------------------
+  #   Puts focus on slide after change.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # infinite
+  # ----------------------------------------------------------------------------
+  #   Enable Infinite looping.
+  #
+  #   values:                             boolean
+  #   default:                            true
+  #
+  # initialSlide
+  # ----------------------------------------------------------------------------
+  #   Slide to start on.
+  #
+  #   values:                             integer
+  #   default:                            0
+  #
+  # lazyLoad
+  # ----------------------------------------------------------------------------
+  #   Accepts 'ondemand' or 'progressive' for lazy load technique. 'ondemand'
+  #   will load the image as soon as you slide to it, 'progressive' loads one
+  #   image after the other when the page loads.
+  #
+  #   values:                             string
+  #   default:                            'ondemand'
+  #
+  # mobileFirst
+  # ----------------------------------------------------------------------------
+  #   Responsive settings use mobile first calculation.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # nextArrow
+  # ----------------------------------------------------------------------------
+  #   Allows you to select a node or customize the HTML for the "Next" arrow.
+  #     (html | jQuery selector) | object (DOM node | jQuery object)
+  #     <button type="button" class="slick-next">Next</button>
+  #
+  #   values:                             string
+  #   default:                            selector
+  #
+  # pauseOnDotsHover
+  # ----------------------------------------------------------------------------
+  #   Pauses autoplay when a dot is hovered.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # pauseOnFocus
+  # ----------------------------------------------------------------------------
+  #   Pause autoplay when slider is focussed
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # pauseOnHover
+  # ----------------------------------------------------------------------------
+  #   Pause autoplay on hover.
+  #
+  #   values:                             boolean
+  #   default:                            true
+  #
+  # prevArrow
+  # ----------------------------------------------------------------------------
+  #   Allows you to select a node or customize the HTML for the "Previous"
+  #   arrow.
+  #     (html | jQuery selector) | object (DOM node | jQuery object)
+  #     <button type="button" class="slick-prev">Previous</button>
+  #
+  #   values:                             string
+  #   default:                            selector
+  #
+  # respondTo
+  # ----------------------------------------------------------------------------
+  #   Width that responsive object responds to. Can be 'window', 'slider' or
+  #   'min' (the smaller of the two).
+  #
+  #   values:                             string
+  #   default:                            'window'
+  #
+  # responsive
+  # ----------------------------------------------------------------------------
+  #   Array of objects containing breakpoints and settings objects.
+  #   Enables settings at given breakpoint. Set settings to "unslick"
+  #   instead of an object to disable slick at a given breakpoint.
+  #
+  #   values:                             array
+  #   default:                            null
+  #
+  # rows
+  # ----------------------------------------------------------------------------
+  #   Setting this to more than 1 initializes grid mode. Use slidesPerRow
+  #   to set how many slides should be in each row.
+  #
+  #   values:                             integer
+  #   default:                            1
+  #
+  # rtl
+  # ----------------------------------------------------------------------------
+  #   Change the slider's direction to become right-to-left.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # slide
+  # ----------------------------------------------------------------------------
+  #   Slide element query.
+  #
+  #   values:                             string
+  #   default:                            ''
+  #
+  # slidesPerRow
+  # ----------------------------------------------------------------------------
+  #   With grid mode initialized via the rows option, this sets how many
+  #   slides are in each grid row.
+  #
+  #   values:                             integer
+  #   default:                            1
+  #
+  # slidesToScroll
+  # ----------------------------------------------------------------------------
+  #   Number of slides to scroll at a time.
+  #
+  #   values:                             integer
+  #   default:                            1
+  #
+  # slidesToShow
+  # ----------------------------------------------------------------------------
+  #   Number of slides to show at a time.
+  #
+  #   values:                             integer
+  #   default:                            1
+  #
+  # speed
+  # ----------------------------------------------------------------------------
+  #   Transition speed.
+  #
+  #   values:                             integer
+  #   default:                            300
+  #
+  # swipe
+  # ----------------------------------------------------------------------------
+  #   Enables touch swipe.
+  #
+  #   values:                             boolean
+  #   default:                            true
+  #
+  # swipeToSlide
+  # ----------------------------------------------------------------------------
+  #   Swipe to slide irrespective of slidesToScroll.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # touchMove
+  # ----------------------------------------------------------------------------
+  #   Enables slide moving with touch.
+  #
+  #   values:                             boolean
+  #   default:                            true
+  #
+  # touchThreshold
+  # ----------------------------------------------------------------------------
+  #   To advance slides, the user must swipe a length of
+  #     (1/touchThreshold) * width
+  #   of the slider.
+  #
+  #   values:                             integer
+  #   default:                            5
+  #
+  # useCSS
+  # ----------------------------------------------------------------------------
+  #   Enable/Disable CSS Transitions.
+  #
+  #   values:                             boolean
+  #   default:                            true
+  #
+  # useTransform
+  # ----------------------------------------------------------------------------
+  #   Enable/Disable CSS Transforms.
+  #
+  #   values:                             boolean
+  #   default:                            true
+  #
+  # variableWidth
+  # ----------------------------------------------------------------------------
+  #   Disables automatic slide width calculation.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # vertical
+  # ----------------------------------------------------------------------------
+  #   Vertical slide direction.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # verticalSwiping
+  # ----------------------------------------------------------------------------
+  #   Changes swipe direction to vertical.
+  #
+  #   values:                             boolean
+  #   default:                            false
+  #
+  # waitForAnimate
+  # ----------------------------------------------------------------------------
+  #   Ignores requests to advance the slide while animating.
+  #
+  #   values:                             boolean
+  #   default:                            true
+  #
+  # zIndex
+  # ----------------------------------------------------------------------------
+  #   Change the slider's direction to become right-to-left.
+  #
+  #   values:                             integer
+  #   default:                            1000
+  #
+  # ----------------------------------------------------------------------------
+  #
+  accessibility:                        true                                    # slick() may fatl if enabled (true)
+  adaptiveHeight:                       false
+  # appendArrows:                       $(element)                              # currently NOT supported
+  # appendDots:                         $(element)                              # currently NOT supported
+  arrows:                               false
+  # asNavFor:                           $(element)                              # currently NOT supported
+  autoplay:                             false
+  autoplaySpeed:                        3000
+  centerMode:                           false
+  centerPadding:                        '50px'
+  cssEase:                              'ease'
+  # customPaging:                       n/a                                     # currently NOT supported
+  dots:                                 false
+  dotsClass:                            'slick-dots'
+  draggable:                            true
+  easing:                               'linear'
+  edgeFriction:                         0.15
+  fade:                                 false
+  focusOnSelect:                        false
+  focusOnChange:                        false
+  infinite:                             true
+  initialSlide:                         0
+  lazyLoad:                             'ondemand'
+  mobileFirst:                          false
+  # nextArrow:                          selector                                # currently NOT supported
+  pauseOnDotsHover:                     false
+  pauseOnFocus:                         true
+  pauseOnHover:                         true
+  # prevArrow:                          selector                                # currently NOT supported
+  respondTo:                            'window'
+  responsive:                           null
+  rows:                                 1
+  rtl:                                  false
+  slide:                                ''
+  slidesPerRow:                         1
+  slidesToScroll:                       1
+  slidesToShow:                         1
+  speed:                                300
+  swipe:                                true
+  swipeToSlide:                         false
+  touchMove:                            true
+  touchThreshold:                       5
+  useCSS:                               true
+  useTransform:                         true
+  variableWidth:                        false
+  vertical:                             false
+  verticalSwiping:                      false
+  waitForAnimate:                       true
+  zIndex:                               1000
+
+# ------------------------------------------------------------------------------
+# END config

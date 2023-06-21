@@ -12,10 +12,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Scroller API
   scope:                                User settings
   location:                             _data/modules/scroller.yml
@@ -26,15 +25,26 @@ description:
 settings:
   enabled:                              true
 
+  # ----------------------------------------------------------------------------
+  # SmoothScroll options
+  # ----------------------------------------------------------------------------
+  smoothscroll:
+    offsetCorrection:                   -9
+    offsetCorrectionLocal:              -90
+
+  # ----------------------------------------------------------------------------
+  # Scroller configurations
+  # ----------------------------------------------------------------------------
   scrollers:
+
     # --------------------------------------------------------------------------
     # Intro Panel
     #
     - scroller:
         enabled:                        true
         type:                           showOnScroll
-        id:                             home_intro_panel
-        container:                      home_intro_panel
+        id:                             panel_home_intro
+        container:                      panel_home_intro
         showDelay:                      1000
         scrollOffset:                   500
 
@@ -42,46 +52,46 @@ settings:
     # Service Panel
     #
     - scroller:
-        enabled:                        true
+        enabled:                        false
         type:                           showOnScroll
-        id:                             home_service_panel
-        container:                      home_service_panel
+        id:                             panel_home_service
+        container:                      panel_home_service
         showDelay:                      700
         scrollOffset:                   200
 
     # --------------------------------------------------------------------------
-    # News Panel
+    # News Panel (ScrollGroup)
     #
     - scroller:
         enabled:                        true
         type:                           infiniteScroll
-        id:                             home_news_panel
-        container:                      home_news_panel-scroll-group
+        id:                             preview_content
+        container:                      panel_home_news-scroll-group
         pagePath:                       /assets/data/news_panel_posts/page
         elementScroll:                  true                                    # false = window, true = container
-        scrollOffset:                   100
-        lastPage:                       3
+        scrollOffset:                   200
+        lastPage:                       2                                       # 1 page "equals" 2 posts
         infoLastPage:                   true
 
         lastPageInfo_en: >
                                         More articles can be found with the
-                                        <a href="/pages/public/blog/navigator/" class="link-no-decoration">Blog Navigator</a>
+                                        <a href="/pages/public/blog/navigator/" class="link-no-decoration">Navigator</a>
         lastPageInfo_de: >
                                         Weitere Artikel finden Sie im
-                                        <a href="/pages/public/blog/navigator/" class="link-no-decoration">Blog Navigator</a>
+                                        <a href="/pages/public/blog/navigator/" class="link-no-decoration">Navigator</a>
 
     # --------------------------------------------------------------------------
-    # Blog Navigator Preview
+    # Blog Navigator Preview (Timeline)
     #
     - scroller:
         enabled:                        true
         type:                           infiniteScroll
-        id:                             blog_navigator_preview
+        id:                             preview_content                         # blog_navigator_preview
         container:                      timeline
         pagePath:                       /pages/public/blog/navigator/page
         elementScroll:                  true
         scrollOffset:                   200
-        lastPage:                       4
+        lastPage:                       1000000                                 # high number "means" ALL pages|posts to load
         infoLastPage:                   false
 
         lastPageInfo_en:                ""

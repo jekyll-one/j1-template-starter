@@ -24,25 +24,25 @@ description:
 #
 defaults:
 
-  xhr_data_path:                        /assets/data/masterslider
-  module_version:                       lite                                    # lite | pro
+  xhr_data_path:                        /assets/data/masterslider               # data portion of all slders configured
+  module_version:                       lite                                    # lite | pro (commercial licence required)
   save_slider_config:                   true
-  slider_manager:                       true
+  slider_manager:                       true                                    # use on init script (#ms-slider-manager) to fire sliders configured on page load (recommended)
+  slider_manager_load_timeout:          2500                                    # depending on the platform|browser performace, loading the slider manager is delayed
 
   icon_family:                          MDI
   icon_class:                           false                                   # false | fas | fab (Fontawsesome only)
   icon_color:                           '#1E88E5'                               # md-blue-600
   icon_size:                            2x
 
-  skin:                                 default
-  lightbox:
+  # ----------------------------------------------------------------------------
+  # Masonry options
+  # ----------------------------------------------------------------------------
+  skin:                                 default                                 # the default MS skin loaded
+
+  lightbox:                                                                     # use on a lightbox|type
     enabled:                            false
-    type:                               lb                                      # lb | lg
-
-
-  # ----------------------------------------------------------------------------
-  # DEFAULT  settings
-  # ----------------------------------------------------------------------------
+    type:                               lb                                      # lb (default) | lg
 
   # ----------------------------------------------------------------------------
   # Slider controls
@@ -226,10 +226,6 @@ defaults:
       layers_parallax_depth:              50
       background_parallax_depth:          40
       fade_layers:                        false
-
-
-
-
 
 # ------------------------------------------------------------------------------
 # END config

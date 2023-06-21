@@ -12,10 +12,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                CookieConsent
   scope:                                Default settings
   location:                             _data/modules/defaults/cookieconsent.yml
@@ -25,6 +24,9 @@ description:
 #
 defaults:
   enabled:                              false
+
+  show_cookie_icon:                     false
+  expire_cookies_on_required_only:      true
 
   reloadPageOnChange:                   true
   autoShowDialog:                       true                                    # show consent dialog if NO consent cookie found
@@ -54,25 +56,25 @@ defaults:
       en: >
                                         This website uses cookies and similar technologies that are required
                                         for operation. You are free to decide to give, refuse or withdraw your
-                                        consent at any time by clicking the <code>My Settings</code> button.
-                                        Changes are possible at any time by clicking on the <code>cookie</code>
-                                        icon in the menu bar. Additional cookies are used only with your consent.
+                                        consent at any time by clicking the <b>My Settings</b> button.
+                                        Changes are possible at any time by clicking on the cookie icon in the
+                                        menu bar. Additional cookies are used only with your consent.
                                         Additional cookies are used to analyze the use of this website or to store
                                         your personal settings for this website. Personal settings allow all visitors
                                         to save preferences of the use of services.
                                         For more information about what data is collected and shared with partners,
-                                        please find more information with <code>Privacy Notice</code>.
+                                        please find more information with <b>Privacy Notice</b>.
                                         <br><br>
                                         To visit this website, your consent on cookies is required by clicking
-                                        the <code>I Agree</code> button.
+                                        the <b>I Agree</b> button.
 
       de: >
                                         Diese Website verwendet Cookies und ähnliche Technologien, die für den Betrieb
                                         dieser Website erforderlich sind. Sie können zu jederzeit entscheiden, ob Sie
                                         Ihre Zustimmung geben, verweigern oder zurückziehen.
                                         Sie können Ihre Zustimmung geben, indem Sie auf die Schaltfläche
-                                        <code>Einverstanden</code> klicken. Nachträgliche Änderungen sind
-                                        jederzeit möglich, indem Sie auf das <code>Cookie</code> Symbol in der
+                                        <b>Einverstanden</b> klicken. Nachträgliche Änderungen sind
+                                        jederzeit möglich, indem Sie auf das Cookie Symbol in der
                                         Menüleiste klicken.
                                         <br><br>
                                         Erweiterte Cookies werden nur mit Ihrer <b>Zustimmung</b> verwendet. Zusätzliche
@@ -83,11 +85,11 @@ defaults:
                                         Präferenzen der Nutzung von Diensten zu speichern.
                                         <br><br>
                                         Weitere Informationen darüber, welche Daten gesammelt und an Partner
-                                        weitergegeben werden finden Sie in der <code>Datenschutzrichtlinie</code>.
-                                        Oder in Kurzform, indem Sie auf <code>Datenschutzerklärung</code> klicken.
+                                        weitergegeben werden finden Sie in der <b>Datenschutzrichtlinie</b>.
+                                        Oder in Kurzform, indem Sie auf <b>Datenschutzerklärung</b> klicken.
                                         <br><br>
                                         Wenn Sie diese Website besuchen, ist Ihre Zustimmung zur Verwendung von Cookies
-                                        erforderlich, indem Sie auf die Schaltfläche <code>Einverstanden</code> klicken.
+                                        erforderlich, indem Sie auf die Schaltfläche <b>Einverstanden</b> klicken.
 
     privacy_notice:
       en: >
@@ -95,67 +97,85 @@ defaults:
                                         seriously. We treat your data confidential and comply with the General
                                         Data Protection Regulation (GDPR) of the European Union to protect your
                                         privacy.
-                                        A set of data is stored in <b>Persistent Cookies</b>. Our partners and we
-                                        make use of Persistent Cookies. Those <b>additional</b> cookies are only
-                                        used with your consent.
+                                        A set of data is stored in persistent cookies and remain on your computer
+                                        for later use. Our partners and we make use of persistent vookies. Those
+                                        additional cookies are only used with your consent.
                                         <br>
                                         <ul>
-                                          <li>
-                                            <code>Necessary</code> This website is based on static content, and no
-                                            database is used behind it. All information (data) needed to control this
-                                            site is stored in so-called <b>Session Cookies</b>. Your browser automatically
-                                            <b>removes</b> session cookies if you close all windows of the browser.
+                                          <li style="list-style-type: none;">
+                                            <b>Necessary</b>
+                                            <p>
+                                              This website is based on static content, and no database is used behind it.
+                                              All information (data) needed to control this site is stored in so-called
+                                              session Cookies. Your browser automatically removes all session cookies
+                                              if you close all windows in the browser.
+                                            </p>
                                           </li>
-                                          <li>
-                                            <code>Analysis</code> of this website's usage helps optimize the site's
-                                            pages to improve the visitor's experience. For analysis, Google Analytics
-                                            (GA) is used. GA uses <b>Persistent Cookies</b> that remain on your computer
-                                            for its service. This website does <b>not</b> transfer any personal data to GA.
-                                            Implicit personal information, like IP addresses, is anonymized to protect
-                                            your privacy.
+                                          <li style="list-style-type: none;">
+                                            <b>Analysis</b>
+                                            <p>
+                                              Analysis of the usage of this website helps optimize the site's pages to
+                                              improve the visitor's experience. For traffic analysis, the service
+                                              Google Analytics (GA) is used. GA uses persistent cookies that remain on
+                                              your computer for its service. This website does <b>not</b> transfer any
+                                              personal data to GA. Implicit personal information, like IP addresses, is
+                                              anonymized to protect your privacy.
+                                            </p>
                                           </li>
-                                          <li>
-                                            <code>Personalization</code> provides <b>additional services</b> like themes,
-                                            translation, comments, or running advertising campaigns to provide visitors
-                                            with a website free of charge. Partners use <b>Persistent Cookies</b> that
-                                            remain on your computer for their services. Our partners like Bootswatch,
-                                            Disqus, or Google provide excellent personalized services and finance running
-                                            this site.
+                                          <li style="list-style-type: none;">
+                                            <b>Personalization</b>
+                                            <p>
+                                              Remebering your personal settings provides additional services like themes
+                                              translation, comments, or running advertising campaigns to provide visitors
+                                              with a website free of charge. Partners use persistent cookies that
+                                              remain on your computer for their services. Our partners like Bootswatch,
+                                              Hyvor, Disqus, or Google provide excellent personalized services and finance
+                                              running this site.
+                                            </p>
                                           </li>
                                         </ul>
       de: >
                                         Der Betreiber dieser Website nimmt den Schutz Ihrer persönlichen Daten sehr
                                         ernst. Wir behandeln Ihre Daten vertraulich und halten uns an die
-                                        <b>Datenschutzgrundverordnung</b> (DSGVO) der Europäischen Union zum Schutz
+                                        <b>Datenschutzgrundverordnung (DSGVO)</b> der Europäischen Union zum Schutz
                                         Ihrer Privatsphäre.
                                         <br><br>
-                                        Eine Reihe von Daten wird in <b>dauerhaften Cookies</b> gespeichert. Unsere
-                                        Partner und wir verwenden dauerhafte Cookies. Diese <b>zusätzlichen</b> Daten
+                                        Eine Reihe von Daten wird in dauerhaften Cookies gespeichert. Unsere
+                                        Partner und wir verwenden dauerhafte Cookies. Diese zusätzlichen Daten
                                         werden nur mit Ihrer <b>Zustimmung</b> gespeichert.
                                         <br>
                                         <ul>
-                                          <li>
-                                            <code>Notwendig</code> Diese Website speichert <b>keine</b> persönliche Daten
-                                            in Datenbanken. Alle Informationen (Daten) die zur Steuerung dieser Seite
-                                            notwendig sind, werden in sogenannten <b>Sitzungscookies</b> gespeichert. Ihr
-                                            Browser <b>entfernt</b> Sitzungscookies automatisch ohne Ihr zutun, wenn Sie
-                                            alle Browserfenster schließen.
-                                          <li>
-                                            <code>Analysen</code> der Nutzung dieser Website hilft bei der Optimierung der
-                                            Website, um die Nutzung für alle Besucher zu verbessern. Für die Analyse wird
-                                            der Dienst <em>Google Analytics</em> (GA) verwendet. GA verwendet dauerhafte
-                                            Cookies die auf Ihrem Computer verbleiben, um diesen Dienst zu ermöglichen.
-                                            Diese Website überträgt <b>keine</b> persönlichen Daten an den Dienst GA.
-                                            Implizite persönliche Informationen, wie IP-Adressen, werden zum Schutz der
-                                            Privatsphäre unserer Besucher anonymisiert.
+                                          <li style="list-style-type: none;">
+                                            <b>Notwendig</b>
+                                            <p>
+                                              Diese Website speichert <b>keine</b> persönliche Daten
+                                              in Datenbanken. Alle Informationen (Daten) die zur Steuerung dieser Seite
+                                              notwendig sind, werden in sogenannten Sitzungscookies gespeichert. Ihr
+                                              Browser <b>entfernt</b> Sitzungscookies automatisch ohne Ihr zutun, wenn Sie
+                                              alle Browserfenster schließen.
+                                            </p>
+                                          <li style="list-style-type: none;">
+                                            <b>Analysen</b>
+                                            <p>
+                                              Die Nutzung von Verkehrsanalysen hilft bei der Optimierung der
+                                              Website, um die Nutzung für alle Besucher zu verbessern. Für die Analyse wird
+                                              der Dienst Google Analytics (GA) verwendet. GA verwendet dauerhafte
+                                              Cookies die auf Ihrem Computer verbleiben, um diesen Dienst zu ermöglichen.
+                                              Diese Website überträgt <b>keine</b> persönlichen Daten an den Dienst GA.
+                                              Implizite persönliche Informationen, wie IP-Adressen, werden zum Schutz der
+                                              Privatsphäre unserer Besucher anonymisiert.
+                                            </p>
                                           </li>
-                                          <li>
-                                            <code>Personalisierung</code> wird verwendet, um <b>zusätzliche</b> Dienste
-                                            anzubieten. Dazu gehören Themen, Übersetzungen, Kommentare oder Werbekampagnen
-                                            die allen Anwendern einen kostenlosen Besuch dieser Website ermöglichen.
-                                            Partner verwenden für ihre Dienste dauerhafte Cookies, die auf Ihrem Computer
-                                            verbleiben. Unsere Partner wie Bootswatch, Disqus, oder Google bieten hervorragende
-                                            personalisierte Dienste und finanzieren die Kosten für den Betrieb dieser Seiten.
+                                          <li style="list-style-type: none;">
+                                            <b>Personalisierung</b>
+                                            <p>
+                                              Die Speicherung persönlichger Einstellungen wird verwendet, um zusätzliche
+                                              Dienste anzubieten. Dazu gehören Themen, Übersetzungen, Kommentare oder Werbekampagnen
+                                              die allen Anwendern einen kostenlosen Besuch dieser Website ermöglichen.
+                                              Partner verwenden für ihre Dienste dauerhafte Cookies, die auf Ihrem Computer
+                                              verbleiben. Unsere Partner wie Bootswatch, Disqus, oder Google bieten hervorragende
+                                              personalisierte Dienste und finanzieren die Kosten für den Betrieb dieser Seiten.
+                                            <p>
                                           </li>
                                         </ul>
 

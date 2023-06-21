@@ -1,6 +1,6 @@
 ---
 title:                                  Simple Document Skeleton
-tagline:                                Create Typical Articles 
+tagline:                                Create Typical Articles
 date:                                   2022-01-01 00:00:00
 description: >
                                         Simple documents are used quite often. If the number
@@ -15,31 +15,26 @@ robots:
   index:                                false
   follow:                               false
 
-personalization:                        false
-comments:                               false
-exclude_from_search:                    false
-
 image:
   path:                                 /assets/images/modules/attics/sigmund-1920x1280.jpg
   width:                                1920
   height:                               1280
   alt:                                  Photo by Sigmund on Unsplash
 
-fab_menu_id:                            page_ctrl
+personalization:                        false
+comments:                               false
+exclude_from_search:                    false
+fab_menu_id:                            open_toc
 scrollbar:                              false
 toc:                                    true
-
-permalink:                              /pages/public/skeleton/simple/
 regenerate:                             false
+permalink:                              /pages/public/skeleton/simple/
 
 resources:                              [ animate, clipboard, lightbox, rouge ]
 resource_options:
   - toccer:
       collapseDepth:                    3
   - attic:
-      padding_top:                      400
-      padding_bottom:                   50
-      opacity:                          0.5
       slides:
         - url:                          /assets/images/modules/attics/sigmund-1920x1280.jpg
           alt:                          Photo by Sigmund on Unsplash

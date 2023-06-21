@@ -11,7 +11,7 @@ image:
   height:                               1280
   alt:                                  Cookies - Good to know
 
-fab_menu_id:                            page_ctrl
+fab_menu_id:                            open_toc
 comments:                               false
 regenerate:                             false
 
@@ -19,8 +19,6 @@ resources:                              [ animate ]
 resource_options:
   - attic:
       padding_top:                      600
-      padding_bottom:                   50
-      opacity:                          0.5
       slides:
         - url:                          /assets/images/modules/attics/cookies-1920x1200.jpg
           alt:                          Photo by Miroslava on Unsplash
@@ -52,20 +50,6 @@ are bothered all the time to accept cookies. For good reasons.
 
 excerpt__end
 
-//  Load Liquid procedures
-// -----------------------------------------------------------------------------
-{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
-
-// Load page attributes
-// -----------------------------------------------------------------------------
-{% include {{load_attributes}} scope="global" %}
-
-
-// Page content
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-// Include sub-documents (if any)
-// -----------------------------------------------------------------------------
 
 == What are cookies technically
 

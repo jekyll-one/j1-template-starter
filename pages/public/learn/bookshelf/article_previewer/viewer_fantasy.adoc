@@ -1,0 +1,89 @@
+---
+title:                                  Fantasy
+tagline:                                Fantasy Literature
+date:                                   2023-01-29 00:00:00
+description: >
+                                        Fantasy Literature in the Book Shelf
+
+categories:                             [ Books ]
+tags:                                   [ Fantasy, Preview ]
+
+image:
+  path:                                 /assets/images/modules/attics/giammarco-boscaro-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Giammarco on Unsplash
+
+robots:
+  index:                                false
+  follow:                               false
+
+toc:                                    false
+fab_menu_id:                            default
+regenerate:                             false
+permalink:                              /pages/public/learn/bookshelf/article_previewer/fantasy/
+
+resources:                              [ animate, masonry ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/images/modules/attics/giammarco-boscaro-1920x1280.jpg
+          alt:                          Photo by Giammarco on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Giammarco
+            href:                       https://unsplash.com/@giamboscaro
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+{% comment %} Liquid procedures
+-------------------------------------------------------------------------------- {% endcomment %}
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+{% capture create_collection_article_preview %}themes/{{site.template.name}}/procedures/collections/create_collection_article_preview.proc{% endcapture %}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+The fantasy genre has become popular the past few years. Once a genre
+restricted to a few Tolkien fanatics and literature freaks, Fantasy has
+now gone mainstream in a big way, from the mega-popular Harry Potter series
+capturing the world's attention for a decade; brought Fantasy to readers of
+all ages.
+
+NOTE: *Resize* the browser window to see the `masonry` module, applied on
+this page, in action. All elements gets automatically *re-ordered* to fit
+the grid positions calculated by the module.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+== Available Books
+
+[role="mb-4"]
+Find below all available articles in the `fantasy` collection. The content is
+automatically generated and taken from the articles this collection
+contains.
+
+masonry::collection_fantasy[role="mb-4"]
+
+////
+++++
+<div class="row mb-4">
+  <div class="col-md-12 col-xs-12">
+    {% include {{create_collection_article_preview}} collection=site.fantasy %}
+  </div>
+</div>
+++++
+////

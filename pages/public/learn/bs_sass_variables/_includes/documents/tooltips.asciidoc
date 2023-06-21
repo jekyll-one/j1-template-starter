@@ -1,0 +1,28 @@
+[source, sass]
+----
+// tooltip variables
+//
+$tooltip-font-size:                     $font-size-sm !default;
+$tooltip-max-width:                     200px !default;
+$tooltip-color:                         var(--#{$prefix}body-bg) !default;
+$tooltip-bg:                            var(--#{$prefix}emphasis-color) !default;
+$tooltip-border-radius:                 var(--#{$prefix}border-radius) !default;
+$tooltip-opacity:                       .9 !default;
+$tooltip-padding-y:                     $spacer * .25 !default;
+$tooltip-padding-x:                     $spacer * .5 !default;
+$tooltip-margin:                        null !default; // TODO: remove this in v6
+
+$tooltip-arrow-width:                   .8rem !default;
+$tooltip-arrow-height:                  .4rem !default;
+
+$tooltip-arrow-color:                   null !default; // Deprecated in Bootstrap 5.2.0 for CSS variables
+
+// tooltip-feedback variables
+//
+$form-feedback-tooltip-padding-y:       $tooltip-padding-y !default;
+$form-feedback-tooltip-padding-x:       $tooltip-padding-x !default;
+$form-feedback-tooltip-font-size:       $tooltip-font-size !default;
+$form-feedback-tooltip-line-height:     null !default;
+$form-feedback-tooltip-opacity:         $tooltip-opacity !default;
+$form-feedback-tooltip-border-radius:   $tooltip-border-radius !default;
+----

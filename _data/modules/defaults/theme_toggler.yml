@@ -1,0 +1,42 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/modules/defaults/theme_toggler.yml
+#  Default configuration settings for J1 Theme Toggler module
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2023 Juergen Adams
+#
+#  J1 Theme is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 Theme Toggler
+  scope:                                Default settings
+  location:                             _data/modules/defaults/theme_toggler.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+  enabled:                              false
+
+  # ----------------------------------------------------------------------------
+  # Toggler options
+  # ----------------------------------------------------------------------------
+  themes:
+
+    light:
+      name:                           UnoLight
+      css_file:                       /assets/themes/j1/core/css/themes/unolight/bootstrap.css
+
+    dark:
+      name:                           UnoDark
+      css_file:                       /assets/themes/j1/core/css/themes/unodark/bootstrap.css
+
+# ------------------------------------------------------------------------------
+# END config

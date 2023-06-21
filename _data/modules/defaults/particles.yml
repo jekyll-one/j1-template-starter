@@ -12,10 +12,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                J1 Particle Module
   scope:                                Default settings
   location:                             _data/modules/defaults/particles.yml
@@ -24,16 +23,16 @@ description:
 # Default configuration settings
 #
 defaults:
+  enabled:                              false
 
   # ----------------------------------------------------------------------------
-  # GENERAL settings
-  #
-  enabled:                              false
+  # Particle options
+  # ----------------------------------------------------------------------------
   xhr_data_path:                        /assets/data/particles.yml
 
-  # ============================================================================
+  # ----------------------------------------------------------------------------
   # Particle settings
-  #
+  # ----------------------------------------------------------------------------
   particle_data:
 
     particles:

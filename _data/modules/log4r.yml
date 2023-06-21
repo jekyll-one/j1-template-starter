@@ -12,10 +12,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Ruby Logger
   scope:                                User settings
   location:                             _data/modules/log4r.yml
@@ -46,6 +45,7 @@ log4r_config:
   #   j1.mw.auth_mgr.api.state
   #   j1.mw.auth_mgr.api.validate
   # ----------------------------------------------------------------------------
+  #
   loggers:
 
     - name:                             j1.mw
@@ -132,6 +132,7 @@ log4r_config:
   #   date_pattern: '%Y-%m-%d %H:%M:%S.%L'      (%L: milli)
   #   date_pattern: '%Y-%m-%d %H:%M:%S.%L %z'   (milli + %z: timezone)
   # ----------------------------------------------------------------------------
+  #
   outputters:
 
     - name:                             console

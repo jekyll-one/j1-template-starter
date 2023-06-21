@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-#  ~/_data/modules/google_translate.yml
-#  User configuration settings for J1 Google Translate module
+#  ~/_data/modules/translator.yml
+#  User configuration ssettings for J1 Translator module
 #
 #  Product/Info:
 #  https://jekyll.one
@@ -12,10 +12,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                J1 Translator
   scope:                                User settings
   location:                             _data/modules/translator.yml
@@ -26,6 +25,9 @@ description:
 settings:
   enabled:                              true
 
+  # ----------------------------------------------------------------------------
+  # Translator options
+  # ----------------------------------------------------------------------------
   translatorName:                       google
   contentLanguage:                      en                                      # [auto|any supported language], auto: language set by site config
   dialogLanguage:                       auto                                    # [auto|en|de], auto: language set by site config

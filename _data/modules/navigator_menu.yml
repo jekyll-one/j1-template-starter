@@ -14,6 +14,9 @@
 # NOTE:
 #   For general navigation settings, see navigator.yml
 # ------------------------------------------------------------------------------
+# NOTE:
+#   NO default settings
+# ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
 # Menu LEARN
@@ -32,40 +35,181 @@
       icon:                             briefcase-search-outline
       dropdown:
 
-        - title:                        Present images
+        - title:                        Image
           href:                         /pages/public/learn/roundtrip/present_images/
           icon:                         image
-        - title:                        Present videos
+        - title:                        Video
           href:                         /pages/public/learn/roundtrip/present_videos/
           icon:                         video
         - title:                        Typography
           href:                         /pages/public/learn/roundtrip/typography/
           icon:                         format-text
-        - title:                        Icon fonts
+        - title:                        Icons
           href:                         /pages/public/learn/roundtrip/mdi_icon_font/
           icon:                         fan
-        - title:                        Asciidoc extensions
+        - title:                        Extensions
           href:                         /pages/public/learn/roundtrip/asciidoc_extensions/
           icon:                         format-annotation-plus
-        - title:                        BS modal extensions
+        - title:                        Modals
           href:                         /pages/public/learn/roundtrip/modals/
           icon:                         image
-        - title:                        BS table extensions
+        - title:                        Tables
           href:                         /pages/public/learn/roundtrip/responsive_tables/
           icon:                         table
-        - title:                        BS themes
+        - title:                        Themes
           href:                         /pages/public/learn/roundtrip/themes/
           icon:                         theme-light-dark
-        - title:                        QuickSearch
+        - title:                        Search
           href:                         /pages/public/learn/roundtrip/quicksearch/
           icon:                         magnify
+
+    # --------------------------------------------------------------------------
+    # Cheatsheets
+    #
+    - title:                            Cheatsheet
+      icon:                             book
+      dropdown:
+
+        - title:                        J1
+#         href:                         /pages/public/learn/cheatsheet/j1/
+          href:                         https://jekyll.one/pages/public/learn/cheatsheet/j1/
+          icon:                         alpha-j-box-outline
+          target:                       _blank
+        - title:                        YAML
+#         href:                         /pages/public/learn/cheatsheet/yaml/
+          href:                         https://jekyll.one/pages/public/learn/cheatsheet/yaml/
+          icon:                         alpha-y-box-outline
+          target:                       _blank
+        - title:                        Git
+#         href:                         /pages/public/learn/cheatsheet/git/
+          href:                         https://jekyll.one/pages/public/learn/cheatsheet/git/
+          icon:                         git
+          target:                       _blank
+        - title:                        Gem
+#         href:                         /pages/public/learn/cheatsheet/gem/
+          href:                         https://jekyll.one/pages/public/learn/cheatsheet/gem/
+          icon:                         language-ruby
+          target:                       _blank
+
+    # --------------------------------------------------------------------------
+    # Collections
+    #
+    - title:                            Collections
+      icon:                             application
+      dropdown:
+
+        - title:                        Jekyll Collections
+          href:                         /pages/public/learn/bookshelf/jekyll_collections/
+#         href:                         https://jekyll.one/pages/public/learn/bookshelf/jekyll_collections/
+          icon:                         head-question
+          target:                       _blank
+
+        - title:                        Bookshelf Collection
+          icon:                         eye
+          dropdown:
+            - title:                    Bookshelf
+              href:                     /pages/public/learn/bookshelf/article_previewer/all_books/
+#             href:                     https://jekyll.one/pages/public/learn/bookshelf/article_previewer/all_books/
+              icon:                     book-marker
+              target:                   _blank
+            - title:                    Biography
+              href:                     /pages/public/learn/bookshelf/article_previewer/biography/
+#             href:                     https://jekyll.one/pages/public/learn/bookshelf/article_previewer/biography/
+              icon:                     book-marker
+              target:                   _blank
+            - title:                    Fantasy
+              href:                     /pages/public/learn/bookshelf/article_previewer/fantasy/
+#             href:                     https://jekyll.one/pages/public/learn/bookshelf/article_previewer/fantasy/
+              icon:                     book-marker
+              target:                   _blank
+            - title:                    Romance
+              href:                     /pages/public/learn/bookshelf/article_previewer/romance/
+#             href:                     https://jekyll.one/pages/public/learn/bookshelf/article_previewer/romance/
+              icon:                     book-marker
+              target:                   _blank
+
+    # --------------------------------------------------------------------------
+    # Tutorials
+    #
+    - title:                            Tutorials
+      icon:                             wizard-hat
+      dropdown:
+
+        - title:                        Rocketstart
+          href:                         https://jekyll.one/pages/public/learn/rocketstart/
+          icon:                         rocket-launch
+          target:                       _blank
+
+
+        - title:                        Site Development
+          href:                         https://jekyll.one/pages/public/learn/devstart/
+          icon:                         launch
+
+        - title:                        Jekyll In A Day
+          icon:                         alpha-j-box
+          dropdown:
+
+            - title:                    Meet & Greet
+              href:                     https://jekyll.one/pages/public/learn/kickstart/web_in_a_day/meet_and_greet/
+              icon:                     human-queue
+              target:                   _blank
+            - title:                    A awesome Site
+              href:                     https://jekyll.one/pages/public/learn/kickstart/web_in_a_day/a_awesome_site/
+              icon:                     sitemap
+              target:                   _blank
+            - title:                    Development System
+              href:                     https://jekyll.one/pages/public/learn/kickstart/web_in_a_day/dev_system/
+              icon:                     hammer-wrench
+              target:                   _blank
+            - title:                    Project Management
+              href:                     https://jekyll.one/pages/public/learn/kickstart/web_in_a_day/manage_projects/
+              icon:                     abacus
+              target:                   _blank
+            - title:                    Creating content
+              href:                     https://jekyll.one/pages/public/learn/kickstart/web_in_a_day/create_content/
+              icon:                     file-document-edit
+              target:                   _blank
+
+        - title:                        Learning SEO
+          icon:                         wizard-hat
+          dropdown:
+
+            - title:                    What SEO Is
+              href:                     https://jekyll.one/pages/public/learn/kickstart/learning_seo/what_seo_is/
+              icon:                     search-web
+              target:                   _blank
+            - title:                    Factors of Success
+              href:                     https://jekyll.one/pages/public/learn/kickstart/learning_seo/success_factors/
+              icon:
+              target:                   _blank
+            - title:                    Structured Data
+              href:                     https://jekyll.one/pages/public/learn/kickstart/learning_seo/structured_data/
+              icon:                     sitemap
+              target:                   _blank
+            - title:                    Content Optimization
+              href:                     https://jekyll.one/pages/public/learn/kickstart/learning_seo/content_optimization/
+              icon:                     calculator-variant-outline
+              target:                   _blank
+
+# ------------------------------------------------------------------------------
+# TopLevel item FEATURES
+#
+- item:                                 Features
+  href:                                 /#panel_home_intro
+
+# ------------------------------------------------------------------------------
+# TopLevel item BLOG
+#
+# - item:                                 Blog
+#   href:                                 /#home_news_panel
 
 # ------------------------------------------------------------------------------
 # Menu BLOG
 #
 - item:                                 Blog
   sublevel:
-    - title:                            Blog Navigator
+
+    - title:                            Navigator
       href:                             /pages/public/blog/navigator/
       icon:                             near-me
     - title:                            Categories
@@ -87,6 +231,13 @@
     # --------------------------------------------------------------------------
     # Modules
     #
+
+    - title:                            Where to go
+      href:                             https://jekyll.one/pages/public/manuals/where_to_go/
+      icon:                             paw
+      target:                           _blank
+
+
     - title:                            Modules
       icon:                             alpha-j-box
       dropdown:
@@ -94,49 +245,58 @@
         - title:                        Master Header
           href:                         https://jekyll.one/pages/public/manuals/modules/attic/
           icon:                         window-shutter
+          target:                       _blank
         - title:                        Carousel
           href:                         https://jekyll.one/pages/public/manuals/modules/carousel/
           icon:                         view-carousel
+          target:                       _blank
         - title:                        Cookie Consent
           href:                         https://jekyll.one/pages/public/manuals/modules/cookie_consent/
-#         href:                         '#'
           icon:                         cookie
+          target:                       _blank
         - title:                        Galleries
           href:                         https://jekyll.one/pages/public/manuals/modules/gallery/
           icon:                         view-dashboard-variant
+          target:                       _blank
         - title:                        Lightbox
           href:                         https://jekyll.one/pages/public/manuals/modules/lightbox/
           icon:                         flashlight
+          target:                       _blank
         - title:                        Logger
           href:                         https://jekyll.one/pages/public/manuals/modules/logger/
           icon:                         math-log
         - title:                        Master Slider
           href:                         https://jekyll.one/pages/public/manuals/modules/masterslider/
           icon:                         gesture-swipe
+          target:                       _blank
         - title:                        Mobile Menu
           href:                         https://jekyll.one/pages/public/manuals/mmenu/
           icon:                         menu
+          target:                       _blank
         - title:                        MSDropdown
           href:                         https://jekyll.one/pages/public/manuals/msdropdown/
           icon:                         form-dropdown
+          target:                       _blank
         - title:                        Navigator
           href:                         https://jekyll.one/pages/public/manuals/modules/navigator/
-#         href:                         '#'
+          target:                       _blank
           icon:                         near-me
         - title:                        Range Slider
           href:                         https://jekyll.one/pages/public/manuals/modules/rangeslider/
           icon:                         distribute-vertical-center
+          target:                       _blank
         - title:                        Code Hightlighter Rouge
           href:                         https://jekyll.one/pages/public/manuals/rouge/user_guide/
           icon:                         format-color-fill
+          target:                       _blank
         - title:                        Themer
           href:                         https://jekyll.one/pages/public/manuals/modules/themer/
-#         href:                         '#'
           icon:                         theme-light-dark
+          target:                       _blank
         - title:                        Toccer
           href:                         https://jekyll.one/pages/public/manuals/modules/toccer/
-#         href:                         '#'
           icon:                         wrap
+          target:                       _blank
 
     # --------------------------------------------------------------------------
     # J1 Components
@@ -150,8 +310,6 @@
           href:                         '#'
           icon:                         garage
         - title:                        Layouts
-#         href:                         https://jekyll.one/pages/public/manuals/j1/layouts/
-#         href:                         '#'
           href:                         https://jekyllrb.com/docs/layouts/
           icon:                         page-layout-body
           target:                       _blank
@@ -163,9 +321,11 @@
             - title:                    Banner And Panel
               href:                     https://jekyll.one/pages/public/manuals/j1/blocks/banner_panel/
               icon:                     order-bool-descending
+              target:                   _blank
             - title:                    Footer
               href:                     https://jekyll.one/pages/public/manuals/j1/blocks/footer/
               icon:                     order-bool-ascending
+              target:                   _blank
 
         - title:                        Content
           icon:                         file
@@ -174,13 +334,16 @@
             - title:                    Pages
               href:                     https://jekyll.one/pages/public/manuals/j1/content/pages/
               icon:                     file-document
+              target:                   _blank
             - title:                    Posts
               href:                     https://jekyll.one/pages/public/manuals/j1/content/posts/
               icon:                     file-delimited
+              target:                   _blank
 
 #           - title:                    Collections
 #             href:                     https://jekyll.one/pages/public/manuals/j1/content/collections/
 #             icon:                     file-percent
+#             target:                   _blank
 
     # --------------------------------------------------------------------------
     # J1 Integrations
@@ -245,6 +408,7 @@
             - title:                    Asciidoctor
               href:                     https://jekyll.one/pages/public/manuals/j1/plugins/asciidoctor/
               icon:                     hospital
+              target:                   _blank
             - title:                    J1 Paginator
 #             href:                     https://jekyll.one/pages/public/manuals/j1/plugins/j1_paginator/
               href:                     '#'
@@ -263,12 +427,18 @@
       icon:                             toolbox
       dropdown:
 
+        - title:                        HTML Validation
+          href:                         https://jekyll.one/pages/public/toolbox/html_validation/
+          icon:                         language-html5
+          target:                       _blank
         - title:                        Pandoc
-          href:                         https://jekyll.one/pages/public/manuals/pandoc/
+          href:                         https://jekyll.one/pages/public/toolbox/pandoc/
           icon:                         cog-transfer
-        - title:                        Platform Info
-          href:                         https://jekyll.one/pages/public/manuals/platform/
+          target:                       _blank
+        - title:                        Platform
+          href:                         https://jekyll.one/pages/public/toolbox/platform/
           icon:                         folder-information
+          target:                       _blank
 
         # ----------------------------------------------------------------------
         # AsciiDoc
@@ -300,17 +470,21 @@
           dropdown:
 
             - title:                    Liquid
-              href:                     https://jekyll.one/pages/public/manuals/liquid/user_guide/
+              href:                     https://jekyll.one/pages/public/toolbox/liquid/
               icon:                     mustache
+              target:                   _blank
             - title:                    Commandline
-              href:                     https://jekyll.one/pages/public/manuals/jekyll/user_guide/commandline/
+              href:                     https://jekyll.one/pages/public/toolbox/jekyll/commandline/
               icon:                     console-line
+              target:                   _blank
             - title:                    Configuration
-              href:                     https://jekyll.one/pages/public/manuals/jekyll/user_guide/configuration/
+              href:                     https://jekyll.one/pages/public/toolbox/jekyll/configuration/
               icon:                     code-braces
+              target:                   _blank
             - title:                    Time and Date formats
-              href:                     https://jekyll.one/pages/public/manuals/jekyll/user_guide/date_formats/
+              href:                     https://jekyll.one/pages/public/toolbox/jekyll/date_time_formats/
               icon:                     calendar-blank
+              target:                   _blank
 
     # --------------------------------------------------------------------------
     # Previewers
@@ -322,31 +496,53 @@
       - title:                          Current Theme
         href:                           /pages/public/previewer/current_theme/
         icon:                           theme-light-dark
+      - title:                          Google Adsense
+        href:                           /pages/public/previewer/gad/
+        icon:                           image
+
+      - title:                          Icon Picker
+        href:                           /pages/public/previewer/icon-picker/
+        icon:                           emoticon-cool-outline
+      - title:                          Image Placeholders
+        href:                           /pages/public/previewer/image_placeholder/
+        icon:                           image
+
+      - title:                          Slick
+        href:                           https://jekyll.one/pages/public/previewer/slick/
+        icon:                           view-carousel
+        target:                         _blank
+      - title:                          Masonry
+        href:                           https://jekyll.one/pages/public/previewer/masonry/
+        icon:                           view-dashboard-variant
+        target:                         _blank
       - title:                          MD Color Palette
         href:                           https://jekyll.one/pages/public/previewer/color_palette/
         icon:                           format-color-fill
+        target:                         _blank
       - title:                          Master Slider
         href:                           https://jekyll.one/pages/public/previewer/masterslider/
         icon:                           gesture-swipe
+        target:                         _blank
       - title:                          Country Flags
         href:                           https://jekyll.one/pages/public/previewer/country_flags/
         icon:                           flag
-      - title:                          MDI Icons (regular)
-        href:                           https://jekyll.one/pages/public/previewer/mdi_font/
+        target:                         _blank
+      - title:                          Font Icons
+        href:                           https://jekyll.one/pages/public/previewer/icon-picker/
         icon:                           sprout
-      - title:                          MDI Icons (light)
-        href:                           https://jekyll.one/pages/public/previewer/mdil_font/
-        icon:                           sprout-outline
+        target:                         _blank
         icon:                           emoticon-cool-outline
       - title:                          Rouge Styles
         href:                           https://jekyll.one/pages/public/previewer/rouge/
         icon:                           code-parentheses
+        target:                         _blank
 
 # ------------------------------------------------------------------------------
 # Menu ONLINE
 #
 - item:                                 Online
   megamenu:
+
     - title:                            Sites
       icon:                             web
       column:
@@ -354,6 +550,14 @@
           href:                         https://jekyllrb.com/
           target:                       _blank
           icon:                         flask
+        - title:                        Jekyll Talk
+          href:                         https://talk.jekyllrb.com/
+          target:                       _blank
+          icon:                         flask
+        - title:                        Asciidoctor
+          href:                         https://asciidoctor.org/
+          target:                       _blank
+          icon:                         hospital
         - title:                        Ruby
           href:                         https://www.ruby-lang.org/en/
           target:                       _blank
@@ -430,20 +634,47 @@
           href:                         http://www.methods.co.nz/asciidoc/faq.html
           target:                       _blank
           icon:                         format-color-text
-        - title:                        Asciidoctor
-          href:                         http://asciidoctor.org/
+        - title:                        Asciidoctor Docs
+          href:                         https://docs.asciidoctor.org/asciidoctor/latest/
+          target:                       _blank
+          icon:                         hospital
+        - title:                        Asciidoctor QuickReference
+          href:                         https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/
+          target:                       _blank
+          icon:                         hospital
+        - title:                        Asciidoctor Writers Gude
+          href:                         https://asciidoctor.org/docs/asciidoc-writers-guide/
           target:                       _blank
           icon:                         hospital
 
     - title:                            Tools
       icon:                             wrench
       column:
+
         - title:                        FreeFormatter
           href:                         http://www.freeformatter.com/
           target:                       _blank
           icon:                         cached
+        - title:                        AppDevTools
+          href:                         https://www.appdevtools.com/
+          target:                       _blank
+          icon:                         cached
+
+        - title:                        W3C Validator
+          href:                         https://validator.w3.org/
+          target:                       _blank
+          icon:                         language-html5
+        - title:                        Nu Html Checker
+          href:                         https://validator.w3.org/nu/
+          target:                       _blank
+          icon:                         language-html5
+
+        - title:                        Closing Tag Checker
+          href:                         https://www.aliciaramirez.com/closing-tags-checker/
+          target:                       _blank
+          icon:                         language-html5
         - title:                        Convert CSS to Sass
-          href:                         http://sebastianpontow.de/css2compass/
+          href:                         https://www.cssportal.com/css-to-scss/
           target:                       _blank
           icon:                         language-css3
         - title:                        CSS Matic Tools
@@ -458,18 +689,10 @@
           href:                         http://yaml-online-parser.appspot.com/
           target:                       _blank
           icon:                         code-braces
-        - title:                        XML-YAML Converter
-          href:                         http://codebeautify.org/xml-to-yaml
-          target:                       _blank
-          icon:                         xml
         - title:                        Character Codes
-          href:                         http://character-code.com/
+          href:                         https://html.spec.whatwg.org/multipage/named-characters.html
           target:                       _blank
           icon:                         alpha-a-box-outline
-        - title:                        Wordcloud Generator
-          href:                         https://www.jasondavies.com/wordcloud/
-          target:                       _blank
-          icon:                         cloud
         - title:                        RegEx 101
           href:                         https://regex101.com/
           target:                       _blank
@@ -479,11 +702,10 @@
           target:                       _blank
           icon:                         regex
 
-
 # ------------------------------------------------------------------------------
 # Menu Themes
 #
-- item:                                 Themes
+- item:                                 Theme
   theme_select:
     - preview:                          enabled
       title:                            Preview
@@ -502,10 +724,10 @@
 #
 - item:                                 About
   sublevel:
-    - title:                            This site
+    - title:                            Starter
       icon:                             home-variant-outline
-      href:                             /pages/public/about/site/
-    - title:                            Reporting issues
+      href:                             /pages/public/about/starter/
+    - title:                            Issues
       icon:                             bug
       href:                             /pages/public/about/reporting_issues/
     - title:                            Features
@@ -514,12 +736,6 @@
     - title:                            Privacy
       icon:                             heart
       href:                             /pages/public/legal/en/privacy/
-#    - title:                            Impress
-#      icon:                             gavel
-#      href:                             /pages/public/legal/en/impress/
-    - title:                            Comments
-      icon:                             comment
-      href:                             /pages/public/legal/en/comment_policy/
 
 # ------------------------------------------------------------------------------
 # END config

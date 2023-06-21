@@ -11,6 +11,9 @@
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
+# NOTE: All panel id's has to be prefixed by 'panel_'
+#
+# ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
 # Description
@@ -47,27 +50,34 @@ settings:
       panel:
         enabled:                        true
 
-        id:                             home_intro_panel
+        id:                             panel_home_intro
         comment:                        Home Intro Panel
         type:                           intro
         animate:                        false
         properties:                     pt-5 pb-5
 
-        title:                          All in One
+        position:                       left                                    # left | center
+        title:                          Features
+        tagline:                        power of jekyll one
         title_translate:                notranslate                             # translate|notranslate
-        tagline:                        top features
-        description_properties:         mt-3 mr-3 mb-3
+        description_properties:         mt-3 mr-3 mb-5
         description: >
                                         <p class="dropcap">
-                                          People quite often ask if static websites make sense
-                                          for anything beyond a one-page website. Some others see in
-                                          static websites the stone age of the World Wide Web. What's
-                                          about static websites today? What's achievable?
+                                          People quite often ask if static websites make sense for
+                                          anything beyond a one-page website. The answer is clearly
+                                          <b>yes</b>!
                                         </p>
                                         <p>
-                                          This board highlights top features, which make static webs
-                                          not only an option, but an attractive method to create fast,
-                                          secure, and sophisticated websites for many use cases.
+                                          Static websites can make sense for any type of website, from
+                                          a portfolio website to an e-commerce store. Static websites
+                                          are becoming increasingly popular because they are faster,
+                                          more secure, and easier to maintain than traditional dynamic
+                                          websites. Static websites are also great for SEO (search engine
+                                          optimization) as they are easier for search engines to crawl
+                                          and index.
+                                        </p>
+                                        <p class="tagline">
+                                          <b>Learn the top features of JekyllOne.</b>
                                         </p>
 
         style:                          flat
@@ -79,46 +89,18 @@ settings:
             enabled:                      true
             height:                       2                                     # [1 .. 9]
             style:                        wave-1                                # default
-            color:                        "#c4c4c4"                             # "#dcdcdc"
-            background_color:             "#f5f5f5"                             # auto|rgb_value, "#f5f5f5"
+            color:                        "#EEEEEE"                             # "#dcdcdc"
+            background_color:             "#FAFAFA"                             # auto|rgb_value, "#FAFAFA"
             transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
           bottom:
             enabled:                      true
             height:                       2
-            style:                        wave-1
-            color:                        "#c4c4c4"
-            background_color:             "#f5f5f5"
+            style:                        wave-4
+            color:                        "#EEEEEE"
+            background_color:             "#FAFAFA"
             transform:                    flip-y flip-x
 
         cards:
-
-          - name:                       Tools
-            card:
-              enabled:                  true
-              type:                     text
-              title:                    Tools
-              title_translate:          notranslate                             # translate|notranslate
-              tagline:                  J1 Theme
-              icon:                     tools
-              icon_family:              MDI
-              icon_size:                3x
-              icon_color:
-              text: >
-                                        <p class="dropcap">
-                                          Current Technology and Design. Excellent performance in running
-                                          a website. Use Jekyll One to present your content at its best.
-                                        </p>
-
-              buttons:
-                - name:                 Read More
-                  button:
-                    type:               text
-                    text:               Make your Web Site unique
-                    class:
-                    icon:
-                    icon_size:
-                    icon_color:
-                    href:               /pages/public/panels/intro_panel#current-technology
 
           - name:                       Design
             card:
@@ -148,6 +130,34 @@ settings:
                     icon_size:
                     icon_color:
                     href:               /pages/public/panels/intro_panel#responsive-design
+
+          - name:                       Tools
+            card:
+              enabled:                  true
+              type:                     text
+              title:                    Tools
+              title_translate:          notranslate                             # translate|notranslate
+              tagline:                  J1 Theme
+              icon:                     tools
+              icon_family:              MDI
+              icon_size:                3x
+              icon_color:
+              text: >
+                                        <p class="dropcap">
+                                          Current Technology and Design. Excellent performance in running
+                                          a website. Use Jekyll One to present your content at its best.
+                                        </p>
+
+              buttons:
+                - name:                 Read More
+                  button:
+                    type:               text
+                    text:               Make your Web Site unique
+                    class:
+                    icon:
+                    icon_size:
+                    icon_color:
+                    href:               /pages/public/panels/intro_panel#current-technology
 
           - name:                       Time
             card:
@@ -191,9 +201,9 @@ settings:
 
     - name:                             Home Plan Panel
       panel:
-        enabled:                        false
+        enabled:                        true
 
-        id:                             home_plan_panel
+        id:                             panel_home_plan
         comment:                        Plan Panel
         type:                           plan
         scroller:                       false
@@ -203,6 +213,7 @@ settings:
         provider:                       Github
         account:                        daattali
 
+        position:                       left                                    # left | center
         title:                          J1 Plans
         title_translate:                notranslate                             # translate|notranslate
         tagline:                        your way
@@ -225,15 +236,15 @@ settings:
             enabled:                      true
             height:                       4                                     # [1 .. 9]
             style:                        wave-4                                # default
-            color:                        "#c4c4c4"
-            background_color:             "#f5f5f5"
+            color:                        "#EEEEEE"
+            background_color:             "#FAFAFA"
             transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
           bottom:
             enabled:                      true
             height:                       2
             style:                        wave-4
-            color:                        "#c4c4c4"
-            background_color:             "#f5f5f5"
+            color:                        "#EEEEEE"
+            background_color:             "#FAFAFA"
             transform:                    rotate
 
         cards:
@@ -388,12 +399,13 @@ settings:
       panel:
         enabled:                        true
 
-        id:                             home_service_panel
+        id:                             panel_home_service
         comment:                        Home Service Panel
         type:                           service
         scroller:                       true
         properties:                     pt-5 pb-5
 
+        position:                       left                                    # left | center
         title:                          Jekyll One
         tagline:                        featured theme for jekyll
         description_properties:         mt-3 mr-3 mb-3
@@ -403,8 +415,6 @@ settings:
                                           anything beyond a one-page website. Some others see in
                                           static websites the stone age of the World Wide Web.
                                           What's about static websites today? What's achievable?
-                                        </p>
-                                        <p>
                                           This board highlights top features, which make static webs
                                           not only an option but a state-of-the-art technology to create
                                           fast, secure, and sophisticated websites for many use cases.
@@ -426,15 +436,15 @@ settings:
             enabled:                      true
             height:                       2                                     # [1 .. 9]
             style:                        wave-1                                # default
-            color:                        "#c4c4c4"
-            background_color:             "#f5f5f5"
+            color:                        "#EEEEEE"
+            background_color:             "#FAFAFA"
             transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
           bottom:
             enabled:                      true
             height:                       2
             style:                        wave-4
-            color:                        "#c4c4c4"
-            background_color:             "#f5f5f5"
+            color:                        "#EEEEEE"
+            background_color:             "#FAFAFA"
             transform:                    rotate
 
         cards:
@@ -486,11 +496,11 @@ settings:
                                           Not get lost in project management.
                                         </p>
                                         <p>
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-language-ruby"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-language-ruby"></i>
                                           Ruby 2.7 <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-language-ruby"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-language-ruby"></i>
                                           Jekyll 4.3 <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-nodejs"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-nodejs"></i>
                                           NodeJS 14.x <br />
                                         </p>
                     title:              Platforms
@@ -531,13 +541,13 @@ settings:
                                           Configure what is to be done.
                                         </p>
                                         <p>
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-bootstrap"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-bootstrap"></i>
                                           Bootstrap V5 <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-language-html5"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-language-html5"></i>
                                           Enhanced HTML, CSS and Javascript <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-grass"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-grass"></i>
                                           Icon Fonts <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-application-settings"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-application-settings"></i>
                                           Fully configurable components <br />
                                         </p>
                     title:              Frameworks
@@ -566,11 +576,11 @@ settings:
                                         Support your visitors.
                                         </p>
                                         <p>
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-devices"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-devices"></i>
                                           Desktop and Mobile support <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-near-me"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-near-me"></i>
                                           Mobile Web Navigation <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-lighthouse"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-lighthouse"></i>
                                           Highest Google Lighthouse Scores <br />
                                         </p>
 
@@ -616,29 +626,29 @@ settings:
                                           Use whats's prepared already.
                                         </p>
                                         <p>
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-mouse-move-down"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-mouse-move-down"></i>
                                           Infinite srcoll <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-mouse-move-down"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-mouse-move-down"></i>
                                           Animate on srcoll <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-animation"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-animation"></i>
                                           Floating Action Buttons <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-magnify"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-magnify"></i>
                                           Full-text search engine (Lunr) <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-cookie"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-cookie"></i>
                                           Cookie consent (GDPR compatible) <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-translate"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-translate"></i>
                                           Translator (Google, Deepl) <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-clipboard"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-clipboard"></i>
                                           Clipboard <br />
-                                          <i class="mdi mdi-24px md-blue mdi-rotate-90 ml-3 mr-2 mdi-forwardburger"></i>
+                                          <i class="mdi mdi-24px md-blue-700 mdi-rotate-90 ml-3 mr-2 mdi-forwardburger"></i>
                                           Smooth-srcoll <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-near-me"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-near-me"></i>
                                           Enhanced Navigation <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-lightbulb-on"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-lightbulb-on"></i>
                                           Lightboxes <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-folder-multiple-image"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-folder-multiple-image"></i>
                                           Image and Video Galleries <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-view-carousel"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-view-carousel"></i>
                                           Text and Image Carousels <br />
                                         </p>
 
@@ -659,17 +669,17 @@ settings:
                                           Make your site unique.
                                         </p>
                                         <p>
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-bootstrap"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-bootstrap"></i>
                                           Bootstrap extensions <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-format-annotation-plus"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-format-annotation-plus"></i>
                                           Asciidoctor extensions <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-group"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-group"></i>
                                           Advanced banners and panels <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-near-me"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-near-me"></i>
                                           Blog Post navigation <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-content-duplicate"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-content-duplicate"></i>
                                           Featured example content <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-image"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-image"></i>
                                           Royalty free images <br />
                                         </p>
                     title:              Extensions
@@ -689,17 +699,17 @@ settings:
                                           Check what services powers your site.
                                         </p>
                                         <p>
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-theme-light-dark"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-theme-light-dark"></i>
                                           Bootstrap Themes <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-comment"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-comment"></i>
                                           Comment providers <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-google-analytics"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-google-analytics"></i>
                                           Google Analytics <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-google-ads"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-google-ads"></i>
                                           Google Ads <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-youtube"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-youtube"></i>
                                           YouTube Video <br />
-                                          <i class="mdi mdi-24px md-blue ml-3 mr-2 mdi-vimeo"></i>
+                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-vimeo"></i>
                                           Vimeo Video <br />
                                         </p>
                     title:              Integrations
@@ -720,39 +730,37 @@ settings:
       panel:
         enabled:                        true
 
-        id:                             home_news_panel
+        id:                             panel_home_news
         comment:                        Home News Panel
         type:                           news
         category_blacklist:             [ posts, public, private, protected, featured, series ]
         properties:                     pt-5 pb-5
 
-        title:                          Creators Blog
+        position:                       left                                    # left | center
+        title:                          Blog
         tagline:                        latest news
-        description_properties:         mt-3 mr-3 mb-3
+        translate_description:          notranslate                             # translate|notranslate
+        description_properties:         mt-3 mr-3 mb-5
         description: >
                                         <p class="dropcap">
                                           Explore the blog and find interesting articles around Jekyll and
                                           website creation processes in general. And this blog is an excellent
                                           example of how J1 and Jekyll can be used for blogging.
                                         </p>
-                                        <p>
-                                          Have fun!
-                                        </p>
-
         wave:
           top:
             enabled:                      false
             height:                       2                                     # [1 .. 9]
             style:                        wave-1                                # default
-            color:                        "#c4c4c4"
-            background_color:             "#f5f5f5"
+            color:                        "#EEEEEE"
+            background_color:             "#FAFAFA"
             transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
           bottom:
             enabled:                      false
             height:                       2
             style:                        wave-4
-            color:                        "#c4c4c4"
-            background_color:             "#f5f5f5"
+            color:                        "#EEEEEE"
+            background_color:             "#FAFAFA"
             transform:                    rotate
 
         cards:

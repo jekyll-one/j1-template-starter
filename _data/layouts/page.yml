@@ -103,6 +103,7 @@
 # Layout configuration settings
 #
 lanes:
+
   # ----------------------------------------------------------------------------
   # HEADER region (body-header)
   #   The header region contains the 'master' header displayed on all pages.
@@ -123,20 +124,53 @@ lanes:
   # ----------------------------------------------------------------------------
 
   # ----------------------------------------------------------------------------
-  # MASTER header (attic)
-  # All pages are using a specific header to display a title and a
-  # tagline. Title and tagline are to be configured with the FRONTMATTER
-  # of a page for individual data (text).
+  # HEADER region (body-header)
   #
+  # MASTER header (attic)
+  #
+  #   All pages are using a specific (master) header placed at the top
+  #   postion of a page (if enabled). Attics are fully configurable and
+  #   can provide text information and|or image-related data like pictures
+  #   or videos. Find the configuration for 'attics' with:
+  #
+  #     attics:  ~/_data/modules/attics.yml
+  #
+  # NOTE:
+  #   Master headers (attics) are specified on a per LAYOUT basis for
+  #   GENERAL settings. Individual settings like 'title' and 'tagline' or
+  #   the background image are to be configured with the FRONTMATTER of
+  #   a page (per PAGE basis). Individual configurations are set by the
+  #   resource option record 'resource_options' by the key 'attic'.
+  # NOTE:
+  #   The property 'id' of a master header is set on a per LAYOUT basis
+  #   defined in the attics configuration file 'attics.yml'.
+  # NOTE:
+  #   The property 'enabled' of the lane in region 'body-header is ALWAYS
+  #   set to 'true to generate the required placeholder. The property
+  #   'enabled' of a master header to switch on|off an attic is set on a
+  #   per LAYOUT basis defined in the attics configuration file 'attics.yml'.
+  # NOTE:
+  #   If the default header (attic) is DISABLED (enabled set to false),
+  #   the correcponding module has to be DISABLED as well
   # ----------------------------------------------------------------------------
   #
   - lane:
       enabled:                          true
+      id:                               header
       region:                           body-header
       type:                             sync
       base:                             _includes/themes/j1
       path:                             modules/attics
       file:                             generator.html
+
+  - lane:
+      enabled:                          false
+      id:                               custom_header
+      region:                           body-header
+      type:                             sync
+      base:                             _includes/custom
+      path:                             templates
+      file:                             custom_header.html
 
   # ----------------------------------------------------------------------------
   # CONTENT region (region body-main)
@@ -179,5 +213,5 @@ lanes:
       path:                             layouts
       file:                             content_generator_page.html
 
-# ------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # END config

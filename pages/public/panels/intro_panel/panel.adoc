@@ -12,9 +12,6 @@ description: >
 categories:                             [ Info ]
 tags:                                   [ Info, Jekyll, Template ]
 
-comments:                               false
-fab_menu_id:                            page_ctrl
-
 robots:
   index:                                false
   follow:                               false
@@ -26,8 +23,8 @@ image:
   alt:                                  Photo by Alexander Andrews on Unsplash
 
 exclude_from_search:                    true
-permalink:                              /pages/public/panels/intro_panel/
 regenerate:                             false
+permalink:                              /pages/public/panels/intro_panel/
 
 resources:                              [
                                           animate, clipboard, rouge, carousel, lightbox,
@@ -72,7 +69,7 @@ resource_options:
 == Full Responsive
 
 [role="mb-3"]
-image::/assets/images/pages/panels/responsive-text-1920x800.jpg[{{page.title}}]
+image::/assets/images/pages/panels/responsive-text-1920x800.jpg[{{page.title}}, width=1280]
 
 A good user experience browsing a Web site is one of the most important
 features a website offers as a must, besides excellent content. Presenting
@@ -105,6 +102,7 @@ the color scheme, fonts, sizes, or the appearance of more complex elements
 like forms or tables. Additionally, a theme may add additional components
 but in the *sense* of Bootstrap's framework rules and philosophy.
 
+[role="mb-4"]
 It is expected that many people will change the template for their needs. To
 create unique websites. Fundamental to do this is are CSS styles
 defined by Bootstrap.
@@ -125,7 +123,7 @@ modifications; your unique design.
 == HTML5 · CSS3 · JS
 
 [role="mb-3"]
-image::/assets/images/pages/panels/florian-olivo-1920x800.jpg[{{page.title}}]
+image::/assets/images/pages/panels/florian-olivo-1920x800.jpg[{{page.title}}, width=1280]
 
 The Internet is a rapidly changing world. Like the fashion industries, new
 trends are set every year. J1 Theme combines modern technologies for the
@@ -184,7 +182,7 @@ solutions like Adobe Flash to build modern web pages based on open standards.
 === Javascript
 
 [role="mb-3"]
-image::/assets/images/pages/panels/modules-apps-1920x800.jpg[{{page.title}}]
+image::/assets/images/pages/panels/modules-apps-1920x800.jpg[{{page.title}}, width=1280]
 
 JavaScript is a text-based programming language used on the client-side and
 server-side to make web pages interactive. HTML and CSS are languages that
@@ -216,7 +214,7 @@ JavaScript is needed to use the build-in JS-based modules.
 == Start in No Time
 
 [role="mb-3"]
-image::/assets/images/pages/panels/no-time-1920x800.jpg[{{page.title}}]
+image::/assets/images/pages/panels/no-time-1920x800.jpg[{{page.title}}, width=1280]
 
 The base idea of the J1 Theme is to give all people a toolset at their
 hands to create a website with no need to start by web development or
@@ -255,12 +253,14 @@ Content Management Systems (CMS) like WordPress, Joomla, or Drupal, many
 modules are available to extend a site by, e.g., Apps like image galleries,
 video players, calendars, etc.
 
+[role="mb-4"]
 That is a bit different for static webs as they don’t have a central Management
 System as CMS does to integrate external code. There no ecosystem, no
 marketplace to get apps and modules from.
 
 gallery::jg_old_times[]
 
+[role="mt-4"]
 Luckily, it is not that hard to integrate external components into the world
 of Jekyll. One of J1 is to give people a ready-to-use toolset without the
 need to install, to integrate features that are expected as a need.

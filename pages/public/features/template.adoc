@@ -15,11 +15,6 @@ keywords: >
 categories:                             [ Features ]
 tags:                                   [ Module, Extension, Integration ]
 
-sitemap:                                true
-advertising:                            false
-comments:                               false
-fab_menu_id:                            page_ctrl
-
 robots:
   index:                                true
   follow:                               true
@@ -30,8 +25,8 @@ image:
   height:                               1280
   alt:                                  Photo by Christina on Unsplash
 
+regenerate:                             false
 permalink:                              /pages/public/features/template_features/
-regenerate:                             true
 
 resources:                              [
                                           animate, clipboard, comments, rouge, lightbox, carousel,
@@ -39,15 +34,9 @@ resources:                              [
                                           video_js, vimeo_player, vimeo_froogaloop
                                         ]
 resource_options:
-
   - toccer:
       collapseDepth:                    3
-
   - attic:
-      padding_top:                      400
-      padding_bottom:                   50
-      opacity:                          0.5
-      alignY:                           top
       slides:
         - url:                          /assets/images/modules/attics/christina-1920x1280.jpg
           alt:                          Photo by Christina on Unsplash

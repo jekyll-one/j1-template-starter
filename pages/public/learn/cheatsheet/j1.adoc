@@ -1,0 +1,63 @@
+---
+title:                                  J1 Template
+tagline:                                Cheatsheet for daily use
+date:                                   2023-05-19 00:00:00 +100
+description: >
+                                        The Cheatsheet discuss j1 commands for daily use.
+                                        The Template system J1 is a creation tool used to build
+                                        simple but fully configurable modern static websites
+                                        using the generator Jekyll.
+keywords: >
+                                        Jekyll, Theme, JekyllOne, Info, Manual, Cheatsheet, J1, Template
+
+categories:                             [ Manual ]
+tags:                                   [ Cheatsheet, JekyllOne, Template ]
+
+image:
+  path:                                 /assets/images/modules/attics/1920x1280/recha-oktaviani.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Recha Oktaviani on Unsplash
+
+regenerate:                             false
+permalink:                              /pages/public/learn/cheatsheet/j1/
+
+resources:                              [ animate, clipboard, rouge ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/images/modules/attics/1920x1280/recha-oktaviani.jpg
+          alt:                          Photo by Recha Oktaviani on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Recha Oktaviani
+            href:                       https://unsplash.com/de/@rechaoktaviani
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="dropcap"]
+The Cheatsheet discuss j1 commands for daily use. The Template system J1 is
+a creation tool used to build simple but fully configurable modern static
+websites using the generator Jekyll.

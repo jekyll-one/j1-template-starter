@@ -11,7 +11,9 @@
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
-
+# NOTE: All footer id's has to be prefixed by 'footer_'
+#
+# ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
 # Description (used for J1 CC only)
 #
@@ -25,6 +27,9 @@ description:
 # SETTINGS
 #
 settings:
+  enabled:                              true
+
+  active_footer:                        footer_uno
 
   # ----------------------------------------------------------------------------
   # FOOTER properties
@@ -32,25 +37,24 @@ settings:
   footers:
 
     # --------------------------------------------------------------------------
-    # Footer UNO light
+    # Footer UNO
     #
-    - name:                             Footer UNO light
+    - name:                             Footer UNO
       footer:
         enabled:                        true
 
-        id:                             footer-en
+        id:                             footer_uno
         comment:                        Footer UNO EN-EN
-        theme:                          footer-light-theme
         properties:                     mt-4
 
         wave:
           top:
-            enabled:                      true
-            height:                       4                                     # [1 .. 9]
-            style:                        wave-4
-            transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
-            color:                        "#212121"
-            background_color:             "#f5f5f5"
+            enabled:                    true
+            height:                     4                                       # [1 .. 9]
+            style:                      wave-4
+            transform:                  false                                   # false or rotate|flip-x|flip-y and combinations
+            color:                      "#455A64"
+            background_color:           "#fafafa"
 
         # ----------------------------------------------------------------------
         # ISSUE settings
@@ -69,25 +73,25 @@ settings:
         # ICON settings
         #
         icons:
-          facebook:
-            enabled:                    true
-            href:                       "#void"
-#           href:                       "https://www.facebook.com/<your_profile>/"
-          twitter:
-            enabled:                    true
-            href:                       "#void"
-#           href:                       "https://twitter.com/<your_profile>/"
           github:
             enabled:                    true
-            href:                       "https://github.com/jekyll-one/j1-template-starter"
+            href:                       https://github.com/jekyll-one/j1-starter
+          facebook:
+            enabled:                    true
+            href:                       "#"
+#           href:                       https://www.facebook.com/<your_profile>/
+          twitter:
+            enabled:                    true
+            href:                       "#"
+#           href:                       https://twitter.com/<your_profile>/
           xing:
             enabled:                    true
-            href:                       "#void"
-#           href:                       "https://www.xing.com/profile/<your_profile>/"
+            href:                       "#"
+#           href:                       https://www.xing.com/profile/<your_profile>/
           linkedin:
             enabled:                    true
-            href:                       "#void"
-#           href:                       "https://www.linkedin.com/in/<your_profile>/"
+            href:                       "#"
+#           href:                       https://www.linkedin.com/in/<your_profile>/
 
         # ----------------------------------------------------------------------
         # LEGAL settings
@@ -123,7 +127,7 @@ settings:
 
           - name:                       Comments
             legal:
-              enabled:                  true
+              enabled:                  false
 
               type:                     comments
               statement:                Comments
@@ -169,14 +173,15 @@ settings:
             type:                       about
             enabled:                    true
 
-            title:                      J1 Theme
+            title:                      Starter
             title_translation:          notranslate
             tagline:                    featured template for jekyll
             text: >
-                                        Jekyll meets Bootstrap - and makes a lot of friends.
-                                        J1 Theme combines the best of OpenSource software for
-                                        the Web and the Web site generator Jekyll. J1 is Open
-                                        Source and the modules packed as well.
+                                        This template gives web developers and hobbyists
+                                        a clean implementation in Jekyll for starting new projects
+                                        and combines the best of open source software for the Web.
+                                        Jekyll One is open source and the modules packed
+                                        as well.
                                         <br><br>
                                         <b>No pain for private or professional purposes.</b>
             justify:                    false
@@ -188,7 +193,7 @@ settings:
             type:                       news
             enabled:                    true
 
-            title:                      Creators Blog
+            title:                      Blog
             title_translation:          notranslate                             # translate|notranslate
             tagline:                    latest news
             category:                   featured
@@ -254,7 +259,7 @@ settings:
             internet:
               enabled:                  true
               home_text:                JekyllOne
-              home_link:                'https://jekyll.one/'
+              home_link:                https://jekyll.one/
               mail_1:                   contact@jekyll.one
               mail_2:                   webmaster@jekyll.one
 

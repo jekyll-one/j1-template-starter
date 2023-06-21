@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/framer.yml
-# User configuration settings for iFrameResizer
+# ~/_data/modules/defaults7framer.yml
+# Default configuration settings for iFrameResizer
 #
 # Product/Info:
 # https://jekyll.one
@@ -12,10 +12,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                Framer
   scope:                                Default settings
   location:                             _data/modules/defaults/framer.yml
@@ -245,8 +244,11 @@ description:
 # DEFAULTS
 #
 defaults:
-  enabled:                            true
+  enabled:                            false
 
+  # ----------------------------------------------------------------------------
+  # Framer options
+  # ----------------------------------------------------------------------------
   load:                               sync
   log:                                false
   autoResize:                         true

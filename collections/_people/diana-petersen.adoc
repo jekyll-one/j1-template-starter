@@ -1,0 +1,169 @@
+---
+title:                                  Title
+tagline:                                Tagline
+description: >
+                                        Use this area to describe a person. Describing a person
+                                        typically involves ...
+
+categories:                             [ Person ]
+tags:                                   [ Business, Private ]
+
+image:
+  path:                                 assets/images/collections/people/diana-petersen.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Diana Petersen
+
+person:
+  name:                                 Diana Petersen
+  role:                                 Lead Marketer
+
+social_media:
+  enabled:                              true
+  facebook:
+    href:                               https://www.facebook.com/
+  twitter:
+    href:                               https://twitter.com/home
+  linkedin:
+    href:                               https://www.linkedin.com/
+
+toc:                                    false
+fab_menu_id:                            default
+comments:                               false
+sitemap:                                false
+personalization:                        false
+exclude_from_search:                    true
+
+resources:                              [ animate ]
+resource_options:
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+// Place an excerpt at the most top position
+// -----------------------------------------------------------------------------
+[role="dropcap mb-4"]
+Use this area to describe a person. Diana Petersen ...
+
+excerpt__end
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+== Describe a persons role (business)
+
+lorem:sentences[5]
+
+Name::
+The name of the person
+
+Role::
+Project Manager
+
+Responsibilities::
+As a Project Manager, she|he oversees the planning, execution, and successful
+completion of various projects within his organization. He works closely
+with cross-functional teams to define project objectives, establish timelines,
+allocate resources, and monitor progress. She|he is responsible for creating
+project plans, assigning tasks, and tracking project milestones to ensure
+that projects are delivered on time, within scope and budget.
+
+Leadership Style::
+She|he is known for his strategic and results-oriented leadership style.
+She|he is skilled at motivating and guiding his team to achieve their best
+performance. She|he provides clear direction, sets expectations, and empowers
+the team to take ownership of their tasks. She|he is also an effective
+communicator, actively engaging with team members, stakeholders, and clients
+to ensure everyone is aligned and informed throughout the project lifecycle.
+
+Skills and Expertise::
+She|he possesses a wide range of skills and expertise essential to his role as
+a Project Manager. She|he has excellent organizational and time management
+skills, allowing him to prioritize tasks, manage resources efficiently, and
+meet deadlines. She|he is also skilled in risk management, identifying
+potential issues early on and proactively developing contingency plans. She|he
+is proficient in project management software and tools, and utilizes them to
+streamline workflows, track progress, and generate reports.
+
+Collaboration and Problem-Solving::
+She|he understands the importance of collaboration in project management.
+She|he fosters a collaborative work environment, encouraging open
+communication, active listening, and teamwork among his team members. She|he
+promotes a problem-solving mindset, encouraging creative thinking and
+brainstorming to overcome challenges and obstacles that may arise during the
+project lifecycle. She|he is skilled at conflict resolution, and he proactively
+addresses any conflicts or issues that may arise among team members or
+stakeholders, ensuring that project progress is not hindered.
+
+Overall, she|he is a skilled and strategic Project Manager who leads
+cross-functional teams, manages projects from inception to completion and
+delivers successful outcomes. His leadership style, skills, and expertise
+make him a valuable asset to his organization, and he is known for his ability
+to drive results and exceed project goals.
+
+
+== Describe a person (private)
+
+lorem:sentences[5]
+
+Name::
+The name of the person
+
+Age::
+The age of the person
+
+Physical Appearance::
+She|he is tall, standing at around 5 feet 10 inches. She has a slender yet
+athletic build, long limbs, and a graceful posture. Her complexion is fair,
+and her skin has a healthy glow. She|he has striking blue eyes that are
+framed by long, dark lashes. She has a heart-shaped face, high cheekbones,
+and a small, upturned nose. Her lips are full and naturally pink.
+
+Hairstyle and Color::
+She|he has luscious, wavy golden blonde hair that falls past her shoulders.
+She usually keeps it styled in loose curls, which add to her effortless and
+carefree vibe. She often parts her hair slightly to the side, allowing it to
+frame her face and highlight her features.
+
+Clothing Style::
+She|he has a fashion-forward sense of style. She often wears trendy clothing
+that reflects her confident personality. She enjoys experimenting with
+different patterns, textures, and colors and is not afraid to take risks
+with her fashion choices. She|he has a keen eye for accessories and can
+effortlessly pull off statement jewelry and fashionable handbags.
+
+Personality::
+She|he is known for her outgoing and friendly nature. She has a warm and
+approachable demeanor and is always willing to converse with anyone she meets.
+She's an extrovert who thrives in social settings and has a knack for making
+others feel comfortable in her presence. She|he is also confident and
+assertive, often taking charge of situations and easily leading.
+
+Interests and Hobbies::
+She|he is a fitness enthusiast who enjoys staying active and healthy. She's
+an avid runner and enjoys practicing yoga to balance her mind and body.
+She's also a foodie who loves trying new restaurants and experimenting with
+different cuisines. She|he is well-traveled and enjoys exploring new places,
+immersing herself in different cultures, and learning about the world.
+Overall, She|he is a confident, outgoing, and fashionable woman with a
+passion for fitness, travel, and socializing. She's a natural leader with a
+warm and approachable personality, making her someone easy to connect with
+and befriend.

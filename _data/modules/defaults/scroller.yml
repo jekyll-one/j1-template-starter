@@ -1,0 +1,40 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/scroller.yml
+# User configuration for J1 Scroller API
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023 Juergen Adams
+#
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+#
+# ------------------------------------------------------------------------------
+# NOTE:
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                Scroller API
+  scope:                                Default settings
+  location:                             _data/modules/defaults/scroller.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+  enabled:                              false
+
+  # ----------------------------------------------------------------------------
+  # SmoothScroll options
+  # ----------------------------------------------------------------------------
+  smoothscroll:
+    offsetCorrection:                   0                                       # used for 'remote' URLS (e.g. page loads),  offset in pixels
+    offsetCorrectionLocal:              0                                       # used for 'local' URLS (e.g. page anchors), offset in pixels
+
+# ------------------------------------------------------------------------------
+# END config

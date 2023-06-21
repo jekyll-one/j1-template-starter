@@ -19,8 +19,6 @@ resources:                              [ animate, lightbox ]
 resource_options:
   - attic:
       padding_top:                      600
-      padding_bottom:                   50
-      opacity:                          0.5
       slides:
         - url:                          /assets/images/modules/attics/machine-generator-1920x1280.jpg
           alt:                          Photo by Isis Françal on Unsplash
@@ -63,15 +61,10 @@ excerpt__end
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
-
-
-
-
-[[readmore]]
 == Dynamic page access
 
 // [role="mb-3"]
-// image::/assets/images/collections/blog/featured/markus-spiske-2.jpg[{{page.title}}]
+// image::/assets/images/posts/featured/markus-spiske-2.jpg[{{page.title}}]
 
 A typical CMS-driven website works by building each and every page
 *dynamically*. That means fetching the content from a database to pass them
@@ -127,4 +120,4 @@ Check popular static site generators at {url-jamstack--generators}[Jamstack, {br
 
 .Top Ratings at Jamstack of October 2022
 [role="mb-4"]
-image::/assets/images/collections/blog/featured/jamstack-generators.png["jamstack-generators"]
+image::/assets/images/posts/featured/jamstack-generators.png["jamstack-generators"]

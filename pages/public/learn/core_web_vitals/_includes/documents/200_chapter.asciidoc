@@ -1,0 +1,33 @@
+== Jekyll Variables
+
+Jekyll traverses your site looking for files to process. Any files with `YAML
+front matter` are subject to processing. For each of these files, Jekyll makes
+a variety of data available via the `Liquid templating system`.
+
+The following is a reference of the available data.
+
+=== Global Variables
+
+include::../tables/global_variables.asciidoc[]
+
+=== Site Variables
+
+include::../tables/site_variables.asciidoc[]
+
+=== Page Variables
+
+include::../tables/page_variables.asciidoc[]
+
+[TIP]
+====
+Use Custom Front Matter
+
+Any custom front matter that you specify will be available under `page`.
+For example, if you specify `custom_css: true` in a pages front matter,
+that value will be available as `page.custom_css`.
+
+If you specify front matter in a layout, access that via `layout`. For
+example, if you specify `class: full_page` in a pages front matter,
+that value will be available as `layout.class` in the layout and its
+parents.
+====

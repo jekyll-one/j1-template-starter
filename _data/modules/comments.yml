@@ -12,10 +12,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                J1 Comments
   scope:                                User settings
   location:                             _data/modules/comments.yml
@@ -24,31 +23,13 @@ description:
 # User configuration settings
 #
 settings:
-  # ----------------------------------------------------------------------------
-  # Base settings
-  #
-  #   enabled
-  #   --------------------------------------------------------------------------
-  #   Enables or disable comments services. If disabled, the service
-  #   won't be enabled on any page.
-  #
-  #   values:                           [true|false]
-  #   default:                          false
-  #
-  #   provider
-  #   --------------------------------------------------------------------------
-  #   Specifies the provider to be used for commenting
-  #
-  #   values:                           [disqus|hyvor|commento|just-comments]
-  #   default:                          disqus
-  #
-  # ----------------------------------------------------------------------------
+  enabled:                              false
 
   # ----------------------------------------------------------------------------
-  # Base settings (required)
+  # Provider settings
   # ----------------------------------------------------------------------------
-  enabled:                              false
   provider:                             hyvor
+  site_id:                              your-site-id
 
 # ------------------------------------------------------------------------------
 # END config

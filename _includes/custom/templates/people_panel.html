@@ -1,0 +1,144 @@
+<!--
+ # -----------------------------------------------------------------------------
+ #  ~/assets/custom/content/templates/people_panel.html
+ #
+ #  Product/Info:
+ #  http://jekyll.one
+ #
+ #  Copyright (C) 2023 Juergen Adams
+ #
+ #  J1 Theme is licensed under the MIT License.
+ #  See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+ #
+ # -----------------------------------------------------------------------------
+ # Test data:
+ #    liquid_var:  {{liquid_var | debug}}
+ # -----------------------------------------------------------------------------
+-->
+
+{% comment %} Process YML config data
+================================================================================ {% endcomment %}
+
+{% comment %} Set collection data
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign collection_name             = "people" %}
+
+{% comment %} Set grid data
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign grid_title                  = collection_name | capitalize %}
+{% assign grid_tagline                = "meet us" %}
+{% assign card_translate_description  = "notranslate" %}
+
+{% comment %} Collect collection documents
+-------------------------------------------------------------------------------- {% endcomment %}
+{% for collection in site.collections %}
+  {% if collection.label contains collection_name %}
+    {% assign articles = collection.docs %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Main
+-------------------------------------------------------------------------------- {% endcomment %}
+<!-- People Grid -->
+<section id="{{collection_name}}" class="page-section elevated-z1">
+  <div class="container mb-5">
+
+    <!-- Header -->
+    <div class="pt-5 mb-5">
+      <h2 class="g-font-weight-500 mb-0 {{card_translate_description}}">{{grid_title}}</h2>
+      <p class="tagline mb-0 {{card_translate_description}}"><b>{{grid_tagline}}</b></p>
+      <div class="d-inline-block g-width-50 g-height-2 bg-primary mb-2"></div>
+    </div>
+    <!-- /Header -->
+
+    <div class="row">
+      {% for article in articles %}
+
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="people-member">
+          <img class="mx-auto rounded-circle" src="{{article.image.path | relative_url}}" alt="{{article.person.name | escape}}" />
+          <h3 class="mt-2">{{article.person.name}}</h3>
+          <p>{{article.person.role}}</p>
+
+          {% comment %} social media (links)
+          ---------------------------------------------------------------------- {% endcomment %}
+          {% if article.social_media.enabled %}
+          <ul class="social-icons">
+            {% if article.social_media.facebook.href contains 'http' %}
+              <li>
+                <a id="personFacebookButton"
+                   href="{{{article.social_media.facebook.href}}"
+                   aria-label="personFacebookButton"
+                   data-original-title="Facebook"
+                   class="rounded-circle social_facebook"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                 </a>
+               </li>
+            {% else %}
+              <li>
+                <a id="personFacebookButton"
+                   href="javascript:void(0)"
+                   aria-label="personFacebookButton"
+                   data-original-title="Facebook"
+                   class="rounded-circle social_facebook">
+                </a>
+              </li>
+            {% endif %}
+
+            {% if article.social_media.twitter.href contains 'http' %}
+              <li>
+                <a id="personTwitterButton"
+                   href="{{{article.social_media.twitter.href}}"
+                   aria-label="personTwitterButton"
+                   data-original-title="Twitter"
+                   class="rounded-circle social_twitter"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                 </a>
+               </li>
+            {% else %}
+              <li>
+                <a id="personTwitterButton"
+                   href="javascript:void(0)"
+                   aria-label="personTwitterButton"
+                   data-original-title="Twitter"
+                   class="rounded-circle social_twitter">
+                </a>
+              </li>
+            {% endif %}
+
+            {% if article.social_media.linkedin.href contains 'http' %}
+              <li>
+                <a id="personLinkedinButton"
+                   href="{{{article.social_media.linkedin.href}}"
+                   aria-label="personLinkedinkButton"
+                   data-original-title="Linkedin"
+                   class="rounded-circle social_linkedin"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                 </a>
+               </li>
+            {% else %}
+              <li>
+                <a id="personLinkedinButton"
+                   href="javascript:void(0)"
+                   aria-label="personLinkedinButton"
+                   data-original-title="Linkedin"
+                   class="rounded-circle social_linkedin">
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+          {% endif %}
+
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+<!-- /People Grid -->

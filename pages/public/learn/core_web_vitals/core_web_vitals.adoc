@@ -1,0 +1,442 @@
+---
+title:                                  Core Web Vitals
+tagline:                                Improve the user experience
+date:                                   2023-06-07 00:00:00 +100
+description: >
+                                        Optimizing the user experience you offer on your website is essential
+                                        for the success of any online business. Google does use different user
+                                        experience-related metrics to rank web pages for SEO and has continued
+                                        to provide multiple tools to measure and improve web performance.
+
+keywords: >
+                                        Jekyll, Theme, JekyllOne, Turorial, SEO, Optimizing, User Experience,
+                                        Core Web Vitals, Speed Index
+
+categories:                             [ Tutorial ]
+tags:                                   [ SEO, FCP, LCP, TBT, CLS, Speed Index ]
+
+image:
+  path:                                 /assets/images/modules/attics/leon-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Leon
+
+fab_menu_id:                            open_toc
+regenerate:                             true
+permalink:                              /pages/public/learn/core_web_vitals/
+
+resources:                              [ animate, clipboard, lightbox, rouge]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/images/modules/attics/leon-1920x1280.jpg
+          alt:                          Photo by Leon
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+Optimizing the user experience you provide on your website is essential to
+the success of any online business. Google uses various user experience-related
+metrics to rank websites for SEO and continues to provide several tools to
+measure and improve web performance.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+// See: https://css-tricks.com/improve-largest-contentful-paint-lcp-on-your-website-with-ease/
+
+== Core Web Vitals
+
+In its recent attempt to make measuring and understanding a good user
+experience easier, _Google_ has standardized the site's user experience
+metrics. These standardized metrics, called *Core Web Vitals*, help
+evaluate the *real-world* user experience of a website.
+
+*Core Web Vitals* is a set of specific website performance metrics introduced
+by Google to measure and quantify the user experience of a web page. They
+focus on key aspects of web *page loading*, *interactivity*, and
+*visual stability*, which are crucial for providing a good user experience.
+
+The Core Web Vitals *metrics* are:
+
+* First Contentful Paint (FCP): `FCP` measures how long it takes the browser
+  to render the *first piece of DOM content* after a user navigates to your
+  page. Images, non-white `<canvas>` elements, and SVGs on your page are
+  considered DOM content; anything inside an iframe isn't included.
+  Values should less than *1.8 seconds*.
+
+* Largest Contentful Paint (LCP): LCP measures the loading speed of
+  the main content on a web page. It represents the time taken for the
+  largest visible element, such as an image or a block of text, to be
+  rendered within the viewport. To provide a good user experience, the
+  `LCP` should occur within the first *2.5 seconds* of the page starting
+  to load.
+
+* Total Blocking Time: `TBT` measures the total amount of time that a page
+  is blocked from responding to user input, such as mouse clicks, screen
+  taps, or keyboard presses. The sum is calculated by adding the blocking
+  portion of all *long tasks* between *First Contentful Paint* (FCP) and
+  *Time to Interactive*. Any task that executes for more than *50 ms* is a
+  *long task*. Values for `TBT` should in total less than
+  *200 milliseconds*.
+
+* Cumulative Layout Shift (CLS): `CLS` measures the *visual* stability
+  of a web page. It quantifies how much the page layout *shifts* during
+  the loading process. Layout shifts can be disruptive, causing users
+  to accidentally click on the wrong elements or lose their place on
+  the page. A good user experience aims for a `CLS` score of less than
+  *0.1*.
+
+Very good (excellent) website performance values for *Core Web Vitals*
+takes a lot of work to achieve. Values like the screenshot below require
+much work in the optimization and even then, can only rarely be achieved.
+
+.Excellent performance values (Lighthouse)
+lightbox::core_web_vitals_best_full[ 800, {data-image--core_web_vitals_best_full}, role="mt-3"]
+
+Nevertheless, it makes sense to achieve the best possible performance. The
+ranking of a website will improve a lot, and above all: the readers will
+appreciate it and visit such sites again.
+
+
+== J1 Template Build-in Optimizations
+
+Optimizations of the *Core Web Vitals* are already done for all pages
+the template system.
+
+Bla ...
+
+First Contentful Paint (FCP::
+Bla ...
+
+Largest Contentful Paint (LCP)::
+Bla ...
+
+Total Blocking Time::
+Bla ...
+
+Cumulative Layout Shift (CLS)::
+Bla ...
+
+
+== Optimizise LCP
+
+The Largest Contentful Paint or short *LCP* is one of the Core Web Vitals
+metrics that measure when the largest *content element* becomes *visible* in
+the browser. While other metrics like *TTFB* (time to first byte) and
+First Contentful Paint (*FCP*) also help measure page experience, they don't
+indicate when the page has become *meaningful* to the user.
+
+Typically, the page provides only a less context information to the user
+until the largest element becomes fully visible. LCP is, therefore, more
+representative of user expectations. As a Core Web Vital metric, LCP accounts
+for *25%* of the total performance ccore, making it one of the most important
+metrics to optimize a page.
+
+As per Google, the types of elements considered for Largest Contentful
+Paint are:
+
+* `<img>` elements
+* `<image>` elements inside an `<svg>` element
+* `<video>` elements (the poster image is used)
+* An element with a background image loaded via the https://developer.mozilla.org/en-US/docs/Web/CSS/url[url()]
+  function (as opposed to a
+  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients[CSS])
+  gradient
+* https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements[Block-level]
+  elements containing text nodes or other inline-level text elements.
+
+Now, there are multiple ways to measure the LCP of your page. The easiest
+ways to measure it online is available on
+https://imagekit.io/blog/improve-google-pagespeed-insights-score-for-images/?utm_source=css-tricks&utm_medium=sponsored_content&utm_campaign=csstricks_LCP[PageSpeed Insights, {browser-window--new}].
+
+Other Tools:
+
+* Google Chrome Developer Tools (Lighthouse)
+* Search Console (Core Web Vitals Report)
+
+For example, *Google PageSpeed Insights* in
+its report indicates the element considered for calculating the LCP.
+
+// image::https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/09/LCP_Image.jpg?resize=1601%2C1201&ssl=1[image,width=558,height=419]
+
+Now that you know what is LCP and what our target should be let’s look at
+ways to improve LCP on our website. The underlying principle of reducing
+LCP in all of the techniques mentioned below is to reduce the data downloaded
+on the user’s device and reduce the time it takes to send and execute that
+content.
+
+=== Optimizing Images
+
+On most websites, the above-the-fold content usually contains a large
+image which gets considered for LCP. It could either be a hero image, a
+banner, or a carousel. It is, therefore, crucial that you optimize these
+images for a better LCP.
+
+// image::https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/09/optimised-vs-unoptimised.jpeg?resize=1600%2C681&ssl=1[image,width=1600,height=681]
+
+To optimize your images, you should use a third-party image CDN like
+ImageKit.io. The advantage of using a third-party
+https://imagekit.io/blog/what-is-image-cdn-guide/?utm_source=css-tricks&utm_medium=sponsored_content&utm_campaign=csstricks_LCP[image CDN, {browser-window--new}]
+is that you can focus on your actual business and leave image
+optimization to the image CDN.
+
+The image CDN would stay at the edge of technology evolution, and you
+always get the best possible features with minimum ongoing investment.
+
+ImageKit is a complete real-time image CDN that integrates with any
+existing cloud storage like AWS S3, Azure, Google Cloud Storage, etc. It
+even comes with its integrated image storage and manager called the
+Media Library.
+
+Here is how ImageKit can help you improve your LCP score.
+
+==== Images in Lighter Formats
+
+ImageKit detects if the user’s browser supports modern lighter formats
+like WebP or AVIF and automatically delivers the image in the *lightest*
+possible format in real-time. Formats like WebP are over 30% lighter
+compared to their JPEG equivalents.
+
+////
+[role="mb-5"]
+image::https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/09/webp_jpg_image_size_comparison.jpeg?resize=1200%2C691&ssl=1[image,width=1200,height=691]
+////
+
+==== Automatically Compress Images
+
+Not just converting the image to the correct format, ImageKit also
+compresses your image to a smaller size. In doing so, it balances the
+image’s visual quality and the output size.
+
+You get the option to alter the compression level (or quality) in
+real-time by just changing a URL parameter, thereby balancing your
+business requirements of visual quality and load time.
+
+// image::https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/09/image-compression-comparison_quality.jpeg?resize=1750%2C860&ssl=1[image,width=1750,height=860]
+
+==== Real-time Transformations for Images
+
+Google uses mobile-first indexing for almost all websites. It is
+therefore essential to optimize LCP for mobile more than that for
+desktop. Every image needs to be scaled down to as per the layout’s
+requirement.
+
+For example, you would need the image in a smaller size on the product
+listing page and a larger size on the product detail page. This resizing
+ensures that you are not sending any additional bytes than what is
+required for that particular page.
+
+ImageKit allows you to transform
+https://imagekit.io/responsive-images/?utm_source=css-tricks&utm_medium=sponsored_content&utm_campaign=csstricks_LCP[responsive images, {browser-window--new}]
+in real-time just by adding the corresponding transformation in
+the image URL. For example, the following image is resized to width
+200px and height 300px by adding the height and width transformation
+parameters in its URL.
+
+////
+[role="mb-5"]
+image::https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/09/eiffel-tower-example_200400.jpg?resize=200%2C400&ssl=1[image,width=200,height=400]
+////
+
+==== Caching Images
+
+Image CDNs use a global
+https://imagekit.io/blog/what-is-content-delivery-network-cdn-guide/?utm_source=css-tricks&utm_medium=sponsored_content&utm_campaign=csstricks_LCP[Content Delivery Network, {browser-window--new}]
+(CDN) to deliver the images. Using a CDN ensures that images load from a
+location closer to the user instead of your server, which could be halfway
+across the globe.
+
+// image::https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/09/CDN_server_user.jpg?resize=702%2C250&ssl=1[image,width=702,height=250]
+
+ImageKit, for example, uses AWS Cloudfront as its CDN, which has over
+220 deliver nodes globally. A vast majority of the images get loaded in
+less than 50ms. Additionally, it uses the proper caching directives to
+cache the images on the user’s device, CDN nodes, and even its
+processing network for a faster load time.
+
+This helps to improve LCP on your website.
+
+
+=== Client-side Optimization
+
+==== Preload Critical Resources
+
+There are certain cases where the browser may not prioritize loading a
+visually important resource that impacts LCP. For example, a banner
+image above the fold could be specified as a background image inside a
+CSS file. Since the browser would never know about this image until the
+CSS file is downloaded and parsed along with the DOM tree, it will not
+prioritize loading it.
+
+For such resources, you can preload them by adding a `<link>` tag with a
+`rel= "preload"` attribute to the head section of your HTML document.
+
+[source, html]
+----
+<!-- Example of preloading -->
+<link rel="preload" src="banner_image.jpg" />
+----
+
+While you can preload multiple resources in a document, you should
+always restrict it to above-the-fold images or videos, page-wide font
+files, or critical CSS and JS files.
+
+==== Preconnect Third-party Origins
+
+If you use third-party domains to deliver critical above-the-fold
+content like JS, CSS, or images, then you would benefit by indicating to
+the browser that a connection to that third-party domain needs to be
+made as soon as possible. This is done using the `rel="preconnect"`
+attribute of the `<link>` tag.
+
+[source, html]
+----
+<link rel="preconnect" href="https://static.example.com" />
+----
+
+With `preconnect` in place, the browser can save the domain connection
+time when it downloads the actual resource later.
+
+Subdomains like static.example.com, of your main website domain
+example.com are also third-party domains in this context.
+
+You can also use the _dns-prefetch_ as a fallback in browsers that don’t
+support preconnect. This directive instructs the browser to complete the
+DNS resolution to the third-party domain even if it cannot establish a
+proper connection.
+
+==== Compress Text Files
+
+Any text-based data you load on your webpage should be compressed when
+transferred over the network using a compression algorithm like gzip or
+Brotli. SVGs, JSONs, API responses, JS and CSS files, and your main
+page’s HTML are good candidates for compression using these algorithms.
+This compression significantly reduces the amount of data that will get
+downloaded on page load, therefore bringing down the LCP.
+
+==== Remove Render-blocking Resources
+
+When the browser receives the HTML page from your server, it parses the
+DOM tree. If there is any external stylesheet or JS file in the DOM, the
+browser has to pause for them before moving ahead with the parsing of
+the remaining DOM tree.
+
+These JS and CSS files are called render-blocking resources and delay
+the LCP time. Here are some ways to reduce the blocking time for JS and
+CSS files:
+
+==== Remove Unnecessary Bundles
+
+Avoid shipping huge bundles of JS and CSS files to the browser if they
+are not needed. If the CSS can be downloaded a lot later, or a JS
+functionality is not needed on a particular page, there is no reason to
+load it up front and block the render in the browser.
+
+Suppose you cannot split a particular file into smaller bundles, but it
+is not critical to the functioning of the page either. In that case, you
+can use the defer attribute of the script tag to indicate to the browser
+that it can go ahead with the DOM parsing and continue to execute the JS
+file at a later stage. Adding the defer attribute removes any blocker
+for DOM parsing. The LCP, therefore, goes down.
+
+==== Use Inline CSS
+
+Critical CSS comprises the style definitions needed for the DOM that
+appears in the first fold of your page. If the style definitions for
+this part of the page are inline, i.e., in each element’s `style`
+attribute, the browser has no dependency on the external CSS to style
+these elements. Therefore, it can render the page quickly, and the LCP
+goes down.
+
+==== Minify Content
+
+You should always minify the CSS and JS files before loading them in the
+browser. CSS and JS files contain whitespace to make them legible, but
+they are unnecessary for code execution. So, you can remove them, which
+reduces the file size on production. Smaller file size means that the
+files can load quickly, thereby reducing your LCP time.
+
+Compression techniques, as discussed earlier, use data compression
+algorithms to bring down the file size delivered over the network. Gzip
+and Brotli are two compression algorithms.
+https://imagekit.io/blog/what-and-why-brotli-compression/?utm_source=css-tricks&utm_medium=sponsored_content&utm_campaign=csstricks_LCP[Brotli compression, {browser-window--new}]
+offers a superior compression ratio compared to Gzip and is
+now supported on all major browsers, servers, and CDNs.
+
+
+=== Server-side Optimization
+
+A lot of computation, DB queries, and page construction happens on the
+server. You should analyze the requests going to your servers and
+identify the possible bottlenecks for responding to the requests. It
+could be a DB query slowing things down or the building of the page on
+your server.
+
+You can apply best practices like caching of DB responses, pre-rendering
+of pages, amongst others, to reduce the time it takes for your server to
+respond to requests.
+
+Of course, if the above does not improve the response time, you might
+need to increase your server capacity to handle the number of requests
+coming in.
+
+==== Reduce Response Times
+
+If your server takes long to respond to a request, then the time it
+takes to render the page on the screen also goes up. It, therefore,
+negatively affects every page speed metric, including LCP. To improve
+your server response times, here is what you should do.
+
+==== Content Delivery Network (CDN)
+
+We have already seen above that using an image CDN like ImageKit
+improves the loading time for your images. Your users get the content
+delivered from a CDN node close to their location in milliseconds.
+
+// image::https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/09/with-cdn.jpg?resize=452%2C250&ssl=1[image,width=452,height=250]
+
+You should extend the same to other content on your website. Using a CDN
+for your static content like JS, CSS, and font files will significantly
+speed up their load time. ImageKit does support the delivery of static
+content through its systems.
+
+You can also try to use a CDN for your HTML and APIs to cache those
+responses on the CDN nodes. Given the dynamic nature of such content,
+using a CDN for HTML or APIs can be a lot more complex than using a CDN
+for static content.
+
+////
+=== Conclusion
+
+Core Web Vitals, which include LCP, have become a significant search
+ranking factor and strongly correlate with the user experience.
+Therefore, if you run an online business, you should optimize these
+vitals to ensure the success of the same.
+
+The above techniques have a significant impact on optimizing LCP. Using
+ImageKit as your image CDN will give you a quick headstart.
+
+https://imagekit.io/registration/?utm_source=css-tricks&utm_medium=sponsored_content&utm_campaign=csstricks_LCP[Sign-up for an forever free account, {browser-window--new}],
+upload your images to the ImageKit storage,
+or connect your origin, and start delivering optimized images in
+minutes.
+////

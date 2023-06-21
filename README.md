@@ -26,7 +26,7 @@ Have fun!
 The template comes with a Web included, a skeleton for your new Web site.
 This Web is called the **Starter Web**, a general-purpose Website scaffold to
 be modified for your needs. The built-in Starter Web can be visited live
-at [Netlify](https://j1-preview-netlify.netlify.app/).
+at [starter.jekyll.one](https://starter.jekyll.one/).
 
 **Have fun exploring what a modern static web, a Jekyll site can do**!
 
@@ -49,25 +49,25 @@ issues for private or professional use.
 
 * Jekyll V4 support
 * Ruby V3 support
+* Bootstrap V5 support
 * Asciidoc (Asciidoctor) and Markdown support
 * Asciidoctor plugins included
-* Bootstrap V5 (v5.2)
 * Responsive Design
-* Material Design
 * Responsive Text
 * Responsive HTML tables
++ Full-text search
 * Compressed HTML, CSS and Javascript support
-* Themes support (Bootswatch)
-* Icon Font support (MDI, FA, Iconify, Twitter Emoji)
-* Themeable source code highlighting (Rouge)
+* Themes support
+* Icon Font support (MDI, FA, Iconify)
+* Themeable source code highlighting
 * Desktop and Mobile Web and Navigation ready
 * Fully configurable
 * Highest Google Lighthouse scores
 
 ## Modules and Extensions
 
-* Bootstrap extensions included
-* Bootstrap Themes Support included
+* Bootstrap V5 extensions included
+* Bootstrap V% Themes Support included
 * Asciidoctor extensions included
 * Advanced Banners and Panels included
 * Source Code Hightlighter (Rouge) included
@@ -83,12 +83,12 @@ issues for private or professional use.
 * Master Header module included
 * Clipboard module included
 * TOC module included
-* Floating Action Buttons included
+* Floating Action Buttons (FAB) included
 * Lightbox module included
 * Gallery module included
-* Carousel module included
-* Slider module included
+* Carousel and Slider modules included
 * Video modules included
+* Masonry module included
 
 ## Addons and Integrations
 
@@ -143,9 +143,8 @@ that all dev packages are installed for your OS (Linux, OSX, or Windows).
 
 For Ruby on Windows, a installation using **RubyInstaller** is recommended.
 A current Ruby of version **3.1** is available at the
-[RubyInstaller](https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.1.2-1/rubyinstaller-devkit-3.1.2-1-x64.exe)
+[RubyInstaller V31](https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.1.3-1/rubyinstaller-devkit-3.1.3-1-x64.exe)
 site.
-
 Note, to automatically install a development environment for Ruby on *Windows*,
 a version of Ruby should be installed that is already **bundled** with a
 **DEVKIT** (MSYS2 toolchain).
@@ -313,20 +312,21 @@ downloaad|install all dpended Ruby GEMs as required (userized).
 The Repo for the **latest** version of J1 Theme is published on Github.
 You can get it by **cloning** the repository using **Git**`:
 
-    git clone https://github.com/jekyll-one/j1-template-starter.git
+    git clone https://github.com/jekyll-one/j1-starter
 
-The repo gets written to folder `j1-template-starter`. Have a look and
+The repo gets written to folder `j1-starter`. Have a look and
 browse the folder. You'll see a structure like this:
 
 General J1 Project Repo structure:
 
 ``` sh
-  ├──── j1-template-starter
+  ├──── j1-starter
   │    └─── _data
   |    └─── _includes
   │    └─── _plugins
   │    └─── assets
-  │    └─── collections  
+  │    └─── collections
+  │    └─── dot.bundle  
   │    └─── pages
   ├──── dot.gitattributes
   ├──── dot.gitignore
@@ -343,7 +343,6 @@ General J1 Project Repo structure:
 
 **NOTE**: It is recommended to rename the folder `j1-template-starter` of
 the cloned repo to a more specific (project) name.
-
 
 All development **tasks** are defined as NPM **scripts** with the project
 config file `package.json`. For your convenience, the J1 Theme Gem
@@ -374,21 +373,21 @@ CLI **j1**. To create a new project inside the projects folder, run:
 This command creates a **initial** project in folder **my-starter**.
 
 ```
-  2022-07-30 18:12:08 - GENERATE: Running bundle install in C:/Users/xxx/j1-projects/my-starter ...
-  2022-07-30 18:12:08 - GENERATE: Install bundle in USER gem folder ~/.gem ...
-  2022-07-30 18:12:12 - GENERATE: Fetching gem metadata from https://rubygems.org/..........
-  2022-07-30 18:12:12 - GENERATE: Resolving dependencies...
-  2022-07-30 18:12:12 - GENERATE: Using bundler 2.3.7
+  2023-02-28 18:12:08 - GENERATE: Running bundle install in C:/Users/xxx/j1-projects/my-starter ...
+  2023-02-28 18:12:08 - GENERATE: Install bundle in USER gem folder ~/.gem ...
+  2023-02-28 18:12:12 - GENERATE: Fetching gem metadata from https://rubygems.org/..........
+  2023-02-28 18:12:12 - GENERATE: Resolving dependencies...
+  2023-02-28 18:12:12 - GENERATE: Using bundler 2.3.7
   ...
-  2022-07-30 18:12:12 - GENERATE: Using j1-template 2023.0.1
-  2022-07-30 18:12:12 - GENERATE: Bundle complete! 31 Gemfile dependencies, 78 gems now installed.
-  2022-07-30 18:12:12 - GENERATE: Bundled gems are installed into `../../.gem`
-  2022-07-30 18:12:12 - GENERATE:  C:/Users/xxx/.gem/ruby/3.1.0;C:/DevTools/Ruby31-x64/lib/ruby/gems/3.1.0;
-  2022-07-30 18:12:13 - GENERATE: Install patches in USER gem folder ~/.gem ...
-  2022-07-30 18:12:13 - GENERATE: Install patches on path C:/Users/xxx/.gem/ruby/3.1.0 ...
-  2022-07-30 18:12:13 - GENERATE: Patches already installed, skip install.
-  2022-07-30 18:12:13 - GENERATE: Generated Jekyll site installed in folder C:/Users/xxx/j1-projects/my-starter
-  2022-07-30 18:12:13 - GENERATE: To setup the site, change to the project folder C:/Users/xxx/j1-projects/my-starter and run: j1 setup
+  2023-02-28 18:12:12 - GENERATE: Using j1-template 2023.3.0
+  2023-02-28 18:12:12 - GENERATE: Bundle complete! 31 Gemfile dependencies, 78 gems now installed.
+  2023-02-28 18:12:12 - GENERATE: Bundled gems are installed into `../../.gem`
+  2023-02-28 18:12:12 - GENERATE:  C:/Users/xxx/.gem/ruby/3.1.0;C:/DevTools/Ruby31-x64/lib/ruby/gems/3.1.0;
+  2023-02-28 18:12:13 - GENERATE: Install patches in USER gem folder ~/.gem ...
+  2023-02-28 18:12:13 - GENERATE: Install patches on path C:/Users/xxx/.gem/ruby/3.1.0 ...
+  2023-02-28 18:12:13 - GENERATE: Patches already installed, skip install.
+  2023-02-28 18:12:13 - GENERATE: Generated Jekyll site installed in folder C:/Users/xxx/j1-projects/my-starter
+  2023-02-28 18:12:13 - GENERATE: To setup the site, change to the project folder C:/Users/xxx/j1-projects/my-starter and run: j1 setup
 ```
 
 ## Initialize the project
@@ -406,46 +405,46 @@ commands are available as well.
 
 ```
   Check consistency of the J1 project ...
-  2022-07-30 18:17:47 - SETUP: Running bundle install in C:/Users/xxx/j1-projects/my-starter ...
-  2022-07-30 18:17:47 - SETUP: Install bundle in USER gem folder ~/.gem ...
+  2023-02-28 18:17:47 - SETUP: Running bundle install in C:/Users/xxx/j1-projects/my-starter ...
+  2023-02-28 18:17:47 - SETUP: Install bundle in USER gem folder ~/.gem ...
   ...
-  2022-07-30 18:17:48 - SETUP: Bundle complete! 31 Gemfile dependencies, 78 gems now installed.
-  2022-07-30 18:17:48 - SETUP: Bundled gems are installed into `../../.gem`
-  2022-07-30 18:17:48 - SETUP: Install patches in USER gem folder ~/.gem ...
-  2022-07-30 18:17:48 - SETUP: Install patches on path C:/Users/xxx/.gem/ruby/3.1.0 ...
-  2022-07-30 18:17:48 - SETUP: Initialize the project ...
-  2022-07-30 18:17:48 - SETUP: Be patient, this will take a while ...
-  2022-07-30 18:17:49 - SETUP:
-  2022-07-30 18:17:49 - SETUP: > j1@2023.0.1 setup C:\Users\xxx\j1-projects\my-starter
-  2022-07-30 18:17:49 - SETUP: > npm --silent run setup-start && npm --silent run setup-base && run-s -s setup:*
-  2022-07-30 18:17:49 - SETUP:
-  2022-07-30 18:17:50 - SETUP: Setup project for first use ..
-  2022-07-30 18:17:50 - SETUP: Bootstrap base modules ..
-  2022-07-30 18:18:05 - SETUP: done.
-  2022-07-30 18:18:05 - SETUP: Configure environment ..
-  2022-07-30 18:18:09 - SETUP: done.
-  2022-07-30 18:18:09 - SETUP: Create project folders ..
+  2023-02-28 18:17:48 - SETUP: Bundle complete! 31 Gemfile dependencies, 78 gems now installed.
+  2023-02-28 18:17:48 - SETUP: Bundled gems are installed into `../../.gem`
+  2023-02-28 18:17:48 - SETUP: Install patches in USER gem folder ~/.gem ...
+  2023-02-28 18:17:48 - SETUP: Install patches on path C:/Users/xxx/.gem/ruby/3.1.0 ...
+  2023-02-28 18:17:48 - SETUP: Initialize the project ...
+  2023-02-28 18:17:48 - SETUP: Be patient, this will take a while ...
+  2023-02-28 18:17:49 - SETUP:
+  2023-02-28 18:17:49 - SETUP: > j1@2023.3.0 setup C:\Users\xxx\j1-projects\my-starter
+  2023-02-28 18:17:49 - SETUP: > npm --silent run setup-start && npm --silent run setup-base && run-s -s setup:*
+  2023-02-28 18:17:49 - SETUP:
+  2023-02-28 18:17:50 - SETUP: Setup project for first use ..
+  2023-02-28 18:17:50 - SETUP: Bootstrap base modules ..
+  2023-02-28 18:18:05 - SETUP: done.
+  2023-02-28 18:18:05 - SETUP: Configure environment ..
+  2023-02-28 18:18:09 - SETUP: done.
+  2023-02-28 18:18:09 - SETUP: Create project folders ..
   ...
-  2022-07-30 18:18:25 - SETUP: done.
-  2022-07-30 18:18:26 - SETUP: Detect OS ..
-  2022-07-30 18:18:27 - SETUP: OS detected: Windows_NT
-  2022-07-30 18:18:28 - SETUP: Build site incremental ..
-  2022-07-30 18:18:31 - SETUP: Configuration file: C:/Users/jadams/j1-projects/my-starter/_config.yml
-  2022-07-30 18:18:34 - SETUP:             Source: C:/Users/jadams/j1-projects/my-starter
-  2022-07-30 18:18:34 - SETUP:        Destination: C:/Users/jadams/j1-projects/my-starter/_site
-  2022-07-30 18:18:34 - SETUP:  Incremental build: enabled
-  2022-07-30 18:18:34 - SETUP:       Generating...
-  2022-07-30 18:18:36 - SETUP:            J1 Lunr: creating search index ...
-  2022-07-30 18:18:38 - SETUP:            J1 Lunr: finished, index ready.
-  2022-07-30 18:18:38 - SETUP:       J1 Paginator: autopages, disabled|not configured
-  2022-07-30 18:18:38 - SETUP:       J1 Paginator: pagination enabled, start processing ...
-  2022-07-30 18:18:38 - SETUP:       J1 Paginator: finished, processed 2 pagination page|s
-  2022-07-30 18:19:28 - SETUP:                     done in 53.925 seconds.
-  2022-07-30 18:19:28 - SETUP:  Auto-regeneration: disabled. Use --watch to enable.
-  2022-07-30 18:19:28 - SETUP: .. build finished.
-  2022-07-30 18:19:29 - SETUP: To open the site, run: yarn site
-  2022-07-30 18:19:29 - SETUP: Initializing the project finished successfully.
-  2022-07-30 18:19:29 - SETUP: To open your site, run: j1 site
+  2023-02-28 18:18:25 - SETUP: done.
+  2023-02-28 18:18:26 - SETUP: Detect OS ..
+  2023-02-28 18:18:27 - SETUP: OS detected: Windows_NT
+  2023-02-28 18:18:28 - SETUP: Build site incremental ..
+  2023-02-28 18:18:31 - SETUP: Configuration file: C:/Users/jadams/j1-projects/my-starter/_config.yml
+  2023-02-28 18:18:34 - SETUP:             Source: C:/Users/jadams/j1-projects/my-starter
+  2023-02-28 18:18:34 - SETUP:        Destination: C:/Users/jadams/j1-projects/my-starter/_site
+  2023-02-28 18:18:34 - SETUP:  Incremental build: enabled
+  2023-02-28 18:18:34 - SETUP:       Generating...
+  2023-02-28 18:18:36 - SETUP:            J1 Lunr: creating search index ...
+  2023-02-28 18:18:38 - SETUP:            J1 Lunr: finished, index ready.
+  2023-02-28 18:18:38 - SETUP:       J1 Paginator: autopages, disabled|not configured
+  2023-02-28 18:18:38 - SETUP:       J1 Paginator: pagination enabled, start processing ...
+  2023-02-28 18:18:38 - SETUP:       J1 Paginator: finished, processed 2 pagination page|s
+  2023-02-28 18:19:28 - SETUP:                     done in 53.925 seconds.
+  2023-02-28 18:19:28 - SETUP:  Auto-regeneration: disabled. Use --watch to enable.
+  2023-02-28 18:19:28 - SETUP: .. build finished.
+  2023-02-28 18:19:29 - SETUP: To open the site, run: yarn site
+  2023-02-28 18:19:29 - SETUP: Initializing the project finished successfully.
+  2023-02-28 18:19:29 - SETUP: To open your site, run: j1 site
 ```
 
 ## Run the J1 Project
@@ -459,30 +458,30 @@ browser. Let's start the journey ...
 ``` sh
   Check consistency of the J1 project ...
   Check setup state of the J1 project ...
-  2022-07-30 18:26:18 - SITE: Starting up your site ...
-  2022-07-30 18:26:18 - SITE:
-  2022-07-30 18:26:18 - SITE: > j1@2023.0.1 j1-site C:\Users\jadams\j1-projects\my-starter
-  2022-07-30 18:26:18 - SITE: > run-p -s j1-site:*
-  2022-07-30 18:26:18 - SITE:
-  2022-07-30 18:26:20 - SITE: Startup UTILSRV ..
-  2022-07-30 18:26:21 - SITE: Log file exists :        messages_2022-07-30
-  2022-07-30 18:26:21 - SITE: Stop the server. Exiting ...
-  2022-07-30 18:26:21 - SITE: Reset file: messages_2022-07-30
-  2022-07-30 18:26:21 - SITE: Configuration file: C:/Users/jadams/j1-projects/my-starter/_config.yml
-  2022-07-30 18:26:24 - SITE:             Source: C:/Users/jadams/j1-projects/my-starter
-  2022-07-30 18:26:24 - SITE:        Destination: C:/Users/jadams/j1-projects/my-starter/_site
-  2022-07-30 18:26:24 - SITE:  Incremental build: enabled
-  2022-07-30 18:26:24 - SITE:       Generating...
-  2022-07-30 18:26:27 - SITE:            J1 Lunr: creating search index ...
-  2022-07-30 18:26:28 - SITE:            J1 Lunr: finished, index ready.
-  2022-07-30 18:26:28 - SITE:       J1 Paginator: autopages, disabled|not configured
-  2022-07-30 18:26:28 - SITE:       J1 Paginator: pagination enabled, start processing ...
-  2022-07-30 18:26:28 - SITE:       J1 Paginator: finished, processed 2 pagination page|s
-  2022-07-30 18:26:35 - SITE:                     done in 10.408 seconds.
-  2022-07-30 18:26:38 - SITE:  Auto-regeneration: enabled for '.'
-  2022-07-30 18:26:39 - SITE: LiveReload address: http://localhost:35729
-  2022-07-30 18:26:39 - SITE:     Server address: http://localhost:40000/
-  2022-07-30 18:26:39 - SITE:   Server running... press ctrl-c to stop.
+  2023-02-28 18:26:18 - SITE: Starting up your site ...
+  2023-02-28 18:26:18 - SITE:
+  2023-02-28 18:26:18 - SITE: > j1@2023.3.0 j1-site C:\Users\jadams\j1-projects\my-starter
+  2023-02-28 18:26:18 - SITE: > run-p -s j1-site:*
+  2023-02-28 18:26:18 - SITE:
+  2023-02-28 18:26:20 - SITE: Startup UTILSRV ..
+  2023-02-28 18:26:21 - SITE: Log file exists :        messages_2023-02-28
+  2023-02-28 18:26:21 - SITE: Stop the server. Exiting ...
+  2023-02-28 18:26:21 - SITE: Reset file: messages_2023-02-28
+  2023-02-28 18:26:21 - SITE: Configuration file: C:/Users/jadams/j1-projects/my-starter/_config.yml
+  2023-02-28 18:26:24 - SITE:             Source: C:/Users/jadams/j1-projects/my-starter
+  2023-02-28 18:26:24 - SITE:        Destination: C:/Users/jadams/j1-projects/my-starter/_site
+  2023-02-28 18:26:24 - SITE:  Incremental build: enabled
+  2023-02-28 18:26:24 - SITE:       Generating...
+  2023-02-28 18:26:27 - SITE:            J1 Lunr: creating search index ...
+  2023-02-28 18:26:28 - SITE:            J1 Lunr: finished, index ready.
+  2023-02-28 18:26:28 - SITE:       J1 Paginator: autopages, disabled|not configured
+  2023-02-28 18:26:28 - SITE:       J1 Paginator: pagination enabled, start processing ...
+  2023-02-28 18:26:28 - SITE:       J1 Paginator: finished, processed 2 pagination page|s
+  2023-02-28 18:26:35 - SITE:                     done in 10.408 seconds.
+  2023-02-28 18:26:38 - SITE:  Auto-regeneration: enabled for '.'
+  2023-02-28 18:26:39 - SITE: LiveReload address: http://localhost:35729
+  2023-02-28 18:26:39 - SITE:     Server address: http://localhost:40000/
+  2023-02-28 18:26:39 - SITE:   Server running... press ctrl-c to stop.
 ```
 
 ## Rebuild a project
@@ -499,31 +498,31 @@ Check consistency of the J1 project ...
 Check setup state of the J1 project ...
 REBUILD: Rebuild the projects website ...
 REBUILD: Be patient, this will take a while ...
-2022-07-30 18:45:09 - REBUILD:
-2022-07-30 18:45:09 - REBUILD: > j1@2023.0.1 rebuild C:\Users\xxx\j1-projects\my-starter
-2022-07-30 18:45:09 - REBUILD: > run-s -s rebuild:* && run-s -s post-rebuild:*
-2022-07-30 18:45:09 - REBUILD:
-2022-07-30 18:45:10 - REBUILD: Rebuild site incremental ..
-2022-07-30 18:45:10 - REBUILD: Clean up site files ..
-2022-07-30 18:45:12 - REBUILD: Configuration file: C:/Users/xxx/j1-projects/my-starter/_config.yml
-2022-07-30 18:45:13 - REBUILD:            Cleaner: Removing _site...
-2022-07-30 18:45:13 - REBUILD:            Cleaner: Removing ./.jekyll-metadata...
-2022-07-30 18:45:13 - REBUILD:            Cleaner: Removing ./.jekyll-cache...
-2022-07-30 18:45:14 - REBUILD:            Cleaner: Nothing to do for .sass-cache.
-2022-07-30 18:45:17 - REBUILD: Configuration file: C:/Users/xxx/j1-projects/my-starter/_config.yml
-2022-07-30 18:45:19 - REBUILD:             Source: C:/Users/xxx/j1-projects/my-starter
-2022-07-30 18:45:19 - REBUILD:        Destination: C:/Users/xxx/j1-projects/my-starter/_site
-2022-07-30 18:45:19 - REBUILD:  Incremental build: enabled
-2022-07-30 18:45:19 - REBUILD:       Generating...
-2022-07-30 18:45:21 - REBUILD:            J1 Lunr: creating search index ...
-2022-07-30 18:45:23 - REBUILD:            J1 Lunr: finished, index ready.
-2022-07-30 18:45:23 - REBUILD:       J1 Paginator: autopages, disabled|not configured
-2022-07-30 18:45:23 - REBUILD:       J1 Paginator: pagination enabled, start processing ...
-2022-07-30 18:45:23 - REBUILD:       J1 Paginator: finished, processed 2 pagination page|s
-2022-07-30 18:46:11 - REBUILD:                     done in 52.09 seconds.
-2022-07-30 18:46:11 - REBUILD:  Auto-regeneration: disabled. Use --watch to enable.
-2022-07-30 18:46:12 - REBUILD: .. rebuild finished.
-2022-07-30 18:46:12 - REBUILD: To open the site, run: yarn site
+2023-02-28 18:45:09 - REBUILD:
+2023-02-28 18:45:09 - REBUILD: > j1@2023.3.0 rebuild C:\Users\xxx\j1-projects\my-starter
+2023-02-28 18:45:09 - REBUILD: > run-s -s rebuild:* && run-s -s post-rebuild:*
+2023-02-28 18:45:09 - REBUILD:
+2023-02-28 18:45:10 - REBUILD: Rebuild site incremental ..
+2023-02-28 18:45:10 - REBUILD: Clean up site files ..
+2023-02-28 18:45:12 - REBUILD: Configuration file: C:/Users/xxx/j1-projects/my-starter/_config.yml
+2023-02-28 18:45:13 - REBUILD:            Cleaner: Removing _site...
+2023-02-28 18:45:13 - REBUILD:            Cleaner: Removing ./.jekyll-metadata...
+2023-02-28 18:45:13 - REBUILD:            Cleaner: Removing ./.jekyll-cache...
+2023-02-28 18:45:14 - REBUILD:            Cleaner: Nothing to do for .sass-cache.
+2023-02-28 18:45:17 - REBUILD: Configuration file: C:/Users/xxx/j1-projects/my-starter/_config.yml
+2023-02-28 18:45:19 - REBUILD:             Source: C:/Users/xxx/j1-projects/my-starter
+2023-02-28 18:45:19 - REBUILD:        Destination: C:/Users/xxx/j1-projects/my-starter/_site
+2023-02-28 18:45:19 - REBUILD:  Incremental build: enabled
+2023-02-28 18:45:19 - REBUILD:       Generating...
+2023-02-28 18:45:21 - REBUILD:            J1 Lunr: creating search index ...
+2023-02-28 18:45:23 - REBUILD:            J1 Lunr: finished, index ready.
+2023-02-28 18:45:23 - REBUILD:       J1 Paginator: autopages, disabled|not configured
+2023-02-28 18:45:23 - REBUILD:       J1 Paginator: pagination enabled, start processing ...
+2023-02-28 18:45:23 - REBUILD:       J1 Paginator: finished, processed 2 pagination page|s
+2023-02-28 18:46:11 - REBUILD:                     done in 52.09 seconds.
+2023-02-28 18:46:11 - REBUILD:  Auto-regeneration: disabled. Use --watch to enable.
+2023-02-28 18:46:12 - REBUILD: .. rebuild finished.
+2023-02-28 18:46:12 - REBUILD: To open the site, run: yarn site
 REBUILD: The projects website has been rebuild successfully.
 REBUILD: To open the site, run: j1 site
 ```
@@ -545,30 +544,30 @@ using Lerna for all packages:
 ```
   Check consistency of the J1 project ...
   Check setup state of the J1 project ...
-  2022-07-30 18:29:07 - RESET: Reset the project to factory state ...
-  2022-07-30 18:29:07 - RESET: Be patient, this will take a while ...
-  2022-07-30 18:29:08 - RESET:
-  2022-07-30 18:29:08 - RESET: > j1@2023.0.1 reset C:\Users\xxx\j1-projects\my-starter
-  2022-07-30 18:29:08 - RESET: > run-s -s reset:*
-  2022-07-30 18:29:08 - RESET:
-  2022-07-30 18:29:08 - RESET: Reset project to factory state ..
-  2022-07-30 18:29:09 - RESET: Clean up base modules ..
-  2022-07-30 18:29:10 - RESET: Clean up site files ..
-  2022-07-30 18:29:12 - RESET: Configuration file: C:/Users/xxx/j1-projects/my-starter/_config.yml
-  2022-07-30 18:29:13 - RESET:            Cleaner: Removing _site...
-  2022-07-30 18:29:13 - RESET:            Cleaner: Removing ./.jekyll-metadata...
-  2022-07-30 18:29:13 - RESET:            Cleaner: Removing ./.jekyll-cache...
-  2022-07-30 18:29:13 - RESET:            Cleaner: Nothing to do for .sass-cache.
-  2022-07-30 18:29:14 - RESET: Clean up projects files ..
-  2022-07-30 18:29:14 - RESET: Remove bundle config folder ..
-  2022-07-30 18:29:15 - RESET: Remove log folder ..
-  2022-07-30 18:29:15 - RESET: Remove etc folder ..
-  2022-07-30 18:29:15 - RESET: Remove various log files ..
-  2022-07-30 18:29:16 - RESET: Remove lock files ..
-  2022-07-30 18:29:16 - RESET: Clean up utility server ..
-  2022-07-30 18:29:21 - RESET: done.
-  2022-07-30 18:29:21 - RESET: The project reset finished successfully.
-  2022-07-30 18:29:21 - RESET: To setup the project, run: j1 setup
+  2023-02-28 18:29:07 - RESET: Reset the project to factory state ...
+  2023-02-28 18:29:07 - RESET: Be patient, this will take a while ...
+  2023-02-28 18:29:08 - RESET:
+  2023-02-28 18:29:08 - RESET: > j1@2023.3.0 reset C:\Users\xxx\j1-projects\my-starter
+  2023-02-28 18:29:08 - RESET: > run-s -s reset:*
+  2023-02-28 18:29:08 - RESET:
+  2023-02-28 18:29:08 - RESET: Reset project to factory state ..
+  2023-02-28 18:29:09 - RESET: Clean up base modules ..
+  2023-02-28 18:29:10 - RESET: Clean up site files ..
+  2023-02-28 18:29:12 - RESET: Configuration file: C:/Users/xxx/j1-projects/my-starter/_config.yml
+  2023-02-28 18:29:13 - RESET:            Cleaner: Removing _site...
+  2023-02-28 18:29:13 - RESET:            Cleaner: Removing ./.jekyll-metadata...
+  2023-02-28 18:29:13 - RESET:            Cleaner: Removing ./.jekyll-cache...
+  2023-02-28 18:29:13 - RESET:            Cleaner: Nothing to do for .sass-cache.
+  2023-02-28 18:29:14 - RESET: Clean up projects files ..
+  2023-02-28 18:29:14 - RESET: Remove bundle config folder ..
+  2023-02-28 18:29:15 - RESET: Remove log folder ..
+  2023-02-28 18:29:15 - RESET: Remove etc folder ..
+  2023-02-28 18:29:15 - RESET: Remove various log files ..
+  2023-02-28 18:29:16 - RESET: Remove lock files ..
+  2023-02-28 18:29:16 - RESET: Clean up utility server ..
+  2023-02-28 18:29:21 - RESET: done.
+  2023-02-28 18:29:21 - RESET: The project reset finished successfully.
+  2023-02-28 18:29:21 - RESET: To setup the project, run: j1 setup
 ```
 
 Start your work from the scratch by running the `setup` task again:

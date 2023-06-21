@@ -15,10 +15,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                J1 NBI
   scope:                                Default settings
   location:                             _data/modules/defaults/nbinteract.yml
@@ -175,10 +174,10 @@ defaults:
   #
   # ----------------------------------------------------------------------------
   #
-  enabled:                              true
+  enabled:                              false
 
   # ----------------------------------------------------------------------------
-  # Binder access
+  # NBI options
   # ----------------------------------------------------------------------------
 
   # Binder baseUrls (all members of the Binder Org Federation)
@@ -192,9 +191,22 @@ defaults:
     gesis:                              'https://gesis.mybinder.org'            # GESIS Notebooks
     turing:                             'https://turing.mybinder.org'           # Alan Turing Institute
 
-  # Provider specs
   # ----------------------------------------------------------------------------
-  #
+  # Module options
+  # ----------------------------------------------------------------------------
+  show_nbi_messages:                    true
+  indicate_nbi_activity:                true
+  nbi_messages_auto_close:              true
+
+  nbi_init_timeout:                     180000
+  nbi_messages_auto_close_delay:        3500
+
+  nbi_init_mathjax:                     true
+  notebook_ready:                       first_widget
+
+  # ----------------------------------------------------------------------------
+  # Provider settings
+  # ----------------------------------------------------------------------------
   providers:
     preferred:                          github                                  # github
     github:
@@ -207,23 +219,8 @@ defaults:
 #     provider_spec:                    10.5281/zenodo.6705036                  # 1st version, config: requirements.txt
 
   # ----------------------------------------------------------------------------
-  # Module settings
-  # ----------------------------------------------------------------------------
-
-  show_nbi_messages:                    false
-  indicate_nbi_activity:                true
-  nbi_messages_auto_close:              true
-
-  nbi_init_timeout:                     180000
-  nbi_messages_auto_close_delay:        3500
-
-  nbi_init_mathjax:                     true
-  notebook_ready:                       first_widget
-
-  # ----------------------------------------------------------------------------
   # Dialog settings (modal)
   # ----------------------------------------------------------------------------
-
   contentURL:                           /assets/data/nbinteract
   xhrDataElement:                       nbi-modal-data
   dialogContainerID:                    nbi-dialog

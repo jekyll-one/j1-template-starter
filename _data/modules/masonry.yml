@@ -12,11 +12,10 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
-  title:                                J1 Masonry
+  caption:                              J1 Masonry
   scope:                                User settings
   location:                             _data/modules/masonry.yml
 
@@ -26,40 +25,384 @@ description:
 settings:
   enabled:                              true
 
+  # ----------------------------------------------------------------------------
+  # All grids available
+  # ----------------------------------------------------------------------------
   grids:
-    # --------------------------------------------------------------------------
-    # Example Grid 1
-    #
-    - name:                             Example Grid 1
-      grid:
-        enabled:                        true
-        hideDisabled:                   true
 
-        id:                             example_masonry
+    # --------------------------------------------------------------------------
+    # Post Series
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               post_series_example
+      type:                             post
+      group:                            Life                                    # generate grid elements only for the group
+      gutters:                          true
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     300px
+      translate_links:                  false                                   # default: false
+      link_new_window:                  true                                    # default: false
+
+      # ------------------------------------------------------------------------
+      # Masonry options
+      #
+      options:
         originTop:                      true
         originLeft:                     true
         initLayout:                     true
         percentPosition:                true
 
-#       horizontalOrder:                false
-#       transitionDuration:             0.4s
-#       columnWidth:                    200
-#       itemSelector:                   '.grid-item'
-#       gutter:                         50
 
     # --------------------------------------------------------------------------
-    # Example Grid 2
+    # Collection Portfolio
     #
-    - name:                             Example Grid 2
-      grid:
-        enabled:                        true
-        hideDisabled:                   true
+    - grid:
+      enabled:                          true
 
-        id:                             example_masonry_2
+      id:                               collection_portfolio
+      type:                             collection
+      collection:                       portfolio                               # generate grid elements (articles) for the collection
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     300px
+      image_width:                      300px
+      translate_titles:                 false                                   # default: false
+      lightbox:                         false
+      gutters:                          true
+
+      # ------------------------------------------------------------------------
+      # Preview options
+      #
+      preview:
+        enabled:                        true
+
+      # ------------------------------------------------------------------------
+      # Masonry options
+      #
+      options:
         originTop:                      true
         originLeft:                     true
         initLayout:                     true
         percentPosition:                true
+
+    # --------------------------------------------------------------------------
+    # Collection Biography
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               collection_biography
+      type:                             collection
+      collection:                       biography                               # generate grid elements (articles) for the collection
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     470px
+      image_width:                      400px
+      translate_titles:                 false                                   # default: false
+      preview:                          false
+      gutters:                          false
+
+      # ------------------------------------------------------------------------
+      # Masonry options
+      #
+      options:
+        originTop:                      true
+        originLeft:                     true
+        initLayout:                     true
+        percentPosition:                true
+
+    # --------------------------------------------------------------------------
+    # Collection Fantasy
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               collection_fantasy
+      type:                             collection
+      collection:                       fantasy                                 # generate grid elements (articles) for the collection
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     470px
+      image_width:                      400px
+      translate_titles:                 false                                   # default: false
+      preview:                          true
+      gutters:                          true
+
+      # ------------------------------------------------------------------------
+      # Masonry options
+      #
+      options:
+        originTop:                      true
+        originLeft:                     true
+        initLayout:                     true
+        percentPosition:                true
+
+    # --------------------------------------------------------------------------
+    # Collection Romance
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               collection_romance
+      type:                             collection
+      translate_titles:                 true                                    # default: false
+      collection:                       romance                                 # generate grid elements (articles) for the collection
+      image_styles:                     img-fluid img-object--cover
+      image_height:                     470px
+      image_width:                      400px
+      preview:                          true
+      gutters:                          true
+
+      # ------------------------------------------------------------------------
+      # Masonry options
+      #
+      options:
+        originTop:                      true
+        originLeft:                     true
+        initLayout:                     true
+        percentPosition:                true
+
+    # --------------------------------------------------------------------------
+    # Image Cards + Lightbox + Gutters + Captions
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               card_example
+      type:                             card
+      image_base_path:                  /assets/images/modules/gallery/mega_cities
+      image_styles:                     img-fluid
+      image_height:                     300px
+      lightbox:                         true
+      gutters:                          true
+
+      # ------------------------------------------------------------------------
+      # Caption options
+      #
+      caption:
+        enabled:                        true
+        position:                       bottom                                  # top|bottom|center
+
+      # ------------------------------------------------------------------------
+      # Masonry options
+      #
+      options:
+        originTop:                      true
+        originLeft:                     true
+        initLayout:                     true
+        percentPosition:                true
+
+      # ------------------------------------------------------------------------
+      # Images
+      #
+      images:
+
+        - image:                        # image 1
+          file:                         denys-nevozhai-1_b.jpg
+          caption:                      Man posing at the rooftop of Jin Mao Tower Shanghai - China
+
+        - image:                        # image 2
+          file:                         thomas-tucker_b.jpg
+          caption:                      Sunset over Taipei City - Taiwan
+
+        - image:                        # image 3
+          file:                         emmad-mazhari_b.jpg
+          caption:                      Chicago - United States
+
+        - image:                        # image 4
+          file:                         johan-mouchet_b.jpg
+          caption:                      The Queen Bee at the Eureka Tower - Melbourne Southbank Australia
+
+        - image:                        # image 5
+          file:                         federico-rizzarelli_b.jpg
+          caption:                      Shanghai - China
+
+        - image:                        # image 6
+          file:                         gints-gailis_b.jpg
+          caption:                      Shangri-La Hotel Jakarta - Indonesia
+
+    # --------------------------------------------------------------------------
+    # Image Grid + No Lightbox + No Gutters + No Captions
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               image_grid_base_example
+      type:                             image
+      image_base_path:                  /assets/images/modules/gallery/mega_cities
+      image_styles:                     img-fluid
+      lightbox:                         false
+      gutters:                          false
+
+      # ------------------------------------------------------------------------
+      # Caption options
+      #
+      caption:
+        enabled:                        false
+        position:                       bottom                                  # top|bottom|center
+
+      # ------------------------------------------------------------------------
+      # Masonry options
+      #
+      options:
+        originTop:                      true
+        originLeft:                     true
+        initLayout:                     true
+        percentPosition:                true
+
+      # ------------------------------------------------------------------------
+      # Images
+      #
+      images:
+
+        - image:                        # image 1
+          file:                         denys-nevozhai-1_b.jpg
+          caption:                      Man posing at the rooftop of Jin Mao Tower Shanghai - China
+
+        - image:                        # image 2
+          file:                         thomas-tucker_b.jpg
+          caption:                      Sunset over Taipei City - Taiwan
+
+        - image:                        # image 3
+          file:                         emmad-mazhari_b.jpg
+          caption:                      Chicago - United States
+
+        - image:                        # image 4
+          file:                         johan-mouchet_b.jpg
+          caption:                      The Queen Bee at the Eureka Tower - Melbourne Southbank Australia
+
+        - image:                        # image 5
+          file:                         federico-rizzarelli_b.jpg
+          caption:                      Shanghai - China
+
+        - image:                        # image 6
+          file:                         gints-gailis_b.jpg
+          caption:                      Shangri-La Hotel Jakarta - Indonesia
+
+    # --------------------------------------------------------------------------
+    # Image Grid + Lightbox + Gutters + Captions
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               image_grid_full_example
+      type:                             image
+      image_base_path:                  /assets/images/modules/gallery/mega_cities
+      image_styles:                     img-fluid
+      lightbox:                         true
+      gutters:                          true
+
+      # ------------------------------------------------------------------------
+      # Caption options
+      #
+      caption:
+        enabled:                        true
+        position:                       bottom                                  # top|bottom|center
+
+      # ------------------------------------------------------------------------
+      # Masonry options
+      #
+      options:
+        originTop:                      true
+        originLeft:                     true
+        initLayout:                     true
+        percentPosition:                true
+
+      # ------------------------------------------------------------------------
+      # Images
+      #
+      images:
+
+        - image:                        # image 1
+          file:                         denys-nevozhai-1_b.jpg
+          caption:                      Man posing at the rooftop of Jin Mao Tower Shanghai - China
+
+        - image:                        # image 2
+          file:                         thomas-tucker_b.jpg
+          caption:                      Sunset over Taipei City - Taiwan
+
+        - image:                        # image 3
+          file:                         emmad-mazhari_b.jpg
+          caption:                      Chicago - United States
+
+        - image:                        # image 4
+          file:                         johan-mouchet_b.jpg
+          caption:                      The Queen Bee at the Eureka Tower - Melbourne Southbank Australia
+
+        - image:                        # image 5
+          file:                         federico-rizzarelli_b.jpg
+          caption:                      Shanghai - China
+
+        - image:                        # image 6
+          file:                         gints-gailis_b.jpg
+          caption:                      Shangri-La Hotel Jakarta - Indonesia
+
+    # --------------------------------------------------------------------------
+    # Image Grid + Lightbox + Gutters + Captions + Filters
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               image_grid_full_example_filters
+      type:                             image
+      image_base_path:                  /assets/images/modules/gallery/mega_cities
+      image_styles:                     img-fluid
+      lightbox:                         true
+      gutters:                          true
+
+      # ------------------------------------------------------------------------
+      # Caption options
+      #
+      caption:
+        enabled:                        true
+        position:                       bottom                                  # top|bottom|center
+
+      # ------------------------------------------------------------------------
+      # CSS filter options (Sepia)
+      #
+      filters:
+        enabled:                        true
+        grayscale:                      0.8
+        contrast:                       0.8
+        brightness:                     0.7
+        sepia:                          1
+
+      # ------------------------------------------------------------------------
+      # Masonry options
+      #
+      options:
+        originTop:                      true
+        originLeft:                     true
+        initLayout:                     true
+        percentPosition:                true
+
+      # ------------------------------------------------------------------------
+      # Images
+      #
+      images:
+
+        - image:                        # image 1
+          file:                         denys-nevozhai-1_b.jpg
+          caption:                      Man posing at the rooftop of Jin Mao Tower Shanghai - China
+
+        - image:                        # image 2
+          file:                         thomas-tucker_b.jpg
+          caption:                      Sunset over Taipei City - Taiwan
+
+        - image:                        # image 3
+          file:                         emmad-mazhari_b.jpg
+          caption:                      Chicago - United States
+
+        - image:                        # image 4
+          file:                         johan-mouchet_b.jpg
+          caption:                      The Queen Bee at the Eureka Tower - Melbourne Southbank Australia
+
+        - image:                        # image 5
+          file:                         federico-rizzarelli_b.jpg
+          caption:                      Shanghai - China
+
+        - image:                        # image 6
+          file:                         gints-gailis_b.jpg
+          caption:                      Shangri-La Hotel Jakarta - Indonesia
 
 # ------------------------------------------------------------------------------
 # END config

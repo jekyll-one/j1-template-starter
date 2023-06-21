@@ -12,10 +12,9 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
-
   title:                                J1 Comments
   scope:                                Default settings
   location:                             _data/modules/default/comments.yml
@@ -57,9 +56,14 @@ defaults:
   enabled:                              false
 
   # ----------------------------------------------------------------------------
-  # Base settings
+  # Provider settings
   # ----------------------------------------------------------------------------
   provider:                             disqus
+  site_id:                              your-site-id
+
+  # ----------------------------------------------------------------------------
+  # Base settings
+  # ----------------------------------------------------------------------------
   comments_headline:
     "en":                               Leave a comment
     "bg":                               Оставите коментар
@@ -85,30 +89,6 @@ defaults:
     "pl":                               Zostaw komentarz
     "ro":                               Lasa un comentariu
     "ru":                               Оставить комментарий
-
-  # ----------------------------------------------------------------------------
-  # Provider settings
-  # ----------------------------------------------------------------------------
-  hyvor:
-    site_id:                            '<your-hyvor-site-id>'
-
-  disqus:
-    site_id:                            '<your-site-short-name>'
-
-  # currently NOT supported
-  commento:
-    site_id:                            '<your-commento-site-id>'
-
-  # currently NOT supported
-  just-comments:
-    site_id:                            '<your-just-comments-site-id>'
-
-  # currently NOT supported
-  facebook:
-    site_id:                            '<your-facebook-app-id>'
-    num_posts:                          5
-    width:                              580
-    colorscheme:                        light
 
 # ------------------------------------------------------------------------------
 # END config

@@ -11,34 +11,26 @@ categories:                             [ Site ]
 tags:                                   [ Privacy, Policy ]
 
 robots:
-  index:                                false
-  follow:                               false
+  index:                                true
+  follow:                               true
 
 image:
-  path:                                 /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
+  path:                                 /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
   width:                                1920
   height:                               1280
-  alt:                                  Photo by Markus Spiske on Unsplash
+  alt:                                  J1 Starter Mockup
 
 sitemap:                                false
 exclude_from_search:                    true
-fab_menu_id:                            page_ctrl
-scrollbar:                              false
-comments:                               false
-toc:                                    true
-
-permalink:                              /pages/public/legal/en/privacy/
 regenerate:                             false
+permalink:                              /pages/public/legal/en/privacy/
 
 resources:                              [ animate, clipboard, comments, rouge ]
 resource_options:
   - attic:
-      padding_top:                      600
-      padding_bottom:                   50
-      opacity:                          0.5
       slides:
-        - url:                          /assets/images/modules/attics/1920x1280/j1-theme-mockup-1.jpg
-          alt:                          J1 Themes Mockup
+        - url:                          /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
+          alt:                          J1 Starter Mockup
 ---
 
 // Page Initializer
@@ -75,7 +67,7 @@ resource_options:
 
 // Load page attributes
 // -----------------------------------------------------------------------------
-{% include {{load_attributes}} scope="none" %}
+{% include {{load_attributes}} scope="global" %}
 
 ifeval::[{legal-warning} == true]
 WARNING: This document *does not* constitute any *legal advice*. It is
