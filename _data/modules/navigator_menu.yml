@@ -26,7 +26,15 @@
 
     - title:                            Where to go
       href:                             /pages/public/learn/where_to_go/
-      icon:                             paw
+      icon:                             foot-print
+
+    - title:                            Core Web Vitals
+      href:                             /pages/public/learn/core_web_vitals/
+      icon:                             quadcopter
+
+    - title:                            BS Sass Variables
+      href:                             /pages/public/learn/bs_sass_variables/
+      icon:                             code-tags
 
     # --------------------------------------------------------------------------
     # Roundtrip
@@ -71,23 +79,23 @@
       dropdown:
 
         - title:                        J1
-#         href:                         /pages/public/learn/cheatsheet/j1/
-          href:                         https://jekyll.one/pages/public/learn/cheatsheet/j1/
+#         href:                         /pages/public/tools/cheatsheet/j1/
+          href:                         https://jekyll.one/pages/public/tools/cheatsheet/j1/
           icon:                         alpha-j-box-outline
           target:                       _blank
         - title:                        YAML
-#         href:                         /pages/public/learn/cheatsheet/yaml/
-          href:                         https://jekyll.one/pages/public/learn/cheatsheet/yaml/
+#         href:                         /pages/public/tools/cheatsheet/yaml/
+          href:                         https://jekyll.one/pages/public/tools/cheatsheet/yaml/
           icon:                         alpha-y-box-outline
           target:                       _blank
         - title:                        Git
-#         href:                         /pages/public/learn/cheatsheet/git/
-          href:                         https://jekyll.one/pages/public/learn/cheatsheet/git/
+#         href:                         /pages/public/tools/cheatsheet/git/
+          href:                         https://jekyll.one/pages/public/tools/cheatsheet/git/
           icon:                         git
           target:                       _blank
         - title:                        Gem
-#         href:                         /pages/public/learn/cheatsheet/gem/
-          href:                         https://jekyll.one/pages/public/learn/cheatsheet/gem/
+#         href:                         /pages/public/tools/cheatsheet/gem/
+          href:                         https://jekyll.one/pages/public/tools/cheatsheet/gem/
           icon:                         language-ruby
           target:                       _blank
 
@@ -234,7 +242,7 @@
 
     - title:                            Where to go
       href:                             https://jekyll.one/pages/public/manuals/where_to_go/
-      icon:                             paw
+      icon:                             foot-print
       target:                           _blank
 
 
@@ -305,41 +313,58 @@
       icon:                             alpha-j-box
       dropdown:
 
-        - title:                        Resources
+#        - title:                        Resources
 #         href:                         https://jekyll.one/pages/public/manuals/j1/resources/
-          href:                         '#'
-          icon:                         garage
-        - title:                        Layouts
-          href:                         https://jekyllrb.com/docs/layouts/
-          icon:                         page-layout-body
-          target:                       _blank
+#          href:                         '#'
+#          icon:                         garage
+#        - title:                        Layouts
+#          href:                         https://jekyllrb.com/docs/layouts/
+#          icon:                         page-layout-body
+#          target:                       _blank
 
-        - title:                        Blocks
-          icon:                         page-layout-header-footer
+        - title:                        Font Icons
+          icon:                         emoticon-cool-outline
           dropdown:
 
-            - title:                    Banner And Panel
-              href:                     https://jekyll.one/pages/public/manuals/j1/blocks/banner_panel/
-              icon:                     order-bool-descending
-              target:                   _blank
-            - title:                    Footer
-              href:                     https://jekyll.one/pages/public/manuals/j1/blocks/footer/
-              icon:                     order-bool-ascending
-              target:                   _blank
+            - title:                    MDI Icons (Regular)
+              href:                     https://jekyll.one/pages/public/manuals/components/fonticons/mdi/
+              icon:                     emoticon-cool-outline
 
-        - title:                        Content
-          icon:                         file
-          dropdown:
+            - title:                    MDI Icons (Light)
+              href:                     https://jekyll.one/pages/public/manuals/components/fonticons/mdil/
+              icon:                     emoticon-cool-outline
 
-            - title:                    Pages
-              href:                     https://jekyll.one/pages/public/manuals/j1/content/pages/
-              icon:                     file-document
-              target:                   _blank
-            - title:                    Posts
-              href:                     https://jekyll.one/pages/public/manuals/j1/content/posts/
-              icon:                     file-delimited
-              target:                   _blank
+#        - title:                        Blocks
+#          icon:                         page-layout-header-footer
+#          dropdown:
 
+#           - title:                    Banner And Panel
+#              href:                     '#'
+#              href:                     https://jekyll.one/pages/public/manuals/components/j1/blocks/banner_panel/
+#              icon:                     order-bool-descending
+
+#            - title:                    Footer
+#              href:                     https://jekyll.one/pages/public/manuals/components/j1/blocks/footer/
+#              icon:                     order-bool-ascending
+
+#       - title:                        Content
+#         icon:                         file
+#         dropdown:
+
+#           - title:                    Pages
+#             href:                     '#'
+#             href:                     https://jekyll.one/pages/public/manuals/components/j1/content/pages/
+#             icon:                     file-document
+
+#           - title:                    Posts
+#             href:                     '#'
+#             href:                     https://jekyll.one/pages/public/manuals/components/j1/content/posts/
+#             icon:                     file-delimited
+
+#           - title:                    Collections
+#             href:                     https://jekyll.one/pages/public/manuals/components/j1/content/collections/
+#             icon:                     file-percent
+#           - title:                    Posts
 #           - title:                    Collections
 #             href:                     https://jekyll.one/pages/public/manuals/j1/content/collections/
 #             icon:                     file-percent
@@ -348,34 +373,34 @@
     # --------------------------------------------------------------------------
     # J1 Integrations
     #
-    - title:                            Integrations
-      icon:                             alpha-j-box
-      dropdown:
-
-        - title:                        Google
-          icon:                         google
-          dropdown:
-
-            - title:                    Google Translate
-              href:                     '#'
-              icon:                     google-translate
-            - title:                    Google Analytics
-              href:                     '#'
-              icon:                     google-analytics
-            - title:                    Google Ads
-              href:                     '#'
-              icon:                     google-ads
-
-        - title:                        Comment Providers
-          icon:                         comment
-          dropdown:
-
-          - title:                      Disqus
-            href:                       '#'
-            icon:                       disqus
-          - title:                      Hyvor Talk
-            href:                       '#'
-            icon:                       comment-outline
+    # - title:                            Integrations
+    #   icon:                             alpha-j-box
+    #   dropdown:
+    #
+    #     - title:                        Google
+    #       icon:                         google
+    #       dropdown:
+    #
+    #         - title:                    Google Translate
+    #           href:                     '#'
+    #           icon:                     google-translate
+    #         - title:                    Google Analytics
+    #           href:                     '#'
+    #           icon:                     google-analytics
+    #         - title:                    Google Ads
+    #           href:                     '#'
+    #           icon:                     google-ads
+    #
+    #     - title:                        Comment Providers
+    #       icon:                         comment
+    #       dropdown:
+    #
+    #       - title:                      Disqus
+    #         href:                       '#'
+    #         icon:                       disqus
+    #       - title:                      Hyvor Talk
+    #         href:                       '#'
+    #         icon:                       comment-outline
 
     # --------------------------------------------------------------------------
     # J1 Plugins
@@ -384,41 +409,109 @@
       icon:                             alpha-j-box
       dropdown:
 
-        - title:                        Internal Plugins
-          icon:                         power-plug-outline
-          dropdown:
-
-            - title:                    J1 SiteMap
-              href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/j1_sitemap/
-              icon:                     map-marker-radius
-            - title:                    J1 SEO Tags
-              href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/j1_seo_tags/
-              icon:                     tag-text
-            - title:                    J1 Feeds
-              href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/j1_feeds/
-              icon:                     slide
-            - title:                    J1 Quicksearch
-              href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/quicksearch/
-              icon:                     magnify
+        # - title:                        Internal Plugins
+        #   icon:                         power-plug-outline
+        #   dropdown:
+        #
+        #     - title:                    J1 SiteMap
+        #       href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/j1_sitemap/
+        #       icon:                     map-marker-radius
+        #     - title:                    J1 SEO Tags
+        #       href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/j1_seo_tags/
+        #       icon:                     tag-text
+        #     - title:                    J1 Feeds
+        #       href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/j1_feeds/
+        #       icon:                     slide
+        #     - title:                    J1 Quicksearch
+        #       href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/quicksearch/
+        #       icon:                     magnify
 
         - title:                        External Plugins
           icon:                         power-plug
           dropdown:
 
             - title:                    Asciidoctor
-              href:                     https://jekyll.one/pages/public/manuals/j1/plugins/asciidoctor/
+              href:                     https://jekyll.one/pages/public/manuals/components/j1/plugins/asciidoctor/
               icon:                     hospital
-              target:                   _blank
-            - title:                    J1 Paginator
-#             href:                     https://jekyll.one/pages/public/manuals/j1/plugins/j1_paginator/
-              href:                     '#'
-              icon:                     page-last
+
+#           - title:                    J1 Paginator
+#             href:                     https://jekyll.one/pages/public/manuals/components/j1/plugins/j1_paginator/
+#             href:                     '#'
+#             icon:                     page-last
 
 # ------------------------------------------------------------------------------
 # Menu TOOLS
 #
 - item:                                 Tools
   sublevel:
+
+    # --------------------------------------------------------------------------
+    # Previewers
+    #
+    - title:                            Previewers
+      icon:                             eye
+      dropdown:
+
+      - title:                          Current Theme
+        href:                           /pages/public/tools/previewer/current_theme/
+        icon:                           theme-light-dark
+      - title:                          Icon Picker
+        href:                           /pages/public/tools/previewer/icon-picker/
+        icon:                           emoticon-cool-outline
+
+      - title:                          Google Adsense
+        href:                           https://jekyll.one/pages/public/tools/previewer/gad/
+        icon:                           image
+        target:                         _blank
+      - title:                          Slick
+        href:                           https://jekyll.one/pages/public/tools/previewer/slick/
+        icon:                           view-carousel
+        target:                         _blank
+      - title:                          Masonry
+        href:                           https://jekyll.one/pages/public/tools/previewer/masonry/
+        icon:                           view-dashboard-variant
+        target:                         _blank
+      - title:                          MD Color Palette
+        href:                           https://jekyll.one/pages/public/tools/previewer/color_palette/
+        icon:                           format-color-fill
+        target:                         _blank
+      - title:                          Master Slider
+        href:                           https://jekyll.one/pages/public/tools/previewer/masterslider/
+        icon:                           gesture-swipe
+        target:                         _blank
+      - title:                          Country Flags
+        href:                           https://jekyll.one/pages/public/tools/previewer/country_flags/
+        icon:                           flag
+        target:                         _blank
+      - title:                          Font Icons
+        href:                           https://jekyll.one/pages/public/tools/previewer/icon-picker/
+        icon:                           sprout
+        target:                         _blank
+        icon:                           emoticon-cool-outline
+      - title:                          Rouge Styles
+        href:                           https://jekyll.one/pages/public/tools/previewer/rouge/
+        icon:                           code-parentheses
+        target:                         _blank
+
+    # --------------------------------------------------------------------------
+    # Cheatsheets
+    #
+    - title:                            Cheatsheets
+      icon:                             book
+      dropdown:
+
+        - title:                        J1
+          href:                         /pages/public/tools/cheatsheet/j1/
+          icon:                         alpha-j-box-outline
+        - title:                        YAML
+          href:                         /pages/public/tools/cheatsheet/yaml/
+          icon:                         alpha-y-box-outline
+        - title:                        Git
+          href:                         /pages/public/tools/cheatsheet/git/
+          icon:                         git
+        - title:                        Gem
+          href:                         /pages/public/tools/cheatsheet/gem/
+          icon:                         language-ruby
 
     # --------------------------------------------------------------------------
     # Tools
@@ -428,15 +521,15 @@
       dropdown:
 
         - title:                        HTML Validation
-          href:                         https://jekyll.one/pages/public/toolbox/html_validation/
+          href:                         https://jekyll.one/pages/public/tools/toolbox/html_validation/
           icon:                         language-html5
           target:                       _blank
         - title:                        Pandoc
-          href:                         https://jekyll.one/pages/public/toolbox/pandoc/
+          href:                         https://jekyll.one/pages/public/tools/toolbox/pandoc/
           icon:                         cog-transfer
           target:                       _blank
         - title:                        Platform
-          href:                         https://jekyll.one/pages/public/toolbox/platform/
+          href:                         https://jekyll.one/pages/public/tools/toolbox/platform/
           icon:                         folder-information
           target:                       _blank
 
@@ -470,72 +563,21 @@
           dropdown:
 
             - title:                    Liquid
-              href:                     https://jekyll.one/pages/public/toolbox/liquid/
+              href:                     https://jekyll.one/pages/public/tools/toolbox/liquid/
               icon:                     mustache
               target:                   _blank
             - title:                    Commandline
-              href:                     https://jekyll.one/pages/public/toolbox/jekyll/commandline/
+              href:                     https://jekyll.one/pages/public/tools/toolbox/jekyll/commandline/
               icon:                     console-line
               target:                   _blank
             - title:                    Configuration
-              href:                     https://jekyll.one/pages/public/toolbox/jekyll/configuration/
+              href:                     https://jekyll.one/pages/public/tools/toolbox/jekyll/configuration/
               icon:                     code-braces
               target:                   _blank
             - title:                    Time and Date formats
-              href:                     https://jekyll.one/pages/public/toolbox/jekyll/date_time_formats/
+              href:                     https://jekyll.one/pages/public/tools/toolbox/jekyll/date_time_formats/
               icon:                     calendar-blank
               target:                   _blank
-
-    # --------------------------------------------------------------------------
-    # Previewers
-    #
-    - title:                            Previewers
-      icon:                             eye
-      dropdown:
-
-      - title:                          Current Theme
-        href:                           /pages/public/previewer/current_theme/
-        icon:                           theme-light-dark
-      - title:                          Google Adsense
-        href:                           /pages/public/previewer/gad/
-        icon:                           image
-
-      - title:                          Icon Picker
-        href:                           /pages/public/previewer/icon-picker/
-        icon:                           emoticon-cool-outline
-      - title:                          Image Placeholders
-        href:                           /pages/public/previewer/image_placeholder/
-        icon:                           image
-
-      - title:                          Slick
-        href:                           https://jekyll.one/pages/public/previewer/slick/
-        icon:                           view-carousel
-        target:                         _blank
-      - title:                          Masonry
-        href:                           https://jekyll.one/pages/public/previewer/masonry/
-        icon:                           view-dashboard-variant
-        target:                         _blank
-      - title:                          MD Color Palette
-        href:                           https://jekyll.one/pages/public/previewer/color_palette/
-        icon:                           format-color-fill
-        target:                         _blank
-      - title:                          Master Slider
-        href:                           https://jekyll.one/pages/public/previewer/masterslider/
-        icon:                           gesture-swipe
-        target:                         _blank
-      - title:                          Country Flags
-        href:                           https://jekyll.one/pages/public/previewer/country_flags/
-        icon:                           flag
-        target:                         _blank
-      - title:                          Font Icons
-        href:                           https://jekyll.one/pages/public/previewer/icon-picker/
-        icon:                           sprout
-        target:                         _blank
-        icon:                           emoticon-cool-outline
-      - title:                          Rouge Styles
-        href:                           https://jekyll.one/pages/public/previewer/rouge/
-        icon:                           code-parentheses
-        target:                         _blank
 
 # ------------------------------------------------------------------------------
 # Menu ONLINE
@@ -709,7 +751,7 @@
   theme_select:
     - preview:                          enabled
       title:                            Preview
-      href:                             /pages/public/previewer/current_theme/
+      href:                             /pages/public/tools/previewer/current_theme/
       icon:                             eye
     - local_themes:                     enabled
       title:                            Jekyll One

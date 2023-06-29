@@ -15,7 +15,7 @@ categories:                             [ Info ]
 tags:                                   [ Introduction ]
 
 image:
-  path:                                 /assets/images/modules/attics/1920x1280/alexander-redl.jpg
+  path:                                 /assets/images/modules/attics/1920x1280/brigitta-schneiter.jpg
   width:                                1920
   height:                               1280
   alt:                                  Photo by Alexander Redl on Unsplash
@@ -24,16 +24,16 @@ fab_menu_id:                            default
 regenerate:                             false
 permalink:                              /pages/public/learn/where_to_go/
 
-resources:                              [ animate ]
+resources:                              [ animate, comments ]
 resource_options:
   - attic:
       slides:
-        - url:                          /assets/images/modules/attics/1920x1280/alexander-redl.jpg
-          alt:                          Photo by Alexander Redl on Unsplash
+        - url:                          /assets/images/modules/attics/1920x1280/brigitta-schneiter.jpg
+          alt:                          Photo by Brigitta Schneiter on Unsplash
           badge:
             type:                       unsplash
-            author:                     Alexander Redl
-            href:                       https://unsplash.com/@alexanderredl
+            author:                     Brigitta Schneiter
+            href:                       https://unsplash.com/de/@brisch27
 ---
 
 // Page Initializer
@@ -44,11 +44,10 @@ resource_options:
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
 // :page--attr:                         <attr-value>
-:url-j1--cheatsheet-template:           /pages/public/learn/cheatsheet/j1/
 :url-j1--jekyll-collections:            /pages/public/learn/bookshelf/jekyll_collections/
+:url-j1--cheatsheet-template:           https://jekyll.one/pages/public/tools/cheatsheet/j1/
 :url-j1--tutorial-j1-in-a-day:          https://jekyll.one/pages/public/learn/kickstart/web_in_a_day/meet_and_greet/
-:url-j1--tutorial-learning-seo:         https://jekyll.one/pages/public/learn/kickstart/learning_seo/what_seo_is
-
+:url-j1--tutorial-learning-seo:         https://jekyll.one/pages/public/learn/kickstart/learning_seo/what_seo_is/
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -61,9 +60,9 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-Welcome to the learning pages of the J1 Theme. A good decision to get on that
-page first. Certainly, there is no better place to start learning what J1 Theme
-can do and what pages are available to experience more.
+Welcome to the learning pages of JekyllOne, the J1 Theme. A good decision to
+get on that page first. Certainly, there is no better place to start learning
+what the J1 Theme can do and what pages are available to experience more.
 
 // Include sub-documents (if any) (if any)
 // -----------------------------------------------------------------------------
@@ -71,7 +70,6 @@ The crucial first step in finding your way to Jekyll is done. Congratulations.
 The *Learn* section contains all you need to expirience what Jekyll and J1
 can do for your new website, for your new static web. You are welcome to spend
 some time diving into the techniques of creating modern static webs.
-
 
 Roundtrip::
 In this section, you’ll find a tour to show some of the main features of

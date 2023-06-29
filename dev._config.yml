@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # ~/_config.yml
-# Global Jekyll site configuration (runtime DEVELOPMENT)
+# Global Jekyll site configuration (runtime)
 #
 # Product/Info:
 # https://jekyll.one
@@ -51,13 +51,13 @@ environment:                            development
 
 # version
 # ------------------------------------------------------------------------------
-# Sets the build version of J1 Theme Gem
+# Sets the build version of the site
 #
-version:                                2023.3.0
+version:                                2023.3.1
 
-# version
+# copyright
 # ------------------------------------------------------------------------------
-# Sets the build version of J1 Theme
+# Sets the copyright info of the site
 #
 copyright:                              © 2023 J1 · All rights reserved
 
@@ -226,16 +226,26 @@ doctype:                                html
 #   default:                            false
 # ------------------------------------------------------------------------------
 #
-title:                                  Jekyll One
-tagline:                                Create Static Websites
+title:                                  Starter
+tagline:                                Build-In Theme
 description: >
-                                        JekyllOne is a Gem-based Theme made for the Static Site
-                                        Generator (SSG) Jekyll. J1 Theme meets Jekyll and Bootstrap.
-                                        And makes a lot of friends. The template system combines
-                                        the best of free software for the web. JekyllOne gives web
-                                        developers and hobbyists a simple and clean implementation
-                                        in Jekyll for starting new projects. The theme is open source
-                                        and the modules included are free to use as well.
+                                        Jekyll One Starter Theme. This template gives web developers
+                                        and hobbyists a clean implementation in Jekyll for starting
+                                        new projects and combines the best of open source software
+                                        for the Web. Jekyll One is open source and the modules packed
+                                        as well. No pain for private or professional purposes.
+keywords: >
+                                        opensource, free, j1, template, jekyll, jekyllone, web, sites,
+                                        static, jamstack, starter
+author:
+  name:                                 Juergen Adams
+  email:                                juergen@jekyll.one
+  url:                                  https://jekyll.one/
+  github:                               username
+  facebook:                             username
+  twitter:                              username
+# feedburner:                           feedname
+
 webmaster:
   email:                                webmaster@jekyll.one
 
@@ -320,10 +330,8 @@ permalink:                              pretty
 # site.url will be set to the value of host, port.
 # NOTE: Required setting for the sitemap plugin, for example.
 #
-# Stemap file:                          https://jekyll.one/sitemap.xml
-#
-url:                                    http://localhost:39000
-# url:                                  https://j1-template-starter.netlify.app/
+url:                                    http://localhost:23000
+# url:                                  https://starter.jekyll.one/
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -349,7 +357,7 @@ base_path:                              ""
 #
 protocol:                               http
 host:                                   localhost
-port:                                   39000
+port:                                   23000
 timezone:                               Europe/Berlin
 encoding:                               UTF-8
 
@@ -405,23 +413,21 @@ strict_front_matter:                    false
 # Possible values: compact|compressed|expanded|nested
 #
 sass:
-  sass_dir:                             _sass
-  style:                                compact                                 # possible values: nested expanded compact compressed
-
+  sass_dir:                             _sass/scss
+  style:                                expanded                                # possible values: nested expanded compact compressed
 
 # ------------------------------------------------------------------------------
 # WEBRICK Customizations
 # You can provide custom headers for your site
-#
 # See: https://jekyllrb.com/docs/configuration/webrick/
 #      https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 #
 # NOTE:
-#   Jekyll provides by default Content-Type and Cache-Control
-#   response headers: one dynamic in order to specify the nature of
-#   the data being served, the other static in order to disable
-#   caching so that you don’t have to fight with Chrome’s aggressive
-#   caching when you are in development mode.
+# Jekyll provides by default Content-Type and Cache-Control
+# response headers: one dynamic in order to specify the nature of
+# the data being served, the other static in order to disable
+# caching so that you don’t have to fight with Chrome’s aggressive
+# caching when you are in development mode.
 #
 # webrick:
 #   headers:
@@ -475,6 +481,7 @@ kramdown:
 plugins:
 # - algolia
 # - asciidoctor-pdf
+# - jekyll-archives
 # - jekyll-gist
 # - jekyll-redirect-from
   - asciidoctor
@@ -523,7 +530,7 @@ whitelist:
 
 
 # ==============================================================================
-# 5. SEO ans Social Media settings (gloal)
+# 5. SEO and Social Media settings (global)
 #
 # ------------------------------------------------------------------------------
 #
@@ -577,13 +584,6 @@ excerpt_truncate_words:                 100
 # See: https://jekyllrb.com/docs/collections/#collections
 #
 collections:
-
-  # ----------------------------------------------------------------------------
-  # People
-  #
-  people:
-    output:                             true
-    permalink:                          /collections/public/:collection/:name/
 
   # ----------------------------------------------------------------------------
   # Portfolio
@@ -674,13 +674,14 @@ defaults:
         index:                          true
         follow:                         true
 
-      personalization:                  false
-      exclude_from_search:              false
+      toc:                              true
       fab_menu_id:                      open_toc
       scrollbar:                        false
+      personalization:                  false
+      exclude_from_search:              false
+
       youtube:                          true
       vimeo:                            true
-      toc:                              true
 
       resource_options:
         - toccer:
@@ -719,9 +720,9 @@ defaults:
       toc:                              true
       fab_menu_id:                      open_toc
       scrollbar:                        false
+      page_navigation:                  true
       personalization:                  false
       exclude_from_search:              false
-      page_navigation:                  true
       series:                           false
 
       resource_options:
@@ -760,44 +761,6 @@ defaults:
       page_navigation:                  true
       personalization:                  false
       exclude_from_search:              false
-
-      resource_options:
-        - toccer:
-            collapseDepth:              3
-
-  # ----------------------------------------------------------------------------
-  # PUBLIC - QA
-  #
-  - scope:
-      path:                             posts/public/qa
-      type:                             posts
-
-    values:
-      layout:                           post
-      compress:                         true
-
-      author:
-        name:                           Juergen Adams
-        url:                            https://jekyll.one/
-
-      logo:                             /assets/images/icons/j1/j1-512x512.png
-      image:
-        path:                           /assets/images/promo/home/screenshot.jpg
-        width:                          1200
-        height:                         800
-        alt:                            J1 Theme Home
-
-      robots:
-        index:                          true
-        follow:                         true
-
-      toc:                              true
-      fab_menu_id:                      open_toc
-      scrollbar:                        false
-      personalization:                  false
-      exclude_from_search:              false
-      page_navigation:                  true
-      series:                           false
 
       resource_options:
         - toccer:
@@ -969,6 +932,8 @@ defaults:
 #   default:                            empty array
 #
 # ------------------------------------------------------------------------------
+
+# Copmress (HTML) settings
 #
 compress_html:
   enabled:                              true

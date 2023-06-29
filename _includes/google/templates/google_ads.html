@@ -1,0 +1,55 @@
+<!--
+# -----------------------------------------------------------------------------
+#  ~/assets/custom/content/templates/google_ads.html
+#
+#  Product/Info:
+#  http://jekyll.one
+#
+#  Copyright (C) 2023 Juergen Adams
+#
+#  J1 Theme is licensed under the MIT License.
+#  See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+#
+# -----------------------------------------------------------------------------
+# Test data:
+#    liquid_var:  {{liquid_var | debug}}
+# -----------------------------------------------------------------------------
+-->
+
+{% comment %} Process YAML config data
+================================================================================ {% endcomment %}
+
+{% comment %} Set config files
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign template_config      = site.data.j1_config %}
+{% assign blocks               = site.data.blocks %}
+{% assign modules              = site.data.modules %}
+
+{% comment %} Set config data
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign advertising_defaults = modules.defaults.advertising.defaults %}
+{% assign advertising_settings = modules.advertising.settings %}
+
+{% comment %} Set config options
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign advertising_options  = advertising_defaults | merge: advertising_settings %}
+
+{% comment %} Variables
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign layout               = page.layout %}
+{% assign google_ads           = advertising_options.google.ads %}
+
+
+{% comment %} Main
+google_ads: {{google_ads | debug}}
+-------------------------------------------------------------------------------- {% endcomment %}
+
+<div class="container">
+
+  <!-- [INFO   ] [~/_includes/google/templates/google_ads.html        ] [ create ad containers for layout: {{layout}}] -->
+  {% for ad in google_ads %} {% if ad.enabled and ad.layout == layout %}
+  <!-- Ad container settings -->
+  <div id="{{ad.id}}" class="gad-container mb-5" data-layout="{{layout}}"></div>
+  {% endif %} {% endfor %}
+
+</div>

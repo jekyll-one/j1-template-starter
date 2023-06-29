@@ -1643,11 +1643,11 @@ resources:
       preload:                          false
       script_load:                      defer
       dependencies:                     false
-      pass_init_data:                   false
+      pass_init_data:                   true
       data:
         css:                            []
         files:                          [
-                                          modules/advertising/js/adInitializer.js,
+#                                         modules/advertising/js/adInitializer.js,
                                           adapter/js/advertising.js
                                         ]
         js:                             []

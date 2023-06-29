@@ -415,7 +415,7 @@ value of the `pdf-stylesdir` attribute.
 
 The following image types (and corresponding file extensions) are supported:
 
-* PNG (.png)
+* PNG (.jpg)
 * JPEG (.jpg)
 * SVG (.svg)
 
@@ -426,7 +426,7 @@ Here's how an image is specified in the theme file as a bare image path:
 [source, yaml]
 ----
 title_page:
-  background_image:   title-cover.png
+  background_image:   title-cover.jpg
 ----
 
 Here's how the image is specified using the inline image macro:
@@ -434,7 +434,7 @@ Here's how the image is specified using the inline image macro:
 [source, yaml]
 ----
 title_page:
-  background_image:   'image:title-cover.png[]'
+  background_image:   'image:title-cover.jpg[]'
 ----
 
 Like in the AsciiDoc syntax, the inline image macro allows you to supply
@@ -443,7 +443,7 @@ set the width of the image and the alignment:
 [source, yaml]
 ----
 title_page:
-  logo_image:         'image:logo.png[width=250,align=center]'
+  logo_image:         'image:logo.jpg[width=250,align=center]'
 ----
 
 === Quoted String

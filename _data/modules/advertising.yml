@@ -28,11 +28,13 @@ description:
 #
 settings:
   enabled:                              true
+  placement:                            manual
 
   google:
-    publisherID:                        pub-123456789012345                     # fake for testing (localhost) ONLY!
+    publisherID:                        ca-pub-3885670015316130                 # jekyll.one
 #   publisherID:                        <your-publisher-id>
 
+    autoPlaceAds:                       false
     autoHideOnUnfilled:                 false
     addBorderOnUnfilled:                true
 
@@ -47,27 +49,33 @@ settings:
     #   values:                       true|false
     #   default:                      true
     #
-    #   id
-    #   ------------------------------------------------------------------------
-    #   Enables or disables the ad unit (container). If an container is
-    #   disabled, this unit get NOT initialized for ads on any page.
-    #
-    #   values:                       string
-    #   default:                      none
-    #
     #   placement (currently NOT supported)
     #   ------------------------------------------------------------------------
-    #   Defines the placements of the unit container specified. For default
-    #   (manual), all ad units are placed on (home/content) pages manually
-    #   by adding the <ins>-code.
+    #   Defines the placement of ad unit containers. For default
+    #   (manual), all ad units are placed on content pages manually
+    #   by adding the <ins>-code on the id (Ad Properties) specified.
     #
-    #   values:                       manual|auto|content-top|content-bottom
+    #   values:                       auto|manual
     #   default:                      manual
     #
     # --------------------------------------------------------------------------
 
     # --------------------------------------------------------------------------
     # Ad Properties
+    #
+    #   id
+    #   ------------------------------------------------------------------------
+    #   Unique ad id (on an page)
+    #
+    #   values:                       ad_integer
+    #   default:                      none
+    #
+    #   layout
+    #   ------------------------------------------------------------------------
+    #   Set the page layout for the ad
+    #
+    #   values:                       home|page|post
+    #   default:                      none
     #
     #   styles
     #   ------------------------------------------------------------------------
@@ -90,19 +98,19 @@ settings:
     #   values:                       number
     #   default:                      none
     #
+    #   ad_layout
+    #   ------------------------------------------------------------------------
+    #   Set the ad layout
+    #
+    #   values:                       string
+    #   default:                      none
+    #
     #   format
     #   ------------------------------------------------------------------------
     #   Defines the (auto)-format settings
     #
     #   values:                       string
     #   default:                      auto
-    #
-    #   responsive
-    #   ------------------------------------------------------------------------
-    #   Enables|Disables responsive display if pages changes in width or height
-    #
-    #   values:                       boolean
-    #   default:                      true
     #
     #   test
     #   ------------------------------------------------------------------------
@@ -120,60 +128,130 @@ settings:
     ads:
 
       # ------------------------------------------------------------------------
-      # Ad on slot id "1234567890"
-      #
-      - ad:
-
-        # container settings
-        # ----------------------------------------------------------------------
-        enabled:                        true
-        id:                             ad_1234567890
-
-        # ad properties
-        # ----------------------------------------------------------------------
-        publisherID:                    pub-123456789012345
-        test:                           "on"
-        styles:                         "display: block;"
-        slot:                           1234567890
-        format:                         auto
-        responsive:                     true
+      # All advertising containers on the landing page
+      # ------------------------------------------------------------------------
 
       # ------------------------------------------------------------------------
-      # Ad on slot id "1234567890" #2
+      # Ad on slot id "5128488466" (Type Display)
       #
       - ad:
 
-        # container settings
-        # ----------------------------------------------------------------------
-        enabled:                        true
-        id:                             ad_1234567890-2
-
-        # ad properties
-        # ----------------------------------------------------------------------
-        publisherID:                    pub-123456789012345
-        test:                           "on"
-        styles:                         "display: block;"
-        slot:                           1234567890
-        format:                         auto
-        responsive:                     true
-
-      # ------------------------------------------------------------------------
-      # Ad on slot id "1929248609"
-      #
-      - ad:
         # container settings
         # ----------------------------------------------------------------------
         enabled:                        false
-        id:                             ad_1929248609
+
+        id:                             ad_5128488466
+        layout:                         home
+        content_page:                   home
+
 
         # ad properties
         # ----------------------------------------------------------------------
-        publisherID:                    <your-publisher-id>
-        test:                           "off"
-        styles:                         "display: block;"
-        slot:                           1929248609
-        format:                         auto
-        responsive:                     true
+        publisherID:                    ca-pub-3885670015316130
+        test:                           "on"
+        styles:                         "display:block;"
+        slot:                           5128488466
+        ad_layout:                      display
+        ad_format:                      auto
+        ad_responsive:                  true
+
+      # ------------------------------------------------------------------------
+      # Ad on slot id "7284712660" (Type Display)
+      #
+      - ad:
+
+        # container settings
+        # ----------------------------------------------------------------------
+        enabled:                        false
+
+        id:                             ad_7284712660
+        layout:                         home
+        content_page:                   home
+
+
+        # ad properties
+        # ----------------------------------------------------------------------
+        publisherID:                    ca-pub-3885670015316130
+        test:                           "on"
+        styles:                         "display:block;"
+        slot:                           7284712660
+        ad_layout:                      display
+        ad_format:                      auto
+        ad_responsive:                  true
+
+      # ------------------------------------------------------------------------
+      # All advertising containers on content pages
+      # ------------------------------------------------------------------------
+
+      # ------------------------------------------------------------------------
+      # Ad on slot id "5128488466" (Type Display)
+      #
+      - ad:
+
+        # container settings
+        # ----------------------------------------------------------------------
+        enabled:                        true
+
+        id:                             ad_5128488466
+        layout:                         page
+        content_page:                   preview_google_adsense
+
+        # ad properties
+        # ----------------------------------------------------------------------
+        publisherID:                    ca-pub-3885670015316130
+        test:                           "on"
+        styles:                         "display:block;"
+        slot:                           5128488466
+        ad_layout:                      display
+        ad_format:                      auto
+        ad_responsive:                  true
+
+      # ------------------------------------------------------------------------
+      # Ad on slot id "7522184684" (Type In-Article)
+      #
+      - ad:
+
+        # container settings
+        # ----------------------------------------------------------------------
+        enabled:                        true
+
+        id:                             ad_7522184684
+        layout:                         page
+        content_page:                   preview_google_adsense
+
+        # ad properties
+        # ----------------------------------------------------------------------
+        publisherID:                    ca-pub-3885670015316130
+        test:                           "on"
+        styles:                         "display:block; text-align:center;"
+        slot:                           7522184684
+        ad_layout:                      in-article
+        ad_format:                      fluid
+
+      # ------------------------------------------------------------------------
+      # Ad on slot id "4814313879" (Type Multiplex)
+      #
+      - ad:
+
+        # container settings
+        # ----------------------------------------------------------------------
+        enabled:                        false
+
+        id:                             ad_4814313879
+        layout:                         page
+        content_page:                   preview_google_adsense
+
+        # ad properties
+        # ----------------------------------------------------------------------
+        publisherID:                    ca-pub-3885670015316130
+        test:                           "on"
+        styles:                         "display:block;"
+        slot:                           4814313879
+        ad_layout:                      multiplex
+        ad_format:                      autorelaxed
+        ui_type:                        image_stacked
+        ui_rows:                        1
+        ui_columns:                     4
 
 # ------------------------------------------------------------------------------
 # END config

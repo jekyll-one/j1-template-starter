@@ -60,8 +60,8 @@ resource_options:
 :url-j1-docs--lightbox-module:          https://jekyll.one/pages/public/manuals/modules/lightbox/
 :url-j1-docs--masterslider-module:      https://jekyll.one/pages/public/manuals/modules/masterslider/
 
-:url-j1-masterslider-previewer:         https://jekyll.one/pages/public/previewer/masterslider/
-:url-j1-slick-previewer:                https://jekyll.one/pages/public/previewer/slick/
+:url-j1-masterslider-previewer:         https://jekyll.one/pages/public/tools/previewer/masterslider/
+:url-j1-slick-previewer:                https://jekyll.one/pages/public/tools/previewer/slick/
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -246,7 +246,7 @@ lazy loading, or autoplay. Slick carousels are compatible with all modern
 browsers and devices, making it a great choice to create a responsive and
 mobile-friendly website.
 
-=== Slick Image Carousel
+=== Image Carousel
 
 [role="mb-4"]
 An _Slick_ image carousel typically consists of a container with images and
@@ -258,7 +258,7 @@ between images, to make the presentation more engaging and visually appealing.
 .Carousel + Arrows + Dots + Captions + Lightbox
 slick::image_carousel_full[role="mb-5"]
 
-=== Slick Carousel from Collections
+=== Carousel from Collections
 
 [role="mb-4"]
 A carousel from a collection for J1 Template is a *pre-defined* carousel
@@ -272,11 +272,35 @@ like *Arrows* and *Dots*.
 .Collection Biography + Arrows + Dots + Gutters
 slick::collection_carousel_biography[role="mb-5"]
 
+=== Carousel from Posts
+
+A Carousel from posts for J1 Template is a *pre-defined* carousel type to
+display post articles on a webpage. It is a popular way to showcase a
+selection of post articles visually appealingly and can be useful for
+highlighting important or *featured* content for your posts content.
+
+[role="mb-4"]
+Post carousels pull news articles from a specific *group*. All Carousels for
+posts display the post category, the title, the author information and
+date. All Slick carousels for the J1 Theme can be easily customized in
+various ways, such as changing the number of posts displayed, the slider
+speed, or the navigation options like *Arrows* and *Dots*.
+
+.Asciidoc configuration
+[source, config, role="noclip mb-3"]
+----
+slick::post_carousel_featured[]
+----
+
+.Post Carousel (Featured Posts)
+slick::post_carousel_featured[role="mb-4"]
+
 === More about Slick Carousels
 
 [role="mb-4"]
 If you're interested to learn more about _Slick_, go previewer page
 link:{url-j1-slick-previewer}[Slick Previewer, {browser-window--new}],
+
 
 [#masterSlider]
 == J1 Master Slider
