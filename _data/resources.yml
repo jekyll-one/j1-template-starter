@@ -339,7 +339,9 @@ resources:
   # ----------------------------------------------------------------------------
 
   # ----------------------------------------------------------------------------
-  # J1 Core, Main JS API for J1 Theme
+  # J1 Core, Main CSS styles and JS API for J1 Theme
+  #
+  # NOTE Theme CSS loaded via module 'themer'
   #
   - name:                               J1 Theme Core
     resource:
@@ -350,22 +352,18 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   true
       data:
         css:                            [
-                                          modules/spinner/css/spin,
-                                          core/css/icon-fonts/mdi,
-                                          core/css/icon-fonts/mdil,
-                                          core/css/icon-fonts/fontawesome,
-                                          core/css/themes/unolight/bootstrap,
+                                          core/css/themes/unolight/bootstrap,   # load always unolight as a 'bese' (e.g. for unodark, but should be removed)
+                                          core/css/icon-fonts/mdib,
                                           core/css/vendor
                                         ]
         files:                          [ adapter/js/j1.js ]
         js:                             [
-                                          modules/spinner/js/spin,
                                           modules/jquery/js/jquery,
                                           modules/jquery/js/extensions/hasClass,
                                           modules/jquery/js/extensions/removeClass,
@@ -412,7 +410,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   false
@@ -436,7 +434,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   false
@@ -487,7 +485,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   false
@@ -512,7 +510,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   false
@@ -537,7 +535,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   true
@@ -562,7 +560,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   false
@@ -586,7 +584,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
@@ -595,8 +593,8 @@ resources:
                                           modules/mmenuLight/css/mmenu-light,
                                           modules/mmenuLight/css/theme/uno/mmenu
                                         ]
-        files:                          [adapter/js/mmenu.js]
-        js:                             [modules/mmenuLight/js/mmenu]
+        files:                          [ adapter/js/mmenu.js ]
+        js:                             [ modules/mmenuLight/js/mmenu ]
         init_function:                  [ j1.adapter.mmenu.init ]
 
   # ----------------------------------------------------------------------------
@@ -614,7 +612,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   false
@@ -639,7 +637,7 @@ resources:
       layout:                           [ page, post, collection, blog_archive ]
       region:                           head
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   true
@@ -664,7 +662,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   false
@@ -739,7 +737,7 @@ resources:
   #
   - name:                               jQueryUI
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               jquery-ui
       comment:                          Module jQueryUI
@@ -773,7 +771,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   false
@@ -797,7 +795,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         always
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   false
@@ -827,7 +825,7 @@ resources:
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            [ modules/rtable/css/theme/uno/rtable ]
+        css:                            []
         files:                          [ adapter/js/rtable.js ]
         js:                             [ modules/rtable/js/rtable ]
         init_function:                  [ j1.adapter.rtable.init ]
@@ -855,30 +853,6 @@ resources:
         init_function:                  [ j1.adapter.asciidoctor.init ]
 
   # ----------------------------------------------------------------------------
-  # CSS Flags Previewer, preview page (UI) for country flags
-  #
-  # See: https://github.com/lipis/flag-icons
-  #
-  - name:                               CSS Flags Previewer
-    resource:
-      enabled:                          true
-
-      id:                               css_flags_previewer
-      comment:                          Module CSS Flags Previewer
-      layout:                           [ all ]
-      region:                           head
-      required:                         always
-      preload:                          false
-      script_load:
-      dependencies:                     false
-      pass_init_data:                   false
-      data:
-        css:                            [ core/country-flags/css/theme/uno ]
-        files:                          []
-        js:                             []
-        init_function:                  []
-
-  # ----------------------------------------------------------------------------
   # rtextResizer (currently NOT used)
   #
   - name:                               J1 RText Resizer
@@ -890,7 +864,7 @@ resources:
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive ]
       required:                         always                                  # always | ondemand
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:
       dependencies:                     false
       pass_init_data:                   false
@@ -922,6 +896,7 @@ resources:
       data:
         css:                            []
         files:                          [ modules/msDropdown/css/themes/uno/msDropdown.css ]
+        files:                          []
         js:                             [ modules/msDropdown/js/msDropdown ]
         init_function:                  []
 
@@ -1133,7 +1108,7 @@ resources:
       layout:                           [ home, page, post, collection, blog_archive ]
       region:                           head
       required:                         ondemand
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   true
@@ -1153,7 +1128,7 @@ resources:
   #
   - name:                               Twitter Emoji Icons
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               twemoji
       comment:                          Module Twitter Emoji Icons
@@ -1177,7 +1152,7 @@ resources:
   #
   - name:                               Twitter Emoji Picker
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               twemoji_picker
       comment:                          Module Twitter Emoji Picker
@@ -1225,7 +1200,7 @@ resources:
   #
   - name:                               Algolia API (JS)
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               Module Algolia API
       comment:                          Resources used by Algolia Instantsearch
@@ -1410,7 +1385,7 @@ resources:
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive, raw, app ]
       required:                         ondemand
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
@@ -1545,7 +1520,7 @@ resources:
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
@@ -1567,7 +1542,7 @@ resources:
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive ]
       required:                         ondemand                                # always | ondemand
-      preload:                          false                                   # property currently unused
+      preload:                          false
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
@@ -1584,7 +1559,7 @@ resources:
   #
   - name:                               Deepl API
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               deeplAPI
       comment:                          Module Deepl API
@@ -1609,7 +1584,7 @@ resources:
   #
   - name:                               Crypto
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               crypto
       comment:                          Module Crypto
@@ -1646,10 +1621,7 @@ resources:
       pass_init_data:                   true
       data:
         css:                            []
-        files:                          [
-#                                         modules/advertising/js/adInitializer.js,
-                                          adapter/js/advertising.js
-                                        ]
+        files:                          [ adapter/js/advertising.js ]
         js:                             []
         init_function:                  [ j1.adapter.advertising.init ]
 
@@ -1678,6 +1650,9 @@ resources:
   # ----------------------------------------------------------------------------
   # Dropdowns. JS API to create simple dropdown menus
   #
+  # NOTE: Modified version for J1
+  # NOTE: Adapted|old (1.3.5) version for cash.js from Materialize
+  #
   - name:                               Dropdowns
     resource:
       enabled:                          true
@@ -1694,8 +1669,8 @@ resources:
       data:
         css:                            [ modules/dropdowns/css/theme/uno/dropdowns ]
         files:                          [
-                                          modules/dropdowns/js/cash.js,         # adapted|old (1.3.5) version from Materialize
-                                          modules/dropdowns/js/dropdowns.js,    # modified version for J1
+                                          modules/dropdowns/js/cash.js,
+                                          modules/dropdowns/js/dropdowns.js,
                                           adapter/js/dropdowns.js
                                         ]
         js:                             []
@@ -1706,7 +1681,7 @@ resources:
   #
   - name:                               J1 NBinteract
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               nbinteract
       comment:                          Module J1 NBinteract
@@ -1818,14 +1793,14 @@ resources:
 
   # ----------------------------------------------------------------------------
   # RequireJS
-  # RequireJS loads plain JavaScript files as well as more defined modules.
+  # RequireJS loads plain JavaScript files as defined (required) in modules
   #
   # See: https://github.com/requirejs/requirejs
   #      https://plotly.com/javascript/getting-started/
   #
   - name:                               RequireJS
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               require
       comment:                          Module RequireJS
@@ -1847,7 +1822,7 @@ resources:
   #
   - name:                               Waves
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               waves
       comment:                          Module Waves
@@ -1869,7 +1844,7 @@ resources:
   #
   - name:                               Particles
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               particles
       comment:                          Module Particles
@@ -1991,6 +1966,29 @@ resources:
         files:                          [ adapter/js/themeToggler.js ]
         js:                             []
         init_function:                  [ j1.adapter.themeToggler.init ]
+
+  # ----------------------------------------------------------------------------
+  # dynamicLoader
+  # Configurable JS
+  #
+  - name:                               lazyCSSLoader
+    resource:
+      enabled:                          true
+
+      id:                               lazy_loader
+      comment:                          Module lazyCSSLoader
+      region:                           head
+      layout:                           [ all ]
+      required:                         always
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+      data:
+        css:                            []
+        files:                          [ adapter/js/lazyLoader.js ]
+        js:                             []
+        init_function:                  [ j1.adapter.lazyLoader.init ]
 
 # ------------------------------------------------------------------------------
 # END config

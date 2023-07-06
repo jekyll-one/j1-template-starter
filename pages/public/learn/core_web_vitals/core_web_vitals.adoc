@@ -293,7 +293,7 @@ For such resources, you can preload them by adding a `<link>` tag with a
 [source, html]
 ----
 <!-- Example of preloading -->
-<link rel="preload" src="banner_image.jpg" />
+<link rel="preload" src="banner_image.jpg">
 ----
 
 While you can preload multiple resources in a document, you should
@@ -310,7 +310,7 @@ attribute of the `<link>` tag.
 
 [source, html]
 ----
-<link rel="preconnect" href="https://static.example.com" />
+<link rel="preconnect" href="https://static.example.com">
 ----
 
 With `preconnect` in place, the browser can save the domain connection

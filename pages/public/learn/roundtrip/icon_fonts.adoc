@@ -1,5 +1,5 @@
 ---
-title:                                  Icons
+title:                                  Icon Fonts
 tagline:                                Popular Icons Sets
 date:                                   2020-11-06 00:00:00
 description: >
@@ -68,6 +68,7 @@ using the so-called Unified OpenSource Icon Framework.
 J1 Theme supports popular icons font sets out-of-the-box:
 
 * link:{url-mdi--home}[Material Design Icons, {browser-window--new}] (MDI)
+* link:{url-mdil--home}[Material Design Light Icons, {browser-window--new}] (MDIL)
 * link:{url-fontawesome--home}[FontAwesome Icons V5, {browser-window--new}] (FA)
 * link:{url-iconify--home}[Iconify Icons, {browser-window--new}] (II)
 
@@ -75,20 +76,21 @@ The icon sets MDI and FA are very good in design and have a rich set of
 different icons for many categories used for the Web. See below for some
 details for <<Material Design Icons>> and <<FontAwesome Icons>>.
 
+[role="mb-5"]
 Iconify icons are not a locally stored icon-set like MDI or FA. All icons are
 loaded over the Internet using the so-called *Unified OpenSource Icon
 Framework*. See section <<Iconify Icons>> for more information.
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
-[role="mt-4"]
-== Material Design Icons
+== Material Design Icons (Regular)
 
 The primary icon-set for the J1 Theme is
 link:{url-mdi--home}[Material Design Icons, {browser-window--new}],
-because it is a rich set providing more than 5900+ icons for the current
-version (v5.9.55). MDI has excellent *Material Design* support from a design
-perspective and comes with the original icon set created by _Google_ build-in.
+because it is a rich set providing more than 7200+ icons for the current
+version (v7.0.96, March 2023). MDI has excellent *Material Design* support
+from a design perspective and comes with the original icon set created by
+_Google_ build-in.
 
 _Material Design Icons_ (MDI) is a beneficial design resource for Web Design
 based on _Google_'s Material Design. _MDI_ is a community-driven
@@ -241,12 +243,149 @@ link:{url-roundtrip--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
 
 _MDI_ is a growing collection to allow designers and developers targeting
 various platforms to download icons in the format, color, and size they need
-for any project. The repo today contains 6000+ icons (v5.4.55) including
-converted icons from the official set created by _Google_.
+for any project. The repo today contains 7200+ icons (v7.0.96, March 2023)
+including converted icons from the official set created by _Google_.
 
-_J1 Theme_ supports the full set of _MDI_ for the Web (Webfont, WOFF). The
+NOTE: _J1 Theme_ supports the full set of _MDI_ for the Web (Webfont, WOFF). The
 icon set is fully integrated and can be used out-of-the-box.
 
+
+[role="mt-5"]
+== Material Design Light Icons
+
+The primary icon-set for the J1 Theme is
+link:{url-mdi--home}[Material Design Icons, {browser-window--new}],
+because it is a rich set providing more than 260+ icons for the current
+version (v0.2.63). MDI has excellent *Material Design* support from a design
+perspective and comes with the original icon set created by _Google_ build-in.
+
+.Material Design Light Icons
+[cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
+|===
+|Size |Modifier |Markup |Render
+
+|1x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+mdil:account[1x]
+----
+|mdil:account[1x]
+
+|3x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+mdil:account[3x]
+----
+|mdil:account[3x]
+
+|5x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+mdil:account[5x]
+----
+|mdil:account[5x]
+
+|5x
+|`mdi-rotate-45`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Rotate 45 degrees +
+[source, adoc, role="noclip"]
+----
+mdil:account[5x mdi-rotate-45]
+----
+|mdil:account[5x mdi-rotate-45]
+
+|5x
+|`mdi-rotate-315`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Rotate 315 degrees +
+[source, adoc, role="noclip"]
+----
+mdil:account[5x mdi-rotate-315]
+----
+|mdil:account[5x mdi-rotate-315]
+
+|5x
+|`mdi-light` +
+`mdi-flip-v`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Color set to (md) light-grey and flipped vertical +
+[source, adoc, role="noclip"]
+----
+mdil:alert[5x mdi-light mdi-flip-v]
+----
+|mdil:alert[5x mdi-light mdi-flip-v]
+
+|5x
+|`md-indigo`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Color set to (md) indigo +
+[source, adoc, role="noclip"]
+----
+mdil:alert[5x md-indigo]
+----
+|mdil:account[5x md-indigo]
+
+|5x
+|`md-pink`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Color set to (md) pink +
+[source, adoc, role="noclip"]
+----
+mdil:alert[5x md-pink]
+----
+|mdil:account[5x md-pink]
+
+|5x
+|`md-red-900` +
+`mdi-pulsed`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Color  set to (md) color dark-red and added animation of type pulsed +
+[source, adoc, role="noclip"]
+----
+mdil:heart[5x md-red-900 mdi-pulsed]
+----
+|mdil:heart[5x md-red-900 mdi-pulsed]
+
+|===
+
+[role="mt-5"]
 == FontAwesome Icons
 
 _FontAwesome_ is a font and icon toolkit based on CSS, initially
@@ -296,6 +435,7 @@ link:{url-roundtrip--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
 
 Find below examples of both and the use with J1 Theme.
 
+[role="mt-5"]
 === Brand icons
 
 .FontAwesome Icons (FAB)
@@ -329,7 +469,7 @@ fab:blogger[5x md-blue]
 
 |===
 
-
+[role="mt-5"]
 === Standard icons
 
 .FontAwesome Icons (FAS)
@@ -478,7 +618,7 @@ fas:heart[5x md-red-900 fa-pulsed]
 
 |===
 
-
+[role="mt-5"]
 == Iconify Icons
 
 MDI and FA are rich icon sets but designed for general use. Sometimes icons
@@ -574,7 +714,7 @@ iconify:medical-icon:i-ear-nose-throat[5x md-red-900]
 
 |===
 
-
+[role="mt-5"]
 == What next
 
 Have you've enjoyed the possibilities J1 offers for managing and

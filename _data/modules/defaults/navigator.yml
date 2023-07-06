@@ -30,41 +30,41 @@ description:
 defaults:
   enabled:                              true
 
-  # ------------------------------------------------------------------------------
+  # ----------------------------------------------------------------------------
   # Font icon settings
   #
   #   icon_family
-  #   ----------------------------------------------------------------------------
-  #   Set the Icon font (Material Design Icon MDI|FontAwesone FA)
+  #   --------------------------------------------------------------------------
+  #   Set the Icon font (Material Design Icon mdib|FontAwesone FA)
   #
-  #   values:                         familiy (MDI|FA)
-  #   default:                        MDI
+  #   values:                         familiy (mdib|fa)
+  #   default:                        mdib
   #
   #   icon_style
-  #   ----------------------------------------------------------------------------
-  #   Select the style (FA only, for MDI always mdi)
+  #   --------------------------------------------------------------------------
+  #   Select the style (FA only, for mdib always mdi)
   #
   #   values:                         style (mdi|far|fas|fab)
   #   default:                        mdi
   #
   #   icon_color
-  #   ----------------------------------------------------------------------------
+  #   --------------------------------------------------------------------------
   #   Select the icon color used
   #
   #   values:                         color string (all supported MD color names mdi-*)
   #   default:                        no default
   #
   #   icon_size
-  #   ----------------------------------------------------------------------------
+  #   --------------------------------------------------------------------------
   #   Select the icon color used
   #
   #   values:                         size string (all supported size names mdi-*)
   #   default:                        true
   #
-  icon_family:                          MDI
-  icon_style:                           mdi
-  icon_color:                           mdi-grey
-  icon_size:                            mdi-sm
+  icon_family:                          mdib
+  icon_style:                           mdib
+  icon_color:                           mdib-grey
+  icon_size:                            mdib-sm
 
   nav_primary_color:                    "#2196F3"                               # md-blue, general color for navbar and nav-menus
 
@@ -132,10 +132,10 @@ defaults:
     max_height:                         600                                     # px
     menu_font_size:                     larger
     megamenu_font_size:                 small
-    icon_family:                        MDI
-    icon_style:                         mdi                                     # far regular icon
+    icon_family:                        mdib
+    icon_style:                         mdib                                    # far regular icon
     icon_color:                         "#9E9E9E"                               # md-grey
-    icon_size:                          mdi-sm
+    icon_size:                          mdib-sm
     menu_item_color:                    '#212121'                               # gray-900 rgba-lighten
     menu_item_color_hover:              '#EEEEEE'                               # gray-500 rgba-lighten-900
     dropdown_style:                     raised
@@ -168,10 +168,10 @@ defaults:
     xhr_data_element:                   quicklinks
     xhr_data_path:                      /assets/data/quicklinks/index.html
 
-    icon_family:                        MDI
+    icon_family:                        mdib
     icon_color:                         '#212121'                               # gray-900
     icon_color_hover:                   '#757575'                               # gray-600
-    icon_size:                          mdi-2x
+    icon_size:                          mdib-2x
 
     # Link buttons
     # --------------------------------------------------------------------------

@@ -1,0 +1,93 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/lazyLoader.yml
+# User Configuration of the lazyLoader Module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023 Juergen Adams
+#
+# J1 Theme is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+#
+# ------------------------------------------------------------------------------
+# NOTE:
+#
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                lazyLoader
+  scope:                                User settings
+  location:                             _data/modules/lazyLoader.yml
+
+# ------------------------------------------------------------------------------
+# User settings
+#
+settings:
+  enabled:                              true
+
+  # ----------------------------------------------------------------------------
+  # Loader settings
+  # ----------------------------------------------------------------------------
+  loaders:
+
+    # --------------------------------------------------------------------------
+    # MDI Light Icon CSS
+    #
+    - loader:
+      enabled:                          true
+
+      src:                              /assets/themes/j1/core/css/icon-fonts/mdil.min.css
+      selector:                         '.mdil'
+      rootMargin:                       '150px 0px'
+      description:                      MDI Icons (light)
+
+    # --------------------------------------------------------------------------
+    # MDI Regular Icon CSS
+    #
+    - loader:
+      enabled:                          true
+
+      src:                              /assets/themes/j1/core/css/icon-fonts/mdi.min.css
+      selector:                         '.mdi'
+      rootMargin:                       '150px 0px'
+      description:                      MDI Icon CSS (regular)
+
+    # --------------------------------------------------------------------------
+    # FontAwesone (FA) Icon CSS
+    #
+    - loader:
+      enabled:                          true
+
+      src:                              /assets/themes/j1/core/css/icon-fonts/fontawesome.min.css
+      selector:                         '.fa'
+      rootMargin:                       '150px 0px'
+      description:                      FA Icon CSS
+
+    # --------------------------------------------------------------------------
+    # countryFlag Icon CSS
+    #
+    - loader:
+      enabled:                          true
+
+      src:                              /assets/themes/j1/core/country-flags/css/theme/uno.min.css
+      selector:                         '.flag-icon'
+      rootMargin:                       '150px 0px'
+      description:                      CountryFlag Icon CSS
+
+    # --------------------------------------------------------------------------
+    # rTable CSS
+    #
+    - loader:
+      enabled:                          true
+
+      src:                              /assets/themes/j1/modules/rtable/css/theme/uno/rtable.min.css
+      selector:                         '.rtable'
+      rootMargin:                       '150px 0px'
+      description:                      rTable CSS
+
+# ------------------------------------------------------------------------------
+# END config

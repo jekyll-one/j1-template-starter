@@ -86,14 +86,14 @@ settings:
 
         wave:
           top:
-            enabled:                      true
+            enabled:                      false
             height:                       2                                     # [1 .. 9]
             style:                        wave-1                                # default
             color:                        "#EEEEEE"                             # "#dcdcdc"
             background_color:             "#FAFAFA"                             # auto|rgb_value, "#FAFAFA"
             transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
           bottom:
-            enabled:                      true
+            enabled:                      false
             height:                       2
             style:                        wave-4
             color:                        "#EEEEEE"
@@ -110,7 +110,7 @@ settings:
               title_translate:          notranslate                             # translate|notranslate
               tagline:                  J1 Theme
               icon:                     responsive
-              icon_family:              MDI
+              icon_family:              mdib
               icon_size:                3x
               icon_color:
               text: >
@@ -139,7 +139,7 @@ settings:
               title_translate:          notranslate                             # translate|notranslate
               tagline:                  J1 Theme
               icon:                     tools
-              icon_family:              MDI
+              icon_family:              mdib
               icon_size:                3x
               icon_color:
               text: >
@@ -167,7 +167,7 @@ settings:
               title_translate:          notranslate                             # translate|notranslate
               tagline:                  J1 Theme
               icon:                     clock
-              icon_family:              MDI
+              icon_family:              mdib
               icon_size:                3x
               icon_color:
               text: >
@@ -233,14 +233,14 @@ settings:
 
         wave:
           top:
-            enabled:                      true
+            enabled:                      defaultCssFile
             height:                       4                                     # [1 .. 9]
             style:                        wave-4                                # default
             color:                        "#EEEEEE"
             background_color:             "#FAFAFA"
             transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
           bottom:
-            enabled:                      true
+            enabled:                      false
             height:                       2
             style:                        wave-4
             color:                        "#EEEEEE"
@@ -433,14 +433,14 @@ settings:
 
         wave:
           top:
-            enabled:                      true
+            enabled:                      false
             height:                       2                                     # [1 .. 9]
             style:                        wave-1                                # default
             color:                        "#EEEEEE"
             background_color:             "#FAFAFA"
             transform:                    false                                 # false or rotate|flip-x|flip-y and combinations
           bottom:
-            enabled:                      true
+            enabled:                      false
             height:                       2
             style:                        wave-4
             color:                        "#EEEEEE"
@@ -454,8 +454,8 @@ settings:
               enabled:                  true
               id:                       card_1
               icon:                     globe-model
-              icon_family:              MDI
-              icon_size:                mdi-6x
+              icon_family:              mdib
+              icon_size:                mdib-6x
               icon_color:               md-white
               href:                     /pages/public/features/general_features/
               title:                    Jekyll One
@@ -496,11 +496,11 @@ settings:
                                           Not get lost in project management.
                                         </p>
                                         <p>
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-language-ruby"></i>
+                                          <i class="mdib mdib-language-ruby mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Ruby 2.7 <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-language-ruby"></i>
+                                          <i class="mdib mdib-language-ruby mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Jekyll 4.3 <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-nodejs"></i>
+                                          <i class="mdib mdib-nodejs mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           NodeJS 14.x <br />
                                         </p>
                     title:              Platforms
@@ -541,13 +541,13 @@ settings:
                                           Configure what is to be done.
                                         </p>
                                         <p>
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-bootstrap"></i>
+                                          <i class="mdib mdib-bootstrap mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Bootstrap V5 <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-language-html5"></i>
+                                          <i class="mdib mdib-language-html5 mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Enhanced HTML, CSS and Javascript <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-grass"></i>
+                                          <i class="mdib mdib-24px mdib-grass md-blue-700 ml-3 mr-2"></i>
                                           Icon Fonts <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-application-settings"></i>
+                                          <i class="mdib mdib-application-settings mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Fully configurable components <br />
                                         </p>
                     title:              Frameworks
@@ -576,11 +576,11 @@ settings:
                                         Support your visitors.
                                         </p>
                                         <p>
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-devices"></i>
+                                          <i class="mdib mdib-devices mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Desktop and Mobile support <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-near-me"></i>
+                                          <i class="mdib mdib-near-me mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Mobile Web Navigation <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-lighthouse"></i>
+                                          <i class="mdib mdib-lighthouse mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Highest Google Lighthouse Scores <br />
                                         </p>
 
@@ -592,8 +592,8 @@ settings:
               enabled:                  true
               id:                       card_2
               icon:                     gift
-              icon_family:              MDI
-              icon_size:                mdi-6x
+              icon_family:              mdib
+              icon_size:                mdib-6x
               icon_color:               md-white
               href:                     /pages/public/features/template_features/
               title:                    Jekyll One
@@ -626,29 +626,29 @@ settings:
                                           Use whats's prepared already.
                                         </p>
                                         <p>
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-mouse-move-down"></i>
+                                          <i class="mdib mdib-mouse-move-down mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Infinite srcoll <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-mouse-move-down"></i>
+                                          <i class="mdib mdib-mouse-move-down mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Animate on srcoll <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-animation"></i>
+                                          <i class="mdib mdib-animation mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Floating Action Buttons <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-magnify"></i>
+                                          <i class="mdib mdib-magnify mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Full-text search engine (Lunr) <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-cookie"></i>
+                                          <i class="mdib mdib-cookie mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Cookie consent (GDPR compatible) <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-translate"></i>
+                                          <i class="mdib mdib-translate mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Translator (Google, Deepl) <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-clipboard"></i>
+                                          <i class="mdib mdib-clipboard mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Clipboard <br />
-                                          <i class="mdi mdi-24px md-blue-700 mdi-rotate-90 ml-3 mr-2 mdi-forwardburger"></i>
+                                          <i class="mdib mdib-forwardburger mdib-24px mdib-rotate-90 md-blue-700 ml-3 mr-2"></i>
                                           Smooth-srcoll <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-near-me"></i>
+                                          <i class="mdib mdib-near-me mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Enhanced Navigation <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-lightbulb-on"></i>
+                                          <i class="mdib mdib-lightbulb-on mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Lightboxes <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-folder-multiple-image"></i>
+                                          <i class="mdib mdib-folder-multiple-image mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Image and Video Galleries <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-view-carousel"></i>
+                                          <i class="mdib mdib-view-carousel mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Text and Image Carousels <br />
                                         </p>
 
@@ -669,17 +669,17 @@ settings:
                                           Make your site unique.
                                         </p>
                                         <p>
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-bootstrap"></i>
+                                          <i class="mdib mdib-bootstrap mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Bootstrap extensions <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-format-annotation-plus"></i>
+                                          <i class="mdib mdib-format-annotation-plus mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Asciidoctor extensions <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-group"></i>
+                                          <i class="mdib mdib-group mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Advanced banners and panels <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-near-me"></i>
+                                          <i class="mdib mdib-near-me mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Blog Post navigation <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-content-duplicate"></i>
+                                          <i class="mdib mdib-content-duplicate mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Featured example content <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-image"></i>
+                                          <i class="mdib mdib-image mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Royalty free images <br />
                                         </p>
                     title:              Extensions
@@ -699,17 +699,17 @@ settings:
                                           Check what services powers your site.
                                         </p>
                                         <p>
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-theme-light-dark"></i>
+                                          <i class="mdib mdib-theme-light-dark mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Bootstrap Themes <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-comment"></i>
+                                          <i class="mdib mdib-comment mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Comment providers <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-google-analytics"></i>
+                                          <i class="mdib mdib-google-analytics mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Google Analytics <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-google-ads"></i>
+                                          <i class="mdib mdib-google-ads mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Google Ads <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-youtube"></i>
+                                          <i class="mdib mdib-youtube mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           YouTube Video <br />
-                                          <i class="mdi mdi-24px md-blue-700 ml-3 mr-2 mdi-vimeo"></i>
+                                          <i class="mdib mdib-vimeo mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Vimeo Video <br />
                                         </p>
                     title:              Integrations

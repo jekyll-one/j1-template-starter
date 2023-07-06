@@ -22,7 +22,7 @@ include Asciidoctor
 #
 # Example:
 #
-#   mdil:account[mdi-48px, <modifier>]
+#   mdil:account[mdil-48px, <modifier>]
 #
 Asciidoctor::Extensions.register do
   class MdilIconInlineMacro < Extensions::InlineMacroProcessor

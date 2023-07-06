@@ -28,14 +28,6 @@
       href:                             /pages/public/learn/where_to_go/
       icon:                             foot-print
 
-    - title:                            Core Web Vitals
-      href:                             /pages/public/learn/core_web_vitals/
-      icon:                             quadcopter
-
-    - title:                            BS Sass Variables
-      href:                             /pages/public/learn/bs_sass_variables/
-      icon:                             code-tags
-
     # --------------------------------------------------------------------------
     # Roundtrip
     #
@@ -70,34 +62,6 @@
         - title:                        Search
           href:                         /pages/public/learn/roundtrip/quicksearch/
           icon:                         magnify
-
-    # --------------------------------------------------------------------------
-    # Cheatsheets
-    #
-    - title:                            Cheatsheet
-      icon:                             book
-      dropdown:
-
-        - title:                        J1
-#         href:                         /pages/public/tools/cheatsheet/j1/
-          href:                         https://jekyll.one/pages/public/tools/cheatsheet/j1/
-          icon:                         alpha-j-box-outline
-          target:                       _blank
-        - title:                        YAML
-#         href:                         /pages/public/tools/cheatsheet/yaml/
-          href:                         https://jekyll.one/pages/public/tools/cheatsheet/yaml/
-          icon:                         alpha-y-box-outline
-          target:                       _blank
-        - title:                        Git
-#         href:                         /pages/public/tools/cheatsheet/git/
-          href:                         https://jekyll.one/pages/public/tools/cheatsheet/git/
-          icon:                         git
-          target:                       _blank
-        - title:                        Gem
-#         href:                         /pages/public/tools/cheatsheet/gem/
-          href:                         https://jekyll.one/pages/public/tools/cheatsheet/gem/
-          icon:                         language-ruby
-          target:                       _blank
 
     # --------------------------------------------------------------------------
     # Collections
@@ -148,11 +112,6 @@
           icon:                         rocket-launch
           target:                       _blank
 
-
-        - title:                        Site Development
-          href:                         https://jekyll.one/pages/public/learn/devstart/
-          icon:                         launch
-
         - title:                        Jekyll In A Day
           icon:                         alpha-j-box
           dropdown:
@@ -188,7 +147,7 @@
               target:                   _blank
             - title:                    Factors of Success
               href:                     https://jekyll.one/pages/public/learn/kickstart/learning_seo/success_factors/
-              icon:
+              icon:                     tune
               target:                   _blank
             - title:                    Structured Data
               href:                     https://jekyll.one/pages/public/learn/kickstart/learning_seo/structured_data/
@@ -202,8 +161,8 @@
 # ------------------------------------------------------------------------------
 # TopLevel item FEATURES
 #
-- item:                                 Features
-  href:                                 /#panel_home_intro
+# - item:                                 Features
+#   href:                                 /#panel_home_intro
 
 # ------------------------------------------------------------------------------
 # TopLevel item BLOG
@@ -272,7 +231,7 @@
           target:                       _blank
         - title:                        Logger
           href:                         https://jekyll.one/pages/public/manuals/modules/logger/
-          icon:                         math-log
+          icon:                         file-document-edit-outline
         - title:                        Master Slider
           href:                         https://jekyll.one/pages/public/manuals/modules/masterslider/
           icon:                         gesture-swipe
@@ -291,7 +250,7 @@
           icon:                         near-me
         - title:                        Range Slider
           href:                         https://jekyll.one/pages/public/manuals/modules/rangeslider/
-          icon:                         distribute-vertical-center
+          icon:                         abacus
           target:                       _blank
         - title:                        Code Hightlighter Rouge
           href:                         https://jekyll.one/pages/public/manuals/rouge/user_guide/
@@ -326,11 +285,11 @@
           icon:                         emoticon-cool-outline
           dropdown:
 
-            - title:                    MDI Icons (Regular)
+            - title:                    mdib Icons (Regular)
               href:                     https://jekyll.one/pages/public/manuals/components/fonticons/mdi/
               icon:                     emoticon-cool-outline
 
-            - title:                    MDI Icons (Light)
+            - title:                    mdib Icons (Light)
               href:                     https://jekyll.one/pages/public/manuals/components/fonticons/mdil/
               icon:                     emoticon-cool-outline
 
@@ -373,34 +332,17 @@
     # --------------------------------------------------------------------------
     # J1 Integrations
     #
-    # - title:                            Integrations
-    #   icon:                             alpha-j-box
-    #   dropdown:
-    #
-    #     - title:                        Google
-    #       icon:                         google
-    #       dropdown:
-    #
-    #         - title:                    Google Translate
-    #           href:                     '#'
-    #           icon:                     google-translate
-    #         - title:                    Google Analytics
-    #           href:                     '#'
-    #           icon:                     google-analytics
-    #         - title:                    Google Ads
-    #           href:                     '#'
-    #           icon:                     google-ads
-    #
-    #     - title:                        Comment Providers
-    #       icon:                         comment
-    #       dropdown:
-    #
-    #       - title:                      Disqus
-    #         href:                       '#'
-    #         icon:                       disqus
-    #       - title:                      Hyvor Talk
-    #         href:                       '#'
-    #         icon:                       comment-outline
+    - title:                            Integrations
+      icon:                             alpha-j-box
+      dropdown:
+
+        - title:                        Google
+          icon:                         google
+          dropdown:
+
+            - title:                    Google Adsense
+              href:                     https://jekyll.one/pages/public/manuals/integrations/google/adsense/
+              icon:                     google-ads
 
     # --------------------------------------------------------------------------
     # J1 Plugins
@@ -455,13 +397,10 @@
       - title:                          Current Theme
         href:                           /pages/public/tools/previewer/current_theme/
         icon:                           theme-light-dark
-      - title:                          Icon Picker
-        href:                           /pages/public/tools/previewer/icon-picker/
-        icon:                           emoticon-cool-outline
 
-      - title:                          Google Adsense
-        href:                           https://jekyll.one/pages/public/tools/previewer/gad/
-        icon:                           image
+      - title:                          Icon Picker
+        href:                           https://jekyll.one/pages/public/tools/previewer/icon-picker/
+        icon:                           emoticon-cool-outline
         target:                         _blank
       - title:                          Slick
         href:                           https://jekyll.one/pages/public/tools/previewer/slick/
@@ -500,18 +439,18 @@
       icon:                             book
       dropdown:
 
-        - title:                        J1
-          href:                         /pages/public/tools/cheatsheet/j1/
-          icon:                         alpha-j-box-outline
         - title:                        YAML
-          href:                         /pages/public/tools/cheatsheet/yaml/
+          href:                         https://jekyll.one/pages/public/tools/cheatsheet/yaml/
           icon:                         alpha-y-box-outline
+          target:                       _blank
         - title:                        Git
-          href:                         /pages/public/tools/cheatsheet/git/
+          href:                         https://jekyll.one/pages/public/tools/cheatsheet/git/
           icon:                         git
+          target:                       _blank
         - title:                        Gem
-          href:                         /pages/public/tools/cheatsheet/gem/
+          href:                         https://jekyll.one/pages/public/tools/cheatsheet/gem/
           icon:                         language-ruby
+          target:                       _blank
 
     # --------------------------------------------------------------------------
     # Tools
@@ -635,7 +574,7 @@
         - title:                        cdnJS
           href:                         https://cdnjs.com/
           target:                       _blank
-          icon:                         arrow-down-bold-hexagon-outline
+          icon:                         cloud-outline
 
     - title:                            Knowledge
       icon:                             lightbulb-on
@@ -759,7 +698,6 @@
     - bootswatch_themes:                enabled
       title:                            Bootswatch
       icon:                             bootstrap
-
 
 # ------------------------------------------------------------------------------
 # Menu ABOUT

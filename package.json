@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "j1",
-  "version": "2023.3.1",
+  "version": "2023.4.0",
   "description": "J1 Theme Starter Web",
   "homepage": "https://your.site",
   "author": {
@@ -41,20 +41,20 @@
     "opt_skip_initial_build": "--skip-initial-build",
     "opt_webserver": "puma",
     "opt_interface": "0.0.0.0",
-    "opt_web_port": "30000",
-    "opt_web_url": "http://localhost:30000/",
-    "opt_app_port": "30010",
-    "opt_app_url": "http://localhost:30010/",
+    "opt_web_port": "23000",
+    "opt_web_url": "http://localhost:23000/",
+    "opt_app_port": "23010",
+    "opt_app_url": "http://localhost:23010/",
     "opt_profile": "",
     "opt_watch": "--watch",
     "opt_livereload": "--livereload",
-    "opt_livereload_port": "30001"
+    "opt_livereload_port": "23001"
   },
   "nbi": {
-  "opt_output_type": "plain",
-  "opt_credentials": "fake/fake",
-  "opt_nbi_input_folder": "FULL_PATH_TBD",
-  "opt_nbi_output_folder": "FULL_PATH_TBD"
+    "opt_output_type": "plain",
+    "opt_credentials": "fake/fake",
+    "opt_nbi_input_folder": "FULL_PATH_TBD",
+    "opt_nbi_output_folder": "FULL_PATH_TBD"
   },
   "algolia": {
     "admin_key": "your-algolia-admin-key"
