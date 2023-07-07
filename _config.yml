@@ -236,7 +236,7 @@ description: >
                                         as well. No pain for private or professional purposes.
 keywords: >
                                         opensource, free, j1, template, jekyll, jekyllone, web, sites,
-                                        static, jamstack, starter
+                                        static, jamstack
 author:
   name:                                 Juergen Adams
   email:                                juergen@jekyll.one
@@ -331,7 +331,7 @@ permalink:                              pretty
 # NOTE: Required setting for the sitemap plugin, for example.
 #
 # url:                                  http://localhost:23000
-url:                                    https://starter.jekyll.one/
+url:                                    https://j1-template-starter.netlify.app/
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -397,7 +397,7 @@ exclude:                                [
                                           package-lock.json, package.json,
                                           '*.ignore', '*._config.yml',
                                           '*.bat', '*.sh', '*.tmp', 'dot.*',
-                                          '*.txt', '*.log', '*.ppt*', '*.pdf',
+                                          '*.log', '*.ppt*', '*.pdf',
                                           '*.zip', '*.7z', '*.tgz', '*.tar',
                                           '*.a2p', '*.asciidoc'
                                         ]
@@ -586,6 +586,13 @@ excerpt_truncate_words:                 100
 collections:
 
   # ----------------------------------------------------------------------------
+  # People
+  #
+  people:
+    output:                             true
+    permalink:                          /collections/public/:collection/:name/
+
+  # ----------------------------------------------------------------------------
   # Portfolio
   #
   portfolio:
@@ -676,6 +683,7 @@ defaults:
 
       toc:                              true
       fab_menu_id:                      open_toc
+      comments:                         false
       scrollbar:                        false
       personalization:                  false
       exclude_from_search:              false
@@ -719,6 +727,7 @@ defaults:
 
       toc:                              true
       fab_menu_id:                      open_toc
+      comments:                         false
       scrollbar:                        false
       page_navigation:                  true
       personalization:                  false
@@ -757,6 +766,7 @@ defaults:
 
       toc:                              true
       fab_menu_id:                      open_toc
+      comments:                         false
       scrollbar:                        false
       page_navigation:                  true
       personalization:                  false
