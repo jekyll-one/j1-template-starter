@@ -24,7 +24,10 @@ comments:                               false
 regenerate:                             false
 permalink:                              /pages/public/learn/roundtrip/asciidoc_extensions/
 
-resources:                              [ animate, clipboard, comments, lightbox, iconify, rouge ]
+resources:                              [
+                                          animate, clipboard, lightbox, lightGallery,
+                                          iconify, justifiedGallery, rouge, video_js
+                                        ]
 resource_options:
   - attic:
       slides:
@@ -377,21 +380,20 @@ position based on available horizontal and vertical space. Sort of like mason
 fitting stones in a wall.
 
 .Gallerie macro for images and videos
-[source, no_template]
+[source, no_template, role="noclip"]
 ----
 .block_title
 gallery::<gallery_id>[role="<additional CSS styles>"]
 ----
 
-=== Image galleries
+.Image Gallery
+gallery::jg_customizer[role="mb-5"]
 
-lorem:sentences[5]
-
-=== Video galleries
-
-lorem:sentences[5]
+.Video Gallery
+gallery::jg_video_html5[role="mb-5"]
 
 
+[role="mt-5"]
 == Country flags
 
 Country flags are often used in the context of language-specific selections
@@ -627,7 +629,7 @@ finished yet.
 Placeholders for blind text comes in several flavors given by `macro`. The
 syntax for the `lorem:` inline macro is simple like this:
 
-[source, no_template]
+[source, no_template, role="noclip"]
 ----
 lorem:macro[]
 lorem:macro[size]
