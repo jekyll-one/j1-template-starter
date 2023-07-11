@@ -1,3 +1,70 @@
+---
+title:                                  Rouge
+tagline:                                Code Highlighter
+date:                                   2023-07-08 00:00:00
+description: >
+                                        Rouge is a native Ruby themeable syntax highlighter fully
+                                        integrated width J1 Template. The highlighter supports 100+
+                                        different languages and generates HTML output using standard
+                                        ANSI 256-colors displayed by all current browsers.
+
+keywords: >
+                                        Jekyll, Theme, JekyllOne, Highlighter, Rouge, Roundtrip
+
+categories:                             [ Roundtrip ]
+tags:                                   [ Module, Rouge ]
+
+image:
+  path:                                 /assets/images/modules/attics/1920x1280/mohammad-rahmani.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  Photo by Mohammad Rahmani on Unsplash
+
+regenerate:                             true
+permalink:                              /pages/public/learn/roundtrip/rouge/
+
+resources:                              [ animate, clipboard, rouge ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/images/modules/attics/1920x1280/mohammad-rahmani.jpg
+          alt:                          Photo by Mohammad Rahmani on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Mohammad Rahmani
+            href:                       https://unsplash.com/de/@afgprogrammer
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+Rouge is a native Ruby themeable syntax highlighter fully integrated width J1
+Template. The highlighter supports 100+ different languages and generates HTML
+output using standard ANSI 256-colors displayed by all current browsers.
+
+Find available themes for selected languages to see how highlighting works
+using Rouge.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-4"]
 == Select a Theme
 
 For the default themes `Uno` of J1 Template, the following _Rouge_ themes
@@ -117,3 +184,21 @@ Asciidoctor::Extensions.register do
 end
 ----
 <1> don't miss to load the Asciidoctor ruby
+
+[role="mt-4"]
+== What next
+
+The search option for the J1 Theme is based on the search engine Lunr and
+is fully integrated with the template. Lunr is designed to be lightweight
+yet full-featured to provide users with a great search experience. Using
+Lunr for a Jekyll website, there is no need to integrate complex external,
+server-sided search engines like Google or Bing.
+
+Visitors should be able to search your site to find pages and posts they
+are interested in. Usability is one of the top criteria for all visitors
+browsing your site. A good user experience and excellent content are key
+factors for the success of a website. Nothing in this business is guaranteed,
+but user experience efforts are good reasons your readers will return.
+
+Check what is searching a J1 website all about at
+link:{url-roundtrip--quicksearch}[Lunr Search].

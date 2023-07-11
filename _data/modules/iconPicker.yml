@@ -24,41 +24,34 @@ description:
 #
 settings:
   enabled:                              true
+  allowEmpty:                           false
 
+  # ------------------------------------------------------------------------------
+  # Picker configurations (currently NOT supported)
+  #
   pickers:
 
     # --------------------------------------------------------------------------
-    # mdibL Picker
+    # MDI Light Picker
     #
     - picker:
-      enabled:                          true
+      enabled:                          false
 
-      id:                               mdil
-      picker_button_id:                 icon_picker_mdil
+      id:                               base
+      picker_button_id:                 icon_picker_base
       iconLibraries:                    [ mdi-icons-light.min.json ]
-      iconLibrariesCss:                 [ https://cdn.jsdelivr.net/npm/@mdi/light-font@0.2.63/css/materialdesignicons-light.min.css ]
+      iconLibrariesCss:                 [ /assets/themes/j1/core/css/icon-fonts/mdil.min.css ]
 
     # --------------------------------------------------------------------------
-    # mdib Picker
+    # MDI Base Picker
     #
     - picker:
-      enabled:                          true
+      enabled:                          false
 
       id:                               mdi
-      picker_button_id:                 icon_picker_md
+      picker_button_id:                 icon_picker_base
       iconLibraries:                    [ mdi-icons-base.min.json ]
-      iconLibrariesCss:                 [ https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.2.96/css/materialdesignicons.min.css ]
-
-    # --------------------------------------------------------------------------
-    # FontAwesome Picker
-    #
-    - picker:
-      enabled:                          true
-
-      id:                               fontawsome
-      picker_button_id:                 icon_picker_fa
-      iconLibraries:                    [ font-awesome.min.json ]
-      iconLibrariesCss:                 [ https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css ]
+      iconLibrariesCss:                 [ /assets/themes/j1/core/css/icon-fonts/mdib.min.css ]
 
 # ------------------------------------------------------------------------------
 # END config
