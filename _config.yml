@@ -675,7 +675,9 @@ defaults:
         follow:                         true
 
       toc:                              true
+      canonical:                        false
       fab_menu_id:                      open_toc
+      comments:                         false
       scrollbar:                        false
       personalization:                  false
       exclude_from_search:              false
@@ -718,8 +720,10 @@ defaults:
         follow:                         true
 
       toc:                              true
+      canonical:                        false
       fab_menu_id:                      open_toc
       scrollbar:                        false
+      comments:                         false
       page_navigation:                  true
       personalization:                  false
       exclude_from_search:              false
@@ -756,7 +760,9 @@ defaults:
         follow:                         true
 
       toc:                              true
+      canonical:                        false
       fab_menu_id:                      open_toc
+      comments:                         false
       scrollbar:                        false
       page_navigation:                  true
       personalization:                  false
@@ -779,6 +785,7 @@ defaults:
 
     values:
       layout:                           page
+      canonical:                        false
 
   # ----------------------------------------------------------------------------
   # Book Shelf
@@ -789,6 +796,7 @@ defaults:
 
     values:
       layout:                           page
+      canonical:                        false
 
   - scope:
       type:                             fantasy
@@ -796,6 +804,7 @@ defaults:
 
     values:
       layout:                           page
+      canonical:                        false
 
   - scope:
       type:                             romance
@@ -803,7 +812,7 @@ defaults:
 
     values:
       layout:                           page
-
+      canonical:                        false
 
 # ==============================================================================
 # 7. LAYOUT configuration
