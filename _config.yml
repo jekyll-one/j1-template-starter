@@ -172,38 +172,28 @@ doctype:                                html
 
 # title
 # ------------------------------------------------------------------------------
-# Sets the ...
-#
-#   values:                             string
-#   default:                            no default
-#
-# slogan
-# ------------------------------------------------------------------------------
-# Sets the <title> tag within the <head> section.
+# Sets the meta tag 'title' (used by SEO tags)
 #
 #   values:                             string
 #   default:                            no default
 #
 # description
 # ------------------------------------------------------------------------------
-# Sets the meta tag for "description"
+# Sets the meta tag 'description' (used by SEO tags)
 #
 #   values:                             string
 #   default:                            no default
 #
 # keywords
 # ------------------------------------------------------------------------------
-# Sets the meta tag for "keywords"
+# Sets the meta tag 'keywords'
+# Meta keywords are can give search engines more information about a
+# page’s content. Most modern search engines does NOT use this tag
+# anymore but should be defined for backwards compatability.
 #
 #   values:                             string (comma separated)
 #   default:                            no default
 #
-# author.name
-# ------------------------------------------------------------------------------
-# Sets the meta tag for "author"
-#
-#   values:                             string (comma separated)
-#   default:                            no default
 #
 # robots.index
 # ------------------------------------------------------------------------------
@@ -237,17 +227,6 @@ description: >
 keywords: >
                                         opensource, free, j1, template, jekyll, jekyllone, web, sites,
                                         static, jamstack, starter
-author:
-  name:                                 Juergen Adams
-  email:                                juergen@jekyll.one
-  url:                                  https://jekyll.one/
-  github:                               username
-  facebook:                             username
-  twitter:                              username
-# feedburner:                           feedname
-
-webmaster:
-  email:                                webmaster@jekyll.one
 
 # Crawling/Indexing ENABLED for default. Settings managed page-wise using
 # frontmatter defaults or by page default settings to make sure that only
@@ -330,8 +309,8 @@ permalink:                              pretty
 # site.url will be set to the value of host, port.
 # NOTE: Required setting for the sitemap plugin, for example.
 #
-# url:                                  http://localhost:23000
-url:                                    https://starter.jekyll.one/
+# url:                                    http://localhost:23000
+url:                                      https://starter.jekyll.one/
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -543,14 +522,12 @@ author:
   twitter:
   feedburner:
 
-
 logo:                                   /assets/images/icons/j1/j1-512x512.png
 
 image:
   path:                                 /assets/images/promo/home/screenshot.jpg
   width:                                1200
   height:                               800
-  alt:                                  J1 Theme Home
 
 twitter:
   username:
@@ -660,7 +637,6 @@ defaults:
         path:                           /assets/images/promo/home/screenshot.jpg
         width:                          1200
         height:                         800
-        alt:                            J1 Theme Home
 
       icons:
         family:                         MDI
@@ -713,7 +689,6 @@ defaults:
         path:                           /assets/images/promo/home/screenshot.jpg
         width:                          1200
         height:                         800
-        alt:                            J1 Theme Home
 
       robots:
         index:                          true
@@ -753,7 +728,6 @@ defaults:
         path:                           /assets/images/promo/home/screenshot.jpg
         width:                          1200
         height:                         800
-        alt:                            J1 Theme Home
 
       robots:
         index:                          true
@@ -813,6 +787,7 @@ defaults:
     values:
       layout:                           page
       canonical:                        false
+
 
 # ==============================================================================
 # 7. LAYOUT configuration

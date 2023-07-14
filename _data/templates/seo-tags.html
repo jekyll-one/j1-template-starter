@@ -23,6 +23,7 @@
 {% endif %}
 
 <meta name="generator" content="Jekyll v{{ jekyll.version }}">
+<meta name="builder" content="J1 Template v{{ site.version }}">
 
 {% if seo_tag.page_title %}
   <meta property="og:title" content="{{ seo_tag.page_title }}">
@@ -56,9 +57,6 @@
   {% if seo_tag.image.width %}
     <meta property="og:image:width" content="{{ seo_tag.image.width }}">
   {% endif %}
-  {% if seo_tag.image.alt %}
-    <meta property="og:image:alt" content="{{ seo_tag.image.alt }}">
-  {% endif %}
 {% endif %}
 
 {% if page.date %}
@@ -82,16 +80,12 @@
   <meta name="twitter:card" content="summary">
 {% endif %}
 
-{% if seo_tag.image.alt %}
-  <meta name="twitter:image:alt" content="{{ seo_tag.image.alt }}">
-{% endif %}
-
 {% if seo_tag.page_title %}
   <meta property="twitter:title" content="{{ seo_tag.page_title }}">
 {% endif %}
 
 {% if site.twitter %}
-  <meta name="twitter:site" content="@{{ site.twitter.username | remove:'@' }}">
+  <meta name="twitter:site" content="{{ seo_tag.canonical_url }}">
 
   {% if seo_tag.author.twitter %}
     <meta name="twitter:creator" content="@{{ seo_tag.author.twitter | remove:'@' }}">
@@ -125,23 +119,9 @@
     <meta name="msvalidate.01" content="{{ site.webmaster_verifications.bing }}">
   {% endif %}
 
-  {% comment %} Alexa.com retired on May 1, 2022
-  # ----------------------------------------------------------------------------
-  {% if site.webmaster_verifications.alexa %}
-    <meta name="alexaVerifyID" content="{{ site.webmaster_verifications.alexa }}">
-  {% endif %}
-  {% endcomment %}
-
   {% if site.webmaster_verifications.yandex %}
     <meta name="yandex-verification" content="{{ site.webmaster_verifications.yandex }}">
   {% endif %}
-
-  {% comment %} Baidu requires chinese mobil number (for registration, not longer possible)
-  # ----------------------------------------------------------------------------
-  {% if site.webmaster_verifications.baidu %}
-    <meta name="baidu-site-verification" content="{{ site.webmaster_verifications.baidu }}">
-  {% endif %}
-  {% endcomment %}
 
   {% if site.webmaster_verifications.facebook %}
     <meta name="facebook-domain-verification" content="{{ site.webmaster_verifications.facebook }}">
@@ -150,6 +130,9 @@
   <meta name="google-site-verification" content="{{ site.google_site_verification }}">
 {% endif %}
 
+{% comment %} jadams 2023-07-17, remove INVALID property 'alt' from 'ImageObject'
+{{ seo_tag.json_ld | jsonify | remove: '"alt":"J1 Theme Home",' }}
+# ------------------------------------------------------------------------------ {% endcomment %}
 <script type="application/ld+json">
   {{ seo_tag.json_ld | jsonify }}
 </script>
