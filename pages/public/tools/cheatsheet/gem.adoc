@@ -1,8 +1,11 @@
 ---
 title:                                  Gem
 tagline:                                Cheatsheet for daily use
-date:                                   2023-05-19 00:00:00 +100
+date:                                   2023-05-19
+#last_modified:                         2023-01-01
 description: >
+                                        J1 Template is a Bootstrap V5 website template for the static
+                                        site generator Jekyll.
                                         The Cheatsheet discuss RubyGems commands for daily use.
                                         RubyGems is a package manager for the Ruby programming language. It provides
                                         a convenient way to distribute and manage software packages, called gems,
@@ -119,7 +122,7 @@ Add this line to your application's Gemfile:
 
 [source, sh]
 ----
-gem 'j1_template', '~> 2023.4.2'
+gem 'j1_template', '~> 2023.5.2'
 ----
 
 and install the locally created RubGem as:
@@ -171,14 +174,14 @@ bla ... specific version ...
 
 [source, sh]
 ----
-gem install j1-template -v 2023.4.2 --user-install --no-document
+gem install j1-template -v 2023.5.2 --user-install --no-document
 ----
 
 You can also use *version* comparators like `>=` or `~>`.
 
 [source, sh]
 ----
-gem install j1-template -v "~> 2023.4.2" --user-install --no-document
+gem install j1-template -v "~> 2023.5.2" --user-install --no-document
 ----
 
 === Install from a different source
@@ -187,7 +190,7 @@ bla ... specific version ...
 
 [source, sh]
 ----
-gem install j1-template -v 2023.4.2 --source 'https://gem.fury.io/jekyll-one-org/' --user-install --no-document
+gem install j1-template -v 2023.5.2 --source 'https://gem.fury.io/jekyll-one-org/' --user-install --no-document
 ----
 
 [role="mt-5"]

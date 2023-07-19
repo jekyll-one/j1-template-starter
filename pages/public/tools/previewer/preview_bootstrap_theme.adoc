@@ -1,12 +1,15 @@
 ---
 title:                                  Theme Preview
 tagline:                                Explore Current Styles
-date:                                   2022-12-01 00:00:00
+date:                                   2022-12-01
+#last_modified:                         2023-01-01
 description: >
-                                        JekyllOne is a theme for multifunctional Bootstrap-based and responsive
-                                        websites, and offers various unique functionalities compared to other themes
-                                        and templates for Jekyll. Themes for Bootstrap are used to customize the appearance
-                                        of a website based on the basic rules and definitions of Bootstrap's CSS styles.
+                                        J1 Template is a Bootstrap V5 website template for the static
+                                        site generator Jekyll and offers various unique functionalities
+                                        compared to other themes and templates for Jekyll. Themes for
+                                        Bootstrap are used to customize the appearance
+                                        of a website based on the basic rules and definitions of
+                                        Bootstrap's CSS styles.
 
 categories:                             [ Previewer ]
 tags:                                   [ Bootstrap, CSS, Theme ]
@@ -731,7 +734,7 @@ endif::[]
 ifeval::[{selections} == true]
 == Selections
 
-J1 Theme support two *selection* elements: checkboxes and radio buttons.
+J1 Template support two *selection* elements: checkboxes and radio buttons.
 These selection elements *replace* the default Bootstrap **toggle**-buttons
 for a better *style*.
 
@@ -1352,7 +1355,7 @@ endif::[]
 ifeval::[{tables} == true]
 == Tables
 
-Creating a design for tables is challenging. The approach used by J1 Theme
+Creating a design for tables is challenging. The approach used by J1 Template
 is based on pure CSS on top of the classic Bootstrap styles for simplicity
 and portability to be viewed best on all devices and browsers.
 
@@ -2095,7 +2098,7 @@ browser's scrollbar.
 NOTE: Custom webkit-based scrollbars are *not* supported with the *Firefox*
 browser.
 
-.Default scrollbar (J1 Theme)
+.Default scrollbar (J1 Template)
 [source, css]
 ----
 ::-webkit-scrollbar {

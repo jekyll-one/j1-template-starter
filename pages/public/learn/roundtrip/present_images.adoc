@@ -1,18 +1,23 @@
 ---
 title:                                  Image
+title_extention:                        Lightboxes, Carousels, Sliders, and Galleries for J1 Template
 tagline:                                Present Images
-date:                                   2020-11-03 00:00:00
+
+date:                                   2020-11-03
+#last_modified:                         2023-01-01
+
 description: >
-                                        J1 Theme support valuable features to manage your image-based
+                                        J1 Template support valuable features to manage your image-based
                                         content using lightboxes, carousels, sliders, and galleries.
-                                        The image modules of J1 Theme offer a wide range of complex
+                                        The image modules of J1 Template offer a wide range of complex
                                         functionality based on powerful OpenSource libraries like
                                         Lightbox2, Master Slider, LightGallery, or JustifiedGallery
                                         for high-end, masonry-styled preview maps.
 keywords: >
-                                        Jekyll, Theme, JekyllOne, Images, Lightboxes, Carousels, Sliders,
-                                        Galleries, Lightbox2, Master Slider, LightGallery, JustifiedGallery,
-                                        Roundtrip
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        image, lightbox, carousel, slider, gallery,
+                                        lightbox2, master slider, lightgallery, justifiedgallery
 
 categories:                             [ Roundtrip ]
 tags:                                   [ Module, Carousel, Lightbox, Image, Slider, Slick ]
@@ -74,9 +79,9 @@ resource_options:
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
 Welcome to the preview page focussing on the image module. This page shows
-all the valuable features of the J1 Theme to manage your image-based content
+all the valuable features of the J1 Template to manage your image-based content
 using using lightboxes, carousels, sliders, and galleries. The image modules
-of J1 Theme offer a wide range of complex functionality based on powerful
+of J1 Template offer a wide range of complex functionality based on powerful
 OpenSource libraries like Lightbox2, Master Slider, LightGallery, or
 JustifiedGallery for high-end, masonry-styled preview maps.
 
@@ -92,12 +97,12 @@ of the page. The technique, introduced by Lightbox2, gained widespread
 popularity thanks to its simple style. The term lightbox has been employed
 since then for Javascript libraries to support such functionality.
 
-For the J1 Theme, two different lightboxes are available:
+For the J1 Template, two different lightboxes are available:
 
 * Lightbox2 (lightbox)
 * LightGallery
 
-The default tool employed by J1 Theme is Lightbox2, a Javascript library
+The default tool employed by J1 Template is Lightbox2, a Javascript library
 written by _Lokesh Dhakar_. The name of that (build-in) is *lightbox*.
 For more complex use cases, like a thumbnail gallery preview or video support,
 LightGallery can be used alternatively.
@@ -111,7 +116,7 @@ Both lightboxes are fully integrated to be used as standalone modules or
 used as helpers *under-the-hood* by other apps or modules focussing on
 image-data like gallery or carousel, the build-in carousel module.
 
-TIP: For details of the default lightbox of J1 Theme, see the documentation
+TIP: For details of the default lightbox of J1 Template, see the documentation
 under the link:{url-j1-docs--lightbox-module}[Lightbox module, {browser-window--new}].
 
 
@@ -150,7 +155,7 @@ plugin for creating fully responsive and touch-enabled carousel sliders.
 
 ////
 NOTE: OWL Carousel V1 is no longer available on the Internet; for an
-unknown reason. Anyway, the J1 Theme is using this version of OWL
+unknown reason. Anyway, the J1 Template is using this version of OWL
 Carousel is a build-in carousel module because the software does an excellent
 job, is based on an MIT license with no issues using them for private and
 business use. And offers a lot of great features!
@@ -160,7 +165,7 @@ business use. And offers a lot of great features!
 
 [role="mb-4"]
 A slider or carousel is typically used for displaying images. Still, the
-implementation for the J1 Theme supports a lot more sources to be
+implementation for the J1 Template supports a lot more sources to be
 displayed as a slide show: simple text, for example.
 
 .Text Carousel
@@ -184,7 +189,7 @@ maybe the better choice.
 carousel::demo_text_carousel_parallax[role="mb-4"]
 
 Parallax text shows can be placed as banners on a page. For text shows,
-different animations are available. Internally, J1 Theme uses some of
+different animations are available. Internally, J1 Template uses some of
 the great CSS styles offered by _animate.css_.
 
 TIP: Have a look a https://daneden.github.io/animate.css/[Dan Eden's home page, {browser-window--new}]
@@ -264,7 +269,7 @@ A carousel from a collection for J1 Template is a *pre-defined* carousel
 type to display collection *articles* on a webpage as a carousel. Collection
 carousels pull content from a specific *collection*. All Carousels
 for collections display the article image and a link to the article as a
-caption. All Slick carousels for the J1 Theme can be easily customized in
+caption. All Slick carousels for the J1 Template can be easily customized in
 various ways, such as changing the slider speed, or the navigation options
 like *Arrows* and *Dots*.
 
@@ -281,7 +286,7 @@ highlighting important or *featured* content for your posts content.
 [role="mb-4"]
 Post carousels pull news articles from a specific *group*. All Carousels for
 posts display the post category, the title, the author information and
-date. All Slick carousels for the J1 Theme can be easily customized in
+date. All Slick carousels for the J1 Template can be easily customized in
 various ways, such as changing the number of posts displayed, the slider
 speed, or the navigation options like *Arrows* and *Dots*.
 
@@ -305,7 +310,7 @@ link:{url-j1-slick-previewer}[Slick Previewer, {browser-window--new}],
 == J1 Master Slider
 
 The Javascript tool _Master Slider_ is a 3rd party plugin fully integrated
-into the J1 Theme by the module `masterslider`. J1 Theme uses the
+into the J1 Template by the module `masterslider`. J1 Template uses the
 *free* version of Master Slider (MS Lite). The Lite version does *not* support
 all features: the functionality of  *filters*, *layouts* are limited and no
 *overlay* techniques are supported by the MS Lite version.
@@ -331,7 +336,7 @@ other digital data sources.
 In short: Carousels are used to present images, and sliders are used to create
 complex image-based slideshows (presentations).
 
-TIP: For more details of the dimplementation of Master Slider of J1 Theme, see
+TIP: For more details of the dimplementation of Master Slider of J1 Template, see
 find  documentation at
 link:{url-j1-docs--masterslider-module}[Master Slider module, {browser-window--new}].
 
@@ -410,7 +415,7 @@ documents:
 
 link:{url-justified-gallery--home}[JustifiedGallery, {browser-window--new}]
 is a great _jQuery_ Plugin to create responsive, infinite, and high-quality
-justified image galleries. J1 Theme combines the Gallery with the lightboxes
+justified image galleries. J1 Template combines the Gallery with the lightboxes
 supported to enlarge the images of a gallery. See the gallery in action; and
 for sure, all that you see is even responsive. Change the size of your current
 browser window, by width or height to see what will happen!
@@ -433,7 +438,7 @@ Hopefully, you've enjoyed exploring the possibilities J1 offers for managing
 and displaying digital image content. But much, much more can the J1 do for
 your web.
 
-The J1 Theme support playing video on web pages by HTML5 Video, the new
+The J1 Template support playing video on web pages by HTML5 Video, the new
 standard of HTML. HTML5 Video implements a pure HTML way to show video on
 the web. Modern browsers support the video tag `<video>` for the HTML5 video
 standard. The previous proprietary de facto standard software like Flash

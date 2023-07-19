@@ -47,13 +47,13 @@
 #   values:                             development|production
 #   default:                            development
 #
-environment:                            production
+environment:                            development
 
 # version
 # ------------------------------------------------------------------------------
 # Sets the build version of the site
 #
-version:                                2023.4.2
+version:                                2023.5.2
 
 # copyright
 # ------------------------------------------------------------------------------
@@ -216,17 +216,18 @@ doctype:                                html
 #   default:                            false
 # ------------------------------------------------------------------------------
 #
-title:                                  Starter
-tagline:                                The Build-In Theme
+title:                                  J1 Starter
+title_extention:                        Free Template for Jekyll and Bootstrap
+
 description: >
-                                        Jekyll One Starter Theme. This template gives web developers
-                                        and hobbyists a clean implementation in Jekyll for starting
-                                        new projects and combines the best of open source software
-                                        for the Web. Jekyll One is open source and the modules packed
-                                        as well. No pain for private or professional purposes.
+                                        J1 Template gives web developers and hobbyists a clean
+                                        implementation in Jekyll for starting new projects
+                                        based on Bootstap V5. The template combines the best
+                                        software for the Web. Jekyll One is open source,
+                                        free to use, and the modules packed as well.
 keywords: >
-                                        opensource, free, j1, template, jekyll, jekyllone, web, sites,
-                                        static, jamstack, starter
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstap
 
 # Crawling/Indexing ENABLED for default. Settings managed page-wise using
 # frontmatter defaults or by page default settings to make sure that only
@@ -309,8 +310,8 @@ permalink:                              pretty
 # site.url will be set to the value of host, port.
 # NOTE: Required setting for the sitemap plugin, for example.
 #
-# url:                                    http://localhost:23000
-url:                                      https://starter.jekyll.one/
+url:                                    http://localhost:23000
+# url:                                  https://starter.jekyll.one/
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -670,10 +671,10 @@ defaults:
   #
 
   # ----------------------------------------------------------------------------
-  # PUBLIC - FEATURED
+  # PUBLIC
   #
   - scope:
-      path:                             posts/public/featured
+      path:                             posts/public
       type:                             posts
 
     values:
@@ -685,6 +686,7 @@ defaults:
         url:                            https://jekyll.one/
 
       logo:                             /assets/images/icons/j1/j1-512x512.png
+
       image:
         path:                           /assets/images/promo/home/screenshot.jpg
         width:                          1200
@@ -703,44 +705,6 @@ defaults:
       personalization:                  false
       exclude_from_search:              false
       series:                           false
-
-      resource_options:
-        - toccer:
-            collapseDepth:              3
-
-  # ----------------------------------------------------------------------------
-  # PUBLIC - SERIES
-  #
-  - scope:
-      type:                             posts
-      path:                             posts/public/series
-
-    values:
-      layout:                           post
-      compress:                         true
-
-      author:
-        name:                           Juergen Adams
-        url:                            https://jekyll.one/
-
-      logo:                             /assets/images/icons/j1/j1-512x512.png
-      image:
-        path:                           /assets/images/promo/home/screenshot.jpg
-        width:                          1200
-        height:                         800
-
-      robots:
-        index:                          true
-        follow:                         true
-
-      toc:                              true
-      canonical:                        false
-      fab_menu_id:                      open_toc
-      comments:                         false
-      scrollbar:                        false
-      page_navigation:                  true
-      personalization:                  false
-      exclude_from_search:              false
 
       resource_options:
         - toccer:

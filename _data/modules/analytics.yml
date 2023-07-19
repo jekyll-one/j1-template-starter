@@ -23,14 +23,15 @@ description:
 # User configuration settings
 #
 settings:
-  enabled:                              false
-  trackingID:                           '<your-tracking-id>'
+  enabled:                              true
+  skipAllHosts:                         localhost, 127.0.0.1
+  trackingID:                           <your-tracking-id>
 
   # ----------------------------------------------------------------------------
   # Provider settings
   # ----------------------------------------------------------------------------
   google:
-    anonymizeIP:                        true
+    anonymizeIP:                        false
 
 # ------------------------------------------------------------------------------
 # END config

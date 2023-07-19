@@ -1,11 +1,20 @@
 ---
-layout:                                 page
-
 title:                                  Jekyll Collections
+title_extention:                        Collections are Jekyll's most powerful feature
 tagline:                                What Collections Are
-date:                                   2023-01-03 00:00:00
+
+date:                                   2023-01-03
+#last_modified:                         2023-01-01
+
 description: >
-                                        Jekyll Collections Overview
+                                        Collections are Jekyll's most powerful and simultaneously least understood
+                                        feature of the generator. Collections add another possibility, or use-case,
+                                        outside of Jekyll's post- and page-publishing functionality.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        collections
+
 categories:                             [ Jekyll, Collection ]
 tags:                                   [ Info, Overview ]
 
@@ -161,7 +170,7 @@ collections somewhat like Jekyll's
  http://jekyllrb.com/docs/datafiles/[data folder support, {browser-window--new}],
 but with the potential to generate content, and be placed into their own
 specific part of your Jekyll site, so a lot more robust. Like `data` files,
-they can support arbitrary key/values through frontmatter, but they also
+they can support arbitrary key/values through front matter, but they also
 support a full content body (like posts and pages), and can be broken out
 into separate files. If I wanted to break out my bakery's hours, I might
 have a `data/hours.yml` file that looked something like this:

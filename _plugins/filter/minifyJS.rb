@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/_plugins/uglify.rb
+# ~/_plugins/filter/uglify.rb
 # Liquid filter for J1 Theme to uglify JS
 #
 # Product/Info:

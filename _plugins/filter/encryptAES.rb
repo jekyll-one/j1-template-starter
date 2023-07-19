@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/_plugins/encode64JSON.rb
+# ~/_plugins/filter/encode64JSON.rb
 # Liquid filter for J1 Theme to Base64 encode a JSON string
 #
 # Product/Info:

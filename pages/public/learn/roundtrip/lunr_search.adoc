@@ -1,9 +1,13 @@
 ---
 title:                                  Search
+title_extention:                        Integrated site search based on Lunr for J1 Template
 tagline:                                Lunr For J1
-date:                                   2020-11-08 00:00:00
+
+date:                                   2020-11-08
+#last_modified:                         2023-01-01
+
 description: >
-                                        The search option for the J1 Theme is based on the
+                                        The search option for the J1 Template is based on the
                                         search engine Lunr and is fully integrated with the template.
                                         Lunr is designed to be lightweight yet full-featured to provide
                                         users with a great search experience. Using Lunr for a Jekyll
@@ -11,11 +15,13 @@ description: >
                                         server-sided search engines like Google or Bing.
 
 keywords: >
-                                        Jekyll, Theme, JekyllOne, Lunr, QuickSearch, Find,
-                                        Search, Google, Bing, Roundtrip
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        lunr, site search, quick search, find,
+                                        google, bing
 
 categories:                             [ Roundtrip ]
-tags:                                   [ Module, Quicksearch ]
+tags:                                   [ Module, Site search ]
 
 image:
   path:                                 /assets/images/modules/attics/lunr-1280x800.jpg
@@ -27,8 +33,6 @@ permalink:                              /pages/public/learn/roundtrip/quicksearc
 
 resources:                              [ animate, clipboard, lightbox, rouge ]
 resource_options:
-  - toccer:
-      collapseDepth:                    3
   - attic:
       slides:
         - url:                          /assets/images/modules/attics/lunr-1280x800.jpg
@@ -55,7 +59,7 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-The search option for the J1 Theme is based on the search engine Lunr and
+The search option for the J1 Template is based on the search engine Lunr and
 is fully integrated with the Template. Lunr is designed to be lightweight yet
 full-featured to provide users with a great search experience. Using Lunr for
 a Jekyll website, there is no need to integrate complex external, server-sided
@@ -132,7 +136,7 @@ A document data set might look like this:
   "title": "Roundtrip",
   "tagline": "present images",
   "url": "/pages/public/learn/roundtrip/present_images/",
-  "date": "2020-11-03 00:00:00 +0100",
+  "date": "2020-11-03 +0100",
   "tags": [
     "Introduction",
     "Module",
@@ -335,7 +339,7 @@ Example\|s: Search
 summary what the document is all about.
 
 Example\|s: QuickSearch is based on the search engine Lunr, fully integrated
-with J1 Theme  ...
+with J1 Template  ...
 
 |===
 
@@ -430,7 +434,7 @@ Theme. This Tutorial focuses on the basics of Jekyll and J1, which all
 people need to know for a successful way to a modern static website. Jekyll
 (and J1) is quite different from classic Content Management Systems (CMS).
 
-If you would like to learn more about the use of Jekyll and J1 Theme, the
+If you would like to learn more about the use of Jekyll and J1 Template, the
 tutorials present what you need to know:
 
 * The basics of modern static webs

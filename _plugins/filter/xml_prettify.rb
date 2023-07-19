@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/_plugins/xml_prettify.rb
+# ~/_plugins/filter/xml_prettify.rb
 # Liquid filter for J1 Theme to beautify XML code
 #
 # Product/Info:

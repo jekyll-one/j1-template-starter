@@ -18,6 +18,8 @@
  # -----------------------------------------------------------------------------
 {% endcomment %}
 
+{% assign time_now = site.time | date_to_xmlschema %}
+
 {% comment %} main
 -------------------------------------------------------------------------------- {% endcomment %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -31,8 +33,8 @@
     {% for doc in docs %}
       <url>
         <loc>{{ doc.url | replace:'/index.html','/' | absolute_url | xml_escape }}</loc>
-        {% if doc.last_modified_at or doc.date %}
-          <lastmod>{{ doc.last_modified_at | default: doc.date | date_to_xmlschema }}</lastmod>
+        {% if time_now or doc.last_modified %}
+          <lastmod>{{ doc.last_modified | default: time_now | date_to_xmlschema }}</lastmod>
         {% endif %}
       </url>
     {% endfor %}
@@ -42,8 +44,8 @@
   {% for page in pages %}
     <url>
       <loc>{{ page.url | replace:'/index.html','/' | absolute_url | xml_escape }}</loc>
-      {% if page.last_modified_at %}
-        <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
+      {% if time_now or page.last_modified %}
+        <lastmod>{{ doc.last_modified | default: time_now | date_to_xmlschema }}</lastmod>
       {% endif %}
     </url>
   {% endfor %}
@@ -52,7 +54,7 @@
   {% for file in static_files %}
     <url>
       <loc>{{ file.path | replace:'/index.html','/' | absolute_url | xml_escape }}</loc>
-      <lastmod>{{ file.modified_time | date_to_xmlschema }}</lastmod>
+      <lastmod>{{ doc.last_modified | default: time_now | date_to_xmlschema }}</lastmod>
     </url>
   {% endfor %}
 </urlset>

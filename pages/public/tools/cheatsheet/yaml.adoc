@@ -1,8 +1,11 @@
 ---
 title:                                  YAML
 tagline:                                Cheatsheet for daily use
-date:                                   2023-05-19 00:00:00 +100
+date:                                   2023-05-19
+#last_modified:                         2023-01-01
 description: >
+                                        J1 Template is a Bootstrap V5 website template for the static
+                                        site generator Jekyll.
                                         The Cheatsheet discuss YAML Markups for daily use.
                                         YAML (short for "YAML Ain't Markup Language") is a human-readable data
                                         serialization format. Its simplicity and readability stand out, making it
@@ -173,7 +176,7 @@ TIP: When *no timezone* is specified, the time is assumed to be in the
 [source, yaml]
 ----
 date1:                  2015-04-05
-date2:                  2022-11-03 00:00:00 +100
+date2:                  2022-11-03 +100
 ----
 
 .JSON data structure
@@ -181,7 +184,7 @@ date2:                  2022-11-03 00:00:00 +100
 ----
 {
   "date1": "2015-04-05T00:00:00.000Z",
-  "date2": "2022-11-03 00:00:00 +100"
+  "date2": "2022-11-03 +100"
 }
 ----
 

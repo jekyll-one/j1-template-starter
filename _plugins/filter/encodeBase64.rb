@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/_plugins/encodeBase64.rb
+# ~/_plugins/filter/encodeBase64.rb
 # Liquid filter for J1 Theme to Base64 encode
 #
 # Product/Info:

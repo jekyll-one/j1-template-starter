@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/_plugins/filters.rb
+# ~/_plugins/filter/filters.rb
 # Liquid filtersfor J1 Theme
 #
 # Product/Info:

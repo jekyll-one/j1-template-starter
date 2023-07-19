@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "j1",
-  "version": "2023.4.2",
+  "version": "2023.5.2",
   "description": "J1 Theme Starter Web",
   "homepage": "https://your.site",
   "author": {
@@ -44,17 +44,11 @@
     "opt_web_port": "23000",
     "opt_web_url": "http://localhost:23000/",
     "opt_app_port": "23010",
-    "opt_app_url": "http://localhost:23010/",
+    "opt_app_url": "http://localhost:30010/",
     "opt_profile": "",
     "opt_watch": "--watch",
     "opt_livereload": "--livereload",
     "opt_livereload_port": "23001"
-  },
-  "nbi": {
-  "opt_output_type": "plain",
-  "opt_credentials": "fake/fake",
-  "opt_nbi_input_folder": "FULL_PATH_TBD",
-  "opt_nbi_output_folder": "FULL_PATH_TBD"
   },
   "algolia": {
     "admin_key": "your-algolia-admin-key"
@@ -134,8 +128,7 @@
     "bump:project": "cross-var cross-env npm version $npm_package_config_bumplevel",
     "bump-no-git": "cross-var cross-env npm --no-git-tag-version version $npm_package_config_bumplevel",
     "get_version": "run-s get_version:*",
-    "get_version:jekyll": "cross-var cross-env JEKYLL_ENV=$npm_package_config_mode BUNDLE_GEMFILE=$npm_package_jekyll_gemfile bundle exec jekyll --version",
-    "nbi-export--all": "cross-var nbinteract -r $npm_package_nbi_opt_nbi_input_folder -o $npm_package_nbi_opt_nbi_output_folder -t $npm_package_nbi_opt_output_type -s $npm_package_nbi_opt_credentials"
+    "get_version:jekyll": "cross-var cross-env JEKYLL_ENV=$npm_package_config_mode BUNDLE_GEMFILE=$npm_package_jekyll_gemfile bundle exec jekyll --version"
   },
   "dependencies": {
     "bootstrap": "^5.2",

@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/_plugins/prettify.rb
+# ~/_plugins/filter/prettify.rb
 # Liquid filter for J1 Theme to beautify HTML code
 #
 # Product/Info:

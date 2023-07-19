@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/_plugins/minifyJSON.rb
+# ~/_plugins/filter/minifyJSON.rb
 # Liquid filter for J1 Theme to minify a JSON string
 #
 # Product/Info:

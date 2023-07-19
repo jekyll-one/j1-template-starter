@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/_plugins/debug.rb
+# ~/_plugins/filter/debug.rb
 # Helper to inspect liquid template variables for Jekyll
 #
 # Product/Info:
