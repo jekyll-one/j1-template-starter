@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/_plugins/asciidoctor-extensions/mdi-icon-inline.rb
+# ~/_plugins/asciidoctor-extensions/mdil-icon-inline.rb
 # Asciidoctor extension for J1 Theme
 #
 # Product/Info:

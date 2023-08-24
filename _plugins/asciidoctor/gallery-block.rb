@@ -33,8 +33,8 @@ Asciidoctor::Extensions.register do
     name_positional_attributes 'role'
 
     def process parent, target, attrs
-      title_html  = (attrs.has_key? 'title') ? %(<div class="gallery-title notranslate">#{attrs['title']}</div>\n) : nil
-      html = %(#{title_html} <div id="#{target}" class="#{attrs['role']}"></div>)
+      title_html  = (attrs.has_key? 'title') ? %(<div class="gallery-title">#{attrs['title']}</div>\n) : nil
+      html = %(#{title_html} <gallery><div id="#{target}" class="#{attrs['role']}"></div></gallery>)
       create_pass_block parent, html, attrs, subs: nil
     end
   end

@@ -1,3 +1,4 @@
+[role="mt-5"]
 == Configuration
 
 Jekyll allows you to configure your sites in any way you can dream up, and it’s
@@ -69,6 +70,8 @@ headers: one *dynamic* in order to specify the nature of the data being served,
 the other *static* in order to disable caching so that you don't have to fight
 with Chrome's aggressive *caching* when you are in *development mode*.
 
+
+[role="mt-5"]
 == Jekyll Environment
 
 === Folder structure
@@ -204,7 +207,6 @@ Changes made to `_config.yml` during automatic regeneration
 are not loaded until the next execution.
 
 Note `Data Files` are included and reloaded during automatic regeneration.
-
 ====
 
 Here, we are scoping the `values` to any file that exists in the path `scope`.

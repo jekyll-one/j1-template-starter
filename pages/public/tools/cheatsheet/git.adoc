@@ -1,8 +1,10 @@
 ---
 title:                                  Git
 tagline:                                Sheatsheet for daily use
+
 date:                                   2023-05-19
 #last_modified:                         2023-01-01
+
 description: >
                                         J1 Template is a Bootstrap V5 website template for the static
                                         site generator Jekyll.
@@ -1078,28 +1080,28 @@ git rm -rf --cached . && git add .
 git commit -am "Cleanup files"
 ----
 
-|`commit -am "New version 2023.6.0"`
+|`commit -am "New version 2023.4.2"`
 |Commit a specific *version*.
 |
 [source, sh]
 ----
-git commit -am "New version 2023.6.0"
+git commit -am "New version 2023.4.2"
 ----
 
-|`commit --allow-empty -m "New version 2023.6.0"`
+|`commit --allow-empty -m "New version 2023.4.2"`
 |Commit a specific version but *no* (file) changes applied.
 |
 [source, sh]
 ----
-git commit --allow-empty -m "New version 2023.6.0"
+git commit --allow-empty -m "New version 2023.4.2"
 ----
 
-|`commit -am "Prepare new version 2023.6.0"`
+|`commit -am "Prepare new version 2023.4.2"`
 |Commit a specific version but changes are *not* final.
 |
 [source, sh]
 ----
-git commit -am "Prepare new version 2023.6.0"
+git commit -am "Prepare new version 2023.4.2"
 ----
 
 |`commit -am "Latest files"`
@@ -1348,14 +1350,14 @@ Use the git 'tag' command with the '-d' option
 
 [source, sh]
 ----
-git tag -d v2023.6.0
+git tag -d v2023.4.2
 ----
 
 .from remote
 
 [source, sh]
 ----
-git push -d origin v2023.6.0
+git push -d origin v2023.4.2
 ----
 
 
@@ -1366,7 +1368,7 @@ then push the new tag
 
 [source, sh]
 ----
-git tag -a v2023.6.0 -m "v2023.6.0"
+git tag -a v2023.4.2 -m "v2023.4.2"
 git push origin --tags
 ----
 
@@ -1398,10 +1400,10 @@ Then:
 [source, sh]
 ----
 git commit -am "Cleanup files"
-git commit -am "New version 2023.6.0"
-git commit --allow-empty -m "New version 2023.6.0"
-git commit -am "Prepare new version 2023.6.0"
-git commit -am "Latest files of version 2023.6.0"
+git commit -am "New version 2023.4.2"
+git commit --allow-empty -m "New version 2023.4.2"
+git commit -am "Prepare new version 2023.4.2"
+git commit -am "Latest files of version 2023.4.2"
 ----
 
 

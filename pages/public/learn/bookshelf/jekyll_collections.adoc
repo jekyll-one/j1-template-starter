@@ -61,13 +61,16 @@ resource_options:
 [role="dropcap"]
 Collections are Jekyll's most powerful and simultaneously least understood
 feature of the generator. Collections add another possibility, or use-case,
-outside of Jekyll's post- and page-publishing functionality. Collections have
-the potential to bring Jekyll's zen-like simplicity to all sorts of other types
-of content that aren't ordered as with posts (ordered by date), but have a
-set *relationship* with one another - hence the name: _collection_.
+outside of Jekyll's post- and page-publishing functionality.
+
+Collections have the potential to bring Jekyll's zen-like simplicity to all
+sorts of other types of content that aren't ordered as with posts
+(ordered by date), but have a set *relationship* with one another - hence
+the name: _collection_.
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
+[role="mt-5"]
 == Posts and Pages
 
 ////
@@ -80,8 +83,8 @@ image::{{page.image.name}}[{{page.title}}, width=1280]
 
 Source: https://ben.balter.com/2015/02/20/jekyll-collections/[Ben Balter: Jekyll Collections, {browser-window--new}]
 
-Most Jekyll sites are organized around two types of content, posts (ordered)
-and pages (un-ordered).
+Most Jekyll sites are organized around two types of content, posts known as
+ordered content and pages, the un-ordered content.
 
 * http://jekyllrb.com/docs/posts/[Posts, {browser-window--new}] are organized
   reverse chronologically. You might use them for blog posts on a personal blog,
@@ -109,7 +112,7 @@ already failed". That's where Jekyll's
 http://jekyllrb.com/docs/collections/[collections, {browser-window--new}]
 come in.
 
-
+[role="mt-5"]
 == Not a post, a page - but a collection?
 
 Collections add another possibility, or use-case, outside of Jekyll's
@@ -212,7 +215,7 @@ contents automatically generated, or use the where syntax to get the
 contents of specific collections to add common content, or devices to
 your site.
 
-
+[role="mt-5"]
 == Using collections
 
 The examples above were a slight simplification. There's one other step.

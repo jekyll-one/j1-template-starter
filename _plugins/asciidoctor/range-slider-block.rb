@@ -34,7 +34,7 @@ Asciidoctor::Extensions.register do
     default_attrs 'role' => ''
 
     def process parent, target, attrs
-      html = %(<div id="#{target}" class="range-slider #{attrs['role']}"></div>)
+      html = %(<div id="#{target}" class="range-slider speak2me-ignore #{attrs['role']}"></div>)
       create_pass_block parent, html, attrs, subs: nil
     end
   end

@@ -3,11 +3,11 @@ layout:                                 page
 
 title:                                  Navigator
 tagline:                                Explore Posts
+
 date:                                   2022-01-01
 #last_modified:                         2023-01-01
+
 description: >
-                                        J1 Template is a Bootstrap V5 website template for the static
-                                        site generator Jekyll.
                                         To make all posts using J1 Template easy accessible to the visitors,
                                         the Navigation System of J1 Template provides a Explorer module
                                         for Blog articles: the Navigator. The Naviagtor supports the users
@@ -40,7 +40,6 @@ regenerate:                             false                                   
 resources:                              [ animate, scroller ]
 resource_options:
   - attic:
-      padding_top:                      550
       slides:
         - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
           alt:                          Photo by Matthaeus on Unsplash
@@ -98,7 +97,7 @@ resource_options:
   {% assign rtext_size = 0 %}
 {% endif %}
 
-{% comment %} language detection
+{% comment %} language detection (disabled)
 -------------------------------------------------------------------------------- {% endcomment %}
 {% if site.language == "en" %}
   {% assign language = "en" %}
@@ -107,6 +106,8 @@ resource_options:
 {% else %}
   {% assign language = "en" %}
 {% endif %}
+
+
 
 {% if language == "en" %}
   {% assign category_view_button_text         = blog_navigator_options.button_text.view_selector.category_view.en %}
@@ -131,10 +132,10 @@ resource_options:
 {% endif %}
 
 
-{% comment %} Main
+{% comment %} Main container
 -------------------------------------------------------------------------------- {% endcomment %}
   <!-- [INFO   ] [j1.layout.content_generator_blog.html  ] [Begin content] -->
-  <main id="main-content" class="container r-text-{{rtext_size}} js-toc-content mb-5">
+  <div id="main-container" class="container r-text-{{rtext_size}} js-toc-content mb-5">
     <!-- Content placed by layouts/content_generator_blog_archive.html -->
     <div id="blog_navigator">
       <div id="article_navigator">
@@ -161,7 +162,7 @@ resource_options:
         {% endcomment %}
 
         <div class="navigator-headline">
-          <nav class="paginator">
+          <nav class="paginator speak2me-ignore mb-4">
             <ul class="pagination raised-z0">
               <li class="page-item"><a class="page-link" href="/" title="Home">Home</a></li>
               <li class="page-item"><a class="page-link" href="{{category_view}}" alt="View by Category">{{category_view_button_text}}</a></li>
@@ -185,7 +186,7 @@ resource_options:
         <div class="previewer-headline">
 
           <div class="post-headline">
-            <h1 id="previewer" class="notoc mt-4">{{previewer_headline}}</h1>
+            <h2 id="post-headline" class="notoc mt-4">{{previewer_headline}}</h2>
           </div>
 
           <!-- Add Jekyll Paginator if enabled: {{scroller}} -->
@@ -194,18 +195,18 @@ resource_options:
             <ul class="pagination raised-z0">
               {% if paginator.previous_page %}
                 <li class="page-item">
-                    <a class="page-link" href="{{ paginator.previous_page_path }}#article_navigator">{{paginator_button_newer_posts_text}}</a>
+                  <a class="page-link" href="{{paginator.previous_page_path}}#article_navigator">{{paginator_button_newer_posts_text}}</a>
                 </li>
               {% else %}
-                  <li class="page-item disabled"><a href="#void" class="page-link">{{paginator_button_first_post_text}}</a></li>
+                <li class="page-item disabled"><a href="#void" class="page-link">{{paginator_button_first_post_text}}</a></li>
               {% endif %}
 
               {% if paginator.next_page %}
               <li class="page-item">
-                  <a class="page-link" href="{{ paginator.next_page_path }}#article_navigator">{{paginator_button_older_posts_text}}</a>
+                <a class="page-link" href="{{paginator.next_page_path}}#article_navigator">{{paginator_button_older_posts_text}}</a>
               </li>
               {% else %}
-                  <li class="page-item disabled"><a href="#void" class="page-link">{{paginator_button_last_post_text}}</a></li>
+                <li class="page-item disabled"><a href="#void" class="page-link">{{paginator_button_last_post_text}}</a></li>
               {% endif %}
             </ul>
           </nav>
@@ -217,7 +218,7 @@ resource_options:
 
         </div>
 
-        <div id="article_preview">
+        <div id="navigator_article_preview">
           <!-- Previewer selected of type: {{previewer}}-->
           <div id="preview_content">
             {% assign posts_collate = paginator.posts %}
@@ -239,4 +240,4 @@ resource_options:
       {% endif %}
 
     </div> <!-- end blog_navigator -->
-  </main> <!-- end main -->
+  </div> <!-- end main -->

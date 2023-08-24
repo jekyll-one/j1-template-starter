@@ -1,8 +1,10 @@
 ---
 title:                                  YAML
 tagline:                                Cheatsheet for daily use
+
 date:                                   2023-05-19
 #last_modified:                         2023-01-01
+
 description: >
                                         J1 Template is a Bootstrap V5 website template for the static
                                         site generator Jekyll.
@@ -107,6 +109,7 @@ on simplicity and machine readability. They have overlapping use cases but
 exhibit some differences in syntax, data types, and readability. JavaScript
 has built-in support for working with JSON data, making it a popular choice
 for handling data exchange in web applications.
+
 
 [role="mt-5"]
 == Scalars
@@ -262,6 +265,7 @@ documents without requiring *manual* line concatenation or escaping characters.
 There is a good online previewer for the different heredoc modes at
 link:{yaml-multiline}[YAML Multiline, {browser-window--new}].
 
+
 [role="mt-5"]
 == Sequences (Arrays)
 
@@ -346,6 +350,7 @@ list_of_lists:
 You can nest sequences of sequences to represent more complex structures
 or hierarchical data. Nesting sequences allow you to organize and represent
 data in a structured manner within YAML documents.
+
 
 [role="mt-5"]
 == Hash (Dictionary)
@@ -452,6 +457,7 @@ Hashes with *JSON* syntax (mixing is possible)
 }
 ----
 ====
+
 
 [role="mt-5"]
 == Content References (Aliases)

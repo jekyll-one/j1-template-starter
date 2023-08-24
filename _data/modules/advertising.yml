@@ -28,15 +28,9 @@ description:
 #
 settings:
   enabled:                              true
-  placement:                            manual
 
   google:
-    publisherID:                        ca-pub-3885670015316130                 # jekyll.one
-#   publisherID:                        <your-publisher-id>
-
-    autoPlaceAds:                       false
-    autoHideOnUnfilled:                 false
-    addBorderOnUnfilled:                true
+    publisherID:                        <your-publisher-id>
 
     # --------------------------------------------------------------------------
     # Container settings
@@ -132,49 +126,24 @@ settings:
       # ------------------------------------------------------------------------
 
       # ------------------------------------------------------------------------
-      # Ad on slot id "5128488466" (Type Display)
+      # Ad on slot id "<your-slot-id>" (Type Display)
       #
       - ad:
 
         # container settings
         # ----------------------------------------------------------------------
-        enabled:                        false
+        enabled:                        true
 
-        id:                             ad_5128488466
+        id:                             ad_<your-slot-id>
         layout:                         home
         content_page:                   home
 
-
         # ad properties
         # ----------------------------------------------------------------------
-        publisherID:                    ca-pub-3885670015316130
+        publisherID:                    <your-publisher-id>
         test:                           "on"
         styles:                         "display:block;"
-        slot:                           5128488466
-        ad_layout:                      display
-        ad_format:                      auto
-        ad_responsive:                  true
-
-      # ------------------------------------------------------------------------
-      # Ad on slot id "7284712660" (Type Display)
-      #
-      - ad:
-
-        # container settings
-        # ----------------------------------------------------------------------
-        enabled:                        false
-
-        id:                             ad_7284712660
-        layout:                         home
-        content_page:                   home
-
-
-        # ad properties
-        # ----------------------------------------------------------------------
-        publisherID:                    ca-pub-3885670015316130
-        test:                           "on"
-        styles:                         "display:block;"
-        slot:                           7284712660
+        slot:                           <your-slot-id>
         ad_layout:                      display
         ad_format:                      auto
         ad_responsive:                  true
@@ -184,7 +153,7 @@ settings:
       # ------------------------------------------------------------------------
 
       # ------------------------------------------------------------------------
-      # Ad on slot id "5128488466" (Type Display)
+      # Ad on slot id "<your-slot-id>" (Type Display)
       #
       - ad:
 
@@ -192,66 +161,19 @@ settings:
         # ----------------------------------------------------------------------
         enabled:                        true
 
-        id:                             ad_5128488466
+        id:                             ad_<your-slot-id>
         layout:                         page
         content_page:                   preview_google_adsense
 
         # ad properties
         # ----------------------------------------------------------------------
-        publisherID:                    ca-pub-3885670015316130
+        publisherID:                    <your-publisher-id>
         test:                           "on"
         styles:                         "display:block;"
-        slot:                           5128488466
+        slot:                           <your-slot-id>
         ad_layout:                      display
         ad_format:                      auto
         ad_responsive:                  true
-
-      # ------------------------------------------------------------------------
-      # Ad on slot id "7522184684" (Type In-Article)
-      #
-      - ad:
-
-        # container settings
-        # ----------------------------------------------------------------------
-        enabled:                        true
-
-        id:                             ad_7522184684
-        layout:                         page
-        content_page:                   preview_google_adsense
-
-        # ad properties
-        # ----------------------------------------------------------------------
-        publisherID:                    ca-pub-3885670015316130
-        test:                           "on"
-        styles:                         "display:block; text-align:center;"
-        slot:                           7522184684
-        ad_layout:                      in-article
-        ad_format:                      fluid
-
-      # ------------------------------------------------------------------------
-      # Ad on slot id "4814313879" (Type Multiplex)
-      #
-      - ad:
-
-        # container settings
-        # ----------------------------------------------------------------------
-        enabled:                        false
-
-        id:                             ad_4814313879
-        layout:                         page
-        content_page:                   preview_google_adsense
-
-        # ad properties
-        # ----------------------------------------------------------------------
-        publisherID:                    ca-pub-3885670015316130
-        test:                           "on"
-        styles:                         "display:block;"
-        slot:                           4814313879
-        ad_layout:                      multiplex
-        ad_format:                      autorelaxed
-        ui_type:                        image_stacked
-        ui_rows:                        1
-        ui_columns:                     4
 
 # ------------------------------------------------------------------------------
 # END config

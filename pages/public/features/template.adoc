@@ -1,8 +1,10 @@
 ---
 title:                                  Features
 tagline:                                Modules, Extensions and Integrations
+
 date:                                   2021-01-01
 #last_modified:                         2023-01-01
+
 description: >
                                         J1 Template is a Bootstrap V5 website template for the static
                                         site generator Jekyll.
@@ -36,8 +38,6 @@ resources:                              [
                                           video_js, vimeo_player, vimeo_froogaloop
                                         ]
 resource_options:
-  - toccer:
-      collapseDepth:                    3
   - attic:
       slides:
         - url:                          /assets/images/modules/attics/christina-1920x1280.jpg
@@ -80,6 +80,7 @@ J1 is different: easy to use, no programming is needed.
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
+[role="mt-5"]
 == Modules
 
 The Template provides a large number of building blocks to create modern
@@ -89,8 +90,10 @@ development or web design from the beginning.
 
 mdi:mouse-move-down[24px, md-blue ml-3 mr-2]
 <<Infinite scroll>> +
+mdi:speaker[24px, md-blue ml-3 mr-2]
+<<Screen reader>> +
 mdi:mouse-move-down[24px, md-blue ml-3 mr-2]
-<<Animate on scroll>> +
+<<Animate on Scroll>> +
 mdi:animation[24px, md-blue ml-3 mr-2]
 <<Floating Action Buttons>> +
 mdi:magnify[24px, md-blue ml-3 mr-2]
@@ -116,6 +119,7 @@ mdi:gesture-swipe[24px, md-blue ml-3 mr-2]
 mdi:folder-multiple-image[24px, md-blue ml-3 mr-2]
 <<Image and Video Galleries>>
 
+[role="mt-5"]
 === Infinite scroll
 
 Infinite scrolling (IS), or known as endless scrolling, is a technique that
@@ -126,7 +130,19 @@ additional pages.
 J1 Template supports infinite scrolling and is used, for example, for loading
 previews of blog articles.
 
-=== Animate on scroll
+[role="mt-5"]
+=== Screen reader
+
+Speak2Me for J1 Template is a speech synthesise (TTS) module that enables a
+so-called screen reader. The reader functionality allows users to sit back
+and listen to the browser read aloud the important contents on a Web page.
+
+The *screen reader* on websites created by J1 Template is started by
+clicking on the *speaker* symbol mdi:speaker[24px, md-blue] placed top
+right in the *menu bar*.
+
+[role="mt-5"]
+=== Animate on Scroll
 
 Scroll-triggered animation (AOS) is an effective way to animate website
 elements such as text, graphics, photos, and video, bringing them to life
@@ -134,6 +150,7 @@ as users scroll down a page. Scroll animations are more likely to grab the
 user's attention, making websites look and feel more dynamic and
 interesting.
 
+[role="mt-5"]
 === Floating Action Buttons
 
 The *Floating Action Button* (FAB) is an element of Google's Material Design.
@@ -148,6 +165,7 @@ The template system supports Floating Action Buttons for in-page navigation.
 When the FAB is pressed, it provides more related actions like showing the
 content table or scrolling a page chapter-wise up and down.
 
+[role="mt-5"]
 === Full-text search engine
 
 Full-text search (FTS) for a website is an advanced method of searching
@@ -162,6 +180,7 @@ to be small but full-featured. Lunr enables developers to provide visitors
 with a great search experience without the need for external, server-sided
 search services like Google on the internet.
 
+[role="mt-5"]
 === Cookie Consent
 
 Running websites in the EU and many other countries, implementing the
@@ -182,6 +201,7 @@ accepting the use of cookies.
 The Template system provides a configurable GDPR compliant module to manage
 the consent of your visitors on cookies.
 
+[role="mt-5"]
 === Translator
 
 A Website translation service is useful in a wide range of situations.
@@ -231,10 +251,11 @@ visitors do not agree on cookies required to use Google Translate, GT gets
 automatically disabled, and all cookies from Google are deleted from the
 user's system.
 
+[role="mt-5"]
 === Master Header
 
 The most-top position of a web page is important; this postion is presented to
-your vistors very first. The Master Header (Attic) give your reader a fist
+your vistors very first. The Master Header (Attic) give your reader a first
 impression of what is presented on a page.
 
 Attics may contains (dynamic) *Text*, *Images* or *Videos* to support a page
@@ -243,12 +264,13 @@ for the content presented.
 .Master Header (image-based)
 lightbox::images--master-header[ 800, {data-images--master-header} ]
 
+[role="mt-5"]
 === Clipboard
 
 The clipboard is a special function of the operating system of desktop or
 mobile computers that temporarily stores copied text or other data in memory.
-Once something is stored in the clipboard, comments, the user can paste the data to a
-new location.
+Once something is stored in the clipboard, comments, the user can paste the
+data to a new location.
 
 TIP: Click on the *COPY* button (top-right) in the following source code
 section.
@@ -276,6 +298,7 @@ J1 integrates the clipboard functionality of your computer system to copy and
 paste examples or code elements from a webpage. A clipboard will help your
 users a lot to manage the code snippets you’ve provided.
 
+[role="mt-5"]
 === Smooth Scroll
 
 Smooth scrolling (SSR) is an enhanced feature of J1 designed to improve
@@ -283,6 +306,7 @@ scrolling and positioning on anchor links. If SSR is enabled, an animated
 transition is done for scrolling to headlines (anchor links) and gets
 exactly positioned.
 
+[role="mt-5"]
 === Enhanced Navigation
 
 When it comes to the usability of a website, your visitors' focus is on one
@@ -325,6 +349,7 @@ All features are available by configuration, and no programming is needed.
             icon:                         format-color-fill
 ----
 
+[role="mt-5"]
 === Lightboxes
 
 A Lightbox is, in general, a helper which displays enlarged, almost
@@ -360,6 +385,7 @@ gallery::jg_old_times[ role="mb-4 wm-800" ]
 .LightGallery
 gallery::jg_old_times[ role="mb-4 wm-800" ]
 
+[role="mt-5"]
 === Text and Image Carousels
 
 J1 Carousel is based on OWL Carousel, a clean and neat jQuery slider plugin
@@ -403,7 +429,7 @@ carousel::demo_text_carousel_parallax[role="mb-3"]
 .Parallax text carousel
 carousel::demo_text_carousel_parallax[role="mb-3"]
 
-
+[role="mt-5"]
 === Text and Image Sliders
 
 Master Slider is a premium image and content slider for any purposes, with
@@ -417,6 +443,7 @@ masterslider::ms_00006[role="mt-4 mb-5"]
 
 masterslider::ms_00009[role="mt-4 mb-5"]
 
+[role="mt-5"]
 === Image and Video Galleries
 
 Image and Video Galleries allow you to lay out groups of images or videos
@@ -449,6 +476,7 @@ gallery::jg_video_html5[role="mb-5"]
 .Video Gallery (HTML5)
 gallery::jg_video_html5[role="mb-5"]
 
+[role="mt-5"]
 == Extensions
 
 Frameworks like _Bootstrap_ and Asciidoc are enormously flexible and customizable.
@@ -456,21 +484,20 @@ Changing or adding components to frameworks requires a lot of experience. That
 is not the idea of J1. Customizations for the base frameworks are prepared,
 simple to use, and usable out-of-the-box.
 
-Make your site unique.
-
 mdi:bootstrap[24px, md-blue ml-3 mr-2]
 <<Bootstrap extensions>> +
-mdi:format-annotation-plus[24px, md-blue ml-3 mr-2]
-<<Asciidoctor extensions>> +
 mdi:group[24px, md-blue ml-3 mr-2]
-<<Banners and Panels>> +
-mdi:near-me[24px, md-blue ml-3 mr-2]
 <<Blog Post Navigation>> +
+mdi:format-annotation-plus[24px, md-blue ml-3 mr-2]
+<<Block elements>> +
+mdi:near-me[24px, md-blue ml-3 mr-2]
+<<Asciidoctor extensions>> +
 mdi:content-duplicate[24px, md-blue ml-3 mr-2]
-Featured Example Content +
+<<Featured example content>> +
 mdi:image[24px, md-blue ml-3 mr-2]
-Royalty Free Images +
+<<Royalty Free Images>>
 
+[role="mt-5"]
 === Bootstrap extensions
 
 A set of Advanced Bootstrap Modals (ABM), based on the free package of Material
@@ -506,40 +533,7 @@ Post's front matter by specifying a new date/time in the format
 `2008-12-14 10:30:00 +0900`).
 |===
 
-=== Asciidoctor extensions
-
-J1 Template implements a bunch of incubating Ruby-based extensions for
-Asciidoctor. Using Asciidoctor extensions, it's easy to integrate lightboxes,
-galleries, icon fonts, and other complex elements using Asciidoc tags with
-your content pages.
-
-.MDI Icons, click on view to see how it's looks alike
-[source, prometheus, role="noclip"]
-----
-mdi:home[2x, mdi-pulsed ml-3 mr-2 mb-2] Symbol icon (pulsed) +
-mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
-mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
-----
-
-[.result]
-====
-mdi:home[2x, mdi-pulsed ml-3 mr-2 mb-2] Symbol icon (pulsed) +
-mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
-mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
-====
-
-=== Banners and Panels
-
-Banners and panels are complex but configurable building blocks, typically used
-for home and landing pages. Examples how to use banners and panels can be found
-with the included starter web for the homepage.
-
-.Teaser Banner
-lightbox::images--teaser-banner[ 600, {data-images--teaser-banner} ]
-
-.Intro Panel
-lightbox::images--intro-panel[ 600, {data-images--intro-panel} ]
-
+[role="mt-5"]
 === Blog Post Navigation
 
 To make your Blog Articles available to your vistors, J1 offers an easy to use
@@ -550,6 +544,43 @@ from an Archive View.
 .Blog Post Navigator
 lightbox::images--blog-post-navigator[ 600, {data-images--blog-post-navigator} ]
 
+[role="mt-5"]
+=== Block elements
+
+Banners and panels are complex but configurable building blocks, typically
+used for home and landing pages. Examples how to use banners and panels
+can be found with the included starter web for the homepage.
+
+.Teaser Banner
+lightbox::images--teaser-banner[ 600, {data-images--teaser-banner} ]
+
+.Intro Panel
+lightbox::images--intro-panel[ 600, {data-images--intro-panel} ]
+
+[role="mt-5"]
+=== Asciidoctor extensions
+
+J1 Template implements a bunch of incubating Ruby-based extensions for
+Asciidoctor. Using Asciidoctor extensions, it's easy to integrate lightboxes,
+galleries, icon fonts, and other complex elements using Asciidoc tags with
+your content pages.
+
+.MDI Icons
+[source, noformat, role="noclip"]
+----
+mdi:home[2x, mdi-pulsed ml-3 mr-2 mb-2] Symbol icon (pulsed)
+mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon
+mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
+----
+
+[.result]
+====
+mdi:home[2x, mdi-pulsed ml-3 mr-2 mb-2] Symbol icon (pulsed) +
+mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
+mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
+====
+
+[role="mt-5"]
 === Featured example content
 
 All pages from the roundtrip section are provided by the starter web
@@ -559,12 +590,15 @@ could be taken from these pages and are easy to use with your website.
 .Example Content (Icon Fonts)
 lightbox::images--example-content[ 600, {data-images--example-content} ]
 
-=== Royalty Free images
+[role="mt-5"]
+=== Royalty Free Images
 
 All images for a *Starter Web*, for example, from the roundtrip section, are
 included with J1 Template. All images are taken from Unsplash.com as
 *Royalty Free* images and can be used without paying any license fees.
 
+
+[role="mt-5"]
 == Integrations
 
 The Internet of today has changed a lot. The new digital world is called the cloud.
@@ -572,24 +606,20 @@ Services out of the cloud is a fast-growing business. J1 Template integrates clo
 services to extend the functionality of a web for commenting features or Bootstrap
 themes, for example.
 
-/////
-mdi:google-ads[2x, md-blue ml-3 mr-2]
-<<Google Ads>> +
-/////
-
 mdi:theme-light-dark[2x, md-blue ml-3 mr-2]
 <<Bootstrap Themes>> (Bootswatch) +
 mdi:comment[2x, md-blue ml-3 mr-2]
 <<Comment providers>> +
-mdi:language-python[2x, md-blue ml-3 mr-2]
-<<Jupyter Notebook>> +
 mdi:google-analytics[2x, md-blue ml-3 mr-2]
 <<Google Analytics>> +
+mdi:google-ads[2x, md-blue ml-3 mr-2]
+<<Google Adsense>> +
 mdi:youtube[2x, md-blue ml-3 mr-2]
 <<YouTube Video>> +
 mdi:vimeo[2x, md-blue ml-3 mr-2]
 <<Vimeo Video>>
 
+[role="mt-5"]
 === Bootstrap Themes
 
 The Themes for the template system J1 are based on the free and open-source
@@ -612,6 +642,7 @@ link:{url-bootswatch--home}[Bootswatch, {browser-window--new}] is at least a
 good base for your modifications: your unique design. J1 integrates all
 available themes from _Bootswatch_ with the navigator module.
 
+[role="mt-5"]
 === Comment providers
 
 Comments became an integral part of almost each website on the web. People
@@ -654,80 +685,7 @@ your visitors do not agree on cookies needed for Diqus, DQC gets
 automatically disabled, and all related cookies are deleted from the user's
 system.
 
-=== Jupyter Notebook
-
-Jupyter Notebook (JN) is an open source web application that allows data
-scientists to create and share documents that include live code, equations,
-and other multimedia resources. JN combines two components:
-
-A web application::
-a browser-based tool for interactive authoring of documents which combine
-explanatory text, mathematics, computations and their rich media output.
-
-Notebook documents::
-a representation of all content visible in the web application, including
-inputs and outputs of the computations, explanatory text, mathematics,
-images, and rich media representations of objects.
-
-The Jupyter Notebook *App* is a server-client application that allows editing
-and running notebook documents via a web browser. The Notebook App can be
-executed on a local desktop requiring no internet access or can be installed
-on a remote server and accessed through the internet.
-
-Notebook *documents* are used for all sorts of data science tasks such as
-exploratory data analysis (EDA), data cleaning and transformation,
-data visualization, statistical modeling, machine learning, and deep
-learning. Jupyter notebooks are especially useful for *showing the work*
-that your data team has done through a combination of code, markdown, links,
-and images.
-
-.NBI Textbook Example (excerpt)
-[source, python]
-----
-import nbinteract as nbi
-import numpy as np
-----
-
-[source, python]
-----
-def x_fn(n):
-    return np.arange(n)
-
-def y_fn(xs, offset):
-    return xs + offset
-
-
-options = {
-    'title': 'Bar chart',
-    'xlabel': 'Number of bars (n)',
-    'ylabel': 'Offset  value',
-    'animation_duration': 500,
-    'aspect_ratio': 1.778,
-    'ylim': (0, 20)
-}
-
-layouts = {
-    'plot_height': '480px',
-    'plot_width': '800px',
-}
-
-bar_chart = nbi.bar(
-    x_fn,
-    y_fn,
-    n=(3, 10),
-    offset=(1, 10),
-    options=options,
-    layouts=layouts
-)
-
-bar_chart
-----
-
-lightbox::nbi-textbook-example[ 800, {data-images--nbi-textbook-example} ]
-
-HTML exported Jupyter Notebooks (so-called Textbooks) can be integrated
-with every webpage of a J1 website using the J1 NBI module.
-
+[role="mt-5"]
 === Google Analytics
 
 Google Analytics (GAL) provides access to a massive amount of data related
@@ -755,14 +713,14 @@ If your visitors do not agree on cooies for *Analysis*, Google Analytics gets
 automatically disabled and all cookies from Google are deleted from the
 user's system.
 
-/////
-=== Google Ads
+[role="mt-5"]
+=== Google Adsense
 
-Google Ads (GAD) is integrated by pure configuration. Simply enable the
+Google Adsense (GAD) is integrated by pure configuration. Simply enable the
 provider and set your your access credentials to the configuration, and
 you're done.
-/////
 
+[role="mt-5"]
 === YouTube Video
 
 J1 Template supports YouTube and Vimeo video content out-of-the-box.
@@ -779,6 +737,7 @@ gallery::jg_video_online_youtube_2_short[role="mb-5"]
 .YouTube Video
 gallery::jg_video_online_youtube_2_short[role="mb-5"]
 
+[role="mt-5"]
 === Vimeo Video
 
 J1 Template supports Vimeo video content out-of-the-box. The type of content

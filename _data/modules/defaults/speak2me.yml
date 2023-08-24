@@ -1,0 +1,72 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/modules/defaults/speak2me.yml
+#  Default configuration settings for J1 Speak2Me module
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2023 Juergen Adams
+#
+#  J1 Theme is licensed under the MIT License.
+#  See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 Speak2Me
+  scope:                                Default settings
+  location:                             _data/modules/defaults/speak2me.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+  enabled:                              false
+
+  dialogContainerID:                    speak2me_container
+  speechSelector:                       main
+
+  modal:
+    title:                              Text-2-Speech Translation
+
+    settings:
+      voice_settings_title:             Voice Settings
+      voice_select_title:               Select a voice
+      voice_control_title:              Voice Control
+
+      speak_button_text:                Speak
+      speak_button_style:               success
+      stop_button_text:                 Stop
+      stop_button_style:                primary
+      pause_button_text:                Pause
+      pause_button_style:               info
+      resume_button_text:               Resume
+      resume_button_style:              info
+      exit_button_text:                 Close
+      exit_button_style:                warning
+
+      voice_speed_min:                  0.1
+      voice_speed_max:                  3.0
+      voice_speed_step:                 0.1
+      voice_speed_value:                1.0
+      voice_speed_label:                Speed
+      voice_speed_max_label:            1.0
+
+      voice_pitch_min:                  0.1
+      voice_pitch_max:                  2.0
+      voice_pitch_step:                 0.1
+      voice_pitch_value:                0.9
+      voice_pitch_label:                Pitch
+      voice_pitch_max_label:            0.9
+
+      voice_volume_min:                 0
+      voice_volume_max:                 1.0
+      voice_volume_step:                0.1
+      voice_volume_value:               0.9
+      voice_volume_label:               Volume
+      voice_volume_max_label:           0.9
+
+# ------------------------------------------------------------------------------
+# END config

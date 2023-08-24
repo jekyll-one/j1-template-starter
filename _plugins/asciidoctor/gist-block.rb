@@ -34,9 +34,9 @@ Asciidoctor::Extensions.register do
 
     def process parent, target, attrs
       title_html = (attrs.has_key? 'title') ?
-          %(<div class="title notranslate">#{attrs['title']}</div>\n) : nil
+          %(<div class="title speak2me-ignore notranslate">#{attrs['title']}</div>\n) : nil
 
-      html = %(<div class="openblock gist mt-4 mb-5">
+      html = %(<div class="openblock gist speak2me-ignore mt-4 mb-5">
                  #{title_html}
                  <div class="content">
                    <script src="https://gist.github.com/#{target}.js"></script>

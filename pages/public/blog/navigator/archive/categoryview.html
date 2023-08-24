@@ -3,11 +3,11 @@ layout:                                 page
 
 title:                                  Posts by Category
 tagline:                                Explore Posts
+
 date:                                   2022-01-01
 #last_modified:                         2023-01-01
+
 description: >
-                                        J1 Template is a Bootstrap V5 website template for the static
-                                        site generator Jekyll.
                                         When it comes to the usability of a website, the focus of your
                                         visitors is on one important component: The Navigation System
                                         of the site. To make all posts using J1 Template easy accessible
@@ -34,9 +34,7 @@ regenerate:                             false                                   
 
 resources:                              [ animate ]
 resource_options:
-
   - attic:
-      padding_top:                      550
       slides:
         - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
           alt:                          Photo by Matthaeus on Unsplash
@@ -99,12 +97,14 @@ resource_options:
   {% assign sorted_posts = site.posts|sort: 'date' %}
 {% endif %}
 
-{% comment %} TODO: skip_words NOT longer needed? Already done
-by processing of categories
+
+{% comment %} TODO: skip_words NOT longer needed?
+              NOTE: Already done by processing of categories
 --------------------------------------------------------------------------------
 {% capture skip_words %} Posts Public {% endcapture %}
 --------------------------------------------------------------------------------
 {% endcomment %}
+
 
 {% comment %} category processing
 -------------------------------------------------------------------------------- {% endcomment %}
@@ -134,8 +134,8 @@ by processing of categories
   {% assign image_filters = '' %}
 {% endif %}
 
-{% comment %} language detection
--------------------------------------------------------------------------------- {% endcomment %}
+{% comment %} language detection NOT used anymore
+--------------------------------------------------------------------------------
 {% if site.language == "en" %}
   {% assign language = "en" %}
 {% elsif site.language == "de"%}
@@ -143,6 +143,9 @@ by processing of categories
 {% else %}
   {% assign language = "en" %}
 {% endif %}
+-------------------------------------------------------------------------------- {% endcomment %}
+
+{% assign language = site.language %}
 
 {% if language == "en" %}
   {% assign readmore_text               = "read" %}
@@ -155,6 +158,8 @@ by processing of categories
   {% assign view_description_text     = blog_navigator_options.category_view.page_text.en.description %}
 {% endif %}
 
+{% comment %} language NOT used anymore
+--------------------------------------------------------------------------------
 {% if language == "de" %}
   {% assign readmore_text               = "lesen" %}
 
@@ -166,6 +171,7 @@ by processing of categories
   {% assign view_headline             = blog_navigator_options.category_view.page_text.de.headline %}
   {% assign view_description_text     = blog_navigator_options.category_view.page_text.de.description %}
 {% endif %}
+-------------------------------------------------------------------------------- {% endcomment %}
 
 {% comment %} Debugging
 --------------------------------------------------------------------------------
@@ -180,7 +186,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
 {% include {{create_word_cloud}} source="categories" word_list=category_list %}
 
 <!-- [INFO   ] [ {{page.url}} ] [Generate HTML}] -->
-<div class="paginator ml-3">
+<div class="paginator speak2me-ignore ml-3 mb-4">
   <ul class="pagination raised-z0">
     <li class="page-item"><a class="page-link" href="/" title="Home">Home</a></li>
     <!-- li class="page-item"><a class="page-link" href="{{navigator|prepend: site.baseurl}}" alt="Blog Navigator">Navigator</a></li -->
@@ -197,7 +203,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
   {% endif %}
 
   <div class="post-headline">
-    <h2 id="post-headline notoc" class="mt-5">{{view_headline}}</h2>
+    <h2 id="post-headline" class="notoc mt-5">{{view_headline}}</h2>
   </div>
 
   {% assign tags = site.categories|sort %}
@@ -249,7 +255,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
 
               <div class="col-md-6 p-0">
                 <div class="card-body r-text-300 mt-0">{{excerpt}}</div>
-                <div class="card-footer not-rounded r-text-200">
+                <div class="card-footer speak2me-ignore not-rounded r-text-200">
                   <div class="card-footer-text">
 
                     {% if post.date %}

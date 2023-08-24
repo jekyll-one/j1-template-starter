@@ -37,7 +37,7 @@ Asciidoctor::Extensions.register do
 
     def process parent, target, attrs
 
-      html = %(<div id="#{target}" class="gad-container #{attrs['role']}"></div>)
+      html = %(<div id="#{target}" class="gad-container speak2me-ignore #{attrs['role']}"></div>)
       create_pass_block parent, html, attrs, subs: nil
     end
   end

@@ -63,9 +63,9 @@ gem 'jekyll', '~> 4.0'
 # ------------------------------------------------------------------------------
 # Install Webrick GEM (internally used Web Server) if Ruby V3 is used
 #
-# install_if -> { RUBY_VERSION =~ /3/ } do
-#   gem 'webrick', '~> 1.7'
-# end
+#install_if -> { RUBY_VERSION =~ /3/ } do
+#  gem 'webrick', '~> 1.8.1'
+#end
 
 # ------------------------------------------------------------------------------
 # PRODUCTION: Gem needed for the Jekyll and J1 prod environment
@@ -75,12 +75,12 @@ gem 'jekyll', '~> 4.0'
 # Specify the THEME GEM used for the project
 
 # Loaded from RubyGems
-gem 'j1-template', '~> 2023.6.0'
+# gem 'j1-template', '~> 2023.6.0'
 
 # Loaded from gem.fury.io
-#source 'https://gem.fury.io/jekyll-one-org/' do
-#  gem 'j1-template', '~> 2023.6.0
-#end
+source 'https://gem.fury.io/jekyll-one-org/' do
+  gem 'j1-template', '~> 2023.6.0'
+end
 
 # ------------------------------------------------------------------------------
 # Code Highlighter Rouge

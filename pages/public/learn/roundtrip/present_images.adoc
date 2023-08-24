@@ -79,66 +79,68 @@ resource_options:
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
 Welcome to the preview page focussing on the image module. This page shows
-all the valuable features of the J1 Template to manage your image-based content
-using using lightboxes, carousels, sliders, and galleries. The image modules
+all the valuable features of the J1 Template to manage your image-based
+content using lightboxes, carousels, sliders, and galleries. The image modules
 of J1 Template offer a wide range of complex functionality based on powerful
 OpenSource libraries like Lightbox2, Master Slider, LightGallery, or
 JustifiedGallery for high-end, masonry-styled preview maps.
 
+mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
+*15-30 Minutes* to read
+
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
 // [role="notranslate"]
-[role="mt-4"]
-== J1 Lightbox blocks
+[role="mt-5"]
+== Lightbox blocks
 
-A Lightbox is, in general, a helper which displays enlarged, almost
+A lightbox is, in general, a helper which displays enlarged, almost
 screen-filling versions of images (or videos) while dimming the remainder
 of the page. The technique, introduced by Lightbox2, gained widespread
 popularity thanks to its simple style. The term lightbox has been employed
 since then for Javascript libraries to support such functionality.
 
-For the J1 Template, two different lightboxes are available:
+For the J1 Template, different lightboxes are available:
 
-* Lightbox2 (lightbox)
+* Lightbox2
 * LightGallery
+* Slick Lightbox (for Slick Carousels only)
 
-The default tool employed by J1 Template is Lightbox2, a Javascript library
-written by _Lokesh Dhakar_. The name of that (build-in) is *lightbox*.
-For more complex use cases, like a thumbnail gallery preview or video support,
-LightGallery can be used alternatively.
+The *default* tool employed by J1 Template is Lightbox2, a Javascript library
+written by _Lokesh Dhakar_. For more complex use cases, like a thumbnail
+gallery preview or video support, *LightGallery* can be used alternatively.
 
 NOTE: The name LightGallery implies a sort of a Gallery, but the library is a
-_lightbox_. And, LightGallery provides much more functionality on image-based
-data rather than enlarged displaying of images. See the examples below to check
-for the differences in comparison to the simpler Lightbox2 lightbox.
+_lightbox_, and provides more functionality on image-based data rather than
+enlarged displaying of images.
 
-Both lightboxes are fully integrated to be used as standalone modules or
-used as helpers *under-the-hood* by other apps or modules focussing on
-image-data like gallery or carousel, the build-in carousel module.
+All lightboxes are fully integrated to be used as a standalone module or
+used as helpers *under-the-hood* by modules focussing on image-data like
+gallerys or carousels.
 
 TIP: For details of the default lightbox of J1 Template, see the documentation
 under the link:{url-j1-docs--lightbox-module}[Lightbox module, {browser-window--new}].
 
-
-== Lightbox block examples
+[role="mt-4"]
+=== Lightbox examples
 
 [role="mb-4"]
-Find below an example of using the lightbox Lightbox standalone. See how
-single (individual) images are linked for use with Lightbox.
+Find below an example of using the lightbox used for standalone images.
+See how single (individual) images are linked.
 
-.Lightbox block for standalone images
+.Lightbox for standalone images
 lightbox::example-standalone[ 800, {data-images-standalone}, role="mb-4" ]
 
 [role="mb-4"]
-Lightbox supports image groups (image sets). Click on the images below to
-see how Lightbox manages a group of images.
+The J1 lightbox module supports image groups as well. Click on the image
+group below to see how a group of images is managed.
 
-.Lightbox block for grouped images
+.Lightbox for grouped images
 lightbox::example-group[ 395, {data-images-group}, group, role="mb-4 wm-800" ]
 
+[role="mt-4"]
 === LightGallery example
 
-[role="mb-4"]
 LightGallery provides more complex functions on image data. The module
 supports a gallery-style thumbnail preview plus image resizing, a download
 dialog, sharing provider support, and more helpful. Check what
@@ -147,6 +149,7 @@ LightGallery can do this by the following example.
 gallery::jg_old_times[ role="mb-4 wm-800" ]
 
 
+[role="mt-5"]
 == J1 Carousel
 
 J1 Carousel is based on OWL Carousel V1 in the latest (and unfortunately
@@ -161,6 +164,7 @@ job, is based on an MIT license with no issues using them for private and
 business use. And offers a lot of great features!
 ////
 
+[role="mt-4"]
 === Simple Text Carousel
 
 [role="mb-4"]
@@ -176,6 +180,7 @@ a paragraph, to give them better visibility. In one line, you can present
 many facts to know animated for the reader's attention within a single
 line. No much space is needed!
 
+[role="mt-4"]
 === Parallax Text Carousel
 
 [role="mb-4"]
@@ -199,6 +204,7 @@ documentation for the
 link:{url-j1-docs--carousel-module}[Carousel module, {browser-window--new}]
 for more details.
 
+[role="mt-4"]
 === Simple Image Carousel
 
 Carousels are mostly used for pictures data to animate the images as a series.
@@ -211,6 +217,7 @@ banner presenting exciting things about your site or the products offered.
 .Image Carousel
 carousel::demo_simple[role="mb-4"]
 
+[role="mt-4"]
 === Carousel + Caption + Lightbox
 
 Carousels are used for an exceptionally compact form of image galleries.
@@ -226,6 +233,7 @@ features for displaying images. For example, the lightbox can display all
 images (of a carousel) as a group. If one picture is opened in the lightbox,
 others are browsed by easy-to-use control buttons.
 
+[role="mt-4"]
 === One Slide Carousel + Lightbox
 
 The build-in Carousel carousel supports multiple and single image shows.
@@ -236,7 +244,7 @@ many images the show contains.
 .One Slide Carousel
 carousel::demo_oneslide[role="mb-4"]
 
-
+[role="mt-5"]
 == J1 Slick Carousel
 
 [role="mb-4"]
@@ -250,6 +258,7 @@ lazy loading, or autoplay. Slick carousels are compatible with all modern
 browsers and devices, making it a great choice to create a responsive and
 mobile-friendly website.
 
+[role="mt-4"]
 === Image Carousel
 
 [role="mb-4"]
@@ -262,6 +271,7 @@ between images, to make the presentation more engaging and visually appealing.
 .Carousel + Arrows + Dots + Captions + Lightbox
 slick::image_carousel_full[role="mb-5"]
 
+[role="mt-4"]
 === Carousel from Collections
 
 [role="mb-4"]
@@ -276,7 +286,8 @@ like *Arrows* and *Dots*.
 .Collection Biography + Arrows + Dots + Gutters
 slick::collection_carousel_biography[role="mb-5"]
 
-=== Carousel from Posts
+[role="mt-4"]
+Carousel from Posts
 
 A Carousel from posts for J1 Template is a *pre-defined* carousel type to
 display post articles on a webpage. It is a popular way to showcase a
@@ -299,6 +310,7 @@ slick::post_carousel_featured[]
 .Post Carousel (Featured Posts)
 slick::post_carousel_featured[role="mb-4"]
 
+[role="mt-4"]
 === More about Slick Carousels
 
 [role="mb-4"]
@@ -307,6 +319,7 @@ link:{url-j1-slick-previewer}[Slick Previewer, {browser-window--new}],
 
 
 [#masterSlider]
+[role="mt-5"]
 == J1 Master Slider
 
 The Javascript tool _Master Slider_ is a 3rd party plugin fully integrated
@@ -321,8 +334,9 @@ all features: the functionality of  *filters*, *layouts* are limited and no
 // platforms, like mobiles or tablets, initializing an MS Slider will take
 // a while to be finished.
 
-[#carouselSlider]
-=== Carousels versus Sliders
+[role="mt-4"]
+[#carousel_versus_slider]
+=== Carousel versus Slider
 
 Sliders and Carousels are focussing quite the same thing: presenting image data
 dynamically as an app. The features of Sliders go far beyond what simple
@@ -340,7 +354,8 @@ TIP: For more details of the dimplementation of Master Slider of J1 Template, se
 find  documentation at
 link:{url-j1-docs--masterslider-module}[Master Slider module, {browser-window--new}].
 
-[#controlsFiltersLightbox]
+[role="mt-4"]
+[#controls_filters_lightbox]
 === MS Slider using Controls + Filters + Lightbox
 
 The following slider uses the (CSS) filter feature of Master Slider.
@@ -358,7 +373,8 @@ slides to see the *colored* images configured for the slider.
 .Slider using Controls
 masterslider::ms_00001[role="mb-5"]
 
-[#textElements]
+[role="mt-4"]
+[#text_elements]
 === MS Slider using Text Elements (MSInfo)
 
 One of the major features of sliders is to present additional (animated)
@@ -369,7 +385,8 @@ elements: the MSInfo element.
 .Slider using Text Elements
 masterslider::ms_00003[role="mb-5"]
 
-[#thumbImages]
+[role="mt-4"]
+[#thumb_images]
 === MS Slider using ThumbImages
 
 To give the users better control over a slideshow, sliders provide complex UI
@@ -380,7 +397,8 @@ the bottom of a slideshow. Find two examples to control a slideshow by
 .Slider using ThumbImages
 masterslider::ms_00004[role="mb-5"]
 
-[#thumbInfo]
+[role="mt-4"]
+[#thumb_info]
 === MS Slider using ThumbInfo
 
 To give the users better control over a slideshow, MS Slider provides
@@ -390,6 +408,7 @@ top, or at the bottom of a slideshow.
 .Slider using ThumbInfo
 masterslider::ms_00007[role="mb-5"]
 
+[role="mt-4"]
 [#partialview]
 === MS Slider using Layout partialview
 
@@ -401,7 +420,8 @@ slide by their neighbors on the left and the right.
 .Slider using Layout partialview
 masterslider::ms_00009[role="mb-5"]
 
-[#aboutMasterSlider]
+[role="mt-4"]
+[#more_about_masterslider]
 === More about Master Slider
 
 If you're interested to learn more about MS Slider, go for the following
@@ -410,7 +430,7 @@ documents:
 * MS Slider link:{url-j1-masterslider-previewer}[Previewer, {browser-window--new}]
 * MS Slider link:{url-j1-docs--masterslider-module}[Module documentation, {browser-window--new}]
 
-[role="mt-4"]
+[role="mt-5"]
 == JustifiedGallery
 
 link:{url-justified-gallery--home}[JustifiedGallery, {browser-window--new}]
@@ -432,6 +452,7 @@ You'll have seen it in use all over the Internet!
 .Masonry Grid Gallery
 gallery::jg_customizer[role="mb-5"]
 
+[role="mt-5"]
 == What next
 
 Hopefully, you've enjoyed exploring the possibilities J1 offers for managing

@@ -2,12 +2,12 @@
 layout:                                 page
 
 title:                                  Posts by Date
+tagline:                                Explore Posts
+
 date:                                   2022-01-01
 #last_modified:                         2023-01-01
-tagline:                                Explore Posts
+
 description: >
-                                        J1 Template is a Bootstrap V5 website template for the static
-                                        site generator Jekyll.
                                         To make all posts using J1 Template easy accessible to the visitors,
                                         the Navigation System of J1 Template provides a Explorer module
                                         for Blog articles: the Navigator. The Naviagtor supports the users
@@ -32,9 +32,7 @@ regenerate:                             false                                   
 
 resources:                              [ animate ]
 resource_options:
-
   - attic:
-      padding_top:                      550
       slides:
         - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
           alt:                          Photo by Matthaeus on Unsplash
@@ -143,7 +141,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
 {% comment %} Main
 -------------------------------------------------------------------------------- {% endcomment %}
 <!-- [INFO   ] [ {{page.url}} ] [Generate HTML}] -->
-<div class="paginator ml-3">
+<div class="paginator speak2me-ignore ml-3 mb-4">
   <ul class="pagination raised-z0">
     <li class="page-item"><a class="page-link" href="/" title="Home">Home</a></li>
     <!-- li class="page-item"><a class="page-link" href="{{navigator|prepend: site.baseurl}}" alt="Blog Navigator">Navigator</a></li -->
@@ -160,8 +158,9 @@ site_category_word_list:    {{site_category_word_list | debug}}
   {% endif %}
 
   <div class="post-headline">
-    <h1 id="post-headline notoc" class="mt-5">{{view_headline}}</h1>
+    <h2 id="post-headline" class="notoc mt-5">{{view_headline}}</h2>
   </div>
+
   {% assign openList = '<ul class="list-unstyled link-news">' %}
   {% assign closeList = '</ul>' %}
 
@@ -227,7 +226,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
 
             <div class="col-md-6 p-0">
               <div class="card-body r-text-300 mt-0">{{excerpt}}</div>
-              <div class="card-footer not-rounded r-text-200">
+              <div class="card-footer speak2me-ignore not-rounded r-text-200">
                 <div class="card-footer-text">
 
                   {% if post.date %}

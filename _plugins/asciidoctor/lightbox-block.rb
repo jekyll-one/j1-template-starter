@@ -44,7 +44,7 @@ Asciidoctor::Extensions.register do
       imagesdir     = parent.attr 'imagesdir'
       images_hash   = Hash[*attrs['image_data'].split(',')]
 
-      title_html    = (attrs.has_key? 'title') ? %(<div class="title notranslate">#{attrs['title']}</div>\n) : nil
+      title_html    = (attrs.has_key? 'title') ? %(<div class="lightbox-title">#{attrs['title']}</div>\n) : nil
       role          = (attrs.has_key? 'role') ? role : ''
       grouped       = (attrs.has_key? 'group') ? true : false
 
@@ -73,12 +73,7 @@ Asciidoctor::Extensions.register do
       end
       content = html_block.target! # See: https://stackoverflow.com/questions/4961609/extra-to-s-when-using-builder-to-generate-xml
 
-      html = %(
-        <div id="lb-#{target}" class="imageblock">
-          #{title_html}
-          #{content}
-        </div>
-      )
+      html = %(#{title_html} <lightbox id="lb-#{target}" class="imageblock"> #{content} </lightbox>)
 
       create_pass_block parent, html, attrs, subs: nil
     end

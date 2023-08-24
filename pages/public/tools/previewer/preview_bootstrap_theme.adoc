@@ -1,8 +1,10 @@
 ---
 title:                                  Theme Preview
 tagline:                                Explore Current Styles
+
 date:                                   2022-12-01
 #last_modified:                         2023-01-01
+
 description: >
                                         J1 Template is a Bootstrap V5 website template for the static
                                         site generator Jekyll and offers various unique functionalities
@@ -130,8 +132,8 @@ The use or change of a style does not alter the functionality of the
 underlying Bootstrap framework but modifies, for example, the color scheme,
 fonts, or font sizes.
 
-
 ifeval::[{navbars} == true]
+[role="mt-5"]
 == Navbars
 
 A navbar is an elementary page element, usually integrated at the top of
@@ -426,6 +428,7 @@ colors. Then, customize with `.bg-*` utilities.
 endif::[]
 
 ifeval::[{buttons} == true]
+[role="mt-5"]
 == Buttons
 
 Buttons are important visual anchors that encourage visitors to click on
@@ -732,6 +735,7 @@ endif::[]
 endif::[]
 
 ifeval::[{selections} == true]
+[role="mt-5"]
 == Selections
 
 J1 Template support two *selection* elements: checkboxes and radio buttons.
@@ -1267,6 +1271,7 @@ endif::[]
 endif::[]
 
 ifeval::[{typography} == true]
+[role="mt-5"]
 == Typography
 
 Typography is a feature of Bootstrap for styling and formatting the text
@@ -1353,6 +1358,7 @@ endif::[]
 endif::[]
 
 ifeval::[{tables} == true]
+[role="mt-5"]
 == Tables
 
 Creating a design for tables is challenging. The approach used by J1 Template
@@ -1441,6 +1447,7 @@ link:{url-bs-docs--content-tables}[Bootstrap Docs {char-middot} Tables, {browser
 endif::[]
 
 ifeval::[{forms} == true]
+[role="mt-5"]
 == Forms
 
 For collecting structured data, forms are essential. So-called Web forms,
@@ -1636,7 +1643,7 @@ ifeval::[{forms_bootstrap} == true]
         <div class="form-check">
           <label class="form-check-label">
             <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-            Option one is this and that—be sure to include why it's great
+            Option one is this and that &nbsp; -- &nbsp; be sure to include why it's great
           </label>
         </div>
         <div class="form-check">
@@ -1770,6 +1777,7 @@ endif::[]
 endif::[]
 
 ifeval::[{navs} == true]
+[role="mt-5"]
 == Navs
 
 Navigation available in Bootstrap shares general markup and styles, from the
@@ -1900,7 +1908,7 @@ ifeval::[{navs_pagination} == true]
 === Pagination
 
 We use a large block of connected links for our pagination, making links
-hard to miss and easily scalable—all while providing large hit areas.
+hard to miss and easily scalable &nbsp; -- &nbsp; all while providing large hit areas.
 Pagination is built with list HTML elements so screen readers can announce
 the number of available links. Use a wrapping <nav> element to identify
 it as a navigation section to screen readers and other assistive technologies.
@@ -1988,6 +1996,7 @@ endif::[]
 endif::[]
 
 ifeval::[{indicators} == true]
+[role="mt-5"]
 == Indicators
 
 With Bootstrap, indicators are elememts to raise the users awareness. Alerts
@@ -2089,6 +2098,7 @@ endif::[]
 endif::[]
 
 ifeval::[{scrollbars} == true]
+[role="mt-5"]
 == Scrollbars
 
 Chromium-based browsers like Chrome, Edge, Safari or Opera support the *webkit*
@@ -2175,6 +2185,7 @@ if (!$.browser.webkit) {
 endif::[]
 
 ifeval::[{progress} == true]
+[role="mt-5"]
 == Progress
 
 Bootstrap custom progress bars featuring support for stacked bars, animated
@@ -2298,6 +2309,7 @@ endif::[]
 endif::[]
 
 ifeval::[{lists} == true]
+[role="mt-5"]
 == Lists
 
 Lists are a flexible and powerful component for displaying a series of content
@@ -2317,6 +2329,7 @@ within an single HTML element.
 endif::[]
 
 ifeval::[{cards} == true]
+[role="mt-5"]
 == Cards
 
 Bootstrap’s cards provide a flexible and extensible content container with
@@ -2533,6 +2546,7 @@ endif::[]
 endif::[]
 
 ifeval::[{dialogs} == true]
+[role="mt-5"]
 == Dialogs
 
 Dialogs are important, interactive UI (user interface) components in Bootstrap

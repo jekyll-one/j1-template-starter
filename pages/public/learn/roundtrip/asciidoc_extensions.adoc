@@ -74,9 +74,12 @@ To create Asciidoc extensions on your own, it is highly recommended to read the
 link:{url-asciidoctor--extensions-manual}[extensions section, {browser-window--new}] in
 the Asciidoctor user manual.
 
+mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
+*15 Minutes* to read
+
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
-[role="mt-4"]
+[role="mt-5"]
 == Asciidoc Result Extension
 
 J1 Template adds a simple Javascript based on the `View Result Extension` to
@@ -100,6 +103,7 @@ Asciidoc code and how the resulting (HTML) code would look alike.
  displayed till clicked, but closed on second click (toggle)
 ====
 
+[role="mt-5"]
 == Asciidoc Admonitions
 
 Admonition blocks draw attention to certain statements by taking them out
@@ -134,7 +138,6 @@ be kept in mind
 
 NOTE: All colors for all default admonition blocks set to the standard
 MD color set. Find available block types and their colors below.
-
 
 When you want to call attention to a single paragraph, start the first
 line of the paragraph with the label you want to use. The label must be
@@ -188,7 +191,7 @@ WARNING: Icon background-color: yellow
 .CAUTION block
 CAUTION: Icon background-color: red
 
-
+[role="mt-5"]
 == Asciidoc Quote elements
 
 Quote elements cite a passage or phrase from a book, speech, or the like,
@@ -239,7 +242,6 @@ A *single* paragraph can be turned into a blockquote by:
 and as necessary in the political world as storms in the physical."
 -- Thomas Jefferson, Papers of Thomas Jefferson: Volume 11
 
-
 === Quote block
 
 If the text element (or excerpt) to be quoted is more than one paragraph,
@@ -270,7 +272,7 @@ That's what I'm on about! Did you see him repressing me? You saw him,
 Didn't you?
 ____
 
-
+[role="mt-5"]
 == Lightboxes
 
 A Lightbox is, in general, a helper which displays enlarged, almost
@@ -370,6 +372,7 @@ lightbox::<block_id>[ 400, {<data-images-group_id>}, <group_name> ]
 .Lightbox block for grouped images
 lightbox::images-group[ 400, {data-images-group}, group_name ]
 
+[role="mt-5"]
 == Galleries
 
 JustifiedGallery, the default gallery for J1, is a great jQuery plugin to
@@ -496,7 +499,7 @@ flag:es[rectangle, xl]
 
 |===
 
-
+[role="mt-5"]
 == Icon Fonts
 
 The J1 Template comes with full icon support for Asciidoc documents included.
@@ -506,6 +509,7 @@ All icon fonts are supported:
 * MDI (MaterialDesign icons)
 * Iconify
 
+[role="mt-5"]
 == Material Designs Icons
 
 Material Designs Icons can be used as inline icons by using
@@ -575,6 +579,7 @@ the icons `size` is set to default (`1x`), the color to `black` and no
 settings for the `modifier` are applied.
 
 
+[role="mt-5"]
 == Iconify Icons
 
 Iconify Icons can be used as inline icons by using the `iconify:`
@@ -619,6 +624,7 @@ applied, the color settings will have no effect.
 ====
 
 
+[role="mt-5"]
 == Blind Text (Lorem)
 
 The Ruby Gem Middleman, a Ruby-based static site generator, provides a
@@ -717,6 +723,7 @@ lorem:email[]
 // -----------------------------------------------------------------------------
 include::{documentdir}/100_gistblock.asciidoc[]
 
+[role="mt-5"]
 == What next
 
 Asciidoc (Asciidoctor) extensions open up the Markup language to new use cases.

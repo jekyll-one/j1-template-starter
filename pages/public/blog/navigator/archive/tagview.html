@@ -3,11 +3,11 @@ layout:                                 page
 
 title:                                  Posts By Tag
 tagline:                                Explore Posts
+
 date:                                   2022-01-01
 #last_modified:                         2023-01-01
+
 description: >
-                                        J1 Template is a Bootstrap V5 website template for the static
-                                        site generator Jekyll.
                                         To make all posts using J1 Template easy accessible to the visitors,
                                         the Navigation System of J1 Template provides a Explorer module
                                         for Blog articles: the Navigator. The Naviagtor supports the users
@@ -32,9 +32,7 @@ regenerate:                             false                                   
 
 resources:                              [ animate ]
 resource_options:
-
   - attic:
-      padding_top:                      550
       slides:
         - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
           alt:                          Photo by Matthaeus on Unsplash
@@ -167,7 +165,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
 <!-- [INFO   ] [ {{page.url}} ] [Generate HTML}] -->
 {% include {{create_word_cloud}} word_list=tag_list source="tags" %}
 
-<div class="paginator ml-3">
+<div class="paginator speak2me-ignore ml-3">
   <ul class="pagination raised-z0">
     <li class="page-item"><a class="page-link" href="/" title="Home">Home</a></li>
     <li class="page-item"><a class="page-link" href="{{navigator}}" alt="Blog View">Navigator</a></li>
@@ -183,7 +181,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
   {% endif %}
 
   <div class="post-headline">
-    <h2 id="post-headline notoc" class="mt-5">Posts By Tag</h2>
+    <h2 id="post-headline" class="notoc mt-5">Posts By Tag</h2>
   </div>
 
   {% assign letter_group = letter_group_array[letter_group_counter] %}
@@ -250,7 +248,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
 
           <div class="col-md-6 p-0">
             <div class="card-body r-text-300 mt-0">{{excerpt}}</div>
-            <div class="card-footer not-rounded r-text-200">
+            <div class="card-footer speak2me-ignore not-rounded r-text-200">
               <div class="card-footer-text">
 
                 {% if post.date %}

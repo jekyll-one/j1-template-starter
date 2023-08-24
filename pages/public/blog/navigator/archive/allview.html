@@ -3,11 +3,11 @@ layout:                                 page
 
 title:                                  Archive
 tagline:                                Explore All Posts
+
 date:                                   2022-01-01
 #last_modified:                         2023-01-01
+
 description: >
-                                        J1 Template is a Bootstrap V5 website template for the static
-                                        site generator Jekyll.
                                         To make all posts using J1 Template easy accessible to the visitors,
                                         the Navigation System of J1 Template provides a Explorer module
                                         for Blog articles: the Navigator. The Naviagtor supports the users
@@ -32,9 +32,7 @@ regenerate:                             false                                   
 
 resources:                              [ animate, scroller ]
 resource_options:
-
   - attic:
-      padding_top:                      550
       slides:
         - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
           alt:                          Photo by Matthaeus on Unsplash
@@ -142,7 +140,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
 {% comment %} Main
 -------------------------------------------------------------------------------- {% endcomment %}
 <!-- [INFO   ] [ {{page.url}} ] [Generate HTML}] -->
-<div class="paginator ml-3">
+<div class="paginator speak2me-ignore ml-3 mb-4">
   <ul class="pagination raised-z0">
     <li class="page-item"><a class="page-link" href="/" title="Home">Home</a></li>
     <li class="page-item"><a class="page-link" href="{{navigator}}" alt="Blog View">Navigator</a></li>
@@ -158,7 +156,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
   {% endif %}
 
   <div class="post-headline">
-    <h2 id="post-headline notoc" class="mt-5">{{view_headline}}</h2>
+    <h2 id="post-headline" class="notoc mt-5">{{view_headline}}</h2>
   </div>
 
   <!-- ul class="list-unstyled link-news" -->
@@ -175,12 +173,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
 
     <article class="card raised-z0 mb-5">
       <div class="card-header bg-primary">
-
-        <h3 id="{{100000|rand}}" class="card-header bg-primary notranslate">
-          {{post.title}}
-          <!-- span>{{post.tagline}}</span -->
-        </h3>
-
+        <h3 id="{{100000|rand}}" class="card-header bg-primary notranslate">{{post.title}}</h3>
       </div>
 
       <div class="row mx-0">
@@ -206,7 +199,7 @@ site_category_word_list:    {{site_category_word_list | debug}}
 
         <div class="col-md-6 p-0">
           <div class="card-body r-text-300 mt-0">{{excerpt}}</div>
-          <div class="card-footer not-rounded r-text-200">
+          <div class="card-footer speak2me-ignore not-rounded r-text-200">
             <div class="card-footer-text">
 
               {% if post.date %}

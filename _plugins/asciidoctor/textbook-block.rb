@@ -35,7 +35,7 @@ Asciidoctor::Extensions.register do
     name_positional_attributes 'role'
 
     def process parent, target, attrs
-      html = %(<div id="#{target}" class="nb-textbook #{attrs['role']}" data-nb-textbook="initial"></div>)
+      html = %(<div id="#{target}" class="nb-textbook speak2me-ignore #{attrs['role']}" data-nb-textbook="initial"></div>)
       create_pass_block parent, html, attrs, subs: nil
     end
   end
