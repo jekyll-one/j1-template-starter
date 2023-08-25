@@ -57,7 +57,7 @@
   <id>{{ page.url | absolute_url | xml_escape }}</id>
   <post_limited>{{ limit_posts }}</post_limited>
   <template_name>J1 Theme</template_name>
-  <template_version>2023.6.17</template_version>
+  <template_version>2023.7.0</template_version>
 
   {% assign title = site.title | default: site.name %}
   {% if page.collection != "posts" %}
