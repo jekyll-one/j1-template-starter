@@ -37,8 +37,8 @@ Asciidoctor::Extensions.register do
       modifier_class = (modifier = attrs['modifier']) ? %(#{modifier}) : nil
       text_content = (text = attrs['text']) ? %(#{text}) : nil
       html = %(
-        <div class="paragraph">
-        	<p class="speak2me-ignore #{modifier}"> <i class="conum" data-value="#{target}"></i> #{text} </p>
+        <div class="paragraph speak2me-ignore">
+        	<p class="#{modifier}"> <i class="conum" data-value="#{target}"></i> #{text} </p>
         </div>
       )
 

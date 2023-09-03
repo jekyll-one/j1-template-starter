@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/j1_navigator_menu.yml (run-time)
+# ~/_data/modules/j1_navigator_menu.yml (runtime)
 # Configuration of the J1 NAV Module for the main navigation bar
 #
 # Product/Info:
@@ -75,7 +75,6 @@
 
         - title:                        Jekyll Collections
           href:                         /pages/public/learn/bookshelf/jekyll_collections/
-#         href:                         https://jekyll.one/pages/public/learn/bookshelf/jekyll_collections/
           icon:                         head-question
           target:                       _blank
 
@@ -84,22 +83,18 @@
           dropdown:
             - title:                    Bookshelf
               href:                     /pages/public/learn/bookshelf/article_previewer/all_books/
-#             href:                     https://jekyll.one/pages/public/learn/bookshelf/article_previewer/all_books/
               icon:                     book-marker
               target:                   _blank
             - title:                    Biography
               href:                     /pages/public/learn/bookshelf/article_previewer/biography/
-#             href:                     https://jekyll.one/pages/public/learn/bookshelf/article_previewer/biography/
               icon:                     book-marker
               target:                   _blank
             - title:                    Fantasy
               href:                     /pages/public/learn/bookshelf/article_previewer/fantasy/
-#             href:                     https://jekyll.one/pages/public/learn/bookshelf/article_previewer/fantasy/
               icon:                     book-marker
               target:                   _blank
             - title:                    Romance
               href:                     /pages/public/learn/bookshelf/article_previewer/romance/
-#             href:                     https://jekyll.one/pages/public/learn/bookshelf/article_previewer/romance/
               icon:                     book-marker
               target:                   _blank
 
@@ -114,6 +109,11 @@
           href:                         https://jekyll.one/pages/public/learn/rocketstart/
           icon:                         rocket-launch
           target:                       _blank
+
+
+        - title:                        Site Development
+          href:                         https://jekyll.one/pages/public/learn/devstart/
+          icon:                         launch
 
         - title:                        Jekyll In A Day
           icon:                         alpha-j-box
@@ -212,6 +212,10 @@
       icon:                             alpha-j-box
       dropdown:
 
+        - title:                        Speak2Me
+          href:                         /pages/public/modules/speak2me/
+          icon:                         speaker
+
         - title:                        Master Header
           href:                         https://jekyll.one/pages/public/manuals/modules/attic/
           icon:                         window-shutter
@@ -271,14 +275,14 @@
       icon:                             alpha-j-box
       dropdown:
 
-#        - title:                        Resources
+#       - title:                        Resources
 #         href:                         https://jekyll.one/pages/public/manuals/j1/resources/
-#          href:                         '#'
-#          icon:                         garage
-#        - title:                        Layouts
-#          href:                         https://jekyllrb.com/docs/layouts/
-#          icon:                         page-layout-body
-#          target:                       _blank
+#         href:                         '#'
+#         icon:                         garage
+#       - title:                        Layouts
+#         href:                         https://jekyllrb.com/docs/layouts/
+#         icon:                         page-layout-body
+#         target:                       _blank
 
         - title:                        Font Icons
           icon:                         emoticon-cool-outline
@@ -350,22 +354,22 @@
       icon:                             alpha-j-box
       dropdown:
 
-        # - title:                        Internal Plugins
-        #   icon:                         power-plug-outline
-        #   dropdown:
-        #
-        #     - title:                    J1 SiteMap
-        #       href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/j1_sitemap/
-        #       icon:                     map-marker-radius
-        #     - title:                    J1 SEO Tags
-        #       href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/j1_seo_tags/
-        #       icon:                     tag-text
-        #     - title:                    J1 Feeds
-        #       href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/j1_feeds/
-        #       icon:                     slide
-        #     - title:                    J1 Quicksearch
-        #       href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/quicksearch/
-        #       icon:                     magnify
+#       - title:                        Internal Plugins
+#         icon:                         power-plug-outline
+#         dropdown:
+#
+#           - title:                    J1 SiteMap
+#             href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/j1_sitemap/
+#             icon:                     map-marker-radius
+#           - title:                    J1 SEO Tags
+#             href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/j1_seo_tags/
+#             icon:                     tag-text
+#           - title:                    J1 Feeds
+#             href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/j1_feeds/
+#             icon:                     slide
+#           - title:                    J1 Quicksearch
+#             href:                     '#'                                     # https://jekyll.one/pages/public/manuals/j1/plugins/quicksearch/
+#             icon:                     magnify
 
         - title:                        External Plugins
           icon:                         power-plug
@@ -397,38 +401,41 @@
         href:                           /pages/public/tools/previewer/current_theme/
         icon:                           theme-light-dark
 
-      - title:                          Icon Picker
-        href:                           https://jekyll.one/pages/public/tools/previewer/icon-picker/
-        icon:                           emoticon-cool-outline
+      - title:                          Speech Converter
+        href:                           https://jekyll.one/pages/public/tools/previewer/speak2me/
+        icon:                           speaker
         target:                         _blank
-      - title:                          Slick
+
+      - title:                          Slick Slider
         href:                           https://jekyll.one/pages/public/tools/previewer/slick/
         icon:                           view-carousel
-        target:                         _blank
-      - title:                          Masonry
-        href:                           https://jekyll.one/pages/public/tools/previewer/masonry/
-        icon:                           view-dashboard-variant
-        target:                         _blank
-      - title:                          MD Color Palette
-        href:                           https://jekyll.one/pages/public/tools/previewer/color_palette/
-        icon:                           format-color-fill
         target:                         _blank
       - title:                          Master Slider
         href:                           https://jekyll.one/pages/public/tools/previewer/masterslider/
         icon:                           gesture-swipe
         target:                         _blank
-      - title:                          Country Flags
+      - title:                          Masonry
+        href:                           https://jekyll.one/pages/public/tools/previewer/masonry/
+        icon:                           view-dashboard-variant
+        target:                         _blank
+
+      - title:                          Icon Picker
+        href:                           https://jekyll.one/pages/public/tools/previewer/icon-picker/
+        icon:                           emoticon-cool-outline
+        target:                         _blank
+      - title:                          Country Flag Icons
         href:                           https://jekyll.one/pages/public/tools/previewer/country_flags/
         icon:                           flag
         target:                         _blank
-      - title:                          Font Icons
-        href:                           https://jekyll.one/pages/public/tools/previewer/icon-picker/
-        icon:                           sprout
-        target:                         _blank
-        icon:                           emoticon-cool-outline
-      - title:                          Rouge Styles
+
+      - title:                          Code Highlighter
         href:                           https://jekyll.one/pages/public/tools/previewer/rouge/
         icon:                           code-parentheses
+        target:                         _blank
+
+      - title:                          Color Palette
+        href:                           https://jekyll.one/pages/public/tools/previewer/color_palette/
+        icon:                           format-color-fill
         target:                         _blank
 
     # --------------------------------------------------------------------------
@@ -439,19 +446,19 @@
       dropdown:
 
         - title:                        J1
-          href:                         https://jekyll.one/pages/public/tools/cheatsheet/j1/
+          href:                         /pages/public/tools/cheatsheet/j1/
           icon:                         alpha-j-box-outline
           target:                       _blank
         - title:                        YAML
-          href:                         https://jekyll.one/pages/public/tools/cheatsheet/yaml/
+          href:                         /pages/public/tools/cheatsheet/yaml/
           icon:                         alpha-y-box-outline
           target:                       _blank
         - title:                        Git
-          href:                         https://jekyll.one/pages/public/tools/cheatsheet/git/
+          href:                         /pages/public/tools/cheatsheet/git/
           icon:                         git
           target:                       _blank
         - title:                        Gem
-          href:                         https://jekyll.one/pages/public/tools/cheatsheet/gem/
+          href:                         /pages/public/tools/cheatsheet/gem/
           icon:                         language-ruby
           target:                       _blank
 

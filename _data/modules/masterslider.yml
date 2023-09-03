@@ -28,7 +28,7 @@ settings:
   # Slider options
   # ----------------------------------------------------------------------------
   skin:                                 default
-  slider_manager_load_timeout:          500
+  slider_manager_load_timeout:          50
 
   # ----------------------------------------------------------------------------
   # Slider settings
@@ -36,88 +36,12 @@ settings:
   sliders:
 
     # --------------------------------------------------------------------------
-    # Slider 1, Simple Boxed
+    # Slider 1 - Full Width
     #
     - slider:
       enabled:                          true
 
       id:                               ms_00001
-      skin:                             light-3
-
-      lightbox:
-        enabled:                        true
-        type:                           lb
-
-      # ------------------------------------------------------------------------
-      # Slider controls
-      #
-      controls:
-
-        arrows:                                                                 # default settings
-          enabled:                      true
-
-        bullets:                                                                # default settings
-          enabled:                      true
-
-      # ------------------------------------------------------------------------
-      # Slider options
-      #
-      options:
-
-        width:                          1200
-        height:                         600
-        applyFiltersAllSlides:          true                                    # default: false
-        duoColor:                       false                                   # default: false | md-colors
-        filters:
-          grayscale:                    0.5
-          sepia:                        0.5
-
-      # ------------------------------------------------------------------------
-      # Slides
-      #
-      slides:
-
-        # slide 1
-        #
-        - slide:
-          alt:                          Cat 1
-          title:                        Cat 1
-          foreground_image:             /assets/images/modules/masterslider/slider_1/cat-1.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  false
-          slideinfo:                    false
-
-        # slide 2
-        #
-        - slide:
-          alt:                          Cat 2
-          title:                        Cat 2
-          foreground_image:             /assets/images/modules/masterslider/slider_1/cat-2.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  false
-          slideinfo:                    false
-
-        # slide 3
-        #
-        - slide:
-          alt:                          Cat 3
-          title:                        Cat 3
-          foreground_image:             /assets/images/modules/masterslider/slider_1/cat-3.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  false
-          slideinfo:                    false
-
-    # --------------------------------------------------------------------------
-    # Slider 2 - Full Width + Lightbox
-    #
-    - slider:
-      enabled:                          true
-
-      id:                               ms_00002
-
-      lightbox:
-        enabled:                        true
-        type:                           lb                                      # lb | lg
 
       # ------------------------------------------------------------------------
       # Slider controls
@@ -173,6 +97,74 @@ settings:
           thumb_image:                  false
           slideinfo:                    false
 
+    # --------------------------------------------------------------------------
+    # Slider 2, Simple Boxed
+    #
+    - slider:
+      enabled:                          true
+
+      id:                               ms_00002
+      skin:                             light-3
+
+      lightbox:
+        enabled:                        true
+        type:                           lb
+
+      # ------------------------------------------------------------------------
+      # Slider controls
+      #
+      controls:
+
+        arrows:                                                                 # default settings
+          enabled:                      true
+
+      # ------------------------------------------------------------------------
+      # Slider options
+      #
+      options:
+
+        width:                          1200
+        height:                         600
+        applyFiltersAllSlides:          true                                    # default: false
+        duoColor:                       false                                   # default: false | md-colors
+        filters:
+          grayscale:                    0.5
+          sepia:                        0.5
+
+      # ------------------------------------------------------------------------
+      # Slides
+      #
+      slides:
+
+        # slide 1
+        #
+        - slide:
+          alt:                          Cat 1
+          title:                        Cat 1
+          foreground_image:             /assets/images/modules/masterslider/slider_1/cat-1.jpg
+          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  false
+          slideinfo:                    false
+
+        # slide 2
+        #
+        - slide:
+          alt:                          Cat 2
+          title:                        Cat 2
+          foreground_image:             /assets/images/modules/masterslider/slider_1/cat-2.jpg
+          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  false
+          slideinfo:                    false
+
+        # slide 3
+        #
+        - slide:
+          alt:                          Cat 3
+          title:                        Cat 3
+          foreground_image:             /assets/images/modules/masterslider/slider_1/cat-3.jpg
+          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  false
+          slideinfo:                    false
 
     # --------------------------------------------------------------------------
     # Slider 3 - SlideInfo (Autoplay|Boxed|Animated)
@@ -283,7 +275,6 @@ settings:
             description_color:          '#9E9E9E'                               # md-gray-500
             description_animated:       fadeInRight
 
-
     # --------------------------------------------------------------------------
     # Slider 4 - ThumbImage (position right|vertical)
     #
@@ -298,23 +289,14 @@ settings:
       #
       controls:
 
-        bullets:                                                                # default settings
-          enabled:                      true
-
         thumblist:
           enabled:                      true
-          width:                        100
+          width:                        140
           height:                       80
           type:                         thumbs
           autohide:                     false
           dir:                          v
           align:                        right
-
-        scrollbar:
-          enabled:                      true
-          inset:                        true
-          align:                        top
-          color:                        '#404040'
 
       # ------------------------------------------------------------------------
       # Slider options
@@ -399,7 +381,6 @@ settings:
           thumb_image:                  /assets/images/modules/masterslider/slider_4/ms-free-animals-7-100x80.jpg
           slideinfo:                    false
 
-
     # --------------------------------------------------------------------------
     # Slider 5 - ThumbImage (position bottom|horizontal)
     #
@@ -414,18 +395,15 @@ settings:
       #
       controls:
 
-        bullets:                                                                # default settings
-          enabled:                      true
-
         thumblist:
           enabled:                      true
-          width:                        140
+          width:                        160
           height:                       80
           type:                         thumbs
           autohide:                     false
           align:                        bottom
-          margin:                       5
-          space:                        5
+          margin:                       1
+          space:                        1
 
       # ------------------------------------------------------------------------
       # Slider options
@@ -443,16 +421,6 @@ settings:
         # slide 1
         #
         - slide:
-          alt:                          MS free image - Food Restaurant
-          title:                        MS free image - Food Restaurant
-          foreground_image:             /assets/images/modules/masterslider/slider_5/ms-free-food-restaurant.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-restaurant-140x80.jpg
-          slideinfo:                    false
-
-        # slide 2
-        #
-        - slide:
           alt:                          MS free image - Food Family
           title:                        MS free image - Food Family
           foreground_image:             /assets/images/modules/masterslider/slider_5/ms-free-food-family.jpg
@@ -460,7 +428,7 @@ settings:
           thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-family-140x80.jpg
           slideinfo:                    false
 
-        # slide 3
+        # slide 2
         #
         - slide:
           alt:                          MS free image - Food Woman Hand
@@ -470,7 +438,7 @@ settings:
           thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-woman-hand-140x80.jpg
           slideinfo:                    false
 
-        # slide 4
+        # slide 3
         #
         - slide:
           alt:                          MS free image - Food Family 2
@@ -480,7 +448,7 @@ settings:
           thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-family-2-140x80.jpg
           slideinfo:                    false
 
-        # slide 5
+        # slide 4
         #
         - slide:
           alt:                          MS free image - Food Family 3
@@ -490,7 +458,7 @@ settings:
           thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-family-3-140x80.jpg
           slideinfo:                    false
 
-        # slide 6
+        # slide 5
         #
         - slide:
           alt:                          MS free image - Food Hamburger
@@ -500,7 +468,7 @@ settings:
           thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-hamburger-140x80.jpg
           slideinfo:                    false
 
-        # slide 7
+        # slide 6
         #
         - slide:
           alt:                          MS free image - Food Pizza
@@ -510,27 +478,7 @@ settings:
           thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-pizza-140x80.jpg
           slideinfo:                    false
 
-        # slide 8
-        #
-        - slide:
-          alt:                          MS free image - Food Single Man
-          title:                        MS free image - Food Single Man
-          foreground_image:             /assets/images/modules/masterslider/slider_5/ms-free-food-single-man.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-single-man-140x80.jpg
-          slideinfo:                    false
-
-        # slide 9
-        #
-        - slide:
-          alt:                          MS free image - Food Single Woman
-          title:                        MS free image - Food Single Woman
-          foreground_image:             /assets/images/modules/masterslider/slider_5/ms-free-food-single-woman.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-single-woman-140x80.jpg
-          slideinfo:                    false
-
-        # slide 10
+        # slide 7
         #
         - slide:
           alt:                          MS free image - Food Table
@@ -539,7 +487,6 @@ settings:
           background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
           thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-table-140x80.jpg
           slideinfo:                    false
-
 
     # --------------------------------------------------------------------------
     # Slider 6 - ThumbTabs (position bottom|horizontal)
@@ -557,8 +504,8 @@ settings:
 
         thumblist:
           enabled:                      true
-          width:                        300
           height:                       160
+          width:                        280
           type:                         tabs
           autohide:                     false
           dir:                          h
@@ -572,9 +519,16 @@ settings:
       #
       options:
 
-        width:                          1200
-        height:                         530
-        layout:                         fullwidth
+        # width:                          1200
+        # height:                         530
+        # layout:                         fullwidth
+
+        width:                            1000
+        height:                           500
+        instantStartLayers:               true
+        loop:                             true
+        speed:                            15
+        view:                             fadeBasic
 
       # ------------------------------------------------------------------------
       # Slides
@@ -661,7 +615,6 @@ settings:
 
           slideinfo:                    false
 
-
     # --------------------------------------------------------------------------
     # Slider 7 - ThumbTabs (position right|vertical)
     #
@@ -680,8 +633,8 @@ settings:
 
         thumblist:
           enabled:                      true
-          width:                        240
           height:                       160
+          width:                        240
           type:                         tabs
           autohide:                     false
           dir:                          v
@@ -788,7 +741,6 @@ settings:
 
           slideinfo:                    false
 
-
     # --------------------------------------------------------------------------
     # Slider 8 - Blog articles (PartialView)
     #
@@ -815,7 +767,9 @@ settings:
         width:                          600
         height:                         300
         layout:                         partialview
-        loop:                           true                                    # required for partialview!
+        autoplay:                       true
+        loop:                           true                                    # required for partialview
+        speed:                          10
         filters:
           brightness:                   0.8
           grayscale:                    0.5
@@ -839,8 +793,8 @@ settings:
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
             boxed:                      false
-            title:                      Special slider for bloggers
-            title_color:                '#F5F5F5'                               # md-gray-100
+            title:                      Slider for bloggers
+            title_color:                '#212121'                               # md-gray-100
             title_animated:             fadeInLeft
             title_upcase:               false
             tagline:                    false
@@ -955,7 +909,6 @@ settings:
               link:                     '#'
               text:                     Read More
 
-
     # --------------------------------------------------------------------------
     # Slider 9 - PartialView/MS-Info (info position below)
     #
@@ -975,6 +928,7 @@ settings:
 
         slideinfo:                                                              # default settings
           enabled:                      true
+          margin:                       0
 
       # ------------------------------------------------------------------------
       # Slider options
@@ -1067,7 +1021,6 @@ settings:
             description: >
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam.
 
             description_color:          '#616161'                               # md-gray-700
             description_animated:       false

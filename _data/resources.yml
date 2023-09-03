@@ -1170,7 +1170,7 @@ resources:
         init_function:                  [ j1.adapter.clipboard.init ]
 
   # ----------------------------------------------------------------------------
-  # Carousel, JS API for the main carousel used by J1 Theme
+  # Carousel, JS API for the built-in carousel used by J1 Theme
   #
   - name:                               J1 Carousel
     resource:
@@ -1192,7 +1192,7 @@ resources:
                                           modules/carousel/css/theme/uno
                                         ]
         files:                          [ adapter/js/carousel.js ]
-        js:                             [ modules/carousel/js/carousel ]
+        js:                             []
         init_function:                  [ j1.adapter.carousel.init ]
 
   # ----------------------------------------------------------------------------
@@ -1646,7 +1646,7 @@ resources:
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            [ modules/masonry/css/theme/uno ]
+        css:                            []
         files:                          [ adapter/js/masonry.js ]
         js:                             [ modules/masonry/js/masonry ]
         init_function:                  [ j1.adapter.masonry.init ]

@@ -28,7 +28,7 @@ image:
 regenerate:                             false
 permalink:                              /pages/public/learn/roundtrip/themes/
 
-resources:                              [ animate, rouge, clipboard, lightbox ]
+resources:                              [ animate, rouge, clipboard ]
 resource_options:
   - attic:
       slides:
@@ -62,22 +62,24 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-Bootstrap themes (styles) for the J1 are based on the free and open-source
+Bootstrap themes for the J1 Template are based on the free and open-source
 CSS front-end framework of version V5. The Bootstrap theme feature enables
 the presentation of different versions of the same site using already prepared
-Bootstrap CSS styles.
+Bootstrap CSS style sets.
 
-link:{url-bs--home}[Bootstrap, {browser-window--new}] is an HTML, CSS and
+NOTE: link:{url-bs--home}[Bootstrap, {browser-window--new}] is an HTML, CSS and
 Javascripts Library that focuses on simplifying the development of modern web
 pages. The primary purpose of applying the framework to J1 is to provide a
 general standard for colors, sizes, fonts, and the overall layout of a
-J1-based site.
+based site.
 
-Using Bootstrap themes results in a uniform appearance for the content in
-terms of the overall layout, text, tables, and form elements across all
-modern web browsers available on the market. In addition, developers can
-take advantage of CSS classes defined in Bootstrap to customize content
-individually.
+Using themes results in a uniform appearance for the content in terms of the
+overall layout, text, tables, and form elements across all modern web browsers
+available on the market. In addition, developers can take advantage of CSS
+classes defined in Bootstrap to customize a layout individually.
+
+mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
+*3 Minutes* to read
 
 mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 *3 Minutes* to read
@@ -94,15 +96,15 @@ powerful code highlighting to distinguish different source code elements
 visually. Highlighting makes the code more readable and easier to understand
 by applying different colors or styles to different parts of the code.
 
-Different programming languages have specific syntax rules and conventions,
+Programming languages have specific syntax rules and conventions,
 so code highlighting is tailored to each language. For example, in a typical
-JavaScript syntax highlighting scheme, keywords like `if`, `for`, and
-`function` may be displayed in one color, while variables and strings are
+JavaScript syntax highlighting scheme, keywords like *if*, *for*, or
+function be displayed in one color, while variables and strings are
 displayed in another.
 
-The highlighter _Rouge_ is a native Ruby themeable syntax highlighter fully
-integrated width J1 Template. The highlighter supports 100+ different languages
-and generates HTML output using standard ANSI 256 colors displayed by all
+The highlighter _Rouge_ is a native Ruby-based themeable syntax highlighter
+integrated by J1 Template. The highlighter supports 100+ different languages
+and generates HTML output using 256 standard *ANSI* colors displayed by all
 current browsers.
 
 To check the code highlighter J1 Template offers, go for the

@@ -1,6 +1,6 @@
 ---
 title:                                  Icon Fonts
-title_extention:                        J1 Template supports MDI, FontAwesome and Iconify icons
+title_extention:                        Popular icons sets for J1 Template
 tagline:                                Popular Icons Sets
 
 date:                                   2020-11-06
@@ -10,9 +10,7 @@ description: >
                                         J1 Template supports popular icons font sets out-of-the-box.
                                         The icon sets MDI and FA are very good in design and have
                                         a rich set of different icons for many categories used for
-                                        the Web. Iconify icons are not a locally stored icon-set
-                                        like MDI or FA. All Iconify icons are loaded over the Internet
-                                        using the so-called Unified OpenSource Icon Framework.
+                                        the Web.
 keywords: >
                                         open source, free, template, jekyll, jekyllone, web,
                                         sites, static, jamstack, bootstrap,
@@ -63,26 +61,22 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-J1 Template supports popular icons font sets out-of-the-box. The icon sets MDI
-and FA are very good in design and have a rich set of different icons for
-many categories used for the Web. Iconify icons are not a locally stored
-icon-set like MDI or FA. All Iconify icons are loaded over the Internet
-using the so-called Unified OpenSource Icon Framework.
+J1 Template supports popular icons font sets out-of-the-box. The icon sets
+have a rich set of different icons for many categories used for the Web.
 
-J1 Template supports popular icons font sets out-of-the-box:
+With J1, the following icons font are available out-of-the-box:
 
-* link:{url-mdi--home}[Material Design Icons, {browser-window--new}] (MDI)
-* link:{url-mdil--home}[Material Design Light Icons, {browser-window--new}] (MDIL)
-* link:{url-fontawesome--home}[FontAwesome Icons V5, {browser-window--new}] (FA)
-* link:{url-iconify--home}[Iconify Icons, {browser-window--new}] (II)
+* MDI -- link:{url-mdi--home}[Material Design Icons, {browser-window--new}]
+* MDIL -- link:{url-mdil--home}[Material Design Light Icons, {browser-window--new}]
+* FA -- link:{url-fontawesome--home}[FontAwesome Icons V5, {browser-window--new}]
+* II -- link:{url-iconify--home}[Iconify Icons, {browser-window--new}]
 
-The icon sets MDI and FA are very good in design and have a rich set of
-different icons for many categories used for the Web. See below for some
-details for <<Material Design Icons>> and <<FontAwesome Icons>>.
+MDI and FA icons are very good in design and have a rich set of different
+icons for many categories used for the Web. See below for some details
+for <<Material Design Icons>> and <<FontAwesome Icons>>.
 
-[role="mb-5"]
-Iconify icons are not a locally stored icon-set like MDI or FA. All icons are
-loaded over the Internet using the so-called *Unified OpenSource Icon
+NOTE: Iconify icons are not a locally stored icon-set like MDI or FA.
+Icons are loaded over the Internet using the so-called *Unified OpenSource Icon
 Framework*. See section <<Iconify Icons>> for more information.
 
 mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
@@ -90,19 +84,19 @@ mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
+[role="mt-5"]
 == Material Design Icons (Regular)
 
 The primary icon-set for the J1 Template is
 link:{url-mdi--home}[Material Design Icons, {browser-window--new}],
 because it is a rich set providing more than 7200+ icons for the current
-version (v7.0.96, March 2023). MDI has excellent *Material Design* support
+version v7 of of March 2023. MDI has excellent *Material Design* support
 from a design perspective and comes with the original icon set created by
 _Google_ build-in.
 
-_Material Design Icons_ (MDI) is a beneficial design resource for Web Design
-based on _Google_'s Material Design. _MDI_ is a community-driven
-project to create an increased number of icons based on _Google_'s official
-repository and MD style specification.
+_Material Design Icons_ is a beneficial design resource for Web Design
+based on _Google_'s Material Design. The icon set is a community-driven
+project to create an increased number of icons.
 
 .Material Design Icons
 [cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
@@ -243,28 +237,20 @@ mdi:heart[5x md-red-900 mdi-pulsed]
 
 |===
 
-NOTE: Using Material Design Icons with Asciidoc is easy as an inline
-macro `mdi:` is available to place icons wherever you want. See more about
-this in section
+Using Material Design Icons is easy as the inline macro `mdi:` is available
+to place icons wherever you want. See more about this in section
 link:{url-roundtrip--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
 
-_MDI_ is a growing collection to allow designers and developers targeting
-various platforms to download icons in the format, color, and size they need
-for any project. The repo today contains 7200+ icons (v7.0.96, March 2023)
-including converted icons from the official set created by _Google_.
-
-NOTE: _J1 Template_ supports the full set of _MDI_ for the Web (Webfont, WOFF). The
+NOTE: _J1 Template_ supports the full set of _MDI_ for the Web. The
 icon set is fully integrated and can be used out-of-the-box.
 
 
 [role="mt-5"]
 == Material Design Light Icons
 
-The primary icon-set for the J1 Template is
-link:{url-mdi--home}[Material Design Icons, {browser-window--new}],
-because it is a rich set providing more than 260+ icons for the current
-version (v0.2.63). MDI has excellent *Material Design* support from a design
-perspective and comes with the original icon set created by _Google_ build-in.
+An alternative MDI-based icon set for the J1 Template is
+link:{url-mdi--home}[Material Design Light Icons, {browser-window--new}].
+The set is providing 260+ icons for the current version of v0.2.63.
 
 .Material Design Light Icons
 [cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
@@ -395,24 +381,25 @@ mdil:heart[5x md-red-900 mdi-pulsed]
 [role="mt-5"]
 == FontAwesome Icons
 
-_FontAwesome_ is a font and icon toolkit based on CSS, initially
-created by  _Dave Gandy_. The previous *version 4* was mainly for the use
-of Twitter Bootstrap *V3*. The new version *V5*, released in December 2017,
-focuses on all frameworks used for web development. Today, the *free FA*
-icon set comes with 1400+ icons included.
+_FontAwesome_ is icon toolkit based on CSS, initially created by _Dave Gandy_.
+The previous *version 4* was mainly for the use of Twitter Bootstrap *V3*.
+The current version *V5*, released in December 2017, focuses on all frameworks
+used for web development. Today, the *free FA* icon set comes with 1400+ icons
+included.
 
 Since version 5, the icon set comes in two packages: FontAwesome *Free*
 and the proprietary, commercial FontAwesome *Pro* version but requires a
 license fee to pay.
 
-The free versions (all releases up to 4 and the free version for 5) are
+NOTE: The free versions (all releases up to 4 and the free version for 5) are
 available under SIL Open Font License 1.1, Creative Commons Attribution 4.0,
 and the MIT License.
 
-FontAwesome V5 meets the Material Design idea (of _Google_), and in comparison
-to Version 4, the current version is much more than face-lifting. Version 5
-comes with more than 2300+ icons, but many are available only with the Pro
-license. For the Free version, only a subset of 900+ icons is available.
+FontAwesome V5 meets the Material Design idea of _Google_, and in comparison
+to Version 4, the current version is much more than face-lifting. The new
+version comes with more than 2300+ icons, but many are available only with
+the Pro license. For the Free version, only a subset of 900+ icons is
+available.
 
 NOTE: The CSS styles for FontAwesome V5 have been extended for the J1 Template
 to the same classes (and their respective names) for other Font Icon sets.
@@ -422,25 +409,25 @@ as well.
 You can check out what icons available at
 link:{url-fontawesome--icons}[FontAwesome Icons, {browser-window--new}].
 _FontAwesome_ V5 is fully integrated - no need for additional resources to
-load.  But in comparison to Version 4, a lot of differences need to be
-noticed.
+load. But in comparison to Version 4, a lot of differences are to be noticed.
 
-If you haven't used V5 yet, it is highly recommended to visit the
+TIP: If you haven't used V5 yet, it is highly recommended to visit the
 link:{url-fontawesome--get-started}[Get started, {browser-window--new}] pages to
 learn the basics and features and styles.
 
 With version V5 of _FontAwesome_, the icon set is split into two general
 parts:
 
-* standard icons (symbols) indicated by *FAS*
-* brand icons (icons for companies and brands) indicated by *FAB*
+* standard icons indicated by *FAS*
+* brand icons, including symbols for companies and brands,
+  indicated by *FAB*
 
 NOTE: Using FontAwesome with Asciidoc is quite easy to use as two inline
 macros `fab:` and `fas:` are available to place icons where ever you want.
 See more about this in section
 link:{url-roundtrip--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
 
-Find below examples of both and the use with J1 Template.
+Find below examples of both sets and how to use with J1 Template.
 
 [role="mt-5"]
 === Brand icons
@@ -628,21 +615,20 @@ fas:heart[5x md-red-900 fa-pulsed]
 [role="mt-5"]
 == Iconify Icons
 
-MDI and FA are rich icon sets but designed for general use. Sometimes icons
-are missing in one of these fonts, like a specific brand or theme icon. An
-interesting solution for using font icons from a remote repository is
-link:{url-iconify--home}[Iconify, {browser-window--new}]. Iconify is a so-called
-unified OpenSource icon framework that makes it possible to use icons from
-different icon sets using one (unified) syntax.
+Sometimes icons are missing like a specific brand or theme icon. An
+interesting solution for using icons from a remote repository is
+link:{url-iconify--home}[Iconify, {browser-window--new}]. Iconify use
+a so-called Unified OpenSource Icon framework that makes it possible
+to use icons from multiple sets.
 
 To access that framework, a Javascript client is needed. For the J1 Template,
 the client is build-in and is loaded if Iconify is requested as a resource.
 To see what icon sets are available with that framework, check the page
 link:{url-iconify--icon-sets}[Iconify Icon Sets, {browser-window--new}].
 
-NOTE: Using Iconify icons with J1 Template is quite easy. An Asciidoctor
-inline macro `iconify:` (Asciidoctor Extension) is available to place icons
-where ever you want. See more about this in section
+NOTE: Using Iconify icons with J1 Template is quite easy. An inline macro
+`iconify:` is available to place icons where ever you want. See more about
+this in section
 link:{url-roundtrip--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
 
 Currently, over 40,000 vector icons are available for many different use cases.
@@ -725,13 +711,12 @@ iconify:medical-icon:i-ear-nose-throat[5x md-red-900]
 == What next
 
 Have you've enjoyed the possibilities J1 offers for managing and
-manipulating font icons. Do you think these icon sets can fit your needs?
-Using Iconify, for all topics, you will find a suitable icon. And it's simple.
+manipulating font icons? Do you think these icon sets can fit your needs?
+Using Iconify, for all topics, you will find a suitable icon.
 
-J1 Template implements some handy Ruby-based enhancements for Asciidoctor.
-Providing extensions for a Jekyll theme is a unique feature of JekyllOne (J1)
-compared to other Jekyll themes and templates. Most extensions are based on
-well-documented examples from the Asciidoctor Extensions Lab.
+J1 Template implements some handy Ruby-based enhancements for the markup
+language Asciidoc. Providing extensions for a Jekyll theme is a unique
+feature of Jekyll One compared to other Jekyll themes and templates.
 
 To make the use of modules for the template easier, some more extensions
 support you to place for example lightboxes, sliders, galleries or fonts icons

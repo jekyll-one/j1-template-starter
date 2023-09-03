@@ -38,7 +38,7 @@ settings:
 
       id:                               post_series_example
       type:                             post
-      group:                            Life                                    # generate grid elements only for the group
+      group:                            Featured                                # generate grid elements only for the group
       gutters:                          true
       image_styles:                     img-fluid img-object--cover
       image_height:                     300px
@@ -54,6 +54,14 @@ settings:
         initLayout:                     true
         percentPosition:                true
 
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      #
+      filters:
+        enabled:                        true
+        grayscale:                      1
+        contrast:                       0.8
+        brightness:                     0.4
 
     # --------------------------------------------------------------------------
     # Collection Portfolio

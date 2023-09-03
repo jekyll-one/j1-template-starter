@@ -7,11 +7,10 @@ date:                                   2020-11-05
 #last_modified:                         2023-01-01
 
 description: >
-                                        J1 Template places the character font as
-                                        one of the most crucial branding elements for any website.
-                                        Typography matters for any media presenting text. The text
-                                        will take on an important role of acting not only as plain
-                                        text but also as something like images.
+                                        J1 Template places the character font as one of the
+                                        most crucial branding elements for any website. The
+                                        text take on an important role of acting not only as
+                                        plain text but also as something like images.
 keywords: >
                                         open source, free, template, jekyll, jekyllone, web,
                                         sites, static, jamstack, bootstrap,
@@ -28,7 +27,7 @@ image:
 regenerate:                             false
 permalink:                              /pages/public/learn/roundtrip/typography/
 
-resources:                              [ animate, clipboard, lightbox, rouge ]
+resources:                              [ animate, clipboard, rouge ]
 resource_options:
   - attic:
       opacity:                          0.3
@@ -66,10 +65,10 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-The Jekyll Theme JekyllOne places the character font as one of the most
-crucial branding elements for any website. Typography matters for any page
-presenting text. The text will take on an important role of acting not only
-as plain text but also as something like images.
+The Jekyll Theme J1 places the character font as one of the most crucial
+branding elements for any website. Typography matters for any page
+presenting text. The text will take on an important role of acting not
+only as plain text but also as something like images.
 
 mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 *5 Minutes* to read
@@ -80,10 +79,11 @@ mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 == Responsive Text
 
 Sadly to say, one common flaw is seen in many templates and frameworks:
-the lack of support for genuinely responsive text. While elements on a page
-resize fluidly, the text still resizes on a fixed basis. To avoid this issue,
+the lack of support for responsive text. While elements on a page resize
+fluidly, the text still resizes on a fixed basis. To avoid this issue,
 especially for heavily text-focused pages, J1 Template supports styles that
-fluidly scale text size and line height to optimize readability for the user.
+fluidly scale text in size and line height to optimize readability for the
+user.
 
 Below you find an example of how text behaves if defined on a fixed basis -
 what you'll see quite often. Change the size of your Browser Window to see
@@ -193,14 +193,12 @@ responsiveness in action.
 
 As mentioned, `r-text` comes in five levels of size. The base of `r-text` is
 the Fibonacci numbers extracted from the Fibonacci series. These numbers are
-the most popular division ratios in typography. When speaking of the golden
-ratio (1: 1.618) in typography and graphic design, the Fibonacci numbers are
-usually the base.
+the most popular division ratios in typography. Fibonacci numbers are relevant
+in design and typography due to their prevalence in natural patterns.
 
 The Fibonacci series is translated into CSS Media queries and scales a base
 font in size accordingly. Further, the resulting font scale series have
-multipliers (scale factors) ranging from 0.5 (50%) up to 1.0 (100%) of the
-base.
+multipliers ranging from 0.5 up to 1.0, resulting in 100% of the base.
 
 That way, five series are available by the five scale factors. See the
 following table how `r-text` scales.

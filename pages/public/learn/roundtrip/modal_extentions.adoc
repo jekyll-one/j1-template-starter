@@ -1,6 +1,6 @@
 ---
 title:                                  Modals
-title_extention:                        Advanced Bootstrap Modal extension for J1 Template
+title_extention:                        Advanced Bootstrap Modals for J1 Template
 tagline:                                Improve Visitor Experience
 
 date:                                   2020-11-08
@@ -28,7 +28,7 @@ image:
 regenerate:                             false
 permalink:                              /pages/public/learn/roundtrip/modals/
 
-resources:                              [ animate, clipboard, lightbox, rouge ]
+resources:                              [ animate, clipboard, rouge ]
 resource_options:
   - attic:
       slides:
@@ -58,16 +58,22 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-J1 Template supports a large set of advanced Bootstrap Modals that add dialogs
-to your web pages for user notifications. The advanced Modals highlight
-important information to your visitors. Modals are positioned over everything
-else in the document so that messages get the full user's attention.
+J1 Template supports a large set of advanced Bootstrap Modals that add
+dialogs to your web pages for user notifications. The advanced Modals
+highlight important information to your visitors. The dialogs are positioned
+over everything else in the document so that messages get the full user's
+attention.
 
 mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 *15 Minutes* to read
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
+
+// Include the modals HTML portion (hidden)
+// -----------------------------------------------------------------------------
+include::{documentdir}/419_advanced_modals_demo.asciidoc[]
+
 [role="mt-4"]
 == Modal Examples
 
@@ -87,12 +93,12 @@ include::{documentdir}/410_table_bs_modal_examples.asciidoc[]
 
 Bootstrap is a helpful framework that offers a complete set of styles in
 the current V5 version to create excellent responsive designs. In the sense
-that all can be improved, the responsive tables support of BS needs some
-enhancement to display tables on low-resolution devices or smaller window
-sizes.
+that all can be improved, the responsive tables supported by Bootstrap needs
+some enhancement to display tables on low-resolution devices or smaller window
+sizes better.
 
-The Jekyll Theme JekyllOne supports a new design for responsive tables based
-on Bootstrap. The approach used by J1 Template is based on pure CSS styles on
+The Theme Jekyll One supports a new design for responsive tables but based
+on Bootstrap. The approach used by J1 Template is based on CSS styles on
 top of the classic Bootstrap tags for simplicity and portability to be viewed
 best on all devices and browsers. Responsive tables help to read this important
 information on mobiles a lot. This feature is what is meant to be fully
@@ -100,7 +106,3 @@ responsive!
 
 Check out from here what the
 link:{url-roundtrip--responsive-tables}[Responsive Tables] can do!
-
-// Include the modals HTML portion
-// -----------------------------------------------------------------------------
-include::{documentdir}/419_advanced_modals_demo.asciidoc[]
