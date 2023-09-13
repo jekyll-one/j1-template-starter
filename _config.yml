@@ -47,13 +47,13 @@
 #   values:                             development|production
 #   default:                            development
 #
-environment:                            development
+environment:                            production
 
 # version
 # ------------------------------------------------------------------------------
 # Sets the build version of the site
 #
-version:                                2023.8.0
+version:                                2023.8.1
 
 # copyright
 # ------------------------------------------------------------------------------
@@ -230,7 +230,7 @@ keywords: >
                                         sites, static, jamstack, bootstap
 
 # Crawling/Indexing ENABLED for default. Settings managed page-wise using
-# front matter defaults or by page default settings to make sure that only
+# frontmatter defaults or by page default settings to make sure that only
 # WANTED pages gets crawled.
 #
 robots:
@@ -293,7 +293,7 @@ favicon:
 #
 # NOTE:
 #   The permalink style can individualy configured by
-#   front matter variables. It is highly recommended to use a
+#   frontmatter variables. It is highly recommended to use a
 #   "pretty style" for individual permalinks as well. For that
 #   reason, the permalink should always have a trailing backslash.
 #
@@ -310,7 +310,8 @@ permalink:                              pretty
 # site.url will be set to the value of host, port.
 # NOTE: Required setting for the sitemap plugin, for example.
 #
-url:                                    http://localhost:30000
+# url:                                    http://localhost:22000
+url:                                      https://starter.jekyll.one/
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -336,7 +337,7 @@ base_path:                              ""
 #
 protocol:                               http
 host:                                   localhost
-port:                                   30000
+port:                                   22000
 timezone:                               Europe/Berlin
 encoding:                               UTF-8
 
@@ -376,7 +377,7 @@ exclude:                                [
                                           package-lock.json, package.json,
                                           '*.ignore', '*._config.yml',
                                           '*.bat', '*.sh', '*.tmp', 'dot.*',
-                                          '*.log', '*.ppt*', '*.pdf',
+                                          '*.txt', '*.log', '*.ppt*', '*.pdf',
                                           '*.zip', '*.7z', '*.tgz', '*.tar',
                                           '*.a2p', '*.asciidoc'
                                         ]
@@ -538,9 +539,6 @@ facebook:
   app_id:
   admins:
 
-webmaster:
-  email:                                webmaster@jekyll.one
-
 webmaster_verifications:
   facebook:
   google:
@@ -566,13 +564,6 @@ excerpt_truncate_words:                 100
 collections:
 
   # ----------------------------------------------------------------------------
-  # People
-  #
-  people:
-    output:                             true
-    permalink:                          /collections/public/:collection/:name/
-
-  # ----------------------------------------------------------------------------
   # Portfolio
   #
   portfolio:
@@ -595,7 +586,7 @@ collections:
     permalink:                          /collections/public/:collection/:name/
 
 # ------------------------------------------------------------------------------
-# FRONT MATTER defaults
+# FRONTMATTER defaults
 #
 # Using the YAML Front Matter is a way the (individual) configuration
 # for post and pages can be specified. Very often, a lot of config
@@ -643,7 +634,6 @@ defaults:
         url:                            https://jekyll.one/
 
       logo:                             /assets/images/icons/j1/j1-512x512.png
-
       image:
         path:                           /assets/images/promo/home/screenshot.jpg
         width:                          1200
@@ -661,7 +651,6 @@ defaults:
         index:                          true
         follow:                         true
 
-      tts:                              true
       toc:                              true
       canonical:                        false
       fab_menu_id:                      open_toc
@@ -707,7 +696,6 @@ defaults:
         index:                          true
         follow:                         true
 
-      tts:                              true
       toc:                              true
       canonical:                        false
       fab_menu_id:                      open_toc
@@ -722,6 +710,7 @@ defaults:
         - toccer:
             collapseDepth:              3
 
+
   # ----------------------------------------------------------------------------
   # Collections
   #
@@ -735,7 +724,6 @@ defaults:
 
     values:
       layout:                           page
-      tts:                              false
       canonical:                        false
 
   # ----------------------------------------------------------------------------
@@ -747,7 +735,6 @@ defaults:
 
     values:
       layout:                           page
-      tts:                              false
       canonical:                        false
 
   - scope:
@@ -756,7 +743,6 @@ defaults:
 
     values:
       layout:                           page
-      tts:                              false
       canonical:                        false
 
   - scope:
@@ -765,7 +751,6 @@ defaults:
 
     values:
       layout:                           page
-      tts:                              false
       canonical:                        false
 
 
