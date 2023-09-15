@@ -158,10 +158,13 @@ In this document, there are several fields, like `title`, `tagline`, or
 fields are available, like `tags` or `categories` that can be used for
 more specific searches based on `identifiers`.
 
-NOTE: The document *content* is collected by the (intrinsic) field `body`.
+[NOTE]
+====
+The document *content* is collected by the (intrinsic) field `body`.
 To limit the index data loaded by the browser, the body field is removed from
 a document. The `body` field not available as an *explicit* field for searches,
 but the *content* is still fully searchable.
+====
 
 To do a simple full-text search as well as more specific searches, the
 QuickSearch core engine Lunr offers a query language, a DSL (domain-specific
@@ -243,8 +246,11 @@ The above example will match documents that contain either `jekyll` *OR*
 `tutorial`. Documents that contain _both_ will increase the score, and those
 documents are returned first.
 
-NOTE: Comparing to a Google search (terms are combined at Google by a
+[NOTE]
+====
+Comparing to a Google search (terms are combined at Google by a
 logical `AND`) a Quicksearch combines the terms by an `OR`.
+====
 
 To combine search terms in a QuickSearch query by a logical *AND*, the terms
 could be prepended by a plus sign (`+`) to mark them as for the QuickSearch
@@ -267,13 +273,15 @@ beginning with `Jek`:
 jek*
 ----
 
-NOTE: Language grammar rules are not relevant for searches. For simplification,
+[NOTE]
+====
+Language grammar rules are not relevant for searches. For simplification,
 all words (terms) are transformed to lower case. As a result, the word
 `Jekyll` is the same as `jekyll` from a search-engines perspective. Language
 variations of `Jekyll's` or plurals like `Generators` are reduced
 to their base form. For searches, don't take care of grammar rules but the
 spelling. If you're unsure about the spelling of a word, use wildcards.
-
+====
 
 === Fields
 

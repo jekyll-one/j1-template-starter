@@ -68,11 +68,14 @@ extensions to the markup language Asciidoc is made especially for documents
 of the Jekyll content type *page*, but can be used for posts or collections
 as well.
 
-TIP: Most extensions are based on well-documented examples from the
+[TIP]
+====
+Most extensions are based on well-documented examples from the
 link:{url-asciidoctor--extensions-lab}[Asciidoctor Extensions Lab, {browser-window--new}].
 To create Asciidoc extensions on your own, it is highly recommended to read the
 link:{url-asciidoctor--extensions-manual}[extensions section, {browser-window--new}] in
 the Asciidoctor user manual.
+====
 
 mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 *15 Minutes* to read
@@ -91,8 +94,11 @@ If a result block `[.result]` is placed under a listing block, clicking the
 toggle button *view* `VIEW` displays or hide the content given by the
 result block.
 
-TIP: The *View Result Extension* is quite helpful for sections discussing
+[TIP]
+====
+The *View Result Extension* is quite helpful for sections discussing
 code elements.
+====
 
 .This example place a button *VIEW* top right of the example box
 [source, no_template, role="noclip"]
@@ -140,8 +146,11 @@ trippings.
 
 |===
 
-NOTE: All colors for all default admonition blocks set to the standard
+[NOTE]
+====
+All colors for all default admonition blocks set to the standard
 color set. Find available block types and their colors below.
+====
 
 When you want to call attention to a single paragraph, start the first
 line of the paragraph with the label you want to use. The label must be
@@ -543,9 +552,12 @@ mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
 mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
 ====
 
-NOTE: Parameters for icon size `icon_size` and modifiers `modifier` are
+[NOTE]
+====
+Parameters for icon size `icon_size` and modifiers `modifier` are
 optional. If not given, the icons size `size` is set to default `1x`, the
 color to *black* and no settings for *modifiers* `modifier` are applied.
+====
 
 [role="mt-4"]
 === Font Awesome Icons
@@ -578,10 +590,12 @@ fab:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
 fab:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
 ====
 
-NOTE: Parameters for icon size `icon_size` and modifiers `modifier` are
+[NOTE]
+====
+Parameters for icon size `icon_size` and modifiers `modifier` are
 optional. If not given, the icons size is set to default `1x`, the color
 to *black* and no settings for modifiers  `modifier` are applied.
-
+====
 
 [role="mt-4"]
 === Iconify Icons

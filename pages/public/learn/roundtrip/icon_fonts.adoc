@@ -75,9 +75,12 @@ MDI and FA icons are very good in design and have a rich set of different
 icons for many categories used for the Web. See below for some details
 for <<Material Design Icons>> and <<FontAwesome Icons>>.
 
-NOTE: Iconify icons are not a locally stored icon-set like MDI or FA.
+[NOTE]
+====
+Iconify icons are not a locally stored icon-set like MDI or FA.
 Icons are loaded over the Internet using the so-called *Unified OpenSource Icon
 Framework*. See section <<Iconify Icons>> for more information.
+====
 
 mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 *10 Minutes* to read
@@ -241,9 +244,11 @@ Using Material Design Icons is easy as the inline macro `mdi:` is available
 to place icons wherever you want. See more about this in section
 link:{url-roundtrip--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
 
-NOTE: _J1 Template_ supports the full set of _MDI_ for the Web. The
+[NOTE]
+====
+_J1 Template_ supports the full set of _MDI_ for the Web. The
 icon set is fully integrated and can be used out-of-the-box.
-
+====
 
 [role="mt-5"]
 == Material Design Light Icons
@@ -389,11 +394,9 @@ included.
 
 Since version 5, the icon set comes in two packages: FontAwesome *Free*
 and the proprietary, commercial FontAwesome *Pro* version but requires a
-license fee to pay.
-
-NOTE: The free versions (all releases up to 4 and the free version for 5) are
-available under SIL Open Font License 1.1, Creative Commons Attribution 4.0,
-and the MIT License.
+license fee to pay. The free versions (all releases up to 4 and the free
+version for 5) are available under SIL Open Font License 1.1, Creative
+Commons Attribution 4.0, and the MIT License.
 
 FontAwesome V5 meets the Material Design idea of _Google_, and in comparison
 to Version 4, the current version is much more than face-lifting. The new
@@ -401,19 +404,25 @@ version comes with more than 2300+ icons, but many are available only with
 the Pro license. For the Free version, only a subset of 900+ icons is
 available.
 
-NOTE: The CSS styles for FontAwesome V5 have been extended for the J1 Template
+[NOTE]
+====
+The CSS styles for FontAwesome V5 have been extended for the J1 Template
 to the same classes (and their respective names) for other Font Icon sets.
 Already existing styles like `fa-flip-vertical` are available as `fa-flip-v`
 as well.
+====
 
 You can check out what icons available at
 link:{url-fontawesome--icons}[FontAwesome Icons, {browser-window--new}].
 _FontAwesome_ V5 is fully integrated - no need for additional resources to
 load. But in comparison to Version 4, a lot of differences are to be noticed.
 
-TIP: If you haven't used V5 yet, it is highly recommended to visit the
+[TIP]
+====
+If you haven't used V5 yet, it is highly recommended to visit the
 link:{url-fontawesome--get-started}[Get started, {browser-window--new}] pages to
 learn the basics and features and styles.
+====
 
 With version V5 of _FontAwesome_, the icon set is split into two general
 parts:
@@ -422,10 +431,13 @@ parts:
 * brand icons, including symbols for companies and brands,
   indicated by *FAB*
 
-NOTE: Using FontAwesome with Asciidoc is quite easy to use as two inline
+[NOTE]
+====
+Using FontAwesome with Asciidoc is quite easy to use as two inline
 macros `fab:` and `fas:` are available to place icons where ever you want.
 See more about this in section
 link:{url-roundtrip--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
+====
 
 Find below examples of both sets and how to use with J1 Template.
 
@@ -626,10 +638,13 @@ the client is build-in and is loaded if Iconify is requested as a resource.
 To see what icon sets are available with that framework, check the page
 link:{url-iconify--icon-sets}[Iconify Icon Sets, {browser-window--new}].
 
-NOTE: Using Iconify icons with J1 Template is quite easy. An inline macro
+[NOTE]
+====
+Using Iconify icons with J1 Template is quite easy. An inline macro
 `iconify:` is available to place icons where ever you want. See more about
 this in section
 link:{url-roundtrip--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
+====
 
 Currently, over 40,000 vector icons are available for many different use cases.
 Find some examples below.
