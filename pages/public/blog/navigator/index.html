@@ -4,7 +4,7 @@ layout:                                 page
 title:                                  Navigator
 tagline:                                Explore Posts
 
-date:                                   2022-01-01
+date:                                   2023-09-20
 #last_modified:                         2023-01-01
 
 description: >
@@ -27,10 +27,11 @@ robots:
   follow:                               true
 
 image:
-  path:                                 /assets/images/modules/attics/matthaeus-1920x1280.jpg
+  path:                                 /assets/images/modules/attics/1920x1280/matthaeus.jpg
   width:                                1920
   height:                               1280
 
+#tts:                                   false
 sort:                                   date
 fab_menu_id:                            default
 scrollDynamicPagesTopOnChange:          false                                   # do NOT scroll the page to top on content changes
@@ -41,13 +42,26 @@ resources:                              [ animate, scroller ]
 resource_options:
   - attic:
       slides:
-        - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
+        - url:                          /assets/images/modules/attics/1920x1280/matthaeus.jpg
           alt:                          Photo by Matthaeus on Unsplash
           badge:
             type:                       unsplash
             author:                     Matthaeus
             href:                       https://unsplash.com/@matthaeus123
 ---
+{% comment %} Stackoverflow articles
+------------------------------------------------------------------------
+https://stackoverflow.com/questions/22763180/assign-an-array-literal-to-a-variable-in-liquid-template
+{% assign my_array = "one|two|three" | split: "|" %}
+------------------------------------------------------------------------
+{% endcomment %}
+
+{% comment %} Debugging
+------------------------------------------------------------------------
+blog_navigator_options.article_navigator.page_text: {{blog_navigator_options.article_navigator.page_text | debug}}
+------------------------------------------------------------------------
+{% endcomment %}
+
 
 {% comment %} Liquid procedures
 -------------------------------------------------------------------------------- {% endcomment %}
@@ -84,7 +98,6 @@ resource_options:
 
 {% assign previewer                           = blog_navigator_options.previewer %}
 {% assign paginate                            = paginator_options.pagination.enabled %}
-{% assign scroller                            = blog_navigator_options.scroller %}
 {% assign rtext                               = template_config.typography.rtext %}
 {% assign page_rtext                          = page.rtext %}
 {% assign page_rtext_size                     = page.rtext_size %}
@@ -97,49 +110,30 @@ resource_options:
   {% assign rtext_size = 0 %}
 {% endif %}
 
-{% comment %} language detection (disabled)
+{% comment %} Collect Button Text/Description
 -------------------------------------------------------------------------------- {% endcomment %}
-{% if site.language == "en" %}
-  {% assign language = "en" %}
-{% elsif site.language == "de"%}
-  {% assign language = "de" %}
-{% else %}
-  {% assign language = "en" %}
-{% endif %}
+{% assign home_button_text                  = blog_navigator_options.button_text.view_pager.home %}
+{% assign category_view_button_text         = blog_navigator_options.button_text.view_pager.category_view %}
+{% assign date_view_button_text             = blog_navigator_options.button_text.view_pager.date_view %}
+{% assign archive_view_button_text          = blog_navigator_options.button_text.view_pager.archive_view %}
+{% assign tag_view_button_text              = blog_navigator_options.button_text.view_pager.tag_view %}
+
+{% assign description_enabled               = blog_navigator_options.article_navigator.page_description.enabled %}
+{% assign description_text                  = blog_navigator_options.article_navigator.page_description.text %}
+{% assign headline_enabled                  = blog_navigator_options.article_navigator.headline.enabled %}
+{% assign headline_text                     = blog_navigator_options.article_navigator.headline.text %}
 
 
-
-{% if language == "en" %}
-  {% assign category_view_button_text         = blog_navigator_options.button_text.view_selector.category_view.en %}
-  {% assign date_view_button_text             = blog_navigator_options.button_text.view_selector.date_view.en %}
-  {% assign archive_view_button_text          = blog_navigator_options.button_text.view_selector.archive_view.en %}
-  {% assign tag_view_button_text              = blog_navigator_options.button_text.view_selector.tag_view.en %}
-
-  {% assign previewer_headline                = blog_navigator_options.article_previewer.page_text.en.headline %}
-  {% assign navigator_description_text        = blog_navigator_options.article_navigator.page_text.en.description %}
-  {% assign previewer_description_text        = blog_navigator_options.article_previewer.page_text.en.description %}
-{% endif %}
-
-{% if language == "de" %}
-  {% assign category_view_button_text         = blog_navigator_options.button_text.view_selector.category_view.de %}
-  {% assign date_view_button_text             = blog_navigator_options.button_text.view_selector.date_view.de %}
-  {% assign archive_view_button_text          = blog_navigator_options.button_text.view_selector.archive_view.de %}
-  {% assign tag_view_button_text              = blog_navigator_options.button_text.view_selector.tag_view.de %}
-
-  {% assign previewer_headline                = blog_navigator_options.article_previewer.page_text.de.headline %}
-  {% assign navigator_description_text        = blog_navigator_options.article_navigator.page_text.de.description %}
-  {% assign previewer_description_text        = blog_navigator_options.article_previewer.page_text.de.description %}
-{% endif %}
-
-
-{% comment %} Main container
+{% comment %} Main
 -------------------------------------------------------------------------------- {% endcomment %}
-  <!-- [INFO   ] [j1.layout.content_generator_blog.html  ] [Begin content] -->
-  <div id="main-container" class="container r-text-{{rtext_size}} js-toc-content mb-5">
-    <!-- Content placed by layouts/content_generator_blog_archive.html -->
+  <!-- [INFO   ] [blog.navigator.index.html               ] [Begin content] -->
+  <div id="navigator_content">
+
     <div id="blog_navigator">
       <div id="article_navigator">
 
+        {% comment %} Generate URLs for all Navigator Views
+        ------------------------------------------------------------------------ {% endcomment %}
         {% include {{get_page_path}} mode='absolute' %}
         {% capture navigator_path%}{{page_path}}{% endcapture %}
         {% capture archive_path %}{{navigator_path}}/archive{% endcapture %}
@@ -148,79 +142,41 @@ resource_options:
         {% capture tag_view %}{{archive_path}}/tagview/{% endcapture %}
         {% capture all_view %}{{archive_path}}/allview/{% endcapture %}
 
-        {% comment %}
-        ------------------------------------------------------------------------
-        https://stackoverflow.com/questions/22763180/assign-an-array-literal-to-a-variable-in-liquid-template
-        {% assign my_array = "one|two|three" | split: "|" %}
-        ------------------------------------------------------------------------
-        {% endcomment %}
-
-        {% comment %} Debugging
-        --------------------------------------------------------------------------------
-        blog_navigator_options.article_navigator.page_text: {{blog_navigator_options.article_navigator.page_text | debug}}
-        --------------------------------------------------------------------------------
-        {% endcomment %}
-
+        {% comment %} Generate navigation pager
+        ------------------------------------------------------------------------ {% endcomment %}
         <div class="navigator-headline">
-          <nav class="paginator speak2me-ignore mb-4">
+          <nav class="paginator speak2me-ignore">
             <ul class="pagination raised-z0">
-              <li class="page-item"><a class="page-link" href="/" title="Home">Home</a></li>
-              <li class="page-item"><a class="page-link" href="{{category_view}}" alt="View by Category">{{category_view_button_text}}</a></li>
-              <li class="page-item"><a class="page-link" href="{{date_view}}" alt="View by Date">{{date_view_button_text}}</a></li>
-              <!-- li class="page-item"><a class="page-link" href="{{tag_view}}" alt="{{tag_view_button_text}}">By Tag</a></li -->
-              <li class="page-item"><a class="page-link" href="{{all_view}}" alt="View All">{{archive_view_button_text}}</a></li>
+              <li class="page-item"><a class="page-link" href="/"                 title="Back to {{home_button_text}}">{{home_button_text}}</a></li>
+              <li class="page-item"><a class="page-link" href="{{category_view}}" title="View by {{category_view_button_text}}">{{category_view_button_text}}</a></li>
+              <li class="page-item"><a class="page-link" href="{{date_view}}"     title="View by {{date_view_button_text}}">{{date_view_button_text}}</a></li>
+          <!-- li class="page-item"><a class="page-link" href="{{tag_view}}"      title="View by {{tag_view_button_text}}">{{tag_view_button_text}}</a></li -->
+              <li class="page-item"><a class="page-link" href="{{all_view}}"      title="View {{archive_view_button_text}}">{{archive_view_button_text}}</a></li>
             </ul>
           </nav> <!-- end paginator -->
         </div> <!-- end navigator headline -->
 
-        {% if blog_navigator_options.article_navigator.page_text.enabled %}
-        <div class="view-description">{{navigator_description_text}}</div>
+        {% if description_enabled %}
+        <div class="view-description mt-4 mb-4">{{description_text}}</div>
+        {% endif %}
+
+        {% if headline_enabled %}
+        <div class="post-headline mt-4 mb-5">
+          <h2 id="post_headline" class="notoc">{{headline_text}}</h2>
+        </div>
         {% endif %}
 
       </div> <!-- end article_navigator -->
 
-      <!-- Add article previewer if paginator is enabled -->
+      {% comment %} Generate content section
+      ------------------------------------------------------------------------ {% endcomment %}
+      <!-- Add article previewer -->
       {% if paginate %}
-      <div id="article_previewer">
+      <div id="article_previewer" class="mt-5">
 
-        <div class="previewer-headline">
-
-          <div class="post-headline">
-            <h2 id="post-headline" class="notoc mt-4">{{previewer_headline}}</h2>
-          </div>
-
-          <!-- Add Jekyll Paginator if enabled: {{scroller}} -->
-          {% if scroller == 'jekyll' %} {% if paginator.total_pages > 1 %}
-          <nav class="paginator mb-4">
-            <ul class="pagination raised-z0">
-              {% if paginator.previous_page %}
-                <li class="page-item">
-                  <a class="page-link" href="{{paginator.previous_page_path}}#article_navigator">{{paginator_button_newer_posts_text}}</a>
-                </li>
-              {% else %}
-                <li class="page-item disabled"><a href="#void" class="page-link">{{paginator_button_first_post_text}}</a></li>
-              {% endif %}
-
-              {% if paginator.next_page %}
-              <li class="page-item">
-                <a class="page-link" href="{{paginator.next_page_path}}#article_navigator">{{paginator_button_older_posts_text}}</a>
-              </li>
-              {% else %}
-                <li class="page-item disabled"><a href="#void" class="page-link">{{paginator_button_last_post_text}}</a></li>
-              {% endif %}
-            </ul>
-          </nav>
-          {% endif %} {% endif %}
-
-          {% if scroller == 'jekyll' %} {% if blog_navigator_options.article_previewer.page_text.enabled %}
-          <div class="view-description mb-3">{{previewer_description_text}}</div>
-          {% endif %} {% endif %}
-
-        </div>
-
-        <div id="navigator_article_preview">
+        <div id="article_preview">
           <!-- Previewer selected of type: {{previewer}}-->
-          <div id="preview_content">
+          <div id="previewer_{{previewer}}">
             {% assign posts_collate = paginator.posts %}
             {% case previewer %}
               {% when 'list' %}

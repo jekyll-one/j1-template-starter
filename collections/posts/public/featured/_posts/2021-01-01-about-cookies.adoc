@@ -1,9 +1,12 @@
 ---
 title:                                  Cookies
-tagline:                                Good To Know
+title_extention:                        Good To Know About Cookies
+tagline:                                About Cookies
+
+#date:                                  2023-01-01
 #last_modified:                         2023-01-01
 
-categories:                             [ Technology, Featured ]
+categories:                             [ Technology ]
 tags:                                   [ Cookies ]
 
 image:
@@ -15,11 +18,12 @@ image:
 group:                                  Featured
 series:                                 Featured
 
+#tts:                                    false
 fab_menu_id:                            open_toc
 comments:                               false
 regenerate:                             false
 
-resources:                              [ animate, bmd ]
+resources:                              [ animate ]
 resource_options:
   - attic:
       padding_top:                      600
@@ -51,96 +55,104 @@ resource_options:
 Cookies can be used for various purposes, such as tracking user behavior,
 remembering login credentials, and personalizing the user experience.
 
-Providing clear and transparent information about cookies helps users
-understand how their data is used and allows them to make informed choices
-about their privacy.
+Providing clear and transparent information about using cookies by website
+operators helps users understand how their data is used and allows them to
+make better choices about their privacy.
 
 excerpt__end
 
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
 
-== What are cookies technically
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
 
-In short, a  cookie is a small piece of data that a website asks your
-browser to store on your computer or mobile device. The cookie allows the
-website to "remember" your actions or preferences over time. All modern
-browsers support cookies, but users can set their browsers to decline them
-and can delete them whenever they like. Good to know.
 
-Websites mainly use cookies for:
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mdi:clock-time-five-outline[24px, md-gray mr-2 mt-4]
+*3-5 Minutes* to read
 
-Identification::
-Identify users, on return for example.
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5"]
+== What are Cookies
 
-General information storage::
-Remember users' custom preferences.
+HTTP header cookies, or short cookies, are a small data files that a website
+asks your browser to create on your computer or mobile device. A cookie allows
+the website to store your actions or preferences over time.
 
-Support::
-Help users complete tasks without re-entering information when browsing
-from one page to another or when visiting the site later.
+All modern browsers support cookies. However, users can configure a browser
+to decline them. Moreover, all users can delete all or selected cookie files 
+whenever they like.
 
-Track behavioral::
+Find below how cookies are typically used for.
+
+[role="mt-4"]
+=== General
+
+In general, cookies are used to remember a vistors personal preferences.
+
+[role="mt-4"]
+=== Identification
+
+Cookies allows to identify users, on return for example.
+
+[role="mt-4"]
+=== Support
+
+The data stored in cookies can help users to complete tasks without
+re-entering the same information when visiting the site later.
+
+[role="mt-4"]
+=== Tracking
+
 Cookies can also be used for online behavioral target advertising and to
-show adverts relevant to something that the user searched for in the past.
-The webserver supplying the webpage can store a cookie on the user's
-computer or mobile device.
+show innformation relevant to something that users searched for in the past.
+The webserver supplying the webpage can store a cookie on the users
+computer or mobile device to store such personal preferences.
 
-All these cookies are called HTTP header cookies. Another way of storing
-cookies is through JavaScript code contained or referenced on that page.
-Each time the user requests a new page, the webserver can receive the
-values of the cookies it previously set and return the page with content
-relating to these values. Similarly, JavaScript code can read a
-cookie belonging to its domain and act accordingly.
 
-.How are they used
-[NOTE]
-====
-The web server supplying the webpage can store a cookie on the user's
-computer or mobile device. An external web server that manages files
-included or referenced in the web page can store cookies. All these
-cookies are called HTTP header cookies. Another way of storing cookies
-is through JavaScript code contained or referenced on that page.
+[role="mt-5"]
+== Types of Cookies
 
-Each time the user requests a new page, the web server can receive the
-values of the cookies it previously set and return the page with content
-relating to these values. Similarly, JavaScript code can read a
-cookie belonging to its domain and act accordingly.
-====
+Cookies let websites remember you: for example your logins or purchases.
+But they can also be a treasure trove of private info for criminals to
+spy on.
 
-== Types of cookies
+In general, cookies can't infect computers with viruses or other type of
+malware. However, some cyberattacks can hijack cookies and enable access to
+your browsing sessions. The danger lies in their ability to track individuals'
+browsing histories. Web browser manufacturers introduced many security
+functions to minimize attack risks.
 
-HTTP cookies are essential to the modern Internet but potentially a
-vulnerability to your privacy. As a necessary part of web browsing, cookies
-help web developers give you more personal, convenient website visits.
-Cookies let websites remember you, your website logins, shopping carts, and
-more. But they can also be a treasure trove of private info for criminals
-to spy on.
+A cookie can be classified by its lifespan and the website to which it
+belongs.
 
-Since the data in cookies doesn't change, cookies themselves aren't harmful.
-They *can't infect* computers with viruses or other malware. However, some
-cyberattacks can hijack cookies and enable access to your browsing sessions.
-The danger lies in their ability to track individuals' browsing histories.
-Cookies generally can be classified by its *lifespan* and the *domain* to
-which it belongs.
+[role="mt-4"]
+=== Lifespan
 
-=== By Lifespan
-
-Cookies classified by *lifespan* are either a:
+Cookies classified by lifespan are either a:
 
 Session cookie::
-Session cookies gets automatically deleted when the user closes the web browser
-and all open window tabs.
+Session cookies gets automatically deleted when the user closes the
+web browser and all open window tabs.
 
 Persistent cookie::
-A persistent cookie *remains* on the user's computer/device for a pre-defined
-period of time.
+A persistent cookie remains on the user's computer/device for a
+pre-defined period of time; for a year at the maximum.
 
-=== By Domain
+[role="mt-4"]
+=== Website
 
-Cookies classified by the *domain* to which it belongs, are either of:
+The domain classifies cookies, the web address to which it belongs is
+either of:
 
 First-party cookie::
 First-party cookie cookies are set by the webserver of the visited page
-and share the *same domain* you're visiting. These are generally safer, as
+and share the same domain you're visiting. These are generally safer, as
 long as users are browsing reputable websites or ones that have not been
 compromised.
 
@@ -148,29 +160,43 @@ Third-party cookies::
 Third-party cookies are stored by a *different* domain to the visited page.
 This can happen when the webpage references a file located outside its domain.
 Third-party cookies let advertisers or analytics companies track the user's
-browsing history across the web on *any* sites that contain their ads.
+browsing history across the web on any sites that contain their ads.
 
 
-== Security aspects on using cookies
+[role="mt-5"]
+== Security
 
-Without cookies, the web would not work as it does today. However, since the
-mid 90ies when cookies were invented, the web changed quite a lot, and so did
-the attack methods on web applications; as mentioned, the Internet is not a
-friendly place.
+Without cookies, the Web would not work as it does today. However, since the
+mid 90ies when Cookies were introduced, the web changed quite a lot, and so
+did the attack methods on web applications.
 
-A well-known attack method is known as Cross-Site Request Forgery or short
-*CSRF*. CSRF is an attack, a criminal act, that forces an end user to execute
-unwanted actions. A cookie may play a *role* in such scenarios, but they are
-not generally *unsafe* if you want, you can read more about that on the
-CRSF Page on {url-owasp-attacks--csrf}[OWASP, {browser-window--new}].
+[role="mb-4"]
+A well-known attack method is known as cross-site request forgery or short
+CSRF. A *CSRF* is an attack that forces an end user to execute unwanted
+actions. A cookie may play a role in such scenarios, but they are not
+generally unsafe.
 
-== How to control cookies
+[TIP]
+====
+If you like, read more about on a CRSF attack on the page
+link:{url-owasp-attacks--csrf}[OWASP, {browser-window--new}].
+====
 
-Users can take control, used or *not* used, or delete cookies. For more
-details, see {url-about-cookies--home}[AboutCookies]. You can delete
-all cookies that are already on your computer, and you can set most
-browsers to prevent them from being placed.
 
+[role="mt-5"]
+== Control
+
+Users can take control when cookies are used or not. You can delete all
+cookies that are already on your computer, and you
+can set most browsers to prevent them from being placed.
+
+[role="mb-4"]
 If you do this, however, you may have to manually adjust some preferences
 every time you visit a site, and some services and functionalities may not
 work.
+
+[TIP]
+====
+For more information how cookies are used, visit the page
+link:{url-about-cookies--home}[AboutCookies, {browser-window--new}].
+====

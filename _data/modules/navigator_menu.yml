@@ -213,8 +213,9 @@
       dropdown:
 
         - title:                        Speak2Me
-          href:                         /pages/public/modules/speak2me/
+          href:                         https://jekyll.one/pages/public/modules/speak2me/
           icon:                         speaker
+          target:                       _blank
 
         - title:                        Master Header
           href:                         https://jekyll.one/pages/public/manuals/modules/attic/
@@ -288,13 +289,15 @@
           icon:                         emoticon-cool-outline
           dropdown:
 
-            - title:                    mdib Icons (Regular)
+            - title:                    MDI Icons (Regular)
               href:                     https://jekyll.one/pages/public/manuals/components/fonticons/mdi/
               icon:                     emoticon-cool-outline
+              target:                   _blank
 
-            - title:                    mdib Icons (Light)
+            - title:                    MDI Icons (Light)
               href:                     https://jekyll.one/pages/public/manuals/components/fonticons/mdil/
               icon:                     emoticon-cool-outline
+              target:                   _blank
 
 #        - title:                        Blocks
 #          icon:                         page-layout-header-footer
@@ -346,6 +349,7 @@
             - title:                    Google Adsense
               href:                     https://jekyll.one/pages/public/manuals/integrations/google/adsense/
               icon:                     google-ads
+              target:                   _blank
 
     # --------------------------------------------------------------------------
     # J1 Plugins
@@ -378,6 +382,7 @@
             - title:                    Asciidoctor
               href:                     https://jekyll.one/pages/public/manuals/components/j1/plugins/asciidoctor/
               icon:                     hospital
+              target:                   _blank
 
 #           - title:                    J1 Paginator
 #             href:                     https://jekyll.one/pages/public/manuals/components/j1/plugins/j1_paginator/
@@ -446,19 +451,19 @@
       dropdown:
 
         - title:                        J1
-          href:                         /pages/public/tools/cheatsheet/j1/
+          href:                         https://jekyll.one/pages/public/tools/cheatsheet/j1/
           icon:                         alpha-j-box-outline
           target:                       _blank
         - title:                        YAML
-          href:                         /pages/public/tools/cheatsheet/yaml/
+          href:                         https://jekyll.one/pages/public/tools/cheatsheet/yaml/
           icon:                         alpha-y-box-outline
           target:                       _blank
         - title:                        Git
-          href:                         /pages/public/tools/cheatsheet/git/
+          href:                         https://jekyll.one/pages/public/tools/cheatsheet/git/
           icon:                         git
           target:                       _blank
         - title:                        Gem
-          href:                         /pages/public/tools/cheatsheet/gem/
+          href:                         https://jekyll.one/pages/public/tools/cheatsheet/gem/
           icon:                         language-ruby
           target:                       _blank
 
@@ -688,9 +693,11 @@
       title:                            Preview
       href:                             /pages/public/tools/previewer/current_theme/
       icon:                             eye
+
     - local_themes:                     enabled
       title:                            Jekyll One
       icon:                             alpha-j-box
+
     - bootswatch_themes:                enabled
       title:                            Bootswatch
       icon:                             bootstrap

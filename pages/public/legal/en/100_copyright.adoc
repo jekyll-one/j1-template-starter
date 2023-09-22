@@ -57,8 +57,11 @@ resource_options:
 {% include {{load_attributes}} scope="global" %}
 
 ifeval::[{legal-warning} == true]
-WARNING: This document *does not* constitute any *legal advice*. It is
+[WARNING]
+====
+This document *does not* constitute any *legal advice*. It is
 highly recommended to verify legal aspects and implications.
+====
 endif::[]
 
 

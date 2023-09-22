@@ -4,7 +4,7 @@ layout:                                 page
 title:                                  Archive
 tagline:                                Explore All Posts
 
-date:                                   2022-01-01
+date:                                   2023-09-20
 #last_modified:                         2023-01-01
 
 description: >
@@ -22,10 +22,12 @@ pagination:
   permalink:                            /page:num/
 
 image:
-  path:                                 /assets/images/modules/attics/matthaeus-1920x1280.jpg
+  path:                                 /assets/images/modules/attics/1920x1280/matthaeus.jpg
   width:                                1920
   height:                               1280
 
+tts:                                    true
+fab_menu_id:                            open_toc
 sort:                                   date
 exclude_from_search:                    true
 regenerate:                             false                                   # set to 'true', if update posts is required
@@ -34,13 +36,20 @@ resources:                              [ animate, scroller ]
 resource_options:
   - attic:
       slides:
-        - url:                          /assets/images/modules/attics/matthaeus-1920x1280.jpg
+        - url:                          /assets/images/modules/attics/1920x1280/matthaeus.jpg
           alt:                          Photo by Matthaeus on Unsplash
           badge:
             type:                       unsplash
             author:                     Matthaeus
             href:                       https://unsplash.com/@matthaeus123
 ---
+
+{% comment %} Debugging
+--------------------------------------------------------------------------------
+skip_categories:            {{skip_categories | debug}}
+site_category_word_list:    {{site_category_word_list | debug}}
+--------------------------------------------------------------------------------
+{% endcomment %}
 
 {% comment %} Liquid procedures
 -------------------------------------------------------------------------------- {% endcomment %}
@@ -76,9 +85,10 @@ resource_options:
   {% capture browser_page_url %}{{page.url}}{% endcapture %}
 {% endif %}
 
+{% comment %} Generate URLs for all Navigator Views
+------------------------------------------------------------------------ {% endcomment %}
 {% include {{get_page_path}} mode='absolute' %}
 {% assign navigator_path = page_path|remove_first: '/archive' %}
-
 {% capture navigator %}{{navigator_path}}/{% endcapture %}
 {% capture date_view %}{{page_path}}/dateview/{% endcapture %}
 {% capture category_view %}{{page_path}}/categoryview/{% endcapture %}
@@ -96,84 +106,75 @@ resource_options:
   {% assign image_filters = '' %}
 {% endif %}
 
-{% comment %} language detection
+{% comment %} Collect Readmore Text
 -------------------------------------------------------------------------------- {% endcomment %}
-{% if site.language == "en" %}
-  {% assign language = "en" %}
-{% elsif site.language == "de"%}
-  {% assign language = "de" %}
-{% else %}
-  {% assign language = "en" %}
+{% if blog_navigator_options.readmore_text %}
+  {% assign readmore_text = blog_navigator_options.readmore_text %}
 {% endif %}
 
-{% if language == "en" %}
-  {% assign readmore_text               = "read" %}
+{% comment %} Collect Button Text/Description
+-------------------------------------------------------------------------------- {% endcomment %}
+{% assign home_button_text                  = blog_navigator_options.button_text.view_pager.home %}
+{% assign navigator_button_text             = blog_navigator_options.button_text.view_pager.navigator %}
+{% assign category_view_button_text         = blog_navigator_options.button_text.view_pager.category_view %}
+{% assign date_view_button_text             = blog_navigator_options.button_text.view_pager.date_view %}
+{% assign archive_view_button_text          = blog_navigator_options.button_text.view_pager.archive_view %}
+{% assign tag_view_button_text              = blog_navigator_options.button_text.view_pager.tag_view %}
 
-  {% assign category_view_button_text   = blog_navigator_options.button_text.view_selector.category_view.en %}
-  {% assign date_view_button_text       = blog_navigator_options.button_text.view_selector.date_view.en %}
-  {% assign archive_view_button_text    = blog_navigator_options.button_text.view_selector.archive_view.en %}
-  {% assign tag_view_button_text        = blog_navigator_options.button_text.view_selector.tag_view.en %}
+{% assign description_enabled               = blog_navigator_options.archive_view.page_description.enabled %}
+{% assign description_text                  = blog_navigator_options.archive_view.page_description.text %}
+{% assign headline_enabled                  = blog_navigator_options.archive_view.headline.enabled %}
+{% assign headline_text                     = blog_navigator_options.archive_view.headline.text %}
 
-  {% assign view_headline               = blog_navigator_options.archive_view.page_text.en.headline %}
-  {% assign view_description_text       = blog_navigator_options.archive_view.page_text.en.description %}
-{% endif %}
-
-{% if language == "de" %}
-  {% assign readmore_text               = "lesen" %}
-
-  {% assign category_view_button_text   = blog_navigator_options.button_text.view_selector.category_view.de %}
-  {% assign date_view_button_text       = blog_navigator_options.button_text.view_selector.date_view.de %}
-  {% assign archive_view_button_text    = blog_navigator_options.button_text.view_selector.archive_view.de %}
-  {% assign tag_view_button_text        = blog_navigator_options.button_text.view_selector.tag_view.de %}
-
-  {% assign view_headline               = blog_navigator_options.archive_view.page_text.de.headline %}
-  {% assign view_description_text       = blog_navigator_options.archive_view.page_text.de.description %}
-{% endif %}
-
-{% comment %} Debugging
---------------------------------------------------------------------------------
-skip_categories:            {{skip_categories | debug}}
-site_category_word_list:    {{site_category_word_list | debug}}
---------------------------------------------------------------------------------
-{% endcomment %}
 
 {% comment %} Main
 -------------------------------------------------------------------------------- {% endcomment %}
-<!-- [INFO   ] [ {{page.url}} ] [Generate HTML}] -->
-<div class="paginator speak2me-ignore ml-3 mb-4">
+<!-- [INFO   ] [blog.navigator.archive.allview.html     ] [Begin content] -->
+
+{% comment %} Generate navigation pager
+-------------------------------------------------------------------------------- {% endcomment %}
+<div class="paginator speak2me-ignore ml-3">
   <ul class="pagination raised-z0">
-    <li class="page-item"><a class="page-link" href="/" title="Home">Home</a></li>
-    <li class="page-item"><a class="page-link" href="{{navigator}}" alt="Blog View">Navigator</a></li>
-    <li class="page-item"><a class="page-link" href="{{category_view}}" alt="View by Category">{{category_view_button_text}}</a></li>
-    <li class="page-item"><a class="page-link" href="{{date_view}}" alt="View by Date">{{date_view_button_text}}</a></li>
-    <!-- li class="page-item"><a class="page-link" href="{{tag_view}}" alt="{{tag_view_button_text}}">By Tag</a></li -->
+    <li class="page-item"><a class="page-link" href="/"                 title="Back to {{home_button_text}}">{{home_button_text}}</a></li>
+    <li class="page-item"><a class="page-link" href="{{navigator}}"     title="Back to {{navigator_button_text}}">{{navigator_button_text}}</a></li>
+    <li class="page-item"><a class="page-link" href="{{category_view}}" title="View by {{category_view_button_text}}">{{category_view_button_text}}</a></li>
+    <li class="page-item"><a class="page-link" href="{{date_view}}"     title="View by {{date_view_button_text}}">{{date_view_button_text}}</a></li>
+<!-- li class="page-item"><a class="page-link" href="{{tag_view}}"      title="View by {{tag_view_button_text}}">{{tag_view_button_text}}</a></li -->
   </ul>
 </div>
 
-<div id="index" class="post-search-results ml-3">
-  {% if blog_navigator_options.archive_view.page_text.enabled %}
-  <div class="view-description">{{view_description_text}}</div>
+{% comment %} Generate content section
+-------------------------------------------------------------------------------- {% endcomment %}
+<div id="index" class="content post-search-results ml-3">
+  {% if description_enabled %}
+  <div class="view-description mt-4 mb-4">{{description_text}}</div>
   {% endif %}
 
-  <div class="post-headline">
-    <h2 id="post-headline" class="notoc mt-5">{{view_headline}}</h2>
+  {% if headline_enabled %}
+  <div class="post-headline mt-4 mb-5">
+    <h2 id="post_headline" class="notoc">{{headline_text}}</h2>
   </div>
+  {% endif %}
 
   <!-- ul class="list-unstyled link-news" -->
   {% for post in site.posts %}
     {% comment %} {% assign excerpt = post.excerpt|truncatewords: truncate_words|replace:'...',' ...'|strip_html %} {% endcomment %}
     {% assign excerpt = post.excerpt|truncatewords: truncate_words|replace:'...',' ...' %}
 
+    {% comment %} jadams, 2023-09-20: currently NOT used
+    ----------------------------------------------------------------------------
     <!-- Collect comment provider details -->
     {% for sharing in builder_config.sharing_provider %}
       {% assign provider      = sharing.provider %}
       {% assign likes_count   = sharing.likes_count %}
       {% assign comment_count = sharing.comment_count %}
     {% endfor %}
+    ---------------------------------------------------------------------------- {% endcomment %}
 
     <article class="card raised-z0 mb-5">
-      <div class="card-header bg-primary">
-        <h3 id="{{100000|rand}}" class="card-header bg-primary notranslate">{{post.title}}</h3>
+
+      <div class="card-header bg-primary pt-3 pb-2">
+        <h3 id="{{100000|rand}}" class="md-white notranslate">{{post.title}}</h3>
       </div>
 
       <div class="row mx-0">
@@ -203,21 +204,23 @@ site_category_word_list:    {{site_category_word_list | debug}}
             <div class="card-footer-text">
 
               {% if post.date %}
-                {% if language == "en" %}
-                  <i class="mdi mdi-calendar-blank md-grey-900 mr-1"></i>{{post.date | localize: "%Y %B, %e"}}
-                {% endif %}
-                {% if language == "de" %}
-                  <i class="mdi mdi-calendar-blank md-grey-900 mr-1"></i>{{post.date | localize: "%-d. %B %Y"}}
-                {% endif %}
+              <i class="mdi mdi-calendar-blank md-grey-600 mr-2"></i>{{post.date | localize: "%Y %B, %e"}}
               {% endif %}
+
+              {% comment %} jadams, 2023-09-20: currently NOT used
+              ------------------------------------------------------------
               {% if likes_count %}
-              <span class="font-weight-bold"> · </span>
-              <i class="mdi mdi-heart md-grey-900 mr-1"></i> {{likes_count}}
+                <span class="ml-3">
+                <i class="mdib mdib-heart md-grey-900 mr-0"></i> · {{likes_count}}
+                </span>
               {% endif %}
+
               {% if comment_count %}
-              <span class="font-weight-bold"> · </span>
-              <i class="mdi mdi-comment md-grey-900 mr-1"></i> {{comment_count}}
+                <span class="ml-3">
+                <i class="mdib mdib-comment md-grey-900 mr-0"></i> · {{comment_count}}
+                </span>
               {% endif %}
+              ------------------------------------------------------------ {% endcomment %}
 
               <!-- Cleanup categories by given blacklist -->
               {% assign my_categories = post.categories | difference: category_blacklist %}

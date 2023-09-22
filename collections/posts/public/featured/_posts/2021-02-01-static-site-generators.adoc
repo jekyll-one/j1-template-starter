@@ -1,9 +1,12 @@
 ---
 title:                                  Static Site Generators
-tagline:                                Top Open Source SSGs
+title_extention:                        Top Open Source Static Site Generators
+tagline:                                Top Open Source
+
+#date:                                  2023-01-01
 #last_modified:                         2023-01-01
 
-categories:                             [ Jekyll, Featured ]
+categories:                             [ Jekyll ]
 tags:                                   [ Generators ]
 
 image:
@@ -15,10 +18,12 @@ image:
 group:                                  Featured
 series:                                 Featured
 
+#tts:                                    false
+fab_menu_id:                            open_toc
 comments:                               false
 regenerate:                             false
 
-resources:                              [ animate, bmd, lightbox ]
+resources:                              [ animate, lightbox ]
 resource_options:
   - attic:
       padding_top:                      600
@@ -43,14 +48,14 @@ resource_options:
 // Place an excerpt at the most top position
 // -----------------------------------------------------------------------------
 [role="dropcap"]
-This article highlights the top open-source projects providing static site
+This article highlights the top Open Source projects providing static site
 generators, so-called SSGs, in many different programming languages. You will
 find Jekyll one of them.
 
 A SSG is a software tool that assists in creating websites by generating
 static HTML, CSS, and JavaScript files. Unlike dynamic websites that generate
-content on the server side in response to each user request, static sites
-pre-generate the content before it's served to users.
+content on the server side in response to each request of a user, static sites
+pre-generate the content upfront it is served to users.
 
 excerpt__end
 
@@ -65,22 +70,22 @@ excerpt__end
 
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mdi:clock-time-five-outline[24px, md-gray mr-2 mt-4]
+*3 Minutes* to read
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
-== Dynamic page access
+[role="mt-5"]
+== Dynamic Webs
 
-// [role="mb-3"]
-// image::/assets/images/posts/featured/markus-spiske-2.jpg[{{page.title}}]
-
-A typical CMS-driven website works by building each and every page
+A typical website driven by a CMS works by building each and every page
 *dynamically*. That means fetching the content from a database to pass them
-over to a template system (engine) to load the page content, adding the
-required structure information (e.g., CSS styles) and Javascript components if
+over to a an middleware engine to load the content, add the required
+structure information, for example CSS styles, and Javascript components if
 needed. This means every page is assembled *on demand*.
 
-.Accessing scheme for a CMS (dynamic web)
-lightbox::kickstart-wiad--dynamic-web-access[ 800, {data-kickstart-wiad--dynamic-web-access} ]
+.Accessing Scheme for a CMS
+lightbox::kickstart-wiad--dynamic-web-access[800, {data-kickstart-wiad--dynamic-web-access}]
 
 callout::1["Web Browser"]
 callout::2["Web Server"]
@@ -88,43 +93,54 @@ callout::3["Rendering Engine (e.g. PHP-based)"]
 callout::4["Database (e.g. MySQL, Postgres)"]
 callout::5["Static content (Images, Videos, JS- and CSS files) and Caches", ml-2 mb-3]
 
-== Is a CMS needed?
 
-For many websites, dynamic page generation is entirely unnecessary and
-adds unwanted risks in terms of complexity, performance losses, and security
+[role="mt-5"]
+== Are CMS required?
+
+For many websites, dynamic page generation is entirely unnecessary and adds
+unwanted risks in terms of complexity, performance losses, and security
 issues. After all, the content of most websites changes, when the content
-authors make changes. Why the hell should a web page always assemble on
+authors make changes. Why the hell should a web page always be assembled on
 demand if there are no changes?
 
-NOTE: To be fair, most CMS are providing caching systems for web pages to
+[NOTE]
+====
+To be fair, most CMS are providing caching systems for web pages to
 prevent unnecessary creation processes. It is not easy to implement such
 a caching strategy, and in the very end, it adds the next level of
 complexity.
+====
 
-A Static Site Generator takes a different approach and generates all the pages
+A static site generator takes a different approach and generates all the pages
 of the website *upfront*. That does not necessarily mean that a static website
 is always built from scratch. Modern generators support a so-called
-incremental build, as does. When there are changes detected to the
-content, only selected pages will rebuild.
+incremental build. When there are changes detected to the content, only
+selected pages are rebuild.
 
-.Accessing scheme for a static web
-lightbox::kickstart-wiad--static-web-access[ 800, {data-kickstart-wiad--static-web-access} ]
+.Accessing Scheme for a Static Web
+lightbox::kickstart-wiad--static-web-access[800, {data-kickstart-wiad--static-web-access}]
 
 callout::1["Web Browser"]
 callout::2["Web Server"]
 callout::3["Server-side rendered (prepared) static content", ml-2 mb-3]
 
-== Statically build web pages
+
+[role="mt-5"]
+== Static Webs
 
 Overall, statically build web pages having no moving parts in the deployed
 website. This results in browser-side caching only, the performance
-goes up, and static sites are far more secure because they *build already*.
-To find out what OpenSource Static Site Generators are available today and
-their ranking in terms of popularity, go for Jamstack. You'll find a
-comprehensive list of static site generators used today.
+goes up, and static sites are far more secure because they *build* already
+and cannot be modified.
 
-Check popular static site generators at {url-jamstack--generators}[Jamstack, {browser-window--new}]!
+To find out what Open Source SSG are available today and their ranking in
+terms of popularity, go for Jamstack. You'll find a comprehensive list of
+static site generators used today.
+
+[role="mb-4"]
+Check the most popular site generators available at the
+{url-jamstack--generators}[Jamstack, {browser-window--new}]
+site.
 
 .Top Ratings at Jamstack of October 2022
-[role="mb-4"]
-image::/assets/images/posts/featured/jamstack-generators.jpg["jamstack-generators"]
+image::/assets/images/posts/featured/jamstack-generators.jpg["SSGs at Jamstack"]

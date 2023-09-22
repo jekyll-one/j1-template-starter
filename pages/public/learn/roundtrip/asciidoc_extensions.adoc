@@ -1,9 +1,9 @@
 ---
 title:                                  Extensions
-title_extention:                        Jekyll One enhancements for the Asciidoc markup language
-tagline:                                Asciidoc Markup Enhancements
+title_extention:                        Enhance Asciidoc Markup Language
+tagline:                                Asciidoc Markup
 
-date:                                   2020-11-07
+date:                                   2023-09-01
 #last_modified:                         2023-01-01
 
 description: >
@@ -24,6 +24,7 @@ image:
   width:                                1920
   height:                               1280
 
+tts:                                    false
 comments:                               false
 regenerate:                             false
 permalink:                              /pages/public/learn/roundtrip/asciidoc_extensions/
@@ -62,11 +63,10 @@ resource_options:
 [role="dropcap"]
 J1 Template implements some handy Ruby-based enhancements for the markup
 language Asciidoc. Providing extensions for a Jekyll theme is a unique feature
-of Jekyll One compared to other Jekyll themes and templates. All already
-implemented Asciidoctor extensions you'll find below. Additional valuable
-extensions to the markup language Asciidoc is made especially for documents
-of the Jekyll content type *page*, but can be used for posts or collections
-as well.
+of Jekyll One compared to other Jekyll themes and templates.
+
+[role="mb-4"]
+All already implemented Asciidoctor extensions you'll find below.
 
 [TIP]
 ====
@@ -76,6 +76,11 @@ To create Asciidoc extensions on your own, it is highly recommended to read the
 link:{url-asciidoctor--extensions-manual}[extensions section, {browser-window--new}] in
 the Asciidoctor user manual.
 ====
+
+[role="mt-4"]
+Additional valuable extensions to the markup language Asciidoc is made
+especially for documents of the Jekyll content type *page*, but can be used
+for posts or collections as well.
 
 mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 *15 Minutes* to read
@@ -90,10 +95,12 @@ J1 Template adds a simple Javascript based functionality for the
 extension adds an interactive toggle button `VIEW` to the output of a listing
 block placed to the top right of the example box.
 
+[role="mb-4"]
 If a result block `[.result]` is placed under a listing block, clicking the
 toggle button *view* `VIEW` displays or hide the content given by the
 result block.
 
+[role="mb-5"]
 [TIP]
 ====
 The *View Result Extension* is quite helpful for sections discussing
@@ -114,13 +121,14 @@ code elements.
 [role="mt-5"]
 == Asciidoc Admonitions
 
+[role="mb-5]
 Admonition blocks draw the reader to certain statements by labeling
 them as priorities displayed in separate blocks. These types of information
 blocks are called *admonitions*. The AsciiDoc markuplanguage provides five
 block types shown by the following examples.
 
 .Admonition labels
-[cols="3a,9a", subs=+macros, options="header", width="100%", role="rtable mt-3"]
+[cols="3a, 9a", subs=+macros, options="header", width="100%", role="rtable mt-3 mb-4"]
 |===
 |Name |Description
 
@@ -152,6 +160,7 @@ All colors for all default admonition blocks set to the standard
 color set. Find available block types and their colors below.
 ====
 
+[role="mr-4]
 When you want to call attention to a single paragraph, start the first
 line of the paragraph with the label you want to use. The label must be
 uppercase and followed by a colon `:`.
@@ -249,6 +258,7 @@ A *single* paragraph can be turned into a blockquote by:
 -- attribution
 ----
 
+[role="mt-5"]
 "Don't do stupid things twice. The selection is too big for that."
 -- Jean-Paul Sartre
 
@@ -269,7 +279,8 @@ paragraph text (multiline)
 ____
 ----
 
-Example of a quoted *block*:
+[role="mt-4 mb-4"]
+Example of a quoted *block*.
 
 [quote, Monty Python and the Holy Grail]
 ____
@@ -283,18 +294,13 @@ ____
 [role="mt-5"]
 == Lightboxes
 
-A lightbox is, in general, a helper which displays enlarged, almost
-screen-filling versions of images while dimming the remainder
-of the page. The technique, introduced by Lightbox V2, gained widespread
-popularity thanks to its simple style. The term lightbox has been employed
-since then for Javascript libraries to support such functionality.
-
 To make the use of the built-in lightbox easier, the J1 Template offers an
-Asciidoc extension: the lightBox block macro. The lightbox block macro
+Asciidoc extension: the lightBox block *macro*. The lightbox block macro
 `lightbox::` embeds one or more images into the output document and puts
-the default lightbox for J1 automatically on. The images width and additional
-a addtional caption text `caption text` and CSS styles are configurable for
-all images using this macro.
+the default lightbox for J1 automatically on.
+
+The images width and additional a addtional caption text `caption text`
+and CSS styles are configurable for all images using this macro.
 
 .Lightbox block for single images
 [source, no_template, role="noclip"]
@@ -323,7 +329,7 @@ J1 Gallery to rearrange images and make them fit at their best for the
 available space.
 ====
 
-[role="mt-4"]
+[role="mt-5"]
 === Standalone Images
 
 For your convenience and better readability, the image data should be
@@ -348,10 +354,13 @@ to images path `/assets/images`. The base path is automatically added to
 each image. If you want to use the default asset path for images, a relative
 path needs to be given like path-to-image `path/to/image`.
 
-WARNING: If an absolute path `/path/to/image` is configured, the base
+[WARNING]
+====
+If an absolute path `/path/to/image` is configured, the base
 path gets ignored. This is the default behavior of the Asciidoc Markup
 processor. If an absolute path is given, the full path to the images
 used has to be configured.
+====
 
 The group parameter `group` for the lightbox block `lightbox::` is optional.
 If *no* group parameter is given for a block, the related images are treated
@@ -366,13 +375,13 @@ lightbox::<block_id>[ 800, {<data-images-id>} ]
 .Lightbox block for standalone images
 lightbox::images-standalone[ 800, {data-images-standalone} ]
 
-[role="mt-4"]
+[role="mt-5"]
 === Grouped Images
 
-If more than a single image is given for a lightbox block `lightbox::`,
-the images can be grouped to enable a simple sliding functionality through
-this group of related images. Enabling this function, the group option
-`group` needs to be configured for the block.
+If more than a single image is given for a lightbox `lightbox::`, images
+can be *grouped* to enable a simple sliding functionality through
+related images. Enabling this function, the group option `group` needs to
+be configured for the block.
 
 .Lightbox block for grouped images
 [source, no_template, role="noclip"]
@@ -382,6 +391,7 @@ lightbox::<block_id>[ 400, {<data-images-group_id>}, <group_name> ]
 
 .Lightbox block for grouped images
 lightbox::images-group[ 400, {data-images-group}, group_name ]
+
 
 [role="mt-5"]
 == Galleries
@@ -559,7 +569,7 @@ optional. If not given, the icons size `size` is set to default `1x`, the
 color to *black* and no settings for *modifiers* `modifier` are applied.
 ====
 
-[role="mt-4"]
+[role="mt-5"]
 === Font Awesome Icons
 
 Font Awesome Icons can be used as inline icons by using the macro *fas* `fas:`
@@ -597,7 +607,7 @@ optional. If not given, the icons size is set to default `1x`, the color
 to *black* and no settings for modifiers  `modifier` are applied.
 ====
 
-[role="mt-4"]
+[role="mt-5"]
 === Iconify Icons
 
 Iconify Icons can be used as inline icons by using the iconify inline
