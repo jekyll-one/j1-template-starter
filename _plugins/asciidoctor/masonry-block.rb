@@ -38,7 +38,7 @@ Asciidoctor::Extensions.register do
 
     def process parent, target, attrs
       title_html  = (attrs.has_key? 'title') ? %(<div class="masonry-title">#{attrs['title']}</div>\n) : nil
-      html = %(#{title_html} <masonry id="#{target}_parent" class="masonry-parent #{attrs['role']}"></masonry>)
+      html = %(#{title_html} <div id="#{target}_parent" class="masonry-parent #{attrs['role']}"></div>)
       create_pass_block parent, html, attrs, subs: nil
     end
 

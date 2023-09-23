@@ -73,7 +73,7 @@ Asciidoctor::Extensions.register do
       end
       content = html_block.target! # See: https://stackoverflow.com/questions/4961609/extra-to-s-when-using-builder-to-generate-xml
 
-      html = %(#{title_html} <lightbox id="lb-#{target}" class="imageblock"> #{content} </lightbox>)
+      html = %(#{title_html} <div id="lb-#{target}" class="imageblock"> #{content} </div>)
 
       create_pass_block parent, html, attrs, subs: nil
     end

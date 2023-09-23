@@ -3,7 +3,7 @@ title:                                  Theme Preview
 title_extention:                        Preview Bootstrap theme for J1 Template
 tagline:                                Explore Current Styles
 
-date:                                   2022-12-01
+date:                                   2023-09-21
 #last_modified:                         2023-01-01
 
 description: >
@@ -1303,7 +1303,7 @@ whereas the <h6> tag defines the least important heading in a document.
       <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
     </div>
     <div class="col-md-4">
-      <h3 class="notoc">Example body text</h2>
+      <h3 class="notoc">Example body text</h3>
       <p>Nullam quis risus eget <a href="javascript:void(0)">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
       <p><small>This line of text is meant to be treated as fine print.</small></p>
       <p>The following is <strong>rendered as bold text</strong>.</p>
@@ -1311,7 +1311,7 @@ whereas the <h6> tag defines the least important heading in a document.
       <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
     </div>
     <div class="col-md-4">
-      <h3 class="notoc">Emphasis classes</h2>
+      <h3 class="notoc">Emphasis classes</h3>
       <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
       <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
       <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
@@ -2023,20 +2023,20 @@ link:{url-bs-docs--components-alerts}[Bootstrap Docs {char-emdash} Alerts, {brow
   <div class="row">
     <div class="col-md-4">
       <div class="alert alert-danger alert-dismissible" role="alert">
-        <strong>Oh snap!</strong> <a href="javascript:void(0)" class="alert-link">Change a few</a> things up and try submitting again.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"</button>
+        <strong>Oh snap!</strong> <a href="javascript:void(0)" class="alert-link">Change a few things up and try submitting again.</a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     </div>
     <div class="col-md-4">
       <div class="alert alert-success alert-dismissible" role="alert">
         <strong>Well done!</strong> You successfully read this important <a href="javascript:void(0)" class="alert-link">alert message</a>.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"</button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     </div>
     <div class="col-md-4">
       <div class="alert alert-info alert-dismissible" role="alert">
         <strong>Heads up!</strong> This alert needs your <a href="javascript:void(0)" class="alert-link">attention</a>, but it's not super important.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"</button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     </div>
   </div>
@@ -2372,7 +2372,7 @@ ifeval::[{cards_simple} == true]
       <div class="card mb-3" style="max-width: 20rem;">
         <div class="card-body">
           <h4 class="card-title notoc">Card title</h4>
-          <h5 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h6>
+          <h5 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="javascript:void(0)" class="card-link">Card link</a>
           <a href="javascript:void(0)" class="card-link">Another link</a>
@@ -2383,7 +2383,7 @@ ifeval::[{cards_simple} == true]
       <div class="card mb-3" style="max-width: 20rem;">
         <div class="card-body">
           <h4 class="card-title notoc">Card title</h4>
-          <h5 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h6>
+          <h5 class="card-subtitle mb-2 text-muted notoc">Card subtitle</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="javascript:void(0)" class="card-link">Card link</a>
           <a href="javascript:void(0)" class="card-link">Another link</a>
@@ -2493,8 +2493,8 @@ ifeval::[{cards_image} == true]
       <div class="card mb-3" style="max-width: 20rem;">
         <img src="/assets/images/modules/attics/building-blocks-1920x1280.jpg" alt="Free site generators">
         <div class="card-body">
-          <h5 class="card-title notoc">Card title</h5>
-          <h5 class="card-subtitle text-muted notoc">Image card subtitle</h6>
+          <h4 class="card-title notoc">Card title</h4>
+          <h5 class="card-subtitle text-muted notoc">Image card subtitle</h5>
         </div>
 
         <div class="card-body">
@@ -2507,8 +2507,8 @@ ifeval::[{cards_image} == true]
       <div class="card mb-3" style="max-width: 20rem;">
         <img src="/assets/images/modules/attics/building-blocks-1920x1280.jpg" alt="Free site generators">
         <div class="card-body">
-          <h5 class="card-title notoc">Card title</h5>
-          <h5 class="card-subtitle text-muted notoc">Image card subtitle</h6>
+          <h4 class="card-title notoc">Card title</h4>
+          <h5 class="card-subtitle text-muted notoc">Image card subtitle</h5>
         </div>
 
         <div class="card-body">
@@ -2525,8 +2525,8 @@ ifeval::[{cards_image} == true]
         <h3 class="card-header notoc">Header</h3>
         <img src="/assets/images/modules/attics/building-blocks-1920x1280.jpg" alt="Free site generators">
         <div class="card-body">
-          <h5 class="card-title notoc">Card title</h5>
-          <h5 class="card-subtitle text-muted notoc">Image card subtitle</h6>
+          <h4 class="card-title notoc">Card title</h4>
+          <h5 class="card-subtitle text-muted notoc">Image card subtitle</h5>
         </div>
 
         <div class="card-body">
@@ -2598,9 +2598,7 @@ from the top of the page.
     <div class="modal-content">
       <div class="modal-header">
         <h5 id="exampleSimpleModalLabel" class="modal-title notoc">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <p>Modal body text goes here.</p>
@@ -2640,9 +2638,7 @@ it (the backdrop).
     <div class="modal-content">
       <div class="modal-header">
         <h5 id="exampleStatcModalLabel" class="modal-title notoc">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <p>Modal body text goes here.</p>
@@ -2683,9 +2679,7 @@ the height.
     <div class="modal-content">
       <div class="modal-header">
         <h5 id="exampleModalLongTitle" class="modal-title notoc">The Extremes of Good and Evil</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <p>
@@ -2758,9 +2752,7 @@ modal body. Try the demo and scroll the content.
     <div class="modal-content">
       <div class="modal-header">
         <h5 id="exampleModalLongScrollableTitle" class="modal-title notoc">The Extremes of Good and Evil</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <p>
@@ -2830,9 +2822,7 @@ modal body. Try the demo and scroll the content.
     <div class="modal-content">
       <div class="modal-header">
         <h5 id="exampleModalVerticalCenterTitle" class="modal-title notoc">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -2873,9 +2863,7 @@ closed, any tooltips and popovers within are also automatically dismissed.
     <div class="modal-content">
       <div class="modal-header">
         <h4 id="exampleModalTooltipTitle" class="modal-title notoc">Modal title</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <h4 class="notoc">Popover in a modal</h4>
@@ -2924,7 +2912,6 @@ closed, any tooltips and popovers within are also automatically dismissed.
           class="btn-close"
           data-bs-dismiss="modal"
           aria-label="Close">
-          <span aria-hidden="true"</span>
         </button>
       </div>
       <div class="modal-body">
@@ -2932,12 +2919,14 @@ closed, any tooltips and popovers within are also automatically dismissed.
       </div>
       <div class="modal-footer">
         <button type="button"
-          class="btn btn-primary btn-flex btn-raised mr-2"> Do nothing
+          class="btn btn-primary btn-flex btn-raised mr-2">
+          Do nothing
         </button>
         <button
           type="button"
           class="btn btn-secondary btn-flex btn-raised"
-          data-bs-dismiss="modal"> Close
+          data-bs-dismiss="modal">
+          Close
         </button>
       </div>
     </div>
