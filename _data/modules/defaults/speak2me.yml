@@ -29,8 +29,11 @@ defaults:
   speechSelector:                       main
   chrome_pause_resume_cycle:            5000
 
+  mobilesDisabled:                      true
+  browsersDisabled:                     []                                      # [Firefox, Opera]
+
   modal:
-    title:                              Text-2-Speech Translation
+    title:                              Text-2-Speech Control
 
     settings:
       voice_settings_title:             Voice Settings
@@ -40,13 +43,13 @@ defaults:
       speak_button_text:                Speak
       speak_button_style:               success
       stop_button_text:                 Stop
-      stop_button_style:                primary
+      stop_button_style:                danger
       pause_button_text:                Pause
-      pause_button_style:               info
+      pause_button_style:               warning
       resume_button_text:               Resume
       resume_button_style:              info
       exit_button_text:                 Close
-      exit_button_style:                warning
+      exit_button_style:                primary
 
       voice_speed_min:                  0.1
       voice_speed_max:                  3.0

@@ -79,11 +79,11 @@ resource_options:
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
 Welcome to the preview page focussing on image modules. This page shows
-all the valuable features of the J1 Template to manage your image-based
+all of the powerful features of the J1 Template to manage your image-based
 content using lightboxes, carousels, sliders, grids, and galleries.
 
 The image-related modules of the J1 Template offer a wide range of complex
-functionality based on powerful Open Source libraries like Lightbox V2,
+functionality based on powerful Open Source libraries like Lightbox Version 2,
 Slick Slider, Master Slider, or Masonry Grid and JustifiedGallery to create
 masonry-styled preview maps.
 
@@ -98,14 +98,14 @@ mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 
 A Lightbox is a helper which displays enlarged, almost screen-filling versions
 of images while dimming the remainder of the page. The technique, introduced
-by Lightbox V2, gained widespread popularity thanks to its simple style. The
-term *Lightbox* has been employed since then for Javascript libraries to
+by Lightbox Version 2, gained widespread popularity thanks to its simple style.
+The term *Lightbox* has been employed since then for Javascript libraries to
 support such functionality.
 
 For J1 Template, different lightbox modules are available:
 
-* Lightbox V2 (default)
-* LightGallery Lightbox (optional)
+* Lightbox Version 2 (default)
+* Lightbox LightGallery (optional)
 * Slick Lightbox (for Slick Carousels only)
 
 The *default* tool employed by J1 Template is Lightbox V2, a Javascript
@@ -127,8 +127,8 @@ under the link:{url-j1-docs--lightbox-module}[Lightbox module, {browser-window--
 === Default Lightbox
 
 [role="mb-4"]
-Find below an example of using the rhe default lightbox used for standalone
-images. See how single (individual) images are linked.
+Find below an example of using the the default lightbox used for standalone
+images. See how individual images are linked.
 
 .Lightbox for standalone images
 lightbox::example-standalone[ 800, {data-images-standalone}, role="mb-4" ]
@@ -164,8 +164,8 @@ gallery::jg_old_times[]
 == J1 Carousel
 
 J1 Carousel is based on OWL Carousel V1 in the latest version. OWL Carousel
-is a clean and neat _jQuery_ slider plugin for creating fully responsive and
-touch-enabled carousel sliders.
+is a powerful jQuery plugin for creating fully responsive and touch-enabled
+carousel sliders.
 
 [role="mt-4"]
 === Simple Text Carousel
@@ -178,20 +178,19 @@ displayed as a slide show: simple text, for example.
 .Text Carousel
 carousel::demo_text_carousel[role="mb-4"]
 
-Important statements or topics can be placed, e.g., on top of an article or
-a paragraph, to give them better visibility. In one line, you can present
+Important statements or topics can be placed on top of an article or
+a paragraph to give them better visibility. In one line, you can present
 many facts to know animated for the reader's attention within a single
-line. No much space is needed!
+line.
 
 [role="mt-4"]
 === Parallax Text Carousel
 
 [role="mb-4"]
-A more visual type of text-based slide show is a parallax text slider. If
-you want to emphasize your statements focussing the meaning, this kind of a
-slide show may be interesting. Image-based slide shows may draw off the
-reader's attention from the text, therefore a pure text-based presentation
-maybe the better choice.
+A more emphasized type of text-based carousel is a parallax text slider. If
+you want to focus the meaning, this kind of a slide show may be interesting.
+Image-based slide shows may draw off the reader's attention from the text,
+therefore a pure text-based presentation maybe the better choice.
 
 .Parallax Text
 carousel::demo_text_carousel_parallax[role="mb-4"]
@@ -228,16 +227,15 @@ carousel::demo_simple[role="mb-4"]
 
 Carousels are used for an exceptionally compact form of image galleries.
 This example shows some pictures having individual caption text and supports
-a lightbox to enlarge images full size. For the example below, an almost simple
-lightbox is used: Lightbox2; or short: lightbox.
+a lightbox to enlarge images full size.
 
 .Image Carousel + Lightbox
 carousel::demo_cats[role="mb-3"]
 
 The J1 module lightbox is a simple Lightbox but offers a bunch of impressive
 features for displaying images. For example, the lightbox can display all
-images (of a carousel) as a group. If one picture is opened in the lightbox,
-others are browsed by easy-to-use control buttons.
+images as a group. If one picture is opened in the lightbox, others are
+browsed by easy-to-use control buttons.
 
 [role="mt-4"]
 === One Slide Carousel + Lightbox
@@ -254,7 +252,7 @@ carousel::demo_oneslide[role="mb-4"]
 == J1 Slick Carousel
 
 [role="mb-4"]
-_Slick_ is a popular jQuery plugin for creating responsive and fully
+Slick is a popular jQuery plugin for creating responsive and fully
 customizable carousels. It allows developers to easily create beautiful
 and dynamic carousels that can display images, videos, or any other type
 of content in a visually appealing way.
@@ -329,11 +327,11 @@ link:{url-j1-slick-previewer}[Slick Previewer, {browser-window--new}],
 [[masterSlider]]
 == J1 Master Slider
 
-The Javascript library _Master Slider_ is a 3rd party plugin fully integrated
-into the J1 Template by the module `masterslider`. J1 Template uses the *free*
-version *MS Lite*. The free version of Master Slider does *not* support
-all features: the functionality of  *filters*, *layouts* are limited and no
-*overlay* techniques are supported by MS Lite.
+Masterslider is a jQuery plugin fully integrated into the J1 Template.
+Jekyll One uses the *free* version of Masterslider well-known as MS Lite.
+The lite version does *not* support all features of the full product.
+The functionality of filters and  layouts are limited and no overlay
+techniques are supported by the MS Lite version.
 
 [role="mt-4"]
 [[carousel_versus_slider]]
@@ -398,26 +396,19 @@ masterslider::ms_00003[]
 
 [role="mt-4"]
 [[thumb_images]]
-=== MS Slider using ThumbImages
+=== [role="mt-4"] Slider using Thumb Elements
 
 To give the users better control over a slideshow, sliders provide complex UI
-elements like *thumbs* placed side-by-side (left|right), at the top, or at
-the bottom of a slideshow. Find two examples to control a slideshow by
-*thumb images*.
+elements to place dor example mini-images or short text elements side-by-side
+left or right, or at the bottom of a slideshow. Find two examples below how
+to control such a carousel element.
 
-.Slider using ThumbImages
-masterslider::ms_00004[]
+.Image controls
+masterslider::ms_00004[role="mb-5"]
 
-[role="mt-4"]
-[[thumb_info]]
-=== MS Slider using ThumbInfo
+.Text controls
+masterslider::ms_00007[role="mt-4 mb-5"]
 
-To give the users better control over a slideshow, MS Slider provides
-complex UI elements like thumbs placed side-by-side (left|right), at the
-top, or at the bottom of a slideshow.
-
-.Slider using ThumbInfo
-masterslider::ms_00007[]
 
 [role="mt-4"]
 [[partialview]]
@@ -445,31 +436,21 @@ documents:
 [role="mt-5"]
 == J1 Masonry
 
-J1 Masonry is based on the popular JavaScript library _Masonry_,  enabling
-the creation of responsive, dynamic grid layouts of *groups* of content
-elements. It uses a unique algorithm to arrange elements vertically, then
-horizontally in a responsive grid.
+J1 Masonry is a great tool to create dynamic image galleries. Image galleries
+are popular on many websites, and masonry can be a useful tool for creating
+dynamic and visually appealing galleries.
 
-The module provides a flexible configuration to enabling developers to
-customize the layout, adjust the column width, gutter size, and add
-animations.
+[role="mb-4"]
+By using masonry, you can create a gallery that displays images of different
+sizes in an aesthetically pleasing and functional way.
 
-[role="mt-4"]
-=== Grid of Images
-
-Bootstrap cards are a popular component of the Bootstrap front-end framework
-that provides a flexible and customizable way to display content on a website.
-Find an example below of how Bootstrap cards can be combined with the Masonry
-module for a fully responsive image grid.
+.Image Cards
+masonry::card_example[role="mb-5"]
 
 [TIP]
 ====
-Resize your browser window for the width to see the J1 Masonry module
-in action.
+Change the size of your current browser width to see what will happen!
 ====
-
-.Grid of Images
-masonry::card_example[]
 
 
 [role="mt-5"]
@@ -493,6 +474,7 @@ You'll have seen it in use all over the Internet!
 
 .Masonry Grid Gallery
 gallery::jg_customizer[]
+
 
 [role="mt-5"]
 == What next
