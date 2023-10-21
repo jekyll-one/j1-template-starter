@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
@@ -39,5 +39,6 @@ Asciidoctor::Extensions.register do
       %(<i class="mdib #{size_class} #{modifier} mdib-#{icon_name}"></i>)
     end
   end
+
   inline_macro MdibIconInlineMacro
 end

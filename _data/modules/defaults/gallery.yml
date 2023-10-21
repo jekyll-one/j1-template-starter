@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 
@@ -33,38 +33,28 @@ defaults:
   #
   # xhr_data_path
   # ----------------------------------------------------------------------------
-  #   All data items displayed by a gallery are being read from a
-  #   JSON file automatically generated from that configuration.
-  #   AJAX get method is used to supply the gallery with respective
-  #   the HTML code at the time the gallery is initialized (by the
-  #   J1 Adapter for J1 Justified Gallery).
+  # The HTML portion of a grid are being read from a HTML file generated
+  # automatically from its configuration for all galleries configured.
+  # AJAX methods are used to supply the needed HTML code at the time
+  # a gallery is initialized by the JS adapter.
   #
   #   values:                           string
-  #   default:                          /assets/data/galleries.json
+  #   default:                          /assets/data/galleries.html
   #
-  # instance_type
   # ----------------------------------------------------------------------------
-  #   Specifies if a modules can be run as a single instance
-  #   (only) or run in multiple instances.
   #
-  #   NOTE: The parameter instance_type controls how MODULE runner
-  #         manages configuration options.
+  enabled:                              false                                    # needed for j1.layout_shim_generator.html
+  xhr_data_path:                        /assets/data/galeries
+  gallery_complete_timeout:             1000
+
+  # ------------------------------------------------------------------------
+  # CSS filter options
   #
-  #   values:                           single|multiple
-  #   default:                          single
-  #
-  # rowHeight
-  # ----------------------------------------------------------------------------
-  #   All data items displayed by a gallery are being read from a
-  #   JSON file automatically generated from that configuration.
-  #
-  #   values:                           string
-  #   default:                          /assets/data/galleries.json
-  #
-  enabled:                              true                                    # needed for j1.layout_shim_generator.html
-  xhr_data_path:                        /assets/data/galleries.json
-  instance_type:                        multiple
-  rowHeight:                            170
+  filters:
+    enabled:                            false
+    grayscale:                          1
+    contrast:                           0.8
+    brightness:                         0.4
 
 # ------------------------------------------------------------------------------
 # END config

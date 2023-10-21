@@ -1,5 +1,5 @@
 ---
-title:                                  Image
+title:                                  Image Content
 title_extention:                        Lightboxes, Carousels, Sliders, and Galleries for J1 Template
 tagline:                                Present Images
 
@@ -11,7 +11,7 @@ description: >
                                         content using lightboxes, carousels, sliders, and galleries.
                                         The image modules of J1 Template offer a wide range of complex
                                         functionality based on powerful OpenSource libraries like
-                                        Lightbox2, Master Slider, LightGallery, or JustifiedGallery
+                                        Lightbox2, Master Slider, lightGallery, or Justified Gallery
                                         for high-end, masonry-styled preview maps.
 keywords: >
                                         open source, free, template, jekyll, jekyllone, web,
@@ -31,8 +31,8 @@ regenerate:                             false
 permalink:                              /pages/public/learn/roundtrip/present_images/
 
 resources:                              [
-                                          animate, clipboard, carousel, comments,
-                                          justifiedGallery, lightbox, lightGallery,
+                                          animate, clipboard, carousel,
+                                          gallery, lightbox, lightgallery,
                                           masterslider, masonry, rouge, slick
                                         ]
 resource_options:
@@ -64,8 +64,10 @@ resource_options:
 :url-j1-docs--lightbox-module:          https://jekyll.one/pages/public/manuals/modules/lightbox/
 :url-j1-docs--masterslider-module:      https://jekyll.one/pages/public/manuals/modules/masterslider/
 
-:url-j1-masterslider-previewer:         https://jekyll.one/pages/public/tools/previewer/masterslider/
 :url-j1-slick-previewer:                https://jekyll.one/pages/public/tools/previewer/slick/
+:url-j1-masonry-previewer:              https://jekyll.one/pages/public/tools/previewer/masonry/
+:url-j1-masterslider-previewer:         https://jekyll.one/pages/public/tools/previewer/masterslider/
+:url-j1-lightgallery-previewer:         https://jekyll.one/pages/public/tools/previewer/lightgallery/
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -105,15 +107,15 @@ support such functionality.
 For J1 Template, different lightbox modules are available:
 
 * Lightbox Version 2 (default)
-* Lightbox LightGallery (optional)
-* Slick Lightbox (for Slick Carousels only)
+* Lightbox lightGallery (optional)
+* Slick Lightbox (optional, currently for Slick Carousels only)
 
 The *default* tool employed by J1 Template is Lightbox V2, a Javascript
 library written by _Lokesh Dhakar_. For more complex use cases, like a
-thumbnail gallery preview or video support, *LightGallery* can be used
+thumbnail gallery preview or video support, *lightGallery* can be used
 alternatively.
 
-All Lightboxes are fully integrated to be used as standalone modules or
+All lightboxes are fully integrated to be used as standalone modules or
 used as helpers *under-the-hood* by other modules focussing on image-data
 like gallerys or carousels.
 
@@ -126,46 +128,51 @@ under the link:{url-j1-docs--lightbox-module}[Lightbox module, {browser-window--
 [role="mt-4"]
 === Default Lightbox
 
-[role="mb-4"]
 Find below an example of using the the default lightbox used for standalone
 images. See how individual images are linked.
 
 .Lightbox for standalone images
-lightbox::example-standalone[ 800, {data-images-standalone}, role="mb-4" ]
+lightbox::example-standalone[ 800, {data-images-standalone}, role="mt-4 mb-4" ]
 
-[role="mb-4"]
 The J1 lightbox module supports groups of images as well. Click on the image
 group below to see how a group is managed.
 
 .Lightbox for grouped images
-lightbox::example-group[ 395, {data-images-group}, group, role="mb-4 wm-800" ]
+lightbox::example-group[ 395, {data-images-group}, group, role="mt-4 mb-4 wm-800" ]
 
 
 [role="mt-5"]
-=== LightGallery
+=== lightGallery
 
-LightGallery provides more complex image data functions than the default
+lightGallery provides more complex image data functions than the default
 lightbox. The module supports a gallery-style thumbnail preview plus image
 resizing, a download dialog, sharing provider support, and more helpful.
 
 [NOTE]
 ====
-The name LightGallery implies a sort of a Gallery, but the library is a
-_lightbox_, and provides enhannced functionality on image-based data rather
+The name lightGallery implies a sort of a gallery, but the library is a
+*lightbox*, and provides enhannced functionality on image-based data rather
 than enlarged displaying of images.
 ====
 
-Check what LightGallery can do this by the following example.
+Check what lightGallery can do this by the following example.
 
+.J1 Gallery + lightGallery
 gallery::jg_old_times[]
 
+[TIP]
+====
+Find more on how the lightGallery module can be used on the
+link:{url-j1-lightgallery-previewer}[lightGallery Preview, {browser-window--new}]
+page.
+====
 
 [role="mt-5"]
 == J1 Carousel
 
-J1 Carousel is based on OWL Carousel V1 in the latest version. OWL Carousel
+J1 Carousel is based on OWL Carousel V1 in the latest version. The carousel
 is a powerful jQuery plugin for creating fully responsive and touch-enabled
-carousel sliders.
+carousel slideshows.
 
 [role="mt-4"]
 === Simple Text Carousel
@@ -173,7 +180,7 @@ carousel sliders.
 [role="mb-4"]
 A slider or carousel is typically used for displaying images. Still, the
 implementation for the J1 Template supports a lot more sources to be
-displayed as a slide show: simple text, for example.
+displayed as a slide show -- simple text for example.
 
 .Text Carousel
 carousel::demo_text_carousel[role="mb-4"]
@@ -307,7 +314,7 @@ posts display the post category, the title, the author information and
 date.
 
 .Asciidoc configuration
-[source, config, role="noclip mb-3"]
+[source, apib, role="noclip mb-3"]
 ----
 slick::post_carousel_featured[]
 ----
@@ -325,7 +332,7 @@ link:{url-j1-slick-previewer}[Slick Previewer, {browser-window--new}],
 
 [role="mt-5"]
 [[masterSlider]]
-== J1 Master Slider
+== Masterslider
 
 Masterslider is a jQuery plugin fully integrated into the J1 Template.
 Jekyll One uses the *free* version of Masterslider well-known as MS Lite.
@@ -373,9 +380,8 @@ Lightboxes on sliders out-of-the-box.
 ====
 
 .Slider using Controls + Filters + Lightbox
-masterslider::ms_00002[]
+masterslider::ms_00002[role="mt-4 mb-4"]
 
-[role="mt-4"]
 [TIP]
 ====
 Click on the Lightbox symbol mdi:image-outline[18px, md-gray] in the
@@ -392,11 +398,11 @@ MS Slider additionally provides functions to combine images and text by
 so-called *MSInfo* blocks out-of-the-box.
 
 .Slider using Images + Text
-masterslider::ms_00003[]
+masterslider::ms_00003[role="mt-4 mb-4"]
 
 [role="mt-4"]
 [[thumb_images]]
-=== [role="mt-4"] Slider using Thumb Elements
+=== Slider using Thumb Elements
 
 To give the users better control over a slideshow, sliders provide complex UI
 elements to place dor example mini-images or short text elements side-by-side
@@ -404,7 +410,7 @@ left or right, or at the bottom of a slideshow. Find two examples below how
 to control such a carousel element.
 
 .Image controls
-masterslider::ms_00004[role="mb-5"]
+masterslider::ms_00004[role="mt-4 mb-5"]
 
 .Text controls
 masterslider::ms_00007[role="mt-4 mb-5"]
@@ -420,7 +426,7 @@ a larger number of slides. The layout `partialview` accompanies the active
 slide by their neighbors on the left and the right.
 
 .Slider using PartialView
-masterslider::ms_00009[]
+masterslider::ms_00009[role="mt-4 mb-5"]
 
 [role="mt-4"]
 [[more_about_masterslider]]
@@ -436,25 +442,25 @@ documents:
 [role="mt-5"]
 == J1 Masonry
 
-J1 Masonry is a great tool to create dynamic image galleries. Image galleries
+Masonry is a great tool to create dynamic image galleries. Image galleries
 are popular on many websites, and masonry can be a useful tool for creating
 dynamic and visually appealing galleries.
 
-[role="mb-4"]
 By using masonry, you can create a gallery that displays images of different
 sizes in an aesthetically pleasing and functional way.
 
-.Image Cards
-masonry::card_example[role="mb-5"]
+.Masonry Grid of Images + Lightbox
+masonry::image_fixed_height_lb[role="mt-4 mb-4"]
 
 [TIP]
 ====
-Change the size of your current browser width to see what will happen!
+Find more on how the Masonry module can be used on the
+link:{url-j1-masonry-previewer}[Masonry Preview, {browser-window--new}] page.
 ====
 
 
 [role="mt-5"]
-== JustifiedGallery
+== J1 Gallery
 
 link:{url-justified-gallery--home}[JustifiedGallery, {browser-window--new}]
 is a great _jQuery_ Plugin to create responsive, infinite, and high-quality
@@ -467,13 +473,15 @@ browser window, by width or height to see what will happen!
 Pictures you've made are typically not even in size. Images may have the
 same size (resolution), but some are orientated landscapes, or others
 may be portraits. For that reason, a more powerful gallery is needed to create
-so-called justified views. JustifiedGallery uses a so-called masonry grid
-layout. It works by placing elements in an optimal position based on available
-horizontal and vertical space. Sort of like mason fitting stones in a wall.
-You'll have seen it in use all over the Internet!
+so-called justified views. J1 Gallery is based on Justified Gallery to create
+so-called masonry grid layouts.
 
-.Masonry Grid Gallery
-gallery::jg_customizer[]
+It works by placing elements in an optimal position based on available
+horizontal and vertical space. Sort of like mason fitting stones in a wall.
+You'll have seen it for sure in use all over the Internet.
+
+.J1 Gallery of Images + lightGallery
+gallery::jg_mega_cities[role="mb-4"]
 
 
 [role="mt-5"]
@@ -491,4 +499,5 @@ Player, Quicktime, or Silverlight is no longer needed as the Jekyll theme
 JekyllOne provides HTML5 Video support for local video content and from
 online sources on the Internet.
 
+[role="mb-7"]
 Incredible? See the next example page link:{url-roundtrip--present-videos}[Present Videos].

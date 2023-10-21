@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 require 'fileutils'
@@ -391,6 +391,6 @@ end
 
 module Jekyll
   module J1LunrSearch
-    VERSION = '2023.9.2'
+    VERSION = '2023.10.1'
   end
 end

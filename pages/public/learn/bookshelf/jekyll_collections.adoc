@@ -26,7 +26,7 @@ image:
 regenerate:                             false
 permalink:                              /pages/public/learn/bookshelf/jekyll_collections/
 
-resources:                              [ animate ]
+resources:                              [ animate, rouge ]
 resource_options:
   - attic:
       slides:
@@ -149,7 +149,7 @@ open-source, which means you should trust the community to work-together
 for the best common-case solution.
 ====
 
-
+[role="mt-4"]
 === Collections in practice
 
 But what if one day you decided to expand your offerings and sell
@@ -207,6 +207,7 @@ https://github.com/github/choosealicense.com/tree/gh-pages/licenses[a licenses c
 and are displayed via
 https://github.com/github/choosealicense.com/blob/gh-pages/licenses.html[a licensed page, {browser-window--new}].
 
+[role="mt-4"]
 === Other use-cases
 
 Of course this is not the only use-case, which is one of the benefits of
@@ -214,6 +215,7 @@ collections. You can turn on content generation to have the collection
 contents automatically generated, or use the where syntax to get the
 contents of specific collections to add common content, or devices to
 your site.
+
 
 [role="mt-5"]
 == Using collections
@@ -256,7 +258,7 @@ The other advantage, is, because the data is now structured and machine readable
 (rather than in plain text), you could also use the `jsonify` filter to output
 that same information as an API for use elsewhere.
 
-
+[role="mt-4"]
 === When to use a post, a page, or a collection
 
 I like to think the decision looks roughly like this:
@@ -301,10 +303,9 @@ group of "things" that can be logically grouped by a common theme
   testimonials, forms, sentences, buzz-words or call-outs
 * And honestly just about anything else
 
+[role="mb-7"]
 Collections are a powerful (and often misunderstood) Jekyll feature, but
 hopefully you've now got an idea or two for your next Jekyll project. Of
 course, if you're looking to dig in to collections, be sure to check out
 http://jekyllrb.com/docs/collections/[the formal documentation, {browser-window--new}]
 for a much more in-depth explanation.
-
-Happy Jekylling!

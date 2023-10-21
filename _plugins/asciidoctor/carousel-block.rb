@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
@@ -18,11 +18,11 @@ include Asciidoctor
 #
 # Usage
 #
-#   carousel::carousel:id[role="additional classes"]
+#   carousel::carousel_id[role="additional classes"]
 #
 # Example:
 #
-#   .The carousel title
+#   .Carousel title
 #   carousel::owl_demo_simple[role="mb-5"]
 #
 Asciidoctor::Extensions.register do
@@ -32,15 +32,21 @@ Asciidoctor::Extensions.register do
 
     named :carousel
     name_positional_attributes 'role'
+    default_attrs 'role' => 'mt-3 mb-3'
 
-    def process parent, target, attrs
+    def process parent, target, attributes
 
-      title_html  = (attrs.has_key? 'title') ? %(<div class="carousel-title">#{attrs['title']}</div>\n) : nil
-      html = %(#{title_html} <div id="#{target}" class="slider #{attrs['role']}"></div>)
-      create_pass_block parent, html, attrs, subs: nil
+      title_html  = (attributes.has_key? 'title') ? %(<div class="carousel-title">#{attributes['title']}</div>\n) : nil
+      html        = %(
+        <div class="#{attributes['role']}">
+          #{title_html}
+          <div id="#{target}" class="slider"></div>
+        </div>
+      )
+
+      create_pass_block parent, html, attributes, subs: nil
     end
   end
 
   block_macro ImageBlockMacro
-
 end

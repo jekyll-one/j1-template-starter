@@ -10,7 +10,7 @@
  #
  # Copyright (C) 2023 Juergen Adams
  #
- # J1 Theme is licensed under the MIT License.
+ # J1 Template is licensed under the MIT License.
  # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
  # -----------------------------------------------------------------------------
  # Test data:
@@ -57,7 +57,7 @@
   <id>{{ page.url | absolute_url | xml_escape }}</id>
   <post_limited>{{ limit_posts }}</post_limited>
   <template_name>J1 Theme</template_name>
-  <template_version>2023.9.2</template_version>
+  <template_version>2023.10.1</template_version>
 
   {% assign title = site.title | default: site.name %}
   {% if page.collection != "posts" %}

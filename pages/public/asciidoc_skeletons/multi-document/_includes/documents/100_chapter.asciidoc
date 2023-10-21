@@ -8,6 +8,7 @@ These options can either be specified in a `_config.yml` file placed in your
 site’s root directory, or can be specified as flags for the `jekyll` executable
 on command-line.
 
+[role="mt-4"]
 === Global Configuration
 
 The table below lists the available settings for Jekyll, and the various
@@ -29,10 +30,12 @@ Do not use an important location for `<destination>` instead, use it as a
 staging area and copy files from there to your web server.
 ====
 
+[role="mt-4"]
 === Build Command Options
 
 include::../tables/build_command_options.asciidoc[]
 
+[role="mt-4"]
 === Serve Command Options
 
 In addition to the options below, the `serve` sub-command can accept any of
@@ -49,6 +52,7 @@ This will either lead to parsing errors, or Jekyll will revert to the
 default settings. Use spaces instead.
 ====
 
+[role="mt-4"]
 === Custom WEBrick Headers
 
 The Jekyll `serve` command enables an internal Web server - `WEBrick` - to
@@ -74,15 +78,17 @@ with Chrome's aggressive *caching* when you are in *development mode*.
 [role="mt-5"]
 == Jekyll Environment
 
-=== Folder structure
-
 Jekyll is, at its core, a text transformation engine. The concept behind the
 system is this: you give it text written in your favorite markup language, be
 that Markdown, Textile, or just plain HTML, and it churns that through a layout
-or a series of layout files. Throughout that process you can tweak how you want
-the site URLs to look, what data gets displayed in the layout, and more. This
-is all done through editing text files; the static web site is the final
-product.
+or a series of layout files.
+
+[role="mt-4"]
+=== Folder structure
+
+Throughout that process you can tweak how you want the site URLs to look,
+what data gets displayed in the layout, and more. This is all done through
+editing text files; the static web site is the final product.
 
 A basic Jekyll site usually looks something like this:
 
@@ -109,12 +115,14 @@ A basic Jekyll site usually looks something like this:
 └── index.html
 ----
 
+[role="mt-4"]
 === Files and Folders
 
 An overview of what each of these does:
 
 include::../tables/files_and_folders.asciidoc[]
 
+[role="mt-4"]
 === Set a Jekyll environment
 You can specify a Jekyll environment at build time. In the build (or serve)
 arguments, you can specify a Jekyll environment and value. The build will then
@@ -163,6 +171,7 @@ include it in production environments.
 By specifying the option in the build command, you avoid having to change
 values in your configuration files when moving from one environment to another.
 
+[role="mt-4"]
 === Front Matter defaults
 
 Using YAML Front Matter is one way that you can specify configuration in the
@@ -271,6 +280,7 @@ defaults:
 In this example, the `layout` is set to `default` inside the collection with
 the name `my_collection`.
 
+[role="mt-4"]
 ==== Precedence
 
 Jekyll will apply all of the configuration settings you specify in the
@@ -319,6 +329,7 @@ The `projects/foo_project.md` would have the `layout` set to `foobar`
 instead of `project` and the `author` set to `John Smith` instead of `Mr. Hyde`
 when the site is built.
 
+[role="mt-4"]
 === Default Configuration
 
 Jekyll runs with the following configuration options by default. Alternative
@@ -418,6 +429,7 @@ kramdown:
   footnote_nr:    1
 --------------
 
+[role="mt-4"]
 === Liquid Options
 
 Liquid's response to errors can be configured by setting `error_mode`.
@@ -427,17 +439,19 @@ The options are
 - `warn` --- Output a warning on the console for each error.
 - `strict` --- Output an error message and stop the build.
 
+[role="mt-4"]
 === Markdown Options
 
 The various Markdown renderers supported by Jekyll sometimes have extra options
 available.
 
+[role="mt-4"]
 ==== Redcarpet
 
-Redcarpet can be configured by providing an `extensions` sub-setting, whose
-value should be an array of strings. Each string should be the name of one of
-the `Redcarpet::Markdown` class's extensions; if present in the array, it will
-set the corresponding extension to `true`.
+Redcarpet Markdown can be configured by providing an `extensions` sub-setting,
+whose value should be an array of strings. Each string should be the name of
+one of the `Redcarpet::Markdown` class's extensions; if present in the array,
+it will set the corresponding extension to `true`.
 
 Jekyll handles two special Redcarpet extensions:
 
@@ -478,7 +492,8 @@ extensions are:
 
 [redcarpet_extensions]: https://github.com/vmg/redcarpet/blob/v3.2.2/README.markdown#and-its-like-really-simple-to-use
 
-### Custom Markdown Processors
+[role="mt-4"]
+=== Custom Markdown Processors
 
 If you're interested in creating a custom markdown processor, you're in luck! Create a new class in the `Jekyll::Converters::Markdown` namespace:
 
@@ -508,6 +523,7 @@ in the `_plugins` folder or as a gem, specify it in your `_config.yml`:
   markdown: MyCustomProcessor
 --------------
 
+[role="mt-4"]
 === Incremental Regeneration
 
 Incremental regeneration helps shorten build times by only generating documents

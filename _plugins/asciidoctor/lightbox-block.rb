@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # For details, see: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
@@ -21,7 +21,7 @@
 # Example:
 #
 #  .The image block title
-#  lightbox::lightbox-example[300, "pages/roundtrip/100_present_images/image-1.jpg, description 1, pages/roundtrip/100_present_images/image-2.jpg, description 2" ]
+#  lightbox::lightbox-example[450, "assets/images/modules/gallery/old_times/image_01.jpg, description 1, assets/images/modules/gallery/old_times/image_02.jpg, description 2" ]
 #
 # ------------------------------------------------------------------------------
 include Asciidoctor
@@ -35,48 +35,54 @@ Asciidoctor::Extensions.register do
     use_dsl
 
     named :lightbox
-    name_positional_attributes 'size', 'image_data', 'group'
-    default_attrs 'size' => 800
+    name_positional_attributes 'size', 'image_data', 'group', 'role'
+    default_attributes 'size' => 800,
+                        'role' => 'mt-3 mb-3'
 
-    def process parent, target, attrs
+    def process parent, target, attributes
 
       html_block    = Builder::XmlMarkup.new(:indent => 2)
       imagesdir     = parent.attr 'imagesdir'
-      images_hash   = Hash[*attrs['image_data'].split(',')]
+      images_hash   = Hash[*attributes['image_data'].split(',')]
 
-      title_html    = (attrs.has_key? 'title') ? %(<div class="lightbox-title">#{attrs['title']}</div>\n) : nil
-      role          = (attrs.has_key? 'role') ? role : ''
-      grouped       = (attrs.has_key? 'group') ? true : false
-
-      # {attrs['role']}
+      title_html    = (attributes.has_key? 'title') ? %(<div class="lightbox-title">#{attributes['title']}</div>\n) : nil
+      role          = (attributes.has_key? 'role') ? role : ''
+      grouped       = (attributes.has_key? 'group') ? true : false
 
       if grouped
-        html_block.div(:class=>"content #{attrs['role']}", :style=>"margin-bottom: 1.75rem;") {
+        html_block.div(:class=>"content", :style=>"margin-bottom: 1.75rem;") {
           images_hash.each do |i,d|
             image = i.strip
             descr = d.strip
             html_block.a(:class=>"notoc link-no-decoration",:href=>"#{imagesdir}/#{image}", :"data-lightbox"=>"lb-#{target}", :"data-title"=>"#{descr}"){
-              html_block.img(:class=>"img-fluid", :src=>"#{imagesdir}/#{image}", :alt=>"#{attrs['title']}", :width=>"#{attrs['size']}")
+              html_block.img(:class=>"img-fluid", :src=>"#{imagesdir}/#{image}", :alt=>"#{attributes['title']}", :width=>"#{attributes['size']}")
             }
           end
         }
       else
-        html_block.div(:class=>"content #{attrs['role']}", :style=>"margin-bottom: 1.75rem;") {
+        html_block.div(:class=>"content", :style=>"margin-bottom: 1.75rem;") {
           images_hash.each do |i,d|
             image = i.strip
             descr = d.strip
             html_block.a(:class=>"notoc link-no-decoration", :href=>"#{imagesdir}/#{image}", :"data-lightbox"=>"#{image}", :"data-title"=>"#{descr}"){
-              html_block.img(:class=>"img-fluid", :src=>"#{imagesdir}/#{image}", :alt=>"#{attrs['title']}", :width=>"#{attrs['size']}")
+              html_block.img(:class=>"img-fluid", :src=>"#{imagesdir}/#{image}", :alt=>"#{attributes['title']}", :width=>"#{attributes['size']}")
             }
           end
         }
       end
-      content = html_block.target! # See: https://stackoverflow.com/questions/4961609/extra-to-s-when-using-builder-to-generate-xml
 
-      html = %(#{title_html} <div id="lb-#{target}" class="lightbox-block imageblock"> #{content} </div>)
+      # See: https://stackoverflow.com/questions/4961609/extra-to-s-when-using-builder-to-generate-xml
+      content = html_block.target!
+      html    = %(
+        <div class="#{attributes['role']}">
+          #{title_html}
+          <div id="lb-#{target}" class="lightbox-block imageblock"> #{content} </div>
+        </div>
+      )
 
-      create_pass_block parent, html, attrs, subs: nil
+      create_pass_block parent, html, attributes, subs: nil
     end
   end
+
   block_macro LightboxBlockMacro
 end

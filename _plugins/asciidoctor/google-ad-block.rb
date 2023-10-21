@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
@@ -34,14 +34,19 @@ Asciidoctor::Extensions.register do
 
     named :gad
     name_positional_attributes 'role'
+    default_attrs 'role' => 'mt-3 mb-3'
 
-    def process parent, target, attrs
+    def process parent, target, attributes
 
-      html = %(<div id="#{target}" class="gad-container speak2me-ignore #{attrs['role']}"></div>)
-      create_pass_block parent, html, attrs, subs: nil
+      html = %(
+        <div class="#{attributes['role']}">
+          <div id="#{target}" class="gad-container speak2me-ignore"></div>
+        </div>
+      )
+
+      create_pass_block parent, html, attributes, subs: nil
     end
   end
 
   block_macro GoogleAdsensekBlockMacro
-
 end

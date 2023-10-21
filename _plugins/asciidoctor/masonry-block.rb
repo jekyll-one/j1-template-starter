@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
@@ -35,15 +35,21 @@ Asciidoctor::Extensions.register do
 
     named :masonry
     name_positional_attributes 'role'
+    default_attributes 'role' => 'mt-3 mb-3'
 
-    def process parent, target, attrs
-      title_html  = (attrs.has_key? 'title') ? %(<div class="masonry-title">#{attrs['title']}</div>\n) : nil
-      html = %(#{title_html} <div id="#{target}_parent" class="masonry masonry-parent #{attrs['role']}"></div>)
-      create_pass_block parent, html, attrs, subs: nil
+    def process parent, target, attributes
+
+      title_html  = (attributes.has_key? 'title') ? %(<div class="masonry-title">#{attributes['title']}</div>\n) : nil
+      html        = %(
+        <div class="#{attributes['role']}">
+          #{title_html}
+          <div id="#{target}_parent" class="masonry masonry-parent"></div>
+        </div>
+      )
+
+      create_pass_block parent, html, attributes, subs: nil
     end
-
   end
 
   block_macro MasonryBlockMacro
-
 end

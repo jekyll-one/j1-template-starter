@@ -28,7 +28,7 @@ fab_menu_id:                            default
 regenerate:                             false
 permalink:                              /pages/public/learn/bookshelf/article_previewer/biography/
 
-resources:                              [ animate, masonry ]
+resources:                              [ animate, masonry, rouge ]
 resource_options:
   - attic:
       slides:
@@ -62,7 +62,6 @@ resource_options:
 -------------------------------------------------------------------------------- {% endcomment %}
 {% comment %} site.biography: {{ site.biography | debug }} {% endcomment %}
 
-
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
@@ -95,7 +94,7 @@ provide insight into a person's life, personality, and achievements and to
 inspire and inform readers about their accomplishments and contributions
 to society.
 
-masonry::collection_biography[role="notoc mb-4"]
+masonry::collection_biography[role="notoc mb-7"]
 
 ////
 ++++

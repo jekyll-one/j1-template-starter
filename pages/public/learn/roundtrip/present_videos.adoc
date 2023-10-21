@@ -1,5 +1,5 @@
 ---
-title:                                  Video
+title:                                  Video Content
 title_extention:                        Playing HTML5 Video using J1 Template
 tagline:                                Playing Video
 
@@ -29,8 +29,8 @@ personalization:                        true
 permalink:                              /pages/public/learn/roundtrip/present_videos/
 
 resources:                              [
-                                          animate, lightGallery, justifiedGallery, video_js,
-                                          vimeo_player, vimeo_froogaloop
+                                          animate, lightgallery, gallery,
+                                          videojs, vimeoplayer
                                         ]
 resource_options:
   - attic:
@@ -39,15 +39,15 @@ resource_options:
         # Broadway Underground - still image (animate default)
         - url:                          /assets/videos/headers/present_videos/still/underground-broadway.jpg
           alt:                          Broadway Underground
-          title:                        Video
-          tagline:                      Playing Video
+#         title:                        Video Content
+#         tagline:                      Playing Video
           alignY:                       top
           animateFirst:                 false
 
         # Broadway Underground - FAYETTE ST, moved file to Github/LFS
         - url:                          /assets/videos/headers/present_videos/underground-broadway.mp4
           alt:                          Broadway Underground Video
-          title:                        Video
+          title:                        Playing Video
           tagline:                      Broadway Underground
           alignY:                       0
           isVideo:                      true
@@ -57,7 +57,7 @@ resource_options:
         # Broadway Underground - still image (animate random)
         - url:                          /assets/videos/headers/present_videos/still/underground-broadway.jpg
           alt:                          Broadway Underground
-          title:                        Video
+          title:                        Video Content
           tagline:                      Playing Video
           alignY:                       top
           transition:                   push_left|push_right|cover_up|cover_down|fade|fadeInOut
@@ -95,24 +95,24 @@ Jekyll theme J1 provides HTML5 Video support for local video content
 and from online sources on the Internet.
 
 mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
-*10 Minutes* to read
+*10-15 Minutes* to read
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
 [role="mt-5"]
-== Video Galleries
+== HTML5 Video
 
 HTML5 Video opens the doors to your way of presenting video content. All
 modern browsers support the video tag `<video>` for the HTML5. Browsers have
 a built-in multimedia framework already for decoding and displaying video
 content. No need to use such proprietary software components anymore!
 
-HTML5 Video support is given by the lightbox *LightGallery*. Two types of
-video sources are supported:
+Two types of video sources are supported:
 
-. Video files from local folders (your webspace)
-. Video files from online sources (on the Internet) like YouTube, Vimeo, etc.
+* Video files from local folders (your webspace)
+* Video files from online sources (on the Internet) like YouTube, Vimeo, etc.
 
+[role="mb-4"]
 The combination of a gallery and a lightbox is entirely usable for all
 the video content you want to present on your site. You can place galleries
 elsewhere with your content. You can use them for video blogs by putting
@@ -126,21 +126,104 @@ link:{url-light-gallery--license}[LightGallery licenses, {browser-window--new}]
 how to use LightGallery for commercial websites and projects.
 ====
 
+[role="mt-4"]
+== Video Players
+
+Video players embedded in Web pages are software components that integrate
+and play videos directly within a web page or application. These players
+are essential for websites, blogs, and apps that want to display video content
+without requiring users to download the video file or use any external
+media player.
+
+Embedded video players provide a seamless and user-friendly way to present
+video content to your audience.
+
+[role="mt-4"]
+=== HTML5
+
+HTML5 Video opens the doors to your way of presenting video content. All
+modern browsers support the video tag `<video>` for the HTML5. Browsers have
+a built-in multimedia framework already for decoding and displaying video
+content. No need to use such proprietary software components anymore.
+
+.HTML5 Player
+video::/assets/videos/gallery/html5/video1.mp4[poster="/assets/videos/gallery/video1-poster.1920.jpg" role="mt-4 mb-5"]
+
+[role="mt-4"]
+=== VideoJS
+
+VideoJS is an open-source JavaScript framework and library for building
+custom video players for the web. It provides a flexible and customizable
+platform for displaying and controlling video content on websites and web
+applications.
+
+.VideoJS
+videojs::/assets/videos/gallery/html5/video1.mp4[poster="/assets/videos/gallery/video1-poster.1920.jpg" role="mt-4 mb-5"]
+
 [role="mt-5"]
-== Local Video content
+=== YouTube
 
-Digital image content, simple pictures or videos, are easy to make. Today,
-every mobile has a camera. Presenting a bunch of pictures is done very easily
-by using *Justified Gallery*. Videos created by a digicam or a mobile can be
-played by J1 Template using the HTML5 Video support. Present videos you have
-made at it's best.
+YouTube is a popular online video-sharing platform that allows users to
+upload, view, share, and comment on videos. It was created in February 2005
+and acquired by Google in November 2006. YouTube provides a platform for
+people and organizations to publish various video content.
 
-Two players are available with LightGallery:
+.Last Carpool Karaoke
+youtube::nV8UZJNBY6Y[poster="/assets/videos/gallery/video_adele_last_carpool_caraoke_poster.1920.jpg" role="mt-4 mb-4"]
 
-. an internal player used by default
-. VideoJS {url-videojs--home}[video.js, {browser-window--new}], a
-  excellent Javascript video library including a great player
+[role="mt-4"]
+=== Dailymotion
 
+The Dailymotion platform is a monetization solution that allows to directly
+connect to high-quality advertisers through a proprietary Advertising system.
+Like YouTube, videos can be watched for free, but ads are shown on each and
+every video.
+
+.SELF Channel
+dailymotion::x87ycik[role="mt-5 mb-4"]
+
+
+[role="mt-5"]
+=== Wistia
+
+Wistia is a marketing software and video hosting platform made for B2B
+marketers with free or paid plans available. While Wistia may not be the
+*Big Man on Campus* (BMOC) like Vimeo, it still brings valuable functionality
+to the table for marketers and should be seriously considered as a viable
+video platform.
+
+.Wistia Video
+wistia::29b0fbf547[role="mt-5 mb-4"]
+
+[role="mt-5"]
+=== Vimeo
+
+Vimeo is an online video-sharing platform that allows users to upload,
+share, and view videos. It was founded in 2004 by a group of filmmakers
+and has since grown into a popular platform for individuals and businesses
+to showcase their videos. Vimeo is known for its emphasis on high-quality
+video content, creative expression, and a supportive community of creators.
+
+.Forever 21 Channel
+vimeo::179528528[role="mt-5 mb-4"]
+
+
+[role="mt-5"]
+=== Galleries of Video
+
+Videos created by a digicam or a mobile can be played by J1 Template using
+the VideoJS integration. Present videos you have made at it's best.
+
+.Asciidoc Markup
+[source, apib, role="noclip mt-4 mb-4"]
+----
+gallery::jg_video_html5[]
+----
+
+.MP4 VideoJS Video
+gallery::jg_video_html5[role="mb-5"]
+
+[role="mb-4"]
 [NOTE]
 ====
 The HTML5 specification does *not* define which video and audio formats
@@ -148,19 +231,57 @@ browsers *should* support. J1 LightGallery can play all types of standard
 HTML5 Video formats on modern browsers today like MP4, WebM, or Ogg.
 ====
 
-.MP4 Videos - VideoJS Player
-gallery::jg_video_html5[role="mb-5"]
-
 
 [role="mt-5"]
-== Online Video content
+== Online Video
 
 The Internet is full of inspiring content. If you want to present video
 content from the Internet, the online video support of J1 Template is the
 right choice.
 
-=== YouTube
+[role="mt-4"]
+=== VideoJS for YouTube
+// See: https://www.tutorialspoint.com/how-to-play-youtube-videos-using-video-js-player
 
+[role="mb-4"]
+For playing _YouTube_ videos using the VideoJS player, the template system J1
+implemented *videojs-youtube* as an add-on package. The package is automatically
+enabled if the module *video_js* is loaded.
+
+[TIP]
+====
+The *default theme* `vjs_theme_name` of VideoJS for the J1 Template system
+is the *uno* theme. Alternatively, the themes *city*, *fantasy*, *forest*,
+or *sea* are available.
+====
+
+[role="mt-4"]
+The Asciidoc extension *youtube::* can embed single YouTube videos in your
+documents for easy use.
+
+.Usage
+[source, apib, role="noclip mt-4 mb-4"]
+----
+youtube::video_id[poster="poster_image" theme="vjs_theme_name" role="CSS classes"]
+----
+
+As as example, find a standalone video of Adele and James Cordon get emotional
+reflecting about their friendship and the times they've been there for each other.
+
+.Asciidoc Markup
+[source, apib, role="noclip mt-4 mb-4"]
+----
+youtube::nV8UZJNBY6Y[poster="last_carpool_caraoke_poster.jpg"]
+----
+
+.Last Carpool Karaoke
+youtube::nV8UZJNBY6Y[poster="/assets/videos/gallery/video_adele_last_carpool_caraoke_poster.1920.jpg" role="mt-4 mb-4"]
+
+
+[role="mt-5"]
+=== YouTube Video Galleries
+
+[role="mb-4"]
 The community at link:{url-youtube--home}[YouTube, {browser-window--new}] is
 large, with over 1 billion users that watch hundreds of millions of hours of
 content every day. The number of channels on YouTube is enormous. For TV
@@ -169,24 +290,72 @@ a current gallery from *The Voice Kids*, a SAT.1 Germany production, and a
 real classic channel *Carpool Karaoke* presented by the frontman _James Corden_
 of *The Late Late Show* at CBS, Los Angeles.
 
-.The Voice Kids, Germany 2021
-gallery::jg_video_online_youtube_2[role="mb-5"]
+.Asciidoc Markup
+[source, apib, role="noclip mt-4 mb-4"]
+----
+gallery::jg_video_online_youtube[]
+----
 
-.James Cordon's Carpool Karaoke
-gallery::jg_video_online_youtube[role="mb-5"]
+.Carpool Karaoke
+gallery::jg_video_online_youtube_james_and_adele[role="mb-5"]
 
-=== Vimeo
 
+.Asciidoc Markup
+[source, apib, role="noclip mt-4 mb-4"]
+----
+gallery::jg_video_online_youtube_voice_kids[]
+----
+
+.The Voice Kids Germany 2021
+gallery::jg_video_online_youtube_voice_kids[role="mt-4 mb-5"]
+
+
+[role="mt-5"]
+=== Vimeo (VideoJS)
+// See: https://www.tutorialspoint.com/how-to-play-vimeo-files-using-video-js-player
+
+Vimeo is an online video-sharing platform that allows users to upload,
+share, and view videos. It was founded in 2004 by a group of filmmakers
+and has since grown into a popular platform for individuals and businesses
+to showcase their videos. Vimeo is known for its emphasis on high-quality
+video content, creative expression, and a supportive community of creators.
+
+Vimeo is often compared to other video-sharing platforms like YouTube.
+While YouTube focuses on a wide range of user-generated content and has
+a larger audience, Vimeo focuses on high-quality and often professional
+video.
+
+It has gained popularity among filmmakers, artists, and businesses
+looking for a platform to showcase their work with a more creative and
+controlled approach to sharing videos.
+
+.Asciidoc Markup
+[source, apib, role="noclip mt-4 mb-4"]
+----
+vimeo::179528528[]
+----
+
+.Forever 21 Channel
+vimeo::179528528[role="mt-4 mb-5"]
+
+[CAUTION]
+====
+For the current version of the Vimeo plugin, *no* VideoJS themes are
+available. The plugin is using the *original* skin of the Vimeo Player to
+control the vidoe. For upcoming versions of the plugin, VideoJS themes
+will be available.
+====
+
+
+[role="mt-5"]
+=== Vimeo Video Galleries
+
+[role="mb-4"]
 link:{url-vimeo--home}[Vimeo, {browser-window--new}] is a video-sharing
 platform that includes features such as live-streaming and customization.
 Vimeo provides many tools for video creation, editing, and broadcasting.
 The platform provides you with an excellent channel to present high-quality,
 professional videos and reach audiences worldwide.
-
-Vimeo does offer a basic, free membership, but it limits you to 500MB maximum
-storage per week. Alternately, you can book on paid plans: Plus, PRO, Business.
-Each membership has varied storage limits, but the free plan offers sufficient
-space for private projects to present video content without advertising.
 
 [NOTE]
 ====
@@ -194,10 +363,55 @@ A great plus using Vimeo is that *no advertising* is used on that
 platform.
 ====
 
-.Vimeo Video Gallery - Fashion
+[role="mt-4 mb-4"]
+Vimeo does offer a basic, free membership, but it limits you to 500MB maximum
+storage per week. Alternately, you can book on paid plans: Plus, PRO, Business.
+Each membership has varied storage limits, but the free plan offers sufficient
+space for private projects to present video content without advertising.
+
+.Asciidoc Markup
+[source, apib, role="noclip mt-4 mb-4"]
+----
+gallery::jg_video_online_vimeo[]
+----
+
+.Fashion
 gallery::jg_video_online_vimeo[role="mb-5"]
 
-=== DailyMotion
+
+[role="mt-4"]
+=== DailyMotion (VideoJS)
+
+link:{url-dailymotion--home}[Dailymotion, {browser-window--new}] is a
+French video-sharing technology platform primarily owned by
+link:{url-vivendi--home}[Vivendi, {browser-window--new}]. The platform is
+available worldwide in 183 languages and 43 localised versions featuring local
+home pages and local content.
+
+[role="mb-4"]
+The platform is a monetization solution that allows to directly
+connect to high-quality advertisers through a proprietary Advertising system.
+Like YouTube, videos can be watched for free, but ads are shown on each and
+every video.
+
+.Asciidoc Markup
+[source, apib, role="noclip mt-4 mb-4"]
+----
+dailymotion::x87ycik[]
+----
+
+.SELF Channel
+dailymotion::x87ycik[role="mt-4 mb-5"]
+
+[NOTE]
+====
+The Dailymotion plugin using the Dailymotion *SDK* in the last version of
+October 2022.
+====
+
+/////
+[role="mt-5"]
+=== DailyMotion Video Galleries
 
 link:{url-dailymotion--home}[Dailymotion, {browser-window--new}] is a French
 video-sharing technology platform primarily owned by
@@ -205,16 +419,27 @@ link:{url-vivendi--home}[Vivendi, {browser-window--new}]. The platform is
 available worldwide in 183 languages and 43 localised versions featuring local
 home pages and local content.
 
+[role="mt-4 mb-4"]
 The platform is a *monetization* solution that allows allows to directly
 connect to high-quality advertisers through a proprietary Advertising system.
 Like YouTube, videos can be watched for free, but ads are shown on each and
 every video.
 
+[role="mt-4 mb-4"]
 Dailymotion allows users to search videos by *tags*, topic *channels*, or
 user-created *groups*. Users can upload videos of up to 2 gigabytes and a
 length of 60 minutes. If a user is a MotionMaker or MotionPartner, a program
 for particularly creative users or partners, they can upload videos of
 unlimited length.
+
+.Asciidoc Markup
+[source, apib, role="noclip mt-4 mb-4"]
+----
+gallery::jg_video_online_dailymotion[]
+----
+
+.SELF Magazine
+gallery::jg_video_online_dailymotion[role="mt-4 mb-5"]
 
 [NOTE]
 ====
@@ -222,32 +447,7 @@ Like YouTube, DailyMotion is a commercial platform using *advertising*
 on all video content. On every video, an ad clip is presented of 15 to
 30 seconds in length.
 ====
-
-.DailyMotion Video Gallery - SELF Magazine (Channel)
-gallery::jg_video_online_dailymotion[role="mb-5"]
-
-=== VK
-
-link:{url-vk--home}[VK, {browser-window--new}], Vkontakte.ru until
-January 2012, is a multilingual social network operated from Russia.
-Registered users can create a profile on VK and exchange information with
-other users.
-
-According to the operator, the platform has over 100 million active users,
-but mainly in Russia, Ukraine, and other Russian spoken countries. VK is
-among the most popular websites in Russia.
-
-[NOTE]
-====
-VK is accused of insufficient protection of personal data. The platform
-is also openly criticized by neo-Nazi and neo-fascist Groups used without
-there being a handle against them so far. To date, the Russian investigative
-authorities (especially the FSB) have not made any efforts to identify
-right-wing extremists or to suppress racist currents on the platform.
-====
-
-.VK Video Gallery - Wildlife
-gallery::jg_video_online_vk[role="mb-5"]
+/////
 
 
 [role="mt-5"]
@@ -269,5 +469,6 @@ presenting text. The text will take on an important role of acting as plain
 text and as something like images. To see how text could be presented great
 for modern responsive websites.
 
+[role="mb-7"]
 What? Please find out how it works.
 Go for: link:{url-roundtrip--typography}[Typography], then.

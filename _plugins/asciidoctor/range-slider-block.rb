@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
@@ -31,14 +31,19 @@ Asciidoctor::Extensions.register do
 
     named :range_slider
     name_positional_attributes 'role'
-    default_attrs 'role' => ''
+    default_attributes 'role' => ''
 
-    def process parent, target, attrs
-      html = %(<div id="#{target}" class="range-slider speak2me-ignore #{attrs['role']}"></div>)
-      create_pass_block parent, html, attrs, subs: nil
+    def process parent, target, attributes
+
+      html = %(
+        <div class="#{attributes['role']}">
+          <div id="#{target}" class="range-slider speak2me-ignore"></div>
+        </div>
+      )
+
+      create_pass_block parent, html, attributes, subs: nil
     end
   end
 
   block_macro SliderBlockMacro
-
 end

@@ -7,7 +7,7 @@
 #
 #  Copyright (C) 2023 Juergen Adams
 #
-#  J1 Theme is licensed under the MIT License.
+#  J1 Template is licensed under the MIT License.
 #  See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 
@@ -24,6 +24,56 @@ description:
 #
 defaults:
   enabled:                              false
+
+  gutters:                              3
+
+  # ----------------------------------------------------------------------------
+  # AJAX (HTML)
+  #
+  # The HTML portion of a grid are being read from a HTML file generated
+  # automatically from its configuration for all grids configured.
+  # AJAX methods are used to supply the needed HTML code at the time
+  # a grid is initialized by the JS adapter.
+  #
+  xhr_data_path:                        /assets/data/masonry
+
+  # ------------------------------------------------------------------------
+  # VideoJS settings
+  # See details: https://jekyll.one/pages/public/manuals/videojs/videojs_api
+  # ------------------------------------------------------------------------
+  #
+  videojs:
+    enabled:                            false
+    theme:                              uno
+    options:
+      autoplay:                         false
+      controls:                         true
+      fluid:                            true
+      muted:                            false
+      preload:                          false
+      playbackRates:                    [0.25, 0.5, 1, 1.5, 2]
+      controlBar:
+        remainingTimeDisplay:           true
+        pictureInPictureToggle:         true
+        skipButtons:
+          forward:                      5
+          backward:                     5
+
+  # ----------------------------------------------------------------------------
+  # Lightbox settings
+  # See settings for lightbox:     https://jekyll.one/pages/public/manuals/modules/lightbox/
+  # See settings for lightGallery: https://jekyll.one/pages/public/manuals/videojs/videojs_api
+  # ----------------------------------------------------------------------------
+  #
+  lightbox:
+    enabled:                            false
+    type:                               lb
+
+  lightGallery:
+    plugins:                            lgFullscreen, lgThumbnail
+    options:
+      download:                         false
+      alignThumbnails:                  left
 
   # ----------------------------------------------------------------------------
   # Masonry MODULE options
@@ -47,7 +97,7 @@ defaults:
   #  default:                          true
   #
   # ----------------------------------------------------------------------------
-  initTimeout:                          500
+  initTimeout:                          1200
   hideDisabled:                         true
 
   # ------------------------------------------------------------------------
@@ -58,7 +108,7 @@ defaults:
     sm:                                 12                                      # viewport: ≥  576px, 1 colum|s
     md:                                 6                                       # viewport: ≥  768px, 2 colum|s
     lg:                                 4                                       # viewport: ≥  992px, 3 colum|s
-    xl:                                 3                                       # viewport: ≥ 1200px, 4 colum|s
+    xl:                                 4                                       # viewport: ≥ 1200px, 4 colum|s
 
   # ----------------------------------------------------------------------------
   # CSS filter options
@@ -68,16 +118,6 @@ defaults:
     grayscale:                          1
     contrast:                           1
     brightness:                         1
-
-  # ----------------------------------------------------------------------------
-  # AJAX (HTML)
-  #
-  # The HTML portion of a grid are being read from a HTML file generated
-  # automatically from its configuration for all grids configured.
-  # AJAX methods are used to supply the needed HTML code at the time
-  # a grid is initialized by the JS adapter.
-  #
-  xhr_data_path:                        /assets/data/masonry
 
   # ----------------------------------------------------------------------------
   # Masonry API options

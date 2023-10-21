@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
@@ -31,22 +31,26 @@ Asciidoctor::Extensions.register do
     use_dsl
 
     named :gist
+    name_positional_attributes 'role'
+    default_attrs 'role' => 'mt-3 mb-3'
 
-    def process parent, target, attrs
-      title_html = (attrs.has_key? 'title') ?
-          %(<div class="title speak2me-ignore notranslate">#{attrs['title']}</div>\n) : nil
+    def process parent, target, attributes
 
-      html = %(<div class="openblock gist speak2me-ignore mt-4 mb-5">
-                 #{title_html}
-                 <div class="content">
-                   <script src="https://gist.github.com/#{target}.js"></script>
-                 </div>
-               </div>)
+      title_html  = (attributes.has_key? 'title') ? %(<div class="title notranslate">#{attributes['title']}</div>\n) : nil
+      html        = %(
+        <div class="#{attributes['role']}">
+          <div class="openblock gist">
+             #{title_html}
+             <div class="content">
+               <script src="https://gist.github.com/#{target}.js"></script>
+             </div>
+          </div>
+        </div>
+      )
 
-      create_pass_block parent, html, attrs, subs: nil
+      create_pass_block parent, html, attributes, subs: nil
     end
   end
 
   block_macro GistBlockMacro
-
 end

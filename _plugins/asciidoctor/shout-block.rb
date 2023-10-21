@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
@@ -27,8 +27,6 @@ PeriodRx = /\.(?= |$)/
 Asciidoctor::Extensions.register do
 
   class ShoutBlock < Extensions::BlockProcessor
-#    PeriodRx = /\.(?= |$)/
-
     use_dsl
 
     named :shout
@@ -36,12 +34,13 @@ Asciidoctor::Extensions.register do
     name_positional_attributes 'vol'
     parse_content_as :simple
 
-    def process parent, reader, attrs
-      volume = ((attrs.delete 'vol') || 1).to_i
-      create_paragraph parent, (reader.lines.map {|l| l.upcase.gsub PeriodRx, '!' * volume }), attrs
+    def process parent, reader, attributes
+
+      volume = ((attributes.delete 'vol') || 1).to_i
+      create_paragraph parent, (reader.lines.map {|l| l.upcase.gsub PeriodRx, '!' * volume }), attributes
+
     end
   end
 
   block ShoutBlock
-
 end

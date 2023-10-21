@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
@@ -37,12 +37,13 @@ Asciidoctor::Extensions.register do
     on_contexts :example, :paragraph
 
     def process parent, reader, attrs
+
       attrs['name'] = 'answer'
       attrs['caption'] = 'Answer'
+
       create_block parent, :admonition, reader.lines, attrs, content_model: :compound
     end
   end
 
   block CustomAdmonitionBlockAnswer
-
 end

@@ -31,7 +31,7 @@ permalink:                              /pages/public/learn/roundtrip/asciidoc_e
 
 resources:                              [
                                           animate, clipboard, lightbox, lightGallery,
-                                          iconify, justifiedGallery, rouge, video_js
+                                          iconify, gallery, rouge, video_js
                                         ]
 resource_options:
   - attic:
@@ -166,7 +166,7 @@ line of the paragraph with the label you want to use. The label must be
 uppercase and followed by a colon `:`.
 
 .Admonition paragraph syntax
-[source, config]
+[source, apib]
 ----
 NOTE: Followed by the paragraph text
 ----
@@ -177,7 +177,7 @@ labels are commonly set on example blocks. The label must be uppercase
 when set as an attribute on a block.
 
 .Admonition block syntax
-[source, config]
+[source, apib]
 ----
 [NOTE]
 ====
@@ -189,7 +189,7 @@ To add an *additional* title element on an admonition, place a dot `.`
 directly followed by the text of the title.
 
 .Admonition block syntax and additional title
-[source, config]
+[source, apib]
 ----
 .title text
 [NOTE]
@@ -753,7 +753,7 @@ lorem:email[]
 // -----------------------------------------------------------------------------
 include::{documentdir}/100_gistblock.asciidoc[]
 
-[role="mt-5"]
+[role="mb-7"]
 == What next
 
 Asciidoc extensions open up the Markup language to new use cases. Using
@@ -768,5 +768,6 @@ important information to your visitors. The dialogs are positioned over
 everything else in the document so that messages get the full user's
 attention.
 
+[role="mb-7"]
 Have a look for the link:{url-roundtrip--extended-modals}[Modal Extensions]
 feature of J1 Template.

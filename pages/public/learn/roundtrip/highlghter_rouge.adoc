@@ -70,7 +70,7 @@ mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 *3 Minutes* to read
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
-[role="mt-4"]
+[role="mt-5"]
 == Select a Theme
 
 For the default themes `Uno` of J1 Template, the following _Rouge_ themes
@@ -137,6 +137,7 @@ from the button *AVAILABLE THEMES* below.
 <div id="selected" class="mt-1 mb-3"></div>
 ++++
 
+[role="mt-4"]
 === Liquid code
 
 [source, liquid]
@@ -149,6 +150,7 @@ Hello {{ 'now' | date: "%Y %h" }}
 {% endfor %}
 ----
 
+[role="mt-4"]
 === Javascript code
 
 [source, javascript]
@@ -168,6 +170,7 @@ function styleSheetLoaded(styleSheet) {
 }
 ----
 
+[role="mt-4"]
 === Ruby code
 
 [source, ruby]
@@ -191,7 +194,8 @@ end
 ----
 <1> don't miss to load the Asciidoctor ruby
 
-[role="mt-4"]
+
+[role="mt-5"]
 == What next
 
 The search option for the J1 Template is based on the search engine Lunr and
@@ -206,5 +210,6 @@ browsing your site. A good user experience and excellent content are key
 factors for the success of a website. Nothing in this business is guaranteed,
 but user experience efforts are good reasons your readers will return.
 
+[role="mb-7"]
 Check what is searching a J1 website all about at
 link:{url-roundtrip--quicksearch}[Lunr Search].

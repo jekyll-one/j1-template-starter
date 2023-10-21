@@ -8,7 +8,7 @@
 # Copyright (C) 2023 Juergen Adams
 # Copyright (C) 2022 Travis Dunn
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # Lorem adapted from Frank
 # Frank is licensed under the MIT License.
@@ -86,9 +86,10 @@ Asciidoctor::Extensions.register do
     end
 
     def email(replacement = nil)
-      delimiters = [ '_', '-', '' ]
-      domains = %w(gmail.com yahoo.com hotmail.com email.com live.com me.com mac.com aol.com fastmail.com mail.com)
-      username = name.gsub(/[^\w]/, delimiters[rand(delimiters.size)])
+      delimiters  = [ '_', '-', '' ]
+      domains     = %w(gmail.com yahoo.com hotmail.com email.com live.com me.com mac.com aol.com fastmail.com mail.com)
+      username    = name.gsub(/[^\w]/, delimiters[rand(delimiters.size)])
+
       "#{username}@#{domains[rand(domains.size)]}".downcase
     end
 

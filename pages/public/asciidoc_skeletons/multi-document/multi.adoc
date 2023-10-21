@@ -1,5 +1,5 @@
 ---
-title:                                  Multi Document Skeleton
+title:                                  Multi Document
 tagline:                                Manage High Number Of Chapters
 
 date:                                   2022-01-01
@@ -73,12 +73,6 @@ folder structure for multi-chapter AsciiDoc projects based on _Jekyll_
 and _J1 Template_. You need *both* to use this skeleton creating AsciiDoc
 documents from it.
 
-Multi-chapter documents are used for more complex articles of a website. If
-the number of chapters is or exceeds three for an article, it could make sense
-to split a larger documents chapter-wise into separate files. This document
-type is based on  *multiple* Asciidoc documents and make use of (local and
-global) Asciidoc include files and attributes.
-
 [NOTE]
 ====
 .Moving documents based on the skeleton
@@ -93,3 +87,14 @@ any subfolder of your Jekyll site.
 include::{documentdir}/100_chapter.asciidoc[]
 
 include::{documentdir}/200_chapter.asciidoc[]
+
+
+[role="mt-5"]
+== Summary
+
+[role="mb-7"]
+Multi-chapter documents are used for more complex articles of a website. If
+the number of chapters is or exceeds three for an article, it could make sense
+to split a larger documents chapter-wise into separate files. This document
+type is based on  *multiple* Asciidoc documents and make use of (local and
+global) Asciidoc include files and attributes.

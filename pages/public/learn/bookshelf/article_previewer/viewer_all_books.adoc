@@ -26,7 +26,7 @@ image:
 regenerate:                             false
 permalink:                              /pages/public/learn/bookshelf/article_previewer/all_books/
 
-resources:                              [ animate, masonry ]
+resources:                              [ animate, masonry, rouge ]
 resource_options:
   - attic:
       slides:
@@ -59,7 +59,6 @@ resource_options:
 {% comment %} Debugging
 site.biography: {{ site.biography | debug }}
 -------------------------------------------------------------------------------- {% endcomment %}
-
 
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,6 +94,7 @@ to society.
 
 masonry::collection_biography[role="mb-5"]
 
+
 [role="mt-5"]
 == Fantasy
 
@@ -106,6 +106,7 @@ all ages.
 
 masonry::collection_fantasy[role="mb-5"]
 
+
 [role="mt-5"]
 == Romance
 
@@ -115,4 +116,4 @@ two people overcome adversity to obtain their happily ever after. According to
 the Romance Writers of America, women count for 82% percent of the genre’s
 readership.
 
-masonry::collection_romance[role="mb-5"]
+masonry::collection_romance[role="mb-7"]

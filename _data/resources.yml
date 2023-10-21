@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 # NOTE:
@@ -282,6 +282,7 @@
 #      preload:                         false|true
 #      script_load:                     sync|defer|async
 #      pass_init_data:                  true|false
+#
 #      data:
 #
 #        css:                           [
@@ -357,6 +358,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   true
+
       data:
         css:                            [
                                           core/css/themes/unolight/bootstrap,
@@ -372,6 +374,32 @@ resources:
                                           core/js/template
                                         ]
         init_function:                  [ j1.init ]
+
+  # ----------------------------------------------------------------------------
+  # Bootstrap JS v5.3.2
+  # Bootstrap Javascript component
+  #
+  # See: https://getbootstrap.com/docs/5.0/getting-started/introduction/
+  #
+  - name:                               Bootstrap JS
+    resource:
+      enabled:                          true
+
+      id:                               bs5
+      comment:                          Module Bootstrap JS
+      region:                           head
+      layout:                           [ all ]
+      required:                         always
+      preload:                          false
+      script_load:
+      dependencies:                     false
+      pass_init_data:                   false
+
+      data:
+        css:                            []
+        files:                          []
+        js:                             [ modules/bootstrap/js/bootstrap ]
+        init_function:                  []
 
   # ----------------------------------------------------------------------------
   # Speak2Me
@@ -390,35 +418,14 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   true
+
       data:
         css:                            []
         files:                          [ adapter/js/speak2me.js ]
         js:                             []
         init_function:                  [ j1.adapter.speak2me.init ]
 
-  # ----------------------------------------------------------------------------
-  # Bootstrap JS v5.3.0
-  #
-  # See: https://getbootstrap.com/docs/5.0/getting-started/introduction/
-  #
-  - name:                               Bootstrap JS
-    resource:
-      enabled:                          true
 
-      id:                               bs5
-      comment:                          Module Bootstrap JS
-      region:                           head
-      layout:                           [ all ]
-      required:                         always
-      preload:                          false
-      script_load:
-      dependencies:                     false
-      pass_init_data:                   false
-      data:
-        css:                            []
-        files:                          []
-        js:                             [ modules/bootstrap/js/bootstrap ]
-        init_function:                  []
 
   # ----------------------------------------------------------------------------
   # Bootstrap Material Design (BMD), responsive UI framework for Bootstrap
@@ -438,6 +445,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/bmd.js ]
@@ -462,6 +470,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          []
@@ -487,6 +496,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/logger.js ]
@@ -512,6 +522,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          []
@@ -537,6 +548,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   true
+
       data:
         css:                            []
         files:                          [ adapter/js/attic.js ]
@@ -562,6 +574,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/navigator.js ]
@@ -586,6 +599,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [
                                           modules/mmenuLight/css/mmenu-light,
@@ -614,6 +628,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/themer.js ]
@@ -639,6 +654,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   true
+
       data:
         css:                            []
         files:                          [ adapter/js/toccer.js ]
@@ -664,6 +680,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/cookieConsent.js ]
@@ -689,6 +706,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [ modules/lunr/css/j1 ]
         files:                          [ adapter/js/lunr.js ]
@@ -717,6 +735,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   true
+
       data:
         css:                            []                                      # styles moved to Template CSS
         files:                          [ adapter/js/fab.js ]
@@ -745,6 +764,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [
                                           modules/jquery/css/jquery-ui/jquery-ui,
@@ -772,6 +792,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          []
@@ -797,6 +818,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/rtable.js ]
@@ -819,6 +841,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/asciidoctor.js ]
@@ -841,6 +864,7 @@ resources:
       script_load:
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/rtextResizer.js ]
@@ -866,6 +890,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [ modules/msDropdown/css/themes/uno/msDropdown ]
         files:                          []
@@ -890,6 +915,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [ modules/translator/css/translator ]
         files:                          [ adapter/js/translator.js ]
@@ -914,6 +940,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/analytics.js ]
@@ -941,6 +968,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/customModule.js ]
@@ -963,6 +991,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/customFunctions.js ]
@@ -986,6 +1015,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [
@@ -1013,33 +1043,12 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [ core/css/animate ]
         files:                          []
         js:                             []
         init_function:                  []
-
-  # ----------------------------------------------------------------------------
-  # Gallery Customizer, Customizer UI for JustifiedGallery
-  #
-  - name:                               J1 Gallery Customizer
-    resource:
-      enabled:                          true
-
-      id:                               justifiedGalleryCustomizer
-      comment:                          Module J1 Gallery Customizer
-      layout:                           [ app, raw ]
-      region:                           head
-      required:                         ondemand
-      preload:                          false
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   true
-      data:
-        css:                            []
-        files:                          [ adapter/js/justifiedGalleryCustomizer.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.justifiedGalleryCustomizer.init ]
 
   # ----------------------------------------------------------------------------
   # iFrameResizer, JS Client|Server implementation to manage HTML iframes
@@ -1049,7 +1058,7 @@ resources:
   #
   - name:                               J1 Framer
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               framer
       comment:                          Module J1 Framer
@@ -1060,6 +1069,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   true
+
       data:
         css:                            []
         files:                          [ adapter/js/framer.js ]
@@ -1084,6 +1094,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   true
+
       data:
         css:                            [
                                           modules/lightbox/css/lightbox,
@@ -1111,6 +1122,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [ core/css/icon-fonts/iconify ]
         files:                          []
@@ -1135,6 +1147,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         files:                          [
                                           adapter/js/algolia.js,
@@ -1163,6 +1176,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [ modules/clipboard/css/theme/uno ]
         files:                          [ adapter/js/clipboard.js ]
@@ -1185,6 +1199,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   true
+
       data:
         css:                            [
                                           modules/carousel/css/carousel,
@@ -1211,6 +1226,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [
                                           modules/masterslider/css/masterslider,
@@ -1239,6 +1255,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [
                                           modules/masterslider_pro/css/masterslider,
@@ -1264,17 +1281,17 @@ resources:
         init_function:                  [ j1.adapter.masterslider.init ]
 
   # ----------------------------------------------------------------------------
-  # Justified Gallery, JS implementation for full-featured image galleries
+  # J1 Gallery, JS implementation for full-featured image galleries
   # based on the Justified Gallery API
   #
   # See: https://miromannino.github.io/Justified-Gallery/
   #
-  - name:                               J1 Justified Gallery
+  - name:                               J1 Gallery
     resource:
       enabled:                          true
 
-      id:                               justifiedGallery
-      comment:                          Module J1 JustifiedGallery
+      id:                               gallery
+      comment:                          Module J1 Gallery
       region:                           head
       layout:                           [ home, page, post, collection, blog_archive, raw, app ]
       required:                         ondemand
@@ -1282,64 +1299,69 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   true
+
       data:
         css:                            [
                                           modules/justifiedGallery/css/justifiedGallery,
                                           modules/justifiedGallery/css/theme/uno
                                         ]
-        files:                          [ adapter/js/justifiedGallery.js ]
+        files:                          [ adapter/js/gallery.js ]
         js:                             [ modules/justifiedGallery/js/justifiedGallery ]
-        init_function:                  [ j1.adapter.justifiedGallery.init ]
+        init_function:                  [ j1.adapter.gallery.init ]
 
   # ----------------------------------------------------------------------------
   # LightGallery, JS implementaion for full-featured lightboxes based on
-  # the JS API lightGallery
+  # the JS API lightGallery v2.7.2, September 2023
   #
   # See: https://www.lightgalleryjs.com/
   #
-  - name:                               J1 LightGallery
+  - name:                               J1 LightGallery V2
     resource:
       enabled:                          true
 
-      id:                               lightGallery
-      comment:                          Module J1 LightGallery
+      id:                               lightgallery
+      comment:                          Module J1 LightGallery V2
       region:                           head
-      layout:                           [ home, page, post, collection, blog_archive, raw, app ]
+      layout:                           [ all ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [
-                                          modules/lightGallery/css/core/lightgallery,
-                                          modules/lightGallery/css/core/lg-transitions,
-                                          modules/lightGallery/css/core/lg-fb-comment-box,
-                                          modules/lightGallery/css/themes/uno
+                                          modules/lightGallery/css/lightgallery-bundle,
+                                          modules/lightGallery/css/lg-transitions,
+                                          modules/lightGallery/css/themes/uno/uno
                                         ]
         files:                          []
         js:                             [
-                                          modules/lightGallery/js/core/j1/lightgallery,
-                                          modules/lightGallery/js/modules/j1/j1-video,
-                                          modules/lightGallery/js/modules/lg-autoplay,
-                                          modules/lightGallery/js/modules/lg-fullscreen,
-                                          modules/lightGallery/js/modules/lg-hash,
-                                          modules/lightGallery/js/modules/lg-pager,
-                                          modules/lightGallery/js/modules/lg-share,
-                                          modules/lightGallery/js/modules/lg-thumbnail,
-                                          modules/lightGallery/js/modules/lg-zoom
+                                          modules/lightGallery/js/lightgallery,
+                                          modules/lightGallery/js/plugins/lg-autoplay,
+                                          modules/lightGallery/js/plugins/lg-comment,
+                                          modules/lightGallery/js/plugins/lg-fullscreen,
+                                          modules/lightGallery/js/plugins/lg-hash,
+                                          modules/lightGallery/js/plugins/lg-medium-zoom,
+                                          modules/lightGallery/js/plugins/lg-pager,
+                                          modules/lightGallery/js/plugins/lg-rotate,
+                                          modules/lightGallery/js/plugins/lg-share,
+                                          modules/lightGallery/js/plugins/lg-thumbnail,
+                                          modules/lightGallery/js/plugins/lg-video,
+                                          modules/lightGallery/js/plugins/lg-vimeo-thumbnail,
+                                          modules/lightGallery/js/plugins/lg-zoom
                                         ]
         init_function:                  []
 
   # ----------------------------------------------------------------------------
   # VideoJS Player, JS API|Player for HTML5 video content
   #
-  - name:                               VideoJS Player
+  - name:                               VideoJS
     resource:
       enabled:                          true
 
-      id:                               video_js
-      comment:                          Module VideoJS Player
+      id:                               videojs
+      comment:                          Module VideoJS
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1347,27 +1369,35 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [
                                           modules/videojs/css/video-js,
                                           modules/videojs/css/themes/city,
                                           modules/videojs/css/themes/fantasy,
                                           modules/videojs/css/themes/forest,
-                                          modules/videojs/css/themes/sea
+                                          modules/videojs/css/themes/sea,
+                                          modules/videojs/css/themes/uno
                                         ]
         files:                          []
-        js:                             [ modules/videojs/js/video ]
+        js:                             [
+                                          modules/videojs/js/video,
+                                          modules/videojs/js/plugins/dm/dailymotion,
+                                          modules/videojs/js/plugins/vm/vimeo,
+                                          modules/videojs/js/plugins/wt/wistia,
+                                          modules/videojs/js/plugins/yt/youtube
+                                        ]
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Vimeo Player Froogaloop, JS API|Player for Vimeo video content
+  # Dailymotion Player, Version v-0.0.3352-rc1 for Dailymotion Video content
   #
-  - name:                               Vimeo Froogaloop API
+  - name:                               Dailymotion Player
     resource:
       enabled:                          true
 
-      id:                               vimeo_froogaloop
-      comment:                          Module Vimeo Froogaloop
+      id:                               dailymotionplayer
+      comment:                          Module Dailymotion Player
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1375,20 +1405,21 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
-        files:                          []
-        js:                             [ modules/vimeo/froogaloop/js/froogaloop2 ]
+        files:                          [ modules/videojs/js/plugins/vm/api/dailymotion.player.min.js ]
+        js:                             []
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Vimeo Player, JS API|Player for Vimeo video content
+  # Vimeo Player, JS API|Player for Vimeo Video content
   #
   - name:                               Vimeo Player
     resource:
       enabled:                          true
 
-      id:                               vimeo_player
+      id:                               vimeoplayer
       comment:                          Module Vimeo Player
       region:                           head
       layout:                           [ all ]
@@ -1397,10 +1428,34 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
-        files:                          []
-        js:                             [ modules/vimeo/player/js/player ]
+        files:                          [ modules/videojs/js/plugins/vm/api/player.min.js ]
+        js:                             []
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # Wistia Player, JS API|Player for Wistia Video content
+  #
+  - name:                               Wistia Player
+    resource:
+      enabled:                          true
+
+      id:                               wistiaplayer
+      comment:                          Module Wistia Player
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+
+      data:
+        css:                            []
+        files:                          [ modules/videojs/js/plugins/wt/api/wistia.min.js]
+        js:                             []
         init_function:                  []
 
   # ----------------------------------------------------------------------------
@@ -1410,7 +1465,7 @@ resources:
   #
   - name:                               J1 Range Slider
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               rangeslider
       comment:                          Module J1 Range Slider
@@ -1421,6 +1476,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [ modules/rangeSlider/css/theme/uno/nouislider ]
         files:                          [ adapter/js/rangeSlider.js ]
@@ -1443,6 +1499,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [ modules/scroller/css/theme/uno ]
         files:                          [ adapter/js/scroller.js ]
@@ -1456,7 +1513,7 @@ resources:
   #
   - name:                               Advertising
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               advertising
       comment:                          Module Advertising
@@ -1467,6 +1524,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   true
+
       data:
         css:                            []
         files:                          [ adapter/js/advertising.js ]
@@ -1478,7 +1536,7 @@ resources:
   #
   - name:                               Comments
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               comments
       comment:                          Module Comments
@@ -1489,39 +1547,12 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   true
+
       data:
         css:                            []
         files:                          [ adapter/js/comments.js ]
         js:                             []
         init_function:                  [ j1.adapter.comments.init ]
-
-  # ----------------------------------------------------------------------------
-  # Dropdowns. JS API to create simple dropdown menus
-  #
-  # NOTE: Modified version for J1
-  # NOTE: Adapted|old (1.3.5) version for cash.js from Materialize
-  #
-  - name:                               Dropdowns
-    resource:
-      enabled:                          true
-
-      id:                               dropdowns
-      comment:                          Module Dropdown Menus
-      region:                           head
-      layout:                           [ all ]
-      required:                         ondemand
-      preload:                          false
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
-      data:
-        css:                            [ modules/dropdowns/css/theme/uno/dropdowns ]
-        files:                          [ adapter/js/dropdowns.js ]
-        js:                             [
-                                          modules/dropdowns/js/cash,
-                                          modules/dropdowns/js/dropdowns
-                                        ]
-        init_function:                  [ j1.adapter.dropdowns.init ]
 
   # ----------------------------------------------------------------------------
   # RequireJS
@@ -1543,6 +1574,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          []
@@ -1565,6 +1597,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/waves.js ]
@@ -1587,6 +1620,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/particles.js ]
@@ -1612,6 +1646,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [
                                           modules/slick/lightbox/css/slick-lightbox,
@@ -1645,10 +1680,14 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/masonry.js ]
-        js:                             [ modules/masonry/js/masonry ]
+        js:                             [
+                                          modules/masonry/js/masonry,
+                                          modules/masonry/js/utils/images_loaded
+                                        ]
         init_function:                  [ j1.adapter.masonry.init ]
 
   # ----------------------------------------------------------------------------
@@ -1670,6 +1709,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [ modules/iconPicker/css/universal-icon-picker ]
         files:                          [ adapter/js/iconPicker.js ]
@@ -1693,6 +1733,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/themeToggler.js ]
@@ -1716,6 +1757,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            []
         files:                          [ adapter/js/lazyLoader.js ]
@@ -1723,12 +1765,41 @@ resources:
         init_function:                  [ j1.adapter.lazyLoader.init ]
 
   # ----------------------------------------------------------------------------
+  # Dropdowns. JS API to create simple dropdown menus
+  #
+  # NOTE: Modified version for J1
+  # NOTE: Adapted|old (1.3.5) version for cash.js from Materialize
+  #
+  - name:                               Dropdowns
+    resource:
+      enabled:                          false
+
+      id:                               dropdowns
+      comment:                          Module Dropdown Menus
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+
+      data:
+        css:                            [ modules/dropdowns/css/theme/uno/dropdowns ]
+        files:                          [ adapter/js/dropdowns.js ]
+        js:                             [
+                                          modules/dropdowns/js/cash,
+                                          modules/dropdowns/js/dropdowns
+                                        ]
+        init_function:                  [ j1.adapter.dropdowns.init ]
+
+  # ----------------------------------------------------------------------------
   # slimSelect
-  # Advanced select dropdown
+  # Advanced select dropdown menus
   #
   - name:                               slimSelect
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               slim_select
       comment:                          Module slimSelect
@@ -1739,6 +1810,7 @@ resources:
       script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
+
       data:
         css:                            [ modules/slimSelect/css/select ]
         files:                          []

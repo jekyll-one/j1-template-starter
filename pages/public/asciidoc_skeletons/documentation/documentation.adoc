@@ -1,7 +1,7 @@
 ---
 # Master Document HTML conversion:      book.adoc
 #
-title:                                  Documentation Skeleton
+title:                                  Documentation
 tagline:                                Manage Huge Number Of Chapters
 
 date:                                   2022-01-01
@@ -78,12 +78,6 @@ The Asciidoc skeleton *documentation* (book) a helper for setting up a base
 file and folder structure for *complex* multi-chapter AsciiDoc projects of
 type *book* based on _Jekyll_ and _J1 Template_.
 
-A document of type  documentation typically consists in a large number
-of chapters and sections. To make this manageable, book-type documents are
-splitted in multiple files placed in a *nested* folder structure. Complex
-AsciiDoc projects of type documentation (book) can be easily worked on by
-*multiple* authors.
-
 // Include Intro
 // -----------------------------------------------------------------------------
 include::{documentdir}/000_intro.asciidoc[]
@@ -93,3 +87,13 @@ include::{documentdir}/000_intro.asciidoc[]
 include::{documentdir}/100_converter.asciidoc[]
 
 include::{documentdir}/200_themes.asciidoc[]
+
+
+[role="mt-5"]
+== Summary
+
+A document of type documentation typically consists in a large number
+of chapters and sections. To make this manageable, book-type documents are
+splitted in multiple files placed in a *nested* folder structure. Complex
+AsciiDoc projects of type documentation (book) can be easily worked on by
+*multiple* authors.

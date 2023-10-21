@@ -1,5 +1,5 @@
 ---
-title:                                  Simple Document Skeleton
+title:                                  Simple Document
 tagline:                                Create Typical Articles
 
 date:                                   2022-01-01
@@ -89,11 +89,6 @@ and folder structure for simple-document AsciiDoc pages based on _Jekyll_ and
 _J1 Template_. You need *both* to use this skeleton creating AsciiDoc
 documents from it.
 
-Simple documents are used quite often for documents of a website. If the number
-of chapters is about or less than three and the document is small in size,
-simple documents should fit. This document type is based on a *single* Asciidoc
-document and does *not* use any (local) Asciidoc include files or attributes.
-
 [NOTE]
 ====
 .Moving documents based on a J1 Skeleton
@@ -132,7 +127,7 @@ the configuration options. All *general* options can be found with the section
 and *serve* processes for a *site*, see the sections for the <<Build command>>
 and the <<Serve command>>.
 
-
+[role="mt-4"]
 === General commands
 
 The *executable* `jekyll` provides some *general* commands to create e.g. a
@@ -171,6 +166,7 @@ Example: `jekyll help build`.
 
 |===
 
+[role="mt-4"]
 === Build command
 
 Performs a one off build your site. For default, site pages gets written
@@ -263,6 +259,7 @@ Build Commands
 
 |===
 
+[role="mt-4"]
 === Serve command
 
 Create your site any time a source file changes and serves it locally using
@@ -426,6 +423,7 @@ Typically you’ll use `jekyll serve` while developing locally and
 jekyll b --incremental
 ----
 
+[role="mt-4"]
 === Run a site in mode incremental
 
 Typically you’ll use `jekyll serve` while developing locally and
@@ -435,3 +433,12 @@ Typically you’ll use `jekyll serve` while developing locally and
 ----
 jekyll s --incremental
 ----
+
+[role="mt-5"]
+== Summary
+
+[role="mb-7"]
+Simple documents are used quite often for documents of a website. If the number
+of chapters is about or less than three and the document is small in size,
+simple documents should fit. This document type is based on a *single* Asciidoc
+document and does *not* use any (local) Asciidoc include files or attributes.

@@ -7,7 +7,7 @@
 #
 # Copyright (C) 2023 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 #
 # ------------------------------------------------------------------------------
@@ -34,15 +34,21 @@ Asciidoctor::Extensions.register do
 
     named :masterslider
     name_positional_attributes 'role'
+    default_attrs 'role' => 'mt-3 mb-3'
 
-    def process parent, target, attrs
+    def process parent, target, attributes
 
-      title_html  = (attrs.has_key? 'title') ? %(<div class="carousel-title">#{attrs['title']}</div>\n) : nil
-      html = %(#{title_html} <div id="p_#{target}" class="slider master-slider-parent #{attrs['role']}"></div>)
-      create_pass_block parent, html, attrs, subs: nil
+      title_html  = (attributes.has_key? 'title') ? %(<div class="carousel-title">#{attributes['title']}</div>\n) : nil
+      html        = %(
+        <div class="#{attributes['role']}">
+          #{title_html}
+          <div id="p_#{target}" class="slider master-slider-parent"></div>
+        </div>
+      )
+
+      create_pass_block parent, html, attributes, subs: nil
     end
   end
 
   block_macro MasterSliderBlockMacro
-
 end

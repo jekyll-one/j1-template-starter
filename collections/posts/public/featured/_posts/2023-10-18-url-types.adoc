@@ -1,0 +1,98 @@
+---
+title:                                  URLs
+title_extention:                        Protocol Scheme
+tagline:                                Protocol Scheme
+
+#date:                                  2023-01-01
+#last_modified:                         2023-01-01
+
+categories:                             [ Web ]
+tags:                                   [ Protocols ]
+
+image:
+  path:                                 /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
+  width:                                1920
+  height:                               1280
+  alt:                                  J1 Starter Mockup
+
+group:                                  Featured
+series:                                 Featured
+
+#tts:                                    false
+fab_menu_id:                            open_toc
+comments:                               false
+regenerate:                             false
+
+resources:                              [ animate ]
+resource_options:
+  - attic:
+      padding_top:                      600
+      slides:
+        - url:                          /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
+          alt:                          J1 Starter Mockup
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:badges-enabled:                        false
+:url-codinghorror--understanding-mvc:   https://blog.codinghorror.com/understanding-model-view-controller
+
+// Place an excerpt at the most top position
+// -----------------------------------------------------------------------------
+[role="dropcap"]
+What is the difference between the URLs `https://domain` and `//domain`?
+
+excerpt__end
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mdi:clock-time-five-outline[24px, md-gray mr-2 mt-4]
+*2 Minutes* to read
+
+ifeval::[{badges-enabled} == true]
+{badge-j1--license} {badge-j1--version-latest} {badge-j1-gh--last-commit} {badge-j1--downloads}
+endif::[]
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5 mb-4"]
+The primary difference is that `https://domain` specifies the protocol
+*HTTPS* explicitly, while `//domain` *inherits* the protocol from the current
+webpage. Using `//domain` is a good practice to maintain consistency with the
+current page's protocol and *reduce* potential security issues related to
+*mixed content*.
+
+Absolute URL::
+
+URLs of type `https://domain` are *absolute* URLs, meaning they explicitly
+include the protocol or scheme -- in this case, "https://". When you use
+this format, you specify that the website should be accessed over *HTTPS*,
+a secure protocol for web communication. The browser will use the HTTPS
+protocol to connect to the specified domain.
+
+Protocol-relative URL::
+
+URLs of type `//domain` are *protocol-relative* URL or *network-path*
+references. It does not explicitly specify a particular protocol as *HTTP*
+or *HTTPS*. Instead, it inherits the protocol used in the *current webpage*.
+
+If the current webpage is loaded over HTTPS, the browser will use HTTPS to
+connect to the domain. If the current webpage is loaded over HTTP, it will
+use HTTP. Protocol-relative URLs often ensure that resources are loaded
+securely when a webpage can be accessed over HTTP and HTTPS without causing
+mixed content issues (e.g., loading insecure resources on a secure page).
