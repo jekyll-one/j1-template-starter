@@ -37,25 +37,34 @@ defaults:
   #
   #   enabled
   #   --------------------------------------------------------------------------
-  #   Enables or disables the Ad services. If disabled, no ads services are
-  #   enabled and no unit container get initialized on any page.
+  #   Enables or disables the Bot services.
   #
   #   values:                           [true|false]
   #   default:                          false
   #
   #   provider
   #   --------------------------------------------------------------------------
-  #   Currently, only Google adsense (google) is available as an provider
-  #   for advertising.
+  #   Currently, four procider are available. The provider are currently
+  #   NOT recommended.
   #
-  #   values:                           [webwhiz]
-  #   default:                          webwhiz
+  #   values:                           [vivochat, chatbob, tutgpt, webwhiz]
+  #   default:                          chatbob
+  #
+  #   chatbotID
+  #   --------------------------------------------------------------------------
+  #   Bot ID procided by the provider
+  #
+  #   J1 Template Bots:
+  #   vivochat:                         3d0b29f1-623a-4915-a817-e436d328f18f
+  #   chatbob:                          qhtrvti8SjKDaf9QFKn6xw
+  #   tutgpt:                           clo54vmlw000582y700nkde5t
+  #   webwhiz:                          653593d609b6412fa51792f6
   #
   # ----------------------------------------------------------------------------
   #
   enabled:                              false
 
-  provider:                             chatbob                                 # [chatbob, webwhiz]
+  provider:                             chatbob
   chatbotID:                            <your-chatbot-id>
 
 # ------------------------------------------------------------------------------
