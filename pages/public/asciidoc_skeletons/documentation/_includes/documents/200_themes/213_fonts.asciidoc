@@ -5,11 +5,14 @@ Asciidoctor PDF or custom fonts loaded from TrueType font (TTF) files.
 If you want to use custom fonts, you must first declare them in your theme
 file.
 
-IMPORTANT: _Asciidoctor_ has no challenge working with Unicode. In fact, it
+[IMPORTANT]
+====
+_Asciidoctor_ has no challenge working with Unicode. In fact, it
 prefers Unicode and considers the entire range. However, once you convert
 to PDF, you have to meet the font requirements of PDF in order to preserve
 Unicode characters. There's nothing _Asciidoctor_ can do to convince PDF to
 work with extended characters without the right fonts in play.
+====
 
 === Built-In (AFM) Fonts
 
@@ -88,9 +91,12 @@ bold and bold_italic. Also provides the circuled numbers used in callouts.
 A sans-serif font that provides a very complete set of Unicode glyphs. Cannot
 be styled as italic, bold or bold_italic. Used as the fallback font.
 
-CAUTION: At the time of this writing, you cannot use the bundled fonts if you
+[CAUTION]
+====
+At the time of this writing, you cannot use the bundled fonts if you
 change the value of the `pdf-fontsdir` attribute (and thus define your own
 custom fonts). This limitation may be lifted in the future.
+====
 
 === Custom Fonts
 
@@ -151,8 +157,11 @@ fonts reside using the `pdf-fontsdir` attribute:
 
  $ asciidoctor-pdf -a pdf-style=basic-theme.yml -a pdf-fontsdir=path/to/fonts document.adoc
 
-WARNING: Currently, all fonts referenced by the theme need to be present in
+[WARNING]
+====
+Currently, all fonts referenced by the theme need to be present in
 the directory specified by the `pdf-fontsdir` attribute.
+====
 
 When *Asciidoctor PDF* creates the PDF, it only embeds the glyphs from the font
 that are needed to render the characters present in the document. In other
@@ -180,10 +189,13 @@ font:
       bold_italic:    roboto-light-bold_italic.ttf
 ----
 
-TIP: Text in SVGs will use the font catalog from your theme. We recommend
+[TIP]
+====
+Text in SVGs will use the font catalog from your theme. We recommend
 that you match the font key to the name of the font seen by the operating
 system. This will allow you to use the same font names (aka families) in
 both your graphics program and *Asciidoctor PDF*.
+====
 
 === Fallback Fonts
 
@@ -192,20 +204,26 @@ such as a special symbol, you can have *Asciidoctor PDF* look for the character
 in a fallback font. You only need to specify a single fallback font, typically
 one that provides a full set of symbols.
 
-IMPORTANT: The fallback font is only used when the primary font is a
+[IMPORTANT]
+====
+The fallback font is only used when the primary font is a
 TrueType font (i.e., TTF, DFont, TTC). Any glyph missing from an AFM font
 is simply replaced with the "`not`" glyph (`&#172;`).
-
-CAUTION: Using the fallback font slows down PDF generation slightly because
-it has to analyze every single character. It's use is not recommended for
-large documents. Instead, it's best to select primary fonts that have all
-the characters you need. Keep in mind that the default theme currently uses
-a fallback font, though this may change in the future.
+====
 
 Like with other custom fonts, you first need to declare the fallback font.
 Let's choose {uri-font-droid-sans-fallback-ttf}[Droid Sans Fallback, {browser-window--new}].
 You can map all the styles to a single font file (since bold and italic don't
 usually make sense for symbols).
+
+[CAUTION]
+====
+Using the fallback font slows down PDF generation slightly because
+it has to analyze every single character. It's use is not recommended for
+large documents. Instead, it's best to select primary fonts that have all
+the characters you need. Keep in mind that the default theme currently uses
+a fallback font, though this may change in the future.
+====
 
 [source, yaml]
 ----
@@ -246,8 +264,11 @@ font:
     - DroidSansFallback
 ----
 
-TIP: If you are using more than one fallback font, add additional lines
+[TIP]
+====
+If you are using more than one fallback font, add additional lines
 to the `fallbacks` key.
+====
 
 Of course, make sure you've configured your theme to use your custom font:
 

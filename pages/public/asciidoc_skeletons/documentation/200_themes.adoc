@@ -68,10 +68,13 @@ of the PDF file *Asciidoctor PDF* generates from AsciiDoc. This document describ
 how the theming system works, how to define a custom theme in YAML and how to
 activate the theme when running *Asciidoctor PDF*.
 
-IMPORTANT: If you're using a custom theme, you're expected to bring your own
+[IMPORTANT]
+====
+If you're using a custom theme, you're expected to bring your own
 fonts or declare the fonts from the default theme. If you don't declare your
 own fonts, the built-in PDF (afm) fonts will be used, which only support
 WINANSI characters (similar to Basic Latin).
+====
 
 // Include documents
 // -------------------------------------------------------------------

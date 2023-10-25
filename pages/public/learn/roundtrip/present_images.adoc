@@ -11,7 +11,7 @@ description: >
                                         content using lightboxes, carousels, sliders, and galleries.
                                         The image modules of J1 Template offer a wide range of complex
                                         functionality based on powerful OpenSource libraries like
-                                        Lightbox2, Master Slider, lightGallery, or Justified Gallery
+                                        Lightbox V2, Master Slider, lightGallery, or Justified Gallery
                                         for high-end, masonry-styled preview maps.
 keywords: >
                                         open source, free, template, jekyll, jekyllone, web,
@@ -86,8 +86,8 @@ content using lightboxes, carousels, sliders, grids, and galleries.
 
 The image-related modules of the J1 Template offer a wide range of complex
 functionality based on powerful Open Source libraries like Lightbox Version 2,
-Slick Slider, Master Slider, or Masonry Grid and JustifiedGallery to create
-masonry-styled preview maps.
+lightGallery Version 2, Slick Slider, Master Slider, or Masonry and
+Justified-Gallery to create masonry-styled preview maps.
 
 mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 *15-30 Minutes* to read
@@ -98,22 +98,31 @@ mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 [role="mt-5"]
 == Lightboxes
 
-A Lightbox is a helper which displays enlarged, almost screen-filling versions
+A lightbox is a helper which displays enlarged, almost screen-filling versions
 of images while dimming the remainder of the page. The technique, introduced
 by Lightbox Version 2, gained widespread popularity thanks to its simple style.
-The term *Lightbox* has been employed since then for Javascript libraries to
+The term *lightbox* has been employed since then for Javascript libraries to
 support such functionality.
 
 For J1 Template, different lightbox modules are available:
 
 * Lightbox Version 2 (default)
-* Lightbox lightGallery (optional)
+* lightGallery Version 2 (optional)
 * Slick Lightbox (optional, currently for Slick Carousels only)
 
 The *default* tool employed by J1 Template is Lightbox V2, a Javascript
-library written by _Lokesh Dhakar_. For more complex use cases, like a
-thumbnail gallery preview or video support, *lightGallery* can be used
-alternatively.
+library written by _Lokesh Dhakar_ free to use for private or business
+websites. For more complex use cases, like a thumbnail gallery preview or
+video support, *lightGallery* can be used alternatively.
+
+[CAUTION]
+====
+lightGallery is *free* to use based on a GPLv3 license for *non-business*
+websites. If you have plans to use this lightbox for your business or on a
+commercial site, you need to subscribe a so-called *Commercial License*. Find
+more on the *paid* solution on the page:
+https://www.lightgalleryjs.com/license[lightGallery license, {browser-window--new}].
+====
 
 All lightboxes are fully integrated to be used as standalone modules or
 used as helpers *under-the-hood* by other modules focussing on image-data
@@ -125,7 +134,7 @@ For details of the default lightbox of J1 Template, see the documentation
 under the link:{url-j1-docs--lightbox-module}[Lightbox module, {browser-window--new}].
 ====
 
-[role="mt-4"]
+[role="mt-5"]
 === Default Lightbox
 
 Find below an example of using the the default lightbox used for standalone
@@ -216,7 +225,7 @@ link:{url-j1-docs--carousel-module}[Carousel module, {browser-window--new}]
 for more details.
 ====
 
-[role="mt-4"]
+[role="mt-5"]
 === Simple Image Carousel
 
 Carousels are mostly used for pictures data to animate the images as a series.
@@ -227,7 +236,7 @@ A simple image show is useful, for example, as an animated (or not animated)
 banner presenting exciting things about your site or the products offered.
 
 .Image Carousel
-carousel::demo_simple[role="mb-4"]
+carousel::demo_simple[role="mb-5"]
 
 [role="mt-4"]
 === Carousel + Caption + Lightbox
@@ -359,24 +368,24 @@ complex image-based presentations.
 
 [TIP]
 ====
-For more details of the dimplementation of Master Slider of J1 Template, see
-find  documentation at
+For more details of the implementation of Master Slider for J1 Template, find
+more helpful information at the page
 link:{url-j1-docs--masterslider-module}[Master Slider module, {browser-window--new}].
 ====
 
-[role="mt-4"]
+[role="mt-5"]
 === Featured MS Slider
 
-The following slider uses the (CSS) filter feature of Master Slider.
-Filters can be used, for example, to *transform* the *style* of the images
-presented by a slider. In this example, the slider images are transformed
-from style *color* to *sepia*.
+The following slider uses the CSS filter feature of Master Slider. Filters
+can be used, for example, to *transform* the *style* of the images presented
+by a slider. In this example, the slider images are transformed from style
+*color* to *sepia*.
 
 [WARNING]
 ====
-Lightbox support is only available for the MS Lite version of J1
-Theme. The product versions *MS Lite* and *MS Pro* does not support
-Lightboxes on sliders out-of-the-box.
+Lightbox support is only available for the MS Lite version of J1 Template.
+The original Product versions *MS Lite* and *MS Pro* does not support
+lightboxes on sliders out-of-the-box.
 ====
 
 .Slider using Controls + Filters + Lightbox
@@ -388,7 +397,7 @@ Click on the Lightbox symbol mdi:image-outline[18px, md-gray] in the
 slides to see the *colored* images configured for the slider.
 ====
 
-[role="mt-4"]
+[role="mt-5"]
 [[text_elements]]
 === MS Slider using Text Elements
 
@@ -398,7 +407,7 @@ MS Slider additionally provides functions to combine images and text by
 so-called *MSInfo* blocks out-of-the-box.
 
 .Slider using Images + Text
-masterslider::ms_00003[role="mt-4 mb-4"]
+masterslider::ms_00003[role="mt-4 mb-5"]
 
 [role="mt-4"]
 [[thumb_images]]
@@ -442,12 +451,12 @@ documents:
 [role="mt-5"]
 == J1 Masonry
 
-Masonry is a great tool to create dynamic image galleries. Image galleries
-are popular on many websites, and masonry can be a useful tool for creating
-dynamic and visually appealing galleries.
+Masonry for J1 is a great tool to create dynamic image galleries. Image
+galleries are popular on many websites, and masonry can be a useful tool for
+creating dynamic galleries.
 
-By using masonry, you can create a gallery that displays images of different
-sizes in an aesthetically pleasing and functional way.
+By using the Masonry module, you can create a gallery that displays images of
+different sizes in an aesthetically pleasing and functional way.
 
 .Masonry Grid of Images + Lightbox
 masonry::image_fixed_height_lb[role="mt-4 mb-4"]
@@ -478,10 +487,10 @@ so-called masonry grid layouts.
 
 It works by placing elements in an optimal position based on available
 horizontal and vertical space. Sort of like mason fitting stones in a wall.
-You'll have seen it for sure in use all over the Internet.
+For sure, you'll have seen it in action all over the Internet.
 
 .J1 Gallery of Images + lightGallery
-gallery::jg_mega_cities[role="mb-4"]
+gallery::jg_mega_cities[role="mt-4 mb-4"]
 
 
 [role="mt-5"]
@@ -491,13 +500,13 @@ Hopefully, you've enjoyed exploring the possibilities J1 offers for managing
 and displaying digital image content. But much, much more can the J1 do for
 your web.
 
-The J1 Template support playing video on web pages by HTML5 Video, the new
-standard of HTML. HTML5 Video implements a pure HTML way to show video on
-the web. Modern browsers support the video tag `<video>` for the HTML5 video
-standard. The previous proprietary de facto standard software like Flash
-Player, Quicktime, or Silverlight is no longer needed as the Jekyll theme
-JekyllOne provides HTML5 Video support for local video content and from
-online sources on the Internet.
+The J1 Template support playing video on web pages by using the HTML5 video
+support, the new standard of HTML. HTML5 video implements a pure HTML way to
+show videos on the web. Modern browsers support the video tag `<video>` for
+the HTML5 standard. The previous proprietary de facto standard software like
+a Flash Player, Quicktime, or Silverlight is no longer needed as the Theme
+JekyllOne provides HTML5 video for local content and from online sources on
+the Internet.
 
 [role="mb-7"]
 Incredible? See the next example page link:{url-roundtrip--present-videos}[Present Videos].

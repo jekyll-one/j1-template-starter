@@ -1315,12 +1315,12 @@ resources:
   #
   # See: https://www.lightgalleryjs.com/
   #
-  - name:                               J1 LightGallery V2
+  - name:                               J1 lightGallery V2
     resource:
       enabled:                          true
 
       id:                               lightgallery
-      comment:                          Module J1 LightGallery V2
+      comment:                          Module J1 lightGallery V2
       region:                           head
       layout:                           [ all ]
       required:                         ondemand
@@ -1816,6 +1816,31 @@ resources:
         files:                          []
         js:                             [ modules/slimSelect/js/select ]
         init_function:                  []
+
+
+  # ----------------------------------------------------------------------------
+  # ChatGPT
+  # AI Chatbot
+  #
+  - name:                               ChatGPT
+    resource:
+      enabled:                          true
+
+      id:                               chatgpt
+      comment:                          Module ChatGPT
+      region:                           head
+      layout:                           [ all ]
+      required:                         always
+      preload:                          false
+      script_load:
+      dependencies:                     false
+      pass_init_data:                   false
+
+      data:
+        css:                            [ modules/chatgpt/css/theme/uno ]
+        files:                          [ adapter/js/chatgpt.js]
+        js:                             []
+        init_function:                  [ j1.adapter.chatgpt.init ]
 
 # ------------------------------------------------------------------------------
 # END config

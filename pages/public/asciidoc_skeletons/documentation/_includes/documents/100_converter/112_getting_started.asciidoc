@@ -111,11 +111,14 @@ It's time to convert the AsciiDoc document directly to PDF.
 [role="mt-4"]
 === Convert AsciiDoc to PDF
 
-IMPORTANT: You'll need the `rouge` gem installed to run this example since
-it uses the `source-highlighter` attribute with the value of `rouge`.
-
 Converting to PDF is a simple as running the `asciidoctor-pdf` script using
 _Ruby_ and passing our AsciiDoc document as the first argument.
+
+[IMPORTANT]
+====
+You'll need the `rouge` gem installed to run this example since
+it uses the `source-highlighter` attribute with the value of `rouge`.
+====
 
 [source, sh]
 ----

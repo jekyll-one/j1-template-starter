@@ -9,7 +9,6 @@
 #
 # J1 Template is licensed under the MIT License.
 # For details, see: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
-#
 # ------------------------------------------------------------------------------
 # A block macro that embeds an Image Block into the output document
 #

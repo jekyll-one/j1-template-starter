@@ -65,9 +65,12 @@ Variables consist of the key name preceded by a dollar sign (`$`) (e.g.,
 referenced in the value of another key. (In order words, as soon as the key is
 assigned, it's available to be used as a variable).
 
-IMPORTANT: Variables are defined from top to bottom (i.e., in document order).
+[IMPORTANT]
+====
+Variables are defined from top to bottom (i.e., in document order).
 Therefore, a variable must be defined before it is referenced. In other words,
 the path the variable refers to must be *above* the usage of that variable.
+====
 
 For example, once the following line is processed,
 
@@ -151,8 +154,11 @@ operator for each.
 
 include::../../tables/math_expressions.asciidoc[]
 
-IMPORTANT: Operators must always be surrounded by a space on either side
+[IMPORTANT]
+====
+Operators must always be surrounded by a space on either side
 (e.g., 2 + 2, not 2+2).
+====
 
 Here's an example of a math expression with fixed values.
 
@@ -175,8 +181,11 @@ Values used in a math expression are automatically coerced to a float value
 before the operation. If the result of the expression is an integer, the
 value is coerced to an integer afterwards.
 
-IMPORTANT: Numeric values less than 1 must have a 0 before the decimal
+[IMPORTANT]
+====
+Numeric values less than 1 must have a 0 before the decimal
 point (e.g., 0.85).
+====
 
 The theme language also supports several functions for rounding the result
 of a math expression. The following functions may be used if they surround
@@ -216,10 +225,13 @@ calculated as a percentage of the page width or height, respectively.
 Currently, percentage units can only be used for placing elements on the
 title page or for setting the width of a block image.
 
-IMPORTANT: Numbers with more than two digits should be written as a float
+[IMPORTANT]
+====
+Numbers with more than two digits should be written as a float
 (e.g., 100.0), a math expression (e.g, 1 * 100), or with a unit (e.g., 100pt).
 Otherwise, the value may be misinterpreted as a hex color (e.g., '100') and
 could cause the converter to crash.
+====
 
 Here's an example of how you can use inches to define the page margins:
 
@@ -358,8 +370,11 @@ base:
 An RGB array value must be three numbers ranging from 0 to 255. The values
 must be separated by commas and be surrounded by square brackets.
 
-NOTE: An RGB array is automatically converted to a hex string internally,
+[NOTE]
+====
+An RGB array is automatically converted to a hex string internally,
 so there's no difference between ff0000 and [255, 0, 0].
+====
 
 Here's how to specify the color red in RGB:
 
@@ -419,7 +434,10 @@ The following image types (and corresponding file extensions) are supported:
 * JPEG (.jpg)
 * SVG (.svg)
 
-CAUTION: The GIF format (.gif) is not supported.
+[CAUTION]
+====
+The GIF format (.gif) is not supported.
+====
 
 Here's how an image is specified in the theme file as a bare image path:
 
@@ -472,8 +490,11 @@ Here's an example of using formatting in the content of the menu caret:
 menu_caret_content:   '<font size=\"1.15em\"><color rgb=\"#b12146\">\u203a</color></font>'
 ----
 
-NOTE: The string must be double quoted in order to use a Unicode escape
+[NOTE]
+====
+The string must be double quoted in order to use a Unicode escape
 code like `\u203a`.
+====
 
 Additionally, normal substitutions are applied to the value of content keys
 for running content, so you can use

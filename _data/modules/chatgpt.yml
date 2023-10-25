@@ -1,12 +1,15 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/theme_toggler.yml
-# User configuration settings for J1 Theme Toggler module
+# ~/_data/modules/chatgpt.yml
+# User configuration settings for J1 ChatGPT module
 #
 # Product/Info:
 # https://jekyll.one
 #
+# Copyright (C) 2023 Sachin Neravath
 # Copyright (C) 2023 Juergen Adams
 #
+# WebWhiz is licensed under the GPLv3 license
+# See: https://github.com/webwhiz-ai/webwhiz/blob/main/license.md
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
 # ------------------------------------------------------------------------------
@@ -15,15 +18,21 @@
 # Description
 #
 description:
-  title:                                J1 Theme Toggler
+  title:                                J1 Analytics
   scope:                                User settings
-  location:                             _data/modules/theme_toggler.yml
+  location:                             _data/modules/analytics.yml
 
 # ------------------------------------------------------------------------------
 # User configuration settings
 #
 settings:
   enabled:                              true
+
+  # Replace this ID by <your-chatbot-id> if yuo have an account|your own
+  # project configured.
+  #
+  chatbotID:                            qhtrvti8SjKDaf9QFKn6xw                  # 653593d609b6412fa51792f6
+  provider:                             chatbob                                 # [chatbob, webwhiz]
 
 # ------------------------------------------------------------------------------
 # END config

@@ -175,12 +175,16 @@ to the folder *./_site*
 .Synopsis
 [source, sh]
 ----
-jekyll build | b [options]
+jekyll build | b [options] +
 ----
 
-NOTE: Typically you’ll use `jekyll serve` while developing locally and
+[NOTE]
+====
+Typically you’ll use `jekyll serve` while developing locally and
 `jekyll build` when you need to generate the site for production.
-Build Commands
+====
+
+.Build commands
 [cols="4a,8a", width="100%", options="header", role="rtable mt-4"]
 |===
 |Option |Description
@@ -273,9 +277,11 @@ For default, site pages gets writen to *./_site*
 jekyll serve | s [options]
 ----
 
-NOTE: Typically you’ll use `jekyll serve` while developing locally and
+[NOTE]
+====
+Typically you’ll use `jekyll serve` while developing locally and
 `jekyll build` when you need to generate the site for production.
-
+====
 
 .Serve Commands
 [cols="6a,6a", width="100%", options="header", role="rtable mt-4"]

@@ -59,7 +59,7 @@ settings:
       #
       lightbox:
         enabled:                      true
-        type:                         lg                                      # lb | lg
+        type:                         lg                                        # lb | lg
 
       lightGallery:
         plugins:                      lgFullscreen, lgRotate, lgThumbnail
@@ -68,10 +68,6 @@ settings:
           licenseKey:                 0000-0000-000-0000
           download:                   false
           alignThumbnails:            left
-          addClass:                   lg-uno-thumbnails                         # customized thumbnails
-          appendThumbnailsTo:         .lg-outer                                 # required for customized thumbnails
-          animateThumb:               false                                     # required for customized thumbnails
-          allowMediaOverlap:          true                                      # required for customized thumbnails
 
       # ------------------------------------------------------------------------
       # Images
@@ -80,19 +76,35 @@ settings:
 
         - image:                      # image
           file:                       image_01.jpg
-          caption:                    GrandPa's 80th Birthday
+          description: >
+                                      <h5>GrandPa</h5>
+                                      <h6>80th Birthday</h6>
+          caption:
+            text:                     GrandPa &middot; 80th Birthday
 
         - image:                      # image
           file:                       image_02.jpg
-          caption:                    GrandPa's 80th Birthday
+          description: >
+                                      <h5>GrandPa</h5>
+                                      <h6>80th Birthday</h6>
+          caption:
+            text:                     GrandPa &middot; 80th Birthday
 
         - image:                      # image
           file:                       image_03.jpg
-          caption:                    GrandPa's annual journey
+          description: >
+                                      <h5>GrandPa</h5>
+                                      <h6>Annual journey</h6>
+          caption:
+            text:                     GrandPa &middot; Annual journey
 
         - image:                      # image
           file:                       image_04.jpg
-          caption:                    GrandPa's annual journey
+          description: >
+                                      <h5>GrandPa</h5>
+                                      <h6>Annual journey</h6>
+          caption:
+            text:                     GrandPa &middot; Annual journey
 
     # --------------------------------------------------------------------------
     # Gallery Mega Cities
@@ -149,59 +161,99 @@ settings:
 
         - image:                      # image 1
           file:                       banter-snaps_b.jpg
-          caption:                    Osaka - Japan
+          description: >
+                                      <h5>Japan</h5>
+                                      <h6>City of Osaka</h6>
+          caption:
+            text:                     Japan &middot; City of Osaka
 
         - image:                      # image 2
           file:                       denys-nevozhai-1_b.jpg
-          caption:                    Man posing at the rooftop of Jin Mao Tower Shanghai - China
+          description: >
+                                      <h5>China</h5>
+                                      <h6>Man posing at the rooftop of Jin Mao Tower Shanghai</h6>
+          caption:
+            text:                     China &middot; Man posing at the rooftop of Jin Mao Tower Shanghai
 
         - image:                      # image 3
           file:                       gints-gailis_b.jpg
-          caption:                    Shangri-La Hotel Jakarta - Indonesia
+          description: >
+                                      <h5>Indonesia</h5>
+                                      <h6>Shangri-La Hotel Jakarta</h6>
+          caption:
+            text:                     Indonesia &middot; Shangri-La Hotel Jakarta
 
         - image:                      # image 4
           file:                       steven-diaz_b.jpg
-          caption:                    Tokyo seen from World Trade Center Observation Deck - Japan
+          description: >
+                                      <h5>Japan</h5>
+                                      <h6>Tokyo seen from World Trade Center Observation Deck</h6>
+          caption:
+            text:                     Japan - Tokyo seen from World Trade Center Observation Deck
 
         - image:                      # image 5
           file:                       denys-nevozhai-2_b.jpg
-          caption:                    Young couple over Shenzhen - China
+          description: >
+                                      <h5>China</h5>
+                                      <h6>Young couple over Shenzhen</h6>
+          caption:
+            text:                     China &middot; Young couple over Shenzhen
 
         - image:                      # image 6
           file:                       johan-mouchet_b.jpg
-          caption:                    The Queen Bee at the Eureka Tower - Melbourne Southbank Australia
+          description: >
+                                      <h5>Australia</h5>
+                                      <h6>The Queen Bee at the Eureka Tower of Melbourne</h6>
+          caption:
+            text:                     Australia &middot; The Queen Bee at the Eureka Tower of Melbourne
 
         - image:                      # image 7
           file:                       thomas-tucker_b.jpg
-          caption:                    Sunset over Taipei City - Taiwan
+          description: >
+                                      <h5>Taiwan</h5>
+                                      <h6>Sunset over City of Taipei</h6>
+          caption:
+            text:                     Taiwan &middot; Sunset over City of Taipei
 
         - image:                      # image 8
           file:                       emmad-mazhari_b.jpg
-          caption:                    Chicago - United States
+          description: >
+                                      <h5>United States</h5>
+                                      <h6>City of Chicago</h6>
+          caption:
+            text:                     United States &middot; City of Chicago
 
         - image:                      # image 9
-          file:                       johan-mouchet_b.jpg
-          caption:                    The Queen Bee at the Eureka Tower - Melbourne Southbank Australia
+          file:                       federico-rizzarelli_b.jpg
+          description: >
+                                      <h5>China</h5>
+                                      <h6>City of Shanghai</h6>
+          caption:
+            text:                     China &middot; City of Shanghai
 
         - image:                      # image 10
-          file:                       federico-rizzarelli_b.jpg
-          caption:                    Shanghai - China
+          file:                       andreas-brucker_b.jpg
+          description: >
+                                      <h5>Thailand</h5>
+                                      <h6>City of Bangkok</h6>
+          caption:
+            text:                     Thailand &middot; City of Bangkok
 
         - image:                      # image 11
-          file:                       andreas-brucker_b.jpg
-          caption:                    Cityscape of Bangkok Downtown - Thailand
+          file:                       luca-bravo_b.jpg
+          description: >
+                                      <h5>Taiwan</h5>
+                                      <h6>Sunset over City of Taipei</h6>
+          caption:
+            text:                     Taiwan &middot; Sunset over City of Taipei
 
         - image:                      # image 12
-          file:                       luca-bravo_b.jpg
-          caption:                    Sunset over Taipei City - Taiwan
-
-        - image:                      # image 13
           file:                       ethan-brooke_b.jpg
-          caption:                    Lotte World Tower Seoul - South Korea
-
-        - image:                      # image 14
-          file:                       oskars-sylwan_b.jpg
-          caption:                    New York City, United States
+          description: >
+                                      <h5>South Korea</h5>
+                                      <h6>Lotte World Tower Seoul</h6>
+          caption:
+            text:                     South Korea &middot; Lotte World Tower Seoul
 
     # ==========================================================================
     # Video Galleries
@@ -215,6 +267,7 @@ settings:
 
       id:                             jg_video_html5
       type:                           video
+      video:                          html5
       video_base_path:                /assets/videos/gallery/html5
       image_base_path:                /assets/videos/gallery
       thumb_base_path:                /assets/videos/gallery
@@ -245,9 +298,10 @@ settings:
           animateThumb:               true
           autoplayFirstVideo:         true
           videojs:                    true
-          videojsTheme:               'vjs-theme-uno'
+          videojsTheme:               vjs-theme-uno
 
         videojsOptions:
+          enabled:                    true
           controls:                   true
           muted:                      false
           preload:                    true
@@ -283,10 +337,10 @@ settings:
           description: >
                                         <h5>Peck Pocketed by Kevin Herron | Disney Favorite</h5>
                                         <h6>Student Academy Award winning Cartoon Clip</h6>
+          caption:
+            text:                       "Peck Pocketed &middot; Student Academy Award winning Cartoon Clip"
           poster:
             source:                     video1-poster.jpg
-          caption:
-            text:                       "Student Academy Award winning Cartoon Clip"
 
           tracks:
             enabled:                    false
@@ -308,10 +362,10 @@ settings:
           description: >
                                         <h5>Rollin` Wild</h5>
                                         <h6>Short Funny Animated Clip created at the Film Academy</h6>
+          caption:
+            text:                       "Rollin` Wild &middot; Short Funny Animated Clip created at the Film Academy"
           poster:
             source:                     video2-poster.jpg
-          caption:
-            text:                       "Rollin` Wild. Short Funny Animated Clip created at the Film Academy"
 
     # --------------------------------------------------------------------------
     # Online VIDEO (YouTube)
@@ -321,6 +375,7 @@ settings:
 
       id:                             jg_video_online_youtube
       type:                           video
+      video:                          youtube
       image_base_path:                /assets/videos/gallery
       thumb_base_path:                /assets/videos/gallery
 
@@ -351,7 +406,19 @@ settings:
           autoplayFirstVideo:         true
           videojs:                    false
 
-        videojsOptions:               {}
+        videojsOptions:
+          enabled:                    false
+
+        playerParams:
+          enabled:                    true
+          autoplay:                   0
+          controls:                   0
+          enablejsapi:                1
+          hl:                         en
+          loop:                       0
+          mute:                       0
+          playsinline:                1
+          wmode:                      opaque
 
       # ------------------------------------------------------------------------
       # CSS filter options
@@ -383,10 +450,13 @@ settings:
                                           Lady Gaga joins James for a drive through Los Angeles
                                           singing her classics and tracks from her new album.
                                         </h6>
+          caption:
+            text:                       "Carpool Karaoke &middot; Lady Gaga"
           poster:
             source:                     video_gaga-poster.jpg
-          caption:
-            text:                       "YouTube &middot; Carpool Karaoke Lady Gaga"
+
+          playerParams:
+            enabled:                    false
 
         - video:                        # video 2
           enabled:                      true
@@ -404,10 +474,13 @@ settings:
                                           off for a ride through the city. On the way they sing some
                                           of their biggest hits and Adele raps Nicki Minaj's <b>monster</b>
                                         </h6>
+          caption:
+            text:                       "Carpool Karaoke &middot; Adele"
           poster:
             source:                     video_adele-poster.jpg
-          caption:
-            text:                       "YouTube &middot; Carpool Karaoke Adele"
+
+          playerParams:
+            enabled:                    false
 
         - video:                        # video 3
           enabled:                      true
@@ -427,7 +500,9 @@ settings:
           poster:
             source:                     video_gwen-poster.jpg
           caption:
-            text:                       "YouTube &middot; Carpool Karaoke Gwen Stefani"
+            text:                       "Carpool Karaoke &middot; Gwen Stefani"
+
+          playerParams:                 false
 
         - video:                        # video 4
           enabled:                      true
@@ -445,11 +520,13 @@ settings:
                                           when First Lady Michelle Obama joins him for a drive around
                                           the grounds singing Stevie Wonder and Beyonce
                                         </h6>
+          caption:
+            text:                       "Carpool Karaoke &middot; Michelle Obama"
           poster:
             source:                     video_michelle-poster.jpg
-          caption:
-            text:                       "YouTube &middot; Carpool Karaoke Michelle Obama"
 
+          playerParams:
+            enabled:                    false
 
     # --------------------------------------------------------------------------
     # Online VIDEO (YouTube)
@@ -459,6 +536,7 @@ settings:
 
       id:                             jg_video_online_youtube_james_and_adele
       type:                           video
+      video:                          youtube
       image_base_path:                /assets/videos/gallery
       thumb_base_path:                /assets/videos/gallery
 
@@ -489,7 +567,20 @@ settings:
           autoplayFirstVideo:         true
           videojs:                    false
 
-        videojsOptions:               {}
+        videojsOptions:
+          enabled:                    false
+
+#       See: https://stackoverflow.com/questions/40685142/youtube-autoplay-does-not-work-with-iframe
+        playerParams:
+          enabled:                    true
+          autoplay:                   1                                         # autoplay = 1 only available for YouTube when muted.
+#         controls:                   1                                         # default = 0
+#         enablejsapi:                1                                         # default = 1
+#         hl:                         en                                        # default = en
+#         loop:                       0                                         # default = 0
+          mute:                       0                                         # default = 1
+#         playsinline:                1                                         # for mobile|iOS only
+#         wmode:                      opaque                                    # default = opaque
 
       # ------------------------------------------------------------------------
       # CSS filter options
@@ -522,10 +613,10 @@ settings:
                                         London and gets Adele off for a ride through the city. On the way
                                         they sing some of their biggest hits.
                                         </h6>
+          caption:
+            text:                       "Carpool Karaoke &middot; James and Adele"
           poster:
             source:                     video_adele-poster.jpg
-          caption:
-            text:                       "YouTube &middot; Carpool Karaoke James and Adele"
 
         - video:                        # video 2
           enabled:                      true
@@ -542,12 +633,10 @@ settings:
                                           April 2023 - Adele wakeup James at home for the last Late Night Show,
                                           for the last Carpool Caraoke ever.
                                         </h6>
+          caption:
+            text:                       "Carpool Karaoke &middot; Last Carpool Karaoke"
           poster:
             source:                     video_adele_last_carpool_caraoke_poster.jpg
-          caption:
-            text:                       "YouTube &middot; Last Carpool Karaoke"
-
-
 
     # --------------------------------------------------------------------------
     # Online VIDEO 2 (YouTube)
@@ -557,6 +646,7 @@ settings:
 
       id:                             jg_video_online_youtube_voice_kids
       type:                           video
+      video:                          youtube
       image_base_path:                /assets/videos/gallery/voice_kids_de_2021
       thumb_base_path:                /assets/videos/gallery/voice_kids_de_2021
 
@@ -587,7 +677,20 @@ settings:
           autoplayFirstVideo:         true
           videojs:                    false
 
-        videojsOptions:               {}
+        videojsOptions:
+          enabled:                    false
+
+#       See: https://stackoverflow.com/questions/40685142/youtube-autoplay-does-not-work-with-iframe
+        playerParams:
+          enabled:                    true
+          autoplay:                   1                                         # autoplay = 1 only available for YouTube when muted.
+#         controls:                   1                                         # default = 0
+#         enablejsapi:                1                                         # default = 1
+#         hl:                         en                                        # default = en
+#         loop:                       0                                         # default = 0
+          mute:                       0                                         # default = 1
+#         playsinline:                1                                         # for mobile|iOS only
+#         wmode:                      opaque                                    # default = opaque
 
       # ------------------------------------------------------------------------
       # CSS filter options
@@ -607,84 +710,92 @@ settings:
         - video:                        # video 1
           enabled:                      true
 
-          name:                         Voice Kids - Constance
+          name:                         Voice Kids Constance
           type:                         youtube
           size:                         "1280-720"
           source:                       "//youtube.com/watch?v=aQqPgLMgO-I"
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           description: >
-                                        <h5>The Voice Kids Germany 2021 - Constance</h5>
+                                        <h5>
+                                          The Voice Kids Germany 2021 &middot; Constance
+                                        </h5>
                                         <h6>
-                                        The 14-year-old Constance has dreamed of being on The Voice Kids stage
-                                        for a very long time. Your dream has finally come true! She performs a
-                                        breathtaking version of Sia's song Alive.
+                                          The 14-year-old Constance has dreamed of being on The Voice Kids stage
+                                          for a very long time. Your dream has finally come true! She performs a
+                                          breathtaking version of Sia's song Alive.
                                         </h6>
+          caption:
+            text:                       "Voice Kids Germany 2021 &middot; Constance"
           poster:
             source:                     constance.jpg
-          caption:
-            text:                       "YouTube &middot; Voice Kids Germany 2021 - Constance"
 
         - video:                        # video 2
           enabled:                      true
 
-          name:                         Voice Kids - Elisa
+          name:                         Voice Kids Elisa
           type:                         youtube
           size:                         "1280-720"
           source:                       "//youtube.com/watch?v=Bl6tkAgaP1g"
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           description: >
-                                        <h5>The Voice Kids Germany 2021 - Elisa</h5>
+                                        <h5>
+                                          The Voice Kids Germany 2021 &middot; Elisa
+                                        </h5>
                                         <h6>
                                           The 14-year-old Elisa is fascinated by the classics of pop music.
                                           Her version of Hey Jude from The Beatles comes with a lot of feeling.
                                         </h6>
+          caption:
+            text:                       "Voice Kids Germany 2021 &middot; Elisa"
           poster:
             source:                     elisa.jpg
-          caption:
-            text:                       "YouTube &middot; Voice Kids Germany 2021 - Elisa"
 
         - video:                        # video 3
           enabled:                      true
 
-          name:                         Voice Kids - Ben
+          name:                         Voice Kids Ben
           type:                         youtube
           size:                         "1280-720"
           source:                       "//youtube.com/watch?v=GuiOYCv9NTI"
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           description: >
-                                        <h5>The Voice Kids Germany 2021 - Ben</h5>
+                                        <h5>
+                                          The Voice Kids Germany 2021 &middot; Ben
+                                        </h5>
                                         <h6>
                                           The 14-year-old Ben pours all of his emotions into his performance
                                           of Maroon 5's Sunday Morning. He wants to show what he's made of.
                                         </h6>
+          caption:
+            text:                       "Voice Kids Germany 2021 &middot; Ben"
           poster:
             source:                     ben.jpg
-          caption:
-            text:                       "YouTube &middot; Voice Kids Germany 2021 - Ben"
 
         - video:                        # video 3
           enabled:                      true
 
-          name:                         Voice Kids - The Battle
+          name:                         Voice Kids The Battle
           type:                         youtube
           size:                         "1280-720"
           source:                       "//youtube.com/watch?v=1bvE2mgJ22I"
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           description: >
-                                        <h5>The Voice Kids Germany 2021 - The Battle</h5>
+                                        <h5>
+                                          The Voice Kids Germany 2021 &middot; The Battle
+                                        </h5>
                                         <h6>
                                           The battle of the three young people is a real emotional battle.
                                           Elisa's husky voice, Constanze's unbelievable power, and Ben's
                                           rhythm come into their own in Adele's James Bond theme song Skyfall.
                                         </h6>
+          caption:
+            text:                       "Voice Kids Germany 2021 &middot; The Battle"
           poster:
             source:                     battle.jpg
-          caption:
-            text:                       "YouTube &middot; Voice Kids Germany 2021 - The Battle"
 
     # --------------------------------------------------------------------------
     # Online VIDEO 3 (Vimeo)
@@ -694,6 +805,7 @@ settings:
 
       id:                             jg_video_online_vimeo
       type:                           video
+      video:                          vimeo
       image_base_path:                /assets/videos/gallery
       thumb_base_path:                /assets/videos/gallery
 
@@ -724,7 +836,16 @@ settings:
           autoplayFirstVideo:         true
           videojs:                    false
 
-        videojsOptions:               {}
+        videojsOptions:
+          enabled:                    false
+
+        playerParams:
+          enabled:                    false
+          autoplay:                   0
+          byline:                     0
+          portrait:                   0
+          color:                      CCCCCC
+          muted:                      0
 
       # ------------------------------------------------------------------------
       # CSS filter options
@@ -751,14 +872,16 @@ settings:
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           description: >
-                                        <h5>Forever 21</h5>
+                                        <h5>
+                                          Forever 21
+                                        </h5>
                                         <h6>
                                           Kick It Old School
                                         </h6>
+          caption:
+            text:                       "Forever 21 &middot; Kick It Old School"
           poster:
             source:                     kick-it-old-school-poster.jpg
-          caption:
-            text:                       "Vimeo &middot; Forever 21 - Kick It Old School"
 
         - video:                        # video 2
           enabled:                      true
@@ -770,14 +893,16 @@ settings:
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           description: >
-                                        <h5>Forever 21</h5>
+                                        <h5>
+                                          Forever 21
+                                        </h5>
                                         <h6>
                                           Stay Colorful, Babe!
                                         </h6>
+          caption:
+            text:                       "Forever 21 &middot; Stay Colorful, Babe!"
           poster:
             source:                     stay-colorful-poster.jpg
-          caption:
-            text:                       "Vimeo &middot; Forever 21 - Stay Colorful, Babe!"
 
     # --------------------------------------------------------------------------
     # Online VIDEO (DailyMotion)
@@ -787,6 +912,7 @@ settings:
 
       id:                             jg_video_online_dailymotion
       type:                           video
+      video:                          dailymotion
       image_base_path:                /assets/videos/gallery/dailymotion
       thumb_base_path:                /assets/videos/gallery/dailymotion
 
@@ -817,7 +943,11 @@ settings:
           autoplayFirstVideo:         true
           videojs:                    false
 
-        videojsOptions:               {}
+        videojsOptions:
+          enabled:                    false
+
+        playerParams:
+          enabled:                    false
 
       # ------------------------------------------------------------------------
       # CSS filter options
@@ -844,14 +974,16 @@ settings:
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           description: >
-                                        <h5>SELF Channel</h5>
+                                        <h5>
+                                          SELF Channel
+                                        </h5>
                                         <h6>
                                           Guided Meditation: Morning Energy
                                         </h6>
+          caption:
+            text:                       "SELF Channel &middot; Morning Energy"
           poster:
             source:                     meditation.jpg
-          caption:
-            text:                       "Dailymotion &middot; Morning Energy"
 
         - video:                        # video 2
           enabled:                      true
@@ -863,11 +995,15 @@ settings:
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           description: >
-                                        <h5>SELF Channel</h5>
+                                        <h5>
+                                          SELF Channel
+                                        </h5>
                                         <h6>
                                           Beginner Mat Pilates: Core Workout
                                         </h6>
+          caption:
+            text:                       "SELF Channel &middot; Pilates Core Workout"
           poster:
             source:                     pilates.jpg
-          caption:
-            text:                       "Dailymotion &middot; Pilates Core Workout"
+
+            
