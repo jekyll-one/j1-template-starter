@@ -1,15 +1,12 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/chatgpt.yml
-# User configuration settings for J1 ChatGPT module
+# ~/_data/modules/chat.yml
+# User configuration settings for J1 Chat module
 #
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023 Sachin Neravath
 # Copyright (C) 2023 Juergen Adams
 #
-# WebWhiz is licensed under the GPLv3 license
-# See: https://github.com/webwhiz-ai/webwhiz/blob/main/license.md
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
 # ------------------------------------------------------------------------------
@@ -18,9 +15,9 @@
 # Description
 #
 description:
-  title:                                J1 Analytics
+  title:                                J1 Chat
   scope:                                User settings
-  location:                             _data/modules/analytics.yml
+  location:                             _data/modules/chat.yml
 
 # ------------------------------------------------------------------------------
 # User configuration settings
@@ -31,8 +28,10 @@ settings:
   # Replace this ID by <your-chatbot-id> if yuo have an account|your own
   # project configured.
   #
-  provider:                             chatbob
-  chatbotID:                            qhtrvti8SjKDaf9QFKn6xw
+# provider:                             <your-provider-id>
+# chatbotID:                            <your-chatbot-id>
+  provider:                             tutgpt
+  chatbotID:                            clo54vmlw000582y700nkde5t
 
 # ------------------------------------------------------------------------------
 # END config

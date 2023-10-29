@@ -1817,17 +1817,16 @@ resources:
         js:                             [ modules/slimSelect/js/select ]
         init_function:                  []
 
-
   # ----------------------------------------------------------------------------
-  # ChatGPT
-  # AI Chatbot
+  # Chat
+  # AI Chatbot settings
   #
-  - name:                               ChatGPT
+  - name:                               Chat
     resource:
       enabled:                          true
 
-      id:                               chatgpt
-      comment:                          Module ChatGPT
+      id:                               chat
+      comment:                          Module Chat
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -1837,10 +1836,10 @@ resources:
       pass_init_data:                   false
 
       data:
-        css:                            [ modules/chatgpt/css/theme/uno ]
-        files:                          [ adapter/js/chatgpt.js]
+        css:                            [ modules/chat/css/theme/uno ]
+        files:                          [ adapter/js/chat.js ]
         js:                             []
-        init_function:                  [ j1.adapter.chatgpt.init ]
+        init_function:                  [ j1.adapter.chat.init ]
 
 # ------------------------------------------------------------------------------
 # END config

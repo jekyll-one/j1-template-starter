@@ -1,15 +1,12 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/defaults/chatgpt.yml
-# User configuration settings for J1 ChatGPT module
+# ~/_data/modules/defaults/chat.yml
+# User configuration settings for J1 Chat module
 #
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023 Sachin Neravath
 # Copyright (C) 2023 Juergen Adams
 #
-# WebWhiz is licensed under the GPLv3 license
-# See: https://github.com/webwhiz-ai/webwhiz/blob/main/license.md
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
 # ------------------------------------------------------------------------------
@@ -23,7 +20,7 @@
 # Description
 #
 description:
-  title:                                ChatGPT
+  title:                                Chat
   scope:                                Default settings
   location:                             _data/modules/default/analytics.yml
 
@@ -37,7 +34,7 @@ defaults:
   #
   #   enabled
   #   --------------------------------------------------------------------------
-  #   Enables or disables the Bot services.
+  #   Enables or disables the chat service glöobally.
   #
   #   values:                           [true|false]
   #   default:                          false
@@ -48,23 +45,35 @@ defaults:
   #   NOT recommended.
   #
   #   values:                           [vivochat, chatbob, tutgpt, webwhiz]
-  #   default:                          chatbob
+  #   default:                          no default
+  #   recommended:                      vivochat, tutgpt
   #
   #   chatbotID
   #   --------------------------------------------------------------------------
-  #   Bot ID procided by the provider
+  #   The ID of a bot privided by the respective provider. The ID can
+  #   be found with the embed script given by the procider to use the
+  #   bot on a webpage.
   #
-  #   J1 Template Bots:
+  #   default:                          no default
+  #
+  # ----------------------------------------------------------------------------
+  #
+  #   Tested bots
+  #   --------------------------------------------------------------------------
+  #   Provider|Bot IDs
+  #
+  #   provider-id                        bot-id
+  #   ==========================================================================
   #   vivochat:                         3d0b29f1-623a-4915-a817-e436d328f18f
-  #   chatbob:                          qhtrvti8SjKDaf9QFKn6xw
   #   tutgpt:                           clo54vmlw000582y700nkde5t
-  #   webwhiz:                          653593d609b6412fa51792f6
+  #   chatbob:                          qhtrvti8SjKDaf9QFKn6xw
+  #   webwhiz:                          653593d609b6412fa51792f6                # NOT recommended as BROKEN since 10/2023
   #
   # ----------------------------------------------------------------------------
   #
   enabled:                              false
 
-  provider:                             chatbob
+  provider:                             <your-chatbot>
   chatbotID:                            <your-chatbot-id>
 
 # ------------------------------------------------------------------------------
