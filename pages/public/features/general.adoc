@@ -31,7 +31,7 @@ image:
 regenerate:                             false
 permalink:                              /pages/public/features/general_features/
 
-resources:                              [ animate, comments, rouge, lightbox, iconify ]
+resources:                              [ animate, clipboard, comments, rouge, lightbox, iconify ]
 resource_options:
   - toccer:
       collapseDepth:                    3
@@ -81,11 +81,11 @@ No license issues for private or professional use.
 J1 Template is based on these popular software platforms:
 
 mdi:language-ruby[24px, md-blue ml-3 mr-2]
-<<Ruby>> +
+<<Ruby>> >= 2.7 +
 mdi:language-ruby[24px, md-blue ml-3 mr-2]
-<<Jekyll>> +
+<<Jekyll>> 4.3 +
 mdi:nodejs[24px, md-blue ml-3 mr-2]
-<<NodeJS>>
+<<NodeJS>> 14.x
 
 All software-platforms are OpenSource, free to use and available on all
 common operating systems like Windows, Linux, and OSX.
@@ -93,7 +93,7 @@ common operating systems like Windows, Linux, and OSX.
 [role="mt-4"]
 === Ruby
 
-For the latest versions of J1 Template (>= *2024.1.0*), Ruby V3 is recommended.
+For the latest versions of J1 Template (>= *2022.5.0*), Ruby V3 is recommended.
 The latest Ruby versions offer much better run-time performance. Ruby 3 will
 be up to three times faster compared to Ruby 2.0. This will definively
 speed-up the development processes for your new website.
@@ -183,7 +183,7 @@ out of your way, J1 is fully configurable. No need to dive in the deep.
     type:             text
 
     text:             [
-                        "<big>Jekyll One Theme</big>            </br> <i>Clean, ..</i>",
+                        "<big>Jekyll One Theme</big>         </br> <i>Clean, ..</i>",
                         "<big>Jekyll meets Bootstrap</big>      </br> <i>Best of ..</i>",
                         "<big>J1 is Open Source</big>           </br> <i>No pain ..</i>",
                         "<big>Explore this site</big>           </br> <i>Learn what's ..</i>",
@@ -223,7 +223,7 @@ traffic on mobile phones has surged over the past decade. As of July 2021,
 more than 50 percent of all web traffic came through mobile devices.
 
 .Global mobile traffic, 2011-2021
-lightbox::broadbandsearch--global-mobile-traffic[ 800, {data-broadbandsearch--global-mobile-traffic} ]
+lightbox::broadbandsearch--global-mobile-traffic[ 1024, {data-broadbandsearch--global-mobile-traffic} ]
 
 Source: link:{url-broadbandsearch--mobile-internet-usage}[broadbandsearch.net, {browser-window--new}]
 
@@ -253,7 +253,7 @@ your vistors easy access to all of your content pages on a mouse-click.
 ----
 
 .Desktop Web Navigation
-lightbox::images--desktop-navigation[ 800, {data-images--desktop-navigation} ]
+lightbox::images--desktop-navigation[ 1024, {data-images--desktop-navigation} ]
 
 [role="mt-4"]
 === Mobile Web Navigation
@@ -282,4 +282,4 @@ level.
 
 [role="mb-7"]
 .Google Lighthouse Scores (Starter Web at Github)
-lightbox::images--google-lighthouse[ 800, {data-images--google-lighthouse} ]
+lightbox::images--google-lighthouse[ 1024, {data-images--google-lighthouse} ]
