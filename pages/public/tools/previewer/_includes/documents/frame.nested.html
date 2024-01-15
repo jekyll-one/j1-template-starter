@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="nofollow">
+
+    <link rel="stylesheet" href="/assets/themes/j1/core/css/themes/unolight/bootstrap.css">
+    <link rel="stylesheet" href="/assets/themes/j1/core/css/vendor.css">
+
+    <script src="/assets/themes/j1/modules/jquery/js/jquery.js"></script>
+    <script src="/assets/themes/j1/modules/popper/js/popper.js"></script>
+
+    <script src="/assets/themes/j1/modules/iframeResizer/js/resizer.js"></script>
+    <script src="/assets/themes/j1/modules/iframeResizer/js/client/iframeResizer.contentWindow.js"></script>
+  </head>
+
+  <body>
+    <a href="my.content.html">Back to page</a>
+    <h2>Nested iFrame</h2>
+    <p>
+      Resize window or click one of the links in the nested iFrame to watch it
+      resize.
+    </p>
+
+    <p id="callback"></p>
+
+    <div class="mt-4">
+      <iframe
+        id="nestedIFrame"
+        src="frame.content.html"
+        width="100%"
+        scrolling="no"
+      ></iframe>
+    </div>
+
+    <script>
+
+      var level = document.location.search.replace(/\?/, '') || 0
+
+      $('iframe')
+        .attr('id', 'nestedIFrame' + level)
+        .attr('src', 'frame.content.html?' + level)
+
+      // -----------------------------------------------------------------------
+      // If you do want to TEST the code below, use 'log: true' in
+      // the following call for exteded log messages.
+      //
+      // iFrameResize({log:true});
+      //
+      // Once you have finished yout tresting, set the log option to `false`.
+      // -----------------------------------------------------------------------
+      //
+      iFrameResize({
+        log: true, // Enable console logging
+        inPageLinks: true,
+        onResized: function(messageData) {
+          // Callback fn when message is received
+          $('p#callback').html (
+            '<b>Frame ID:</b> ' +
+              messageData.iframe.id +
+              '&nbsp;&nbsp; <b>Height:</b> ' +
+              messageData.height +
+              '&nbsp;&nbsp; <b>Width:</b> ' +
+              messageData.width +
+              '&nbsp;&nbsp; <b>Event type:</b> ' +
+              messageData.type
+          )
+        }
+      });
+
+    </script>
+  </body>
+
+</html>

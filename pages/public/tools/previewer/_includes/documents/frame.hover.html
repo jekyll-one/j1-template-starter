@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>iFrame message passing test 3</title>
+    <meta name="description" content="iFrame message passing test 3">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="nofollow">
+
+    <link rel="stylesheet" href="/assets/themes/j1/core/css/themes/unolight/bootstrap.css">
+    <link rel="stylesheet" href="/assets/themes/j1/core/css/vendor.css">
+
+    <script src="/assets/themes/j1/modules/jquery/js/jquery.js"></script>
+    <script src="/assets/themes/j1/modules/popper/js/popper.js"></script>
+
+    <script src="/assets/themes/j1/modules/iframeResizer/js/resizer.js"></script>
+    <script src="/assets/themes/j1/modules/iframeResizer/js/client/iframeResizer.contentWindow.js"></script>
+  </head>
+
+  <body>
+
+    <a href="my.content.html">Back to page</a>
+    <h2>iFrame Hover Example</h2>
+    <p>
+      Mouse over the code example below.
+    </p>
+
+    <xmp>
+		    <!--  #code  -->
+	  </xmp>
+
+    <script>
+      var iFrameResizer = {
+        heightCalculationMethod: 'lowestElement'
+      }
+    </script>
+
+
+
+    <div id="code">
+      <style>
+        xmp {
+          background-color: #eee;
+          padding: 20px;
+          display: block;
+        }
+
+        xmp:hover {
+          border: #c33 solid 40px;
+        }
+      </style>
+      <script>
+        ;(function() {
+          $('xmp').hover(function() {
+            if ('parentIFrame' in window) {
+              // Fix race condition in FireFox with setTimeout
+              setTimeout(parentIFrame.size.bind(parentIFrame), 0)
+            }
+          })
+        })()
+      </script>
+    </div>
+
+    <script>
+      $('xmp').text('<xmp>' + $('#code').html() + '<xmp>')
+    </script>
+  </body>
+</html>

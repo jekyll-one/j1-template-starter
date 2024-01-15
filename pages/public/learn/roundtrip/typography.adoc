@@ -27,7 +27,7 @@ image:
 regenerate:                             false
 permalink:                              /pages/public/learn/roundtrip/typography/
 
-resources:                              [ animate, clipboard, rouge ]
+resources:                              [ animate, rouge ]
 resource_options:
   - attic:
       opacity:                          0.3
@@ -131,22 +131,20 @@ what will happen in terms of responsiveness.
 </script>
 ++++
 
-To see Responsive Text `r-text` in action, use the button above to toggle on
-and off Responsive Text to see the difference!
-
 
 [role="mt-5"]
-== Scaling Responsive Text
+== Text Scaling
 
-The responsive text comes in five different scale factors in a range from 100
-to 500. Scaling `r-text` gives you the flexibility to use `r-text` everywhere.
-Or you can offer different text sizes of your Web for visitors having visual
-handicaps or reading disabilities.
+Responsive text comes in five different scale factors in a range from 100
+to 500. Scaling `r-text` gives you the flexibility to use responsive text
+`r-text` everywhere. Or you can offer different text sizes of your Web for
+visitors having visual handicaps or reading disabilities *without* bothering
+your visitors for changing their browser settings.
 
-To see `r-text` scaling in action, click on the button above to resize
-the text from `r-text` level 300 to 500 back and forth. Resize
-your Browser and watch the size of this text body change to see the
-responsiveness in action.
+To see the text `r-text` scaling in action, click on the button above to
+resize the text from `r-text` level 300 to 500 back and forth. Resize your
+Browser and watch the size of this text body change to see the responsiveness
+in action.
 
 ++++
 <div>
@@ -191,19 +189,23 @@ responsiveness in action.
 [role="mt-5"]
 == Scale factors
 
-As mentioned, `r-text` comes in five levels of size. The base of `r-text` is
-the Fibonacci numbers extracted from the Fibonacci series. These numbers are
-the most popular division ratios in typography. Fibonacci numbers are relevant
-in design and typography due to their prevalence in natural patterns.
+As mentioned, responsive text `r-text` comes in five levels of size. The
+base of responsive text `r-text` is the Fibonacci numbers extracted from
+the Fibonacci series.
+
+These numbers are the most popular division ratios in typography. Fibonacci
+numbers are relevant in design and typography due to their prevalence in
+natural patterns.
 
 The Fibonacci series is translated into CSS Media queries and scales a base
 font in size accordingly. Further, the resulting font scale series have
-multipliers ranging from 0.5 up to 1.0, resulting in 100% of the base.
+multipliers ranging from 100 up to 500, resulting in 100% of the base.
 
 That way, five series are available by the five scale factors. See the
-following table how `r-text` scales.
+following table how responsive text `r-text` scales.
 
 .Scale factors
+[cols="3a,3a,6a", options="header", width="100%", role="table-responsive mt-4"]
 |===
 |Property |Factor |Example text
 
@@ -258,20 +260,22 @@ explorer of the truth, the master-builder of human happiness.
 [role="mt-5"]
 == What next
 
-Have you enjoyed playing with the text? I hope so. But even more, J1 can
-do for your web pages. With the examples on that page, icons support the
-meaning of what was grouped as text.
+Have you enjoyed playing with the text? I hope so. But even more, the template
+J1 can do for your web pages. With the examples on the following page, find how
+icons support the meaning of what was grouped as text.
 
 J1 Template supports popular icons font sets out-of-the-box. The icon sets MDI
-and FA are very good in design and have a rich set of different icons for
-many categories used for the Web.
+and FA are very good in design and have a rich set of different icon elements
+for many categories used for the Web.
 
-J1 Template supports popular icons font sets like:
+With J1 Template, the following icons font sets are available out-of-the-box
+like:
 
-* Material Design Icons
-* FontAwesome Icons V5
-* Iconify
+* Material Design Icons (MDI)
+* FontAwesome Icons V5 (FA)
+* Iconify Icon Sets
 
 [role="mb-7"]
-Would you like to learn more about icons? The next example page focus on what's
-possible using link:{url-roundtrip--icon-fonts}[Icon Fonts, {browser-window--new}].
+Would you like to learn more about using icons? The next example page focus
+on what's possible using link:{url-roundtrip--icon-fonts}[Icon Fonts, {browser-window--new}]
+on your pages.

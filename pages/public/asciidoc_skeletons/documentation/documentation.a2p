@@ -1,11 +1,11 @@
 // -----------------------------------------------------------------------------
-// ~/document_base_folder:              book
-// Master Document PDF conversion:      book.a2p
+// ~/document_base_folder:              ~/pages/public/asciidoc_skeletons/documentation
+// Master Document PDF conversion:      documentation.a2p
 //
 // Product/Info:
 // https://jekyll.one
 //
-// Copyright (C) 2023 Juergen Adams
+// Copyright (C) 2023, 2024 Juergen Adams
 //
 // J1 Template is licensed under the MIT License.
 // For details, see https://jekyll.one
@@ -45,7 +45,8 @@ include::{includedir}/attributes.asciidoc[tag=data]
 
 // Set local page attributes
 // -----------------------------------------------------------------------------
-:allow-uri-read:
+//:data-uri:
+//:allow-uri-read:
 :pdf-theme:                             j1
 
 // MAIN
@@ -53,7 +54,7 @@ include::{includedir}/attributes.asciidoc[tag=data]
 
 // Document Header
 // -----------------------------------------------------------------------------
-= Asciidoc Book Skeleton
+= Asciidoc Documentation Skeleton
 
 ifdef::toc-enabled[]
 :toc:                                   left
@@ -91,17 +92,12 @@ the PDF converter _Prawn_.
 
 // Include Introduction
 // -----------------------------------------------------------------------------
-
 include::{documentdir}/000_intro.asciidoc[]
-
 
 // Include Sublevel Entry Documents
 // -----------------------------------------------------------------------------
-
 include::{documentdir}/100_converter.asciidoc[]
-
 include::{documentdir}/200_themes.asciidoc[]
-
 
 // Document Index
 // -----------------------------------------------------------------------------

@@ -1,8 +1,8 @@
 # All you need for your new amazing site
 
 Jekyll meets Bootstrap - and makes a lot of friends. J1 Theme combines
-the best of OpenSource software for the Web and the Web site generator
-`Jekyll`. J1 is OpenSource, and so are the packaged modules - no pain for
+the best of Open Source software for the Web and the Web site generator
+`Jekyll`. J1 is Open Source, and so are the packaged modules - no pain for
 private or professional use. Explore this site to learn what's possible if
 you go to the Jekyll Way.
 
@@ -33,7 +33,7 @@ at [starter.jekyll.one](https://starter.jekyll.one/).
 # Features
 
 The template combines the best free software for the web. Jekyll One Theme
-is OpenSource and the modules included are free to use as well. No license
+is Open Source and the modules included are free to use as well. No license
 issues for private or professional use.
 
 * Fully Responsive. J1 Theme supports modern web browsers on all
@@ -379,7 +379,7 @@ This command creates a **initial** project in folder **my-starter**.
   2023-02-28 18:12:12 - GENERATE: Resolving dependencies...
   2023-02-28 18:12:12 - GENERATE: Using bundler 2.3.7
   ...
-  2023-02-28 18:12:12 - GENERATE: Using j1-template 2024.0.0
+  2023-02-28 18:12:12 - GENERATE: Using j1-template 2024.1.0
   2023-02-28 18:12:12 - GENERATE: Bundle complete! 31 Gemfile dependencies, 78 gems now installed.
   2023-02-28 18:12:12 - GENERATE: Bundled gems are installed into `../../.gem`
   2023-02-28 18:12:12 - GENERATE:  C:/Users/xxx/.gem/ruby/3.1.0;C:/DevTools/Ruby31-x64/lib/ruby/gems/3.1.0;
@@ -415,7 +415,7 @@ commands are available as well.
   2023-02-28 18:17:48 - SETUP: Initialize the project ...
   2023-02-28 18:17:48 - SETUP: Be patient, this will take a while ...
   2023-02-28 18:17:49 - SETUP:
-  2023-02-28 18:17:49 - SETUP: > j1@2024.0.0 setup C:\Users\xxx\j1-projects\my-starter
+  2023-02-28 18:17:49 - SETUP: > j1@2024.1.0 setup C:\Users\xxx\j1-projects\my-starter
   2023-02-28 18:17:49 - SETUP: > npm --silent run setup-start && npm --silent run setup-base && run-s -s setup:*
   2023-02-28 18:17:49 - SETUP:
   2023-02-28 18:17:50 - SETUP: Setup project for first use ..
@@ -460,7 +460,7 @@ browser. Let's start the journey ...
   Check setup state of the J1 project ...
   2023-02-28 18:26:18 - SITE: Starting up your site ...
   2023-02-28 18:26:18 - SITE:
-  2023-02-28 18:26:18 - SITE: > j1@2024.0.0 j1-site C:\Users\jadams\j1-projects\my-starter
+  2023-02-28 18:26:18 - SITE: > j1@2024.1.0 j1-site C:\Users\jadams\j1-projects\my-starter
   2023-02-28 18:26:18 - SITE: > run-p -s j1-site:*
   2023-02-28 18:26:18 - SITE:
   2023-02-28 18:26:20 - SITE: Startup UTILSRV ..
@@ -499,7 +499,7 @@ Check setup state of the J1 project ...
 REBUILD: Rebuild the projects website ...
 REBUILD: Be patient, this will take a while ...
 2023-02-28 18:45:09 - REBUILD:
-2023-02-28 18:45:09 - REBUILD: > j1@2024.0.0 rebuild C:\Users\xxx\j1-projects\my-starter
+2023-02-28 18:45:09 - REBUILD: > j1@2024.1.0 rebuild C:\Users\xxx\j1-projects\my-starter
 2023-02-28 18:45:09 - REBUILD: > run-s -s rebuild:* && run-s -s post-rebuild:*
 2023-02-28 18:45:09 - REBUILD:
 2023-02-28 18:45:10 - REBUILD: Rebuild site incremental ..
@@ -547,7 +547,7 @@ using Lerna for all packages:
   2023-02-28 18:29:07 - RESET: Reset the project to factory state ...
   2023-02-28 18:29:07 - RESET: Be patient, this will take a while ...
   2023-02-28 18:29:08 - RESET:
-  2023-02-28 18:29:08 - RESET: > j1@2024.0.0 reset C:\Users\xxx\j1-projects\my-starter
+  2023-02-28 18:29:08 - RESET: > j1@2024.1.0 reset C:\Users\xxx\j1-projects\my-starter
   2023-02-28 18:29:08 - RESET: > run-s -s reset:*
   2023-02-28 18:29:08 - RESET:
   2023-02-28 18:29:08 - RESET: Reset project to factory state ..

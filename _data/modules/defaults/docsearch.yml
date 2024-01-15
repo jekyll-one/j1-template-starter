@@ -1,0 +1,87 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/docsearch.yml
+# Default configuration settings for J1 DocSearch integration
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023, 2024 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 DocSearch
+  scope:                                Default settings
+  location:                             _data/modules/defaults/docsearch.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+  enabled:                              false
+
+  # Provider settings
+  # ----------------------------------------------------------------------------
+  provider_settings:
+    provider_id:                        <your-provider_id>
+    bot_id:                             <your-bot_id-id>
+
+  # Bot settings
+  # ----------------------------------------------------------------------------
+  bot_settings:
+    iframe:
+      title:                            ""
+      height:                           500
+      width:                            100%
+      scrolling:                        no
+      style:                            "border: none; background: #FAFAFA;"
+
+  # Dialog settings
+  # ----------------------------------------------------------------------------
+  dialog_settings:
+    modal_container_id:                 docsearch_container
+    modal_settings:
+
+      title:                            DocSearch AI
+      body_text: >
+                                        Using <b>DocSearch AI</b>, you can ask <b>your</b> questions based on all documents
+                                        available at <a href="https://jekyll.one/" target="_blank" rel="noopener">JekyllOne</a>
+                                        to receive human readable answers. Below, the superpower of DocSearch AI is available
+                                        at your fingertips.
+                                        <div class="listingblock mt-4 mb-4">
+                                          <div class="title">Example Question</div>
+                                          <div class="content">
+                                            <div class="j1-clipboard"><span class="btn-clipboard" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-original-title="to clipboard">Copy</span></div>
+                                            <pre class="rouge highlight notranslate"><code data-lang="apib">What is J1 Template?</code></pre>
+                                          </div>
+                                        </div>
+                                        Ask <b>your</b> question and get an answer in seconds.
+      privacy_notice: >
+                                        <b>DocSearch AI</b> requires Cookies for traffic analysis
+                                        and personalization to run the service.
+                                        <br><br>
+                                        Required Cookie Settings:
+                                        <ul>
+                                          <li style="list-style-type: none;">
+                                            <b>Analysis</b>
+                                            <p>
+                                              For the use of DocSearch AI, your consent on analysis
+                                              in the <b>Privacy Settings</b> is required.
+                                            </p>
+                                          </li>
+                                          <li style="list-style-type: none;">
+                                            <b>Personalization</b>
+                                            <p>
+                                              For the use of DocSearch AI, your consent on personalization
+                                              in the <b>Privacy Settings</b> is required.
+                                            </p>
+                                          </li>
+                                        </ul>
+
+# ------------------------------------------------------------------------------
+# END config

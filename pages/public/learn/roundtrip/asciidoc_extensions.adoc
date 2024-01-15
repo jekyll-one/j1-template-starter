@@ -24,13 +24,13 @@ image:
   width:                                1920
   height:                               1280
 
-tts:                                    false
 comments:                               false
 regenerate:                             false
 permalink:                              /pages/public/learn/roundtrip/asciidoc_extensions/
 
 resources:                              [
-                                          animate, clipboard, lightbox, lightgallery,
+                                          animate,
+                                          lightbox, lightgallery,
                                           iconify, gallery, rouge, videojs
                                         ]
 resource_options:
@@ -61,9 +61,9 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-J1 Template implements some handy Ruby-based enhancements for the markup
-language Asciidoc. Providing extensions for a Jekyll theme is a unique feature
-of Jekyll One compared to other Jekyll themes and templates.
+J1 Template implements some handy enhancements for the markup language
+Asciidoc. Providing extensions for a Jekyll theme is a unique feature
+of Jekyll One template system compared to other Jekyll themes and templates.
 
 [role="mb-4"]
 All already implemented Asciidoctor extensions you'll find below.
@@ -73,14 +73,14 @@ All already implemented Asciidoctor extensions you'll find below.
 Most extensions are based on well-documented examples from the
 link:{url-asciidoctor--extensions-lab}[Asciidoctor Extensions Lab, {browser-window--new}].
 To create Asciidoc extensions on your own, it is highly recommended to read the
-link:{url-asciidoctor--extensions-manual}[extensions section, {browser-window--new}] in
-the Asciidoctor user manual.
+link:{url-asciidoctor--extensions-manual}[Extensions Section, {browser-window--new}]
+in the Asciidoctor user manual.
 ====
 
 [role="mt-4"]
-Additional valuable extensions to the markup language Asciidoc is made
-especially for documents of the Jekyll content type *page*, but can be used
-for posts or collections as well.
+Extensions for the markup language Asciidoc were made especially for documents
+of the Jekyll content type *page*, but can be used for *posts* or *collections*
+as well.
 
 mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 *5-10 Minutes* to read
@@ -100,14 +100,16 @@ If a result block `[.result]` is placed under a listing block, clicking the
 toggle button *view* `VIEW` displays or hide the content given by the
 result block.
 
-[role="mb-5"]
+[role="mb-4"]
 [TIP]
 ====
 The *View Result Extension* is quite helpful for sections discussing
 code elements.
 ====
 
-.This example place a button *VIEW* top right of the example box
+This example place a button *VIEW* top right of the example box.
+
+.VIEW extension
 [source, no_template, role="noclip"]
 ----
 * displayed always
@@ -541,9 +543,9 @@ flag:es[rectangle, xl]
 The J1 Template comes with full icon support for Asciidoc based documents
 included. All icon fonts are supported of type:
 
-* FA -- FontAwesome
-* MDI -- MaterialDesign icons
-* II -- Iconify
+* Material Design Icons link:{url-mdi--home}[ (MDI), {browser-window--new}]
+* FontAwesome Icons V5 link:{url-fontawesome--home}[(FA), {browser-window--new}]
+* Iconify-Framework Icons link:{url-iconify--home}[(IF), {browser-window--new}]
 
 [role="mt-4"]
 === Material Designs Icons
@@ -584,7 +586,7 @@ color to *black* and no settings for *modifiers* `modifier` are applied.
 ====
 
 [role="mt-5"]
-=== Font Awesome Icons
+=== FontAwesome Icons V5
 
 Font Awesome Icons can be used as inline icons by using the macro *fas* `fas:`
 for *standard* icons or the macro *fab* `fab` for *brand* icons.
@@ -622,9 +624,9 @@ to *black* and no settings for modifiers  `modifier` are applied.
 ====
 
 [role="mt-5"]
-=== Iconify Icons
+=== Iconify-Framework Icons
 
-Iconify Icons can be used as inline icons by using the iconify inline
+Iconify-Framework Icons can be used as inline icons by using the inline
 macro `iconify:`.
 
 [source, no_template, role="noclip"]
@@ -637,42 +639,52 @@ iconify:icon_name[icon_size, modifier] <1> <2> <3>
 <3> The `modifier` can be used to set e.g the color (md-blue) or additional
 positioning classes for margings and padding
 
-.Click on the VIEW button `VIEW` to see how it's looks alike
+Click on the VIEW button `VIEW` to see how it's looks alike
+
+.Brand Icon Open Source
 [source, no_template, role="noclip"]
 ----
-iconify:logos:opensource[2x, ml-4 mr-2 mb-2] Brand icon OpenSource  +
-iconify:logos:netlify[2x, ml-4 mr-2 mb-2] Brand icon Netlify +
-iconify:simple-icons:netlify[2x, md-red ml-4 mr-2] Brand icon Netlify
+iconify:logos:opensource[2x, mr-3 mb-3 ml-4] Brand Icon Open Source
 ----
 
 [.result]
 ====
-iconify:logos:opensource[2x, ml-4 mb-2] Brand icon OpenSource  +
-iconify:logos:netlify[2x, ml-4 mb-2] Brand icon Netlify +
-iconify:simple-icons:netlify[2x, md-red ml-4] Brand icon Netlify, colored
+iconify:logos:opensource[2x, mr-3 mb-3 ml-4] Brand Icon Open Source
 ====
 
-Find all Iconify Icons available on page
-link:{url-iconify--icon-sets}[Iconify Icon Sets, {browser-window--new}].
+
+.Brand Icon Netlifyy
+[source, no_template, role="noclip"]
+----
+iconify:logos:netlify[2x, mr-3 mb-3 ml-4] Brand Icon Netlify
+----
+
+[.result]
+====
+iconify:logos:netlify[2x, mr-3 mb-3 ml-4] Brand Icon Netlify
+====
+
+Find all Iconify-Framework Icons available on page
+link:{url-iconify--icon-sets}[Iconify-Framework Icons, {browser-window--new}].
 
 [NOTE]
 ====
-Parameters for icon size `icon_size` and modifiers `modifier` are
-optional. If not given, the icons size is set to default `1x`, the color
-to *black* and no settings for modifiers `modifier` are applied.
+Parameters for icon size `icon_size` and modifiers `modifier` are optional.
+If not given, the icons size is set to default `1x`, the color to *black*
+and no settings for modifiers `modifier` are applied.
 
-Not all icon sets support the color settings for modifiers. If applied,
-the color settings will have no effect.
+Note that *not all* icon sets support the color settings for modifiers -- if
+applied, the color settings will have *no effect*.
 ====
 
 
 [role="mt-5"]
 == Blind Text
 
-The Ruby GEM *Middleman*, a Ruby-based static site generator, provides a
-set of great helpers for generating random text content. The lorem
-inline macro `lorem:` adapted this functionality from Middleman to use
-Asciidoc-based documents processed by Jekyll.
+The Ruby GEM *Middleman*, a very simple and light-weight static site
+generator, provides a set of great helpers for generating *random* text
+content. The lorem inline macro `lorem:` adapted this functionality from
+Middleman to be used for Asciidoc-based documents processed by Jekyll.
 
 If you start writing larger documents with several chapters, not all of the
 content is available initially. It is quite useful to place blind text
@@ -767,21 +779,30 @@ lorem:email[]
 // -----------------------------------------------------------------------------
 include::{documentdir}/100_gistblock.asciidoc[]
 
+
 [role="mt-5"]
 == What next
 
-Asciidoc extensions open up the Markup language to new use cases. Using
-the full power of programming languages to extend what's needed. The number
-of extensions will grow - to get handy and powerful functionality needed
-for modern web pages based on the Asciidoc Markup language generated by
-Jekyll and J1 Template.
+Asciidoc extensions open up advanced possibilities for placing specific
+content elements on a page. The number of available extensions will grow.
+Extensions for Asciidoc gives handy and powerful functionality needed for
+modern web pages.
 
-J1 Template supports a set of advanced Bootstrap Modals that add dialogs
-to your web pages for user notifications. The advanced Modals highlight
-important information to your visitors. The dialogs are positioned over
-everything else in the document so that messages get the full user's
+[NOTE]
+====
+Asciidoc extensions are available for all content pages based on the Markup
+Language Asciidoc created for J1 Template. For content pages based on
+*Markdown*, extensions are *not* supported.
+====
+
+J1 Template supports a rich set of *advanced Bootstrap Modals* that add
+dialogs to your web pages for user notifications. The advanced Modals
+highlight important information to your visitors. The dialogs are positioned
+over everything else in the document so that messages get the full user's
 attention.
 
 [role="mb-7"]
-Have a look for the link:{url-roundtrip--extended-modals}[Modal Extensions]
-feature of J1 Template.
+Have a look at the preview page
+link:{url-roundtrip--extended-modals}[Advanced Bootstrap Modals] to explore
+the possibilities of the *extended* Bootstrap features provided by J1 Template
+for your new website.

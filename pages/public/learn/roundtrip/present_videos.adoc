@@ -25,12 +25,13 @@ image:
   width:                                1920
   height:                               1280
 
-regenerate:                             false
 personalization:                        true
+regenerate:                             false
 permalink:                              /pages/public/learn/roundtrip/present_videos/
 
 resources:                              [
-                                          animate, lightgallery, gallery, rouge,
+                                          animate,
+                                          lightgallery, gallery, rouge,
                                           videojs, vimeoplayer
                                         ]
 resource_options:
@@ -151,7 +152,7 @@ video::/assets/videos/gallery/html5/video1.mp4[poster="/assets/videos/gallery/vi
 [role="mt-4"]
 === VideoJS Player
 
-VideoJS is an open-source JavaScript framework and library for building
+VideoJS is an Open Source JavaScript framework and library for building
 custom video players for the web. It provides a flexible and customizable
 platform for displaying and controlling video content on websites and web
 applications.
@@ -167,8 +168,9 @@ YouTube is a popular online video-sharing platform that allows users to
 upload, view, share, and comment on videos. The platform provides services
 for people and organizations to publish various video content.
 
-.Last Carpool Karaoke
-youtube::nV8UZJNBY6Y[poster="/assets/videos/gallery/video_adele_last_carpool_caraoke_poster.1920.jpg" role="mt-4 mb-5"]
+.The Voice Kids NL 2021 - Emma Kok
+youtube::20gXikNRjbo[poster="/assets/videos/gallery/voice_kids_nl_2021/video_poster.jpg" role="mt-4 mb-5"]
+
 
 [role="mt-4"]
 === Dailymotion on VideoJS
@@ -207,13 +209,24 @@ and creative expression.
 vimeo::179528528[role="mt-4 mb-5"]
 
 
-[role="mt-4"]
+[role="mt-5"]
 == Galleries of Video
+
+Video galleries are collections to display videos organized around a specific
+theme, topic, or purpose. The gallery module (lightGallery) for J1 Template is
+a fast, modular, and responsive plugin to create beautiful-looking, featured
+image and video galleries.
+
+Find below examples of video galleries of locally stored (MP4) video resources
+and video content provided online via YouTube.
+
+[role="mt-4"]
+=== Local Video
 
 Videos created by a digicam or a mobile can be played by J1 Template using
 the lightGallery integration. Present videos you have made at it's best.
 
-.Local Videos
+.MP4 Videos
 gallery::jg_video_html5[role="mt-4 mb-4"]
 
 [role="mb-4"]
@@ -226,7 +239,7 @@ video for the Web like MP4, WebM, or Ogg.
 
 
 [role="mt-5"]
-=== YouTube Video Galleries
+=== YouTube Video
 
 [role="mb-4"]
 The community at link:{url-youtube--home}[YouTube, {browser-window--new}] is
@@ -242,7 +255,7 @@ gallery::jg_video_online_youtube_james_and_adele[role="mb-5"]
 
 
 [role="mt-4"]
-=== Vimeo Video Galleries
+=== Vimeo Video
 
 [role="mb-4"]
 link:{url-vimeo--home}[Vimeo, {browser-window--new}] is a video-sharing

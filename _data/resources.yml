@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023 Juergen Adams
+# Copyright (C) 2023, 2024 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
@@ -424,8 +424,6 @@ resources:
         files:                          [ adapter/js/speak2me.js ]
         js:                             []
         init_function:                  [ j1.adapter.speak2me.init ]
-
-
 
   # ----------------------------------------------------------------------------
   # Bootstrap Material Design (BMD), responsive UI framework for Bootstrap
@@ -1056,13 +1054,13 @@ resources:
   #
   # See: https://github.com/davidjbradshaw/iframe-resizer
   #
-  - name:                               J1 Framer
+  - name:                               J1 IFramer
     resource:
-      enabled:                          false
+      enabled:                          true
 
-      id:                               framer
-      comment:                          Module J1 Framer
-      layout:                           [ home, page, post, collection, blog_archive, raw, app ]
+      id:                               iframer
+      comment:                          Module J1 IFramer
+      layout:                           [ all ]
       region:                           head
       required:                         ondemand
       preload:                          false
@@ -1072,9 +1070,9 @@ resources:
 
       data:
         css:                            []
-        files:                          [ adapter/js/framer.js ]
+        files:                          [ adapter/js/iframer.js ]
         js:                             [ modules/iframeResizer/js/resizer ]
-        init_function:                  [ j1.adapter.framer.init ]
+        init_function:                  [ j1.adapter.iframer.init ]
 
   # ----------------------------------------------------------------------------
   # Lightbox V2, the main lightbox for J1 Theme
@@ -1170,8 +1168,8 @@ resources:
       id:                               clipboard
       comment:                          Module J1 Clipboard
       region:                           head
-      layout:                           [ page, post, collection ]
-      required:                         ondemand
+      layout:                           [ all ]
+      required:                         always
       preload:                          false
       script_load:                      defer
       dependencies:                     false
@@ -1337,7 +1335,7 @@ resources:
                                         ]
         files:                          []
         js:                             [
-                                          modules/lightGallery/js/lightgallery,
+                                          modules/lightGallery/js/parser/webvtt/parser,
                                           modules/lightGallery/js/plugins/lg-autoplay,
                                           modules/lightGallery/js/plugins/lg-comment,
                                           modules/lightGallery/js/plugins/lg-fullscreen,
@@ -1349,7 +1347,8 @@ resources:
                                           modules/lightGallery/js/plugins/lg-thumbnail,
                                           modules/lightGallery/js/plugins/lg-video,
                                           modules/lightGallery/js/plugins/lg-vimeo-thumbnail,
-                                          modules/lightGallery/js/plugins/lg-zoom
+                                          modules/lightGallery/js/plugins/lg-zoom,
+                                          modules/lightGallery/js/lightgallery
                                         ]
         init_function:                  []
 
@@ -1372,7 +1371,8 @@ resources:
 
       data:
         css:                            [
-                                          modules/videojs/css/video-js,
+                                          modules/videojs/css/video,
+                                          modules/videojs/css/plugins/zoom,
                                           modules/videojs/css/themes/city,
                                           modules/videojs/css/themes/fantasy,
                                           modules/videojs/css/themes/forest,
@@ -1385,7 +1385,8 @@ resources:
                                           modules/videojs/js/plugins/dm/dailymotion,
                                           modules/videojs/js/plugins/vm/vimeo,
                                           modules/videojs/js/plugins/wt/wistia,
-                                          modules/videojs/js/plugins/yt/youtube
+                                          modules/videojs/js/plugins/yt/youtube,
+                                          modules/videojs/js/plugins/zoom
                                         ]
         init_function:                  []
 
@@ -1818,15 +1819,15 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Chat
-  # AI Chatbot settings
+  # Chatbot AI
+  # Chatbot settings
   #
-  - name:                               Chat
+  - name:                               Chatbot
     resource:
       enabled:                          true
 
-      id:                               chat
-      comment:                          Module Chat
+      id:                               chatbot
+      comment:                          Module Chatbot
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -1836,10 +1837,34 @@ resources:
       pass_init_data:                   false
 
       data:
-        css:                            [ modules/chat/css/theme/uno ]
-        files:                          [ adapter/js/chat.js ]
+        css:                            [ modules/chatbot/css/theme/uno ]
+        files:                          [ adapter/js/chatbot.js ]
         js:                             []
-        init_function:                  [ j1.adapter.chat.init ]
+        init_function:                  [ j1.adapter.chatbot.init ]
+
+  # ----------------------------------------------------------------------------
+  # Docsearch
+  #
+  #
+  - name:                               DocSearch
+    resource:
+      enabled:                          true
+
+      id:                               docsearch
+      comment:                          Module docsearch
+      region:                           head
+      layout:                           [ all ]
+      required:                         always
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+
+      data:
+        css:                            []
+        files:                          [ adapter/js/docsearch.js ]
+        js:                             []
+        init_function:                  [ j1.adapter.docsearch.init ]
 
 # ------------------------------------------------------------------------------
 # END config

@@ -291,7 +291,7 @@ be applied to the text. The following transforms are recognized:
 * lowercase
 * none (clears an inherited value)
 
-[CAUTION#transform-unicode-letters]
+[CAUTION]
 ====
 Since Ruby 2.4, Ruby has built-in support for transforming the case of any
 letter defined by Unicode. If you're using Ruby < 2.4, and the text you want
@@ -310,7 +310,6 @@ or
 ----
 gem install unicode
 ----
-
 ====
 
 // Additional transforms, such as capitalize, may be added in the future.

@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023 Juergen Adams
+# Copyright (C) 2023, 2024 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
@@ -244,30 +244,65 @@ description:
 # DEFAULTS
 #
 defaults:
-  enabled:                            false
+  enabled:                              false
+
+  xhr_data_path:                        /assets/data/iframes
+  delay_iframer:                        1000
+  inject_contentWindowScript:           false
+  delay_inject_contentWindowScript:     500
 
   # ----------------------------------------------------------------------------
-  # Framer options
+  # iframe (HTML) attributes
   # ----------------------------------------------------------------------------
-  load:                               sync
-  log:                                false
-  autoResize:                         true
-  bodyBackground:
-  bodyMargin:                         0
-  checkOrigin:                        true
-  inPageLinks:                        false
-  interval:                           32
-  heightCalculationMethod:            bodyOffset
-  widthCalculationMethod:             scroll
-  maxHeight:                          100000000
-  minHeight:                          512
-  maxWidth:                           100000000
-  minWidth:                           0
-  resizeFrom:                         parent
-  scrolling:                          false
-  sizeHeight:                         true
-  sizeWidth:                          false
-  tolerance:                          0
+  #
+  attributes:
+    allow:                              false                                   # false or specifies a Permissions Policy for the <iframe>
+    allowfullscreen:                    true                                    # boolean
+    height:                             false                                   # false|pixels|percentage
+    loading:                            eager                                   # [eager|lazy]
+    name:                               false                                   # false|text
+    referrerpolicy:                     no-referrer                             # specifies which referrer information to send when fetching the iframe  [no-referrer|no-referrer-when-downgrade|origin|origin-when-cross-origin|same-origin|strict-origin-when-cross-origin|unsafe-url]
+    src:                                ""                                      # URL
+    scrolling:                          false                                   # boolean
+    title:                              false                                   # false|text
+    width:                              false                                   # false|pixels|percentage
+
+  # ----------------------------------------------------------------------------
+  # iFramer module options
+  # ----------------------------------------------------------------------------
+  options:
+    autoResize:                         true
+    bodyBackground:                     null
+    bodyMargin:                         null
+    bodyMarginV1:                       8
+    bodyPadding:                        null
+    checkOrigin:                        true
+    inPageLinks:                        false
+    enablePublicMethods:                true
+    heightCalculationMethod:            bodyOffset
+    id:                                 iFrameResizer
+    interval:                           32
+    log:                                false
+    maxHeight:                          Infinity
+    maxWidth:                           Infinity
+    minHeight:                          0
+    minWidth:                           0
+    mouseEvents:                        true
+    resizeFrom:                         parent
+    scrolling:                          false
+    sizeHeight:                         true
+    sizeWidth:                          false
+    warningTimeout:                     5000
+    tolerance:                          0
+    widthCalculationMethod:             scroll
+    onClose:                            function () { return true }
+    onClosed:                           function () {}
+    onInit:                             function () {}
+    onMessage:                          function () { warn('onMessage function not defined') }
+    onMouseEnter:                       function () {}
+    onMouseLeave:                       function () {}
+    onResized:                          function () {}
+    onScroll:                           function () { return true }
 
 # ------------------------------------------------------------------------------
 # END config

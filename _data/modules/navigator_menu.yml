@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023 Juergen Adams
+# Copyright (C) 2023, 2024 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
@@ -202,10 +202,38 @@
       icon:                             foot-print
       target:                           _blank
 
+    - title:                            VideoJS
+      icon:                             video
+      dropdown:
+
+        - title:                        VideoJS API
+          href:                         /pages/public/manuals/videojs/videojs_api/
+          icon:                         video
+          target:                       _blank
+
+        - title:                        Vimeo API
+          href:                         /pages/public/manuals/videojs/vimeo_api/
+          icon:                         video
+          target:                       _blank
+
+        - title:                        Dailymotion API
+          href:                         /pages/public/manuals/videojs/dailymotion_api/
+          icon:                         video
+          target:                       _blank
+
+        - title:                        Wistia API
+          href:                         /pages/public/manuals/videojs/wistia_api/
+          icon:                         video
+          target:                       _blank
 
     - title:                            Modules
       icon:                             alpha-j-box
       dropdown:
+
+        - title:                        lightGallery
+          href:                         /pages/public/manuals/videojs/lightgallery_api/
+          icon:                         flashlight
+          target:                       _blank
 
         - title:                        Speak2Me
           href:                         https://jekyll.one/pages/public/modules/speak2me/
@@ -262,6 +290,10 @@
         - title:                        Toccer
           href:                         https://jekyll.one/pages/public/manuals/modules/toccer/
           icon:                         wrap
+          target:                       _blank
+        - title:                        iFramer
+          href:                         https://jekyll.one/pages/public/manuals/modules/iframer/
+          icon:                         window-open-variant
           target:                       _blank
 
     # --------------------------------------------------------------------------
@@ -400,8 +432,14 @@
       - title:                          Current Theme
         href:                           /pages/public/tools/previewer/current_theme/
         icon:                           theme-light-dark
-        target:                         _blank
+      - title:                          J1 iFramer
+        href:                           /pages/public/tools/previewer/iframer/
+        icon:                           window-open-variant
 
+      - title:                          J1 DocSearch
+        href:                           https://jekyll.one/pages/public/tools/previewer/docsearch/
+        icon:                           head-question
+        target:                         _blank
       - title:                          J1 Gallery
         href:                           https://jekyll.one/pages/public/tools/previewer/gallery/
         icon:                           view-dashboard-variant

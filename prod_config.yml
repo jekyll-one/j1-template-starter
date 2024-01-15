@@ -5,9 +5,9 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023 Juergen Adams
+# Copyright (C) 2023, 2024 Juergen Adams
 #
-# J1 Theme is licensed under the MIT License.
+# J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
 # ------------------------------------------------------------------------------
 
@@ -47,19 +47,19 @@
 #   values:                             development|production
 #   default:                            development
 #
-environment:                            development
+environment:                            production
 
 # version
 # ------------------------------------------------------------------------------
 # Sets the build version of the site
 #
-version:                                2024.0.0
+version:                                2024.1.0
 
 # copyright
 # ------------------------------------------------------------------------------
 # Sets the copyright info of the site
 #
-copyright:                              © 2023 J1 · All rights reserved
+copyright:                              © 2023, 2024 J1 · All rights reserved
 
 # noscript
 # ------------------------------------------------------------------------------
@@ -230,7 +230,7 @@ keywords: >
                                         sites, static, jamstack, bootstap
 
 # Crawling/Indexing ENABLED for default. Settings managed page-wise using
-# frontmatter defaults or by page default settings to make sure that only
+# front matter defaults or by page default settings to make sure that only
 # WANTED pages gets crawled.
 #
 robots:
@@ -293,7 +293,7 @@ favicon:
 #
 # NOTE:
 #   The permalink style can individualy configured by
-#   frontmatter variables. It is highly recommended to use a
+#   front matter variables. It is highly recommended to use a
 #   "pretty style" for individual permalinks as well. For that
 #   reason, the permalink should always have a trailing backslash.
 #
@@ -310,8 +310,8 @@ permalink:                              pretty
 # site.url will be set to the value of host, port.
 # NOTE: Required setting for the sitemap plugin, for example.
 #
-url:                                    http://localhost:22000
-# url:                                  https://starter.jekyll.one/
+# url:                                  http://localhost:22000
+url:                                    https://starter.jekyll.one/
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -373,11 +373,12 @@ exclude:                                [
                                           History.markdown, README.md,
                                           changelog.md, Rakefile,
                                           Gemfile, Gemfile.lock, Guardfile,
+                                          dev_config.yml, prod_config.yml,
                                           yarn.lock, config.ru,
                                           package-lock.json, package.json,
                                           '*.ignore', '*._config.yml',
                                           '*.bat', '*.sh', '*.tmp', 'dot.*',
-                                          '*.txt', '*.log', '*.ppt*', '*.pdf',
+                                          '*.log', '*.ppt*', '*.pdf',
                                           '*.zip', '*.7z', '*.tgz', '*.tar',
                                           '*.a2p', '*.asciidoc'
                                         ]
@@ -539,6 +540,9 @@ facebook:
   app_id:
   admins:
 
+webmaster:
+  email:                                webmaster@jekyll.one
+
 webmaster_verifications:
   facebook:
   google:
@@ -564,6 +568,13 @@ excerpt_truncate_words:                 100
 collections:
 
   # ----------------------------------------------------------------------------
+  # People
+  #
+  people:
+    output:                             true
+    permalink:                          /collections/public/:collection/:name/
+
+  # ----------------------------------------------------------------------------
   # Portfolio
   #
   portfolio:
@@ -586,7 +597,7 @@ collections:
     permalink:                          /collections/public/:collection/:name/
 
 # ------------------------------------------------------------------------------
-# FRONTMATTER defaults
+# FRONT MATTER defaults
 #
 # Using the YAML Front Matter is a way the (individual) configuration
 # for post and pages can be specified. Very often, a lot of config
@@ -634,6 +645,7 @@ defaults:
         url:                            https://jekyll.one/
 
       logo:                             /assets/images/icons/j1/j1-512x512.png
+
       image:
         path:                           /assets/images/promo/home/screenshot.jpg
         width:                          1200
@@ -651,6 +663,7 @@ defaults:
         index:                          true
         follow:                         true
 
+      tts:                              true
       toc:                              true
       canonical:                        false
       fab_menu_id:                      open_toc
@@ -696,6 +709,7 @@ defaults:
         index:                          true
         follow:                         true
 
+      tts:                              true
       toc:                              true
       canonical:                        false
       fab_menu_id:                      open_toc
@@ -723,6 +737,7 @@ defaults:
 
     values:
       layout:                           page
+      tts:                              false
       canonical:                        false
 
   # ----------------------------------------------------------------------------
@@ -734,6 +749,7 @@ defaults:
 
     values:
       layout:                           page
+      tts:                              false
       canonical:                        false
 
   - scope:
@@ -742,6 +758,7 @@ defaults:
 
     values:
       layout:                           page
+      tts:                              false
       canonical:                        false
 
   - scope:
@@ -750,6 +767,7 @@ defaults:
 
     values:
       layout:                           page
+      tts:                              false
       canonical:                        false
 
 

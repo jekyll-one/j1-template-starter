@@ -1,0 +1,248 @@
+== Add (global) Committer identity
+
+  git config --global user.name "Juergen Adams"
+  git config --global user.email "juergen@jekyll.one"
+
+== Git status colors
+
+[cols="4a,8a", options="header", width="100%", role="rtable mt-3"]
+|===
+|Color |Description
+
+|`grey`
+|*Ignored* file or folder by `.gitignore`.
+
+|`green`
+|*New* file or folder.
+
+|`orange`
+|*Modified* file or folder.
+
+|`red`
+|*Deleted* file or folder.
+
+|`blue`
+|*Untracked* file or folder (may NOT used by Atom).
+
+|===
+
+
+== Git Aliases (~/.gitconfig)
+
+	aa 	= add .
+	st 	= status
+	sts = status -b -s
+	cm 	= commit -am
+	cs 	= commit --amend --no-edit
+	ce 	= commit --amend
+	cr 	= reset HEAD~1 --soft
+	cd 	= reset HEAD~1 --hard
+	cl 	= clone
+	br 	= branch
+	co 	= checkout
+	la 	= ls-files
+	ll 	= ls-tree --full-tree -r --name-only HEAD
+	lg 	= log --stat
+	df 	= diff
+	he 	= help
+	dw 	= diff --word-diff
+	ra 	= rm -r --cached .
+	rf 	= rm -rf --cached .
+	hi 	= log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	ty 	= 'cat-file'
+	dp 	= 'cat-file'
+	pu 	= push
+
+== Make a new commit and create a new message if no changes are made to files
+
+  git commit --allow-empty -m "Empty test commit"
+
+== Create a new repository on the command line
+
+echo "# heroku_starter_app" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jekyll-one-org/heroku_starter_app.git
+git push -u origin master
+
+== List branches
+
+git branch -a zeigt alle lokalen und entfernten Branches an, hingegen -r
+nur die entfernten Branches anzeigt.
+
+  git branch -a
+  git branch -r
+
+== Rename a branch
+
+If you want to rename a local branch while pointed to `any` branch, do:
+
+  git branch -m <oldname> <newname>
+
+If you want to rename the `current` local branch, you can do:
+
+  git branch -m <newname>
+
+If you want rename a the local branch *and* push|reset the `upstream` branch:
+
+  git push origin -u <newname>
+  git push origin --delete <old_name>
+
+== Push current branch to remote (main)
+
+  git push --set-upstream origin main
+
+== Create branches
+
+Create a branch on your local machine *and* switch in this branch:
+
+  git checkout -b [name_of_your_new_branch]
+
+== Delete branches
+
+See:
+  {https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely}[Stackoverflow]
+
+=== Delete branches from `remote`
+
+  git push -d <remote_name> <branch_name>
+
+NOTE: In most cases the remote name is origin. In such a case you'll
+have to use the command like so.
+
+  git push -d origin <branch_name>
+
+=== Delete branches from `local`
+
+  git branch -d <branch_name>
+
+== Create branch from commit
+
+Create a branch from a previous `commit`:
+
+  git branch branch_name <sha1-of-commit>
+
+== Reset repo to a commit
+
+=== Reset from `local`
+
+  git reset --hard 217a618
+
+=== Reset from `remote`
+
+  git push --force origin main
+
+== Push an existing repository from the command line
+
+  git remote add github https://github.com/jekyll-one-org/heroku_starter_app.git
+  git push -u github master
+
+== Removing non-repository files with git
+
+See: https://stackoverflow.com/questions/5037480/removing-non-repository-files-with-git
+
+If you want to see which files will be deleted you can use the
+option -n *before* you run the actual command:
+
+  git clean -n
+
+You can use git-clean. This command will remove untracked files/directories.
+By default, it will only print what it would have removed, without actually
+removing them.
+
+Given the -f flag to remove the files, and the -d flag to remove empty
+directories as well:
+
+  git clean -df
+
+Also removing ignored files:
+
+  git clean -dfx
+
+
+== Modify most recent commit message
+
+The git commit option `--amend` allows you to change the *most recent*
+commit message:
+
+  git commit --amend -m "New commit message"
+
+== Delete a Git tag
+
+Use the git 'tag' command with the '-d' option
+
+=== From local
+
+  git tag -d v2024.1.0
+
+=== From remote
+
+  git push -d origin v2024.1.0
+
+== Set a Git tag
+
+When modifying remember to issue a new tag command in git before committing,
+then push the new tag
+
+  git tag -a v2024.1.0 -m "v2024.1.0"
+  git push origin --tags
+
+== Update Git Index (cache) completely
+
+See: https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore
+
+The series of commands below will remove all of the items from the Git
+Index (not from the working directory or local repo), and then updates
+the Git Index, while respecting git ignores.
+
+NOTE: Index = Cache
+
+  git rm -r --cached . && git add .
+
+or forced
+
+  git rm -rf --cached . && git add .
+
+Then:
+
+  git commit -am "Cleanup files"
+  git commit -am "New version 2024.1.0"
+  git commit --allow-empty -m "New version 2024.1.0"
+  git commit -am "Prepare new version 2024.1.0"
+  git commit -am "Latest files of version 2024.1.0"
+
+== Add file permissions on Windows
+
+See: https://medium.com/@akash1233/change-file-permissions-when-working-with-git-repos-on-windows-ea22e34d5cee
+
+Most of the folks on Windows working with git repo’s use windows git bash
+for doing git check-ins and check-outs to/from from git repo. If you are
+already not using it, I will highly recommend use it pretty neat tool
+for the Windows OS.
+
+  git update-index --chmod=+x 'name-of-shell-script'
+
+== List all committed files
+
+List all files in the repo, including those that are only staged but not
+yet committed:
+
+  git ls-files
+
+Lists all of the *already* committed files being tracked by the repo:
+
+  git ls-tree --full-tree -r --name-only HEAD
+
+== Disable warning `CRLF will be replaced by LF`
+
+You can turn off the warning with:
+
+  git config --global core.safecrlf false
+
+NOTE: This will only turn off the warning, not the function itself.
+
+== Upload Gem to Gemfury
+
+  git remote add fury https://jekyll-one@git.fury.io/jekyll-one-org/<package-name>.git
+  git push fury master

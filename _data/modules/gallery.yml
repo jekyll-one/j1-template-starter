@@ -1,11 +1,11 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/justifiedGallery.yml
+# ~/_data/modules/gallery.yml
 # User configuration for J1 Justified Gallery (jg)
 #
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023 Juergen Adams
+# Copyright (C) 2023, 2024 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
@@ -306,6 +306,13 @@ settings:
           muted:                      false
           preload:                    true
           playbackRates:              [0.25, 0.5, 1, 1.5, 2]
+          zoomPlugin:
+            enabled:                  true
+#           options:
+#             moveX:                  0
+#             moveY:                  0
+#             rotate:                 0
+#             zoom:                   1
           controlBar:
             remainingTimeDisplay:     true
             pictureInPictureToggle:   false
@@ -343,12 +350,19 @@ settings:
             source:                     video1-poster.jpg
 
           tracks:
-            enabled:                    false
-            src:                        /assets/videos/gallery/html5/video1.subtitles.vtt
-            kind:                       captions
-            srclang:                    en
-            label:                      English
-            default:                    true
+            - track:
+              default:                  true                                    # Indicates that the track is to be enabled if the user's preferences do not indicate that another track would be more appropriate
+              kind:                     captions
+              srclang:                  en                                      # Code for the language of the text track
+              label:                    English                                 # Descriptive text for the track that will used in the user interface (player)
+              src:                      /assets/videos/vtt/captions/video1.vtt
+
+            - track:
+              default:                  true                                    # Indicates that the track is to be enabled if the user's preferences do not indicate that another track would be more appropriate
+              kind:                     chapters
+              srclang:                  en                                      # Code for the language of the text track
+              label:                    Chapters                                # Descriptive text for the track that will used in the user interface (player)
+              src:                      /assets/videos/vtt/chapters/video1.vtt
 
         - video:                        # video 2
           enabled:                      true
@@ -1005,5 +1019,3 @@ settings:
             text:                       "SELF Channel &middot; Pilates Core Workout"
           poster:
             source:                     pilates.jpg
-
-            

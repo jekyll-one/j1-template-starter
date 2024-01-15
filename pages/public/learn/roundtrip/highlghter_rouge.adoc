@@ -27,7 +27,7 @@ image:
 regenerate:                             true
 permalink:                              /pages/public/learn/roundtrip/rouge/
 
-resources:                              [ animate, clipboard, rouge ]
+resources:                              [ animate, rouge ]
 resource_options:
   - attic:
       slides:
@@ -68,6 +68,7 @@ using Rouge.
 
 mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 *3 Minutes* to read
+
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
 [role="mt-5"]
@@ -76,8 +77,8 @@ mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
 For the default themes `Uno` of J1 Template, the following _Rouge_ themes
 are used:
 
-* theme_light: based on theme `igorpro`
-* theme_dark:  based on theme `monokai.sublime`
+* theme_light: based on IgorPro theme `igorpro`
+* theme_dark:  based on Monokai theme Sublime `monokai.sublime`
 
 The *default* themes used for the J1 Template can be configured with
 the global *template config* file `~/_data/j1_config.yml`.
@@ -198,18 +199,22 @@ end
 [role="mt-5"]
 == What next
 
-The search option for the J1 Template is based on the search engine Lunr and
-is fully integrated with the template. Lunr is designed to be lightweight
-yet full-featured to provide users with a great search experience. Using
-Lunr for a Jekyll website, there is no need to integrate complex external,
-server-sided search engines like Google or Bing.
+The search module *QuickSearch* for J1 Template is based on _Lunr_, a
+great search engine inspired by _Apache Solr_, written in Javscript by
+http://lunrjs.com[Oliver Nightingale, {browser-window--new}]. The engine
+is fully integrated with the template and is designed to provide users
+with a great search experience.
 
-Visitors should be able to search your site to find pages and posts they
-are interested in. Usability is one of the top criteria for all visitors
-browsing your site. A good user experience and excellent content are key
-factors for the success of a website. Nothing in this business is guaranteed,
-but user experience efforts are good reasons your readers will return.
+Using the search module *QuickSearch* for J1 based websites, it is *not*
+longer needed to integrate complex external, server-sided search engines
+like _Google_ or _Bing_. Visitors are able to search your site to find pages
+and posts they are interested in.
+
+Usability is one of the top criteria for all visitors browsing your site.
+A good user experience and excellent content are key factors for the success
+of a website. Nothing in business is guaranteed, but excellent user experience
+efforts are good reasons your readers will return.
 
 [role="mb-7"]
-Check what is searching a J1 website all about at
-link:{url-roundtrip--quicksearch}[Lunr Search].
+Learn what is searching a J1 based websites all about at
+link:{url-roundtrip--quicksearch}[Search Engine].

@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023 Juergen Adams
+# Copyright (C) 2023, 2024 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
@@ -47,19 +47,19 @@
 #   values:                             development|production
 #   default:                            development
 #
-environment:                            development
+environment:                            production
 
 # version
 # ------------------------------------------------------------------------------
 # Sets the build version of the site
 #
-version:                                2024.0.0
+version:                                2024.1.0
 
 # copyright
 # ------------------------------------------------------------------------------
 # Sets the copyright info of the site
 #
-copyright:                              © 2023 J1 · All rights reserved
+copyright:                              © 2023, 2024 J1 · All rights reserved
 
 # noscript
 # ------------------------------------------------------------------------------
@@ -310,7 +310,8 @@ permalink:                              pretty
 # site.url will be set to the value of host, port.
 # NOTE: Required setting for the sitemap plugin, for example.
 #
-url:                                    http://localhost:30000
+# url:                                  http://localhost:22000
+url:                                    https://starter.jekyll.one/
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -336,7 +337,7 @@ base_path:                              ""
 #
 protocol:                               http
 host:                                   localhost
-port:                                   30000
+port:                                   22000
 timezone:                               Europe/Berlin
 encoding:                               UTF-8
 
@@ -372,6 +373,7 @@ exclude:                                [
                                           History.markdown, README.md,
                                           changelog.md, Rakefile,
                                           Gemfile, Gemfile.lock, Guardfile,
+                                          dev_config.yml, prod_config.yml,
                                           yarn.lock, config.ru,
                                           package-lock.json, package.json,
                                           '*.ignore', '*._config.yml',

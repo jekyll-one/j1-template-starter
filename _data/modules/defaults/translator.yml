@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023 Juergen Adams
+# Copyright (C) 2023, 2024 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
@@ -70,37 +70,22 @@ defaults:
                                         ]
     modal_settings:
 
-      title:
-        en:                             Google Translator
-        de:                             Google Übersetzer
-
-      body_text:
-        en: >
-                                        This website uses the <b>free service</b> Google Translate to translate
-                                        the content into 100+ languages in seconds. The language for
-                                        translation is selected automatically from the language settings
-                                        of your browser.
-
-        de: >
-                                        Diese Website nutzt den <b>kostenlosen</b> Dienst Google Translate, um
-                                        die Inhalte in sekundenschnelle in über 100+ Sprachen zu übersetzen.
-                                        Die Sprache für die Übersetzung wird automatisch aus den
-                                        Spracheinstellungen Ihres Browsers gewählt.
-
-      language_selector_title:
-
-        en:                             "Your current language setting for the translation is:"
-        de:                             "Ihre aktuelle Spracheinstellung für die Übersetzung ist:"
-
-      privacy_notice:
-
-        en: >
+      title:                            Google Translator
+      body_text: >
+                                        This website use the <b>free</b> service <b>Google Translator</b> to
+                                        translate the content of this website into 100+ languages in seconds.
+                                        The language for translation is automatically taken from your browser
+                                        settings.
+      language_selector_title: >
+                                        Your current language settings for the translation are
+      privacy_notice: >
                                         The <b>free service</b> from Google Translate uses cookies to provide
                                         its services, personalize advertising and run traffic analysis To use the
                                         service, your consent on using cookies is required. Find more information
                                         about at the Google
                                         <a href="https://policies.google.com/" target="_blank" rel="noopener">Privacy Policy</a>.
-                                        <br />Required Cookie Settings:
+                                        <br><br>
+                                        Required Cookie Settings:
                                         <ul>
                                           <li style="list-style-type: none;">
                                             <b>Analysis</b>
@@ -114,32 +99,6 @@ defaults:
                                             <p>
                                               For the use of Google Translations, your consent on personalization
                                               in the privacy settings is required.
-                                            </p>
-                                          </li>
-                                        </ul>
-        de: >
-                                        Der <b>kostenlose</b> Dienst von Google Translate verwendet Cookies
-                                        um seine Dienste bereitzustellen, Werbung zu personalisieren und
-                                        Verkehrsanalysen durchzuführen. Mehr Information dazu finden Sie dazu in der
-                                        <a href="https://policies.google.com/" target="_blank" rel="noopener">Datenschutzerklärung</a>
-                                        von Google.
-                                        Erforderliche Cookie Einstellungen:
-                                        <br />
-                                        <ul>
-                                          <li style="list-style-type: none;">
-                                            <b>Analysen</b>
-                                            <p>
-                                              Für die Nutzung von Übersetzungen ist Ihre Zustimmung zu
-                                              Analysen in den Einstellungen Ihrer Privatsphäre
-                                              erforderlich.
-                                            </p>
-                                          </li>
-                                          <li style="list-style-type: none;">
-                                            <b>Personalisierung</b>
-                                            <p>
-                                              Für die Nutzung von Übersetzungen ist Ihre Zustimmung zur
-                                              Personalisierung in den Einstellungen Ihrer Privatsphäre
-                                              erforderlich.
                                             </p>
                                           </li>
                                         </ul>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>iFrame message passing test 5</title>
+    <meta name="description" content="iFrame message passing test 5">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="nofollow">
+
+    <link rel="stylesheet" href="/assets/themes/j1/core/css/themes/unolight/bootstrap.css">
+    <link rel="stylesheet" href="/assets/themes/j1/core/css/icon-fonts/mdib.css">
+    <link rel="stylesheet" href="/assets/themes/j1/core/css/vendor.css">
+
+    <script src="/assets/themes/j1/adapter/js/j1.js"></script>
+    <script src="/assets/themes/j1/modules/jquery/js/jquery.js"></script>
+    <script src="/assets/themes/j1/modules/popper/js/popper.js"></script>
+
+  </head>
+
+  <body>
+
+
+    <a href="my.content.html">Back to page</a>
+    <h2>iFrame TextArea Example</h2>
+    <p>
+      Resize the textarea element below.
+    </p>
+
+    <p id="callback"></p>
+
+
+
+
+
+    <textarea id="textArea">Resize me</textarea>
+
+    <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script -->
+    <script src="../js/client/iframeResizer.contentWindow.min.js"></script>
+
+    <script>
+      function store() {
+        this.x = this.offsetWidth
+        this.y = this.offsetHeight
+      }
+
+      $('textarea')
+        .each(store)
+        .on('mouseover mouseout', function() {
+          if (this.offsetWidth !== this.x || this.offsetHeight !== this.y) {
+            if ('parentIFrame' in window) parentIFrame.size()
+            store.call(this)
+          }
+        })
+    </script>
+  </body>
+</html>

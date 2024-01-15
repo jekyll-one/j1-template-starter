@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023 Juergen Adams
+# Copyright (C) 2023, 2024 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
@@ -18,7 +18,7 @@ include Asciidoctor
 #
 # Usage:
 #
-#   video::video_path[poster="full_image_path" theme="vjs_theme_name" role="CSS classes"]
+#   video::video_path[poster="full_image_path" theme="vjs_theme_name" zoom="true|false" role="CSS classes"]
 #
 # Example:
 #
@@ -36,7 +36,7 @@ Asciidoctor::Extensions.register do
     use_dsl
 
     named :videojs
-    name_positional_attributes 'poster', 'theme', 'role'
+    name_positional_attributes 'poster', 'theme', 'zoom', 'role'
     default_attrs 'poster' => '/assets/images/icons/videojs/videojs-poster.png',
                   'theme' => 'uno',
                   'role' => 'mt-3 mb-3'
@@ -73,6 +73,7 @@ Asciidoctor::Extensions.register do
           > </video>
         </div>
       )
+
       create_pass_block parent, html, attributes, subs: nil
     end
   end

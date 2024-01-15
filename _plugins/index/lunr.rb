@@ -5,7 +5,7 @@
 # Product/Info:
 # http://jekyll.one
 #
-# Copyright (C) 2023 Juergen Adams
+# Copyright (C) 2023, 2024 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
@@ -76,6 +76,8 @@ module Jekyll
         @lunr_path = File.join(@project_path, 'lunr.min.js')
         raise "Could not find #{@lunr_path}" unless File.exist?(@lunr_path)
 
+        # set NodeJS for JS runtime explicitely
+        ExecJS.runtime = ExecJS::Runtimes::Node
         lunr_src = open(@lunr_path).read
         ctx = ExecJS.compile(lunr_src)
 
@@ -148,7 +150,7 @@ module Jekyll
           entry = SearchEntry.create(item, content_renderer)
 
           entry.strip_index_suffix_from_url! if @strip_index_html
-          entry.strip_stopwords!(stopwords, @min_length) if File.exists?(@stopwords_file)
+          entry.strip_stopwords!(stopwords, @min_length) if File.exist?(@stopwords_file)
 
           doc = {
             'id'          => i,
@@ -176,6 +178,7 @@ module Jekyll
 
         end
         index_js << '});'
+
 
         filename  = File.join(@index_dir, "#{@index_name}")
         ctx       = ExecJS.compile(index_js)
@@ -391,6 +394,6 @@ end
 
 module Jekyll
   module J1LunrSearch
-    VERSION = '2024.0.0'
+    VERSION = '2024.1.0'
   end
 end

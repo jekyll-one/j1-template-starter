@@ -1,7 +1,7 @@
 ---
-title:                                  Search
-title_extention:                        Integrated site search based on Lunr for J1 Template
-tagline:                                Lunr For J1
+title:                                  Search Engine
+title_extention:                        Integrated site search module based on Lunr for J1 Template
+tagline:                                QuickSearch Module for J1
 
 date:                                   2020-11-08
 #last_modified:                         2023-01-01
@@ -31,7 +31,7 @@ image:
 regenerate:                             false
 permalink:                              /pages/public/learn/roundtrip/quicksearch/
 
-resources:                              [ animate, clipboard, lightbox, rouge ]
+resources:                              [ animate, lightbox, rouge ]
 resource_options:
   - attic:
       slides:
@@ -59,17 +59,19 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-The search option for the J1 Template is based on the search engine Lunr and
-is fully integrated with the Template. Lunr is designed to be lightweight yet
-full-featured to provide users with a great search experience. Using Lunr for
-a Jekyll website, there is no need to integrate complex external, server-sided
-search engines like Google or Bing.
+The search option for the J1 Template is based on the search engine _Lunr_,
+a great search engine inspired by _Apache Solr_ written in Javscript by
+http://lunrjs.com[Oliver Nightingale, {browser-window--new}]. The search
+engine is fully integrated with the Template. The engine is designed to be
+lightweight yet full-featured to provide users with a great search experience.
 
-Searching a website using QuickSearch is different from search engines like
-Google or Microsoft Bing. Those search platforms using complex algorithms to
-provide a simple interface to the public but using a lot of artificial
-intelligence (AI) methods to make sense of results out of a handful of words
-given for a search.
+Using the J1 QuickSearch module for a website, it is *not* longer needed to
+integrate complex external, server-sided search engines like Microsoft
+_Bing_ or _Google_. Searching a website using QuickSearch is different from
+Internet search engines. Search platforms are using complex algorithms
+to provide a simple interface but require a lot of artificial intelligence
+(AI) methods under the hood to make sense of results out of a handful of
+words given for a search.
 
 Nevertheless, QuickSearch, the J1 implementation of Lunr, is simple like
 searching at Google but offers additional features to do searches more
@@ -211,13 +213,16 @@ To access QuickSearch, a magnifier button is available in the `Quicklinks`
 area in the menu bar at the top-right of every page.
 
 .Search button (magnifier) in the quick access area
-lightbox::quicksearch-icon[ 800, {data-quicksearch-icon} ]
+lightbox::quicksearch-icon[ 1024, {data-quicksearch--icon} ]
 
 A mouse-click on the magnifier button opens the search input and disables
 all other navigation to focus on what you're intended to do: searching.
 
-.Input bar for a QuickSearch
-lightbox::quicksearch-input[ 800, {data-quicksearch-input} ]
+.Input for a QuickSearch
+lightbox::quicksearch-input[ 1024, {data-quicksearch--input} ]
+
+.Results for a QuickSearch
+lightbox::quicksearch-results[ 1024, {data-quicksearch--results} ]
 
 Search queries look like simple text. But the search `engine` under the
 hood of QuickSearch transforms the given search string (text) always into a
@@ -447,29 +452,33 @@ To simulate a logical *AND* search of documents that contain the word `jekyll`
 [role="mt-5"]
 == What next
 
-You reached the end of the roundtrip. Hopefully you enjoyed exploring what J1
-can do for your new website. To make things real for your site, go for
-_J1 in a Day_.
+You reached the end of the overview series presentieng what J1 can do.
+I hope you enjoyed exploring what the Template System can do for your new
+website. To learn more on using J1 for your site, I recomment to go for
+*J1 in a Day* next.
 
-J1 in a Day is a tutorial learning to create modern websites using the J1
-Theme. This Tutorial focuses on the basics of Jekyll and J1, which all
-people need to know for a successful way to a modern static website. Jekyll
+J1 in a Day is a *tutorial* learning to create modern websites using the J1
+Template. The tutorial focuses on the basics of Jekyll *and* J1, which all
+people should know for a successful way to a modern static website. Jekyll
 (and J1) is quite different from classic Content Management Systems (CMS).
+Knowlege in CMS system can help someway, but generatora like Jekyll for
+static websites work system-related quite different.
 
-If you would like to learn more about the use of Jekyll and J1 Template, the
-tutorials present what you need to know:
+If you would like to learn more about the use of Jekyll and J1 Template,
+the tutorials present what you need to know to have a successful start in
+creating modern websites using Jekyll and J1:
 
 * The basics of modern static webs
-* Creating an awesome Site
-* Development System
-* Project Management
-* Create Content
+* Creating an awesome site in minutes
+* Learning the Development System of J1 Template
+* Introduction to the Project Management for a static web
+* Content creation for J1 based static websites
 
-It sounds much, spending a whole day to get Jekyll and J1 to know. Yes, it is
-much. But it makes sense to get a full overview of what can be achieved by
-modern static websites.
+It sounds much, spending a whole day to get Jekyll and J1 to know. Yes, it
+is much. But it really makes sense to get a full overview of what can be
+achieved by modern static websites on your own.
 
 [role="mb-7"]
-It's a pleasant journey to learn what modern static webs can offer today.
-Start your journey from here:
+It's a promise: you'll have a pleasant journey to learn what modern static
+webs can offer today. Start your experience from here:
 link:{url-j1-kickstarter--web-in-a-day}[J1 in a Day, {browser-window--new}].

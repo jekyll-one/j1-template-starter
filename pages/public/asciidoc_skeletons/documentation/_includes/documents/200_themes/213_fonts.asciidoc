@@ -155,7 +155,10 @@ heading:
 When you execute *Asciidoctor PDF*, you need to specify the directory where the
 fonts reside using the `pdf-fontsdir` attribute:
 
- $ asciidoctor-pdf -a pdf-style=basic-theme.yml -a pdf-fontsdir=path/to/fonts document.adoc
+[source, sh]
+----
+asciidoctor-pdf -a pdf-style=basic-theme.yml -a pdf-fontsdir=path/to/fonts document.adoc
+----
 
 [WARNING]
 ====

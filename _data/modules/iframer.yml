@@ -1,0 +1,103 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/framer.yml
+# User configuration settings for module iFramer
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023, 2024 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                iFramer
+  scope:                                User settings
+  location:                             _data/modules/iframer.yml
+
+# ------------------------------------------------------------------------------
+# User settings
+#
+settings:
+  enabled:                              true
+
+  # ----------------------------------------------------------------------------
+  # iFrames
+  # ----------------------------------------------------------------------------
+  iframes:
+
+    # --------------------------------------------------------------------------
+    # Test iframe
+    #
+    - iframe:
+      enabled:                          true
+
+      id:                               magic_iframe
+      inject_contentWindowScript:       true
+
+      # ------------------------------------------------------------------------
+      # iframe (HTML) attributes
+      # ------------------------------------------------------------------------
+      #
+      attributes:
+        loading:                        lazy
+        name:                           iframe document
+        src:                            /pages/public/tools/previewer/iframer_documents/iframe.content.html
+        width:                          100%
+        scrolling:                      false
+
+      # ------------------------------------------------------------------------
+      # iFramer (module) options
+      # ------------------------------------------------------------------------
+      options:
+        log:                            true
+        inPageLinks:                    true
+        onResized: >
+                                        function(messageData) {
+                                          // Callback when page is resized
+                                          $('p#resize_stats').html (
+                                            '<b>iFrame ID:</b> ' +
+                                              messageData.iframe.id +
+                                              '&nbsp;&nbsp; <b>Height:</b> ' +
+                                              messageData.height +
+                                              '&nbsp;&nbsp; <b>Width:</b> ' +
+                                              messageData.width +
+                                              '&nbsp;&nbsp; <b>Event type:</b> ' +
+                                              messageData.type
+                                          )
+                                        }
+
+    # --------------------------------------------------------------------------
+    # Documind iframe
+    #
+    - iframe:
+      enabled:                          true
+
+      id:                               documind
+      inject_contentWindowScript:       true
+
+      # ------------------------------------------------------------------------
+      # iframe (HTML) attributes
+      # ------------------------------------------------------------------------
+      #
+      attributes:
+        loading:                        lazy
+        src:                            /pages/public/tools/previewer/iframer_documents/iframe.docsearch.info.html
+        title:                          ""
+        allowtransparency:              true
+        style:                          "background: #FAFAFA;"
+        height:                         600
+        width:                          100%
+
+      # ------------------------------------------------------------------------
+      # iFramer (module) options
+      # ------------------------------------------------------------------------
+      options:
+        checkOrigin:                    false
+
+# ------------------------------------------------------------------------------
+# END config

@@ -1,0 +1,45 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/docsearch.yml
+# User configuration settings for J1 DocSearch integration
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023, 2024 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 DocSearch
+  scope:                                User settings
+  location:                             _data/modules/docsearch.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+settings:
+  enabled:                              false
+
+  # Provider settings
+  # ----------------------------------------------------------------------------
+  provider_settings:
+    provider_id:                        <your-provider_id>
+    bot_id:                             <your-bot_id-id>
+
+  # Bot settings
+  # ----------------------------------------------------------------------------
+  bot_settings:
+    iframe:
+      title:                            J1 DocSearch
+      height:                           400
+      width:                            100%
+      scrolling:                        no
+      style:                            "border: none; background: white;"
+
+# ------------------------------------------------------------------------------
+# END config
