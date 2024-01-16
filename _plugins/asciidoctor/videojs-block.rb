@@ -67,7 +67,10 @@ Asciidoctor::Extensions.register do
                 "src": "#{target}"
               }],
               "controlBar": {
-                "pictureInPictureToggle": false
+                "pictureInPictureToggle": false,
+                "volumePanel": {
+                  "inline": false
+                }
               }
             }'
           > </video>
