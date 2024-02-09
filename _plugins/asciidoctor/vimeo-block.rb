@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # ~/_plugins/asciidoctor-extensions/vimeo-block.rb
-# Asciidoctor extension for J1 Vimeo Video
+# Asciidoctor extension for Vimeo Video
 #
 # Product/Info:
 # https://jekyll.one

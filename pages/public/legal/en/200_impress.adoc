@@ -6,12 +6,10 @@ date:                                   2020-10-23
 #last_modified:                         2023-01-01
 
 description: >
-                                        J1 Template is a Bootstrap V5 website template for the static
-                                        site generator Jekyll.
-                                        The content and works published on this website are governed by the copyright
-                                        laws of Germany. Any duplication, processing, distribution, or any form of
-                                        utilization beyond the scope of copyright law shall require the prior written
-                                        consent of the author or authors in question.
+                                        Required information about the content responsible
+                                        persons in accordance of the Germany laws based on
+                                        § 18 section 1 MStV regarding Information obligations
+                                        and rights to information
 
 categories:                             [ Site ]
 tags:                                   [ Impress ]
@@ -21,9 +19,9 @@ robots:
   follow:                               false
 
 image:
-  path:                                 /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
+  path:                                 /assets/images/modules/attics/1920x1280/ifonnx-toys.jpg
   width:                                1920
-  height:                               1280
+  height:                               1200
 
 sitemap:                                false
 exclude_from_search:                    true
@@ -36,9 +34,17 @@ permalink:                              /pages/public/legal/en/impress/
 resources:                              [ animate, rouge ]
 resource_options:
   - attic:
+      padding_top:                      630
+#     padding_bottom:                   100
+#     margin_bottom:                    180
       slides:
-        - url:                          /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
-          alt:                          J1 Starter Mockup
+        - url:                          /assets/images/modules/attics/1920x1280/ifonnx-toys.jpg
+          alt:                          IFONNX Toys
+          badge:
+            type:                       unsplash
+            author:                     IFONNX Toys
+            href:                       https://unsplash.com/de/@danroc0414
+
 ---
 
 // Page Initializer
@@ -82,10 +88,9 @@ endif::[]
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-The content and works published on this website are governed by the copyright
-laws of Germany. Any duplication, processing, distribution, or any form of
-utilization beyond the scope of copyright law shall require the prior written
-consent of the author or authors in question.
+Find below the required information about the content responsible persons in
+accordance of the German Laws with section 18 of paragraph 1 MStV regarding
+information obligations and rights to information.
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------

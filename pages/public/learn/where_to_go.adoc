@@ -23,10 +23,14 @@ image:
   width:                                1920
   height:                               1280
 
+comments:                               false
 regenerate:                             false
 permalink:                              /pages/public/learn/where_to_go/
 
-resources:                              [ animate, rouge ]
+resources:                              [
+                                          animate, comments,
+                                          rouge
+                                        ]
 resource_options:
   - attic:
       slides:

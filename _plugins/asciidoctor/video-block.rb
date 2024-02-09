@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # ~/_plugins/asciidoctor-extensions/video-block.rb
-# Asciidoctor extension for local J1 HTML5 Video
+# Asciidoctor extension for local HTML5 Video
 #
 # Product/Info:
 # https://jekyll.one

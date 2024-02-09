@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # ~/_plugins/asciidoctor-extensions/youtube-block.rb
-# Asciidoctor extension for J1 YouTube Video
+# Asciidoctor extension for YouTube Video
 #
 # Product/Info:
 # https://jekyll.one

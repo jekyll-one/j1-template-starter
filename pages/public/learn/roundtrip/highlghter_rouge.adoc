@@ -83,7 +83,7 @@ are used:
 The *default* themes used for the J1 Template can be configured with
 the global *template config* file `~/_data/j1_config.yml`.
 
-[source, yaml]
+[source, yaml, role="noclip"]
 ----
 # ------------------------------------------------------------------------------
 # HIGHLIGHTERs
@@ -141,7 +141,7 @@ from the button *AVAILABLE THEMES* below.
 [role="mt-4"]
 === Liquid code
 
-[source, liquid]
+[source, liquid, role="noclip"]
 ----
 Hello {{ 'now' | date: "%Y %h" }}
 
@@ -154,7 +154,7 @@ Hello {{ 'now' | date: "%Y %h" }}
 [role="mt-4"]
 === Javascript code
 
-[source, javascript]
+[source, javascript, role="noclip"]
 ----
 // helper functions
 //
@@ -174,7 +174,7 @@ function styleSheetLoaded(styleSheet) {
 [role="mt-4"]
 === Ruby code
 
-[source, ruby]
+[source, ruby, role="noclip"]
 ----
 require 'asciidoctor/extensions' unless RUBY_ENGINE == 'opal'
 include Asciidoctor <1>

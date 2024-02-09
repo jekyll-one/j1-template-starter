@@ -54,14 +54,14 @@
 #   values:           head|body-navigation|body-header|body-main|body-footer
 #   default:          no defaults
 #
-#   type
+#   type (required)
 #   ----------------------------------------------------------------------------
-#   The (HTML) content of a lane can be included (from an include file) or
-#   loaded asychronously from a HTML data file by AJAX (get|load) calls.
-#   J1 Theme is using jQuery as an interface to AJAX calls.
+#   The (HTML) content of a lane can be passed from an included HTML template
+#   file or loaded asychronously at runtime from HTML data files by AJAX
+#   calls for dynamic HTML pages.
 #
-#   values:           include|load
-#   default:          no defaults
+#     values:                           sync|async
+#     default:                          no default
 #
 #   source
 #   ----------------------------------------------------------------------------

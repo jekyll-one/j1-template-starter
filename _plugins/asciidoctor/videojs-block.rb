@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # ~/_plugins/asciidoctor-extensions/video-block.rb
-# Asciidoctor extension for local J1 HTML5 Video
+# Asciidoctor extension for local HTML5 Video
 #
 # Product/Info:
 # https://jekyll.one
@@ -14,16 +14,17 @@ require 'asciidoctor/extensions' unless RUBY_ENGINE == 'opal'
 include Asciidoctor
 
 # ------------------------------------------------------------------------------
-# A block macro that embeds a local video into the output document
+# A block macro that embeds a local video using VideoJS into the output document
 #
 # Usage:
 #
-#   video::video_path[poster="full_image_path" theme="vjs_theme_name" zoom="true|false" role="CSS classes"]
+#   .Title
+#   video::video_path[start="hh:mm:ss" poster="full_image_path" theme="vjs_theme_name" zoom="true|false" role="CSS classes"]
 #
 # Example:
 #
-#   .Video title
-#   video::nV8UZJNBY6Y[poster="/assets/images/icons/videojs/videojs-poster.png" theme="city" role="mt-5 mb-5"]
+#   .MP4 Video, Rolling Wild
+#   videojs::/assets/videos/gallery/html5/video2.mp4[start="00:00:50" poster="/assets/videos/gallery/video1-poster.jpg" role="mt-4 mb-5"]
 #
 # ------------------------------------------------------------------------------
 # See:
@@ -36,9 +37,11 @@ Asciidoctor::Extensions.register do
     use_dsl
 
     named :videojs
-    name_positional_attributes 'poster', 'theme', 'zoom', 'role'
-    default_attrs 'poster' => '/assets/images/icons/videojs/videojs-poster.png',
+    name_positional_attributes 'start', 'poster', 'theme', 'zoom', 'role'
+    default_attrs 'start' => '00:00:00',
+                  'poster' => '/assets/videos/gallery/videojs-poster.png',
                   'theme' => 'uno',
+                  'zoom' => false,
                   'role' => 'mt-3 mb-3'
 
     def process parent, target, attributes
@@ -75,6 +78,26 @@ Asciidoctor::Extensions.register do
             }'
           > </video>
         </div>
+
+        <script>
+          $(function() {
+            var dependencies_met_page_ready = setInterval (function (options) {
+              var pageState   = $('#no_flicker').css("display");
+              var pageVisible = (pageState == 'block') ? true : false;
+
+              if (j1.getState() === 'finished' && pageVisible) {
+                videojs("#{video_id}").ready(function() {
+                  var videojsPlayer = this;
+                  videojsPlayer.on("play", function() {
+                    var startFromSecond = new Date('1970-01-01T' + "#{attributes['start']}" + 'Z').getTime() / 1000;
+                    videojsPlayer.currentTime(startFromSecond);
+                  });
+                });
+                clearInterval(dependencies_met_page_ready);
+              }
+            }, 10);
+          });
+        </script>
       )
 
       create_pass_block parent, html, attributes, subs: nil

@@ -30,7 +30,7 @@
 #
 # base_url
 # ------------------------------------------------------------------------------
-#   For J1 Theme, all CSS and JS resources are stored as ASSETS
+#   For J1 Theme, all CSS and JS resources are stored as ASSEFFTS
 #   under ~/assets/themes/j1. To shorten the filenames to be configured,
 #   base_url points to the (base) asset path.
 #
@@ -1391,6 +1391,29 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
+  # TikTok Player, Version v1.0.11
+  #
+  - name:                               TikToc Player
+    resource:
+      enabled:                          true
+
+      id:                               tiktokplayer
+      comment:                          Module TikToc Player
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+
+      data:
+        css:                            []
+        files:                          [ modules/tiktocPlayer/js/player.min.js ]
+        js:                             []
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
   # Dailymotion Player, Version v-0.0.3352-rc1 for Dailymotion Video content
   #
   - name:                               Dailymotion Player
@@ -1551,7 +1574,10 @@ resources:
 
       data:
         css:                            []
-        files:                          [ adapter/js/comments.js ]
+        files:                          [
+                                          modules/comments/hyvor/css/themes/uno.css,
+                                          adapter/js/comments.js
+                                        ]
         js:                             []
         init_function:                  [ j1.adapter.comments.init ]
 

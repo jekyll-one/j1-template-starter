@@ -32,6 +32,7 @@ permalink:                              /pages/public/learn/roundtrip/present_vi
 resources:                              [
                                           animate,
                                           lightgallery, gallery, rouge,
+#                                         tiktocplayer,
                                           videojs, vimeoplayer
                                         ]
 resource_options:
@@ -95,7 +96,7 @@ standard. The previous proprietary software like _Flash Player_, _Quicktime_,
 or _Silverlight_ is no longer needed as J1 provides HTML Video and VideoJS
 support for local video and from online sources on the Internet.
 
-mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
+mdi:clock-time-five-outline[24px, md-gray mt-5 mr-2]
 *10-15 Minutes* to read
 
 // Include sub-documents (if any)
@@ -146,19 +147,20 @@ Modern browsers support the video tag `<video>` for the current version of
 HTML. The browsers support a framework for decoding and displaying video
 content.
 
-.Local Video
-video::/assets/videos/gallery/html5/video1.mp4[poster="/assets/videos/gallery/video1-poster.1920.jpg" role="mt-4 mb-5"]
+.MP4 Video, Peck Pocketed
+video::/assets/videos/gallery/html5/video1.mp4[poster="/assets/videos/gallery/video1-poster.jpg" role="mt-4 mb-5"]
 
 [role="mt-4"]
 === VideoJS Player
 
 VideoJS is an Open Source JavaScript framework and library for building
 custom video players for the web. It provides a flexible and customizable
-platform for displaying and controlling video content on websites and web
-applications.
+platform for displaying and controlling MPEG 4 video content on websites
+and web applications.
 
-.Local Video
-videojs::/assets/videos/gallery/html5/video1.mp4[poster="/assets/videos/gallery/video1-poster.1920.jpg" role="mt-4 mb-5"]
+.MP4 Video, Rolling Wild
+// videojs::/assets/videos/gallery/html5/video2.mp4[start="00:00:50" poster="/assets/videos/gallery/video2-poster.jpg" role="mt-4 mb-5"]
+videojs::/assets/videos/gallery/html5/video2.mp4[poster="/assets/videos/gallery/video2-poster.jpg" role="mt-4 mb-5"]
 
 
 [role="mt-5"]
@@ -172,6 +174,7 @@ for people and organizations to publish various video content.
 youtube::20gXikNRjbo[poster="/assets/videos/gallery/voice_kids_nl_2021/video_poster.jpg" role="mt-4 mb-5"]
 
 
+/////
 [role="mt-4"]
 === Dailymotion on VideoJS
 
@@ -182,6 +185,16 @@ every video.
 
 .SELF Channel
 dailymotion::x87ycik[role="mt-4 mb-5"]
+/////
+
+/////
+++++
+<iframe frameborder="0" width="480" height="270"
+    src="//www.dailymotion.com/embed/video/x87ycik"
+    allowfullscreen allow="autoplay">
+</iframe>
+++++
+/////
 
 
 [role="mt-4"]
@@ -195,6 +208,7 @@ video platform.
 
 .Wistia Video
 wistia::29b0fbf547[role="mt-4 mb-4"]
+
 
 [role="mt-5"]
 === Vimeo on VideoJS
@@ -221,10 +235,18 @@ Find below examples of video galleries of locally stored (MP4) video resources
 and video content provided online via YouTube.
 
 [role="mt-4"]
-=== Local Video
+=== MP4 Video
 
 Videos created by a digicam or a mobile can be played by J1 Template using
 the lightGallery integration. Present videos you have made at it's best.
+
+[NOTE]
+====
+The current file size of Local Video is *limited* to *50MB* (Git LFS limit).
+Using a modern MP4 Encoder (H264|H265 compression), a video will have a
+playing time of around ~*3-5 minutes* for HD 1080p (1920x1080) or
+up to ~*10 minutes* for HD 720p (1280x720) resolution.
+====
 
 .MP4 Videos
 gallery::jg_video_html5[role="mt-4 mb-4"]
@@ -253,6 +275,13 @@ _James Corden_ of *The Late Late Show* at CBS, Los Angeles.
 .Carpool Karaoke
 gallery::jg_video_online_youtube_james_and_adele[role="mb-5"]
 
+// [role="mt-4"]
+// === TikToc Video
+//
+// Bla ...
+//
+// .TikToc Videos
+// gallery::jg_video_online_tiktoc[role="mb-5"]
 
 [role="mt-4"]
 === Vimeo Video
@@ -278,6 +307,7 @@ space for private projects to present video content without advertising.
 
 .Fashion
 gallery::jg_video_online_vimeo[role="mb-5"]
+
 
 /////
 [role="mt-5"]

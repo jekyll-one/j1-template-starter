@@ -6,8 +6,6 @@ date:                                   2023-01-01
 #last_modified:                         2023-01-01
 
 description: >
-                                        J1 Template is a Bootstrap V5 website template for the static
-                                        site generator Jekyll.
                                         The operators of this website take the protection of your personal data
                                         seriously. We treat your data confidentially and protect your data privacy to
                                         the General Data Protection Regulation (GDPR) of the European Union.
@@ -20,9 +18,9 @@ robots:
   follow:                               true
 
 image:
-  path:                                 /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
+  path:                                 /assets/images/modules/attics/1920x1280/ifonnx-toys.jpg
   width:                                1920
-  height:                               1280
+  height:                               1200
 
 sitemap:                                false
 exclude_from_search:                    true
@@ -32,9 +30,16 @@ permalink:                              /pages/public/legal/en/privacy/
 resources:                              [ animate, rouge ]
 resource_options:
   - attic:
+      padding_top:                      600
+#     padding_bottom:                   100
+#     margin_bottom:                    180
       slides:
-        - url:                          /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
-          alt:                          J1 Starter Mockup
+        - url:                          /assets/images/modules/attics/1920x1280/ifonnx-toys.jpg
+          alt:                          IFONNX Toys
+          badge:
+            type:                       unsplash
+            author:                     IFONNX Toys
+            href:                       https://unsplash.com/de/@danroc0414
 ---
 
 // Page Initializer
@@ -151,11 +156,12 @@ functions of your browser.
 
 ++++
 <div class="mt-4 mb-4 d-grid gap-2">
-  <a  href="javascript:j1.cookieConsent.showDialog()"
-      class="btn btn-info btn-flex btn-lg"
-      aria-label="Cookie Consent">
-      <i class="mdi mdi-cookie mdi-2x mr-2"></i>
-      Your settings
+  <a href="#"
+     onclick="j1.cookieConsent.showDialog(); return false;"
+     class="btn btn-info btn-flex btn-lg"
+     aria-label="Cookie Consent">
+     <i class="mdi mdi-cookie mdi-2x mr-2"></i>
+      Ihre Einstellungen
   </a>
 </div>
 ++++
@@ -590,6 +596,5 @@ settings with your privacy settings. Notice, however, that you may not be able
 to use the full functionality of this website in this case.
 ====
 endif::[]
-
 
 [role="mb-7"]

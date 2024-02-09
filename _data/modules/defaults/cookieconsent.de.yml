@@ -1,0 +1,104 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/cookieconsent.yml
+# Default configuration settings for J1 Cookie Consent module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023, 2024 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                CookieConsent
+  scope:                                Default settings
+  location:                             _data/modules/defaults/cookieconsent.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+  enabled:                              false
+
+  show_cookie_icon:                     false
+  expire_cookies_on_required_only:      true
+
+  reloadPageOnChange:                   true
+  autoShowDialog:                       true                                    # show consent dialog if NO consent cookie found
+  dialogLanguage:                       auto                                    # auto|one of the configured dialogLanguages
+  dialogLanguages:                      [en, de]                                # supported dialog (modal) languages, defaults to FIRST language defined by languages
+  contentURL:                           /assets/data/cookieconsent              # dialog content (modals) for all supported languages
+  reloadPageOnChange:                   true                                    # reload current page if user settings has been changed
+  whitelisted:                          []                                      # pages NO consent issued
+  xhrDataElement:                       consent-data                            # container for all language-specific consent modals (taken from contentURL)
+  dialogContainerID:                    consent-dialog                          # container, the dialog modal is (dynamically) loaded
+  postSelectionCallback:                j1.adapter.cookieConsent.cbCookie       # called after the user has made his selection
+
+  modal_settings:
+
+    title:                              Your Privacy
+    body_text: >
+                                        This website uses cookies and similar technologies that are required
+                                        for operation. You are free to decide to give, refuse or withdraw your
+                                        consent at any time by clicking the <b>My Settings</b> button.
+                                        Changes are possible at any time by clicking on the cookie icon in the
+                                        menu bar. Additional cookies are used only with your consent.
+                                        Additional cookies are used to analyze the use of this website or to store
+                                        your personal settings for this website. Personal settings allow all visitors
+                                        to save preferences of the use of services.
+                                        For more information about what data is collected and shared with partners,
+                                        please find more information with <b>Privacy Notice</b>.
+                                        <br><br>
+                                        To visit this website, your consent on cookies is required by clicking
+                                        the <b>I Agree</b> button.
+    privacy_notice: >
+
+                                        The operator of this website takes the protection of your personal data
+                                        seriously. We treat your data confidential and comply with the General
+                                        Data Protection Regulation (GDPR) of the European Union to protect your
+                                        privacy.
+                                        A set of data is stored in persistent cookies and remain on your computer
+                                        for later use. Our partners and we make use of persistent vookies. Those
+                                        additional cookies are only used with your consent.
+                                        <br>
+                                        <ul>
+                                          <li style="list-style-type: none;">
+                                            <b>Necessary</b>
+                                            <p>
+                                              This website is based on static content, and no database is used behind it.
+                                              All information (data) needed to control this site is stored in so-called
+                                              session Cookies. Your browser automatically removes all session cookies
+                                              if you close all windows in the browser.
+                                            </p>
+                                          </li>
+                                          <li style="list-style-type: none;">
+                                            <b>Analysis</b>
+                                            <p>
+                                              Analysis of the usage of this website helps optimize the site's pages to
+                                              improve the visitor's experience. For traffic analysis, the service
+                                              Google Analytics (GA) is used. GA uses persistent cookies that remain on
+                                              your computer for its service. This website does <b>not</b> transfer any
+                                              personal data to GA. Implicit personal information, like IP addresses, is
+                                              anonymized to protect your privacy.
+                                            </p>
+                                          </li>
+                                          <li style="list-style-type: none;">
+                                            <b>Personalization</b>
+                                            <p>
+                                              Remebering your personal settings provides additional services like themes
+                                              translation, comments, or running advertising campaigns to provide visitors
+                                              with a website free of charge. Partners use persistent cookies that
+                                              remain on your computer for their services. Our partners like Bootswatch,
+                                              Hyvor, Disqus, or Google provide excellent personalized services and finance
+                                              running this site.
+                                            </p>
+                                          </li>
+                                        </ul>
+
+# ------------------------------------------------------------------------------
+# END config

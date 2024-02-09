@@ -78,7 +78,7 @@
 #   type (required)
 #   ----------------------------------------------------------------------------
 #   The (HTML) content of a lane can be passed from an included HTML template
-#   file or loaded asychronously at runtime from HTML data files by AJAX
+#   file (sync) or loaded asychronously at runtime from HTML data files by AJAX
 #   calls for dynamic HTML pages.
 #
 #     values:                           sync|async
@@ -381,7 +381,7 @@ lanes:
   # ----------------------------------------------------------------------------
   #
   - lane:
-      enabled:                          false
+      enabled:                          true
       id:                               banner_home_parallax
       region:                           body-main
       type:                             async

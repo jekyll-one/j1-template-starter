@@ -24,6 +24,7 @@ image:
   width:                                1920
   height:                               1280
 
+tts:                                    true
 comments:                               false
 regenerate:                             false
 permalink:                              /pages/public/learn/roundtrip/asciidoc_extensions/
@@ -82,7 +83,7 @@ Extensions for the markup language Asciidoc were made especially for documents
 of the Jekyll content type *page*, but can be used for *posts* or *collections*
 as well.
 
-mdi:clock-time-five-outline[24px, md-gray mt-4 mr-2]
+mdi:clock-time-five-outline[24px, md-gray mt-5 mr-2]
 *5-10 Minutes* to read
 
 // Include sub-documents (if any)
@@ -321,14 +322,14 @@ and CSS styles are configurable for all images using this macro.
 .Lightbox block for single images
 [source, no_template, role="noclip"]
 ----
-.block_title
+.Block title
 lightbox::<block_id>[ <images_width>, <images_data_id>, <role="CSS styles"> ]
 ----
 
 .Lightbox block for image groups
 [source, no_template, role="noclip"]
 ----
-.block_title
+.Block title
 lightbox::<block_id>[ <images_width>, <images_data_id>, <group_name>, <role="CSS styles"> ]
 ----
 
@@ -423,10 +424,10 @@ portrait. For that reason, a more powerful gallery is needed to create
 a so-called *masonry grid layout*. It works by placing elements in an
 optimal position based on available horizontal and vertical space.
 
-.Gallerie macro for images and videos
+.Gallery macro for images and videos
 [source, no_template, role="noclip"]
 ----
-.block_title
+.Gallery title
 gallery::<gallery_id>[role="<additional CSS styles>"]
 ----
 

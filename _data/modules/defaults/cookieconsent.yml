@@ -30,18 +30,11 @@ defaults:
 
   reloadPageOnChange:                   true
   autoShowDialog:                       true                                    # show consent dialog if NO consent cookie found
-  dialogLanguage:                       content                                 # auto|content|one of dialogLanguages
+  dialogLanguage:                       content                                 # auto|content|one of the configured dialogLanguages
   dialogLanguages:                      [en, de]                                # supported dialog (modal) languages, defaults to FIRST language defined by languages
   contentURL:                           /assets/data/cookieconsent              # dialog content (modals) for all supported languages
-#  cookieName:                          j1.user.consent                         # name of the user consent cookie
-#  cookieStorageDays:                   365                                     # duration the consent cookie is stored
-#  cookieSameSite:                      Strict                                  # restrict consent cookie to first-party, do NOT send cookie to other domains
   reloadPageOnChange:                   true                                    # reload current page if user settings has been changed
   whitelisted:                          []                                      # pages NO consent issued
-# whitelisted:                          [
-#                                         '/pages/public/legal/en/privacy/',
-#                                         '/pages/public/se-fake/',
-#                                       ]                                     ]
   xhrDataElement:                       consent-data                            # container for all language-specific consent modals (taken from contentURL)
   dialogContainerID:                    consent-dialog                          # container, the dialog modal is (dynamically) loaded
   postSelectionCallback:                j1.adapter.cookieConsent.cbCookie       # called after the user has made his selection

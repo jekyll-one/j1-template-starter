@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # ~/_plugins/asciidoctor-extensions/wistia-block.rb
-# Asciidoctor extension for J1 Wistia Video
+# Asciidoctor extension for Wistia Video
 #
 # Product/Info:
 # https://jekyll.one
