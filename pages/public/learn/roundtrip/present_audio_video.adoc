@@ -1,7 +1,7 @@
 ---
-title:                                  Video Content
-title_extention:                        Playing HTML5 Video using J1 Template
-tagline:                                Playing Video
+title:                                  Audio and Video
+title_extention:                        Playing HTML5 Audio and Video using J1 Template
+tagline:                                Playing Audio and Video files
 
 date:                                   2020-11-04
 #last_modified:                         2023-01-01
@@ -27,7 +27,7 @@ image:
 
 personalization:                        true
 regenerate:                             false
-permalink:                              /pages/public/learn/roundtrip/present_videos/
+permalink:                              /pages/public/learn/roundtrip/present_audio_video/
 
 resources:                              [
                                           animate,
@@ -42,16 +42,16 @@ resource_options:
         # Broadway Underground - still image (animate default)
         - url:                          /assets/videos/headers/present_videos/still/underground-broadway.jpg
           alt:                          Broadway Underground
-#         title:                        Video Content
-#         tagline:                      Playing Video
+          title:                        Audio and Video
+          tagline:                      Playing Audio and Video files
           alignY:                       top
           animateFirst:                 false
 
         # Broadway Underground - FAYETTE ST, moved file to Github/LFS
         - url:                          /assets/videos/headers/present_videos/underground-broadway.mp4
           alt:                          Broadway Underground Video
-          title:                        Playing Video
-          tagline:                      Broadway Underground
+          title:                        Audio and Video
+          tagline:                      Playing Audio and Video files
           alignY:                       0
           isVideo:                      true
           loop:                         false
@@ -60,8 +60,8 @@ resource_options:
         # Broadway Underground - still image (animate random)
         - url:                          /assets/videos/headers/present_videos/still/underground-broadway.jpg
           alt:                          Broadway Underground
-          title:                        Video Content
-          tagline:                      Playing Video
+          title:                        Audio and Video
+          tagline:                      Playing Audio and Video files
           alignY:                       top
           transition:                   push_left|push_right|cover_up|cover_down|fade|fadeInOut
 ---
@@ -88,16 +88,29 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-The J1 Template system support playing video on web pages by HTML5 video,
-the new standard of HTML to show videos on webpages natively.
+The J1 Template system support playing audio and video on web pages by HTML5,
+the new standard of HTML to play audio and video files on webpages natively
+without the need of any external player.
 
-Modern browsers support the video tag `<video>` for the current HTML V5
-standard. The previous proprietary software like _Flash Player_, _Quicktime_,
-or _Silverlight_ is no longer needed as J1 provides HTML Video and VideoJS
-support for local video and from online sources on the Internet.
+Modern browsers support the audio tag `<audio>` and the video tag `<video>`
+for the current HTML standard. The previous proprietary software like
+_Flash Player_, _Quicktime_, or _Silverlight_ is no longer needed as J1
+provides HTML Audio and Video and VideoJS support for local video and from
+online sources on the Internet.
 
 mdi:clock-time-five-outline[24px, md-gray mt-5 mr-2]
 *10-15 Minutes* to read
+
+
+[role="mt-5"]
+== HTML5 Audio
+
+Audio players can be embedded in Web pages very easy by using the HTML5 audio
+tag `<audio>`. Browsers have a built-in multimedia framework for decoding
+and playing audio content directly within a webpage.
+
+.Ambient Piano
+audio::/assets/audio/sound-effects/ambient-piano.mp3[role="mt-4 mb-5"]
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
@@ -254,9 +267,9 @@ gallery::jg_video_html5[role="mt-4 mb-4"]
 [role="mb-4"]
 [NOTE]
 ====
-The HTML5 specification does *not* define which video and audio *formats*
-browsers *should* support. J1 lightGallery can play all standard types of
-video for the Web like MP4, WebM, or Ogg.
+The HTML5 specification does *not* define which audio and video *formats*
+browsers should support. J1 lightGallery can play all standard types of
+video for the Web like *MP4*, *WebM*, or *Ogg*.
 ====
 
 
