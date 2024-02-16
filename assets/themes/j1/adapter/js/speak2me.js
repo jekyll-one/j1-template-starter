@@ -134,7 +134,6 @@ let intervalId;
 
 const scrollBehavior      = 'smooth';
 
-
 // -----------------------------------------------------------------------------
 // global event handler
 // -----------------------------------------------------------------------------
@@ -152,6 +151,22 @@ var Events = {
   // Main object
   // ---------------------------------------------------------------------------
   return {
+
+    // -------------------------------------------------------------------------
+    // global helper functions
+    // -------------------------------------------------------------------------
+    //
+    // See: https://gist.github.com/carloscabo/0ec69aaa42216c7f12efd861e110cb8b
+    // function isSafariIos() {
+    //   var is_ios    = /iP(ad|od|hone)/i.test(window.navigator.userAgent);
+    //   var is_safari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+    //
+    //   if (is_ios && is_safari) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // };
 
     // -------------------------------------------------------------------------
     // init()
@@ -240,7 +255,7 @@ var Events = {
           }
 
           var safariDisabled = (browsersDisabled.includes('Safari')) ? true : false;
-          if (safariDisabled && isSafari) {
+          if (safariDisabled && !isChrome && isSafari) {
             console.log('module speak2me is disabled for the Safari browser');
             logger.warn('\n' + 'module speak2me is disabled for the Safari browser');
             $('#quickLinksSpeakButton').hide();
