@@ -1,20 +1,20 @@
 ---
-title:                                  Fantasy
+title:                                  Romance
 title_extention:                        Collections are Jekyll's most powerful feature
-tagline:                                Fantasy Literature
+tagline:                                Romance Literature
 
 date:                                   2023-01-29
 #last_modified:                         2023-01-01
 
 description: >
-                                        Fantasy Literature in the Book Shelf
+                                        Romance Literature in the Book Shelf
 keywords: >
                                         open source, free, template, jekyll, jekyllone, web,
                                         sites, static, jamstack, bootstrap,
                                         collections
 
 categories:                             [ Books ]
-tags:                                   [ Fantasy, Preview ]
+tags:                                   [ Romance, Preview ]
 
 image:
   path:                                 /assets/images/modules/attics/giammarco-boscaro-1920x1280.jpg
@@ -28,7 +28,7 @@ robots:
 toc:                                    false
 fab_menu_id:                            default
 regenerate:                             false
-permalink:                              /pages/public/learn/bookshelf/article_previewer/fantasy/
+permalink:                              /pages/public/learn/bookshelf/article_previewer/romance/
 
 resources:                              [ animate, masonry, rouge ]
 resource_options:
@@ -39,7 +39,7 @@ resource_options:
           badge:
             type:                       unsplash
             author:                     Giammarco
-            href:                       https://unsplash.com/@giamboscaro
+            href:                       //unsplash.com/@giamboscaro
 ---
 
 // Page Initializer
@@ -64,11 +64,11 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-The fantasy genre has become popular the past few years. Once a genre
-restricted to a few Tolkien fanatics and literature freaks, Fantasy has
-now gone mainstream in a big way, from the mega-popular Harry Potter series
-capturing the world's attention for a decade; brought Fantasy to readers of
-all ages.
+The romance genre is a popular category of books that consistently churns out
+bestsellers. The aim of the genre is simple, showcasing a love story where
+two people overcome adversity to obtain their happily ever after. According to
+the Romance Writers of America, women count for 82% percent of the genre’s
+readership.
 
 [NOTE]
 ====
@@ -85,19 +85,18 @@ mdi:clock-time-five-outline[24px, md-gray mr-2]
 [role="mt-5"]
 == Available Books
 
-[role="mb-4"]
-Find below all available articles in the `fantasy` collection. The content is
+Find below all available articles in the `romance` collection. The content is
 automatically generated and taken from the articles this collection
 contains.
 
-.Collection Fantasy
-masonry::collection_fantasy[role="mb-7"]
+.Collection Romance
+masonry::collection_romance[role="mb-7"]
 
 ////
 ++++
 <div class="row mb-4">
   <div class="col-md-12 col-xs-12">
-    {% include {{create_collection_article_preview}} collection=site.fantasy %}
+    {% include {{create_collection_article_preview}} collection=site.romance %}
   </div>
 </div>
 ++++

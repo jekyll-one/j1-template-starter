@@ -553,55 +553,56 @@ settings:
     # Online VIDEO (YouTube)
     #
     - gallery:
-      enabled:                        true
+      enabled:                          true
 
-      id:                             jg_video_online_youtube_james_and_adele
-      type:                           video
-      video:                          youtube
-      image_base_path:                /assets/videos/gallery
-      thumb_base_path:                /assets/videos/gallery
+      id:                               jg_video_online_youtube_james_and_adele
+      type:                             video
+      video:                            youtube
+      image_base_path:                  /assets/videos/gallery
+      thumb_base_path:                  /assets/videos/gallery
 
       # ------------------------------------------------------------------------
       # Justified Gallery settings
       # ------------------------------------------------------------------------
       #
       gallery_options:
-        rowHeight:                    250
-        gutters:                      3
+        rowHeight:                      250
+        gutters:                        3
 
       # ------------------------------------------------------------------------
       # Lightbox|lightGallery settings
       # ------------------------------------------------------------------------
       #
       lightbox:
-        enabled:                      true
-        type:                         lg
+        enabled:                        true
+        type:                           lg
 
       lightGallery:
-        plugins:                      lgThumbnail, lgVideo
+        plugins:                        lgThumbnail, lgVideo
 
         options:
-          licenseKey:                 0000-0000-000-0000
-          download:                   false
-          alignThumbnails:            left
-          animateThumb:               true
-          autoplayFirstVideo:         true
-          videojs:                    false
+          licenseKey:                   0000-0000-000-0000
+          download:                     false
+          alignThumbnails:              left
+          animateThumb:                 true
+          autoplayFirstVideo:           true
+          videojs:                      false
 
         videojsOptions:
-          enabled:                    false
+          enabled:                      false
 
 #       See: https://stackoverflow.com/questions/40685142/youtube-autoplay-does-not-work-with-iframe
         playerParams:
-          enabled:                    true
-          autoplay:                   1                                         # autoplay = 1 only available for YouTube when muted.
-#         controls:                   1                                         # default = 0
-#         enablejsapi:                1                                         # default = 1
-#         hl:                         en                                        # default = en
-#         loop:                       0                                         # default = 0
-          mute:                       0                                         # default = 1
-#         playsinline:                1                                         # for mobile|iOS only
-#         wmode:                      opaque                                    # default = opaque
+          enabled:                      true
+          start:                        ["00:00:50", "00:00:50"]                # start time video1, vido2
+          autoplay:                     1                                       # autoplay = 1 only available for YouTube when muted.
+#         controls:                     1                                       # default = 0
+#         enablejsapi:                  1                                       # default = 1
+#         hl:                           en                                      # default = en
+#         loop:                         0                                       # default = 0
+          mute:                         0                                       # default = 1
+#         playsinline:                  1                                       # for mobile|iOS only
+#         wmode:                        opaque                                  # default = opaque
 
       # ------------------------------------------------------------------------
       # CSS filter options
@@ -639,6 +640,9 @@ settings:
           poster:
             source:                     video_adele-poster.jpg
 
+          playerParams:
+            start:                      50                                      # seconds to start
+
         - video:                        # video 2
           enabled:                      true
 
@@ -658,6 +662,9 @@ settings:
             text:                       "Carpool Karaoke &middot; Last Carpool Karaoke"
           poster:
             source:                     video_adele_last_carpool_caraoke_poster.jpg
+
+          playerParams:
+            start:                      50                                      # seconds to start
 
     # --------------------------------------------------------------------------
     # Online VIDEO 2 (YouTube)
@@ -861,8 +868,8 @@ settings:
           enabled:                      false
 
         playerParams:
-          enabled:                      true
-          autoplay:                     1
+          enabled:                      false
+          autoplay:                     0
           byline:                       0
           portrait:                     0
           color:                        CCCCCC

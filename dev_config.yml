@@ -53,7 +53,7 @@ environment:                            development
 # ------------------------------------------------------------------------------
 # Sets the build version of the site
 #
-version:                                2024.1.4
+version:                                2024.1.5
 
 # copyright
 # ------------------------------------------------------------------------------
@@ -310,8 +310,8 @@ permalink:                              pretty
 # site.url will be set to the value of host, port.
 # NOTE: Required setting for the sitemap plugin, for example.
 #
-url:                                    http://localhost:23000
-# url:                                  https://j1-template-starter.netlify.app/
+url:                                    http://localhost:22000
+#url:                                   https://starter.jekyll.one/
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -337,7 +337,7 @@ base_path:                              ""
 #
 protocol:                               http
 host:                                   localhost
-port:                                   23000
+port:                                   22000
 timezone:                               Europe/Berlin
 encoding:                               UTF-8
 
@@ -395,7 +395,7 @@ strict_front_matter:                    false
 #
 sass:
   sass_dir:                             _sass/scss
-  style:                                expanded                                # possible values: nested expanded compact compressed
+  style:                                expanded                                # values: compact|compressed|expanded|nested
 
 # ------------------------------------------------------------------------------
 # WEBRICK Customizations

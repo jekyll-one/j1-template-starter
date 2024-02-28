@@ -1,34 +1,32 @@
 ---
-title:                                  Romance
+title:                                  Biography
 title_extention:                        Collections are Jekyll's most powerful feature
-tagline:                                Romance Literature
+tagline:                                Today's People
 
 date:                                   2023-01-29
 #last_modified:                         2023-01-01
 
 description: >
-                                        Romance Literature in the Book Shelf
+                                        Today's people is a collection contains the biography's
+                                        of celebrities well known by most of us. Find the books issued
+                                        by musicans, actors and more.
 keywords: >
                                         open source, free, template, jekyll, jekyllone, web,
                                         sites, static, jamstack, bootstrap,
                                         collections
 
 categories:                             [ Books ]
-tags:                                   [ Romance, Preview ]
+tags:                                   [ Biography, Preview ]
 
 image:
   path:                                 /assets/images/modules/attics/giammarco-boscaro-1920x1280.jpg
   width:                                1920
   height:                               1280
 
-robots:
-  index:                                true
-  follow:                               true
-
 toc:                                    false
 fab_menu_id:                            default
 regenerate:                             false
-permalink:                              /pages/public/learn/bookshelf/article_previewer/romance/
+permalink:                              /pages/public/learn/bookshelf/article_previewer/biography/
 
 resources:                              [ animate, masonry, rouge ]
 resource_options:
@@ -39,7 +37,7 @@ resource_options:
           badge:
             type:                       unsplash
             author:                     Giammarco
-            href:                       https://unsplash.com/@giamboscaro
+            href:                       //unsplash.com/@giamboscaro
 ---
 
 // Page Initializer
@@ -47,7 +45,7 @@ resource_options:
 // Enable the Liquid Preprocessor
 :page-liquid:
 
-// Set (local) page attributes here
+// Set page (local) attributes here
 // -----------------------------------------------------------------------------
 // :page--attr:                         <attr-value>
 
@@ -60,15 +58,16 @@ resource_options:
 // -----------------------------------------------------------------------------
 {% include {{load_attributes}} scope="none" %}
 
+{% comment %} Debugging
+-------------------------------------------------------------------------------- {% endcomment %}
+{% comment %} site.biography: {{ site.biography | debug }} {% endcomment %}
 
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-The romance genre is a popular category of books that consistently churns out
-bestsellers. The aim of the genre is simple, showcasing a love story where
-two people overcome adversity to obtain their happily ever after. According to
-the Romance Writers of America, women count for 82% percent of the genre’s
-readership.
+Find below all available articles the `Booskhelf` collections contains.
+The content is automatically generated and taken from the articles the
+collections contains.
 
 [NOTE]
 ====
@@ -85,18 +84,30 @@ mdi:clock-time-five-outline[24px, md-gray mr-2]
 [role="mt-5"]
 == Available Books
 
-Find below all available articles in the `romance` collection. The content is
-automatically generated and taken from the articles this collection
+Find below all available articles in the `biography` collection. The content
+is automatically generated and taken from the articles this collection
 contains.
 
-.Collection Romance
-masonry::collection_romance[role="mb-7"]
+A biography is a written account of a person's life, typically focusing on
+major achievements, events, and experiences. It can be a detailed record of
+a person's life, covering everything from their birth and childhood to their
+personal and professional accomplishments and even their death.
+
+[role="mb-4"]
+Biographies can be written by someone or someone else and found in various
+formats, including books, articles, and online sources. A biography aims to
+provide insight into a person's life, personality, and achievements and to
+inspire and inform readers about their accomplishments and contributions
+to society.
+
+.Collection Biography
+masonry::collection_biography[role="notoc mb-7"]
 
 ////
 ++++
 <div class="row mb-4">
   <div class="col-md-12 col-xs-12">
-    {% include {{create_collection_article_preview}} collection=site.romance %}
+    {% include {{create_collection_article_preview}} collection=site.biography %}
   </div>
 </div>
 ++++

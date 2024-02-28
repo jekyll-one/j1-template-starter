@@ -1,0 +1,165 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/gemini.yml
+# Default configuration settings for J1 Gemini API module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023, 2024 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 Gemini
+  scope:                                Default settings
+  location:                             _data/modules/defaults/gemini.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # Settings
+  #
+  #   enabled
+  #   --------------------------------------------------------------------------
+  #   Enables or disables the Ad services. If disabled, no ads services are
+  #   enabled and no unit container get initialized on any page.
+  #
+  #   values:                           [true|false]
+  #   default:                          false
+  #
+  #   detectGeoLocation
+  #   --------------------------------------------------------------------------
+  #   Enable|Disable the detection of the current GeoLocation.
+  #
+  #   values:                           false|true
+  #   default:                          false
+  #
+  #   xhr_data_path
+  #   --------------------------------------------------------------------------
+  #   Full path of the HTML data file loaded|processed for the Gemini UI.
+  #
+  #   values:                           string
+  #   default:                          /assets/data/gemini-ui/index.html
+  #
+  #   xhr_container_id
+  #   --------------------------------------------------------------------------
+  #   ID of the container element the UI is placed.
+  #
+  #   values:                           string
+  #   default:                          gemini_ui
+  #
+  #   xhr_data_element
+  #   --------------------------------------------------------------------------
+  #   ID of the container element the UI is being read.
+  #
+  #   values:                           string
+  #   default:                          gemini_ui_container
+  #
+  #   xhr_container_id
+  #   --------------------------------------------------------------------------
+  #   ID of the container element the UI is placed.
+  #
+  #   values:                           string
+  #   default:                          gemini_ui
+  #
+  #   apiKey
+  #   --------------------------------------------------------------------------
+  #   API key to be used for the Google Gemini API.
+  #
+  #   values:                           string
+  #   default:                          <your-api-key> (placeholder)
+  #
+  #   responseLengthMin
+  #   --------------------------------------------------------------------------
+  #   Minimum number of characters returned by the Google Gemini API.
+  #
+  #   values:                           integer
+  #   default:                          10
+  #
+  #   enableCandidateFeedback
+  #   --------------------------------------------------------------------------
+  #   Return results from candidate feedback.
+  #
+  #   values:                           true|false
+  #   default:                          true
+  #
+  #   safetyRatings
+  #   --------------------------------------------------------------------------
+  #   Safety ratings used for Google Gemini API requests.
+  #
+  #   values:                           keys
+  #   defaults:
+  #   HARM_CATEGORY_DANGEROUS_CONTENT:  BLOCK_MEDIUM_AND_ABOVE
+  #   HARM_CATEGORY_HARASSMENT:         BLOCK_ONLY_HIGH
+  #   HARM_CATEGORY_HATE_SPEECH:        BLOCK_ONLY_HIGH
+  #   HARM_CATEGORY_SEXUALLY_EXPLICIT:  BLOCK_NONE
+  #
+  #   candidateRatings
+  #   --------------------------------------------------------------------------
+  #   Safety ratings from candidates returned by Google Gemini API.
+  #
+  #   values:                           keys
+  #   defaults:
+  #   HARM_CATEGORY_DANGEROUS_CONTENT:  BLOCK_MEDIUM_AND_ABOVE
+  #   HARM_CATEGORY_HARASSMENT:         BLOCK_ONLY_HIGH
+  #   HARM_CATEGORY_HATE_SPEECH:        BLOCK_ONLY_HIGH
+  #   HARM_CATEGORY_SEXUALLY_EXPLICIT:  BLOCK_NONE
+  #
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
+
+  detectGeoLocation:                    false
+
+  prompt:
+    title:                              Your request
+    default:                            Please provide tips on how using the prompt for a chat bot.
+    placeholder:                        Please enter a clear and concise text that conveys the task or question you want the chatbot to perform.
+    size:                               7
+
+  buttons:
+    generate:                           Generate
+    reset:                              Reset
+
+  titles:
+    result:                             Response
+    errorInfo:                          API request failure
+
+  errors:
+    http400:                            Location is not supported
+    http500:                            Service currently not available
+
+  xhr_data_path:                        /assets/data/gemini-ui/index.html
+  xhr_container_id:                     gemini_ui
+  xhr_data_element:                     gemini_ui_container
+
+  # ----------------------------------------------------------------------------
+  # Gemini API options
+  # ----------------------------------------------------------------------------
+  apiKey:                               <your-api-key>
+
+  responseLengthMin:                    10
+  enableCandidateFeedback:              true
+
+  safetyRatings:
+    HARM_CATEGORY_DANGEROUS_CONTENT:    BLOCK_MEDIUM_AND_ABOVE
+    HARM_CATEGORY_HARASSMENT:           BLOCK_ONLY_HIGH
+    HARM_CATEGORY_HATE_SPEECH:          BLOCK_ONLY_HIGH
+    HARM_CATEGORY_SEXUALLY_EXPLICIT:    BLOCK_NONE
+
+  candidateRatings:
+    HARM_CATEGORY_DANGEROUS_CONTENT:    BLOCK_MEDIUM_AND_ABOVE
+    HARM_CATEGORY_HARASSMENT:           BLOCK_ONLY_HIGH
+    HARM_CATEGORY_HATE_SPEECH:          BLOCK_ONLY_HIGH
+    HARM_CATEGORY_SEXUALLY_EXPLICIT:    BLOCK_NONE
+
+# ------------------------------------------------------------------------------
+# END config

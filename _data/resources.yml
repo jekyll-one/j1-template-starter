@@ -1850,7 +1850,7 @@ resources:
   #
   - name:                               Chatbot
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               chatbot
       comment:                          Module Chatbot
@@ -1874,7 +1874,7 @@ resources:
   #
   - name:                               DocSearch
     resource:
-      enabled:                          true
+      enabled:                          false
 
       id:                               docsearch
       comment:                          Module docsearch
@@ -1891,6 +1891,33 @@ resources:
         files:                          [ adapter/js/docsearch.js ]
         js:                             []
         init_function:                  [ j1.adapter.docsearch.init ]
+
+  # ----------------------------------------------------------------------------
+  # Gemini API
+  # Google Gemini API
+  #
+  - name:                               Gemini API
+    resource:
+      enabled:                          true
+
+      id:                               gemini
+      comment:                          Module Gemini API
+      region:                           head
+      layout:                           [ page ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+
+      data:
+        css:                            [ modules/gemini/css/theme/uno ]
+        files:                          [
+                                          modules/gemini/js/parser/marked.min.js,
+                                          adapter/js/gemini.js
+                                        ]
+        js:                             []
+        init_function:                  [ j1.adapter.gemini.init ]
 
 # ------------------------------------------------------------------------------
 # END config
