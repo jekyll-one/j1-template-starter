@@ -44,13 +44,13 @@ defaults:
           value_area:                   800
 
       color:
-        value:                          '#ffffff'
+        value:                          var(--bs-white)
 
       shape:
         type:                           circle
         stroke:
           width:                        0
-          color:                        '#ff0000'
+          color:                        var(--bs-red)
         polygon:
           nb_sides:                     5
         image:
@@ -79,7 +79,7 @@ defaults:
       line_linked:
         enable:                         true
         distance:                       100
-        color:                          '#ffffff'
+        color:                          var(--bs-white)
         opacity:                        1
         width:                          1
       move:

@@ -47,13 +47,13 @@
 #   values:                             development|production
 #   default:                            development
 #
-environment:                            development
+environment:                            production
 
 # version
 # ------------------------------------------------------------------------------
 # Sets the build version of the site
 #
-version:                                2024.1.5
+version:                                2024.2.1
 
 # copyright
 # ------------------------------------------------------------------------------
@@ -310,8 +310,8 @@ permalink:                              pretty
 # site.url will be set to the value of host, port.
 # NOTE: Required setting for the sitemap plugin, for example.
 #
-url:                                    http://localhost:23000
-#url:                                   https://starter.jekyll.one/
+#url:                                   http://localhost:23000
+url:                                    https://starter.jekyll.one/
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the

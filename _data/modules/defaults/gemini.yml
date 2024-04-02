@@ -25,63 +25,174 @@ description:
 defaults:
 
   # ----------------------------------------------------------------------------
-  # Settings
+  # Settings|Descriptions
   #
   #   enabled
   #   --------------------------------------------------------------------------
-  #   Enables or disables the Ad services. If disabled, no ads services are
-  #   enabled and no unit container get initialized on any page.
+  #   Enables or disables the module. If disabled, the Gemini module is NOT
+  #   loaded and no SERVICES are available on ANY PAGE.
   #
   #   values:                           [true|false]
-  #   default:                          false
-  #
-  #   detectGeoLocation
-  #   --------------------------------------------------------------------------
-  #   Enable|Disable the detection of the current GeoLocation.
-  #
-  #   values:                           false|true
   #   default:                          false
   #
   #   xhr_data_path
   #   --------------------------------------------------------------------------
   #   Full path of the HTML data file loaded|processed for the Gemini UI.
   #
-  #   values:                           string
+  #   value:                            string
   #   default:                          /assets/data/gemini-ui/index.html
   #
   #   xhr_container_id
   #   --------------------------------------------------------------------------
   #   ID of the container element the UI is placed.
   #
-  #   values:                           string
+  #   value:                            string
   #   default:                          gemini_ui
   #
   #   xhr_data_element
   #   --------------------------------------------------------------------------
   #   ID of the container element the UI is being read.
   #
-  #   values:                           string
+  #   value:                            string
   #   default:                          gemini_ui_container
   #
-  #   xhr_container_id
+  #   detect_geo_location
   #   --------------------------------------------------------------------------
-  #   ID of the container element the UI is placed.
+  #   Enable|Disable the detection of the current GeoLocation.
+  #
+  #   values:                           [true|false]
+  #   default:                          false
+  #
+  #   prompt_id
+  #   --------------------------------------------------------------------------
+  #   ID of the input element (textarea)
   #
   #   values:                           string
-  #   default:                          gemini_ui
+  #   default:                          prompt
   #
-  #   apiKey
+  #   prompt_history_id
   #   --------------------------------------------------------------------------
-  #   API key to be used for the Google Gemini API.
+  #   ID of the prompt history SELECT element. The ID equals 'id' in
+  #   slim_select USER config (slim_select.yml) for the select requested.
   #
   #   values:                           string
-  #   default:                          <your-api-key> (placeholder)
+  #   default:                          prompt_history
+  #
+  #   prompt_history_wrapper_id
+  #   --------------------------------------------------------------------------
+  #   ID of the promot history CONTAINER element. The ID equals 'wrapper_id'
+  #   in slim_select USER config (slim_select.yml) for the select requested.
+  #
+  #   values:                           string
+  #   default:                          prompt_history_select_wrapper
+  #
+  #   prompt_history_max
+  #   --------------------------------------------------------------------------
+  #   Limit the NUMBER of history elements.
+  #
+  #   values:                           integer [1 .. 30]
+  #   default:                          30
+  #
+  #   prompt_history_enabled
+  #   --------------------------------------------------------------------------
+  #   Enable|Disable the usage of the prompt history. If set to false.
+  #   NO prompt histoty is used.
+  #
+  #   values:                           [true|false]
+  #   default:                          false
+  #
+  #   prompt_history_from_cookie
+  #   --------------------------------------------------------------------------
+  #   Enable|Disable to write|read the prompt history a cookie (j1.chat_prompt).
+  #
+  #   values:                           [true|false]
+  #   default:                          false
+  #
+  #   allow_prompt_history_updates_on_max
+  #   --------------------------------------------------------------------------
+  #   If set to 'true', duplicates allowed in the prompt history.
+  #   If set to 'false', duplicates are removed from the prompt history.
+  #
+  #   values:                           [true|false]
+  #   default:                          true
+  #
+  #   prompt
+  #   --------------------------------------------------------------------------
+  #   Configureste UI input element (textarea).
+  #
+  #   values:
+  #
+  #     size:
+  #     ------------------------------------------------------------------------
+  #     Sets the SIZE of the input element (textarea) measured in LINES.
+  #
+  #     value:                           integer
+  #     default:                         7
+  #
+  #     title:
+  #     ------------------------------------------------------------------------
+  #     Sets the TITLE placed above the input element.
+  #
+  #     value:                           string
+  #     default:                         Your request
+  #
+  #     default:
+  #     ------------------------------------------------------------------------
+  #     Sets the PROMPT for a request if the input element is EMPTY.
+  #
+  #     value:                           string
+  #     default:                         Please provide tips on how using the prompt
+  #                                      for a chat bot.
+  #     placeholder:
+  #     ------------------------------------------------------------------------
+  #     Sets the PLACEHOLDER for the input element.
+  #
+  #     value:                           string
+  #     default:                         Please enter a clear and concise text that conveys
+  #                                      the task or question you want the chatbot to perform.
+  #
+  #   buttons
+  #   --------------------------------------------------------------------------
+  #   Configures the UI BUTTON elements. Settingd should NOT changed.
+  #
+  #   titles
+  #   --------------------------------------------------------------------------
+  #   Configureste UI TITLE elements.
+  #
+  #   result:
+  #   ------------------------------------------------------------------------
+  #   Sets the TITLE of the RESPONSE container element.
+  #
+  #   value:                           string
+  #   default:                         Response
+  #
+  #   request_history:
+  #   ------------------------------------------------------------------------
+  #   Sets the TITLE of the REQUEST HISTORY container element.
+  #
+  #   value:                           string
+  #   default:                         Request history
+  #
+  #   errorInfo:
+  #   ------------------------------------------------------------------------
+  #   Sets the TITLE of the ERROR element (modal).
+  #
+  #   value:                           string
+  #   default:                         API request failure
+  #
+  #   buttons
+  #   --------------------------------------------------------------------------
+  #   Configures the UI BUTTON elements. Button settingd should NOT changed.
+  #
+  #   api_options
+  #   --------------------------------------------------------------------------
+  #   Configures avaialve options to control the Gemini API-
   #
   #   responseLengthMin
   #   --------------------------------------------------------------------------
   #   Minimum number of characters returned by the Google Gemini API.
   #
-  #   values:                           integer
+  #   value:                            integer
   #   default:                          10
   #
   #   enableCandidateFeedback
@@ -115,51 +226,98 @@ defaults:
   #
   # ----------------------------------------------------------------------------
   #
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
   enabled:                              false
-
-  detectGeoLocation:                    false
-
-  prompt:
-    title:                              Your request
-    default:                            Please provide tips on how using the prompt for a chat bot.
-    placeholder:                        Please enter a clear and concise text that conveys the task or question you want the chatbot to perform.
-    size:                               7
-
-  buttons:
-    generate:                           Generate
-    reset:                              Reset
-
-  titles:
-    result:                             Response
-    errorInfo:                          API request failure
-
-  errors:
-    http400:                            Location is not supported
-    http500:                            Service currently not available
 
   xhr_data_path:                        /assets/data/gemini-ui/index.html
   xhr_container_id:                     gemini_ui
   xhr_data_element:                     gemini_ui_container
 
+  detect_geo_location:                  false
+
+  prompt_id:                            prompt
+  prompt_history_id:                    prompt_history
+  prompt_history_wrapper_id:            prompt_history_select_wrapper
+
+  # ----------------------------------------------------------------------------
+  # MODULE options
+  # ----------------------------------------------------------------------------
+  #
+  prompt_history_max:                   30
+  prompt_history_enabled:               false
+  prompt_history_from_cookie:           true
+  allow_prompt_history_updates_on_max:  true
+
+  # UI prompt (input)
+  # ----------------------------------------------------------------------------
+  prompt:
+    size:                               7
+    title:                              Prompt
+    default: >
+                                        Please provide tips on how to use a prompt
+                                        for the chatbot
+    placeholder: >
+                                        Please enter a text describing the task or question
+                                        for which the chatbot should process
+
+  # UI buttons
+  # ----------------------------------------------------------------------------
+  buttons:
+    generate:
+      id:                               send
+      name:                             Process prompt
+    reset:
+      id:                               reset
+      name:                             Clear prompt
+    clear:
+      id:                               clear
+      name:                             Clear last prompts
+
+  # UI titles
+  # ----------------------------------------------------------------------------
+  titles:
+    result:                             Response
+    request_history:                    Last Prompts
+    errorInfo:                          API request failure
+
+  # Gemini API errors
+  # ----------------------------------------------------------------------------
+  errors:
+    http400:                            Location is not supported
+    http500:                            Service currently not available
+
   # ----------------------------------------------------------------------------
   # Gemini API options
   # ----------------------------------------------------------------------------
-  apiKey:                               <your-api-key>
+  #
+  api_options:
+    model:                              gemini-pro                              # gemini-pro (text only) | gemini-pro-vision (requires text and images)
+    maxApiRetries:                      3
 
-  responseLengthMin:                    10
-  enableCandidateFeedback:              true
+    responseLengthMin:                  10
+    enableCandidateFeedback:            true
 
-  safetyRatings:
-    HARM_CATEGORY_DANGEROUS_CONTENT:    BLOCK_MEDIUM_AND_ABOVE
-    HARM_CATEGORY_HARASSMENT:           BLOCK_ONLY_HIGH
-    HARM_CATEGORY_HATE_SPEECH:          BLOCK_ONLY_HIGH
-    HARM_CATEGORY_SEXUALLY_EXPLICIT:    BLOCK_NONE
+    generationConfig:
+      candidateCount:                   1                                       # currentely fixed to 1
+      maxOutputTokens:                  65536                                   # 32k:32768
+      temperature:                      0.5
+      topK:                             40
+      topP:                             0.5
 
-  candidateRatings:
-    HARM_CATEGORY_DANGEROUS_CONTENT:    BLOCK_MEDIUM_AND_ABOVE
-    HARM_CATEGORY_HARASSMENT:           BLOCK_ONLY_HIGH
-    HARM_CATEGORY_HATE_SPEECH:          BLOCK_ONLY_HIGH
-    HARM_CATEGORY_SEXUALLY_EXPLICIT:    BLOCK_NONE
+    safetyRatings:
+      HARM_CATEGORY_DANGEROUS_CONTENT:  BLOCK_MEDIUM_AND_ABOVE
+      HARM_CATEGORY_HARASSMENT:         BLOCK_ONLY_HIGH
+      HARM_CATEGORY_HATE_SPEECH:        BLOCK_ONLY_HIGH
+      HARM_CATEGORY_SEXUALLY_EXPLICIT:  BLOCK_NONE
+
+    candidateRatings:
+      HARM_CATEGORY_DANGEROUS_CONTENT:  BLOCK_MEDIUM_AND_ABOVE
+      HARM_CATEGORY_HARASSMENT:         BLOCK_ONLY_HIGH
+      HARM_CATEGORY_HATE_SPEECH:        BLOCK_ONLY_HIGH
+      HARM_CATEGORY_SEXUALLY_EXPLICIT:  BLOCK_NONE
 
 # ------------------------------------------------------------------------------
 # END config

@@ -49,13 +49,13 @@ settings:
                 value_area:             800
 
             color:
-              value:                    "#ffffff"
+              value:                    var(--bs-white)
 
             shape:
               type:                     image
               stroke:
                 width:                  0
-                color:                  "#000000"
+                color:                  var(--bs-black)
               polygon:
                 nb_sides:               5
               image:
@@ -84,7 +84,7 @@ settings:
             line_linked:
               enable:                   false
               distance:                 500
-              color:                    "#ffffff"
+              color:                    var(--bs-white)
               opacity:                  0.4
               width:                    2
 

@@ -1,0 +1,54 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/slimSelect.yml
+# Default configuration settings for J1 slimSelect module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023, 2024 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 slimSelect
+  scope:                                Default settings
+  location:                             _data/modules/defaults/slim_select.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+  enabled:                              false
+
+  # ----------------------------------------------------------------------------
+  # API options
+  # See: https://slimselectjs.com/settings
+  # ----------------------------------------------------------------------------
+  #
+  api_options:
+    showSearch:                         true
+    searchPlaceholder:                  Enter your search expression
+    searchText:                         No results
+    searchingText:                      Searching ...
+    searchHighlight:                    false
+    closeOnSelect:                      true
+  # contentLocation:                    document.getElementById('body')         # document.body, currently NOT supported
+    contentPosition:                    absolute
+    openPosition:                       auto                                    # options: auto, up, down
+    placeholderText:                    Select an item
+    allowDeselect:                      false
+    hideSelected:                       false
+    showOptionTooltips:                 false
+    minSelected:                        0
+    maxSelected:                        1
+    timeoutDelay:                       200
+    maxValuesShown:                     20
+    maxValuesMessage:                   '{number} selected'
+
+# ------------------------------------------------------------------------------
+# END config

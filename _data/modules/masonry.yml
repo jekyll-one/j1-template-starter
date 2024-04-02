@@ -3,12 +3,12 @@
 # User configuration settings for J1 Masonry module
 #
 # Product/Info:
-# https://jekyll.one
+# //jekyll.one
 #
 # Copyright (C) 2023, 2024 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# See: //github.com/jekyll-one/J1 Theme/blob/master/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -542,7 +542,7 @@ settings:
 
       # ------------------------------------------------------------------------
       # VideoJS settings
-      # See settings: https://jekyll.one/pages/public/manuals/videojs/videojs_api/
+      # See settings: //jekyll.one/pages/public/manuals/videojs/videojs_api/
       # ------------------------------------------------------------------------
       #
       videojs:
@@ -551,7 +551,7 @@ settings:
 
         # ----------------------------------------------------------------------
         # Player settings
-        # See: https://jekyll.one/pages/public/manuals/videojs/lightgallery_api
+        # See: //jekyll.one/pages/public/manuals/videojs/lightgallery_api
         # ----------------------------------------------------------------------
         #
         player:
@@ -576,7 +576,7 @@ settings:
               autoPlay:                 true
               byline:                   0
               portrait:                 0
-              color:                    CCCCCC
+              color:                    var(--md-gray-100)
 
           wistiaPlayer:
             enabled:                    true
@@ -596,8 +596,8 @@ settings:
 
       # ------------------------------------------------------------------------
       # Lightbox settings
-      # See settings for lightbox:     https://jekyll.one/pages/public/manuals/modules/lightbox
-      # See settings for lightGallery: https://jekyll.one/pages/public/manuals/videojs/videojs_api
+      # See settings for lightbox:     //jekyll.one/pages/public/manuals/modules/lightbox
+      # See settings for lightGallery: //jekyll.one/pages/public/manuals/videojs/videojs_api
       # ------------------------------------------------------------------------
       #
       lightbox:
@@ -646,66 +646,63 @@ settings:
           name:                         Planet Earth II
           type:                         youtube
           size:                         "1280-720"
-          source:                       "https://youtu.be/IUN664s7N-c"
+          source:                       "//youtu.be/IUN664s7N-c"
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           description: >
-                                        <h4>
-                                          Visual Soundscapes - Mountains | Planet Earth II | BBC America
-                                        </h4>
-                                        <p>
-                                          On the heels of Planet Earth II’s record-breaking
-                                          Emmy nominations, BBC America presents stunning visual
-                                          soundscapes from the series' amazing habitats.
-                                        </p>
+                                        <h5>Beauty of Nature</h5>
+                                        <h6>
+                                          The BBC America presents breathtaking landscapes of
+                                          amazing habitats from their Planet Earth II series
+                                          on YouTube
+                                        </h6>
+                                        <br>
           poster:
             style:                      img-responsive
-            source:                     "https://img.youtube.com/vi/IUN664s7N-c/maxresdefault.jpg"
+            source:                     "//img.youtube.com/vi/IUN664s7N-c/maxresdefault.jpg"
           caption:
             position:                   bottom
-            text:                       "YouTube &middot; Visual Soundscapes - Mountains | BBC America"
+            text:                       "YouTube Video &middot; Beauty of Nature"
 
 #       video 2
         - video:
           name:                         Nature Video by Charlie Kaye
           type:                         vimeo
           size:                         "1280-720"
-          source:                       "https://vimeo.com/112836958"
+          source:                       "//vimeo.com/112836958"
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           description: >
-                                        <h4>
-                                          Nature
-                                        </h4>
-                                        <p>
-                                          Video by <a target='_blank' href='https://vimeo.com/charliekaye'>Charlie Kaye.</a>
-                                        </p>
+                                        <h5>Amazing Nature</h5>
+                                        <h6>
+                                          Video by <a target='_blank' href='//vimeo.com/charliekaye'>Charlie Kaye.</a> on Vimeo
+                                        </h6>
+                                        <br>
           poster:
             style:                      img-responsive
-            source:                     "https://www.lightgalleryjs.com/images/demo/vimeo-video-poster.jpg"
+            source:                     "//www.lightgalleryjs.com/images/demo/vimeo-video-poster.jpg"
           caption:
             position:                   bottom
-            text:                       "Vimeo &middot; Nature Video by Charlie Kaye"
+            text:                       "Vimeo Video &middot; Amazing Nature"
 
 #       video 3
         - video:
           name:                         Thank You
           type:                         wistia
           size:                         "1280-720"
-          source:                       "https://private-sharing.wistia.com/medias/mwhrulrucj"
+          source:                       "//private-sharing.wistia.com/medias/mwhrulrucj"
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           description: >
-                                        <h4>Thank You!</h4>
-                                        <p>
-                                          Sample Wistia video
-                                        </p>
+                                        <h5>Thank You!</h5>
+                                        <h6>Sample Video on Wistia</h6>
+                                        <br>
           poster:
             style:                      img-responsive
-            source:                     "https://www.lightgalleryjs.com/images/demo/wistia-video-poster.jpeg"
+            source:                     "//www.lightgalleryjs.com/images/demo/wistia-video-poster.jpeg"
           caption:
             position:                   bottom
-            text:                       "Wistia &middot; Thank You"
+            text:                       "Wistia Video &middot; Thank You"
 
 #       video 4
         - video:
@@ -716,15 +713,17 @@ settings:
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           description: >
-                                        <h4>
-                                          Peck Pocketed by Kevin Herron | Disney Favorite
-                                        </h4>
+                                        <h5>Peck Pocketed by Kevin Herron</h5>
+                                        <h6>
+                                          Student Academy Award winning cartoon clip on VideoJS
+                                        </h6>
+                                        <br>
           poster:
             style:                      img-responsive
             source:                     video1-poster.jpg
           caption:
             position:                   bottom
-            text:                       "MP4 Video &middot; Student Academy Award winning cartoon clip"
+            text:                       "MP4 Video &middot; Peck Pocketed"
 
 # ------------------------------------------------------------------------------
 # END config

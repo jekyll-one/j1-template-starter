@@ -31,8 +31,7 @@ permalink:                              /pages/public/learn/roundtrip/present_au
 
 resources:                              [
                                           animate,
-                                          lightgallery, gallery, rouge,
-#                                         tiktocplayer,
+                                          gallery, lightgallery, masonry, rouge,
                                           videojs, vimeoplayer
                                         ]
 resource_options:
@@ -246,6 +245,23 @@ image and video galleries.
 
 Find below examples of video galleries of locally stored (MP4) video resources
 and video content provided online via YouTube.
+
+[role="mt-4"]
+=== Masonry Grid
+
+Masonry for J1 is a great tool to create dynamic video galleries as well.
+By using the Masonry module, you can create a gallery that displays video of
+different type.
+
+.Grid of Videos
+masonry::mixed_video_example[role="mt-4 mb-5"]
+
+.More about Masonry
+[TIP]
+====
+Find more on how the Masonry module can be used on the
+link:{url-j1-masonry-previewer}[Masonry Preview, {browser-window--new}] page.
+====
 
 [role="mt-4"]
 === MP4 Video

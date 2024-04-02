@@ -9,7 +9,7 @@
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
 # Description
@@ -23,12 +23,51 @@ description:
 # User configuration settings
 #
 settings:
+
+  # ----------------------------------------------------------------------------
+  # Settings|Descriptions (find more descriptions in module defaults)
+  #
+  #   enabled (required)
+  #   --------------------------------------------------------------------------
+  #   Enables or disables the module. If disabled, the Gemini module is NOT
+  #   loaded and no SERVICES are available on ANY PAGE.
+  #
+  #   values:                           [true|false]
+  #   default:                          false
+  #
+  #   api_options
+  #   --------------------------------------------------------------------------
+  #   Configures avaialve options to control the Gemini API-
+  #
+  #   apiKey (required)
+  #   --------------------------------------------------------------------------
+  #   API key for the Google Gemini API.
+  #
+  #   value:                            string
+  #   default:                          <your-api-key>
+  #
+  # ----------------------------------------------------------------------------
+  #
   enabled:                              true
 
   # ----------------------------------------------------------------------------
-  # Gemini API options
+  # GENERAL options
   # ----------------------------------------------------------------------------
-  apiKey:                               <your-api-key>
+  #
+  detect_geo_location:                  true
+
+  # ----------------------------------------------------------------------------
+  # MODULE options
+  # ----------------------------------------------------------------------------
+  #
+  prompt_history_enabled:               true
+
+  # ----------------------------------------------------------------------------
+  # API options
+  # ----------------------------------------------------------------------------
+  #
+  api_options:
+    apiKey:                             AIzaSyAtiLEW4oQiOJtGiPsdsGwMHi8O__7cqjU # <your-api-key>
 
 # ------------------------------------------------------------------------------
 # END config

@@ -75,11 +75,11 @@ gem 'jekyll', '~> 4.0'
 # Specify the THEME GEM used for the project
 
 # Loaded from RubyGems
-gem 'j1-template', '~> 2024.1'
+gem 'j1-template', '~> 2024.2'
 
 # Loaded from gem.fury.io
 #source 'https://gem.fury.io/jekyll-one-org/' do
-#  gem 'j1-template', '~> 2024.1'
+#  gem 'j1-template', '~> 2024.2'
 #end
 
 # ------------------------------------------------------------------------------

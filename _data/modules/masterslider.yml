@@ -182,7 +182,7 @@ settings:
 
         slideinfo:
           enabled:                      true
-          margin:                       -133
+          margin:                       -133                                    # pixel
 
       # ------------------------------------------------------------------------
       # Slider options
@@ -208,20 +208,19 @@ settings:
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
             boxed:                      true
+            margin-top:                 -150                                    # slideinfo position (pixel from slide top)
             title:                      The Art of Life
-            title_color:                '#BDBDBD'                               # md-gray-400
+            title_color:                var(--md-gray-400)
             title_animated:             fadeInRight
             title_upcase:               false
             tagline:                    places to enjoy
-            tagline_color:              false                                   # '#757575' md-gray-600
+            tagline_color:              false                                   # false or or color: var(--md-gray-600)
             tagline_animated:           fadeInLeft
             tagline_upcase:             false
-            description: >
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt.
-
-            description_color:          '#9E9E9E'                               # md-gray-500
+            description_color:          var(--md-gray-500)
             description_animated:       fadeInRight
+            description: >
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 
         # slide 2
         #
@@ -234,20 +233,19 @@ settings:
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
             boxed:                      true
+            margin-top:                 -150                                    # slideinfo position (pixel from slide top)
             title:                      The Art of Life
-            title_color:                '#BDBDBD'                               # md-gray-400
+            title_color:                var(--md-gray-400)
             title_animated:             fadeInRight
             title_upcase:               false
             tagline:                    places to enjoy
-            tagline_color:              false                                   # '#757575' md-gray-600
+            tagline_color:              false                                   # false or or color: var(--md-gray-600)
             tagline_animated:           fadeInLeft
             tagline_upcase:             false
-            description: >
-                                        Consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                                        ut labore et dolore.
-
-            description_color:          '#9E9E9E'                               # md-gray-500
+            description_color:          var(--md-gray-500)
             description_animated:       fadeInRight
+            description: >
+                                        Consectetur adipisicing elit, sed do eiusmod tempor incididunt.
 
         # slide 3
         #
@@ -260,20 +258,19 @@ settings:
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
             boxed:                      true
+            margin-top:                 -150                                    # slideinfo position (pixel from slide top)
             title:                      The Art of Life
-            title_color:                '#BDBDBD'                               # md-gray-400
+            title_color:                var(--md-gray-400)
             title_animated:             fadeInRight
             title_upcase:               false
             tagline:                    places to enjoy
-            tagline_color:              false                                   # '#757575' md-gray-600
+            tagline_color:              false                                   # false or or color: var(--md-gray-600)
             tagline_animated:           fadeInLeft
             tagline_upcase:             false
+            description_color:          var(--md-gray-500)
+            description_animated:       fadeInRight
             description: >
                                         Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad veniam.
-
-            description_color:          '#9E9E9E'                               # md-gray-500
-            description_animated:       fadeInRight
 
     # --------------------------------------------------------------------------
     # Slider 4 - ThumbImage (position right|vertical)
@@ -519,10 +516,6 @@ settings:
       #
       options:
 
-        # width:                          1200
-        # height:                         530
-        # layout:                         fullwidth
-
         width:                            1000
         height:                           500
         instantStartLayers:               true
@@ -543,13 +536,12 @@ settings:
           foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876385555_74a0d7d7ee_b.jpg
           background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
 
+          slideinfo:                    false
           thumbinfo:
             title:                      Kitchen Design Ideas
             tagline:                    Slider with Horizontal Tabs
             description: >
-                                        Lorem ipsum dolor sit amet, consectetuer elit
-
-          slideinfo:                    false
+                                        Lorem ipsum dolor sit amet, consectetuer elit.
 
         # slide 2
         #
@@ -559,13 +551,13 @@ settings:
           foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876387431_d86867a3d9_b.jpg
           background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
 
+          slideinfo:                    false
+
           thumbinfo:
             title:                      Modern Wall Design
             tagline:                    Slider with Horizontal Tabs
             description: >
-                                        Lorem ipsum dolor sit amet, consectetuer elit
-
-          slideinfo:                    false
+                                        Lorem ipsum dolor sit amet, consectetuer elit.
 
         # slide 3
         #
@@ -575,14 +567,13 @@ settings:
           foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876388511_d618d53455_b.jpg
           background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
 
+          slideinfo:                    false
+
           thumbinfo:
             title:                      Banquette Seating Kitchen
             tagline:                    Slider with Horizontal Tabs
             description: >
-                                        Lorem ipsum dolor sit amet, consectetuer elit
-
-          slideinfo:                    false
-
+                                        Lorem ipsum dolor sit amet, consectetuer elit.
         # slide 4
         #
         - slide:
@@ -591,13 +582,13 @@ settings:
           foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876389463_db27a377e1_b.jpg
           background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
 
+          slideinfo:                    false
+
           thumbinfo:
             title:                      Harmony in Interior Design
             tagline:                    Slider with Horizontal Tabs
             description: >
-                                        Lorem ipsum dolor sit amet, consectetuer elit
-
-          slideinfo:                    false
+                                        Lorem ipsum dolor sit amet, consectetuer elit.
 
         # slide 5
         #
@@ -607,13 +598,13 @@ settings:
           foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876390339_2e4dd9dbbb_b.jpg
           background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
 
+          slideinfo:                    false
+
           thumbinfo:
             title:                      Make Your Workspace Better
             tagline:                    Slider with Horizontal Tabs
             description: >
-                                        Lorem ipsum dolor sit amet, consectetuer elit
-
-          slideinfo:                    false
+                                        Lorem ipsum dolor sit amet, consectetuer elit.
 
     # --------------------------------------------------------------------------
     # Slider 7 - ThumbTabs (position right|vertical)
@@ -668,14 +659,13 @@ settings:
           foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876385555_74a0d7d7ee_b.jpg
           background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
 
+          slideinfo:                    false
+
           thumbinfo:
             title:                      Kitchen Design Ideas
             tagline:                    Slider with Vertical Tabs
             description: >
-                                        Lorem ipsum dolor sit amet, consectetuer elit
-
-
-          slideinfo:                    false
+                                        Lorem ipsum dolor sit amet, consectetuer elit.
 
         # slide 2
         #
@@ -685,13 +675,13 @@ settings:
           foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876387431_d86867a3d9_b.jpg
           background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
 
+          slideinfo:                    false
+
           thumbinfo:
             title:                      Modern Wall Design
             tagline:                    Slider with Vertical Tabs
             description: >
-                                        Lorem ipsum dolor sit amet, consectetuer elit
-
-          slideinfo:                    false
+                                        Lorem ipsum dolor sit amet, consectetuer elit.
 
         # slide 3
         #
@@ -701,13 +691,13 @@ settings:
           foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876388511_d618d53455_b.jpg
           background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
 
+          slideinfo:                    false
+
           thumbinfo:
             title:                      Banquette Seating Kitchen
             tagline:                    Slider with Vertical Tabs
             description: >
-                                        Lorem ipsum dolor sit amet, consectetuer elit
-
-          slideinfo:                    false
+                                        Lorem ipsum dolor sit amet, consectetuer elit.
 
         # slide 4
         #
@@ -717,13 +707,13 @@ settings:
           foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876389463_db27a377e1_b.jpg
           background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
 
+          slideinfo:                    false
+
           thumbinfo:
             title:                      Harmony in Interior Design
             tagline:                    Slider with Vertical Tabs
             description: >
-                                        Lorem ipsum dolor sit amet, consectetuer elit
-
-          slideinfo:                    false
+                                        Lorem ipsum dolor sit amet, consectetuer elit.
 
         # slide 5
         #
@@ -733,13 +723,13 @@ settings:
           foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876390339_2e4dd9dbbb_b.jpg
           background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
 
+          slideinfo:                    false
+
           thumbinfo:
             title:                      Make Your Workspace Better
             tagline:                    Slider with Vertical Tabs
             description: >
-                                        Lorem ipsum dolor sit amet, consectetuer elit
-
-          slideinfo:                    false
+                                        Lorem ipsum dolor sit amet, consectetuer elit.
 
     # --------------------------------------------------------------------------
     # Slider 8 - Blog articles (PartialView)
@@ -775,7 +765,6 @@ settings:
           grayscale:                    0.5
           opacity:                      0.6
 
-
       # ------------------------------------------------------------------------
       # Slides
       #
@@ -794,7 +783,7 @@ settings:
             rtext:                      300                                     # false or [100 .. 500]
             boxed:                      false
             title:                      Slider for bloggers
-            title_color:                '#212121'                               # md-gray-100
+            title_color:                var(--md-gray-100)
             title_animated:             fadeInLeft
             title_upcase:               false
             tagline:                    false
@@ -826,11 +815,11 @@ settings:
             rtext:                      400                                     # false or [100 .. 500]
             boxed:                      false
             title:                      We love architecture websites
-            title_color:                '#212121'                               # md-gray-900
+            title_color:                var(--md-gray-100)
             title_animated:             fadeInLeft
             title_upcase:               false
             tagline:                    false
-            tagline_color:              false                                   # '#7a7a7a'
+            tagline_color:              false                                   # false or or color: var(--md-gray-100)
             tagline_animated:           false
             tagline_upcase:             false
             description:                false
@@ -858,11 +847,11 @@ settings:
             rtext:                      400                                     # false or [100 .. 500]
             boxed:                      false
             title:                      New Buildings, New Designs!
-            title_color:                '#212121'                               # md-gray-900
+            title_color:                var(--md-gray-100)
             title_animated:             fadeInLeft
             title_upcase:               false
             tagline:                    false
-            tagline_color:              false                                   # '#7a7a7a'
+            # false or or color: var(--md-gray-100)# '#7a7a7a'
             tagline_animated:           false
             tagline_upcase:             false
             description:                false
@@ -890,11 +879,11 @@ settings:
             rtext:                      400                                     # false or [100 .. 500]
             boxed:                      false
             title:                      Greatest Modern Architect Designs
-            title_color:                '#212121'                               # md-gray-900
+            title_color:                var(--md-gray-100)
             title_animated:             fadeInLeft
             title_upcase:               false
             tagline:                    false
-            tagline_color:              false                                   # '#7a7a7a'
+            tagline_color:              false                                   # false or or color: var(--md-gray-100)
             tagline_animated:           false
             tagline_upcase:             false
             description:                false
@@ -959,19 +948,18 @@ settings:
             rtext:                      300                                     # false or [100 .. 500]
             boxed:                      false
             title:                      Childhood Memories
-            title_color:                '#222222'
+            title_color:                var(--md-gray-900)
             title_animated:             false
             title_upcase:               true
             tagline:                    John Wiliam
-            tagline_color:              '#0D47A1'
+            tagline_color:              var(--bs-blue)
             tagline_animated:           false
             tagline_upcase:             false
+            description_color:          var(--md-gray-700)
+            description_animated:       false
             description: >
                                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                                         sed diam nonummy nibh euismod tincidunt.
-
-            description_color:          '#616161'                               # md-gray-700
-            description_animated:       false
 
         # slide 2
         #
@@ -985,19 +973,18 @@ settings:
             rtext:                      300                                     # false or [100 .. 500]
             boxed:                      false
             title:                      Consectetuer adipiscing elit
-            title_color:                '#222222'
+            title_color:                var(--md-gray-900)
             title_animated:             fadeInRight
             title_upcase:               true
             tagline:                    John Wiliam
-            tagline_color:              '#0D47A1'
+            tagline_color:              var(--bs-blue)
             tagline_animated:           false
             tagline_upcase:             true
+            description_color:          var(--md-gray-700)
+            description_animated:       false
             description: >
                                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                                         sed diam nonummy nibh euismod tincidunt.
-
-            description_color:          '#616161'                               # md-gray-700
-            description_animated:       false
 
         # slide 3
         #
@@ -1011,19 +998,18 @@ settings:
             rtext:                      300                                     # false or [100 .. 500]
             boxed:                      false
             title:                      Suspendissue ut pulvinar mauris
-            title_color:                '#222222'
+            title_color:                var(--md-gray-900)
             title_animated:             fadeInRight
             title_upcase:               true
             tagline:                    John Wiliam
-            tagline_color:              '#0D47A1'
+            tagline_color:              var(--bs-blue)
             tagline_animated:           false
             tagline_upcase:             true
+            description_color:          var(--md-gray-700)
+            description_animated:       false
             description: >
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-            description_color:          '#616161'                               # md-gray-700
-            description_animated:       false
 
         # slide 4
         #
@@ -1037,19 +1023,18 @@ settings:
             rtext:                      300                                     # false or [100 .. 500]
             boxed:                      false
             title:                      Sed dabibus sit amet felis
-            title_color:                '#222222'
+            title_color:                var(--md-gray-900)
             title_animated:             fadeInRight
             title_upcase:               true
             tagline:                    Gregory Wilson
-            tagline_color:              '#0D47A1'
+            tagline_color:              var(--bs-blue)
             tagline_animated:           false
             tagline_upcase:             true
+            description_color:          var(--md-gray-700)
+            description_animated:       false
             description: >
                                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                                         sed diam nonummy nibh euismod tincidunt.
-
-            description_color:          '#616161'                               # md-gray-700
-            description_animated:       false
 
         # slide 5
         #
@@ -1063,19 +1048,18 @@ settings:
             rtext:                      300                                     # false or [100 .. 500]
             boxed:                      false
             title:                      Cheetags on the edge
-            title_color:                '#222222'
+            title_color:                var(--md-gray-900)
             title_animated:             fadeInRight
             title_upcase:               true
             tagline:                    Gregory Wilson
-            tagline_color:              '#0D47A1'
+            tagline_color:              var(--bs-blue)
             tagline_animated:           false
             tagline_upcase:             true
+            description_color:          var(--md-gray-700)
+            description_animated:       false
             description: >
                                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                                         sed diam nonummy nibh euismod tincidunt.
-
-            description_color:          '#616161'                               # md-gray-700
-            description_animated:       false
 
         # slide 6
         #
@@ -1089,19 +1073,18 @@ settings:
             rtext:                      300                                     # false or [100 .. 500]
             boxed:                      false
             title:                      Consecteur adipiscing elit
-            title_color:                '#222222'
+            title_color:                var(--md-gray-900)
             title_animated:             fadeInRight
             title_upcase:               true
             tagline:                    Gregory Wilson
-            tagline_color:              '#0D47A1'
+            tagline_color:              var(--bs-blue)
             tagline_animated:           false
             tagline_upcase:             true
+            description_color:          var(--md-gray-700)
+            description_animated:       false
             description: >
                                         Lorem ipsum dolor sit amet, consec tetuer adipiscing elit,
                                         sed diam nonummy nibh euismod tincidunt.
-
-            description_color:          '#616161'                               # md-gray-700
-            description_animated:       false
 
 # ------------------------------------------------------------------------------
 # END config

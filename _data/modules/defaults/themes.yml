@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/defaults/themer.yml
-# Default configuration settings for J1 Themer
+# ~/_data/modules/defaults/themes.yml
+# Default configuration settings for J1 themes
 #
 # Product/Info:
 # https://jekyll.one
@@ -15,9 +15,9 @@
 # Description
 #
 description:
-  title:                                Themer
+  title:                                Themes
   scope:                                Default settings
-  location:                             _data/modules/defaults/themer.yml
+  location:                             _data/modules/defaults/themes.yml
 
 # ------------------------------------------------------------------------------
 # Default configuration settings
@@ -25,12 +25,12 @@ description:
 defaults:
 
   # ----------------------------------------------------------------------------
-  # Themer options
+  # Themes options
   # ----------------------------------------------------------------------------
   #
   #   enabled
   #   --------------------------------------------------------------------------
-  #   Enables|Disables the use of J1 Themer
+  #   Enables|Disables the use of J1 Themes
   #
   #     values:                         boolean (true|false)
   #     default:                        false
@@ -48,7 +48,7 @@ defaults:
   saveToCookie:                         true
 
   # ----------------------------------------------------------------------------
-  # Themer settings
+  # Themes settings
   # ----------------------------------------------------------------------------
   #
   #   cssThemeLink
@@ -155,11 +155,11 @@ defaults:
   retries:                              30                                      # retry to load theme list from API
   preview_page:                         /pages/public/tools/previewer/current_theme/
   menu_icon_family:                     mdib
-  menu_icon_color:                      "#9E9E9E"
+  menu_icon_color:                      var(--md-gray-500)
   menu_icon_size:                       mdib-sm
   cssThemeLink:                         bootstrapTheme
-  defaultCssFile:                       https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css
-  bootswatchApiUrl:                     https://bootswatch.com/api
+  defaultCssFile:                       "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+  bootswatchApiUrl:                     "https://bootswatch.com/api"
   bootswatchApiVersion:                 5
   loadFromBootswatch:                   true
   localThemes:                          /assets/data/themes.json

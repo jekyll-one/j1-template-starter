@@ -1,7 +1,7 @@
 ---
 title:                                  URLs
-title_extention:                        Protocol Scheme
-tagline:                                Protocol Scheme
+title_extention:                        Protocol scheme
+tagline:                                Protocol scheme
 
 #date:                                  2023-01-01
 #last_modified:                         2023-01-01
@@ -18,15 +18,14 @@ image:
 group:                                  Featured
 series:                                 Featured
 
-#tts:                                    false
-fab_menu_id:                            open_toc
+fab_menu_id:                            default
 comments:                               false
 regenerate:                             false
 
 resources:                              [ animate ]
 resource_options:
   - attic:
-      padding_top:                      600
+      padding_top:                      630
       slides:
         - url:                          /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
           alt:                          J1 Starter Mockup
@@ -41,7 +40,7 @@ resource_options:
 // -----------------------------------------------------------------------------
 // :page--attr:                         <attr-value>
 :badges-enabled:                        false
-:url-codinghorror--understanding-mvc:   https://blog.codinghorror.com/understanding-model-view-controller
+:url-codinghorror--understanding-mvc:   //blog.codinghorror.com/understanding-model-view-controller
 
 // Place an excerpt at the most top position
 // -----------------------------------------------------------------------------
@@ -71,28 +70,29 @@ endif::[]
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
 [role="mt-5 mb-4"]
-The primary difference is that +++<code>https://domain</code>+++ specifies
-the protocol *HTTPS* explicitly, while +++<code>//domain</code>+++ *inherits*
-the protocol from the current webpage. Using +++<code>//domain</code>+++ is a
+The primary difference is that pass:[<code>https://domain</code>] specifies
+the protocol *HTTPS* explicitly, while pass:[<code>//domain</code>] *inherits*
+the protocol from the current webpage. Using pass:[<code>//domain</code>] is a
 good practice to maintain consistency with the current page's protocol and
 *reduce* potential security issues related to *mixed content*.
 
 Absolute URL::
 
-URLs of type +++<code>https://domain</code>+++ are *absolute* URLs, meaning
+URLs of type pass:[<code>https://domain</code>] are *absolute* URLs, meaning
 they explicitly include the protocol or scheme -- in this case
-+++<code>https://</code>+++. When you use this format, you specify that
+pass:[<code>https://</code>]. When you use this format, you specify that
 the website should be accessed over *HTTPS*, a secure protocol for web
 communication. The browser will use the HTTPS protocol to connect to the
 specified domain.
 
 Protocol-relative URL::
 
-URLs of type +++<code>https://domain</code>+++ are *protocol-relative* URL
+URLs of type pass:[<code>//domain</code>] are *protocol-relative* URL
 or *network-path* references. It does not explicitly specify a particular
 protocol as *HTTP* or *HTTPS*. Instead, it inherits the protocol used in
 the *current webpage*.
 
+[role="mb-7"]
 If the current webpage is loaded over HTTPS, the browser will use HTTPS to
 connect to the domain. If the current webpage is loaded over HTTP, it will
 use HTTP. Protocol-relative URLs often ensure that resources are loaded

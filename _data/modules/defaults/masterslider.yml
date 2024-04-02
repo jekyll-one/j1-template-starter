@@ -32,7 +32,7 @@ defaults:
 
   icon_family:                          mdib
   icon_class:                           false                                   # false | fas | fab (Fontawsesome only)
-  icon_color:                           '#1E88E5'                               # md-blue-600
+  icon_color:                           var(--bs-blue)
   icon_size:                            2x
 
   # ----------------------------------------------------------------------------
@@ -114,7 +114,7 @@ defaults:
       dir:                              h
       inset:                            false
       align:                            bottom
-      color:                            '#3D3D3D'
+      color:                            var(--md-gray-800)
       hideUnder:                        null
       margin:                           10
       width:                            4
@@ -123,7 +123,7 @@ defaults:
       enabled:                          false
       autohide:                         false
       overVideo:                        true
-      color:                            '#A2A2A2'
+      color:                            var(--md-gray-300)
       radius:                           4
       stroke:                           10
       hideUnder:                        null
@@ -132,7 +132,7 @@ defaults:
       enabled:                          false
       autohide:                         false
       overVideo:                        true
-      color:                            '#FFFFFF'
+      color:                            var(--bs-white)
       hideUnder:                        null
       align:                            bottom
       inset:                            false

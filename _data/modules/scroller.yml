@@ -42,7 +42,7 @@ settings:
     # Intro Panel
     #
     - scroller:
-        enabled:                        true
+        enabled:                        false
         type:                           showOnScroll
         id:                             panel_home_intro
         container:                      panel_home_intro
@@ -66,7 +66,7 @@ settings:
     - scroller:
         enabled:                        true
         type:                           infiniteScroll
-        id:                             preview_content
+        id:                             panel_home_news
         container:                      panel_home_news-scroll-group
         pagePath:                       /assets/data/news_panel_posts/page
         elementScroll:                  true                                    # false = window, true = container
@@ -92,7 +92,7 @@ settings:
         pagePath:                       /pages/public/blog/navigator/page
         elementScroll:                  true
         scrollOffset:                   200
-        lastPage:                       2                                       # Dosn't work: high number "means" ALL pages|posts to load
+        lastPage:                       2                                       # 1 page "equals" 2 posts
         infoLastPage:                   false
 
         lastPageInfo_en:                ""

@@ -23,8 +23,17 @@ description:
 # Default settings
 #
 defaults:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
   enabled:                              false
 
+  # ----------------------------------------------------------------------------
+  # MODULE options
+  # ----------------------------------------------------------------------------
+  #
   placement:                            navbar
   target:                               _blank
   rebuild:                              false
@@ -51,20 +60,26 @@ defaults:
   #
   emptyMsg:                                                                     # '<p style="margin-left: 3.5rem">No matches.</p>'
 
-
   # ----------------------------------------------------------------------------
-  # TopSearch
-  #
+  # Search options
+  # ----------------------------------------------------------------------------
   topsearch:
     enabled:                            false
+
+    search_history_max:                 30
+    search_history_enabled:             false
+    search_history_from_cookie:         true
+    allow_history_updates_on_max:       true
+
+    search_history_id:                  search_history
+    search_history_wrapper_id:          search_history_select_wrapper
 
     container_id:                       search_modal
     type:                               quicksearch                             # quicksearch | elasticsearch
     icon_family:                        mdib
-    icon_color:                         "#FFFFFF"                               # md-white
+    icon_color:                         var(--bs-white)
     icon_size:                          mdib-2x
     search_icon:                        magnify
-    close_icon:                         close
     clear_icon:                         format-clear
     input_color:                        rgba(0, 0, 0, 0.7)                      # rgba-darken-700
     background_color:                   transparent                             # md-grey-50

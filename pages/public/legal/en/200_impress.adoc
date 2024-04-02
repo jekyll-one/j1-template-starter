@@ -19,7 +19,7 @@ robots:
   follow:                               false
 
 image:
-  path:                                 /assets/images/modules/attics/1920x1280/ifonnx-toys.jpg
+  path:                                 /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
   width:                                1920
   height:                               1200
 
@@ -35,15 +35,9 @@ resources:                              [ animate, rouge ]
 resource_options:
   - attic:
       padding_top:                      630
-#     padding_bottom:                   100
-#     margin_bottom:                    180
       slides:
-        - url:                          /assets/images/modules/attics/1920x1280/ifonnx-toys.jpg
-          alt:                          IFONNX Toys
-          badge:
-            type:                       unsplash
-            author:                     IFONNX Toys
-            href:                       //unsplash.com/de/@danroc0414
+        - url:                          /assets/images/modules/attics/1920x1280/j1-starter-mockup-1.jpg
+          alt:                          J1 Starter Mockup
 
 ---
 
@@ -108,10 +102,9 @@ endif::[]
 ----
 
 ifeval::[{eu-region} == true]
+[role="mb-7"]
 .Responsible for the content according to § 18 Abs. 1 MStV:
 ----
   <your-postal-address>
 ----
 endif::[]
-
-[role="mb-7"]

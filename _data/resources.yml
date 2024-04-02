@@ -342,7 +342,7 @@ resources:
   # ----------------------------------------------------------------------------
   # J1 Core, Main CSS styles and JS API for J1 Theme
   #
-  # NOTE Theme CSS loaded via module 'themer'
+  # NOTE Theme CSS loaded via module 'themes'
   # NOTE: load always 'unolight' as a 'bese' (e.g. for unodark, but should be removed)
   #
   - name:                               J1 Theme Core
@@ -412,7 +412,7 @@ resources:
       id:                               speak2me
       comment:                          Module speak2me
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         always
       preload:                          false
       script_load:                      defer
@@ -608,17 +608,17 @@ resources:
         init_function:                  [ j1.adapter.mmenu.init ]
 
   # ----------------------------------------------------------------------------
-  # Themer, JS implementation to integrate themes from Bootswatch
+  # Themes, JS implementation to integrate themes from Bootswatch
   # based on the bootstrapThemeSwitcher API
   #
   # See: https://github.com/jguadagno/bootstrapThemeSwitcher
   #
-  - name:                               J1 Themer
+  - name:                               J1 Themes
     resource:
       enabled:                          true
 
-      id:                               themer
-      comment:                          Module Themer
+      id:                               themes
+      comment:                          Module Themes
       region:                           head
       layout:                           [ all ]
       required:                         always
@@ -629,9 +629,9 @@ resources:
 
       data:
         css:                            []
-        files:                          [ adapter/js/themer.js ]
+        files:                          [ adapter/js/themes.js ]
         js:                             []
-        init_function:                  [ j1.adapter.themer.init ]
+        init_function:                  [ j1.adapter.themes.init ]
 
   # ----------------------------------------------------------------------------
   # Toccer, JS implementation to create TOCs from HTML headline elements
@@ -672,7 +672,7 @@ resources:
       id:                               cookieConsent
       comment:                          Module J1 CookieConsent
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         always
       preload:                          false
       script_load:
@@ -727,7 +727,7 @@ resources:
       id:                               fab
       comment:                          Module J1 Floating Action Buttons
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         always
       preload:                          false
       script_load:                      defer
@@ -784,7 +784,7 @@ resources:
       id:                               theme_switcher
       comment:                          Module Theme Switcher
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         always
       preload:                          false
       script_load:
@@ -810,7 +810,7 @@ resources:
       id:                               rtable
       comment:                          Module J1 Responsive Tables
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         always
       script_load:                      defer
       script_load:
@@ -882,7 +882,7 @@ resources:
       id:                               msDropdown
       comment:                          Module J1 MsDropdown
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         always
       preload:                          false
       script_load:                      defer
@@ -907,7 +907,7 @@ resources:
       id:                               translator
       comment:                          Module J1 Translator
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         always
       preload:                          false
       script_load:                      defer
@@ -960,7 +960,7 @@ resources:
       id:                               CustomModule
       comment:                          Module J1 Custom Module
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -983,7 +983,7 @@ resources:
       id:                               customFunctions
       comment:                          Module Custom Functions
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1060,7 +1060,7 @@ resources:
 
       id:                               iframer
       comment:                          Module J1 IFramer
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       region:                           head
       required:                         ondemand
       preload:                          false
@@ -1168,7 +1168,7 @@ resources:
       id:                               clipboard
       comment:                          Module J1 Clipboard
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         always
       preload:                          false
       script_load:                      defer
@@ -1191,7 +1191,7 @@ resources:
       id:                               carousel
       comment:                          Module J1 Carousel
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1218,7 +1218,7 @@ resources:
       id:                               masterslider
       comment:                          Module Master Slider Lite
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1247,7 +1247,7 @@ resources:
       id:                               mastersliderpro
       comment:                          Module Master Slider Pro
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1320,7 +1320,7 @@ resources:
       id:                               lightgallery
       comment:                          Module J1 lightGallery V2
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1362,7 +1362,7 @@ resources:
       id:                               videojs
       comment:                          Module VideoJS
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1400,7 +1400,7 @@ resources:
       id:                               tiktokplayer
       comment:                          Module TikToc Player
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1423,7 +1423,7 @@ resources:
       id:                               dailymotionplayer
       comment:                          Module Dailymotion Player
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1446,7 +1446,7 @@ resources:
       id:                               vimeoplayer
       comment:                          Module Vimeo Player
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1469,7 +1469,7 @@ resources:
       id:                               wistiaplayer
       comment:                          Module Wistia Player
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1494,7 +1494,7 @@ resources:
       id:                               rangeslider
       comment:                          Module J1 Range Slider
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1542,7 +1542,7 @@ resources:
       id:                               advertising
       comment:                          Module Advertising
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1565,7 +1565,7 @@ resources:
       id:                               comments
       comment:                          Module Comments
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1618,7 +1618,7 @@ resources:
       id:                               waves
       comment:                          Module Waves
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         always
       preload:                          false
       script_load:                      defer
@@ -1632,6 +1632,32 @@ resources:
         init_function:                  [ j1.adapter.waves.init ]
 
   # ----------------------------------------------------------------------------
+  # jsCookies
+  # JavaScript API for handling cookies
+  #
+  # See: https://github.com/js-cookie/js-cookie/
+  #
+  - name:                               jsCookie
+    resource:
+      enabled:                          false
+
+      id:                               js-cookie
+      comment:                          Module jsCookie
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      preload:                          false
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+
+      data:
+        css:                            []
+        files:                          []
+        js:                             [ modules/js-cookies/js/js.cookie ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
   # Particles
   #
   - name:                               Particles
@@ -1641,7 +1667,7 @@ resources:
       id:                               particles
       comment:                          Module Particles
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1667,7 +1693,7 @@ resources:
       id:                               slick
       comment:                          Module Slick
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1701,7 +1727,7 @@ resources:
       id:                               masonry
       comment:                          Module Masonry
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1730,7 +1756,7 @@ resources:
       id:                               iconpicker
       comment:                          Module IconPicker
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ page ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1738,10 +1764,19 @@ resources:
       pass_init_data:                   false
 
       data:
-        css:                            [ modules/iconPicker/css/universal-icon-picker ]
-        files:                          [ adapter/js/iconPicker.js ]
+        css:                            [
+                                          modules/iconPicker/css/universal-icon-picker,
+                                          modules/iconPicker/css/theme/uno
+                                        ]
+        files:                          [
+                                          adapter/js/iconPicker.js,
+                                          adapter/js/iconPickerPage.js
+                                        ]
         js:                             [ modules/iconPicker/js/universal-icon-picker ]
-        init_function:                  [ j1.adapter.iconPicker.init ]
+        init_function:                  [
+                                          j1.adapter.iconPicker.init,
+                                          j1.adapter.iconPickerPage.init
+                                        ]
 
   # ----------------------------------------------------------------------------
   # Theme Toggler
@@ -1754,7 +1789,7 @@ resources:
       id:                               theme_toggler
       comment:                          Module Theme Toggler
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         always
       preload:                          false
       script_load:                      defer
@@ -1804,7 +1839,7 @@ resources:
       id:                               dropdowns
       comment:                          Module Dropdown Menus
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         ondemand
       preload:                          false
       script_load:                      defer
@@ -1822,17 +1857,18 @@ resources:
 
   # ----------------------------------------------------------------------------
   # slimSelect
+  # https://github.com/brianvoe/slim-select
   # Advanced select dropdown menus
   #
   - name:                               slimSelect
     resource:
-      enabled:                          false
+      enabled:                          true
 
       id:                               slim_select
       comment:                          Module slimSelect
       region:                           head
-      layout:                           [ all ]
-      required:                         ondemand
+      layout:                           [ home, page, post ]
+      required:                         always
       preload:                          false
       script_load:                      defer
       dependencies:                     false
@@ -1840,9 +1876,9 @@ resources:
 
       data:
         css:                            [ modules/slimSelect/css/select ]
-        files:                          []
+        files:                          [ adapter/js/slimSelect.js ]
         js:                             [ modules/slimSelect/js/select ]
-        init_function:                  []
+        init_function:                  [ j1.adapter.slimSelect.init ]
 
   # ----------------------------------------------------------------------------
   # Chatbot AI
@@ -1855,7 +1891,7 @@ resources:
       id:                               chatbot
       comment:                          Module Chatbot
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         always
       preload:                          false
       script_load:
@@ -1879,7 +1915,7 @@ resources:
       id:                               docsearch
       comment:                          Module docsearch
       region:                           head
-      layout:                           [ all ]
+      layout:                           [ home, page, post ]
       required:                         always
       preload:                          false
       script_load:                      defer

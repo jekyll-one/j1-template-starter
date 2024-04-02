@@ -49,7 +49,7 @@ defaults:
   pauseOnHover:                         false
 
   icon_family:                          mdib                                    # mdib | fa (FontAweSome)
-  icon_color:                           "#9E9E9E"                               # md-gray
+  icon_color:                           var(--md-gray-500)
   icon_size:                            default
 
   raised_level:                         0
@@ -76,13 +76,13 @@ defaults:
 
   # gradient effect (all image color types)
   #
-  # background_color_1:                   "#000"                                # black
-  # background_color_2:                   "#78909C"                             # md-bluegray-400
+  # background_color_1:                   var(--bs-black)
+  # background_color_2:                   var(--md-gray-400)
 
   # duo-color effect, base color 'blue' (requires gray-scaled images)
   #
-  background_color_1:                   "#0D47A1"                               # md-blue-900
-  background_color_2:                   "#0D47A1"                               # md-blue-900
+  background_color_1:                   var(--md-blue-900)
+  background_color_2:                   var(--md-blue-900)
 
   # placeholder slide, used if NO slides given in FRONTMATTER (of a page|post)
   #

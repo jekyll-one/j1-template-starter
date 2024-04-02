@@ -1,7 +1,7 @@
 ---
 title:                                  Theme Preview
-title_extention:                        Preview Bootstrap theme for J1 Template
-tagline:                                Explore Current Styles
+title_extention:                        Preview styles
+tagline:                                Preview styles
 
 date:                                   2023-09-21
 #last_modified:                         2023-01-01
@@ -25,12 +25,14 @@ image:
   width:                                1920
   height:                               1280
 
-tts:                                    true
 comments:                               false
 regenerate:                             false
 permalink:                              /pages/public/tools/previewer/current_theme/
 
-resources:                              [ animate, bmd, rouge ]
+resources:                              [
+                                          animate, rouge,
+                                          bmd
+                                        ]
 resource_options:
   - toccer:
       collapseDepth:                    4
@@ -122,7 +124,7 @@ create fully responsive web pages. The Template system offers various unique
 functionalities compared to other Jekyll themes and templates.
 
 mdi:clock-time-five-outline[24px, md-gray mt-4 mb-5 mr-2]
-*15-30 Minutes* to read
+*15-30 Minutes* to read.
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
@@ -468,15 +470,15 @@ a *ripple* effect is shown for feedback.
 
 ++++
 <div class="doc-example mb-3">
-  <button type="button" class="btn btn-primary btn-raised">Primary</button>
-  <button type="button" class="btn btn-secondary btn-raised">Secondary</button>
-  <button type="button" class="btn btn-success btn-raised">Success</button>
-  <button type="button" class="btn btn-info btn-raised">Info</button>
-  <button type="button" class="btn btn-warning btn-raised">Warning</button>
-  <button type="button" class="btn btn-danger btn-raised">Danger</button>
-  <button type="button" class="btn btn-light btn-raised">Light</button>
-  <button type="button" class="btn btn-dark btn-raised">Dark</button>
-  <button type="button" class="btn btn-link btn-raised">Link</button>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-secondary">Secondary</button>
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-warning">Warning</button>
+  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-light">Light</button>
+  <button type="button" class="btn btn-dark">Dark</button>
+  <button type="button" class="btn btn-link">Link</button>
 </div>
 ++++
 
@@ -484,15 +486,15 @@ a *ripple* effect is shown for feedback.
 .Example HTML code for Buttons
 [source, html]
 ----
-<button type="button" class="btn btn-primary btn-raised">Primary</button>
-<button type="button" class="btn btn-secondary btn-raised">Secondary</button>
-<button type="button" class="btn btn-success btn-raised">Success</button>
-<button type="button" class="btn btn-info btn-raised">Info</button>
-<button type="button" class="btn btn-warning btn-raised">Warning</button>
-<button type="button" class="btn btn-danger btn-raised">Danger</button>
-<button type="button" class="btn btn-light btn-raised">Light</button>
-<button type="button" class="btn btn-dark btn-raised">Dark</button>
-<button type="button" class="btn btn-link btn-raised">Link</button>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+<button type="button" class="btn btn-link">Link</button>
 ----
 endif::[]
 
@@ -699,9 +701,9 @@ Beside the *default* size, small and large buttons are available.
 
 ++++
 <div class="doc-example mb-3">
-  <button type="button" class="btn btn-primary btn-raised btn-lg">Large button</button>
-  <button type="button" class="btn btn-primary btn-raised">Default button</button>
-  <button type="button" class="btn btn-primary btn-raised btn-sm">Small button</button>
+  <button type="button" class="btn btn-primary btn-lg">Large button</button>
+  <button type="button" class="btn btn-primary">Default button</button>
+  <button type="button" class="btn btn-primary btn-sm">Small button</button>
 </div>
 ++++
 
@@ -709,9 +711,9 @@ Beside the *default* size, small and large buttons are available.
 .Example HTML code for Button sizes
 [source, html]
 ----
-<button type="button" class="btn btn-primary btn-raised btn-lg">Large button</button>
-<button type="button" class="btn btn-primary btn-raised">Default button</button>
-<button type="button" class="btn btn-primary btn-raised btn-sm">Small button</button>
+<button type="button" class="btn btn-primary btn-lg">Large button</button>
+<button type="button" class="btn btn-primary">Default button</button>
+<button type="button" class="btn btn-primary btn-sm">Small button</button>
 ----
 endif::[]
 
@@ -723,7 +725,7 @@ Draw attention to a button, e.g for a *recommended* action.
 
 ++++
 <div class="doc-example mb-3">
-  <button type="button" class="btn btn-primary btn-raised pulsed-z2">Recommend</button>
+  <button type="button" class="btn btn-primary pulsed-z2">Recommend</button>
 </div>
 ++++
 
@@ -731,7 +733,7 @@ Draw attention to a button, e.g for a *recommended* action.
 .Example HTML code for a pulsed Button
 [source, html]
 ----
-  <button type="button" class="btn btn-primary btn-raised pulsed-z2">Primary</button>
+  <button type="button" class="btn btn-primary pulsed-z2">Primary</button>
 ----
 endif::[]
 
@@ -747,8 +749,8 @@ and responsive behaviors.
 ++++
 <div class="doc-example mb-3">
   <div class="d-grid gap-2">
-    <button type="button" class="btn btn-primary btn-lg btn-raised">Block level button</button>
-    <button type="button" class="btn btn-secondary btn-raised">Block level button</button>
+    <button type="button" class="btn btn-primary btn-lg">Block level button</button>
+    <button type="button" class="btn btn-secondary">Block level button</button>
   </div>
 </div>
 ++++
@@ -758,8 +760,8 @@ and responsive behaviors.
 [source, html]
 ----
 <div class="d-grid gap-2">
-  <button type="button" class="btn btn-primary btn-lg btn-raised">Block level button</button>
-  <button type="button" class="btn btn-secondary btn-raised">Block level button</button>
+  <button type="button" class="btn btn-primary btn-lg">Block level button</button>
+  <button type="button" class="btn btn-secondary">Block level button</button>
 </div>
 ----
 endif::[]
@@ -1494,7 +1496,7 @@ link:{url-bs-docs--components-forms}[Bootstrap Docs {char-emdash} Forms, {browse
         </label>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary btn-raised mt-3">Submit</button>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
   </form>
 </div>
 ++++
@@ -2581,7 +2583,7 @@ from the top of the page.
 <div class="ml-0">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-primary"
     data-bs-toggle="modal"
     data-bs-target="#exampleSimpleModal">
     Launch Example
@@ -2604,8 +2606,8 @@ from the top of the page.
         <p>Modal body text goes here.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
-        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-flex mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2620,7 +2622,7 @@ it (the backdrop).
 <div class="ml-0">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-primary"
     data-bs-toggle="modal"
     data-bs-target="#exampleStaticModal">
     Launch Example
@@ -2644,8 +2646,8 @@ it (the backdrop).
         <p>Modal body text goes here.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
-        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-flex mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2661,7 +2663,7 @@ the height.
 <div class="ml-0">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-primary"
     data-bs-toggle="modal"
     data-bs-target="#exampleModalLong">
     Launch Example
@@ -2718,8 +2720,8 @@ the height.
         </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
-        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-flex mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2734,7 +2736,7 @@ modal body. Try the demo and scroll the content.
 <div class="ml-0">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-primary"
     data-bs-toggle="modal"
     data-bs-target="#exampleModalLongScrollable">
     Launch Example
@@ -2791,8 +2793,8 @@ modal body. Try the demo and scroll the content.
         </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
-        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-flex mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2806,7 +2808,7 @@ modal body. Try the demo and scroll the content.
 <div class="ml-0">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-primary"
     data-bs-toggle="modal" data-bs-target="#exampleModalVerticalCenter">
     Launch Example
   </button>
@@ -2830,8 +2832,8 @@ modal body. Try the demo and scroll the content.
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
-        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-flex mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2846,7 +2848,7 @@ closed, any tooltips and popovers within are also automatically dismissed.
 <div class="ml-0">
   <!-- Button trigger modal -->
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-primary"
     data-bs-toggle="modal"
     data-bs-target="#exampleModalTooltip">
     Launch Example
@@ -2867,14 +2869,14 @@ closed, any tooltips and popovers within are also automatically dismissed.
       </div>
       <div class="modal-body">
         <h4 class="notoc">Popover in a modal</h4>
-        <p>This <a href="javascript:void(0)" role="button" class="btn btn-primary btn-raised popover-test" data-bs-toggle="popover" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on hover or click.</p>
+        <p>This <a href="javascript:void(0)" role="button" class="btn btn-primary popover-test" data-bs-toggle="popover" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on hover or click.</p>
         <hr>
         <h4 class="notoc">Tooltips in a modal</h4>
         <p><a href="javascript:void(0)" class="tooltip-test" data-bs-toggle="tooltip" title="Tooltip">This link</a> and <a href="javascript:void(0)" class="tooltip-test" data-bs-toggle="tooltip" title="Tooltip">that link</a> have tooltips on hover.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-flex btn-raised mr-2">Do nothing</button>
-        <button type="button" class="btn btn-secondary btn-flex btn-raised" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-flex mr-2">Do nothing</button>
+        <button type="button" class="btn btn-secondary btn-flex" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -2889,7 +2891,7 @@ closed, any tooltips and popovers within are also automatically dismissed.
 <!-- Trigger Button (modal) -->
 <div class="ml-0">
   <button type="button"
-    class="btn btn-primary btn-raised"
+    class="btn btn-primary"
     data-bs-toggle="modal"
     data-bs-target="#exampleSimpleModal">
     Launch Example
@@ -2919,12 +2921,12 @@ closed, any tooltips and popovers within are also automatically dismissed.
       </div>
       <div class="modal-footer">
         <button type="button"
-          class="btn btn-primary btn-flex btn-raised mr-2">
+          class="btn btn-primary btn-flex mr-2">
           Do nothing
         </button>
         <button
           type="button"
-          class="btn btn-secondary btn-flex btn-raised"
+          class="btn btn-secondary btn-flex"
           data-bs-dismiss="modal">
           Close
         </button>
@@ -2950,10 +2952,10 @@ link:{url-bs-docs--components-tooltips}[Bootstrap Docs {char-emdash} Tooltips, {
 <div class="doc-example mb-3">
   <div class="row d-flex justify-content-center">
     <div class="col-md-6 p-0">
-      <button type="button" class="btn btn-primary btn-raised" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">Left</button>
-      <button type="button" class="btn btn-primary btn-raised" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">Top</button>
-      <button type="button" class="btn btn-primary btn-raised" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">Bottom</button>
-      <button type="button" class="btn btn-primary btn-raised" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">Right</button>
+      <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">Left</button>
+      <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">Top</button>
+      <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">Bottom</button>
+      <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">Right</button>
     </div>
   </div>
 </div>
@@ -2963,22 +2965,22 @@ link:{url-bs-docs--components-tooltips}[Bootstrap Docs {char-emdash} Tooltips, {
 .Example HTML code for Tooltips
 [source, html]
 ----
-  <button type="button" class="btn btn-primary btn-raised"
+  <button type="button" class="btn btn-primary"
     data-bs-toggle="tooltip"
     data-bs-placement="top"
     title="Tooltip on top">Top
   </button>
-  <button type="button" class="btn btn-primary btn-raised"
+  <button type="button" class="btn btn-primary"
     data-bs-toggle="tooltip"
     data-bs-placement="bottom"
     title="Tooltip on bottom">Bottom
   </button>
-  <button type="button" class="btn btn-primary btn-raised"
+  <button type="button" class="btn btn-primary"
     data-bs-toggle="tooltip"
     data-bs-placement="right"
     title="Tooltip on right">Right
   </button>
-  <button type="button" class="btn btn-primary btn-raised"
+  <button type="button" class="btn btn-primary"
     data-bs-toggle="tooltip"
     data-bs-placement="left"
     title="Tooltip on left">Left
@@ -2992,20 +2994,20 @@ link:{url-bs-docs--components-popovers}[Bootstrap Docs {char-emdash} Popovers, {
 <div class="doc-example mb-3">
   <div class="row d-flex justify-content-center">
     <div class="col-md-6 p-0">
-      <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left</button>
-      <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top</button>
-      <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Bottom</button>
-      <button type="button" class="btn btn-primary btn-raised" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right</button>
+      <button type="button" class="btn btn-primary" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left</button>
+      <button type="button" class="btn btn-primary" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top</button>
+      <button type="button" class="btn btn-primary" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Bottom</button>
+      <button type="button" class="btn btn-primary" title="Popover Title" data-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-trigger="hover focus" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right</button>
     </div>
   </div>
 </div>
 ++++
 
-[role="mt-5"]
+[role="mt-5 mb-7"]
 .Example HTML code for Popovers
 [source, html]
 ----
-  <button type="button" class="btn btn-primary btn-raised"
+  <button type="button" class="btn btn-primary"
     title="Popover Title"
     data-container="body"
     data-bs-toggle="popover"
@@ -3014,7 +3016,7 @@ link:{url-bs-docs--components-popovers}[Bootstrap Docs {char-emdash} Popovers, {
     data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
     Top
   </button>
-  <button type="button" class="btn btn-primary btn-raised"
+  <button type="button" class="btn btn-primary"
     title="Popover Title"
     data-container="body"
     data-bs-toggle="popover"
@@ -3023,7 +3025,7 @@ link:{url-bs-docs--components-popovers}[Bootstrap Docs {char-emdash} Popovers, {
     data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
     Bottom
   </button>
-  <button type="button" class="btn btn-primary btn-raised"
+  <button type="button" class="btn btn-primary"
     title="Popover Title" data-container="body"
     data-bs-toggle="popover"
     data-bs-placement="right"
@@ -3031,7 +3033,7 @@ link:{url-bs-docs--components-popovers}[Bootstrap Docs {char-emdash} Popovers, {
     data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
     Right
   </button>
-  <button type="button" class="btn btn-primary btn-raised"
+  <button type="button" class="btn btn-primary"
     title="Popover Title"
     data-container="body"
     data-bs-toggle="popover"

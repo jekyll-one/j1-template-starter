@@ -65,7 +65,7 @@ defaults:
   icon_color:                           mdib-grey
   icon_size:                            mdib-sm
 
-  nav_primary_color:                    "#2196F3"                               # md-blue, general color for navbar and nav-menus
+  nav_primary_color:                    var(--md-blue)
 
   # ----------------------------------------------------------------------------
   # NavBar
@@ -84,14 +84,14 @@ defaults:
     fixed:                              true
     style:                              overlay
     color:                              light
-    nav_item_color:                     '#212121'                               # gray-900|rgba-lighten
-    nav_item_color_hover:               '#EEEEEE'                               # gray-200|rgba-lighten-400
-    nav_item_background_image:          'linear-gradient(#afabab, #1c1c1c 40%, #212121);'
+    nav_item_color:                     var(--md-gray-900)
+    nav_item_color_hover:               var(--md-gray-300)
+    nav_item_background_image:          "linear-gradient(var(--md-gray-500), var(--md-gray-900) 60%, var(--md-gray-900));"
     position:                           left
     bottom_line_height:                 1
-    bottom_line_color:                  "#EEEEEE"                               # md-grey-200
-    background_color_full:              'rgba(255, 255, 255, 0.8)'              # rgba(0, 0, 0, 0.8) lighten-800
-    background_color_scrolled:          'var(--bs-primary)'                     # default: theme|bs-primary
+    bottom_line_color:                  var(--md-gray-300)
+    background_color_full:              rgba(255, 255, 255, 0.8)                # darken-800
+    background_color_scrolled:          var(--md-blue)
 
   # ----------------------------------------------------------------------------
   # NavMenu (Mobile)
@@ -132,13 +132,13 @@ defaults:
     menu_font_size:                     larger
     megamenu_font_size:                 small
     icon_family:                        mdib
-    icon_style:                         mdib                                    # far regular icon
-    icon_color:                         "#9E9E9E"                               # md-grey
+    icon_style:                         mdib
+    icon_color:                         var(--md-gray-500)
     icon_size:                          mdib-sm
-    menu_item_color:                    '#212121'                               # gray-900 rgba-lighten
-    menu_item_color_hover:              '#EEEEEE'                               # gray-500 rgba-lighten-900
+    menu_item_color:                    var(--md-gray-900)
+    menu_item_color_hover:              var(--md-gray-300)
     dropdown_style:                     raised
-    dropdown_color:                     '#2196f3'
+    dropdown_color:                     var(--md-blue)
     dropdown_left:                      12                                      # px
     dropdown_item_style:                flat
     dropdown_animate:                   false
@@ -150,12 +150,12 @@ defaults:
     dropdown_font_size:                 small
     dropdown_padding_x:                 18                                      # rem
     dropdown_padding_y:                 10                                      # px
-    dropdown_item_color:                "#212121"                               # md-grey-900
-    dropdown_border_color:              "#2196f3"                               # BS bg-primary
-    dropdown_border_top:                0                                       # 3, px
+    dropdown_item_color:                var(--md-gray-900)
+    dropdown_border_color:              var(--md-blue)
+    dropdown_border_top:                0                                       # px
     dropdown_border_radius:             2                                       # px
-    dropdown_background_color_hover:    "#ECEFF1"                               # md-bluegrey-50
-    dropdown_background_color_active:   "#CFD8DC"                               # md-bluegrey-100
+    dropdown_background_color_hover:    var(--md-gray-300)
+    dropdown_background_color_active:   var(--md-gray-500)
 
   # ----------------------------------------------------------------------------
   # NavQuicklinks
@@ -168,14 +168,14 @@ defaults:
     xhr_data_path:                      /assets/data/quicklinks/index.html
 
     icon_family:                        mdib
-    icon_color:                         '#212121'                               # gray-900
-    icon_color_hover:                   '#757575'                               # gray-600
+    icon_color:                         var(--md-gray-900)
+    icon_color_hover:                   var(--md-gray-500)
     icon_size:                          mdib-2x
 
     # Link buttons
     # --------------------------------------------------------------------------
     home_icon:                          home-variant
-    home_url:                           /                                       # URL | none (disables the home button)
+    home_url:                           /                                       # URL|none (disables the home button)
     home_label:                         Home
 
     disqus_icon:                        disqus
@@ -227,10 +227,6 @@ defaults:
     theme_toggler_icon:                 lightbulb-outline
     theme_toggler_action:               themeToggler
     theme_toggler_label:                Theme Toggler
-
-#   notebooks_icon:                     notebook
-#   notebooks_action:                   nbi-notebooks
-#   notebooks_label:                    NBI Notebooks
 
     r_text_icon:                        false                                   # format-text
     r_text_action:                      rtext
