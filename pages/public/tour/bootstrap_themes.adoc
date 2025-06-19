@@ -1,0 +1,168 @@
+---
+title:                                  Themes
+title_extention:                        Bootstrap V5 Themes
+tagline:                                Individual Style
+
+date:                                   2020-11-10
+#last_modified:                         2023-01-01
+
+description: >
+                                        J1 Template offers various unique functionalities compared to other Jekyll
+                                        themes and templates. Bootstrap themes for the J1 Template are based on the
+                                        free and Open Source CSS front-end framework Bootstrap of version V5. The
+                                        Bootstrap themes for the J1 enable the presentation of different versions
+                                        (skins) of the same site using already prepared Bootstrap CSS templates.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        css, style, theme, skin
+
+categories:                             [ Roundtrip ]
+tags:                                   [ Bootstrap, Module, Theme ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/stories-ink-tattoo-care.jpg
+  width:                                1920
+  height:                               1280
+
+regenerate:                             false
+permalink:                              /pages/public/tour/themes/
+
+resources:                              [ lightbox ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/stories-ink-tattoo-care.jpg
+          alt:                          Photo by Stories & Ink Tattoo Care on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Stories & Ink Tattoo Care
+            href:                       https://unsplash.com/de/@storiesandink
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:time-num--string:                      3
+:time-en--string:                       Minutes
+:time-en--description:                  to read
+:time-de--string:                       Minuten
+:time-de--description:                  Lesezeit
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+Themes for the J1 Template are based on the Open Source CSS front-end
+framework Bootstrap of version V5. The Bootstrap theme feature enables
+the presentation of a website using different skins of the same site using
+already prepared Bootstrap CSS style sets.
+
+Using a theme results in a uniform appearance for the content in terms of the
+overall layout, text, tables, and form elements across all modern web browsers
+available on the market. In addition, developers can take advantage of already
+defined CSS classes in Bootstrap to customize a layout individually.
+
+[subs=attributes]
+++++
+<div class="video-title">
+  <i class="mdi mdi-gray mdi-clock-time-five-outline mdi-24px mr-2"></i>
+  {time-num--string} {time-en--string} {time-en--description}
+</div>
+++++
+
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5"]
+== The Themes
+
+Styles adjust the website's appearance based on the CSS rules and definitions
+of Bootstrap. Styles do not change the framework's functionality but modify
+rule-based, e.g., the color scheme, fonts, sizes, or the appearance of more
+complex elements like forms or tables. Additionally, a style may add additional
+components to extend the Bootstrap's framework.
+
+Modifying the CSS styles of link:{url-bs--home}[Bootstrap, {browser-window--new}]
+is not rocket science. But, to be honest, some knowledge is needed for the
+link:{url-w3org--css-spec}[CSS technology, {browser-window--new}] to do so.
+I encourage you to spend some time on learning CSS, the
+link:{url-w3schools--css-tutorial}[Design base, {browser-window--new}] of each
+and every website.
+
+.Bootswatch Themes (Examples)
+lightbox::bootswatch-themes[1280, {data-images--bootswatch-themes}]
+
+Thanks to the people at link:{url-bootswatch--home}[Bootswatch, {browser-window--new}],
+a great set of already prepared Bootstrap stylesheets in various designs are
+available on their website; no need to start from scratch. It is not
+required to re-define all the Bootstrap variables and rebuild the framework.
+Many different styles are available. What is already available at Bootswatch
+is at least a good base for your modifications -- your unique design.
+
+Besides the bunch of different stylesheets at *Bootswatch*, an
+link:{url-bootswatch--api}[Integration API, {browser-window--new}] is provided
+that helps a lot to make designs available for an existing site. This API
+is the base to integrate selectable Bootswatch stylesheets into the J1 Template
+navigation system.
+
+[role="mt-4"]
+=== Apply a Style
+
+The base for designing pages using the J1 Template is the style Uno, a modern
+light or dark CSS layout used for many types of websites. What I mentioned
+already, web design is not: one size fits all. The style Uno can be seen as
+a good base, a starting point. Combining Uno and a different styles may be
+a fast solution for your site!
+
+You can find all available stylesheets to be applied on your pages from the
+*Themes* menu. You're invited to check how a page is changing for its design
+if a different stylesheet for web design is used.
+
+[WARNING]
+====
+For changing from one style to the next at *runtime*, the current
+version of the J1 Template system tries add new styles to J1 specific
+components like fonts, headlines, lists or paragraphs. Changing the style
+will work for the most *common* elements, but *not all* of them for now.
+====
+
+Select a style from the *Themes* menu, and the new BS-based stylesheet is
+automatically applied to all pages of your website.
+
+
+[role="mt-5"]
+== What next
+
+J1 Template is an excellent base for all types of websites. J1 supports
+powerful code highlighting to distinguish different source code elements
+visually. Highlighting makes code more readable and easier to understand
+by applying different styles to the code.
+
+Programming languages have specific syntax rules and conventions, so code
+highlighting is tailored to each language. For example, in a typical
+JavaScript syntax highlighting scheme, keywords like *if*, *for*, or
+*function* be displayed in one color, while variables and strings are
+displayed in another.
+
+The highlighter _Rouge_ is a native Ruby-based themeable syntax highlighter
+integrated by J1 Template. The highlighter supports 100+ different languages
+and generates HTML output using 256 standard *ANSI* colors displayed by all
+current browsers.
+
+[role="mb-7"]
+To check the code highlighter J1 Template offers, go for the
+link:{url-tour--rouge-hightlighter}[Rouge Code Highlighter].

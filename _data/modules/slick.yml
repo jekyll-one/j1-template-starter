@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -23,6 +23,11 @@ description:
 # User configuration settings
 #
 settings:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
   enabled:                              true
 
   # ----------------------------------------------------------------------------
@@ -352,7 +357,7 @@ settings:
       id:                               image_carousel_simple
       type:                             image
       gutters:                          0                                       # 0 .. 5
-      image_base_path:                  /assets/images/modules/gallery/mega_cities
+      image_base_path:                  /assets/image/module/swiper/simple/mega_city/image
       image_styles:                     img-fluid img-object--cover
       image_height:                     300px
 
@@ -407,27 +412,33 @@ settings:
       #
       slides:
 
-        - slide:                        # slide 1
+        # slide 1
+        - slide:
           image:                        denys-nevozhai-1_b.jpg
           caption:                      Man posing at the rooftop of Jin Mao Tower Shanghai - China
 
-        - slide:                        # slide 2
+        # slide 2
+        - slide:
           image:                        thomas-tucker_b.jpg
           caption:                      Sunset over Taipei City - Taiwan
 
-        - slide:                        # slide 3
+        # slide 3
+        - slide:
           image:                        emmad-mazhari_b.jpg
           caption:                      Chicago - United States
 
-        - slide:                        # slide 4
+        # slide 4
+        - slide:
           image:                        johan-mouchet_b.jpg
           caption:                      The Queen Bee at the Eureka Tower - Melbourne Southbank Australia
 
-        - slide:                        # slide 5
+        # slide 5
+        - slide:
           image:                        federico-rizzarelli_b.jpg
           caption:                      Shanghai - China
 
-        - slide:                        # slide 6
+        # slide 6
+        - slide:
           image:                        gints-gailis_b.jpg
           caption:                      Shangri-La Hotel Jakarta - Indonesia
 
@@ -441,7 +452,7 @@ settings:
       id:                               image_carousel_full
       type:                             image
       gutters:                          1                                       # 0 .. 5
-      image_base_path:                  /assets/images/modules/gallery/mega_cities
+      image_base_path:                  /assets/image/module/swiper/simple/mega_city/image
       image_styles:                     img-fluid img-object--cover
       image_height:                     300px
 
@@ -495,27 +506,33 @@ settings:
       #
       slides:
 
-        - slide:                        # slide 1
+        # slide 1
+        - slide:
           image:                        denys-nevozhai-1_b.jpg
           caption:                      Man posing at the rooftop of Jin Mao Tower Shanghai - China
 
-        - slide:                        # slide 2
+        # slide 2
+        - slide:
           image:                        thomas-tucker_b.jpg
           caption:                      Sunset over Taipei City - Taiwan
 
-        - slide:                        # slide 3
+        # slide 3
+        - slide:
           image:                        emmad-mazhari_b.jpg
           caption:                      Chicago - United States
 
-        - slide:                        # slide 4
+        # slide 4
+        - slide:
           image:                        johan-mouchet_b.jpg
           caption:                      The Queen Bee at the Eureka Tower - Melbourne Southbank Australia
 
-        - slide:                        # slide 5
+        # slide 5
+        - slide:
           image:                        federico-rizzarelli_b.jpg
           caption:                      Shanghai - China
 
-        - slide:                        # slide 6
+        # slide 6
+        - slide:
           image:                        gints-gailis_b.jpg
           caption:                      Shangri-La Hotel Jakarta - Indonesia
 

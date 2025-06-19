@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 # <i class="flag-icon flag-icon-gr rectangle size-xs"></i>
 # <i class="flag-icon flag-icon-gr squared size-xs"></i>

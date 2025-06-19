@@ -1,0 +1,53 @@
+[role="mt-5"]
+== Initialization
+
+When the Swiper HTML layout is in place, a initialization is reqired to
+*create* a slider (instance). Find initialization also with the
+https://swiperjs.com/swiper-api[Swiper Documentation, {browser-window--new}].
+
+[source, js]
+----
+// initialize swiper instance with options
+const swiper = new Swiper(
+  swiperContainer,
+  parameters
+);
+----
+
+swiperContainer::
+HTML Element or string (with CSS Selector) of swiper a container HTML element
+(required).
+
+parameters::
+Object with Swiper parameters (ptional).
+
+.Example
+[source, js]
+----
+// Initialize a slider and create a instance variable (for later access)
+const swiper = new Swiper(
+  '.swiper',
+  {
+    speed: 400,
+    spaceBetween: 100
+  }
+);
+----
+
+[NOTE]
+====
+The method `new` returns a reference to the initialized swiper *instance*.
+====
+
+*After* swiper initialization, it is possible to access to the swiper
+instance.
+
+.Example
+[source, js]
+----
+// Create an instance variable
+const swiper = document.querySelector('.swiper').swiper;
+
+// Access the sliders instance (e.g. by a method) like so
+swiper.slideNext();
+----

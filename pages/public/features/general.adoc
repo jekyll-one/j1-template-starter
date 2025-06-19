@@ -24,20 +24,20 @@ robots:
   follow:                               true
 
 image:
-  path:                                 /assets/images/modules/attics/christina-1920x1280.jpg
+  path:                                 /assets/image/module/attic/christina-1920x1280.jpg
   width:                                1920
   height:                               1280
 
 regenerate:                             false
 permalink:                              /pages/public/features/general_features/
 
-resources:                              [ animate, clipboard, comments, rouge, lightbox, iconify ]
+resources:                              [ lightbox, iconify ]
 resource_options:
   - toccer:
       collapseDepth:                    3
   - attic:
       slides:
-        - url:                          /assets/images/modules/attics/christina-1920x1280.jpg
+        - url:                          /assets/image/module/attic/christina-1920x1280.jpg
           alt:                          Photo by Christina on Unsplash
           badge:
             type:                       unsplash
@@ -54,7 +54,7 @@ resource_options:
 // -----------------------------------------------------------------------------
 // :page--attr:                         <attr-value>
 :url-fontawesome--home:                 https://fontawesome.com/
-:url-roundtrip--mdi-icons:              /pages/public/learn/roundtrip/mdi_icon_font/#material-design-icons
+:url-roundtrip--mdi-icons:              /pages/public/tour/mdi_icon_font/#material-design-icons
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------

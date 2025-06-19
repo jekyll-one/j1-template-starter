@@ -1,0 +1,1534 @@
+[role="mt-5"]
+== Events A - R
+
+The Swiper API comes with a large number of *predefined* event listeners you
+can assign to an (swiper) instance. Find available event listeners also with the
+https://swiperjs.com/swiper-api#events[Swiper Documentation, {browser-window--new}].
+
+
+[role="mt-4"]
+=== Assignment
+
+Events can be assigned in *two* ways.
+
+==== On swiper initialization
+
+Fire event *on* swiper initialization.
+
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // ...
+  on: {
+    init: function () {
+      console.log('swiper initialized');
+    }
+  }
+});
+----
+
+[role="mt-4"]
+==== After swiper initialization
+
+Fire event *after* swiper initialization.
+
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // ...
+});
+
+swiper.on('slideChange', function () {
+  console.log('slide changed');
+});
+----
+
+[NOTE]
+====
+The *this* keyword within a *event handler* points always to the swiper
+instance.
+====
+
+
+[role="mt-5"]
+=== Listeners
+
+Available *predefined* event listeners.
+
+[role="mt-4"]
+[[event-activeIndexChange]]
+=== activeIndexChange
+
+Event fired on *active* index change.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    activeIndexChange: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+
+[role="mt-4"]
+[[event-afterInit]]
+=== afterInit
+
+Event fired right *after* swipers *initialization*.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    afterInit: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-beforeDestroy]]
+=== beforeDestroy
+
+Event fired right *before* swiper instance is destroyed.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    beforeDestroy: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-beforeInit]]
+=== beforeInit
+
+Event fired right *before* swiper initialization.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    beforeInit: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-afterDestroy]]
+=== afterDestroy
+
+Event fired right *after* swiper instance is destroyed.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage 
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    afterDestroy: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-beforeLoopFix]]
+=== beforeLoopFix
+
+Event fired right *before* loop fix.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    beforeLoopFix: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-beforeResize]]
+=== beforeResize
+
+Event fired *before* resize handler.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    beforeResize: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-beforeSlideChangeStart]]
+=== beforeSlideChangeStart
+
+Event fired *before* slide *change transition* start.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    beforeSlideChangeStart: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-beforeTransitionStart]]
+=== beforeTransitionStart
+
+Event fired *before* transition starts.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    beforeTransitionStart: (swiper, speed, internal) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-breakpoint]]
+=== breakpoint
+
+Event fired on *breakpoint change*
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    breakpoint: (swiper, breakpointParams) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-changeDirection]]
+=== changeDirection
+
+Event fired on *direction* change.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    changeDirection: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-click]]
+=== click
+
+Event fired when user *click/tap* on Swiper.
+
+[NOTE]
+====
+Receives *pointerup* event as an *argument*.
+====
+
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    click: (swiper, event) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-destroy]]
+=== destroy
+
+Event fired *after* swiper is destroyed.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    destroy: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-doubleClick]]
+=== doubleClick
+
+Event fired when user *double click/tap* on Swiper.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    doubleClick: (swiper, event) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-doubleTap]]
+=== doubleTap
+
+Event fired when user *double tap* on the Swipers container.
+
+[NOTE]
+====
+Receives *pointerup* event as an *argument*.
+====
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    doubleTap: (swiper, event) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-fromEdge]]
+=== fromEdge
+
+Event fired when Swiper goes from *beginning* or *end* position.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    fromEdge: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-init]]
+=== init
+
+Fired *after* Swiper *initialization*.
+
+[CAUTION]
+====
+The `swiper.on('init')` syntax works only in case setting the parameter
+`init` to `false` and run explicitely an initialization.
+
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  init: false,
+  // other parameters
+});
+
+swiper.on('init', (swiper) => {
+ // do something
+});
+
+// init Swiper
+swiper.init();
+----
+
+Otherwise use the event as an *initialization parameter* on instance
+setup (new) as shown below.
+
+====
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    init: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-lock]]
+=== lock
+
+Event fired when swiper is *locked* (if `watchOverflow` is *enabled*).
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    lock: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-loopFix]]
+=== loopFix
+
+Event fired after *loop fix*.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    loopFix: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-momentumBounce]]
+=== momentumBounce
+
+Event fired on momentum bounce.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    momentumBounce: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-observerUpdate]]
+=== observerUpdate
+
+Event fired if observer is *enabled* and a *DOM mutations* is detected.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    observerUpdate: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-orientationchange]]
+=== orientationchange
+
+Event fired on *orientation change* (e.g. landscape -> portrait).
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    orientationchange: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-progress]]
+=== progress
+
+Event fired when Swiper *progress* has been *changed*.
+
+[NOTE]
+====
+Receives *progress event* as an *argument*.
+====
+
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    progress: (swiper, progress) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-reachBeginning]]
+=== reachBeginning
+
+Event fired when Swiper reach its *beginning* (initial position).
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    reachBeginning: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-reachEnd]]
+=== reachEnd
+
+Event fired when Swiper reach *last* slide.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    reachEnd: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-realIndexChange]]
+=== realIndexChange
+
+Event fired on real index change.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    realIndexChange: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-resize]]
+=== resize
+
+Event fired on *window resize* and *before* on s swiper *onresize*
+manipulation.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    resize: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+
+[role="mt-5"]
+== Events S - Z
+
+The Swiper API comes with a large number of *predefined* event listeners you
+can assign to an (swiper) instance. Find available event listeners also with the
+https://swiperjs.com/swiper-api#events[Swiper Documentation, {browser-window--new}].
+
+[role="mt-4"]
+[[event-setTransition]]
+=== setTransition
+
+Event fired *everytime* when swiper *starts animation*.
+
+[NOTE]
+====
+Receives transition duration value (in ms) as an argument.
+====
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    setTransition: (swiper, transition) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-setTranslate]]
+=== setTranslate
+
+Set *custom* CSS3 *transform translate* value for the *swiper wrapper*.
+
+[NOTE]
+====
+Receives current *translate* value as as *argument*.
+====
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    setTranslate: (swiper, translate)) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-slideChange]]
+=== slideChange
+
+Event fired when *active* slide has been *changed*.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage 
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    slideChange: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-slideChangeTransitionEnd]]
+=== slideChangeTransitionEnd
+
+Event fired *after* animation to *other slide* (next or previous).
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    slideChangeTransitionEnd: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-slideChangeTransitionStart]]
+=== slideChangeTransitionStart
+
+Event fired in the *beginning* of animation to *other slide* (next or previous).
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    slideChangeTransitionStart: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-slideNextTransitionEnd]]
+=== slideNextTransitionEnd
+
+Same as *slideChangeTransitionEnd* but only for *forward direction*.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    slideNextTransitionEnd: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-slideNextTransitionStart]]
+=== slideNextTransitionStart
+
+Same as *slideChangeTransitionStart* but only for *forward direction*.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    slideNextTransitionStart: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-slidePrevTransitionEnd]]
+=== slidePrevTransitionEnd
+
+Same as *slideChangeTransitionEnd* but only for *backward direction*.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    slidePrevTransitionEnd: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-slidePrevTransitionStart]]
+=== slidePrevTransitionStart
+
+Same as *slideChangeTransitionStart* but only for *backward direction*.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    slidePrevTransitionStart: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-slideResetTransitionEnd]]
+=== slideResetTransitionEnd
+
+Event fired in the *end* of animation of *resetting* slide to current one.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    slideResetTransitionEnd: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-slideResetTransitionStart]]
+=== slideResetTransitionStart
+
+Event fired in the *beginning* of animation of *resetting* slide to
+current one.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    slideResetTransitionStart: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-sliderFirstMove]]
+=== sliderFirstMove
+
+Event fired when user *touch and move* finger over Swiper and move it.
+
+[NOTE]
+====
+Receives *pointermove* event as an *argument*.
+====
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    xxx: (swiper, event) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-sliderMove]]
+=== sliderMove
+
+Event fired when user *touch and move* finger over Swiper and move it.
+
+[NOTE]
+====
+Receives *pointermove* event as an *argument*.
+====
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    sliderMove: (swiper, event) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-slidesGridLengthChange]]
+=== slidesGridLengthChange
+
+Event fired when *slides grid* has been *changed*.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    slidesGridLengthChange: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+
+[role="mt-4"]
+[[event-slidesLengthChange]]
+=== slidesLengthChange
+
+Event fired when *number* of slides has been *changed*.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    slidesLengthChange: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-slidesUpdated]]
+=== slidesUpdated
+
+Event fired *after* slides and their sizes are *calculated and updated*.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    slidesUpdated: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-snapGridLengthChange]]
+=== snapGridLengthChange
+
+Event fired when *snap grid* has been *changed*.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    snapGridLengthChange: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-snapIndexChange]]
+=== snapIndexChange
+
+Event fired when *snap index* has been changed.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    xxx: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-tap]]
+=== tap
+
+Event fired when user *click/tap* on *Swiper*.
+
+[NOTE]
+====
+Receives *pointerup* event as an *argument*.
+====
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    tap: (swiper, event) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-toEdge]]
+=== toEdge
+
+Event fired when Swiper goes to *beginning* or *end* position.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    toEdge: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-touchEnd]]
+=== touchEnd
+
+Event fired *after* user *releases* the swiper.
+
+[NOTE]
+====
+Receives *pointerup* event as an *argument*.
+====
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    touchEnd: (swiper, event) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-touchMove]]
+=== touchMove
+
+Event fired when user *touch and move* finger *over* the swiper.
+
+[NOTE]
+====
+Receives *pointermove* event as an *argument*.
+====
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    touchMove: (swiper, event) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-touchMoveOpposite]]
+=== touchMoveOpposite
+
+Event fired when *user touch and move finger* over Swiper in *opposite*
+to the *direction parameter*. 
+
+[NOTE]
+====
+Receives *pointermove* event as an *argument*.
+====
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    touchMoveOpposite: (swiper, event) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-touchStart]]
+=== touchStart
+
+Event fired when user *touches* the swiper.
+
+[NOTE]
+====
+Receives *pointerdown* event as an *argument*.
+====
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    touchStart: (swiper, event) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-transitionEnd]]
+=== transitionEnd
+
+Event fired *after* a transition.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    xxx: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-transitionStart]]
+=== transitionStart
+
+Event fired in the *beginning* of a transition.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    transitionStart: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-unlock]]
+=== unlock
+
+Event fired when swiper is *unlocked* (if parameter `watchOverflow` is *enabled*).
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    unlock: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[event-update]]
+=== update
+
+Event fired *after* update() call is *finished*.
+
+[cols="12a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Usage
+
+|
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // option settings ...
+  on: {
+    update: (swiper) => {
+      // do something
+    }
+  }
+});
+----
+
+|===
+
+
+

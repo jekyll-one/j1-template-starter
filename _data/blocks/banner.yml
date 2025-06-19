@@ -5,10 +5,10 @@
 #  Product/Info:
 #  https://jekyll.one
 #
-#  Copyright (C) 2023, 2024 Juergen Adams
+#  Copyright (C) 2023-2025 Juergen Adams
 #
 #  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+#  See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 #
 # ------------------------------------------------------------------------------
 # NOTE: All banner id's has to be prefixed by 'banner_'
@@ -85,15 +85,15 @@ settings:
             enabled:                    false
             height:                     3                                       # [1 .. 9]
             style:                      wave-1                                  # default
-            color:                      "#DCDCDC"
-            background_color:           "#F5F5F5"
+            color:                      var(--md-gray-50)
+            background_color:           var(--md-gray-100)
             transform:                  false                                   # false or rotate|flip-x|flip-y and combinations
           bottom:
             enabled:                    false
             height:                     3
             style:                      wave-4
-            color:                      "#DCDCDC"
-            background_color:           "#F5F5F5"
+            color:                      var(--md-gray-50)
+            background_color:           var(--md-gray-100)
             transform:                  rotate
 
         cards:
@@ -104,19 +104,19 @@ settings:
               width:                    12
               type:                     text
               position:                 left                                    # left | center
-              title:                    J1
-              tagline:                  <b>modern static websites</b>
+              title:                    Jekyll
+              tagline:                  <b>create modern websites</b>
               translate_description:    notranslate                             # translate|notranslate
               description_properties:   mt-3 mb-3
               description: >
                                         <p class="dropcap">
-                                          The Starter Web of J1 Template is a full-featured template for Jekyll to
+                                          The build-in Web of J1 Template is a full-featured template for Jekyll to
                                           create modern dynamic websites. The template system provides a clean
-                                          implementation for starting new projects. Jekyll One is open source,
+                                          implementation for starting new projects. J1 Template is open source,
                                           and the modules packed are also free to use.
                                         </p>
                                         <p>
-                                          J1 Starter Web is designed to be lightweight and easily customizable.
+                                          J1 Template is designed to be lightweight and easily customizable.
                                           It comes with a basic structure and styling out of the box so that you
                                           can create a website quickly and easily, without having to worry about
                                           the code.
@@ -142,7 +142,7 @@ settings:
                     icon:               briefcase-search-outline
                     icon_color:
                     icon_size:          3x
-                    href:               /pages/public/learn/roundtrip/present_images/
+                    href:               /pages/public/tour/present_images/
                     target:
 
                 - name:                 Rocketstart
@@ -203,7 +203,7 @@ settings:
             card:
               enabled:                  true
               type:                     quote
-              cite:                     J1 Team
+#             cite:                     J1 Team
               cite_text_size:           300%
               cite_text_quotes:         false
               cite_text: >
@@ -213,11 +213,11 @@ settings:
                                           <span class="text-primary">Better</span>
                                         </strong>
 
-              text_color:               "#E0E0E0"
+              text_color:               var(--md-gray-300)
               gridify:                  true
               size_y:                   450
               darken:                   6
-              background_image:         /assets/images/modules/attics/ideas-start-here-1920x1280-bw.jpg
+              background_image:         /assets/image/module/attic/1920x1280/ideas-start-here-1920x1280.jpg
 
 
   # ----------------------------------------------------------------------------
@@ -246,7 +246,7 @@ settings:
           justify:                      true
           brightness:                   80
           opacity:                      false
-          picture:                      /assets/images/modules/attics/ideas-start-here-1920x1280-bw.jpg
+          picture:                      /assets/image/module/attic/1920x1280/ideas-start-here-1920x1280.jpg
 
 # ------------------------------------------------------------------------------
 # END config

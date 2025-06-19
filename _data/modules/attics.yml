@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 # NOTE:
 #   If NO attic (top page header) is assigned to a LAYOUT, all pages based
@@ -36,6 +36,23 @@ description:
 # SETTINGS
 #
 settings:
+
+  # ----------------------------------------------------------------------------
+  # GLOBAL options
+  # ----------------------------------------------------------------------------
+  #
+  # CSS filter setting applied on (backstretch|background) image
+  #
+  filters:
+    grayscale:                          0
+    contrast:                           1
+    brightness:                         1
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              true
 
   # ----------------------------------------------------------------------------
   # Layout specific properties

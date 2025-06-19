@@ -8,7 +8,7 @@
 # Copyright (C) 2023 Juergen Adams
 #
 # J1 Theme is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 #
 # ------------------------------------------------------------------------------
 # NOTE: All panel id's has to be prefixed by 'panel_'
@@ -88,15 +88,15 @@ settings:
             enabled:                    false
             height:                     2                                     # [1 .. 9]
             style:                      wave-1                                # default
-            color:                      "#EEEEEE"                             # "#dcdcdc"
-            background_color:           "#FAFAFA"                             # auto|rgb_value, "#FAFAFA"
+            color:                      var(--md-gray-200)
+            background_color:           var(--md-gray-50)                             # auto|rgb_value, var(--md-gray-50)
             transform:                  false                                 # false or rotate|flip-x|flip-y and combinations
           bottom:
             enabled:                    false
             height:                     2
             style:                      wave-4
-            color:                      "#EEEEEE"
-            background_color:           "#FAFAFA"
+            color:                      var(--md-gray-200)
+            background_color:           var(--md-gray-50)
             transform:                  flip-y flip-x
 
         cards:
@@ -144,7 +144,7 @@ settings:
               text: >
                                         <p class="dropcap">
                                           Current Technology and Design. Excellent performance in running
-                                          a website. Use Jekyll One to present your content at its best.
+                                          a website. Use J1 Template to present your content at its best.
                                         </p>
 
               buttons:
@@ -235,15 +235,15 @@ settings:
             enabled:                    defaultCssFile
             height:                     4                                     # [1 .. 9]
             style:                      wave-4                                # default
-            color:                      "#EEEEEE"
-            background_color:           "#FAFAFA"
+            color:                      var(--md-gray-200)
+            background_color:           var(--md-gray-50)
             transform:                  false                                 # false or rotate|flip-x|flip-y and combinations
           bottom:
             enabled:                    false
             height:                     2
             style:                      wave-4
-            color:                      "#EEEEEE"
-            background_color:           "#FAFAFA"
+            color:                      var(--md-gray-200)
+            background_color:           var(--md-gray-50)
             transform:                  rotate
 
         cards:
@@ -405,8 +405,8 @@ settings:
         properties:                     pt-5 pb-5
 
         position:                       left                                    # left | center
-        title:                          Jekyll One
-        tagline:                        featured theme for jekyll
+        title:                          J1 Template
+        tagline:                        free bootstrap V5 theme for jekyll
         description_properties:         mt-3 mr-3 mb-3
         description: >
                                         <p class="dropcap">
@@ -428,7 +428,7 @@ settings:
                                             <p style="margin-bottom: 0;">Fully Responsive. Best results on PCs, Tablets, and SmartPhones.</p>
                                           </li>
                                           <li>
-                                            <p style="margin-bottom: 0;">Start in no time. No programming is needed using Jekyll One.</p>
+                                            <p style="margin-bottom: 0;">Start in no time. No programming is needed using J1 Template.</p>
                                           </li>
                                         </ul>
                                         <p class="fw-bold mt-4 mb-5">Explore what the J1 Template system can do for your next website.</p>
@@ -438,15 +438,15 @@ settings:
             enabled:                    false
             height:                     2                                     # [1 .. 9]
             style:                      wave-1                                # default
-            color:                      "#EEEEEE"
-            background_color:           "#FAFAFA"
+            color:                      var(--md-gray-200)
+            background_color:           var(--md-gray-50)
             transform:                  false                                 # false or rotate|flip-x|flip-y and combinations
           bottom:
             enabled:                    false
             height:                     2
             style:                      wave-4
-            color:                      "#EEEEEE"
-            background_color:           "#FAFAFA"
+            color:                      var(--md-gray-200)
+            background_color:           var(--md-gray-50)
             transform:                  rotate
 
         cards:
@@ -458,9 +458,9 @@ settings:
               icon:                     globe-model
               icon_family:              mdib
               icon_size:                mdib-6x
-              icon_color:               md-white
+              icon_color:               var(--bs-white)
               href:                     /pages/public/features/general_features/
-              title:                    Jekyll One
+              title:                    J1 Template
               tagline:                  General Features
               header_translate:         notranslate
               text: >
@@ -482,7 +482,7 @@ settings:
                     description: >
                                         <p>
                                           The J1 Theme is based on the <i>Ruby</i> language of the latest
-                                          versions of V3. Websites created by Jekyll One Theme are managed
+                                          versions of V3. Websites created by J1 Template are managed
                                           by NodeJS. The built-in script engine provided simplifies the management
                                           of J1 projects a lot. Well-known commands typically used to manage
                                           software projects are at your fingertips.
@@ -514,7 +514,7 @@ settings:
                                         </p>
                                         <p>
                                           For current webs, a must: responsiveness and modern design.
-                                          Jekyll One is based on <i>Bootstrap</i>, the leading platform
+                                          J1 Template is based on <i>Bootstrap</i>, the leading platform
                                           to create today's responsive webs.
                                         </p>
                                         <p>
@@ -559,7 +559,7 @@ settings:
                                         </p>
                                         <p>
                                           Mobile devices are great for apps designed for these platforms. Using a web
-                                          browser to surf websites is often frustrating on mobiles. Jekyll One provides
+                                          browser to surf websites is often frustrating on mobiles. J1 Template provides
                                           navigation systems that cover both worlds: desktops and mobiles.
                                         </p>
                                         <p>
@@ -590,9 +590,9 @@ settings:
               icon:                     gift
               icon_family:              mdib
               icon_size:                mdib-6x
-              icon_color:               md-white
+              icon_color:               var(--bs-white)
               href:                     /pages/public/features/template_features/
-              title:                    Jekyll One
+              title:                    J1 Template
               tagline:                  Theme Features
               header_translate:         notranslate
               text: >
@@ -642,7 +642,7 @@ settings:
                                           Enhanced Navigation <br />
                                           <i class="mdib mdib-lightbulb-on mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Lightboxes <br />
-                                          <i class="mdib mdib-folder-multiple-image mdib-24px md-blue-700 ml-3 mr-2"></i>
+                                          <i class="mdib mdib-gesture-swipe mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Image and Video Galleries <br />
                                           <i class="mdib mdib-view-carousel mdib-24px md-blue-700 ml-3 mr-2"></i>
                                           Text and Image Carousels <br />
@@ -748,17 +748,17 @@ settings:
         wave:
           top:
             enabled:                    false
-            height:                     2                                     # [1 .. 9]
-            style:                      wave-1                                # default
-            color:                      "#EEEEEE"
-            background_color:           "#FAFAFA"
-            transform:                  false                                 # false or rotate|flip-x|flip-y and combinations
+            height:                     2                                       # [1 .. 9]
+            style:                      wave-1                                  # default
+            color:                      var(--md-gray-200)
+            background_color:           var(--md-gray-50)
+            transform:                  false                                   # false or rotate|flip-x|flip-y and combinations
           bottom:
             enabled:                    false
             height:                     2
             style:                      wave-4
-            color:                      "#EEEEEE"
-            background_color:           "#FAFAFA"
+            color:                      var(--md-gray-200)
+            background_color:           var(--md-gray-50)
             transform:                  rotate
 
         cards:

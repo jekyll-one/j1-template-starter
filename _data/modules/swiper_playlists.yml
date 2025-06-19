@@ -1,0 +1,581 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/swiper_playlists.yml
+# Playlist settings for the J1 Swiper App
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2025 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# -----------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 Swiper App
+  scope:                                User Playlist settings
+  location:                             _data/modules/swiper_playlists.yml
+
+# ------------------------------------------------------------------------------
+# User Playlist configuration settings
+#
+settings:
+
+  # ============================================================================
+  # PLAYLIST configurations
+  # ----------------------------------------------------------------------------
+  playlists:
+
+    # --------------------------------------------------------------------------
+    # TEXT Playlists
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             text_playlist
+      type:                             text/html
+
+      # ------------------------------------------------------------------------
+      # SLIDE settings
+      # ------------------------------------------------------------------------
+      items:
+
+        # slide 01
+        - item:
+          enabled:                      true
+          text: >
+                                        <big>Jekyll One Template</big>
+                                        </br> 
+                                        <i>Responsive Template made for Jekyll</i>
+
+        # slide 02
+        - item:
+          enabled:                      true
+          text: >
+                                        <big>Explore this site</big>
+                                        </br>
+                                        <i>Learn what's possible if you go for Jekyll</i>
+
+        # slide 03
+        - item:
+          enabled:                      true
+          text: 
+                                        <big>Jekyll meets Bootstrap and Friends</big>
+                                        </br>
+                                        <i>Best Open Source software for the Web</i>
+
+        # slide 04
+        - item:
+          enabled:                      true
+          text: >
+                                        <big>J1 is Open Source</big>
+                                        </br>
+                                        <i>No pain for private or professional use</i>
+
+        # slide 05
+        - item:
+          enabled:                      true
+          text: > 
+                                        <big>Create modern static sites</big>
+                                        </br>
+                                        <i>Powerful, Secure, and Fast<i>
+
+
+    # --------------------------------------------------------------------------
+    # IMAGE Playlists
+    # ==========================================================================
+
+    # --------------------------------------------------------------------------
+    # ATTIC SWIPER
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             attic_swiper_base
+      type:                             image/jpg
+
+      image_defaults:
+        base_folder:                    //kj.de/images/media
+
+      # ------------------------------------------------------------------------
+      # SLIDE settings
+      # ------------------------------------------------------------------------
+      #
+      items:
+
+        # slide 01
+        - item:
+          enabled:                      true
+          image:                        "6078_20579"                            # diana_krall
+          # caption_text:               Diana Krall
+          # description:                Diana Krall
+
+    # --------------------------------------------------------------------------
+    # FREE ANIMALS
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             free_animal
+      type:                             image/jpg
+
+      image_defaults:
+        base_folder:                    /assets/image/module/swiper/simple/free_animal/image
+        image_width:                    810
+        image_height:                   490
+
+      # ------------------------------------------------------------------------
+      # SLIDE settings
+      # ------------------------------------------------------------------------
+      #
+      items:
+
+        # slide 01
+        - item:
+          enabled:                      true
+          image:                        free-animal-1
+          caption_text:                 Husky
+          description: >
+                                        Husky
+
+        # slide 02
+        - item:
+          enabled:                      true
+          image:                        free-animal-2
+          caption_text:                 Female Lion
+          description: >
+                                        Female Lion
+
+        # slide 03
+        - item:
+          enabled:                      true
+          image:                        free-animal-3
+          caption_text:                 Approaching Vulture
+          description: >
+                                        Approaching Vulture
+
+        # slide 04
+        - item:
+          enabled:                      true
+          image:                        free-animal-4
+          caption_text:                 Group of Flamingos
+          description: >
+                                        Group of Flamingos
+
+        # slide 05
+        - item:
+          enabled:                      true
+          image:                        free-animal-5
+          caption_text:                 Young Deer
+          description: >
+                                        Young Deer
+
+        # slide 06
+        - item:
+          enabled:                      true
+          image:                        free-animal-6
+          caption_text:                 Lttle Bird
+          description: >
+                                        Lttle Bird
+
+    # --------------------------------------------------------------------------
+    # MEGA CITIES 1
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             mega_cities_1
+      type:                             image/jpg
+
+      image_defaults:
+        base_folder:                    /assets/image/module/swiper/simple/mega_city/image
+        image_width:                    slide
+        image_height:                   slide
+
+      # ------------------------------------------------------------------------
+      # SLIDE settings
+      # ------------------------------------------------------------------------
+      #
+      items:
+
+        # slide 01
+        - item:
+          enabled:                      true
+          image:                        denys-nevozhai-3_b
+          imageWidth:                   1920
+          imageHeight:                  1280
+          caption_text:                 Sunset view from Google's Office in Chelsea (NY) · United States
+          description: >
+                                        Sunset view from Google's Office in Chelsea (NY) · United States
+
+        # slide 02
+        - item:
+          enabled:                      true
+          image:                        emmad-mazhari_c
+          imageWidth:                   2023
+          imageHeight:                  1920
+          caption_text:                 Chicago (IL) · United States
+          description: >
+                                        Chicago (IL) · United States
+
+        # slide 03
+        - item:
+          enabled:                      true
+          image:                        thomas-tucker_b
+          imageWidth:                   1920
+          imageHeight:                  1038
+          caption_text:                 Sunset view over Taipei City · Taiwan
+          description: >            
+                                        Sunset view over Taipei City · Taiwan
+
+        # slide 04
+        - item:
+          enabled:                      true
+          image:                        queen_bees_at_eureka_tower
+          imageWidth:                   1308
+          imageHeight:                  1920
+          caption_text:                 The Queen Bees at the Eureka Tower · Melbourne Australia
+          description: >
+                                        The Queen Bees at the Eureka Tower · Melbourne Australia
+
+        # slide 05
+        - item:
+          enabled:                      true
+          image:                        federico-rizzarelli_c
+          imageWidth:                   1627
+          imageHeight:                  2440
+          caption_text:                 Man sitting over Shanghai City · China
+          description: >
+                                        Man sitting over Shanghai City · China
+
+        # slide 06
+        - item:
+          enabled:                      true
+          image:                        jakarta_indonesia_2
+          imageWidth:                   2772
+          imageHeight:                  1355
+          caption_text:                 Jakarta City Skyline · Indonesia
+          description: >
+                                        Jakarta City Skyline · Indonesia
+
+    # --------------------------------------------------------------------------
+    # MEGA CITIES 2
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             mega_cities_2
+      type:                             image/jpg
+
+      image_defaults:
+        base_folder:                    /assets/image/module/swiper/simple/mega_city/image
+        image_width:                    1920
+        image_height:                   1280
+
+      # ------------------------------------------------------------------------
+      # SLIDE settings
+      # ------------------------------------------------------------------------
+      #
+      items:
+
+        # slide 01
+        - item:
+          enabled:                      true
+          image:                        tokyo_japan
+          caption_text:                 Tokyo · Japan
+          description: >    
+                                        Tokyo · Japan
+
+        # slide 02
+        - item:
+          enabled:                      true          
+          image:                        thomas-tucker_b         
+          caption_text:                 Sunset over Taipei City · Taiwan
+          description: >
+                                        Sunset over Taipei City · Taiwan
+
+        # slide 03
+        - item:
+          enabled:                      true
+          image:                        chicago-us
+          caption_text:                 Chicago · United States
+          description: >
+                                        Chicago · United States
+
+        # slide 04
+        - item:
+          enabled:                      true
+          image:                        melbourne_australia       
+          caption_text:                 Melbourne · Australia
+          description: >
+                                        Melbourne · Australia
+
+        # slide 05
+        - item:
+          enabled:                      true
+          image:                        shanghai_china         
+          caption_text:                 Shanghai · China
+          description: >
+                                        Shanghai · China
+
+        # slide 06
+        - item:
+          enabled:                      true
+          image:                        jakarta_indonesia         
+          caption_text:                 Jakarta · Indonesia
+          description: >
+                                        Jakarta · Indonesia
+
+    # --------------------------------------------------------------------------
+    # PANORAMA
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             panorama
+      type:                             image/jpg
+
+      image_defaults:
+        base_folder:                    /assets/image/module/swiper/extended/panorama/image
+        image_width:                    960
+        image_height:                   641
+
+      # ------------------------------------------------------------------------
+      # SLIDE settings
+      # ------------------------------------------------------------------------
+      #
+      items:
+
+        # slide 01
+        - item:
+          enabled:                      true
+          image:                        1
+          caption_text:                 Image Caption
+          description: >
+                                        Lightbox Caption
+
+        # slide 02
+        - item:
+          enabled:                      true
+          image:                        2
+          caption_text:                 Image Caption
+          description: >
+                                        Lightbox Caption
+        # slide 03
+        - item:
+          enabled:                      true
+          image:                        3
+          caption_text:                 Image Caption
+          description: >
+                                        Lightbox Caption
+
+        # slide 04
+        - item:
+          enabled:                      true
+          image:                        4
+          caption_text:                 Image Caption
+          description: >
+                                        Lightbox Caption
+
+        # slide 05
+        - item:
+          enabled:                      true
+          image:                        5
+          caption_text:                 Image Caption
+          description: >
+                                        Lightbox Caption
+
+        # slide 06
+        - item:
+          enabled:                      true
+          image:                        6
+          caption_text:                 Image Caption
+          description: >
+                                        Lightbox Caption
+
+        # slide 07
+        - item:
+          enabled:                      true
+          image:                        7
+          caption_text:                 Image Caption
+          description: >
+                                        Lightbox Caption
+
+        # slide 08
+        - item:
+          enabled:                      true
+          image:                        8
+          caption_text:                 Image Caption
+          description: >
+                                        Lightbox Caption
+
+        # slide 09
+        - item:
+          enabled:                      true
+          image:                        9
+          caption_text:                 Image Caption
+          description: >
+                                        Lightbox Caption
+
+        # slide 10
+        - item:
+          enabled:                      true
+          image:                        10
+          caption_text:                 Image Caption
+          description: >
+                                        Lightbox Caption
+
+        # slide 11
+        - item:
+          enabled:                      true
+          image:                        11
+          caption_text:                 Image Caption
+          description: >
+                                        Lightbox Caption
+
+        # slide 12
+        - item:
+          enabled:                      true
+          image:                        12
+          caption_text:                 Image Caption
+          description: >
+                                        Lightbox Caption
+
+    # --------------------------------------------------------------------------
+    # STACKED Game Posters
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             game_posters
+      type:                             image/jpg
+      image_defaults:
+        base_folder:                    /assets/image/module/swiper/extended/stacked/image
+        parallax_data_elements:         [ data-swiper-parallax-scale="1.1" ]
+
+      # ------------------------------------------------------------------------
+      # SLIDE settings
+      # ------------------------------------------------------------------------
+      #
+      items:
+
+       # slide 01
+        - item:
+          enabled:                      true
+          image:                        1
+
+        # slide 02
+        - item:
+          enabled:                      true
+          image:                        2
+
+        # slide 03
+        - item:
+          enabled:                      true
+          image:                        3
+
+        # slide 04
+        - item:
+          enabled:                      true
+          image:                        4
+
+        # slide 05
+        - item:
+          enabled:                      true
+          image:                        5
+
+        # slide 06
+        - item:
+          enabled:                      true
+          image:                        6
+
+    # --------------------------------------------------------------------------
+    # NEIGHBOR
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             neighbor
+      type:                             image/jpg
+
+      image_defaults:
+        base_folder:                    /assets/image/module/swiper/extended/neighbor/image
+        image_width:                    1280
+        image_height:                   640
+
+      # ------------------------------------------------------------------------
+      # SLIDE settings
+      # ------------------------------------------------------------------------
+      #
+      items:
+
+        # slide 01
+        - item:
+          enabled:                      true
+          image:                        free-animal-1
+          caption_text:                 Husky
+          description: >
+                                        Husky
+
+        # slide 02
+        - item:
+          enabled:                      true
+          image:                        free-animal-2
+          caption_text:                 Female Lion
+          description: >
+                                        Female Lion
+
+        # slide 03
+        - item:
+          enabled:                      true
+          image:                        free-animal-3
+          caption_text:                 Approaching Vulture
+          description: >
+                                        Approaching Vulture
+
+        # slide 04
+        - item:
+          enabled:                      true
+          image:                        free-animal-4
+          caption_text:                 Group of Flamingos
+          description: >
+                                        Group of Flamingos
+
+        # slide 05
+        - item:
+          enabled:                      true
+          image:                        free-animal-5
+          caption_text:                 Young Deer
+          description: >
+                                        Young Deer
+
+        # slide 06
+        - item:
+          enabled:                      true
+          image:                        free-animal-6
+          caption_text:                 Lttle Bird
+          description: >
+                                        Lttle Bird
+
+
+    # --------------------------------------------------------------------------
+    # AUDIO Playlists
+    # ==========================================================================
+
+
+    # --------------------------------------------------------------------------
+    # VIDER Playlists
+    # ==========================================================================
+
+# ------------------------------------------------------------------------------
+# END config

@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -23,11 +23,19 @@ description:
 # User configuration settings
 #
 settings:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
   enabled:                              true
   checkCookies:                         true
 
   # ----------------------------------------------------------------------------
-  # Cookie settings
+  # NOTE:  Set to 'None' open the access to the site (e.g. for iFrame embeds)  
+  #        for 3rd party domains. Should NEVER used for productive sites !!!
+  #        This is used ONLY for sites promoting Jekyll Templates
+  #        like ???.
   # ----------------------------------------------------------------------------
   same_site:                            None
 

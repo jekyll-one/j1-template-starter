@@ -1,0 +1,537 @@
+[role="mt-5"]
+== Options L - O
+
+List of available Swiper parameters (properties) alphabetically ordered
+from *L* to *O*. Find parameter settings also with the
+https://swiperjs.com/swiper-api[Swiper Documentation, {browser-window--new}].
+
+=== Lazy Loading
+
+The Lazy Loading module in SwiperJS controls the lazy loading of *images*
+within a swiper. Lazy loading means images are *not loaded* until they
+scroll into the browser's *visible area*. Using the module increases loading
+speed, especially for websites with many images, and thus improves the user
+experience.
+
+[TIP]
+====
+Find all available configurable *settings* with <<Lazy Loading>> in section
+<<Mdules>>.
+====
+
+Find the available options for lazy loading below.
+
+[role="mt-4"]
+[[options-lazyPreloadPrevNext]]
+==== lazyPreloadPrevNext
+
+Number of next and previous slides to be preloaded.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`lazyPreloadPrevNext`
+|number
+|0
+|Number of next and previous slides to preload. Only applicable if using
+*lazy loading*.
+
+|===
+
+[role="mt-4"]
+[[options-lazyPreloaderClass]]
+==== lazyPreloaderClass
+
+Set CSS class name of lazy preloader.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`lazyPreloaderClass`
+|string
+|_swiper-lazy-preloader_
+|CSS class name of lazy preloader.
+
+|===
+
+[role="mt-4"]
+[[options-longSwipes]]
+=== longSwipes
+
+Enable or disable long swipes.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`longSwipes`
+|boolean
+|true
+|Set to `false` if you want to disable long swipes.
+
+|===
+
+[role="mt-4"]
+[[options-longSwipesMs]]
+=== longSwipesMs
+
+Set the minimal duration (in ms) to trigger long swipes.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`longSwipesMs`
+|number
+|300
+|Minimal duration (in ms) to trigger swipe to next/previous slide
+during long swipes.
+
+|===
+
+[role="mt-4"]
+[[options-longSwipesRatio]]
+=== longSwipesRatio
+
+Set the ratio to trigger swipe to next/previous slide during long swipes.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`longSwipesRatio`
+|number
+|0.5
+|Ratio to trigger swipe to next/previous slide during long swipes.
+
+|===
+
+[role="mt-4"]
+[[options-loop]]
+=== loop
+
+Enable or disable continuous loop mode.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`loop`
+|boolean
+|false
+|Set to `true` to enable continuous loop mode.
+
+Because of nature of how the loop mode works (it will rearrange slides),
+total number of slides must be:
+
+* more than or equal to `lidesPerView` + `slidesPerGroup`
+* even to `slidesPerGroup` (or use `loopAddBlankSlides` parameter)
+* even to `grid.rows` (or use `loopAddBlankSlides` parameter)
+|===
+
+[role="mt-4"]
+[[options-loopAddBlankSlides]]
+=== loopAddBlankSlides
+
+Add blank slides if you use Grid or `slidesPerGroup` on total amount of
+slides is *not even* to `slidesPerGroup`.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`loopAddBlankSlides`
+|boolean
+|true
+|Automatically adds blank slides if you use Grid or `slidesPerGroup`
+and the total amount of slides is not even to `slidesPerGroup` or to
+`grid.rows`.
+
+|===
+
+[role="mt-4"]
+[[options-loopAdditionalSlides]]
+=== loopAdditionalSlides
+
+Allows to increase amount of looped slides.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`loopAdditionalSlides`
+|number
+|0
+|Allows to increase amount of looped slides.
+
+|===
+
+[role="mt-4"]
+[[options-loopPreventsSliding]]
+=== loopPreventsSliding
+
+Set *slideNext* \| *slidePrev* to do nothing while slider is animating
+in *loop* mode.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`loopPreventsSliding`
+|boolean
+|true
+|If enabled then slideNext/Prev will do nothing while slider is animating
+in loop mode.
+
+|===
+
+[role="mt-4"]
+[[options-maxBackfaceHiddenSlides]]
+=== maxBackfaceHiddenSlides
+
+Reduce visual *flicker* in Apple's *Safari Browser*.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`maxBackfaceHiddenSlides`
+|number
+|10
+|If total number of slides less than specified here value, then Swiper
+will enable `backface-visibility: hidden` on slide elements to reduce
+visual *flicker* in Safari Browser.
+
+[CAUTION]
+====
+It is not recommended to enable on large amount of slides as it will
+reduce performance.
+====
+
+|===
+
+////
+[role="mt-4"]
+[[options-modules]]
+=== modules
+
+Configure array with Swiper modules.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`modules`
+|any[]
+|*no defaults*
+|Array with Swiper modules.
+
+[source, js]
+----
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+
+const swiper = new Swiper('#swiper_id', {
+    modules: [ Navigation, Pagination ]
+});
+----
+
+|===
+////
+
+
+[role="mt-4"]
+[[options-mousewheel]]
+=== mousewheel
+
+The Mousewheel Control module in SwiperJS enables users to navigate through
+the slides of a SwiperJS instance using their mouse wheel.
+
+[TIP]
+====
+Find all available configurable *settings* with <<Mousewheel Control>> in
+section <<Mdules>>.
+====
+
+Find the available options for mousewheel control below to enables or disable
+navigation through slides using mouse wheel.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`mousewheel`
+|any
+|*no defaults*
+|Enables navigation through slides using mouse wheel. Object with
+mousewheel parameters or boolean `true` to enable with default settings.
+
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  mousewheel: {
+    invert: true
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[options-navigation]]
+=== navigation
+
+The Pagination module in SwiperJS is a powerful tool that allows you to add
+visual indicators (like buttons) to a SwiperJS slide. The navigation elements
+make it clear to users how many slides there are and which slide they are
+currently viewing.
+
+[TIP]
+====
+Find all available configurable *settings* with <<Navigation>> in section
+<<Mdules>>.
+====
+
+Find the available options for navigation below to enable and configure the
+navigation (module).
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`navigation`
+|any
+|*no defaults*
+|Object with navigation parameters or boolean `true` to enable with
+default settings.
+
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
+});
+----
+
+|===
+
+
+[role="mt-4"]
+[[options-nested]]
+=== nested
+
+Control Swiper for correct touch events interception.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`nested`
+|boolean
+|false
+|Set to `true` on Swiper for correct touch events interception. Use only on
+swipers that use same direction as the parent one.
+
+|===
+
+[role="mt-4"]
+[[options-noSwiping]]
+=== noSwiping
+
+Control *no* swiping on elements specified by (CSS) `noSwipingClass`.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`noSwiping`
+|boolean
+|true
+|Enable/disable swiping on elements matched to class specified in
+`noSwipingClass`.
+
+|===
+
+[role="mt-4"]
+[[options-noSwipingClass]]
+=== noSwipingClass
+
+Specify (CSS) elements to disable swiping on.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`noSwipingClass`
+|string
+|_swiper-no-swiping_
+|Specify `noSwiping` element css class.
+
+|===
+
+
+[role="mt-4"]
+[[options-noSwipingSelector]]
+=== noSwipingSelector
+
+Specify (CSS) elements to disable swiping on.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`noSwipingSelector`
+|string
+|*no defaults*
+|Can be used instead of `noSwipingClass` to specify elements to disable
+swiping on. For example `input` will disable swiping on all inputs.
+
+|===
+
+[role="mt-4"]
+[[options-normalizeSlideIndex]]
+=== normalizeSlideIndex
+
+Normalize slide index.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`normalizeSlideIndex`
+|boolean
+|true
+|Normalize slide index.
+
+|===
+
+[role="mt-4"]
+[[options-observeParents]]
+=== observeParents
+
+Configure to watch *Mutations* for Swiper parent elements.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`observeParents`
+|boolean
+|false
+|Set to `true` if you also need to watch *Mutations* for Swiper
+parent elements.
+
+|===
+
+[role="mt-4"]
+[[options-observeSlideChildren]]
+=== observeSlideChildren
+
+Configure to watch *Mutations* for Swiper slide child elements.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`observeSlideChildren`
+|boolean
+|false
+|Set to `true` if you also need to watch *Mutations* for Swiper slide
+child elements.
+
+|===
+
+[role="mt-4"]
+[[options-observer]]
+=== observer
+
+Enable a *Mutation Observer* on Swiper and its elements.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`observer`
+|boolean
+|false
+|Set to `true` to enable a *Mutation Observer* on Swiper and its elements.
+In this case Swiper will be updated (reinitialized) each time if you change
+its style (like hide/show) or modify its child elements
+(like adding/removing slides).
+
+|===
+
+[role="mt-4"]
+[[options-on]]
+=== on
+
+Register event handlers.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`on`
+|object
+|*no defaults*
+|Register event handlers.
+
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  swiper.on('click', (swiper, event) => {
+    // do something
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[options-onAny]]
+=== onAny
+
+Register event handlers on *all* events.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`onAny`
+|function([.text-primary]#handler#)
+|*no defaults*
+|Add event listener that will be fired on all events.
+
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  onAny(eventName, ...args) {
+    console.log('Event: ', eventName);
+    console.log('Event data: ', args);
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[options-oneWayMovement]]
+=== oneWayMovement
+
+Configure swipe slides only forward (one-way) regardless of swipe direction.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|'oneWayMovement'
+|boolean
+|false
+|When *enabled*, will swipe slides only forward (one-way) regardless of
+swipe direction.
+
+|===

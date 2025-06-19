@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 #
 # ------------------------------------------------------------------------------
 # NOTE:
@@ -123,7 +123,7 @@ lanes:
       file:                             layout_metadata_generator.html
 
   # ----------------------------------------------------------------------------
-  # RESOURCE loader
+  # RESOURCE loader (HEAD region)
   #
   - lane:
       enabled:                          true
@@ -193,8 +193,19 @@ lanes:
       class:                            active_footer
 
   # ----------------------------------------------------------------------------
-  # MODULE container
-  # Generate all initializers for the JS components specified for a page.
+  # RESOURCE loader (BODY-FOOTER region)
+  #
+  - lane:
+      enabled:                          true
+      region:                           body-footer
+      type:                             sync
+      base:                             _includes/themes/j1
+      path:                             layouts
+      file:                             layout_resource_generator.html
+
+  # ----------------------------------------------------------------------------
+  # MODULE loader (BODY-FOOTER region)
+  # Generate all module initializers for modules specified for a page.
   #
   - lane:
       enabled:                          true

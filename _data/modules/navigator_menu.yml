@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 # NOTE:
 #   For general navigation settings, see navigator.yml
@@ -16,6 +16,48 @@
 # NOTE:
 #   NO default settings
 # ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Menu TOUR
+#
+- item:                                 Tour
+  sublevel:
+
+    - title:                            Image
+      href:                             /pages/public/tour/image_data/
+      icon:                             image
+    - title:                            Audio
+      href:                             /pages/public/tour/audio_data/
+      icon:                             volume-high
+    - title:                            Video
+      href:                             /pages/public/tour/video_data/
+      icon:                             video
+
+    - title:                            Typography
+      href:                             /pages/public/tour/typography/
+      icon:                             format-text
+    - title:                            Icons
+      href:                             /pages/public/tour/mdi_icon_font/
+      icon:                             fan
+    - title:                            Extensions
+      href:                             /pages/public/tour/asciidoc_extensions/
+      icon:                             format-annotation-plus
+    - title:                            Modals
+      href:                             /pages/public/tour/modals/
+      icon:                             image
+    - title:                            Tables
+      href:                             /pages/public/tour/responsive_tables/
+      icon:                             table
+
+    - title:                            Themes
+      href:                             /pages/public/tour/themes/
+      icon:                             theme-light-dark
+    - title:                            Highligher
+      href:                             /pages/public/tour/rouge/
+      icon:                             code-parentheses
+    - title:                            Search
+      href:                             /pages/public/tour/quicksearch/
+      icon:                             magnify
 
 # ------------------------------------------------------------------------------
 # Menu LEARN
@@ -34,44 +76,6 @@
 #   - title:                            BS Sass Variables
 #     href:                             /pages/public/learn/bs_sass_variables/
 #     icon:                             code-tags
-
-    # --------------------------------------------------------------------------
-    # Roundtrip
-    #
-    - title:                            Roundtrip
-      icon:                             briefcase-search-outline
-      dropdown:
-
-        - title:                        Image
-          href:                         /pages/public/learn/roundtrip/present_images/
-          icon:                         image
-        - title:                        Audio and Video
-          href:                         /pages/public/learn/roundtrip/present_audio_video/
-          icon:                         video
-        - title:                        Typography
-          href:                         /pages/public/learn/roundtrip/typography/
-          icon:                         format-text
-        - title:                        Icons
-          href:                         /pages/public/learn/roundtrip/mdi_icon_font/
-          icon:                         fan
-        - title:                        Extensions
-          href:                         /pages/public/learn/roundtrip/asciidoc_extensions/
-          icon:                         format-annotation-plus
-        - title:                        Modals
-          href:                         /pages/public/learn/roundtrip/modals/
-          icon:                         image
-        - title:                        Tables
-          href:                         /pages/public/learn/roundtrip/responsive_tables/
-          icon:                         table
-        - title:                        Themes
-          href:                         /pages/public/learn/roundtrip/themes/
-          icon:                         theme-light-dark
-        - title:                        Highligher
-          href:                         /pages/public/learn/roundtrip/rouge/
-          icon:                         code-parentheses
-        - title:                        Search
-          href:                         /pages/public/learn/roundtrip/quicksearch/
-          icon:                         magnify
 
     # --------------------------------------------------------------------------
     # Collections
@@ -201,40 +205,14 @@
 - item:                                 Manuals
   sublevel:
 
-    # --------------------------------------------------------------------------
-    # Modules
-    #
-
     - title:                            Where to go
       href:                             //jekyll.one/pages/public/manuals/where_to_go/
       icon:                             foot-print
       target:                           _blank
 
-    - title:                            VideoJS
-      icon:                             video
-      dropdown:
-
-        - title:                        VideoJS API
-          href:                         //jekyll.one/pages/public/manuals/videojs/videojs_api/
-          icon:                         video
-          target:                       _blank
-        - title:                        YouTube API
-          href:                         //jekyll.one//pages/public/manuals/videojs/youtube_api/
-          icon:                         video
-          target:                       _blank
-        - title:                        Vimeo API
-          href:                         //jekyll.one/pages/public/manuals/videojs/vimeo_api/
-          icon:                         video
-          target:                       _blank
-        - title:                        Dailymotion API
-          href:                         //jekyll.one/pages/public/manuals/videojs/dailymotion_api/
-          icon:                         video
-          target:                       _blank
-        - title:                        Wistia API
-          href:                         //jekyll.one/pages/public/manuals/videojs/wistia_api/
-          icon:                         video
-          target:                       _blank
-
+    # --------------------------------------------------------------------------
+    # Modules
+    #
     - title:                            Modules
       icon:                             alpha-j-box
       dropdown:
@@ -380,10 +358,59 @@
           icon:                         google
           dropdown:
 
+            - title:                    Google Translate
+              href:                     '#'
+              icon:                     google-translate
+            - title:                    Google Analytics
+              href:                     '#'
+              icon:                     google-analytics
+
             - title:                    Google Adsense
               href:                     //jekyll.one/pages/public/manuals/integrations/google/adsense/
               icon:                     google-ads
-              target:                   _blank
+            - title:                    Google Gemini
+              href:                     //jekyll.one//pages/public/manuals/integrations/google/gemini/
+              icon:                     robot
+
+        - title:                        Audio
+          icon:                         speaker
+          dropdown:
+
+          - title:                      AmplitudeJS API
+            href:                       /pages/public/manuals/integrations/amplitudejs/amplitudejs_api/
+            icon:                       speaker
+
+        - title:                        Video
+          icon:                         video
+          dropdown:
+
+            - title:                    VideoJS API
+              href:                     //jekyll.one/pages/public/manuals/integrations/videojs/videojs_api/
+              icon:                     video
+            - title:                    YouTube API
+              href:                     //jekyll.one/pages/public/manuals/videojs/youtube_api/
+              icon:                     video
+            - title:                    Dailymotion API
+              href:                     //jekyll.one/pages/public/manuals/integrations/videojs/dailymotion_api/
+              icon:                     video
+            - title:                    Vimeo API
+              href:                     //jekyll.one/pages/public/manuals/integrations/videojs/vimeo_api/
+              icon:                     video
+            - title:                    Wistia API
+              href:                     //jekyll.one/pages/public/manuals/integrations/videojs/wistia_api/
+              icon:                     video
+
+#       - title:                        Comment Providers
+#         icon:                         comment
+#         dropdown:
+
+#           - title:                      Hyvor Talk
+#             href:                       '#'
+#             icon:                       comment-outline
+
+#           - title:                      Disqus
+#             href:                       '#'
+#             icon:                       disqus
 
     # --------------------------------------------------------------------------
     # J1 Plugins
@@ -441,13 +468,28 @@
         icon:                           theme-light-dark
 
 #      - title:                         J1 DocSearch
-#        href:                          //jekyll.one/pages/public/tools/previewer/docsearch/
+#        href:                          ://jekyll.one/pages/public/tools/previewer/docsearch/
 #        icon:                          head-question
 #        target:                        _blank
 #      - title:                         J1 iFramer
 #        href:                          //jekyll.one/pages/public/tools/previewer/iframer/
 #        icon:                          window-open-variant
 #        target:                        _blank
+
+#      - title:                         Icon Picker
+#        href:                          /pages/public/test_icon_picker/
+#        icon:                          emoticon-cool-outline
+#      - title:                         Google Gemini AI
+#        href:                          /pages/public/tools/previewer/google-gemini-ai/
+#        icon:                          robot
+#      - title:                         Google Gemini AI
+#        href:                          //jekyll.one/pages/public/tools/previewer/google-gemini-ai/
+#        icon:                          robot
+#        target:                        _blank
+
+      - title:                          J1 Amplitude
+        href:                           /pages/public/tools/previewer/amplitudejs/
+        icon:                           speaker
 
       - title:                          J1 Geolocation
         href:                           //jekyll.one/pages/public/tools/previewer/geolocation/
@@ -621,6 +663,10 @@
           href:                         //www.npmjs.com/
           target:                       _blank
           icon:                         language-javascript
+        - title:                        jQuery
+          href:                         //jquery.com/
+          target:                       _blank
+          icon:                         jquery
         - title:                        Bootstrap Home
           href:                         //getbootstrap.com/
           target:                       _blank
@@ -669,10 +715,14 @@
           href:                         //wiki.selfhtml.org/
           target:                       _blank
           icon:                         language-html5
-        - title:                        LearnCSS
+        - title:                        Learn CSS
           href:                         //developer.mozilla.org/en-US/docs/Learn/CSS
           target:                       _blank
           icon:                         language-css3
+        - title:                        Learn Javascript
+          href:                         https://developer.mozilla.org/en-US/docs/Learn/JavaScript
+          target:                       _blank
+          icon:                         language-javascript
         - title:                        Asciidoc Language
           href:                         //docs.asciidoctor.org/asciidoc/latest/
           target:                       _blank
@@ -700,6 +750,10 @@
           icon:                         cached
         - title:                        AppDevTools
           href:                         //appdevtools.com/
+          target:                       _blank
+          icon:                         cached
+        - title:                        Minify JS Online
+          href:                         //minify-js.com/
           target:                       _blank
           icon:                         cached
         - title:                        W3C Validator
@@ -760,18 +814,22 @@
 #
 - item:                                 About
   sublevel:
-    - title:                            Starter
+
+    - title:                            This Site
       icon:                             home-variant-outline
       href:                             /pages/public/about/starter/
-    - title:                            Issues
-      icon:                             bug
-      href:                             /pages/public/about/reporting_issues/
+
+    - title:                            Privacy
+      icon:                             heart
+      href:                             /pages/public/legal/en/privacy/      
+
     - title:                            Features
       icon:                             wrench
       href:                             /pages/public/about/features/
-    - title:                            Privacy
-      icon:                             heart
-      href:                             /pages/public/legal/en/privacy/
+
+    - title:                            Issues
+      icon:                             bug
+      href:                             /pages/public/about/reporting_issues/
 
 # ------------------------------------------------------------------------------
 # END config

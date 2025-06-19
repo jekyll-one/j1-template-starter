@@ -1,0 +1,118 @@
+[role="mt-5"]
+== Common Options
+// https://swiperjs.com/types/interfaces/types_swiper_options.SwiperOptions
+
+Find a *full list* of all swiper options, aka known as *properties*, with the
+https://swiperjs.com/swiper-api#parameters[Swiper Documentation, {browser-window--new}]
+and with the *Parameters* sections below.
+
+The *properties* for a Swiper slider are extensive, covering various aspects
+of its behavior and appearance. Here's a *summary* of the key *default*
+values.
+
+
+[role="mt-4"]
+=== Base Settings
+
+[cols="3,3,6a", subs=+macros, options="header", width="100%", role="rtable mt-4"]
+|===
+|Name |Default |Description
+
+|<<options-direction>>
+|_horizontal_
+|Slides *move horizontally* by default
+
+|<<options-effect>>
+|_slide_
+|Base *sliding transition* by default
+
+|<<options-spaceBetween>>
+|0
+|No space (gutters) in between the slides by default
+
+|<<options-slidesPerView>>
+|1
+|Only one slide visible at a time by default
+
+|<<options-initialSlide>>
+|0
+|*First* slide *active initially* by default
+|<<options-centeredSlides>>
+|`false
+|*Active* slide *not centered* by default
+
+|<<options-loop>>
+|`false`
+|Continuous looping *disabled* by default
+
+|===
+
+
+[role="mt-4"]
+=== User Interaction
+
+[cols="3,3,6a", subs=+macros, options="header", width="100%", role="rtable mt-4"]
+|===
+|Name |Default |Description
+
+|<<options-allowTouchMove>>
+|`true`
+|Swiping *enabled* by default
+
+|<<options-grabCursor>>
+|`false`
+|Cursor doesn't change on hover by default
+
+|<<options-keyboard>>
+|`false`|
+Keyboard navigation *disabled* by default
+
+|<<options-mousewheel>>
+|false`|
+Mousewheel navigation *disabled* by default
+
+|<<options-pagination>>
+|*no default*
+|Pagination Elements (like bullets) *disabled* by default
+
+|<<options-navigation>>
+|*no default*
+|Navigation buttons *disabled* by default
+
+|<<options-scrollbar>>
+|*no default*
+|Scrollbar *disabled* by default
+
+|===
+
+
+[role="mt-4"]
+=== Appearance
+
+[cols="3,3,6a", subs=+macros, options="header", width="100%", role="rtable mt-4"]
+|===
+|Name |Default |Description
+
+|<<options-autoHeight>>
+|`false`
+|Slider height *doesn't adjust* to slide content by default
+
+|<<options-speed>>
+|300
+|Transition animation duration between slides in ms.
+
+|===
+
+
+[role="mt-4"]
+=== Page control
+
+[cols="3,3,6a", subs=+macros, options="header", width="100%", role="rtable mt-4"]
+|===
+|Name |Default |Description
+
+|<<options-breakpoints>>
+|*no default*
+|No *responsive breakpoints* defined by default
+
+|===

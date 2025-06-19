@@ -19,18 +19,18 @@ categories:                             [ Jekyll, Collection ]
 tags:                                   [ Info, Overview ]
 
 image:
-  path:                                 /assets/images/modules/attics/giammarco-boscaro-1920x1280.jpg
+  path:                                 /assets/image/module/attic/giammarco-boscaro-1920x1280.jpg
   width:                                1920
   height:                               1280
 
 regenerate:                             false
 permalink:                              /pages/public/learn/bookshelf/jekyll_collections/
 
-resources:                              [ animate, rouge ]
+resources:                              []
 resource_options:
   - attic:
       slides:
-        - url:                          /assets/images/modules/attics/giammarco-boscaro-1920x1280.jpg
+        - url:                          /assets/image/module/attic/giammarco-boscaro-1920x1280.jpg
           alt:                          Photo by Giammarco on Unsplash
           badge:
             type:                       unsplash
@@ -89,20 +89,19 @@ Source: https://ben.balter.com/2015/02/20/jekyll-collections/[Ben Balter: Jekyll
 Most Jekyll sites are organized around two types of content, posts known as
 ordered content and pages, the un-ordered content.
 
-* http://jekyllrb.com/docs/posts/[Posts, {browser-window--new}] are organized
+* https://jekyllrb.com/docs/posts/[Posts, {browser-window--new}] are organized
   reverse chronologically. You might use them for blog posts on a personal blog,
   or articles on a news site. You can recognize a post by its filename.
   Posts live in the `posts` folder, and are always named in the form of
   `YYYY-MM-DD-post-title.md`. Because posts are dated, they're
   traditionally not updated regularly once published.
 
-* http://jekyllrb.com/docs/pages/[Pages, {browser-window--new}] are documents
+* https://jekyllrb.com/docs/pages/[Pages, {browser-window--new}] are documents
   that don't have a relationship with one another. They can live anywhere within
   the   site's source directory and don't have a set naming pattern. If you
   have a personal blog, you might have an `index.html` page
-  (https://ben.balter.com/[the site's main page which is used to list
-  posts, {browser-window--new}]),
-  or
+  (https://ben.balter.com/[the site's main page, {browser-window--new}] which
+  is used to list posts,  or
   https://ben.balter.com/about/[an about me page, {browser-window--new}],
   to name two examples. Because pages aren't date specific, pages are often
   updated over time to maintain accuracy.
@@ -112,11 +111,11 @@ falls cleanly into the those two categories of content. As I noted in
 https://github.com/jekyll/jekyll/issues/1941[the original pitch], "If
 people are using blog posts for a non-blog post thing, Jekyll has
 already failed". That's where Jekyll's
-http://jekyllrb.com/docs/collections/[collections, {browser-window--new}]
+https://jekyllrb.com/docs/collections/[collections, {browser-window--new}]
 come in.
 
 [role="mt-5"]
-== Not a post, a page - but a collection?
+== Not a Post, a Page - But a Collection?
 
 Collections add another possibility, or use-case, outside of Jekyll's
 post- and page-publishing functionality. Collections have the potential to
@@ -124,8 +123,8 @@ bring Jekyll's zen-like simplicity to all sorts of other types of content that
 aren't ordered as with posts (ordered by date), but have a set _relationship_
 with one another - hence the name: _collection_. If you're familiar with
 traditional CMS's, you can think of collections like
-http://codex.wordpress.org/Post_Types[WordPress custom post types, {browser-window--new}]]
-or https://www.drupal.org/node/774728[Drupal custom content types, {browser-window--new}]],
+https://wordpress.org/documentation/article/what-is-post-type/[What are Post Types, {browser-window--new}]
+or https://drupal.org/documentation[Drupal Dokumentation, {browser-window--new}],
 except you do not need to program a specific class, learn any back-end
 languages, and the syntax used to specify them is very easily readable.
 
@@ -146,7 +145,7 @@ one-another in the sense that they're all cupcakes.
 ====
 Collections are a very young feature to Jekyll, and according to the
 official documentation may be subject to change Jekyll Documentation on
-http://jekyllrb.com/docs/collections/[Collections, {browser-window--new}]],
+https://jekyllrb.com/docs/collections/[Collections, {browser-window--new}],
 you should not let that put you off of using them, because Jekyll is
 Open Source, which means you should trust the community to work-together
 for the best common-case solution.
@@ -173,7 +172,7 @@ to display all products, with specific includes for `cupcakes` and
 
 Abstractly, because they're not outputted by default, you can think of
 collections somewhat like Jekyll's
- http://jekyllrb.com/docs/datafiles/[data folder support, {browser-window--new}],
+ https://jekyllrb.com/docs/datafiles/[data folder support, {browser-window--new}],
 but with the potential to generate content, and be placed into their own
 specific part of your Jekyll site, so a lot more robust. Like `data` files,
 they can support arbitrary key/values through front matter, but they also
@@ -202,7 +201,7 @@ site owner to focus on the content.
 For a more concrete example, take a look at
 https://github.com/github/choosealicense.com[the source, {browser-window--new}]
 for
-http://choosealicense.com[choosealicense.com, {browser-window--new}]
+https://choosealicense.com[choosealicense.com, {browser-window--new}]
 a site which helps explain Open Source licenses like the MIT or GPL license.
 There are pages like *about* and *terms of service*, but the actual licenses
 live in
@@ -237,7 +236,7 @@ collections:
 
 This tells Jekyll to look in the `cupcakes` and `cookies` folders
 for documents, and to read them into the appropriate collection, including
-http://jekyllrb.com/docs/frontmatter/[YAML front matter, {browser-window--new}],
+https://jekyllrb.com/docs/frontmatter/[YAML front matter, {browser-window--new}],
 just as it would posts (but again, without the date, because collection
 documents aren't date specific).
 
@@ -310,5 +309,5 @@ group of "things" that can be logically grouped by a common theme
 Collections are a powerful (and often misunderstood) Jekyll feature, but
 hopefully you've now got an idea or two for your next Jekyll project. Of
 course, if you're looking to dig in to collections, be sure to check out
-http://jekyllrb.com/docs/collections/[the formal documentation, {browser-window--new}]
+https://jekyllrb.com/docs/collections/[the formal documentation, {browser-window--new}]
 for a much more in-depth explanation.

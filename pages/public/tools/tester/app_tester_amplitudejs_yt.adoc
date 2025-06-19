@@ -1,0 +1,297 @@
+---
+title:                                  J1 Amplitude
+title_extention:                        YouTube Video 
+tagline:                                YouTube Video
+
+date:                                   2024-09-21
+#last_modified:                         2024-01-01
+
+description: >
+                                        The J1 Template support playing video on web pages
+                                        by HTML5 Video, the new standard of HTML to show
+                                        videos on web pages.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        html, html5, video, support, flash player,
+                                        quicktime, silverlight
+
+categories:                             [ Tester ]
+tags:                                   [ Audio, Amplitude App, YouTube ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/markus-spiske.jpg
+  width:                                1920
+  height:                               1280
+
+compress:                               false
+regenerate:                             false
+personalization:                        true
+permalink:                              /pages/public/tools/tester/amplitude_app_yt/
+
+resources:                              [ amplitudejs ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/markus-spiske.jpg
+          alt:                          Photo by Markus Spiske on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Markus Spiske
+            href:                       https://unsplash.com/de/@markusspiske/ 
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Attribute settings for section control
+//
+:ytp-api--description:                  false
+:ytp--example:                          false
+:ytp--audio-player:                     true
+:ms-slider-video--example:              false
+
+:manon-melodie--playlist:               //youtube.com/channel/UCEsIlUzfXYT5AZSOVnbFqsQ
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+The J1 Template supports the AmpltidueJS module playing audio from (YouTube)
+video. The Template system provides a plugin (Tech) to mimic AmpliudeJS
+players to control the audio.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+ifeval::[{ytp-api--description} == true]
+[role="mt-4"]
+== YouTube Audio
+
+// https://www.youtube.com/watch?v=7_WWz2DSnT8
+//
+// https://www.youtube.com/watch?v=WxcWO9O4DSM, 19:58, Tchaikovsky - Romeo and Juliet: Fantasy Overture
+// https://www.youtube.com/watch?v=zAmDwCz2BOs
+// https://www.youtube.com/watch?v=ryxAe4B_3Pg
+// https://www.youtube.com/watch?v=wI1Rr29OCJM
+
+You can embed any YouTube video on your web pages, and visitors can play
+and pause the audio with a simple click. This technique can also be used
+to use a YouTube video as background audio that runs in a loop.
+
+[TIP]
+====
+The audio player is created using the YouTube API. Read the full Tutorial at:
+http://www.labnol.org/internet/youtube-audio-player/26740/[Embed YouTube as an Audio Player, {browser-window--new}]
+====
+
+[role="mt-4"]
+=== How to Embed YouTube Audio
+
+It takes just one step to embed a YouTube audio. Open any YouTube video and
+make a note of the YouTube Video ID (a string of 11 characters).
+
+Next, copy and paste the code below anywhere on your website, replacing
+VIDEO_ID with the actual ID of your YouTube video.
+
+[source, html]
+----
+<div data-video="VIDEO_ID" data-autoplay="0" data-loop="1" id="youtube-audio"></div>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script>
+----
+
+The following example is using the YouTube JavaScript API, which renders a
+regular YouTube player with the width and height set to *0 pixels*. When
+the user clicks the audio button, it toggles the existing YouTube player state,
+and the video begins to play or pauses.
+
+Here’s the annotated version of the source code. It can be extended to embed
+YouTube playlists; the default playback volume can be changed, or you even
+https://www.labnol.org/internet/embed-part-of-youtube-video/27948/[embeda part, {browser-window--new}]
+of the video.
+
+[role="mt-4"]
+=== Technical Details
+
+lorem:sentences[5]
+endif::[]
+
+ifeval::[{ytp--example} == true]
+[role="mt-5"]
+== YT Player Example
+++++
+<!-- the <iframe> (video player) will replace this <div> tag                    -->
+<!-- =========================================================================== -->
+<div style="display:flex;justify-content:center;align-items:center;">
+  <div id="youtube-audio1" data-video="WxcWO9O4DSM" data-autoplay="0" data-loop="1"></div>
+  <div id="youtube-audio2" data-video="zAmDwCz2BOs" data-autoplay="0" data-loop="1"></div>
+  <div id="youtube-audio3" data-video="ryxAe4B_3Pg" data-autoplay="0" data-loop="1"></div>
+  <div id="youtube-audio4" data-video="wI1Rr29OCJM" data-autoplay="0" data-loop="1"></div>
+</div>
+
+<script>
+  $(function() {
+
+    // load the IFrame Player API code (asynchronously)
+    var techScript;
+
+    var tech    = document.createElement('script');
+    tech.src    = "/assets/theme/j1/modules/amplitudejs/js/tech/youtube_example.js";
+    techScript  = document.getElementsByTagName('script')[0];
+
+    techScript.parentNode.insertBefore(tech, techScript);
+
+  });
+</script>
+++++
+endif::[]
+
+
+ifeval::[{ytp--audio-player} == true]
+
+[role="mt-5"]
+== Amplitude YouTube Player
+
+The example below demonstrates playing only the *Audio* track from YouTube
+Video using an *AmplitudJS* player. The J1 template uses the video plugin
+*ytp* to *extend* the native functionality of the AmplitudeJS API to playback
+YouTube files *only* for the *audio* track.
+
+[role="mt-4 mb-5"]
+[TIP]
+====
+Find the complete *playlist* for Manon Mélodie on
+link:{manon-melodie--playlist}[YouTube, {browser-window--new}].
+====
+
+
+[role="mt-4"]
+[[manon_melodie]]
+=== Manon Mélodie
+
+lorem:sentences[3]
+
+.Manon Mélodie · YouTube 2025
+amplitude::manon_melodie_yt_large[role="mb-5"]
+
+[role="mt-4"]
+[[bea]]
+=== Bea and her Business
+
+lorem:sentences[3]
+
+.Bea and her Business · YouTube 2025
+amplitude::bea_yt_large[role="mb-5"]
+
+
+[role="mt-4"]
+=== Diana Krall
+
+lorem:sentences[3]
+
+.Diana Krall · YouTube
+amplitude::diana_krall_yt_large[role="mb-5"]
+
+
+[role="mt-4"]
+=== Ephraim Kishon
+
+lorem:sentences[5]
+
+[role="mt-4"]
+==== Beste Familiengeschichten
+
+lorem:sentences[3]
+
+.Ephraim Kishon · Beste Familiengeschichten
+amplitude::familiengeschichten_yt_large[role="mb-5"]
+
+
+[role="mt-4"]
+==== Beste Autofahrergeschichten
+
+lorem:sentences[3]
+
+.Ephraim Kishon · Beste Autofahrergeschichten
+amplitude::autofahrer_geschichten_yt_large[role="mb-5"]
+
+
+[role="mt-4"]
+=== Disco 80th
+
+The large design provides the full functionality of an audio player to ensure
+users can easily control audio playback. The player behaves similarly to a
+compact player, but all controls are displayed in a single window; there is
+no need to open other widgets.
+
+.Royalty Free Music · Disco 80th
+amplitude::disco_large[role="mb-5"]
+
+
+[role="mt-4"]
+=== Mimi Rutherfurt
+
+lorem:sentences[3]
+
+.Mimi Rutherfurt · Maritim Verlag
+amplitude::mimi_rutherfurt_yt_large[role="mb-5"]
+
+endif::[]
+
+[role="mb-8"]
+[CAUTION]
+====
+Playing audio tracks is currently supported only for videos from YouTube (YT).
+The YT plugin *ytp* embeds a YouTube (iframe) player and mimics the AmplitudeJS
+player buttons and controls to manage a *playlist* of video the same as known
+for native audio files.
+
+Note, AmplitudeJS YT Player can only be used with the J1 Template. Currently,
+only AJS players of type *compact* and *large* are supported.
+====
+
+
+ifeval::[{ms-slider-video--example} == true]
+[[ms_video]]
+== MS Slider using YouTube Video
+
+lorem:sentences[5]
+
+.Slider using Video
+masterslider::ms_00010[role="mb-5"]
+
+
+[role="mt-5"]
+=== YouTube Video
+
+YouTube is a popular online video-sharing platform that allows users to
+upload, view, share, and comment on videos. The platform provides services
+for people and organizations to publish various video content.
+
+.Fortnight (feat. Post Malone, Official Music Video) · Taylor Swift
+youtube::q3zqJs7JUCQ[poster="//img.youtube.com/vi/q3zqJs7JUCQ/maxresdefault.jpg" role="mb-5"]
+
+
+[role="mt-5"]
+=== Local Video
+
+VideoJS provides a flexible and customizable platform for displaying and
+controlling MPEG 4 video content on websites and web applications.
+
+.Video over VideoJS
+gallery::jg_video_html5_videojs[role="mb-5"]
+endif::[]

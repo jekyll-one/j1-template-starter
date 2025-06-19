@@ -1,0 +1,63 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/videojs.yml
+# User configuration settings for J1 VideoJS module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2025 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# -----------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 VideoJS
+  scope:                                User settings
+  location:                             _data/modules/videojs.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              true
+  
+  # ----------------------------------------------------------------------------
+  # VideoJS settings
+  # ----------------------------------------------------------------------------
+  playbackRates:
+    enabled:                            true
+ 
+  # ----------------------------------------------------------------------------
+  # VideoJS Plugin settings
+  # ----------------------------------------------------------------------------
+  plugins:
+
+    hotKeys:
+      enabled:                          true
+
+      # Plugin options
+      # ------------------------------------------------------------------------
+      enableInactiveFocus:              false                                   # mutiple players on same page: reassign focus to the player when the control bar fades out
+#     hotkeysFocusElementFilter:        'e => e.tagName.toLowerCase() === "body"'      
+
+    skipButtons:
+      enabled:                          true
+
+      # Plugin options
+      # ------------------------------------------------------------------------      
+      surroundPlayButton:               true                                    # surround buttons side-by-side the play button
+
+    zoomButtons:
+      enabled:                          true
+
+# ------------------------------------------------------------------------------
+# END config

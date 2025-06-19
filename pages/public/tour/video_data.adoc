@@ -1,0 +1,438 @@
+---
+title:                                  Video
+title_extention:                        J1 Template Apps
+tagline:                                J1 Players
+
+date:                                   2020-11-04
+#last_modified:                         2023-01-01
+
+description: >
+                                        J1 Template provides playing video on web pages
+                                        by HTML5 Video and supports custom players created
+                                        by VidoeJS to playback video individually.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        html, html5, video, support, flash player,
+                                        quicktime, silverlight, videojs,
+                                        vimeo, dailymotion, wistia, youtube
+
+categories:                             [ Tour ]
+tags:                                   [ Video, Module ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/alexander-shatov.jpg
+  width:                                1920
+  height:                               1280
+
+compress:                               false
+personalization:                        true
+regenerate:                             false
+permalink:                              /pages/public/tour/video_data/
+
+resources:                              [
+#                                         amplitudejs,
+                                          gallery, lightgallery, masonry,
+                                          videojs, vimeo-player
+                                        ]
+resource_options:
+  - toccer:
+      collapseDepth:                    3
+  - attic:
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/alexander-shatov.jpg
+          alt:                          Photo by Alexander Shatov on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Alexander Shatov
+            href:                       //unsplash.com/de/@alexbemore
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:time-num--string:                      5-10
+:time-en--string:                       Minutes
+:time-en--description:                  to read
+:time-de--string:                       Minuten
+:time-de--description:                  Lesezeit
+
+
+// Attribute settings for section control
+//
+:ytp_audio:                             false
+:ytp_best_2024:                         false
+:ytp_rhythm:                            false
+:ytp_sky_elements:                      true
+:dm_video:                              false
+:vm_video:                              true
+:masonry:                               true
+:lightGallery:                          false
+:dm_gallery:                            true
+:vm_gallery:                            true
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+The J1 Template system supports playing audio and video on web pages using
+HTML5, the current standard. Visitors can play audio and video files without
+the need for an external player.
+
+Modern browsers support the video tag `<video>`. The previous proprietary
+software, like _Flash Player_, _Quicktime_, _Silverlight_ is no longer needed
+as the J1 Template provides audio and video support for local video files
+and online sources.
+
+[subs=attributes]
+++++
+<div class="video-title">
+  <i class="mdib mdib-clock-outline mdib-24px mr-2"></i>
+  {time-num--string} {time-en--string} {time-en--description}
+</div>
+++++
+
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5"]
+== HTML 5 Player
+// See: https://docs.asciidoctor.org/asciidoc/latest/macros/audio-and-video/
+//
+HTML5 video opens the doors to how to present video content on your web.
+All modern browsers support the video tag `<video>.` Browsers already have
+a built-in multimedia framework for decoding and displaying video content.
+
+Two types of video sources are supported:
+
+* Video files from local folders (your webspace)
+* Video files from online sources (on the Internet) like YouTube, Vimeo, etc.
+
+Standalone video players embedded in websites are software components that
+integrate and play video sources directly within a page or application. These
+players are essential for all current sites and apps. Embedded players provide
+a seamless and user-friendly way to present multimedia content to your audience.
+
+[role="mb-4"]
+All modern browsers universally support the video tag `<video>`. This tag
+offers an out-of-the-box framework for decoding and displaying video content
+without loading *external players*.
+
+++++
+<div class="video-title">
+  <i class="mdib mdib-video mdib-24px mr-2"></i>
+  Peck Pocketed · Local Video over HTML5 Video
+</div>
+++++
+
+video::/assets/video//html5/peck_pocketed.mp4[poster="/assets/video/poster/html5/peck_pocketed.jpg", opts="" role="mt-1 mb-5"]
+
+ifeval::[{ytp_audio} == true]
+[role="mt-5"]
+== AmplitudeJS (over YouTube Video)
+
+The example below demonstrates playing only the *Audio* track from YouTube
+Video using an AmplitudJS player. The J1 template uses the video *plugin* ytp
+to extend the native functionality of the AmplitudeJS API to playback YouTube
+files for the audio part.
+
+[role="mt-4 mb-4"]
+[CAUTION]
+====
+Playing audio tracks is currently supported only for videos from YouTube (YT).
+The YT plugin *ytp* embeds a YouTube (iframe) player and mimics the AmplitudeJS
+player buttons and controls to manage a *playlist* of videos the same as known
+for native audio files.
+====
+
+.Manon Mélodie · YouTube 2025
+amplitude::manon_melodie_yt_large[role="mb-4"]
+
+[NOTE]
+====
+AmplitudeJS YT Player can only be used with the J1 Template. Currently, only
+AJS players of type *large * are supported.
+====
+endif::[]
+
+
+[role="mt-5"]
+== VideoJS
+
+VideoJS is a *free-to-use* open-source JavaScript framework for building
+custom video players for the web. Implementing VideoJS for the J1 Template
+supports local video and several platforms, such as YouTube, Vimeo, Wistia,
+or Dailymotion, for presenting videos *online*.
+
+For *online sources*, VideoJS uses plugins, such as the so-called VJS
+Playback Technology. With the help of *plugins*, it is possible to present
+*different media* using the *same player*, the same look and feel for a
+better user experience.
+
+[role="mt-5"]
+=== Native Video
+
+VideoJS provides a flexible and customizable platform for displaying and
+controlling MPEG 4 video content on websites and web applications.
+
+.Peck Pocketed · Local Video over VideoJS
+videojs::/assets/video//html5/peck_pocketed.mp4[poster="/assets/video/poster/html5/peck_pocketed.jpg", opts="" role="mb-5"]
+
+// .Rolling Wild · MP4 Video (over VideoJS)
+// videojs::/assets/video//html5/rolling_wild.mp4[poster="/assets/video/poster/html5/rolling_wild.jpg", opts="" role="mb-5"]
+
+[role="mt-5"]
+=== YouTube
+
+YouTube is a popular online video-sharing platform that allows users to
+upload, view, share, and comment on videos. The platform provides services
+for people and organizations to publish various video content.
+
+ifeval::[{ytp_best_2024} == true]
+The season 19 (2024) of _America's Got Talent_ (AGT) is special. In the long
+history of AGT, only a few *Goldern Buzzers* were given. In 2024, this is
+different - for good reasons. See a compilation on YouTube of the very best
+auditions ever.
+
+.Best Auditions · AGT 2024
+youtube::4VSBJU52UvM[poster="//img.youtube.com/vi/4VSBJU52UvM/maxresdefault.jpg" role="mb-4"]
+endif::[]
+
+ifeval::[{ytp_rhythm} == true]
+Dog Dancing is presented quite often on stage. Like AGT season 18, Adrian Stoica
+presented his dog Hurricane https://www.youtube.com/watch?v=ENGRnUN1UKQ)[Youtube, {browser-window--new}].
+But see Roni Sagi - an Israeli dog trainer - and her dog Rhythm. This is Dog
+Traing the next level.
+
+.Roni Sagi & Rhythm · AGT 2024
+youtube::1J2qz6B-PFY[poster="//img.youtube.com/vi/1J2qz6B-PFY/maxresdefault.jpg" role="mb-4"]
+endif::[]
+
+ifeval::[{ytp_sky_elements} == true]
+Sky Elements uses the night sky as a canvas on which anything is possible.
+A large group of Drones is painting lights in the sky to reflect the most
+captivating narratives. 
+
+.Sky Elements · AGT 2024
+youtube::cN8IrZUhPtc[poster="//img.youtube.com/vi/cN8IrZUhPtc/maxresdefault.jpg" role="mb-4"]
+endif::[]
+
+
+ifeval::[{dm_video} == true]
+[role="mt-5"]
+=== Dailymotion
+
+The Dailymotion platform is a monetization solution directly connecting to
+high-quality advertisers through a proprietary advertising system.
+Like YouTube, videos can be watched for free, but ads are shown on every
+video.
+
+.Beginner Mat Pilates · SELF Channel
+dailymotion::x87ycik[poster="/assets/video/poster/dailymotion/pilates.jpg" role="mb-4"]
+endif::[]
+
+ifeval::[{vm_video} == true]
+[role="mt-5"]
+=== Vimeo
+ 
+Vimeo is an sharing platform that allows users to upload, share, and view
+video content. It was founded in 2004 by a group of filmmakers and has
+since grown into a popular platform for individuals and businesses to
+showcase their videos. Vimeo is known for its emphasis on high-quality 
+video and creative expression.
+
+.Kick It Old School · Forever 21
+vimeo::179528528[poster="/assets/video/poster/vimeo/kick_it_old_school.jpg" role="mb-4"]
+// vimeo::179528528[poster="auto" role="mt-4 mb-5"]
+// vimeo::179528528[role="mt-4 mb-5"]
+
+.Video controls
+[CAUTION]
+====
+For the *VJS Vimeo Tech*, native vjs controls (controllbar) are currently
+*NOT* supported. Instead, the controllbar of the Vimeo Player is shown.
+====
+endif::[]
+
+[role="mt-5"]
+== Galleries of Video
+
+Video galleries are collections that display videos organized around a
+specific theme, topic, or purpose. The gallery module (lightGallery) for
+J1 Template is a fast, modular, and responsive plugin for creating
+beautiful-looking, featured image and video galleries.
+
+[role="mb-4"]
+The combination of a gallery and a lightbox is entirely usable for all
+the video content you want to present on your site. You can place galleries
+elsewhere with your content. You can use them for blogs by putting them into
+your article's content.
+
+[CAUTION]
+====
+The module lightGallery can be used for free for private use, but a
+*commercial license* is required for business or commercial websites. See
+link:{url-light-gallery--license}[LightGallery Licenses, {browser-window--new}]
+how to use lightGallery for *commercial* websites and projects.
+====
+
+Find below examples of video galleries of locally stored (MP4) video resources
+*and* video content provided online.
+
+ifeval::[{masonry} == true]
+[role="mt-5"]
+=== Masonry
+
+Masonry for J1 Template is a great tool for creating dynamic video galleries.
+The module makes creating a gallery to display videos of different types easy.
+
+.Mixed Video · Masonry + LightGallery
+masonry::mixed_video_example[role="mb-4"]
+
+[role="mb-5"]
+.More about Masonry
+[TIP]
+====
+Find more on how the Masonry module can be used on the
+link:{url-j1-masonry-previewer}[Masonry Preview, {browser-window--new}] page.
+====
+endif::[]
+
+
+ifeval::[{lightGallery} == true]
+[role="mt-5"]
+=== lightGallery (YouTube)
+
+The galley maker *justifiedGallery* in combination with the *lightbox*
+lightGallery is a great toolset for creating dynamic video galleries.
+The module combinati0n makes creating a gallery to access videos easy.
+
+.YouTube Video · justifiedGallery + LightGallery
+gallery::jg_video_youtube_james_and_adele[role="mb-4"]
+endif::[]
+
+
+[role="mt-5"]
+[[local-video-2]]
+=== Local Video
+
+Videos created by a digicam or a mobile can be played by J1 Template using
+the lightGallery integration. Present videos you have made at it's best.
+
+[role="mb-5"]
+[NOTE]
+====
+The current file *size* of local video media files is limited to *50 MegaByte*.
+Using a modern MP4 Encoder for video compression, a video will play around
+*3-5 minutes* for HD 1080p (1920x1080 pixel) or up to *10 minutes* for
+HD 720p (1280x720 pixel).
+====
+
+.Local MP4 Video · Justified Gallery + LightGallery
+gallery::jg_video_html5[role="mb-4"]
+
+
+ifeval::[{yt_gallery} == true]
+[role="mt-5"]
+=== YouTube
+
+The community at link:{url-youtube--home}[YouTube, {browser-window--new}]
+is large, with over 1 billion users that watch hundreds of millions of
+hours of content every day. The number of YouTube channels is enormous.
+Today, it's a must for TV stations or musicians to publish videos of their
+shows or songs on YouTube.
+
+A really great channel at YouTube is presented by _Taylor Swift_ for her
+new studio album *The Tortured Poets Department: The Anthology*, released on
+April 19, 2024.
+
+.Taylor Swift - The Tortured Poets Department · Justified Gallery + LightGallery
+gallery::jg_video_online_taylor_swift[role="mb-4"]
+
+[role="mb-5"]
+[TIP]
+====
+An *anthology* is a collection of selected texts or, in a broader sense,
+a thematic compilation of literary or musical works.
+====
+endif::[]
+
+ifeval::[{vm_gallery} == true]
+[role="mt-5"]
+=== Vimeo
+
+[role="mb-4"]
+link:{url-vimeo--home}[Vimeo, {browser-window--new}] is a video-sharing
+platform that includes features such as live-streaming and customization.
+Vimeo provides many tools for video creation, editing, and broadcasting.
+The platform enables the operators of websites to present high-quality,
+professional videos and reach audiences worldwide.
+
+[NOTE]
+====
+A plus using Vimeo is that *no advertising* is used on that platform. The
+visitors can focus on the video without being distracted.
+====
+
+[role="mt-4 mb-4"]
+Vimeo offers a basic free membership, but it limits you to 500MB of maximum
+weekly storage. Alternatively, you can book a paid plan: Plus, PRO, and
+Business. Each membership has varied storage limits, but the free plan
+offers sufficient space for private projects to present video content
+without advertising.
+
+.Forever 21 · Justified Gallery + LightGallery
+gallery::jg_video_online_vimeo[role="mb-4"]
+endif::[]
+
+ifeval::[{dm_gallery} == true]
+[role="mt-5"]
+=== Dailymotion
+
+link:{url-dailymotion--home}[Dailymotion, {browser-window--new}] is a
+video-sharing platform. The platform is available worldwide in 180+
+languages, featuring websites for their video content.
+
+The platform is a *monetization* solution that allows allows to directly
+connect to high-quality advertisers through a proprietary Advertising system.
+Like YouTube, videos can be watched for free, but ads are shown on each and
+every video.
+
+.SELF Chanel · Justified Gallery + LightGallery
+gallery::jg_video_online_dailymotion[role="mb-4"]
+endif::[]
+
+[role="mt-5"]
+== What next
+
+Images and videos are pretty visual, and they can be impressive, for sure.
+However, the most visual component on all web pages is text for all sites
+on the Internet.
+
+Sadly, one common flaw in many templates and frameworks is a lack of support
+for *responsive text*. While other elements on a page resize fluidly, the
+text is still fixed. To avoid this issue, especially for heavily text-focused
+pages, the J1 Template supports a fluidly scaled text that changes
+in size and line height to optimize readability for the user.
+
+The JekyllOne Template J1 places the character font as one of the most crucial
+*branding elements* for any website. Typography matters for any media presenting
+text. The text will take on an important role of acting as plain text and as
+something like images. To see how text could be presented is great for modern
+responsive websites.
+
+[role="mb-7"]
+Find out how it works and go for link:{url-tour--typography}[Typography], then.

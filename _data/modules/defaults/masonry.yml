@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -23,8 +23,12 @@ description:
 # Default settings
 #
 defaults:
-  enabled:                              false
 
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ============================================================================
+  #
+  enabled:                              false
   gutters:                              3
 
   # ----------------------------------------------------------------------------
@@ -35,16 +39,20 @@ defaults:
   # AJAX methods are used to supply the needed HTML code at the time
   # a grid is initialized by the JS adapter.
   #
-  xhr_data_path:                        /assets/data/masonry
+  xhr_data_path:                        /assets/data/masonry_app
 
-  # ------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
   # VideoJS settings
   # See details: https://jekyll.one/pages/public/manuals/videojs/videojs_api
-  # ------------------------------------------------------------------------
+  # ============================================================================
   #
   videojs:
     enabled:                            false
+
     theme:                              uno
+    api:                                native                                  # native|videojs
+
     options:
       autoplay:                         false
       controls:                         true
@@ -59,11 +67,98 @@ defaults:
           forward:                      5
           backward:                     5
 
+
+  # ----------------------------------------------------------------------------
+  # Player settings
+  # See: //jekyll.one/pages/public/manuals/videojs/lightgallery_api
+  # ============================================================================
+  #
+  player:
+    enabled:                            true
+
+    # VideoJS
+    # --------------------------------------------------------------------------
+    videojsPlayer:
+      enabled:                          true
+
+      options:
+        muted:                          false
+        preload:                        false
+        autoplayFirstVideo:             true
+        playbackRates:                  [0.25, 0.5, 1, 1.5, 2]
+
+      controls:                         true
+      controlBar:
+        remainingTimeDisplay:           true
+        pictureInPictureToggle:         false
+        playbackRates:                  [0.25, 0.5, 1, 1.5, 2]
+
+        volumePanel:
+          inline:                       false
+
+        hotkeysPlugin:
+          enabled:                      true
+          options:
+            volumeStep:                 0.2
+
+        skipButtonsPlugin:
+          enabled:                      true
+          options:
+            forward:                    15
+            backward:                   15
+
+        zoomPlugin:
+          enabled:                      true
+          options:
+            moveX:                      0
+            moveY:                      0
+            rotate:                     0
+            zoom:                       1
+
+    # Vimeo
+    # --------------------------------------------------------------------------
+    vimeoPlayer:
+      enabled:                          true
+      api:                              native                                  # native|videojs
+
+      options:
+        autoPlay:                       true
+        muted:                          true
+#       byline:                         0
+#       portrait:                       0
+#       color:                          var(--md-gray-100)
+
+
+    # Wistia
+    # --------------------------------------------------------------------------
+    wistiaPlayer:
+      enabled:                          true
+      api:                              native                                  # native|videojs
+
+      options:
+        autoPlay:                       true
+        fullscreenButton:               true
+        muted:                          false
+        qualityControl:                 false
+
+    # Youtube
+    # --------------------------------------------------------------------------
+    youTubePlayer:
+      enabled:                          true
+      api:                              videojs                                 # native|videojs
+
+      options:
+        autoPlay:                       true
+        muted:                          true
+        showinfo:                       true
+        controls:                       true
+
+
   # ----------------------------------------------------------------------------
   # Lightbox settings
   # See settings for lightbox:     https://jekyll.one/pages/public/manuals/modules/lightbox/
   # See settings for lightGallery: https://jekyll.one/pages/public/manuals/videojs/videojs_api
-  # ----------------------------------------------------------------------------
+  # ============================================================================
   #
   lightbox:
     enabled:                            false
@@ -75,12 +170,13 @@ defaults:
       download:                         false
       alignThumbnails:                  left
 
+
   # ----------------------------------------------------------------------------
   # Masonry MODULE options
-  # ----------------------------------------------------------------------------
+  # ============================================================================
   #
   #  initTimeout
-  #  --------------------------------------------------------------------------
+  #  ----------------------------------------------------------------------------
   #  Delays the initialization of a grid after the HTML code is loaded.
   #  The delay depends on the browser used repectively how long it takes
   #  the DOM is updated for the dynamically loaded HTML code (AJAX).
@@ -89,7 +185,7 @@ defaults:
   #  default:                          500
   #
   #  hideDisabled
-  #  --------------------------------------------------------------------------
+  #  ---------------------------------------------------------------------------
   #  Hide if the grid is disabled. The CSS style display is set to `none`
   #  for the element specified by `id`.
   #
@@ -100,7 +196,7 @@ defaults:
   initTimeout:                          1200
   hideDisabled:                         true
 
-  # ------------------------------------------------------------------------
+  # ----------------------------------------------------------------------------
   # Bootstrap responsive options
   #
   responsive:
@@ -119,18 +215,22 @@ defaults:
     contrast:                           1
     brightness:                         1
 
+
   # ----------------------------------------------------------------------------
   # Masonry API options
-  #
+  # ============================================================================
+
+  # Settings
+  # ----------------------------------------------------------------------------
   #  id
-  #  --------------------------------------------------------------------------
+  #  ---------------------------------------------------------------------------
   #  Specifies the id used for a grid
   #
   #  values:                           string
   #  default:                          no defaults
   #
   #  percentPosition
-  #  --------------------------------------------------------------------------
+  #  ---------------------------------------------------------------------------
   #  Sets item positions in percent values, rather than pixel values.
   #  Set percentPosition to true works well with percent-width items,
   #  as items will not transition their position on resize.
@@ -139,28 +239,28 @@ defaults:
   #  default:                          false
   #
   #  horizontalOrder
-  #  --------------------------------------------------------------------------
+  #  ---------------------------------------------------------------------------
   #  Lays out items to (mostly) maintain horizontal left-to-right order.
   #
   #  values:                           true|false
   #  default:                          false
   #
   #  resize
-  #  --------------------------------------------------------------------------
+  #  ---------------------------------------------------------------------------
   #  Adjusts sizes and positions when window is resized. Enabled by default.
   #
   #  values:                           true|false
   #  default:                          true
   #
   #  transitionDuration
-  #  --------------------------------------------------------------------------
+  #  ---------------------------------------------------------------------------
   #  Duration of the transition (seconds) when items change position.
   #
   #  values:                           float
   #  default:                          0.4
   #
   #  columnWidth
-  #  --------------------------------------------------------------------------
+  #  ---------------------------------------------------------------------------
   #  Aligns items to a horizontal grid.
   #  It is recommend setting columnWidth. If columnWidth is not set, Masonry
   #  will use the outer width of the first item.
@@ -169,7 +269,7 @@ defaults:
   #  default:                          no defaults
   #
   #  stagger
-  #  --------------------------------------------------------------------------
+  #  ---------------------------------------------------------------------------
   #  Staggers item transitions, so items transition incrementally after
   #  one another. Value (integer) set as a number of milliseconds.
   #
@@ -177,7 +277,7 @@ defaults:
   #  default:                          30
   #
   #  itemSelector
-  #  --------------------------------------------------------------------------
+  #  ---------------------------------------------------------------------------
   #  Specifies which child elements will be used as item elements in the layout.
   #  It is recommend always setting itemSelector. itemSelector is useful to
   #  exclude sizing elements or other elements that are not part of the layout.
@@ -186,7 +286,7 @@ defaults:
   #  default:                          no defaults
   #
   #  initLayout
-  #  --------------------------------------------------------------------------
+  #  ---------------------------------------------------------------------------
   #  Enables|Disables layout on initialization. Disabled for J1 by default.
   #  If initLayout is to `false`, layout is DISABLED on initialization.
   #  Used to MANUALLY initialize a layout by methods or add events BEFORE
@@ -196,10 +296,7 @@ defaults:
   #  default:                          true
   #
   # ----------------------------------------------------------------------------
-
-  # ----------------------------------------------------------------------------
-  # Masonry options
-  # ----------------------------------------------------------------------------
+  #
   initLayout:                           true
   originTop:                            true
   originLeft:                           true

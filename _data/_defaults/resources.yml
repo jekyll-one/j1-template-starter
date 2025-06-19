@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 # NOTE:
 #   By J1 Theme, "Liquid Procedures" are being used intensively. To load
@@ -30,11 +30,11 @@
 # base_url
 # ------------------------------------------------------------------------------
 #   For J1 Theme, all CSS and JS resources are stored as ASSETS
-#   under ~/assets/themes/j1. To shorten the filenames to be configured,
+#   under ~/assets/theme/j1. To shorten the filenames to be configured,
 #   base_url points to the (base) asset path.
 #
 #   type:                           string
-#   default:                        /assets/themes/j1
+#   default:                        /assets/theme/j1
 #
 # extensions
 # ------------------------------------------------------------------------------
@@ -53,7 +53,7 @@
 # location
 # ------------------------------------------------------------------------------
 #   For J1 Theme, resources can be loaded from LOCAL assets folder
-#   (~/assets/themes/j1) OR from REMOTE using e.g. a CDN. Resources
+#   (~/assets/theme/j1) OR from REMOTE using e.g. a CDN. Resources
 #   are written as LOCATORS, simple JSON objects consists in two
 #   key|value pairs. The keys are "local" or "remote" to indicate
 #   from which SOURCE a resource should be loaded from. The value
@@ -318,7 +318,7 @@
 # GLOBAL configuration settings
 #
 globals:
-  base_path:                            /assets/themes/j1
+  base_path:                            /assets/theme/j1
   location:                             local
   dependency_check_cycle:               25
   dependency_check_timeout:             50

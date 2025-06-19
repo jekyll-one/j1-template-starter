@@ -1,0 +1,756 @@
+---
+title:                                  Icon Fonts
+title_extention:                        Icons for J1 Template
+tagline:                                Icons for Your Web
+
+date:                                   2020-11-06
+#last_modified:                         2023-01-01
+
+description: >
+                                        J1 Template supports popular icons font sets out-of-the-box.
+                                        The icon sets MDI and FA are very good in design and have
+                                        a rich set of different icons for many categories used for
+                                        the Web.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        icon, fonts, mdi, fontawesome, iconify
+
+categories:                             [ Roundtrip ]
+tags:                                   [ Module, Icon ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/material_symbols.jpg
+  width:                                1920
+  height:                               1280
+
+regenerate:                             false
+permalink:                              /pages/public/tour/mdi_icon_font/
+
+resources:                              [ iconify ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/material_symbols.jpg
+          alt:                          Material Design Symbols
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:time-num--string:                      5-10
+:time-en--string:                       Minutes
+:time-en--description:                  to read
+:time-de--string:                       Minuten
+:time-de--description:                  Lesezeit
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+J1 Template supports popular icon font sets. This icon sets offer a rich
+set of different elements for many symbols and categories widely used for the
+Web.
+
+With J1 Template, the following icon fonts are available out-of-the-box:
+
+* Material Design Icons link:{url-mdi--home}[ (MDI), {browser-window--new}]
+* Light MDI Icons link:{url-mdil--home}[(MDIL), {browser-window--new}]
+* FontAwesome Icons V5 link:{url-fontawesome--home}[(FA), {browser-window--new}]
+* Iconify-Framework Icons link:{url-iconify--home}[(IF), {browser-window--new}]
+
+[role="mb-4"]
+MDI and FA icons are excellent in design and provide a rich set of different
+icons for many categories used for the Web. See below for some details for
+<<Material Design Icons>> and <<FontAwesome Icons>>.
+
+[NOTE]
+====
+Iconify-Framework icons is not a locally stored icon-set like MDI or FA Icons
+for example. All IF elements are loaded remotely over the *Internet* using
+the so-called *Unified Open Source Icon Framework* -- see section
+<<Iconify-Framework Icons>> for more information.
+====
+
+[subs=attributes]
+++++
+<div class="video-title">
+  <i class="mdib mdib-clock-outline mdib-24px mr-2"></i>
+  {time-num--string} {time-en--string} {time-en--description}
+</div>
+++++
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5"]
+== Material Design Icons
+
+The primary icon-set for the J1 Template is
+link:{url-mdi--home}[Material Design Icons, {browser-window--new}],
+a rich set providing more than 7200+ icons for the current version v7 of
+March 2023. MDI has excellent support of the Material Design (MD) styles
+defined by _Google_ and comes with Googles' original MD icon set build-in.
+
+_Material Design Icons_ is a beneficial design resource for Web Design
+based on _Google_'s Material Design. The MDI icon set is a community-driven
+project to provide a large number of different icons for the Web.
+
+.Material Design Icons
+[cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
+|===
+|Size |Modifier |Markup |Render
+
+|1x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+mdi:account[1x]
+----
+|mdi:account[1x]
+
+|3x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+mdi:account[3x]
+----
+|mdi:account[3x]
+
+|5x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+mdi:account[5x]
+----
+|mdi:account[5x]
+
+|5x
+|`mdi-rotate-45`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Rotate 45 degrees +
+[source, adoc, role="noclip"]
+----
+mdi:account[5x mdi-rotate-45]
+----
+|mdi:account[5x mdi-rotate-45]
+
+|5x
+|`mdi-rotate-315`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Rotate 315 degrees +
+[source, adoc, role="noclip"]
+----
+mdi:account[5x mdi-rotate-315]
+----
+|mdi:account[5x mdi-rotate-315]
+
+|5x
+|`mdi-light` +
+`mdi-flip-v`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Color set to (md) light-grey and flipped vertical +
+[source, adoc, role="noclip"]
+----
+mdi:alert[5x mdi-light mdi-flip-v]
+----
+|mdi:alert[5x mdi-light mdi-flip-v]
+
+|5x
+|`md-indigo`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Color set to (md) indigo +
+[source, adoc, role="noclip"]
+----
+mdi:alert[5x md-indigo]
+----
+|mdi:account[5x md-indigo]
+
+|5x
+|`md-pink`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Color set to (md) pink +
+[source, adoc, role="noclip"]
+----
+mdi:alert[5x md-pink]
+----
+|mdi:account[5x md-pink]
+
+|5x
+|`mdi-spin`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Added animation of type rotate (spin) +
+[source, adoc, role="noclip"]
+----
+mdi:loading[5x mdi-spin]
+----
+|mdi:loading[5x mdi-spin]
+
+|5x
+|`md-red-900` +
+`mdi-pulsed`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Color  set to (md) color dark-red and added animation of type pulsed +
+[source, adoc, role="noclip"]
+----
+mdi:heart[5x md-red-900 mdi-pulsed]
+----
+|mdi:heart[5x md-red-900 mdi-pulsed]
+
+|===
+
+[role="mb-4"]
+Using Material Design Icons is easy as the inline macro `mdi:` for Asciidoc
+is available to place icons automatically wherever you want. See more about
+this in section
+link:{url-tour--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
+
+[NOTE]
+====
+_J1 Template_ supports the full set of _MDI_ for the Web. The
+icon set is fully integrated and can be used out-of-the-box.
+====
+
+
+[role="mt-5"]
+== Light Material Design Icons
+
+An alternative to the default MDI-based icon set for the J1 Template is
+link:{url-mdi--home}[Material Design Light Icons, {browser-window--new}] --
+the set is providing currently 260+ icons for the latest version.
+
+.Material Design Light Icons
+[cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
+|===
+|Size |Modifier |Markup |Render
+
+|1x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+mdil:account[1x]
+----
+|mdil:account[1x]
+
+|3x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+mdil:account[3x]
+----
+|mdil:account[3x]
+
+|5x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+mdil:account[5x]
+----
+|mdil:account[5x]
+
+|5x
+|`mdi-rotate-45`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Rotate 45 degrees +
+[source, adoc, role="noclip"]
+----
+mdil:account[5x mdi-rotate-45]
+----
+|mdil:account[5x mdi-rotate-45]
+
+|5x
+|`mdi-rotate-315`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Rotate 315 degrees +
+[source, adoc, role="noclip"]
+----
+mdil:account[5x mdi-rotate-315]
+----
+|mdil:account[5x mdi-rotate-315]
+
+|5x
+|`mdi-light` +
+`mdi-flip-v`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Color set to (md) light-grey and flipped vertical +
+[source, adoc, role="noclip"]
+----
+mdil:alert[5x mdi-light mdi-flip-v]
+----
+|mdil:alert[5x mdi-light mdi-flip-v]
+
+|5x
+|`md-indigo`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Color set to (md) indigo +
+[source, adoc, role="noclip"]
+----
+mdil:alert[5x md-indigo]
+----
+|mdil:account[5x md-indigo]
+
+|5x
+|`md-pink`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Color set to (md) pink +
+[source, adoc, role="noclip"]
+----
+mdil:alert[5x md-pink]
+----
+|mdil:account[5x md-pink]
+
+|5x
+|`md-red-900` +
+`mdi-pulsed`
+|All icons can be found for preview at the
+link:{url-font-icons--icon-picker}[Font Icon Picker, {browser-window--new}]
+page online. +
+
+Color  set to (md) color dark-red and added animation of type pulsed +
+[source, adoc, role="noclip"]
+----
+mdil:heart[5x md-red-900 mdi-pulsed]
+----
+|mdil:heart[5x md-red-900 mdi-pulsed]
+
+|===
+
+
+[role="mt-5"]
+== FontAwesome Icons
+
+_FontAwesome_ is icon toolkit based on CSS, initially created by _Dave Gandy_.
+The previous *version 4* was mainly for the use of Twitter Bootstrap *V3*.
+The current version *V5*, released in December 2017, focuses on all frameworks
+used for web development. Today, the *free FA* icon set comes with 1400+ icons
+included.
+
+Since version 5, the icon set comes in two packages: FontAwesome *Free*
+and the proprietary, commercial FontAwesome *Pro* version but requires a
+license fee to pay. The free versions (all releases up to 4 and the free
+version for 5) are available under SIL Open Font License 1.1, Creative
+Commons Attribution 4.0, and the MIT License.
+
+FontAwesome V5 meets the Material Design idea of _Google_, and in comparison
+to Version 4, the current version is much more than face-lifting. The new
+version comes with more than 2300+ icons, but many are available only with
+the Pro license. For the Free version, only a subset of 900+ icons is
+available.
+
+[NOTE]
+====
+The CSS styles for FontAwesome V5 have been extended for the J1 Template
+to the same classes (and their respective names) for other Font Icon sets.
+Already existing styles like flipping `fa-flip-vertical` are available as
+`fa-flip-v` as well.
+====
+
+You can check out what icons available at
+link:{url-fontawesome--icons}[FontAwesome Icons, {browser-window--new}].
+The icon set of version V5 is fully integrated - no need for additional
+resources to load.
+
+[TIP]
+====
+In comparison to FA Version 4, a lot of differences are to be noticed
+If you haven't used V5 yet, it is highly recommended to visit the
+link:{url-fontawesome--get-started}[Get started, {browser-window--new}]
+pages to learn the basics and features and styles for the current version.
+====
+
+With version V5 of _FontAwesome_, the icon set is split into two general
+parts:
+
+* Standard icons, indicated by *FAS*
+* Brand icons, including symbols for companies and brands,
+  indicated by *FAB*
+
+[NOTE]
+====
+Using FontAwesome with Asciidoc is quite easy to use as two inline
+macros `fab:` and `fas:` are available to place icons where ever you want.
+See more about this in section
+link:{url-tour--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
+====
+
+Find below examples of both sets and how to use with J1 Template.
+
+[role="mt-4"]
+=== Brand icons
+
+.FontAwesome Branding Icons (FAB)
+[cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
+|===
+|Size |Modifier |Markup |Render
+
+|2x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+fab:google[2x]
+----
+^|fab:google[2x]
+
+|5x
+|`md-blue`
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+Color blue +
+[source, adoc, role="noclip"]
+----
+fab:blogger[5x md-blue]
+----
+|fab:blogger[5x md-blue]
+
+|===
+
+[role="mt-4"]
+=== Standard icons
+
+.FontAwesome Standard Icons (FAS)
+[cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
+|===
+|Size |Modifier |Markup |Render
+
+|1x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+fas:user[1x]
+----
+^|fas:user[1x]
+
+|3x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+fas:user[3x]
+----
+^|fas:user[3x]
+
+|5x
+|no modifier set
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+fas:user[5x]
+----
+^|fas:user[5x]
+
+|5x
+|`fa-rotate-90`
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+Rotate 90 degrees +
+[source, adoc, role="noclip"]
+----
+fas:user[5x fa-rotate-90]
+----
+^|fas:user[5x fa-rotate-90]
+
+|5x
+|`md-indigo`
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+Color set to MD Indigo +
+[source, adoc, role="noclip"]
+----
+fas:user[5x md-indigo]
+----
+^|fas:user[5x md-indigo]
+
+|5x
+|`md-pink`
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+Color set to MD Pink +
+[source, adoc, role="noclip"]
+----
+fas:user[5x md-pink]
+----
+^|fas:user[5x md-pink]
+
+|5x
+|`mdi-light`
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+Color set to MD Light (Grey) +
+[source, adoc, role="noclip"]
+----
+fas:exclamation-triangle[5x mdi-light]
+----
+^|fas:exclamation-triangle[5x mdi-light]
+
+|5x
+|`fa-flip-v`
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+Orientation is set to *flipped vertical* +
+
+[source, adoc, role="noclip"]
+----
+fas:exclamation-triangle[5x fa-flip-v]
+----
+^|fas:exclamation-triangle[5x fa-flip-v]
+
+|5x
+|`md-red-900` +
+`fa-flip-v`
+
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+Color set to MD *dark red* and *flipped* vertical +
+
+[source, adoc, role="noclip"]
+----
+fas:exclamation-triangle[5x md-red-900 fa-flip-v]
+----
+^|fas:exclamation-triangle[5x md-red-900 fa-flip-v]
+
+|5x
+|`fa-spin`
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+Added animation of type *spin* (rotate) +
+
+[source, adoc, role="noclip"]
+----
+fas:circle-notch[5x fa-spin]
+----
+^|fas:circle-notch[5x fa-spin]
+
+|5x
+|`md-red-900` +
+`fa-pulsed`
+|All icons can be found for preview at the
+link:{url-fontawesome--icons}[FA Gallery, {browser-window--new}] page online. +
+
+Color set to MD *dark red* and added animation of type *pulsed* +
+
+[source, adoc, role="noclip"]
+----
+fas:heart[5x md-red-900 fa-pulsed]
+----
+^|fas:heart[5x md-red-900 fa-pulsed]
+
+|===
+
+
+[role="mt-5"]
+== Iconify-Framework Icons
+
+Sometimes icons are missing like a specific brand or theme icon. An
+interesting solution for using icons from a remote repository are
+link:{url-iconify--home}[Iconify-Framework Icons, {browser-window--new}].
+the Iconify-Framework consuse a so-called Unified Open Source Icon framework
+that makes it possible to use icons from multiple sets.
+
+To access that framework, a Javascript client is needed. For the J1 Template,
+the client is build-in and is loaded if Iconify-Framework icons are requested
+as a resource. To see what icon sets are available with that framework, check
+the page link:{url-iconify--icon-sets}[Iconify-Framework Icon Sets, {browser-window--new}].
+
+[NOTE]
+====
+Using Iconify-Framework icons with J1 Template is quite easy. An inline macro
+`iconify:` for Asciidoc is available to place icons where ever you want.
+See more about this in section
+link:{url-tour--asciidoc-extensions}#icon-fonts[Asciidoc Extensions].
+====
+
+Currently, over 40,000 vector icons are available for many different use cases.
+Find some examples below.
+
+.Brand Icons
+[cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
+|===
+|Size |Modifier |Markup |Render
+
+|3x
+|no modifier set
+|All icons can be found for preview at
+link:{url-iconify--brand-icons}[SVG Logos, {browser-window--new}] page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+iconify:logos:opensource[3x]
+----
+^|iconify:logos:opensource[3x]
+
+|3x
+|no modifier set
+|All icons can be found for preview at
+link:{url-iconify--brand-icons}[SVG Logos, {browser-window--new}] page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+iconify:logos:asciidoctor[3x]
+----
+^|iconify:logos:asciidoctor[3x]
+
+|3x
+|no modifier set
+|All icons can be found for preview at
+link:{url-iconify--brand-icons}[SVG Logos, {browser-window--new}] page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+iconify:logos:jupyter[3x]
+----
+^|iconify:logos:jupyter[3x]
+|===
+
+.Medical Icons
+[cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
+|===
+|Size |Modifier |Markup |Render
+
+|3x
+|no modifier set
+|All icons can be found for preview at
+link:{url-iconify--medical-icons}[Medical Icons, {browser-window--new}] page online. +
+
+No modifiers +
+[source, adoc, role="noclip"]
+----
+iconify:medical-icon:i-ear-nose-throat[3x]
+----
+^|iconify:medical-icon:i-ear-nose-throat[3x]
+
+|5x
+|`md-red-900`
+|All icons can be found for preview at
+link:{url-iconify--medical-icons}[Medical Icons, {browser-window--new}] page online. +
+
+Color (md) red +
+[source, adoc, role="noclip"]
+----
+iconify:medical-icon:i-ear-nose-throat[5x md-red-900]
+----
+^|iconify:medical-icon:i-ear-nose-throat[5x md-red-900]
+
+|===
+
+
+[role="mt-5"]
+== What next
+
+Have you've enjoyed the possibilities The template system offers for using
+font icons? Do you think these icon sets can fit your needs? For sure, using
+Iconify, for all topics, you will find a suitable icon.
+
+J1 Template implements some handy Ruby-based enhancements for the markup
+language Asciidoc. Providing extensions for a Jekyll theme is a unique
+feature of Jekyll One compared to other Jekyll themes and templates.
+
+To make the use of modules for the template easier, some more extensions
+support you to place for example lightboxes, sliders, or galleries using
+Asciidoc block elements. I'm sure, you'll love it.
+
+[role="mb-7"]
+Check the more J1 Template offer and go for
+link:{url-tour--asciidoc-extensions}[Asciidoc Extensions] made for J1!

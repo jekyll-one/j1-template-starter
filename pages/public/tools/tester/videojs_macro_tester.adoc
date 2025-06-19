@@ -1,0 +1,370 @@
+---
+title:                                  VideoJS
+title_extention:                        Custom VJS Players
+tagline:                                Custom VJS Players
+
+date:                                   2025-06-05
+last_modified:                          2025-06-08
+
+description: >
+                                        Test the VideoJS ADOC Macro for
+                                        custom AJS progressControlSilder
+keywords: >
+                                        open source, free, template, jekyll,
+                                        jekyllone, web, sites, static, jamstack,
+                                        bootstrap, html, html5, video, support,
+                                        videojs
+
+categories:                             [ Tester ]
+tags:                                   [ Module, VideoJS ]
+
+image:
+  path:                                 /assets/image/module/attic/markus-spiske-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+
+attic:                                  false
+regenerate:                             false
+personalization:                        true
+permalink:                              /pages/public/tester/videojs_yt/
+
+resources:                              [ gallery, lightgallery, masonry, videojs ]
+resource_options:
+  - toccer:
+      collapseDepth:                    3
+  - attic:
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/markus-spiske.jpg
+          alt:                          Photo by Markus Spiske on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Markus Spiske
+            href:                       https://unsplash.com/de/@markusspiske/ 
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Attribute settings for section control
+//
+:swiper--features:                      false
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+Swiper, the free and most modern mobile touch slider with hardware accelerated
+transitions and amazing native behavior. It is intended to be used in mobile
+websites, mobile web apps, and mobile native/hybrid apps.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+// [role="mt-5"]
+// == Local Video
+
+// Videos created by a digicam or a mobile can be played by J1 Template using
+// the lightGallery integration. Present videos you have made at it's best.
+
+// .Local Video over VideoJS · Justified Gallery + LightGallery
+// gallery::jg_video_html5[role="mb-4"]
+
+
+// == Masonry
+
+// Masonry for J1 Template is a great tool for creating dynamic video galleries.
+// The module makes creating a gallery to display videos of different types easy.
+
+// .Mixed Video · Masonry + LightGallery
+// masonry::mixed_video_example[role="mb-4"]
+
+
+// [role="mt-4"]
+// == lightGallery (YouTube)
+
+// The galley maker *justifiedGallery* in combination with the *lightbox*
+// lightGallery is a great toolset for creating dynamic video galleries.
+// The module combinati0n makes creating a gallery to access videos easy.
+
+// .YouTube Video · justifiedGallery + LightGallery
+// gallery::jg_video_youtube_james_and_adele[role="mb-4"]
+
+
+// [role="mt-5"]
+// == VideoJS Player over YouTube
+
+// YouTube is a popular online video-sharing platform that allows users to
+// upload, view, share, and comment on videos. The platform provides services
+// for people and organizations to publish various video content.
+
+// ++++
+// <div class="video-title">
+//   <i class="mdib mdib-video mdib-24px mr-2"></i>
+//   The Breathtaking Beauty of Nature
+// </div>
+
+// <div class="mb-8">
+//   <video
+//     id="vid_2rtQOsWaAXc"
+//     class="video-js vjs-theme-uno"
+//     controls
+//     width="640"
+//     height="360"
+//     poster="//img.youtube.com/vi/IUN664s7N-c/maxresdefault.jpg" alt="Beauty of Nature" 
+//     aria-label="The Breathtaking Beauty of Nature"
+//     data-setup='{
+//         "fluid" : true,
+//         "techOrder": [
+//             "youtube", "html5"
+//         ],
+//         "sources": [{
+//             "type": "video/youtube",
+//             "src": "//youtube.com/watch?v=IUN664s7N-c"
+//         }],
+//         "controlBar": {      
+//           "pictureInPictureToggle": false,
+//           "volumePanel": {
+//               "inline": false
+//           }
+//         }
+//       }'
+//   ></video>
+// </div>
+// ++++
+
+[role="mt-5"]
+== VideoJS Player over Dailymotion
+
+link:{url-dailymotion--home}[Dailymotion, {browser-window--new}] is a
+video-sharing platform. The platform is available worldwide in 180+
+languages, featuring websites for their video content.
+
+The platform is a *monetization* solution that allows allows to directly
+connect to high-quality advertisers through a proprietary Advertising system.
+Like YouTube, videos can be watched for free, but ads are shown on each and
+every video.
+
+++++
+<div class="video-title">
+  <i class="mdib mdib-video mdib-24px mr-2"></i>
+  Morning Energy
+</div>
+
+<div class="mb-8">
+  <video
+    id="vid_x887s09"
+    class="video-js vjs-theme-uno"
+    controls
+    width="640"
+    height="360"
+    poster="/assets/video/poster/dailymotion/meditation.jpg" alt="Morning Energy" 
+    aria-label="Morning Energy"
+    data-setup='{
+        "fluid" : true,
+        "techOrder": [
+            "dailymotion", "html5"
+        ],
+        "sources": [{
+            "type": "video/dailymotion",
+            "src": "//dai.ly/x887s09"
+        }],
+        "controlBar": {      
+          "pictureInPictureToggle": false,
+          "volumePanel": {
+              "inline": false
+          }
+        }
+      }'
+  ></video>
+</div>
+++++
+
+
+++++
+<style>
+
+/* -----------------------------------------------------------------------------
+  styles moved to VJS theme uno at: 
+  assets/theme/j1/modules/videojs/css/themes/uno.css
+*/
+
+</style>
+++++
+
+++++
+<script>
+
+$(function() {
+  // ===========================================================================
+  // take over VideoJS configuration data (JSON data from Ruby)
+  // ---------------------------------------------------------------------------
+  //
+  const videojsDefaultConfigJson = '{"description":{"title":"J1 VideoJS","scope":"Default settings","location":"_data/modules/defaults/videojs.yml"},"defaults":{"enabled":false,"playbackRates":{"enabled":false,"values":[0.25,0.5,1,1.5,2]},"players":{"youtube":{"autoplay":0,"cc_load_policy":0,"controls":0,"disablekb":1,"enablejsapi":1,"fs":0,"iv_load_policy":3,"loop":0,"modestbranding":1,"rel":0,"showinfo":0,"default_poster":"/assets/image/icon/videojs/videojs-poster.png","poster":"maxresdefault.jpg","end":true,"start":true}},"plugins":{"autoCaption":{"enabled":false},"hotKeys":{"enabled":false,"seekStep":15,"volumeStep":0.1,"alwaysCaptureHotkeys":true,"captureDocumentHotkeys":false,"hotkeysFocusElementFilter":"function () { return false }","enableFullscreen":true,"enableHoverScroll":true,"enableInactiveFocus":true,"enableJogStyle":false,"enableMute":true,"enableModifiersForNumbers":true,"enableNumbers":false,"enableVolumeScroll":true,"skipInitialFocus":false},"skipButtons":{"enabled":false,"surroundPlayButton":false,"backwardIndex":1,"forwardIndex":1,"forward":10,"backward":10},"zoomButtons":{"enabled":false,"moveX":0,"moveY":0,"rotate":0,"zoom":1}}}}';
+
+  const videojsUserConfigJson = '{"description":{"title":"J1 VideoJS","scope":"User settings","location":"_data/modules/videojs.yml"},"settings":{"enabled":true,"playbackRates":{"enabled":true},"plugins":{"hotKeys":{"enabled":false,"enableInactiveFocus":false},"skipButtons":{"enabled":true,"surroundPlayButton":true},"zoomButtons":{"enabled":false}}}}';
+
+  // ===========================================================================
+  // create config objects from JSON data
+  // ---------------------------------------------------------------------------
+  const videojsDefaultSettings  = JSON.parse(videojsDefaultConfigJson);
+  const videojsUserSettings     = JSON.parse(videojsUserConfigJson);
+  const videojsConfig           = $.extend(true, {}, videojsDefaultSettings.defaults, videojsUserSettings.settings);
+
+  // ===========================================================================
+  // VideoJS player settings
+  // ---------------------------------------------------------------------------
+  const vjsPlayerType           = 'ytp';
+  const vjsPlaybackRates        = videojsConfig.playbackRates.values;
+
+  // ===========================================================================
+  // VideoJS plugin settings
+  // -----------------------------------------------------------------
+  const piAutoCaption           = videojsConfig.plugins.autoCaption;
+  const piHotKeys               = videojsConfig.plugins.hotKeys;
+  const piSkipButtons           = videojsConfig.plugins.skipButtons;
+  const piZoomButtons           = videojsConfig.plugins.zoomButtons;
+
+  // ===========================================================================
+  // helper functions
+  // ---------------------------------------------------------------------------
+  function addCaptionAfterImage(imageSrc) {
+    const image = document.querySelector(`img[src="${imageSrc}"]`);
+
+    if (image) {
+      // create div|caption container
+      const newDiv = document.createElement('div');
+      newDiv.classList.add('caption');
+      newDiv.textContent = 'Morning Energy';
+
+      // insert div|caption container AFTER the image
+      image.parentNode.insertBefore(newDiv, image.nextSibling);
+    } else {
+      console.error(`No image found at: ${imageSrc}`);
+    }
+  }
+
+  // ===========================================================================
+  // initialize the VideoJS player (on page ready)
+  // ---------------------------------------------------------------------------
+  var dependencies_met_page_ready = setInterval(function(options) {
+    var pageState       = $('#content').css("display");
+    var pageVisible     = (pageState == 'block') ? true : false;
+    var j1CoreFinished  = (j1.getState() === 'finished') ? true : false;
+
+    if (j1CoreFinished && pageVisible) {
+      // const vjs_player  = document.getElementById("vid_2rtQOsWaAXc");
+      const vjs_player  = document.getElementById('vid_x887s09');
+
+      // add captions (on poster image)
+      // naddCaptionAfterImage('//img.youtube.com/vi/IUN664s7N-c/maxresdefault.jpg');
+      addCaptionAfterImage('/assets/video/poster/dailymotion/meditation.jpg');
+      
+      // scroll page to the players top position
+      // -----------------------------------------------------------------------
+      vjs_player.addEventListener('click', function(event) {
+        const targetDiv         = document.getElementById("vid_x887s09");
+        const targetDivPosition = targetDiv.offsetTop;
+        const scrollOffset      = (window.innerWidth >= 720) ? -130 : -110;
+
+        // scroll player to top position
+        window.scrollTo(0, targetDivPosition + scrollOffset);
+      });// END EventListener 'click'
+
+      clearInterval(dependencies_met_page_ready);
+    }
+  }, 10);
+
+  // customize the yt player created
+  // ---------------------------------------------------------------------------
+  var dependencies_met_vjs_player_exist = setInterval(function(options) {
+    var vjsPlayerExist = document.getElementById("vid_x887s09") ? true : false;
+
+    if (vjsPlayerExist) {
+
+      // apply player customization on 'player ready'
+      videojs("vid_x887s09").ready(function() {
+        const vjsPlayer = this;
+
+        // create customControlContainer for progressControlSilder|time (display) elements
+        const customProgressContainer = vjsPlayer.controlBar.addChild('Component', {
+          el: videojs.dom.createEl('div', {
+            className: 'vjs-theme-uno custom-progressbar-container'
+          })
+        });
+
+        // move progressControlSlider into customControlContainer
+        const progressControlSlider = vjsPlayer.controlBar.progressControl;
+        if (progressControlSlider) {
+          customProgressContainer.el().appendChild(progressControlSlider.el());
+        }
+
+        // move currentTimeDisplay BEFORE the progressControlSilder
+        const currentTimeDisplay = vjsPlayer.controlBar.currentTimeDisplay;
+        if (currentTimeDisplay) {
+          customProgressContainer.el().insertBefore(currentTimeDisplay.el(), progressControlSlider.el());
+        }
+
+        // move the durationDisplay AFTER the progressControlSilder
+        const durationDisplay = vjsPlayer.controlBar.durationDisplay;
+        if (durationDisplay) {
+          customProgressContainer.el().appendChild(durationDisplay.el());
+        }
+
+        // add|skip playbackRates
+        if (videojsConfig.playbackRates.enabled) {
+          vjsPlayer.playbackRates(vjsPlaybackRates);
+        }
+
+        // add|skip skipButtons plugin
+        if (piSkipButtons.enabled) {
+          var backwardIndex = piSkipButtons.backward;
+          var forwardIndex  = piSkipButtons.forwardIndex;
+
+          // property 'surroundPlayButton' takes precendence
+          if (piSkipButtons.surroundPlayButton) {
+              var backwardIndex = 0;
+              var forwardIndex  = 1;
+          }
+
+          vjsPlayer.skipButtons({
+            backwardIndex: backwardIndex,
+            forwardIndex: forwardIndex,
+            backward: piSkipButtons.backward,
+            forward: piSkipButtons.forward,
+          });
+        }
+
+        // set start position of current video (on play)
+        // ---------------------------------------------------------------------
+        var appliedOnce = false;
+        vjsPlayer.on("play", function() {
+          var startFromSecond = new Date('1970-01-01T' + "00:00:00" + 'Z').getTime() / 1000;
+          if (!appliedOnce) {
+              vjsPlayer.currentTime(startFromSecond);
+              appliedOnce = true;
+          }
+        });
+
+      }); // eventListener on 'player ready'
+
+      clearInterval(dependencies_met_vjs_player_exist);
+    } // END if 'vjsPlayerExist'
+  }, 10); // END 'dependencies_met_vjs_player_exist'
+}); // END 'document ready'
+
+</script>
+++++
+

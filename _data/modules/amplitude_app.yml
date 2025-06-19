@@ -1,0 +1,535 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/amplitude_app.yml
+# User Configuration (PLAYERS) of the AmplitudeJS Module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2025 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                AmplitudeJS
+  scope:                                User settings (PLAYERS)
+  location:                             _data/modules/amplitude_players.yml
+
+# ------------------------------------------------------------------------------
+# User settings
+#
+settings:
+
+  # ============================================================================
+  # PLAYER configuration
+  # ----------------------------------------------------------------------------
+  players:
+
+    # --------------------------------------------------------------------------
+    # MINI player, Disco 80th
+    # --------------------------------------------------------------------------
+    #
+    - player:
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      volume_slider:
+        enabled:                        true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               disco_mini
+      type:                             mini
+
+      # ------------------------------------------------------------------------
+      # TIME settings
+      display_hours:                    false
+
+      playlist:
+        name:                           free_disco
+        title:                          Disco 80th
+        controls:                       true
+
+    # --------------------------------------------------------------------------
+    # COMPACT player, Disco 80th
+    # --------------------------------------------------------------------------
+    #
+    - player:
+      enabled:                          true
+
+      plugin_manager:
+        enabled:                        true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               disco_compact
+      type:                             compact
+      audio_info:                       true
+      audio_rating:                     true
+
+      # ------------------------------------------------------------------------
+      # TIME settings
+      display_hours:                    false
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      volume_slider:
+        enabled:                        true
+        preset_value:                   50
+
+      playlist:
+        name:                           free_disco
+        title:                          Disco 80th
+        controls:                       true
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Disco 80th
+    # --------------------------------------------------------------------------
+    #
+    - player:
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               disco_large
+      type:                             large
+      audio_info:                       true
+      audio_rating:                     true
+
+      # ------------------------------------------------------------------------
+      # TIME settings
+      display_hours:                    false
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+
+      playlist:
+        name:                           free_disco
+        title:                          Disco 80th
+        audio_info:                     false
+        controls:                       false
+
+    # --------------------------------------------------------------------------
+    # MINI player, Emancipator
+    # --------------------------------------------------------------------------
+    #
+    - player:
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # TIME settings
+      display_hours:                    false
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      volume_slider:
+        enabled:                        true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               emancipator_mini
+      type:                             mini
+
+      playlist:
+        name:                           emancipator
+        title:                          Emancipator
+        controls:                       true
+
+    # --------------------------------------------------------------------------
+    # COMPACT player, Emancipator
+    # --------------------------------------------------------------------------
+    #
+    - player:
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      volume_slider:
+        enabled:                        true
+        # preset_value:                 50
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               emancipator_compact
+      type:                             compact
+      audio_info:                       true
+      audio_rating:                     true
+
+      playlist:
+        name:                           emancipator
+        title:                          Emancipator
+        controls:                       true
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Emancipator
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #     
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # TIME settings
+      display_hours:                    false
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      volume_slider:
+        enabled:                        true
+        preset_value:                   50
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               emancipator_large
+      type:                             large
+      audio_info:                       true
+      audio_rating:                     true
+
+      playlist:
+        name:                           emancipator
+        title:                          Emancipator
+        controls:                       false
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Ephraim Kishon - Beste Familiengeschichten
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #     
+      enabled:                          true
+
+      id:                               familiengeschichten_yt_large
+      type:                             large
+      source:                           video
+      loop:                             false
+      display_hours:                    true
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      forward_backward_skip_seconds:    60
+      delay_after_video_loaded:         750
+
+      volume_slider:
+        enabled:                        true
+        preset_value:                   50
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      playlist:
+        name:                           familiengeschichten_yt
+        title:                          Ephraim Kishon
+        audio_info:                     true
+        audio_rating:                   true     
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Ephraim Kishon - Beste Autofahrergeschichten
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #     
+      enabled:                          true
+
+      id:                               autofahrer_geschichten_yt_large
+      type:                             large
+      source:                           video
+      loop:                             false
+      display_hours:                    true
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      forward_backward_skip_seconds:    30
+      delay_after_video_loaded:         750
+
+      volume_slider:
+        enabled:                        true
+        preset_value:                   50
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      playlist:
+        name:                           autofahrer_geschichten_yt
+        title:                          Ephraim Kishon
+        audio_info:                     true
+        audio_rating:                   true   
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Manon Mélodie
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #    
+      enabled:                          true
+
+      id:                               manon_melodie_yt_large
+      type:                             large
+      source:                           video
+      display_hours:                    false
+      audio_fade_in:                    true
+      audio_fade_out:                   true
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      forward_backward_skip_seconds:    10
+      volume_slider:
+        enabled:                        true
+        preset_value:                   50
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #      
+      playlist:
+        name:                           manon_melodie_yt
+        title:                          Manon Mélodie
+        audio_info:                     true
+        audio_rating:                   true
+        shuffle:                        true
+        controls:                       false                                   # currently NOT supported for YTP
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Bea and her Business
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #    
+      enabled:                          true
+
+      id:                               bea_yt_large
+      type:                             large
+      source:                           video
+      display_hours:                    false
+      audio_fade_in:                    true
+      audio_fade_out:                   true
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      forward_backward_skip_seconds:    10
+      volume_slider:
+        enabled:                        true
+        preset_value:                   50
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #      
+      playlist:
+        name:                           bea_yt
+        title:                          Bea and her Business
+        audio_info:                     true
+        audio_rating:                   true
+        shuffle:                        true
+        controls:                       false
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Diana Krall
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #     
+      enabled:                          true
+
+      id:                               diana_krall_yt_large
+      type:                             large
+      source:                           video
+      display_hours:                    false
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      forward_backward_skip_seconds:    10
+      volume_slider:
+        enabled:                        true
+        preset_value:                   50
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      playlist:
+        name:                           diana_krall_yt
+        title:                          Diana Krall
+        audio_info:                     true
+        audio_rating:                   false   
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Mimi Rutherfurt
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #     
+      enabled:                          true
+
+      id:                               mimi_rutherfurt_yt_large
+      type:                             large
+      source:                           video
+      display_hours:                    false
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      forward_backward_skip_seconds:    30
+      volume_slider:
+        enabled:                        true
+        preset_value:                   50
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      playlist:
+        name:                           mimi_rutherfurt_yt
+        title:                          Mimi Rutherfurt
+        audio_info:                     true
+        audio_rating:                   true     
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Die größten Fälle des BND
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #
+      enabled:                          false
+
+      id:                               faelle_des_bnd_yt_large
+      type:                             large
+      source:                           video
+
+      # ------------------------------------------------------------------------
+      # TIME settings
+      display_hours:                    true
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      forward_backward_skip_seconds:    30
+      volume_slider:
+        enabled:                        true
+        preset_value:                   50
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      playlist:
+        name:                           faelle_des_bnd_yt
+        title:                          Die größten Fälle des BND
+        audio_info:                     true
+        audio_rating:                   true
+
+# ------------------------------------------------------------------------------
+# END config

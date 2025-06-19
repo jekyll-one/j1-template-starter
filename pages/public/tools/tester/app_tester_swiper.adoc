@@ -1,0 +1,87 @@
+---
+title:                                  J1 Swiper
+title_extention:                        Replacemant for Backstretch
+tagline:                                Replacemant for Backstretch
+date:                                   2025-05-22
+#last_modified:                         2025-01-01
+
+description: >
+                                        SwiperJS is a Javascript API that creates modern
+                                        slider shows. All sliders use hardware-accelerated
+                                        features like 3D transitions to perform best on modern
+                                        devices. SwiperJS-based sliders are intended to be
+                                        displayed at their best on all types of websites, such
+                                        as those viewed on desktop computers, tablets, or
+                                        smartphones.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        html, html5, sliders, carousels, SwiperJS
+
+categories:                             [ Tester ]
+tags:                                   [ SwiperJS ]
+
+image:
+  path:                                 /assets/image/module/attic/markus-spiske-1920x1280.jpg
+  width:                                1920
+  height:                               1280
+
+compress:                               false
+regenerate:                             false
+personalization:                        true
+permalink:                              /pages/public/tools/tester/swiper/
+
+resources:                              [ swiperjs ]
+resource_options:
+  - toccer:
+      collapseDepth:                    3
+  - attic:
+      enabled:                          false
+      slides:
+        - url:                          //kj.de/images/media/6078_20579.jpg
+          alt:                          Diana Krall
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Attribute settings for section control
+//
+:swiper--features:                      false
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+swiper::attic_swiper[role="mb-8"]
+
+// ++++
+// <!-- Swiper elements (El) -->
+// <div id="swiper_image_base" class="swiper swiper-container">
+//   <!-- Swiper Wrapper (slides) -->
+//   <ul class="swiper-wrapper">
+//     <!-- flat swiper slide HTML -->
+//     <li class="swiper-slide">
+//       <img src="/assets/image/module/swiper/simple/test/image/diana_krall.jpg" alt="Slide Image diana_krall">
+//     </li>
+//   </ul>
+//   <!-- END Swiper Wrapper (slides) -->
+// </div>
+// <!-- END Swiper Container (elements) -->
+// ++++

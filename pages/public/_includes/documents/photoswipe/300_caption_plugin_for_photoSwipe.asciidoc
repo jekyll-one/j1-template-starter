@@ -1,0 +1,324 @@
+[role="mt-5"]
+[[photoswipe-captions-plugin]]
+=== Lightbox Captions
+
+PhotoSwipe does not support captions out of the box, but a *plugin* is available.
+The plugin can *automatically position* the text below or aside the image,
+depending on the available space for small to medium-sized captions *and* only
+for images with the default `fit` scale mode.
+
+link:https://dimsemenov.github.io/photoswipe-dynamic-caption-plugin/[Plugin demo] 
+
+For accessibility, make sure that important captions are always
+available without PhotoSwipe - either use an `alt` attribute on
+thumbnails or `aria-labelledby`.
+
+[role="mt-5"]
+[[photoswipe-captions-plugin-initialization]]
+=== Initialization
+
+The plugin has a single JS file *photoswipe-caption-plugin.min.js*
+and a single CSS file *photoswipe-caption-plugin.css*. The plugin can be
+initialized like so:
+
+[role="mt-4"]
+=== Base HTML Layout v1
+
+lorem:sentences[3]
+
+[source, html]
+----
+<!-- Slider main container (required) -->
+<div id="gallery_id" class="swiper swiper-container">
+
+  <!-- Slider wrapper element (required) -->
+  <div class="swiper-wrapper">
+    <!-- Slides (required) -->
+    <div class="swiper-slide">
+      <img src="path/to/image-1.jpg">
+      <span class="pswp-caption-content">Caption: Image 1</span>
+    </div>
+    <!-- more slides -->
+    <div class="swiper-slide">
+      <img src="path/to/image-x.jpg">
+      <span class="pswp-caption-content">Caption: Image X</span>
+    </div>
+  </div> <!-- END wrapper element -->
+  
+  <!-- Sniper Pagination (optional) -->
+  <div class="swiper-pagination"></div>
+
+  <!-- Sniper Navigation (optional) -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- Sniper Scrollbar (optional)-->
+  <div class="swiper-scrollbar"></div>
+
+</div> <!-- END Main container -->
+----
+
+[role="mt-5"]
+=== Base HTML Layout v2
+
+lorem:sentences[3]
+
+[source, html]
+----
+<!-- Slider main container (required) -->
+<div id="gallery_id" class="swiper swiper-container">
+
+  <!-- Slider wrapper element (required) -->
+    <ul class="swiper-wrapper">
+      <!-- Slides (required) -->
+      <li class="swiper-slide">
+        <img src="path/to/image-1.jpg">
+        <span class="pswp-caption-content">Caption: Image 1</span>
+      </li>
+      <!-- more slides -->
+      <li class="swiper-slide">
+        <img src="path/to/image-x.jpg">
+        <span class="pswp-caption-content">Caption: Image X</span>
+      </li>
+    </ul> <!-- END swiper-wrapper (slides) -->
+
+  <!-- Sniper Pagination (optional) -->
+  <div class="swiper-pagination"></div>
+
+  <!-- Sniper Navigation (optional) -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- Sniper Scrollbar (optional)-->
+  <div class="swiper-scrollbar"></div>
+
+</div> <!-- END Main container -->
+----
+
+[role="mt-5"]
+=== Extended HTML Layout
+
+lorem:sentences[3]
+
+[source, html]
+----
+<!-- Slider main container (required) -->
+<div id="gallery_id" class="swiper swiper-container">
+
+  <!-- Slider wrapper element (required) -->
+  <ul class="swiper-wrapper">
+    <!-- Slides (required) -->
+    <li class="swiper-slide">
+      <a href="path/to/image-1.jpg"
+        data-pswp-width="<max_width>"
+        data-pswp-height="<max_height>">
+        <img src="path/to/image-1.jpg" alt="Image 1">
+        <span class="pswp-caption-content">Caption: Image 1</span>
+      </a>
+    </li>
+    <!-- more slides -->
+    <li class="swiper-slide">
+      <a href="path/to/image-x.jpg"
+        data-pswp-width="<max_width>"
+        data-pswp-height="<max_height>">
+        <img src="path/to/image-x.jpg" alt="Image X">
+        <span class="pswp-caption-content">Caption: Image X</span>
+      </a>
+    </li>
+  </ul> <!-- END swiper-wrapper (slides) -->
+
+  <!-- Sniper Pagination (optional) -->
+  <div class="swiper-pagination"></div>
+
+  <!-- Sniper Navigation (optional) -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- Sniper Scrollbar (optional)-->
+  <div class="swiper-scrollbar"></div>
+
+</div> <!-- END Main container -->
+----
+
+[role="mt-5"]
+=== Sniper Initialization (Javascript)
+
+lorem:sentences[3]
+
+[source, html]
+----
+<!-- Sniper Initialization (Javascript) -->
+<script>
+  const myLightbox = new PhotoSwipeLightbox({
+    gallerySelector: '#my_gallery',
+    pswpModule: PhotoSwipe,
+    // .. other options
+  });
+
+  const captionPlugin = new PhotoSwipeDynamicCaption(myLightbox, {
+    type: 'auto'
+  });
+
+  // init photoswipe core >>after<< the plugin is added
+  myLightbox.init();
+</script>
+----
+
+[role="mt-5"]
+[[photoswipe-captions-plugin-parameters]]
+== Parameters
+
+lorem:sentences[3]
+
+// .HTML Structure
+// [source, html]
+// ----
+// <a href="path/to/large-image.jpg" data-pswp-width="1024" data-pswp-height="768">
+//   <img src="path/to/thumbnail.jpg" alt="" />
+//   <span class="pswp-caption-content">Caption content</span>
+// </a>
+// ----
+
+// Or a function that should return *caption content*.
+
+// .Example
+// [source, js]
+// ----
+// captionContent: (slide) => {
+//   return slide.data.element.querySelector('img').getAttribute('alt');
+// }
+// ----
+
+[cols="4,2,2,4a", subs=+macros, options="header", width="100%", role="rtable mt-5"]
+|===
+|Name |Type |Default |Description \| Example
+
+|`captionContent`
+|string
+|_.pswp-caption-content_
+|Used to retrieve caption content. Can be a selector of the element from
+which caption content will be retrieved, if the element is not found, the
+plugin will try to use the thumbnail image `alt` attribute.
+
+|`type`
+|string
+|_auto_
+|Position type of the caption can be _auto_, _below_, or _aside_.
+
+* _below_, caption will always be placed below the image
+* _aside_, caption will always be placed on the right side of the
+  image
+* _auto_, the plugin will try to automatically determine the best
+  position (depending on available space)
+
+|`mobileLayoutBreakpoint`
+|number
+|600
+|Maximum window width at which mobile layout should be used, or a
+function that should return true if mobile layout should be used. 
+
+.Example
+[source, js]
+----
+mobileLayoutBreakpoint: (pswp, captionPlugin) => {
+  return (window.innerWidth < 750);
+}
+----
+
+|`horizontalEdgeThreshold`
+|number
+|20
+|When the caption `x` position is less than this value, it'll get class
+`pswp__dynamic-caption--on-hor-edge`. You may use it to apply
+different styling, such as horizontal padding.
+
+|`mobileCaptionOverlapRatio`
+|number
+|0.3
+|Ratio defines the amount of horizontal empty space before the mobile
+caption switches to an "`overlap`" layout. For example, if it's set to
+0.3 - the caption will start overlapping the image when more than 30% of
+horizontal space is not occupied by an image. If you set it to 0 - the
+caption will always overlap. If you set it to 1 - the caption will
+constantly shift the image (unless it's taller than the viewport).
+
+|`verticallyCenterImage`
+|boolean
+|`false`
+|If enabled, the image will always be vertically centered in the
+remaining space between the caption and the rest of the viewport. If set
+to false (default value) - the image will lift up only if the caption
+does not fit below.
+
+|===
+
+[role="mt-5"]
+[[photoswipe-captions-plugin-styling]]
+== Styling
+
+The caption has class `pswp__dynamic-caption`.
+
+It can be in one of these states:
+
+* Below the main image - `pswp__dynamic-caption--below`.
+* Right side of the main image - `pswp__dynamic-caption--aside`.
+* "`Mobile`" (by default just pinned to bottom) -
+`pswp__dynamic-caption--mobile`
+
+If the caption is near the left horizontal edge - it gets class
+`pswp__dynamic-caption--on-hor-edge`.
+
+Feel free to adjust styles in the *plugin CSS file* (and use media
+queries if you need to):
+
+[source, css]
+----
+.pswp__dynamic-caption--aside {
+  max-width: 300px;
+  padding: 20px 15px 20px 20px;
+  margin-top: 70px;
+}
+.pswp__dynamic-caption--below {
+  max-width: 700px;
+  padding: 15px 0 0;
+}
+.pswp__dynamic-caption--mobile {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+}
+----
+
+[role="mt-5 mb-8"]
+=== How auto positioning works
+
+* Check if there is more horizontal or vertical free space around the
+  image.
+
+* If there is more free vertical space:
+** Set caption width to the width of the image
+** Add `pswp__dynamic-caption--below` class, so the size can also be
+   adjusted via CSS.
+** Measure caption height.
+** Check if the caption will fit without any adjustments to the image
+   position.
+*** If it does - just show the caption below the image.
+*** If it doesn't - reduce the pan area height by the height of the
+    caption.
+
+* If there is more horizontal space:
+** Add `pswp__dynamic-caption--aside` class, so the size can be
+   adjusted via CSS.
+** Measure caption width.
+** Check if caption will fit on the right side without any adjustments
+   of image position.
+*** If it does - just show the caption aside from the image.
+*** If it doesn't - reduce the pan area width by the width of the
+    caption.
+
+If `mobileLayoutBreakpoint` requirements are met:
+
+* Measure caption height when it occupies 100% of width.
+* Reduce pan area height to fit the caption below the image.
+* Check the amount of free horizontal space after the adjustment.
+* If there is too much horizontal space (`mobileCaptionOverlapRatio`),
+  just overlap the caption and keep the image at the default position.

@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -140,8 +140,14 @@ description:
 #
 defaults:
 
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
+
   readmore_text:                        read
-  post_image:                           /assets/images/modules/attics/christa-dodoo-1920x1280.jpg
+  post_image:                           /assets/image/module/attic/christa-dodoo-1920x1280.jpg
   previewer:                            timeline
 
   filters:

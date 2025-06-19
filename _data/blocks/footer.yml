@@ -5,17 +5,18 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 #
 # ------------------------------------------------------------------------------
 # NOTE: All footer id's has to be prefixed by 'footer_'
 #
 # ------------------------------------------------------------------------------
+
 # ------------------------------------------------------------------------------
-# Description (used for J1 CC only)
+# Description
 #
 description:
 
@@ -56,8 +57,8 @@ settings:
             height:                     4                                       # [1 .. 9]
             style:                      wave-4
             transform:                  false                                   # false or rotate|flip-x|flip-y and combinations
-            color:                      "#455A64"
-            background_color:           "#fafafa"
+            color:                      var(--md-blue-gray-700)
+            background_color:           var(--md-gray-50)
 
         # ----------------------------------------------------------------------
         # ISSUE settings
@@ -80,19 +81,24 @@ settings:
             enabled:                    true
             href:                       //github.com/jekyll-one/j1-starter
           facebook:
-            enabled:                    true
+            enabled:                    false
             href:                       "#"
 #           href:                       //www.facebook.com/<your_profile>/
           twitter:
-            enabled:                    true
+            enabled:                    false
             href:                       "#"
 #           href:                       //twitter.com/<your_profile>/
+          twitter_x:
+            enabled:                    false
+            href:                       "#"
+#           href:                       //twitter.com/<your_profile>/
+
           xing:
-            enabled:                    true
+            enabled:                    false
             href:                       "#"
 #           href:                       //www.xing.com/profile/<your_profile>/
           linkedin:
-            enabled:                    true
+            enabled:                    false
             href:                       "#"
 #           href:                       //www.linkedin.com/in/<your_profile>/
 
@@ -176,16 +182,16 @@ settings:
             type:                       about
             enabled:                    true
 
-            title:                      Starter
+            title:                      J1 Template
             title_translation:          notranslate
-            tagline:                    powerful template for jekyll
+            tagline:                    free bootstrap V5 theme for jekyll
             text: >
-                                        The Starter Web of J1 Template is a full-featured template
-                                        for Jekyll to create modern dynamic websites. The template
-                                        system provides a clean implementation for starting new projects.
+                                        The build-in web of J1 Template is a full-featured theme
+                                        for Jekyll to create modern dynamic websites based on Bootstrap V5.
+                                        The theme provides a clean implementation for starting new projects
+                                        of any type.
                                         <br><br>
-                                        J1 Template is Open Source, and all the modules included are
-                                        also free to use.
+                                        Jekyll One is open-source and free to use for private and business use.
 
             justify:                    false
 

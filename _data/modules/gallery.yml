@@ -5,34 +5,42 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 
-# ------------------------------------------------------------------------------
+# ==============================================================================
 # Description
+# ==============================================================================
 #
 description:
   title:                                Justified Gallery
   scope:                                User settings
   location:                             _data/apps/justifiedGallery.yml
 
-# ------------------------------------------------------------------------------
+# ==============================================================================
 # User configuration settings
+# ==============================================================================
 #
 settings:
+
+  # ============================================================================
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
   enabled:                              true
 
-  # ----------------------------------------------------------------------------
+  # ============================================================================
   # All galleries available
   # ----------------------------------------------------------------------------
+  #
   galleries:
 
     # ==========================================================================
     # Image Galleries
-    # ==========================================================================
+    # --------------------------------------------------------------------------
 
     # --------------------------------------------------------------------------
     # Old Times
@@ -42,8 +50,7 @@ settings:
 
       id:                               jg_old_times
       type:                             image
-      image_base_path:                  /assets/images/modules/gallery/old_times
-      thumb_base_path:                  /assets/images/modules/gallery/old_times
+      image_base_path:                  /assets/image/module/gallery/old_time/image/grand_pa
 
       # ------------------------------------------------------------------------
       # Justified Gallery settings
@@ -75,36 +82,32 @@ settings:
       images:
 
         - image:                        # image
-          file:                         image_01.jpg
+          file:                         image-1.jpg
+          caption_text:                 GrandPa &middot; 80th Birthday
           description: >
-                                        <h5>GrandPa</h5>
-                                        <h6>80th Birthday</h6>
-          caption:
-            text:                       GrandPa &middot; 80th Birthday
+                                        <h2>GrandPa</h2>
+                                        <h3>80th Birthday</h3>
 
         - image:                        # image
-          file:                         image_02.jpg
+          file:                         image-2.jpg
+          caption_text:                 GrandPa &middot; 80th Birthday
           description: >
-                                        <h5>GrandPa</h5>
-                                        <h6>80th Birthday</h6>
-          caption:
-            text:                       GrandPa &middot; 80th Birthday
+                                        <h2>GrandPa</h2>
+                                        <h3>80th Birthday</h3>
 
         - image:                        # image
-          file:                         image_03.jpg
+          file:                         image-3.jpg
+          caption_text:                 GrandPa &middot; Annual journey
           description: >
-                                        <h5>GrandPa</h5>
-                                        <h6>Annual journey</h6>
-          caption:
-            text:                       GrandPa &middot; Annual journey
+                                        <h2>GrandPa</h2>
+                                        <h3>Annual journey</h3>
 
         - image:                        # image
-          file:                         image_04.jpg
+          file:                         image-4.jpg
+          caption_text:                 GrandPa &middot; Annual journey
           description: >
-                                        <h5>GrandPa</h5>
-                                        <h6>Annual journey</h6>
-          caption:
-            text:                       GrandPa &middot; Annual journey
+                                        <h2>GrandPa</h2>
+                                        <h3>Annual journey</h3>
 
     # --------------------------------------------------------------------------
     # Gallery Mega Cities
@@ -114,8 +117,8 @@ settings:
 
       id:                               jg_mega_cities
       type:                             image
-      image_base_path:                  /assets/images/modules/gallery/mega_cities
-      thumb_base_path:                  /assets/images/modules/gallery/mega_cities
+      image_base_path:                  /assets/image/module/swiper/simple/mega_city/image
+
 
       # ------------------------------------------------------------------------
       # Justified Gallery settings
@@ -161,103 +164,186 @@ settings:
 
         - image:                        # image 1
           file:                         banter-snaps_b.jpg
+          caption_text:                 Japan &middot; City of Osaka
           description: >
-                                        <h5>Japan</h5>
-                                        <h6>City of Osaka</h6>
-          caption:
-            text:                       Japan &middot; City of Osaka
+                                        <h2>Japan</h2>
+                                        <h3>City of Osaka</h3>
 
         - image:                        # image 2
           file:                         denys-nevozhai-1_b.jpg
+          caption_text:                 China &middot; Man posing at the rooftop of Jin Mao Tower Shanghai
           description: >
-                                        <h5>China</h5>
-                                        <h6>Man posing at the rooftop of Jin Mao Tower Shanghai</h6>
-          caption:
-            text:                       China &middot; Man posing at the rooftop of Jin Mao Tower Shanghai
+                                        <h2>China</h2>
+                                        <h3>Man posing at the rooftop of Jin Mao Tower Shanghai</h3>
 
         - image:                        # image 3
           file:                         gints-gailis_b.jpg
+          caption_text:                 Indonesia &middot; Shangri-La Hotel Jakarta
           description: >
-                                        <h5>Indonesia</h5>
-                                        <h6>Shangri-La Hotel Jakarta</h6>
-          caption:
-            text:                       Indonesia &middot; Shangri-La Hotel Jakarta
+                                        <h2>Indonesia</h2>
+                                        <h3>Shangri-La Hotel Jakarta</h3>
 
         - image:                        # image 4
           file:                         steven-diaz_b.jpg
+          caption_text:                 Indonesia &middot; Shangri-La Hotel Jakarta
           description: >
-                                        <h5>Japan</h5>
-                                        <h6>Tokyo seen from World Trade Center Observation Deck</h6>
-          caption:
-            text:                       Japan - Tokyo seen from World Trade Center Observation Deck
+                                        <h2>Japan</h2>
+                                        <h3>Tokyo seen from World Trade Center Observation Deck</h3>
 
         - image:                        # image 5
           file:                         denys-nevozhai-2_b.jpg
+          caption_text:                 China &middot; Young couple over Shenzhen
           description: >
-                                        <h5>China</h5>
-                                        <h6>Young couple over Shenzhen</h6>
-          caption:
-            text:                       China &middot; Young couple over Shenzhen
+                                        <h2>China</h2>
+                                        <h3>Young couple over Shenzhen</h3>
 
         - image:                        # image 6
           file:                         johan-mouchet_b.jpg
+          caption_text:                 Australia &middot; The Queen Bee at the Eureka Tower of Melbourne
           description: >
-                                        <h5>Australia</h5>
-                                        <h6>The Queen Bee at the Eureka Tower of Melbourne</h6>
-          caption:
-            text:                       Australia &middot; The Queen Bee at the Eureka Tower of Melbourne
+                                        <h2>Australia</h2>
+                                        <h3>The Queen Bee at the Eureka Tower of Melbourne</h3>
 
         - image:                        # image 7
           file:                         thomas-tucker_b.jpg
+          caption_text:                 Taiwan &middot; Sunset over City of Taipei
           description: >
-                                        <h5>Taiwan</h5>
-                                        <h6>Sunset over City of Taipei</h6>
-          caption:
-            text:                       Taiwan &middot; Sunset over City of Taipei
+                                        <h2>Taiwan</h2>
+                                        <h3>Sunset over City of Taipei</h3>
 
         - image:                        # image 8
           file:                         emmad-mazhari_b.jpg
+          caption_text:                 United States &middot; City of Chicago
           description: >
-                                        <h5>United States</h5>
-                                        <h6>City of Chicago</h6>
-          caption:
-            text:                       United States &middot; City of Chicago
+                                        <h2>United States</h2>
+                                        <h3>City of Chicago</h3>
 
         - image:                        # image 9
           file:                         federico-rizzarelli_b.jpg
+          caption_text:                 China &middot; City of Shanghai
           description: >
-                                        <h5>China</h5>
-                                        <h6>City of Shanghai</h6>
-          caption:
-            text:                       China &middot; City of Shanghai
+                                        <h2>China</h2>
+                                        <h3>City of Shanghai</h3>
 
         - image:                        # image 10
           file:                         andreas-brucker_b.jpg
+          caption_text:                 Thailand &middot; City of Bangkok
           description: >
-                                        <h5>Thailand</h5>
-                                        <h6>City of Bangkok</h6>
-          caption:
-            text:                       Thailand &middot; City of Bangkok
+                                        <h2>Thailand</h2>
+                                        <h3>City of Bangkok</h3>
 
         - image:                        # image 11
           file:                         luca-bravo_b.jpg
+          caption_text:                 Taiwan &middot; Sunset over City of Taipei
           description: >
-                                        <h5>Taiwan</h5>
-                                        <h6>Sunset over City of Taipei</h6>
-          caption:
-            text:                       Taiwan &middot; Sunset over City of Taipei
+                                        <h2>Taiwan</h2>
+                                        <h3>Sunset over City of Taipei</h3>
 
         - image:                        # image 12
           file:                         ethan-brooke_b.jpg
+          caption_text:                 South Korea &middot; Lotte World Tower Seoul
           description: >
-                                        <h5>South Korea</h5>
-                                        <h6>Lotte World Tower Seoul</h6>
-          caption:
-            text:                       South Korea &middot; Lotte World Tower Seoul
+                                        <h2>South Korea</h2>
+                                        <h3>Lotte World Tower Seoul</h3>
+
+
+      # ========================================================================
+      # VideoJS settings
+      # See settings: //jekyll.one/pages/public/manuals/videojs/videojs_api/
+      # ------------------------------------------------------------------------
+      #
+      videojs:
+        enabled:                        true
+        theme:                          uno
+
+        # ----------------------------------------------------------------------
+        # Player settings
+        # See: //jekyll.one/pages/public/manuals/videojs/lightgallery_api
+        # ----------------------------------------------------------------------
+        #
+        player:
+          enabled:                      true
+
+          # VideoJS
+          # --------------------------------------------------------------------
+          videojsPlayer:
+            enabled:                    true
+
+            options:
+              muted:                    false
+              preload:                  false
+              autoplayFirstVideo:       true
+              playbackRates:            [0.25, 0.5, 1, 1.5, 2]
+
+            controls:                   true
+            controlBar:
+              remainingTimeDisplay:     true
+              pictureInPictureToggle:   false
+              playbackRates:            [0.25, 0.5, 1, 1.5, 2]
+
+              volumePanel:
+                inline:                 false
+
+              hotkeysPlugin:
+                enabled:                true
+                options:
+                  volumeStep:           0.2
+
+              skipButtonsPlugin:
+                enabled:                  true
+                options:
+                  forward:                15
+                  backward:               15
+
+              zoomButtonsPlugin:
+                enabled:                true
+                options:
+                  moveX:                0
+                  moveY:                0
+                  rotate:               0
+                  zoom:                 1
+
+          # Vimeo
+          # --------------------------------------------------------------------
+          vimeoPlayer:
+            enabled:                    true
+            api:                        native                                  # native|videojs
+
+            options:
+              autoPlay:                 true
+              muted:                    true
+  #             byline:                   0
+  #             portrait:                 0
+  #             color:                    var(--md-gray-100)
+
+
+          # Wistia
+          # --------------------------------------------------------------------
+          wistiaPlayer:
+            enabled:                    true
+            api:                        native                                  # native|videojs
+
+            options:
+              autoPlay:                 true
+              fullscreenButton:         true
+              muted:                    false
+              qualityControl:           false
+
+          # Youtube
+          # --------------------------------------------------------------------
+          youTubePlayer:
+            enabled:                    true
+            api:                        videojs                                 # native|videojs
+
+            options:
+              autoPlay:                 true
+              muted:                    true
+              showinfo:                 true
+              controls:                 true
 
     # ==========================================================================
     # Video Galleries
-    # ==========================================================================
+    # --------------------------------------------------------------------------
 
     # --------------------------------------------------------------------------
     # HTML5 VIDEO
@@ -268,9 +354,9 @@ settings:
       id:                               jg_video_html5
       type:                             video
       video:                            html5
-      video_base_path:                  /assets/videos/gallery/html5
-      image_base_path:                  /assets/videos/gallery
-      thumb_base_path:                  /assets/videos/gallery
+      video_base_path:                  /assets/video/html5
+      image_base_path:                  /assets/video/poster/html5
+      thumb_base_path:                  /assets/video/poster/html5
 
       # ------------------------------------------------------------------------
       # Justified Gallery settings
@@ -297,29 +383,53 @@ settings:
           alignThumbnails:              left
           animateThumb:                 true
           autoplayFirstVideo:           true
-          videojs:                      true
+          videojs:                      true                                    # jadams: !!!
           videojsTheme:                 vjs-theme-uno
 
         videojsOptions:
           enabled:                      true
 
-#         videoStart:                   ["00:00:30", "00:01:30"]                  # start time (hh:mm:ss) for [video1, video2]
-          controls:                     true
           muted:                        false
           preload:                      true
-          playbackRates:                [0.25, 0.5, 1, 1.5, 2]
-          zoomPlugin:
+
+          controls:                     true
+
+          hotKeysPlugin:
             enabled:                    true
-#           options:
-#             moveX:                    0
-#             moveY:                    0
-#             rotate:                   0
-#             zoom:                     1
+
+            options:
+              volumeStep:               0.2          
+
           controlBar:
+            playbackRates:              [0.25, 0.5, 1, 1.5, 2]
             remainingTimeDisplay:       true
             pictureInPictureToggle:     false
+
             volumePanel:
               inline:                   false
+
+            skipButtonsPlugin:
+              enabled:                  true
+
+              options:
+                forward:                5
+                backward:               5
+                backwardIndex:          0
+                forwardIndex:           1
+
+            zoomPlugin:
+              enabled:                  true
+
+              showZoom:                 true
+              showMove:                 false
+              showRotate:               false
+              gestureHandler:           false
+
+              options:
+                moveX:                  0
+                moveY:                  0
+                rotate:                 0
+                zoom:                   1
 
       # ------------------------------------------------------------------------
       # CSS filter options
@@ -341,18 +451,16 @@ settings:
 
           name:                         Peck Pocketed
           type:                         html5
-          size:                         "1280-720"
-          source:                       video1.mp4
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       peck_pocketed.mp4
+          poster_image:                 peck_pocketed.jpg
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
+          caption_text:                 Peck Pocketed &middot; Student Academy Award winning Cartoon Clip
           description: >
-                                        <h5>Peck Pocketed by Kevin Herron | Disney Favorite</h5>
-                                        <h6>Student Academy Award winning Cartoon Clip</h6>
-                                        <br>
-          caption:
-            text:                       "Peck Pocketed &middot; Student Academy Award winning Cartoon Clip"
-          poster:
-            source:                     video1-poster.jpg
+                                        <h2>Peck Pocketed by Kevin Herron | Disney Favorite</h2>
+                                        <h3>Student Academy Award winning Cartoon Clip</h3>
 
           tracks:
             - track:
@@ -360,212 +468,41 @@ settings:
               kind:                     captions
               srclang:                  en                                      # Code for the language of the text track
               label:                    English                                 # Descriptive text for the track that will used in the user interface (player)
-              src:                      /assets/videos/vtt/captions/video1.vtt
+              src:                      /assets/video/tracks/html5/peck_pocketed/captions/video.vtt
 
             - track:
               default:                  true                                    # Indicates that the track is to be enabled if the user's preferences do not indicate that another track would be more appropriate
               kind:                     chapters
               srclang:                  en                                      # Code for the language of the text track
               label:                    Chapters                                # Descriptive text for the track that will used in the user interface (player)
-              src:                      /assets/videos/vtt/chapters/video1.vtt
+              src:                      /assets/video/tracks/html5/peck_pocketed/chapters/video.vtt
 
         - video:                        # video 2
           enabled:                      true
 
           name:                         Rollin Wild
           type:                         html5
-          size:                         "1280-720"
-          source:                       video2.mp4
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       rolling_wild.mp4
+          poster_image:                 rolling_wild.jpg
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
+          caption_text:                 Rollin` Wild &middot; Short Funny animated video clip created at the Film Academy
           description: >
-                                        <h5>Rollin` Wild</h5>
-                                        <h6>Short Funny Animated Clip created at the Film Academy</h6>
-                                        <br>
-          caption:
-            text:                       "Rollin` Wild &middot; Short Funny animated video clip created at the Film Academy"
-          poster:
-            source:                     video2-poster.jpg
+                                        <h2>Rollin` Wild</h2>
+                                        <h3>Short Funny Animated Clip created at the Film Academy</h3>
 
     # --------------------------------------------------------------------------
-    # Online VIDEO (YouTube)
+    # Online VIDEO Carpool Karaoke (YouTube)
     #
     - gallery:
       enabled:                          true
 
-      id:                               jg_video_online_youtube
+      id:                               jg_video_youtube_james_and_adele
       type:                             video
       video:                            youtube
-      image_base_path:                  /assets/videos/gallery
-      thumb_base_path:                  /assets/videos/gallery
-
-      # ------------------------------------------------------------------------
-      # Justified Gallery settings
-      # ------------------------------------------------------------------------
-      #
-      gallery_options:
-        rowHeight:                      200
-        gutters:                        3
-
-      # ------------------------------------------------------------------------
-      # Lightbox|lightGallery settings
-      # ------------------------------------------------------------------------
-      #
-      lightbox:
-        enabled:                        true
-        type:                           lg
-
-      lightGallery:
-        plugins:                        lgThumbnail, lgVideo
-
-        options:
-          licenseKey:                   0000-0000-000-0000
-          download:                     false
-          alignThumbnails:              left
-          animateThumb:                 true
-          autoplayFirstVideo:           true
-          videojs:                      false
-
-        videojsOptions:
-          enabled:                      false
-
-        playerParams:
-          enabled:                      true
-          start:                        ["00:00:50", "00:00:50"]                # start time video1, vido2
-          autoplay:                     0
-          controls:                     0
-          enablejsapi:                  1
-          hl:                           en
-          loop:                         0
-          mute:                         0
-          playsinline:                  1
-          wmode:                        opaque
-
-      # ------------------------------------------------------------------------
-      # CSS filter options
-      #
-      filters:
-        enabled:                        false
-        grayscale:                      0
-        contrast:                       1
-        brightness:                     1
-
-      # ------------------------------------------------------------------------
-      # Video settings
-      # ------------------------------------------------------------------------
-      #
-      videos:
-
-        - video:                        # video 1
-          enabled:                      true
-
-          id:                           X5Cfi7U4eL4
-          name:                         Carpool Karaoke Lady Gaga
-          type:                         youtube
-          size:                         "1280-720"
-          source:                       "//youtube.com/watch?v=X5Cfi7U4eL4"
-          pinterest_prefix:             Pin video
-          tweet_prefix:                 Try video
-          description: >
-                                        <h5>Carpool Karaoke</h5>
-                                        <h6>
-                                          Lady Gaga joins James for a drive through Los Angeles
-                                          singing her classics and tracks from her new album.
-                                        </h6>
-                                        <br>
-          caption:
-            text:                       "Carpool Karaoke &middot; Lady Gaga"
-          poster:
-            source:                     video_gaga-poster.jpg
-
-          playerParams:
-            enabled:                    false
-
-        - video:                        # video 2
-          enabled:                      true
-
-          name:                         Carpool Karaoke Adele
-          type:                         youtube
-          size:                         "1280-720"
-          source:                       "//youtube.com/watch?v=Nck6BZga7TQ"
-          pinterest_prefix:             Pin video
-          tweet_prefix:                 Try video
-          description: >
-                                        <h5>Carpool Karaoke</h5>
-                                        <h6>
-                                          James Corden is about the holidays in London and gets Adele
-                                          off for a ride through the city. On the way they sing some
-                                          of their biggest hits and Adele raps Nicki Minaj's <b>monster</b>
-                                        </h6>
-                                        <br>
-          caption:
-            text:                       "Carpool Karaoke &middot; Adele"
-          poster:
-            source:                     video_adele-poster.jpg
-
-          playerParams:
-            enabled:                    true
-            start:                      50
-
-        - video:                        # video 3
-          enabled:                      true
-
-          name:                         Carpool Karaoke Gwen Stefani
-          type:                         youtube
-          size:                         "1280-720"
-          source:                       "//youtube.com/watch?v=F2SXmzk8ve4"
-          pinterest_prefix:             Pin video
-          tweet_prefix:                 Try video
-          description: >
-                                        <h5>Carpool Karaoke</h5>
-                                        <h6>
-                                          Gwen Stefani, Julia Roberts, George Clooney and James Corden
-                                          singing Holla back girl, there's nothing left to see
-                                        </h6>
-                                        <br>
-          poster:
-            source:                     video_gwen-poster.jpg
-          caption:
-            text:                       "Carpool Karaoke &middot; Gwen Stefani"
-
-          playerParams:                 false
-
-        - video:                        # video 4
-          enabled:                      true
-
-          name:                         Carpool Karaoke Michelle Obama
-          type:                         youtube
-          size:                         "1280-720"
-          source:                       "//youtube.com/watch?v=ln3wAdRAim4"
-          pinterest_prefix:             Pin video
-          tweet_prefix:                 Try video
-          description: >
-                                        <h5>Carpool Karaoke</h5>
-                                        <h6>
-                                          James Corden's White House tour takes an unthinkable turn
-                                          when First Lady Michelle Obama joins him for a drive around
-                                          the grounds singing Stevie Wonder and Beyonce
-                                        </h6>
-                                        <br>
-          caption:
-            text:                       "Carpool Karaoke &middot; Michelle Obama"
-          poster:
-            source:                     video_michelle-poster.jpg
-
-          playerParams:
-            enabled:                    false
-
-    # --------------------------------------------------------------------------
-    # Online VIDEO (YouTube)
-    #
-    - gallery:
-      enabled:                          true
-
-      id:                               jg_video_online_youtube_james_and_adele
-      type:                             video
-      video:                            youtube
-      image_base_path:                  /assets/videos/gallery
-      thumb_base_path:                  /assets/videos/gallery
+      image_base_path:                  //img.youtube.com/vi
 
       # ------------------------------------------------------------------------
       # Justified Gallery settings
@@ -592,15 +529,47 @@ settings:
           alignThumbnails:              left
           animateThumb:                 true
           autoplayFirstVideo:           true
-          videojs:                      false
+          videojs:                      true                                    # jadams: !!!
+          videojsTheme:                 vjs-theme-uno
 
         videojsOptions:
-          enabled:                      false
+          enabled:                      true
+          muted:                        false
+          preload:                      true
+          controls:                     true
 
-#       See: https://stackoverflow.com/questions/40685142/youtube-autoplay-does-not-work-with-iframe
+          hotKeysPlugin:
+            enabled:                    true
+            options:
+              volumeStep:               0.2          
+
+          controlBar:
+            playbackRates:              [0.25, 0.5, 1, 1.5, 2]
+            remainingTimeDisplay:       true
+            pictureInPictureToggle:     false
+
+            volumePanel:
+              inline:                   false
+
+            skipButtonsPlugin:
+              enabled:                  true
+              options:
+                forward:                5
+                backward:               5
+                backwardIndex:          0
+                forwardIndex:           1
+
+            zoomPlugin:
+              enabled:                  false
+              options:
+                moveX:                  0
+                moveY:                  0
+                rotate:                 0
+                zoom:                   1
+
         playerParams:
           enabled:                      true
-          start:                        ["00:00:50", "00:00:50"]                # start time video1, vido2
+#         start:                        ["00:00:50", "00:00:50"]                # start time video1, vido2
           autoplay:                     1                                       # autoplay = 1 only available for YouTube when muted.
 #         controls:                     1                                       # default = 0
 #         enablejsapi:                  1                                       # default = 1
@@ -628,217 +597,51 @@ settings:
         - video:                        # video 1
           enabled:                      true
 
-          name:                         Carpool Karaoke Lady Gaga
+          name:                         Carpool Karaoke James and Adele
           type:                         youtube
-          size:                         "1280-720"
-          source:                       "//youtube.com/watch?v=Nck6BZga7TQ"
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       //youtube.com/watch?v=Nck6BZga7TQ
+          poster_image:                 Nck6BZga7TQ/mqdefault.jpg               # jadams !!!
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
+          caption_text:                 Carpool Karaoke 2015 &middot; James and Adele
           description: >
-                                        <h5>Carpool Karaoke</h5>
-                                        <h6>
-                                        December 2015 - James is on holidays is about the holidays in
-                                        London and gets Adele off for a ride through the city. On the way
-                                        they sing some of their biggest hits.
-                                        </h6>
-                                        <br>
-          caption:
-            text:                       "Carpool Karaoke &middot; James and Adele"
-          poster:
-            source:                     video_adele-poster.jpg
+                                        <h2>Carpool Karaoke 2015</h2>
+                                        <h3>
+                                          James is on holidays in London and picks up
+                                          Adele for a ride through the city.
+                                          On the way, they sing some of their biggest hits.
+                                        </h3>
 
           playerParams:
-            start:                      50                                      # seconds to start
+            # start:                      50                                    # seconds to start
 
         - video:                        # video 2
           enabled:                      true
 
           name:                         Last Carpool Karaoke
           type:                         youtube
-          size:                         "1280-720"
-          source:                       "//youtube.com/watch?v=nV8UZJNBY6Y"
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       //youtube.com/watch?v=nV8UZJNBY6Y
+          poster_image:                 nV8UZJNBY6Y/mqdefault.jpg               # jadams !!!
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
+          caption_text:                 Carpool Karaoke 2023 &middot; Last Carpool Karaoke Tour
           description: >
-                                        <h5>Carpool Karaoke</h5>
-                                        <h6>
-                                          April 2023 - Adele wakeup James at home for the last Late Night Show,
-                                          for the last Carpool Caraoke ever.
-                                        </h6>
-                                        <br>
-          caption:
-            text:                       "Carpool Karaoke &middot; Last Carpool Karaoke"
-          poster:
-            source:                     video_adele_last_carpool_caraoke_poster.jpg
+                                        <h2>Carpool Karaoke 2023</h2>
+                                        <h3>
+                                          Adele wakeups James at home for the very
+                                          last Late Late Night Show and for the
+                                          final Carpool Caraoke Tour.
+                                        </h3>
 
           playerParams:
-            start:                      50                                      # seconds to start
+            # start:                      50                                    # seconds to start
 
     # --------------------------------------------------------------------------
-    # Online VIDEO 2 (YouTube)
-    #
-    - gallery:
-      enabled:                          true
-
-      id:                               jg_video_online_youtube_voice_kids
-      type:                             video
-      video:                            youtube
-      image_base_path:                  /assets/videos/gallery/voice_kids_de_2021
-      thumb_base_path:                  /assets/videos/gallery/voice_kids_de_2021
-
-      # ------------------------------------------------------------------------
-      # Justified Gallery settings
-      # ------------------------------------------------------------------------
-      #
-      gallery_options:
-        rowHeight:                      200
-        gutters:                        3
-
-      # ------------------------------------------------------------------------
-      # Lightbox|lightGallery settings
-      # ------------------------------------------------------------------------
-      #
-      lightbox:
-        enabled:                        true
-        type:                           lg
-
-      lightGallery:
-        plugins:                        lgThumbnail, lgVideo
-
-        options:
-          licenseKey:                   0000-0000-000-0000
-          download:                     false
-          alignThumbnails:              left
-          animateThumb:                 true
-          autoplayFirstVideo:           true
-          videojs:                      false
-
-        videojsOptions:
-          enabled:                      false
-
-#       See: https://stackoverflow.com/questions/40685142/youtube-autoplay-does-not-work-with-iframe
-        playerParams:
-          enabled:                      true
-          autoplay:                     1                                       # autoplay = 1 only available for YouTube when muted.
-#         controls:                     1                                       # default = 0
-#         enablejsapi:                  1                                       # default = 1
-#         hl:                           en                                      # default = en
-#         loop:                         0                                       # default = 0
-          mute:                         0                                       # default = 1
-#         playsinline:                  1                                       # for mobile|iOS only
-#         wmode:                        opaque                                  # default = opaque
-
-      # ------------------------------------------------------------------------
-      # CSS filter options
-      #
-      filters:
-        enabled:                        false
-        grayscale:                      0
-        contrast:                       1
-        brightness:                     1
-
-      # ------------------------------------------------------------------------
-      # Video settings
-      # ------------------------------------------------------------------------
-      #
-      videos:
-
-        - video:                        # video 1
-          enabled:                      true
-
-          name:                         Voice Kids Constance
-          type:                         youtube
-          size:                         "1280-720"
-          source:                       "//youtube.com/watch?v=aQqPgLMgO-I"
-          pinterest_prefix:             Pin video
-          tweet_prefix:                 Try video
-          description: >
-                                        <h5>
-                                          The Voice Kids Germany 2021 &middot; Constance
-                                        </h5>
-                                        <h6>
-                                          The 14-year-old Constance has dreamed of being on The Voice Kids stage
-                                          for a very long time. Your dream has finally come true! She performs a
-                                          breathtaking version of Sia's song Alive.
-                                        </h6>
-                                        <br>
-          caption:
-            text:                       "Voice Kids Germany 2021 &middot; Constance"
-          poster:
-            source:                     constance.jpg
-
-        - video:                        # video 2
-          enabled:                      true
-
-          name:                         Voice Kids Elisa
-          type:                         youtube
-          size:                         "1280-720"
-          source:                       "//youtube.com/watch?v=Bl6tkAgaP1g"
-          pinterest_prefix:             Pin video
-          tweet_prefix:                 Try video
-          description: >
-                                        <h5>
-                                          The Voice Kids Germany 2021 &middot; Elisa
-                                        </h5>
-                                        <h6>
-                                          The 14-year-old Elisa is fascinated by the classics of pop music.
-                                          Her version of Hey Jude from The Beatles comes with a lot of feeling.
-                                        </h6>
-                                        <br>
-          caption:
-            text:                       "Voice Kids Germany 2021 &middot; Elisa"
-          poster:
-            source:                     elisa.jpg
-
-        - video:                        # video 3
-          enabled:                      true
-
-          name:                         Voice Kids Ben
-          type:                         youtube
-          size:                         "1280-720"
-          source:                       "//youtube.com/watch?v=GuiOYCv9NTI"
-          pinterest_prefix:             Pin video
-          tweet_prefix:                 Try video
-          description: >
-                                        <h5>
-                                          The Voice Kids Germany 2021 &middot; Ben
-                                        </h5>
-                                        <h6>
-                                          The 14-year-old Ben pours all of his emotions into his performance
-                                          of Maroon 5's Sunday Morning. He wants to show what he's made of.
-                                        </h6>
-                                        <br>
-          caption:
-            text:                       "Voice Kids Germany 2021 &middot; Ben"
-          poster:
-            source:                     ben.jpg
-
-        - video:                        # video 3
-          enabled:                      true
-
-          name:                         Voice Kids The Battle
-          type:                         youtube
-          size:                         "1280-720"
-          source:                       "//youtube.com/watch?v=1bvE2mgJ22I"
-          pinterest_prefix:             Pin video
-          tweet_prefix:                 Try video
-          description: >
-                                        <h5>
-                                          The Voice Kids Germany 2021 &middot; The Battle
-                                        </h5>
-                                        <h6>
-                                          The battle of the three young people is a real emotional battle.
-                                          Elisa's husky voice, Constanze's unbelievable power, and Ben's
-                                          rhythm come into their own in Adele's James Bond theme song Skyfall.
-                                        </h6>
-                                        <br>
-          caption:
-            text:                       "Voice Kids Germany 2021 &middot; The Battle"
-          poster:
-            source:                     battle.jpg
-
-    # --------------------------------------------------------------------------
-    # Online VIDEO 3 (Vimeo)
+    # Online VIDEO (Vimeo)
     #
     - gallery:
       enabled:                          true
@@ -846,8 +649,7 @@ settings:
       id:                               jg_video_online_vimeo
       type:                             video
       video:                            vimeo
-      image_base_path:                  /assets/videos/gallery
-      thumb_base_path:                  /assets/videos/gallery
+      image_base_path:                  /assets/video/poster/vimeo
 
       # ------------------------------------------------------------------------
       # Justified Gallery settings
@@ -881,7 +683,7 @@ settings:
 
         playerParams:
           enabled:                      false
-          autoplay:                     0
+          autoplay:                     1
           byline:                       0
           portrait:                     0
           color:                        var(--md-gray-100)
@@ -907,22 +709,15 @@ settings:
 
           name:                         Forever 21
           type:                         vimeo
-          size:                         "1280-720"
-          source:                       "//vimeo.com/179528528"
+          size:                         1280-720
+          source:                       //vimeo.com/179528528
+          poster_image:                 kick_it_old_school.jpg
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
+          caption_text:                 Forever 21 &middot; Kick It Old School
           description: >
-                                        <h5>
-                                          Forever 21
-                                        </h5>
-                                        <h6>
-                                          Kick It Old School
-                                        </h6>
-                                        <br>
-          caption:
-            text:                       "Forever 21 &middot; Kick It Old School"
-          poster:
-            source:                     kick-it-old-school-poster.jpg
+                                        <h2>Forever 21</h2>
+                                        <h3>Kick It Old School</h3>
 
           playerParams:
             start:                      50                                      # seconds to start
@@ -932,21 +727,21 @@ settings:
 
           name:                         Forever 21
           type:                         vimeo
-          size:                         "1280-720"
-          source:                       "//vimeo.com/202117650"
+          size:                         1280-720
+          source:                       //vimeo.com/33929033
+          poster_image:                 fall_2011.jpg
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
+          caption_text:                 Forever 21 &middot; Fall 2011
           description: >
-                                        <h5>Forever 21</h5>
-                                        <h6>Stay Colorful, Babe!</h6>
-                                        <br>
-          caption:
-            text:                       "Forever 21 &middot; Stay Colorful, Babe!"
-          poster:
-            source:                     stay-colorful-poster.jpg
+                                        <h2>Forever 21</h2>
+                                        <h3>Fall 2011</h3>
+
+          playerParams:
+            start:                      50                                      # seconds to start
 
     # --------------------------------------------------------------------------
-    # Online VIDEO (DailyMotion)
+    # Online VIDEO (Dailymotion)
     #
     - gallery:
       enabled:                          true
@@ -954,8 +749,7 @@ settings:
       id:                               jg_video_online_dailymotion
       type:                             video
       video:                            dailymotion
-      image_base_path:                  /assets/videos/gallery/dailymotion
-      thumb_base_path:                  /assets/videos/gallery/dailymotion
+      image_base_path:                  /assets/video/poster/dailymotion
 
       # ------------------------------------------------------------------------
       # Justified Gallery settings
@@ -1010,55 +804,50 @@ settings:
 
           name:                         SELF Channel
           type:                         dailymotion
-          size:                         "1280-720"
-          source:                       "//dai.ly/x887s09"
+          size:                         1280-720
+          source:                       //dai.ly/x887s09
+          poster_image:                 meditation.jpg
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
+          caption_text:                 SELF Channel &middot; Morning Energy
           description: >
-                                        <h5>SELF Channel</h5>
-                                        <h6>Guided Meditation: Morning Energy</h6>
-                                        <br>
-          caption:
-            text:                       "SELF Channel &middot; Morning Energy"
-          poster:
-            source:                     meditation.jpg
+                                        <h2>SELF Channel</h2>
+                                        <h3>Guided Meditation: Morning Energy</h3>
 
         - video:                        # video 2
           enabled:                      true
 
           name:                         SELF Channel
           type:                         dailymotion
-          size:                         "1280-720"
-          source:                       "//dai.ly/x87ycik"
+          size:                         1280-720
+          source:                       //dai.ly/x87ycik
+          poster_image:                 pilates.jpg
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
+          caption_text:                 SELF Channel &middot; Pilates Core Workout
           description: >
-                                        <h5>SELF Channel</h5>
-                                        <h6>Beginner Mat Pilates: Core Workout</h6>
-                                        <br>
-          caption:
-            text:                       "SELF Channel &middot; Pilates Core Workout"
-          poster:
-            source:                     pilates.jpg
+                                        <h2>SELF Channel</h2>
+                                        <h3>Beginner Mat Pilates: Core Workout</h3>
 
     # --------------------------------------------------------------------------
-    # Online VIDEO (TikTok)
+    # HTML5 VIDEO (over VideoJS)
     #
     - gallery:
       enabled:                          true
 
-      id:                               jg_video_online_tiktoc
+      id:                               jg_video_html5_videojs
       type:                             video
-      video:                            tiktoc
-      image_base_path:                  /assets/videos/gallery
-      thumb_base_path:                  /assets/videos/gallery
+      video:                            html5
+      video_base_path:                  /assets/video/html5
+      image_base_path:                  /assets/video/poster/html5
+      thumb_base_path:                  /assets/video/poster/html5
 
       # ------------------------------------------------------------------------
       # Justified Gallery settings
       # ------------------------------------------------------------------------
       #
       gallery_options:
-        rowHeight:                      480
+        rowHeight:                      250
         gutters:                        3
 
       # ------------------------------------------------------------------------
@@ -1076,22 +865,47 @@ settings:
           licenseKey:                   0000-0000-000-0000
           download:                     false
           alignThumbnails:              left
-#         addClass:                     lg-uno-thumbnails                       # customized thumbnails
-#         appendThumbnailsTo:           .lg-outer                               # required for customized thumbnails
-#         animateThumb:                 false                                   # required for customized thumbnails
-#         allowMediaOverlap:            true                                    # required for customized thumbnails
-
           animateThumb:                 true
           autoplayFirstVideo:           true
-          videojs:                      false
+          videojs:                      true                                    # jadams: !!!
+          videojsTheme:                 vjs-theme-uno
 
         videojsOptions:
-          enabled:                      false
+          enabled:                      true
 
-        playerParams:
-          enabled:                      false
-          autoplay:                     0
-          muted:                        0
+          muted:                        false
+          preload:                      true
+
+          controls:                     true
+
+          hotKeysPlugin:
+            enabled:                    true
+            options:
+              volumeStep:               0.2          
+
+          controlBar:
+            playbackRates:              [0.25, 0.5, 1, 1.5, 2]
+            remainingTimeDisplay:       true
+            pictureInPictureToggle:     false
+
+            volumePanel:
+              inline:                   false
+
+            skipButtonsPlugin:
+              enabled:                  true
+              options:
+                forward:                5
+                backward:               5
+                backwardIndex:          0
+                forwardIndex:           1
+
+            zoomPlugin:
+              enabled:                  true
+              options:
+                moveX:                  0
+                moveY:                  0
+                rotate:                 0
+                zoom:                   1
 
       # ------------------------------------------------------------------------
       # CSS filter options
@@ -1111,56 +925,34 @@ settings:
         - video:                        # video 1
           enabled:                      true
 
-          name:                         Gesund
-          type:                         tiktoc
-          size:                         "300-575"
-          source:                       "//tiktok.com/embed/6901614235709869314"
+          name:                         Peck Pocketed
+          type:                         html5
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       peck_pocketed.mp4
+          poster_image:                 peck_pocketed.jpg
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
+          caption_text:                 Peck Pocketed &middot; Student Academy Award winning Cartoon Clip
           description: >
-                                        <h5>Gianna Bacio</h5>
-                                        <h6>Warum 2x wöchentlich Sex gesund ist</h6>
-                                        <br>
-          caption:
-            text:                       "Gianna Bacio &middot; Warum 2x wöchentlich Sex gesund ist"
-          poster:
-            source:                     gianna_1.jpg
+                                        <h2>Peck Pocketed by Kevin Herron | Disney Favorite</h2>
+                                        <h3>Student Academy Award winning Cartoon Clip</h3>
 
         - video:                        # video 2
           enabled:                      true
-
-          name:                         Vergesslichkeit
-          type:                         tiktoc
-          size:                         "300-575"
-          source:                       "//tiktok.com/embed/6938375143181913349"
+        
+          name:                         Rollin Wild
+          type:                         html5
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       rolling_wild.mp4
+          poster_image:                 rolling_wild.jpg
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
+          caption_text:                 Rollin` Wild &middot; Short Funny animated video clip created at the Film Academy
           description: >
-                                        <h5>Gianna Bacio</h5>
-                                        <h6>Sex hilft gegen Vergesslichkeit?!</h6>
-                                        <br>
-          caption:
-            text:                       "Gianna Bacio &middot; Sex hilft gegen Vergesslichkeit?!"
-          poster:
-            source:                     gianna_2.jpg
-
-        - video:                        # video 3
-          enabled:                      true
-
-          name:                         Denken
-          type:                         tiktoc
-          size:                         "300-575"
-          source:                       "//tiktok.com/embed/6919457437510569218"
-          pinterest_prefix:             Pin video
-          tweet_prefix:                 Try video
-          description: >
-                                        <h5>Gianna Bacio</h5>
-                                        <h6>Daran denken die Meisten beim Sex!</h6>
-                                        <br>
-          caption:
-            text:                       "Gianna Bacio &middot; Daran denken die Meisten beim Sex!"
-          poster:
-            source:                     gianna_3.jpg
+                                        <h2>Rollin` Wild</h2>
+                                        <h3>Short Funny Animated Clip created at the Film Academy</h3>
 
 # ------------------------------------------------------------------------------
 # END config

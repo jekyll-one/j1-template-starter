@@ -1,0 +1,203 @@
+---
+title:                                  VideoJS
+title_extention:                        Custom Video Players
+tagline:                                Custom Video Players
+
+date:                                   2024-11-10
+#last_modified:                         2024-01-01
+
+description: >
+                                        The J1 Template support playing video on web pages
+                                        by HTML5 Video, the new standard of HTML to show
+                                        videos on web pages.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        html, html5, video, support, flash player,
+                                        quicktime, silverlight
+
+categories:                             [ Previewer ]
+tags:                                   [ Module, Video ]
+
+image:
+  path:                                 /assets/image/icon/videojs/videojs-poster.png
+  width:                                1920
+  height:                               1280
+
+regenerate:                             false
+personalization:                        true
+permalink:                              /pages/public/tools/previewer/videojs/
+
+resources:                              [ videojs ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/image/icon/videojs/videojs-poster.png
+          alt:                          VideoJS Poster
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+// :images-dir:                         {imagesdir}/pages/roundtrip/100_present_images
+
+// Attributes for section control
+//
+:vjs_plugin_info:                       true
+:native_video:                          false
+:yt_video:                              false
+:vm_video:                              false
+:wt_video:                              true
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+The J1 Template support playing audio on web pages by HTML5 Video, the new
+standard of HTML to show videos on webpages. Modern browsers support the
+audio tag `<audio>` for the new HTML5 audio audio standard.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+ifeval::[{vjs_plugin_info} == true]
+[role="mt-5"]
+== VJS Plugins
+
+The J1 Template provides a collection of plugins to enhance VJS players, such
+as by providing useful functions like additional buttons or advanced keyboard
+support to control a player by defined keys (hotkeys).
+
+[role="mt-4"]
+=== hotKeys
+
+The *hotkeys* plugin for Video.js enables *keyboard hotkeys* when the
+*player has focus*.
+
+* `Space bar` toggles play|pause.
+* `Right|Left Arrow keys` seek the video forwards and back.
+* Up and Down Arrow keys increase and decrease the volume.
+* `M key` toggles mute/unmute.
+* `F key` toggles fullscreen off and on. Does not work in Internet Explorer,
+  it seems to be a limitation where scripts cannot request fullscreen without
+  a mouse click:
+* Double-clicking with the mouse toggles fullscreen off and on.
+* `Number keys` from *1-9* skip to a percentage of the video:
+  1 is `10%` and 9 is `90%`.
+
+[role="mt-4"]
+=== skipbuttons
+
+The plugin *skipbuttons* add *VJS seek buttons* to the control bar. These
+buttons allow the user to skip forward or back by a configured number of
+seconds.
+
+
+[role="mt-4"]
+=== zoomButtons
+
+Adds a zoom button to player controlbar.
+
+endif::[]
+
+ifeval::[{build_in_video} == true]
+[role="mt-4"]
+== Built-in Player
+
+All modern browsers universally support the video tag `<video>`. This tag
+offers an out-of-the-box framework for decoding and displaying video content
+without loading *external players*.
+
+.MP4 Video, Peck Pocketed
+video::/assets/video/html5/peck_pocketed.mp4[poster="/assets/video/poster/html5/peck_pocketed.jpg", opts="" role="mt-4 mb-5"]
+endif::[]
+
+
+[role="mt-5"]
+== VJS Players
+
+VideoJS is a *free-to-use* open-source JavaScript framework for building
+custom video players for the web. Implementing VideoJS for the J1 Template
+supports local video and several platforms, such as YouTube, Vimeo, Wistia,
+or Dailymotion, for presenting videos *online*.
+
+For *online sources*, VideoJS uses plugins, such as the so-called VJS
+Playback Technology. With the help of *plugins*, it is possible to present
+*different media* using the *same player*, the same look and feel for a
+better user experience.
+
+ifeval::[{native_video} == true]
+[role="mt-4"]
+=== Native Video
+
+VideoJS provides a flexible and customizable platform for displaying and
+controlling MPEG 4 video content on websites and web applications.
+
+.Rolling Wild · MP4 Video
+videojs::/assets/video//html5/rolling_wild.mp4[poster="/assets/video/poster/html5/rolling_wild.jpg", opts="" role="mt-4 mb-5"]
+endif::[]
+
+
+ifeval::[{yt_video} == true]
+[role="mt-4"]
+=== YouTube
+
+YouTube is a popular online video-sharing platform that allows users to
+upload, view, share, and comment on videos. The platform provides services
+for people and organizations to publish various video content.
+
+.Fortnight (feat. Post Malone, Official Music Video) · Taylor Swift
+// youtube::q3zqJs7JUCQ[start="00:01:00" poster="//img.youtube.com/vi/q3zqJs7JUCQ/maxresdefault.jpg" role="mt-4 mb-5"]
+youtube::q3zqJs7JUCQ[poster="//img.youtube.com/vi/q3zqJs7JUCQ/maxresdefault.jpg"]
+endif::[]
+
+ifeval::[{wt_video} == true]
+[role="mt-5"]
+=== Wistia
+
+Wistia is a marketing software and video hosting platform for business-to-business
+marketers. Free or paid plans are available. While Wistia may not be the
+*Big Man on Campus*, like Vimeo, still brings valuable functionality and
+should be considered a viable video platform.
+
+.Platform Intro
+// wistia::29b0fbf547[poster="/assets/video/poster/wistia/wistia-black.jpg" role="mt-4 mb-4"]
+wistia::29b0fbf547[poster="auto" role="mt-4 mb-4"]
+// wistia::29b0fbf547[role="mt-4 mb-4"]
+endif::[]
+
+ifeval::[{vm_video} == true]
+[role="mt-5"]
+== Vimeo
+
+Vimeo is an sharing platform that allows users to upload, share, and view
+video content. It was founded in 2004 by a group of filmmakers and has
+since grown into a popular platform for individuals and businesses to
+showcase their videos.
+
+.Forever 21 - Kick It Old School
+vimeo::179528528[poster="/assets/video/poster/vimeo/kick_it_old_school.jpg" role="mt-4 mb-5"]
+// vimeo::179528528[poster="auto" role="mt-4 mb-5"]
+// vimeo::179528528[role="mt-4 mb-5"]
+
+[role="mb-7"]
+.Video controls
+[CAUTION]
+====
+For the *VJS Vimeo Tech*, native vjs controls (controllbar) are currently
+*NOT* supported. Instead, the controllbar of the Vimeo Player is shown.
+====
+endif::[]

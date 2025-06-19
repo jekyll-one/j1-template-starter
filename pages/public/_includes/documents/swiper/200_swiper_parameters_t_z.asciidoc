@@ -1,0 +1,451 @@
+[role="mt-5"]
+== Options T - Z
+
+List of available Swiper parameters (properties) alphabetically ordered
+from *T* to *Z*. Find parameter settings also with the
+https://swiperjs.com/swiper-api[Swiper Documentation, {browser-window--new}].
+
+
+[role="mt-4"]
+[[options-threshold]]
+=== threshold
+
+Set the threshold value in px then swiper will *not* move.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`threshold`
+|number
+|5
+|Threshold value in px. If *touch distance* will be lower than this value
+then swiper will not move.
+
+|===
+
+[role="mt-4"]
+[[options-thumbs]]
+=== thumbs
+
+The Thumbs module enables to create a *thumbnail navigation* for SliderJS
+sliders.
+
+[TIP]
+====
+Find all available configurable *settings* with <<Thumbs>> in section
+<<Mdules>>.
+====
+
+Find below how to enable the *thumbs* module and set the *thumbs* parameters.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`thumbs`
+|any
+|*no defaults*
+|Object with thumbs component parameters for *thumb image* navigation.
+
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  // other parameters ...
+  thumbs: {
+    swiper: thumbsSwiper
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[options-touchAngle]]
+=== touchAngle
+
+Set Angle in degrees to trigger touch move.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`touchAngle`
+|number
+|45
+|Angle in degrees to trigger touch move.
+
+|===
+
+[role="mt-4"]
+[[options-touchEventsTarget]]
+=== touchEventsTarget
+
+Set the *target* element to listen on touch events.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`touchEventsTarget`
+|_container_ \| _wrapper_
+|_wrapper_
+|Target element to listen on touch events. Can be _container_ to listen
+for touch events on the swiper *container* or _wrapper_ to listen for touch
+events on the swiper *wrapper*.
+
+|===
+
+[role="mt-4"]
+[[options-touchMoveStopPropagation]]
+=== touchMoveStopPropagation
+
+Enable to *stop* the propagation of *touchmove*.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`touchMoveStopPropagation`
+|boolean
+|false
+|If enabled, then propagation of *touchmove* will be stopped.
+
+|===
+
+[role="mt-4"]
+[[options-touchRatio]]
+=== touchRatio
+
+Set the touch ratio.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`touchRatio`
+|number
+|1
+|Touch ratio
+
+|===
+
+[role="mt-4"]
+[[options-touchReleaseOnEdges]]
+=== touchReleaseOnEdges
+
+Enable touch events on slider edge positions for *page scrolling*.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`touchReleaseOnEdges`
+|boolean
+|false
+|Enable to release touch events on slider edge position (beginning, end)
+to allow for further *page scrolling*. 
+
+[CAUTIION]
+====
+This feature works only with *touch* events (and not pointer events), so it
+will work on *iOS * or *Android* devices (mobiles) and not work on *Windows*
+(desktp) devices with *pointer* events.
+
+Also *threshold* parameter must be set to *0*.
+====
+
+|===
+
+[role="mt-4"]
+[[options-touchStartForcePreventDefault]]
+=== touchStartForcePreventDefault
+
+Force to *prevent default* for `touchstart` or `pointerdown` events.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`touchStartForcePreventDefault`
+|boolean
+|false
+|Force to prevent default for `touchstart` \| `pointerdown` events.
+
+|===
+
+[role="mt-4"]
+=== touchStartPreventDefault
+
+Enable *prevent default* for `touchstart` or `pointerdown` events.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`touchStartPreventDefault`
+|boolean
+|true
+|If set `false` (disabled), `pointerdown` events are *not* prevented
+by default.
+
+|===
+
+[role="mt-4"]
+[[options-uniqueNavElements]]
+=== uniqueNavElements
+
+Disable navigation element parameters passed as a string like _.pagination_.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`uniqueNavElements`
+|boolean
+|true
+|When enabled (by default) and navigation element parameters passed as a
+string (like `_.pagination_) then Swiper will look for such elements
+through *child* elements first. Applies for *pagination*, *prev* \| *next*
+buttons and *scrollbar* elements.
+
+|===
+
+[role="mt-4"]
+[[options-updateOnWindowResize]]
+=== updateOnWindowResize
+
+Disable the recalculation of slide positions on window resize for desktops or
+orientation change on mobiles.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`updateOnWindowResize`
+|boolean
+|true
+|Swiper will recalculate slides position on window resize (desktops) or
+orientation change (on mobiles).
+
+|===
+
+[role="mt-4"]
+[[options-url]]
+=== url
+
+Required for *active* slide detection when rendered on server-side and
+history enabled.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`url`
+|null \| string
+|null
+|Required for active slide detection when rendered on server-side and
+history enabled.
+
+|===
+
+[role="mt-4"]
+[[options-userAgent]]
+=== userAgent
+
+Setting the *userAgent string* is required for browser or device detection
+when swiper is rendered on server-side.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`userAgent`
+|null \| string
+|null
+|userAgent string. Required for browser \| device detection when swiper is
+rendered on server-side.
+
+|===
+
+[role="mt-4"]
+[[options-virtual]]
+=== virtual
+
+The Virtual Slides module allows you to keep the required number of slides
+in the DOM. The module is very useful in terms of performance and memory
+issues if you have a lot of slides, especially slides with heavyweight DOM
+trees or images.
+
+[TIP]
+====
+Find all available configurable *settings* with <<Virtual Slides>> in section
+<<Mdules>>.
+====
+
+Find below how to enable and configures the *virtual slides* functionality.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|'virtual'
+|any
+|*no defaults*
+|Enables virtual slides functionality. Object with virtual slides
+parameters or boolean `true` to enable with default settings.
+
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  virtual: {
+    slides: ['Slide 1', 'Slide 2', 'Slide 3', 'Slide 4', 'Slide 5']
+  }
+});
+----
+
+|===
+
+[role="mt-4"]
+[[options-virtualTranslate]]
+=== virtualTranslate
+
+Useful when you need to create *custom* slide *transitions*.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`virtualTranslate`
+|boolean
+|false
+|If enabled, the swiper will be operated as usual, but will not move
+and *real* CSS3 *transform translate* values on wrapper will *not*
+be set.
+
+[TIP]
+====
+Useful when you need to create *custom* slide *transitions*.
+====
+
+|===
+
+[role="mt-4"]
+[[options-watchOverflow]]
+=== watchOverflow
+
+When enabled, the swiper will be *disabled* and *hide navigation* buttons
+in case there are *not enough* slides for *sliding*.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`watchOverflow`
+|boolean
+|true
+|When enabled, Swiper will be *disabled* and *hide navigation* buttons
+in case there are *not enough* slides for *sliding*.
+
+|===
+
+[role="mt-4"]
+[[options-watchSlidesProgress]]
+=== watchSlidesProgress
+
+When enabled, the swiper will be *disabled* and *hide navigation* buttons
+in case there are *not enough* slides for *sliding*.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`watchSlidesProgress`
+|boolean
+|false
+|Enable this feature to calculate each slides progress and visibility.
+
+[NOTE]
+====
+Slides in viewport will have an *additional* visible class.
+====
+
+|===
+
+[role="mt-4"]
+[[options-width]]
+=== width
+
+Force the swiper width (in px).
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`width`
+|null \| number
+|null
+|Parameter allows to force the swiper width (in px).
+
+[CAUTION]
+====
+Useful only if you initialize Swiper when it is *hidden* and in
+Test environments for correct Swiper initialization.
+
+Setting this parameter will make Swiper *not responsive*.
+====
+
+|===
+
+[role="mt-4"]
+[[options-wrapperClass]]
+=== wrapperClass
+
+Set the CSS class name of the slides *wrapper*.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`wrapperClass`
+|string
+|_swiper-wrapper_
+|CSS class name of the slides wrapper.
+
+[CAUTION]
+====
+By changing classes, you will also need to change Swiper's CSS to reflect
+changed classes.
+
+*Not supported* for swipers in _React_ and _Vue_ environments.
+====
+
+|===
+
+
+[role="mt-4"]
+[[options-zoom]]
+=== zoom
+
+Enables *zooming* functionality.
+
+[cols="3,2,2,5a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Default |Description
+
+|`zoom`
+|any
+|*no defaults*
+|Enables zooming functionality. Object with zoom parameters or boolean
+`true` to enable with default settings
+
+[source, js]
+----
+const swiper = new Swiper('#swiper_id', {
+  zoom: {
+    maxRatio: 5
+  }
+});
+----
+
+|===

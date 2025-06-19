@@ -5,10 +5,10 @@
 #  Product/Info:
 #  https://jekyll.one
 #
-#  Copyright (C) 2023, 2024 Juergen Adams
+#  Copyright (C) 2023-2025 Juergen Adams
 #
 #  J1 Template is licensed under the MIT License.
-#  See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+#  See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 #
 # ------------------------------------------------------------------------------
 
@@ -54,7 +54,7 @@ defaults:
   #   Pixel image used to gridify the background image of the banner.
   #
   #   values:                         image path|name (string)
-  #   default:                        /assets/images/modules/patterns/gridtile.png
+  #   default:                        /assets/image/pattern/image/gridtile.png
   #
   #   darken
   #   --------------------------------------------------------------------------
@@ -72,17 +72,17 @@ defaults:
   #   the panels configuration (j1_panels.yml).
   #
   #   values:                         image path|name (string)
-  #   default:                        /assets/images/quotes/default.png
+  #   default:                        /assets/image/quotes/default.png
   # ----------------------------------------------------------------------------
   #
   parallax_settings:
 
     gridify:                          true
-    gridifier:                        /assets/images/modules/patterns/gridtile.png
+    gridifier:                        /assets/image/pattern/image/gridtile.png
     text_color:                       rgba_lighten
     cite_color:                       rgba_lighten
     darken:                           3
-    background:                       /assets/images/quotes/default.png
+    background:                       /assets/image/quotes/default.png
     background_pos_x:                 50%
     background_pos_y:                 0
 
@@ -92,7 +92,7 @@ defaults:
   # ----------------------------------------------------------------------------
   #
   image_settings:
-    gridifier:                        /assets/images/modules/patterns/gridtile.png
+    gridifier:                        /assets/image/pattern/image/gridtile.png
 
 
   # ----------------------------------------------------------------------------
@@ -127,8 +127,8 @@ defaults:
 
     icon_family:                        MDI
     style:                              light
-    background_color_1:                 md_gray_50
-    background_color_2:                 md_gray_50
+    background_color_1:                 var(--md-gray-50)
+    background_color_2:                 var(--md-gray-50)
 
     cards:
       card:
@@ -147,27 +147,27 @@ defaults:
               text:                     Button-1
               class:                    btn-primary btn-flex
               icon:                     image
-              icon_color:               md_white
+              icon_color:               var(--md-white)
               icon_size:                lg
-              href:                     #!
+              href:                     "#"
               target:                   _blank
 
           - button:
               text:                     Button-2
               class:                    btn-primary btn-flex
               icon:                     image
-              icon_color:               md_white
+              icon_color:               var(--md-white)
               icon_size:                lg
-              href:                     #!
+              href:                     "#"
               target:                   _blank
 
           - button:
               text:                     Button-3
               class:                    btn-danger btn-flex
               icon:                     image
-              icon_color:               md_white
+              icon_color:               var(--md-white)
               icon_size:                lg
-              href:                     #!
+              href:                     "#"
               target:                   _blank
 
 
@@ -212,8 +212,8 @@ defaults:
     type:                               parallax
 
     style:                              dark
-    background_color_1:                 md_gray_300
-    background_color_2:                 md_gray_50
+    background_color_1:                 var(--md-gray-300)
+    background_color_2:                 var(--md-gray-50)
 
     cards:
 
@@ -229,7 +229,7 @@ defaults:
         gridify:                        true
         size_y:                         300
         darken:                         7
-        background_image:               /assets/images/quotes/people.png
+        background_image:               /assets/image/quotes/people.png
 
         buttons:
 
@@ -237,9 +237,9 @@ defaults:
             text:                       Button
             class:                      btn-primary btn-flex
             icon:                       image
-            icon_color:                 md_white
+            icon_color:                 var(--md-white)
             icon_size:                  lg
-            href:                       #!
+            href:                       "#"
             target:                     _blank
 
 

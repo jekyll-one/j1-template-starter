@@ -1,0 +1,1760 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/amplitude_playlists.yml
+# User Configuration (PLAYLISTS) of the AmplitudeJS Module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2025 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                AmplitudeJS
+  scope:                                User Playlist settings
+  location:                             _data/modules/amplitude_playlists.yml
+
+# ------------------------------------------------------------------------------
+# User settings
+#
+settings:
+
+  # ============================================================================
+  # PLAYLIST configuration
+  # ----------------------------------------------------------------------------
+  playlists:
+
+    # --------------------------------------------------------------------------
+    #  Ephraim Kishon, Beste Familiengeschichten
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             familiengeschichten_yt
+      title:                            Ephraim Kishon
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &album_familiengeschichten_yt
+        name:                           Ephraim Kishon
+        playlist:                       familiengeschichten_yt
+        artist:                         Beste Familiengeschichten
+        audio:                          watch?v=9LojTw98Fks
+        audio_fade:                     false
+        audio_base:                     //youtube.com
+        audio_info:                     //youtube.com/watch?v=9LojTw98Fks
+        cover_image:                    //img.youtube.com/vi/9LojTw98Fks/maxresdefault.jpg
+        repeat:                         false
+        shuffle:                        false        
+
+      # ------------------------------------------------------------------------
+      # TITLE settings (songs)
+      # ------------------------------------------------------------------------
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Ein Vater wird geboren
+          rating:                       4
+          start:                        "00:00:03"
+          end:                          "00:16:53"
+          duration:                     "00:16:50"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Baby Sitting und was man dafür tun muß
+          rating:                       3
+          start:                        "00:16:55"
+          end:                          "00:28:34"
+          duration:                     "00:11:39"
+
+        # title 03
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Schreckens Rotkäppchen
+          rating:                       2
+          start:                        "00:28:36"
+          end:                          "00:33:57"
+          duration:                     "00:05:20"
+
+        # title 04
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Kontakt mit Linsen
+          rating:                       4
+          start:                        "00:34:00"
+          end:                          "00:45:57"
+          duration:                     "00:11:57"
+
+        # title 05
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Auf Mäusesuche
+          rating:                       4
+          start:                        "00:46:00"
+          end:                          "00:54:35"
+          duration:                     "00:08:35"
+
+        # title 06
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Das Wunderkind
+          rating:                       2
+          start:                        "00:54:36"
+          end:                          "01:01:07"
+          duration:                     "00:06:31"
+
+        # title 07
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Ein Fläschchen für's Kätzchen
+          rating:                       3
+          start:                        "01:01:13"
+          end:                          "01:11:34"
+          duration:                     "00:10:21"
+
+        # title 08
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Die Stmme des Blutes
+          rating:                       3
+          start:                        "01:11:36"
+          end:                          "01:20:44"
+          duration:                     "00:09:08"
+
+        # title 09
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Onkel Morris und das Kollosalgemälde
+          rating:                       3
+          start:                        "01:20:45"
+          end:                          "01:34:05"
+          duration:                     "00:13:20"
+
+        # title 10
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Durch den Kakao gezogen 
+          rating:                       4
+          start:                        "01:34:08"
+          end:                          "01:44:39"
+          duration:                     "00:09:31"
+
+        # title 11
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Ein Scnnuller Namens Zezie 
+          rating:                       4
+          start:                        "01:44:41"
+          end:                          "01:54:02"
+          duration:                     "00:09:21"
+
+        # title 12
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Gefahren des Wachstums
+          rating:                       4
+          start:                        "01:54:08"
+          end:                          "02:02:35"
+          duration:                     "00:07:27"
+
+        # title 13
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Wie man Freunde gewinnt
+          rating:                       3
+          start:                        "02:02:37"
+          end:                          "02:10:33"
+          duration:                     "00:07:56"
+
+        # title 14
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Pedigree
+          rating:                       4
+          start:                        "02:10:35"
+          end:                          "02:22:26"
+          duration:                     "00:11:09"
+
+        # title 15
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Dressur
+          rating:                       4
+          start:                        "02:22:29"
+          end:                          "02:31:46"
+          duration:                     "00:08:15"
+
+        # title 16
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Die große Steak-Saga
+          rating:                       3
+          start:                        "02:31:48"
+          end:                          "02:39:54"
+          duration:                     "00:08:07"
+
+        # title 17
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Der kluge Mann baut vor
+          rating:                       3
+          start:                        "02:39:56"
+          end:                          "02:47:44"
+          duration:                     "00:07:48"
+
+        # title 18
+        - item:
+          enabled:                      true
+          <<:                           *album_familiengeschichten_yt
+          title:                        Vertrauen gegen Vertrauen
+          rating:                       4
+          start:                        "02:47:45"
+          end:                          "02:55:15"
+          duration:                     "00:07:30"
+
+    # --------------------------------------------------------------------------
+    #  Ephraim Kishon, Beste Autofahrergeschichten
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             autofahrer_geschichten_yt
+      title:                            Ephraim Kishon
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &album_autofahrer_geschichten_yt
+        name:                           Ephraim Kishon
+        playlist:                       autofahrer_geschichten_yt
+        artist:                         Beste Familiengeschichten
+        audio_fade:                     false
+        audio_base:                     //youtube.com
+        cover_image:                    //img.youtube.com/vi/D2gVmGFa2wE/maxresdefault.jpg
+        repeat:                         false
+        shuffle:                        false
+
+      # ------------------------------------------------------------------------
+      # TITLE settings (songs)
+      # ------------------------------------------------------------------------
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=D2gVmGFa2wE
+          audio_info:                   //youtube.com/watch?v=D2gVmGFa2wE
+          title:                        Süss ist die Rache
+          rating:                       3
+          start:                        "00:00:39"
+          end:                          "00:04:27"
+          duration:                     "00:03:48"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=D2gVmGFa2wE
+          audio_info:                   //youtube.com/watch?v=D2gVmGFa2wE
+          title:                        Non-stop Autostop
+          rating:                       3
+          start:                        "00:04:29"
+          end:                          "00:08:34"
+          duration:                     "00:04:05"
+
+        # title 03
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=D2gVmGFa2wE
+          audio_info:                   //youtube.com/watch?v=D2gVmGFa2wE
+          title:                        Privatparkplatz
+          rating:                       3
+          start:                        "00:08:35"
+          end:                          "00:12:03"
+          duration:                     "00:03:38"
+
+        # title 04
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=D2gVmGFa2wE
+          audio_info:                   //youtube.com/watch?v=D2gVmGFa2wE
+          title:                        Der letzte Schrei der Medien
+          rating:                       3
+          start:                        "00:12:05"
+          end:                          "00:19:54"
+          duration:                     "00:03:38"
+
+        # title 05
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=D2gVmGFa2wE
+          audio_info:                   //youtube.com/watch?v=D2gVmGFa2wE
+          title:                        In den Händen der Chauvinisten
+          rating:                       3
+          start:                        "00:19:55"
+          end:                          "00:29:47"
+          duration:                     "00:03:38"
+
+        # title 06
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=D2gVmGFa2wE
+          audio_info:                   //youtube.com/watch?v=D2gVmGFa2wE
+          title:                        Ein Parasit fährt mit
+          rating:                       3
+          start:                        "00:19:55"
+          end:                          "00:37:57"
+          duration:                     "00:03:38"
+
+        # title 07
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=D2gVmGFa2wE
+          audio_info:                   //youtube.com/watch?v=D2gVmGFa2wE
+          title:                        Die Gefahren der guten Kinderstube
+          rating:                       3
+          start:                        "00:37:58"
+          end:                          "00:41:31"
+          duration:                     "00:03:38"
+
+        # title 08
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=D2gVmGFa2wE
+          audio_info:                   //youtube.com/watch?v=D2gVmGFa2wE
+          title:                        Jede Münze hat zwei Seiten
+          rating:                       3
+          start:                        "00:37:58"
+          end:                          "00:52:17"
+          duration:                     "00:03:38"
+
+        # title 09
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=D2gVmGFa2wE
+          audio_info:                   //youtube.com/watch?v=D2gVmGFa2wE
+          title:                        Das Werkstatt-Kabaret
+          rating:                       3
+          start:                        "00:52:19"
+          end:                          "00:55:28"
+          duration:                     "00:03:38"
+
+        # title 10
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=D2gVmGFa2wE
+          audio_info:                   //youtube.com/watch?v=D2gVmGFa2wE
+          title:                        Busfahren ist gefährlich
+          rating:                       3
+          start:                        "00:55:30"
+          end:                          "00:59:20"
+          duration:                     "00:03:38"
+
+        # title 11
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=zBSlRSGp5N4
+          audio_info:                   //youtube.com/watch?v=zBSlRSGp5N4
+          title:                        Ein Profi am Steuer
+          rating:                       3
+          start:                        "00:00:03"
+          end:                          false                                   # "00:03:12"
+          duration:                     "00:03:38"
+
+        # title 12
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=zBSlRSGp5N4
+          audio_info:                   //youtube.com/watch?v=zBSlRSGp5N4
+          title:                        Amtshandlung mit menschlichen Zügen
+          rating:                       3
+          start:                        "00:03:14"
+          end:                          false                                   # "00:06:04"
+          duration:                     "00:03:38"
+
+        # title 13
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=zBSlRSGp5N4
+          audio_info:                   //youtube.com/watch?v=zBSlRSGp5N4
+          title:                        Freund in der Not
+          rating:                       3
+          start:                        "00:06:05"
+          end:                          false
+          duration:                     "00:03:38"
+
+        # title 14
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=zBSlRSGp5N4
+          audio_info:                   //youtube.com/watch?v=zBSlRSGp5N4
+          title:                        Fernsehen hat vorrang
+          rating:                       3
+          start:                        "00:08:48"
+          end:                          false
+          duration:                     "00:03:38"
+
+        # title 15
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=zBSlRSGp5N4
+          audio_info:                   //youtube.com/watch?v=zBSlRSGp5N4
+          title:                        Parkplatz-Safari
+          rating:                       3
+          start:                        "00:16:51"
+          end:                          false
+          duration:                     "00:03:38"
+
+        # title 16
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=zBSlRSGp5N4
+          audio_info:                   //youtube.com/watch?v=zBSlRSGp5N4
+          title:                        Gottes Hand und Josseles Fuß
+          rating:                       3
+          start:                        "00:22:38"
+          end:                          false
+          duration:                     "00:03:38"
+
+        # title 17
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=zBSlRSGp5N4
+          audio_info:                   //youtube.com/watch?v=zBSlRSGp5N4
+          title:                        Ein vierbeiniger Autofan
+          rating:                       3
+          start:                        "00:29:13"
+          end:                          false
+          duration:                     "00:03:38"
+
+        # title 18
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=zBSlRSGp5N4
+          audio_info:                   //youtube.com/watch?v=zBSlRSGp5N4
+          title:                        Wir gehen in den Untergrund
+          rating:                       3
+          start:                        "00:38:29"
+          end:                          false
+          duration:                     "00:03:38"
+
+        # title 19
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=zBSlRSGp5N4
+          audio_info:                   //youtube.com/watch?v=zBSlRSGp5N4
+          title:                        Autofahren ist gesund
+          rating:                       3
+          start:                        "00:44:17"
+          end:                          false
+          duration:                     "00:03:38"
+
+        # title 20
+        - item:
+          enabled:                      true
+          <<:                           *album_autofahrer_geschichten_yt
+          audio:                        watch?v=zBSlRSGp5N4
+          audio_info:                   //youtube.com/watch?v=zBSlRSGp5N4
+          title:                        Und am Ende steht die Parklaterne
+          rating:                       3
+          start:                        "00:48:42"
+          end:                          false
+          duration:                     "00:03:38"
+
+    # --------------------------------------------------------------------------
+    # Manon Mélodie
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             manon_melodie_yt
+      title:                            Manon Mélodie
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &album_manon_melodie_yt
+        name:                           YouTube 2025
+        playlist:                       manon_melodie_yt
+        artist:                         Manon Mélodie
+        audio_base:                     //youtube.com
+        cover_image:                    /assets/audio/cover/default/placeholder-blue.jpg
+        audio_fade:                     true
+        audio_single:                   false
+        repeat:                         false
+        shuffle:                        false
+
+      # ------------------------------------------------------------------------
+      # TITLE settings (songs)
+      # ------------------------------------------------------------------------
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_manon_melodie_yt
+          title:                        En Volant Haut                          # Hoch hinaus (fliegen)
+          audio:                        watch?v=5NiMGeQOzKQ
+          rating:                       2
+          # start:                        false                                   # timestamp | false
+          # end:                          false                                   # timestamp | false
+          # start:                        "00:00:30"
+          # end:                          "00:00:40"
+          # start:                        "00:01:20"
+          # end:                          "00:01:50"
+          start:                        "00:01:00"
+          end:                          "00:02:00"
+          audio_info:                   //youtube.com/channel/UCEsIlUzfXYT5AZSOVnbFqsQ
+          cover_image:                  //img.youtube.com/vi/5NiMGeQOzKQ/maxresdefault.jpg
+          duration:                     "00:02:47"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_manon_melodie_yt
+          title:                        Anno du Soleil                          # Jahr der Sonne
+          audio:                        watch?v=pCXSGCBSIG0
+          rating:                       4
+          start:                        "00:01:20"
+          end:                          "00:02:20"
+          audio_info:                   //youtube.com/channel/UCEsIlUzfXYT5AZSOVnbFqsQ
+          cover_image:                  //img.youtube.com/vi/pCXSGCBSIG0/maxresdefault.jpg
+          duration:                     "00:02:53"
+
+        # title 03
+        - item:
+          enabled:                      true
+          <<:                           *album_manon_melodie_yt
+          title:                        La Fête du cœur                         # Fest des Herzens
+          audio:                        watch?v=fFn1GZIYC4Y
+          rating:                       3
+          start:                        "00:01:00"
+          end:                          "00:02:00"
+          audio_info:                   //youtube.com/channel/UCEsIlUzfXYT5AZSOVnbFqsQ
+          cover_image:                  //img.youtube.com/vi/fFn1GZIYC4Y/maxresdefault.jpg
+          duration:                     "00:02:32"
+
+        # title 04
+        - item:
+          enabled:                      true
+          <<:                           *album_manon_melodie_yt
+          title:                        Fleur de Printemps                      # Frühlingsblume
+          audio:                        watch?v=OUjHRpNUqyw
+          rating:                       3
+          start:                        "00:01:20"
+          end:                          "00:02:20"          
+          audio_info:                   //youtube.com/channel/UCEsIlUzfXYT5AZSOVnbFqsQ
+          cover_image:                  //img.youtube.com/vi/OUjHRpNUqyw/maxresdefault.jpg
+          duration:                     "00:02:57"
+
+        # # title 05
+        - item:
+          enabled:                      true
+          <<:                           *album_manon_melodie_yt
+          title:                        Cote d'Azur                             # Cote d'Azur
+          audio:                        watch?v=9Z9yNpsiBKs
+          rating:                       3
+          start:                        "00:01:00"
+          end:                          "00:02:00"
+          audio_info:                   //youtube.com/channel/UCEsIlUzfXYT5AZSOVnbFqsQ
+          cover_image:                  //img.youtube.com/vi/9Z9yNpsiBKs/maxresdefault.jpg
+          duration:                     "00:02:42"
+
+        # # title 06
+        - item:
+          enabled:                      true
+          <<:                           *album_manon_melodie_yt
+          title:                        Les Échos du Passé                      # Echos der Vergangenheit          
+          audio:                        watch?v=_EYc5W3qy4s
+          rating:                       4
+          start:                        "00:01:20"
+          end:                          "00:02:20"         
+          audio_info:                   //youtube.com/channel/UCEsIlUzfXYT5AZSOVnbFqsQ
+          cover_image:                  //img.youtube.com/vi/_EYc5W3qy4s/maxresdefault.jpg
+          duration:                     "00:03:02"
+
+        # title 07
+        - item:
+          enabled:                      true
+          <<:                           *album_manon_melodie_yt
+          title:                        Les Souvenirs                           # Erinnerungen
+          audio:                        watch?v=i8ltW0WDcdQ
+          rating:                       4
+          start:                        "00:00:30"
+          end:                          "00:00:30"
+          audio_info:                   //youtube.com/channel/UCEsIlUzfXYT5AZSOVnbFqsQ
+          cover_image:                  //img.youtube.com/vi/i8ltW0WDcdQ/maxresdefault.jpg
+          duration:                     "00:02:19"
+
+        # title 08
+        - item:
+          enabled:                      true
+          <<:                           *album_manon_melodie_yt
+          title:                        La Vie en Dance                         # Leben im Tanz
+          audio:                        watch?v=yttS9UNgZFk
+          rating:                       4
+          start:                        "00:01:20"
+          end:                          "00:01:50"
+          audio_info:                   //youtube.com/channel/UCEsIlUzfXYT5AZSOVnbFqsQ
+          cover_image:                  //img.youtube.com/vi/yttS9UNgZFk/maxresdefault.jpg
+          duration:                     "00:02:45"
+
+    # --------------------------------------------------------------------------
+    # Bea and her Business
+    # https://www.beaandher.business/
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             bea_yt
+      title:                            Bea and her Business
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &album_bea_yt
+        name:                           YouTube 2025
+        playlist:                       bea_yt
+        artist:                         Bea and her Business
+        audio_base:                     //youtube.com
+        cover_image:                    /assets/audio/cover/default/placeholder-blue.jpg
+        audio_fade:                     true
+        audio_single:                   false
+        repeat:                         false
+        shuffle:                        false
+
+      # ------------------------------------------------------------------------
+      # TITLE settings (songs)
+      # ------------------------------------------------------------------------
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        Safety Net (Official Video)
+          audio:                        watch?v=fTXrSVzkIXI
+          rating:                       5
+          start:                        "00:00:03"                              # false | timestamp
+          end:                          "00:03:20"                              # false | timestamp
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/fTXrSVzkIXI/maxresdefault.jpg
+          duration:                     "00:03:26"
+
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        Good Things
+          audio:                        watch?v=dM7CmIHwJnU
+          rating:                       3
+          start:                        "00:00:03"
+          end:                          "00:02:56"
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/dM7CmIHwJnU/maxresdefault.jpg
+          duration:                     "00:02:58"
+
+        # title 03
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        Me Against My Head
+          audio:                        watch?v=bvXV4pfIzog
+          rating:                       4
+          start:                        "00:00:03"
+          end:                          "00:03:14"
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/dM7CmIHwJnU/maxresdefault.jpg
+          duration:                     "00:03:21"
+
+        # title 04
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        Never Ever Love a Liar (Live Session)
+          audio:                        watch?v=npctqyR5ZdU
+          rating:                       4
+          start:                        "00:00:03"
+          end:                          false # "00:02:50"
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/npctqyR5ZdU/maxresdefault.jpg
+          duration:                     "00:02:53"
+
+        # title 05
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        Smoking Lessons (Live Session)
+          audio:                        watch?v=DMxz1Sp8RPA
+          rating:                       4
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/DMxz1Sp8RPA/maxresdefault.jpg
+          duration:                     "00:02:58"
+
+        # title 06
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        Too Loud (And That's The Way I'm Going Out)
+          audio:                        watch?v=PcDCR8s0IU4
+          rating:                       4
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/PcDCR8s0IU4/maxresdefault.jpg
+          duration:                     "00:02:58"
+
+        # title 07
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        We're Not The Same
+          audio:                        watch?v=915zXRLgirM
+          rating:                       3
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/915zXRLgirM/maxresdefault.jpg
+          duration:                     "00:03:16"
+
+        # title 08
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        Born To Be Alive
+          audio:                        watch?v=hu8VcmkM0yI
+          rating:                       3
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/hu8VcmkM0yI/maxresdefault.jpg
+          duration:                     "00:02:37"
+
+        # title 09
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        If I Was A God
+          audio:                        watch?v=eVcXzVMKf0I
+          rating:                       3
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/eVcXzVMKf0I/maxresdefault.jpg
+          duration:                     "00:02:55"
+
+        # title 10
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        Safety Net (Cry in your bed version)
+          audio:                        watch?v=W5uafrpOZ6M
+          rating:                       5
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/W5uafrpOZ6M/maxresdefault.jpg
+          duration:                     "00:02:55"
+
+        # title 11
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        Rich
+          audio:                        watch?v=gyquo0Z6ngY
+          rating:                       2
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/gyquo0Z6ngY/maxresdefault.jpg
+          duration:                     "00:02:31"
+
+        # title 12
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        The Scientist
+          audio:                        watch?v=UXMMm3CdRdI
+          rating:                       3
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/UXMMm3CdRdI/maxresdefault.jpg
+          duration:                     "00:02:31"
+
+        # title 13
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        Sunburnt Shoulders
+          audio:                        watch?v=6-B2hDMR7S0
+          rating:                       3
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/6-B2hDMR7S0/maxresdefault.jpg
+          duration:                     "00:02:31"
+
+        # title 14
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        Nightmare Being 19 
+          audio:                        watch?v=s74aKArgOvU
+          rating:                       3
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/s74aKArgOvU/maxresdefault.jpg
+          duration:                     "00:02:31"
+
+        # title 15
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        WOW!
+          audio:                        watch?v=R0UJgMJJaio
+          rating:                       3
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/R0UJgMJJaio/maxresdefault.jpg
+          duration:                     "00:02:50"
+
+        # title 16
+        - item:
+          enabled:                      true
+          <<:                           *album_bea_yt
+          title:                        All The Boys
+          audio:                        watch?v=ffjNBbYa_oA
+          rating:                       3
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/channel/UC_qruKTFPfMUJW6gsPGcwgA
+          cover_image:                  //img.youtube.com/vi/ffjNBbYa_oA/maxresdefault.jpg
+          duration:                     "00:02:50"
+
+    # --------------------------------------------------------------------------
+    #  Smooth Jazz (Diana Krall)
+    # --------------------------------------------------------------------------
+    
+    - playlist:
+      enabled:                          true
+
+      name:                             diana_krall_yt
+      title:                            Diana Krall
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &album_diana_krall_yt
+        name:                           Diana Krall
+        playlist:                       diana_krall_yt
+        artist:                         Smooth Jazz
+        audio_base:                     //youtube.com
+        cover_image:                    /assets/audio/cover/default/placeholder-blue.jpg
+        audio_fade:                     true
+        audio_single:                   false
+        repeat:                         false
+        shuffle:                        false    
+
+      # ------------------------------------------------------------------------
+      # TITLE settings (songs)
+      # ------------------------------------------------------------------------
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Cry Me A River · Live in Rio
+          audio:                        watch?v=cizgXSegrko
+          rating:                       3
+          start:                        "00:00:10"                              # false | timestamp
+          end:                          false                                   # false | timestamp          
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/cizgXSegrko/maxresdefault.jpg
+          duration:                     "00:06:07"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Walk On By · Live in Rio
+          audio:                        watch?v=yCwc-5YTBb0
+          rating:                       3
+          start:                        "00:00:05"
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/cizgXSegrko/maxresdefault.jpg
+          duration:                     "00:05:10"
+
+        # title 03
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Este seu Olhar · Live in Rio
+          audio:                        watch?v=okb8nIpuXgs
+          rating:                       3
+          start:                        "00:00:10"
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/cizgXSegrko/maxresdefault.jpg
+          duration:                     "00:03:11"
+
+        # title 04
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        So Nice · Live in Rio
+          audio:                        watch?v=LKaAS3ZxiKM
+          rating:                       3
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/cizgXSegrko/maxresdefault.jpg
+          duration:                     "00:06:07"
+
+        # title 05
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Besame Mucho
+          audio:                        watch?v=4uEl5Z5DEDw
+          rating:                       4
+          start:                        false
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:06:07"
+
+        # title 06
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        When I look in your eyes
+          audio:                        watch?v=Hkke0UOJMB0
+          rating:                       4
+          start:                        false
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:05:00"
+
+        # title 07
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Narrow Daylight
+          audio:                        watch?v=0XMZNI1qKh8
+          rating:                       4
+          start:                        "00:00:03"
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:03:29"
+
+        # title 08
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Quiet Nights
+          audio:                        watch?v=LyHFY-gWLR4
+          rating:                       3
+          start:                        "00:00:05"
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:04:43"
+
+        # title 09
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        The Look Of Love
+          audio:                        watch?v=Yr8xDSPjII8
+          rating:                       4
+          start:                        false
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:03:50"
+
+        # title 10
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        You Go To My Head
+          audio:                        watch?v=Mpq61KN2ShY
+          rating:                       3
+          start:                        false
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:03:48"
+
+        # title 11
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        East Of The Sun
+          audio:                        watch?v=jkk2mMq2x8E
+          rating:                       3
+          start:                        false
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/jkk2mMq2x8E/maxresdefault.jpg
+          duration:                     "00:04:10"
+
+        # title 12
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Almost Blue
+          audio:                        watch?v=_z7X8fbNIkI
+          rating:                       3
+          start:                        false
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/_z7X8fbNIkI/maxresdefault.jpg
+          duration:                     "00:03:59"
+
+        # title 13
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Temptation
+          audio:                        watch?v=pbej3bEnPfk
+          rating:                       3
+          start:                        "00:00:06"
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:04:37"
+
+        # title 14
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Maybe You'll Be There
+          audio:                        watch?v=dMsvBwvZ7U8
+          rating:                       4
+          start:                        "00:00:04"
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:05:26"
+
+        # title 15
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        A Blossom Fell
+          audio:                        watch?v=GBnWGAQQw1w
+          rating:                       3
+          start:                        "00:00:04"
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:05:14"
+
+        # title 16
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Boulevard of broken dreams
+          audio:                        watch?v=J5fBxO5YL3Q
+          rating:                       3
+          start:                        "00:00:04"
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:06:21"
+
+        # title 17
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        How Can You Mend A Broken Heart
+          audio:                        watch?v=mG88b1qjWik
+          rating:                       4
+          start:                        false
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:04:35"
+
+        # title 18
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Abandoned Masquerade
+          audio:                        watch?v=tHWusss1MHk
+          rating:                       3
+          start:                        "00:00:04"
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:05:22"
+
+        # title 19
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Is You Is Or Is You Ain't My Baby
+          audio:                        watch?v=m-_wewgy-Ls
+          rating:                       3
+          start:                        false
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/0XMZNI1qKh8/maxresdefault.jpg
+          duration:                     "00:04:57"
+
+        # title 20
+        - item:
+          enabled:                      true
+          <<:                           *album_diana_krall_yt
+          title:                        Just The Way You Are
+          audio:                        watch?v=d8RYUZT57XA
+          rating:                       4
+          start:                        "00:00:02"
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL63F10BA7870008CB
+          cover_image:                  //img.youtube.com/vi/d8RYUZT57XA/maxresdefault.jpg
+          duration:                     "00:04:01"
+
+    # --------------------------------------------------------------------------
+    #  Mimi Rutherfurt, Maritim Verlag
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             mimi_rutherfurt_yt
+      title:                            Mimi Rutherfurt
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &album_mimi_rutherfurt_yt
+        name:                           Mimi Rutherfurt
+        playlist:                       mimi_rutherfurt_yt
+        artist:                         Maritim Verlag
+        audio_base:                     //youtube.com
+        cover_image:                    /assets/audio/cover/default/placeholder-blue.jpg
+        repeat:                         false
+        shuffle:                        false        
+
+      # ------------------------------------------------------------------------
+      # Playlist Items (Songs)
+      #
+      items:
+
+        # # title 00
+        # - item:
+        #   enabled:                      true
+        #   <<:                           *album_mimi_rutherfurt_yt
+        #   title:                        Ein Vater wird geboren
+        #   audio:                        watch?v=9LojTw98Fks
+        #   rating:                       5
+        #   start:                        "00:00:03"
+        #   end:                          "00:16:53"
+        #   audio_info:                   //youtube.com/watch?v=9LojTw98Fks
+        #   cover_image:                  //img.youtube.com/vi/9LojTw98Fks/maxresdefault.jpg
+        #   duration:                     "02:55:35"
+
+        # # title 00
+        # - item:
+        #   enabled:                      true
+        #   <<:                           *album_mimi_rutherfurt_yt
+        #   title:                        Baby Sitting
+        #   audio:                        watch?v=9LojTw98Fks
+        #   rating:                       4
+        #   start:                        "00:16:55"
+        #   end:                          "00:28:34"
+        #   audio_info:                   //youtube.com/watch?v=9LojTw98Fks
+        #   cover_image:                  //img.youtube.com/vi/9LojTw98Fks/maxresdefault.jpg
+        #   duration:                     "02:55:35"
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_mimi_rutherfurt_yt
+          title:                        Alte Zeiten
+          audio:                        watch?v=qEhzpBJpUq0
+          rating:                       3
+          audio_info:                   //youtube.com/watch?v=qEhzpBJpUq0
+          cover_image:                  //img.youtube.com/vi/qEhzpBJpUq0/maxresdefault.jpg
+          duration:                     "00:48:15"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_mimi_rutherfurt_yt
+          title:                        Nacht-Express
+          audio:                        watch?v=I4VTc8nQxDs
+          rating:                       4
+          audio_info:                   //youtube.com/watch?v=I4VTc8nQxDs
+          cover_image:                  //img.youtube.com/vi/I4VTc8nQxDs/maxresdefault.jpg
+          duration:                     "00:59:35"
+  
+        # title 03
+        - item:
+          enabled:                      true
+          <<:                           *album_mimi_rutherfurt_yt
+          title:                        Puppenspielerin
+          audio:                        watch?v=WAI07l_v9FA
+          rating:                       3
+          audio_info:                   //youtube.com/watch?v=WAI07l_v9FA
+          cover_image:                  //img.youtube.com/vi/WAI07l_v9FA/maxresdefault.jpg
+          duration:                     "00:45:37"
+
+        # title 04
+        - item:
+          enabled:                      true
+          <<:                           *album_mimi_rutherfurt_yt
+          title:                        Todesliste
+          audio:                        watch?v=ADKSPZJDErY
+          rating:                       3
+          audio_info:                   //youtube.com/watch?v=ADKSPZJDErY
+          cover_image:                  //img.youtube.com/vi/ADKSPZJDErY/maxresdefault.jpg
+          duration:                     "00:49:57"
+
+        # title 05
+        - item:
+          enabled:                      true
+          <<:                           *album_mimi_rutherfurt_yt
+          title:                        Buckingham Palace
+          audio:                        watch?v=ce_8ez1rFP0
+          rating:                       2
+          audio_info:                   //youtube.com/watch?v=ce_8ez1rFP0
+          cover_image:                  //img.youtube.com/vi/ce_8ez1rFP0/maxresdefault.jpg
+          duration:                     "01:09:14"
+
+        # title 06
+        - item:
+          enabled:                      true
+          <<:                           *album_mimi_rutherfurt_yt
+          title:                        Flucht im Dunkeln
+          audio:                        watch?v=Isy7X_HFYKc
+          rating:                       3
+          audio_info:                   //youtube.com/watch?v=Isy7X_HFYKc
+          cover_image:                  //img.youtube.com/vi/Isy7X_HFYKc/hqdefault.jpg
+          duration:                     "00:43:42"
+
+        # title 07
+        - item:
+          enabled:                      true
+          <<:                           *album_mimi_rutherfurt_yt
+          title:                        Priestermord
+          audio:                        watch?v=Wm9HMq7u_eA
+          rating:                       3
+          audio_info:                   //youtube.com/watch?v=Wm9HMq7u_eA
+          cover_image:                  //img.youtube.com/vi/Wm9HMq7u_eA/hqdefault.jpg
+          duration:                     "00:55:01"
+
+        # title 08
+        - item:
+          enabled:                      true
+          <<:                           *album_mimi_rutherfurt_yt
+          title:                        Das indische Kind
+          audio:                        watch?v=IggoySTsG5s
+          rating:                       3
+          audio_info:                   //youtube.com/watch?v=IggoySTsG5s
+          cover_image:                  //img.youtube.com/vi/IggoySTsG5s/maxresdefault.jpg
+          duration:                     "00:50:21"
+
+        # title 09
+        - item:
+          enabled:                      true
+          <<:                           *album_mimi_rutherfurt_yt
+          title:                        Schwarze Rache
+          audio:                        watch?v=N853_AAE0Fg
+          rating:                       3
+          audio_info:                   //youtube.com/watch?v=N853_AAE0Fg
+          cover_image:                  //img.youtube.com/vi/N853_AAE0Fg/maxresdefault.jpg
+          duration:                     "00:54:40"
+
+        # title 10
+        - item:
+          enabled:                      true
+          <<:                           *album_mimi_rutherfurt_yt
+          title:                        Spuk im Herrenhaus
+          audio:                        watch?v=mBRbyVFIL0U
+          rating:                       3
+          audio_info:                   //youtube.com/watch?v=mBRbyVFIL0U
+          cover_image:                  //img.youtube.com/vi/mBRbyVFIL0U/hqdefault.jpg
+          duration:                     "01:19:16"
+
+    # --------------------------------------------------------------------------
+    # Die größten Fälle des BND, Maritim Verlag
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             faelle_des_bnd_yt
+      title:                            Die größten Fälle des BND
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &faelle_des_bnd_yt
+        name:                           Die größten Fälle des BND
+        artist:                         Maritim Verlag
+        playlist:                       faelle_des_bnd_yt
+        audio_base:                     //youtube.com
+        cover_image:                    /assets/audio/cover/default/placeholder-blue.jpg
+        repeat:                         false
+        shuffle:                        false        
+
+      # ------------------------------------------------------------------------
+      # Playlist Items (Songs)
+      #
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *faelle_des_bnd_yt
+          title:                        Der unverzichtbare Feind
+          audio:                        watch?v=Y56DTeGXOfs
+          rating:                       3
+          audio_info:                   //youtube.com/watch?v=Y56DTeGXOfs
+          cover_image:                  //img.youtube.com/vi/Y56DTeGXOfs/hqdefault.jpg
+          duration:                     "01:17:17"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *faelle_des_bnd_yt
+          title:                        Ein Diener vieler Herren
+          audio:                        watch?v=biZp6ko8x7E
+          rating:                       3
+          audio_info:                   //youtube.com/watch?v=biZp6ko8x7E
+          cover_image:                  //img.youtube.com/vi/biZp6ko8x7E/hqdefault.jpg
+          duration:                     "01:20:24"
+
+    # --------------------------------------------------------------------------
+    # Emancipator - Royalty Free Music
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             emancipator
+      title:                            Emancipator
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &album_emancipator_music
+        name:                           Emancipator Music
+        playlist:                       emancipator
+        artist:                         Emancipator
+        audio_base:                     /assets/audio/album/emancipator
+        cover_image:                    /assets/audio/cover/default/placeholder-blue.jpg
+        audio_info:                     //emancipatormusic.com/
+        audio_fade_in:                  true
+        audio_fade_out:                 true
+        repeat:                         false
+        shuffle:                        false        
+
+      # ------------------------------------------------------------------------
+      # Playlist Items (Songs)
+      #
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        First Snow
+          rating:                       2
+          start:                        "00:01:00"                              # false | "00:01:00"
+          end:                          "00:01:20"                              # false | "00:01:10"
+          audio:                        FirstSnow.mp3
+          cover_image:                  /assets/audio/cover/emancipator/soon-it-will-be-cold-enough.jpg
+          duration:                     "00:05:12"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        From Dusk To Dawn
+          rating:                       3
+          start:                        false                                   # "00:00:30"
+          end:                          false                                   # "00:00:40"
+          audio:                        DuskToDawn.mp3
+          cover_image:                  /assets/audio/cover/emancipator/from-dusk-to-dawn.jpg
+          duration:                     "00:05:25"
+
+        # title 03
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        Anthem
+          rating:                       3
+          start:                        false                                   # "00:00:30"
+          end:                          false                                   # "00:00:40"          
+          audio:                        Anthem.mp3
+          cover_image:                  /assets/audio/cover/emancipator/anthem.jpg
+          duration:                     "00:05:40"
+
+        # title 04
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        Safe In The Steep Cliffs
+          rating:                       3
+          start:                        false                                   # "00:00:30"
+          end:                          false                                   # "00:00:40"
+          audio:                        SafeInTheSteepCliffs.mp3
+          cover_image:                  /assets/audio/cover/emancipator/safe-in-the-steep-cliffs.jpg
+          duration:                     "00:04:35"
+
+        # title 05
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        Time For Space
+          rating:                       3
+          start:                        false                                   # "00:00:30"
+          end:                          false                                   # "00:00:40"
+          audio:                        TimeForSpace.mp3
+          cover_image:                  /assets/audio/cover/emancipator/tine-for-space.jpg
+          duration:                     "00:07:13"
+
+        # title 06
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        Sea To Sky
+          rating:                       3
+          start:                        false                                   # "00:00:30"
+          end:                          false                                   # "00:00:40"
+          audio:                        SeaToSky.mp3
+          cover_image:                  /assets/audio/cover/emancipator/sea-to-sky.jpg
+          duration:                     "00:04:24"
+
+        # title 07
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        Alligator
+          rating:                       3
+          start:                        false                                   # "00:00:30"
+          end:                          false                                   # "00:00:40"
+          audio:                        alligator.mp3
+          cover_image:                  /assets/audio/cover/emancipator/alligator.jpg
+          duration:                     "00:03:13"
+
+        # title 08
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        Dab City
+          rating:                       3
+          start:                        false                                   # "00:00:30"
+          end:                          false                                   # "00:00:40"
+          audio:                        DabCity.mp3
+          cover_image:                  /assets/audio/cover/emancipator/dab-city.jpg
+          duration:                     "00:04:22"
+
+    # --------------------------------------------------------------------------
+    # Disco 80th - Royalty Free Music
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             free_disco
+      title:                            Disco 80th
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &album_free_disco
+        name:                           Disco 80th
+        playlist:                       free_disco
+        artist:                         Royalty Free Music
+        audio_base:                     //p.productioncrate.com/stock-hd/audio
+        cover_image:                    /assets/audio/cover/royalty_free/free_disco_sounds.jpg
+        audio_fade:                     false
+        repeat:                         false
+        shuffle:                        false        
+
+      # ------------------------------------------------------------------------
+      # Playlist Items (Songs)
+      #
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Dancefloor Fever
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        SoundsCrate-Dancefloor_Fever.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:27"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Dance On Dance Off
+          rating:                       1
+          start:                        false
+          end:                          false          
+          audio:                        SoundsCrate-Dance_On_Dance_Off.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:14"
+
+        # title 03
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Disco Flamingo
+          rating:                       4
+          start:                        false
+          end:                          false          
+          audio:                        SoundsCrate-Disco_Flamingo.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:19"
+
+        # title 04
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Downtown
+          rating:                       1
+          start:                        false
+          end:                          false          
+          audio:                        SoundsCrate-Downtown.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:48"
+
+        # title 05
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Electric Boogie
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        SoundsCrate-Electric_Boogie.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:19"
+
+        # title 06
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Grand Central
+          rating:                       1
+          start:                        false
+          end:                          false          
+          audio:                        SoundsCrate-Grand_Central.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:33"
+
+        # title 07
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        In The Pocket
+          rating:                       1
+          start:                        false
+          end:                          false          
+          audio:                        SoundsCrate-In_The_Pocket.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:58"
+
+        # title 08
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Lounge Life
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        SoundsCrate-Lounge_Life.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:34"
+
+        # title 09
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Made For This
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        SoundsCrate-Made_For_This.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:13"
+
+        # title 10
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Midnight Express
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        SoundsCrate-Midnight_Express.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:30"
+
+        # title 11
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Nightrun
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        SoundsCrate-Nightrun.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:58"
+
+        # title 12
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Saturday Night
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        SoundsCrate-Saturday_Night.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:02"
+
+        # title 13
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Studio 45
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        SoundsCrate-Studio_45.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:01:56"
+
+        # title 14
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Yes Sir I Can Disco
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        SoundsCrate-Yes_Sir_I_Can_Disco.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:21"
+
+        # title 15
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Fashion Show
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        soundscrate-fashion-show.mp3
+          audio_info:                   /sfx.productioncrate.com
+          duration:                     "00:03:08"
+
+        # title 16
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Loungy Disco
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        soundscrate-loungy-disco.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:03:04"
+
+        # title 17
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Oakland Style
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        soundscrate-oakland-style.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:03:19"
+
+        # title 18
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Funkish Vibe
+          rating:                       1
+          start:                        false
+          end:                          false
+          audio:                        soundscrate-funkish-vibe.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "00:02:38"
+
+# ------------------------------------------------------------------------------
+# END config

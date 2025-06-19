@@ -227,24 +227,25 @@ tag::urls[]
 :url-j1-kickstarter--learning-seo:                //jekyll.one/pages/public/learn/kickstart/learning_seo/what_seo_is/
 :url-j1-learning-seo--what_seo_is:                //jekyll.one/pages/public/learn/kickstart/learning_seo/what_seo_is/
 
-:url-j1-downloads--template:                	    //rubygems.org/gems/j1-template
+:url-j1-downloads--template:                	  //rubygems.org/gems/j1-template
 
 :url-j1--devstart:                                //jekyll.one/pages/public/learn/devstart/
 
 :url-j1--rocketstart:                             //jekyll.one/pages/public/learn/rocketstart
 :url-j1--rocketstart-deployment-reference:        //jekyll.one/pages/public/learn/rocketstart/#deployment-reference
 
-:url-j1-roundtrip--present-images:                /pages/public/learn/roundtrip/present_images/
+:url-j1-roundtrip--image_data:                    /pages/public/tour/image_data/
 
 :url-j1-learn--whats-up:                          //jekyll.one/pages/public/learn/whats_up/
-:url-j1-learn--present-images:                    //jekyll.one/pages/public/learn/roundtrip/present_images/
-:url-j1-learn--present-videos:                    //jekyll.one/pages/public/learn/roundtrip/present_videos/
-:url-j1-learn--typography:                        //jekyll.one/pages/public/learn/roundtrip/typography/
-:url-j1-learn--icon-fonts:                        //jekyll.one/pages/public/learn/roundtrip/mdi_icon_font/
-:url-j1-learn--asciidoc_extensions:               //jekyll.one/pages/public/learn/roundtrip/asciidoc_extensions/
-:url-j1-learn--extended-modals:                   //jekyll.one/pages/public/learn/roundtrip/modals/
-:url-j1-learn--responsive-tables:                 //jekyll.one/pages/public/learn/roundtrip/responsive_tables/
-:url-j1-learn--themes:                            //jekyll.one/pages/public/learn/roundtrip/themes/
+:url-j1-learn--present-images:                    //jekyll.one/pages/public/tour/image_data/
+:url-j1-learn--present-audio:                     //jekyll.one/pages/public/tour/audio_data/
+:url-j1-learn--present-video:                     //jekyll.one/pages/public/tour/video_data/
+:url-j1-learn--typography:                        //jekyll.one/pages/public/tour/typography/
+:url-j1-learn--icon-fonts:                        //jekyll.one/pages/public/tour/mdi_icon_font/
+:url-j1-learn--asciidoc_extensions:               //jekyll.one/pages/public/tour/asciidoc_extensions/
+:url-j1-learn--extended-modals:                   //jekyll.one/pages/public/tour/modals/
+:url-j1-learn--responsive-tables:                 //jekyll.one/pages/public/tour/responsive_tables/
+:url-j1-learn--themes:                            //jekyll.one/pages/public/tour/themes/
 
 :url-j1-binder-repo--requirements-txt:            //github.com/jekyll-one/j1-binder-repo
 :url-j1-binder-repo--environment-yml:             //github.com/jekyll-one/j1-binder-nbinteract
@@ -535,6 +536,7 @@ tag::tags[]
 
 // special characters
 //
+:char-space:                                      &nbsp;
 :char-emdash:                                     &#8212;
 :char-middot:                                     &middot;
 :char-dot:                                        &#46;
@@ -550,50 +552,57 @@ end::tags[]
 // -----------------------------------------------------------------------------
 tag::data[]
 
-:data-broadbandsearch--global-mobile-traffic:     "assets/images/pages/features/global-mobile-traffic-1920x1080.jpg, Percentage global mobile traffic - 2011-2021"
+:data-broadbandsearch--global-mobile-traffic:     "assets/image/page/features/global-mobile-traffic-1920x1080.jpg, Percentage global mobile traffic - 2011-2021"
 
-:data-binderhub--architecture:                    "assets/images/pages/nbinteract/binderhub-architecture.jpg, Binderhub Architecture"
-:data-jupyterlab--architecture:                   "assets/images/pages/nbinteract/jupyterlab-architecture.jpg, JupyterLab Architecture"
+:data-binderhub--architecture:                    "assets/image/page/nbinteract/binderhub-architecture.jpg, Binderhub Architecture"
+:data-jupyterlab--architecture:                   "assets/image/page/nbinteract/jupyterlab-architecture.jpg, JupyterLab Architecture"
 
-:data-nbi-textbook--excerpt:                      "assets/images/pages/nbinteract/manual/nbi-textbook-example.jpg, NBI textbook (excerpt)"
+:data-nbi-textbook--excerpt:                      "assets/image/page/nbinteract/manual/nbi-textbook-example.jpg, NBI textbook (excerpt)"
 
-:data-lingohub--speakers-by-language:             "assets/images/pages/features/native-speakers-by-language.jpg, Native speakers by language"
-:data-images--google-lighthouse:                  "assets/images/pages/features/google-lighthouse-1080x300.jpg, Google Lighthouse Scores (Starter Web at Github)"
-:data-images--desktop-navigation:                 "assets/images/pages/features/desktop-web-navigation-1280x1000.jpg, Desktop Web Navigation"
-:data-images--mobile-navigation:                  "assets/images/pages/features/mobile-navigation-600x800.jpg, Mobile Web Navigation"
-:data-images--master-header:                      "assets/images/pages/features/master-header-1280x600.jpg, Master Header (image-based)"
-:data-images--fab:                                "assets/images/pages/features/fab-1280x500.jpg, FAB (Menu)"
-:data-images--full-text-search:                   "assets/images/pages/features/full-text-search-1280x800.jpg, Full-text search"
-:data-images--cookie-consent:                     "assets/images/pages/features/cookie-consent-1280x800.jpg, Cookie Consent"
-:data-images--translator:                         "assets/images/pages/features/translator-1280x800.jpg, Google Translator"
-:data-images--comments-hyvor:                     "assets/images/pages/features/comments-1280x600.jpg, Comments by Hyvor Talk"
-:data-images--nav-module:                         "assets/images/pages/features/nav-module-1280x300.jpg, Navigation Module (NAV)"
-:data-images--teaser-banner:                      "assets/images/pages/features/teaser-banner-1280x600.jpg, Teaser Banner"
-:data-images--intro-panel:                        "assets/images/pages/features/intro-panel-1280x800.jpg, Intro Panel"
-:data-images--example-content:                    "assets/images/pages/features/example-content-1280x800.jpg, Example Content"
-:data-images--bootswatch-themes:                  "assets/images/pages/features/bootswatch-themes-1280x800.jpg, Bootswatch Themes (Minty)"
-:data-images--blog-post-navigator:                "assets/images/pages/features/blog-post-navigator-1280x1000.jpg, Blog Post Navigator"
-:data-images--nbi-textbook-example:                "assets/images/pages/features/nbi-barchart-1280x800.jpg, Bar Chart"
+:data-lingohub--speakers-by-language:             "assets/image/page/features/native-speakers-by-language.jpg, Native speakers by language"
+:data-images--google-lighthouse:                  "assets/image/page/features/google-lighthouse-1080x300.jpg, Google Lighthouse Scores (Starter Web at Github)"
+:data-images--desktop-navigation:                 "assets/image/page/features/desktop-web-navigation-1280x1000.jpg, Desktop Web Navigation"
+:data-images--mobile-navigation:                  "assets/image/page/features/mobile-navigation-600x800.jpg, Mobile Web Navigation"
+:data-images--master-header:                      "assets/image/page/features/master-header-1280x600.jpg, Master Header (image-based)"
+:data-images--fab:                                "assets/image/page/features/fab-1280x500.jpg, FAB (Menu)"
+:data-images--full-text-search:                   "assets/image/page/features/full-text-search-1280x800.jpg, Full-text search"
+:data-images--cookie-consent:                     "assets/image/page/features/cookie-consent-1280x800.jpg, Cookie Consent"
+:data-images--translator:                         "assets/image/page/features/translator-1280x800.jpg, Google Translator"
+:data-images--comments-hyvor:                     "assets/image/page/features/comments-1280x600.jpg, Comments by Hyvor Talk"
+:data-images--nav-module:                         "assets/image/page/features/nav-module-1280x300.jpg, Navigation Module (NAV)"
+:data-images--teaser-banner:                      "assets/image/page/features/teaser-banner-1280x600.jpg, Teaser Banner"
+:data-images--intro-panel:                        "assets/image/page/features/intro-panel-1280x800.jpg, Intro Panel"
+:data-images--example-content:                    "assets/image/page/features/example-content-1280x800.jpg, Example Content"
+:data-images--bootswatch-themes:                  "assets/image/page/features/bootswatch-themes-1280x800.jpg, Bootswatch Themes (Minty)"
+:data-images--blog-post-navigator:                "assets/image/page/features/blog-post-navigator-1280x1000.jpg, Blog Post Navigator"
+:data-images--nbi-textbook-example:               "assets/image/page/features/nbi-barchart-1280x800.jpg, Bar Chart"
 
-:data-lb-example--template-features:              "assets/images/modules/gallery/old_times/image_01.jpg, GrandPa's 80th Birthday, assets/images/modules/gallery/old_times/image_02.jpg, GrandPa's 80th Birthday, assets/images/modules/gallery/old_times/image_03.jpg, GrandPa's annual journey"
+:data-lb-example--template-features:              "assets/image/module/gallery/old_time/image/grand_pa/image-1.jpg, GrandPa's 80th Birthday, assets/image/module/gallery/old_time/image/grand_pa/image-2.jpg, GrandPa's 80th Birthday, assets/image/module/gallery/old_time/image/grand_pa/image-3.jpg, GrandPa's annual journey"
 
-:data-rocketstart--1-click-deploy-1:              "assets/images/pages/1-click-deploy/step-1.jpg, 1-Click Deploy Process"
-:data-rocketstart--1-click-deploy-2:              "assets/images/pages/1-click-deploy/step-2.jpg, 1-Click Deploy Process"
-:data-rocketstart--1-click-deploy-3:              "assets/images/pages/1-click-deploy/step-3.jpg, 1-Click Deploy Process"
-:data-rocketstart--1-click-deploy-4:              "assets/images/pages/1-click-deploy/step-4.jpg, 1-Click Deploy Process"
-:data-rocketstart--1-click-deploy-5:              "assets/images/pages/1-click-deploy/step-5.jpg, 1-Click Deploy Process"
-:data-rocketstart--1-click-deploy-6:              "assets/images/pages/1-click-deploy/step-6.jpg, 1-Click Deploy Process"
-:data-rocketstart--1-click-deploy-7:              "assets/images/pages/1-click-deploy/step-7.jpg, 1-Click Deploy Process"
-:data-rocketstart--1-click-deploy-8:              "assets/images/pages/1-click-deploy/step-8.jpg, 1-Click Deploy Process"
-:data-rocketstart--1-click-deploy-9:              "assets/images/pages/1-click-deploy/step-9.jpg, 1-Click Deploy Process"
-:data-rocketstart--1-click-deploy-9a:             "assets/images/pages/1-click-deploy/step-9a.jpg, 1-Click Deploy Process"
-:data-rocketstart--1-click-deploy-10a:            "assets/images/pages/1-click-deploy/step-10a.jpg, 1-Click Deploy Process"
-:data-rocketstart--1-click-deploy-10b:            "assets/images/pages/1-click-deploy/step-10b.jpg, 1-Click Deploy Process"
+:data-rocketstart--1-click-deploy-1:              "assets/image/page/1-click-deploy/step-1.jpg, 1-Click Deploy Process"
+:data-rocketstart--1-click-deploy-2:              "assets/image/page/1-click-deploy/step-2.jpg, 1-Click Deploy Process"
+:data-rocketstart--1-click-deploy-3:              "assets/image/page/1-click-deploy/step-3.jpg, 1-Click Deploy Process"
+:data-rocketstart--1-click-deploy-4:              "assets/image/page/1-click-deploy/step-4.jpg, 1-Click Deploy Process"
+:data-rocketstart--1-click-deploy-5:              "assets/image/page/1-click-deploy/step-5.jpg, 1-Click Deploy Process"
+:data-rocketstart--1-click-deploy-6:              "assets/image/page/1-click-deploy/step-6.jpg, 1-Click Deploy Process"
+:data-rocketstart--1-click-deploy-7:              "assets/image/page/1-click-deploy/step-7.jpg, 1-Click Deploy Process"
+:data-rocketstart--1-click-deploy-8:              "assets/image/page/1-click-deploy/step-8.jpg, 1-Click Deploy Process"
+:data-rocketstart--1-click-deploy-9:              "assets/image/page/1-click-deploy/step-9.jpg, 1-Click Deploy Process"
+:data-rocketstart--1-click-deploy-9a:             "assets/image/page/1-click-deploy/step-9a.jpg, 1-Click Deploy Process"
+:data-rocketstart--1-click-deploy-10a:            "assets/image/page/1-click-deploy/step-10a.jpg, 1-Click Deploy Process"
+:data-rocketstart--1-click-deploy-10b:            "assets/image/page/1-click-deploy/step-10b.jpg, 1-Click Deploy Process"
 
-:data-translator--icon:                           "assets/images/pages/tools/translator-icon.jpg, QuickLinks - Translator Icon"
+:data-translator--icon:                           "assets/image/page/tools/translator-icon.jpg, QuickLinks - Translator Icon"
 
-:data-images-lightbox--standalone:                "assets/images/modules/gallery/old_times/image_02.jpg, GrandPa's 80th Birthday"
-:data-images-lightbox--group:                     "assets/images/modules/gallery/old_times/image_03.jpg, GrandPa's annual journey, assets/images/modules/gallery/old_times/image_04.jpg, GrandPa's annual journey"
+:data-images-lightbox--standalone:                "assets/image/module/gallery/old_time/image/grand_pa/image-2.jpg, GrandPa's 80th Birthday"
+:data-images-lightbox--group:                     "assets/image/module/gallery/old_time/image/grand_pa/image-3.jpg, GrandPa's annual journey, assets/image/module/gallery/old_time/image/grand_pa/image-4.jpg, GrandPa's annual journey"
+
+:data-images--themes-menu:                        "assets/image/page/tour/bootswatch-themes.jpg, Bootswatch Themes"
+:data-images--bootswatch-themes:                  "assets/image/page/tour/themes-1920x1280.jpg, Themes menu (Bootswatch)"
+
+:data-quicksearch--icon:                          "assets/image/page/tour/600_quicksearch/quicksearch_icon.jpg, Search button (magnifier) in the quick access area"
+:data-quicksearch--input:                         "assets/image/page/tour/600_quicksearch/quicksearch_input.jpg, Input bar for a QuickSearch"
+:data-quicksearch--results:                       "assets/image/page/tour/600_quicksearch/quicksearch_results.jpg, Results for a QuickSearch"
 
 end::data[]
 

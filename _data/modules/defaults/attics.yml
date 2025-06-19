@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 # NOTE:
 #   If no header is assigned to a LAYOUT, all pages based on this
@@ -36,11 +36,12 @@ description:
 # Default configuration settings
 #
 defaults:
-  enabled:                              true
 
   # ----------------------------------------------------------------------------
-  # Global settings for text- and image-based header
+  # GENERAL options (for text- and image-based header)
+  # ----------------------------------------------------------------------------
   #
+  enabled:                              false
   debug:                                false
   hide_page_oninit:                     true                                    # hide page on 'init' to optimze LCP (loading images ???)
 
@@ -87,7 +88,7 @@ defaults:
   # placeholder slide, used if NO slides given in FRONTMATTER (of a page|post)
   #
   slides:
-    - url:                              /assets/images/modules/attics/placeholder/transparent-1920x1280.png
+    - url:                              /assets/image/module/attic/placeholder/transparent-1920x1280.png
       alt:                              Placeholder background image
 
   # CSS filter setting applied on (backstretch|background) image
@@ -109,7 +110,7 @@ defaults:
   # currently NOT supported
   #
   logo_enabled:                         false
-  logo_url:                             /assets/images/modules/icons/j1/j1-512x512.png
+  logo_url:                             /assets/image/module/icon/j1/j1-512x512.png
   logo_alt:                             Jekyll-One-Template
   logo_height:                          196
   logo_animate:                         animate__slideInDown

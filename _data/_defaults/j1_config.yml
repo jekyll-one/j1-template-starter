@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# For details, see: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# For details, see: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 
 # ==============================================================================
@@ -92,15 +92,15 @@ typography:
 # By default, the asset_path is automatically defined relative to
 # base_path plus the enabled theme, e.g
 #
-#     [base_path]/assets/themes/[THEME-NAME]
+#     [base_path]/assets/theme/[THEME-NAME]
 #
-#     e.g. /assets/themes/bootstrap
+#     e.g. /assets/theme/bootstrap
 #
 # Override this by defining an absolute path to assets here.
 # ex:
 #   http://s3.amazonaws.com/yoursite/themes/watermelon/assets
 #
-asset_path:                             /assets/themes/j1
+asset_path:                             /assets/theme/j1
 app_path:                               /assets/apps
 image_path:                             /assets/images
 
@@ -326,27 +326,27 @@ preload:
   css:
     preload:                              true
     css:                                  [
-                                            /assets/themes/j1/core/css/themes/unolight/bootstrap,
-                                            /assets/themes/j1/core/css/vendor
+                                            /assets/theme/j1/core/css/themes/unolight/bootstrap,
+                                            /assets/theme/j1/core/css/vendor
                                           ]
     files:                                []
 
   js:
     preload:                              true
     js:                                   [
-                                            /assets/themes/j1/modules/bmd/js/bmd,
-                                            /assets/themes/j1/modules/backstretch/js/backstretch,
-                                            /assets/themes/j1/core/js/template
+                                            /assets/theme/j1/modules/bmd/js/bmd,
+                                            /assets/theme/j1/modules/backstretch/js/backstretch,
+                                            /assets/theme/j1/core/js/template
                                           ]
     files:                                [
-                                            /assets/themes/j1/adapter/js/attic.js,
-                                            /assets/themes/j1/adapter/js/logger.js,
-                                            /assets/themes/j1/adapter/js/bmd.js,
-                                            /assets/themes/j1/adapter/js/navigator.js
+                                            /assets/theme/j1/adapter/js/attic.js,
+                                            /assets/theme/j1/adapter/js/logger.js,
+                                            /assets/theme/j1/adapter/js/bmd.js,
+                                            /assets/theme/j1/adapter/js/navigator.js
                                           ]
   image:
     preload:                              false
-    files:                                [ /assets/images/modules/icons/j1/j1-512x512.png ]
+    files:                                [ /assets/image/module/icon/j1/j1-512x512.png ]
 
 # ------------------------------------------------------------------------------
 # PRECONNECT settings

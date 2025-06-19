@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -43,9 +43,6 @@ defaults:
   #   default:                            /assets/data/carousel.json
   #
   # ----------------------------------------------------------------------------
-  enabled:                              false
-
-  # ----------------------------------------------------------------------------
   # AJAX (JSON)
   #
   # The HTML portion of a slider are being read from a HTML file generated
@@ -53,10 +50,16 @@ defaults:
   # AJAX methods are used to supply the needed HTML code at the time
   # a slider is initialized by the JS adapter.
   # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
   xhr_data_path:                        /assets/data/slick
 
   # ----------------------------------------------------------------------------
-  # Lightbox options (Slick Ligghtbox)
+  # Lightbox options (Slick Lightbox)
   # ----------------------------------------------------------------------------
   lightbox:
     enabled:                            false

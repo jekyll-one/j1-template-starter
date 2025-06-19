@@ -1,14 +1,14 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/lazyLoader.yml
-# User Configuration of the lazyLoader Module
+# ~/_data/modules/lazyCSSLoader.yml
+# User Configuration of the lazyCSSLoader Module
 #
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 # NOTE:
 #
@@ -18,14 +18,19 @@
 # Description
 #
 description:
-  title:                                lazyLoader
+  title:                                lazyCSSLoader
   scope:                                User settings
-  location:                             _data/modules/lazyLoader.yml
+  location:                             _data/modules/lazyCSSLoader.yml
 
 # ------------------------------------------------------------------------------
 # User settings
 #
 settings:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
   enabled:                              true
 
   # ----------------------------------------------------------------------------
@@ -34,59 +39,96 @@ settings:
   loaders:
 
     # --------------------------------------------------------------------------
-    # MDI Light Icon CSS
+    # Images (foreground)
     #
     - loader:
       enabled:                          true
+      type:                             image
+      description:                      Foreground Images (img)
+
+      selector:                         img.lazy
+      rootMargin:                       150px
+
+    # --------------------------------------------------------------------------
+    # HTML content (banner) loaded via AJAX
+    #
+    - loader:
+      enabled:                          true
+      type:                             xhr
+      description:                      Teaser Banner
+
+      content:                          banner_home_teaser_content
+      content_file:                     /assets/data/banner.html
+      selector:                         banner_home_teaser                      # div id
+      rootMargin:                       150px
+
+    - loader:
+      enabled:                          true
+      type:                             xhr
+      description:                      Parallax Banner
+
+      content:                          banner_home_parallax_content
+      content_file:                     /assets/data/banner.html
+      selector:                         banner_home_parallax                    # div id
+      rootMargin:                       250px
+
+    # --------------------------------------------------------------------------
+    # CSS files
+    #
+    - loader:
+      enabled:                          true
+      type:                             css
       description:                      MDI Icons (light)
 
-      src:                              /assets/themes/j1/core/css/icon-fonts/mdil.min.css
-      selector:                         '.mdil'
-      rootMargin:                       '150px 0px'
+      src:                              /assets/theme/j1/core/css/icon-fonts/mdil.min.css
+      selector:                         .mdil
+      rootMargin:                       150px
 
-    # --------------------------------------------------------------------------
-    # MDI Regular Icon CSS
-    #
     - loader:
       enabled:                          true
+      type:                             css
       description:                      MDI Icon CSS (regular)
 
-      src:                              /assets/themes/j1/core/css/icon-fonts/mdi.min.css
-      selector:                         '.mdi'
-      rootMargin:                       '150px 0px'
+      src:                              /assets/theme/j1/core/css/icon-fonts/mdi.min.css
+      selector:                         .mdi
+      rootMargin:                       150px
 
-    # --------------------------------------------------------------------------
-    # FontAwesone (FA) Icon CSS
-    #
+  # - loader:
+  #   enabled:                          true
+  #   type:                             css
+  #   description:                      FA Icon CSS (all)
+
+  #   src:                              /assets/theme/j1/core/css/icon-fonts/fontawesome.min.css
+  #   selector:                         .fa
+  #   rootMargin:                       150px
+
     - loader:
       enabled:                          true
-      description:                      FA Icon CSS
-
-      src:                              /assets/themes/j1/core/css/icon-fonts/fontawesome.min.css
-      selector:                         '.fa'
-      rootMargin:                       '150px 0px'
-
-    # --------------------------------------------------------------------------
-    # countryFlag Icon CSS
-    #
-    - loader:
-      enabled:                          true
+      type:                             css
       description:                      CountryFlag Icon CSS
 
-      src:                              /assets/themes/j1/core/country-flags/css/theme/uno.min.css
-      selector:                         '.flag-icon'
-      rootMargin:                       '150px 0px'
+      src:                              /assets/theme/j1/core/country-flags/css/theme/uno.min.css
+      selector:                         .flag-icon
+      rootMargin:                       150px
 
-    # --------------------------------------------------------------------------
-    # rTable CSS
+
+    # - loader:
+    #   enabled:                          true
+    #   type:                             css
+    #   description:                      rTable CSS
     #
-    - loader:
-      enabled:                          true
-      description:                      rTable CSS
+    #   src:                              /assets/theme/j1/modules/rtable/css/theme/uno/rtable.min.css
+    #   selector:                         .rtable
+    #   rootMargin:                       150px
 
-      src:                              /assets/themes/j1/modules/rtable/css/theme/uno/rtable.min.css
-      selector:                         '.rtable'
-      rootMargin:                       '150px 0px'
+    # - loader:
+    #   enabled:                          true
+    #   type:                             css
+    #   description:                      Rouge CSS
+    #
+    #   src:                              /assets/theme/j1/modules/rouge/css/uno.light/theme.min.css
+    #   selector:                         .highlight
+    #   rootMargin:                       50px
 
 # ------------------------------------------------------------------------------
 # END config

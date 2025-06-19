@@ -1,13 +1,12 @@
 ---
-title:                                  J1 Starter
+title:                                  J1 Template
 tagline:                                Plan Details
 
 date:                                   2020-11-03
 #last_modified:                         2023-01-01
 
 description: >
-                                        J1 Template is a Bootstrap V5 website template for the static
-                                        site generator Jekyll.
+                                        J1 Template is a Bootstrap V5 based template for Jekyll.
                                         Service plans give customers a clear understanding of what services
                                         they will receive, how they will be provided, and what they will cost. Service
                                         plans help ensure that the service provider and the customer are on the same
@@ -21,7 +20,7 @@ robots:
   follow:                               false
 
 image:
-  path:                                 /assets/images/modules/attics/1920x1280/kira-auf-der-heide.jpg
+  path:                                 /assets/image/module/attic/1920x1280/kira-auf-der-heide.jpg
   width:                                1920
   height:                               1280
 
@@ -29,11 +28,11 @@ exclude_from_search:                    true
 regenerate:                             false
 permalink:                              /pages/public/plans/plan_details/
 
-resources:                              [ animate, lightbox, rouge ]
+resources:                              [ lightbox ]
 resource_options:
   - attic:
       slides:
-        - url:                          /assets/images/modules/attics/1920x1280/kira-auf-der-heide.jpg
+        - url:                          /assets/image/module/attic/1920x1280/kira-auf-der-heide.jpg
           alt:                          Photo by Kira auf der Heide on Unsplash
           badge:
             type:                       unsplash

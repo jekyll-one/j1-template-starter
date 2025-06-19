@@ -22,7 +22,7 @@ robots:
   follow:                               false
 
 image:
-  path:                                 /assets/images/modules/attics/jessica-ruscello-1920x1280.jpg
+  path:                                 /assets/image/module/attic/jessica-ruscello-1920x1280.jpg
   width:                                1920
   height:                               1280
 
@@ -30,15 +30,12 @@ exclude_from_search:                    true
 regenerate:                             false
 permalink:                              /pages/public/panels/intro_panel/
 
-resources:                              [
-                                          animate, carousel, lightbox,
-                                          gallery, lightgallery, rouge
-                                        ]
+resources:                              [ carousel, gallery, lightbox, lightgallery ]
 
 resource_options:
   - attic:
       slides:
-        - url:                          /assets/images/modules/attics/jessica-ruscello-1920x1280.jpg
+        - url:                          /assets/image/module/attic/jessica-ruscello-1920x1280.jpg
           alt:                          Photo by Alexander Andrews on Unsplash
           badge:
             type:                       unsplash
@@ -77,7 +74,7 @@ A good user experience browsing a Web site is one of the most important
 features a website offers as a must, besides excellent content.
 
 [role="mb-3"]
-image::/assets/images/pages/panels/responsive-text-1920x800.jpg[{{page.title}}, width=1280]
+image::/assets/image/page/panels/responsive-text-1920x800.jpg[{{page.title}}, width=1280]
 
 Presenting content at its best on all devices for all window sizes makes
 a great Web brilliant. J1 Template supports your Web for full responsiveness,
@@ -132,7 +129,7 @@ The Internet is a rapidly changing world. Like the fashion industries, new
 trends are set every year.
 
 [role="mb-3"]
-image::/assets/images/pages/panels/florian-olivo-1920x800.jpg[{{page.title}}, width=1280]
+image::/assets/image/page/panels/florian-olivo-1920x800.jpg[{{page.title}}, width=1280]
 
 J1 Template combines modern technologies for the world of static Webs to
 make a site unique using current standards in terms of web development,
@@ -194,7 +191,7 @@ give structure and style to web pages, and JavaScript provides web pages
 interactive elements that engage a user.
 
 [role="mb-3"]
-image::/assets/images/pages/panels/modules-apps-1920x800.jpg[{{page.title}}, width=1280]
+image::/assets/image/page/panels/modules-apps-1920x800.jpg[{{page.title}}, width=1280]
 
 Content placement and basic methods for the dynamic of elements can be done
 using pure HTML5 and CSS3. For more complex solutions like *modules* (to
@@ -227,7 +224,7 @@ hands to create a website with no need to start by web development or
 web design from the beginning.
 
 [role="mb-3"]
-image::/assets/images/pages/panels/no-time-1920x800.jpg[{{page.title}}, width=1280]
+image::/assets/image/page/panels/no-time-1920x800.jpg[{{page.title}}, width=1280]
 
 A website based on J1 is using build-in templates and engines. As a result,
 the process to generate HTML code from your content is done automatically

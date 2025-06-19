@@ -1,0 +1,122 @@
+[role="mt-5"]
+== HTML Layout
+
+A HTML Layout is required to define the *slides* (images) to be
+used by a Swiper slider. Find the HTML Layout also with the
+https://swiperjs.com/swiper-api[Swiper Documentation, {browser-window--new}].
+
+[role="mt-4"]
+=== Base HTML Layout v1
+
+lorem:sentences[3]
+
+[source, html]
+----
+<!-- Slider main container (required) -->
+<div id="gallery_id" class="swiper swiper-container">
+
+  <!-- Slider wrapper element (required) -->
+  <div class="swiper-wrapper">
+    <!-- Slides (required) -->
+    <div class="swiper-slide">
+      <img src="<path_to>/image-1.jpg">
+    </div>
+    <!-- more slides -->
+    <div class="swiper-slide">
+      <img src="<path_to>/image-x.jpg">
+    </div>
+  </div> <!-- END wrapper element -->
+  
+  <!-- Sniper Pagination (optional) -->
+  <div class="swiper-pagination"></div>
+
+  <!-- Sniper Navigation (optional) -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- Sniper Scrollbar (optional)-->
+  <div class="swiper-scrollbar"></div>
+
+</div> <!-- END Main container -->
+----
+
+[role="mt-4"]
+=== Base HTML Layout v2
+
+lorem:sentences[3]
+
+[source, html]
+----
+<!-- Slider main container (required) -->
+<div id="gallery_id" class="swiper swiper-container">
+
+  <!-- Slider wrapper element (required) -->
+    <ul class="swiper-wrapper">
+      <!-- Slides (required) -->
+      <li class="swiper-slide">
+        <img src="<path_to>/image-1.jpg">
+      </li>
+      <!-- more slides -->
+      <li class="swiper-slide">
+        <img src="<path_to>/image-x.jpg">
+      </li>
+    </ul> <!-- END swiper-wrapper (slides) -->
+
+  <!-- Sniper Pagination (optional) -->
+  <div class="swiper-pagination"></div>
+
+  <!-- Sniper Navigation (optional) -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- Sniper Scrollbar (optional)-->
+  <div class="swiper-scrollbar"></div>
+
+</div> <!-- END Main container -->
+----
+
+[role="mt-4"]
+=== Extended HTML Layout
+
+lorem:sentences[3]
+
+[source, html]
+----
+<!-- Slider main container (required) -->
+<div id="gallery_id" class="swiper swiper-container">
+
+  <!-- Slider wrapper element (required) -->
+  <ul class="swiper-wrapper">
+    <!-- Slides (required) -->
+    <li class="swiper-slide">
+      <a href="<path_to>/image-1.jpg"
+        data-pswp-width="<max_width>"
+        data-pswp-height="<max_height>">
+        <img src="<path_to>/image-1.jpg" alt="Image 1">
+        <span class="pswp-caption-content">Caption: Image 1</span>
+      </a>
+    </li>
+    <!-- more slides -->
+    <li class="swiper-slide">
+      <a href="<path_to>/image-x.jpg"
+        data-pswp-width="<max_width>"
+        data-pswp-height="<max_height>">
+        <img src="<path_to>/image-x.jpg" alt="Image X">
+        <span class="pswp-caption-content">Caption: Image X</span>
+      </a>
+    </li>
+  </ul> <!-- END swiper-wrapper (slides) -->
+
+  <!-- Sniper Pagination (optional) -->
+  <div class="swiper-pagination"></div>
+
+  <!-- Sniper Navigation (optional) -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- Sniper Scrollbar (optional)-->
+  <div class="swiper-scrollbar"></div>
+
+</div> <!-- END Main container -->
+----
+

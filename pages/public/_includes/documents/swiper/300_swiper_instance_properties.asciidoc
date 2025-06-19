@@ -1,0 +1,873 @@
+[role="mt-5"]
+== Instance Properties A - M
+
+After slider initialization, the *instance variable* comes with helpful
+properties (slider parameters) set. See the the *const swiper* (variable)
+in the *examples* from above.
+
+List of available Swiper parameters (properties) alphabetically ordered
+from *A* to *M*. Find parameter settings also with the
+https://swiperjs.com/swiper-api[Swiper Documentation, {browser-window--new}].
+
+
+[role="mt-4"]
+[[prop-activeIndex]]
+=== activeIndex
+
+Index *number* of the *active* slide.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`activeIndex`
+|number
+|Index *number* of the *active* slide.
+
+[NOTE]
+====
+In *loop* mode, the *value* of *activeIndex* will be increased by the number
+of slides looped.
+====
+|===
+
+[role="mt-4"]
+[[prop-allowSlideNext]]
+=== allowSlideNext
+
+Set the ability on sliding to the *next* slides by assigning `false` \| `true`
+to this property.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`allowSlideNext`
+|boolean
+|Disable \| Enable ability to slide to the *next* slides by assigning
+`false` \| `true` to this property.
+
+|===
+
+[role="mt-4"]
+[[prop-allowSlidePrev]]
+=== allowSlidePrev
+
+Set the ability on sliding to the *previous* slides by assigning
+`false` \| `true` to this property.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`allowSlidePrev`
+|boolean
+|Disable \| Enable ability to slide to the *previous* slides by assigning
+`false` \| `true` to this property.
+
+|===
+
+[role="mt-4"]
+[[prop-allowTouchMove]]
+=== allowTouchMove
+
+Set the  ability move slider by *grabbing* it with mouse or by touching
+it with finger (on touch screens) by assigning `false` \| `true`
+to this property.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`allowTouchMove`
+|boolean
+|Disable \| Enable ability move slider by grabbing it with mouse or by
+touching it with finger (on touch screens) by assigning `false` \| `true`
+to this property.
+
+|===
+
+[role="mt-4"]
+[[prop-animating]]
+=== animating
+
+Is set to `true` if swiper is in *transition*.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`animating`
+|boolean
+|Is set to `true` if swiper is in *transition*.
+
+|===
+
+[role="mt-4"]
+[[prop-autoplay]]
+=== animating
+
+Is set to `true` if swiper is in *transition*.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`autoplay`
+|any
+|Set auto playing behaviour for a slide show.
+
+|===
+
+[role="mt-4"]
+[[prop-cardsEffect]]
+=== cardsEffect
+
+Object with Cards-effect parameters.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`cardsEffect`
+|any
+|Object with Cards-effect parameters.
+
+|===
+
+[role="mt-4"]
+[[prop-clickedIndex]]
+=== clickedIndex
+
+Index number of last *clicked* slide.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|'clickedIndex'
+|number
+|Index number of last *clicked* slide.
+
+|===
+
+[role="mt-4"]
+[[prop-clickedSlide]]
+=== clickedSlide
+
+Link to last clicked slide (*HTML Element*).
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`clickedSlide`
+|HTML Element
+|Link to last clicked slide (*HTML Element*).
+
+|===
+
+[role="mt-4"]
+[[prop-controller]]
+=== controller
+
+Object with controller parameters or boolean `true` to enable with
+default settings.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`controller`
+|any
+|Object with controller parameters or boolean `true` to enable with
+default settings.
+
+|===
+
+[role="mt-4"]
+[[prop-coverflowEffect]]
+=== coverflowEffect
+
+Object with Coverflow-effect parameters.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+`|coverflowEffect
+`|any
+|Object with Coverflow-effect parameters.
+
+|===
+
+[role="mt-4"]
+[[prop-creativeEffect]]
+=== creativeEffect
+
+Object with Creative-effect parameters.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`creativeEffect`
+|any
+|Object with Creative-effect parameters.
+
+|===
+
+[role="mt-4"]
+[[prop-cubeEffect]]
+=== cubeEffect
+
+Object with Cube-effect parameters.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`cubeEffect`
+|any
+|Object with Cube-effect parameters.
+
+|===
+
+[role="mt-4"]
+[[prop-defaults]]
+=== defaults
+
+Object with Swiper default options.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`defaults`
+|any
+|Swiper default options.
+
+|===
+
+[role="mt-4"]
+[[prop-el]]
+=== el
+
+Contains the Slider container HTML element.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`el`
+|HTML Element
+|Slider container HTML element.
+
+|===
+
+[role="mt-4"]
+[[prop-extendedDefaults]]
+=== extendedDefaults
+
+Object with global Swiper extended options.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`extendedDefaults`
+|any
+|Object with global Swiper extended options.
+
+|===
+
+[role="mt-4"]
+[[prop-fadeEffect]]
+=== fadeEffect
+
+Object with Fade-effect parameters.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`fadeEffect`
+|any
+|Object with Fade-effect parameters.
+
+|===
+
+[role="mt-4"]
+[[prop-flipEffect]]
+=== flipEffect
+
+Object with Flip-effect parameters.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`flipEffect`
+|any
+|Object with Flip-effect parameters.
+
+|===
+
+[role="mt-4"]
+[[prop-freeMode]]
+=== freeMode
+
+Object with free mode parameters or boolean `true` if enabled
+with default settings.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`freeMode`
+|any
+|Object with free mode parameters or boolean `true` if enabled
+with default settings.
+
+|===
+
+[role="mt-4"]
+[[prop-hashNavigation]]
+=== hashNavigation
+
+Object with hash navigation parameters or boolean `true` if enabled
+with default settings.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`hashNavigation`
+|any
+|Object with hash navigation parameters or boolean `true` if enabled
+with default settings.
+
+|===
+
+[role="mt-4"]
+[[prop-height]]
+=== height
+
+Is set to the height of the swiper container.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`height`
+|number
+|Is set to the height of the swiper container.
+
+|===
+
+[role="mt-4"]
+[[prop-history]]
+=== history
+
+Object with history parameters.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`history`
+|any
+|Object with history parameters.
+
+|===
+
+[role="mt-4"]
+[[prop-isBeginning]]
+=== isBeginning
+
+Is set to `true` if slider on most *left|top* position.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`isBeginning`
+|boolean
+|Is set to `true` if slider on most *left\|top* position.
+
+|===
+
+[role="mt-4"]
+[[prop-isEnd]]
+=== isEnd
+
+Is set to `true` if slider on most *right/bottom* position.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`isEnd`
+|boolean
+|Is set to `true` if slider on most *right/bottom* position.
+
+|===
+
+
+[role="mt-4"]
+[[prop-isLocked]]
+=== isLocked
+
+Is set to `true` if slide is *locked* (`watchOverflow`) and slides
+can not be *accessed*, e.g. when amount of slides is less than
+slides per view.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`isLocked`
+|boolean
+|Is set to `true` if slide is *locked* (`watchOverflow`) and slides
+can not be *accessed*, e.g. when amount of slides is less than
+slides per view.
+
+|===
+
+[role="mt-4"]
+[[prop-keyboard]]
+=== keyboard
+
+Object with keyboard parameters or boolean `true` if enabled
+with default settings.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`keyboard`
+|any
+|Object with keyboard parameters or boolean `true` if enabled
+with default settings.
+
+|===
+
+[role="mt-4"]
+[[prop-mousewheel]]
+=== mousewheel
+
+Object with mousewheel parameters or boolean `true` ìf enabled with
+default settings.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`mousewheel`
+|any
+|Object with mousewheel parameters or boolean `true` ìf enabled
+with default settings.
+
+|===
+
+[role="mt-5"]
+== Instance Properties N - Z
+
+After slider initialization, the *instance variable* comes with helpful
+properties (slider parameters) set. See the the *const swiper* (variable)
+in the *examples* from above.
+
+List of available Swiper parameters (properties) alphabetically ordered
+from *N* to *Z*. Find parameter settings also with the
+https://swiperjs.com/swiper-api[Swiper Documentation, {browser-window--new}].
+
+
+[role="mt-4"]
+[[prop-navigation]]
+=== navigation
+
+Object with navigation parameters or boolean `true` if enabled
+with default settings.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`navigation`
+|any
+|Object with navigation parameters or boolean `true` if enabled
+with default settings.
+
+|===
+
+[role="mt-4"]
+[[prop-originalParams]]
+=== originalParams
+
+Object with original *initialization* parameters
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`originalParams`
+|any
+|Object with original *initialization* parameters
+
+|===
+
+[role="mt-4"]
+[[prop-pagination]]
+=== pagination
+
+Object with pagination parameters or boolean `true` if enabled
+with default settings.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`pagination`
+|any
+|Object with pagination parameters or boolean `true` if enabled
+with default settings.
+
+|===
+
+[role="mt-4"]
+[[prop-parallax]]
+=== parallax
+
+Object with parallax parameters or boolean `true` if enabled
+with default settings.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`parallax`
+|any
+|Object with parallax parameters or boolean `true` if enabled
+with default settings.
+
+|===
+
+[role="mt-4"]
+[[prop-params]]
+=== params
+
+Object with passed *initialization* parameters.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`params`
+|any
+|Object with passed *initialization* parameters.
+
+|===
+
+[role="mt-4"]
+[[prop-previousIndex]]
+=== previousIndex
+
+Is set to index number of *previously active* slide.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`previousIndex`
+|number
+|Is set to index number of *previously active* slide.
+
+|===
+
+[role="mt-4"]
+[[prop-progress]]
+=== progress
+
+Current progress of wrapper translate (from 0 to 1).
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`progress`
+|number
+|Current progress of wrapper translate (from 0 to 1).
+
+|===
+
+[role="mt-4"]
+[[prop-realIndex]]
+=== realIndex
+
+Index number of currently *active slide* considering rearranged slides
+in *loop mode*.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`realIndex`
+|number
+|Index number of currently *active slide* considering rearranged slides
+in *loop mode*.
+
+|===
+
+[role="mt-4"]
+[[prop-scrollbar]]
+=== scrollbar
+
+Object with scrollbar parameters or boolean `true` if enabled
+with default settings.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`scrollbar`
+|any
+|Object with scrollbar parameters or boolean `true` if enabled
+with default settings.
+
+|===
+
+[role="mt-4"]
+[[prop-slides]]
+=== slides
+
+Array of slides HTML elements. To get specific slide HTML Element use
+`swiper.slides[1]`
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`slides`
+|HTML Element[]
+|Array of slides HTML elements. To get specific slide HTML Element use
+`swiper.slides[1]`
+
+|===
+
+[role="mt-4"]
+[[prop-slidesEl]]
+=== slidesEl
+
+Swiper wrapper *HTML element*.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`slidesEl`
+|HTML Element
+|Swiper wrapper *HTML element*.
+
+|===
+
+[role="mt-4"]
+[[prop-slidesGrid]]
+=== slidesGrid
+
+Array of slides grid elements.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`slidesGrid`
+|number[]
+|Array of slides grid elements.
+
+|===
+
+[role="mt-4"]
+[[prop-slidesSizesGrid]]
+=== slidesSizesGrid
+
+Array of widths for all slides elements.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`slidesSizesGrid`
+|number[]
+|Array of widths for all slides elements.
+
+|===
+
+[role="mt-4"]
+[[prop-snapGrid]]
+=== snapGrid
+
+Array of all slides snap grid elements.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`snapGrid`
+|number[]
+|Array of all slides snap grid elements.
+
+|===
+
+[role="mt-4"]
+[[prop-snapIndex]]
+=== snapIndex
+
+Index number of current snap in `snapGrid`.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`snapIndex`
+|number
+|Index number of current snap in `snapGrid`.
+
+|===
+
+[role="mt-4"]
+[[prop-swipeDirection]]
+=== swipeDirection
+
+Strings that reflect the direction of sliding.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`swipeDirection`
+|_prev_ \| _next_
+|Strings that reflect the direction of sliding.
+
+|===
+
+[role="mt-4"]
+[[prop-thumbs]]
+=== thumbs
+
+Object with thumbs component parameters for thumb image navigation.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`thumbs`
+|any
+|Object with thumbs component parameters for thumb image navigation.
+
+|===
+
+[role="mt-4"]
+[[prop-touches]]
+=== touches
+
+Object with touch event properties.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`touches`
+|object
+|Object with the following touch event properties: +
+
+* `touches.startX`
+* `touches.startY`
+* `touches.currentX`
+* `touches.currentY`
+* `touches.diff`
+
+|===
+
+[role="mt-4"]
+[[prop-translate]]
+=== translate
+
+Is set to current value of wrapper translate.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`translate`
+|number
+|Is set to current value of wrapper translate.
+
+|===
+
+[role="mt-4"]
+[[prop-virtual]]
+=== virtual
+
+Object with virtual slides settings.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`virtual`
+|any
+|Object with virtual slides settings.
+
+|===
+
+[role="mt-4"]
+[[prop-width]]
+=== width
+
+Set to width of the swiper container.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`width`
+|number
+|Set to width of the swiper container.
+
+|===
+
+
+[role="mt-4"]
+[[prop-wrapperEl]]
+=== wrapperEl
+
+Swiper wrapper *HTML element*.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`wrapperEl`
+|HTML Element
+|Swiper wrapper *HTML element*.
+
+|===
+
+[role="mt-4"]
+[[prop-zoom]]
+=== zoom
+
+Object with zoom parameters or boolean `true` if enabled
+with default settings.
+
+[cols="3,2,7a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Name |Type |Description
+
+|`zoom`
+|any
+|Object with zoom parameters or boolean `true` if enabled
+with default settings.
+
+|===
+

@@ -1,0 +1,326 @@
+---
+title:                                  Responsive Tables
+title_extention:                        Responsive tables for J1 Template
+tagline:                                Present tables at its best
+
+date:                                   2020-11-09
+#last_modified:                         2023-01-01
+description: >
+                                        J1 Template supports a new design for responsive tables
+                                        based on Bootstrap. The approach used is using pure CSS
+                                        styles on top of the classic Bootstrap styles for simplicity
+                                        and portability to be viewed best  on all devices and browsers.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        tables, responsive, css styles
+
+categories:                             [ Roundtrip ]
+tags:                                   [ Bootstrap, Tables, Extension ]
+
+image:
+  path:                                 /assets/image/page/tour/tables-1920x1280-bw.jpg
+  width:                                1920
+  height:                               1280
+
+regenerate:                             false
+permalink:                              /pages/public/tour/responsive_tables/
+
+resources:                              []
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/towfiqu-barbhuiya.jpg
+          alt:                          Photo by Towfiqu barbhuiya on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Towfiqu barbhuiya
+            href:                       https://unsplash.com/de/@towfiqu999999
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:time-num--string:                      5
+:time-en--string:                       Minutes
+:time-en--description:                  to read
+:time-de--string:                       Minuten
+:time-de--description:                  Lesezeit
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+Creating a design for *responsive* tables is challenging for all template
+sytems. J1 Template supports a new design for responsive tables based on the
+Bootstrap framework.
+
+The approach is using pure CSS styles on top of the classic Bootstrap tags
+for simplicity and portability to be viewed best on all devices and browsers.
+
+[subs=attributes]
+++++
+<div class="video-title">
+  <i class="mdib mdib-clock-outline mdib-24px mr-2"></i>
+  {time-num--string} {time-en--string} {time-en--description}
+</div>
+++++
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5"]
+== Table types
+
+For sure, the solution provided by J1 Template for *responsive* tables are
+a compromise. To fit the everyday needs for tables, viewed well on desktop
+and mobile devices, two types of *responsive* tables are implemented by the
+J1 Template system:
+
+.Types of Responsive Tables
+[cols="3a,3a,6a", options="header", width="100%", role="rtable mt-4"]
+|===
+|Style |Type |Description
+
+|`rtable`
+|*Bootstap Table*
+|Bootstap tables are used by J1 Template for default. Those tables are using
+the *responsive text* feature (see link:{url-tour--typography}[Typography])
+and classic Bootstrap table styles with no additional CSS classes applied.
+For smaller viewports, the text scales down and should automatically fit the
+cells. The default text size for tables is level 300 `r-text-300` for
+*responsive* text.
+
+|`table-responsive`
+|*Responsive Table*
+|If adding the class `table-responsive`, it creates a responsive table based
+on *additional* Bootstrap CSS styles.  Making any table responsive across
+all viewports, the additional class `table-responsive` is to applied. For
+specific Bootstrap breakpoints, the breakpoint classes
+`table-responsive-{lg \| sm \| md \| lg \| xl}` are available to have better
+control on what viewport sizes tables are being transformed.
+
+|===
+
+[TIP]
+====
+To see the transformation on a table in action, resize for desktop
+devices the browser window smaller than *768px* to transform for mobiles or
+tablets.
+====
+
+
+[role="mt-5"]
+== Bootstrap Tables (striped)
+
+Tables are widely used for documentation pages. Below, simple 2-column tables
+are used to explain some of the Jekyll variables for templating your content
+pages.
+
+[role="mt-4"]
+[bs-table-2-column-fixed]
+=== Fixed font size
+
+Bootstrap tables support tables to be scrolled horizontally on smaller
+viewports. From a specified breakpoint and up, the table will behave
+normally and do not scroll horizontally.
+
+.Bootstrap using fixed text size `no-rtext`
+[source, asciidoc, role="noclip"]
+----
+[cols="4a,8a", options="header", width="100%", role="table-striped table-responsive-md no-rtext"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+|`page.title`
+|The title of the Page.
+
+...
+
+|===
+----
+
+.Bootstrap, fixed text size `no-rtext`
+[cols="4a,8a", options="header", width="100%", role="table-striped table-responsive-md no-rtext mt-4"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+|`page.title`
+|The title of the Page.
+
+|`page.date`
+|The Date assigned to the Post. This can be overridden in a
+Post's front matter by specifying a new date/time in the format
+`YYYY-MM-DD HH:MM:SS` (assuming UTC), or `YYYY-MM-DD HH:MM:SS +/-TTTT`
+(to specify a time zone using an offset from UTC. e.g.
+`2008-12-14 10:30:00 +0900`).
+
+|===
+
+[role="mt-4"]
+[bs-table-2-column-responsive]
+=== Responsive font size
+
+.Bootstrap using responsive text size
+[source, asciidoc, role="noclip"]
+----
+[cols="4a,8a", options="header", width="100%", role="table-striped table-responsive-md"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+...
+
+|===
+----
+
+.Bootstrap, responsive text size
+[cols="4a,8a", options="header", width="100%", role="table-striped table-responsive mt-4"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+|`page.title`
+|The title of the Page.
+
+|`page.date`
+|The Date assigned to the Post. This can be overridden in a
+Post's front matter by specifying a new date/time in the format
+`YYYY-MM-DD HH:MM:SS` (assuming UTC), or `YYYY-MM-DD HH:MM:SS +/-TTTT`
+(to specify a time zone using an offset from UTC. e.g.
+`2008-12-14 10:30:00 +0900`).
+
+|===
+
+[role="mt-4"]
+[[rtables-striped]]
+== Responsive Tables (striped)
+
+Responsive tables *rebuild* a table. The header is set to invisible, and
+all columns get vertically *stacked as rows*.
+
+.R Table using responsive text size
+[source, asciidoc, role="noclip"]
+----
+[cols="4a,8a", options="header", width="100%", role="table-striped rtable"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+...
+
+|===
+----
+
+.R Table, responsive text size
+[cols="4a,8a", options="header", width="100%", role="table-striped rtable mt-4"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+|`page.title`
+|The title of the Page.
+
+|`page.date`
+|The Date assigned to the Post. This can be overridden in a
+Post's front matter by specifying a new date/time in the format
+`YYYY-MM-DD HH:MM:SS` (assuming UTC), or `YYYY-MM-DD HH:MM:SS +/-TTTT`
+(to specify a time zone using an offset from UTC. e.g.
+`2008-12-14 10:30:00 +0900`).
+
+|===
+
+
+[role="mt-4"]
+[[rtables-not-striped]]
+== Responsive Tables (NOT striped)
+
+.R Table using fixed font size (no rtext)
+[source, asciidoc, role="noclip"]
+----
+[cols="4a,8a", options="header", width="100%", role="rtable no-rtext"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+...
+
+|===
+----
+
+.R Table, stacked, fixed text size `no-rtext`
+[cols="4a,8a", options="header", width="100%", role="rtable no-rtext mt-4"]
+|===
+|Variable |Description
+
+|`page.content`
+|The content of the Page, rendered or un-rendered
+depending upon what Liquid is being processed and what `page` is.
+
+|`page.title`
+|The title of the Page.
+
+|`page.date`
+|The Date assigned to the Post. This can be overridden in a
+Post's front matter by specifying a new date/time in the format
+`YYYY-MM-DD HH:MM:SS` (assuming UTC), or `YYYY-MM-DD HH:MM:SS +/-TTTT`
+(to specify a time zone using an offset from UTC. e.g.
+`2008-12-14 10:30:00 +0900`).
+
+|===
+
+
+[role="mt-5"]
+== What next
+
+J1 Template offers unique functionalities in compare to other templates
+for Jekyll available on the market -- *Themes* for J1 Template is one of
+them. J1 Themes are based on the framework Bootstrap of version V5. J1
+themes for Bootstrap enable the presentation of different *skins* of the
+*same site* based on already prepared CSS templates for Bootstrap.
+
+Using Bootstrap themes results in a uniform appearance for the content in
+terms of the overall layout, text, tables, and form elements across all
+modern web browsers available on the market. In addition, developers can
+take advantage of CSS classes already defined in Bootstrap to customize
+content individually for a seamless integration in existing webs.
+
+[role="mb-7"]
+Check out what the *Theme Feature* can do for modern static websites.
+Experience the functionality checking the preview page at
+link:{url-tour--themes}[Bootstrap Themes]!

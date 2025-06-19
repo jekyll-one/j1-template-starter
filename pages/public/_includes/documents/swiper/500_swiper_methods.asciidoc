@@ -1,0 +1,989 @@
+[role="mt-5"]
+== Methods
+
+Find method settings also with the
+https://swiperjs.com/swiper-api[Swiper Documentation, {browser-window--new}].
+
+[mt-5 mb-5]
+[CAUTION]
+====
+*Change* the Swiper *instance* variable *swiper* used in column *Synopsis*
+to your setup.
+====
+
+
+[role="mt-4"]
+=== attachEvents
+
+*Re-Attach* all event listeners configured for an instance.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.attachEvents();
+----
+|Attach all event listeners *again*.
+
+|===
+
+[role="mt-4"]
+=== changeDirection
+
+Change the slider orientation from *horizontal* to *vertical* or back.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.changeDirection(
+    direction,
+    needUpdate
+);
+----
+
+|Change the slider orientation from *horizontal* to *vertical* and back.
+
+direction::
+If *not* specified, the value will automatically *toggle* the direction
+(to the *opposite*).
+
+* _Type_:     string of _horizontal_ or _vertical_.
+* _Default_:  *no defaults*
+
+needUpdate::
+If set to `true`, automatically `update()` method is called.
+
+* _Type_      boolean
+* _Default_: `true`
+
+|===
+
+[role="mt-4"]
+[[method-changeLanguageDirection]]
+=== changeLanguageDirection
+
+Changes slider language direction.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.changeLanguageDirection(direction);
+----
+
+|Changes slider language direction.
+
+direction::
+Should be _rtl_ or _ltr_.
+
+* _Type_:     string of _rtl_ or _ltr_.
+* _Default_:  *no defaults*
+|===
+
+[role="mt-4"]
+[[method-destroy]]
+=== destroy
+
+Destroy a slider *instance* and detach all *event listeners*.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.destroy(
+    deleteInstance,
+    cleanStyles
+);
+----
+
+|Destroy a slider *instance* and detach all *event listeners*.
+
+deleteInstance::
+Set to `false` to *not delete* the swiper instance.
+
+* _Type_:       boolean
+* _Default_:    `true`
+
+cleanStyles::
+If set to `true`, all custom styles will be *removed* from slides, wrapper
+and container. Useful if you need to destroy a swiper instance and to init
+again with *new options* or in *different direction*.
+
+* _Type_:       boolean
+* _Default_:    `true`
+
+|===
+
+[role="mt-4"]
+[[method-detachEvents]]
+=== detachEvents
+
+Detach all event listeners.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.detachEvents();
+----
+
+|Detach all event listeners.
+
+|===
+
+[role="mt-4"]
+[[method-disable]]
+=== disable
+
+Disable Swiper (if it was *enabled*). When Swiper is disabled, it will
+hide all navigation elements and won't respond to any events and
+interactions.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.disable();
+----
+
+|Disable Swiper (if it was *enabled*). When Swiper is disabled, it will
+hide all navigation elements and won't respond to any events and
+interactions.
+
+|===
+
+[role="mt-4"]
+[[method-emit]]
+=== emit
+
+Fire event on instance.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.emit(
+    event,
+    args
+);
+----
+
+|Fire event on instance.
+
+|===
+
+[role="mt-4"]
+[[method-enable]]
+=== enable
+
+Enable a swiper instance (if it was *disabled*).
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.enable();
+----
+
+|Enable a swiper instance (if it was *disabled*).
+
+|===
+
+[role="mt-4"]
+[[method-extendDefaults]]
+=== extendDefaults
+
+Extend a swiper instance by (global) swiper options (properties).
+See section <<Common options>> for common, frequently used options.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.extendDefaults(options);
+----
+
+|Extend a swiper instance by (global) swiper options (properties).
+See section <<Common options>> for common, frequently used options.
+
+|===
+
+[role="mt-4"]
+[[method-getTranslate]]
+=== getTranslate
+
+Get current values of swiper wrapper CSS3 *transform translate* settings.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.getTranslate();
+----
+
+|Get current values of swiper wrapper CSS3 *transform translate* settings.
+
+|===
+
+[role="mt-4"]
+[[method-init]]
+=== init
+
+Initialize a slider on its HTML element `el`.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.init(el);
+----
+
+|Initialize a slider on its HTML element `el`.
+
+|===
+
+[role="mt-4"]
+[[method-maxTranslate]]
+=== maxTranslate
+
+Get current maximal CSS3 *transform translate* value.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.maxTranslate();
+----
+
+|Get current minimal CSS3 *transform translate* value.
+
+|===
+
+[role="mt-4"]
+[[method-minTranslate]]
+=== minTranslate
+
+Get current maximal CSS3 *transform translate* value.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.minTranslate();
+----
+
+|Get current minimal CSS3 *transform translate* value.
+
+|===
+
+[role="mt-4"]
+[[method-off]]
+=== off
+
+Remove a event handler.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.off(
+    event,
+    handler
+);
+----
+
+|Remove a event handler.
+
+|===
+
+[role="mt-4"]
+[[method-offAny]]
+=== offAny
+
+Remove a event listener that will be fired on *all events*.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.offAny(handler);
+----
+
+|Remove a event listener that will be fired on *all events*.
+
+|===
+
+[role="mt-4"]
+[[method-on]]
+=== on
+
+Add a event handler.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.on(event, handler);
+----
+
+|Add a event handler.
+
+|===
+
+[role="mt-4"]
+[[method-onAny]]
+=== onAny
+
+Add a event listener that will be fired on *all events*.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.onAny(handler);
+----
+
+|ReAddmove a event listener that will be fired on *all events*.
+
+|===
+
+[role="mt-4"]
+[[method-once]]
+=== once
+
+Add a event handler that is run *only once*. The event handler will
+be removed after it was fired.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.once(
+    event,
+    handler
+);
+----
+
+|Add a event handler that is run *only once*. The event handler will
+be removed after it was fired.
+
+|===
+
+[role="mt-4"]
+[[method-setGrabCursor]]
+=== setGrabCursor
+
+Enable|Set a grab cursor on the swiper instance.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.setGrabCursor();
+----
+
+|Enable \| Set a grab cursor on the swiper instance.
+
+|===
+
+[role="mt-4"]
+[[method-setProgress]]
+=== setProgress
+
+Set Swiper translate progress (from 0 to 1). Where 0 its *initial*
+position (offset) on *first* slide, and 1 its *maximum* position (offset)
+on *last* slide.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.setProgress(
+    progress,
+    speed
+);
+----
+
+|Set Swiper translate progress (from 0 to 1). Where 0 its *initial*
+position (offset) on *first* slide, and 1 its *maximum* position (offset)
+on *last* slide.
+
+progress::
+Swiper CSS3 translate progress.
+
+* _Type_:   	number from 0 to 1
+* _Default_:    *no default*
+
+
+speed::
+Transition duration (in ms).
+
+* _Type_:   	number
+* _Default_:    *no default*
+|===
+
+
+[role="mt-4"]
+[[method-setTranslate]]
+=== setTranslate
+
+Set *custom* values for CSS3 *transform translate* settings of the
+swiper wrapper.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.setTranslate(translate);
+----
+
+|Set *custom* values for CSS3 *transform translate* settings of the
+swiper wrapper.
+
+|===
+
+[role="mt-4"]
+[[method-slideNext]]
+=== slideNext
+
+Run transition to next slide.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.slideNext(
+    speed,
+    runCallbacks
+);
+----
+
+|Run transition to next slide.
+
+speed::
+Transition duration (in ms).
+
+* _Type_:   	number
+* _Default_:    *no default*
+
+runCallbacks::
+Set it to false, the transition will not produce transition events.
+
+* _Type_:   	boolean
+* _Default_:    `true`
+
+|===
+
+[role="mt-4"]
+[[method-slidePrev]]
+=== slidePrev
+
+Run transition to previous slide.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.slidePrev(
+    speed,
+    runCallbacks
+);
+----
+
+|Run transition to previous slide.
+
+speed::
+Transition duration (in ms).
+
+* _Type_:   	number
+* _Default_:    *no default*
+
+runCallbacks::
+Set it to false, the transition will not produce transition events.
+
+* _Type_:   	boolean
+* _Default_:    `true`
+
+|===
+
+[role="mt-4"]
+[[method-slideReset]]
+=== slideReset
+
+Reset swiper position to currently *active* slide for the duration equal
+to `speed` parameter.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.slideReset(
+    speed,
+    runCallbacks
+);
+----
+
+|Reset swiper position to currently *active* slide for the duration equal
+to `speed` parameter.
+
+speed::
+Transition duration (in ms).
+
+* _Type_:   	number
+* _Default_:    *no default*
+
+runCallbacks::
+Set it to false, the transition will not produce transition events.
+
+* _Type_:   	boolean
+* _Default_:    `true`
+
+|===
+
+[role="mt-4"]
+[[method-slideTo]]
+=== slideTo
+
+Run transition to the slide with *index* number equal to the `index` parameter
+for the duration equal to `speed` parameter.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.slideTo(
+    index,
+    speed,
+    runCallbacks
+);
+----
+
+|Run transition to the slide with *index* number equal to the `index` parameter
+for the duration equal to `speed` parameter.
+
+index::
+Index number of slide.
+
+* _Type_:   	number
+* _Default_:    *no default*
+
+speed::
+Transition duration (in ms).
+
+* _Type_:   	number
+* _Default_:    *no default*
+
+runCallbacks::
+Set it to false, the transition will not produce transition events.
+
+* _Type_:   	boolean
+* _Default_:    `true`
+
+|===
+
+[role="mt-4"]
+[[method-slideToClosest]]
+=== slideToClosest
+
+Reset swiper position to closest slide/snap point for the duration equal
+to `speed` parameter.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.slideToClosest(
+    speed,
+    runCallbacks
+);
+----
+
+|Reset swiper position to closest slide/snap point for the duration equal
+to `speed` parameter.
+
+speed::
+Transition duration (in ms).
+
+* _Type_:   	number
+* _Default_:    *no default*
+
+runCallbacks::
+Set it to false, the transition will not produce transition events.
+
+* _Type_:   	boolean
+* _Default_:    `true`
+
+|===
+
+[role="mt-4"]
+[[method-slideToLoop]]
+=== slideToLoop
+
+Does the *same* as method *slideTo()* but in case when used with enabled loop.
+So this method will slide to slides with realIndex matching to passed index.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.slideToLoop(
+    index,
+    speed,
+    runCallbacks
+);
+----
+
+|Does the *same* as method *slideTo()* but in case when used with enabled loop.
+So this method will slide to slides with realIndex matching to passed index.
+
+index::
+Index number of slide.
+
+* _Type_:   	number
+* _Default_:    *no default*
+
+speed::
+Transition duration (in ms).
+
+* _Type_:   	number
+* _Default_:    *no default*
+
+runCallbacks::
+Set it to false, the transition will not produce transition events.
+
+* _Type_:   	boolean
+* _Default_:    `true`
+
+|===
+
+[role="mt-4"]
+[[method-slidesPerViewDynamic]]
+=== slidesPerViewDynamic
+
+Get dynamically calculated amount of slides per view. Only useful when
+property `slidesPerView` set to `auto`.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.slidesPerViewDynamic();
+----
+
+|Get dynamically calculated amount of slides per view.
+
+[CAUTION]
+====
+Only useful when property `slidesPerView` set to `auto`.
+====
+
+|===
+
+
+[role="mt-4"]
+[[method-translateTo]]
+=== translateTo
+
+Animate custom CSS3 *transform' translate* value for swiper wrapper.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.translateTo(
+    translate, 
+    speed,
+    runCallbacks,
+    translateBounds
+);
+----
+
+|Animate custom CSS3 *transform' translate* value for swiper wrapper.
+
+translate::
+Translate value (in px).
+
+* _Type_:   	number
+* _Default_:    *no default*
+
+speed::
+Transition duration (in ms).
+
+* _Type_:   	number
+* _Default_:    *no default*
+
+runCallbacks::
+Set it to false, the transition will not produce transition events.
+
+* _Type_:   	boolean
+* _Default_:    `true`
+
+translateBounds::
+Set it to false the transition value can extend beyond min and max translate.
+
+* _Type_:   	boolean
+* _Default_:    `true`
+
+|===
+
+role="mt-4"]
+[[method-unsetGrabCursor]]
+=== unsetGrabCursor
+
+Disable | Unset a grab cursor on the swiper instance.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.unsetGrabCursor();
+----
+
+|Disable\|Unset a grab cursor on the swiper instance.
+
+|===
+
+[role="mt-4"]
+[[method-update]]
+=== update
+
+Should called after *add/remove* slides manually, or after *hide/show*
+a slider, or any custom *DOM modifications* done with Swiper.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.update();
+----
+
+|Should called after *add/remove* slides manually, or after *hide/show*
+a slider, or any custom *DOM modifications* done with a swiper.
+
+|===
+
+
+[role="mt-4"]
+[[method-updateAutoHeight]]
+=== updateAutoHeight
+
+Force swiper to update its height (when `autoHeight` is *enabled*) for the
+duration equal to `speed` parameter.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.updateAutoHeight(speed);
+----
+
+|Force swiper to update its height (when `autoHeight` is *enabled*) for the
+duration equal to `speed` parameter.
+
+speed::
+Transition duration (in ms).
+
+* _Type_:   	number
+* _Default_:    *no default*
+
+|===
+
+[role="mt-4"]
+[[method-updateProgress]]
+=== updateProgress
+
+Recalculate swiper progress.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.updateProgress();
+----
+
+|Recalculate swiper progress.
+
+|===
+
+[role="mt-4"]
+[[method-updateSize]]
+=== updateSize
+
+Recalculate size of swiper container.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.updateSize();
+----
+
+|Recalculate size of swiper container.
+
+|===
+
+[role="mt-4"]
+[[method-updateSlides]]
+=== updateSlides
+
+Recalculate number of slides and their offsets. Useful after *add/remove*
+slides.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.updateSlides();
+----
+
+|Recalculate number of slides and their offsets. Useful after *add/remove*
+slides.
+
+|===
+
+[role="mt-4"]
+[[method-updateSlidesClasses]]
+=== updateSlidesClasses
+
+Update *active/prev/next* classes on slides and bullets.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.updateSlidesClasses();
+----
+
+|Update *active/prev/next* classes on slides and bullets.
+
+|===
+
+[role="mt-4"]
+[[method-use]]
+=== updateSlidesClasses
+
+Installs Swiper modules on a instance at runtime.
+
+[cols="6a,6a", subs=+macros, options="header", width="100%", role="rtable mt-4 mb-5"]
+|===
+|Synopsis |Description \| Parameters
+
+|
+[source, js]
+----
+swiper.use(modules);
+----
+
+|Installs Swiper modules on a instance at runtime.
+
+|===
+

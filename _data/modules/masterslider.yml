@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -23,6 +23,12 @@ description:
 # User settings
 #
 settings:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              true
 
   # ----------------------------------------------------------------------------
   # Slider options
@@ -62,6 +68,7 @@ settings:
         loop:                           true
         speed:                          10
 
+
       # ------------------------------------------------------------------------
       # Slides
       #
@@ -70,30 +77,33 @@ settings:
         # slide 1
         #
         - slide:
+          type:                         image
           alt:                          Cities 1
           title:                        Cities 1
-          foreground_image:             /assets/images/modules/masterslider/slider_2/andreas-brucker.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_2/andreas-brucker.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:                    false
 
         # slide 2
         #
         - slide:
+          type:                         image
           alt:                          Cities 2
           title:                        Cities 2
-          foreground_image:             /assets/images/modules/masterslider/slider_2/denys-nevozhai-1.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_2/denys-nevozhai-1.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:                    false
 
         # slide 3
         #
         - slide:
+          type:                         image
           alt:                          Cities 3
           title:                        Cities 3
-          foreground_image:             /assets/images/modules/masterslider/slider_2/denys-nevozhai-2.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_2/denys-nevozhai-2.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:                    false
 
@@ -139,30 +149,33 @@ settings:
         # slide 1
         #
         - slide:
+          type:                         image
           alt:                          Cat 1
           title:                        Cat 1
-          foreground_image:             /assets/images/modules/masterslider/slider_1/cat-1.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_1/cat-1.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:                    false
 
         # slide 2
         #
         - slide:
+          type:                         image
           alt:                          Cat 2
           title:                        Cat 2
-          foreground_image:             /assets/images/modules/masterslider/slider_1/cat-2.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_1/cat-2.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:                    false
 
         # slide 3
         #
         - slide:
+          type:                         image
           alt:                          Cat 3
           title:                        Cat 3
-          foreground_image:             /assets/images/modules/masterslider/slider_1/cat-3.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_1/cat-3.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:                    false
 
@@ -200,10 +213,11 @@ settings:
         # slide 1
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Food Restaurant
           title:                        MS free image - Food Restaurant
-          foreground_image:             /assets/images/modules/masterslider/slider_3/ms-free-food-restaurant.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_3/ms-free-food-restaurant.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
@@ -225,10 +239,11 @@ settings:
         # slide 2
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Food Hamburger
           title:                        MS free image - Food Hamburger
-          foreground_image:             /assets/images/modules/masterslider/slider_3/ms-free-food-hamburger.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_3/ms-free-food-hamburger.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
@@ -250,10 +265,11 @@ settings:
         # slide 3
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Food Family 2
           title:                        MS free image - Food Family 2
-          foreground_image:             /assets/images/modules/masterslider/slider_3/ms-free-food-family-2.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_3/ms-free-food-family-2.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
@@ -288,8 +304,8 @@ settings:
 
         thumblist:
           enabled:                      true
-          width:                        140
-          height:                       80
+          height:                       180
+          width:                        250
           type:                         thumbs
           autohide:                     false
           dir:                          v
@@ -300,8 +316,8 @@ settings:
       #
       options:
 
-        width:                          1200
-        height:                         600
+        width:                          1000
+        height:                         500
 
       # ------------------------------------------------------------------------
       # Slides
@@ -311,71 +327,78 @@ settings:
         # slide 1
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Animals 1
           title:                        MS free image - Animals 1
-          foreground_image:             /assets/images/modules/masterslider/slider_4/ms-free-animals-1.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_4/ms-free-animals-1-100x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_4/ms-free-animals-1.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_4/ms-free-animals-1-100x80.jpg
           slideinfo:                    false
 
         # slide 2
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Animals 2
           title:                        MS free image - Animals 2
-          foreground_image:             /assets/images/modules/masterslider/slider_4/ms-free-animals-2.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_4/ms-free-animals-2-100x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_4/ms-free-animals-2.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_4/ms-free-animals-2-100x80.jpg
           slideinfo:                    false
 
         # slide 3
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Animals 3
           title:                        MS free image - Animals 3
-          foreground_image:             /assets/images/modules/masterslider/slider_4/ms-free-animals-3.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_4/ms-free-animals-3-100x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_4/ms-free-animals-3.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_4/ms-free-animals-3-100x80.jpg
           slideinfo:                    false
 
         # slide 4
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Animals 4
           title:                        MS free image - Animals 4
-          foreground_image:             /assets/images/modules/masterslider/slider_4/ms-free-animals-4.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_4/ms-free-animals-4-100x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_4/ms-free-animals-4.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_4/ms-free-animals-4-100x80.jpg
           slideinfo:                    false
 
         # slide 5
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Animals 5
           title:                        MS free image - Animals 5
-          foreground_image:             /assets/images/modules/masterslider/slider_4/ms-free-animals-5.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_4/ms-free-animals-5-100x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_4/ms-free-animals-5.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_4/ms-free-animals-5-100x80.jpg
           slideinfo:                    false
 
         # slide 6
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Animals 6
           title:                        MS free image - Animals 6
-          foreground_image:             /assets/images/modules/masterslider/slider_4/ms-free-animals-6.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_4/ms-free-animals-6-100x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_4/ms-free-animals-6.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_4/ms-free-animals-6-100x80.jpg
           slideinfo:                    false
 
         # slide 7
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Animals 7
           title:                        MS free image - Animals 7
-          foreground_image:             /assets/images/modules/masterslider/slider_4/ms-free-animals-7.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_4/ms-free-animals-7-100x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_4/ms-free-animals-7.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_4/ms-free-animals-7-100x80.jpg
           slideinfo:                    false
 
     # --------------------------------------------------------------------------
@@ -418,71 +441,78 @@ settings:
         # slide 1
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Food Family
           title:                        MS free image - Food Family
-          foreground_image:             /assets/images/modules/masterslider/slider_5/ms-free-food-family.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-family-140x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_5/ms-free-food-family.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_5/ms-free-food-family-140x80.jpg
           slideinfo:                    false
 
         # slide 2
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Food Woman Hand
           title:                        MS free image - Food Woman Hand
-          foreground_image:             /assets/images/modules/masterslider/slider_5/ms-free-food-woman-hand.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-woman-hand-140x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_5/ms-free-food-woman-hand.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_5/ms-free-food-woman-hand-140x80.jpg
           slideinfo:                    false
 
         # slide 3
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Food Family 2
           title:                        MS free image - Food Family 2
-          foreground_image:             /assets/images/modules/masterslider/slider_5/ms-free-food-family-2.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-family-2-140x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_5/ms-free-food-family-2.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_5/ms-free-food-family-2-140x80.jpg
           slideinfo:                    false
 
         # slide 4
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Food Family 3
           title:                        MS free image - Food Family 3
-          foreground_image:             /assets/images/modules/masterslider/slider_5/ms-free-food-family-3.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-family-3-140x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_5/ms-free-food-family-3.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_5/ms-free-food-family-3-140x80.jpg
           slideinfo:                    false
 
         # slide 5
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Food Hamburger
           title:                        MS free image - Food hamburger
-          foreground_image:             /assets/images/modules/masterslider/slider_5/ms-free-food-hamburger.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-hamburger-140x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_5/ms-free-food-hamburger.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_5/ms-free-food-hamburger-140x80.jpg
           slideinfo:                    false
 
         # slide 6
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Food Pizza
           title:                        MS free image - Food Pizza
-          foreground_image:             /assets/images/modules/masterslider/slider_5/ms-free-food-pizza.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-pizza-140x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_5/ms-free-food-pizza.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_5/ms-free-food-pizza-140x80.jpg
           slideinfo:                    false
 
         # slide 7
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Food Table
           title:                        MS free image - Food Table
-          foreground_image:             /assets/images/modules/masterslider/slider_5/ms-free-food-table.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
-          thumb_image:                  /assets/images/modules/masterslider/slider_5/ms-free-food-table-140x80.jpg
+          foreground_image:             /assets/image/module/masterslider/slider_5/ms-free-food-table.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
+          thumb_image:                  /assets/image/module/masterslider/slider_5/ms-free-food-table-140x80.jpg
           slideinfo:                    false
 
     # --------------------------------------------------------------------------
@@ -516,12 +546,12 @@ settings:
       #
       options:
 
-        width:                            1000
-        height:                           500
-        instantStartLayers:               true
-        loop:                             true
-        speed:                            15
-        view:                             fadeBasic
+        width:                          1000
+        height:                         500
+        instantStartLayers:             true
+        loop:                           true
+        speed:                          15
+        view:                           fadeBasic
 
       # ------------------------------------------------------------------------
       # Slides
@@ -531,10 +561,11 @@ settings:
         # slide 1
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Kitchen Design Ideas
           title:                        MS free image - Kitchen Design Ideas
-          foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876385555_74a0d7d7ee_b.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_6_7/6876385555_74a0d7d7ee_b.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
 
           slideinfo:                    false
           thumbinfo:
@@ -546,10 +577,11 @@ settings:
         # slide 2
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Modern Wall Design
           title:                        MS free image - Modern Wall Design
-          foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876387431_d86867a3d9_b.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_6_7/6876387431_d86867a3d9_b.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
 
           slideinfo:                    false
 
@@ -562,10 +594,11 @@ settings:
         # slide 3
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Banquette Seating Kitchen
           title:                        MS free image - Banquette Seating Kitchen
-          foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876388511_d618d53455_b.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_6_7/6876388511_d618d53455_b.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
 
           slideinfo:                    false
 
@@ -577,10 +610,11 @@ settings:
         # slide 4
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Harmony in Interior Design
           title:                        MS free image - Harmony in Interior Design
-          foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876389463_db27a377e1_b.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_6_7/6876389463_db27a377e1_b.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
 
           slideinfo:                    false
 
@@ -593,10 +627,11 @@ settings:
         # slide 5
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Make Your Workspace Better
           title:                        MS free image - Make Your Workspace Better
-          foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876390339_2e4dd9dbbb_b.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_6_7/6876390339_2e4dd9dbbb_b.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
 
           slideinfo:                    false
 
@@ -624,8 +659,8 @@ settings:
 
         thumblist:
           enabled:                      true
-          height:                       160
-          width:                        240
+          height:                       180
+          width:                        280
           type:                         tabs
           autohide:                     false
           dir:                          v
@@ -639,12 +674,12 @@ settings:
       #
       options:
 
-        width:                            1000
-        height:                           500
-        instantStartLayers:               true
-        loop:                             true
-        speed:                            15
-        view:                             fadeBasic
+        width:                          1000
+        height:                         500
+        instantStartLayers:             true
+        loop:                           true
+        speed:                          15
+        view:                           fadeBasic
 
       # ------------------------------------------------------------------------
       # Slides
@@ -654,10 +689,11 @@ settings:
         # slide 1
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Kitchen Design Ideas
           title:                        MS free image - Kitchen Design Ideas
-          foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876385555_74a0d7d7ee_b.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_6_7/6876385555_74a0d7d7ee_b.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
 
           slideinfo:                    false
 
@@ -670,10 +706,11 @@ settings:
         # slide 2
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Modern Wall Design
           title:                        MS free image - Modern Wall Design
-          foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876387431_d86867a3d9_b.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_6_7/6876387431_d86867a3d9_b.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
 
           slideinfo:                    false
 
@@ -686,10 +723,11 @@ settings:
         # slide 3
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Banquette Seating Kitchen
           title:                        MS free image - Banquette Seating Kitchen
-          foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876388511_d618d53455_b.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_6_7/6876388511_d618d53455_b.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
 
           slideinfo:                    false
 
@@ -702,10 +740,11 @@ settings:
         # slide 4
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Harmony in Interior Design
           title:                        MS free image - Harmony in Interior Design
-          foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876389463_db27a377e1_b.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_6_7/6876389463_db27a377e1_b.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
 
           slideinfo:                    false
 
@@ -718,10 +757,11 @@ settings:
         # slide 5
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Make Your Workspace Better
           title:                        MS free image - Make Your Workspace Better
-          foreground_image:             /assets/images/modules/masterslider/slider_6_7/6876390339_2e4dd9dbbb_b.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_6_7/6876390339_2e4dd9dbbb_b.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
 
           slideinfo:                    false
 
@@ -773,10 +813,11 @@ settings:
         # slide 1
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Special slider for bloggers
           title:                        MS free image - Special slider for bloggers
-          foreground_image:             /assets/images/modules/masterslider/slider_8/postslider6-bg-slide2-1024x622.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_8/postslider6-bg-slide2-1024x622.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
 
           slideinfo:
@@ -805,10 +846,11 @@ settings:
         # slide 2
         #
         - slide:
+          type:                         image
           alt:                          MS free image - We love architecture websites
           title:                        MS free image - We love architecture websites
-          foreground_image:             /assets/images/modules/masterslider/slider_8/postslider-5-img-3.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_8/postslider-5-img-3.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
 
           slideinfo:
@@ -837,10 +879,11 @@ settings:
         # slide 3
         #
         - slide:
+          type:                         image
           alt:                          MS free image - New Buildings, New Designs!
           title:                        MS free image - New Buildings, New Designs!
-          foreground_image:             /assets/images/modules/masterslider/slider_8/postslider-5-img-2.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_8/postslider-5-img-2.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
 
           slideinfo:
@@ -869,10 +912,11 @@ settings:
         # slide 4
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Greatest Modern Architect Designs
           title:                        MS free image - Greatest Modern Architect Designs
-          foreground_image:             /assets/images/modules/masterslider/slider_8/postslider-5-img-1.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_8/postslider-5-img-1.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
 
           slideinfo:
@@ -923,6 +967,7 @@ settings:
       # Slider options
       #
       options:
+
         width:                          700
         height:                         350
         layout:                         partialview
@@ -939,10 +984,11 @@ settings:
         # slide 1
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Childhood Memories
           title:                        MS free image - Childhood Memories
-          foreground_image:             /assets/images/modules/masterslider/slider_9/6-2.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_9/6-2.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
@@ -964,10 +1010,11 @@ settings:
         # slide 2
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Consectetuer adipiscing elit
           title:                        MS free image - Consectetuer adipiscing elit
-          foreground_image:             /assets/images/modules/masterslider/slider_9/5-2.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_9/5-2.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
@@ -989,10 +1036,11 @@ settings:
         # slide 3
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Suspendissue ut pulvinar mauris
           title:                        MS free image - Suspendissue ut pulvinar mauris
-          foreground_image:             /assets/images/modules/masterslider/slider_9/6-3.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_9/6-3.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
@@ -1014,10 +1062,11 @@ settings:
         # slide 4
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Sed dabibus sit amet felis
           title:                        MS free image - Sed dabibus sit amet felis
-          foreground_image:             /assets/images/modules/masterslider/slider_9/8.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_9/8.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
@@ -1039,10 +1088,11 @@ settings:
         # slide 5
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Cheetags on the edge
           title:                        MS free image - Cheetags on the edge
-          foreground_image:             /assets/images/modules/masterslider/slider_9/8-1.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_9/8-1.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
@@ -1064,10 +1114,11 @@ settings:
         # slide 6
         #
         - slide:
+          type:                         image
           alt:                          MS free image - Consectetuer adipiscing elit
           title:                        MS free image - Consectetuer adipiscing elit
-          foreground_image:             /assets/images/modules/masterslider/slider_9/1-2.jpg
-          background_image:             /assets/themes/j1/modules/masterslider/css/blank.gif
+          foreground_image:             /assets/image/module/masterslider/slider_9/1-2.jpg
+          background_image:             /assets/theme/j1/modules/masterslider/css/blank.gif
           thumb_image:                  false
           slideinfo:
             rtext:                      300                                     # false or [100 .. 500]
@@ -1085,6 +1136,67 @@ settings:
             description: >
                                         Lorem ipsum dolor sit amet, consec tetuer adipiscing elit,
                                         sed diam nonummy nibh euismod tincidunt.
+
+    # --------------------------------------------------------------------------
+    # Slider 10, Simple Boxed
+    #
+    - slider:
+      enabled:                          true
+
+      id:                               ms_00010
+      skin:                             light-3
+
+      lightbox:
+        enabled:                        false
+        type:                           lb
+
+      # ------------------------------------------------------------------------
+      # Slider controls
+      #
+      controls:
+
+        arrows:                                                                 # default settings
+          enabled:                      true
+
+      # ------------------------------------------------------------------------
+      # Slider options
+      #
+      options:
+
+        sliderMode:                     video
+        videoMode:                      embed
+        width:                          1200
+        height:                         600
+        loop:                           true
+
+      # ------------------------------------------------------------------------
+      # Slides
+      #
+      slides:
+
+        # slide 1
+        #
+        - slide:
+          type:                         video
+          video:                        embed
+          alt:                          Video 1
+          title:                        Video 1
+          video_url:                    //youtube.com/watch?v=q3zqJs7JUCQ
+          poster_image:                 //img.youtube.com/vi/q3zqJs7JUCQ/maxresdefault.jpg
+          thumb_image:                  false
+          slideinfo:                    false
+
+        # slide 2
+        #
+        - slide:
+          type:                         video
+          video:                        embed
+          alt:                          Video 2
+          title:                        Video 2
+          video_url:                    //youtube.com/watch?v=0GQ_QeZxdzo
+          poster_image:                 //img.youtube.com/vi/0GQ_QeZxdzo/maxresdefault.jpg
+          thumb_image:                  false
+          slideinfo:                    false
 
 # ------------------------------------------------------------------------------
 # END config

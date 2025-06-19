@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 require 'asciidoctor/extensions' unless RUBY_ENGINE == 'opal'
 include Asciidoctor
@@ -37,7 +37,7 @@ Asciidoctor::Extensions.register do
 
     def process parent, target, attributes
 
-      title_html  = (attributes.has_key? 'title') ? %(<div class="carousel-title">#{attributes['title']}</div>\n) : nil
+      title_html  = (attributes.has_key? 'title') ? %(<div class="carousel-title"> <i class="mdib mdib-view-carousel mdib-24px mr-2"></i> #{attributes['title']} </div>\n) : nil
       html        = %(
         <div class="#{attributes['role']}">
           #{title_html}

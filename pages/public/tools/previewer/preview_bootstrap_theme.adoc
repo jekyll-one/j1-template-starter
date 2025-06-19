@@ -21,7 +21,7 @@ categories:                             [ Previewer ]
 tags:                                   [ Theme, Bootstrap ]
 
 image:
-  path:                                 /assets/images/modules/attics/themes-1920x1280-bw.jpg
+  path:                                 /assets/image/module/attic/1920x1280/stories-ink-tattoo-care.jpg
   width:                                1920
   height:                               1280
 
@@ -29,21 +29,18 @@ comments:                               false
 regenerate:                             false
 permalink:                              /pages/public/tools/previewer/current_theme/
 
-resources:                              [
-                                          animate, rouge,
-                                          bmd
-                                        ]
+resources:                              [ bmd ]
 resource_options:
   - toccer:
       collapseDepth:                    4
   - attic:
       slides:
-        - url:                          /assets/images/modules/attics/themes-1920x1280-bw.jpg
-          alt:                          Photo by Clem Onojeghuo on Unsplash
+        - url:                          /assets/image/module/attic/1920x1280/stories-ink-tattoo-care.jpg
+          alt:                          Photo by Stories & Ink Tattoo Care on Unsplash
           badge:
             type:                       unsplash
-            author:                     Clem Onojeghuo
-            href:                       //unsplash.com/@clemono
+            author:                     Stories & Ink Tattoo Care
+            href:                       https://unsplash.com/de/@storiesandink
 ---
 
 // Page Initializer
@@ -88,7 +85,7 @@ resource_options:
 :indicators:                            true
 :indicators_alerts:                     true
 :indicators_badges:                     true
-:scrollbars:                            false
+:scrollbars:                            true
 :progress:                              true
 :progress_basic:                        true
 :progress_contextual_alternatives:      true
@@ -2122,7 +2119,7 @@ browser.
 }
 ----
 
-For the following flavours are implemented.
+The following scrollers are available for the J1 Template.
 
 [subs="attributes"]
 ++++
@@ -2172,10 +2169,9 @@ For the following flavours are implemented.
 </div>
 
 <!-- script>
-<!-- NOTE: $.browser.webkit does NOT exists !!! -->
-if (!$.browser.webkit) {
-  $('.wrapper').html('<p>Sorry! Non webkit browser detected. Scrollbars <b>not</b> displayed :</p>');
-}
+  if (!$.browser.webkit) {
+    $('.wrapper').html('<p>Sorry! Non webkit browser detected. Scrollbars <b>not</b> displayed :</p>');
+  }
 </script -->
 ++++
 endif::[]
@@ -2493,7 +2489,7 @@ ifeval::[{cards_image} == true]
   <div class="row">
     <div class="col-md-4 col-sm-4 col-xs-12">
       <div class="card mb-3" style="max-width: 20rem;">
-        <img src="/assets/images/modules/attics/building-blocks-1920x1280.jpg" alt="Free site generators">
+        <img src="/assets/image/module/attic/building-blocks-1920x1280.jpg" alt="Free site generators">
         <div class="card-body">
           <h4 class="card-title notoc">Card title</h4>
           <h5 class="card-subtitle text-muted notoc">Image card subtitle</h5>
@@ -2507,7 +2503,7 @@ ifeval::[{cards_image} == true]
     </div>
     <div class="col-md-4 col-sm-4 col-xs-12">
       <div class="card mb-3" style="max-width: 20rem;">
-        <img src="/assets/images/modules/attics/building-blocks-1920x1280.jpg" alt="Free site generators">
+        <img src="/assets/image/module/attic/building-blocks-1920x1280.jpg" alt="Free site generators">
         <div class="card-body">
           <h4 class="card-title notoc">Card title</h4>
           <h5 class="card-subtitle text-muted notoc">Image card subtitle</h5>
@@ -2525,7 +2521,7 @@ ifeval::[{cards_image} == true]
     <div class="col-md-4 col-sm-4 col-xs-12">
       <div class="card mb-3" style="max-width: 20rem;">
         <h3 class="card-header notoc">Header</h3>
-        <img src="/assets/images/modules/attics/building-blocks-1920x1280.jpg" alt="Free site generators">
+        <img src="/assets/image/module/attic/building-blocks-1920x1280.jpg" alt="Free site generators">
         <div class="card-body">
           <h4 class="card-title notoc">Card title</h4>
           <h5 class="card-subtitle text-muted notoc">Image card subtitle</h5>

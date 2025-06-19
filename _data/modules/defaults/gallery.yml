@@ -1,14 +1,14 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/defaults/gallery.yml
-# Default configuration for J1 Justified Gallery (jg)
+# ~/_data/modules/defaults/gallery_app.yml
+# Default configuration for J1 justifiedGallery (jg)
 #
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -39,22 +39,94 @@ defaults:
   # a gallery is initialized by the JS adapter.
   #
   #   values:                           string
-  #   default:                          /assets/data/galleries.html
+  #   default:                          /assets/data/gallery_app
   #
   # ----------------------------------------------------------------------------
   #
-  enabled:                              false                                    # needed for j1.layout_shim_generator.html
-  xhr_data_path:                        /assets/data/galeries
+  enabled:                              false                                   # needed for j1.layout_shim_generator.html
+
+  # ----------------------------------------------------------------------------
+  # Global settings
+  #
+  xhr_data_path:                        /assets/data/gallery_app
   gallery_complete_timeout:             1000
 
-  # ------------------------------------------------------------------------
-  # CSS filter options
+  # ----------------------------------------------------------------------------
+  # CSSFilter settings
   #
   filters:
     enabled:                            false
     grayscale:                          1
     contrast:                           0.8
     brightness:                         0.4
+
+  # ----------------------------------------------------------------------------
+  # justifiedGallery settings
+  #
+  rowHeight:                            250
+  gutters:                              3
+
+  # ----------------------------------------------------------------------------
+  # Lightbox settings
+  #
+  lightbox:
+    enabled:                            true
+    type:                               lg                                      # lightGallery
+
+  # ----------------------------------------------------------------------------
+  # lightGallery settings
+  #
+  lightGallery:
+    plugins:                            lgThumbnail, lgVideo
+
+    # --------------------------------------------------------------------------
+    # lightGallery options
+    #
+    options:
+      licenseKey:                       0000-0000-000-0000
+      download:                         false
+      alignThumbnails:                  left
+      animateThumb:                     true
+      autoplayFirstVideo:               true
+      videojs:                          false
+
+    # --------------------------------------------------------------------------
+    # VideoJS options
+    #
+    videojsOptions:
+      enabled:                          false
+
+      muted:                            false
+      preload:                          true
+  #   videoStart:                       ["00:00:30", "00:01:30"]                # start time (hh:mm:ss) for [video1, video2]
+
+      controls:                         true
+      controlBar:
+        playbackRates:                  [0.25, 0.5, 1, 1.5, 2]
+        remainingTimeDisplay:           true
+        pictureInPictureToggle:         false
+
+        volumePanel:
+          inline:                       false
+
+        hotkeysPlugin:
+          enabled:                      true
+          options:
+            volumeStep:                 0.2
+
+        skipButtonsPlugin:
+          enabled:                      true
+          options:
+            forward:                    15
+            backward:                   15
+
+        zoomPlugin:
+          enabled:                      true
+          options:
+            moveX:                      0
+            moveY:                      0
+            rotate:                     0
+            zoom:                       1
 
 # ------------------------------------------------------------------------------
 # END config

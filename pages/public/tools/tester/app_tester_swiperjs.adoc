@@ -1,0 +1,1219 @@
+---
+title:                                  J1 SwiperJS Apps
+title_extention:                        Selected Examples
+tagline:                                Selected Examples
+date:                                   2025-02-10
+#last_modified:                         2025-01-01
+
+description: >
+                                        SwiperJS is a Javascript API that creates modern
+                                        slider shows. All sliders use hardware-accelerated
+                                        features like 3D transitions to perform best on modern
+                                        devices. SwiperJS-based sliders are intended to be
+                                        displayed at their best on all types of websites, such
+                                        as those viewed on desktop computers, tablets, or
+                                        smartphones.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        html, html5, sliders, carousels, SwiperJS
+
+categories:                             [ Tester ]
+tags:                                   [ Swiper App ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/markus-spiske.jpg
+  width:                                1920
+  height:                               1280
+
+compress:                               false
+regenerate:                             false
+personalization:                        true
+permalink:                              /pages/public/tools/tester/swiper_app/
+
+resources:                              [ photoswipejs, swiperjs, videojs ]
+resource_options:
+  - toccer:
+      collapseDepth:                    3
+  - attic:
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/markus-spiske.jpg
+          alt:                          Photo by Markus Spiske on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Markus Spiske
+            href:                       https://unsplash.com/de/@markusspiske/ 
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Attribute settings for section control
+//
+:swiper--features:                      false
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+SwiperJS is a Javascript API that creates modern slider shows. All sliders
+use hardware-accelerated features like 3D transitions to perform best on modern
+devices. SwiperJS-based sliders are intended to be displayed at their best on
+all types of websites, such as those viewed on desktop computers, tablets, or
+smartphones.
+
+
+[role="mt-4"]
+== What SwiperJS Apps are
+
+SwiperJS Apps are preconfigured swipers (sliders) that use the SwiperJS API as
+a *base* and *combine* it with *other libraries* like AmplitudeJS, VideoJS,
+and Photoswipe to create powerful and modern *slide shows* to be *embedded* in 
+webpages of a J1 Template based site.
+
+[NOTE]
+====
+SwiperJS Apps create sliders that display text, images, videos, or audio files.
+They can be used to create simple sliders or more complex slide shows with
+different type of content.
+
+SwiperJS Apps are defined by pure *configuration* and do *not require* any
+*programming*.
+====
+
+
+[role="mt-5"]
+== SwiperJS Apps for Text
+
+Swipers are mnainly used for displaying images. Still, the implementation
+for the J1 Template supports a lot more *sources* to be displayed as a *slide*.
+Simple *text* for example.
+
+
+[role="mt-4"]
+=== Base Text Swiper
+
+Important statements or topics can be placed on top of an *article* or a
+*paragraph* to give them better visibility. You can present facts to know
+animated for the readers attention.
+
+.Base Text Swiper
+swiper::swiper_text_base[role="mt-4 mb-5"]
+
+
+[role="mt-4"]
+=== Extended Text Swiper
+
+A more *emphasized* type of a **text**-based swiper is a *parallax* text
+swiper. If you want to *focus* the meaning, this kind of a swiper may be
+nteresting. Parallax text sliders can be placed as *banners* on a page.
+
+.Extended Text Swiper · Parallax
+swiper::swiper_text_parallax[role="mt-4 mb-5"]
+
+
+[role="mt-5"]
+== SwiperJS Apps for Images
+
+Swipers (sliders or carousels) are mainly used for pictures *animated* as a
+managed *group*. Find below some examples of using simple (base) swipers for
+presenting images using the Swiper App.
+
+[role="mt-4"]
+=== Base Image Swipers
+
+lorem:sentences[5]
+
+[role="mt-4"]
+==== Image Full-width
+
+Find an example of a *full-width* slider with *pagination* control *enabled*
+to browse all images *back* and *forth*. Additionally, the pagination bullets
+below the Swiper App indicate how *many* slides (images) the slide show
+*contains* for improved usage experience.
+
+.Image Swiper · Full-width + Pagination
+swiper::swiper_image_base_full_width_pagination[role="mt-3"]
+
+[role="mt-4"]
+==== Equal Image Sizes
+
+Important statements or topics can be placed on top of an article or
+a paragraph to give them better visibility. In one line, you can present
+many facts to know animated for the reader's attention within a single
+line.
+
+.Equal Image Sizes · Captions + Navigation + Pagination
+swiper::swiper_image_base_navigation_pagination[role="mt-3"]
+
+
+[role="mt-4"]
+==== Mixed Image Sizes
+
+Pictures you've made are typically *not even in size*. Images may have the
+same size (resolution), but some are orientated *landscape*, or others may
+be *portrait*. For that reason, a more powerful swiper is needed to create
+so-called justified slides.
+
+.Mixed Image Sizes · Captions + Lightbox
+swiper::swiper_image_base_captions[role="mt-4 mb-4"]
+
+
+[role="mt-5"]
+=== Extendend Image Swipers
+
+Layouts in terms of J1 Template for SwiperJS are *transformations* of a Swiper.
+A *layout* is used to rebuild it for a more complex visual *presentation* for
+the Swiper's slides. The Layout of a swiper can improve the *useability* or
+make the *presentation* of a slideshow more *interesting*.
+
+[role="mt-4"]
+[[image_thumbs_top_bottom]]
+==== Layout Thumb Top|Bottom
+
+To give the users a more *visual* control over a slideshow, Swiper sliders
+can provide *UI elements* by placing minified images or text elements (thumbs)
+side-by-side (on the left|right), or at the bottom|top of a swiper. Find below
+examples how to control such sliders' by a thumb (slave) silder.
+
+[role="mt-4 mb-4"]
+[TIP]
+====
+This Layout creates best results for high-quality images for websites mainly
+used on *desktop* computers.
+====
+
+This Thumb Slider uses minified images that are placed to control the (main)
+slider at the *top* or the *bottom*. This swiper type creates a thumbed Swiper
+that uses *two lanes*, which takes up a *lot of space* but can render the
+sliders' images *optimally*.
+
+.Extendend Swiper · Layout Thumb Top
+swiper::thumb_slider_top[role="mb-5"]
+
+
+[role="mt-5"]
+[[image_thumbs_right_left]]
+==== Layout Thumb Right|Left
+
+A more **mobile**-friendly version of a Thunb slider is created by placing the
+minified images for the slider side-by-side on the *right* or the *left*. This
+swiper use just a *single lane* in the page, but *minifies* the presented images
+as required for the lane *heigth* specified.
+
+[role="mb-5"]
+[TIP]
+====
+Adding a *Lightbox* to a *single-lane* swiper allows users to *enlarge* the
+presented *images*.
+====
+
+++++
+<div class="swiper-title"> <i class="mdib mdib-view-carousel mdib-24px mr-2"></i> Extendend Swiper · Layout Thumb Right + Captions </div>
+<div class="container g-0 mb-5">
+    <div id="thumb_view_row" class="row gx-1">
+
+      <!-- Thumb View (main) -->
+      <div class="col-md-9">
+        <!-- Swiper container -->
+        <div id="master_slider_2" class="swiper swiper-container swiper--multi gallery-slider">
+            <!-- Swiper wrapper (slides) -->
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-1.jpg">
+                <div class="swp-caption-content">Husky</div>
+              </li>
+              <li class="swiper-slide">
+                <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-2.jpg">
+                <div class="swp-caption-content">Female Lion</div>
+              </li>
+              <li class="swiper-slide">
+                <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-3.jpg">
+                <div class="swp-caption-content">Approaching Vulture</div>
+              </li>
+              <li class="swiper-slide">
+                <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-4.jpg">
+                <div class="swp-caption-content">Group of Flamingos</div>
+              </li>
+              <li class="swiper-slide">
+                <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-5.jpg">
+                <div class="swp-caption-content">Young Deer</div>
+              </li>
+              <li class="swiper-slide">
+                <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-6.jpg">
+                <div class="swp-caption-content">Little Bird</div>
+              </li>
+            </ul> <!-- END Swiper wrapper -->
+
+            <!-- Outer Pagination -->
+            <div id="thumb_view_row_pagination" class="swiper-pagination-outer"></div>
+
+        </div> <!-- END Swiper container  -->        
+      </div> <!-- END Thumb View (main)  -->
+
+      <!-- Thumb View (thumbs/right) -->
+      <div class="col-md-3">
+        <!-- Swiper container -->
+        <div id="thumbs_slider_2" class="swiper swiper-container swiper--multi thumbs-slider--right">
+          <!-- Swiper wrapper (slides) -->
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+              <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-1.jpg">
+              <div class="swp-caption-content">Husky</div>
+            </li>
+            <li class="swiper-slide">
+              <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-2.jpg">
+              <div class="swp-caption-content">Female Lion</div>
+            </li>
+            <li class="swiper-slide">
+              <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-3.jpg">
+              <div class="swp-caption-content">Approaching Vulture</div>
+            </li>
+            <li class="swiper-slide">
+              <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-4.jpg">
+              <div class="swp-caption-content">Group of Flamingos</div>
+            </li>
+            <li class="swiper-slide">
+              <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-5.jpg">
+              <div class="swp-caption-content">Young Deer</div>
+            </li>
+            <li class="swiper-slide">
+              <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-6.jpg">
+              <div class="swp-caption-content">Little Bird</div>
+            </li>
+          </ul> <!-- END Swiper wrapper -->
+        </div> <!-- END Swiper container -->
+      </div> <!-- END Thumb View (thumbs/right) -->
+
+    </div> <!-- END BS row -->
+
+    <!-- Outer Pagination -->
+    <!--div class="swiper-pagination-outer"></div -->
+
+</div> <!-- END BS container -->
+
+<script>
+$(function() {
+  // ---------------------------------------------------------------------------
+  // Swiper initializer (Thumb View (right))
+  // ---------------------------------------------------------------------------
+  var dependencies_met_page_ready = setInterval (() => {
+    var atticFinished = (j1.adapter.attic.getState() == 'finished') ? true : false;
+
+    if (atticFinished) {
+
+      // Initialize Thumbs instance (right)
+      var thumbsSwiper2 = new Swiper('#thumbs_slider_2', {
+        direction: 'vertical',
+        spaceBetween: 5,
+        slidesPerView: 3,
+        grabCursor: true,
+        on: {
+          transitionStart: (swiper) => {
+            masterSwiper2.slideTo(swiper.activeIndex);
+          }
+        }
+      });
+
+      // Initialize Master instance
+      var masterSwiper2 = new Swiper('#master_slider_2', {        
+        direction: 'horizontal',
+        grabCursor: true,
+        pagination: {
+          el: '.swiper-pagination-outer',
+          clickable: true,
+        },        
+        effect: 'fade',
+          fadeEffect: {
+          crossFade: true
+        },
+        thumbs: {
+          swiper: thumbsSwiper2
+        },
+        on: {
+          slideChangeTransitionStart: (swiper) => {
+            thumbsSwiper2.slideTo(swiper.activeIndex);
+          },
+          click: (swiper, event) => {
+            console.log('Clicked on the slider, index: ', swiper.activeIndex);
+          }
+        }
+      });
+
+      // workaround for swiper pagination placed 'outer'
+      // ---------------------------------------------------------------
+      {% assign init_swiper_delay  = 500 %}
+      {% assign pagination_enabled = true %}
+
+      {% if pagination_enabled %}
+      setTimeout(() => {
+        const sourceEl = document.getElementById('thumb_view_row_pagination');
+        const targetEl = document.getElementById('thumb_view_row');
+        targetEl.appendChild(sourceEl);
+
+        // logger.debug('\n' + 'pagination elements (outer) moved');
+      }, {{init_swiper_delay}});
+      {% endif %}
+      // ---------------------------------------------------------------
+
+      clearInterval(dependencies_met_page_ready);
+    } // END pageVisible
+  }, 10); // END dependencies_met_page_ready
+}); // END Swiper initializer (Thumb View (right))
+</script>
+++++
+
+
+[role="mt-5"]
+==== Layout Neighbor
+
+A slideshow typically presents a larger number of slides, which requires a
+sort of navigation. The effect *neighbors* accompanies the *active slide* by
+their *neighbors* on the left and right as *previews*. The neighbor on the
+*left* acts like a *previous button* and scrolls the slides *backward*. The
+neighbor on the *right* acts like a *next button* and scrolls the slides
+*forward*.
+
+[role="mb-5"]
+[TIP]
+====
+The *effect* transforms a slider into a quite *compact* presentation that does
+*not* require any (additional) *navigation* elements.
+====
+
+.Extendend Swiper · Layout Neighbor
+swiper::neighbor_slider[role="mb-5"]
+
+
+[role="mt-5"]
+==== Layout Panorama
+
+The layout panaorama presents available slides of a slider as a group. The
+group is displayed in a virtual, circular viewing angle. 
+
+[role="mb-5"]
+[TIP]
+====
+The effect is great for slides connected in terms of content to give the user
+a panoramic view impression.
+====
+
+.Extendend Swiper · Layout Panorama
+swiper::swiper_image_panorama[role="mt-4 mb-5"]
+
+////
+[role="mt-5"]
+==== Layout Cards
+
+lorem:sentences[5]
+
+++++
+<div class="carousel-title"> <i class="mdib mdib-view-carousel mdib-24px mr-2"></i> Extendend Swiper · Layout Cards</div>
+<!-- Cards slider -->
+<div id="cards_swiper" class="swiper swiper-container mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide slide-1">Slide 1</div>
+    <div class="swiper-slide slide-2">Slide 2</div>
+    <div class="swiper-slide slide-3">Slide 3</div>
+    <!--div class="swiper-slide slide-1">Slide 1</div>
+    <div class="swiper-slide slide-2">Slide 2</div>
+    <div class="swiper-slide slide-3">Slide 3</div -->
+  </div>
+</div>
+++++
+
+++++
+<script>
+$(function() {
+
+  // ---------------------------------------------------------------------------
+  // Swiper initializer
+  // ---------------------------------------------------------------------------
+  var dependencies_met_page_ready = setInterval (() => {
+    var atticFinished = (j1.adapter.attic.getState() == 'finished') ? true : false;
+
+    if (atticFinished) {
+      const sliderEl = document.querySelector('#cards_swiper');
+      const swiperEl = sliderEl.querySelector('.swiper');
+
+      // Initialize Swiper
+      //
+      var swiper = new Swiper(".mySwiper", {
+        autoplay: false,
+        effect: "cards",
+        grabCursor: true,
+        loop: true,
+        centeredSlides: true,
+      });
+
+      clearInterval(dependencies_met_page_ready);
+    } // END pageVisible
+
+  }, 10); // END dependencies_met_page_ready
+
+}); // END Document READY
+</script>
+++++
+
+++++
+<style>
+
+.swiper {
+  width: 240px;
+  height: 320px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.slide-1 {
+  background-color: red;
+}
+
+.slide-2 {
+  background-color: green;
+}
+
+.slide-3 {
+  background-color: blue;
+}
+</style>
+++++
+////
+
+[role="mt-5"]
+==== Layout Stacked
+
+lorem:sentences[5]
+
+.Extendend Swiper · Layout Stacked
+swiper::swiper_image_stacked[role="mt-4 mb-5"]
+
+////
+++++
+<div class="carousel-title"> <i class="mdib mdib-view-carousel mdib-24px mr-2"></i> Extendend Swiper · Layout Stacked (manual)</div>
+<!-- Stacked slider -->
+<div id="stacked_slider" class="stacked-slider mt-3">
+  <div id="stacked_slider_swiper_container" class="swiper swiper-container">
+
+    <ul class="swiper-wrapper">
+      <li class="swiper-slide">
+        <!-- set image parallax scale for nice zoom effect -->
+        <img data-swiper-parallax-scale="1.1" src="/assets/image/module/swiper/extended/stacked/image/1.jpg" alt="">
+      </li>
+      <li class="swiper-slide">
+        <img data-swiper-parallax-scale="1.1" src="/assets/image/module/swiper/extended/stacked/image/2.jpg" alt="">
+      </li>
+      <li class="swiper-slide">
+        <img data-swiper-parallax-scale="1.1" src="/assets/image/module/swiper/extended/stacked/image/3.jpg" alt="">
+      </li>
+      <li class="swiper-slide">
+        <img data-swiper-parallax-scale="1.1" src="/assets/image/module/swiper/extended/stacked/image/4.jpg" alt="">
+      </li>
+      <li class="swiper-slide">
+        <img data-swiper-parallax-scale="1.1" src="/assets/image/module/swiper/extended/stacked/image/5.jpg" alt="">
+      </li>
+      <li class="swiper-slide">
+        <img data-swiper-parallax-scale="1.1" src="/assets/image/module/swiper/extended/stacked/image/6.jpg" alt="">
+      </li>
+    </ul> <!-- END Swiper Wrapper (slides) -->
+
+    <!-- Pagination -->
+    <!-- div id="stacked_slider_pagination" class="swiper-pagination-outer"></div -->
+    <div id="stacked_slider_pagination" class="swiper-pagination-inner"></div>
+
+  </div> <!-- END Swiper Container (elements) -->
+</div> <!-- END Swiper stacked_slider -->
+
+<script>
+$(function() {
+
+  function LayoutStacked(el) {
+    const swiperEl = el.querySelector('.swiper');
+
+    const calcNextOffset = () => {
+      const parentWidth = swiperEl.parentElement.offsetWidth;
+      const swiperWidth = swiperEl.offsetWidth;
+      var nextOffset    = (parentWidth - (parentWidth - swiperWidth) / 2) / swiperWidth;
+      var nextOffsetVh  = Math.max(nextOffset, 1) * 100;
+
+      return `${nextOffsetVh}%`;
+    };
+
+    const onLastSlide = (swiper) => {
+      console.log ('\n' + 'LayoutStacked, Entered event: reachEnd');
+      // swiper.allowTouchMove = false;
+      // swiper.allowSlidePrev = false;
+      // swiper.allowSlideNext = false;
+    };
+
+    const stackedSwiper = new Swiper(swiperEl, {      
+      effect: 'creative',
+      speed: 600,
+      resistanceRatio: 0,
+      grabCursor: true,
+      parallax: true,
+      pagination: {
+      //el: '.swiper-pagination-outer',
+        el: '.swiper-pagination-inner',
+        type: 'bullets',
+        clickable: true
+      },      
+      creativeEffect: {
+        limitProgress: 3,
+        perspective: true,
+        shadowPerProgress: true,
+        prev: {
+          shadow: true,
+          translate: ['-15%', 0, -200],
+        },
+        next: {
+          translate: [calcNextOffset(), 0, 0],
+        },
+      },
+      on: {
+        init:     (swiper) => { 
+          var slideHeight = 900;
+          swiper.slides.forEach(slide => {
+            slide.style.height = `${slideHeight}px`;
+          });
+        },
+        // reachEnd: (swiper) => { 
+        //   onLastSlide(swiper);
+        // }
+      }
+    });
+
+    const onResize = () => {
+      if (!stackedSwiper || stackedSwiper.destroyed) return;
+      // prettier-ignore
+      stackedSwiper.params.creativeEffect.next.translate = [calcNextOffset(), 0, 0];
+      if (
+        stackedSwiper.params.resizeObserver &&
+        typeof window.ResizeObserver !== 'undefined'
+      ) {
+        stackedSwiper.update();
+      }
+    };
+    window.addEventListener('resize', onResize);
+
+
+    // workaround for swiper pagination placed 'outer'
+    // -------------------------------------------------------------------------
+    {% assign init_swiper_delay   = 500 %}
+    {% assign pagination_el       = swiper.module_settings.pagination.el | split: '-' %}
+    {% assign pagination_position = pagination_el[2] %}
+
+    setTimeout(() => {
+      // const sourceEl = document.getElementById('{{swiper.id}}_pagination');
+      // const targetEl = document.getElementById('{{swiper.id}}');
+      const sourceEl = document.getElementById('stacked_slider_pagination');
+      const targetEl = document.getElementById('stacked_slider_swiper_container');
+      // targetEl.appendChild(sourceEl);
+
+      // logger.debug('\n' + 'pagination elements (outer) moved');
+    }, {{init_swiper_delay}});
+    // -------------------------------------------------------------------------
+
+    return stackedSwiper;
+
+  } // END LayoutStacked
+
+  // ---------------------------------------------------------------------------
+  // Swiper initializer
+  // ---------------------------------------------------------------------------
+  var dependencies_met_page_ready = setInterval (() => {
+    var atticFinished = (j1.adapter.attic.getState() == 'finished') ? true : false;
+
+    if (atticFinished) {
+      const sliderEl = document.querySelector('#stacked_slider');
+
+      LayoutStacked(sliderEl);
+
+      clearInterval(dependencies_met_page_ready);
+    } // END pageVisible
+
+  }, 10); // END dependencies_met_page_ready
+
+}); // END Document READY
+</script>
+++++
+////
+
+[role="mt-5"]
+==== Layout Expanding
+
+lorem:sentences[3]
+
+++++
+<div class="swiper-title mt-4"> <i class="mdib mdib-view-carousel mdib-24px mr-2"></i> Extendend Swiper · Layout Expanding </div>
+<div id="app" class="extended-app">
+  <!-- Style expanding-slide should wrap the swiper for Effect: Expanding  -->
+  <div id="expanding_slides" class="expanding-slide mt-4">
+    <div id="expanding_slides_swiper_container" class="swiper swiper-container">
+
+        <ul class="swiper-wrapper">
+            <!-- First slide -->
+            <li class="swiper-slide">
+                <!-- Expanding card container, required element -->
+                <div class="expanding-slide-container">
+                    <!-- Expanding card content that opens underneath the cover image on click -->
+                    <div class="expanding-slide-content">
+                        <div class="expanding-slide-content-inner">
+                            <!-- Put any required content here -->
+                            <div class="slide-content">
+                                <div class="slide-content-title">Jameson Street, CA90030</div>
+                                <div class="slide-content-avatars">
+                                    <img src="/assets/image/module/swiper/extended/expanding/image/avatar/avatar-1.jpg">
+                                </div>
+                                <div class="slide-content-rating">
+                                    <img src="/assets/image/pattern/rating/scalable/2-star.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expanding card cover, can contain any HTML content -->
+                    <div class="expanding-slide-cover">
+                        <img src="/assets/image/module/swiper/extended/expanding/image/tokyo.jpg">
+                        <div class="slide-cover-title">Tokyo</div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Second slide -->
+            <li class="swiper-slide">
+                <!-- Expanding card container, required element -->
+                <div class="expanding-slide-container">
+                    <div class="expanding-slide-content">
+                        <div class="expanding-slide-content-inner">
+                            <div class="slide-content">
+                                <div class="slide-content-title">Jameson Street, CA90030</div>
+                                <div class="slide-content-avatars">
+                                    <img src="/assets/image/module/swiper/extended/expanding/image/avatar/avatar-1.jpg">
+                                </div>
+                                <div class="slide-content-rating">
+                                    <img src="/assets/image/pattern/rating/scalable/2-star.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expanding-slide-cover">
+                        <img src="/assets/image/module/swiper/extended/expanding/image/san-francisco.jpg">
+                        <div class="slide-cover-title">San Francisco</div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Third slide -->
+            <li class="swiper-slide">
+                <!-- Expanding card container, required element -->
+                <div class="expanding-slide-container">
+                    <div class="expanding-slide-content">
+                        <div class="expanding-slide-content-inner">
+                            <div class="slide-content">
+                                <div class="slide-content-title">Jameson Street, CA90030</div>
+                                <div class="slide-content-avatars">
+                                    <img src="/assets/image/module/swiper/extended/expanding/image/avatar/avatar-1.jpg">
+                                </div>
+                                <div class="slide-content-rating">
+                                    <img src="/assets/image/pattern/rating/scalable/2-star.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expanding-slide-cover">
+                        <img src="/assets/image/module/swiper/extended/expanding/image/london.jpg">
+                        <div class="slide-cover-title">London</div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Fourth slide -->
+            <li class="swiper-slide">
+                <!-- Expanding card container, required element -->
+                <div class="expanding-slide-container">
+                    <div class="expanding-slide-content">
+                        <div class="expanding-slide-content-inner">
+                            <div class="slide-content">
+                                <div class="slide-content-title">Jameson Street, CA90030</div>
+                                <div class="slide-content-avatars">
+                                    <img src="/assets/image/module/swiper/extended/expanding/image/avatar/avatar-1.jpg">
+                                </div>
+                                <div class="slide-content-rating">
+                                    <img src="/assets/image/pattern/rating/scalable/2-star.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="expanding-slide-cover">
+                        <img src="/assets/image/module/swiper/extended/expanding/image/moscow.jpg">
+                        <div class="slide-cover-title">Moscow</div>
+                    </div>
+                </div>
+            </li>
+        </ul> <!-- END Swiper wrapper -->
+
+          <!-- Inner Pagination -->
+          <!-- div class="swiper-pagination-inner"></div -->
+
+        <!-- Outer pagination, NOT moved by SwiperJS Adapter (workaround) -->
+        <div class="swiper-pagination-outer"></div>
+
+    </div> <!-- END Swiper container -->
+  </div> <!-- END expanding_slides -->
+</div> <!-- END app -->
+++++
+
+++++
+<script>
+
+$(function() {
+
+  // ---------------------------------------------------------------------------
+  // Initialize Layout Expanding
+  // ---------------------------------------------------------------------------  
+  function createLayoutExpanding(el) {
+    const swiperEl = el.querySelector('.swiper');
+
+    const calcOffsets = (slideEl) => {
+      const coverEl = slideEl.querySelector('.expanding-slide-cover');
+      const contentEl = slideEl.querySelector('.expanding-slide-content');
+      if (!contentEl || !coverEl) return;
+
+      const { offsetWidth: coverWidth, offsetHeight: coverHeight } = coverEl;
+      slideEl.style.setProperty(
+        '--expanding-slide-cover-height',
+        `${coverHeight}px`,
+      );
+      const { offsetHeight: contentHeight, offsetWidth: contentWidth } = contentEl;
+      const props = {
+        '--expanding-slide-scale-x': (coverWidth / contentWidth) * 0.95,
+        '--expanding-slide-scale-y': (coverHeight / contentHeight) * 0.95,
+      };
+      Object.keys(props).forEach((prop) => {
+        slideEl.style.setProperty(prop, props[prop]);
+      });
+    };
+
+    const initEvents = (swiper) => {
+      swiper.slides.forEach((slideEl) => {
+        const containerEl = slideEl.querySelector(
+          '.expanding-slide-container',
+        );
+        const coverEl = slideEl.querySelector('.expanding-slide-cover');
+        const contentEl = slideEl.querySelector('.expanding-slide-content');
+        coverEl.expandingCollectionClickHandler = () => {
+          if (!contentEl || !slideEl.classList.contains('swiper-slide-active'))
+            return;
+          containerEl.classList.toggle('expanding-slide-opened');
+        };
+        coverEl.addEventListener(
+          'click',
+          coverEl.expandingCollectionClickHandler,
+        );
+      });
+    };
+
+    const removeEvents = (swiper) => {
+      swiper.slides.forEach((slideEl) => {
+        const coverEl = slideEl.querySelector('.expanding-slide-cover');
+        if (coverEl && coverEl.expandingCollectionClickHandler) {
+          coverEl.removeEventListener(
+            'click',
+            coverEl.expandingCollectionClickHandler,
+          );
+        }
+      });
+    };
+
+    const swiper = new Swiper(swiperEl, {
+      speed: 600,
+      pagination: {
+        el: '.swiper-pagination-outer',
+        type: 'bullets',
+        clickable: true
+      },
+      resistanceRatio: 0,
+      // slidesPerView: 'auto',
+      // centeredSlides: true,
+      on: {
+        init(s) {
+          s.slides.forEach((slideEl) => {
+            const coverImageEl = slideEl.querySelector(
+              '.expanding-slide-cover img',
+            );
+            if (coverImageEl && !coverImageEl.complete) {
+              coverImageEl.addEventListener('load', () => {
+                calcOffsets(slideEl);
+              });
+            }
+            calcOffsets(slideEl);
+          });
+          requestAnimationFrame(() => {
+            el.classList.add('expanding-slide-initialized');
+          });
+          initEvents(s);
+        },
+        slideChange(s) {
+          const openedContainerEl = s.wrapperEl.querySelector(
+            '.expanding-slide-opened',
+          );
+          if (openedContainerEl) {
+            openedContainerEl.classList.remove('expanding-slide-opened');
+          }
+        },
+        imagesReady(s) {
+          el.classList.remove('expanding-slide-initialized');
+          s.slides.forEach((slideEl) => {
+            calcOffsets(slideEl);
+          });
+          el.classList.add('expanding-slide-initialized');
+        },
+        resize(s) {
+          el.classList.remove('expanding-slide-initialized');
+          s.slides.forEach((slideEl) => {
+            calcOffsets(slideEl);
+          });
+          el.classList.add('expanding-slide-initialized');
+        },
+        beforeDestroy(s) {
+          removeEvents(s);
+        },
+      },
+    });
+
+    // return swiper;
+  } // END Expanding Effect
+
+  // ---------------------------------------------------------------------------
+  // Swiper initializer
+  // ---------------------------------------------------------------------------
+  var dependencies_met_page_ready = setInterval (() => {
+    var atticFinished = (j1.adapter.attic.getState() == 'finished') ? true : false;
+
+    if (atticFinished) {
+      const sliderEl = document.querySelector('#expanding_slides');
+
+      createLayoutExpanding(sliderEl);
+//    createNeighborEffect(sliderEl);
+
+      clearInterval(dependencies_met_page_ready);
+    } // END pageVisible
+
+  }, 10); // END dependencies_met_page_ready
+
+}); // END Document READY
+
+</script>
+++++
+
+++++
+<style>
+</style>
+++++
+
+////
+[role="mt-5"]
+== Audio SwiperJS Apps
+
+lorem:sentences[5]
+////
+
+////
+[role="mt-5"]
+== Video SwiperJS Apps
+
+If only a *small* number of video sources should presented, the concept of
+controller based slders using Thumb Elements provide a quite *space-saving*
+way to do so.
+
+The J1 template system uses VideoJS to enable *mixed* video sliders. VideoJS
+for J1 supports VJS plugins for local Video like MP4 files or platforms like
+YouTube, Vimeo, or Dailymotion to play video *sources* from *different*
+providers.
+////
+
+////
+++++
+<div class="swiper-title"> <i class="mdib mdib-view-carousel mdib-24px mr-2"></i> Video Slider · Mixed Sources + Captions</div>
+<!-- Master Slider (top) -->
+<div id="master_slider_3" class="swiper swiper-container master-slider">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide swiper-no-swiping" data-slide-type="image">
+      <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-1.jpg" aria-label="Animals-1">
+      <div class="swp-caption-content">Image 1</div>
+    </div>    
+
+    <!-- div class="swiper-slide swiper-no-swiping" data-slide-type="video">
+      <video
+        id="peck_pocketed_video"
+        class="video-js vjs-theme-uno"
+        controls
+        width="640" height="360"
+        poster="/assets/video/poster/html5/peck_pocketed.jpg"
+        alt="title"
+        aria-label="title"
+        data-setup='{
+          "fluid" : true,
+          "sources": [{
+            "type": "video/mp4",
+            "src": "/assets/video//html5/peck_pocketed.mp4"
+          }],
+          "controlBar": {
+            "pictureInPictureToggle": false,
+            "skipButtons": {
+              "backward": 15,
+              "forward": 15
+            },
+            "volumePanel": {
+              "inline": false
+            }
+          }
+        }'
+      > </video>
+    </div -->
+
+    <div class="swiper-slide swiper-no-swiping" data-slide-type="video">
+      <video
+        id="peck_pocketed_video"
+        class="video-js vjs-theme-uno"
+        controls
+        width="640" height="360"
+        poster="//img.youtube.com/vi/1J2qz6B-PFY/maxresdefault.jpg"
+        data-setup='{
+          "fluid" : true,
+          "rel": 0,
+          "techOrder": [
+            "youtube", "html5"
+          ],
+          "sources": [{
+            "type": "video/youtube",
+            "src": "//youtube.com/watch?v=1J2qz6B-PFY"
+          }],
+          "controlBar": {
+            "pictureInPictureToggle": false,
+            "volumePanel": {
+              "inline": false
+            }
+          }
+        }'
+      >
+      </video>
+      <div class="swp-caption-content">Roni Sagi & Rhythm · AGT 2024 (YouTube)</div>
+    </div>
+
+    <div class="swiper-slide swiper-no-swiping" data-slide-type="image">
+      <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-2.jpg" aria-label="Animals-2">
+      <div class="swp-caption-content">Image 2</div>
+    </div>
+    <div class="swiper-slide swiper-no-swiping" data-slide-type="image">
+      <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-3.jpg" aria-label="Animals-3">
+      <div class="swp-caption-content">Image 3</div>
+    </div>
+  </div> <!-- END swiper-wrapper -->
+
+</div> <!-- END swiper-container -->
+
+<!-- Thumbs Slider (bottom) -->
+<div id="thumbs_slider_3" class="swiper swiper-container thumbs-slider thumbs-slider--bottom mt-1 mb-4">
+
+  <div class="swiper-wrapper">
+		<div class="swiper-slide">
+		  <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-1.jpg" aria-label="Animals-1">
+      <div class="swp-caption-content">Image 1</div>
+		</div>
+		<div class="swiper-slide">
+		  <!-- img src="/assets/video/poster/html5/peck_pocketed.jpg" aria-label="peck_pocketed" -->
+		  <img src="//img.youtube.com/vi/1J2qz6B-PFY/maxresdefault.jpg">
+      <div class="swp-caption-content">Roni Sagi & Rhythm · AGT 2024 (YouTube)</div>
+		</div>
+		<div class="swiper-slide">
+		  <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-2.jpg" aria-label="Animals-2">
+      <div class="swp-caption-content">Image 2</div>
+		</div>      
+		<div class="swiper-slide">
+		  <img src="/assets/image/module/swiper/extended/neighbor/image/free-animal-3.jpg" aria-label="Animals-3">
+		</div>
+	</div> <!-- END swiper-wrapper -->
+
+</div> <!-- END swiper-container -->
+
+<script>
+$(function() {
+
+  // ---------------------------------------------------------------------------
+  // Swiper initializer
+  // ---------------------------------------------------------------------------
+  var dependencies_met_page_ready = setInterval (() => {
+    var atticFinished = (j1.adapter.attic.getState() == 'finished') ? true : false;
+
+    if (atticFinished) {
+
+      const VIDEO_PLAYING_STATE = {
+        "PLAYING":  "PLAYING",
+        "PAUSE":    "PAUSE",
+        "ENDED":    "ENDED"
+      }; 
+
+      var vjsPlayer;
+      var vjsOptions;
+      var piSkipButtons;
+
+      var vjsPlayerType   = 'native';
+      var videoPlayStatus = VIDEO_PLAYING_STATE.PAUSE;
+
+      piSkipButtons = {
+        enabled:            true,
+        backward:           30,
+        forward:            30,
+        backwardIndex:      0,
+        forwardIndex:       0,
+        surroundPlayButton: true
+      };
+
+      // Thumbs Slider (slave|bottom)
+      // -----------------------------------------------------------------------
+      const thumbsSlider3 = new Swiper("#thumbs_slider_3", {
+        direction: 'horizontal',
+        spaceBetween: 5,
+        slidesPerView: 3,
+        grabCursor: true,
+        watchSlidesProgress: true,
+        on: {
+          transitionStart: (swiper) => {
+            masterSlider3.slideTo(swiper.activeIndex);
+          }
+        }
+      });
+
+      // Initialize Master Slider
+      // -----------------------------------------------------------------------
+      // See: https://stackoverflow.com/questions/45468980/how-to-fix-event-conflicts-between-swiper-and-video-js
+      var masterSlider3 = new Swiper('#master_slider_3', {
+        autoHeight:       true,  // adapt height of the currently active slide.
+        direction:        'horizontal',
+        thumbs: {
+          swiper: thumbsSlider3,
+        },
+        on: {
+          afterInit: (swiper) => {
+            // do something
+          },
+          slideChangeTransitionStart: (swiper) => {
+            thumbsSlider3.slideTo(swiper.activeIndex);
+          },          
+          slideChangeTransitionEnd: (swiper) => {
+            var currentSlide      = $(swiper.slides[swiper.activeIndex]);
+            var currentSlideType  = currentSlide.data('slide-type');
+            // in case user click next before video ended
+            if (videoPlayStatus === VIDEO_PLAYING_STATE.PLAYING) {
+              vjsPlayer.pause();
+            }
+
+            switch (currentSlideType) {
+              case 'image':
+                //runNext();
+                break;
+              case 'video':
+                // vjsPlayer.currentTime(0);
+                // vjsPlayer.play();
+                videoPlayStatus = VIDEO_PLAYING_STATE.PLAYING;
+                break;
+              default:
+                throw new Error('invalid slide type');
+            }
+          }
+        }
+      });
+
+      // vjsPlayer.on('ended', function() {
+      //     next();
+      // });
+
+      // global function
+      // function prev() {
+      //   swiper.slidePrev();
+      // }
+
+      // function next() {
+      //   swiper.slideNext();
+      // }
+
+      // function runNext() {  
+      //   timeout = setTimeout(function () {
+      //     next()
+      //   }, waiting)
+      // }
+
+      // Initialize VideoJS player/s
+      // -----------------------------------------------------------------------
+      vjsOptions = {
+        plugins: {
+          skipButtons: {
+            backward:       30,
+            forward:        30,
+            backwardIndex:  0,
+            forwardIndex:   1
+          }
+        }
+      };
+      vjsPlayer = videojs('peck_pocketed_video', {});
+
+      // Add VJS plugins
+      // -----------------------------------------------------------------------
+      if (piSkipButtons.enabled) {
+        var backwardIndex = piSkipButtons.backwardIndex;
+        var forwardIndex  = piSkipButtons.forwardIndex;
+
+        // property 'surroundPlayButton' takes precendence
+        //
+        if (piSkipButtons.surroundPlayButton) {
+          var backwardIndex = 0;
+          var forwardIndex  = 1;
+        }
+
+        // plugin initialized with custom options
+        // See: https://videojs.com/guides/options/
+        vjsPlayer.skipButtons({
+          backwardIndex:  backwardIndex,
+          forwardIndex:   forwardIndex,
+          backward:       piSkipButtons.backward,
+          forward:        piSkipButtons.forward,
+        });
+      }
+
+      clearInterval(dependencies_met_page_ready);
+    } // END pageVisible
+  }, 10); // END dependencies_met_page_ready
+
+});
+</script>
+++++
+////

@@ -1,0 +1,507 @@
+---
+title:                                  Image
+title_extention:                        J1 Template Apps
+tagline:                                Apps
+
+date:                                   2020-11-03
+#last_modified:                         2023-01-01
+
+description: >
+                                        The image modules supported by J1 Template offer valuable
+                                        features based on powerful Open Source libraries like
+                                        Masterslider, lightGallery, or Justified Gallery for high-end,
+                                        masonry-styled preview maps.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        image, lightbox, carousel, slider, gallery,
+                                        masterslider, lightgallery, justifiedgallery
+
+categories:                             [ Roundtrip ]
+tags:                                   [ Module, Carousel, Lightbox, Image, Slider, Slick ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/quino-al-2.jpg
+  width:                                1920
+  height:                               1280
+
+compress:                               true
+regenerate:                             false
+permalink:                              /pages/public/tour/image_data/
+
+resources:                              [
+                                          carousel, gallery, lightbox, lightgallery,
+                                          master-slider, masonry, slick-slider,
+                                          swiper, photoswipe
+                                        ]
+resource_options:
+  - toccer:
+      collapseDepth:                    4
+  - attic:
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/quino-al-2.jpg
+          alt:                          Photo by Quino Al Angel on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Quino Al Angel
+            href:                       //unsplash.com/@quinoal
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:time-num--string:                      10-15
+:time-en--string:                       Minutes
+:time-en--description:                  to read
+:time-de--string:                       Minuten
+:time-de--description:                  Lesezeit
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+Welcome to the preview page focussing on image modules. This page shows
+all of the powerful features of the J1 Template to manage your image-based
+content using lightboxes, carousels, sliders, grids, and galleries.
+
+The image-related modules of the J1 Template offer a wide range of complex
+functionality based on powerful Open Source libraries like Lightbox Version 2,
+lightGallery Version 2, Slick Slider, Master Slider, or Masonry and
+Justified-Gallery to create masonry-styled preview maps.
+
+[subs=attributes]
+++++
+<div class="video-title">
+  <i class="mdib mdib-clock-outline mdib-24px mr-2"></i>
+  {time-num--string} {time-en--string} {time-en--description}
+</div>
+++++
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+// [role="notranslate"]
+[role="mt-5"]
+== Lightboxes
+
+A lightbox is a helper which displays enlarged, almost screen-filling versions
+of images while dimming the remainder of the page. The technique, introduced
+by Lightbox Version 2, gained widespread popularity thanks to its simple style.
+The term *lightbox* has been employed since then for Javascript libraries to
+support such functionality.
+
+For J1 Template, different lightbox modules are available:
+
+* Lightbox Version 2 (default)
+* lightGallery Version 2 (optional)
+* Slick Lightbox (optional, currently for Slick Carousels only)
+
+The *default* tool employed by J1 Template is Lightbox V2, a Javascript
+library written by _Lokesh Dhakar_ free to use for private or business
+websites. For more complex use cases, like a thumbnail gallery preview or
+video support, *lightGallery* can be used alternatively.
+
+[CAUTION]
+====
+lightGallery is *free* to use based on a GPLv3 license for *non-business*
+websites. If you have plans to use this lightbox for your business or on a
+commercial site, you need to subscribe a so-called *Commercial License*. Find
+more on the *paid* solution on the page:
+https://www.lightgalleryjs.com/license[lightGallery license, {browser-window--new}].
+====
+
+All lightboxes are fully integrated to be used as standalone modules or
+used as helpers *under-the-hood* by other modules focussing on image-data
+like gallerys or carousels.
+
+[TIP]
+====
+For details of the default lightbox of J1 Template, see the documentation
+under the link:{url-j1-docs--lightbox-module}[Lightbox module, {browser-window--new}].
+====
+
+[role="mt-5"]
+=== Lightboxes
+
+Find below an example of using the the default lightbox used for standalone
+images. See how individual images are linked.
+
+.Lightbox for standalone images
+lightbox::example-standalone[800, {data-images-lightbox--standalone}, role="mt-4 mb-5"]
+
+The J1 lightbox module supports groups of images as well. Click on the image
+group below to see how a group is managed.
+
+.Lightbox for grouped images
+lightbox::example-group[395, {data-images-lightbox--group}, group, role="mt-4 mb-4 wm-800"]
+
+
+[role="mt-5"]
+=== lightGallery
+
+lightGallery provides more complex image data functions than the default
+lightbox. The module supports a gallery-style thumbnail preview plus image
+resizing, a download dialog, sharing provider support, and more helpful.
+Check what lightGallery can do this by the following example.
+
+.Gallery + lightGallery
+gallery::jg_old_times[role="mt-4 mb-4"]
+
+.lightGallery - Gallery or Lightbox
+[NOTE]
+====
+The name lightGallery implies a sort of a gallery, but the library is a
+*lightbox*, and provides enhannced functionality on image-based data rather
+than enlarged displaying of images.
+====
+
+[role="mt-5"]
+== J1 Slider
+
+J1 Slider is based on *SwiperJS* in version *1.2.0* (January 7, 2025). The
+slider is a powerful tool to create fully responsive and touch-enabled
+slideshows.
+
+[role="mt-4"]
+=== Text Sliders
+
+Swipers are typically used for displaying images. Still, the implementation
+for the J1 Template supports a lot more sources to be displayed as a slide
+show -- simple text for example.
+
+[TIP]
+====
+Text sliders can be placed like banners on a page's section. For text sliders,
+different animations are available.
+====
+
+[role="mt-4"]
+==== Base Text Slider
+
+Important statements or topics can be placed on top of an article or
+a paragraph to give them better visibility. In one line, you can present
+many facts to know animated for the reader's attention within a single
+line.
+
+.Base Text Slider
+// carousel::demo_text_carousel[role="mb-4"]
+swiper::swiper_text_base[role="mt-4 mb-4"]
+
+
+[role="mt-4"]
+==== Parallax Text Slider
+
+A more emphasized type of text-based slide is a *parallax* text slider. If you
+want to focus the meaning, this kind of a slide show may be interesting.
+Image-based slide may draw off the reader's attention from the text. Therefore,
+a pure text-based presentation may a better choice.
+
+.Parallax Text Slider
+swiper::swiper_text_parallax[role="mt-4 mb-4"]
+
+
+[role="mt-5"]
+=== Image Slider
+
+Carousels are mostly used for pictures data to animate the images as a series.
+Find with the following some examples of how to use a carousel for your image
+data.
+
+A simple image show is useful, for example, as an animated (or not animated)
+banner presenting exciting things about your site or the products offered.
+
+.Image Slider
+carousel::demo_simple[role="mb-5"]
+
+[role="mt-4"]
+==== Image Slider + Lightbox
+
+Carousels are used for an exceptionally compact form of image galleries.
+This example shows some pictures having individual caption text and supports
+a lightbox to enlarge images full size.
+
+.Image Slider + Lightbox
+carousel::demo_cats[role="mt-4 mb-5"]
+
+The J1 module lightbox is a simple Lightbox but offers a bunch of impressive
+features for displaying images. For example, the lightbox can display all
+images as a group. If one picture is opened in the lightbox, others are
+browsed by easy-to-use control buttons.
+
+[role="mt-4"]
+==== One Slide Slider + Lightbox
+
+The build-in carousel supports multiple and single image shows. Here you find
+an example of a single image slide show with controls enabled to browse all
+images back and forth. An indicator below the slider shows how many images
+the show contains.
+
+.One Slide Slider
+carousel::demo_oneslide[role="mb-4"]
+
+
+[role="mt-5"]
+== Slick Slider
+
+[role="mb-4"]
+Slick is a popular jQuery plugin for creating responsive and fully
+customizable carousels. It allows developers to easily create beautiful
+and dynamic carousels that can display images, videos, or any other type
+of content in a visually appealing way.
+
+The plugin is designed to be lightweight, fast, and easy to use, making it
+a popular choice for all web developers. It has many features, including
+multiple navigation options, lazy loading, or autoplay. Slick carousels are
+compatible with all modern browsers and devices, making it a great choice to
+create a responsive and mobile-friendly website.
+
+All Slick carousels for the J1 Template can be easily customized in
+various ways, such as changing the number of posts displayed, the slider
+speed, or the navigation options like *Arrows* and *Dots*.
+
+[role="mt-4"]
+[[slick-image-carousel]]
+=== Image Carousel
+
+[role="mb-4"]
+An _Slick_ image carousel typically consists of a container with images and
+a navigation system, including buttons, arrows, or dots that allow users to
+move back and forth between images or select a specific image. Image carousels
+can also include animation effects, such as fade-in or slide-in transitions
+between images, to make the presentation more engaging and visually appealing.
+
+.Carousel + Arrows + Dots + Captions + Lightbox
+slick::image_carousel_full[role="mt-4 mb-5"]
+
+[role="mt-4"]
+=== Carousel from Collections
+
+[role="mb-4"]
+A carousel from a collection for J1 Template is a *pre-defined* element
+type to display *articles* from a Jekyll collection on a webpage. All
+carousels for collections display the article image and a link to the article
+as a caption.
+
+.Collection Biography + Arrows + Dots + Gutters
+slick::collection_carousel_biography[role="mt-4 mb-5"]
+
+[role="mt-4"]
+=== Carousel from Posts
+
+A Carousel from posts for J1 Template is a *pre-defined* carousel type to
+display post articles on a webpage. It is a popular way to showcase a
+selection of post articles visually appealingly and can be useful for
+highlighting important or *featured* content for your posts content.
+
+[role="mb-4"]
+Post carousels pull news articles from a specific *group*. All Carousels for
+posts display the post category, the title, the author information and
+date.
+
+.Asciidoc configuration
+[source, apib, role="noclip mb-3"]
+----
+slick::post_carousel_featured[]
+----
+
+.Posts Carousel
+slick::post_carousel_featured[role="mt-5 mb-5"]
+
+[role="mt-4"]
+.More about Slick Carousels
+[TIP]
+====
+If you're interested to learn more about _Slick_, go previewer page
+link:{url-j1-slick-previewer}[Slick Previewer, {browser-window--new}],
+====
+
+[role="mt-5"]
+[[masterSlider]]
+== Masterslider
+
+Masterslider is a jQuery plugin fully integrated into the J1 Template.
+Jekyll One uses the *free* version of Masterslider well-known as MS Lite.
+The lite version does *not* support all features of the full product.
+The functionality of filters and  layouts are limited and no overlay
+techniques are supported by the MS Lite version.
+
+[role="mt-4"]
+[[carousel_versus_slider]]
+=== Carousel versus Slider
+
+Sliders and Carousels are focussing quite the same thing: presenting images
+dynamically. The features of Sliders go far beyond what simple carousels can
+do: presenting image-based data as slide *shows*.
+
+Well-known Office Products to create *presentations* are Powerpoint from
+_Microsoft_ or _Google Docs_. Modern sliders like _Master Slider_ provide
+similar features to present animated presentations based on digital image
+data combined with text elements, buttons, or overlay techniques for images
+or other digital data sources.
+
+In short: Carousels are used to present images, and sliders are used to create
+complex image-based presentations.
+
+[TIP]
+====
+For more details of the implementation of Master Slider for J1 Template, find
+more helpful information at the page
+link:{url-j1-docs--masterslider-module}[Master Slider module, {browser-window--new}].
+====
+
+[role="mt-5"]
+=== Featured Slider
+
+The following slider uses the CSS filter feature of Master Slider. Filters
+can be used, for example, to *transform* the *style* of the images presented
+by a slider. In this example, the slider images are transformed from style
+*color* to *sepia*.
+
+[WARNING]
+====
+Lightbox support is only available for the MS Lite version of J1 Template.
+The original Product versions *MS Lite* and *MS Pro* does not support
+lightboxes on sliders out-of-the-box.
+====
+
+.Slider using Controls + Filters + Lightbox
+masterslider::ms_00002[role="mt-5 mb-5"]
+
+[TIP]
+====
+Click on the Lightbox symbol mdi:image-outline[18px, md-gray] in the
+slides to see the *colored* images configured for the slider.
+====
+
+[role="mt-5"]
+[[text_elements]]
+=== Slider using Text Elements
+
+One of the major features of sliders is to present additional animated
+elements, like text data, connected to the images presented by an slideshow.
+Masterslider additionally provides functions to combine images and text by
+so-called *MSInfo* blocks out-of-the-box.
+
+.Slider using Images + Text
+masterslider::ms_00003[role="mt-4 mb-5"]
+
+[role="mt-4"]
+[[thumb_images]]
+=== Layout Thumb
+
+To give the users a more *visual* control over a slideshow, Swiper sliders
+can provide *UI elements* by placing minified images or text elements (thumbs)
+side-by-side (on the left|right), or at the bottom|top of a swiper. Find below
+examples how to control such sliders' by a thumb (slave) silder.
+
+.Layout Thumb · Top
+swiper::thumb_slider_top[role="mb-5"]
+
+.Layout Thumb · Right
+masterslider::ms_00004[role="mt-4 mb-5"]
+
+.Text controls
+masterslider::ms_00007[role="mt-4 mb-5"]
+
+
+[role="mt-5"]
+=== Layout Neighbor
+
+A slideshow typically presents a larger number of slides, which requires a
+sort of navigation. The effect *neighbors* accompanies the *active slide* by
+their *neighbors* on the left and right as *previews*. The neighbor on the
+*left* acts like a *previous button* and scrolls the slides *backward*. The
+neighbor on the *right* acts like a *next button* and scrolls the slides
+*forward*.
+
+[role="mb-5"]
+[TIP]
+====
+The *effect* transforms a slider into a quite *compact* presentation that does
+*not* require any (additional) *navigation* elements.
+====
+
+.Layout Neighbor
+swiper::neighbor_slider[role="mb-5"]
+
+.Slider using PartialView
+masterslider::ms_00009[role="mt-4 mb-5"]
+
+
+[role="mt-5"]
+== Masonry
+
+Masonry for J1 is a great tool to create dynamic image galleries. Image
+galleries are popular on many websites, and masonry can be a useful tool for
+creating dynamic galleries.
+
+By using the Masonry module, you can create a gallery that displays images of
+different sizes in an aesthetically pleasing and functional way.
+
+.Grid of Images
+masonry::image_fixed_height_lb[role="mt-4 mb-5"]
+
+.More about Masonry
+[TIP]
+====
+Find more on how the Masonry module can be used on the
+link:{url-j1-masonry-previewer}[Masonry Preview, {browser-window--new}] page.
+====
+
+
+[role="mt-5"]
+== Justified Gallery
+
+link:{url-justified-gallery--home}[JustifiedGallery, {browser-window--new}]
+is a great _jQuery_ Plugin to create responsive, infinite, and high-quality
+justified image galleries. J1 Template combines the Gallery with the lightboxes
+supported to enlarge the images of a gallery. See the gallery in action; and
+for sure, all that you see is even responsive. Change the size of your current
+browser window, by width or height to see what will happen!
+
+[role="mb-4"]
+Pictures you've made are typically not even in size. Images may have the
+same size (resolution), but some are orientated landscapes, or others
+may be portraits. For that reason, a more powerful gallery is needed to create
+so-called justified views. J1 Gallery is based on Justified Gallery to create
+so-called masonry grid layouts.
+
+It works by placing elements in an optimal position based on available
+horizontal and vertical space. Sort of like mason fitting stones in a wall.
+For sure, you'll have seen it in action all over the Internet.
+
+.Gallery of Images + lightGaller
+gallery::jg_mega_cities[role="mt-4 mb-4"]
+
+
+[role="mt-5"]
+== What next
+
+I hope, you've enjoyed exploring the possibilities J1 offers for managing
+and displaying digital image content. But much, much more can the J1 do for
+your web.
+
+The J1 Template support playing audio and video on web pages by using the
+HTML5 audio and video support, the new standard of HTML. HTML5 implements a
+pure HTML way to show play audio or playing video on the web. Modern browsers
+support the audio tag `<audio>` and the video tag `<video>` for the HTML5
+standard.
+
+The previous proprietary de facto standard software like a Flash Player,
+Quicktime, or Silverlight is no longer needed as the Theme JekyllOne provides
+HTML5 video for local content and from online sources on the Internet.
+
+[role="mb-7"]
+Incredible? See the next example page link:{url-tour--audio_data}[Audio Player].

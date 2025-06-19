@@ -3,7 +3,7 @@ REM  ---------------------------------------------------------------------------
 REM  Product/Info:
 REM  http://jekyll-one
 REM
-REM  Copyright (C) 2023, 2024 Juergen Adams
+REM  Copyright (C) 2023-2025 Juergen Adams
 REM  J1 is licensed under the MIT License
 REM  ---------------------------------------------------------------------------
 

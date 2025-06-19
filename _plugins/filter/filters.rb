@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 #
 #  NOTE:
@@ -45,6 +45,7 @@
 #
 # ------------------------------------------------------------------------------
 require 'json'
+require 'execjs'
 
 module Jekyll
   module J1_Filters
@@ -53,6 +54,7 @@ module Jekyll
     DOCTYPE_HTML = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">'
 #   EMPTY_LINE = /^\s*\n/
     EMPTY_LINE = /^\s*$\n/
+    SURRUNDING_QUOTES = /^\h*\K"|"(?=\h*$)/
     MULTIPLE_SPACES = / +/
     ALL_SPACES = /\s+/
     COMMENT_LINE = /^\s*#.*\n|\s*#.*\n/
@@ -95,23 +97,13 @@ module Jekyll
     end
 
     # --------------------------------------------------------------------------
-    #  contains: check if a string contains a substring
-    #
-    #  Example:
-    #
-    # --------------------------------------------------------------------------
-    def contains(input, substr)
-       input.include?(substr) ? true : false
-    end
-
-    # --------------------------------------------------------------------------
     #  contain_substr: check if a string contains a substring
     #
     #  Example:
     #
     # --------------------------------------------------------------------------
     def contain_substr(input, substr)
-       input.include?(substr) ? true : false
+       input.include?(substr.to_s) ? true : false
     end
 
     # --------------------------------------------------------------------------
@@ -185,6 +177,16 @@ module Jekyll
       else
         []
       end
+    end
+
+    # --------------------------------------------------------------------------
+    #  strip_surrounding_quotes:
+    #
+    #  Example:
+    #
+    # --------------------------------------------------------------------------
+    def strip_surrounding_quotes(input)
+      input.to_s.gsub(Regexp.new(SURRUNDING_QUOTES), NOTHING)
     end
 
     # --------------------------------------------------------------------------
@@ -317,6 +319,25 @@ module Jekyll
     def json(input)
       input.to_json
     end
+
+    # --------------------------------------------------------------------------
+    #  jsonStr:
+    #
+    #  Example:
+    #
+    # --------------------------------------------------------------------------
+    # def jsonStr(input)
+    #   input.to_json
+
+    #   prettyOpts = {
+    #     array_nl: "\n",
+    #     object_nl: "\n",
+    #     indent: '  ',
+    #     space: ' '
+    #   }
+
+    #   return JSON.pretty_generate(input, prettyOpts).gsub(/{|}/m, "")
+    # end
 
     # --------------------------------------------------------------------------
     #  is_type:

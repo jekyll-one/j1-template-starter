@@ -1,0 +1,231 @@
+---
+title:                                  Rouge
+title_extention:                        Themeable Syntax Highlighter for J1 Template
+tagline:                                Themeable Syntax Highlighter
+
+date:                                   2023-07-08
+#last_modified:                         2023-01-01
+
+description: >
+                                        Rouge is a native Ruby themeable syntax highlighter fully
+                                        integrated with J1 Template. The highlighter supports 100+
+                                        different languages and generates HTML output using standard
+                                        ANSI 256-colors displayed by all current browsers.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        highlighter, rouge
+
+categories:                             [ Roundtrip ]
+tags:                                   [ Module, Rouge ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/mohammad-rahmani.jpg
+  width:                                1920
+  height:                               1280
+
+regenerate:                             true
+permalink:                              /pages/public/tour/rouge/
+
+resources:                              []
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/mohammad-rahmani.jpg
+          alt:                          Photo by Mohammad Rahmani on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Mohammad Rahmani
+            href:                       //unsplash.com/de/@afgprogrammer
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:time-num--string:                      3
+:time-en--string:                       Minutes
+:time-en--description:                  to read
+:time-de--string:                       Minuten
+:time-de--description:                  Lesezeit
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+Rouge is a native Ruby themeable syntax highlighter fully integrated width J1
+Template. The highlighter supports 100+ different languages and generates HTML
+output using standard ANSI 256-colors displayed by all current browsers.
+
+Find available themes for selected languages to see how highlighting works
+using Rouge.
+
+[subs=attributes]
+++++
+<div class="video-title">
+  <i class="mdib mdib-clock-outline mdib-24px mr-2"></i>
+  {time-num--string} {time-en--string} {time-en--description}
+</div>
+++++
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5"]
+== Select a Theme
+
+For the default themes `Uno` of J1 Template, the following _Rouge_ themes
+are used:
+
+* theme_light: based on IgorPro theme `igorpro`
+* theme_dark:  based on Monokai theme Sublime `monokai.sublime`
+
+The *default* themes used for the J1 Template can be configured with
+the global *template config* file `~/_data/j1_config.yml`.
+
+[source, yaml, role="noclip"]
+----
+# ------------------------------------------------------------------------------
+# HIGHLIGHTERs
+#
+rouge:
+
+  theme_light:                          uno.light
+  theme_dark:                           uno.dark
+----
+
+To preview *all* themes supported by *J1 Template*, make your selection
+from the button *AVAILABLE THEMES* below.
+
+++++
+<div class="btn-group speak2me-ignore">
+  <!-- See: https://stackoverflow.com/questions/47242702/force-bootstrap-dropdown-menu-to-always-display-at-the-bottom-and-allow-it-go-of -->
+  <!-- NOTE: control the behaviour of popper.js for positioning -->
+  <!-- NOTE: set attribute data-flip="false" to open the SELECT list at the BOTTOM of the BUTTON -->
+  <button
+    class="btn btn-flex btn-lg btn-info dropdown-toggle mt-2 mb-4"
+    data-flip="false" type="button"
+    data-bs-toggle="dropdown"
+    data-bs-target="#navbarDropdown"
+    aria-haspopup="true"
+    aria-expanded="false">
+    Available Themes <span class="ml-2 caret"></span>
+  </button>
+
+  <ul class="dropdown-menu scrollable-menu" role="menu">
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16')">                 <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.dark')">            <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.dark</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.light')">           <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.light</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.monokai')">         <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.monokai</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.monokai.dark')">    <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.monokai.dark</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.monokai.light')">   <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.monokai.light</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.solarized')">       <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.solarized</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.solarized.dark')">  <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.solarized.dark</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.solarized.light')"> <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.solarized.light</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('colorful')">               <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>colorful</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('github')">                 <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>github</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('gruvbox')">                <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>gruvbox</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('gruvbox.light')">          <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>gruvbox.light</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('igorpro')">                <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>igorpro</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('molokai')">                <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>molokai</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('monokai')">                <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>monokai</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('monokai.sublime')">        <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>monokai.sublime</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('pastie')">                 <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>pastie</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('thankful_eyes')">          <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>thankful_eyes</a></li>
+    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('tulip')">                  <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>tulip</a></li>
+  </ul>
+</div>
+<div id="selected" class="mt-1 mb-3"></div>
+++++
+
+[role="mt-4"]
+=== Liquid code
+
+[source, liquid, role="noclip"]
+----
+Hello {{ 'now' | date: "%Y %h" }}
+
+{% comment %} if item.quantity is 4... {% endcomment %}
+{% for i in (1..item.quantity) %}
+  {{ i }}
+{% endfor %}
+----
+
+[role="mt-4"]
+=== Javascript code
+
+[source, javascript, role="noclip"]
+----
+// helper functions
+//
+function styleSheetLoaded(styleSheet) {
+  var sheets     = document.styleSheets,
+      stylesheet = sheets[(sheets.length - 1)];
+
+  // find CSS file 'styleSheetName' in document
+  for(var i in document.styleSheets) {
+    if(sheets[i].href && sheets[i].href.indexOf(styleSheet) > -1) {
+      return true;;
+    }
+  }
+}
+----
+
+[role="mt-4"]
+=== Ruby code
+
+[source, ruby, role="noclip"]
+----
+require 'asciidoctor/extensions' unless RUBY_ENGINE == 'opal'
+include Asciidoctor <1>
+
+Asciidoctor::Extensions.register do
+  class J1BlockMacro < Extensions::BlockMacroProcessor
+    use_dsl
+    named :banner
+    name_positional_attributes 'role'
+
+    def process parent, target, attrs
+      html = %(<div id="#{target}" class="#{attrs['role']}"></div>)
+      create_pass_block parent, html, attrs, subs: nil
+    end
+  end
+  block_macro J1BlockMacro
+end
+----
+<1> don't miss to load the Asciidoctor ruby
+
+
+[role="mt-5"]
+== What next
+
+The search module *QuickSearch* for J1 Template is based on _Lunr_, a
+great search engine inspired by _Apache Solr_, written in Javscript by
+http://lunrjs.com[Oliver Nightingale, {browser-window--new}]. The engine
+is fully integrated with the template and is designed to provide users
+with a great search experience.
+
+Using the search module *QuickSearch* for J1 based websites, it is *not*
+longer needed to integrate complex external, server-sided search engines
+like _Google_ or _Bing_. Visitors are able to search your site to find pages
+and posts they are interested in.
+
+Usability is one of the top criteria for all visitors browsing your site.
+A good user experience and excellent content are key factors for the success
+of a website. Nothing in business is guaranteed, but excellent user experience
+efforts are good reasons your readers will return.
+
+[role="mb-7"]
+Learn what is searching a J1 based websites all about at
+link:{url-tour--quicksearch}[Search Engine].

@@ -1,0 +1,105 @@
+[role="mt-5"]
+== PhotoSwipe Lightbox
+
+See link:/getting-started[getting started] and link:/data-sources[data
+sources] for examples.
+
+[cols="3,9a", subs=+macros, options="header", width="100%", role="rtable mt-5"]
+|===
+|Name |Description
+
+|`gallery`
+|Element, NodeList, or CSS selector (string) for the *gallery* element,
+a swiper slider for example.
+
+|`children`
+|Element, NodeList, or CSS selector (string) for elements within a
+`gallery`, a swiper slider for example. If not defined or set to `false`,
+the `gallery` *root* node is used.
+
+|===
+
+[role="mt-5"]
+=== pswpModule
+
+Function or Module. Should return import(), if you need to *dynamic* import.
+
+Default: `undefined`
+
+[role="mb-5"]
+.Example
+[source, js]
+----
+pswpModule: PhotoSwipe
+----
+
+Or the PhotoSwipe *Core* module itself.
+
+[role="mb-5"]
+.Example
+[source, js]
+----
+const lightbox = new PhotoSwipeLightbox({
+  pswpModule: PhotoSwipe
+  // ...
+});
+----
+
+
+[role="mt-5"]
+=== preloadFirstSlide
+
+Boolean, `true`. Loads the first slide image in parallel with PhotoSwipe
+Core (while PhotoSwipe is opening).
+
+[role="mb-5"]
+[source, js]
+----
+import PhotoSwipeLightbox from '/photoswipe/photoswipe-lightbox.esm.js';
+const lightbox = new PhotoSwipeLightbox({
+  gallery: '#gallery_id',
+  pswpModule: PhotoSwipe,
+  children: 'a',
+  preloadFirstSlide: false
+});
+lightbox.init();
+----
+
+[role="mt-5"]
+=== Translating
+
+A list of options that might need a *translation*.
+
+[role="mb-5"]
+[source, js]
+----
+{
+  closeTitle:         'Close',
+  zoomTitle:          'Zoom',
+  arrowPrevTitle:     'Previous',
+  arrowNextTitle:     'Next',
+  errorMsg:           'The image cannot be loaded',
+  indexIndicatorSep:  '/'
+}
+----
+
+[role="mb-5"]
+.Example
+[source, js]
+----
+const lightbox = new PhotoSwipeLightbox({
+  gallery: '#gallery_id',
+  pswpModule: PhotoSwipe,
+  children: 'a',
+  closeTitle: 'Close the dialog',
+  zoomTitle: 'Zoom the photo',
+  arrowPrevTitle: 'Go to the previous photo',
+  arrowNextTitle: 'Go to the next photo',
+  errorMsg: 'The photo cannot be loaded',
+  indexIndicatorSep: ' of ',
+  preloadFirstSlide: false
+});
+
+lightbox.init();
+----
+

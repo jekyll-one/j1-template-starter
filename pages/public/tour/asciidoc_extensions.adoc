@@ -1,0 +1,822 @@
+---
+title:                                  Extensions
+title_extention:                        Enhanced Asciidoc Markups for J1 Template
+tagline:                                Enhanced Asciidoc Markups
+
+date:                                   2023-09-01
+#last_modified:                         2023-01-01
+
+description: >
+                                        J1 Template implements some handy Ruby-based enhancements
+                                        for the markup language Asciidoc. Markup extensions for
+                                        is a unique feature of Jekyll One compared to other Jekyll
+                                        themes and templates.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        asciidoc, asciidoctor, ruby, extensions
+
+categories:                             [ Roundtrip ]
+tags:                                   [ Asciidoc, Extension ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/martin-sanchez.jpg
+  width:                                1920
+  height:                               1280
+
+tts:                                    true
+comments:                               false
+regenerate:                             false
+permalink:                              /pages/public/tour/asciidoc_extensions/
+
+resources:                              [
+                                          gallery, iconify, lightbox,
+                                          lightgallery, videojs
+                                        ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/martin-sanchez.jpg
+          alt:                          Photo by Martin Sanchez on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     BP Miller
+            href:                       //unsplash.com/de/@bp_miller
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:time-num--string:                      5-10
+:time-en--string:                       Minutes
+:time-en--description:                  to read
+:time-de--string:                       Minuten
+:time-de--description:                  Lesezeit
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="all" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+J1 Template implements some handy enhancements for the markup language
+Asciidoc. Providing extensions for a Jekyll theme is a unique feature
+of Jekyll One template system compared to other Jekyll themes and templates.
+
+[role="mb-4"]
+All already implemented Asciidoctor extensions you'll find below.
+
+[TIP]
+====
+Most extensions are based on well-documented examples from the
+link:{url-asciidoctor--extensions-lab}[Asciidoctor Extensions Lab, {browser-window--new}].
+To create Asciidoc extensions on your own, it is highly recommended to read the
+link:{url-asciidoctor--extensions-manual}[Extensions Section, {browser-window--new}]
+in the Asciidoctor user manual.
+====
+
+[role="mt-4"]
+Extensions for the markup language Asciidoc were made especially for documents
+of the Jekyll content type *page*, but can be used for *posts* or *collections*
+as well.
+
+[subs=attributes]
+++++
+<div class="video-title">
+  <i class="mdib mdib-clock-outline mdib-24px mr-2"></i>
+  {time-num--string} {time-en--string} {time-en--description}
+</div>
+++++
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5"]
+== Asciidoc Result Extension
+
+J1 Template adds a simple Javascript based functionality for the
+*View Result Extension* to any listing block element `listingblock`. The
+extension adds an interactive toggle button `VIEW` to the output of a listing
+block placed to the top right of the example box.
+
+[role="mb-4"]
+If a result block `[.result]` is placed under a listing block, clicking the
+toggle button *view* `VIEW` displays or hide the content given by the
+result block.
+
+[role="mb-4"]
+[TIP]
+====
+The *View Result Extension* is quite helpful for sections discussing
+code elements.
+====
+
+This example place a button *VIEW* top right of the example box.
+
+.VIEW extension
+[source, no_template, role="noclip"]
+----
+* displayed always
+----
+
+[.result]
+====
+ displayed till clicked, but closed on second click (toggle)
+====
+
+[role="mt-5"]
+== Asciidoc Admonitions
+
+[role="mb-5]
+Admonition blocks draw the reader to certain statements by labeling
+them as priorities displayed in separate blocks. These types of information
+blocks are called *admonitions*. The AsciiDoc markuplanguage provides five
+block types shown by the following examples.
+
+.Admonition labels
+[cols="3a, 9a", subs=+macros, options="header", width="100%", role="rtable mt-3 mb-4"]
+|===
+|Name |Description
+
+|`NOTE`
+|Additional details on the currently discussed topic that may help the
+reader to understand the following content better.
+
+|`TIP`
+|Provides facts that may help the reader *to go further* or points to
+additional *options* available that can be used.
+
+|`IMPORTANT`
+|Emphasis on what is currently being discussed and provide facts that
+should be remembered.
+
+|`WARNING`
+|instructs readers of potential danger, harm, or consequences for the
+wrong usage.
+
+|`CAUTION`
+|Advise the reader to act carefully and point to potential risks or
+trippings.
+
+|===
+
+[NOTE]
+====
+All colors for all default admonition blocks set to the standard
+color set. Find available block types and their colors below.
+====
+
+[role="mr-4]
+When you want to call attention to a single paragraph, start the first
+line of the paragraph with the label you want to use. The label must be
+uppercase and followed by a colon `:`.
+
+.Admonition paragraph syntax
+[source, apib]
+----
+NOTE: Followed by the paragraph text
+----
+
+Set the label as a style attribute on a block when you want to apply an
+admonition to complex content. The next example shows that admonition
+labels are commonly set on example blocks. The label must be uppercase
+when set as an attribute on a block.
+
+.Admonition block syntax
+[source, apib]
+----
+[NOTE]
+====
+The block text (multiline)
+====
+----
+
+To add an *additional* title element on an admonition, place a dot `.`
+directly followed by the text of the title.
+
+.Admonition block syntax + title
+[source, apib]
+----
+.title text
+[NOTE]
+====
+The block text (multiline)
+====
+----
+
+.NOTE block
+[NOTE]
+====
+Icon background-color: indigo
+====
+
+.TIP block
+[TIP]
+====
+Icon background-color: green
+====
+
+.IMPORTANT block
+[IMPORTANT]
+====
+Icon background-color: orange
+====
+
+.WARNING block
+[WARNING]
+====
+Icon background-color: yellow
+====
+
+.CAUTION block
+[CAUTION]
+====
+Icon background-color: red
+====
+
+[role="mt-5"]
+== Asciidoc Quote elements
+
+Quote elements cite a passage or phrase from a book, speech, or the like,
+such as authority, illustration, etc. the quote elements are controlled
+by the following *attributes*:
+
+attribution::
+The attribute `attribution` specifies the name of *who* the content
+is attributed to.
+
+information::
+The attribute `information` is optional and specifies the general or
+bibliographical information of the book, speech, play, poem, etc.,
+where the content was *drawn from*.
+
+[role="mt-4"]
+=== Quoted paragraph
+
+If the text element to be quoted is a single line or paragraph, the attribute
+list quote, attribution, and information `[quote, attribution, information]`
+can be placed directly *above* the text.
+
+.Synopsis
+[source, text]
+----
+[quote, attribution, information]
+Quote or excerpt text
+----
+
+A *single* paragraph can be turned into a blockquote by:
+
+. surrounding the quoted paragraph with double-quotes `"`
+. adding an optional attribution `attribution`, prefixed by two
+  dashes `--` *below* the quoted text
+
+[role="mt-3 mb-5"]
+.Synopsis
+[source, text]
+----
+"quoted paragraph"
+-- attribution
+----
+
+[role="mt-5"]
+"Don't do stupid things twice. The selection is too big for that."
+-- Jean-Paul Sartre
+
+[role="mt-4"]
+=== Quote block
+
+If the text element, or excerpt, to be quoted is more than one paragraph,
+place the multine text between delimiter lines consisting of four
+*underscores* `____`.
+
+[role="mt-3 mb-4"]
+.Synopsis
+[source, text]
+----
+[quote, attribution]
+____
+paragraph text (multiline)
+____
+----
+
+[role="mt-4 mb-4"]
+Example of a quoted *block*.
+
+[quote, Monty Python and the Holy Grail]
+____
+Dennis: Oh, what a giveaway! Did you hear that? Did you hear that, eh? +
+That's what I'm on about! Did you see him repressing me?
+
+You saw him, Didn't you?
+____
+
+
+[role="mt-5"]
+== Lightboxes
+
+To make the use of the built-in lightbox easier, the J1 Template offers an
+Asciidoc extension: the lightBox block *macro*. The lightbox block macro
+`lightbox::` embeds one or more images into the output document and puts
+the default lightbox for J1 automatically on.
+
+The images width and additional a addtional caption text `caption text`
+and CSS styles are configurable for all images using this macro.
+
+.Lightbox block for single images
+[source, no_template, role="noclip"]
+----
+.Block title
+lightbox::<block_id>[ <images_width>, <images_data_id>, <role="CSS styles"> ]
+----
+
+.Lightbox block for image groups
+[source, no_template, role="noclip"]
+----
+.Block title
+lightbox::<block_id>[ <images_width>, <images_data_id>, <group_name>, <role="CSS styles"> ]
+----
+
+[NOTE]
+====
+The role parameter `role` to specify additional CSS styles is for all
+lightbox macros `lightbox::` *optional* and can be omitted.
+
+For a lightbox block, images are placed in the output document
+without any other scaling than in width - they are placed using simple
+HTML img tags `<img>`. This technique is fine for images that are even
+in size. For images in different sizes, a gallery should be used as a
+J1 Gallery to rearrange images and make them fit at their best for the
+available space.
+====
+
+[role="mt-5"]
+=== Standalone Images
+
+For your convenience and better readability, the image data should be
+defined as Asciidoc attributes. The image data is given as a string
+of data pairs:
+
+.Paired attributes
+[source, no_template, role="noclip"]
+----
+"path/to/image-1, image-caption-1, ..."
+----
+
+.Example of an data attribute for a lightbox block
+[source, no_template, role="noclip"]
+----
+:data-images: "pages/image-1.jpg, Description 1, "pages/image-2.jpg, Description 2"
+----
+
+The base path for all image-related data is a configuration placed in
+the side-wide project configuration *_config.yml* and points per default
+to images path `/assets/images`. The base path is automatically added to
+each image. If you want to use the default asset path for images, a relative
+path needs to be given like path-to-image `path/to/image`.
+
+[WARNING]
+====
+If an absolute path `/path/to/image` is configured, the base
+path gets ignored. This is the default behavior of the Asciidoc Markup
+processor. If an absolute path is given, the full path to the images
+used has to be configured.
+====
+
+The group parameter `group` for the lightbox block `lightbox::` is optional.
+If *no* group parameter is given for a block, the related images are treated
+as standalone.
+
+.Lightbox block for standalone images
+[source, no_template, role="noclip"]
+----
+lightbox::<block_id>[ 800, {<data-images-id>} ]
+----
+
+.Lightbox block for standalone images
+lightbox::images-standalone[ 800, {data-images-lightbox--standalone} ]
+
+[role="mt-5"]
+=== Grouped Images
+
+If more than a single image is given for a lightbox `lightbox::`, images
+can be *grouped* to enable a simple sliding functionality through
+related images. Enabling this function, the group option `group` needs to
+be configured for the block.
+
+.Lightbox block for grouped images
+[source, no_template, role="noclip"]
+----
+lightbox::<block_id>[ 400, {<data-images-group_id>}, <group_name> ]
+----
+
+.Lightbox block for grouped images
+lightbox::images-group[ 400, {data-images-lightbox--group}, group_name ]
+
+
+[role="mt-5"]
+== Galleries
+
+JustifiedGallery, the default gallery for J1, is a great jQuery plugin to
+create responsive, infinite, and high-quality justified image galleries.
+J1 Template combines the Gallery with the lightboxes supported to enlarge
+the images of a gallery.
+
+Pictures you’ve made are typically not even in size. Images may have the
+same resolution, but some are orientated landscapes, or others may be
+portrait. For that reason, a more powerful gallery is needed to create
+a so-called *masonry grid layout*. It works by placing elements in an
+optimal position based on available horizontal and vertical space.
+
+.Gallery macro for images and videos
+[source, no_template, role="noclip"]
+----
+.Gallery title
+gallery::<gallery_id>[role="<additional CSS styles>"]
+----
+
+.Image Gallery
+gallery::jg_old_times[role="mb-5"]
+
+.Video Gallery
+gallery::jg_video_html5[role="mb-5"]
+
+
+[role="mt-5"]
+== Country flags
+
+Country flags are often used in the context of language-specific selections
+or for content related to a specific country. The use of country flags can
+make language selections or country indicators more visual to support your
+visitors by making a more meaningful presentation.
+
+The J1 Template comes with full support of country flags for Asciidoc
+documents included.
+
+Country flags can be used as inline icons by using the flag inline
+macro `flag:`:
+
+[source, no_template, role="noclip"]
+----
+flag:country[style, size, modifier] <1> <2> <3> <4>
+----
+<1> All `country` flags can be found on the preview page for
+    link:{url-previewer--county-flags}[country flags]
+<2> The `style` attribute can be one of: `rectangle` or `squared`
+<3> The `size` attribute can be one of: `xs`, `sm`, `md`, `lg`, `xl` (responsive)
+    and `1x` to `10x` (proportional)
+<4> The `modifier` can be used to add individual CSS classes e.g. for
+    BS styles for margin setting and other
+
+.Click on button `VIEW` to see how it's looks alike
+[source, no_template, role="noclip"]
+----
+flag:de[rectangle, 2x, ml-3 mr-2 mb-2] Germany (rectangle) +
+flag:de[squared, 2x, ml-3 mr-3 mb-2] Germany (square)
+----
+
+[.result]
+====
+flag:de[rectangle, 2x, ml-3 mr-2 mb-2] Germany (rectangle) +
+flag:de[squared, 2x, ml-3 mr-3 mb-2] Germany (square)
+====
+
+Flag Icons is a collection of all country flags in the SVG vector format.
+All icons can be automatically resized with no loss in display quality.
+
+.Example of responsive flag sizes
+[cols="2a,3a,4a,^", options="header", width="100%", role="rtable mt-3"]
+|===
+|Size |Style |Markup |Render
+
+|`xs`
+|rectangle
+|
+.Germany
+[source, adoc, role="noclip"]
+----
+flag:de[rectangle, xs]
+----
+^|flag:de[rectangle, xs]
+
+|`sm`
+|rectangle
+|
+.Germany
+[source, adoc, role="noclip"]
+----
+flag:de[rectangle, sm]
+----
+^|flag:de[rectangle, sm]
+
+|`md`
+|rectangle
+|
+.Belgium
+[source, adoc, role="noclip"]
+----
+flag:be[rectangle, md]
+----
+^|flag:be[rectangle, md]
+
+|`lg`
+|rectangle
+|
+.Denmark
+[source, adoc, role="noclip"]
+----
+flag:dk[rectangle, lg]
+----
+^|flag:dk[rectangle, lg]
+
+|`xl`
+|rectangle
+|
+.Spain
+[source, adoc, role="noclip"]
+----
+flag:es[rectangle, xl]
+----
+^|flag:es[rectangle, xl]
+
+|===
+
+
+[role="mt-5"]
+== Icon Fonts
+
+The J1 Template comes with full icon support for Asciidoc based documents
+included. All icon fonts are supported of type:
+
+* Material Design Icons link:{url-mdi--home}[ (MDI), {browser-window--new}]
+* FontAwesome Icons V5 link:{url-fontawesome--home}[(FA), {browser-window--new}]
+* Iconify-Framework Icons link:{url-iconify--home}[(IF), {browser-window--new}]
+
+[role="mt-4"]
+=== Material Designs Icons
+
+Material Designs Icons can be used as inline icons by using
+the MDI inline macro `mdi:`:
+
+[source, no_template, role="noclip"]
+----
+mdi:icon_name[icon_size, modifier] <1> <2> <3>
+----
+<1> All `icon_name` can be found on the preview page for
+    link:{url-previewer--mdi-icons}[MDI Icon Previewer]
+<2> The `icon_size` attribute can be one of: `xs`, `sm`, `lg` and `1x` to `10x`
+<3> The `modifier` can be used to set the e.g the color (md-blue), an
+    animation (fa-pulsed) or the orientation (fa-rotate-45)
+
+.Click on the VIEW button `VIEW` to see how it's looks alike
+[source, no_template, role="noclip"]
+----
+mdi:home[2x, mdi-pulsed ml-3 mr-2 mb-2] Symbol icon (pulsed) +
+mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
+mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
+----
+
+[.result]
+====
+mdi:home[2x, mdi-pulsed ml-3 mr-2 mb-2] Symbol icon (pulsed) +
+mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
+mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
+====
+
+[NOTE]
+====
+Parameters for icon size `icon_size` and modifiers `modifier` are
+optional. If not given, the icons size `size` is set to default `1x`, the
+color to *black* and no settings for *modifiers* `modifier` are applied.
+====
+
+[role="mt-5"]
+=== FontAwesome Icons V5
+
+Font Awesome Icons can be used as inline icons by using the macro *fas* `fas:`
+for *standard* icons or the macro *fab* `fab` for *brand* icons.
+
+[source, no_template, role="noclip"]
+----
+fas:icon_name[icon_size, modifier] <1> <2> <3>
+----
+<1> All `icon_name` can be found on the preview page at
+    link:{url-fa-icons--previewer}[FA Icons, {browser-window--new}]
+<2> The `icon_size` attribute can be one of: `xs`, `sm`, `lg` and `1x` to `10x`
+<3> The `modifier` can be used to set e.g the color (md-blue), an
+    animation (fa-pulsed) or the orientation (fa-rotate-45) of an icon
+
+.Click on button `VIEW` to see how it's looks alike
+[source, no_template, role="noclip"]
+----
+fas:home[2x, fa-pulsed ml-2 mr-2 mb-2] Solid icon (pulsed) +
+fab:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
+fab:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
+----
+
+[.result]
+====
+fas:home[2x, fa-pulsed ml-2 mr-2 mb-2] Solid icon (pulsed) +
+fab:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
+fab:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
+====
+
+[NOTE]
+====
+Parameters for icon size `icon_size` and modifiers `modifier` are
+optional. If not given, the icons size is set to default `1x`, the color
+to *black* and no settings for modifiers  `modifier` are applied.
+====
+
+[role="mt-5"]
+=== Iconify-Framework Icons
+
+Iconify-Framework Icons can be used as inline icons by using the inline
+macro `iconify:`.
+
+[source, no_template, role="noclip"]
+----
+iconify:icon_name[icon_size, modifier] <1> <2> <3>
+----
+<1> All `icon_name` can be found on the preview page at
+    link:{url-iconify-icons--previewer}[Iconify Icons, {browser-window--new}]
+<2> The `icon_size` attribute can be one of: `xs`, `sm`, `lg` and `1x` to `10x`
+<3> The `modifier` can be used to set e.g the color (md-blue) or additional
+positioning classes for margings and padding
+
+Click on the VIEW button `VIEW` to see how it's looks alike
+
+.Brand Icon Open Source
+[source, no_template, role="noclip"]
+----
+iconify:logos:opensource[2x, mr-3 mb-3 ml-4] Brand Icon Open Source
+----
+
+[.result]
+====
+iconify:logos:opensource[2x, mr-3 mb-3 ml-4] Brand Icon Open Source
+====
+
+
+.Brand Icon Netlifyy
+[source, no_template, role="noclip"]
+----
+iconify:logos:netlify[2x, mr-3 mb-3 ml-4] Brand Icon Netlify
+----
+
+[.result]
+====
+iconify:logos:netlify[2x, mr-3 mb-3 ml-4] Brand Icon Netlify
+====
+
+Find all Iconify-Framework Icons available on page
+link:{url-iconify--icon-sets}[Iconify-Framework Icons, {browser-window--new}].
+
+[NOTE]
+====
+Parameters for icon size `icon_size` and modifiers `modifier` are optional.
+If not given, the icons size is set to default `1x`, the color to *black*
+and no settings for modifiers `modifier` are applied.
+
+Note that *not all* icon sets support the color settings for modifiers -- if
+applied, the color settings will have *no effect*.
+====
+
+
+[role="mt-5"]
+== Blind Text
+
+The Ruby GEM *Middleman*, a very simple and light-weight static site
+generator, provides a set of great helpers for generating *random* text
+content. The lorem inline macro `lorem:` adapted this functionality from
+Middleman to be used for Asciidoc-based documents processed by Jekyll.
+
+If you start writing larger documents with several chapters, not all of the
+content is available initially. It is quite useful to place blind text
+first to get a better impression of how a page will look-alike that is not
+finished yet.
+
+Placeholders for blind text comes in several flavors given by their name
+`macro`. The syntax for the lorem inline macro `lorem:` is simple like
+this:
+
+[source, no_template, role="noclip"]
+----
+lorem:macro[]
+lorem:macro[size]
+----
+
+.Example of a lorem sentences macro
+[source, no_template, role="noclip"]
+----
+lorem:sentences[5]
+----
+
+[.result]
+====
+lorem:sentences[5]
+====
+
+[role="mt-4"]
+=== Lorem Types
+
+All macro types available for the lorem macro `lorem:` to be used for blind
+text can be found with the following table below.
+
+.Macros available
+[cols="5,2,5a", options="header", role="rtable mb-2"]
+|===
+|Macro | Type |Example
+
+|`word[]`
+|text
+|
+lorem:word[]
+
+|`words[5]`
+|text
+|
+lorem:words[5]
+
+|`sentence[]`
+|text
+|
+lorem:sentence[]
+
+|`sentences[5]`
+|text
+|
+lorem:sentences[5]
+
+|`date[]`
+|date
+|
+lorem:date[]
+
+|`date[strftime]` e.g. `date[%Y-%m-%d]`
+|date
+|
+lorem:date[%Y-%m-%d]
+
+|`name[]`
+|text
+|
+lorem:name[]
+
+|`first_name[]`
+|text
+|
+lorem:first_name[]
+
+|`last_name[]`
+|text
+|
+lorem:last_name[]
+
+|`email[]`
+|email
+|
+lorem:email[]
+
+|===
+
+// Include documents
+// -----------------------------------------------------------------------------
+include::{documentdir}/100_gistblock.asciidoc[]
+
+
+[role="mt-5"]
+== What next
+
+Asciidoc extensions open up advanced possibilities for placing specific
+content elements on a page. The number of available extensions will grow.
+Extensions for Asciidoc gives handy and powerful functionality needed for
+modern web pages.
+
+[NOTE]
+====
+Asciidoc extensions are available for all content pages based on the Markup
+Language Asciidoc created for J1 Template. For content pages based on
+*Markdown*, extensions are *not* supported.
+====
+
+J1 Template supports a rich set of *advanced Bootstrap Modals* that add
+dialogs to your web pages for user notifications. The advanced Modals
+highlight important information to your visitors. The dialogs are positioned
+over everything else in the document so that messages get the full user's
+attention.
+
+[role="mb-7"]
+Have a look at the preview page
+link:{url-tour--extended-modals}[Advanced Bootstrap Modals] to explore
+the possibilities of the *extended* Bootstrap features provided by J1 Template
+for your new website.

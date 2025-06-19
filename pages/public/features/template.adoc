@@ -25,7 +25,7 @@ robots:
   follow:                               true
 
 image:
-  path:                                 /assets/images/modules/attics/christina-1920x1280.jpg
+  path:                                 /assets/image/module/attic/christina-1920x1280.jpg
   width:                                1920
   height:                               1280
 
@@ -33,15 +33,14 @@ regenerate:                             false
 permalink:                              /pages/public/features/template_features/
 
 resources:                              [
-                                          animate, comments, rouge,
-                                          lightbox, carousel,
-                                          masterslider, lightgallery, gallery,
-                                          videojs, vimeoplayer
+                                          amplitudejs, lightbox, carousel,
+                                          master-slider, lightgallery, gallery,
+                                          videojs, vimeo-player
                                         ]
 resource_options:
   - attic:
       slides:
-        - url:                          /assets/images/modules/attics/christina-1920x1280.jpg
+        - url:                          /assets/image/module/attic/christina-1920x1280.jpg
           alt:                          Photo by Christina on Unsplash
           badge:
             type:                       unsplash
@@ -57,7 +56,7 @@ resource_options:
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
 // :page--attr:                         <attr-value>
-:url-fontawesome--home:                 https://fontawesome.com/
+:url-fontawesome--home:                 //fontawesome.com/
 :url-roundtrip--mdi-icons:              /pages/public/learn/roundtrip/mdi_icon_font/#material-design-icons
 
 //  Load Liquid procedures
@@ -77,7 +76,7 @@ use cases for websites. The bad story: most of them require programming and
 low-level customization. Deep knowledge of Jekyll and valuable experience
 using HTML, CSS, and Javascript is required.
 
-J1 is different: easy to use, no programming is needed.
+*J1 is different: easy to use, no programming is needed.*
 
 
 // Include sub-documents (if any)
@@ -92,6 +91,8 @@ development or web design from the beginning.
 
 mdi:mouse-move-down[24px, md-blue ml-3 mr-2]
 <<Infinite scroll>> +
+mdi:speaker[24px, md-blue ml-3 mr-2]
+<<Audio Player>> +
 mdi:speaker[24px, md-blue ml-3 mr-2]
 <<Screen reader>> +
 mdi:mouse-move-down[24px, md-blue ml-3 mr-2]
@@ -121,7 +122,7 @@ mdi:gesture-swipe[24px, md-blue ml-3 mr-2]
 mdi:folder-multiple-image[24px, md-blue ml-3 mr-2]
 <<Image and Video Galleries>>
 
-[role="mt-4"]
+[role="mt-5"]
 === Infinite scroll
 
 Infinite scrolling (IS), or known as endless scrolling, is a technique that
@@ -131,6 +132,15 @@ additional pages.
 
 J1 Template supports infinite scrolling and is used, for example, for loading
 previews of blog articles.
+
+[role="mt-4"]
+=== Audio Player
+
+J1 Template provides playing audio on web pages by HTML5 and supports custom
+players created by AmplitudeJS to playback audio individually.
+
+.Emancipator · From Dusk To Dawn
+amplitude::free_emancipator_large[role="mt-3 mb-5"]
 
 [role="mt-4"]
 === Screen reader
@@ -420,19 +430,19 @@ carousel::demo_text_carousel[role="mb-3"]
 .Text carousel
 carousel::demo_text_carousel[role="mb-3"]
 
-A more eye-minded type of text-based slide show is a parallax text slider.
-If you want to emphasize your statements focussing on the meaning, this kind
-of slide show may be interesting.
+// A more eye-minded type of text-based slide show is a parallax text slider.
+// If you want to emphasize your statements focussing on the meaning, this kind
+// of slide show may be interesting.
 
-.Markup to place a Parallax carousel (Asciidoc)
-[source, apib, role="noclip"]
-----
-.Parallax carousel
-carousel::demo_text_carousel_parallax[role="mb-3"]
-----
+// .Markup to place a Parallax carousel (Asciidoc)
+// [source, apib, role="noclip"]
+// ----
+// .Parallax carousel
+// carousel::demo_text_carousel_parallax[role="mb-3"]
+// ----
 
-.Parallax text carousel
-carousel::demo_text_carousel_parallax[role="mb-3"]
+// .Parallax text carousel
+// carousel::demo_text_carousel_parallax[role="mb-3"]
 
 [role="mt-4"]
 === Text and Image Sliders

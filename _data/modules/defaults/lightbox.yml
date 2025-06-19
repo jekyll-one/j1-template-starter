@@ -5,10 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2025 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
-# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -32,27 +32,7 @@ defaults:
   # for individual images, images sets and images are part of a carousel
   # (e.g. Owl Carousel).
 
-  # GENERAL settings
-  # ------------------------------------------------------------------------------
-
-  # version
-  # ------------------------------------------------------------------------------
-  #   Current version of the module
-  #
-  #   values:                         string
-  #   default:                        no defaults
-  #
-  version:                            0.0.1
-
-  # enabled
-  # ------------------------------------------------------------------------------
-  #   Enables|Disables the use of LightGallery for the template system
-  #
-  #   values:                         boolean (true|false)
-  #   default:                        false
-  #
-  enabled:                            true
-
+ 
   # ------------------------------------------------------------------------------
   # J1 Lightbox default settings
   #
@@ -162,6 +142,11 @@ defaults:
   #
   # ------------------------------------------------------------------------------
 
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
   alwaysShowNavOnTouchDevices:          false
   albumLabel:                           Image %1 of %2
   disableScrolling:                     true

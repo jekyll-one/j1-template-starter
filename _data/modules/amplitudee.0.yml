@@ -1,0 +1,549 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/amplitude.yml
+# User Configuration of the AmplitudeJS Module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023, 2024 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                AmplitudeJS
+  scope:                                User settings
+  location:                             _data/modules/amplitude.yml
+
+# ------------------------------------------------------------------------------
+# User settings
+#
+settings:
+
+  # ============================================================================
+  # PLAYLIST configuration
+  # ----------------------------------------------------------------------------
+  playlists:
+
+
+    # --------------------------------------------------------------------------
+    # Emancipator
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             mimi_rutherfurt_yt
+      title:                            Mimi Rutherfurt
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &album_mimi_rutherfurt_yt
+        name:                           Mimi Rutherfurt
+        artist:                         Maritim Verlag
+        audio_base:                     //youtube.com
+        cover_image:                    /assets/audio/cover/default/placeholder-blue.jpg
+
+      # ------------------------------------------------------------------------
+      # TITLE settings (songs)
+      # ------------------------------------------------------------------------
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_mimi_rutherfurt_yt
+          title:                        Alte Zeiten
+          audio:                        watch?v=qEhzpBJpUq0
+          audio_info:                   //www.youtube.com/@MaritimVerlag
+          cover_image:                  //img.youtube.com/vi/qEhzpBJpUq0/maxresdefault.jpg
+          duration:                     "5:25"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_mimi_rutherfurt_yt
+          title:                        Nacht-Express
+          audio:                        watch?v=I4VTc8nQxDs
+          audio_info:                   //www.youtube.com/@MaritimVerlag
+          cover_image:                  //img.youtube.com/vi/I4VTc8nQxDs/maxresdefault.jpg
+          duration:                     "5:12"
+
+
+    # --------------------------------------------------------------------------
+    # Emancipator
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             emancipator
+      title:                            Emancipator
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &album_from_dusk_to_dawn
+        name:                           From Dusk To Dawn
+        artist:                         Emancipator
+#       audio_base:                     //521dimensions.com/song
+        audio_base:                     /assets/audio/album/emancipator/from-dusk-to-dawn
+        cover_image:                    /assets/audio/cover/default/placeholder-blue.jpg
+
+      # ------------------------------------------------------------------------
+      # TITLE settings (songs)
+      # ------------------------------------------------------------------------
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_from_dusk_to_dawn
+          title:                        Dusk To Dawn
+          audio:                        DuskToDawn.mp3
+          audio_info:                   //emancipator.bandcamp.com/
+          cover_image:                  /assets/audio/cover/emancipator/from-dusk-to-dawn/from-dusk-to-dawn.jpg
+          duration:                     "5:25"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_from_dusk_to_dawn
+          title:                        First Snow
+          audio:                        FirstSnow.mp3
+          audio_info:                   //emancipator.bandcamp.com/
+          cover_image:                  /assets/audio/cover/emancipator/from-dusk-to-dawn/soon-it-will-be-cold-enough.jpg
+          duration:                     "5:12"
+
+        # title 03
+        - item:
+          enabled:                      true
+          <<:                           *album_from_dusk_to_dawn
+          title:                        Anthem
+          audio:                        Anthem.mp3
+          audio_info:                   //emancipator.bandcamp.com/
+          cover_image:                  /assets/audio/cover/emancipator/from-dusk-to-dawn/anthem.jpg
+          duration:                     "5:40"
+
+        # title 04
+        - item:
+          enabled:                      true
+          <<:                           *album_from_dusk_to_dawn
+          title:                        Safe In The Steep Cliffs
+          audio:                        SafeInTheSteepCliffs.mp3
+          audio_info:                   //emancipator.bandcamp.com/
+          cover_image:                  /assets/audio/cover/emancipator/from-dusk-to-dawn/safe-in-the-steep-cliffs.jpg
+          duration:                     "4:35"
+
+    # --------------------------------------------------------------------------
+    # Disco 80th - Royalty Free Music
+    # --------------------------------------------------------------------------
+    #
+    - playlist:
+      enabled:                          true
+
+      name:                             free_disco
+      title:                            Disco 80th
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &album_free_disco
+        name:                           Disco 80th
+        artist:                         Royalty Free Music
+        audio_base:                     //p.productioncrate.com/stock-hd/audio
+        cover_image:                    /assets/audio/cover/royalty_free/free_disco_sounds.jpg
+
+      # ------------------------------------------------------------------------
+      # TITLE settings (songs)
+      # ------------------------------------------------------------------------
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Dancefloor Fever
+          audio:                        SoundsCrate-Dancefloor_Fever.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:27"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Dance On Dance Off
+          audio:                        SoundsCrate-Dance_On_Dance_Off.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:14"
+
+        # title 03
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Disco Flamingo
+          audio:                        SoundsCrate-Disco_Flamingo.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:19"
+
+        # title 04
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Downtown
+          audio:                        SoundsCrate-Downtown.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:48"
+
+        # title 05
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Electric Boogie
+          audio:                        SoundsCrate-Electric_Boogie.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:19"
+
+        # title 06
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Grand Central
+          audio:                        SoundsCrate-Grand_Central.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:33"
+
+        # title 07
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        In The Pocket
+          audio:                        SoundsCrate-In_The_Pocket.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:58"
+
+        # title 08
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Lounge Life
+          audio:                        SoundsCrate-Lounge_Life.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:34"
+
+        # title 09
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Made For This
+          audio:                        SoundsCrate-Made_For_This.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:13"
+
+        # title 10
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Midnight Express
+          audio:                        SoundsCrate-Midnight_Express.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:30"
+
+        # title 11
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Nightrun
+          audio:                        SoundsCrate-Nightrun.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:58"
+
+        # title 12
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Saturday Night
+          audio:                        SoundsCrate-Saturday_Night.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:02"
+
+        # title 13
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Studio 45
+          audio:                        SoundsCrate-Studio_45.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "1:56"
+
+        # title 14
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Yes Sir I Can Disco
+          audio:                        SoundsCrate-Yes_Sir_I_Can_Disco.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:21"
+
+        # title 15
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Fashion Show
+          audio:                        soundscrate-fashion-show.mp3
+          audio_info:                   /sfx.productioncrate.com
+          duration:                     "3:08"
+
+        # title 16
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Loungy Disco
+          audio:                        soundscrate-loungy-disco.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "3:04"
+
+        # title 17
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Oakland Style
+          audio:                        soundscrate-oakland-style.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "3:19"
+
+        # title 18
+        - item:
+          enabled:                      true
+          <<:                           *album_free_disco
+          title:                        Funkish Vibe
+          audio:                        soundscrate-funkish-vibe.mp3
+          audio_info:                   //sfx.productioncrate.com
+          duration:                     "2:38"
+
+
+  # ============================================================================
+  # PLAYER configuration
+  # ----------------------------------------------------------------------------
+  players:
+
+    # --------------------------------------------------------------------------
+    # MINI player, Disco 80th
+    # --------------------------------------------------------------------------
+    #
+    - plaver:
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # CONTROL BUTTON settings
+      #
+      song_progress_bar:                true
+      volume_slider:
+        enabled:                        true
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               free_disco_mini
+      type:                             mini
+
+      # ------------------------------------------------------------------------
+      # TIME settings
+      display_hours:                    false
+
+      playlist:
+        name:                           free_disco
+        title:                          Disco 80th
+        audio_info:                     false
+        controls:                       true
+
+    # --------------------------------------------------------------------------
+    # COMPACT player, Disco 80th
+    # --------------------------------------------------------------------------
+    #
+    - plaver:
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               free_disco_compact
+      type:                             compact
+
+      # ------------------------------------------------------------------------
+      # TIME settings
+      display_hours:                    false
+
+      # ------------------------------------------------------------------------
+      # CONTROL BUTTON settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      volume_slider:
+        enabled:                        false
+
+      playlist:
+        name:                           free_disco
+        title:                          Disco 80th
+        audio_info:                     true
+        controls:                       true
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Disco 80th
+    # --------------------------------------------------------------------------
+    #
+    - plaver:
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               free_disco_large
+      type:                             large
+
+      # ------------------------------------------------------------------------
+      # TIME settings
+      display_hours:                    false
+
+      # ------------------------------------------------------------------------
+      # CONTROL BUTTON settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      volume_slider:
+        enabled:                        false
+
+      playlist:
+        name:                           free_disco
+        title:                          Disco 80th
+        audio_info:                     true
+        controls:                       true
+
+    # --------------------------------------------------------------------------
+    # MINI player, Emancipator
+    # --------------------------------------------------------------------------
+    #
+    - plaver:
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # TIME settings
+      display_hours:                    false
+
+      # ------------------------------------------------------------------------
+      # CONTROL BUTTON settings
+      #
+      song_progress_bar:                true
+      volume_slider:
+        enabled:                        true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               free_emancipator_mini
+      type:                             mini
+
+      playlist:
+        name:                           emancipator
+        title:                          Emancipator
+        audio_info:                     false
+        controls:                       true
+
+    # --------------------------------------------------------------------------
+    # COMPACT player, Emancipator
+    # --------------------------------------------------------------------------
+    #
+    - plaver:
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # CONTROL BUTTON settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               free_emancipator_compact
+      type:                             compact
+
+      playlist:
+        name:                           emancipator
+        title:                          Emancipator
+        audio_info:                     true
+        controls:                       true
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Emancipator
+    # --------------------------------------------------------------------------
+    #
+    - plaver:
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # TIME settings
+      display_hours:                    false
+
+      # ------------------------------------------------------------------------
+      # CONTROL BUTTON settings
+      #
+      song_progress_bar:                true
+      skip_forward_backward_button:     true
+      volume_slider:
+        enabled:                        false
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               free_emancipator_large
+      type:                             large
+
+      playlist:
+        name:                           emancipator
+        title:                          Emancipator
+        audio_info:                     true
+        controls:                       true
+
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Mimi Rutherfurt
+    # --------------------------------------------------------------------------
+    #
+    - plaver:
+      enabled:                          false
+
+      # ------------------------------------------------------------------------
+      # SOURCE settings
+      source:                           video
+
+      # ------------------------------------------------------------------------
+      # TIME settings
+      display_hours:                    true
+
+      # ------------------------------------------------------------------------
+      # CONTROL BUTTON settings
+      #
+      song_progress_bar:                false
+      skip_forward_backward_button:     true
+      volume_slider:
+        enabled:                        false
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               mimi_rutherfurt_yt_large
+      type:                             large
+
+      playlist:
+        name:                           mimi_rutherfurt_yt
+        title:                          Mimi Rutherfurt
+        controls:                       false
+        audio_info:                     false
+
+# ------------------------------------------------------------------------------
+# END config
