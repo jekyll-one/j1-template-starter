@@ -29,6 +29,11 @@ description:
 #
 settings:
 
+  filters:
+    grayscale:                          0
+    contrast:                           1
+    brightness:                         1
+
   # ----------------------------------------------------------------------------
   # DIVIDER banner
   #
@@ -104,30 +109,36 @@ settings:
               width:                    12
               type:                     text
               position:                 left                                    # left | center
-              title:                    Jekyll
-              tagline:                  <b>create modern websites</b>
+              title:                    Jekyll and J1 Template
+              tagline:                  <b>Create fast, secure, and powerful modern websites</b>
               translate_description:    notranslate                             # translate|notranslate
               description_properties:   mt-3 mb-3
               description: >
                                         <p class="dropcap">
-                                          The build-in Web of J1 Template is a full-featured template for Jekyll to
-                                          create modern dynamic websites. The template system provides a clean
-                                          implementation for starting new projects. J1 Template is open source,
-                                          and the modules packed are also free to use.
+                                          Jekyll is a <b>static website</b> generation engine that enables to
+                                          create websites and blogs from simple text files, eliminating the
+                                          need for a database or other complex server-side processing.
+                                          The content is written in <b>simple text</b> formats such as Markdown,
+                                          AsciiDoc, or native HTML and processed into static HTML pages using
+                                          content templates powered by the templating engine <b>Liquid</b>.
+                                          <br><br>
+                                          The static web can be delivered directly to any standard web server,
+                                          as they are already generated and ready to use. Jekyll is particularly
+                                          popular for personal websites, project pages, documentation, and blogs.
+                                          Thanks to its easy versioning and deployment, Jekyll is ideal for
+                                          <b>collaborative</b> web project development - via Github for example.
                                         </p>
                                         <p>
-                                          J1 Template is designed to be lightweight and easily customizable.
-                                          It comes with a basic structure and styling out of the box so that you
-                                          can create a website quickly and easily, without having to worry about
-                                          the code.
+                                          Jekyll One is a fully featured, free theme and template system for the
+                                          Jekyll site generator, specifically designed to create modern, dynamic,
+                                          and responsive websites.
+                                          It features a modern design with a focus on usability and accessibility.
+                                          Additionally, it comes with built-in support for search engine optimization
+                                          (SEO) and social media integration, making it easy to get your site off
+                                          the ground and running - <b>free to use</b> for both <b>personal</b> and
+                                          <b>business purposes</b>.
                                         </p>
-                                        <p>
-                                          It features a modern, minimalist design with a focus on usability
-                                          and accessibility. Additionally, it comes with built-in support for
-                                          search engine optimization and social media integration, making it
-                                          easy to get your site off the ground and running.
-                                        </p>
-                                        <p class="mt-4 fw-bold">Explore what is possible when using static webs.</p>
+                                        <p class="mt-4 fw-bold d-flex justify-content-center flex-wrap">The most featured Bootstrap V5 Theme for Jekyll on the market.</p>
               buttons:
 
                 - name:                 Roundtrip
@@ -142,7 +153,7 @@ settings:
                     icon:               briefcase-search-outline
                     icon_color:
                     icon_size:          3x
-                    href:               /pages/public/tour/present_images/
+                    href:               /pages/public/tour/image_data/
                     target:
 
                 - name:                 Rocketstart

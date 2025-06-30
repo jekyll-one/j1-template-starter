@@ -1,20 +1,22 @@
 ---
-title:                                  General Features
+title:                                  Core Features
 tagline:                                Platforms, Frameworks, and Devices
 
 date:                                   2021-01-01
 #last_modified:                         2023-01-01
 
 description: >
-                                        J1 Template is a Bootstrap V5 website template for the static
-                                        site generator Jekyll.
-                                        Current software counts. Excellent tools in their latest versions
-                                        make the rocket engine for each and every website. J1 Template
-                                        is using current software in their latest versions. All of them
-                                        are OpenSource and free to use. No license issues using JekyllOne
-                                        Theme for private or professional purposes.
+                                        Jekyll One Template (J1) is a free Jekyll Theme providing
+                                        a clean implementation for Jekyll to start new projects
+                                        for all businesses based on Bootstrap V5.
+                                        The template combines the best current software for the Web.
+                                        Jekyll One is open-source and free to use for private and
+                                        business purposes.
+
 keywords: >
-                                        Jekyll, JekyllOne, Theme, Software, Platforms, Frameworks, Devices
+                                        open source, free, template, theme,
+                                        jekyll, jekyllone, web, site, static,
+                                        jamstack, bootstrap, netlify
 
 categories:                             [ Features ]
 tags:                                   [ General ]
@@ -24,12 +26,12 @@ robots:
   follow:                               true
 
 image:
-  path:                                 /assets/image/module/attic/christina-1920x1280.jpg
+  path:                                 /assets/image/module/attic/1920x1280/j1-launch.jpg
   width:                                1920
   height:                               1280
 
 regenerate:                             false
-permalink:                              /pages/public/features/general_features/
+permalink:                              /pages/public/features/core_features/
 
 resources:                              [ lightbox, iconify ]
 resource_options:
@@ -37,12 +39,8 @@ resource_options:
       collapseDepth:                    3
   - attic:
       slides:
-        - url:                          /assets/image/module/attic/christina-1920x1280.jpg
-          alt:                          Photo by Christina on Unsplash
-          badge:
-            type:                       unsplash
-            author:                     Christina
-            href:                       //unsplash.com/@wocintechchat
+        - url:                          /assets/image/module/attic/1920x1280/j1-launch.jpg
+          alt:                          Making is like wanting - but even better
 ---
 
 // Page Initializer
@@ -83,9 +81,9 @@ J1 Template is based on these popular software platforms:
 mdi:language-ruby[24px, md-blue ml-3 mr-2]
 <<Ruby>> >= 2.7 +
 mdi:language-ruby[24px, md-blue ml-3 mr-2]
-<<Jekyll>> 4.3 +
+<<Jekyll>> >= 3.x +
 mdi:nodejs[24px, md-blue ml-3 mr-2]
-<<NodeJS>> 14.x
+<<NodeJS>> >= 14.x
 
 All software-platforms are OpenSource, free to use and available on all
 common operating systems like Windows, Linux, and OSX.
@@ -93,7 +91,7 @@ common operating systems like Windows, Linux, and OSX.
 [role="mt-4"]
 === Ruby
 
-For the latest versions of J1 Template (>= *2022.5.0*), Ruby V3 is recommended.
+For the latest versions of J1 Template (>= *2024.3.x*), Ruby V3 is recommended.
 The latest Ruby versions offer much better run-time performance. Ruby 3 will
 be up to three times faster compared to Ruby 2.0. This will definively
 speed-up the development processes for your new website.
@@ -102,19 +100,19 @@ speed-up the development processes for your new website.
 === Jekyll
 
 The latest version of
-http://jekyllrb.com/news/2022/10/20/jekyll-4-3-0-released/[Jekyll v4.3.0 (October 2022), {browser-window--new}]
-including all fixes for version V4. The upcoming version *v4.3.0* will offer
-some new features and modernized functionality. If this version is released,
+link://jekyllrb.com/news/2025/01/27/jekyll-4-4-0-released/[Jekyll v4.4.0 (January 2025), {browser-window--new}]
+including all fixes for version V4. The upcoming version *v4.5* will offer
+new features and modernized functionality. If this version is released,
 all new features will be implemented in J1 as well.
 
 [role="mt-4"]
 === NodeJS
 
-Websites created by Jekyll One are projects managed by NodeJS. The built-in
+Websites created by Jekyll One are projects *managed* by NodeJS. The built-in
 script engine provided by the package manager `npm` of NodeJS simplifies the
-management of J1 projects a lot. Well-known commands typically used to manage
-software projects are at your fingertips. Easy to learn, easy to remember.
-Simple commands support creators to concentrate on the content.
+*management* of *J1 projects* a lot. Well-known commands, typically used to
+control software projects, are at your fingertips. Easy to learn, easy to
+remember. Simple commands support creators to concentrate on the content.
 
 
 [role="mt-5"]
@@ -127,26 +125,65 @@ well known, and accepted worldwide.
 mdi:bootstrap[24px, md-blue ml-3 mr-2]
 <<Bootstrap V5>> +
 mdi:language-html5[24px, md-blue ml-3 mr-2]
-<<Internet Standards Supported>> (HTML5, CSS and Javascript) +
+<<Web Standards>> (HTML5, CSS and Javascript) +
 mdi:grass[24px, md-blue ml-3 mr-2]
 <<Icon Fonts>> +
 mdi:application-settings[24px, md-blue ml-3 mr-2]
 <<Fully Configurable>> +
 
-[role="mt-4"]
+[role="mt-5"]
 === Bootstrap V5
 
 For current webs, a must: responsiveness and modern design. Jekyll One is
-based on Bootstrap V5, the leading platform to create today's responsive
-webs.
+based on Bootstrap V5, one of the leading platforms to create today's
+responsive webs.
+
+[role="mt-5"]
+=== Web Standards
+
+Standardization Organizations and Professional websites on the internet define
+standards. All current sites support dynamic, fast loading, and some more
+features. For fastest loading, all HTML, CSS, and Javascript have been
+compressed automatically for production. Going further for dynamic, AJAX 
+oading for websites created by J1 Template is supported as well.
+
+Für die tägliche Entwicklung sollten Sie sich auf folgende Standards
+konzentrieren.
 
 [role="mt-4"]
-=== Internet Standards Supported
+=== HTML5
 
-Professional websites on the internet define standards. All current sites
-support dynamic, fast loading, and some more features. For fastest loading,
-all HTML, CSS, and Javascript have been compressed automatically for production.
-Going further for dynamic, AJAX loading for J1 webs is supported as well.
+HTML5 ist der aktuelle Standard, wobei HTML als "Living Standard"
+kontinuierlich weiterentwickelt wird durch das WHATWG (Web Hypertext
+Application Technology Working Group).
+
+Die wichtigsten aktuellen Features umfassen:
+
+* Semantische Elemente wie <article>, <section>, <nav>
+* Native Form-Validierung
+* Web Components (Custom Elements, Shadow DOM)
+* Neue Input-Typen (date, email, range, etc.)
+
+[role="mt-4"]
+=== CSS3
+
+CSS3 ist der aktuelle Standard, der modular entwickelt wird. Wichtige
+aktuelle Module und Features:
+
+* CSS Grid und Flexbox für Layout
+* CSS Custom Properties
+* CSS Subgrid
+* CSS Nesting 
+* CSS Color Level 4 
+* CSS Cascade Layers
+
+[role="mt-4"]
+=== JavaScript ES15
+
+ECMAScript 2024 (ES2024/ES15) ist die neueste Version, die im Juni 2024
+veröffentlicht wurde.
+
+
 
 [role="mt-4"]
 === Icon Fonts
@@ -168,7 +205,9 @@ various categories typically used for the Web.
 === Fully Configurable
 
 Software products of today are not easy to manage. To get the complexity
-out of your way, J1 is fully configurable. No need to dive in the deep.
+out of your way, J1 is fully *configurable*. No need to dive in the deep.
+
+Configure what nedds to be done.
 
 .Example of a Text Slider configuration (`carousel.yml`)
 [source, yaml, role="noclip"]
@@ -195,9 +234,6 @@ out of your way, J1 is fully configurable. No need to dive in the deep.
       pagination:     false
 ----
 
-Configure what is to be done.
-
-
 [role="mt-5"]
 == Devices
 
@@ -211,9 +247,10 @@ mdi:near-me[24px, md-blue ml-3 mr-2]
 mdi:near-me[24px, md-blue ml-3 mr-2]
 <<Mobile Web Navigation>> +
 mdi:lighthouse[24px, md-blue ml-3 mr-2]
-<<Best Google Lighthouse Scores>>
+Excellent <<Google Lighthouse>> Scoring
 
-[role="mt-4"]
+
+[role="mt-5"]
 === Desktop and Mobile support
 
 The internet has shifted from almost exclusively desktop-driven to mostly
@@ -255,7 +292,7 @@ your vistors easy access to all of your content pages on a mouse-click.
 .Desktop Web Navigation
 lightbox::images--desktop-navigation[ 1024, {data-images--desktop-navigation} ]
 
-[role="mt-4"]
+[role="mt-5"]
 === Mobile Web Navigation
 
 Mobile devices are great for Apps designed for these platforms. Using a web
@@ -265,6 +302,7 @@ navigation systems that cover both worlds: desktops and mobiles.
 .Mobile Web Navigation
 lightbox::images--mobile-navigation[ 400, {data-images--mobile-navigation} ]
 
+[role="mt-4"]
 [IMPORTANT]
 ====
 Desktop and Mobile Navigation is using the **same** configuration
@@ -272,14 +310,21 @@ data (`navigator_menu.yml`). The automatically generated menus for Desktop and
 Mobile Devices are displayed based on the size of the viewport.
 ====
 
-[role="mt-4"]
-=== Best Google Lighthouse Scores
+
+[role="mt-5"]
+== Google Lighthouse
 
 Performance is a key factor for all users. To not get visitors lost, J1 webs
 are highly optimized. All Websites will achieve the  best Google Lighthouse
 scores for performance, accessibility, best practices, and SEO at the green
 level.
 
-[role="mb-7"]
-.Google Lighthouse Scores (Starter Web at Github)
+.Google Lighthouse Scores - Starter Web of version 2024.3.29
 lightbox::images--google-lighthouse[ 1024, {data-images--google-lighthouse} ]
+
+[role="mt-5 mb-8"]
+[NOTE]
+====
+Google lighthouse scores depend on the Browser version and may vary
+from sample to sample.
+====

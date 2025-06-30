@@ -388,15 +388,13 @@ settings:
 
         videojsOptions:
           enabled:                      true
-
           muted:                        false
           preload:                      true
-
           controls:                     true
+          tracks:                       true                                    # jadams: !!!
 
           hotKeysPlugin:
             enabled:                    true
-
             options:
               volumeStep:               0.2          
 
@@ -410,7 +408,6 @@ settings:
 
             skipButtonsPlugin:
               enabled:                  true
-
               options:
                 forward:                5
                 backward:               5
@@ -419,12 +416,10 @@ settings:
 
             zoomPlugin:
               enabled:                  true
-
               showZoom:                 true
               showMove:                 false
               showRotate:               false
               gestureHandler:           false
-
               options:
                 moveX:                  0
                 moveY:                  0
@@ -493,6 +488,8 @@ settings:
                                         <h2>Rollin` Wild</h2>
                                         <h3>Short Funny Animated Clip created at the Film Academy</h3>
 
+          tracks::                      []
+
     # --------------------------------------------------------------------------
     # Online VIDEO Carpool Karaoke (YouTube)
     #
@@ -537,6 +534,7 @@ settings:
           muted:                        false
           preload:                      true
           controls:                     true
+          tracks:                       false                                   # jadams: !!!
 
           hotKeysPlugin:
             enabled:                    true
@@ -569,15 +567,15 @@ settings:
 
         playerParams:
           enabled:                      true
-#         start:                        ["00:00:50", "00:00:50"]                # start time video1, vido2
+          # start:                      ["00:00:50", "00:00:50"]                # start time video1, vido2
           autoplay:                     1                                       # autoplay = 1 only available for YouTube when muted.
-#         controls:                     1                                       # default = 0
-#         enablejsapi:                  1                                       # default = 1
-#         hl:                           en                                      # default = en
-#         loop:                         0                                       # default = 0
+          # controls:                   1                                       # default = 0
+          # enablejsapi:                1                                       # default = 1
+          # hl:                         en                                      # default = en
+          # loop:                       0                                       # default = 0
           mute:                         0                                       # default = 1
-#         playsinline:                  1                                       # for mobile|iOS only
-#         wmode:                        opaque                                  # default = opaque
+          # playsinline:                1                                       # for mobile|iOS only
+          # wmode:                      opaque                                  # default = opaque
 
       # ------------------------------------------------------------------------
       # CSS filter options
@@ -602,7 +600,7 @@ settings:
           api:                          videojs                                 # jadams !!!
           size:                         1280-720
           source:                       //youtube.com/watch?v=Nck6BZga7TQ
-          poster_image:                 Nck6BZga7TQ/mqdefault.jpg               # jadams !!!
+          poster_image:                 Nck6BZga7TQ/mqdefault.jpg
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           caption_text:                 Carpool Karaoke 2015 &middot; James and Adele
@@ -614,8 +612,9 @@ settings:
                                           On the way, they sing some of their biggest hits.
                                         </h3>
 
-          playerParams:
-            # start:                      50                                    # seconds to start
+          tracks:                       []                                      # jadams !!!
+          # playerParams:
+          #   start:                    50                                      # seconds to start
 
         - video:                        # video 2
           enabled:                      true
@@ -625,7 +624,7 @@ settings:
           api:                          videojs                                 # jadams !!!
           size:                         1280-720
           source:                       //youtube.com/watch?v=nV8UZJNBY6Y
-          poster_image:                 nV8UZJNBY6Y/mqdefault.jpg               # jadams !!!
+          poster_image:                 nV8UZJNBY6Y/mqdefault.jpg
           pinterest_prefix:             Pin video
           tweet_prefix:                 Try video
           caption_text:                 Carpool Karaoke 2023 &middot; Last Carpool Karaoke Tour
@@ -637,8 +636,7 @@ settings:
                                           final Carpool Caraoke Tour.
                                         </h3>
 
-          playerParams:
-            # start:                      50                                    # seconds to start
+          tracks:                       []                                      # jadams !!!
 
     # --------------------------------------------------------------------------
     # Online VIDEO (Vimeo)
@@ -953,6 +951,134 @@ settings:
           description: >
                                         <h2>Rollin` Wild</h2>
                                         <h3>Short Funny Animated Clip created at the Film Academy</h3>
+
+    # --------------------------------------------------------------------------
+    # TinyDesk Concerts, Latin (YouTube)
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               tdc_latin
+      type:                             video
+      video:                            youtube
+      image_base_path:                  //img.youtube.com/vi
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings
+      # ------------------------------------------------------------------------
+      #
+      gallery_options:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox|lightGallery settings
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           lg
+
+      lightGallery:
+        plugins:                        lgThumbnail, lgVideo
+
+        options:
+          licenseKey:                   0000-0000-000-0000
+          download:                     false
+          alignThumbnails:              left
+          animateThumb:                 true
+          autoplayFirstVideo:           true
+          videojs:                      true                                    # jadams: !!!
+          videojsTheme:                 vjs-theme-uno
+
+        videojsOptions:
+          enabled:                      true
+          muted:                        false
+          preload:                      true
+          controls:                     true
+
+          hotKeysPlugin:
+            enabled:                    true
+            options:
+              volumeStep:               0.2          
+
+          controlBar:
+            playbackRates:              [0.25, 0.5, 1, 1.5, 2]
+            remainingTimeDisplay:       true
+            pictureInPictureToggle:     false
+
+            volumePanel:
+              inline:                   false
+
+            skipButtonsPlugin:
+              enabled:                  true
+              options:
+                forward:                5
+                backward:               5
+                backwardIndex:          0
+                forwardIndex:           1
+
+            zoomPlugin:
+              enabled:                  false
+              options:
+                moveX:                  0
+                moveY:                  0
+                rotate:                 0
+                zoom:                   1
+
+        playerParams:
+          enabled:                      true
+          autoplay:                     1                                       # autoplay = 1 only available for YouTube when muted.
+          mute:                         0                                       # default = 1
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      #
+      filters:
+        enabled:                        false
+        grayscale:                      0
+        contrast:                       1
+        brightness:                     1
+
+      # ------------------------------------------------------------------------
+      # Video settings
+      # ------------------------------------------------------------------------
+      #
+      videos:
+
+        # video 01
+        - video:
+          enabled:                      true
+
+          name:                         S01BeckyG
+          type:                         youtube
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       //youtube.com/watch?v=FftvVi42U4o
+          poster_image:                 FftvVi42U4o/maxresdefault.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 S01 · Becky G 2023
+          description: >
+                                        <h2> S01 Becky G </h2>
+                                        <h3>At NPR 2023  </h3>
+
+        # video 02
+        - video:
+          enabled:                      true
+
+          name:                         S02RobertoFonsecas
+          type:                         youtube
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       //youtube.com/watch?v=vdph2l0iw74
+          poster_image:                 vdph2l0iw74/maxresdefault.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 S02 · Roberto Fonsecas 2025
+          description: >
+                                        <h2> S02 Roberto Fonsecas </h2>
+                                        <h3>At NPR 2025           </h3>
 
 # ------------------------------------------------------------------------------
 # END config

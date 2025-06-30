@@ -1,5 +1,5 @@
 ---
-title:                                  J1 SwiperJS Apps
+title:                                  J1 SwiperJS App
 title_extention:                        Selected Examples
 tagline:                                Selected Examples
 date:                                   2025-02-10
@@ -77,7 +77,6 @@ use hardware-accelerated features like 3D transitions to perform best on modern
 devices. SwiperJS-based sliders are intended to be displayed at their best on
 all types of websites, such as those viewed on desktop computers, tablets, or
 smartphones.
-
 
 [role="mt-4"]
 == What SwiperJS Apps are
@@ -201,7 +200,7 @@ used on *desktop* computers.
 
 This Thumb Slider uses minified images that are placed to control the (main)
 slider at the *top* or the *bottom*. This swiper type creates a thumbed Swiper
-that uses *two lanes*, which takes up a *lot of space* but can render the
+that uses *two lines*, which takes up a *lot of space* but can render the
 sliders' images *optimally*.
 
 .Extendend Swiper · Layout Thumb Top
@@ -214,13 +213,13 @@ swiper::thumb_slider_top[role="mb-5"]
 
 A more **mobile**-friendly version of a Thunb slider is created by placing the
 minified images for the slider side-by-side on the *right* or the *left*. This
-swiper use just a *single lane* in the page, but *minifies* the presented images
-as required for the lane *heigth* specified.
+swiper use just a *single line* in the page, but *minifies* the presented images
+as required for the line *heigth* specified.
 
 [role="mb-5"]
 [TIP]
 ====
-Adding a *Lightbox* to a *single-lane* swiper allows users to *enlarge* the
+Adding a *Lightbox* to a *single-line* swiper allows users to *enlarge* the
 presented *images*.
 ====
 
@@ -404,15 +403,11 @@ swiper::neighbor_slider[role="mb-5"]
 [role="mt-5"]
 ==== Layout Panorama
 
-The layout panaorama presents available slides of a slider as a group. The
-group is displayed in a virtual, circular viewing angle. 
-
-[role="mb-5"]
-[TIP]
-====
-The effect is great for slides connected in terms of content to give the user
-a panoramic view impression.
-====
+The *Panorama* layout in SwiperJS sliders is used to create a 3D-like
+panoramic effect, where the slides are animated as they swipe, creating
+a continuous, curved panorama. The layout creates an immersive sense of
+depth and movement, which is especially beneficial when presenting wide
+images, landscapes, or other visual content with a large aspect ratio.
 
 .Extendend Swiper · Layout Panorama
 swiper::swiper_image_panorama[role="mt-4 mb-5"]

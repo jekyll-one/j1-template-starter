@@ -1,21 +1,22 @@
 ---
-title:                                  Features
+title:                                  Theme Features
 tagline:                                Modules, Extensions and Integrations
 
 date:                                   2021-01-01
 #last_modified:                         2023-01-01
 
 description: >
-                                        J1 Template is a Bootstrap V5 website template for the static
-                                        site generator Jekyll.
-                                        For Jekyll, a huge number of templates are available that cover
-                                        all typical use cases for websites. The bad story: most of them
-                                        require programming and low-level customization. Deep knowledge
-                                        of Jekyll and valuable experience using HTML, CSS, and Javascript
-                                        is required. J1 Template is different: easy to use, no programming
-                                        is needed.
+                                        Jekyll One Template (J1) is a free Jekyll Theme providing
+                                        a clean implementation for Jekyll to start new projects
+                                        for all businesses based on Bootstrap V5.
+                                        The template combines the best current software for the Web.
+                                        Jekyll One is open-source and free to use for private and
+                                        business purposes.
+
 keywords: >
-                                        Jekyll, JekyllOne, Theme, Software, Modules, Extensions, Integrations
+                                        open source, free, template, theme,
+                                        jekyll, jekyllone, web, site, static,
+                                        jamstack, bootstrap, netlify
 
 categories:                             [ Features ]
 tags:                                   [ Module, Extension, Integration ]
@@ -25,27 +26,23 @@ robots:
   follow:                               true
 
 image:
-  path:                                 /assets/image/module/attic/christina-1920x1280.jpg
+  path:                                 /assets/image/module/attic/1920x1280/j1-launch.jpg
   width:                                1920
   height:                               1280
 
 regenerate:                             false
-permalink:                              /pages/public/features/template_features/
+permalink:                              /pages/public/features/theme_features/
 
 resources:                              [
-                                          amplitudejs, lightbox, carousel,
-                                          master-slider, lightgallery, gallery,
-                                          videojs, vimeo-player
+                                          amplitudejs, lightbox, lightgallery,
+                                          masonry, gallery, photoswipejs,
+                                          swiperjs, videojs, vimeo-player
                                         ]
 resource_options:
   - attic:
       slides:
-        - url:                          /assets/image/module/attic/christina-1920x1280.jpg
-          alt:                          Photo by Christina on Unsplash
-          badge:
-            type:                       unsplash
-            author:                     Christina
-            href:                       //unsplash.com/@wocintechchat
+        - url:                          /assets/image/module/attic/1920x1280/j1-launch.jpg
+          alt:                          Making is like wanting - but even better
 ---
 
 // Page Initializer
@@ -116,11 +113,9 @@ mdi:near-me[24px, md-blue ml-3 mr-2]
 mdi:lightbulb-on[24px, md-blue ml-3 mr-2]
 <<Lightboxes>> +
 mdi:view-carousel[24px, md-blue ml-3 mr-2]
-<<Text and Image Carousels>> +
+<<Sliders>> +
 mdi:gesture-swipe[24px, md-blue ml-3 mr-2]
-<<Text and Image Sliders>> +
-mdi:folder-multiple-image[24px, md-blue ml-3 mr-2]
-<<Image and Video Galleries>>
+<<Galleries>>
 
 [role="mt-5"]
 === Infinite scroll
@@ -139,21 +134,25 @@ previews of blog articles.
 J1 Template provides playing audio on web pages by HTML5 and supports custom
 players created by AmplitudeJS to playback audio individually.
 
-.Emancipator · From Dusk To Dawn
-amplitude::free_emancipator_large[role="mt-3 mb-5"]
+.Emancipator · From Dusk To Dawn (Trip-Hop)
+amplitude::emancipator_large[role="mb-4"]
 
-[role="mt-4"]
+
+[role="mt-5"]
 === Screen reader
 
 Speak2Me for J1 Template is a speech synthesise (TTS) module that enables a
 so-called screen reader. The reader functionality allows users to sit back
 and listen to the browser read aloud the important contents on a Web page.
 
+.TTS Control
+lightbox::images--tts[ 1920, {data-images--tts} ]
+
 The *screen reader* on websites created by J1 Template is started by
 clicking on the *speaker* symbol mdi:speaker[24px, md-blue] placed top
 right in the *menu bar*.
 
-[role="mt-4"]
+[role="mt-5"]
 === Animate on Scroll
 
 Scroll-triggered animation (AOS) is an effective way to animate website
@@ -162,7 +161,7 @@ as users scroll down a page. Scroll animations are more likely to grab the
 user's attention, making websites look and feel more dynamic and
 interesting.
 
-[role="mt-4"]
+[role="mt-5"]
 === Floating Action Buttons
 
 The *Floating Action Button* (FAB) is an element of Google's Material Design.
@@ -177,7 +176,7 @@ The template system supports Floating Action Buttons for in-page navigation.
 When the FAB is pressed, it provides more related actions like showing the
 content table or scrolling a page chapter-wise up and down.
 
-[role="mt-4"]
+[role="mt-5"]
 === Full-text search engine
 
 Full-text search (FTS) for a website is an advanced method of searching
@@ -192,7 +191,7 @@ to be small but full-featured. Lunr enables developers to provide visitors
 with a great search experience without the need for external, server-sided
 search services like Google on the internet.
 
-[role="mt-4"]
+[role="mt-5"]
 === Cookie Consent
 
 Running websites in the EU and many other countries, implementing the
@@ -213,7 +212,7 @@ accepting the use of cookies.
 The Template system provides a configurable GDPR compliant module to manage
 the consent of your visitors on cookies.
 
-[role="mt-4"]
+[role="mt-6"]
 === Translator
 
 A Website translation service is useful in a wide range of situations.
@@ -237,17 +236,51 @@ Translation makes it easier for users to browse content and find what they’re
 looking for. An excellent user experience and understanding the language are
 key for building trust in the content you provide.
 
-.Translator configuration (j1_config.yml)
+.Translator configuration
 [source, yaml, role="noclip"]
 ----
-translation:
-  enabled:                     true
-  provider:                    google
+# ------------------------------------------------------------------------------
+# ~/_data/modules/translator.yml
+# User configuration ssettings for J1 Translator module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2025 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
 
-  google:
-    layout:                    default
-    sourcelanguage:            en
-    translationlanguages:      [auto]
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 Translator
+  scope:                                User settings
+  location:                             _data/modules/translator.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              true
+
+  # ----------------------------------------------------------------------------
+  # Translator options
+  # ----------------------------------------------------------------------------
+  translatorName:                       google
+  contentLanguage:                      en
+  dialogLanguage:                       auto
+  translationLanguage:                  de
+
+# ------------------------------------------------------------------------------
+# END config
 ----
 
 J1 integrates the *free* translation service provided by Google Translate
@@ -263,7 +296,7 @@ visitors do not agree on cookies required to use Google Translate, GT gets
 automatically disabled, and all cookies from Google are deleted from the
 user's system.
 
-[role="mt-4"]
+[role="mt-5"]
 === Master Header
 
 The most-top position of a web page is important; this postion is presented to
@@ -400,66 +433,74 @@ gallery::jg_old_times[ role="mb-4 wm-800" ]
 .LightGallery
 gallery::jg_old_times[ role="mb-4 wm-800" ]
 
-[role="mt-4"]
-=== Text and Image Carousels
-
-J1 Carousel is based on OWL Carousel, a clean and neat jQuery slider plugin
-for creating fully responsive and touch-enabled carousel sliders. Carousels
-are mostly used for pictures data to animate the images as a series.
-
-.Markup to place a Image carousel (Asciidoc)
-[source, apib, role="noclip"]
-----
-.Image carousel
-carousel::demo_simple[role="mb-3"]
-----
-
-.Image carousel
-carousel::demo_simple[role="mb-3"]
-
-In general, J1 Carousel supports many more sources to be displayed as a
-slide show: simple text, for example.
-
-.Markup to place a Text carousel (Asciidoc)
-[source, apib, role="noclip"]
-----
-.Text carousel
-carousel::demo_text_carousel[role="mb-3"]
-----
-
-.Text carousel
-carousel::demo_text_carousel[role="mb-3"]
-
-// A more eye-minded type of text-based slide show is a parallax text slider.
-// If you want to emphasize your statements focussing on the meaning, this kind
-// of slide show may be interesting.
-
-// .Markup to place a Parallax carousel (Asciidoc)
-// [source, apib, role="noclip"]
-// ----
-// .Parallax carousel
-// carousel::demo_text_carousel_parallax[role="mb-3"]
-// ----
-
-// .Parallax text carousel
-// carousel::demo_text_carousel_parallax[role="mb-3"]
 
 [role="mt-4"]
-=== Text and Image Sliders
+=== Sliders
 
-Master Slider is a premium image and content slider for any purposes, with
-super smooth hardware accelerated transitions. MS is a well-known Slider Plugin
-for _WordPress_. J1 implements the *free* version MS Lite of version v2.85.13
-(Feb 2022).
+SwiperJS is a Javascript API that creates modern slider shows. All sliders
+use hardware-accelerated features like 3D transitions to perform best on modern
+devices. SwiperJS-based sliders are intended to be displayed at their best on
+all types of websites, such as those viewed on desktop computers, tablets, or
+smartphones.
 
-masterslider::ms_00005[role="mt-4 mb-5"]
+[role="mt-4"]
+==== Text Sliders
 
-masterslider::ms_00006[role="mt-4 mb-5"]
+Swipers are mnainly used for displaying images. Still, the implementation
+for the J1 Template supports a lot more *sources* to be displayed as a *slide*.
+Simple *text* for example.
 
-masterslider::ms_00009[role="mt-4 mb-5"]
+.Markup to place a Base Text Slider
+[source, apib, role="noclip"]
+----
+.Base Text Swiper
+swiper::swiper_text_base[role="mt-4 mb-5"]
+----
 
-[role="mt-5"]
-=== Image and Video Galleries
+.Base Text Swiper
+swiper::swiper_text_base[role="mt-4 mb-5"]
+
+A more *emphasized* type of a **text**-based swiper is a *parallax* text
+swiper. If you want to *focus* the meaning, this kind of a swiper may be
+nteresting. Parallax text sliders can be placed as *banners* on a page.
+
+.Markup to place a Extended Text Swiper
+[source, apib, role="noclip"]
+----
+.Extended Text Swiper · Parallax
+swiper::swiper_text_parallax[role="mt-4 mb-5"]
+----
+
+.Extended Text Swiper · Parallax
+swiper::swiper_text_parallax[role="mt-4 mb-5"]
+
+
+[role="mt-4"]
+==== Image Sliders
+
+Swipers (sliders or carousels) are mainly used for pictures *animated* as a
+managed *group*. Find below some examples of using simple (base) swipers for
+presenting images using the Swiper App.
+
+Find an example of a *full-width* slider with *pagination* control *enabled*
+to browse all images *back* and *forth*. Additionally, the pagination bullets
+below the Swiper App indicate how *many* slides (images) the slide show
+*contains* for improved usage experience.
+
+.Image Swiper · Full-width + Pagination
+swiper::swiper_image_base_full_width_pagination[role="mt-3 mb-4"]
+
+Important statements or topics can be placed on top of an article or
+a paragraph to give them better visibility. In one line, you can present
+many facts to know animated for the reader's attention within a
+*single line*.
+
+.Equal Image Sizes · Captions + Navigation + Pagination
+swiper::swiper_image_base_navigation_pagination[role="mt-3 mb-3"]
+
+
+[role="mt-4"]
+=== Galleries
 
 Image and Video Galleries allow you to lay out groups of images or videos
 in very different ways. J1 supports JustifiedGallery is a great jQuery plugin
@@ -468,30 +509,59 @@ The gallery uses a so-called masonry grid layout. It works by placing
 elements in an optimal position based on available horizontal and vertical
 space. Sort of like mason fitting stones in a wall.
 
-.Markup to place the Image Gallery (Asciidoc)
-[source, apib, role="noclip"]
-----
-.Image Gallery
-gallery::jg_example[role="mb-5"]
-----
-
-.Image Gallery
-gallery::jg_customizer[role="mb-5"]
-
-A JustifiedGallery provides not only images. See the next example of a gallery
-for HTML5 video content.
-
-.Markup to place the Video Gallery (Asciidoc)
-[source, apib, role="noclip"]
-----
-.Video Gallery (HTML5)
-gallery::jg_video_html5[role="mb-5"]
-----
-
-.Video Gallery (HTML5)
-gallery::jg_video_html5[role="mb-5"]
-
 [role="mt-4"]
+==== Image Galleries
+
+*Masonry* for J1 is a great tool to create dynamic image galleries. Image
+galleries are popular on many websites, and masonry can be a useful tool for
+creating dynamic galleries.
+
+By using the Masonry module, you can create a gallery that displays images of
+different sizes in an aesthetically pleasing and functional way.
+
+.Grid of Images
+masonry::image_fixed_height_lb[role="mt-4 mb-5"]
+
+link:{url-justified-gallery--home}[JustifiedGallery, {browser-window--new}]
+is a great _jQuery_ Plugin to create responsive, infinite, and high-quality
+justified image galleries. J1 Template combines the Gallery with the lightboxes
+supported to enlarge the images of a gallery. See the gallery in action; and
+for sure, all that you see is even responsive. Change the size of your current
+browser window, by width or height to see what will happen!
+
+// [role="mb-4"]
+Pictures you've made are typically not even in size. Images may have the
+same size (resolution), but some are orientated landscapes, or others
+may be portraits. For that reason, a more powerful gallery is needed to create
+so-called justified views.
+
+.Gallery of Images + lightGaller
+gallery::jg_mega_cities[role="mt-4 mb-4"]
+
+It works by placing elements in an optimal position based on available
+horizontal and vertical space. Sort of like mason fitting stones in a wall.
+For sure, you'll have seen it in action all over the Internet.
+
+[role="mt-5"]
+==== Video Galleries
+
+Video galleries are collections that display videos organized around a
+specific theme, topic, or purpose. The gallery module (lightGallery) for
+J1 Template is a fast, modular, and responsive plugin for creating
+beautiful-looking, featured image and video galleries.
+
+.Markup to place the Video Gallery
+[source, apib, role="noclip"]
+----
+.YouTube Video · Adele and James Cordon
+gallery::jg_video_youtube_james_and_adele[]
+----
+
+.YouTube Video · Adele and James Cordon
+gallery::jg_video_youtube_james_and_adele[role="mb-4"]
+
+
+[role="mt-5"]
 == Extensions
 
 Frameworks like _Bootstrap_ and Asciidoc are enormously flexible and customizable.
@@ -501,18 +571,23 @@ simple to use, and usable out-of-the-box.
 
 mdi:bootstrap[24px, md-blue ml-3 mr-2]
 <<Bootstrap extensions>> +
-mdi:group[24px, md-blue ml-3 mr-2]
-<<Blog Post Navigation>> +
+
 mdi:format-annotation-plus[24px, md-blue ml-3 mr-2]
-<<Block elements>> +
+<<Asciidoc extensions>> +
+
+mdi:group[24px, md-blue ml-3 mr-2]
+<<Banner and Panel>> +
+
 mdi:near-me[24px, md-blue ml-3 mr-2]
-<<Asciidoctor extensions>> +
+<<Blog Navigation>> +
+
 mdi:content-duplicate[24px, md-blue ml-3 mr-2]
-<<Featured example content>> +
+<<Sample content>> +
+
 mdi:image[24px, md-blue ml-3 mr-2]
 <<Royalty Free Images>>
 
-[role="mt-4"]
+[role="mt-5"]
 === Bootstrap extensions
 
 A set of Advanced Bootstrap Modals (ABM), based on the free package of Material
@@ -548,32 +623,9 @@ Post's front matter by specifying a new date/time in the format
 `2008-12-14 10:30:00 +0900`).
 |===
 
-[role="mt-4"]
-=== Blog Post Navigation
 
-To make your Blog Articles available to your vistors, J1 offers an easy to use
-navigation module for all your posts. The Blog Post Navigator automatically
-generates different views to explore articles by Categoy, Date, or all posts
-from an Archive View.
-
-.Blog Post Navigator
-lightbox::images--blog-post-navigator[ 1920, {data-images--blog-post-navigator} ]
-
-[role="mt-4"]
-=== Block elements
-
-Banners and panels are complex but configurable building blocks, typically
-used for home and landing pages. Examples how to use banners and panels
-can be found with the included starter web for the homepage.
-
-.Teaser Banner
-lightbox::images--teaser-banner[ 1920, {data-images--teaser-banner} ]
-
-.Intro Panel
-lightbox::images--intro-panel[ 1920, {data-images--intro-panel} ]
-
-[role="mt-4"]
-=== Asciidoctor extensions
+[role="mt-5"]
+=== Asciidoc extensions
 
 J1 Template implements a bunch of incubating Ruby-based extensions for
 Asciidoctor. Using Asciidoctor extensions, it's easy to integrate lightboxes,
@@ -595,8 +647,43 @@ mdi:font-awesome[2x, ml-3 mr-2 mb-2] Brand icon +
 mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
 ====
 
-[role="mt-4"]
-=== Featured example content
+
+[role="mt-5"]
+=== Banner and Panel
+
+Banners and panels are complex but configurable building blocks, typically
+used for home and landing pages. Examples how to use banners and panels
+can be found with the included starter web for the homepage.
+
+.Teaser Banner
+lightbox::images--teaser-banner[ 1920, {data-images--teaser-banner} ]
+
+
+[role="mt-5"]
+=== Blog Navigation
+
+To make your Blog Articles available to your vistors, J1 offers an easy to use
+navigation module for all your posts. The Blog Post Navigator automatically
+generates different views to explore articles by Categoy, Date, or all posts
+from an Archive View.
+
+.Blog Post Navigator
+lightbox::images--blog-post-navigator[ 1920, {data-images--blog-post-navigator} ]
+
+
+[role="mt-5"]
+=== Block elements
+
+Banners and panels are complex but configurable building blocks, typically
+used for home and landing pages. Examples how to use banners and panels
+can be found with the included starter web for the homepage.
+
+.Teaser Banner
+lightbox::images--teaser-banner[ 1920, {data-images--teaser-banner} ]
+
+
+[role="mt-5"]
+=== Sample content
 
 All pages from the roundtrip section are provided by the starter web
 included with the J1 Template. Many real-world examples for your content
@@ -605,7 +692,8 @@ could be taken from these pages and are easy to use with your website.
 .Example Content (Icon Fonts)
 lightbox::images--example-content[ 1920, {data-images--example-content} ]
 
-[role="mt-4"]
+
+[role="mt-5"]
 === Royalty Free Images
 
 All images for a *Starter Web*, for example, from the roundtrip section, are
@@ -627,14 +715,11 @@ mdi:comment[2x, md-blue ml-3 mr-2]
 <<Comment providers>> +
 mdi:google-analytics[2x, md-blue ml-3 mr-2]
 <<Google Analytics>> +
-mdi:google-ads[2x, md-blue ml-3 mr-2]
-<<Google Adsense>> +
-mdi:youtube[2x, md-blue ml-3 mr-2]
-<<YouTube Video>> +
-mdi:vimeo[2x, md-blue ml-3 mr-2]
-<<Vimeo Video>>
+// mdi:google-ads[2x, md-blue ml-3 mr-2]
+// <<Google Adsense>>
 
-[role="mt-4"]
+
+[role="mt-5"]
 === Bootstrap Themes
 
 The Themes for the template system J1 are based on the free and Open Source
@@ -657,7 +742,7 @@ link:{url-bootswatch--home}[Bootswatch, {browser-window--new}] is at least a
 good base for your modifications: your unique design. J1 integrates all
 available themes from _Bootswatch_ with the navigator module.
 
-[role="mt-4"]
+[role="mt-5"]
 === Comment providers
 
 Comments became an integral part of almost each website on the web. People
@@ -677,22 +762,49 @@ configuration, and you're done. On all posts or pages you want to use for
 comments, the comment interface is shown automatically and can be used by
 your visitors.
 
-.Comments configuration for Hyvor (j1_config.yml)
+.Comments configuration for Hyvor
 [source, yaml, role="noclip"]
 ----
-  comments:
-    enabled:                              true
-    provider:                             hyvor
+# ------------------------------------------------------------------------------
+# ~/_data/modules/comments.yml
+# User configuration settings for J1 Comments Module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2025 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
 
-    comments_headline:
-      en:                                 Leave a comment
-      de:                                 Kommentieren
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 Comments
+  scope:                                User settings
+  location:                             _data/modules/comments.yml
 
-    hyvor:
-      site_id:                           'hyvor-site-id'
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
 
-    disqus:
-      site_id:                           '<your-site-short-name>'
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
+
+  # ----------------------------------------------------------------------------
+  # Provider settings
+  # ----------------------------------------------------------------------------
+  provider:                             hyvor
+  site_id:                              your-site-id
+
+# ------------------------------------------------------------------------------
+# END config
 ----
 
 DQC is fully integrated with the GDPR-compatible Cookie Consent module. If
@@ -700,7 +812,7 @@ your visitors do not agree on cookies needed for Diqus, DQC gets
 automatically disabled, and all related cookies are deleted from the user's
 system.
 
-[role="mt-4"]
+[role="mt-5"]
 === Google Analytics
 
 Google Analytics (GAL) provides access to a massive amount of data related
@@ -712,57 +824,63 @@ Google Analytics is integrated by pure configuration. Simply enable the
 provider and set your your access credentials to the configuration, and
 you're done.
 
-.Google Analytics configuration (j1_config.yml)
+.Google Analytics configuration
 [source, yaml, role="noclip"]
 ----
-  analytics:
-    enabled:                              true
-    provider:                             google
+# ------------------------------------------------------------------------------
+# ~/_data/modules/analytics.yml
+# User configuration settings for J1 Analytics module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2025 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
 
-    google:
-      tracking_id:                        '<your-tracking-id>'
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 Analytics
+  scope:                                User settings
+  location:                             _data/modules/analytics.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
+  skipAllHosts:                         localhost, 127.0.0.1
+  trackingID:                           <your-tracking-id>
+
+  # ----------------------------------------------------------------------------
+  # Provider settings
+  # ----------------------------------------------------------------------------
+  google:
+    anonymizeIP:                        false
+
+# ------------------------------------------------------------------------------
+# END config
 ----
 
+[role="mb-8"]
 GAL is fully integrated with the GDPR-compatible Cookie Consent module.
 If your visitors do not agree on cooies for *Analysis*, Google Analytics gets
 automatically disabled and all cookies from Google are deleted from the
 user's system.
 
-[role="mt-4"]
-=== Google Adsense
+// [role="mt-5"]
+// === Google Adsense
 
-Google Adsense (GAD) is integrated by pure configuration. Simply enable the
-provider and set your your access credentials to the configuration, and
-you're done.
-
-[role="mt-4"]
-=== YouTube Video
-
-J1 Template supports YouTube and Vimeo video content out-of-the-box.
-The type of content is *automatically detected* with your video galleries
-configured, and the player is started as needed.
-
-.Asciidoc Markup
-[source, apib, role="noclip"]
-----
-gallery::jg_video_online_youtube_james_and_adele[]
-----
-
-.YouTube Video
-gallery::jg_video_online_youtube_james_and_adele[role="mb-5"]
-
-[role="mt-4"]
-=== Vimeo Video
-
-J1 Template supports Vimeo video content out-of-the-box. The type of content
-is *automatically detected* with your video galleries configured, and the
-player is started as needed.
-
-.Asciidoc Markup
-[source, apib, role="noclip"]
-----
-gallery::jg_video_online_vimeo[role="mb-5"]
-----
-
-.Vimeo Video
-gallery::jg_video_online_vimeo[role="mb-7"]
+// [role="mb-8"]
+// Google Adsense (GAD) is integrated by pure configuration. Simply enable the
+// provider and set your your access credentials to the configuration, and
+// you're done.

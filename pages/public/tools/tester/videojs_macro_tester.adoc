@@ -1,10 +1,10 @@
 ---
 title:                                  VideoJS
-title_extention:                        Custom VJS Players
-tagline:                                Custom VJS Players
+title_extention:                        Custom video player
+tagline:                                Custom video player
 
 date:                                   2025-06-05
-last_modified:                          2025-06-08
+last_modified:                          2025-06-22
 
 description: >
                                         Test the VideoJS ADOC Macro for
@@ -16,7 +16,7 @@ keywords: >
                                         videojs
 
 categories:                             [ Tester ]
-tags:                                   [ Module, VideoJS ]
+tags:                                   [ VideoJS, YouTube ]
 
 image:
   path:                                 /assets/image/module/attic/markus-spiske-1920x1280.jpg
@@ -49,7 +49,10 @@ resource_options:
 
 // Attribute settings for section control
 //
-:swiper--features:                      false
+:videojs--youtube-video:                true
+:videojs--masonry:                      false
+:videojs--local-video:                  true
+:videojs--over-youtube:                 false
 
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
@@ -67,131 +70,100 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-Swiper, the free and most modern mobile touch slider with hardware accelerated
-transitions and amazing native behavior. It is intended to be used in mobile
-websites, mobile web apps, and mobile native/hybrid apps.
+VideoJS is a *free-to-use* open-source JavaScript framework for building
+custom video players for the web. Implementing VideoJS for the J1 Template
+supports local video and several platforms, such as YouTube, Vimeo, Wistia,
+or Dailymotion, for presenting videos *online*.
+
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
-// [role="mt-5"]
-// == Local Video
 
-// Videos created by a digicam or a mobile can be played by J1 Template using
-// the lightGallery integration. Present videos you have made at it's best.
-
-// .Local Video over VideoJS · Justified Gallery + LightGallery
-// gallery::jg_video_html5[role="mb-4"]
-
-
-// == Masonry
-
-// Masonry for J1 Template is a great tool for creating dynamic video galleries.
-// The module makes creating a gallery to display videos of different types easy.
-
-// .Mixed Video · Masonry + LightGallery
-// masonry::mixed_video_example[role="mb-4"]
-
-
-// [role="mt-4"]
-// == lightGallery (YouTube)
-
-// The galley maker *justifiedGallery* in combination with the *lightbox*
-// lightGallery is a great toolset for creating dynamic video galleries.
-// The module combinati0n makes creating a gallery to access videos easy.
-
-// .YouTube Video · justifiedGallery + LightGallery
-// gallery::jg_video_youtube_james_and_adele[role="mb-4"]
-
-
-// [role="mt-5"]
-// == VideoJS Player over YouTube
-
-// YouTube is a popular online video-sharing platform that allows users to
-// upload, view, share, and comment on videos. The platform provides services
-// for people and organizations to publish various video content.
-
+// .Vimeo Video · The Present
+// // 137221158 152985022
 // ++++
-// <div class="video-title">
-//   <i class="mdib mdib-video mdib-24px mr-2"></i>
-//   The Breathtaking Beauty of Nature
-// </div>
-
-// <div class="mb-8">
-//   <video
-//     id="vid_2rtQOsWaAXc"
-//     class="video-js vjs-theme-uno"
-//     controls
-//     width="640"
-//     height="360"
-//     poster="//img.youtube.com/vi/IUN664s7N-c/maxresdefault.jpg" alt="Beauty of Nature" 
-//     aria-label="The Breathtaking Beauty of Nature"
-//     data-setup='{
-//         "fluid" : true,
-//         "techOrder": [
-//             "youtube", "html5"
-//         ],
-//         "sources": [{
-//             "type": "video/youtube",
-//             "src": "//youtube.com/watch?v=IUN664s7N-c"
-//         }],
-//         "controlBar": {      
-//           "pictureInPictureToggle": false,
-//           "volumePanel": {
-//               "inline": false
-//           }
-//         }
-//       }'
-//   ></video>
-// </div>
+// <iframe
+//     width="930" height="640"
+//     src="https://player.vimeo.com/video/152985022" 
+//     frameborder="0" 
+//     allowfullscreen>
+// </iframe>
 // ++++
 
+
+// .Dailymotion Video · Blödsinn
+// // x7vn9g2 
+// ++++
+// <iframe
+//     width="930" height="640"
+//     src="https://www.dailymotion.com/embed/video/x8oz6w2"
+//     frameborder="0"
+//     allowfullscreen>
+// </iframe>
+// ++++
+
+
+// .Wistia Video · Blödsinn
+// ++++
+// <iframe
+//     width="930" height="640"
+//     src="https://fast.wistia.net/embed/iframe/zs8hlyi5xz"
+//     allowtransparency="true"
+//     frameborder="0"
+//     scrolling="no"
+//     class="wistia_embed" name="wistia_embed"
+//     allowfullscreen>
+// </iframe>
+// ++++
+
+ifeval::[{videojs--local-video} == true]
 [role="mt-5"]
-== VideoJS Player over Dailymotion
+== Local Video
 
-link:{url-dailymotion--home}[Dailymotion, {browser-window--new}] is a
-video-sharing platform. The platform is available worldwide in 180+
-languages, featuring websites for their video content.
+Videos created by a digicam or a mobile can be played by J1 Template using
+the lightGallery integration. Present videos you have made at it's best.
 
-The platform is a *monetization* solution that allows allows to directly
-connect to high-quality advertisers through a proprietary Advertising system.
-Like YouTube, videos can be watched for free, but ads are shown on each and
-every video.
+.Local (MP4) Video · Justified Gallery + LightGallery
+gallery::jg_video_html5[role="mb-4"]
+endif::[]
 
-++++
-<div class="video-title">
-  <i class="mdib mdib-video mdib-24px mr-2"></i>
-  Morning Energy
-</div>
 
-<div class="mb-8">
-  <video
-    id="vid_x887s09"
-    class="video-js vjs-theme-uno"
-    controls
-    width="640"
-    height="360"
-    poster="/assets/video/poster/dailymotion/meditation.jpg" alt="Morning Energy" 
-    aria-label="Morning Energy"
-    data-setup='{
-        "fluid" : true,
-        "techOrder": [
-            "dailymotion", "html5"
-        ],
-        "sources": [{
-            "type": "video/dailymotion",
-            "src": "//dai.ly/x887s09"
-        }],
-        "controlBar": {      
-          "pictureInPictureToggle": false,
-          "volumePanel": {
-              "inline": false
-          }
-        }
-      }'
-  ></video>
-</div>
-++++
+ifeval::[{videojs--masonry} == true]
+[role="mt-5"]
+== Masonry
 
+Masonry for J1 Template is a great tool for creating dynamic video galleries.
+The module makes creating a gallery to display videos of different types easy.
+
+.Mixed Video · Masonry + LightGallery
+masonry::mixed_video_example[role="mb-4"]
+endif::[]
+
+
+ifeval::[{videojs--youtube-video} == true]
+[role="mt-5"]
+== lightGallery (YouTube)
+
+The galley maker *justifiedGallery* in combination with the *lightbox*
+lightGallery is a great toolset for creating dynamic video galleries.
+The module combinati0n makes creating a gallery to access videos easy.
+
+.YouTube Video · justifiedGallery + LightGallery
+gallery::jg_video_youtube_james_and_adele[role="mb-4"]
+
+
+.NPR Tiny Desk Concerts · Latin
+gallery::tdc_latin[role="mb-5"]
+endif::[]
+
+
+ifeval::[{videojs--over-youtube} == true]
+[role="mt-5"]
+== VideoJS Player over YouTube
+
+YouTube is a popular online video-sharing platform that allows users to
+upload, view, share, and comment on videos. The platform provides services
+for people and organizations to publish various video content.
 
 ++++
 <style>
@@ -202,6 +174,41 @@ every video.
 */
 
 </style>
+++++
+
+++++
+<div class="video-title">
+  <i class="mdib mdib-video mdib-24px mr-2"></i>
+  The Breathtaking Beauty of Nature
+</div>
+
+<div class="mb-8">
+  <video
+    id="2rtQOsWaAXc"
+    class="video-js vjs-theme-uno"
+    controls
+    width="640"
+    height="360"
+    poster="//img.youtube.com/vi/IUN664s7N-c/maxresdefault.jpg" alt="Beauty of Nature" 
+    aria-label="The Breathtaking Beauty of Nature"
+    data-setup='{
+        "fluid" : true,
+        "techOrder": [
+            "youtube", "html5"
+        ],
+        "sources": [{
+            "type": "video/youtube",
+            "src": "//youtube.com/watch?v=IUN664s7N-c"
+        }],
+        "controlBar": {      
+          "pictureInPictureToggle": false,
+          "volumePanel": {
+              "inline": false
+          }
+        }
+      }'
+  ></video>
+</div>
 ++++
 
 ++++
@@ -247,7 +254,7 @@ $(function() {
       // create div|caption container
       const newDiv = document.createElement('div');
       newDiv.classList.add('caption');
-      newDiv.textContent = 'Morning Energy';
+      newDiv.textContent = 'The Breathtaking Beauty of Nature';
 
       // insert div|caption container AFTER the image
       image.parentNode.insertBefore(newDiv, image.nextSibling);
@@ -265,17 +272,15 @@ $(function() {
     var j1CoreFinished  = (j1.getState() === 'finished') ? true : false;
 
     if (j1CoreFinished && pageVisible) {
-      // const vjs_player  = document.getElementById("vid_2rtQOsWaAXc");
-      const vjs_player  = document.getElementById('vid_x887s09');
+      const vjs_player  = document.getElementById("2rtQOsWaAXc");
 
       // add captions (on poster image)
-      // naddCaptionAfterImage('//img.youtube.com/vi/IUN664s7N-c/maxresdefault.jpg');
-      addCaptionAfterImage('/assets/video/poster/dailymotion/meditation.jpg');
-      
+      addCaptionAfterImage('//img.youtube.com/vi/IUN664s7N-c/maxresdefault.jpg');
+
       // scroll page to the players top position
       // -----------------------------------------------------------------------
       vjs_player.addEventListener('click', function(event) {
-        const targetDiv         = document.getElementById("vid_x887s09");
+        const targetDiv         = document.getElementById("2rtQOsWaAXc");
         const targetDivPosition = targetDiv.offsetTop;
         const scrollOffset      = (window.innerWidth >= 720) ? -130 : -110;
 
@@ -290,12 +295,12 @@ $(function() {
   // customize the yt player created
   // ---------------------------------------------------------------------------
   var dependencies_met_vjs_player_exist = setInterval(function(options) {
-    var vjsPlayerExist = document.getElementById("vid_x887s09") ? true : false;
+    var vjsPlayerExist = document.getElementById("2rtQOsWaAXc") ? true : false;
 
     if (vjsPlayerExist) {
 
       // apply player customization on 'player ready'
-      videojs("vid_x887s09").ready(function() {
+      videojs("2rtQOsWaAXc").ready(function() {
         const vjsPlayer = this;
 
         // create customControlContainer for progressControlSilder|time (display) elements
@@ -367,4 +372,4 @@ $(function() {
 
 </script>
 ++++
-
+endif::[]

@@ -569,6 +569,7 @@ settings:
       #
       videojs:
         enabled:                        true
+
         theme:                          uno
 
         # ----------------------------------------------------------------------
@@ -584,16 +585,14 @@ settings:
           videojsPlayer:
             enabled:                    true
 
-            options:
-              muted:                    false
-              preload:                  false
-              autoplayFirstVideo:       true
-              playbackRates:            [0.25, 0.5, 1, 1.5, 2]
+            videojsOptions:
+              controls:                 true
+              tracks:                   true
 
-            controls:                   true
             controlBar:
-              remainingTimeDisplay:     true
               pictureInPictureToggle:   false
+              chaptersButton:           true
+              subtitlesButton:          true
               playbackRates:            [0.25, 0.5, 1, 1.5, 2]
 
               volumePanel:
@@ -605,10 +604,10 @@ settings:
                   volumeStep:           0.2
 
               skipButtonsPlugin:
-                enabled:                  true
+                enabled:                true
                 options:
-                  forward:                15
-                  backward:               15
+                  forward:              15
+                  backward:             15
 
               zoomPlugin:
                 enabled:                true
