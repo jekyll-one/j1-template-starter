@@ -1,0 +1,906 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/gallery.yml
+# User configuration for J1 Justified Gallery (jg)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ==============================================================================
+# Description
+# ==============================================================================
+#
+description:
+  title:                                Justified Gallery
+  scope:                                User settings
+  location:                             _data/apps/justifiedGallery.yml
+
+# ==============================================================================
+# User configuration settings
+# ==============================================================================
+#
+settings:
+
+  # ============================================================================
+  # GENERAL options
+  # ============================================================================
+  #
+  enabled:                              true
+
+  # ============================================================================
+  # All galleries available
+  # ============================================================================
+  #
+  galleries:
+
+    # ==========================================================================
+    # Image Galleries
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # Old Times
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               jg_old_times
+      type:                             image
+      image_base_path:                  /assets/image/module/gallery/old_time/image/grand_pa
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings
+      # ------------------------------------------------------------------------
+      #
+      gallerySettings:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox settings
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           lg                                      # lb | lg
+
+      lightGallery:
+        plugins:                        lgFullscreen, lgRotate, lgThumbnail
+
+        options:
+          licenseKey:                   0000-0000-000-0000
+          download:                     false
+          alignThumbnails:              left
+
+    # --------------------------------------------------------------------------
+    # Gallery Mega Cities
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               jg_mega_cities
+      type:                             image
+      image_base_path:                  /assets/image/module/swiper/simple/mega_city/image
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings
+      # ------------------------------------------------------------------------
+      #
+      gallerySettings:
+        rowHeight:                      150
+        gutters:                        1
+
+      # ------------------------------------------------------------------------
+      # Lightbox settings
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           lg
+
+      lightGallery:
+        plugins:                        lgFullscreen, lgRotate, lgThumbnail
+
+        options:
+          licenseKey:                   0000-0000-000-0000
+          download:                     false
+          alignThumbnails:              left
+          addClass:                     lg-uno-thumbnails                         # customized thumbnails
+          appendThumbnailsTo:           .lg-outer                                 # required for customized thumbnails
+          animateThumb:                 false                                     # required for customized thumbnails
+          allowMediaOverlap:            true                                      # required for customized thumbnails
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      #
+      filters:
+        enabled:                        false
+        grayscale:                      0
+        contrast:                       0.8
+        brightness:                     0.4
+
+    # ==========================================================================
+    # Video Galleries
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # HTML5 VIDEO
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               jg_video_html5
+      type:                             video
+      video:                            html5
+      video_base_path:                  /assets/video/html5
+      image_base_path:                  /assets/video/poster/html5
+      thumb_base_path:                  /assets/video/poster/html5
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings
+      # ------------------------------------------------------------------------
+      #
+      gallerySettings:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox|lightGallery settings
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           lg
+
+      lightGallery:
+        plugins:                        lgThumbnail, lgVideo
+
+        options:
+          licenseKey:                   0000-0000-000-0000
+          download:                     false
+          alignThumbnails:              left
+          animateThumb:                 true
+          autoplayFirstVideo:           true
+          videojs:                      true                                    # jadams: !!!
+          videojsTheme:                 vjs-theme-uno
+
+        videojsOptions:
+          enabled:                      true
+          muted:                        false
+          preload:                      true
+          controls:                     true
+          tracks:                       true                                    # jadams: !!!
+
+          hotKeysPlugin:
+            enabled:                    true
+            options:
+              volumeStep:               0.2          
+
+          controlBar:
+            playbackRates:              [0.25, 0.5, 1, 1.5, 2]
+            remainingTimeDisplay:       true
+            pictureInPictureToggle:     false
+
+            volumePanel:
+              inline:                   false
+
+            skipButtonsPlugin:
+              enabled:                  true
+              options:
+                forward:                5
+                backward:               5
+                backwardIndex:          0
+                forwardIndex:           1
+
+            zoomPlugin:
+              enabled:                  true
+              showZoom:                 true
+              showMove:                 false
+              showRotate:               false
+              gestureHandler:           false
+              options:
+                moveX:                  0
+                moveY:                  0
+                rotate:                 0
+                zoom:                   1
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      #
+      filters:
+        enabled:                        false
+        grayscale:                      0
+        contrast:                       1
+        brightness:                     1
+
+    # --------------------------------------------------------------------------
+    # Online VIDEO Carpool Karaoke (YouTube)
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               jg_video_youtube_james_and_adele
+      type:                             video
+      video:                            youtube
+      image_base_path:                  //img.youtube.com/vi
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings
+      # ------------------------------------------------------------------------
+      #
+      gallerySettings:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox|lightGallery settings
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           lg
+
+      lightGallery:
+        plugins:                        lgThumbnail, lgVideo
+
+        options:
+          licenseKey:                   0000-0000-000-0000
+          download:                     false
+          alignThumbnails:              left
+          animateThumb:                 true
+          autoplayFirstVideo:           true
+          videojs:                      true                                    # jadams: !!!
+          videojsTheme:                 vjs-theme-uno
+
+        videojsOptions:
+          enabled:                      true
+          muted:                        false
+          preload:                      true
+          controls:                     true
+          tracks:                       false                                   # jadams: !!!
+
+          hotKeysPlugin:
+            enabled:                    true
+            options:
+              volumeStep:               0.2          
+
+          controlBar:
+            playbackRates:              [0.25, 0.5, 1, 1.5, 2]
+            remainingTimeDisplay:       true
+            pictureInPictureToggle:     false
+
+            volumePanel:
+              inline:                   false
+
+            skipButtonsPlugin:
+              enabled:                  true
+              options:
+                forward:                5
+                backward:               5
+                backwardIndex:          0
+                forwardIndex:           1
+
+            zoomPlugin:
+              enabled:                  false
+              options:
+                moveX:                  0
+                moveY:                  0
+                rotate:                 0
+                zoom:                   1
+
+        playerParams:
+          enabled:                      true
+          # start:                      ["00:00:50", "00:00:50"]                # start time video1, vido2
+          autoplay:                     1                                       # autoplay = 1 only available for YouTube when muted.
+          # controls:                   1                                       # default = 0
+          # enablejsapi:                1                                       # default = 1
+          # hl:                         en                                      # default = en
+          # loop:                       0                                       # default = 0
+          mute:                         0                                       # default = 1
+          # playsinline:                1                                       # for mobile|iOS only
+          # wmode:                      opaque                                  # default = opaque
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      #
+      filters:
+        enabled:                        false
+        grayscale:                      0
+        contrast:                       1
+        brightness:                     1
+
+    # --------------------------------------------------------------------------
+    # Online VIDEO (Vimeo)
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               jg_video_online_vimeo
+      type:                             video
+      video:                            vimeo
+      image_base_path:                  /assets/video/poster/vimeo
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings
+      # ------------------------------------------------------------------------
+      #
+      gallerySettings:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox|lightGallery settings
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           lg
+
+      lightGallery:
+        plugins:                        lgThumbnail, lgVideo
+
+        options:
+          licenseKey:                   0000-0000-000-0000
+          download:                     false
+          alignThumbnails:              left
+          animateThumb:                 true
+          autoplayFirstVideo:           true
+          videojs:                      false
+
+        videojsOptions:
+          enabled:                      false
+
+        playerParams:
+          enabled:                      false
+          autoplay:                     1
+          byline:                       0
+          portrait:                     0
+          color:                        var(--md-gray-100)
+          muted:                        0
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      #
+      filters:
+        enabled:                        false
+        grayscale:                      0
+        contrast:                       1
+        brightness:                     1
+
+      # ------------------------------------------------------------------------
+      # Video settings
+      # ------------------------------------------------------------------------
+      #
+      videos:
+
+        - video:                        # video 1
+          enabled:                      true
+
+          name:                         Forever 21
+          type:                         vimeo
+          size:                         1280-720
+          source:                       //vimeo.com/179528528
+          poster_image:                 kick_it_old_school.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 Forever 21 &middot; Kick It Old School
+          description: >
+                                        <h2>Forever 21</h2>
+                                        <h3>Kick It Old School</h3>
+
+          playerParams:
+            start:                      50                                      # seconds to start
+
+        - video:                        # video 2
+          enabled:                      true
+
+          name:                         Forever 21
+          type:                         vimeo
+          size:                         1280-720
+          source:                       //vimeo.com/33929033
+          poster_image:                 fall_2011.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 Forever 21 &middot; Fall 2011
+          description: >
+                                        <h2>Forever 21</h2>
+                                        <h3>Fall 2011</h3>
+
+          playerParams:
+            start:                      50                                      # seconds to start
+
+    # --------------------------------------------------------------------------
+    # Online VIDEO (Dailymotion)
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               jg_video_online_dailymotion
+      type:                             video
+      video:                            dailymotion
+      image_base_path:                  /assets/video/poster/dailymotion
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings
+      # ------------------------------------------------------------------------
+      #
+      gallerySettings:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox|lightGallery settings
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           lg
+
+      lightGallery:
+        plugins:                        lgThumbnail, lgVideo
+
+        options:
+          licenseKey:                   0000-0000-000-0000
+          download:                     false
+          alignThumbnails:              left
+          animateThumb:                 true
+          autoplayFirstVideo:           true
+          videojs:                      false
+
+        videojsOptions:
+          enabled:                      false
+
+        playerParams:
+          enabled:                      false
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      #
+      filters:
+        enabled:                        false
+        grayscale:                      0
+        contrast:                       1
+        brightness:                     1
+
+      # ------------------------------------------------------------------------
+      # Video settings
+      # ------------------------------------------------------------------------
+      #
+      videos:
+
+        - video:                        # video 1
+          enabled:                      true
+
+          name:                         SELF Channel
+          type:                         dailymotion
+          size:                         1280-720
+          source:                       //dai.ly/x887s09
+          poster_image:                 meditation.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 SELF Channel &middot; Morning Energy
+          description: >
+                                        <h2>SELF Channel</h2>
+                                        <h3>Guided Meditation: Morning Energy</h3>
+
+        - video:                        # video 2
+          enabled:                      true
+
+          name:                         SELF Channel
+          type:                         dailymotion
+          size:                         1280-720
+          source:                       //dai.ly/x87ycik
+          poster_image:                 pilates.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 SELF Channel &middot; Pilates Core Workout
+          description: >
+                                        <h2>SELF Channel</h2>
+                                        <h3>Beginner Mat Pilates: Core Workout</h3>
+
+    # --------------------------------------------------------------------------
+    # HTML5 VIDEO (over VideoJS)
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               jg_video_html5_videojs
+      type:                             video
+      video:                            html5
+      video_base_path:                  /assets/video/html5
+      image_base_path:                  /assets/video/poster/html5
+      thumb_base_path:                  /assets/video/poster/html5
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings
+      # ------------------------------------------------------------------------
+      #
+      gallerySettings:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox|lightGallery settings
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           lg
+
+      lightGallery:
+        plugins:                        lgThumbnail, lgVideo
+
+        options:
+          licenseKey:                   0000-0000-000-0000
+          download:                     false
+          alignThumbnails:              left
+          animateThumb:                 true
+          autoplayFirstVideo:           true
+          videojs:                      true                                    # jadams: !!!
+          videojsTheme:                 vjs-theme-uno
+
+        videojsOptions:
+          enabled:                      true
+
+          muted:                        false
+          preload:                      true
+
+          controls:                     true
+
+          hotKeysPlugin:
+            enabled:                    true
+            options:
+              volumeStep:               0.2          
+
+          controlBar:
+            playbackRates:              [0.25, 0.5, 1, 1.5, 2]
+            remainingTimeDisplay:       true
+            pictureInPictureToggle:     false
+
+            volumePanel:
+              inline:                   false
+
+            skipButtonsPlugin:
+              enabled:                  true
+              options:
+                forward:                5
+                backward:               5
+                backwardIndex:          0
+                forwardIndex:           1
+
+            zoomPlugin:
+              enabled:                  true
+              options:
+                moveX:                  0
+                moveY:                  0
+                rotate:                 0
+                zoom:                   1
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      #
+      filters:
+        enabled:                        false
+        grayscale:                      0
+        contrast:                       1
+        brightness:                     1
+
+      # ------------------------------------------------------------------------
+      # Video settings
+      # ------------------------------------------------------------------------
+      #
+      videos:
+
+        - video:                        # video 1
+          enabled:                      true
+
+          name:                         Peck Pocketed
+          type:                         html5
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       peck_pocketed.mp4
+          poster_image:                 peck_pocketed.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 Peck Pocketed &middot; Student Academy Award winning Cartoon Clip
+          description: >
+                                        <h2>Peck Pocketed by Kevin Herron | Disney Favorite</h2>
+                                        <h3>Student Academy Award winning Cartoon Clip</h3>
+
+        - video:                        # video 2
+          enabled:                      true
+        
+          name:                         Rollin Wild
+          type:                         html5
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       rolling_wild.mp4
+          poster_image:                 rolling_wild.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 Rollin` Wild &middot; Short Funny animated video clip created at the Film Academy
+          description: >
+                                        <h2>Rollin` Wild</h2>
+                                        <h3>Short Funny Animated Clip created at the Film Academy</h3>
+
+    # --------------------------------------------------------------------------
+    # TinyDesk Concerts, Latin (YouTube)
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               tdc_latin
+      type:                             video
+      video:                            youtube
+      image_base_path:                  //img.youtube.com/vi
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings
+      # ------------------------------------------------------------------------
+      #
+      gallerySettings:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox|lightGallery settings
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           lg
+
+      lightGallery:
+        plugins:                        lgThumbnail, lgVideo
+
+        options:
+          licenseKey:                   0000-0000-000-0000
+          download:                     false
+          alignThumbnails:              left
+          animateThumb:                 true
+          autoplayFirstVideo:           true
+          videojs:                      true                                    # jadams: !!!
+          videojsTheme:                 vjs-theme-uno
+
+        videojsOptions:
+          enabled:                      true
+          muted:                        false
+          preload:                      true
+          controls:                     true
+
+          hotKeysPlugin:
+            enabled:                    true
+            options:
+              volumeStep:               0.2          
+
+          controlBar:
+            playbackRates:              [0.25, 0.5, 1, 1.5, 2]
+            remainingTimeDisplay:       true
+            pictureInPictureToggle:     false
+
+            volumePanel:
+              inline:                   false
+
+            skipButtonsPlugin:
+              enabled:                  true
+              options:
+                forward:                5
+                backward:               5
+                backwardIndex:          0
+                forwardIndex:           1
+
+            zoomPlugin:
+              enabled:                  false
+              options:
+                moveX:                  0
+                moveY:                  0
+                rotate:                 0
+                zoom:                   1
+
+        playerParams:
+          enabled:                      true
+          autoplay:                     1                                       # autoplay = 1 only available for YouTube when muted.
+          mute:                         0                                       # default = 1
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      #
+      filters:
+        enabled:                        false
+        grayscale:                      0
+        contrast:                       1
+        brightness:                     1
+
+
+    # ==========================================================================
+    # Video Galleries
+    # ==========================================================================
+
+    # --------------------------------------------------------------------------
+    # HTML5 VIDEO
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               die_augenzeugen
+      type:                             video
+      video:                            html5
+      video_base_path:                  /assets/video/html5
+      image_base_path:                  /assets/video/poster/html5
+      thumb_base_path:                  /assets/video/poster/html5
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      # ------------------------------------------------------------------------
+      #
+      filters:
+        enabled:                        false
+        grayscale:                      0
+        contrast:                       1
+        brightness:                     1
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings
+      # ------------------------------------------------------------------------
+      #
+      gallerySettings:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox settings
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           lg
+
+      # ------------------------------------------------------------------------
+      # lightGallery settings
+      # ------------------------------------------------------------------------
+      #
+      lightGallery:   
+        plugins:                        lgThumbnail, lgVideo
+
+        options:
+          licenseKey:                   0000-0000-000-0000
+          download:                     false
+          alignThumbnails:              left
+          animateThumb:                 true
+          autoplayFirstVideo:           true
+          videojs:                      true
+          videojsTheme:                 vjs-theme-uno
+
+        videojsOptions:
+          enabled:                      true
+          muted:                        false
+          preload:                      true
+          controls:                     true
+          tracks:                       false
+
+          hotKeysPlugin:
+            enabled:                    true
+            options:
+              volumeStep:               0.2          
+
+          controlBar:
+            playbackRates:              [0.25, 0.5, 1, 1.5, 2]
+            remainingTimeDisplay:       true
+            pictureInPictureToggle:     false
+
+            volumePanel:
+              inline:                   false
+
+            skipButtonsPlugin:
+              enabled:                  true
+              options:
+                forward:                5
+                backward:               5
+                backwardIndex:          0
+                forwardIndex:           1
+
+            zoomPlugin:
+              enabled:                  true
+              showZoom:                 true
+              showMove:                 false
+              showRotate:               false
+              gestureHandler:           false
+              options:
+                moveX:                  0
+                moveY:                  0
+                rotate:                 0
+                zoom:                   1
+
+    # ==========================================================================
+    # TUSHY Blonde
+    #
+    # - gallery:
+    #   enabled:                          true
+
+    #   id:                               tushy_blonde
+    #   type:                             video
+    #   video:                            html5
+
+    #   video_base_path:                  //localhost:10000/studios/tushy/blonde/video
+    #   image_base_path:                  //localhost:10000/studios/tushy/blonde/video/images
+
+    #   # ------------------------------------------------------------------------
+    #   # Justified Gallery settings
+    #   # ------------------------------------------------------------------------
+    #   #
+    #   gallerySettings:
+    #     rowHeight:                      200
+    #     margins:                        3
+
+    #   # ------------------------------------------------------------------------
+    #   # Lightbox|lightGallery settings
+    #   # ------------------------------------------------------------------------
+    #   #
+    #   lightbox:
+    #     enabled:                        true
+    #     type:                           lg
+
+    #   lightGallery:
+    #     plugins:                        lgThumbnail, lgVideo
+
+    #     options:
+    #       licenseKey:                   0000-0000-000-0000
+    #       download:                     false
+    #       animateThumb:                 true
+    #       alignThumbnails:              left
+    #       allowMediaOverlap:            true                                    # required for customized thumbnails
+    #       autoplayFirstVideo:           true
+    #       videojs:                      true
+    #       videojsTheme:                 vjs-theme-uno                           # required for customized thumbnails
+
+    #     videojsOptions:
+    #       enabled:                      true
+
+    #       muted:                        false
+    #       preload:                      true
+
+    #       controls:                     true
+    #       controlBar:
+    #         playbackRates:              [0.25, 0.5, 1, 1.5, 2]
+    #         remainingTimeDisplay:       true
+    #         pictureInPictureToggle:     false
+
+    #         volumePanel:
+    #           inline:                   false
+
+    #         hotkeysPlugin:
+    #           enabled:                  true
+    #           options:
+    #             volumeStep:             0.2
+
+    #         skipButtonsPlugin:
+    #           enabled:                  true
+    #           options:
+    #             forward:                5
+    #             backward:               5
+    #             backwardIndex:          0
+    #             forwardIndex:           1
+
+    #         zoomPlugin:
+    #           enabled:                  true
+    #           options:
+    #             moveX:                  0
+    #             moveY:                  0
+    #             rotate:                 0
+    #             zoom:                   1
+
+    #   # ------------------------------------------------------------------------
+    #   # CSS filter options
+    #   #
+    #   filters:
+    #     enabled:                        false
+    #     grayscale:                      0
+    #     contrast:                       1
+    #     brightness:                     1
+
+# ------------------------------------------------------------------------------
+# END config

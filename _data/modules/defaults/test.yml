@@ -1,0 +1,65 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/test.yml
+# Default configuration for J1 test daten (e.g. deep_merge)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 Test Daten
+  scope:                                Default settings
+  location:                             _data/defaults/tests.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # GLOBAL settings
+  #
+  # enabled
+  # ----------------------------------------------------------------------------
+  #   Enables|Disables the use of a gallery
+  #
+  # ----------------------------------------------------------------------------
+  #
+  # enabled:                              false
+  
+  # ----------------------------------------------------------------------------
+  # GLOBAL Default settings
+  # ----------------------------------------------------------------------------
+  #
+  defaults:                             &app_defaults
+    enabled:                            false
+    controls:                           true
+
+    settings:
+      width:                            800
+      height:                           600
+
+    options:
+      autoplay:                         false
+      loop:                             true
+      volume:                           1.0
+
+  # ----------------------------------------------------------------------------
+  # APP Default settings
+  # ----------------------------------------------------------------------------
+  #
+  apps:
+
+    - app:
+      <<:                               *app_defaults
+
+    - app:
+      <<:                               *app_defaults

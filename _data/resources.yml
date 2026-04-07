@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023-2025 Juergen Adams
+# Copyright (C) 2023-2026 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
@@ -393,7 +393,7 @@ resources:
       pass_init_data:                   false
 
       data:
-        css:                            []
+        css:                            [ modules/bootstrap/css/bootstrap ]
         files:                          []
         js:                             [ modules/bootstrap/js/bootstrap ]
         init_function:                  []
@@ -495,33 +495,8 @@ resources:
         init_function:                  [ j1.adapter.logger.init ]
 
   # ----------------------------------------------------------------------------
-  # Backstretch, JS API to add responsive image|video content
-  # to J1 Top Headers
-  #
-  # See: https://github.com/jquery-backstretch/jquery-backstretch
-  #
-  - name:                               J1 Backstretch
-    resource:
-      enabled:                          true
-
-      id:                               backstretch
-      comment:                          Module Backstretch
-      region:                           head
-      layout:                           [ all ]
-      required:                         always
-      script_load:
-      dependencies:                     false
-      pass_init_data:                   false
-
-      data:
-        css:                            []
-        files:                          []
-        js:                             [ modules/backstretch/js/backstretch ]
-        init_function:                  []
-
-  # ----------------------------------------------------------------------------
-  # Top Header, JS implementaion to create top headers for J1 Theme
-  # based on the JS API jQuery Backstretch
+  # Implementaion to create top headers for J1 Theme  based on the JS API
+  # jQuery Backstretch API to add responsive image|video content.
   #
   # See: https://github.com/jquery-backstretch/jquery-backstretch
   #
@@ -539,9 +514,9 @@ resources:
       pass_init_data:                   true
 
       data:
-        css:                            []
+        css:                            [ modules/backstretch/css/attic ]
         files:                          [ adapter/js/attic.js ]
-        js:                             []
+        js:                             [ modules/backstretch/js/backstretch ]
         init_function:                  [ j1.adapter.attic.init ]
 
   # ----------------------------------------------------------------------------
@@ -1701,7 +1676,6 @@ resources:
   # ----------------------------------------------------------------------------
   # Masonry
   # Cascading grid layout library
-  #
   # See: https://github.com/desandro/masonry
   #
   - name:                               J1 Masonry
@@ -1718,11 +1692,11 @@ resources:
       pass_init_data:                   false
 
       data:
-        css:                            []
+        css:                            [ modules/masonry/css/theme/uno ]
         files:                          [ adapter/js/masonry.js ]
         js:                             [
                                           modules/masonry/js/masonry,
-                                          modules/masonry/js/utils/images_loaded
+                                          modules/masonry/js/util/images_loaded
                                         ]
         init_function:                  [ j1.adapter.masonry.init ]
 

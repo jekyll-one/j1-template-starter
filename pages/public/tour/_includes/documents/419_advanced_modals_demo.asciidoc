@@ -39,11 +39,11 @@
     <div class="modal-content">
       <!--Header-->
       <div class="modal-header">
-        <p class="lead">Modal Success</p>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <i class="mdi mdi-close mdi-dark mdi-48px"></i>
+        <p id="successModalLabel" class="modal-title lead mb-3" style="font-size: 1.5rem;font-weight: 400;">Modal Success</p>
+        <button id="closeSuccessModal" type="button" class="btn-close mb-3" data-bs-dismiss="modal" aria-label="Close">
         </button>
       </div>
+
       <!-- Body -->
       <div class="modal-body">
         <div class="text-center">
@@ -76,11 +76,11 @@
     <div class="modal-content">
       <!--Header-->
       <div class="modal-header">
-        <p class="lead">Modal Info</p>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <i class="mdi mdi-close mdi-dark mdi-48px"></i>
+        <p id="infoModalLabel" class="modal-title lead mb-3" style="font-size: 1.5rem;font-weight: 400;">Modal Info</p>
+        <button id="closeInfoModal" type="button" class="btn-close mb-3" data-bs-dismiss="modal" aria-label="Close">
         </button>
       </div>
+
       <!-- Body -->
       <div class="modal-body">
         <img src="/assets/image/module/attic/1920x1280/admin-dashboard-bootstrap.jpg" alt="admin-dashboard-bootstrap" class="img-fluid">
@@ -136,11 +136,12 @@
     <div class="modal-content">
       <!--Header-->
       <div class="modal-header">
-        <p class="lead">Modal Danger</p>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <i class="mdi mdi-close mdi-dark mdi-48px"></i>
+        <p id="dangerModalLabel" class="modal-title lead mb-3"
+        style="font-size: 1.5rem;font-weight: 400;">Modal Danger</p>
+        <button id="closeDangerModal" type="button" class="btn-close mb-3" data-bs-dismiss="modal" aria-label="Close">
         </button>
       </div>
+
       <!-- Body -->
       <div class="modal-body">
         <div class="row">
@@ -178,11 +179,12 @@
     <div class="modal-content">
       <!--Header-->
       <div class="modal-header">
-        <p class="lead">Modal Warning</p>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <i class="mdi mdi-close mdi-dark mdi-48px"></i>
+        <p id="warningModalLabel" class="modal-title lead mb-3"
+        style="font-size: 1.5rem;font-weight: 400;">Modal Warning</p>
+        <button id="closeWarningModal" type="button" class="btn-close mb-3" data-bs-dismiss="modal" aria-label="Close">
         </button>
-      </div>
+      </div>      
+
       <!-- Body -->
       <div class="modal-body">
         <div class="row">
@@ -222,11 +224,12 @@
     <div class="modal-content">
       <!--Header-->
       <div class="modal-header">
-        <p class="lead">Modal Success</p>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <i class="mdi mdi-close mdi-dark mdi-48px"></i>
+        <p id="successModalLabel2" class="modal-title lead mb-3"
+        style="font-size: 1.5rem;font-weight: 400;">Modal Success</p>
+        <button id="closeSuccessModal2" type="button" class="btn-close mb-3" data-bs-dismiss="modal" aria-label="Close">
         </button>
-      </div>
+      </div> 
+
       <!-- Body -->
       <div class="modal-body">
         <div class="text-center">
@@ -285,11 +288,12 @@
     <div class="modal-content">
       <!--Header-->
       <div class="modal-header">
-        <p class="lead">Modal Success</p>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <i class="mdi mdi-close mdi-dark mdi-48px"></i>
+        <p id="infoModalLabel2" class="modal-title lead mb-3"
+        style="font-size: 1.5rem;font-weight: 400;">Modal Info</p>
+        <button id="closeInfoModal2" type="button" class="btn-close mb-3" data-bs-dismiss="modal" aria-label="Close">
         </button>
-      </div>
+      </div>       
+
       <!-- Body -->
       <div class="modal-body">
         <div class="text-center">

@@ -1,0 +1,58 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/test_app.yml
+# Default configuration for J1 test app daten (deep_merge)
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 Test Daten
+  scope:                                User settings
+  location:                             _data/modules/test_apps.yml
+
+# ==============================================================================
+# User configuration settings
+# ==============================================================================
+#
+settings:
+
+  # ============================================================================
+  # All apps available
+  # ============================================================================
+  #
+  apps:
+
+  - app:
+    # --------------------------------------------------------------------------
+    # App 1 settings
+    #
+    enabled:                            true
+
+    app_id:                             app_1
+    controls:                           true
+
+    options:
+        autoplay:                       true
+        volume:                         0.8
+
+  - app:
+    # --------------------------------------------------------------------------
+    # App 2 settings
+    #
+#   enabled:                            false
+
+    app_id:                             app_2
+#   controls:                           true
+
+    options:
+        autoplay:                       false
+#        volume:                         0.8

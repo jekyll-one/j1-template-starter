@@ -21,7 +21,7 @@ categories:                             [ Tour ]
 tags:                                   [ Video, Module ]
 
 image:
-  path:                                 /assets/image/module/attic/1920x1280/alexander-shatov.jpg
+  path:                                 /assets/image/module/attic/1920x1280/modern-dance.jpg
   width:                                1920
   height:                               1280
 
@@ -40,12 +40,13 @@ resource_options:
       collapseDepth:                    3
   - attic:
       slides:
-        - url:                          /assets/image/module/attic/1920x1280/alexander-shatov.jpg
-          alt:                          Photo by Alexander Shatov on Unsplash
-          badge:
-            type:                       unsplash
-            author:                     Alexander Shatov
-            href:                       //unsplash.com/de/@alexbemore
+        - url:                          /assets/video/headers/present_videos/modern-dance.mp4
+          alt:                          AI generated video
+          title:                        Video Player
+          tagline:                      Playback Video
+          isVideo:                      true
+          mute:                         false
+#         loop:                         false
 ---
 
 // Page Initializer
@@ -68,8 +69,9 @@ resource_options:
 :ytp_best_2024:                         false
 :ytp_rhythm:                            false
 :ytp_sky_elements:                      true
+:ytp_hb:                                false
 :dm_video:                              false
-:vm_video:                              false
+:vm_video:                              true
 :masonry:                               true
 :justifiedGallery:                      true
 :dm_gallery:                            true
@@ -100,7 +102,7 @@ sources.
 ++++
 <div class="video-title">
   <i class="mdib mdib-clock-outline mdib-24px mr-2"></i>
-  {time-num--string} {time-en--string} {time-en--description}
+  {time-num--string} {time-en--string} {time-en--description}.
 </div>
 ++++
 
@@ -198,8 +200,17 @@ Sky Elements uses the night sky as a canvas on which anything is possible.
 A large group of Drones is painting lights in the sky to reflect the most
 captivating narratives. 
 
-.Sky Elements · AGT 2024
-youtube::cN8IrZUhPtc[poster="//img.youtube.com/vi/cN8IrZUhPtc/maxresdefault.jpg" role="mb-4"]
+.Sky Elements · AGT 2024 
+youtube::brEXrQBIj68[poster="//img.youtube.com/vi/brEXrQBIj68/maxresdefault.jpg" role="mb-4"]
+endif::[]
+
+ifeval::[{ytp_hb} == true]
+Sky Elements uses the night sky as a canvas on which anything is possible.
+A large group of Drones is painting lights in the sky to reflect the most
+captivating narratives. 
+
+.Hazel Brugger · Immer noch wach
+youtube::-w37wr0b6KE[poster="//img.youtube.com/vi/-w37wr0b6KE/maxresdefault.jpg" role="mb-4"]
 endif::[]
 
 

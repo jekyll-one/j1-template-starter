@@ -1,0 +1,218 @@
+---
+title:                                  J1 Gallery App
+title_extention:                        Selected Examples
+tagline:                                Selected Examples
+date:                                   2025-02-10
+#last_modified:                         2025-01-01
+
+description: >
+                                        The gallery module of the J1 Template offer a wide 
+                                        ange of complex functionality based on powerful open-source libraries, such as PhotoSwipeJS, LightGallery, SwiperJS, Masonry, and Justified-Gallery, to create so-called 
+                                        masonry-styled preview maps.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        image, picture, lightbox, masonry, gallery,
+                                        lightgallery, justifiedgallery
+
+categories:                             [ Tester ]
+tags:                                   [ Gallery App ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/simona-sergi.jpg
+  width:                                1920
+  height:                               1280
+
+compress:                               false
+regenerate:                             false
+personalization:                        true
+permalink:                              /pages/public/tools/tester/gallery_app/
+
+resources:                              [
+                                          gallery, lightgallery, masonry,
+                                          videojs, vimeo-player
+                                        ]
+resource_options:
+  - toccer:
+      collapseDepth:                    3
+  - attic:
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/simona-sergi.jpg
+          alt:                          Photo by Simona Sergi on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     Simona Sergi
+            href:                       https://unsplash.com/de/@i_am_simoesse
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Attribute settings for section control
+//
+:swiper--features:                      false
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+The Gallery module of the J1 Template offer a wide range of complex
+functionality based on powerful open-source libraries, such as PhotoSwipeJS,
+LightGallery, SwiperJS, Masonry, and Justified-Gallery, to create so-called 
+masonry-styled preview maps.
+
+[role="mt-5"]
+== Galleries for pictures
+
+The link:{url-justified-gallery--home}[JustifiedGallery, {browser-window--new}]
+is a great *jQuery Plugin* to create responsive, infinite, and high-quality
+justified image galleries. J1 Template combines the Gallery with the lightboxes
+supported to enlarge the images of a gallery.
+
+[role="mt-4"]
+[[justified-gallery-images]]
+=== Justified Gallery
+
+Pictures you've made are typically not even in size. Images may have the
+same size (resolution), but some are orientated landscapes, and others
+may be portraits. For that reason, a more powerful gallery is needed to
+create so-called *justified* views. J1 Gallery supports *Justified Gallery*
+to create so-called masonry grid layouts.
+
+.Gallery + lightGallery
+gallery::jg_old_times[role="mt-4 mb-4"]
+
+.lightGallery - Gallery or Lightbox
+[NOTE]
+====
+The name lightGallery implies a sort of a gallery, but the library is a
+*lightbox*, and provides enhannced functionality on image-based data rather
+than enlarged displaying of images.
+====
+
+A *justified* view works by placing elements in an optimal position based
+on available horizontal and vertical space, like fitting stones in a wall.
+For sure, you'll have seen it in action all over the Internet.
+
+.Gallery of Images + lightGallery
+gallery::jg_mega_cities[role="mt-4 mb-4"]
+
+[role="mt-5"]
+== Galleries for Videos
+
+lorem:sentences[5]
+
+[role="mt-4"]
+[[masonry-gallery-video]]
+=== Masonry  Gallery
+
+Masonry for J1 Template is a great tool for creating dynamic video galleries.
+The module makes creating a gallery to display videos of different types easy.
+
+.Mixed Video · Masonry + LightGallery
+masonry::mixed_video_example[role="mb-4"]
+
+
+[role="mt-4"]
+[[justified-gallery-video]]
+=== Justified Gallery
+
+The galley maker *justifiedGallery* in combination with the *lightbox*
+lightGallery is a great toolset for creating dynamic video galleries.
+The module combinati0n makes creating a gallery to access videos easy.
+
+
+[role="mt-4"]
+[[justified-gllery-local-video]]
+=== Local Video
+
+Videos created by a digicam or a mobile can be played by J1 Template using
+the lightGallery integration. Present videos you have made at it's best.
+
+[role="mb-5"]
+[NOTE]
+====
+The current file *size* of local video media files is limited to *50 MegaByte*.
+Using a modern MP4 Encoder for video compression, a video will play around
+*3-5 minutes* for HD 1080p (1920x1080 pixel) or up to *10 minutes* for
+HD 720p (1280x720 pixel).
+====
+
+.Local MP4 Video · Justified Gallery + LightGallery
+gallery::jg_video_html5[role="mb-4"]
+
+
+[role="mt-5"]
+[[justified-gllery-youtube]]
+=== YouTube
+
+The community at link:{url-youtube--home}[YouTube, {browser-window--new}]
+is large, with over 1 billion users that watch hundreds of millions of
+hours of content every day. The number of YouTube channels is enormous.
+Today, it's a must for TV stations or musicians to publish videos of their
+shows or songs on YouTube.
+
+.YouTube Video · justifiedGallery + LightGallery
+gallery::jg_video_youtube_james_and_adele[role="mb-4"]
+
+[role="mt-5"]
+=== Vimeo
+
+[role="mb-4"]
+link:{url-vimeo--home}[Vimeo, {browser-window--new}] is a video-sharing
+platform that includes features such as live-streaming and customization.
+Vimeo provides many tools for video creation, editing, and broadcasting.
+The platform enables the operators of websites to present high-quality,
+professional videos and reach audiences worldwide.
+
+[NOTE]
+====
+A plus using Vimeo is that *no advertising* is used on that platform. The
+visitors can focus on the video without being distracted.
+====
+
+[role="mt-4 mb-4"]
+Vimeo offers a basic free membership, but it limits you to 500MB of maximum
+weekly storage. Alternatively, you can book a paid plan: Plus, PRO, and
+Business. Each membership has varied storage limits, but the free plan
+offers sufficient space for private projects to present video content
+without advertising.
+
+.Forever 21 · Justified Gallery + LightGallery
+gallery::jg_video_online_vimeo[role="mb-4"]
+
+
+[role="mt-5"]
+=== Dailymotion
+
+link:{url-dailymotion--home}[Dailymotion, {browser-window--new}] is a
+video-sharing platform. The platform is available worldwide in 180+
+languages, featuring websites for their video content.
+
+The platform is a *monetization* solution that allows allows to directly
+connect to high-quality advertisers through a proprietary Advertising system.
+Like YouTube, videos can be watched for free, but ads are shown on each and
+every video.
+
+.SELF Chanel · Justified Gallery + LightGallery
+gallery::jg_video_online_dailymotion[role="mb-4"]
+
+
+
+

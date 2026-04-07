@@ -5,7 +5,7 @@
 # Product/Info:
 # http://jekyll.one
 #
-# Copyright (C) 2023-2025 Juergen Adams
+# Copyright (C) 2023-2026 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
@@ -394,6 +394,6 @@ end
 
 module Jekyll
   module J1LunrSearch
-    VERSION = '2024.3.29'
+    VERSION = '2026.0.2'
   end
 end

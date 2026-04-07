@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023-2025 Juergen Adams
+# Copyright (C) 2023-2026 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
@@ -245,101 +245,6 @@ settings:
           description: >
                                         <h2>South Korea</h2>
                                         <h3>Lotte World Tower Seoul</h3>
-
-
-      # ========================================================================
-      # VideoJS settings
-      # See settings: //jekyll.one/pages/public/manuals/videojs/videojs_api/
-      # ------------------------------------------------------------------------
-      #
-      videojs:
-        enabled:                        true
-        theme:                          uno
-
-        # ----------------------------------------------------------------------
-        # Player settings
-        # See: //jekyll.one/pages/public/manuals/videojs/lightgallery_api
-        # ----------------------------------------------------------------------
-        #
-        player:
-          enabled:                      true
-
-          # VideoJS
-          # --------------------------------------------------------------------
-          videojsPlayer:
-            enabled:                    true
-
-            options:
-              muted:                    false
-              preload:                  false
-              autoplayFirstVideo:       true
-              playbackRates:            [0.25, 0.5, 1, 1.5, 2]
-
-            controls:                   true
-            controlBar:
-              remainingTimeDisplay:     true
-              pictureInPictureToggle:   false
-              playbackRates:            [0.25, 0.5, 1, 1.5, 2]
-
-              volumePanel:
-                inline:                 false
-
-              hotkeysPlugin:
-                enabled:                true
-                options:
-                  volumeStep:           0.2
-
-              skipButtonsPlugin:
-                enabled:                  true
-                options:
-                  forward:                15
-                  backward:               15
-
-              zoomButtonsPlugin:
-                enabled:                true
-                options:
-                  moveX:                0
-                  moveY:                0
-                  rotate:               0
-                  zoom:                 1
-
-          # Vimeo
-          # --------------------------------------------------------------------
-          vimeoPlayer:
-            enabled:                    true
-            api:                        native                                  # native|videojs
-
-            options:
-              autoPlay:                 true
-              muted:                    true
-  #             byline:                   0
-  #             portrait:                 0
-  #             color:                    var(--md-gray-100)
-
-
-          # Wistia
-          # --------------------------------------------------------------------
-          wistiaPlayer:
-            enabled:                    true
-            api:                        native                                  # native|videojs
-
-            options:
-              autoPlay:                 true
-              fullscreenButton:         true
-              muted:                    false
-              qualityControl:           false
-
-          # Youtube
-          # --------------------------------------------------------------------
-          youTubePlayer:
-            enabled:                    true
-            api:                        videojs                                 # native|videojs
-
-            options:
-              autoPlay:                 true
-              muted:                    true
-              showinfo:                 true
-              controls:                 true
 
     # ==========================================================================
     # Video Galleries

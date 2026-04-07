@@ -1,0 +1,149 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/skipad.yml
+# Default configuration settings for J1 SkipAd module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 SkipAd
+  scope:                                Default settings
+  location:                             _data/modules/defaults/skipad.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
+
+  smoothScroll:
+    enabled:                            true
+
+  toolbox:
+    enabled:                            false
+
+  playlist:
+    enabled:                            true
+
+    search:
+      enabled:                          true
+
+    sort:
+      enabled:                          true
+
+    loop:
+      enabled:                          true
+      pip:                              false
+
+    type:                               cards                                   # list | cards
+
+    cards:
+      perRow:                           4
+
+  # ----------------------------------------------------------------------------
+  # MODULE options
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # videoJS settings
+  # ----------------------------------------------------------------------------
+  videoJS:
+
+    autoStart:                          true
+    preloadVideo:                       true
+
+    # --------------------------------------------------------------------------
+    # videoJS settings
+    # --------------------------------------------------------------------------
+    playbackRates:
+      enabled:                          true
+      values:                           [ 0.25, 0.5, 1, 1.5, 2 ]
+
+    # --------------------------------------------------------------------------
+    # videoJS Player (Tech) settings
+    # --------------------------------------------------------------------------
+    players:
+
+      youtube:
+
+        # players parameters
+        #
+        autoplay:                       true
+        cc_load_policy:                 0                                       # captions are initially hidden
+        controls:                       0
+        disablekb:                      1
+        enablejsapi:                    1    
+        fs:                             0
+        iv_load_policy:                 3                                       # video annotations not shown
+        loop:                           0
+        modestbranding:                 1
+        rel:                            0
+        showinfo:                       0
+
+        # video parameters
+        #
+        default_poster:                 /assets/image/icon/videojs/videojs-poster.png
+        poster:                         maxresdefault.jpg                       # poster taken from YT at highest resolution
+        end:                            true                                    # set end (of a video) allowed
+        start:                          true                                    # set start (of a video) allowed
+
+    # --------------------------------------------------------------------------
+    # videoJS Plugin settings
+    # --------------------------------------------------------------------------
+    plugins:
+
+      autoCaption:
+        enabled:                        false
+
+      hotKeys:
+        enabled:                        false
+
+        seekStep:                       15
+        volumeStep:                     0.1
+        
+        alwaysCaptureHotkeys:           true
+        captureDocumentHotkeys:         false                                   # Capture document keydown events even if the player does not have focus (default: false)
+        hotkeysFocusElementFilter:      'function () { return false }'          # default
+        enableFullscreen:               true
+        enableHoverScroll:              true
+        enableInactiveFocus:            true
+        enableJogStyle:                 false                                 
+        enableMute:                     true
+        enableModifiersForNumbers:      true
+        enableNumbers:                  false
+        enableVolumeScroll:             true
+        skipInitialFocus:               false                                   # stops focusing the player on initial Play (default: false)
+
+      skipButtons:
+        enabled:                        true
+        surroundPlayButton:             true
+        
+        backwardIndex:                  1
+        forwardIndex:                   1
+        forward:                        10
+        backward:                       10
+
+      zoomButtons:
+        enabled:                        false
+
+        moveX:                          0
+        moveY:                          0
+        rotate:                         0
+        zoom:                           1
+
+# ------------------------------------------------------------------------------
+# END config

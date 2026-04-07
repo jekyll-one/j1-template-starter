@@ -1,11 +1,11 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/defaults/gallery_app.yml
+# ~/_data/modules/defaults/gallery.yml
 # Default configuration for J1 justifiedGallery (jg)
 #
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023-2025 Juergen Adams
+# Copyright (C) 2023-2026 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
@@ -63,8 +63,9 @@ defaults:
   # ----------------------------------------------------------------------------
   # justifiedGallery settings
   #
-  rowHeight:                            250
-  gutters:                              3
+  gallerySettings:
+    rowHeight:                            150
+    gutters:                              1
 
   # ----------------------------------------------------------------------------
   # Lightbox settings

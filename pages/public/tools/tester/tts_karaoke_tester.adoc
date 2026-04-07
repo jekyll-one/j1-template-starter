@@ -1,0 +1,258 @@
+---
+title:                                  Speak2Me
+title_extention:                        TTS Highlighting
+tagline:                                Test TTS Highlighting
+
+date:                                   2024-02-08
+#last_modified:                         2023-01-01
+
+description: >
+                                        The search option for the J1 Template is based on the
+                                        search engine Lunr and is fully integrated with the template.
+                                        Lunr is designed to be lightweight yet full-featured to provide
+                                        users with a great search experience. Using Lunr for a Jekyll
+                                        website, there is no need to integrate complex external,
+                                        server-sided search engines like Google or Bing.
+
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        lunr, site search, quick search, find,
+                                        google, bing
+
+categories:                             [ Roundtrip ]
+tags:                                   [ Module, Site search ]
+
+image:
+  path:                                 /assets/image/module/attic/lunr-1280x800.jpg
+  width:                                1920
+  height:                               1280
+
+regenerate:                             false
+permalink:                              /pages/public/speak2me_hl_test_doc/
+
+resources:                              [ gallery, lightgallery ]
+resource_options:
+  - attic:
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/markus-spiske.jpg
+          alt:                          Audio Transcription
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:time-num--string:                      5-10
+:time-en--string:                       Minutes
+:time-en--description:                  to read
+:time-de--string:                       Minuten
+:time-de--description:                  Lesezeit
+:lunrjs--home:                          //lunrjs.com
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sentence no 1. Sentence no 2. Sentence no 3.
+
+// [role="dropcap"]
+// The search option for J1 Template is based on Lunar, a great search engine.
+
+// Eins. Zwei. Drei.
+
+// [role="dropcap"]
+// The search option for J1 Template is based on Lunar, a great search engine.
+// Lunar, written by Oliver Nightingale in Javscript, is fully integrated with
+// the template system. The engine is designed to be small in code size yet
+// full-featured to provide users with a great search experience.
+
+// *Lunar*, written by link:{lunrjs--home}[Oliver Nightingale, {browser-window--new}]
+// in Javscript, is fully integrated with the template system. The engine is
+// designed to be small in code size yet full-featured to provide users with a
+// great search experience.
+
+// Necessary data is stored in cookies to enable the basic services of this site
+// to operate. This website does not keep records of their use. All information
+// data necessary to control this page are stored in so-called session cookies.
+// Session cookies are automatically removed from your browser when you have
+// closed all the tabs in your browser.
+
+// Necessary::
+// Necessary data is stored in cookies to enable the basic services of this site
+// to operate. This website *does not keep records* of their use. All information
+// data necessary to control this page are stored in so-called *session cookies*.
+// Session cookies are *automatically* removed from your browser when you have
+// *closed* all the tabs in your browser.
+
+// Analyses::
+// Analyzing the use of this website helps us to improve your user experience of
+// the website to optimize. Google Analytics GA is used for the analysis. This
+// site does not transmit any personal data. Implicit personal data such as
+// IP addresses are *anonymized* to protect your privacy.
+
+// For J1 Template, different lightbox modules are available:
+
+// * PhotoSwipeJS, the default
+// * lightGallery, optional lightbox
+
+// Two types of video sources are supported:
+
+// * Video from local folders from your webspace.
+// * Video from online sources like YouTube.
+
+// .Gallery + lightGallery
+// gallery::jg_old_times[role="mt-4 mb-4"]
+
+// [role="mt-4"]
+// "Don't do stupid things twice. The selection is too big for that."
+// -- Jean-Paul Sartre
+
+[subs=attributes]
+++++
+<div class="video-title">
+  <p>
+    <i class="mdib mdib-clock-outline mdib-24px mr-2"></i>
+    {time-num--string} {time-en--string} {time-en--description}.
+  </p>
+</div>
+++++
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+// [role="mt-5"]
+// == Github Gist
+
+// Code snippets may helpful to support your readers for existing code examples.
+// An excellent place for code snippets is  at Github. To embed an existing
+// gist into your documents, the Asciidoc Extention *Gist block* provides the
+// block macro `gist::` to do so.
+
+// The following *Gist* snippet is taken from this
+// link:{url-asciidoc-extensions--gist-example}[example, {browser-window--new}]:
+
+// [source, prometheus, role="noclip"]
+// ----
+// .Gist title
+// gist::git_address[]
+// ----
+
+// .Example of a gist block
+// [source, text, role="noclip"]
+// ----
+// .Guard setup to live preview AsciiDoc output
+// gist::mojavelinux/5546622[]
+// ----
+
+// [.result]
+// ====
+// .Guard setup to live preview AsciiDoc output
+// gist::mojavelinux/5546622[]
+// ====
+
+[role="mt-4"]
+== Introduction
+
+Using the J1 Search module for a website, it is *not* longer needed to
+integrate complex external search engines like _Bing_ or _Google_ into your
+web. Searching a website using QuickSearch is s little different from Internet
+search engines.
+
+[NOTE]
+====
+The document content is collected from the HTML body element `<body>`.
+To limit the size of the index data loaded by the browser, the bodys'
+content is removed from the document source, but the *content* is still
+fully searchable.
+====
+
+Search platforms are using complex algorithms to provide a simple interface
+but require a lot of artificial intelligence methods to make sense out of a
+handful of words given for a search and to inject advertising elements for
+their customers.
+
+Nevertheless, the J1 implementation of Lunar, is simple like searching at
+_Google_ or _Bing_ but offers additional features to do searches more
+specifically. QuickSearch provides an easy-to-use query language for better
+results with no advertising included.
+
+[role="mt-4"]
+== Core concepts
+
+Understanding some of the concepts and terminology that search engine of
+J1 Template, will allow users to provide powerful search expressions to get
+more relevant search results.
+
+[role="mt-4"]
+=== Indexing documents
+
+QuickSearch offers searches on *all* documents of the website generated by J1.
+Advantage: no internet access is needed for searches. Searches are based on a
+pre-build local *full-text* index loaded by the browser for all pages. The
+index for a site is generated by the Jekyll index plugin `lunr_index.rb`
+located in the plugins folder `_plugins`.
+
+[NOTE]
+====
+The full-text index for the search engine is always generated by Jekyll
+at *build-time.*
+====
+
+[role="mt-4"]
+=== Documents
+
+The searchable data in an index is organized as documents containing the
+text and the words you want to search on. A document is a JSON-based data set
+with fields that are processed to create the result list for a search.
+
+
+In this document, there are several fields, like *title*, *tagline*, or
+*description*, that could be used for full-text searches. But additional
+fields are available, like *tags* or *categories* that can be used for
+more specific searches.
+
+To do a simple full-text search as well as more specific searches, the
+search core engine *Lunar* offers a query language, a DSL (domain-specific
+language). Find more about *QuickSearch|Lunr DSL* queries with the section
+<<Searching>>.
+
+[role="mt-4"]
+=== Scoring
+
+The relevance, the *score*, is calculated based on an algorithm called *BM25*,
+along with other factors. You don't need to worry too much about the details
+of how this technique works. To summarize: the more a search term occurs in
+a document, the more that term will increase that documents' score, but th
+more a search term occurs in the *overall* collection of documents, the less
+that term will increase a document's score. In other words: seldom words count
+and increase the score.
+
+Scoring information generated by the BM25 algorithm is added to the search
+index and allows a very fast calculation of the relevance of documents
+for queries.
+
+Imagine you're website contains documents about Jekyll. The term *Jekyll*
+may occur very frequently throughout the entire website. Used quite often
+for the content. So finding a document that mentions the term Jekyll isn't
+very significant for a search.
+
+However, if you're searching for *Jekyll Generator*, only some documents of
+the website has the word *Generator* in them, and that will bring the score,
+the relevance, for documents having both words in them at a higher level,
+and bring them higher up in the search results.
+
+Matching and scoring are used by all search engines - the same as for J1
+QuickSearch. You'll see for QuickSearch a similar behavior in *sorting*
+search results as you already know from commercial internet search engines
+like Google: the top results are the more relevant ones.

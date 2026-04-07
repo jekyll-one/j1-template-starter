@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023-2025 Juergen Adams
+# Copyright (C) 2023-2026 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
@@ -23,6 +23,13 @@ description:
 # User configuration settings
 #
 settings:
+
+  postSelectionCallback:                j1.adapter.cookieConsent.cbCookie       # called after the user has made his selection
+
+  # claude - pass options to postSelectionCallback callback function
+  # ----------------------------------------------------------------------------
+  reloadPageOnChange:                   true                                    # reload current page if user settings has been changed
+  expireCookiesOnRequiredOnly:          true
 
   # ----------------------------------------------------------------------------
   # GENERAL options

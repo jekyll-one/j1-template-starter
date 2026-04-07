@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023-2025 Juergen Adams
+# Copyright (C) 2023-2026 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
@@ -36,27 +36,24 @@ defaults:
   translationEnabled:                   false
   hideTranslatorIcon:                   false                                   # hide translator icon if translation not allowed (cookie consent)
   disableLanguageSelector:              false                                   # disable language dropdown for translation in dialog (modal)
-  translationLanguage:                  en                                      # 'auto'|detect translation language from browser
   translatorLanguagesFile:              /assets/data/iso-639-language-codes-flags.json
   translatorLanguages:                  translator-languages                    # languages supported by the translator taken from "translatorLanguagesFile"
   translateAllPages:                    true                                    # enable translation for all pages
   reloadPageOnChange:                   true                                    # reload current page if user settings has been changed
-
   contentURL:                           /assets/data/translator                 # dialogs (modals) for all supported translators|languages
-  contentLanguage:                      auto                                    # auto | one of 'translationLanguages'
-  dialogLanguage:                       auto                                    # auto|content|one of dialogLanguages
-  dialogLanguages:                      [en, de]                                # supported dialog (modal) languages, defaults to FIRST language defined
-  cookieName:                           j1.user.translate                       # name of the user translation cookie (primary data)
+  translationLanguages:                 ['en', 'de', 'es', 'fr', 'it']          # supported languages for translation
+  defaultLanguage:                      'en'                                    # default language of the website (documents)
+  translatorLocalStorageKey:            user_translate                          # name of the key in localsorage for user translation data
   cookieConsentName:                    j1.user.consent                         # name of the Cookie Consent Cookie (secondary data)
   xhrDataElement:                       google-data                             # container for the language-specific modal (taken fromcontentURL)
-  dialogContainerID:                    translator-dialog                       # container, the dialog modal is (dynamically) loaded
+  dialogContainerID:                    modal-google-translate                  # container, the dialog modal is (dynamically) loaded  
+  postSelectionCallback:                j1.adapter.translator.cbGoogle          # callback to run the translation
 
 # ------------------------------------------------------------------------------
 # Default Google Translator settings
 #
   google:
 
-    postSelectionCallback:              j1.adapter.translator.cbGoogle          # callback to run the translation
     hideSuggestionBox:                  true                                    # disable suggestions on translated text
     hidePoweredBy:                      true                                    # disable label "Powered by Google"
     hideTopFrame:                       true                                    # disable the (google) translator frame
@@ -77,69 +74,37 @@ defaults:
                                         ]
     modal_settings:
 
-      title:                            Google Übersetzer
+      title:                            Google Translator
       body_text: >
-                                        Diese Website nutzt den <b>kostenlosen</b> Dienst <b>Google Translator</b>
-                                        Übersetzen Sie den Inhalt dieser Website in Sekundenschnelle in über 100 Sprachen.
-                                        Die zu übersetzende Sprache wird automatisch von Ihrem Browser übernommen
-                                        Einstellungen.
+                                        This website uses the <b>free</b> service <b>Google Translate</b>
+                                        to translate its content into a different language in no time.
+                                        The translation language is taken from your selection below.
       language_selector_title: >
-                                        Ihre aktuellen Spracheinstellungen für die Übersetzung sind
+                                        Your current language setting
       privacy_notice: >
-                                        Der <b>kostenlose Dienst</b> von Google Translate verwendet zur Bereitstellung Cookies
-                                        seine Dienste, personalisieren Werbung und führen Verkehrsanalysen durch
-                                        Für die Nutzung von Cookies ist Ihre Einwilligung erforderlich. Weitere Informationen finden Sie hier
-                                        etwa bei Google
-                                        <a href="https://policies.google.com/" target="_blank" rel="noopener">Datenschutzerklärung</a>.
+                                        The <b>free service</b> from Google Translate uses cookies to provide
+                                        its services, personalize advertising, and run traffic analysis.
+                                        To use the service, you must consent to the use of cookies. Find more
+                                        information about at the Google
+                                        <a href="https://policies.google.com/" target="_blank" rel="noopener">Privacy Policy</a>.
                                         <br><br>
-                                        Erforderliche Cookie-Einstellungen:
+                                        Required Cookie Settings:
                                         <ul>
                                           <li style="list-style-type: none;">
-                                            <b>Analyse</b>
+                                            <b>Analysis</b>
                                             <p>
-                                              Für die Nutzung von Google Translations ist Ihre Einwilligung zur Analyse erforderlich
-                                              in den Datenschutzeinstellungen ist erforderlich.
+                                              For Google Translate, you must enable analysis in your
+                                              privacy settings.
                                             </p>
                                           </li>
                                           <li style="list-style-type: none;">
-                                            <b>Personalisierung</b>
+                                            <b>Personalization</b>
                                             <p>
-                                              Für die Nutzung von Google Translations ist Ihre Einwilligung zur Personalisierung erforderlich
-                                              in den Datenschutzeinstellungen ist erforderlich.
+                                              For Google Translate, you must enable personalization in your
+                                              privacy settings.
                                             </p>
                                           </li>
                                         </ul>
-
-  # ------------------------------------------------------------------------------
-  # Default Deepl Translator settings (currently NOT supported)
-  #
-  # deepl:
-  #
-  #   postSelectionCallback:            j1.adapter.translator.cbDeepl()         # currently NOT used
-  #   translationLanguages:             [
-  #                                       bg, cs, da, de, el, es, en, en-us,
-  #                                       en-uk, et, ft, fr, hu, it, ja, lv,
-  #                                       lt, nl, af, pt, pt-pt, pt-br, ro,
-  #                                       ru, sk, sl, sv, zh-CN, zh-TW
-  #                                     ]
-  #
-  #   modal_settings:
-  #
-  #     title:
-  #       en:                           Deepl Translator
-  #       de:                           Deepl Übersetzer
-  #
-  #     body_text:
-  #       en:
-  #       de:
-  #
-  #     language_selector_title:
-  #       en:
-  #       de:
-  #
-  #     privacy_notice:
-  #       en:
-  #       de:
 
 # ------------------------------------------------------------------------------
 # END config

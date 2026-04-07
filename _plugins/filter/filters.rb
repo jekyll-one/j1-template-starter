@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023-2025 Juergen Adams
+# Copyright (C) 2023-2026 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
@@ -70,16 +70,43 @@ module Jekyll
     ADOC_INLINE_COMMENT = /^\s*(\/\/.*$)/
 
     # --------------------------------------------------------------------------
-    #  merge: merge two hashes (input <- hash)
+    #  merge: merge TWO (nested) hashes (input <- hash)
     #
     #  Example:
-    #   {% assign settings = options|merge:defaults %}
+    #   {% assign settings = options | merge: prodA %}
     # --------------------------------------------------------------------------
     def merge(input, hash)
       unless input.respond_to?(:to_hash)
+        is_caller = caller[0][/`([^']*)'/, 1]
+        raise ArgumentError.new(
+          "merge: requires at least a hash for the 1st arg, " \
+          "for #{is_caller}|#{input.inspect}"
+        )
+      end
+
+      # early return on invalid hash
+      return input unless hash.respond_to?(:to_hash) && !hash.nil? && !hash.empty?
+
+      merged = input.dup
+      hash.each do |k, v|
+        if merged[k].respond_to?(:to_hash) && v.respond_to?(:to_hash)
+          # Rekursiv mergen bei nested Hashes
+          merged[k] = merge(merged[k], v)
+        else
+          merged[k] = v
+        end
+      end
+      merged
+    end
+
+    def merge_old(input, hash)
+      unless input.respond_to?(:to_hash)
         # value = input == EMPTY ? 'empty' : input
         is_caller = caller[0][/`([^']*)'/, 1]
-        raise ArgumentError.new('merge filter requires at least a hash for 1st arg, found caller|args: ' + "#{is_caller}|#{input}:#{hash}")
+        raise ArgumentError.new(
+          "merge: requires at least a hash for the 1st arg, " \
+          "for #{is_caller}|#{input.inspect}"
+        )
       end
       # if hash to merge is NOT a hash or empty return first hash (input)
       unless hash.respond_to?(:to_hash)
@@ -93,6 +120,69 @@ module Jekyll
           merged[k] = v
         end
         merged
+      end
+    end
+
+    # --------------------------------------------------------------------------
+    #  deep_merge: merge MULTIPLE (nested) hashes (input <- hash*)
+    #
+    #  Example:
+    #   {% assign settings = defaults | deep_merge: prodA, prodB %}
+    # --------------------------------------------------------------------------
+    def deep_merge(input, *hashes)
+      unless input.respond_to?(:to_hash)
+        is_caller = caller[0][/`([^']*)'/, 1]
+        raise ArgumentError.new(
+          "deep_merge: requires at least a hash for the 1st arg, " \
+          "for #{is_caller}|#{input.inspect}"
+        )
+      end
+
+      # start by a deep copy of the defaults hash
+      result = deep_clone(input)
+
+      # merge all subsequent hashes one after the other
+      # later values ​​overwrite earlier values
+      hashes.each do |hash|
+        next if hash.nil?
+        deep_merge_into!(result, hash)
+      end
+
+      result
+    end
+
+    def deep_merge_into!(target, source)
+      source.each do |key, value|
+        if value.is_a?(Hash) && target[key].is_a?(Hash)
+          # both are hashes - merge recursively
+          deep_merge_into!(target[key], value)
+        else
+          # production value overrides default value
+          target[key] = deep_clone(value)
+        end
+      end
+
+      target
+    end
+
+    def deep_clone(value)
+      case value
+      when Hash
+        value.each_with_object({}) { |(k, v), h| h[k] = deep_clone(v) }
+      when Array
+        value.map { |v| deep_clone(v) }
+      else
+        # secure duplication for duplicable value types
+        if value.respond_to?(:dup) && 
+          !value.is_a?(Symbol) && 
+          !value.is_a?(Numeric) && 
+          !value.is_a?(TrueClass) && 
+          !value.is_a?(FalseClass) && 
+          !value.nil?
+          value.dup
+        else
+          value
+        end
       end
     end
 
