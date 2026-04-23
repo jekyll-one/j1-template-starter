@@ -30,9 +30,8 @@ regenerate:                             false
 permalink:                              /pages/public/tour/image_data/
 
 resources:                              [
-                                          gallery, lightbox, lightgallery,
+                                          gallery, lightbox3, lightgallery,
                                           masonry, photoswipejs, swiperjs
-#                                         videojs, vimeo-player
                                         ]
 resource_options:
   - toccer:
@@ -104,7 +103,8 @@ support such functionality.
 
 For J1 Template, different lightbox modules are available:
 
-* PhotoSwipeJS (default)
+* Lightbox V3  (default)
+* PhotoSwipeJS (optional)
 * lightGallery (optional)
 
 The *default* tool employed by J1 Template is PhotoSwipeJS, a Javascript
@@ -132,7 +132,7 @@ under the link:{url-j1-docs--lightbox-module}[Lightbox module, {browser-window--
 ====
 
 [role="mt-5"]
-=== Lightboxes
+=== Lightbox V3
 
 Find below an example of using the the default lightbox used for standalone
 images. See how individual images are linked.
@@ -146,26 +146,6 @@ group below to see how a group is managed.
 .Lightbox for grouped images
 lightbox::example-group[395, {data-images-lightbox--group}, group, role="mt-4 mb-4 wm-800"]
 
-
-[role="mt-5"]
-=== lightGallery
-
-The J1 Gallery module *LightGallery* provides much more complex image data
-functions than the default lightbox. The module supports a **gallery**-style
-thumbnail preview, image resizing, a download dialog, sharing provider support,
-and more helpful features. Check what LightGallery can do with the following
-example.
-
-.Gallery + lightGallery
-gallery::jg_old_times[role="mt-4 mb-4"]
-
-.lightGallery - Gallery or Lightbox
-[NOTE]
-====
-The name lightGallery implies a sort of a gallery, but the library is a
-*lightbox*, and provides enhannced functionality on image-based data rather
-than enlarged displaying of images.
-====
 
 [role="mt-5"]
 == J1 Slider
@@ -335,13 +315,31 @@ swiper::swiper_image_panorama[role="mt-4 mb-5"]
 
 
 [role="mt-5"]
-== Masonry Gallery
+== J1 Galleries
+
+A J1 Gallery is a collection of images (or videos) displayed together. It
+helps display products, portfolios, or events in a visually appealing,
+easy-to-explore way. Visitors can view, zoom in, or swipe through the visuals,
+making the experience more engaging.
+
+Find examples of available galleries suppoerted by J1-Template: 
+
+* **Grid**-styled Galleries
+* **Masonry**-styled Galleries
+
+The difference between a **Grid**-styled gallery and a **Masonry**-styled
+gallery is how they handle image height and alignment. While a *grid* forces
+a *uniform structure*, *masonry* allows images to retain their natural
+proportions, creating a *brick wall* effect. 
+
+[role="mt-4"]
+=== Grid-styled Gallery
 
 Masonry for J1 is a great tool to create dynamic image galleries. Image
 galleries are popular on many websites, and masonry can be a useful tool for
 creating dynamic galleries.
 
-[role="mt--3 mb-4"]
+[role="mt-3 mb-4"]
 [TIP]
 ====
 See the gallery in action; and for sure, all that you see is even responsive.
@@ -358,12 +356,11 @@ The elements are placed in optimal positions according to the available
 vertical space, creating columns of varying heights based on the natural
 height of the contents.
 
-.Grid of Images
+.Grid-styled Image Gallery
 masonry::image_fixed_height_lb[role="mt-4 mb-5"]
 
-
-[role="mt-5"]
-== Justified Gallery
+[role="mt-4"]
+=== Masonry-styled Gallery
 
 The link:{url-justified-gallery--home}[JustifiedGallery, {browser-window--new}]
 is a great *jQuery Plugin* to create responsive, infinite, and high-quality
@@ -385,7 +382,7 @@ It works by placing elements in an optimal position based on available
 horizontal and vertical space, like fitting stones in a wall. For sure,
 you'll have seen it in action all over the Internet.
 
-.Gallery of Images + lightGallery
+.Masonry-styled Image Gallery
 gallery::jg_mega_cities[role="mt-4 mb-4"]
 
 
@@ -407,5 +404,4 @@ QuickTime or Silverlight is no longer needed, as the J1 Theme provides
 HTML5 video support for both local content and online sources on the
 Internet.
 
-[role="mb-7"]
 Incredible? See the next example page link:{url-tour--audio_data}[Audio Player].

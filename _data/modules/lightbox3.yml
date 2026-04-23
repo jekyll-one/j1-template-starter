@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/docsearch.yml
-# User configuration settings for J1 DocSearch integration
+# ~/_data/modules/lightbox.yml
+# User configuration for J1 Lightbox
 #
 # Product/Info:
 # https://jekyll.one
@@ -15,12 +15,12 @@
 # Description
 #
 description:
-  title:                                J1 DocSearch
+  title:                                Lightbox
   scope:                                User settings
-  location:                             _data/modules/docsearch.yml
+  location:                             _data/modules/lightbox.yml
 
 # ------------------------------------------------------------------------------
-# Default settings
+# User configuration settings
 #
 settings:
 
@@ -28,23 +28,13 @@ settings:
   # GENERAL options
   # ----------------------------------------------------------------------------
   #
-  enabled:                              false
+  enabled:                              true
 
-  # Provider settings
   # ----------------------------------------------------------------------------
-  provider_settings:
-    provider_id:                        <your-provider_id>
-    bot_id:                             <your-bot_id-id>
-
-  # Bot settings
+  # Lightbox options
   # ----------------------------------------------------------------------------
-  bot_settings:
-    iframe:
-      title:                            J1 DocSearch
-      height:                           400
-      width:                            100%
-      scrolling:                        no
-      style:                            "border: none; background: white;"
+  # backdrop:
+  #   click:                              keep
 
 # ------------------------------------------------------------------------------
 # END config

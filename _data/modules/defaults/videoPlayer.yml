@@ -1,0 +1,156 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/videoPlayer.yml
+# Default configuration settings for J1 VideoPlayer module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+# claude - change skipAd API to local files #1
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 VideoPlayer
+  scope:                                Default settings
+  location:                             _data/modules/defaults/videoPlayer.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
+
+  smoothScroll:
+    enabled:                            true
+
+  toolbox:
+    enabled:                            false
+
+  playlist:
+    enabled:                            true
+
+    search:
+      enabled:                          true
+
+    sort:
+      enabled:                          true
+
+    loop:
+      enabled:                          true
+      pip:                              false
+
+    type:                               cards                                   # list | cards
+
+    cards:
+      perRow:                           4
+
+  # ----------------------------------------------------------------------------
+  # MODULE options
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # videoJS settings
+  # ----------------------------------------------------------------------------
+  videoJS:
+
+    autoStart:                          true
+    preloadVideo:                       true                                    # preload: 'auto' | 'metadata' | 'none'
+
+    # --------------------------------------------------------------------------
+    # videoJS playback rate settings
+    # --------------------------------------------------------------------------
+    playbackRates:
+      enabled:                          true
+      values:                           [ 0.25, 0.5, 1, 1.5, 2 ]
+
+    # --------------------------------------------------------------------------
+    # videoJS native (HTML5) player settings
+    # --------------------------------------------------------------------------
+    # claude - change skipAd API to local files #1
+    # Replaced YouTube player tech with native HTML5 video.js player.
+    # All YouTube-specific parameters (cc_load_policy, disablekb, enablejsapi,
+    # modestbranding, rel, showinfo, etc.) have been removed.
+    # --------------------------------------------------------------------------
+    players:
+
+      native:
+
+        # player parameters
+        #
+        autoplay:                       false                                   # true | false | 'muted' | 'play' | 'any'
+        controls:                       true
+        fluid:                          true                                    # responsive, fills container width
+        fill:                           false                                   # stretch to container dimensions
+        responsive:                     true
+        preload:                        auto                                    # auto | metadata | none
+        playsinline:                    true                                    # prevent fullscreen on iOS by default
+
+        # video parameters
+        #
+        default_poster:                 /assets/image/icon/videojs/videojs-poster.png
+        poster:                         poster.jpg                             # local poster image (same folder as video)
+        end:                            true                                    # set end (trim) of a video allowed
+        start:                          true                                    # set start (trim) of a video allowed
+
+        # source type priorities (tried in order)
+        #
+        sourceOrder:                    [ mp4, webm, ogv ]
+
+    # --------------------------------------------------------------------------
+    # videoJS Plugin settings
+    # --------------------------------------------------------------------------
+    plugins:
+
+      autoCaption:
+        enabled:                        false
+
+      hotKeys:
+        enabled:                        false
+
+        seekStep:                       15
+        volumeStep:                     0.1
+
+        alwaysCaptureHotkeys:           true
+        captureDocumentHotkeys:         false                                   # Capture document keydown events even if the player does not have focus (default: false)
+        hotkeysFocusElementFilter:      'function () { return false }'          # default
+        enableFullscreen:               true
+        enableHoverScroll:              true
+        enableInactiveFocus:            true
+        enableJogStyle:                 false
+        enableMute:                     true
+        enableModifiersForNumbers:      true
+        enableNumbers:                  false
+        enableVolumeScroll:             true
+        skipInitialFocus:               false                                   # stops focusing the player on initial Play (default: false)
+
+      skipButtons:
+        enabled:                        true
+        surroundPlayButton:             true
+
+        backwardIndex:                  1
+        forwardIndex:                   1
+        forward:                        10
+        backward:                       10
+
+      zoomButtons:
+        enabled:                        false
+
+        moveX:                          0
+        moveY:                          0
+        rotate:                         0
+        zoom:                           1
+
+# ------------------------------------------------------------------------------
+# END config

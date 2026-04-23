@@ -37,8 +37,6 @@ settings:
 
     # --------------------------------------------------------------------------
     # POSTS
-    # claude - optimization chances #5
-    # Fix: removed stray period in section separator
     # --------------------------------------------------------------------------
 
     # --------------------------------------------------------------------------
@@ -94,8 +92,6 @@ settings:
 
     # --------------------------------------------------------------------------
     # COLLECTIONS
-    # claude - optimization chances #5
-    # Fix: removed stray period in section separator
     # --------------------------------------------------------------------------
 
     # --------------------------------------------------------------------------
@@ -280,8 +276,6 @@ settings:
 
     # --------------------------------------------------------------------------
     # IMAGES
-    # claude - optimization chances #5
-    # Fix: removed stray period in section separator
     # --------------------------------------------------------------------------
 
     # --------------------------------------------------------------------------
@@ -315,6 +309,8 @@ settings:
       lightbox:
         enabled:                        true
         type:                           lb                                      # lb | lg
+        sw-width:                       1920
+        sw-height:                      1280
 
       # ------------------------------------------------------------------------
       # caption options
@@ -525,8 +521,6 @@ settings:
           file:                         thomas-tucker_b.jpg
           caption:                      Sunset over Taipei City - Taiwan
 
-        # claude - optimization chances #5
-        # Fix: corrected duplicate comment numbering (was "image 2")
         # image 3
         - image:
           file:                         emmad-mazhari_b.jpg
@@ -537,8 +531,6 @@ settings:
           file:                         johan-mouchet_b.jpg
           caption:                      The Queen Bee at the Eureka Tower - Melbourne Southbank Australia
 
-        # claude - optimization chances #5
-        # Fix: corrected indentation (was 7 spaces, should be 8)
         # image 5
         - image:
           file:                         federico-rizzarelli_b.jpg
@@ -549,10 +541,9 @@ settings:
           file:                         gints-gailis_b.jpg
           caption:                      Shangri-La Hotel Jakarta - Indonesia
 
+
     # --------------------------------------------------------------------------
     # VIDEOS
-    # claude - optimization chances #5
-    # Fix: removed stray period in section separator
     # --------------------------------------------------------------------------
 
     # --------------------------------------------------------------------------
@@ -641,7 +632,6 @@ settings:
 #             byline:                   0
 #             portrait:                 0
 #             color:                    var(--md-gray-100)
-
 
           # Wistia
           # --------------------------------------------------------------------
@@ -737,7 +727,9 @@ settings:
           poster:
             style:                      img-responsive
             source:                     //img.youtube.com/vi/IUN664s7N-c/maxresdefault.jpg
+
           caption:
+            enabled:                    true
             position:                   bottom
             text:                       YouTube Video &middot; Beauty of Nature
 
@@ -758,7 +750,9 @@ settings:
           poster:
             style:                      img-responsive
             source:                     /assets/video/poster/vimeo/amazing_nature.jpg
+
           caption:
+            enabled:                    true
             position:                   bottom
             text:                       Vimeo Video &middot; Amazing Nature
 
@@ -778,6 +772,7 @@ settings:
             source:                     /assets/video/poster/dailymotion/pilates.jpg
 
           caption:
+            enabled:                    true
             position:                   bottom
             text:                       "Dailymotion Video &middot; SELF Channel: Beginner Mat Pilates"
 
@@ -811,9 +806,267 @@ settings:
           poster:
             style:                      img-responsive
             source:                     peck_pocketed.jpg
+
           caption:
+            
             position:                   bottom
             text:                       Local MP4 Video &middot; Peck Pocketed
+
+
+    # --------------------------------------------------------------------------
+    # YouTube Videos
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               youtube
+      type:                             video
+      gutters:                          2
+
+      # ------------------------------------------------------------------------
+      # Bootstrap responsive options
+      #
+      responsive:
+        xs:                             12
+        sm:                             12
+        md:                             6
+        lg:                             6
+        xl:                             6
+
+      # ------------------------------------------------------------------------
+      # VideoJS settings
+      # See settings: //jekyll.one/pages/public/manuals/videojs/videojs_api/
+      # ------------------------------------------------------------------------
+      #
+      videojs:
+        enabled:                        true
+
+        theme:                          uno
+
+        # ----------------------------------------------------------------------
+        # Player settings
+        # See: //jekyll.one/pages/public/manuals/videojs/lightgallery_api
+        # ----------------------------------------------------------------------
+        #
+        player:
+          enabled:                      true
+
+          # VideoJS
+          # --------------------------------------------------------------------
+          videojsPlayer:
+            enabled:                    true
+
+            videojsOptions:
+              controls:                 true
+              tracks:                   true
+
+            controlBar:
+              pictureInPictureToggle:   false
+              chaptersButton:           true
+              subtitlesButton:          true
+              playbackRates:            [0.25, 0.5, 1, 1.5, 2]
+
+              volumePanel:
+                inline:                 false
+
+              hotkeysPlugin:
+                enabled:                true
+                options:
+                  volumeStep:           0.2
+
+              skipButtonsPlugin:
+                enabled:                true
+                options:
+                  forward:              15
+                  backward:             15
+
+              zoomPlugin:
+                enabled:                true
+                options:
+                  moveX:                0
+                  moveY:                0
+                  rotate:               0
+                  zoom:                 1
+
+          # Vimeo
+          # --------------------------------------------------------------------
+          vimeoPlayer:
+            enabled:                    true
+            api:                        native                                  # native|videojs
+
+            options:
+              autoPlay:                 true
+              muted:                    true
+#             byline:                   0
+#             portrait:                 0
+#             color:                    var(--md-gray-100)
+
+          # Wistia
+          # --------------------------------------------------------------------
+          wistiaPlayer:
+            enabled:                    true
+            api:                        native                                  # native|videojs
+
+            options:
+              autoPlay:                 true
+              fullscreenButton:         true
+              muted:                    false
+              qualityControl:           false
+
+          # Youtube
+          # --------------------------------------------------------------------
+          youTubePlayer:
+            enabled:                    true
+            api:                        videojs                                 # native|videojs
+
+            options:
+              autoPlay:                 true
+              muted:                    true
+              showinfo:                 true
+              controls:                 true
+
+      # ------------------------------------------------------------------------
+      # Lightbox settings
+      # See settings for lightbox:     //jekyll.one/pages/public/manuals/modules/lightbox
+      # See settings for lightGallery: //jekyll.one/pages/public/manuals/videojs/videojs_api
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           lg
+
+      lightGallery:
+        plugins:                        lgThumbnail, lgVideo
+
+        options:
+          licenseKey:                   0000-0000-000-0000
+          download:                     false
+          alignThumbnails:              left
+#         addClass:                     lg-uno-thumbnails                         # customized thumbnails
+#         appendThumbnailsTo:           .lg-outer                                 # required for customized thumbnails
+#         animateThumb:                 false                                     # required for customized thumbnails
+#         allowMediaOverlap:            true                                      # required for customized thumbnails
+
+      # ------------------------------------------------------------------------
+      # caption options
+      #
+      caption:
+        enabled:                        true
+        position:                       bottom                                  # top|bottom|center
+
+      # ------------------------------------------------------------------------
+      # masonry options
+      #
+      options:
+        originTop:                      true
+        originLeft:                     true
+        initLayout:                     true
+        percentPosition:                true
+
+      # ------------------------------------------------------------------------
+      # videos
+      #
+      videos:
+
+#       video 1
+        - video:
+          name:                         Carpool Karaoke James and Adele
+          type:                         youtube
+          api:                          videojs
+          size:                         1280-720
+          source:                       //youtube.com/Nck6BZga7TQ
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          description: >
+                                        <h2>Carpool Karaoke 2015</h2>
+                                        <h3>
+                                          James is on holidays in London and picks up
+                                          Adele for a ride through the city.
+                                          On the way, they sing some of their biggest hits.
+                                        </h3>
+          poster:
+            style:                      img-responsive
+            source:                     //img.youtube.com/vi/Nck6BZga7TQ/mqdefault.jpg
+
+          caption:
+            enabled:                    true
+            position:                   bottom
+            text:                       YouTube Video &middot; Carpool Karaoke James and Adele
+
+#       video 2
+        - video:
+          name:                         Last Carpool Karaoke
+          type:                         youtube
+          api:                          videojs
+          size:                         1280-720
+          source:                       //youtube.com/nV8UZJNBY6Y
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          description: >
+                                        <h2>Carpool Karaoke 2023</h2>
+                                        <h3>
+                                          Adele wakeups James at home for the very
+                                          last Late Late Night Show and for the
+                                          final Carpool Caraoke Tour.
+                                        </h3>
+          poster:
+            style:                      img-responsive
+            source:                     //img.youtube.com/vi/nV8UZJNBY6Y/maxresdefault.jpg
+
+          caption:
+            enabled:                    true
+            position:                   bottom
+            text:                       YouTube Video &middot; Last Carpool Karaoke
+
+#       video 3
+        - video:
+          name:                         Carpool Karaoke James and Adele
+          type:                         youtube
+          api:                          videojs
+          size:                         1280-720
+          source:                       //youtube.com/Nck6BZga7TQ
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          description: >
+                                        <h2>Carpool Karaoke 2015</h2>
+                                        <h3>
+                                          James is on holidays in London and picks up
+                                          Adele for a ride through the city.
+                                          On the way, they sing some of their biggest hits.
+                                        </h3>
+          poster:
+            style:                      img-responsive
+            source:                     //img.youtube.com/vi/Nck6BZga7TQ/mqdefault.jpg
+
+          caption:
+            enabled:                    true
+            position:                   bottom
+            text:                       YouTube Video &middot; Carpool Karaoke James and Adele
+
+#       video 4
+        - video:
+          name:                         Last Carpool Karaoke
+          type:                         youtube
+          api:                          videojs
+          size:                         1280-720
+          source:                       //youtube.com/nV8UZJNBY6Y
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          description: >
+                                        <h2>Carpool Karaoke 2023</h2>
+                                        <h3>
+                                          Adele wakeups James at home for the very
+                                          last Late Late Night Show and for the
+                                          final Carpool Caraoke Tour.
+                                        </h3>
+          poster:
+            style:                      img-responsive
+            source:                     //img.youtube.com/vi/nV8UZJNBY6Y/maxresdefault.jpg
+
+          caption:
+            enabled:                    true
+            position:                   bottom
+            text:                       YouTube Video &middot; Last Carpool Karaoke
 
 # ------------------------------------------------------------------------------
 # END config

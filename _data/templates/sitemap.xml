@@ -3,7 +3,8 @@
 {% comment %}
  # -----------------------------------------------------------------------------
  # ~/_data/templates/sitemap.xml
- # Liquid template to generate the sitemap XML entries
+ # J1 Sitemap plugin
+ # Liquid template to generate the sitemap XML entries 
  #
  # Product/Info:
  # https://jekyll.one
@@ -27,6 +28,7 @@
   <?xml-stylesheet type="text/xsl" href="{{ "/sitemap.xsl" | absolute_url }}"?>
 {% endif %}
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   {% assign collections = site.collections | where_exp:'collection','collection.output != false' %}
   {% for collection in collections %}
     {% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}
@@ -50,6 +52,8 @@
     </url>
   {% endfor %}
 
+  {% comment %} Processing of (other) static files
+  ------------------------------------------------------------------------------ {% endcomment %}
   {% assign static_files = page.static_files | where_exp:'page','page.sitemap != false' | where_exp:'page','page.name != "404.html"' %}
   {% for file in static_files %}
     <url>
@@ -57,10 +61,9 @@
       <lastmod>{{ doc.last_modified | default: time_now | date_to_xmlschema }}</lastmod>
     </url>
   {% endfor %}
+
 </urlset>
-
 {% endcapture %}
-
 
 {% comment %} POST processing of the generated feed XML file|s
 -------------------------------------------------------------------------------- {% endcomment %}

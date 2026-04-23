@@ -5,7 +5,7 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023, 2024 Juergen Adams
+# Copyright (C) 2023-2026 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE.md
@@ -53,7 +53,7 @@ environment:                            production
 # ------------------------------------------------------------------------------
 # Sets the build version of the site
 #
-version:                                2026.0.2
+version:                                2026.0.6
 
 # copyright
 # ------------------------------------------------------------------------------
@@ -310,8 +310,8 @@ permalink:                              pretty
 # site.url will be set to the value of host, port.
 # NOTE: Required setting for the sitemap plugin, for example.
 #
-# url:                                  http://localhost:23000
-url:                                    https://starter.jekyll.one/
+#url:                                   http://localhost:23000
+url:                                    https://starter.jekyll.one
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -621,13 +621,52 @@ defaults:
       sitemap:                          false
 
   # ----------------------------------------------------------------------------
-  # Module HTML docs and examples excluded from sitemap
+  # MODULE files
+  # HTML docs and examples excluded from sitemap
   #
   - scope:
       path:                             assets/themes/j1
 
     values:
       sitemap:                          false
+
+  # ----------------------------------------------------------------------------
+  # PAGES excluded from sitemap
+  #
+  - scope:
+      path:                             pages/public/asciidoc_skeletons
+
+    values:
+      sitemap:                          false
+
+  - scope:
+      path:                             pages/public/blog
+
+    values:
+      sitemap:                          false
+
+  - scope:
+      path:                             pages/public/legal
+
+    values:
+      sitemap:                          false
+
+  - scope:
+      path:                             pages/public/plans
+
+    values:
+      sitemap:                          false
+
+  - scope:
+      path:                             pages/public/tools
+
+    values:
+      sitemap:                          false
+
+
+  # ----------------------------------------------------------------------------
+  # DEFAULT document settings
+  # ============================================================================
 
   # ----------------------------------------------------------------------------
   # PAGES
@@ -644,10 +683,10 @@ defaults:
         name:                           Juergen Adams
         url:                            https://jekyll.one/
 
-      logo:                             /assets/images/icon/j1/j1-512x512.png
+      logo:                             /assets/image/icon/j1/j1-512x512.png
 
       image:
-        path:                           /assets/images/promo/home/screenshot.jpg
+        path:                           /assets/image/promo/home/screenshot.jpg
         width:                          1200
         height:                         800
 
@@ -657,7 +696,7 @@ defaults:
         size:                           5x
 
       images:
-        dir:                            /assets/images/pages
+        dir:                            /assets/image/page
 
       robots:
         index:                          true
@@ -698,10 +737,10 @@ defaults:
         name:                           Juergen Adams
         url:                            https://jekyll.one/
 
-      logo:                             /assets/images/icon/j1/j1-512x512.png
+      logo:                             /assets/image/icon/j1/j1-512x512.png
 
       image:
-        path:                           /assets/images/promo/home/screenshot.jpg
+        path:                           /assets/image/promo/home/screenshot.jpg
         width:                          1200
         height:                         800
 

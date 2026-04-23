@@ -57,10 +57,16 @@ defaults:
   #     values:                         string
   #     default:                        sitemap.xml
   #
-  #   --------------------------------------------------------------------------
+  # ----------------------------------------------------------------------------
+  # File EXCLUDE setting
+  #
+  #   All file excludes for the sitemap (plugin) are configured in site config
+  #   (_config.xml) in section "PAGE configuration" with "FRONT MATTER defaults".
+  # 
+  # ----------------------------------------------------------------------------  
   #
   enabled:                              false
 
   template_source_folder:               _data/templates
-  robots_theme_name:                 robots.txt
-  sitemap_theme_name:                sitemap.xml
+  robots_theme_name:                    robots.txt
+  sitemap_theme_name:                   sitemap.xml

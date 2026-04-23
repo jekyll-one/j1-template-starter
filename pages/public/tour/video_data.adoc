@@ -30,11 +30,16 @@ personalization:                        true
 regenerate:                             false
 permalink:                              /pages/public/tour/video_data/
 
-resources:                              [
-                                          amplitudejs,
-                                          gallery, lightgallery, masonry,
-                                          videojs, vimeo-player
-                                        ]
+resources:                              [ gallery, lightgallery, videojs ]
+
+#resource_options:
+#  - toccer:
+#      collapseDepth:                    3
+#  - attic:
+#      slides:
+#        - url:                          /assets/image/module/attic/1920x1280/modern-dance.jpg
+#          alt:                          Photo Gemini AI
+
 resource_options:
   - toccer:
       collapseDepth:                    3
@@ -65,17 +70,9 @@ resource_options:
 
 // Attribute settings for section control
 //
-:ytp_audio:                             false
-:ytp_best_2024:                         false
-:ytp_rhythm:                            false
-:ytp_sky_elements:                      true
-:ytp_hb:                                false
-:dm_video:                              false
-:vm_video:                              true
-:masonry:                               true
+:masonry:                               false
 :justifiedGallery:                      true
-:dm_gallery:                            true
-:vm_gallery:                            true
+
 
 //  Load Liquid procedures
 // -----------------------------------------------------------------------------
@@ -175,80 +172,13 @@ Today, YouTube is the most used online video-sharing platform that allows
 users to upload, view, share, and comment on videos. YouTube provides services
 for people and organizations to publish various video content on the internet.
 
-ifeval::[{ytp_best_2024} == true]
-The season 19 (2024) of _America's Got Talent_ (AGT) is special. In the long
-history of AGT, only a few *Goldern Buzzers* were given. In 2024, this is
-different - for good reasons. See a compilation on YouTube of the very best
-auditions ever.
-
-.Best Auditions · AGT 2024
-youtube::4VSBJU52UvM[poster="//img.youtube.com/vi/4VSBJU52UvM/maxresdefault.jpg" role="mb-4"]
-endif::[]
-
-ifeval::[{ytp_rhythm} == true]
-Dog Dancing is presented quite often on stage. Like AGT season 18, Adrian Stoica
-presented his dog Hurricane https://www.youtube.com/watch?v=ENGRnUN1UKQ)[Youtube, {browser-window--new}].
-But see Roni Sagi - an Israeli dog trainer - and her dog Rhythm. This is Dog
-Traing the next level.
-
-.Roni Sagi & Rhythm · AGT 2024
-youtube::1J2qz6B-PFY[poster="//img.youtube.com/vi/1J2qz6B-PFY/maxresdefault.jpg" role="mb-4"]
-endif::[]
-
-ifeval::[{ytp_sky_elements} == true]
 Sky Elements uses the night sky as a canvas on which anything is possible.
 A large group of Drones is painting lights in the sky to reflect the most
 captivating narratives. 
 
 .Sky Elements · AGT 2024 
 youtube::brEXrQBIj68[poster="//img.youtube.com/vi/brEXrQBIj68/maxresdefault.jpg" role="mb-4"]
-endif::[]
 
-ifeval::[{ytp_hb} == true]
-Sky Elements uses the night sky as a canvas on which anything is possible.
-A large group of Drones is painting lights in the sky to reflect the most
-captivating narratives. 
-
-.Hazel Brugger · Immer noch wach
-youtube::-w37wr0b6KE[poster="//img.youtube.com/vi/-w37wr0b6KE/maxresdefault.jpg" role="mb-4"]
-endif::[]
-
-
-ifeval::[{dm_video} == true]
-[role="mt-5"]
-=== Dailymotion
-
-The Dailymotion platform is a monetization solution directly connecting to
-high-quality advertisers through a proprietary advertising system.
-Like YouTube, videos can be watched for free, but ads are shown on every
-video.
-
-.Beginner Mat Pilates · SELF Channel
-dailymotion::x87ycik[poster="/assets/video/poster/dailymotion/pilates.jpg" role="mb-4"]
-endif::[]
-
-ifeval::[{vm_video} == true]
-[role="mt-5"]
-=== Vimeo
- 
-Vimeo is an sharing platform that allows users to upload, share, and view
-video content. It was founded in 2004 by a group of filmmakers and has
-since grown into a popular platform for individuals and businesses to
-showcase their videos. Vimeo is known for its emphasis on high-quality 
-video and creative expression.
-
-.Kick It Old School · Forever 21
-vimeo::179528528[poster="/assets/video/poster/vimeo/kick_it_old_school.jpg" role="mb-4"]
-// vimeo::179528528[poster="auto" role="mt-4 mb-5"]
-// vimeo::179528528[role="mt-4 mb-5"]
-
-.Video controls
-[CAUTION]
-====
-For the *VJS Vimeo Tech*, native vjs controls (controllbar) are currently
-*NOT* supported. Instead, the controllbar of the Vimeo Player is shown.
-====
-endif::[]
 
 [role="mt-5"]
 == Galleries of Video
@@ -258,12 +188,15 @@ specific theme, topic, or purpose. The gallery module (lightGallery) for
 J1 Template is a fast, modular, and responsive plugin for creating
 beautiful-looking, featured image and video galleries.
 
-[role="mb-4"]
 The combination of a gallery and a lightbox is entirely usable for all
 the video content you want to present on your site. You can place galleries
 elsewhere with your content. You can use them for blogs by putting them into
-your article's content.
+your article's content. The galley maker *justifiedGallery* in combination
+with the *lightbox* lightGallery is a great toolset for creating dynamic
+video galleries. The module combinati0n makes creating a gallery to access
+videos easy.
 
+[role="mt-4"]
 [CAUTION]
 ====
 The module lightGallery can be used for free for private use, but a
@@ -275,38 +208,9 @@ how to use lightGallery for *commercial* websites and projects.
 Find below examples of video galleries of locally stored (MP4) video resources
 *and* video content provided online.
 
-ifeval::[{masonry} == true]
-[role="mt-5"]
-=== Masonry Gallery
-
-Masonry for J1 Template is a great tool for creating dynamic video galleries.
-The module makes creating a gallery to display videos of different types easy.
-
-.Mixed Video · Masonry + LightGallery
-masonry::mixed_video_example[role="mb-4"]
-
-[role="mb-5"]
-.More about Masonry
-[TIP]
-====
-Find more on how the Masonry module can be used on the
-link:{url-j1-masonry-previewer}[Masonry Preview, {browser-window--new}] page.
-====
-endif::[]
-
-
-ifeval::[{justifiedGallery} == true]
-[role="mt-5"]
-=== Justified Gallery
-
-The galley maker *justifiedGallery* in combination with the *lightbox*
-lightGallery is a great toolset for creating dynamic video galleries.
-The module combinati0n makes creating a gallery to access videos easy.
-
-
 [role="mt-4"]
 [[justified-gllery-local-video]]
-==== Local Video
+=== Local Video
 
 Videos created by a digicam or a mobile can be played by J1 Template using
 the lightGallery integration. Present videos you have made at it's best.
@@ -326,7 +230,7 @@ gallery::jg_video_html5[role="mb-4"]
 
 [role="mt-5"]
 [[justified-gllery-youtube]]
-==== YouTube
+=== YouTube
 
 The community at link:{url-youtube--home}[YouTube, {browser-window--new}]
 is large, with over 1 billion users that watch hundreds of millions of
@@ -336,83 +240,6 @@ shows or songs on YouTube.
 
 .YouTube Video · justifiedGallery + LightGallery
 gallery::jg_video_youtube_james_and_adele[role="mb-4"]
-endif::[]
-
-
-ifeval::[{vm_gallery} == true]
-[role="mt-5"]
-==== Vimeo
-
-[role="mb-4"]
-link:{url-vimeo--home}[Vimeo, {browser-window--new}] is a video-sharing
-platform that includes features such as live-streaming and customization.
-Vimeo provides many tools for video creation, editing, and broadcasting.
-The platform enables the operators of websites to present high-quality,
-professional videos and reach audiences worldwide.
-
-[NOTE]
-====
-A plus using Vimeo is that *no advertising* is used on that platform. The
-visitors can focus on the video without being distracted.
-====
-
-[role="mt-4 mb-4"]
-Vimeo offers a basic free membership, but it limits you to 500MB of maximum
-weekly storage. Alternatively, you can book a paid plan: Plus, PRO, and
-Business. Each membership has varied storage limits, but the free plan
-offers sufficient space for private projects to present video content
-without advertising.
-
-.Forever 21 · Justified Gallery + LightGallery
-gallery::jg_video_online_vimeo[role="mb-4"]
-endif::[]
-
-ifeval::[{dm_gallery} == true]
-[role="mt-5"]
-==== Dailymotion
-
-link:{url-dailymotion--home}[Dailymotion, {browser-window--new}] is a
-video-sharing platform. The platform is available worldwide in 180+
-languages, featuring websites for their video content.
-
-The platform is a *monetization* solution that allows allows to directly
-connect to high-quality advertisers through a proprietary Advertising system.
-Like YouTube, videos can be watched for free, but ads are shown on each and
-every video.
-
-.SELF Chanel · Justified Gallery + LightGallery
-gallery::jg_video_online_dailymotion[role="mb-4"]
-endif::[]
-
-
-ifeval::[{ytp_audio} == true]
-[role="mt-5"]
-// == YouTube Audio (over AmplitudeJS)
-== YouTube Audio
-
-The example below demonstrates playing only the *Audio* track from YouTube
-Video using AmplitudJS for the player. The J1 template uses the video
-*plugin* ytp to extend the native functionality of AmplitudeJS to playback
-YouTube files for the audio part.
-
-[role="mt-4 mb-4"]
-[CAUTION]
-====
-Playing audio tracks is currently supported only for videos from YouTube (YT).
-The YT plugin *ytp* embeds a YouTube (iframe) player and mimics the AmplitudeJS
-player buttons and controls to manage a *playlist* of videos the same as known
-for native audio files.
-====
-
-.Bea and her Business · YouTube 2025
-amplitude::bea_yt_large[role="mb-5"]
-
-[NOTE]
-====
-AmplitudeJS YT Player can only be used with the J1 Template. Currently, only
-AJS players of type *large* are supported.
-====
-endif::[]
 
 
 [role="mt-5"]
@@ -434,5 +261,4 @@ text. The text will take on an important role of acting as plain text and as
 something like images. To see how text could be presented is great for modern
 responsive websites.
 
-[role="mb-7"]
 Find out how it works and go for link:{url-tour--typography}[Typography], then.

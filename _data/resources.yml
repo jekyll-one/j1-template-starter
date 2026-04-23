@@ -337,7 +337,8 @@ resources:
   # ----------------------------------------------------------------------------
 
   # ----------------------------------------------------------------------------
-  # J1 Core, Main CSS styles and JS API for J1 Theme
+  # J1 Core
+  # Main CSS styles and JS API for J1 Theme
   #
   # NOTE Theme CSS loaded via module 'themes'
   # NOTE: load always 'unolight' as a 'bese' (e.g. for unodark, but should be removed)
@@ -374,8 +375,8 @@ resources:
         init_function:                  [ j1.init ]
 
   # ----------------------------------------------------------------------------
-  # Bootstrap JS v5.3.2
-  # Bootstrap Javascript component
+  # Bootstrap JS
+  # Bootstrap Javascript component (v5.3.2)
   #
   # See: https://getbootstrap.com/docs/5.0/getting-started/introduction/
   #
@@ -422,7 +423,8 @@ resources:
         init_function:                  [ j1.adapter.speak2me.init ]
 
   # ----------------------------------------------------------------------------
-  # Bootstrap Material Design (BMD), responsive UI framework for Bootstrap
+  # Bootstrap Material Design (BMD)
+  # Responsive UI framework for Bootstrap (to be removed)
   #
   # See: https://github.com/mdbootstrap/bootstrap-material-design/tree/4.1.3
   #
@@ -446,7 +448,8 @@ resources:
         init_function:                  [ j1.adapter.bmd.init ]
 
   # ----------------------------------------------------------------------------
-  # Google Analytics OptIn, a browser library to opt-in in Google Analytics
+  # Google Analytics OptIn
+  # A browser library to opt-in in Google Analytics
   #
   # See: https://github.com/luciomartinez/gtag-opt-in
   #
@@ -470,7 +473,8 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # J1 Logger, JS API for all logs used by J1 Theme based on the
+  # J1 Logger
+  # JS API for all logs used by J1 Theme based on the
   # log4j implementation for JS (log4javascript)
   #
   # See: http://log4javascript.org
@@ -495,10 +499,34 @@ resources:
         init_function:                  [ j1.adapter.logger.init ]
 
   # ----------------------------------------------------------------------------
-  # Implementaion to create top headers for J1 Theme  based on the JS API
-  # jQuery Backstretch API to add responsive image|video content.
-  #
+  # Backstretch
+  # JS API to add responsive image|video content
+  # to J1 Top Headers (Attic)
   # See: https://github.com/jquery-backstretch/jquery-backstretch
+  #
+  - name:                               J1 Backstretch
+    resource:
+      enabled:                          true
+
+      id:                               backstretch
+      comment:                          Module Backstretch
+      region:                           head
+      layout:                           [ all ]
+      required:                         always
+      script_load:
+      dependencies:                     false
+      pass_init_data:                   false
+
+      data:
+        css:                            []
+        files:                          []
+        js:                             [ modules/backstretch/js/backstretch ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # Attic (Top Header)
+  # JS implementaion to create top headers for J1 Theme
+  # based on the JS API jQuery Backstretch
   #
   - name:                               J1 Attic
     resource:
@@ -516,11 +544,12 @@ resources:
       data:
         css:                            [ modules/backstretch/css/attic ]
         files:                          [ adapter/js/attic.js ]
-        js:                             [ modules/backstretch/js/backstretch ]
+        js:                             []
         init_function:                  [ j1.adapter.attic.init ]
 
   # ----------------------------------------------------------------------------
-  # Navigator, JS API to create the naviagtion for J1 Theme
+  # Navigator
+  # JS API to create the naviagtion for J1 Theme
   # based on the (BS3) JS implementaion of Bootsnav.
   #
   # See: https://github.com/adamnurdin01/bootsnav
@@ -545,7 +574,8 @@ resources:
         init_function:                  [ j1.adapter.navigator.init ]
 
   # ----------------------------------------------------------------------------
-  # Mobile Menu (Light), JS API to create TOCs for mobile devices
+  # Mobile Menu
+  # JS API (Light) to create TOCs for mobile devices
   #
   # See: https://github.com/FrDH/mmenu-light
   #
@@ -572,7 +602,8 @@ resources:
         init_function:                  [ j1.adapter.mmenu.init ]
 
   # ----------------------------------------------------------------------------
-  # Themes, JS implementation to integrate themes from Bootswatch
+  # Themes
+  # JS implementation to integrate themes from Bootswatch
   # based on the bootstrapThemeSwitcher API
   #
   # See: https://github.com/jguadagno/bootstrapThemeSwitcher
@@ -597,7 +628,8 @@ resources:
         init_function:                  [ j1.adapter.themes.init ]
 
   # ----------------------------------------------------------------------------
-  # Toccer, JS implementation to create TOCs from HTML headline elements
+  # Toccer
+  # JS implementation to create TOCs from HTML headline elements
   # based on Tocbot API
   #
   # See: https://github.com/tscanlin/tocbot
@@ -622,7 +654,8 @@ resources:
         init_function:                  [ j1.adapter.toccer.init ]
 
   # ----------------------------------------------------------------------------
-  # CookieConsent, JS API to create GDPR compatible cookie consent based
+  # CookieConsent
+  # JS API to create GDPR compatible cookie consent based
   # on bootstrap-cookie-banner JS API
   #
   # See: https://github.com/shaack/bootstrap-cookie-banner
@@ -647,7 +680,8 @@ resources:
         init_function:                  [ j1.adapter.cookieConsent.init ]
 
   # ----------------------------------------------------------------------------
-  # lunr search engine, JS API used for the QuickSearch feature
+  # Lunr search engine
+  # JS API used for the site_search feature
   # of J1 Theme based on the Lunr JS API
   #
   # See: https://lunrjs.com/
@@ -678,7 +712,8 @@ resources:
         init_function:                  [ j1.adapter.lunr.init ]
 
   # ----------------------------------------------------------------------------
-  # Floating Action Buttons, JS API to create FABs
+  # Floating Action Buttons
+  # JS API to create FABs
   #
   - name:                               J1 FAB
     resource:
@@ -707,59 +742,55 @@ resources:
   #
   # See: https://github.com/digitalkaoz/preload-polyfill
   #
-  - name:                               Preload Polyfill
-    resource:
-      enabled:                          false
+  # - name:                               Preload Polyfill
+  #   resource:
+  #     enabled:                          false
 
-      id:                               preload-polyfill
-      comment:                          Module Preload Polyfill
+  #     id:                               preload-polyfill
+  #     comment:                          Module Preload Polyfill
+  #     region:                           head
+  #     layout:                           [all]
+  #     required:                         always
+  #     script_load:
+  #     dependencies:                     false
+  #     pass_init_data:                   false
+
+  #     data:
+  #       css:                            []
+  #       files:                          []
+  #       js:                             [
+  #                                         modules/preloadPolyfill/js/preload-polyfill,
+  #                                         modules/preloadPolyfill/js/preload-polyfill-invoke,
+  #                                         modules/preloadPolyfill/js/preload-polyfill-inline
+  #                                       ]
+  #       init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # CSS Loader
+  # Configurable lazyLoader for CSS files
+  #
+  - name:                               J1 CSS Loader
+    resource:
+      enabled:                          true
+
+      id:                               cssloader
+      comment:                          Module CSS Loader
       region:                           head
-      layout:                           [all]
+      layout:                           [ all ]
       required:                         always
-      script_load:
+      script_load:                      defer
       dependencies:                     false
       pass_init_data:                   false
 
       data:
         css:                            []
-        files:                          []
-        js:                             [
-                                          modules/preloadPolyfill/js/preload-polyfill,
-                                          modules/preloadPolyfill/js/preload-polyfill-invoke,
-                                          modules/preloadPolyfill/js/preload-polyfill-inline
-                                        ]
-        init_function:                  []
+        files:                          [ adapter/js/lazyLoader.js ]
+        js:                             []
+        init_function:                  [ j1.adapter.lazyLoader.init ]
 
   # ----------------------------------------------------------------------------
-  # jQueryUI, curated set of user interface interactions, effects, widgets,
-  # and themes built on top of jQuery
-  #
-  # See: https://jqueryui.com/
-  #
-  - name:                               jQueryUI
-    resource:
-      enabled:                          false
-
-      id:                               jquery-ui
-      comment:                          Module jQueryUI
-      region:                           head
-      layout:                           [ all ]
-      required:                         ondemand
-      script_load:
-      dependencies:                     false
-      pass_init_data:                   false
-
-      data:
-        css:                            [
-                                          modules/jquery/css/jquery-ui/jquery-ui,
-                                          modules/jquery/css/jquery-ui/jquery-ui.theme
-                                        ]
-        files:                          []
-        js:                             [ modules/jquery/js/jquery-ui ]
-        init_function:                  []
-
-  # ----------------------------------------------------------------------------
-  # Theme Switcher, JS API for switching Bootstrap Themes (Bootswatch)
+  # Theme Switcher
+  # JS API for switching Bootstrap Themes (Bootswatch)
   #
   # See: https://bootswatch.com/
   #
@@ -783,7 +814,8 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Responsive Tables, JS implementation to create responsive HTML tables
+  # Responsive Tables
+  # JS implementation to create responsive HTML tables
   # based on the JS API Tablesaw
   #
   # See: https://github.com/filamentgroup/tablesaw
@@ -809,7 +841,8 @@ resources:
         init_function:                  [ j1.adapter.rtable.init ]
 
   # ----------------------------------------------------------------------------
-  # J1 Asciidoctor, JS functions to (dynamically) modify Asciidoctor HTML elements
+  # J1 Asciidoctor
+  # JS functions to (dynamically) modify Asciidoctor HTML elements
   #
   - name:                               J1 Asciidoctor
     resource:
@@ -833,27 +866,28 @@ resources:
   # ----------------------------------------------------------------------------
   # rtextResizer (currently NOT used)
   #
-  - name:                               J1 Text Resizer
-    resource:
-      enabled:                          false
+  # - name:                               J1 Text Resizer
+  #   resource:
+  #     enabled:                          false
 
-      id:                               text-resizer
-      comment:                          Module Text Resizer
-      region:                           head
-      layout:                           [ all ]
-      required:                         always
-      script_load:
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               text-resizer
+  #     comment:                          Module Text Resizer
+  #     region:                           head
+  #     layout:                           [ all ]
+  #     required:                         always
+  #     script_load:
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            []
-        files:                          [ adapter/js/rtextResizer.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.rtextResizer.init ]
+  #     data:
+  #       css:                            []
+  #       files:                          [ adapter/js/rtextResizer.js ]
+  #       js:                             []
+  #       init_function:                  [ j1.adapter.rtextResizer.init ]
 
   # ----------------------------------------------------------------------------
-  # MsDropdowns, JS implementation to create themeable HTML <select>
+  # MsDropdowns
+  # JS implementation to create themeable HTML <select>
   # elements (dropdowns) based on the msDropdown API
   #
   # See: https://github.com/marghoobsuleman/ms-Dropdown
@@ -878,7 +912,8 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Translator, JS API to provide Translation services
+  # Translator
+  # JS API to provide Translation services
   #
   # See: https://translate.google.com/intl/en/about/
   #
@@ -902,7 +937,8 @@ resources:
         init_function:                  [ j1.adapter.translator.init ]
 
   # ----------------------------------------------------------------------------
-  # Analytics, JS implementation to provide Analytics services
+  # Analytics
+  # JS implementation to provide Analytics services
   #
   # See: https://analytics.google.com/
   #
@@ -933,49 +969,80 @@ resources:
   # ----------------------------------------------------------------------------
   # Custom module
   #
-  - name:                               J1 Custom Module
-    resource:
-      enabled:                          false
+  # - name:                               J1 Custom Module
+  #   resource:
+  #     enabled:                          false
 
-      id:                               custom-module
-      comment:                          Module Custom Module
-      region:                           head
-      layout:                           [ home, page, post ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               custom-module
+  #     comment:                          Module Custom Module
+  #     region:                           head
+  #     layout:                           [ home, page, post ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            []
-        files:                          [ adapter/js/customModule.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.customModule.init ]
+  #     data:
+  #       css:                            []
+  #       files:                          [ adapter/js/customModule.js ]
+  #       js:                             []
+  #       init_function:                  [ j1.adapter.customModule.init ]
 
   # ----------------------------------------------------------------------------
   # Custom functions
   #
-  - name:                               J1 Custom Function
-    resource:
-      enabled:                          false
+  # - name:                               J1 Custom Function
+  #   resource:
+  #     enabled:                          false
 
-      id:                               custom-function
-      comment:                          Module Custom Function
-      region:                           head
-      layout:                           [ home, page, post ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               custom-function
+  #     comment:                          Module Custom Function
+  #     region:                           head
+  #     layout:                           [ home, page, post ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            []
-        files:                          [ adapter/js/customFunctions.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.customFunctions.init ]
+  #     data:
+  #       css:                            []
+  #       files:                          [ adapter/js/customFunctions.js ]
+  #       js:                             []
+  #       init_function:                  [ j1.adapter.customFunctions.init ]
 
   # ----------------------------------------------------------------------------
-  # Rouge, pure Ruby themeable code highlighter
+  # jQueryUI
+  # Curated set of user interface interactions, effects, widgets,
+  # and themes built on top of jQuery
+  #
+  # See: https://jqueryui.com/
+  #
+  # - name:                               jQueryUI
+  #   resource:
+  #     enabled:                          false
+
+  #     id:                               jquery-ui
+  #     comment:                          Module jQueryUI
+  #     region:                           head
+  #     layout:                           [ all ]
+  #     required:                         ondemand
+  #     script_load:
+  #     dependencies:                     false
+  #     pass_init_data:                   false
+
+  #     data:
+  #       css:                            [
+  #                                         modules/jquery/css/jquery-ui/jquery-ui,
+  #                                         modules/jquery/css/jquery-ui/jquery-ui.theme
+  #                                       ]
+  #       files:                          []
+  #       js:                             [ modules/jquery/js/jquery-ui ]
+  #       init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # Rouge,
+  # Pure Ruby themeable code highlighter
+  #
   # See: http://rouge.jneen.net/
   #
   - name:                               J1 Rouge (Highlighter)
@@ -1001,7 +1068,8 @@ resources:
         init_function:                  [ j1.adapter.rouge.init ]
 
   # ----------------------------------------------------------------------------
-  # Animate CSS, styles for CSS-based animations
+  # Animate CSS
+  # Styles for CSS-based animations
   #
   # See: https://animate.style/
   #
@@ -1025,7 +1093,8 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # iFrameResizer, JS Client|Server implementation to manage HTML iframes
+  # iFrameResizer
+  # JS Client|Server implementation to manage HTML iframes
   # based on the JS API iFrame Resizer
   #
   # See: https://github.com/davidjbradshaw/iframe-resizer
@@ -1050,15 +1119,16 @@ resources:
         init_function:                  [ j1.adapter.iframer.init ]
 
   # ----------------------------------------------------------------------------
-  # Lightbox V2, the main lightbox for J1 Theme
+  # Lightbox V3
+  # The default lightbox for J1 Template
   #
-  # See: ttp://lokeshdhakar.com/projects/lightbox2/
+  # See: https://github.com/lokesh/lightbox3
   #
-  - name:                               J1 Lightbox V2
+  - name:                               J1 Lightbox V3
     resource:
       enabled:                          true
 
-      id:                               lightbox
+      id:                               lightbox3
       comment:                          Module Lightbox
       layout:                           [ all ]
       region:                           head
@@ -1069,15 +1139,16 @@ resources:
 
       data:
         css:                            [
-                                          modules/lightbox/css/lightbox,
-                                          modules/lightbox/css/theme/uno
+                                          modules/lightbox3/css/lightbox3,
+                                          modules/lightbox3/css/theme/uno
                                         ]
-        files:                          [ adapter/js/lightbox.js ]
-        js:                             [ modules/lightbox/js/lightbox ]
-        init_function:                  [ j1.adapter.lightbox.init ]
+        files:                          [ adapter/js/lightbox3.js ]
+        js:                             [ modules/lightbox3/js/lightbox3 ]
+        init_function:                  [ j1.adapter.lightbox3.init ]
 
   # ----------------------------------------------------------------------------
-  # Iconify Framework, JS API to use Iconify icons
+  # Iconify Framework
+  # JS API to use Iconify icons
   #
   # See: https://iconify.design/
   #
@@ -1101,34 +1172,36 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Algolia, JS API (wrapper) to use Algolia Search
+  # Algolia
+  # JS API (wrapper) to use Algolia Search
   #
   # See: https://www.algolia.com/doc/
   #
-  - name:                               J1 Algolia Search (Algolia InstantSearch)
-    resource:
-      enabled:                          false
+  # - name:                               J1 Algolia Search (Algolia InstantSearch)
+  #   resource:
+  #     enabled:                          false
 
-      id:                               algolia
-      comment:                          Module Algolia Search
-      region:                           head
-      layout:                           [ all ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               algolia
+  #     comment:                          Module Algolia Search
+  #     region:                           head
+  #     layout:                           [ all ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        files:                          [
-                                          adapter/js/algolia.js,
-                                          //cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css,
-                                          //cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css,
-                                          //cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js
-                                        ]
-        init_function:                  [ j1.adapter.algolia.init ]
+  #     data:
+  #       files:                          [
+  #                                         adapter/js/algolia.js,
+  #                                         //cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css,
+  #                                         //cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css,
+  #                                         //cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js
+  #                                       ]
+  #       init_function:                  [ j1.adapter.algolia.init ]
 
   # ----------------------------------------------------------------------------
-  # Clipboard, JS implementation to add clipboard functionality based
+  # Clipboard
+  # JS implementation to add clipboard functionality based
   # on the JS API clipboard.js
   #
   # See: https://clipboardjs.com/
@@ -1154,97 +1227,100 @@ resources:
 
   # ----------------------------------------------------------------------------
   # Carousel, JS API for the built-in carousel used by J1 Theme
+  # Owl Carousel V1 (1.3.3)
   #
-  - name:                               J1 Carousel
-    resource:
-      enabled:                          true
+  # - name:                               J1 Carousel
+  #   resource:
+  #     enabled:                          true
 
-      id:                               carousel
-      comment:                          Module Carousel
-      region:                           head
-      layout:                           [ home, page, post ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   true
+  #     id:                               carousel
+  #     comment:                          Module Carousel
+  #     region:                           head
+  #     layout:                           [ home, page, post ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   true
 
-      data:
-        css:                            [
-                                          modules/carousel/css/carousel,
-                                          modules/carousel/css/carousel_transitions,
-                                          modules/carousel/css/theme/uno
-                                        ]
-        files:                          [ adapter/js/carousel.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.carousel.init ]
+  #     data:
+  #       css:                            [
+  #                                         modules/carousel/css/carousel,
+  #                                         modules/carousel/css/carousel_transitions,
+  #                                         modules/carousel/css/theme/uno
+  #                                       ]
+  #       files:                          [ adapter/js/carousel.js ]
+  #       js:                             []
+  #       init_function:                  [ j1.adapter.carousel.init ]
 
   # ----------------------------------------------------------------------------
-  # MasterSlider, lite|free version 2.85.13 - Feb 2022
+  # MasterSlider.
+  # Lite|Free version 2.85.13 (Feb 2022)
   #
-  - name:                               J1 Master Slider (Lite)
-    resource:
-      enabled:                          true
+  # - name:                               J1 Master Slider (Lite)
+  #   resource:
+  #     enabled:                          true
 
-      id:                               master-slider
-      comment:                          Module Master Slider
-      region:                           head
-      layout:                           [ home, page, post ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               master-slider
+  #     comment:                          Module Master Slider
+  #     region:                           head
+  #     layout:                           [ home, page, post ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            [
-                                          modules/masterslider/css/masterslider,
-                                          modules/masterslider/css/theme/uno
-                                        ]
-        files:                          [ adapter/js/masterslider.js ]
-        js:                             [
-                                          modules/masterslider/js/plugins/jquery.easing,
-                                          modules/masterslider/js/masterslider
-                                        ]
-        init_function:                  [ j1.adapter.masterslider.init ]
+  #     data:
+  #       css:                            [
+  #                                         modules/masterslider/css/masterslider,
+  #                                         modules/masterslider/css/theme/uno
+  #                                       ]
+  #       files:                          [ adapter/js/masterslider.js ]
+  #       js:                             [
+  #                                         modules/masterslider/js/plugins/jquery.easing,
+  #                                         modules/masterslider/js/masterslider
+  #                                       ]
+  #       init_function:                  [ j1.adapter.masterslider.init ]
 
   # ----------------------------------------------------------------------------
-  # MasterSlider Pro
+  # MasterSlider
+  # Pro Version
   #
-  - name:                               J1 Master Slider (Professional)
-    resource:
-      enabled:                          false
+  # - name:                               J1 Master Slider (Professional)
+  #   resource:
+  #     enabled:                          false
 
-      id:                               master-slider-pro
-      comment:                          Module Master Slider Professional
-      region:                           head
-      layout:                           [ home, page, post ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               master-slider-pro
+  #     comment:                          Module Master Slider Professional
+  #     region:                           head
+  #     layout:                           [ home, page, post ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            [
-                                          modules/masterslider_pro/css/masterslider,
-                                          modules/masterslider_pro/css/theme/uno
-                                        ]
-        files:                          [
-                                          modules/masterslider_pro/css/style/masterslider.css,
-                                          modules/masterslider_pro/css/skins/black-1/style.css,
-                                          modules/masterslider_pro/css/skins/black-2/style.css,
-                                          modules/masterslider_pro/css/skins/light-1/style.css,
-                                          modules/masterslider_pro/css/skins/light-2/style.css,
-                                          modules/masterslider_pro/css/skins/light-3/style.css,
-                                          modules/masterslider_pro/css/skins/light-4/style.css,
-                                          modules/masterslider_pro/css/skins/light-5/style.css,
-                                          modules/masterslider_pro/css/skins/light-6/style.css,
-                                          modules/masterslider_pro/css/skins/contrast/style.css,
-                                          modules/masterslider_pro/css/skins/default/style.css,
-                                          modules/masterslider_pro/css/skins/metro/style.css,
-                                          modules/masterslider_pro/css/skins/minimal/style.css,
-                                          adapter/js/masterslider.js
-                                        ]
-        js:                             [ modules/masterslider_pro/js/masterslider ]
-        init_function:                  [ j1.adapter.masterslider.init ]
+  #     data:
+  #       css:                            [
+  #                                         modules/masterslider_pro/css/masterslider,
+  #                                         modules/masterslider_pro/css/theme/uno
+  #                                       ]
+  #       files:                          [
+  #                                         modules/masterslider_pro/css/style/masterslider.css,
+  #                                         modules/masterslider_pro/css/skins/black-1/style.css,
+  #                                         modules/masterslider_pro/css/skins/black-2/style.css,
+  #                                         modules/masterslider_pro/css/skins/light-1/style.css,
+  #                                         modules/masterslider_pro/css/skins/light-2/style.css,
+  #                                         modules/masterslider_pro/css/skins/light-3/style.css,
+  #                                         modules/masterslider_pro/css/skins/light-4/style.css,
+  #                                         modules/masterslider_pro/css/skins/light-5/style.css,
+  #                                         modules/masterslider_pro/css/skins/light-6/style.css,
+  #                                         modules/masterslider_pro/css/skins/contrast/style.css,
+  #                                         modules/masterslider_pro/css/skins/default/style.css,
+  #                                         modules/masterslider_pro/css/skins/metro/style.css,
+  #                                         modules/masterslider_pro/css/skins/minimal/style.css,
+  #                                         adapter/js/masterslider.js
+  #                                       ]
+  #       js:                             [ modules/masterslider_pro/js/masterslider ]
+  #       init_function:                  [ j1.adapter.masterslider.init ]
 
   # ----------------------------------------------------------------------------
   # J1 Gallery, JS implementation for full-featured image galleries
@@ -1312,7 +1388,7 @@ resources:
                                           modules/lightGallery/js/plugins/lg-share,
                                           modules/lightGallery/js/plugins/lg-thumbnail,
                                           modules/lightGallery/js/plugins/lg-video,
-                                          modules/lightGallery/js/plugins/lg-vimeo-thumbnail,
+#                                         modules/lightGallery/js/plugins/lg-vimeo-thumbnail,
                                           modules/lightGallery/js/plugins/lg-zoom,
                                           modules/lightGallery/js/lightgallery
                                         ]
@@ -1342,22 +1418,23 @@ resources:
                                           modules/videojs/css/themes/forest,
                                           modules/videojs/css/themes/sea,
                                           modules/videojs/css/themes/uno,
-                                          modules/videojs/plugins/controls/aspect-ratio-panel/css/aspect-ratio-panel,
+#                                         modules/videojs/plugins/controls/aspect-ratio-panel/css/aspect-ratio-panel,
                                           modules/videojs/plugins/controls/skipbuttons/css/skipbuttons,
                                           modules/videojs/plugins/controls/zoom/css/zoom
                                         ]
         files:                          [ adapter/js/videojs.js ]
         js:                             [
                                           modules/videojs/js/video,
-                                          modules/videojs/plugins/controls/aspect-ratio-panel/js/aspect-ratio-panel,
+#                                         modules/videojs/plugins/controls/aspect-ratio-panel/js/aspect-ratio-panel,
                                           modules/videojs/plugins/controls/hotkeys/js/hotkeys,
                                           modules/videojs/plugins/controls/skipbuttons/js/skipbuttons,
-                                          modules/videojs/plugins/controls/persist-settings/js/videojs-persist,
-                                          modules/videojs/plugins/controls/playbackrate-adjuster/js/playbackrate-adjuster,
+#                                         modules/videojs/plugins/controls/persist-settings/js/videojs-persist,
+#                                         modules/videojs/plugins/controls/playbackrate-adjuster/js/playbackrate-adjuster,
                                           modules/videojs/plugins/controls/zoom/js/zoom,
-                                          modules/videojs/plugins/players/dm/js/dailymotion,
-                                          modules/videojs/plugins/players/vm/js/vimeo,
-                                          modules/videojs/plugins/players/wt/js/wistia,
+#                                         modules/videojs/plugins/players/dm/js/dailymotion,
+#                                         modules/videojs/plugins/players/vm/js/vimeo,
+#                                         modules/videojs/plugins/players/wt/js/wistia,
+                                          modules/videojs/plugins/players/native/js/native,
                                           modules/videojs/plugins/players/yt/js/youtube
                                         ]
         init_function:                  [ j1.adapter.videojs.init ]
@@ -1365,114 +1442,114 @@ resources:
   # ----------------------------------------------------------------------------
   # TikToc Player, Version v1.0.11
   #
-  - name:                               TikToc Player
-    resource:
-      enabled:                          true
+  # - name:                               TikToc Player
+  #   resource:
+  #     enabled:                          true
 
-      id:                               tiktoc-player
-      comment:                          Module TikToc Player
-      region:                           head
-      layout:                           [ home, page, post ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               tiktoc-player
+  #     comment:                          Module TikToc Player
+  #     region:                           head
+  #     layout:                           [ home, page, post ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            []
-        files:                          [ modules/videoPlayer/tiktoc/js/player.min.js ]
-        js:                             []
-        init_function:                  []
+  #     data:
+  #       css:                            []
+  #       files:                          [ modules/videoPlayer/tiktoc/js/player.min.js ]
+  #       js:                             []
+  #       init_function:                  []
 
   # ----------------------------------------------------------------------------
   # Dailymotion Player, Version v-0.0.3524-rc1 (may required by lightGallery)
   #
-  - name:                               Dailymotion Player
-    resource:
-      enabled:                          true
+  # - name:                               Dailymotion Player
+  #   resource:
+  #     enabled:                          true
 
-      id:                               dailymotion-player
-      comment:                          Module Dailymotion Player
-      region:                           head
-      layout:                           [ home, page, post ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               dailymotion-player
+  #     comment:                          Module Dailymotion Player
+  #     region:                           head
+  #     layout:                           [ home, page, post ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            []
-        files:                          [ modules/videoPlayer/dailymotion/js/player.min.js ]
-        js:                             []
-        init_function:                  []
+  #     data:
+  #       css:                            []
+  #       files:                          [ modules/videoPlayer/dailymotion/js/player.min.js ]
+  #       js:                             []
+  #       init_function:                  []
 
   # ----------------------------------------------------------------------------
   # Vimeo Player, Version v2.22.0  (may required by lightGallery)
   #
-  - name:                               Vimeo Player
-    resource:
-      enabled:                          true
+  # - name:                               Vimeo Player
+  #   resource:
+  #     enabled:                          true
 
-      id:                               vimeo-player
-      comment:                          Module Vimeo Player
-      region:                           head
-      layout:                           [ home, page, post ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               vimeo-player
+  #     comment:                          Module Vimeo Player
+  #     region:                           head
+  #     layout:                           [ home, page, post ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            []
-        files:                          [ modules/videoPlayer/vimeo/js/player.min.js ]
-        js:                             []
-        init_function:                  []
+  #     data:
+  #       css:                            []
+  #       files:                          [ modules/videoPlayer/vimeo/js/player.min.js ]
+  #       js:                             []
+  #       init_function:                  []
 
   # ----------------------------------------------------------------------------
   # Wistia Player, Version E-v1 (may required by lightGallery)
   #
-  - name:                               Wistia Player
-    resource:
-      enabled:                          true
+  # - name:                               Wistia Player
+  #   resource:
+  #     enabled:                          true
 
-      id:                               wistia-player
-      comment:                          Module Wistia Player
-      region:                           head
-      layout:                           [ home, page, post ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               wistia-player
+  #     comment:                          Module Wistia Player
+  #     region:                           head
+  #     layout:                           [ home, page, post ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            []
-        files:                          [ modules/videoPlayer/wistia/js/player.min.js ]
-        js:                             []
-        init_function:                  []
+  #     data:
+  #       css:                            []
+  #       files:                          [ modules/videoPlayer/wistia/js/player.min.js ]
+  #       js:                             []
+  #       init_function:                  []
 
   # ----------------------------------------------------------------------------
   # Range Slider, based on the JS implementation of the noUiSlider API
   #
   # See: https://github.com/leongersen/noUiSlider
   #
-  - name:                               J1 Range Slider
-    resource:
-      enabled:                          false
+  # - name:                               J1 Range Slider
+  #   resource:
+  #     enabled:                          true
 
-      id:                               range-slider
-      comment:                          Module Range Slider
-      region:                           head
-      layout:                           [ home, page, post ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               range-slider
+  #     comment:                          Module Range Slider
+  #     region:                           head
+  #     layout:                           [ home, page, post ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            [ modules/rangeSlider/css/theme/uno/nouislider ]
-        files:                          [ adapter/js/rangeSlider.js ]
-        js:                             [ modules/rangeSlider/js/nouislider ]
-        init_function:                  [ j1.adapter.rangeSlider.init ]
+  #     data:
+  #       css:                            [ modules/rangeSlider/css/theme/uno/nouislider ]
+  #       files:                          [ adapter/js/rangeSlider.js ]
+  #       js:                             [ modules/rangeSlider/js/nouislider ]
+  #       init_function:                  [ j1.adapter.rangeSlider.init ]
 
   # ----------------------------------------------------------------------------
   # Scroller, JS API to implement infinite scroll
@@ -1503,7 +1580,7 @@ resources:
   #
   - name:                               J1 Advertising
     resource:
-      enabled:                          false
+      enabled:                          true
 
       id:                               advertising
       comment:                          Module Advertising
@@ -1525,7 +1602,7 @@ resources:
   #
   - name:                               J1 Comments
     resource:
-      enabled:                          false
+      enabled:                          true
 
       id:                               comments
       comment:                          Module Comments
@@ -1552,46 +1629,46 @@ resources:
   # See: https://github.com/requirejs/requirejs
   #      https://plotly.com/javascript/getting-started/
   #
-  - name:                               RequireJS
-    resource:
-      enabled:                          false
+  # - name:                               RequireJS
+  #   resource:
+  #     enabled:                          false
 
-      id:                               require-js
-      comment:                          Module RequireJS
-      region:                           head
-      layout:                           [ all ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               require-js
+  #     comment:                          Module RequireJS
+  #     region:                           head
+  #     layout:                           [ all ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            []
-        files:                          []
-        js:                             [ modules/requirejs/js/require ]
-        init_function:                  []
+  #     data:
+  #       css:                            []
+  #       files:                          []
+  #       js:                             [ modules/requirejs/js/require ]
+  #       init_function:                  []
 
   # ----------------------------------------------------------------------------
   # Waves
   #
-  - name:                               J1 Waves
-    resource:
-      enabled:                          false
+  # - name:                               J1 Waves
+  #   resource:
+  #     enabled:                          false
 
-      id:                               waves
-      comment:                          Module Waves
-      region:                           head
-      layout:                           [ home, page, post ]
-      required:                         always
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               waves
+  #     comment:                          Module Waves
+  #     region:                           head
+  #     layout:                           [ home, page, post ]
+  #     required:                         always
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            []
-        files:                          [ adapter/js/waves.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.waves.init ]
+  #     data:
+  #       css:                            []
+  #       files:                          [ adapter/js/waves.js ]
+  #       js:                             []
+  #       init_function:                  [ j1.adapter.waves.init ]
 
   # ----------------------------------------------------------------------------
   # jsCookies
@@ -1621,24 +1698,24 @@ resources:
   # ----------------------------------------------------------------------------
   # Particles
   #
-  - name:                               J1 Particles
-    resource:
-      enabled:                          false
+  # - name:                               J1 Particles
+  #   resource:
+  #     enabled:                          false
 
-      id:                               particles
-      comment:                          Module Particles
-      region:                           head
-      layout:                           [ home, page, post ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               particles
+  #     comment:                          Module Particles
+  #     region:                           head
+  #     layout:                           [ home, page, post ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            []
-        files:                          [ adapter/js/particles.js ]
-        js:                             [ modules/particles/js/particles ]
-        init_function:                  [ j1.adapter.particles.init ]
+  #     data:
+  #       css:                            []
+  #       files:                          [ adapter/js/particles.js ]
+  #       js:                             [ modules/particles/js/particles ]
+  #       init_function:                  [ j1.adapter.particles.init ]
 
   # ----------------------------------------------------------------------------
   # Slick Slider
@@ -1758,30 +1835,8 @@ resources:
         init_function:                  [ j1.adapter.themeToggler.init ]
 
   # ----------------------------------------------------------------------------
-  # dynamicLoader
-  # Configurable JS
-  #
-  - name:                               J1 CSS Loader
-    resource:
-      enabled:                          true
-
-      id:                               cssloader
-      comment:                          Module CSS Loader
-      region:                           head
-      layout:                           [ all ]
-      required:                         always
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
-
-      data:
-        css:                            []
-        files:                          [ adapter/js/lazyLoader.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.lazyLoader.init ]
-
-  # ----------------------------------------------------------------------------
-  # Dropdowns. JS API to create simple dropdown menus
+  # Dropdowns
+  # JS API to create simple dropdown menus.
   #
   # NOTE: Modified version for J1
   # NOTE: Adapted|old (1.3.5) version for cash.js from Materialize
@@ -1837,73 +1892,70 @@ resources:
   # Chatbot AI
   # Chatbot settings
   #
-  - name:                               J1 Chatbot
-    resource:
-      enabled:                          false
+  # - name:                               J1 Chatbot
+  #   resource:
+  #     enabled:                          false
 
-      id:                               chat-bot
-      comment:                          Module Chatbot
-      region:                           head
-      layout:                           [ all ]
-      required:                         ondemand
-      script_load:
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               chat-bot
+  #     comment:                          Module Chatbot
+  #     region:                           head
+  #     layout:                           [ all ]
+  #     required:                         ondemand
+  #     script_load:
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            [ modules/chatbot/css/theme/uno ]
-        files:                          [ adapter/js/chatbot.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.chatbot.init ]
-
-  # ----------------------------------------------------------------------------
-  # Docsearch
-  #
-  #
-  - name:                               J1 DocSearch
-    resource:
-      enabled:                          false
-
-      id:                               doc-search
-      comment:                          Module DocSearch
-      region:                           head
-      layout:                           [ all ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
-
-      data:
-        css:                            []
-        files:                          [ adapter/js/docsearch.js ]
-        js:                             []
-        init_function:                  [ j1.adapter.docsearch.init ]
+  #     data:
+  #       css:                            [ modules/chatbot/css/theme/uno ]
+  #       files:                          [ adapter/js/chatbot.js ]
+  #       js:                             []
+  #       init_function:                  [ j1.adapter.chatbot.init ]
 
   # ----------------------------------------------------------------------------
-  # Gemini API
+  # Docsearch AI
+  # Docsearch settings
+  #
+  # - name:                               J1 DocSearch
+  #   resource:
+  #     enabled:                          false
+
+  #     id:                               doc-search
+  #     comment:                          Module DocSearch
+  #     region:                           head
+  #     layout:                           [ all ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
+
+  #     data:
+  #       css:                            []
+  #       files:                          [ adapter/js/docsearch.js ]
+  #       js:                             []
+  #       init_function:                  [ j1.adapter.docsearch.init ]
+
+  # ----------------------------------------------------------------------------
+  # Gemini AI
   # Google Gemini API
   #
-  - name:                               J1 Gemini
-    resource:
-      enabled:                          true
+  # - name:                               J1 Gemini
+  #   resource:
+  #     enabled:                          true
 
-      id:                               gemini
-      comment:                          Module Gemini
-      region:                           head
-      layout:                           [ page ]
-      required:                         ondemand
-      script_load:                      defer
-      dependencies:                     false
-      pass_init_data:                   false
+  #     id:                               gemini
+  #     comment:                          Module Gemini
+  #     region:                           head
+  #     layout:                           [ page ]
+  #     required:                         ondemand
+  #     script_load:                      defer
+  #     dependencies:                     false
+  #     pass_init_data:                   false
 
-      data:
-        css:                            [ modules/gemini/css/theme/uno ]
-        files:                          [
-                                          modules/gemini/js/parser/marked.min.js,
-                                          adapter/js/gemini.js
-                                        ]
-        js:                             []
-        init_function:                  [ j1.adapter.gemini.init ]
+  #     data:
+  #       css:                            [ modules/gemini/css/theme/uno ]
+  #       files:                          [ adapter/js/gemini.js ]
+  #       js:                             []
+  #       init_function:                  [ j1.adapter.gemini.init ]
 
   # ----------------------------------------------------------------------------
   # AmplitudeJS
@@ -2000,26 +2052,72 @@ resources:
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # jqueryScrollbar
+  # Markdown (MD -> HTML renderer)
   #
-  # - name:                               J1 jqueryScrollbar
-  #   resource:
-  #     enabled:                          true
+  - name:                               J1 Markdown
+    resource:
+      enabled:                          true
 
-  #     id:                               scrollbars
-  #     comment:                          Module jqueryScrollbar
-  #     region:                           head
-  #     layout:                           [ home, page, post ]
-  #     required:                         always
-  #     script_load:                      defer
-  #     dependencies:                     false
-  #     pass_init_data:                   false
+      id:                               renderMD
+      comment:                          Module Markdown
+      region:                           head
+      layout:                           [ home, page, post ]
+      required:                         ondemand
+      script_load:                      defer
+      pass_init_data:                   false
 
-  #     data:
-  #       css:                            [ modules/jqueryScrollbar/css/scrollbar ]
-  #       files:                          []
-  #       js:                             [ modules/jqueryScrollbar/js/scrollbar ]
-  #       init_function:                  []
+      data:
+        css:                            []
+        files:                          []
+        js:                             [ modules/markdown/js/marked ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # PDF tools
+  #
+  - name:                               J1 PDF
+    resource:
+      enabled:                          true
+
+      id:                               pdf
+      comment:                          Module PDF
+      region:                           head
+      layout:                           [ home, page, post ]
+      required:                         ondemand
+      script_load:                      defer
+      pass_init_data:                   false
+
+      data:
+        css:                            []
+#       files:                          [ modules/pdf/js/pdf.mjs ]              # JS Module
+        files:                          []
+        js:                             [
+                                          modules/pdf/js/pdf,                   # PDF text extraction
+                                          modules/pdf/js/jsPDF                  # convert text to PDF
+                                        ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # J1 VideoPlayer
+  #
+  - name:                               J1 VideoPlayer
+    resource:
+      enabled:                          true
+
+      id:                               videoPlayer
+      comment:                          Module videoPlayer
+      region:                           head
+      layout:                           [ page ]
+      required:                         ondemand
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+
+      data: 
+        css:                            [ modules/videoPlayer/css/videoPlayer ]
+        js:                             [ modules/videoPlayer/js/videoPlayer ]
+        files:                          [ adapter/js/videoPlayer.js ]
+        init_function:                  [ j1.adapter.videoPlayer.init ]
 
 # ------------------------------------------------------------------------------
 # END config

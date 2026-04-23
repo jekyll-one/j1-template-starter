@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/lightbox.yml
-# User configuration for J1 Lightbox
+# ~/_data/modules/videoPlayer.yml
+# User configuration settings for J1 videoPlayer module
 #
 # Product/Info:
 # https://jekyll.one
@@ -15,9 +15,9 @@
 # Description
 #
 description:
-  title:                                Lightbox
+  title:                                J1 videoPlayer
   scope:                                User settings
-  location:                             _data/modules/lightbox.yml
+  location:                             _data/modules/videoPlayer.yml
 
 # ------------------------------------------------------------------------------
 # User configuration settings
@@ -30,10 +30,12 @@ settings:
   #
   enabled:                              true
 
-  # ----------------------------------------------------------------------------
-  # Lightbox options
-  # ----------------------------------------------------------------------------
-  imageFadeDuration:                    600
+  toolbox:
+    enabled:                            false
+
+  playlist:
+    cards:
+      perRow:                           2
 
 # ------------------------------------------------------------------------------
 # END config

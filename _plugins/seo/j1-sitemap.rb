@@ -38,11 +38,11 @@ module Jekyll
       @module_config                    = @module_config_default_settings.merge!(@module_config_user_settings)
 
       @template_source_folder           = File.join(@project_path, @module_config['template_source_folder'])
-      @robots_theme_name             = @module_config['robots_theme_name']
-      @sitemap_theme_name            = @module_config['sitemap_theme_name']
+      @robots_theme_name                = @module_config['robots_theme_name']
+      @sitemap_theme_name               = @module_config['sitemap_theme_name']
 
-      @robots_source_path ||= File.expand_path @robots_theme_name, @template_source_folder
-      @sitemap_source_path ||= File.expand_path @sitemap_theme_name, @template_source_folder
+      @robots_source_path             ||= File.expand_path @robots_theme_name, @template_source_folder
+      @sitemap_source_path            ||= File.expand_path @sitemap_theme_name, @template_source_folder
 
       if plugin_disabled?
         Jekyll.logger.info "J1 Sitemap:", "disabled"

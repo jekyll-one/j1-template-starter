@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
-# ~/_plugins/asciidoctor-extensions/video-block.rb
-# Asciidoctor extension for local HTML5 Video
+# ~/_plugins/asciidoctor-extensions/videojs-block.rb
+# Asciidoctor extension for local HTML5 Video over VideoJS
 #
 # Product/Info:
 # https://jekyll.one
@@ -14,23 +14,23 @@ require 'asciidoctor/extensions' unless RUBY_ENGINE == 'opal'
 include Asciidoctor
 
 # ------------------------------------------------------------------------------
-# A block macro that embeds a local video using VideoJS into the output document
+# A block macro that embeds a local video using VideoJS into
+# the output document
 #
 # Usage:
 #
 #   .Title
-#   video::video_path[start="hh:mm:ss" poster="full_image_path" theme="vjs_theme_name" zoom="true|false" role="CSS classes"]
+#   videojs::video_path[start="hh:mm:ss" poster="full_image_path" theme="vjs_theme_name" zoom="true|false" role="CSS classes"]
 #
 # Example:
 #
 #   .MP4 Video, Rolling Wild
 #   videojs::/assets/video/gallery/html5/video2.mp4[start="00:00:50" poster="/assets/video/gallery/video1-poster.jpg" role="mt-4 mb-5"]
-#
 # ------------------------------------------------------------------------------
 # See:
 # https://www.tutorialspoint.com/creating-a-responsive-video-player-using-video-js
 # ------------------------------------------------------------------------------
-
+#
 Asciidoctor::Extensions.register do
 
   class VideoJSBlockMacro < Extensions::BlockMacroProcessor
@@ -39,11 +39,11 @@ Asciidoctor::Extensions.register do
     named :videojs
     name_positional_attributes 'caption', 'start', 'poster', 'theme', 'zoom', 'role'
     default_attrs 'caption' => 'true',
-                  'start' => '00:00:00',
-                  'poster' => '/assets/video/gallery/videojs-poster.png',
-                  'theme' => 'uno',
-                  'zoom' => false,
-                  'role' => 'mt-3 mb-3'
+                  'start'   => '00:00:00',
+                  'poster'  => '/assets/video/gallery/videojs-poster.png',
+                  'theme'   => 'uno',
+                  'zoom'    => false,
+                  'role'    => 'mt-3 mb-3'
 
     def process parent, target, attributes
 

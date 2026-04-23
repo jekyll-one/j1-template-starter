@@ -252,7 +252,7 @@ module Jekyll
 
         # jadams, 2012-08-04
         # TODO: List of excludes should (alternatively) be taken from
-        #       quicksearch.yml configuration
+        #       site_search.yml configuration
 
         items
       end
@@ -394,6 +394,6 @@ end
 
 module Jekyll
   module J1LunrSearch
-    VERSION = '2026.0.2'
+    VERSION = '2026.0.6'
   end
 end

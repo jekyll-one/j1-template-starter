@@ -78,20 +78,23 @@ source 'https://rubygems.org'
 gem 'jekyll', '~> 4.0'
 
 # ------------------------------------------------------------------------------
-# Install GEM csv to suppress warnings when Ruby version >= 3.3 is used.
+# Install GEM webrick when Ruby version >= 3.3 is used.
+#
+# NOTE: The GEM will no longer be part of the default (system) gems starting
+# from Ruby 3.3
 #
 install_if -> { RUBY_VERSION =~ /3/ } do
   gem 'webrick', '~> 1.9'
 end
 
 # ------------------------------------------------------------------------------
-# Install GEM csv (to suppress warnings) when Ruby version >= 3.3 is used.
+# Install GEM csv when Ruby version >= 3.3 is used.
 #
-# NOTE: The GEM will no longer be part of the default gems starting
-# from Ruby 3.4.0
+# NOTE: The GEM will no longer be part of the default (system) gems starting
+# from Ruby 3.3.0
 #
 install_if -> { RUBY_VERSION =~ /3.3/ } do
-   gem 'csv', '~> 3.0'
+  gem 'csv', '~> 3.0'
 end
 
 # ------------------------------------------------------------------------------
@@ -106,7 +109,7 @@ gem 'j1-template', '~> 2026.0'
 
 # Loaded from gem.fury.io
 #source 'https://gem.fury.io/jekyll-one-org/' do
-#  gem 'j1-template', '~> 2026.ß'
+#  gem 'j1-template', '~> 2026.0'
 #end
 
 # ------------------------------------------------------------------------------

@@ -1,0 +1,736 @@
+---
+title:                                  Lightbox V3
+title_extention:                        The original lightbox script
+tagline:                                Default lightbox
+
+date:                                   2020-11-05
+#last_modified:                         2023-01-01
+
+description: >
+                                        The original lightbox script. Now with fluid
+                                        animations and touch‑first gestures.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, lightbox
+
+categories:                             [ Manual ]
+tags:                                   [ Module, Lightbox ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/bp-miller.jpg
+  width:                                1920
+  height:                               1280
+
+regenerate:                             false
+permalink:                              /pages/public/manuals/lightbox/
+
+resources:                              [ lightbox3 ]
+resource_options:
+  - attic:
+      opacity:                          0.3
+      preload:                          0
+      transitionDuration:               fast
+      resolutionRefreshRate:            500
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/bp-miller.jpg
+          alt:                          Photo by BP Miller on Unsplash
+          badge:
+            type:                       unsplash
+            author:                     BP Miller
+            href:                       //unsplash.com/de/@bp_miller
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+:time-num--string:                      10-30
+:time-en--string:                       Minutes
+:time-en--description:                  to read
+:time-de--string:                       Minuten
+:time-de--description:                  Lesezeit
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="global" %}
+
+
+// Page content
+// https://lokeshdhakar.com/projects/lightbox3/
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+The original lightbox script. Now with fluid animations and touch‑first
+gestures.
+
+[subs=attributes]
+++++
+<div class="video-title">
+  <i class="mdib mdib-clock-outline mdib-24px mr-2"></i>
+  {time-num--string} {time-en--string} {time-en--description}.
+</div>
+++++
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5"]
+== Getting started
+
+++++
+<div class="featured mt-5" style="opacity: 1;">
+    <div class="featured-grid">
+      <a href="https://images.unsplash.com/photo-1654394237275-081d5455774b?w=2400&amp;q=80" data-lightbox="featured" data-caption="Swipe through images or use ← → arrow keys" style="">
+        <img src="https://images.unsplash.com/photo-1654394237275-081d5455774b?w=600&amp;h=450&amp;fit=crop&amp;q=80" alt="A view of a town with mountains in the background">
+      </a>
+      <a href="https://images.unsplash.com/photo-1567972042114-5a1eaba28886?w=2400&amp;q=80" data-lightbox="featured" data-caption="Tap, click, or pinch to zoom" style="">
+        <img src="https://images.unsplash.com/photo-1567972042114-5a1eaba28886?w=600&amp;h=450&amp;fit=crop&amp;q=80" alt="A view of a street with a lot of palm trees">
+      </a>
+      <a href="https://images.unsplash.com/photo-1600663757626-0fc610ba60d4?w=2400&amp;q=80" data-lightbox="featured" data-caption="Drag to pan when zoomed in" style="">
+        <img src="https://images.unsplash.com/photo-1600663757626-0fc610ba60d4?w=600&amp;h=450&amp;fit=crop&amp;q=80" alt="Red and white bridge over the trees">
+      </a>      <a href="https://images.unsplash.com/photo-1576764225594-96ad970efffa?w=2400&amp;q=80" data-lightbox="featured" data-caption="Swipe down, flick the ×, or press Escape to close">
+        <img src="https://images.unsplash.com/photo-1576764225594-96ad970efffa?w=600&amp;h=450&amp;fit=crop&amp;q=80" alt="A view of a city from a hill above the clouds">
+      </a>
+    </div>
+  </div>
+++++
+
+++++
+<style>
+
+/* ——— Featured grid ——— */
+
+.featured {
+  position: relative;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 16px 2rem;
+  opacity: 0;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  position: relative;
+}
+
+.featured-grid a {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--color-bg-hover);
+  border-radius: 8px;
+}
+
+.featured-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.15s ease;
+}
+
+.featured-grid a:active img {
+  transform: scale(0.95);
+}
+
+@media (max-width: 719px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+</style>
+++++
+
+
+[[gs-markup]]
+[role="mt-4"]
+=== Markup
+
+Add `+data-lightbox+` to any `+<a>+` element. The `+href+` is the
+full-size image URL.
+
+[source, html]
+----
+<a href="photo.jpg" data-lightbox>
+  <img src="thumb.jpg">
+</a>
+----
+
+To create a gallery, give each link the same `+data-lightbox+` value.
+
+[source, html]
+----
+<a href="photo-1.jpg" data-lightbox="gallery">
+  <img src="thumb-1.jpg">
+</a>
+<a href="photo-2.jpg" data-lightbox="gallery">
+  <img src="thumb-2.jpg">
+</a>
+----
+
+[[gs-script-tag]]
+[role="mt-4"]
+=== Script tag
+
+Load the CSS and JavaScript directly. Lightbox3 will auto-initialize on
+all `+[data-lightbox]+` elements.
+
+[source, html]
+----
+<link rel="stylesheet" href="lightbox3.css">
+<script src="lightbox3.min.js"></script>
+----
+
+[[gs-lightbox2]]
+[role="mt-4"]
+=== Coming from Lightbox2
+
+Lightbox3 uses the same markup pattern you already know — mostly the
+same HTML, way better UX.
+
+[cols=",",options="header",]
+|===
+|What changed |Details
+|No jQuery |Lightbox3 is zero-dependency. Remove jQuery and the
+Lightbox2 plugin script.
+
+|Same `+data-lightbox+` |Your existing `+data-lightbox+` and
+`+data-lightbox="gallery"+` attributes work as-is.
+
+|`+data-title+` still works |Lightbox3 reads `+data-title+` for
+captions, so your existing markup carries over. You can also use
+`+data-caption+`.
+
+|New features |Pinch-to-zoom, swipe navigation, swipe-to-dismiss, spring
+animations — all built in, no configuration needed.
+|===
+
+[[api]]
+[role="mt-5"]
+== API reference
+
+[[api-attributes]]
+[role="mt-4"]
+=== Data attributes
+
+[cols=",",options="header",]
+|===
+|Attribute |Description
+|`+data-lightbox+` |Add to an `+<a>+` element to enable lightbox. The
+`+href+` is used as the full-res image URL.
+
+|`+data-lightbox="+`[.subtle]#`+name+`#`+"+` |Group links into a
+navigable gallery. All links sharing the same value form a set.
+
+|`+data-caption="+`[.subtle]#`+text+`#`+"+` |Caption text displayed
+below the image. Also accepts `+data-title+` for Lightbox2
+compatibility.
+
+|`+data-alt="+`[.subtle]#`+text+`#`+"+` |Alt text for the full-size
+image. Falls back to the thumbnail's `+alt+` attribute if not set.
+|===
+
+[[api-init]]
+[role="mt-4"]
+=== Initialization
+
+[cols=",",options="header",]
+|===
+|Method |Description
+|`+Lightbox.init(+`[.subtle]#`+options?+`#`+)+` |Initialize and return a
+singleton instance. Scans the DOM for `+[data-lightbox]+` elements. Safe
+to call multiple times — returns the existing instance.
+|===
+
+[[api-options]]
+[role="mt-4"]
+==== Options
+
+[cols=",,,",options="header",]
+|===
+|Option |Type |Default |Description
+|`+selector+` |`+string+` |`+'[data-lightbox]'+` |CSS selector for
+trigger elements.
+
+|`+springOpen+` |`+SpringConfig+` |`+{ stiffness: 260, damping: 26 }+`
+|Spring config for open and zoom-in animations.
+
+|`+springClose+` |`+SpringConfig+` |`+{ stiffness: 500, damping: 38 }+`
+|Spring config for close and zoom-out animations.
+
+|`+padding+` |`+number+` |`+40+` |Viewport padding in pixels around the
+opened image.
+
+|`+debug+` |`+boolean+` |`+false+` |Show debug overlay with spring
+values and state. Also enabled via `+?debug+` URL param.
+|===
+
+[[api-methods]]
+[role="mt-4"]
+=== Methods
+
+[cols=",",options="header",]
+|===
+|Method |Description
+|`+open(+`[.subtle]#`+src, triggerEl?+`#`+)+` |Programmatically open an
+image. `+src+` is the full-res URL. Optional `+triggerEl+` enables the
+morph animation from that element; without it, the image fades in.
+
+|`+close()+` |Close the lightbox.
+
+|`+next()+` |Navigate to the next image in the gallery.
+
+|`+prev()+` |Navigate to the previous image in the gallery.
+
+|`+destroy()+` |Remove all event listeners, cancel animations, and tear
+down the instance.
+|===
+
+[[api-events]]
+[role="mt-4"]
+=== Events
+
+[cols=",",options="header",]
+|===
+|Event |Description
+|`+open+` |Fired when the open animation starts.
+
+|`+opened+` |Fired when the open animation completes.
+
+|`+close+` |Fired when the close animation starts.
+
+|`+closed+` |Fired when the close animation completes and the overlay is
+removed.
+
+|`+navigate+` |Fired when navigating to a different image in a gallery.
+
+|`+zoomIn+` |Fired when zoom-in starts (tap or double-click).
+
+|`+zoomOut+` |Fired when zoom-out starts.
+|===
+
+Subscribe with `+lb.on(event, callback)+` and unsubscribe with
+`+lb.off(event, callback)+`. Callbacks receive a
+`+{ src, triggerEl, index, total }+` detail object.
+
+[[api-css]]
+[role="mt-4"]
+=== CSS custom properties
+
+Override these on `+:root+` or any parent element to customize the
+lightbox appearance.
+
+[cols=",,",options="header",]
+|===
+|Property |Default |Description
+|`+--lb-backdrop-color+` |`+rgba(0, 0, 0, 0.95)+` |Overlay backdrop
+color.
+
+|`+--lb-image-border-radius+` |`+24px+` |Border radius of the opened
+image.
+
+|`+--lb-image-padding+` |`+40px+` |Padding between the image and
+viewport edges.
+
+|`+--lb-chrome-bg+` |`+rgba(24, 24, 24, 0.8)+` |Background color of the
+caption bar.
+
+|`+--lb-chrome-text+` |`+rgba(255, 255, 255, 0.9)+` |Text color in the
+caption bar.
+
+|`+--lb-chrome-font-size+` |`+15px+` |Font size in the caption bar.
+
+|`+--lb-chrome-padding+` |`+16px+` |Padding around the caption bar and
+nav arrows.
+
+|`+--lb-chrome-border-radius+` |`+48px+` |Border radius of the caption
+bar.
+
+|`+--lb-z-index+` |`+999999+` |Z-index of the lightbox overlay.
+|===
+
+
+[role="mt-5"]
+== Examples
+
+[role="mt-4"]
+=== Mixed aspect ratios
+
+Portrait, landscape, square. Thumbnails can be cropped to any aspect ratio
+and will seamlessly transition to the full-size image.
+
+++++
+<div class="mixed-gallery">
+  <a href="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=2400&amp;q=80" data-lightbox="mixed" data-caption="Sunlit mountain valley" style="width: 210px;"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=420&amp;h=280&amp;fit=crop&amp;q=80" alt="Sunlit mountain valley"></a>
+  <a href="https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?w=2400&amp;q=80" data-lightbox="mixed" data-caption="Ocean cliffs at sunset" style="width: 94px;"><img src="https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?w=188&amp;h=280&amp;fit=crop&amp;q=80" alt="Ocean cliffs at sunset"></a>
+  <a href="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=2400&amp;q=80" data-lightbox="mixed" data-caption="Lake with autumn trees" style="width: 210px;"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=420&amp;h=280&amp;fit=crop&amp;q=80" alt="Lake with autumn trees"></a>
+  <a href="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=2400&amp;q=80" data-lightbox="mixed" data-caption="Snow-capped peaks at night" style="width: 140px;"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=280&amp;h=280&amp;fit=crop&amp;q=80" alt="Snow-capped peaks at night"></a>
+  <a href="https://images.unsplash.com/photo-1505567745926-ba89000d255a?w=2400&amp;q=80" data-lightbox="mixed" data-caption="Volcanic landscape" style="width: 94px;"><img src="https://images.unsplash.com/photo-1505567745926-ba89000d255a?w=188&amp;h=280&amp;fit=crop&amp;q=80" alt="Volcanic landscape"></a>
+  <a href="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=2400&amp;q=80" data-lightbox="mixed" data-caption="Sunset over the sea" style="width: 210px;"><img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=420&amp;h=280&amp;fit=crop&amp;q=80" alt="Sunset over the sea"></a>
+</div>
+++++
+
+++++
+<style>
+/* ——— Mixed gallery ——— */
+
+.mixed-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mixed-gallery a {
+  display: block;
+  overflow: hidden;
+  height: 140px;
+  background: var(--color-bg-hover);
+  border-radius: 8px;
+  outline: none;
+}
+
+.mixed-gallery a:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 2px;
+}
+
+.mixed-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.15s ease;
+}
+
+.mixed-gallery a:active img {
+  transform: scale(0.95);
+}
+
+@media (max-width: 719px) {
+  .mixed-gallery {
+    gap: 6px;
+  }
+
+  .mixed-gallery a {
+    height: 90px;
+    width: auto !important;
+    border-radius: 6px;
+  }
+
+  .mixed-gallery img {
+    width: auto;
+    height: 100%;
+    border-radius: 6px;
+  }
+}
+
+</style>
+++++
+
+[role="mt-5"]
+=== Zoom & pan
+
+Click or tap to zoom in. Pinch to zoom on touch. Drag to pan when
+zoomed.
+
+++++
+<div class="image-row">
+  <a href="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=3600&amp;q=90" data-lightbox="" data-caption="Glass tower">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=560&amp;h=400&amp;fit=crop&amp;q=80" alt="Modern skyscraper glass facade looking up">
+  </a>
+</div>
+++++      
+
+++++
+<style>
+/* ——— Image grid & rows ——— */
+
+.image-row {
+  display: flex;
+  gap: 8px;
+}
+
+.image-row a {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: var(--color-bg-hover);
+  width: 200px;
+  border-radius: 8px;
+}
+
+.image-row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.15s ease;
+}
+
+.image-row a:active img {
+  transform: scale(0.95);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.gallery a {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: var(--color-bg-hover);
+  border-radius: 8px;
+  outline: none;
+}
+
+.gallery a:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 2px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.15s ease;
+}
+
+.gallery a:active img {
+  transform: scale(0.95);
+}
+
+/* ——— Text links ——— */
+
+.text-links a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.text-links a:hover {
+  color: var(--color-text);
+}
+
+.text-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 1.05rem;
+}
+
+</style>
+++++
+
+
+[role="mt-5"]
+=== HTML in captions
+
+Captions support links and line breaks.
+
+++++
+<div class="image-row mb-4">
+  <a href="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=2400&amp;q=80" data-lightbox="" data-caption="Photo by &lt;a href='https://unsplash.com/@kalenemsley'&gt;Kalen Emsley&lt;/a&gt;">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&amp;h=400&amp;fit=crop&amp;q=80" alt="Snow-capped mountains with a valley and evergreen trees">
+  </a>
+</div>
+++++      
+
+[source, html]
+----
+<a href="photo.jpg"
+   data-lightbox
+   data-caption="Photo by <a href='https://example.com'>Jane Doe</a>">
+  <img src="thumb.jpg">
+</a>
+----
+
+[role="mt-5"]
+=== Custom springs
+
+Select a preset, then click the image to feel the difference.
+
+++++
+<div class="spring-presets">
+  <button class="spring-preset-btn active" data-preset="default">Default</button>
+  <button class="spring-preset-btn" data-preset="snappy">Snappy</button>
+  <button class="spring-preset-btn" data-preset="bouncy">Bouncy</button>
+</div>
+
+<div class="image-row mb-4" style="margin-top: 12px;">
+  <a href="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=2400&amp;q=80" data-lightbox="" data-caption="Try different spring presets to feel the difference">
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&amp;h=400&amp;fit=crop&amp;q=80" alt="Mountains rising above a sea of clouds at sunset">
+  </a>
+</div>
+++++
+
+
+[source, js]
+----
+Lightbox.init({
+  springOpen:  { stiffness: 260, damping: 24 },
+  springClose: { stiffness: 300, damping: 28 },
+});
+----
+
+[role="mt-4"]
+=== Text links
+
+Links without thumbnails fade in instead of morphing from a source
+element.
+
+++++
+<div class="text-links">
+  <ul>
+    <li><a href="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?w=2400&amp;q=80" data-lightbox="" style="">Cherry blossoms in bloom</a></li>
+    <li><a href="https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=2400&amp;q=80" data-lightbox="">Coral reef underwater</a></li>
+    <li><a href="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=2400&amp;q=80" data-lightbox="">Lightning over the plains</a></li>
+  </ul>
+</div>
+++++
+
+
+[role="mt-4"]
+=== Programmatic open
+
+Open images from code. Without a trigger element, the image fades in
+from center.
+
+Open image via API
+
+[source, js]
+----
+const lb = Lightbox3.Lightbox.init();
+lb.open('https://example.com/photo.jpg');
+----
+
+// ++++
+// <script>
+//   setTimeout(() => {
+//     // load API reference
+//     const lb = Lightbox3.Lightbox.init();
+//     lb.open('https://images.unsplash.com/photo-1542224566-6e85f2e6772f?w=2400&q=80[Cherry blossoms in bloom]');
+
+//     lb.on('open', (e) => console.log('open', e.detail));
+//     lb.on('closed', (e) => console.log('closed', e.detail));
+//     lb.on('navigate', (e) => console.log('navigate', e.detail));
+//     lb.on('zoomIn', (e) => console.log('zoomIn', e.detail));
+//     lb.on('zoomOut', (e) => console.log('zoomOut', e.detail));
+
+//   }, 500);
+// </script>
+// ++++
+
+
+[role="mt-4"]
+=== Events
+
+Interact with any image above to see events logged here.
+
+++++
+<div id="event-log" class="event-log">
+  <span class="event-log-placeholder">Interact with any image above...</span>
+</div>
+++++
+
+[source, js]
+----
+const lb = Lightbox.init();
+
+lb.on('open', (e) => console.log('open', e.detail));
+lb.on('closed', (e) => console.log('closed', e.detail));
+lb.on('navigate', (e) => console.log('navigate', e.detail));
+lb.on('zoomIn', (e) => console.log('zoomIn', e.detail));
+lb.on('zoomOut', (e) => console.log('zoomOut', e.detail));
+----
+
+// ++++
+// <script>
+
+//     const lb = Lightbox3.Lightbox.init();
+
+//     // ——— Preload high-res images ———
+//     // Featured first, then the rest, one at a time to avoid bandwidth contention.
+//     const featured = document.querySelectorAll('[data-lightbox="featured"]');
+//     const rest = document.querySelectorAll('[data-lightbox]:not([data-lightbox="featured"])');
+//     const queue = [...featured, ...rest].map(el => el.closest('a')?.href).filter(Boolean);
+
+//     (function preloadNext() {
+//       const src = queue.shift();
+//       if (!src) return;
+//       const img = new Image();
+//       img.onload = img.onerror = preloadNext;
+//       img.src = src;
+//     })();
+
+//     // ——— Programmatic open recipe ———
+//     document.getElementById('programmatic-open-btn').addEventListener('click', () => {
+//       lb.open('https://images.unsplash.com/photo-1542224566-6e85f2e6772f?w=2400&q=80');
+//     });
+
+//     // ——— Event log ———
+//     const eventLog = document.getElementById('event-log');
+//     const eventNames = ['open', 'opened', 'close', 'closed', 'navigate', 'zoomIn', 'zoomOut'];
+
+//     function setupEvents() {
+//       eventNames.forEach(name => {
+//         lb.on(name, () => {
+//           const placeholder = eventLog.querySelector('.event-log-placeholder');
+//           if (placeholder) placeholder.remove();
+//           const entry = document.createElement('div');
+//           const time = new Date().toLocaleTimeString('en', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+//           entry.innerHTML = '<span class="event-time">' + time + '</span> <span class="event-name">' + name + '</span>';
+//           eventLog.appendChild(entry);
+//           eventLog.scrollTop = eventLog.scrollHeight;
+//         });
+//       });
+//     }
+
+//     setupEvents();
+
+//     // ——— Spring presets ———
+//     const springPresets = {
+//       default: {},
+//       snappy: { springOpen: { stiffness: 500, damping: 35 }, springClose: { stiffness: 600, damping: 40 } },
+//       bouncy: { springOpen: { stiffness: 200, damping: 10 }, springClose: { stiffness: 200, damping: 12 } },
+//     };
+
+//     const springCode = document.getElementById('spring-code');
+//     const presetCode = {
+//       default: 'Lightbox.init({\n  springOpen:  { stiffness: 260, damping: 24 },\n  springClose: { stiffness: 300, damping: 28 },\n});',
+//       snappy:  'Lightbox.init({\n  springOpen:  { stiffness: 500, damping: 35 },\n  springClose: { stiffness: 600, damping: 40 },\n});',
+//       bouncy:  'Lightbox.init({\n  springOpen:  { stiffness: 200, damping: 10 },\n  springClose: { stiffness: 200, damping: 12 },\n});',
+//     };
+
+//     document.querySelectorAll('.spring-preset-btn').forEach(btn => {
+//       btn.addEventListener('click', () => {
+//         document.querySelectorAll('.spring-preset-btn').forEach(b => b.classList.remove('active'));
+//         btn.classList.add('active');
+//         const preset = btn.dataset.preset;
+//         lb.destroy();
+//         lb = Lightbox.init(springPresets[preset]);
+//         setupEvents();
+//         springCode.textContent = presetCode[preset];
+//         if (window.Prism) Prism.highlightElement(springCode);
+//       });
+//     });
+
+// </script>
+// ++++

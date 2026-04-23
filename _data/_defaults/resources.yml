@@ -1189,14 +1189,14 @@ resources:
         init_function:                  [ j1.adapter.fam.init ]
 
   # ----------------------------------------------------------------------------
-  # QuickSearch (lunr for J1 Theme)
+  # site_search (lunr for J1 Theme)
   # NOTE: This module is in state EXPERIMENTAL
   #
-  - name:                               QuickSearch
+  - name:                               site_search
     resource:
-      id:                               quicksearch
+      id:                               site_search
       enabled:                          true
-      comment:                          J1 QuickSearch
+      comment:                          J1 site_search
       region:                           head
       layout:                           [ all ]
       required:                         always                                  # always | ondemand
@@ -1205,17 +1205,17 @@ resources:
       dependencies:                     false
       pass_init_data:                   false
       data:
-        css:                            [ modules/lunrSearch/css/quicksearch ]
-        files:                          [ adapter/js/quicksearch.js ]
+        css:                            [ modules/lunrSearch/css/site_search ]
+        files:                          [ adapter/js/site_search.js ]
         js:                             [
                                           modules/lunrSearch/js/lunr,
                                           modules/lunrSearch/js/mustache,
                                           modules/lunrSearch/js/dateformat,
                                           modules/lunrSearch/js/uri,
 #                                         modules/jquery/js/require,            # require.js currently unused, but conflicts with some modules
-                                          modules/lunrSearch/js/quicksearch
+                                          modules/lunrSearch/js/site_search
                                         ]
-        init_function:                  [ j1.adapter.quicksearch.init ]
+        init_function:                  [ j1.adapter.site_search.init ]
 
   # ----------------------------------------------------------------------------
   # Data tables for J1 Theme
