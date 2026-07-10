@@ -10,6 +10,94 @@
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
+#
+# All configurable text for the consent modal has been consolidated into
+# this defaults file. Previously, the button labels, section headings,
+# and per-category descriptions were hardcoded as `| default:` fallbacks
+# inside the cookieconsent.html Liquid template (and would only become
+# configurable if a site-level override under `modules.cookieconsent.labels`
+# was published). They now live under `modal_settings.labels` here, so
+# they:
+#
+#   1. participate in the standard defaults/settings merge chain
+#      (defaults <- site overrides), giving full i18n with no template
+#      edits required;
+#   2. travel to the client via the adapter's `cookieConsentOptions`
+#      object (i.e. directly in the JS bundle) rather than through a
+#      separate XHR fetch of /assets/data/cookieconsent.
+#
+# Descriptions for the three consent categories are now proper YAML
+# arrays. The old "pipe-separated string" representation, only needed
+# because Liquid's `default:` filter could not carry list literals, is
+# gone.
+#
+# claude - improve cookieConsent code using lit #2
+# ------------------------------------------------------------------------------
+# Legacy XHR scaffolding removed. The Lit component cookieConsent.mjs
+# now receives its localized text directly from the adapter via the
+# `content` constructor property, so the following defaults — which
+# only existed to support the old XHR-based content-loading path —# have been deleted from this file:
+#
+#   - contentURL        (/assets/data/cookieconsent endpoint)
+#   - xhrDataElement    (consent-data wrapper inside the fetched HTML)
+#   - dialogContainerID (placeholder host element for the injected modal)
+#
+# Action item for the site: the Liquid template that emitted the JSON
+# payload at /assets/data/cookieconsent (cookieconsent.html in the
+# pages/_data tree) is no longer referenced by anything and should be
+# deleted from the source tree to keep the deployment clean.
+#
+# The `buttonDoNothing` label default has been updated from
+# "Do Nothing" to "Show Privacy Notice" because the corresponding button in the
+# modal footer was repurposed to toggle the Privacy Notice section.
+# The YAML key name is deliberately unchanged so existing site-level
+# translation overrides keyed on `buttonDoNothing` continue to work.
+#
+# claude - improve cookieConsent code using lit #3
+# ------------------------------------------------------------------------------
+# Added a companion `buttonHidePrivacyNotice` label default. The
+# "Show Privacy Notice" button in the modal footer is now a true
+# toggle: while the Privacy Notice section is collapsed the label
+# reads "Show Privacy Notice", and while it is expanded the label
+# reads "Hide Privacy Notice". The component (cookieConsent.mjs)
+# picks between the two label keys at render time based on its
+# `_showPrivacy` reactive state. Either key is independently
+# overridable from site config for i18n.
+#
+# claude - improve cookieConsent code using lit #4
+# ------------------------------------------------------------------------------
+# Added two new label defaults for the footer Settings toggle:
+#
+#   buttonShowSettings:   "Show Settings"
+#   buttonHideSettings:   "Hide Settings"
+#
+# Background: the previous version exposed the detailed options
+# section via a small floated `<a>My Settings</a>` link inside the
+# modal body. That link has been removed from cookieConsent.mjs and
+# replaced with a true toggle button placed in the modal footer,
+# immediately to the right of the existing `buttonShowPrivacyNotice`
+# toggle. The new button:
+#
+#   - reads "Show Settings" while the options section is collapsed
+#     (`_detailed === false`),
+#   - reads "Hide Settings" while it is expanded
+#     (`_detailed === true`),
+#   - is wired to the same `_toggleOptions` handler that the inline
+#     anchor used, so cookie/persistence semantics are unchanged.
+#
+# Both label keys are independently overridable from
+# `modules.cookieconsent.settings.modal_settings.labels` for full
+# i18n, with no template edits required. Each falls back to its
+# English literal at render time if the key is absent from a
+# partial site-level override.
+#
+# The pre-existing `mySettings` label ("My Settings") is RETAINED:
+# the component still uses it as the heading of the expanded
+# options section ("<b>My Settings</b>" rendered above the three
+# category switches). Only the inline link that bore that label
+# has been removed.
+#
+# ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
 # Description
@@ -30,16 +118,19 @@ defaults:
   #
   enabled:                              false
 
-  show_cookie_icon:                     false
-  expire_cookies_on_required_only:      true
+  showCookieIcon:                       false
+  expireCookiesOnRequiredOnly:          true
 
   reloadPageOnChange:                   true
   autoShowDialog:                       true                                    # show consent dialog if NO consent cookie found
-  contentURL:                           /assets/data/cookieconsent              # dialog content modal
-  reloadPageOnChange:                   true                                    # reload current page if user settings has been changed
+
+  # `contentURL`, `xhrDataElement`, and `dialogContainerID` used to
+  # sit here as defaults for the XHR-based content-loading path. They
+  # have been removed; cookieConsent.mjs no longer reads any of them
+  # and the /assets/data/cookieconsent endpoint is obsolete (the
+  # source template that emitted it should be deleted from the site).
+  #
   whitelisted:                          []                                      # pages NO consent issued
-  xhrDataElement:                       consent-data                            # container for the consent modal
-  dialogContainerID:                    consent-dialog                          # container, the dialog modal
   postSelectionCallback:                j1.adapter.cookieConsent.cbCookie       # called after the user has made his selection
 
   modal_settings:
@@ -70,7 +161,7 @@ defaults:
                                         A set of data is stored in persistent cookies and remains on your
                                         computer for later use. Our partners and we make use of persistent
                                         cookies. Those additional cookies are only used with your consent.
-                                        <br>
+                                        <br><br>
                                         <ul>
                                           <li style="list-style-type: none;">
                                             <b>Necessary</b>
@@ -106,6 +197,81 @@ defaults:
                                             </p>
                                           </li>
                                         </ul>
+
+    # Localized text strings (button labels, section headings, and the
+    # per-category descriptions) for the consent modal. To translate the
+    # modal, override any of these keys under
+    # `modules.cookieconsent.settings.modal_settings.labels` in the
+    # site-level configuration; missing keys fall back to the defaults
+    # below.
+    #
+    # The `*Desc` keys are YAML lists; each list item renders as a
+    # separate `<li>` under the corresponding switch.
+    #
+    labels:
+      privacyNotice:                    Privacy Notice
+      mySettings:                       Current settings
+
+      necessary:                        Necessary
+      necessaryDesc:
+        -                               Required to run the website
+
+      analysis:                         Analysis
+      analysisDesc:
+        -                               Usage monitoring for this site
+        -                               Optimizing of the performance for this site
+        -                               Optimizing of content for all visitors
+
+      personalization:                  Personalization
+      personalizationDesc:
+        -                               Enable Translation services
+        -                               Enable Advertising services
+        -                               Storage of personal preferences from previous visits
+        -                               Enable Comment services to exchange visitor's experiences
+
+      buttonDoNotAgree:                 I Do not Agree
+
+      # Renamed from "Do Nothing" to "Show Privacy Notice". The button in the
+      # modal footer no longer just closes the dialog without action;
+      # it now toggles the Privacy Notice section. The YAML key is
+      # kept as `buttonDoNothing` so existing site-level translation
+      # overrides keep working without an additional rename.
+      #
+      # The button is a true toggle: cookieConsent.mjs swaps the label
+      # at render time based on the `_showPrivacy` reactive state.
+      # `buttonShowPrivacyNotice` is rendered while the Privacy Notice
+      # section is collapsed; `buttonHidePrivacyNotice` is rendered while
+      # it is expanded. Both keys are independently overridable in
+      # `modules.cookieconsent.settings.modal_settings.labels` for full
+      # i18n with no template edits.
+      #
+      buttonShowPrivacyNotice:          Show Privacy Notice
+      buttonHidePrivacyNotice:          Hide Privacy Notice
+
+      # Companion label pair for the new footer Settings toggle.
+      # The Lit component (cookieConsent.mjs) selects between the
+      # two keys at render time based on its `_detailed` reactive
+      # state, exactly as it does for the Privacy toggle above:
+      #
+      #   _detailed === false  →  buttonShowSettings  ("Show Settings")
+      #   _detailed === true   →  buttonHideSettings  ("Hide Settings")
+      #
+      # The button replaces the previous inline "My Settings" link
+      # that lived in the modal body. The `mySettings` label key
+      # (further up in this block) is RETAINED and is still used as
+      # the section heading inside the expanded options block; only
+      # the inline link that bore that label has been removed.
+      # Either key below is independently overridable from
+      # `modules.cookieconsent.settings.modal_settings.labels` for
+      # i18n.
+      #
+      buttonShowSettings:               Show Settings
+      buttonHideSettings:               Hide Settings
+
+      buttonAgree:                      I Agree
+      buttonSave:                       Save selection
+      buttonAgreeAll:                   Agree on all
+      close:                            Close
 
 # ------------------------------------------------------------------------------
 # END config

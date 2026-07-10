@@ -34,7 +34,7 @@ Asciidoctor::Extensions.register do
 
     named :amplitude
     name_positional_attributes 'role'
-    default_attrs 'role' => 'mt-3 mb-3'
+    default_attrs 'role' => 'mb-4'
 
     def process parent, target, attributes
 
@@ -43,7 +43,7 @@ Asciidoctor::Extensions.register do
       html = %(
         <div class="audioblock #{attributes['role']}">
           #{title_html}
-          <div id="#{target}_app" class="amplitude-player"></div>
+          <div id="#{target}_audio" class="amplitude-player"></div>
           <div id="#{target}_video" class="yt-player"></div>
         </div>
       )

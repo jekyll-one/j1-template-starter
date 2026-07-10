@@ -2,15 +2,17 @@
 title:                                  About
 tagline:                                You should know
 
-date:                                   2022-01-01
-#last_modified:                         2023-01-01
+date:                                   2026-05-11
+#last_modified:                         2026-05-11
 
 description: >
-                                        J1 Template is a Bootstrap V5 template for Jekyll.
-                                        Find what is good to know about this site, the people,
-                                        the software and the services provided by this project.
+                                        J1 Template is a free, open-source Bootstrap V5
+                                        template for Jekyll. Learn about this site, the
+                                        people behind the project, the software it runs
+                                        on, and the cloud services it connects to.
 keywords: >
-                                        Jekyll, Theme, JekyllOne, J1, About, Project, Site
+                                        Jekyll, Theme, JekyllOne, J1, About, Project, Site,
+                                        Open Source, Bootstrap, Static Site, Responsive
 
 categories:                             [ About ]
 tags:                                   [ Site, Review ]
@@ -41,6 +43,12 @@ resource_options:
 // Enable the Liquid Preprocessor
 :page-liquid:
 
+// Attribute settings for page content control (e.g includes)
+//
+:includedir:                            _includes
+:tabledir:                              _includes/tables
+:documentdir:                           _includes/documents
+
 // Set (local) page attributes here
 // -----------------------------------------------------------------------------
 // :page--attr:                         <attr-value>
@@ -69,12 +77,220 @@ endif::[]
 Things you should know about this site, the people, the software and the
 services provided by this project.
 
-// Include sub-documents (if any)
-// -----------------------------------------------------------------------------
-Whether you work solo or as part of a team, it’s always a great idea to
-help visitors put a face to the names behind a website. The best place to
-include a bit of information about you and your team is on your homepage with
-an About page so that no one will miss it.
+[role="mt-5"]
+== About this Site
 
-[role="mb-7"]
-Good luck presenting your site, your project to the world!
+This site is built with *J1 Template*. J1 (short for *Jekyll One*) is a free
+theme for Jekyll, a tool that turns simple text files into a complete website.
+The pages you see here are made with the same template that you can download
+and use for your own project — at no cost, for personal or business use.
+
+The goal of J1 is simple: give you everything you need to build a modern
+website *without writing any code*. You focus on your content. The template
+takes care of the rest.
+
+[role="mt-5"]
+== The Software
+
+J1 Template combines well-known, modern tools for the web. All of them are
+*open-source*, which means they are free to use and their code is public.
+You do not pay any licence fees — whether you build a small personal page or
+a big business website.
+
+[role="mt-4"]
+=== Modern Tools, Running Quietly
+
+Under the hood, J1 uses three popular software platforms:
+
+* *Ruby* — the programming language that runs Jekyll.
+* *Jekyll* — the engine that builds your website pages.
+* *NodeJS* — used to manage your project and the parts inside it.
+
+You do not need to know any of these in detail. They run quietly in the
+background while you write your content. All three work on Windows, Linux,
+and macOS, so you can use the operating system you like best.
+
+[role="mt-4"]
+=== Built on Modern Web Standards
+
+J1 follows today's standards for the web. It is built on *Bootstrap V5*, one
+of the most popular frameworks for modern websites. Bootstrap gives your
+site ready-made menus, buttons, forms, tables, and many other parts that
+look familiar to your visitors right away.
+
+J1 also uses the current versions of the three core web languages:
+
+* *HTML5* — describes the *structure* of a page (headings, paragraphs,
+  images, and so on).
+* *CSS3* — controls how a page *looks* (colours, fonts, layout, spacing).
+* *JavaScript* — adds the *actions* that make a page interactive.
+
+The good news again: you do not need to write any of this yourself. J1
+generates the right code for you, based on your settings.
+
+[role="mt-4"]
+=== Fully Configurable
+
+Modern software is rarely simple to manage. J1 takes that pain away by
+being *fully configurable*. You do not need to dig deep into the code. You
+just change the parts you want to change, using small text files with
+clearly named settings.
+
+[role="mt-5"]
+== Ready-Made Building Blocks
+
+A modern website needs many small parts to work well. Instead of asking you
+to build them, J1 includes them all ready to go. You turn them on, set a few
+options, and they work. Here is a short tour of what you get.
+
+[role="mt-4"]
+=== Navigation, on Desktop and Mobile
+
+A clear menu helps visitors find what they are looking for. J1 builds both
+a *desktop menu* and a *mobile menu* from the *same* configuration file.
+The right one shows up automatically, based on the size of the visitor's
+screen.
+
+[role="mt-4"]
+=== Full-Text Search
+
+Visitors can search every page of your site with a built-in search engine.
+It is fast, lives on your own site, and does not depend on an outside
+service like Google.
+
+[role="mt-4"]
+=== Lightboxes, Sliders, and Galleries
+
+To show off pictures and videos, J1 gives you three building blocks:
+
+* *Lightboxes* — click an image and it pops up large, with the rest of the
+  page dimmed in the background.
+* *Sliders* — show a series of images, text, or videos as a slideshow.
+* *Galleries* — arrange many images neatly on a page, with thumbnails and
+  click-to-enlarge support.
+
+These work on desktops, tablets, and phones. On a phone, visitors can swipe,
+pan, and pinch-to-zoom — just like in a regular phone app.
+
+[role="mt-4"]
+=== Audio Player and Screen Reader
+
+J1 can play audio on a page with a built-in player. There is also a *screen
+reader* feature: visitors can press a button and let the page be read out
+loud — handy for long articles or visitors who would rather listen than
+read.
+
+[role="mt-4"]
+=== Cookie Consent
+
+If your website uses *cookies* — small files that store information about a
+visitor — many countries require you to ask the visitor's permission first.
+J1 includes a *Cookie Consent* module that handles this for you and follows
+the European GDPR rules out of the box.
+
+[role="mt-4"]
+=== Translator
+
+J1 can translate your pages into other languages with one click. It
+connects to *Google Translate* for free translations or *DeepL* for
+professional ones. That helps you reach visitors from around the world,
+even if you only write in one language.
+
+[role="mt-4"]
+=== Scroll Animations and Smooth Scroll
+
+To make your pages feel more lively, J1 can fade in or move elements as the
+visitor scrolls down. It also makes the page slide *smoothly* to a section
+when someone clicks a link, instead of jumping there suddenly.
+
+[role="mt-4"]
+=== Floating Action Buttons
+
+A *Floating Action Button* (FAB) is a small round button in the corner of
+the screen. Tap it and you get quick access to extra tools, like a table of
+contents or a way to jump from one section to the next.
+
+[role="mt-4"]
+=== Clipboard
+
+Every code block on a page comes with a *COPY* button. Visitors can copy a
+snippet to their clipboard with a single click — handy for tutorials and
+documentation pages.
+
+[role="mt-5"]
+== Works on Every Device
+
+The web is everywhere today. More than half of all visits to websites now
+come from mobile phones. So your site needs to look good and work well on
+every screen, from a small phone to a wide desktop monitor.
+
+J1 Template is *fully responsive*. It adjusts the layout of every page
+automatically, so your visitors always get the best view of your content,
+on any device.
+
+J1 pages also load quickly. The template shrinks your HTML, CSS, and
+JavaScript files before publishing, so visitors do not have to wait. The
+result: high scores in *Google Lighthouse*, Google's tool for measuring
+website performance, accessibility, best practices, and search engine
+quality.
+
+[role="mt-5"]
+== The Services
+
+A modern website is rarely on its own. It often connects to a few outside
+*cloud services* to extend what it can do. With J1, you can hook up these
+services through simple configuration — no code required.
+
+[role="mt-4"]
+=== Ready-Made Designs (Bootswatch)
+
+Want to change the whole look of your site in one click? J1 connects to
+*Bootswatch*, a free collection of ready-made designs for Bootstrap V5.
+Pick a theme you like, and your site adopts its colours, fonts, and overall
+style right away. You can switch between designs with a small menu, so you
+do not have to commit to one look forever.
+
+[role="mt-4"]
+=== Comments
+
+Visitors love to talk about what they read. J1 supports two popular comment
+providers: *Disqus* and *Hyvor*. Turn one on, add your account details to
+the configuration, and a comment section appears at the bottom of every
+page where you allow it.
+
+[role="mt-4"]
+=== Google Analytics
+
+Want to know how many people visit your site, where they come from, and
+which pages they like best? J1 connects to *Google Analytics* through
+simple configuration. Visitor tracking is also linked to the Cookie Consent
+module, so visitor privacy is fully respected.
+
+
+[role="mt-5"]
+== Free, Easy to Publish
+
+A site built with J1 is a *static* website. That means the pages do not
+change after they are built — there is no database and no server program
+running in the background. Static sites are *fast*, *cheap to host*, and
+*secure by design*, because there is little for attackers to break into.
+
+You can publish a J1 site for free on services like *GitHub Pages*,
+*Netlify*, or *Cloudflare Pages*. Many people use these to host their
+personal site, blog, or small business landing page at no cost at all.
+
+
+[role="mt-5"]
+== The People
+
+Whether you work solo or as part of a team, it is always a great idea to
+help visitors put a face to the names behind a website. The best place to
+share a bit of information about you and your team is here, on your *About*
+page, so no one will miss it.
+
+Tell your visitors who you are, what you do, and why they should care. A
+friendly *About* page builds trust — and trust is what turns a casual
+visitor into a returning reader or a happy customer.
+
+[role="mt-4]
+Good luck presenting your site, your project, and your team to the world.

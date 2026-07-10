@@ -44,29 +44,33 @@ settings:
   scrollers:
 
     # --------------------------------------------------------------------------
-    # Intro Panel
+    # Intro Panel - Home page
     #
-    - scroller:
-        enabled:                        false
-        type:                           showOnScroll
-        id:                             panel_home_intro
-        container:                      panel_home_intro
-        showDelay:                      1000
-        scrollOffset:                   500
+  # - scroller:
+  #     enabled:                        false
+  #     type:                           showOnScroll
+  #     id:                             panel_home_intro
+  #     container:                      panel_home_intro
+  #     dataElement:                    data-scroller
+  #     dataSelector:                   ???
+  #     showDelay:                      1000
+  #     scrollOffset:                   500
 
     # --------------------------------------------------------------------------
-    # Service Panel
+    # Service Panel - Home page
     #
-    - scroller:
-        enabled:                        false
-        type:                           showOnScroll
-        id:                             panel_home_service
-        container:                      panel_home_service
-        showDelay:                      700
-        scrollOffset:                   200
+  # - scroller:
+  #     enabled:                        false
+  #     type:                           showOnScroll
+  #     id:                             panel_home_service
+  #     container:                      panel_home_service
+  #     dataElement:                    data-scroller
+  #     dataSelector:                   ???  
+  #     showDelay:                      700
+  #     scrollOffset:                   200
 
     # --------------------------------------------------------------------------
-    # News Panel (ScrollGroup)
+    # News Panel - Home page  (ScrollGroup)
     #
     - scroller:
         enabled:                        true
@@ -74,6 +78,8 @@ settings:
         id:                             panel_home_news
         container:                      panel_home_news-scroll-group
         pagePath:                       /assets/data/news_panel_posts/page
+        dataElement:                    data-scroller
+        dataSelector:                   data-panel-home-news
         elementScroll:                  true                                    # false = window, true = container
         scrollOffset:                   200
         lastPage:                       2                                       # 1 page "equals" 2 posts
@@ -87,7 +93,7 @@ settings:
                                         <a href="/pages/public/blog/navigator/" class="link-no-decoration">Navigator</a>
 
     # --------------------------------------------------------------------------
-    # Blog Navigator Preview (Timeline)
+    # Blog Navigator - Preview (Timeline)
     #
     - scroller:
         enabled:                        true
@@ -95,6 +101,8 @@ settings:
         id:                             preview_content                         # blog_navigator_preview
         container:                      timeline
         pagePath:                       /pages/public/blog/navigator/page
+        dataElement:                    data-scroller
+        dataSelector:                   data-preview-content
         elementScroll:                  true
         scrollOffset:                   200
         lastPage:                       2                                       # 1 page "equals" 2 posts

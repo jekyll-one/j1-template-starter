@@ -3,15 +3,12 @@ title:                                  Themes
 title_extention:                        Bootstrap V5 Themes
 tagline:                                Individual Style
 
-date:                                   2020-11-10
-#last_modified:                         2023-01-01
+date:                                   2026-05-07
+#last_modified:                         2026-01-01
 
 description: >
-                                        J1 Template offers various unique functionalities compared to other Jekyll
-                                        themes and templates. Bootstrap themes for the J1 Template are based on the
-                                        free and Open Source CSS front-end framework Bootstrap of version V5. The
-                                        Bootstrap themes for the J1 enable the presentation of different versions
-                                        (skins) of the same site using already prepared Bootstrap CSS templates.
+                                        J1 Template offers various unique functionalities compared to other Jekyll themes and templates. Bootstrap themes for the J1 Template are based on the free and Open Source CSS front-end framework Bootstrap of version V5. The
+                                        Bootstrap themes for the J1 enable the presentation of different versions (skins) of the same site using already prepared Bootstrap CSS templates.
 keywords: >
                                         open source, free, template, jekyll, jekyllone, web,
                                         sites, static, jamstack, bootstrap,
@@ -66,15 +63,15 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-Themes for the J1 Template are based on the Open Source CSS front-end
-framework Bootstrap of version V5. The Bootstrap theme feature enables
-the presentation of a website using different skins of the same site using
-already prepared Bootstrap CSS style sets.
+Themes for the J1 Template are based on the Open Source CSS framework
+*Bootstrap* (version 5). A theme is like a *skin* for your website -- it
+changes the *look* of your pages without changing the content. With themes,
+you can show the same site in many different styles.
 
-Using a theme results in a uniform appearance for the content in terms of the
-overall layout, text, tables, and form elements across all modern web browsers
-available on the market. In addition, developers can take advantage of already
-defined CSS classes in Bootstrap to customize a layout individually.
+A theme makes sure your website looks the same on every modern web browser.
+It sets the colors, fonts, sizes, and the look of buttons, tables, and
+forms. You can also use Bootstrap's built-in CSS classes to fine-tune
+parts of your design on your own.
 
 [subs=attributes]
 ++++
@@ -84,84 +81,77 @@ defined CSS classes in Bootstrap to customize a layout individually.
 </div>
 ++++
 
-
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
 [role="mt-5"]
 == The Themes
 
-Styles adjust the website's appearance based on the CSS rules and definitions
-of Bootstrap. Styles do not change the framework's functionality but modify
-rule-based, e.g., the color scheme, fonts, sizes, or the appearance of more
-complex elements like forms or tables. Additionally, a style may add additional
-components to extend the Bootstrap's framework.
+A theme changes how your website *looks*, but not how it *works*. It uses
+CSS rules from Bootstrap to set things like the color scheme, fonts, sizes,
+and the appearance of more complex parts such as forms and tables. Some
+themes also add extra components on top of the standard Bootstrap set.
 
-Modifying the CSS styles of link:{url-bs--home}[Bootstrap, {browser-window--new}]
-is not rocket science. But, to be honest, some knowledge is needed for the
-link:{url-w3org--css-spec}[CSS technology, {browser-window--new}] to do so.
-I encourage you to spend some time on learning CSS, the
-link:{url-w3schools--css-tutorial}[Design base, {browser-window--new}] of each
-and every website.
+Changing the CSS styles of link:{url-bs--home}[Bootstrap, {browser-window--new}]
+is not too hard, but you do need some basic knowledge of
+link:{url-w3org--css-spec}[CSS, {browser-window--new}] to do it well.
+If you are new to CSS, the
+link:{url-w3schools--css-tutorial}[CSS tutorial at W3Schools, {browser-window--new}]
+is a good place to start. CSS is the design language used by every
+modern website.
 
 .Bootswatch Themes (Examples)
 lightbox::bootswatch-themes[1280, {data-images--bootswatch-themes}]
 
-Thanks to the people at link:{url-bootswatch--home}[Bootswatch, {browser-window--new}],
-a great set of already prepared Bootstrap stylesheets in various designs are
-available on their website; no need to start from scratch. It is not
-required to re-define all the Bootstrap variables and rebuild the framework.
-Many different styles are available. What is already available at Bootswatch
-is at least a good base for your modifications -- your unique design.
+Thanks to the team at link:{url-bootswatch--home}[Bootswatch, {browser-window--new}],
+many ready-made Bootstrap stylesheets are available for free. You can use
+them as they are, or use them as a starting point for your own design --
+you do not have to build everything from scratch.
 
-Besides the bunch of different stylesheets at *Bootswatch*, an
-link:{url-bootswatch--api}[Integration API, {browser-window--new}] is provided
-that helps a lot to make designs available for an existing site. This API
-is the base to integrate selectable Bootswatch stylesheets into the J1 Template
-navigation system.
+Bootswatch also offers an
+link:{url-bootswatch--api}[Integration API, {browser-window--new}] that
+makes it easy to add their themes to an existing site. The J1 Template
+uses this API so you can pick a Bootswatch theme right from the menu of
+your website.
 
 [role="mt-4"]
 === Apply a Style
 
-The base for designing pages using the J1 Template is the style Uno, a modern
-light or dark CSS layout used for many types of websites. What I mentioned
-already, web design is not: one size fits all. The style Uno can be seen as
-a good base, a starting point. Combining Uno and a different styles may be
-a fast solution for your site!
+The default theme of the J1 Template is called *Uno*. It comes with both
+a *light* and a *dark* version and works well for many kinds of websites.
+*Uno* is a good starting point. If you want a different look, you can
+combine *Uno* with another theme to get your site ready quickly.
 
-You can find all available stylesheets to be applied on your pages from the
-*Themes* menu. You're invited to check how a page is changing for its design
-if a different stylesheet for web design is used.
+You can find every available theme in the *Themes* menu in the top bar of
+your website. Try a few of them and see how the page changes when a
+different theme is used.
 
 [WARNING]
 ====
-For changing from one style to the next at *runtime*, the current
-version of the J1 Template system tries add new styles to J1 specific
-components like fonts, headlines, lists or paragraphs. Changing the style
-will work for the most *common* elements, but *not all* of them for now.
+When you switch from one theme to another *while the site is running*, the
+J1 Template tries to apply the new styles to all parts of the page (such
+as fonts, headings, lists, and paragraphs). This works for *most* common
+elements, but *not yet* for every single one.
 ====
 
-Select a style from the *Themes* menu, and the new BS-based stylesheet is
-automatically applied to all pages of your website.
+Pick a theme from the *Themes* menu, and the new Bootstrap stylesheet is
+applied automatically to every page of your website.
 
 
 [role="mt-5"]
 == What next
 
-J1 Template is an excellent base for all types of websites. J1 supports
-powerful code highlighting to distinguish different source code elements
-visually. Highlighting makes code more readable and easier to understand
-by applying different styles to the code.
+The J1 Template is a great starting point for many kinds of websites.
+One handy feature it offers is *code highlighting*. Code highlighting
+adds colors to source code so it is easier to read and understand.
 
-Programming languages have specific syntax rules and conventions, so code
-highlighting is tailored to each language. For example, in a typical
-JavaScript syntax highlighting scheme, keywords like *if*, *for*, or
-*function* be displayed in one color, while variables and strings are
-displayed in another.
+Each programming language has its own keywords and rules. Code highlighting
+uses different colors for different parts of the code. For example, in
+JavaScript, keywords like *if*, *for*, or *function* get one color, while
+text strings and variables get another.
 
-The highlighter _Rouge_ is a native Ruby-based themeable syntax highlighter
-integrated by J1 Template. The highlighter supports 100+ different languages
-and generates HTML output using 256 standard *ANSI* colors displayed by all
-current browsers.
+The J1 Template uses a code highlighter called *Rouge*. Rouge is written in
+Ruby and supports more than 100 programming languages. It produces colored
+HTML output that works in every modern web browser.
 
-To check the code highlighter J1 Template offers, go for the
-link:{url-tour--rouge-hightlighter}[Rouge Code Highlighter].
+To see what Rouge can do, go to the
+link:{url-tour--rouge-hightlighter}[Code Highlighter] page.

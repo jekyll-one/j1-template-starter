@@ -2,17 +2,19 @@
 title:                                  J1 Template
 tagline:                                Creating Responsive Websites
 
-date:                                   2020-11-03
-#last_modified:                         2023-01-01
+date:                                   2026-05-07
+# last_modified:                        2026-01-01
 
 description: >
-                                        J1 Template is a Bootstrap V5 website template for the static
-                                        site generator Jekyll.
-                                        A good user experience browsing a Web site is one of the most important
-                                        features a website offers as a must, besides excellent content. Presenting
-                                        content at its best on all devices for all window sizes makes a great Web
-                                        brilliant. J1 Template supports your Web for full responsiveness, for the
-                                        best user experience on all modern devices.
+                                        J1 Template is a Bootstrap V5 website template for Jekyll,
+                                        a tool that builds static websites. A great user experience
+                                        is one of the most important things a website can offer, right next to good content. Pages need to look good and work well
+                                        on every screen size. J1 Template gives your site full
+                                        responsive support, so it shines on every modern device.
+keywords: >
+                                        open source, free, template, theme,
+                                        jekyll, jekyllone, web, site, static,
+                                        jamstack, bootstrap, netlify
 
 categories:                             [ Info ]
 tags:                                   [ Info, Jekyll, Template ]
@@ -30,8 +32,7 @@ exclude_from_search:                    true
 regenerate:                             false
 permalink:                              /pages/public/panels/intro_panel/
 
-resources:                              [ carousel, gallery, lightbox, lightgallery ]
-
+resources:                              [ gallery, lightgallery, photoswipejs ]
 resource_options:
   - attic:
       slides:
@@ -70,210 +71,201 @@ resource_options:
 [role="mt-5"]
 == Full Responsive
 
-A good user experience browsing a Web site is one of the most important
-features a website offers as a must, besides excellent content.
+A great user experience is one of the most important things a website
+can offer, right next to good content.
 
 [role="mb-3"]
 image::/assets/image/page/panels/responsive-text-1920x800.jpg[{{page.title}}, width=1280]
 
-Presenting content at its best on all devices for all window sizes makes
-a great Web brilliant. J1 Template supports your Web for full responsiveness,
-for the best user experience on all modern devices.
+A *responsive* website looks good and works well on every screen size,
+from a small mobile phone to a wide desktop monitor. J1 Template makes
+sure your pages adjust automatically, so visitors always get the best
+view of your content.
 
 // [role="skiptranslate"]
 === Bootstrap Integration
 
-To not sidetrack your audience by irritating user interface (UI) components,
-the J1 Template is based on Bootstrap. Bootstrap is one of the most popular
-frameworks for web development used today. J1 is based on Bootstrap V5,
-the last current version to support your visitors by common navigation
-elements, data input, tables, and many other components.
+Visitors should not have to learn a new layout for every site they visit.
+That is why J1 Template is built on *Bootstrap*, one of the most popular
+frameworks for the web today. We use Bootstrap V5, the latest version,
+which gives you ready-made navigation menus, forms, tables, and many
+other building blocks that look familiar to most users.
 
-Bootstrap simplifies HTML programming a lot, offers excellent JS support
-for interactive components like navigation elements, cards, forms, etc.
+Bootstrap takes a lot of work out of writing HTML. It also includes
+helpful JavaScript code for interactive parts like menus, cards, and
+forms.
 
 ==== Bootstrap Themes
 
-The Bootstrap Themes feature for J1 is in an experimental state for the
-J1 Template system. Anyway, it makes sense to present what is possible using
-different versions of Bootstrap's CSS styles for a website.
+The Bootstrap Themes feature in J1 is still experimental. Even so, it
+is a good way to show what is possible when you change the look of a
+Bootstrap-based site.
 
-Themes for Bootstrap step in the framework to further adjust the website's
-appearance based on the core CSS rules and definitions of Bootstrap. Themes
-do not change the framework's functionality but modify rule-based, e.g.,
-the color scheme, fonts, sizes, or the appearance of more complex elements
-like forms or tables. Additionally, a theme may add additional components
-but in the *sense* of Bootstrap's framework rules and philosophy.
+A *theme* changes how a Bootstrap site looks while keeping the same
+features. It does not change what each part *does*. A theme can change
+colours, fonts, font sizes, or the look of more complex parts like
+forms and tables. A theme can also add new components, as long as they
+fit Bootstrap's rules and style.
 
 [role="mb-4"]
-It is expected that many people will change the template for their needs. To
-create unique websites. Fundamental to do this is are CSS styles
-defined by Bootstrap.
+Many people will want to change the template to fit their own ideas and
+build a unique website. Bootstrap's CSS styles are the foundation that
+makes this possible.
 
 .Themes menu (Bootswatch)
 lightbox::images--themes-menu[ 1024, {data-images--themes-menu} ]
 
-Thanks to the people at link:{url-bootswatch--home}[Bootswatch, {browser-window--new}],
-a great set of already prepared Bootstrap stylesheets (20+ for BS V5) in
-various designs are available on their website. There is no need to start from
-scratch, re-define all the Bootstrap variables, and rebuild the framework files
-to create a new theme for Bootstrap. Many different styles are available.
-What is already available at Bootswatch is at least a good base for your
-modifications; your unique design.
+The team at link:{url-bootswatch--home}[Bootswatch, {browser-window--new}]
+offers a great set of ready-made Bootstrap stylesheets — more than 20
+designs for Bootstrap V5. So you do not need to start from scratch,
+re-define every Bootstrap variable, or rebuild the framework files to
+make a new theme. Many different styles are already prepared. Bootswatch
+is a great starting point for your own modifications and your own unique
+design.
 
 
 [[current-technology]]
 [role="mt-5"]
 == HTML5 · CSS3 · JS
-The Internet is a rapidly changing world. Like the fashion industries, new
-trends are set every year.
+
+The web changes fast. Like fashion, it has new trends every year.
 
 [role="mb-3"]
 image::/assets/image/page/panels/florian-olivo-1920x800.jpg[{{page.title}}, width=1280]
 
-J1 Template combines modern technologies for the world of static Webs to
-make a site unique using current standards in terms of web development,
-languages, and tools.
+J1 Template uses modern web technology to help you build static sites
+that follow today's standards in web development, languages, and tools.
 
 === Coding web pages
 
-J1 uses HTML5, the latest major HTML version, for structuring content
-on the World Wide Web. The HTML standard's current version many new features,
-including detailed processing models to support more
-interoperable implementations. It extends and improves HTML markups available
-in older versions.
+J1 uses HTML5, the latest major version of HTML. HTML is the language
+that describes the structure of a web page. HTML5 adds many new features
+and clear rules for how browsers should handle them. It also extends and
+improves the older versions of HTML.
 
-HTML5 introduces application programming interfaces (APIs) for more complex
-web applications. For the same reasons, the new HTML standard is also a good
-choice for modern cross-platform mobile applications because it includes
-features designed with mobile devices in mind.
+HTML5 introduces application programming interfaces (APIs) that make it
+easier to build complex web applications. For the same reason, HTML5 is
+also a great choice for cross-platform mobile apps, since many of its
+features were designed with mobile devices in mind.
 
-Many new features are included with HTML5. To natively support multimedia and
-graphical content, the new `<video>`, `<audio>` and `<canvas>` elements were
-added. Besides this, *SVG* (scalable vector graphics) support an API called
-*MathML* for mathematical formulas, and Flex's grid system is now available.
+HTML5 includes many new features. It supports multimedia and graphics
+out of the box with the new `<video>`, `<audio>`, and `<canvas>` elements.
+It also supports *SVG* (Scalable Vector Graphics) and *MathML* (a way to
+display mathematical formulas), and it includes the Flex grid system for
+layouts.
 
-The new standard allows to use so-called *semantic* markup elements for your
-documents. New structure elements such as `<main>`, `<section>`, `<article>`,
-`<header>` or `<footer>` (and many more) were added. Better structured HTML
-code can help people having disabilities to read the pages presented better.
+HTML5 also lets you use *semantic* tags. New structure tags such as
+`<main>`, `<section>`, `<article>`, `<header>`, and `<footer>` (and many
+more) describe what each part of the page is *for*. Better-structured
+HTML helps people who use assistive technology, such as screen readers,
+to read the page more easily.
 
-*CSS* (cascading style sheets) is designed to enable the *separation* of
-presentation and content, including layout, colors, and fonts. This separation
-improves content accessibility, provides more flexibility and control for
-the presentation.
+*CSS* (Cascading Style Sheets) is the language that controls how a page
+looks. It separates the *content* of the page from the *presentation*,
+which includes layout, colours, and fonts. This separation makes content
+easier to access and gives you more control over the design.
 
-Separation of formatting and content also makes it feasible to present the
-same page in different styles. For example, the *themes feature* of the J1
-Template makes use of this.
+Separating the look from the content also lets you show the same page in
+different styles. The *themes feature* in J1 Template uses this idea.
 
-*CSS3*, the current standard for cascaded style sheets, is divided into
-several separate components called *modules*. Each module adds new
-capabilities or extends features defined in the former CSS2 standard. HTML5,
-in combination with CSS3, allows creating modern and modular code for web pages
-viewed on all current devices like Mobiles, Tablets, or the classic Desktop PC.
-The new HTML5 elements plus CSS3 modules can replace proprietary solutions
-like _Adobe Flash_ to build modern web pages based on open standards
-
-*CSS3*, the current standard for cascading style sheets, is divided into
-several separate components called modules. Each module adds new capabilities
-or extends features defined in the former CSS2 standard. HTML5, in combination
-with CSS3, allows creating modern and modular code for web pages that can be
-viewed on all current devices like Mobiles, Tablets, or the classic Desktop
-PC. The new HTML5 elements plus CSS3 modules can replace proprietary
-solutions like Adobe Flash to build modern web pages based on open standards.
+*CSS3* is the current version of CSS. It is split into smaller parts
+called *modules*. Each module adds new features or improves features
+from the older CSS2 standard. Together, HTML5 and CSS3 let you build
+modern, modular web pages that work on every current device, including
+mobile phones, tablets, and desktop computers. The new HTML5 elements
+and CSS3 modules can replace older tools like _Adobe Flash_, so you can
+build modern pages on open standards.
 
 === Javascript
 
-JavaScript is a text-based programming language used on the client-side and
-server-side to make web pages interactive. HTML and CSS are languages that
-give structure and style to web pages, and JavaScript provides web pages
-interactive elements that engage a user.
+JavaScript is a programming language used on both the client side (in
+the browser) and the server side. It makes web pages interactive. HTML
+gives a page its structure, CSS gives it its look, and JavaScript adds
+the actions that engage the visitor.
 
 [role="mb-3"]
 image::/assets/image/page/panels/modules-apps-1920x800.jpg[{{page.title}}, width=1280]
 
-Content placement and basic methods for the dynamic of elements can be done
-using pure HTML5 and CSS3. For more complex solutions like *modules* (to
-provide dynamic, interactive features), the support of *Javascript* for a
-webpage is needed.
+You can place content and add basic motion using only HTML5 and CSS3.
+For more complex features, such as interactive *modules*, you need
+*JavaScript*.
 
-JavaScript is used for J1 mainly as a client-side script engine. A client-side
-script is a programming language that performs its tasks entirely on the
-client's machine and does not need to interact with the server to function.
+In J1, JavaScript runs mostly on the client side. A client-side script
+runs entirely in the visitor's browser and does not need to talk to the
+server to do its job.
 
-Some of the dynamic website enhancements performed by JavaScript are:
+Some of the things JavaScript can do for a website are:
 
-* Loading (new) content or data onto the page without reloading the page
-* Rollover effects and dropdown menus
-* Animating page elements such as fading, resizing, or relocating
-* Playing audio and video
+* Load new content or data without reloading the page
+* Create rollover effects and dropdown menus
+* Animate parts of the page (fade, resize, or move)
+* Play audio and video
 
-J1 Template has build-in a wide range of JS-powered modules to support a
-website, e.g., by a powerful navigation system, for presenting image data
-in galleries, lightboxes, and so on. The good news is: no programming
-JavaScript is needed to use the build-in JS-based modules.
+J1 Template comes with many built-in modules powered by JavaScript.
+These give your site a powerful navigation system, image galleries,
+lightboxes, and more. The good news: you do *not* need to write any
+JavaScript to use them.
 
 
 [[launch-ready]]
 [role="mt-5"]
 == Start in No Time
 
-The base idea of the J1 Template is to give all people a toolset at their
-hands to create a website with no need to start by web development or
-web design from the beginning.
+The main idea behind J1 Template is to give everyone a complete toolset
+to build a website. You do not need to start with web development or
+web design from scratch.
 
 [role="mb-3"]
 image::/assets/image/page/panels/no-time-1920x800.jpg[{{page.title}}, width=1280]
 
-A website based on J1 is using build-in templates and engines. As a result,
-the process to generate HTML code from your content is done automatically
-and allows you to concentrate on what truly matters: your content.
+A J1-based site uses built-in templates and engines. They turn your
+content into HTML pages automatically, so you can focus on what really
+matters: your content.
 
-Using J1, you can instantly start a web project by creating your content and
-not earning the deep of web development technologies.
+With J1, you can start a web project right away. Just create your
+content. You do not need to learn the deep details of web development.
 
 === Create your Web
 
-J1 is highly customizable. Based on a pure configuration, websites are
-created. The template system creates static web pages using Jekyll as the
-base HTML code generator. Static websites are fast and secure but
-straightforward to manage. No complex database systems and PHP interfaces
-are needed.
+J1 is highly customisable. You build your website mostly through
+configuration. The template system uses Jekyll to generate static HTML
+pages from your content. Static websites are fast, secure, and simple
+to manage. You do not need a complex database or server-side code.
 
-For managing static websites, only a web server environment is needed. Publish
-a site on the Internet, possible platforms can be used like Github, Netlify,
-or Heroku, for free!
+To run a static website, you only need a basic web server. To publish
+your site online, you can use platforms such as GitHub Pages, Netlify,
+or Heroku — and many of them are free.
 
-The Internet is not a peaceful place. Every site accessible from the public
-is attacked from the first second if published. Static websites are robust,
-fast, and that’s import: intrinsically secure. That means: not changeable.
-No offender attacking your website can break your site because it’s static,
-or in other words: unchangeable, unbreakable from its nature.
+The internet is not always a friendly place. Every public website is
+under attack from the moment it goes live. Static websites are robust,
+fast, and — most important — secure by design. Because the pages do not
+change after they are built, attackers cannot break them in the same way
+they break dynamic sites.
 
-That makes a static website for the better.
+That is what makes static websites such a strong choice.
 
 === Modules and Apps
 
-It's predictable what base components are needed for a modern website. For
-Content Management Systems (CMS) like WordPress, Joomla, or Drupal, many
-modules are available to extend a site by, e.g., Apps like image galleries,
-video players, calendars, etc.
+The basic features of a modern website are easy to predict. For Content
+Management Systems (CMS) like WordPress, Joomla, or Drupal, there are
+many add-on modules. These add features such as image galleries, video
+players, calendars, and more.
 
 [role="mb-4"]
-That is a bit different for static webs as they don’t have a central Management
-System as CMS does to integrate external code. There no ecosystem, no
-marketplace to get apps and modules from.
+Static websites work a little differently. They have no central
+management system to plug into, so there is no big marketplace of apps
+and modules to install.
 
 gallery::jg_old_times[]
 
 [role="mt-4"]
-Luckily, it is not that hard to integrate external components into the world
-of Jekyll. One of J1 is to give people a ready-to-use toolset without the
-need to install, to integrate features that are expected as a need.
+The good news is that adding outside components to Jekyll is not hard.
+One of the goals of J1 is to give you a ready-to-use toolset, so you do
+not need to install or set up the features people expect on a modern
+site.
 
 [role="mb-7"]
-A rich set of modules are already included. The modules support usual use
-cases of a website like a flexible navigation system, a local search,
-lightboxes to present pictures and videos, little helpers for scrolling,
-or to automatically create TOCs (table of contents) for a page.
+J1 already includes a rich set of modules. They cover the common needs
+of any website: a flexible navigation system, a local search, lightboxes
+for images and videos, smooth-scroll helpers, and tools that build a
+table of contents (TOC) for each page automatically.

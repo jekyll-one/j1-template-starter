@@ -1,0 +1,453 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/gallery_media.yml (0)
+# User (media) configuration for the module J1 Justified Gallery
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+# claude - split J1 Gallery data #1
+# The single data file (gallery.yml) has been split into two files:
+#
+#   - gallery_control.yml per-gallery configuration (this file: galleries)
+#   - gallery_media.yml   per-gallery media content (images / videos)
+#
+# Both files use the same `- gallery:` list structure, keyed by `id`, modeled
+# on the Masonry scaffold (masonry_player.yml / masonry_playlist.yml). The
+# control config and the playlist content are merged ID-wise (deep_merge) in
+# galleries.html and gallery.js. See those files for the merge|sort logic.
+# ------------------------------------------------------------------------------
+
+# ==============================================================================
+# Description
+# ==============================================================================
+#
+description:
+  title:                                Justified Gallery
+  scope:                                User media settings
+  location:                             _data/gallery_media.yml
+
+# ==============================================================================
+# User configuration settings
+# ==============================================================================
+#
+settings:
+
+  # ============================================================================
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              true
+
+  # ============================================================================
+  # All galleries available
+  # ----------------------------------------------------------------------------
+  #
+  galleries:
+
+    # ==========================================================================
+    # Image Galleries
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # Old Times
+    #
+    - gallery:
+
+      enabled:                          true
+      id:                               jg_old_times
+
+      # ------------------------------------------------------------------------
+      # Images
+      #
+      images:
+
+        # image 1
+        - image:
+          file:                         image-1.jpg
+          width:                        1600
+          height:                       1050
+          caption_text:                 GrandPa &middot; 80th Birthday
+          description: >
+                                        <h2>GrandPa</h2>
+                                        <h3>80th Birthday</h3>
+
+         # image 2
+        - image: 
+          file:                         image-2.jpg
+          width:                        1600
+          height:                       1050        
+          caption_text:                 GrandPa &middot; 80th Birthday
+          description: >
+                                        <h2>GrandPa</h2>
+                                        <h3>80th Birthday</h3>
+
+         # image 3
+        - image:
+          file:                         image-3.jpg
+          width:                        1600
+          height:                       1050        
+          caption_text:                 GrandPa &middot; Annual journey
+          description: >
+                                        <h2>GrandPa</h2>
+                                        <h3>Annual journey</h3>
+
+         # image 4
+        - image:
+          file:                         image-4.jpg
+          width:                        1600
+          height:                       1050       
+          caption_text:                 GrandPa &middot; Annual journey
+          description: >
+                                        <h2>GrandPa</h2>
+                                        <h3>Annual journey</h3>
+
+    # --------------------------------------------------------------------------
+    # Gallery Mega Cities
+    #
+    - gallery:
+
+      enabled:                          true
+      id:                               jg_mega_cities
+
+      # ------------------------------------------------------------------------
+      # Images
+      #
+      images:
+
+        # image 1
+        - image:
+          file:                         banter-snaps_b.jpg
+          width:                        1280
+          height:                       1920
+          caption_text:                 Japan &middot; City of Osaka
+          description: >
+                                        <h2>Japan</h2>
+                                        <h3>City of Osaka</h3>
+        # image 2
+        - image:
+          file:                         denys-nevozhai-1_b.jpg
+          width:                        1920
+          height:                       1280          
+          caption_text:                 China &middot; Man posing at the rooftop of Jin Mao Tower Shanghai
+          description: >
+                                        <h2>China</h2>
+                                        <h3>Man posing at the rooftop of Jin Mao Tower Shanghai</h3>
+        # image 3
+        - image:
+          file:                         gints-gailis_b.jpg
+          width:                        1468
+          height:                       1920          
+          caption_text:                 Indonesia &middot; Shangri-La Hotel Jakarta
+          description: >
+                                        <h2>Indonesia</h2>
+                                        <h3>Shangri-La Hotel Jakarta</h3>
+        # image 4
+        - image:
+          file:                         steven-diaz_b.jpg
+          width:                        1920
+          height:                       1123          
+          caption_text:                 Japan &middot; Tokyo seen from World Trade Center Observation Deck
+          description: >
+                                        <h2>Japan</h2>
+                                        <h3>Tokyo seen from World Trade Center Observation Deck</h3>
+        # image 5
+        - image:
+          file:                         denys-nevozhai-2_b.jpg
+          width:                        1920
+          height:                       1300          
+          caption_text:                 China &middot; Young couple over Shenzhen
+          description: >
+                                        <h2>China</h2>
+                                        <h3>Young couple over Shenzhen</h3>
+        # image 6
+        - image:
+          file:                         johan-mouchet_b.jpg
+          width:                        872
+          height:                       1280          
+          caption_text:                 Australia &middot; The Queen Bee at the Eureka Tower of Melbourne
+          description: >
+                                        <h2>Australia</h2>
+                                        <h3>The Queen Bee at the Eureka Tower of Melbourne</h3>
+        # image 7
+        - image:
+          file:                         thomas-tucker_b.jpg
+          width:                        1600
+          height:                       1050
+          caption_text:                 Taiwan &middot; Sunset over City of Taipei
+          description: >
+                                        <h2>Taiwan</h2>
+                                        <h3>Sunset over City of Taipei</h3>
+        # image 8
+        - image:
+          file:                         emmad-mazhari_b.jpg
+          width:                        1920
+          height:                       1822
+          caption_text:                 United States &middot; City of Chicago
+          description: >
+                                        <h2>United States</h2>
+                                        <h3>City of Chicago</h3>
+        # image 9
+        - image:
+          file:                         federico-rizzarelli_b.jpg
+          width:                        1920
+          height:                       2880
+          caption_text:                 China &middot; City of Shanghai
+          description: >
+                                        <h2>China</h2>
+                                        <h3>City of Shanghai</h3>
+        # image 10
+        - image:
+          file:                         andreas-brucker_b.jpg
+          width:                        1920
+          height:                       1280
+          caption_text:                 Thailand &middot; City of Bangkok
+          description: >
+                                        <h2>Thailand</h2>
+                                        <h3>City of Bangkok</h3>
+        # image 11
+        - image:
+          file:                         luca-bravo_b.jpg
+          width:                        1920
+          height:                       1280
+          caption_text:                 Taiwan &middot; Sunset over City of Taipei
+          description: >
+                                        <h2>Taiwan</h2>
+                                        <h3>Sunset over City of Taipei</h3>
+        # image 12
+        - image:
+          file:                         ethan-brooke_b.jpg
+          width:                        1920
+          height:                       1686
+          caption_text:                 South Korea &middot; Lotte World Tower Seoul
+          description: >
+                                        <h2>South Korea</h2>
+                                        <h3>Lotte World Tower Seoul</h3>
+
+    # ==========================================================================
+    # Video Galleries
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # HTML5 VIDEO
+    #
+    - gallery:
+
+      enabled:                          true
+      id:                               jg_video_html5
+
+      # ------------------------------------------------------------------------
+      # Video settings
+      # ------------------------------------------------------------------------
+      #
+      videos:
+
+        - video:                        # video 1
+          enabled:                      true
+
+          name:                         Peck Pocketed
+          type:                         html5
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       peck_pocketed.mp4
+          poster_image:                 peck_pocketed.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 Peck Pocketed &middot; Student Academy Award winning Cartoon Clip
+          description: >
+                                        <h2>Peck Pocketed by Kevin Herron | Disney Favorite</h2>
+                                        <h3>Student Academy Award winning Cartoon Clip</h3>
+
+          tracks:
+            - track:
+              default:                  true                                    # Indicates that the track is to be enabled if the user's preferences do not indicate that another track would be more appropriate
+              kind:                     captions
+              srclang:                  en                                      # Code for the language of the text track
+              label:                    English                                 # Descriptive text for the track that will used in the user interface (player)
+              src:                      /assets/video/tracks/html5/peck_pocketed/captions/video.vtt
+
+            - track:
+              default:                  true                                    # Indicates that the track is to be enabled if the user's preferences do not indicate that another track would be more appropriate
+              kind:                     chapters
+              srclang:                  en                                      # Code for the language of the text track
+              label:                    Chapters                                # Descriptive text for the track that will used in the user interface (player)
+              src:                      /assets/video/tracks/html5/peck_pocketed/chapters/video.vtt
+
+        - video:                        # video 2
+          enabled:                      true
+
+          name:                         Rollin Wild
+          type:                         html5
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       rolling_wild.mp4
+          poster_image:                 rolling_wild.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 Rollin` Wild &middot; Short Funny animated video clip created at the Film Academy
+          description: >
+                                        <h2>Rollin` Wild</h2>
+                                        <h3>Short Funny Animated Clip created at the Film Academy</h3>
+
+          tracks::                      []
+
+    # --------------------------------------------------------------------------
+    # Online VIDEO Carpool Karaoke (YouTube)
+    #
+    - gallery:
+
+      enabled:                          true
+      id:                               jg_video_youtube_james_and_adele
+
+      # ------------------------------------------------------------------------
+      # Video settings
+      # ------------------------------------------------------------------------
+      #
+      videos:
+
+        - video:                        # video 1
+          enabled:                      true
+
+          name:                         Carpool Karaoke James and Adele
+          type:                         youtube
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       //youtube.com/watch?v=Nck6BZga7TQ
+          poster_image:                 Nck6BZga7TQ/mqdefault.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 Carpool Karaoke 2015 &middot; James and Adele
+          description: >
+                                        <h2>Carpool Karaoke 2015</h2>
+                                        <h3>
+                                          James is on holidays in London and picks up
+                                          Adele for a ride through the city.
+                                          On the way, they sing some of their biggest hits.
+                                        </h3>
+
+          tracks:                       []                                      # jadams !!!
+          # playerParams:
+          #   start:                    50                                      # seconds to start
+
+        - video:                        # video 2
+          enabled:                      true
+
+          name:                         Last Carpool Karaoke
+          type:                         youtube
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       //youtube.com/watch?v=nV8UZJNBY6Y
+          poster_image:                 nV8UZJNBY6Y/mqdefault.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 Carpool Karaoke 2023 &middot; Last Carpool Karaoke Tour
+          description: >
+                                        <h2>Carpool Karaoke 2023</h2>
+                                        <h3>
+                                          Adele wakeups James at home for the very
+                                          last Late Late Night Show and for the
+                                          final Carpool Caraoke Tour.
+                                        </h3>
+
+          tracks:                       []                                      # jadams !!!
+
+    # --------------------------------------------------------------------------
+    # HTML5 VIDEO (over VideoJS)
+    #
+    - gallery:
+
+      enabled:                          true
+      id:                               jg_video_html5_videojs
+
+      # ------------------------------------------------------------------------
+      # Video settings
+      # ------------------------------------------------------------------------
+      #
+      videos:
+
+        - video:                        # video 1
+          enabled:                      true
+
+          name:                         Peck Pocketed
+          type:                         html5
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       peck_pocketed.mp4
+          poster_image:                 peck_pocketed.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 Peck Pocketed &middot; Student Academy Award winning Cartoon Clip
+          description: >
+                                        <h2>Peck Pocketed by Kevin Herron | Disney Favorite</h2>
+                                        <h3>Student Academy Award winning Cartoon Clip</h3>
+
+        - video:                        # video 2
+          enabled:                      true
+        
+          name:                         Rollin Wild
+          type:                         html5
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       rolling_wild.mp4
+          poster_image:                 rolling_wild.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 Rollin` Wild &middot; Short Funny animated video clip created at the Film Academy
+          description: >
+                                        <h2>Rollin` Wild</h2>
+                                        <h3>Short Funny Animated Clip created at the Film Academy</h3>
+
+    # --------------------------------------------------------------------------
+    # TinyDesk Concerts, Latin (YouTube)
+    #
+    - gallery:
+
+      enabled:                          true
+      id:                               tdc_latin
+
+      # ------------------------------------------------------------------------
+      # Video settings
+      # ------------------------------------------------------------------------
+      #
+      videos:
+
+        # video 01
+        - video:
+          enabled:                      true
+
+          name:                         S01BeckyG
+          type:                         youtube
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       //youtube.com/watch?v=FftvVi42U4o
+          poster_image:                 FftvVi42U4o/maxresdefault.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 S01 · Becky G 2023
+          description: >
+                                        <h2> S01 Becky G </h2>
+                                        <h3>At NPR 2023  </h3>
+
+        # video 02
+        - video:
+          enabled:                      true
+
+          name:                         S02RobertoFonsecas
+          type:                         youtube
+          api:                          videojs                                 # jadams !!!
+          size:                         1280-720
+          source:                       //youtube.com/watch?v=vdph2l0iw74
+          poster_image:                 vdph2l0iw74/maxresdefault.jpg
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          caption_text:                 S02 · Roberto Fonsecas 2025
+          description: >
+                                        <h2> S02 Roberto Fonsecas </h2>
+                                        <h3>At NPR 2025           </h3>
+
+# ------------------------------------------------------------------------------
+# END config

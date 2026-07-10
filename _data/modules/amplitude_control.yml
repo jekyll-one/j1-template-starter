@@ -1,0 +1,306 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/amplitude_control.yml
+# User (control) configuration settings for the module AmplitudeJS
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                AmplitudeJS
+  scope:                                User control settings
+  location:                             _data/modules/amplitude_control.yml
+
+# ------------------------------------------------------------------------------
+# User settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # PLAYER settings
+  # ----------------------------------------------------------------------------
+  #
+  players:
+
+    # --------------------------------------------------------------------------
+    # MINI player, Emancipator
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #       
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #  
+      id:                               emancipator_mini
+      type:                             mini
+
+      # PLAYLIST settings
+      #
+      playlist:
+        name:                           emancipator
+
+    # --------------------------------------------------------------------------
+    # COMPACT player, Emancipator
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #       
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #  
+      id:                               emancipator_compact
+      type:                             compact
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      playlist:
+        name:                           emancipator
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      # skip_forward_backward_button:     true                                  # default: true
+      # song_progress_bar:              false                                   # currently dont work om player level
+      # forward_backward_skip_seconds:  30                                      # currently dont work on player level
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Emancipator
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #     
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               emancipator_large
+      type:                             large
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      playlist:
+        name:                           emancipator
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Bea and her Business
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #    
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               bea_yt_large
+      type:                             large
+      source:                           video
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #      
+      playlist:
+        name:                           bea_yt
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Diana Krall
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #     
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               diana_krall_yt_large
+      type:                             large
+      source:                           video
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      playlist:
+        name:                           diana_krall_yt
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Manon Mélodie
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #    
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               manon_melodie_yt_large
+      type:                             large
+      source:                           video
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #      
+      playlist:
+        name:                           manon_melodie_yt
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Ephraim Kishon - Beste Familiengeschichten
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #     
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      # 
+      id:                               familiengeschichten_yt_large
+      type:                             large
+      source:                           video
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      playlist:
+        name:                           familiengeschichten_yt
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      delay_after_video_loaded:         750
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Ephraim Kishon - Beste Autofahrergeschichten
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #     
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #
+      id:                               autofahrer_geschichten_yt_large
+      type:                             large
+      source:                           video
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      playlist:
+        name:                           autofahrer_geschichten_yt
+
+      # ------------------------------------------------------------------------
+      # CONTROL settings
+      #
+      display_hours:                    true
+      delay_after_video_loaded:         750
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+    # --------------------------------------------------------------------------
+    # LARGE player, Mimi Rutherfurt
+    # --------------------------------------------------------------------------
+    #
+    - player:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #     
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYER settings
+      #  
+      id:                               mimi_rutherfurt_yt_large
+      type:                             large
+      source:                           video
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      playlist:
+        name:                           mimi_rutherfurt_yt
+
+      # ------------------------------------------------------------------------
+      # PLUGIN settings
+      #
+      plugin_manager:
+        enabled:                        true
+        plugins:                        [ ytp ]
+
+# ------------------------------------------------------------------------------
+# END config

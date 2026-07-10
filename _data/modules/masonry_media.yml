@@ -1,0 +1,166 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/masonry_media.yml (0)
+# User (media) configuration settings for the module J1 Masonry 
+#
+# Product/Info:
+# //jekyll.one
+#
+# Copyright (C) 2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: //github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  caption:                              J1 Masonry
+  scope:                                User media settings
+  location:                             _data/modules/masonry_media.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              true
+
+  # ----------------------------------------------------------------------------
+  # All players available
+  # ----------------------------------------------------------------------------
+  players:
+
+    # --------------------------------------------------------------------------
+    # IMAGE PLAYERS
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # Images + Fixed Height + Gutters + Captions + Lightbox
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               image_fixed_height_lb
+
+      # ------------------------------------------------------------------------
+      # Images
+      #
+      images:
+
+        # image 1
+        - image:
+          file:                         denys-nevozhai-1_b.jpg
+          width:                        5401
+          height:                       3601           
+          caption:                      Man posing at the rooftop of Jin Mao Tower Shanghai - China
+
+        # image 2
+        - image:
+          file:                         thomas-tucker_b.jpg
+          width:                        1600
+          height:                       1050          
+          caption:                      Sunset over Taipei City - Taiwan
+
+        # image 3
+        - image:
+          file:                         emmad-mazhari_b.jpg
+          width:                        1920
+          height:                       1822          
+          caption:                      Chicago - United States
+
+        # image 4
+        - image:
+          file:                         johan-mouchet_b.jpg
+          width:                        1920
+          height:                       2880           
+          caption:                      The Queen Bee at the Eureka Tower - Melbourne Southbank Australia
+
+        # image 5
+        - image:
+          file:                         federico-rizzarelli_b.jpg
+          width:                        1920
+          height:                       2880          
+          caption:                      Shanghai - China
+
+        # image 6
+        - image:
+          file:                         gints-gailis_b.jpg
+          width:                        1440
+          height:                       1861           
+          caption:                      Shangri-La Hotel Jakarta - Indonesia
+
+
+    # --------------------------------------------------------------------------
+    # VIDEO PLAYERS
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # YouTube Videos
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               youtube
+
+      # ------------------------------------------------------------------------
+      # videos
+      #
+      videos:
+
+#       video 1
+        - video:
+          name:                         Carpool Karaoke James and Adele
+          type:                         youtube
+          api:                          videojs
+          size:                         1280-720
+          source:                       //youtube.com/Nck6BZga7TQ
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          description: >
+                                        <h2>Carpool Karaoke 2015</h2>
+                                        <h3>
+                                          James is on holidays in London and picks up
+                                          Adele for a ride through the city.
+                                          On the way, they sing some of their biggest hits.
+                                        </h3>
+          poster:
+            style:                      img-responsive
+            source:                     //img.youtube.com/vi/Nck6BZga7TQ/mqdefault.jpg
+
+          caption:
+            enabled:                    true
+            position:                   bottom
+            text:                       YouTube Video &middot; Carpool Karaoke James and Adele
+
+#       video 2
+        - video:
+          name:                         Last Carpool Karaoke
+          type:                         youtube
+          api:                          videojs
+          size:                         1280-720
+          source:                       //youtube.com/nV8UZJNBY6Y
+          pinterest_prefix:             Pin video
+          tweet_prefix:                 Try video
+          description: >
+                                        <h2>Carpool Karaoke 2023</h2>
+                                        <h3>
+                                          Adele wakeups James at home for the very
+                                          last Late Late Night Show and for the
+                                          final Carpool Caraoke Tour.
+                                        </h3>
+          poster:
+            style:                      img-responsive
+            source:                     //img.youtube.com/vi/nV8UZJNBY6Y/maxresdefault.jpg
+
+          caption:
+            enabled:                    true
+            position:                   bottom
+            text:                       YouTube Video &middot; Last Carpool Karaoke
+
+# ------------------------------------------------------------------------------
+# END config

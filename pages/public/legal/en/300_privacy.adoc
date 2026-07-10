@@ -2,13 +2,14 @@
 title:                                  Privacy
 tagline:                                Your Personal Data
 
-date:                                   2023-01-01
-#last_modified:                         2023-01-01
+date:                                   2026-05-07
+# last_modified:                        2026-01-01
 
 description: >
-                                        The operators of this website take the protection of your personal data
-                                        seriously. We treat your data confidentially and protect your data privacy to
-                                        the General Data Protection Regulation (GDPR) of the European Union.
+                                        We take the protection of your personal data seriously.
+                                        We treat your data as private and protect it in line
+                                        with the General Data Protection Regulation (GDPR) of
+                                        the European Union.
 
 categories:                             [ Site ]
 tags:                                   [ Privacy, Policy ]
@@ -74,8 +75,8 @@ resource_options:
 ifeval::[{legal-warning} == true]
 [WARNING]
 ====
-This document *does not* constitute any *legal advice*. It is
-highly recommended to verify legal aspects and implications.
+This page is *not* legal advice. We recommend that you check the legal
+details with a qualified lawyer before you publish your own version.
 ====
 endif::[]
 
@@ -83,9 +84,9 @@ endif::[]
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-The operators of this website take the protection of your personal data
-seriously. We treat your data confidentially and protect your data privacy to
-the General Data Protection Regulation GDPR of the European Union.
+We take the protection of your personal data seriously. We keep your data
+private and protect it in line with the General Data Protection Regulation
+(GDPR) of the European Union.
 
 // Include sub-documents (if any)
 // -----------------------------------------------------------------------------
@@ -93,40 +94,36 @@ ifeval::[{cookies} == true]
 [role="mt-5"]
 == Cookies
 
-This website uses cookies and similar technologies for its operation
-this offer. You are free to give your consent, refuse, or revoke by clicking on
-the data protection dialog button.
+This website uses cookies and similar technologies to work properly. You
+can accept, refuse, or change your choices at any time using the privacy
+settings dialog.
 
-Subsequent changes are possible *at any time* by clicking on the icon
-mdi:cookie[24px, md-blue] placed top right in the *menu bar*.
+To open it later, click the cookie icon
+mdi:cookie[24px, md-blue] in the top-right of the *menu bar*.
 
 [role="mb-4"]
-*Advanced* third-party cookies are only used with your consent. Additional
-cookies are used to analyze the website usage or to offer personalized content.
-The evaluation of this information gives you a better user experience of the
-offered content, such as additional functions. Further information you find in
-the data protection dialog by clicking the button *Privacy Policy* or in the
-following sections of the respective providers.
+We only use *advanced* third-party cookies if you give us your permission.
+These extra cookies help us analyse how the site is used or show you
+content that fits your interests. They make your visit smoother and unlock
+extra features. You can read the full details by clicking *Privacy Policy*
+in the cookie dialog or in the sections below for each provider.
 
 Necessary::
-Necessary data is stored in cookies to enable the basic services of this site
-to operate. This website *does not keep records* of their use. All information
-data necessary to control this page are stored in so-called *session cookies*.
-Session cookies are *automatically* removed from your browser when you have
-*closed* all the tabs in your browser.
+Necessary cookies store the information needed for the basic features of
+this site. We do not keep records of how you use them. All this data goes
+into so-called *session cookies*, which your browser *deletes automatically*
+when you close all open tabs.
 
 Analyses::
-Analyzing the use of this website helps us to improve your user experience of
-the website to optimize. Google Analytics GA is used for the analysis. This
-site does not transmit any personal data. Implicit personal data such as
-IP addresses are *anonymized* to protect your privacy.
+Analytics cookies help us understand how people use this site so we can
+make it better. We use Google Analytics (GA) for this. We do not send any
+personal data, and IP addresses are *anonymised* to protect your privacy.
 
 Personalization::
-Personalization is used, for example, to collect user feedback, offer
-additional functions, or carry out advertising campaigns. Revenue from
-advertising allows us to make this website available to you free of charge.
-Partners enable us to offer you excellent personalized services and
-finance the costs of running this website.
+Personalization cookies help us collect feedback, offer extra features, or
+run advertising campaigns. The income from advertising lets us keep this
+website free for you. Our partners help us provide a better personal
+experience and cover the costs of running the site.
 endif::[]
 
 
@@ -134,18 +131,16 @@ ifeval::[{cookie-consent} == true]
 [role="mt-5"]
 == Privacy Settings
 
-If you want to set which *cookies* are used by this site, you can adjust your
-consent settings. You can also refuse cookies by using your *browser*
-accordingly. Please be careful when changing your browser settings. Rejecting
-on cookies can cause serious issues when visiting websites lead to the use of
-cookies. This does not only apply to the pages of this website.
+You can choose which cookies this site is allowed to use. You can also
+block cookies through your browser settings. Be careful when you change
+your browser settings, though: blocking cookies may stop many websites
+from working properly, not just this one.
 
 [NOTE]
 ====
-Have you previously visited our website and agreed on the use of cookies,
-the data files created at this time may still stored on your system. In such
-cases, cookies already be present and needs to be *manually* deleted by
-functions of your browser.
+If you visited this site before and accepted cookies, some of those
+cookies may still be on your device. In that case, you can remove them
+by hand using your browser settings.
 ====
 
 ++++
@@ -166,21 +161,18 @@ ifeval::[{themes} == true]
 [role="mt-5"]
 == Bootstrap Themes
 
-Themes for Bootstrap are used to customize the appearance of a website
-based on the basic rules and definitions of Bootstrap’s CSS styles. The
-use or change of a theme does not alter the functionality of the underlying
-Bootstrap framework but modifies, for example, the color scheme, fonts, or
-font sizes. Furthermore, the appearance of selected predefined HTML elements
-like buttons, forms, or navigation elements may be adapted by a theme.
+Bootstrap themes change how a website looks while keeping the same
+features. A theme can change colours, fonts, font sizes, and the look of
+elements like buttons, forms, or menus. It does not change what these
+elements do.
 
-The underlying *Themer* Module uses the free themes for Bootstrap
-provided by _Bootswatch_. The platform provides a large number of different
-themes, using pre-compiled CSS files, to be directly used for websites using
-Bootstrap V5.
+The built-in *Themer* module uses the free Bootstrap themes from
+_Bootswatch_. Bootswatch offers many ready-made themes that work
+directly with websites built on Bootstrap V5.
 
-The services at _Bootswatch_ use *permanent* Cookies to store relevant theme
-information. Therefore, to use the themes feature of J1 Template, you must
-agree on *permanent* Cookies for *personalization*.
+The Bootswatch service uses *permanent* cookies to remember which theme
+you picked. So, to use the themes feature in J1 Template, you need to
+accept *permanent* cookies for *personalization*.
 endif::[]
 
 
@@ -188,21 +180,21 @@ ifeval::[{logs-files} == true]
 [role="mt-5"]
 == Log files
 
-We collect certain information automatically from our web servers and save them
-in log files on our servers. This information can be Internet Protocol IP
-addresses, browser type, Internet service provider ISP, referral and exit
-pages, the operation system, time stamp and/or other clickstream data.
+Our web servers automatically collect some information and save it in
+log files. This information may include your IP address, browser type,
+internet provider, the page you came from, the page you went to next,
+your operating system, the time of your visit, and similar details.
 
-These are:
+The data we save includes:
 
 * Browser type and version
 * Operating system
-* URLs
+* URLs you visited
 * Hostnames
-* Timestamps of pages viewed
+* Time stamps for each page
 
-We can combine this log information with other information. We do this to
-improve the services we offer and to improve the content on our website.
+We may combine this log data with other information. We do this to
+improve our services and the content on this site.
 endif::[]
 
 
@@ -210,10 +202,11 @@ ifeval::[{google-analytics} == true]
 [role="mt-5"]
 == Google Traffic Analytics
 
-This website uses Google Analytics GA, a data service for the analysis of
-user activity. This functionality is only available if you have given your
-consent on privacy settings for *analyzes*.
-This service is offered by:
+This website uses Google Analytics (GA), a service that helps us see how
+people use the site. This feature is only active if you accept the
+*Analyses* option in your privacy settings.
+
+This service is provided by:
 
 ----
    Google Inc.
@@ -222,24 +215,22 @@ This service is offered by:
    USA
 ----
 
-The service uses so-called cookies. These are text files saved on your system
-to evaluate users for their activity on the website. The information generated
-by cookies will be transmitted to the provider and stored on the company's
-servers.
+Google Analytics uses cookies. These are small text files saved on your
+device that record how you use the site. The information from these
+cookies is sent to Google and stored on Google's servers.
 
-This website uses *anonymization* of IP addresses. Network addresses of
-visitors out of the area of the European Union as well as other countries
-were contracting to the privacy regulations on the European Economic area
-shortened. Personal assignment of the data recorded is *not* possible.
+This site uses *IP anonymisation*. For visitors in the European Union and
+other countries covered by European privacy rules, the IP address is
+shortened before it is stored. As a result, we *cannot* link the data back
+to a specific person.
 
-For more information, see the companies guidelines of the
-link:{url-google--privacy-policy-en}[Privacy Settings, {browser-window--new}].
+For more details, see the
+link:{url-google--privacy-policy-en}[Google Privacy Settings, {browser-window--new}].
 
 [NOTE]
 ====
-You can object to its use at any time by selecting the appropriate
-settings with your privacy settings. Notice, however, that you may not be able
-to use the full functionality of this website in this case.
+You can turn off this feature at any time in your privacy settings.
+If you do, some parts of this website may no longer work as expected.
 ====
 endif::[]
 
@@ -247,10 +238,11 @@ ifeval::[{google-ads} == true]
 [role="mt-5"]
 == Google Advertising
 
-This website uses Google Adsense GAD, a data service for personalized
-advertising. This functionality is only available if you have given your
-consent on privacy settings for *personalization*.
-This service is offered by:
+This website uses Google AdSense (GAD), a service for personalised
+advertising. This feature is only active if you accept the
+*Personalization* option in your privacy settings.
+
+This service is provided by:
 
 ----
    Google Inc.
@@ -259,24 +251,22 @@ This service is offered by:
    USA
 ----
 
-The service uses so-called cookies. These are text files saved on your system
-to evaluate users for their activity on the website. The information generated
-by cookies will be transmitted to the provider and stored on the company's
-servers.
+Google AdSense uses cookies. These are small text files saved on your
+device that record how you use the site. The information from these
+cookies is sent to Google and stored on Google's servers.
 
-This website uses *anonymization* of IP addresses. Network addresses of
-visitors out of the area of the European Union as well as other countries
-were contracting to the privacy regulations on the European Economic area
-shortened. Personal assignment of the data recorded is *not* possible.
+This site uses *IP anonymisation*. For visitors in the European Union and
+other countries covered by European privacy rules, the IP address is
+shortened before it is stored. As a result, we *cannot* link the data back
+to a specific person.
 
-For more information, see the companies guidelines of the
-link:{url-google--privacy-policy-en}[Privacy Settings, {browser-window--new}].
+For more details, see the
+link:{url-google--privacy-policy-en}[Google Privacy Settings, {browser-window--new}].
 
 [NOTE]
 ====
-You can object to its use at any time by selecting the appropriate
-settings with your privacy settings. Notice, however, that you may not be able
-to use the full functionality of this website in this case.
+You can turn off this feature at any time in your privacy settings.
+If you do, some parts of this website may no longer work as expected.
 ====
 endif::[]
 
@@ -285,10 +275,11 @@ ifeval::[{google-translator} == true]
 [role="mt-5"]
 == Google Translation
 
-This website uses Google Google Translator GT, a service to translate the
-content of websites. This functionality is only available if you have given
-your consent on privacy settings for *personalization*.
-This service is offered by:
+This website uses Google Translator (GT), a service that translates the
+content of websites into other languages. This feature is only active if
+you accept the *Personalization* option in your privacy settings.
+
+This service is provided by:
 
 ----
    Google Inc.
@@ -297,19 +288,18 @@ This service is offered by:
    USA
 ----
 
-The service uses so-called cookies. These are text files saved *permanent*
-on your system process the website for translation. The information generated
-by cookies will be transmitted to the provider and stored on the company's
-servers.
+Google Translator uses cookies. These are small text files saved
+*permanently* on your device so the service can translate pages.
+The information from these cookies is sent to Google and stored on
+Google's servers.
 
-For more information, see the companies guidelines of the
-link:{url-google--privacy-policy-en}[Privacy Settings, {browser-window--new}].
+For more details, see the
+link:{url-google--privacy-policy-en}[Google Privacy Settings, {browser-window--new}].
 
 [NOTE]
 ====
-You can object to its use at any time by selecting the appropriate
-settings with your privacy settings. Notice, however, that you may not be able
-to use the full functionality of this website in this case.
+You can turn off this feature at any time in your privacy settings.
+If you do, some parts of this website may no longer work as expected.
 ====
 endif::[]
 
@@ -318,39 +308,38 @@ ifeval::[{hyvor} == true]
 [role="mt-5"]
 == Comments
 
-On our pages, functions of the service *Hyvor Talk* HT may be embedded.
-This functionality is only available if you have given your consent on
-privacy settings for *personalization*.
-These services are offered by:
+Some pages on this site use the *Hyvor Talk* (HT) commenting service.
+This feature is only active if you accept the *Personalization* option
+in your privacy settings.
+
+This service is provided by:
 
 ----
-  Google Inc.
-  1600 Amphitheatre Parkway Mountain View
-  CA 94043
-  USA
+  Hyvor
+  Mahabodhi Mawatha
+  Colombo 03
+  Sri Lanka
 ----
 
-The *costs* for the provision of the service are paid by the *operator* of
-this website. The services of *Hyvor Talk* respect your privacy first. If you
-use commenting at Hyvor Talk, the platform will establish a direct link
-between your browser and the servers of the Hyvor company.
+The *cost* of this service is paid by the *operator* of this website.
+Hyvor Talk puts your privacy first. When you post a comment, your browser
+connects directly to the Hyvor server.
 
-If you are commenting on Hyvor, *no* tracking, advertising, affiliate, or any
-other *third party* codes are collected or transmitted. Personal data is
-never passed on to third parties.
+When you comment through Hyvor, *no* tracking, advertising, or other
+*third-party* code runs in the background. Your personal data is never
+sold or passed on to other companies.
 
-The service uses so-called cookies. These are text files saved on your system
-to evaluate the user's activity. The information generated by cookies will be
-transmitted to the provider and stored on the company's servers.
+Hyvor Talk uses cookies. These are small text files saved on your device
+that record how you use the service. The information from these cookies
+is sent to Hyvor and stored on Hyvor's servers.
 
-For more information, see the companies guidelines of the
-https://hyvor.com/privacy-policy[Privacy Settings, {browser-window--new}].
+For more details, see the
+https://hyvor.com/privacy-policy[Hyvor Privacy Settings, {browser-window--new}].
 
 [NOTE]
 ====
-You can object to its use at any time by selecting the appropriate
-settings with your privacy settings. Notice, however, that you may not be able
-to use the full functionality of this website in this case.
+You can turn off this feature at any time in your privacy settings.
+If you do, some parts of this website may no longer work as expected.
 ====
 endif::[]
 
@@ -359,10 +348,11 @@ ifeval::[{facebook} == true]
 [role="mt-5"]
 == Facebook Integration
 
-On our pages, *functions* of the social network *Facebook* may be embedded.
-This functionality is only available if you have given your consent on privacy
-settings for *personalization*.
-These services are offered by:
+Some pages on this site may include *features* from the *Facebook* social
+network. These features are only active if you accept the *Personalization*
+option in your privacy settings.
+
+This service is provided by:
 
 ----
   Facebook Inc.
@@ -371,26 +361,24 @@ These services are offered by:
   USA
 ----
 
-When you visit our website, the integration, the *Like Button*, creates
-a direct connection between your browser and the provider's server. As a
-result, personal data is sent to the systems of the provider. The prerequisite
-for this is that you are logged in with your user account visiting our
-pages.
+When you visit our site, the *Like Button* opens a direct connection
+between your browser and the Facebook server. Some of your personal data
+is then sent to Facebook. This happens only if you are also logged in to
+your Facebook account while visiting our site.
 
-The service uses so-called cookies. These are text files saved on your system
-to evaluate the user's activity. The information generated by cookies will be
-transmitted to the provider and stored on the company's servers.
-We point out that we, the operator, do not know about what data is transmitted
-as well as their use at the service provider.
+Facebook uses cookies. These are small text files saved on your device
+that record how you use the service. The information from these cookies
+is sent to Facebook and stored on Facebook's servers. Please note that
+we, as the site operator, do not know exactly which data is sent or how
+Facebook uses it.
 
-For more information, see the companies guidelines of the
-link:{url-facebook--privacy-policy-en}[Privacy Settings, {browser-window--new}].
+For more details, see the
+link:{url-facebook--privacy-policy-en}[Facebook Privacy Settings, {browser-window--new}].
 
 [NOTE]
 ====
-You can object to its use at any time by selecting the appropriate
-settings with your privacy settings. Notice, however, that you may not be able
-to use the full functionality of this website in this case.
+You can turn off this feature at any time in your privacy settings.
+If you do, some parts of this website may no longer work as expected.
 ====
 endif::[]
 
@@ -399,10 +387,11 @@ ifeval::[{twitter} == true]
 [role="mt-5"]
 == Twitter Integration
 
-On our pages, *functions* of the news network *Twitter* may be embedded.
-This functionality is only available if you have given your consent on
-privacy settings for *personalization*.
-These services are offered by:
+Some pages on this site may include *features* from the *Twitter* social
+network. These features are only active if you accept the *Personalization*
+option in your privacy settings.
+
+This service is provided by:
 
 ----
   Twitter Inc.
@@ -411,26 +400,24 @@ These services are offered by:
   USA
 ----
 
-When you visit our website, the integration, the *Re-Tweet* function, creates
-a direct connection between your browser and the provider's server. As a
-result, personal data is sent to the systems of the provider. The prerequisite
-for this is that you are logged in with your user account visiting our
-pages.
+When you visit our site, the *Re-Tweet* button opens a direct connection
+between your browser and the Twitter server. Some of your personal data
+is then sent to Twitter. This happens only if you are also logged in to
+your Twitter account while visiting our site.
 
-The service uses so-called cookies. These are text files saved on your system
-to evaluate the user's activity. The information generated by cookies will be
-transmitted to the provider and stored on the company's servers.
-We point out that we, the operator, do not know about what data is transmitted
-as well as their use at the service provider.
+Twitter uses cookies. These are small text files saved on your device
+that record how you use the service. The information from these cookies
+is sent to Twitter and stored on Twitter's servers. Please note that we,
+as the site operator, do not know exactly which data is sent or how
+Twitter uses it.
 
-For more information, see the companies guidelines of the
-link:{url-twitter--privacy-policy-en}[Privacy Settings, {browser-window--new}].
+For more details, see the
+link:{url-twitter--privacy-policy-en}[Twitter Privacy Settings, {browser-window--new}].
 
 [NOTE]
 ====
-You can object to its use at any time by selecting the appropriate
-settings with your privacy settings. Notice, however, that you may not be able
-to use the full functionality of this website in this case.
+You can turn off this feature at any time in your privacy settings.
+If you do, some parts of this website may no longer work as expected.
 ====
 endif::[]
 
@@ -439,10 +426,11 @@ ifeval::[{instagram} == true]
 [role="mt-5"]
 == Instagram Integration
 
-On our pages, *functions* of the social network *Instagram* may be embedded.
-This functionality is only available if you have given your consent on
-privacy settings for *personalization*.
-These services are offered by:
+Some pages on this site may include *features* from the *Instagram* social
+network. These features are only active if you accept the *Personalization*
+option in your privacy settings.
+
+This service is provided by:
 
 ----
   Instagram Inc.
@@ -451,26 +439,24 @@ These services are offered by:
   USA
 ----
 
-When you visit our website, the integration, the *Instagram Button*, creates a
-direct connection between your browser and the provider's server. As a result,
-personal data is sent to the systems of the provider. The prerequisite
-for this is that you are logged in with your user account visiting our
-pages.
-We point out that we, the operator, do not know about what data is transmitted
-as well as their use at the service provider.
+When you visit our site, the *Instagram Button* opens a direct connection
+between your browser and the Instagram server. Some of your personal data
+is then sent to Instagram. This happens only if you are also logged in to
+your Instagram account while visiting our site. Please note that we, as
+the site operator, do not know exactly which data is sent or how Instagram
+uses it.
 
-The service uses so-called cookies. These are text files saved on your system
-to evaluate the user's activity. The information generated by cookies will be
-transmitted to the provider and stored on the company's servers.
+Instagram uses cookies. These are small text files saved on your device
+that record how you use the service. The information from these cookies
+is sent to Instagram and stored on Instagram's servers.
 
-For more information, see the companies guidelines of the
-link:{url-instagram--privacy-policy}[Privacy Settings, {browser-window--new}].
+For more details, see the
+link:{url-instagram--privacy-policy}[Instagram Privacy Settings, {browser-window--new}].
 
 [NOTE]
 ====
-You can object to its use at any time by selecting the appropriate
-settings with your privacy settings. Notice, however, that you may not be able
-to use the full functionality of this website in this case.
+You can turn off this feature at any time in your privacy settings.
+If you do, some parts of this website may no longer work as expected.
 ====
 endif::[]
 
@@ -479,37 +465,36 @@ ifeval::[{youtube} == true]
 [role="mt-5"]
 == YouTube Videos
 
-On our pages, the *player* of the video platform *YouTube* YT may be embedded.
-This functionality is only available if you have given your consent on privacy
-settings for *personalization*.
+Some pages on this site may include the *YouTube* (YT) video player.
+This feature is only active if you accept the *Personalization* option
+in your privacy settings.
 
-These services are offered by:
+This service is provided by:
 
 ----
   Google Ireland Limited
   Gordon House, Barrow Street
   Dublin 4
-  Irland
+  Ireland
 ----
 
-When you visit our website, the *player* creates a direct connection between
-your browser and the provider's server. In addition to the content, personal
-data is transmitted to the servers of the company *YouTube*.
+When you visit our site, the YouTube player opens a direct connection
+between your browser and the YouTube server. Along with the video
+content, some of your personal data is sent to YouTube.
 
-The service uses so-called cookies. These are text files saved on your system
-to evaluate the user's activity. The information generated by cookies will be
-transmitted to the provider and stored on the company's servers.
-We point out that we, the operator, do not know about what data is transmitted
-as well as their use at the service provider.
+YouTube uses cookies. These are small text files saved on your device
+that record how you use the service. The information from these cookies
+is sent to YouTube and stored on YouTube's servers. Please note that
+we, as the site operator, do not know exactly which data is sent or how
+YouTube uses it.
 
-For more information, see the companies guidelines of the
-link:{url-google--privacy-policy-de}[Privacy Settings, {browser-window--new}].
+For more details, see the
+link:{url-google--privacy-policy-de}[Google Privacy Settings, {browser-window--new}].
 
 [NOTE]
 ====
-You can object to its use at any time by selecting the appropriate
-settings with your privacy settings. Notice, however, that you may not be able
-to use the full functionality of this website in this case.
+You can turn off this feature at any time in your privacy settings.
+If you do, some parts of this website may no longer work as expected.
 ====
 endif::[]
 
@@ -518,11 +503,11 @@ ifeval::[{vimeo} == true]
 [role="mt-5"]
 == Vimeo Videos
 
-On our pages, the *player* of the video platform *Vimeo* VIV may be embedded.
-This functionality is only available if you have given your consent on privacy
-settings for *personalization*.
+Some pages on this site may include the *Vimeo* (VIV) video player.
+This feature is only active if you accept the *Personalization* option
+in your privacy settings.
 
-These services are offered by:
+This service is provided by:
 
 ----
   Vimeo Inc.
@@ -531,24 +516,23 @@ These services are offered by:
   USA
 ----
 
-When you visit our website, the *player* creates a direct connection between
-your browser and the provider's server. In addition to the content, personal
-data is transmitted to the servers of the company *Vimeo*.
+When you visit our site, the Vimeo player opens a direct connection
+between your browser and the Vimeo server. Along with the video content,
+some of your personal data is sent to Vimeo.
 
-The service uses so-called cookies. These are text files saved on your system
-to evaluate the user's activity. The information generated by cookies will be
-transmitted to the provider and stored on the company's servers.
-We point out that we, the operator, do not know about what data is transmitted
-as well as their use at the service provider.
+Vimeo uses cookies. These are small text files saved on your device that
+record how you use the service. The information from these cookies is
+sent to Vimeo and stored on Vimeo's servers. Please note that we, as the
+site operator, do not know exactly which data is sent or how Vimeo uses
+it.
 
-For more information, see the companies guidelines of the
-link:{url-vimeo--privacy-policy}[Privacy Settings, {browser-window--new}].
+For more details, see the
+link:{url-vimeo--privacy-policy}[Vimeo Privacy Settings, {browser-window--new}].
 
 [NOTE]
 ====
-You can object to its use at any time by selecting the appropriate
-settings with your privacy settings. Notice, however, that you may not be able
-to use the full functionality of this website in this case.
+You can turn off this feature at any time in your privacy settings.
+If you do, some parts of this website may no longer work as expected.
 ====
 endif::[]
 
@@ -557,11 +541,11 @@ ifeval::[{dailymotion} == true]
 [role="mt-5"]
 == DailyMotion Videos
 
-On our pages,the *player* of the video platform *DailyMotion* DMV may be embedded.
-This functionality is only available if you have given your consent on privacy
-settings for *personalization*.
+Some pages on this site may include the *DailyMotion* (DMV) video player.
+This feature is only active if you accept the *Personalization* option
+in your privacy settings.
 
-These services are offered by:
+This service is provided by:
 
 ----
   Dailymotion
@@ -570,24 +554,23 @@ These services are offered by:
   France
 ----
 
-When you visit our website, the *player* creates a direct connection between
-your browser and the provider's server. In addition to the content, personal
-data is transmitted to the servers of the company *DailyMotion*.
+When you visit our site, the DailyMotion player opens a direct connection
+between your browser and the DailyMotion server. Along with the video
+content, some of your personal data is sent to DailyMotion.
 
-The service uses so-called cookies. These are text files saved on your system
-to evaluate the user's activity. The information generated by cookies will be
-transmitted to the provider and stored on the company's servers.
-We point out that we, the operator, do not know about what data is transmitted
-as well as their use at the service provider.
+DailyMotion uses cookies. These are small text files saved on your device
+that record how you use the service. The information from these cookies
+is sent to DailyMotion and stored on DailyMotion's servers. Please note
+that we, as the site operator, do not know exactly which data is sent or
+how DailyMotion uses it.
 
-For more information, see the companies guidelines of the
-link:{url-dailymotion--privacy-policy}[Privacy Settings, {browser-window--new}].
+For more details, see the
+link:{url-dailymotion--privacy-policy}[DailyMotion Privacy Settings, {browser-window--new}].
 
 [role="mb-7"]
 [NOTE]
 ====
-You can object to its use at any time by selecting the appropriate
-settings with your privacy settings. Notice, however, that you may not be able
-to use the full functionality of this website in this case.
+You can turn off this feature at any time in your privacy settings.
+If you do, some parts of this website may no longer work as expected.
 ====
 endif::[]

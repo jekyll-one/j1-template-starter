@@ -1,0 +1,220 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/masonry_control.yml (1)
+# User (control) configuration settings for the module J1 Masonry
+#
+# Product/Info:
+# //jekyll.one
+#
+# Copyright (C) 2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: //github.com/jekyll-one/J1 Theme/blob/master/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  caption:                              J1 Masonry
+  scope:                                User control settings
+  location:                             _data/modules/masonry_control.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              true
+
+  # ----------------------------------------------------------------------------
+  # All player available
+  # ----------------------------------------------------------------------------
+  players:
+
+    # --------------------------------------------------------------------------
+    # IMAGE PLAYERS
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # Images + Fixed Height + Gutters + Captions + Lightbox
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               image_fixed_height_lb
+      type:                             image
+      gutters:                          1
+
+      image_base_path:                  /assets/image/module/swiper/simple/mega_city/image
+    # image_styles:                     img-fluid
+    # image_height:                     300
+
+      # ------------------------------------------------------------------------
+      # Bootstrap responsive options
+      #
+      # responsive:
+      #   xs:                             12
+      #   sm:                             12
+      #   md:                             6
+      #   lg:                             4
+      #   xl:                             4
+
+      # ------------------------------------------------------------------------
+      # lightbox settings
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           ps                                      # ps | lb | lg
+
+      # ------------------------------------------------------------------------
+      # split J1 Masonry data #2
+      # `caption` and Masonry `options` blocks removed from per-grid config.
+      # Values were identical across all grids in masonry_player.yml and
+      # have been moved to masonry.yml defaults. Each grid inherits them
+      # via deep_merge in masonry.html (defaults <- player <- playlist).
+      # For the JS layer, masonry.js already falls back to top-level
+      # defaults when `grid.options.*` is missing — no change required.
+      # ------------------------------------------------------------------------
+
+      # ------------------------------------------------------------------------
+      # lightGallery options
+      # split J1 Masonry data #2
+      # `download` and `alignThumbnails` removed — already defined with
+      # identical values in masonry.yml defaults.lightGallery.options.      
+      #
+      lightGallery:
+        plugins:                        lgFullscreen, lgThumbnail, lgZoom
+        options:
+          alignThumbnails:              left
+
+    # --------------------------------------------------------------------------
+    # VIDEO PLAYERS
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # YouTube Videos
+    #
+    - grid:
+      enabled:                          true
+
+      id:                               youtube
+      type:                             video
+      gutters:                          2
+
+      # ------------------------------------------------------------------------
+      # Bootstrap responsive options
+      #
+      responsive:
+        xs:                             12
+        sm:                             12
+        md:                             6
+        lg:                             6
+        xl:                             6
+
+      # ------------------------------------------------------------------------
+      # VideoJS settings
+      # See settings: //jekyll.one/pages/public/manuals/videojs/videojs_api/
+      # ------------------------------------------------------------------------
+      #
+      videojs:
+        enabled:                        true
+
+        theme:                          uno
+
+        # ----------------------------------------------------------------------
+        # Player settings
+        # See: //jekyll.one/pages/public/manuals/videojs/lightgallery_api
+        # ----------------------------------------------------------------------
+        #
+        player:
+          enabled:                      true
+
+          # VideoJS
+          # --------------------------------------------------------------------
+          videojsPlayer:
+            enabled:                    true
+
+            videojsOptions:
+              controls:                 true
+              tracks:                   true
+
+            controlBar:
+              pictureInPictureToggle:   false
+              chaptersButton:           true
+              subtitlesButton:          true
+              playbackRates:            [0.25, 0.5, 1, 1.5, 2]
+
+              volumePanel:
+                inline:                 false
+
+              hotkeysPlugin:
+                enabled:                true
+                options:
+                  volumeStep:           0.2
+
+              skipButtonsPlugin:
+                enabled:                true
+                options:
+                  forward:              15
+                  backward:             15
+
+              zoomPlugin:
+                enabled:                true
+                options:
+                  moveX:                0
+                  moveY:                0
+                  rotate:               0
+                  zoom:                 1
+
+          # Youtube
+          # --------------------------------------------------------------------
+          youTubePlayer:
+            enabled:                    true
+            api:                        videojs                                 # native|videojs
+
+            options:
+              autoPlay:                 true
+              muted:                    true
+              showinfo:                 true
+              controls:                 true
+
+      # ------------------------------------------------------------------------
+      # Lightbox settings
+      # See settings for lightbox:     //jekyll.one/pages/public/manuals/modules/lightbox
+      # See settings for lightGallery: //jekyll.one/pages/public/manuals/videojs/videojs_api
+      # ------------------------------------------------------------------------
+      #
+      lightbox:
+        enabled:                        true
+        type:                           lg
+
+      lightGallery:
+        plugins:                        lgThumbnail, lgVideo
+
+        options:
+          licenseKey:                   0000-0000-000-0000
+          # split J1 Masonry data #2
+          # `download` and `alignThumbnails` removed — already defined with
+          # identical values in masonry.yml defaults.lightGallery.options.
+          addClass:                     lg-uno-thumbnails                         # customized thumbnails
+          appendThumbnailsTo:           .lg-outer                                 # required for customized thumbnails
+          animateThumb:                 false                                     # required for customized thumbnails
+          allowMediaOverlap:            true                                      # required for customized thumbnails
+
+      # ------------------------------------------------------------------------
+      # split J1 Masonry data #2
+      # `caption` and Masonry `options` blocks removed from per-grid config.
+      # Values were identical across all grids in masonry_player.yml and
+      # have been moved to masonry.yml defaults. Each grid inherits them
+      # via deep_merge in masonry.html (defaults <- player <- playlist).
+      # For the JS layer, masonry.js already falls back to top-level
+      # defaults when `grid.options.*` is missing — no change required.
+      # ------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# END config

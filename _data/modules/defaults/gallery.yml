@@ -1,11 +1,11 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/defaults/gallery.yml
-# Default configuration for J1 justifiedGallery (jg)
+# ~/_data/modules/defaults/gallery.yml (1)
+# Default configuration for the module J1 justifiedGallery
 #
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023-2026 Juergen Adams
+# Copyright (C) 2026 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
@@ -17,7 +17,7 @@
 description:
   title:                                Justified Gallery
   scope:                                Default settings
-  location:                             _data/apps/defaults/justifiedGallery.yml
+  location:                             _data/defaults/gallery.yml
 
 # ------------------------------------------------------------------------------
 # User configuration settings
@@ -39,7 +39,7 @@ defaults:
   # a gallery is initialized by the JS adapter.
   #
   #   values:                           string
-  #   default:                          /assets/data/gallery_app
+  #   default:                          /assets/data/gallery
   #
   # ----------------------------------------------------------------------------
   #
@@ -48,8 +48,7 @@ defaults:
   # ----------------------------------------------------------------------------
   # Global settings
   #
-# xhr_data_path:                        /assets/data/gallery_app
-  xhr_data_path:                        /assets/data/galleries
+  xhr_data_path:                        /assets/data/gallery
   gallery_complete_timeout:             1000
 
   # ----------------------------------------------------------------------------
@@ -64,7 +63,23 @@ defaults:
   # ----------------------------------------------------------------------------
   # justifiedGallery settings
   #
-  gallerySettings:
+  # claude - split J1 Gallery data #2
+  # ----------------------------------------------------------------------------
+  # Renamed the default key `gallerySettings` -> `gallery_options` so the
+  # default Justified Gallery layout options ACTUALLY feed the per-gallery
+  # `gallery_options` block that the adapter consumes:
+  #
+  #     gallery.js:  {% for option in gallery.gallery_options %} ... {% endfor %}
+  #
+  # The old `gallerySettings` key was never read by gallery.js / gallery.html,
+  # so its rowHeight/gutters defaults had no effect and could not be inherited
+  # by galleries that omit them. This mirrors the Masonry pattern, where the
+  # defaults file and the per-grid config share the SAME option keys, allowing
+  # a gallery that omits `rowHeight`/`gutters` to inherit these values via the
+  # per-gallery deep_merge (gallery_defaults <- control <- media).
+  # ----------------------------------------------------------------------------
+  #
+  gallery_options:
     rowHeight:                            150
     gutters:                              1
 
@@ -73,7 +88,7 @@ defaults:
   #
   lightbox:
     enabled:                            true
-    type:                               lg                                      # lightGallery
+    type:                               lg                                      # ps | lb | lg
 
   # ----------------------------------------------------------------------------
   # lightGallery settings
@@ -100,7 +115,6 @@ defaults:
 
       muted:                            false
       preload:                          true
-  #   videoStart:                       ["00:00:30", "00:01:30"]                # start time (hh:mm:ss) for [video1, video2]
 
       controls:                         true
       controlBar:

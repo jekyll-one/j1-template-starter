@@ -1,0 +1,619 @@
+---
+title:                                  VideoJS 
+title_extention:                        Playlist Plugins
+tagline:                                Playlist Test Tool
+
+date:                                   2026-06-13
+#last_modified:                         2026-06-13
+
+description: >
+                                        A featured test page for a Video.js player driven by the
+                                        official videojs-playlist and videojs-playlist-ui plugins.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap, videojs, playlist
+
+categories:                             [ Tools ]
+tags:                                   [ videoPlayer, videojs, playlist ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/j1-launch.jpg
+  width:                                1920
+  height:                               1280
+
+regenerate:                             false
+permalink:                              /pages/public/tools/test/videojs-playlist/
+
+resources:                              [ videojs ]
+resource_options:
+  - attic:
+      opacity:                          .8
+      padding_top:                      600
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/j1-launch.jpg
+          alt:                          videojs-playlist-promo-image
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set page (local) attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+{% comment %} Liquid procedures
+-------------------------------------------------------------------------------- {% endcomment %}
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{% endcapture %}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+This page exercises a *Video.js* player whose playlist is driven entirely by
+the two official plugins, `videojs-playlist` (logic) and `videojs-playlist-ui`
+(the clickable menu). Every edit operation rebuilds the playlist array and
+re-renders the menu in place — *without a single page reload*.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5"]
+== Playlist test tool
+
+Use the transport, playback and edit controls to drive the player. The *State*
+panel mirrors the live plugin values and the *Event log* records every plugin
+and player event as it fires.
+
+// Include Player HTML
+// -----------------------------------------------------------------------------
+// The whole tool is namespaced under #vjs_playlist_test so its dark theme and
+// element IDs never collide with the surrounding J1 / Bootstrap page. Video.js
+// is reused from the J1 `videojs` resource when present and pulled from the CDN
+// otherwise; the two official plugins are always added from the CDN.
+// -----------------------------------------------------------------------------
+//
+++++
+<style>
+  #vjs_playlist_test {
+    --bg:#0f1115; --panel:#181b22; --panel-2:#1f242d; --border:#2a303b;
+    --text:#e7ebf0; --muted:#9aa4b2; --accent:#4f8cff; --accent-2:#38c172;
+    --warn:#e0a458; --danger:#e05858;
+    --mono: ui-monospace,"SF Mono","Cascadia Code",Menlo,Consolas,monospace;
+    --sans: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid var(--border);
+    border-radius: 0px;
+    overflow: hidden;
+  }
+  #vjs_playlist_test * { box-sizing: border-box; }
+  #vjs_playlist_test .vjt-header {
+    padding: 16px 20px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+  }
+  #vjs_playlist_test .vjt-header h3 { font-size: 16px; margin: 0; font-weight: 600; color: var(--text); }
+  #vjs_playlist_test .vjt-subtitle { color: var(--muted); font-size: 12px; }
+  #vjs_playlist_test .vjt-versions { margin-left: auto; color: var(--muted); font-size: 11px; font-family: var(--mono); }
+
+  #vjs_playlist_test .vjt-wrap {
+    display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(300px, 1fr);
+    gap: 18px; padding: 18px 20px; align-items: start;
+  }
+  @media (max-width: 1000px) { #vjs_playlist_test .vjt-wrap { grid-template-columns: 1fr; } }
+
+  #vjs_playlist_test .vjt-stage { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+
+  #vjs_playlist_test .vjt-player-shell {
+    background: #000;
+    /* border-radius: 10px; */
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  #vjs_playlist_test .video-js { width: 100%; aspect-ratio: 16 / 9; height: auto; }
+
+  #vjs_playlist_test .vjs-playlist {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    max-height: 532px;
+    margin-top: 22px;
+    overflow-y: scroll;
+  }
+
+  #vjs_playlist_test .vjt-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    /* border-radius: 10px; */
+    padding: 14px 16px;
+  }
+
+  #vjs_playlist_test .vjt-card h4 { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 12px; font-weight: 600; }
+  #vjs_playlist_test .vjt-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  #vjs_playlist_test .vjt-row + .vjt-row { margin-top: 10px; }
+
+  #vjs_playlist_test button {
+    background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+    border-radius: 7px; padding: 7px 12px; font-size: 13px; font-family: var(--sans);
+    cursor: pointer; transition: border-color .12s, background .12s;
+  }
+  #vjs_playlist_test button:hover { border-color: var(--accent); }
+  #vjs_playlist_test button:active { background: #11141a; }
+  #vjs_playlist_test button.vjt-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  #vjs_playlist_test button.vjt-primary:hover { filter: brightness(1.08); }
+  #vjs_playlist_test button.vjt-danger { border-color: var(--danger); color: #ffb3b3; }
+  #vjs_playlist_test button:disabled { opacity: .4; cursor: not-allowed; border-color: var(--border); }
+
+  #vjs_playlist_test input[type="text"],
+  #vjs_playlist_test input[type="number"],
+  #vjs_playlist_test select {
+    background: #11141a; color: var(--text); border: 1px solid var(--border);
+    border-radius: 7px; padding: 7px 10px; font-size: 13px; font-family: var(--mono);
+  }
+  #vjs_playlist_test input[type="text"] { flex: 1; min-width: 140px; }
+  #vjs_playlist_test input[type="number"] { width: 70px; }
+
+  #vjs_playlist_test label.vjt-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted) !important;
+    cursor: pointer;
+  }
+
+  #vjs_playlist_test label.vjt-inline input { accent-color: var(--accent); }
+
+  #vjs_playlist_test .vjt-status { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-family: var(--mono); font-size: 12.5px; }
+  #vjs_playlist_test .vjt-status .k { color: var(--muted); }
+  #vjs_playlist_test .vjt-status .v { color: var(--text); word-break: break-all; }
+  #vjs_playlist_test .vjt-status .v.hl { color: var(--accent-2); }
+
+  #vjs_playlist_test .vjt-log {
+    font-family: var(--mono); font-size: 11.5px; background: #0a0c10; border: 1px solid var(--border);
+    border-radius: 8px; height: 200px; overflow-y: auto; padding: 8px 10px; margin: 0; white-space: pre-wrap;
+  }
+  #vjs_playlist_test .vjt-log .t { color: var(--muted); }
+  #vjs_playlist_test .vjt-log .e { color: var(--accent); }
+  #vjs_playlist_test .vjt-log .info { color: var(--text); }
+  #vjs_playlist_test .vjt-log .ok { color: var(--accent-2); }
+  #vjs_playlist_test .vjt-log .warn { color: var(--warn); }
+
+  #vjs_playlist_test .vjt-hint { color: var(--muted); font-size: 11.5px; margin-top: 8px; }
+  #vjs_playlist_test code { font-family: var(--mono); background: #11141a; padding: 1px 5px; border-radius: 4px; color: #cdd6e0; }
+</style>
+++++
+
+++++
+<div id="vjs_playlist_test" class="vjs-playlist-test">
+
+  <div class="vjt-header">
+    <h3>Playlist Test Tool</h3>
+    <!-- span class="vjt-subtitle">official <code>videojs-playlist</code> + <code>videojs-playlist-ui</code></span -->
+    <span class="vjt-versions" id="vjt_versions">loading</span>
+  </div>
+
+  <div class="vjt-wrap">
+
+    <!-- LEFT: player + playlist menu -->
+    <div class="vjt-stage">
+      <div class="vjt-player-shell">
+        <video-js
+          id="vjt_player"
+          class="video-js vjs-default-skin vjs-big-play-centered"
+          controls
+          preload="auto"
+          playsinline>
+        </video-js>
+      </div>
+
+      <!-- videojs-playlist-ui renders the clickable menu in here -->
+      <div class="vjs-playlist"></div>
+    </div>
+
+    <!-- RIGHT: control panel -->
+    <div class="vjt-stage">
+
+      <div class="vjt-card">
+        <h4>Transport</h4>
+        <div class="vjt-row">
+          <button id="vjt_btnFirst">&#9198; First</button>
+          <button id="vjt_btnPrev">&#9664; Previous</button>
+          <button id="vjt_btnNext">Next &#9654;</button>
+          <button id="vjt_btnLast">Last &#9197;</button>
+        </div>
+        <div class="vjt-row">
+          <span style="color:var(--muted)">Jump to index</span>
+          <input type="number" id="vjt_jumpIdx" min="0" value="0">
+          <button id="vjt_btnJump" class="vjt-primary">Go</button>
+          <button id="vjt_btnPlay">Play</button>
+          <button id="vjt_btnPause">Pause</button>
+        </div>
+      </div>
+
+      <div class="vjt-card">
+        <h4>Playback options</h4>
+        <div class="vjt-row">
+          <label class="vjt-inline"><input type="checkbox" id="vjt_repeat"> Repeat playlist</label>
+        </div>
+        <div class="vjt-row">
+          <span style="color:var(--muted)">Auto-advance</span>
+          <label class="vjt-inline"><input type="radio" name="vjt_aa" value="off" checked> Off</label>
+          <label class="vjt-inline"><input type="radio" name="vjt_aa" value="0"> 0s</label>
+          <label class="vjt-inline"><input type="radio" name="vjt_aa" value="5"> 5s</label>
+          <label class="vjt-inline"><input type="radio" name="vjt_aa" value="10"> 10s</label>
+          <label class="vjt-inline"><input type="radio" name="vjt_aa" value="30"> 30s</label>
+        </div>
+        <p class="vjt-hint"><code>autoadvance(null)</code> disables it; <code>autoadvance(0)</code> jumps immediately on <code>ended</code>.</p>
+      </div>
+
+      <div class="vjt-card">
+        <h4>Edit playlist</h4>
+        <div class="vjt-row">
+          <input type="text" id="vjt_addUrl" placeholder="https://… .mp4 source URL">
+          <button id="vjt_btnAdd">Add item</button>
+        </div>
+        <div class="vjt-row">
+          <button id="vjt_btnRemove" class="vjt-danger">Remove current</button>
+          <button id="vjt_btnShuffle">Shuffle</button>
+          <button id="vjt_btnReset">Reset demo list</button>
+        </div>
+        <p class="vjt-hint">Add/remove rebuild the array and call <code>player.playlist([...])</code> — the menu re-renders automatically (no page reload).</p>
+      </div>
+
+      <div class="vjt-card">
+        <h4>State</h4>
+        <div class="vjt-status">
+          <span class="k">currentItem()</span><span class="v hl" id="vjt_stIdx">–</span>
+          <span class="k">item name</span><span class="v" id="vjt_stName">–</span>
+          <span class="k">playlist length</span><span class="v" id="vjt_stLen">–</span>
+          <span class="k">nextIndex()</span><span class="v" id="vjt_stNext">–</span>
+          <span class="k">previousIndex()</span><span class="v" id="vjt_stPrev">–</span>
+          <span class="k">repeat()</span><span class="v" id="vjt_stRepeat">–</span>
+          <span class="k">autoadvance</span><span class="v" id="vjt_stAA">off</span>
+          <span class="k">current src</span><span class="v" id="vjt_stSrc">–</span>
+        </div>
+      </div>
+
+      <div class="vjt-card">
+        <h4>Event log</h4>
+        <pre id="vjt_log" class="vjt-log"></pre>
+        <div class="vjt-row" style="margin-top:10px">
+          <button id="vjt_btnClearLog">Clear log</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+++++
+
+++++
+<script>
+
+    {% raw %}
+    (function () {
+    'use strict';
+
+    // Namespacing -------------------------------------------------------------
+    var ROOT_ID   = 'vjs_playlist_test';
+    var PLAYER_ID = 'vjt_player';
+
+    // Pinned, mutually-compatible CDN versions (the same set the standalone
+    // tool was verified against). Video.js core is only fetched when the J1
+    // `videojs` resource has not already exposed window.videojs.
+    var CDN = {
+        coreCss: 'https://vjs.zencdn.net/8.10.0/video-js.css',
+        coreJs:  'https://vjs.zencdn.net/8.10.0/video.min.js',
+        // Video.js 8-compatible plugin builds. The pre-8 releases (playlist 4.x,
+        // playlist-ui 3.x) were ES5-transpiled and call Component.call(this) for
+        // their super-constructor, which Video.js 8's native ES6 Component class
+        // rejects with "Class constructor Component$1 cannot be invoked without 'new'".
+        // playlist-ui 5.x ships a single videojs-playlist-ui.css (the separate
+        // .vertical.css is gone; vertical/horizontal is now a modifier class the
+        // plugin applies automatically).
+        plUiCss: 'https://cdn.jsdelivr.net/npm/videojs-playlist-ui@5.0.0/dist/videojs-playlist-ui.css',
+        plJs:    'https://cdn.jsdelivr.net/npm/videojs-playlist@5.2.0/dist/videojs-playlist.min.js',
+        plUiJs:  'https://cdn.jsdelivr.net/npm/videojs-playlist-ui@5.0.0/dist/videojs-playlist-ui.min.js'
+    };
+    var PLUGIN_VERSIONS = 'playlist 5.2.0 · playlist-ui 5.0.0';
+
+    // Tiny asset helpers ------------------------------------------------------
+    function byId(id) { return document.getElementById(id); }
+
+    function addCss(href) {
+        if (document.querySelector('link[href="' + href + '"]')) return;
+        var l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.href = href;
+        document.head.appendChild(l);
+    }
+
+    function addJs(src) {
+        return new Promise(function (resolve, reject) {
+        var existing = document.querySelector('script[src="' + src + '"]');
+        if (existing) {
+            if (existing.getAttribute('data-loaded') === '1') { resolve(); return; }
+            existing.addEventListener('load', function () { resolve(); });
+            existing.addEventListener('error', function () { reject(new Error('load failed: ' + src)); });
+            return;
+        }
+        var s = document.createElement('script');
+        s.src = src;
+        s.async = false; // preserve execution order
+        s.onload = function () { s.setAttribute('data-loaded', '1'); resolve(); };
+        s.onerror = function () { reject(new Error('load failed: ' + src)); };
+        document.head.appendChild(s);
+        });
+    }
+
+    // Dependency loader
+    // -------------------------------------------------------------------------
+
+    // 1) Reuse the J1-provided Video.js if present, else pull core from the CDN.
+    //    The base skin CSS is always ensured so the player is styled regardless
+    //    of what the surrounding page ships.
+    function ensureVideojs() {
+        addCss(CDN.coreCss);
+        if (window.videojs) return Promise.resolve();
+        return addJs(CDN.coreJs);
+    }
+
+    // 2) Add the two official playlist plugins + the vertical playlist-ui CSS,
+    //    skipping any that are already registered on this Video.js instance.
+    function ensurePlugins() {
+        addCss(CDN.plUiCss);
+        var vjs = window.videojs;
+        var hasPlugin = function (name) {
+        return !!(vjs && typeof vjs.getPlugin === 'function' && vjs.getPlugin(name));
+        };
+
+        var chain = Promise.resolve();
+        if (!hasPlugin('playlist'))   { chain = chain.then(function () { return addJs(CDN.plJs); }); }
+        if (!hasPlugin('playlistUi')) { chain = chain.then(function () { return addJs(CDN.plUiJs); }); }
+        return chain;
+    }
+
+    function boot() {
+        ensureVideojs()
+        .then(ensurePlugins)
+        .then(initTool)
+        .catch(function (err) {
+            console.error('[vjs-playlist-test] init failed:', err);
+            var v = byId('vjt_versions');
+            if (v) { v.textContent = 'init failed — see console'; }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', boot);
+    } else {
+        boot();
+    }
+
+    // The test tool itself ----------------------------------------------------
+    function initTool() {
+        var videojs = window.videojs;
+        var root = byId(ROOT_ID);
+        if (!videojs || !root || !byId(PLAYER_ID)) { return; }
+
+        // ---- Demo playlist --------------------------------------------------
+        // Each item: standard Video.js source list + the fields videojs-playlist-ui
+        // reads to build the menu (name, description, duration, thumbnail/poster).
+        function demoPlaylist() {
+          return [
+            {
+            name:         'Sintel',
+            description:  'Blender Foundation open movie — a girl searching for a baby dragon.',
+            duration:      52,
+            poster:       'https://media.w3.org/2010/05/sintel/poster.png',
+            thumbnail:    'https://media.w3.org/2010/05/sintel/poster.png',
+            sources: [ {  src: 'https://media.w3.org/2010/05/sintel/trailer.mp4', type: 'video/mp4' } ]
+            },
+            {
+            name:         'Big Buck Bunny',
+            description:  'A large rabbit deals with three rodent bullies. Blender open movie.',
+            duration:     33,
+            poster:       'https://dn721404.ca.archive.org/0/items/BigBuckBunny_328/__ia_thumb.jpg',
+            thumbnail:    'https://dn721404.ca.archive.org/0/items/BigBuckBunny_328/__ia_thumb.jpg',
+            sources: [ {  src: 'https://ia801903.us.archive.org/32/items/BigBuckBunny_328/BigBuckBunny_512kb.mp4', type: 'video/mp4' } ]
+            },
+            {
+            name:         'Oceans',
+            description:  'Test clip hosted by the Video.js Zencoder CDN.',
+            duration:     47,
+            poster:       '/assets/image/icon/videojs/videojs-logo.png',
+            thumbnail:    '/assets/image/icon/videojs/videojs-logo.png',
+            sources: [ {  src: 'https://vjs.zencdn.net/v/oceans.mp4', type: 'video/mp4' } ]
+            },
+            {
+            name:         'Quizduell Olymp',
+            description:  'Test clip hosted by the Video.js Zencoder CDN.',
+            duration:     47,
+            poster:       '/assets/image/icon/videojs/videojs-logo.png',
+            thumbnail:    '/assets/image/icon/videojs/videojs-logo.png',
+            sources: [ {  src: 'https://ia801603.us.archive.org/1/items/job-550778-sendeton-1920x-1080-50p-5000kbit/JOB_550778__sendeton_1920x1080-50p-5000kbit.mp4' } ]
+            }
+          ];
+        }
+
+        // ---- Logging --------------------------------------------------------
+        var logEl = byId('vjt_log');
+        function log(msg, cls) {
+        var time = new Date().toLocaleTimeString();
+        var line = document.createElement('div');
+        line.innerHTML = '<span class="t">' + time + '</span>  ' +
+                        '<span class="' + (cls || 'info') + '">' + msg + '</span>';
+        logEl.appendChild(line);
+        logEl.scrollTop = logEl.scrollHeight;
+        }
+        byId('vjt_btnClearLog').onclick = function () { logEl.innerHTML = ''; };
+
+        // ---- Initialise the player ------------------------------------------
+        var player = videojs(PLAYER_ID, {
+        fluid: false,
+        playbackRates: [ 0.5, 1, 1.5, 2 ]
+        });
+
+        byId('vjt_versions').textContent = 'video.js ' + videojs.VERSION + ' · ' + PLUGIN_VERSIONS;
+
+        var currentAA = 'off';
+
+        player.ready(function () {
+        log('player ready', 'ok');
+
+        // 1) Load the playlist via the official plugin.
+        player.playlist(demoPlaylist());
+
+        // 2) Build the clickable menu inside <div class="vjs-playlist">.
+        player.playlistUi();
+
+        // 3) Default behaviour.
+        player.playlist.autoadvance(null); // disabled until the user picks one
+        player.playlist.repeat(false);
+
+        refreshState();
+        bindControls();
+        bindEvents();
+        log('playlist loaded: ' + player.playlist().length + ' items', 'ok');
+        });
+
+        // ---- Read live state into the panel ---------------------------------
+        function refreshState() {
+        var list = player.playlist() || [];
+        var idx  = player.playlist.currentItem(); // returns the current index
+        var item = (idx > -1 && list[idx]) ? list[idx] : null;
+
+        byId('vjt_stIdx').textContent    = idx;
+        byId('vjt_stName').textContent   = item ? (item.name || '(unnamed)') : '–';
+        byId('vjt_stLen').textContent    = list.length;
+        byId('vjt_stNext').textContent   = player.playlist.nextIndex();
+        byId('vjt_stPrev').textContent   = player.playlist.previousIndex();
+        byId('vjt_stRepeat').textContent = player.playlist.repeat();
+        byId('vjt_stAA').textContent     = currentAA;
+
+        var src = (item && item.sources && item.sources[0]) ? item.sources[0].src : '–';
+        byId('vjt_stSrc').textContent    = src;
+
+        byId('vjt_jumpIdx').max = Math.max(0, list.length - 1);
+        }
+
+        // ---- Wire up the control panel --------------------------------------
+        function bindControls() {
+        byId('vjt_btnFirst').onclick = function () { player.playlist.first(); };
+        byId('vjt_btnPrev').onclick  = function () { player.playlist.previous(); };
+        byId('vjt_btnNext').onclick  = function () { player.playlist.next(); };
+        byId('vjt_btnLast').onclick  = function () { player.playlist.last(); };
+
+        byId('vjt_btnJump').onclick = function () {
+            var i = parseInt(byId('vjt_jumpIdx').value, 10);
+            var len = player.playlist().length;
+            if (isNaN(i) || i < 0 || i >= len) { log('jump: index out of range (0–' + (len - 1) + ')', 'warn'); return; }
+            player.playlist.currentItem(i); // setter form jumps to the index
+        };
+
+        byId('vjt_btnPlay').onclick  = function () { player.play(); };
+        byId('vjt_btnPause').onclick = function () { player.pause(); };
+
+        byId('vjt_repeat').onchange = function () {
+            player.playlist.repeat(this.checked);
+            log('repeat(' + this.checked + ')', 'e');
+            refreshState();
+        };
+
+        Array.prototype.forEach.call(document.getElementsByName('vjt_aa'), function (r) {
+            r.onchange = function () {
+            currentAA = this.value;
+            if (this.value === 'off') {
+                player.playlist.autoadvance(null);
+            } else {
+                player.playlist.autoadvance(parseInt(this.value, 10));
+            }
+            log('autoadvance(' + (this.value === 'off' ? 'null' : this.value) + ')', 'e');
+            refreshState();
+            };
+        });
+
+        byId('vjt_btnAdd').onclick = function () {
+            var url = byId('vjt_addUrl').value.trim();
+            if (!url) { log('add: enter a source URL first', 'warn'); return; }
+            var list = player.playlist();
+            list.push({
+            name: 'Custom ' + (list.length + 1),
+            description: url,
+            sources: [ { src: url, type: guessType(url) } ]
+            });
+            player.playlist(list); // re-set rebuilds the menu, no reload
+            byId('vjt_addUrl').value = '';
+            log('added item #' + (list.length - 1) + ': ' + url, 'ok');
+            refreshState();
+        };
+
+        byId('vjt_btnRemove').onclick = function () {
+            var list = player.playlist();
+            var idx  = player.playlist.currentItem();
+            if (list.length <= 1) { log('remove: refusing to empty the playlist', 'warn'); return; }
+            var removed = list.splice(idx, 1)[0];
+            player.playlist(list);
+            log('removed item: ' + (removed.name || idx), 'warn');
+            refreshState();
+        };
+
+        byId('vjt_btnShuffle').onclick = function () {
+            var list = player.playlist().slice();
+            for (var i = list.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = list[i]; list[i] = list[j]; list[j] = tmp;
+            }
+            player.playlist(list);
+            log('shuffled playlist', 'e');
+            refreshState();
+        };
+
+        byId('vjt_btnReset').onclick = function () {
+            player.playlist(demoPlaylist());
+            player.playlist.currentItem(0);
+            log('reset to demo playlist', 'ok');
+            refreshState();
+        };
+        }
+
+        function guessType(url) {
+        var u = url.toLowerCase();
+        if (u.indexOf('.webm') > -1) { return 'video/webm'; }
+        if (u.indexOf('.ogv') > -1 || u.indexOf('.ogg') > -1) { return 'video/ogg'; }
+        if (u.indexOf('.m3u8') > -1) { return 'application/x-mpegURL'; }
+        return 'video/mp4';
+        }
+
+        // ---- Listen to the plugin + player events ----------------------------
+        function bindEvents() {
+        // videojs-playlist events
+        player.on('playlistchange',     function () { log('event: playlistchange', 'e'); refreshState(); });
+        player.on('playlistsorted',     function () { log('event: playlistsorted', 'e'); refreshState(); });
+        player.on('beforeplaylistitem', function () { log('event: beforeplaylistitem', 'e'); });
+        player.on('playlistitem',       function () { log('event: playlistitem (now playing #' + player.playlist.currentItem() + ')', 'e'); refreshState(); });
+
+        // standard player events
+        player.on('loadstart', function () { refreshState(); });
+        player.on('play',      function () { log('play',  'ok'); });
+        player.on('pause',     function () { log('pause', 'info'); });
+        player.on('ended',     function () { log('ended', 'warn'); });
+        player.on('error',     function () {
+            var err = player.error();
+            log('error: ' + (err ? (err.code + ' ' + err.message) : 'unknown'), 'warn');
+        });
+        }
+    } // END initTool
+    })();
+    {% endraw %}
+
+</script>
+++++

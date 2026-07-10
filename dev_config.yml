@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 # ~/_config.yml
-# Global Jekyll site configuration (production)
+# Global Jekyll site configuration (development)
 #
 # Product/Info:
 # https://jekyll.one
@@ -47,13 +47,13 @@
 #   values:                             development|production
 #   default:                            development
 #
-environment:                            production
+environment:                            development
 
 # version
 # ------------------------------------------------------------------------------
 # Sets the build version of the site
 #
-version:                                2026.0.6
+version:                                2026.0.17
 
 # copyright
 # ------------------------------------------------------------------------------
@@ -310,8 +310,8 @@ permalink:                              pretty
 # site.url will be set to the value of host, port.
 # NOTE: Required setting for the sitemap plugin, for example.
 #
-#url:                                   http://localhost:22000
-url:                                    https://starter.jekyll.one
+url:                                    http://localhost:24000
+#url:                                   https://starter.jekyll.one
 
 # The subpath of your site, e.g. /blog/. Used in conjunction with
 # site.url (see above) when you want a link to something with the
@@ -337,7 +337,7 @@ base_path:                              ""
 #
 protocol:                               http
 host:                                   localhost
-port:                                   23000
+port:                                   24000
 timezone:                               Europe/Berlin
 encoding:                               UTF-8
 

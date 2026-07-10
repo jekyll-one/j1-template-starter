@@ -1,0 +1,176 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/swiper.yml (1)
+# Default settings for J1 Swiper
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                SwiperJS
+  scope:                                Default settings
+  location:                             _data/modules/defaults/swiper.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # GLOBAL App settings
+  #
+
+  # ----------------------------------------------------------------------------
+  # AJAX (JSON)
+  #
+  # The HTML portion of a slider are being read from a HTML file generated
+  # automatically from its configuration for all sliders configured.
+  # AJAX methods are used to supply the needed HTML code at the time
+  # a slider is initialized by the JS adapter.
+
+  # ----------------------------------------------------------------------------
+  # SWIPER options
+  #
+  # accessibility
+  # ----------------------------------------------------------------------------
+  #   Enables tabbing and arrow key navigation. Unless autoplay: true,
+  #   sets browser focus to current slide (or first of current slide set,
+  #   if multiple slidesToShow) after slide change. For full a11y compliance
+  #   enable focusOnChange in addition to this.
+  #
+  #   values:                           boolean
+  #   default:                          false
+  #
+  # adaptiveHeight
+  # ----------------------------------------------------------------------------
+  #   Adapts slider height to the current slide.
+  #
+  #   values:                           boolean
+  #   default:                          false
+  #
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
+  xhr_data_path:                        /assets/data/swiper
+  layout:                               image_base
+
+  # ----------------------------------------------------------------------------
+  # split J1 Swiper data #1
+  # Per-swiper "noise" defaults pulled up from swiper_player.yml. Most
+  # swipers declared `swiper_classes: false`, `container_classes: false`
+  # and `wrapper_styles: false` verbatim — those entries have been removed
+  # from each swiper and live here. Note: the original defaults key
+  # `wrapper_classes` was a typo (swiper.html references `wrapper_styles`)
+  # and has been renamed accordingly.
+  # ----------------------------------------------------------------------------
+  #
+  swiper_classes:                       false
+  container_classes:                    false
+  wrapper_styles:                       false
+
+  # ----------------------------------------------------------------------------
+  # THEME options
+  # ----------------------------------------------------------------------------
+  theme:                                uno
+
+  # ----------------------------------------------------------------------------
+  # CAPTION options
+  # split J1 Swiper data #1
+  # The original file had this block declared twice with identical content.
+  # The duplicate has been removed. Per-swiper caption blocks in
+  # swiper_player.yml that match these defaults verbatim have been removed
+  # as well; per-swiper config only overrides `enabled` where the swiper
+  # actually shows captions.
+  # ----------------------------------------------------------------------------
+  #
+  captions:
+    enabled:                            false
+    css_class:                          swp-caption-content
+
+  # ----------------------------------------------------------------------------
+  # CSS filter options
+  # ----------------------------------------------------------------------------
+  filters:
+    enabled:                            false
+    grayscale:                          0
+    contrast:                           1
+    brightness:                         1
+
+  # ----------------------------------------------------------------------------
+  # SWIPER Core Settings
+  #
+  parameters:
+    autoHeight:                         false
+    loop:                               false
+    speed:                              600
+    slidesPerView:                      1
+    slidesPerGroup:                     1
+    spaceBetween:                       1
+
+  # ----------------------------------------------------------------------------
+  # LIGHTBOX options
+  # split J1 Swiper data #1
+  # The lightbox block used to live at the top level of this file (outside
+  # `defaults:`) which made it unreachable via deep_merge per swiper. It
+  # has been moved inside `defaults:` so swiper.html can deep_merge it
+  # into every swiper, ID-wise. All per-swiper lightbox `captions`,
+  # `parameters`, `ui_controls` and `kbd_controls` blocks in
+  # swiper_player.yml were verbatim copies of these defaults and have
+  # been removed; per-swiper config now only carries `lightbox.enabled`
+  # (and `lightbox.captions.enabled: true` where the lightbox shows a
+  # description).
+  # ----------------------------------------------------------------------------
+  #
+  lightbox:
+    enabled:                            false
+
+    # --------------------------------------------------------------------------
+    # LIGHTBOX caption settings
+    #
+    captions:
+      enabled:                          false
+      css_class:                        pswp-caption-content
+
+    # --------------------------------------------------------------------------
+    # LIGHTBOX Core Parameters
+    #
+    parameters:
+      children:                         a
+      bgOpacity:                        1
+      showHideOpacity:                  true
+      loop:                             true
+      wheelToZoom:                      true
+      showHideAnimationType:            zoom
+      imageClickAction:                 next
+      tapAction:                        next
+      padding:                          { top: 0, bottom: 0, left: 80, right: 80 }
+
+    # --------------------------------------------------------------------------
+    # LIGHTBOX User Interface controls
+    #
+    ui_controls:
+      zoom:                             false
+      close:                            true
+      counter:                          true
+      arrowKeys:                        false
+
+    # --------------------------------------------------------------------------
+    # LIGHTBOX Keyboard controls
+    #
+    kbd_controls:
+      escKey:                           true
+
+# ------------------------------------------------------------------------------
+# END config

@@ -1,0 +1,51 @@
+# ------------------------------------------------------------------------------
+#  ~/_data/pluins/defaults/load-env.yml
+#  Default configuration settings for the J1 Load Env plugin
+#
+#  Product/Info:
+#  https://jekyll.one
+#
+#  Copyright (C) 2026 Juergen Adams
+#
+#  J1 Template is licensed under the MIT License.
+#  See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description 
+#
+description:
+
+  title:                                J1 Load Env
+  scope:                                Default settings
+  location:                             _data/modules/defaults/load-env.yml
+
+# ------------------------------------------------------------------------------
+# Default configuration settings
+#
+# ------------------------------------------------------------------------------
+# Global settings
+#
+#   enabled
+#   ----------------------------------------------------------------------------
+#   Enables|Disables the plugin. If set to false, no env data is being
+#   processed.
+#
+#     values:                         boolean (true|false)
+#     default:                        false
+#
+#   ----------------------------------------------------------------------------
+#
+defaults:
+
+  # GLOBAL settings
+  #
+  enabled:                              false
+
+  # ----------------------------------------------------------------------------
+  # Plugin settings
+  #
+  allowedEnvVars:                       []
+
+# ------------------------------------------------------------------------------
+# END config

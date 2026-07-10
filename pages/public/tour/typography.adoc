@@ -1,10 +1,10 @@
 ---
 title:                                  Typography
-title_extention:                        Branding element for J1 Template
+title_extention:                        Branding element
 tagline:                                Crucial Branding Element for Your Web
 
-date:                                   2020-11-05
-#last_modified:                         2023-01-01
+date:                                   2026-05-07
+#last_modified:                         2026-01-01
 
 description: >
                                         J1 Template places the character font as one of the
@@ -68,11 +68,13 @@ resource_options:
 
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
 [role="dropcap"]
-The Jekyll Theme J1 places the character font as one of the most crucial
-branding elements for any website. Typography matters for any page
-presenting text. The text will take on an important role of acting not
-only as plain text but also as something like images.
+*Typography* is the way text looks on a web page -- the fonts, the sizes,
+the spacing, and the line height. The J1 Template treats typography as one
+of the most important *branding elements* of your website. Good typography
+makes a page easier to read and gives your site its own visual character,
+almost like the way a logo or an image does.
 
 [subs=attributes]
 ++++
@@ -87,16 +89,19 @@ only as plain text but also as something like images.
 [role="mt-5"]
 == Responsive Text
 
-Sadly to say, one common flaw is seen in many templates and frameworks:
-the lack of support for responsive text. While elements on a page resize
-fluidly, the text still resizes on a fixed basis. To avoid this issue,
-especially for heavily text-focused pages, J1 Template supports styles that
-fluidly scale text in size and line height to optimize readability for the
-user.
+*Responsive text* is text that changes its size *automatically* to fit
+the screen. On a big monitor it looks bigger, on a phone it looks smaller
+-- but it always stays easy to read.
 
-Below you find an example of how text behaves if defined on a fixed basis -
-what you'll see quite often. Change the size of your Browser Window to see
-what will happen in terms of responsiveness.
+Many website templates do not support responsive text. They resize images
+and boxes, but the text size stays fixed. The J1 Template fixes this. It
+adjusts both the font size *and* the line height so reading stays
+comfortable on every device.
+
+Below you can see how text behaves with a *fixed* size -- the way most
+templates show it. Click the *Toggle rtext* button to switch between
+fixed text and responsive text, then change the size of your browser
+window to see the difference.
 
 ++++
 <div>
@@ -144,16 +149,16 @@ what will happen in terms of responsiveness.
 [role="mt-5"]
 == Text Scaling
 
-Responsive text comes in five different scale factors in a range from 100
-to 500. Scaling `r-text` gives you the flexibility to use responsive text
-`r-text` everywhere. Or you can offer different text sizes of your Web for
-visitors having visual handicaps or reading disabilities *without* bothering
-your visitors for changing their browser settings.
+Responsive text comes in *five sizes* (called scale factors), from 100
+to 500. With these sizes you can:
 
-To see the text `r-text` scaling in action, click on the button above to
-resize the text from `r-text` level 300 to 500 back and forth. Resize your
-Browser and watch the size of this text body change to see the responsiveness
-in action.
+* use responsive text everywhere on your pages, and
+* offer different text sizes to visitors who need a larger or smaller
+  font, without asking them to change their browser settings.
+
+Click the *Scale rtext* button below to switch the text size from level
+300 to level 500 and back. Try resizing your browser window at the same
+time to see how the text always stays easy to read.
 
 ++++
 <div>
@@ -198,20 +203,16 @@ in action.
 [role="mt-5"]
 == Scale factors
 
-As mentioned, responsive text `r-text` comes in five levels of size. The
-base of responsive text `r-text` is the Fibonacci numbers extracted from
-the Fibonacci series.
+Responsive text comes in *five* sizes, named `r-text-100` through
+`r-text-500`. The smallest is `r-text-100`, the largest is `r-text-500`.
 
-These numbers are the most popular division ratios in typography. Fibonacci
-numbers are relevant in design and typography due to their prevalence in
-natural patterns.
+Behind the scenes, the sizes are based on the *Fibonacci series* -- a
+famous sequence of numbers that often appears in nature and in design.
+The Fibonacci numbers give pleasing proportions, which is why they are
+also popular in typography. The J1 Template translates these numbers
+into CSS rules so the text scales smoothly with the browser size.
 
-The Fibonacci series is translated into CSS Media queries and scales a base
-font in size accordingly. Further, the resulting font scale series have
-multipliers ranging from 100 up to 500, resulting in 100% of the base.
-
-That way, five series are available by the five scale factors. See the
-following table how responsive text `r-text` scales.
+The table below shows how each scale factor compares to the base size.
 
 .Scale factors
 [cols="3a,3a,6a", options="header", width="100%", role="table-responsive mt-4"]
@@ -269,21 +270,16 @@ explorer of the truth, the master-builder of human happiness.
 [role="mt-5"]
 == What next
 
-Have you enjoyed playing with the text? I hope so. But even more, the template
-J1 can do for your web pages. With the examples on the following page, find how
-icons support the meaning of what was grouped as text.
+Have you enjoyed trying out the responsive text? The J1 Template can do
+much more for the look of your pages. The next topic is *icons* -- small
+visual symbols that can support the meaning of your text.
 
-J1 Template supports popular icons font sets out-of-the-box. The icon sets MDI
-and FA are very good in design and have a rich set of different icon elements
-for many categories used for the Web.
+The J1 Template includes several popular icon sets out-of-the-box:
 
-With J1 Template, the following icons font sets are available out-of-the-box
-like:
+* *Material Design Icons* (MDI)
+* *FontAwesome Icons* V5 (FA)
+* *Iconify Icon Sets* (online icon library)
 
-* Material Design Icons (MDI)
-* FontAwesome Icons V5 (FA)
-* Iconify Icon Sets
-
-Would you like to learn more about using icons? The next example page focus
-on what's possible using link:{url-tour--icon-fonts}[Icon Fonts, {browser-window--new}]
-on your pages.
+Each set comes with hundreds or thousands of ready-to-use icons covering
+many topics. Want to know how to use them on your pages? Move on to
+link:{url-tour--icon-fonts}[Icon Fonts, {browser-window--new}].

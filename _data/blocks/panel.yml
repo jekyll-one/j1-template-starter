@@ -700,7 +700,10 @@ settings:
         id:                             panel_home_news
         comment:                        Home News Panel
         type:                           news
-        category_blacklist:             [ posts, public, private, protected, featured, series ]
+        category_blacklist:             [
+                                            posts, public, private,
+                                            protected, featured, series
+                                        ]
         properties:                     pt-5 pb-5
 
         position:                       left                                    # left | center
@@ -728,7 +731,7 @@ settings:
               animate:                  fadeInLeft
               block:                    card-list                               # card-deck | card-list
               num_per_row:              2                                       # card-list only: [1 .. 4]
-              max_posts:                2
+              max_posts:                2                                       # number of collected post (pages)
 
 # ------------------------------------------------------------------------------
 # END config

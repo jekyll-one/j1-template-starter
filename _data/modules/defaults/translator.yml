@@ -1,14 +1,57 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/defaults/translator.yml
+# ~/_data/modules/defaults/translator.yml (1)
 # Default configuration settings for J1 Translator module
 #
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023-2026 Juergen Adams
+# Copyright (C) 2026 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+#
+# claude - improve translator code using lit #1
+# ------------------------------------------------------------------------------
+# All configurable text for the translator modal has been consolidated
+# into this defaults file. Previously, the button labels, section
+# headings, and the language-selector caption were embedded inside the
+# Liquid template that emitted the modal's HTML at
+# /assets/data/translator/<lang>/index.html and would only become
+# configurable via a site-level translation override on that template.
+# They now live under `google.modal_settings.labels` here, so they:
+#
+#   1. participate in the standard defaults/settings merge chain
+#      (defaults <- site overrides), giving full i18n with no template
+#      edits required;
+#   2. travel to the client via the adapter's `translatorOptions`
+#      object (i.e. directly in the JS bundle) rather than through a
+#      separate XHR fetch of /assets/data/translator/<lang>/index.html.
+#
+# Descriptions for the two consent categories (`analysisDesc`,
+# `personalizationDesc`) are proper YAML arrays, mirroring the shape
+# used by cookieConsent.yml. Each list item renders as a separate
+# `<li>` under the corresponding switch in the modal.
+#
+# Legacy XHR scaffolding removed. The Lit component translator.mjs
+# now receives its localized text directly from the adapter via the
+# `content` constructor property, so the following defaults — which
+# only existed to support the old XHR-based content-loading path —
+# have been deleted from this file:
+#
+#   - contentURL        (/assets/data/translator endpoint)
+#   - xhrDataElement    (google-data wrapper inside the fetched HTML)
+#   - dialogContainerID (modal-google-translate placeholder)
+#
+# Action item for the site: the Liquid template that emitted the per-
+# language modal HTML at /assets/data/translator/<lang>/index.html is
+# no longer referenced by anything and should be deleted from the
+# source tree to keep the deployment clean. The translator-languages
+# JSON file at /assets/data/iso-639-language-codes-flags.json is
+# RETAINED — that is *data* (ISO-639 codes + flag SVGs + native-
+# language names), not localized UI text, and is still loaded by
+# translator.mjs to populate the language dropdown.
+#
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -37,16 +80,21 @@ defaults:
   hideTranslatorIcon:                   false                                   # hide translator icon if translation not allowed (cookie consent)
   disableLanguageSelector:              false                                   # disable language dropdown for translation in dialog (modal)
   translatorLanguagesFile:              /assets/data/iso-639-language-codes-flags.json
-  translatorLanguages:                  translator-languages                    # languages supported by the translator taken from "translatorLanguagesFile"
+  translatorLanguages:                  translator-languages                    # JSON element key holding the language array
   translateAllPages:                    true                                    # enable translation for all pages
   reloadPageOnChange:                   true                                    # reload current page if user settings has been changed
-  contentURL:                           /assets/data/translator                 # dialogs (modals) for all supported translators|languages
   translationLanguages:                 ['en', 'de', 'es', 'fr', 'it']          # supported languages for translation
   defaultLanguage:                      'en'                                    # default language of the website (documents)
   translatorLocalStorageKey:            user_translate                          # name of the key in localsorage for user translation data
   cookieConsentName:                    j1.user.consent                         # name of the Cookie Consent Cookie (secondary data)
-  xhrDataElement:                       google-data                             # container for the language-specific modal (taken fromcontentURL)
-  dialogContainerID:                    modal-google-translate                  # container, the dialog modal is (dynamically) loaded  
+
+  # claude - improve translator code using lit #1
+  # `contentURL`, `xhrDataElement`, and `dialogContainerID` used to
+  # sit here as defaults for the XHR-based content-loading path. They
+  # have been removed; translator.mjs no longer reads any of them and
+  # the /assets/data/translator endpoint is obsolete (the source
+  # template that emitted it should be deleted from the site).
+  #
   postSelectionCallback:                j1.adapter.translator.cbGoogle          # callback to run the translation
 
 # ------------------------------------------------------------------------------
@@ -72,15 +120,18 @@ defaults:
                                           tg, ta, tt, te, th, tr, tk, ug, uk,
                                           ur, uz, vi, cy, xh, yi, yo, zu
                                         ]
+
     modal_settings:
 
       title:                            Google Translator
+
       body_text: >
                                         This website uses the <b>free</b> service <b>Google Translate</b>
                                         to translate its content into a different language in no time.
                                         The translation language is taken from your selection below.
-      language_selector_title: >
-                                        Your current language setting
+
+      language_selector_title:          Current language
+
       privacy_notice: >
                                         The <b>free service</b> from Google Translate uses cookies to provide
                                         its services, personalize advertising, and run traffic analysis.
@@ -89,6 +140,7 @@ defaults:
                                         <a href="https://policies.google.com/" target="_blank" rel="noopener">Privacy Policy</a>.
                                         <br><br>
                                         Required Cookie Settings:
+                                        <br><br>
                                         <ul>
                                           <li style="list-style-type: none;">
                                             <b>Analysis</b>
@@ -105,6 +157,81 @@ defaults:
                                             </p>
                                           </li>
                                         </ul>
+
+      # claude - improve translator code using lit #1
+      # ------------------------------------------------------------------
+      # Localized text strings (button labels, section headings, and the
+      # per-category descriptions) for the translator modal. To translate
+      # the modal, override any of these keys under
+      # `modules.translator.settings.google.modal_settings.labels` in
+      # the site-level configuration; missing keys fall back to the
+      # defaults below.
+      #
+      # The `*Desc` keys are YAML lists; each list item renders as a
+      # separate `<li>` under the corresponding switch. Empty lists are
+      # legal and render no `<li>` elements at all.
+      #
+      # Button label conventions match cookieConsent.yml:
+      #   - `buttonShow*` / `buttonHide*` pairs drive the toggle
+      #     button labels in the modal footer. The Lit component
+      #     swaps between the two keys at render time based on the
+      #     corresponding `_showPrivacy` / `_detailed` reactive state.
+      #   - Each key is independently overridable from a site config
+      #     for full i18n, with no template edits required.
+      #
+      labels:
+        # Section headings
+        mySettings:                     Current settings
+        privacyNotice:                  Privacy Notice
+
+        # Per-category labels and bullet-list descriptions. Shown in
+        # the expanded "My Settings" section when the user clicks
+        # "Show Settings". The descriptions explain WHY each consent
+        # is required by the Google Translate service.
+        #
+        analysis:                       Analysis
+        analysisDesc:
+          -                             Required by Google Translate to monitor service usage
+          -                             Optimizes translation suggestions for all visitors
+
+        personalization:                Personalization
+        personalizationDesc:
+          -                             Required by Google Translate to remember your language choice
+          -                             Stores your translation preferences for future visits
+
+        # Primary action buttons. The translator footer has FIVE
+        # buttons in the default bank (the cookieConsent has four),
+        # because the translator modal exposes both a "commit"
+        # action (Translate) AND a destructive opt-out action
+        # (Don't translate, which clears the googtrans cookie and
+        # reloads the page).
+        #
+        buttonDisableTranslation:       Don't translate
+        buttonTranslate:                Translate
+        buttonSave:                     Save settings
+        buttonExit:                     Cancel
+
+        # Toggle buttons. The Lit component (translator.mjs) selects
+        # between each pair at render time based on the corresponding
+        # reactive state flag:
+        #
+        #   _showPrivacy === false  →  buttonShowPrivacyNotice  ("Show Privacy Notice")
+        #   _showPrivacy === true   →  buttonHidePrivacyNotice  ("Hide Privacy Notice")
+        #
+        #   _detailed    === false  →  buttonShowSettings       ("Show Settings")
+        #   _detailed    === true   →  buttonHideSettings       ("Hide Settings")
+        #
+        # The Settings toggle button is rendered in BOTH the default
+        # and the detailed footer banks so the user can both open AND
+        # close the section without committing. The Privacy toggle
+        # only appears in the default bank because opening the
+        # Privacy Notice never swaps the footer bank.
+        #
+        buttonShowPrivacyNotice:        Show Privacy Notice
+        buttonHidePrivacyNotice:        Hide Privacy Notice
+        buttonShowSettings:             Show Settings
+        buttonHideSettings:             Hide Settings
+        close:                          Close
 
 # ------------------------------------------------------------------------------
 # END config

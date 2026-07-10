@@ -1,0 +1,317 @@
+---
+title:                                  Image Extractor
+title_extention:                        J1 Player
+tagline:                                Extract images from a video
+
+date:                                   2026-04-17
+#last_modified:                         2026-01-01
+
+description: >
+                                        Image Extractor
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap
+
+categories:                             [ Tools ]
+tags:                                   [ videoPlayer ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/j1-launch.jpg
+  width:                                1920
+  height:                               1280
+
+regenerate:                             false
+permalink:                              /pages/public/tools/test/imageExtractor/
+
+resources:                              [ videoPlayer, videojs ]
+resource_options:
+  - attic:
+      opacity:                          .8
+      padding_top:                      600
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/j1-launch.jpg
+          alt:                          skipad-promo-image
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set page (local) attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+{% comment %} Liquid procedures
+-------------------------------------------------------------------------------- {% endcomment %}
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{% endcapture %}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+
+// Page content
+// https://claude.ai/chat/80736ffd-c841-41be-8626-50315bec24a5
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+SkipAd embeds an excellent video player to block all ads on YouTube
+videos instantly for a better viewing experience. No more pre-roll,
+mid-roll, or overlay ads.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5"]
+== Image Extractor
+
+Ein verstecktes `<video>`-Element lädt die Datei, wird per `currentTime`
+auf die gewünschte Position gesprungen, und sobald `onseeked` feuert,
+zeichnet `canvas.drawImage(video, ...)` den aktuellen Frame ins Canvas.
+
+Danach liefert `canvas.toDataURL()` das fertige Bild als Base64-String.
+
+++++
+<style>
+.vte-wrap { padding: 1.5rem 0; font-family: var(--font-sans); }
+.vte-zone { border: 1.5px dashed var(--color-border-secondary); border-radius: var(--border-radius-lg); padding: 2rem; text-align: center; cursor: pointer; transition: background 0.15s; background: var(--color-background-secondary); }
+.vte-zone:hover { background: var(--color-background-tertiary); }
+.vte-zone.drag-over { border-color: #378ADD; background: #E6F1FB; }
+.vte-zone i { font-size: 32px; color: var(--color-text-secondary); display: block; margin-bottom: 8px; }
+.vte-zone p { margin: 0; font-size: 14px; color: var(--color-text-secondary); }
+.vte-zone small { font-size: 12px; color: var(--color-text-tertiary); }
+.vte-controls { display: none; margin-top: 1.5rem; gap: 1rem; flex-direction: column; }
+.vte-controls.show { display: flex; }
+.vte-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.vte-label { font-size: 13px; color: var(--color-text-secondary); min-width: 80px; }
+.vte-seek { flex: 1; min-width: 150px; }
+.vte-val { font-size: 13px; font-weight: 500; min-width: 40px; }
+.vte-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-top: 1rem; }
+.vte-thumb { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); overflow: hidden; cursor: pointer; transition: border-color 0.15s; }
+.vte-thumb:hover { border-color: var(--color-border-primary); }
+.vte-thumb img { width: 100%; display: block; }
+.vte-thumb .vte-time { font-size: 11px; color: var(--color-text-secondary); padding: 4px 8px; }
+.vte-thumb .vte-dl { font-size: 11px; color: var(--color-text-info); padding: 0 8px 6px; display: block; text-decoration: none; }
+.vte-snap-btn { display: flex; align-items: center; gap: 6px; }
+.vte-info { font-size: 12px; color: var(--color-text-tertiary); padding: 4px 0; }
+.vte-divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1rem 0; }
+video { display: none; }
+canvas { display: none; }
+.vte-url-row { display: flex; gap: 8px; }
+.vte-url-row input { flex: 1; }
+.vte-tabs { display: flex; gap: 0; margin-bottom: 1.5rem; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); overflow: hidden; width: fit-content; }
+.vte-tab { font-size: 13px; padding: 6px 16px; cursor: pointer; background: var(--color-background-secondary); color: var(--color-text-secondary); border: none; transition: background 0.1s; }
+.vte-tab.active { background: var(--color-background-primary); color: var(--color-text-primary); font-weight: 500; }
+</style>
+
+<div class="vte-wrap">
+  <h2 class="sr-only">Video Thumbnail Extractor — Frame aus Video als Posterbild exportieren</h2>
+
+  <div class="vte-tabs">
+    <button class="vte-tab active" id="tab-file" onclick="switchTab('file')">Lokale Datei</button>
+    <button class="vte-tab" id="tab-url" onclick="switchTab('url')">URL</button>
+  </div>
+
+  <div id="panel-file">
+    <div class="vte-zone" id="dropzone" onclick="document.getElementById('fileInput').click()" ondragover="onDrag(event,true)" ondragleave="onDrag(event,false)" ondrop="onDrop(event)">
+      <i class="ti ti-video" aria-hidden="true"></i>
+      <p>Videodatei hier ablegen</p>
+      <small>oder klicken zum Auswählen · MP4, WebM, MKV, OGG</small>
+    </div>
+    <input type="file" id="fileInput" accept="video/*" style="display:none" onchange="loadFile(this)">
+  </div>
+
+  <div id="panel-url" style="display:none">
+    <div class="vte-url-row">
+      <input type="text" id="urlInput" placeholder="https://example.com/video.mp4" />
+      <button onclick="loadUrl()">Laden</button>
+    </div>
+    <p class="vte-info">Hinweis: CORS muss auf dem Videoserver erlaubt sein. YouTube-URLs werden nicht unterstützt.</p>
+  </div>
+
+  <video id="vid" crossorigin="anonymous" preload="metadata"></video>
+  <canvas id="cnv"></canvas>
+
+  <div class="vte-controls" id="controls">
+    <hr class="vte-divider">
+    <div class="vte-row">
+      <span class="vte-label">Datei</span>
+      <span id="fname" style="font-size:13px; font-weight:500; color:var(--color-text-primary)"></span>
+    </div>
+    <div class="vte-row">
+      <span class="vte-label">Auflösung</span>
+      <span id="vdim" class="vte-info"></span>
+    </div>
+    <div class="vte-row">
+      <span class="vte-label">Position</span>
+      <input type="range" class="vte-seek" id="seek" min="0" max="100" step="0.1" value="0" oninput="onSeek(this)">
+      <span class="vte-val" id="seektime">0s</span>
+    </div>
+    <div class="vte-row">
+      <span class="vte-label">Breite (px)</span>
+      <input type="number" id="outW" value="320" min="64" max="1920" style="width:90px">
+      <span class="vte-info">Höhe wird proportional berechnet</span>
+    </div>
+    <div class="vte-row">
+      <span class="vte-label">Format</span>
+      <select id="fmt" style="width:120px">
+        <option value="image/jpeg">JPG</option>
+        <option value="image/png">PNG</option>
+        <!-- option value="image/webp">WebP</option -->
+      </select>
+      <span class="vte-label" style="min-width:60px">Qualität</span>
+      <input type="range" min="0.5" max="1" step="0.05" value="0.85" id="qual" style="width:90px" oninput="document.getElementById('qualval').textContent=Math.round(this.value*100)+'%'">
+      <span class="vte-val" id="qualval">85%</span>
+    </div>
+    <div class="vte-row vte-snap-btn mt-4">
+      <button class="btn btn-primary" onclick="snapCurrent()">
+      <i class="mdib mdib-camera" aria-hidden="true"></i> Default Frame</button>
+      <button class="btn btn-primary" onclick="snapMultiple()">
+      <i class="mdib mdib-dots-grid" aria-hidden="true"></i> 6 Frames</button>
+      <button class="btn btn-danger" onclick="clearThumbs()" style="color:var(--color-text-danger)"><i class="mdib mdib-trash-can-outline" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="vte-grid" id="thumbGrid"></div>
+  </div>
+</div>
+
+<script>
+let vid = document.getElementById('vid');
+let cnv = document.getElementById('cnv');
+let ctx = cnv.getContext('2d');
+let thumbCount = 0;
+
+function switchTab(t) {
+  document.getElementById('panel-file').style.display = t==='file'?'':'none';
+  document.getElementById('panel-url').style.display = t==='url'?'':'none';
+  document.getElementById('tab-file').className = 'vte-tab'+(t==='file'?' active':'');
+  document.getElementById('tab-url').className = 'vte-tab'+(t==='url'?' active':'');
+}
+
+function onDrag(e, enter) {
+  e.preventDefault();
+  document.getElementById('dropzone').classList.toggle('drag-over', enter);
+}
+
+function onDrop(e) {
+  e.preventDefault();
+  document.getElementById('dropzone').classList.remove('drag-over');
+  const f = e.dataTransfer.files[0];
+  if (f && f.type.startsWith('video/')) setupVideo(URL.createObjectURL(f), f.name);
+}
+
+function loadFile(input) {
+  const f = input.files[0];
+  if (f) setupVideo(URL.createObjectURL(f), f.name);
+}
+
+function loadUrl() {
+  const u = document.getElementById('urlInput').value.trim();
+  if (u) setupVideo(u, u.split('/').pop() || 'video');
+}
+
+function setupVideo(src, name) {
+  vid.src = src;
+  document.getElementById('fname').textContent = name;
+  vid.onloadedmetadata = () => {
+    const dur = vid.duration;
+    const seek = document.getElementById('seek');
+    seek.max = dur;
+    seek.step = dur / 1000;
+    document.getElementById('vdim').textContent = vid.videoWidth + ' × ' + vid.videoHeight + ' px · ' + formatTime(dur);
+    document.getElementById('controls').classList.add('show');
+    seekTo(dur * 0.1);
+  };
+}
+
+function onSeek(el) {
+  seekTo(parseFloat(el.value));
+}
+
+function seekTo(t) {
+  vid.currentTime = t;
+  document.getElementById('seek').value = t;
+  document.getElementById('seektime').textContent = formatTime(t);
+  vid.onseeked = snapPreview;
+}
+
+function snapPreview() {}
+
+function captureFrame() {
+  const w = parseInt(document.getElementById('outW').value) || 320;
+  const ratio = vid.videoHeight / vid.videoWidth;
+  const h = Math.round(w * ratio);
+  cnv.width = w;
+  cnv.height = h;
+  ctx.drawImage(vid, 0, 0, w, h);
+  const fmt = document.getElementById('fmt').value;
+  const qual = parseFloat(document.getElementById('qual').value);
+  return { dataUrl: cnv.toDataURL(fmt, qual), time: vid.currentTime, w, h, fmt };
+}
+
+function snapCurrent() {
+  const {dataUrl, time, w, h, fmt} = captureFrame();
+  addThumb(dataUrl, time, w, h, fmt);
+}
+
+function snapMultiple() {
+  const dur = vid.duration;
+  if (!dur) return;
+  const times = [0.05, 0.15, 0.30, 0.50, 0.70, 0.90].map(f => f * dur);
+  let i = 0;
+  function next() {
+    if (i >= times.length) return;
+    vid.currentTime = times[i];
+    vid.onseeked = () => {
+      const {dataUrl, time, w, h, fmt} = captureFrame();
+      addThumb(dataUrl, time, w, h, fmt);
+      i++;
+      next();
+    };
+  }
+  next();
+}
+
+function addThumb(dataUrl, time, w, h, fmt) {
+  thumbCount++;
+  const ext = fmt.split('/')[1];
+  const grid = document.getElementById('thumbGrid');
+  const div = document.createElement('div');
+  div.className = 'vte-thumb';
+  const img = document.createElement('img');
+  img.src = dataUrl;
+  img.alt = 'Frame @ ' + formatTime(time);
+  const tspan = document.createElement('div');
+  tspan.className = 'vte-time';
+  tspan.textContent = formatTime(time) + ' · ' + w + '×' + h;
+  const a = document.createElement('a');
+  a.className = 'vte-dl';
+  a.href = dataUrl;
+  a.download = 'poster_' + formatTimeFn(time) + '.' + ext;
+  a.innerHTML = '<i class="ti ti-download" aria-hidden="true"></i> Download';
+  div.appendChild(img);
+  div.appendChild(tspan);
+  div.appendChild(a);
+  grid.appendChild(div);
+}
+
+function clearThumbs() {
+  document.getElementById('thumbGrid').innerHTML = '';
+  thumbCount = 0;
+}
+
+function formatTime(s) {
+  if (!isFinite(s)) return '0s';
+  const m = Math.floor(s / 60);
+  const sec = (s % 60).toFixed(1);
+  return m > 0 ? m + ':' + (sec < 10 ? '0' : '') + sec : sec + 's';
+}
+
+function formatTimeFn(s) {
+  return s.toFixed(1).replace('.', '_');
+}
+</script>
+++++
+
+
+
+

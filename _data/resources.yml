@@ -376,7 +376,7 @@ resources:
 
   # ----------------------------------------------------------------------------
   # Bootstrap JS
-  # Bootstrap Javascript component (v5.3.2)
+  # Bootstrap Javascript component (v5.3.8)
   #
   # See: https://getbootstrap.com/docs/5.0/getting-started/introduction/
   #
@@ -394,33 +394,37 @@ resources:
       pass_init_data:                   false
 
       data:
-        css:                            [ modules/bootstrap/css/bootstrap ]
+#       css:                            [ modules/bootstrap/css/bootstrap ]
+        css:                            []
         files:                          []
         js:                             [ modules/bootstrap/js/bootstrap ]
         init_function:                  []
 
   # ----------------------------------------------------------------------------
-  # Speak2Me
-  # Speech Synthesis (TTS)
+  # J1 Test/Manual
+  # Additional CSS for test/manual
   #
-  - name:                               J1 Speak2Me
+  - name:                               J1 Tester 
     resource:
       enabled:                          true
 
-      id:                               speak2me
-      comment:                          Module Speak2Me
+      id:                               test-css
+      comment:                          Additional CSS for test/manual
       region:                           head
-      layout:                           [ home, page, post ]
+      layout:                           [ all ]
       required:                         always
-      script_load:                      defer
+      script_load:
       dependencies:                     false
-      pass_init_data:                   true
+      pass_init_data:                   false
 
       data:
         css:                            []
-        files:                          [ adapter/js/speak2me.js ]
+        files:                          [
+                                          modules/test/css/lightbox3.css,
+                                          modules/test/css/photoswipeLightbox.css
+                                        ]
         js:                             []
-        init_function:                  [ j1.adapter.speak2me.init ]
+        init_function:                  []
 
   # ----------------------------------------------------------------------------
   # Bootstrap Material Design (BMD)
@@ -649,7 +653,10 @@ resources:
 
       data:
         css:                            []
-        files:                          [ adapter/js/toccer.js ]
+        files:                          [
+                                          modules/toccer/js/toccer.mjs,
+                                          adapter/js/toccer.js
+                                        ]
         js:                             []
         init_function:                  [ j1.adapter.toccer.init ]
 
@@ -675,8 +682,11 @@ resources:
 
       data:
         css:                            []
-        files:                          [ adapter/js/cookieConsent.js ]
-        js:                             [ modules/cookieConsent/js/cookieConsent ]
+        files:                          [
+                                          modules/cookieConsent/js/cookieConsent.mjs,
+                                          adapter/js/cookieConsent.js
+                                        ]
+        js:                             []
         init_function:                  [ j1.adapter.cookieConsent.init ]
 
   # ----------------------------------------------------------------------------
@@ -932,8 +942,11 @@ resources:
 
       data:
         css:                            [ modules/translator/css/translator ]
-        files:                          [ adapter/js/translator.js ]
-        js:                             [ modules/translator/js/translator ]
+        files:                          [
+                                          modules/translator/js/translator.mjs,
+                                          adapter/js/translator.js
+                                        ]
+        js:                             []
         init_function:                  [ j1.adapter.translator.init ]
 
   # ----------------------------------------------------------------------------
@@ -1388,7 +1401,6 @@ resources:
                                           modules/lightGallery/js/plugins/lg-share,
                                           modules/lightGallery/js/plugins/lg-thumbnail,
                                           modules/lightGallery/js/plugins/lg-video,
-#                                         modules/lightGallery/js/plugins/lg-vimeo-thumbnail,
                                           modules/lightGallery/js/plugins/lg-zoom,
                                           modules/lightGallery/js/lightgallery
                                         ]
@@ -1418,138 +1430,23 @@ resources:
                                           modules/videojs/css/themes/forest,
                                           modules/videojs/css/themes/sea,
                                           modules/videojs/css/themes/uno,
-#                                         modules/videojs/plugins/controls/aspect-ratio-panel/css/aspect-ratio-panel,
                                           modules/videojs/plugins/controls/skipbuttons/css/skipbuttons,
+                                          modules/videojs/plugins/controls/nextprevbuttons/css/nextprevbuttons,
                                           modules/videojs/plugins/controls/zoom/css/zoom
                                         ]
         files:                          [ adapter/js/videojs.js ]
         js:                             [
-                                          modules/videojs/js/video,
-#                                         modules/videojs/plugins/controls/aspect-ratio-panel/js/aspect-ratio-panel,
+                                          modules/videojs/js/video,                                       
                                           modules/videojs/plugins/controls/hotkeys/js/hotkeys,
                                           modules/videojs/plugins/controls/skipbuttons/js/skipbuttons,
-#                                         modules/videojs/plugins/controls/persist-settings/js/videojs-persist,
-#                                         modules/videojs/plugins/controls/playbackrate-adjuster/js/playbackrate-adjuster,
+                                          modules/videojs/plugins/controls/nextprevbuttons/js/nextprevbuttons,
                                           modules/videojs/plugins/controls/zoom/js/zoom,
-#                                         modules/videojs/plugins/players/dm/js/dailymotion,
-#                                         modules/videojs/plugins/players/vm/js/vimeo,
-#                                         modules/videojs/plugins/players/wt/js/wistia,
+                                          modules/videojs/plugins/players/playlist/js/core,
+                                          modules/videojs/plugins/players/playlist/js/ui,                                         
                                           modules/videojs/plugins/players/native/js/native,
                                           modules/videojs/plugins/players/yt/js/youtube
                                         ]
         init_function:                  [ j1.adapter.videojs.init ]
-
-  # ----------------------------------------------------------------------------
-  # TikToc Player, Version v1.0.11
-  #
-  # - name:                               TikToc Player
-  #   resource:
-  #     enabled:                          true
-
-  #     id:                               tiktoc-player
-  #     comment:                          Module TikToc Player
-  #     region:                           head
-  #     layout:                           [ home, page, post ]
-  #     required:                         ondemand
-  #     script_load:                      defer
-  #     dependencies:                     false
-  #     pass_init_data:                   false
-
-  #     data:
-  #       css:                            []
-  #       files:                          [ modules/videoPlayer/tiktoc/js/player.min.js ]
-  #       js:                             []
-  #       init_function:                  []
-
-  # ----------------------------------------------------------------------------
-  # Dailymotion Player, Version v-0.0.3524-rc1 (may required by lightGallery)
-  #
-  # - name:                               Dailymotion Player
-  #   resource:
-  #     enabled:                          true
-
-  #     id:                               dailymotion-player
-  #     comment:                          Module Dailymotion Player
-  #     region:                           head
-  #     layout:                           [ home, page, post ]
-  #     required:                         ondemand
-  #     script_load:                      defer
-  #     dependencies:                     false
-  #     pass_init_data:                   false
-
-  #     data:
-  #       css:                            []
-  #       files:                          [ modules/videoPlayer/dailymotion/js/player.min.js ]
-  #       js:                             []
-  #       init_function:                  []
-
-  # ----------------------------------------------------------------------------
-  # Vimeo Player, Version v2.22.0  (may required by lightGallery)
-  #
-  # - name:                               Vimeo Player
-  #   resource:
-  #     enabled:                          true
-
-  #     id:                               vimeo-player
-  #     comment:                          Module Vimeo Player
-  #     region:                           head
-  #     layout:                           [ home, page, post ]
-  #     required:                         ondemand
-  #     script_load:                      defer
-  #     dependencies:                     false
-  #     pass_init_data:                   false
-
-  #     data:
-  #       css:                            []
-  #       files:                          [ modules/videoPlayer/vimeo/js/player.min.js ]
-  #       js:                             []
-  #       init_function:                  []
-
-  # ----------------------------------------------------------------------------
-  # Wistia Player, Version E-v1 (may required by lightGallery)
-  #
-  # - name:                               Wistia Player
-  #   resource:
-  #     enabled:                          true
-
-  #     id:                               wistia-player
-  #     comment:                          Module Wistia Player
-  #     region:                           head
-  #     layout:                           [ home, page, post ]
-  #     required:                         ondemand
-  #     script_load:                      defer
-  #     dependencies:                     false
-  #     pass_init_data:                   false
-
-  #     data:
-  #       css:                            []
-  #       files:                          [ modules/videoPlayer/wistia/js/player.min.js ]
-  #       js:                             []
-  #       init_function:                  []
-
-  # ----------------------------------------------------------------------------
-  # Range Slider, based on the JS implementation of the noUiSlider API
-  #
-  # See: https://github.com/leongersen/noUiSlider
-  #
-  # - name:                               J1 Range Slider
-  #   resource:
-  #     enabled:                          true
-
-  #     id:                               range-slider
-  #     comment:                          Module Range Slider
-  #     region:                           head
-  #     layout:                           [ home, page, post ]
-  #     required:                         ondemand
-  #     script_load:                      defer
-  #     dependencies:                     false
-  #     pass_init_data:                   false
-
-  #     data:
-  #       css:                            [ modules/rangeSlider/css/theme/uno/nouislider ]
-  #       files:                          [ adapter/js/rangeSlider.js ]
-  #       js:                             [ modules/rangeSlider/js/nouislider ]
-  #       init_function:                  [ j1.adapter.rangeSlider.init ]
 
   # ----------------------------------------------------------------------------
   # Scroller, JS API to implement infinite scroll
@@ -2043,13 +1940,13 @@ resources:
                                           modules/photoswipe/css/photoswipe,
                                           modules/photoswipe/css/photoswipe-caption-plugin
                                         ]
-        files:                          []
+        files:                          [ adapter/js/photoswipe.js]
         js:                             [
                                           modules/photoswipe/js/photoswipe-core,
                                           modules/photoswipe/js/photoswipe-lightbox,
                                           modules/photoswipe/js/photoswipe-caption-plugin
                                         ]
-        init_function:                  []
+        init_function:                  [ j1.adapter.photoswipe.init ]
 
   # ----------------------------------------------------------------------------
   # Markdown (MD -> HTML renderer)
@@ -2089,12 +1986,55 @@ resources:
 
       data:
         css:                            []
-#       files:                          [ modules/pdf/js/pdf.mjs ]              # JS Module
         files:                          []
         js:                             [
                                           modules/pdf/js/pdf,                   # PDF text extraction
                                           modules/pdf/js/jsPDF                  # convert text to PDF
                                         ]
+        init_function:                  []
+
+  # ----------------------------------------------------------------------------
+  # J1 Claude AI
+  #
+  - name:                               J1 claudeAI
+    resource:
+      enabled:                          true
+
+      id:                               claudeAI
+      comment:                          Module claudeAI
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+
+      data: 
+        css:                            [ modules/claudeAI/css/claudeAI ]
+        js:                             [ modules/claudeAI/js/claudeAI ]
+        files:                          [ adapter/js/claudeAI.js ]
+        init_function:                  [ j1.adapter.claudeAI.init ]
+
+  # ----------------------------------------------------------------------------
+  # litElement
+  #
+  - name:                               litElement
+    resource:
+      enabled:                          true
+
+      id:                               lit3
+      comment:                          Module litElement
+      region:                           head
+      layout:                           [ all ]
+      required:                         ondemand
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   false
+
+      data: 
+        css:                            []
+        js:                             []
+        files:                          [ modules/lit3/js/lit-all.mjs ]         # JS Module
         init_function:                  []
 
   # ----------------------------------------------------------------------------
@@ -2116,8 +2056,34 @@ resources:
       data: 
         css:                            [ modules/videoPlayer/css/videoPlayer ]
         js:                             [ modules/videoPlayer/js/videoPlayer ]
-        files:                          [ adapter/js/videoPlayer.js ]
+        files:                          [ 
+                                          modules/videoPlayer/js/playlistCards.mjs,
+                                          adapter/js/videoPlayer.js
+                                        ]
         init_function:                  [ j1.adapter.videoPlayer.init ]
+
+  # ----------------------------------------------------------------------------
+  # Speak2Me
+  # Speech Synthesis (TTS)
+  #
+  - name:                               J1 Speak2Me
+    resource:
+      enabled:                          true
+
+      id:                               speak2me
+      comment:                          Module Speak2Me
+      region:                           head
+      layout:                           [ home, page, post ]
+      required:                         always
+      script_load:                      defer
+      dependencies:                     false
+      pass_init_data:                   true
+
+      data:
+        css:                            []
+        files:                          [ adapter/js/speak2me.js ]
+        js:                             [ modules/speak2me/js/speak2me ]
+        init_function:                  [ j1.adapter.speak2me.init ]
 
 # ------------------------------------------------------------------------------
 # END config

@@ -14,3 +14,9 @@
 # Enforce Unix newlines, all text files
 # ------------------------------------------------------------------------------
 * text=auto eol=lf
+
+# Don't diff or textually merge source maps
+*.map   binary
+
+bootstrap.css linguist-vendored=false
+bootstrap.js linguist-vendored=false

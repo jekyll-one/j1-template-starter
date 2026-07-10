@@ -2,17 +2,15 @@
 title:                                  Theme Features
 tagline:                                Modules, Extensions and Integrations
 
-date:                                   2021-01-01
-#last_modified:                         2023-01-01
+date:                                   2026-05-07
+# last_modified:                        2026-01-01
 
 description: >
-                                        Jekyll One Template (J1) is a free Jekyll Theme providing
-                                        a clean implementation for Jekyll to start new projects
-                                        for all businesses based on Bootstrap V5.
-                                        The template combines the best current software for the Web.
-                                        Jekyll One is open-source and free to use for private and
-                                        business purposes.
-
+                                        Jekyll One Template (J1) is a free Jekyll theme that gives
+                                        you a clean starting point for new projects of any kind,
+                                        based on Bootstrap V5. It combines the best modern tools for
+                                        the web. Jekyll One is open-source and free for personal and
+                                        business use.
 keywords: >
                                         open source, free, template, theme,
                                         jekyll, jekyllone, web, site, static,
@@ -34,7 +32,7 @@ regenerate:                             false
 permalink:                              /pages/public/features/theme_features/
 
 resources:                              [
-                                          amplitudejs, lightbox, lightgallery,
+                                          amplitudejs, lightbox3, lightgallery,
                                           masonry, gallery, photoswipejs,
                                           swiperjs, videojs, vimeo-player
                                         ]
@@ -68,12 +66,12 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-For Jekyll, a huge number of templates are available that cover all typical
-use cases for websites. The bad story: most of them require programming and
-low-level customization. Deep knowledge of Jekyll and valuable experience
-using HTML, CSS, and Javascript is required.
+There are many themes for Jekyll, and they cover most common types of
+websites. The downside is that most of them ask you to write code and
+make low-level changes. To use them well, you need a deep knowledge of
+Jekyll and a lot of experience with HTML, CSS, and JavaScript.
 
-*J1 is different: easy to use, no programming is needed.*
+*J1 is different: it is easy to use, and you do not need to write any code.*
 
 
 // Include sub-documents (if any)
@@ -81,10 +79,10 @@ using HTML, CSS, and Javascript is required.
 [role="mt-5"]
 == Modules
 
-The Template provides a large number of building blocks to create modern
-web pages in minutes. The base idea of the J1 Template is to give all people
-a toolset at their hands to create a website with no need to start web
-development or web design from the beginning.
+The template gives you a large set of building blocks. With them, you
+can put modern web pages together in just a few minutes. The main idea
+behind J1 is to give everyone a complete toolset, so you do not have to
+start with web development or web design from scratch.
 
 mdi:mouse-move-down[24px, md-blue ml-3 mr-2]
 <<Infinite scroll>> +
@@ -120,19 +118,19 @@ mdi:gesture-swipe[24px, md-blue ml-3 mr-2]
 [role="mt-5"]
 === Infinite scroll
 
-Infinite scrolling (IS), or known as endless scrolling, is a technique that
-loads more content as a user scrolls down the page. It allows visitors to
-continue reading the content by scrolling seamlessly and not by loading
-additional pages.
+Infinite scroll (sometimes called endless scroll) loads more content
+automatically as the visitor scrolls down the page. Readers can keep
+reading without clicking to load extra pages.
 
-J1 Template supports infinite scrolling and is used, for example, for loading
+J1 Template supports infinite scroll. We use it, for example, to load
 previews of blog articles.
 
 [role="mt-4"]
 === Audio Player
 
-J1 Template provides playing audio on web pages by HTML5 and supports custom
-players created by AmplitudeJS to playback audio individually.
+J1 Template can play audio on web pages with the built-in HTML5 player.
+It also supports custom players built with AmplitudeJS, so you can play
+audio tracks one at a time.
 
 .Emancipator · From Dusk To Dawn (Trip-Hop)
 amplitude::emancipator_large[role="mb-4"]
@@ -141,107 +139,101 @@ amplitude::emancipator_large[role="mb-4"]
 [role="mt-5"]
 === Screen reader
 
-Speak2Me for J1 Template is a speech synthesise (TTS) module that enables a
-so-called screen reader. The reader functionality allows users to sit back
-and listen to the browser read aloud the important contents on a Web page.
+Speak2Me is a text-to-speech (TTS) module for J1 Template. It works
+like a screen reader: visitors can sit back and listen as the browser
+reads the main content of the page out loud.
 
 .TTS Control
 lightbox::images--tts[ 1920, {data-images--tts} ]
 
-The *screen reader* on websites created by J1 Template is started by
-clicking on the *speaker* symbol mdi:speaker[24px, md-blue] placed top
-right in the *menu bar*.
+To start the *screen reader* on a J1 site, click the *speaker* icon
+mdi:speaker[24px, md-blue] in the top-right of the *menu bar*.
 
 [role="mt-5"]
 === Animate on Scroll
 
-Scroll-triggered animation (AOS) is an effective way to animate website
-elements such as text, graphics, photos, and video, bringing them to life
-as users scroll down a page. Scroll animations are more likely to grab the
-user's attention, making websites look and feel more dynamic and
-interesting.
+Animate on Scroll (AOS) is an easy way to animate elements on a page,
+such as text, images, photos, and video. The animations play as the
+visitor scrolls down. Scroll animations help catch the visitor's
+attention and make the site feel more dynamic and lively.
 
 [role="mt-5"]
 === Floating Action Buttons
 
-The *Floating Action Button* (FAB) is an element of Google's Material Design.
-A FAB represents the primary action in an application, or triggers additional
-functions for a webpage. FABs are increasingly used on the web and serves to
-enable important actions for a page, but separated from the main navigation.
+A *Floating Action Button* (FAB) is part of Google's Material Design.
+It stands for the main action on a page or starts an extra feature.
+FABs are common on the web today. They put important actions within
+easy reach but keep them separate from the main navigation.
 
 .FAB (Menu)
 lightbox::images--fab[ 1920, {data-images--fab} ]
 
-The template system supports Floating Action Buttons for in-page navigation.
-When the FAB is pressed, it provides more related actions like showing the
-content table or scrolling a page chapter-wise up and down.
+J1 Template supports Floating Action Buttons for in-page navigation.
+When you tap the FAB, it shows extra related actions, such as opening
+the table of contents or scrolling the page section by section.
 
 [role="mt-5"]
 === Full-text search engine
 
-Full-text search (FTS) for a website is an advanced method of searching
-through all documents. FTS promises fast retrieval of data with advanced
-indexing and more intuitive search results based on relevance.
+A full-text search (FTS) is a powerful way to search every word on
+your website. It returns results quickly thanks to indexing, and it
+sorts them by how well they match what the visitor is looking for.
 
 .Full-text search
 lightbox::images--full-text-search[ 1920, {data-images--full-text-search} ]
 
-J1 implements Lunr for indexing the whole website. The engine is designed
-to be small but full-featured. Lunr enables developers to provide visitors
-with a great search experience without the need for external, server-sided
-search services like Google on the internet.
+J1 uses Lunr to index the whole website. Lunr is small but full
+featured. It lets you offer a great search experience right inside
+the site, with no need for an outside service like Google search.
 
 [role="mt-5"]
 === Cookie Consent
 
-Running websites in the EU and many other countries, implementing the
-*General Data Protection Regulation* (GDPR) is required to make a website
-compliant with the *ePrivacy* regulations of the European Unions and
-associated countries.
+If you run a website in the EU or many other countries, you must follow
+the *General Data Protection Regulation* (GDPR). This makes your site
+follow the *ePrivacy* rules of the European Union and the countries
+linked to it.
 
 .Cookie Consent
 lightbox::images--cookie-consent[ 1920, {data-images--cookie-consent} ]
 
-Under the GDPR, *most cookies* will fall into the category of *personal data*
-because they can identify visitors and can be used to provide website
-personalization and even profiling of individuals. As a result, you will
-need a *legal basis* for processing the data contained within those cookies.
-That legal basis is most likely going to be the CONSENT of your visitors on
-accepting the use of cookies.
+Under the GDPR, *most cookies* count as *personal data*, because they
+can identify visitors. Cookies can also be used to personalise a site
+and even build profiles of users. So, you need a *legal basis* to
+process the data inside those cookies. In most cases, that legal basis
+is the *consent* of your visitors to the use of cookies.
 
-The Template system provides a configurable GDPR compliant module to manage
-the consent of your visitors on cookies.
+The template comes with a configurable, GDPR-compatible module that
+lets you manage how visitors give or withdraw their consent.
 
 [role="mt-6"]
 === Translator
 
-A Website translation service is useful in a wide range of situations.
-In today’s interconnected and global world English is no longer enough.
-Most online content is still written in English, while the language is
-just ranked 3rd in terms of the highest number of native speakers among all
-languages worldwide.
+A website translation feature is useful in many situations. The world
+is more connected than ever, and English alone is no longer enough.
+Most online content is still written in English, even though English
+is only the third most spoken native language in the world.
 
 .Native speakers by language
 lightbox::lingohub--speakers-by-language[ 1920, {data-lingohub--speakers-by-language} ]
 
 Source: link:{url-lingohub--speakers-by-language}[lingohub.com, {browser-window--new}]
 
-In 2015 it was necessary to support 25 languages to reach 90 percent of the
-entire Internet population in their native language. By 2020, a website will
-require localization into 48 languages to reach the same proportion of the
-global Internet audience.
+In 2015, you needed 25 languages to reach 90 percent of all internet
+users in their native tongue. By 2020, you needed about 48 languages to
+reach the same share of users.
 
-Localization adapts a website to cultural backgrounds and local languages.
-Translation makes it easier for users to browse content and find what they’re
-looking for. An excellent user experience and understanding the language are
-key for building trust in the content you provide.
+Localisation adapts a website to local languages and cultures.
+Translation makes it easier for visitors to read your content and find
+what they need. A great experience and a clear language are key to
+building trust in what you offer.
 
 .Translator configuration
 [source, yaml, role="noclip"]
 ----
 # ------------------------------------------------------------------------------
 # ~/_data/modules/translator.yml
-# User configuration ssettings for J1 Translator module
+# User configuration settings for J1 Translator module
 #
 # Product/Info:
 # https://jekyll.one
@@ -283,28 +275,28 @@ settings:
 # END config
 ----
 
-J1 integrates the *free* translation service provided by Google Translate
-(GT) and the *professional* translation services of Deepl (DT). If you want
-to get a larger number of international audiences, translating your site can
-help target your global audience more easily and quickly.
+J1 connects to the *free* translation service from Google Translate
+(GT) and the *professional* translation service from Deepl (DT). If
+you want to reach a wider international audience, translation makes it
+quick and easy to share your site with the world.
 
 .Google Translator
 lightbox::images--translator[ 1920, {data-images--translator} ]
 
-GT is fully integrated with the GDPR-compatible Cookie Consent module. If your
-visitors do not agree on cookies required to use Google Translate, GT gets
-automatically disabled, and all cookies from Google are deleted from the
-user's system.
+GT is fully connected to our GDPR-compatible Cookie Consent module.
+If a visitor does not accept the cookies that Google Translate needs,
+GT is turned off automatically and any related Google cookies are
+deleted from the visitor's device.
 
 [role="mt-5"]
 === Master Header
 
-The most-top position of a web page is important; this postion is presented to
-your vistors very first. The Master Header (Attic) give your reader a first
-impression of what is presented on a page.
+The very top of a page matters a lot — it is the first thing your
+visitor sees. The Master Header (also called the *Attic*) gives the
+reader a first impression of what the page is about.
 
-Attics may contains (dynamic) *Text*, *Images* or *Videos* to support a page
-for the content presented.
+The Attic can hold (dynamic) *text*, *images*, or *videos* to support
+the content on the page.
 
 .Master Header (image-based)
 lightbox::images--master-header[ 1920, {data-images--master-header} ]
@@ -312,15 +304,15 @@ lightbox::images--master-header[ 1920, {data-images--master-header} ]
 [role="mt-4"]
 === Clipboard
 
-The clipboard is a special function of the operating system of desktop or
-mobile computers that temporarily stores copied text or other data in memory.
-Once something is stored in the clipboard, comments, the user can paste the
-data to a new location.
+The clipboard is a feature in your operating system, on both desktop
+and mobile devices. It briefly stores text or other data you have
+copied. Once something is on the clipboard, you can paste it
+somewhere else.
 
 [TIP]
 ====
-Click on the *COPY* button (top-right) in the following source code
-section.
+Click the *COPY* button in the top right of the source code block
+below.
 ====
 
 .Clipboard
@@ -342,39 +334,38 @@ function styleSheetLoaded(styleSheet) {
 }
 ----
 
-J1 integrates the clipboard functionality of your computer system to copy and
-paste examples or code elements from a webpage. A clipboard will help your
-users a lot to manage the code snippets you’ve provided.
+J1 lets you use your system clipboard to copy and paste examples or
+code from a page. It makes it much easier for readers to use the code
+snippets you share.
 
 [role="mt-4"]
 === Smooth Scroll
 
-Smooth scrolling (SSR) is an enhanced feature of J1 designed to improve
-scrolling and positioning on anchor links. If SSR is enabled, an animated
-transition is done for scrolling to headlines (anchor links) and gets
-exactly positioned.
+Smooth Scroll (SSR) is a J1 feature that improves how the page jumps
+to anchor links. When SSR is on, the browser slides smoothly to the
+target heading instead of jumping there suddenly, and it lines up the
+heading at exactly the right spot.
 
 [role="mt-4"]
 === Enhanced Navigation
 
-When it comes to the usability of a website, your visitors' focus is on one
-important component: the Navigation System. The Navigation System used by
-J1 Template is a multi-purpose navigation builder based on the _Bootstrap_ V5
-Framework.
+When it comes to usability, your visitors notice one thing first: the
+navigation system. The navigation system in J1 Template is a flexible
+multi-purpose menu builder based on the _Bootstrap_ V5 framework.
 
 .Navigation Module (NAV)
 lightbox::images--nav-module[ 1920, {data-images--nav-module} ]
 
-The NAV module for J1 consists of four configurable sub-modules:
+The NAV module in J1 has four configurable parts:
 
 * Navigation Bar
 * MainMenu
 * Quicklinks
 * TopSearch
 
-All features are available by configuration, and no programming is needed.
+You can set up every feature through configuration. No code is needed.
 
-.Configuration example for main menu entry  (navigator_menu.yml)
+.Configuration example for a main menu entry  (navigator_menu.yml)
 [source, yaml, role="noclip"]
 ----
   # ------------------------------------------------------------------------------
@@ -400,28 +391,35 @@ All features are available by configuration, and no programming is needed.
 [role="mt-4"]
 === Lightboxes
 
-A Lightbox is, in general, a helper which displays enlarged, almost
-screen-filling versions of images (or videos) while dimming the remainder
-of the page. For the J1 Template, two different lightboxes are available:
+A *lightbox* is a small overlay that pops up when a visitor clicks an
+image. It enlarges the image to fill most of the screen and dims the
+rest of the page, so the picture gets all the attention. The trick was
+made popular by a JavaScript library called *Lightbox 2* in 2005, and
+the name has been used for similar tools ever since.
 
-* Lightbox V2
-* LightGallery
+The J1 Template offers three lightbox options:
 
-The default tool employed by J1 Template is Lightbox V2, a Javascript library
-written by Lokesh Dhakar.
+* *PhotoSwipe Lightbox V5* (default)
+* *Lightbox V3* (optional)
+* *lightGallery* (optional)
 
-.Markup to place a Lightbox V2 (Asciidoc)
+The default is *PhotoSwipe Lightbox V5*. It is free for both private
+and business websites and works equally well on desktop computers and
+mobile devices. On a phone, you can swipe, pan, and pinch-to-zoom in
+the lightbox just as you would in a native app.
+
+.Markup to place a Lightbox V3 (Asciidoc)
 [source, apib, role="noclip"]
 ----
-.Lightbox V2
+.Lightbox V3
 lightbox::lb-example--template-features[ 300, {data-lb-example--template-features}, group ]
 ----
 
-.Lightbox V2
+.Lightbox V3
 lightbox::lb-example--template-features[ 300, {data-lb-example--template-features}, group ]
 
-For more complex use cases, like thumbnail gallery previews or video support,
-LightGallery can be used alternatively.
+For more advanced cases — such as galleries with thumbnail previews or
+video support — you can use LightGallery instead.
 
 .Markup to place a LightGallery (Asciidoc)
 [source, apib, role="noclip"]
@@ -437,18 +435,18 @@ gallery::jg_old_times[ role="mb-4 wm-800" ]
 [role="mt-4"]
 === Sliders
 
-SwiperJS is a Javascript API that creates modern slider shows. All sliders
-use hardware-accelerated features like 3D transitions to perform best on modern
-devices. SwiperJS-based sliders are intended to be displayed at their best on
-all types of websites, such as those viewed on desktop computers, tablets, or
-smartphones.
+SwiperJS is a JavaScript library that creates modern slide shows.
+All sliders use hardware-accelerated features, such as 3D transitions,
+to perform well on modern devices. SwiperJS sliders look great on
+every type of website, whether you view them on a desktop computer,
+a tablet, or a smartphone.
 
 [role="mt-4"]
 ==== Text Sliders
 
-Swipers are mnainly used for displaying images. Still, the implementation
-for the J1 Template supports a lot more *sources* to be displayed as a *slide*.
-Simple *text* for example.
+Sliders are mainly used for images, but the version in J1 Template
+also supports many other *sources* for a *slide* — including plain
+*text*.
 
 .Markup to place a Base Text Slider
 [source, apib, role="noclip"]
@@ -460,11 +458,12 @@ swiper::swiper_text_base[role="mt-4 mb-5"]
 .Base Text Swiper
 swiper::swiper_text_base[role="mt-4 mb-5"]
 
-A more *emphasized* type of a **text**-based swiper is a *parallax* text
-swiper. If you want to *focus* the meaning, this kind of a swiper may be
-nteresting. Parallax text sliders can be placed as *banners* on a page.
+A more eye-catching kind of *text* slider is the *parallax* text
+slider. If you want to *highlight* a strong message, this kind of
+slider is a great choice. Parallax text sliders also work well as
+*banners* on a page.
 
-.Markup to place a Extended Text Swiper
+.Markup to place an Extended Text Slider
 [source, apib, role="noclip"]
 ----
 .Extended Text Swiper · Parallax
@@ -478,22 +477,22 @@ swiper::swiper_text_parallax[role="mt-4 mb-5"]
 [role="mt-4"]
 ==== Image Sliders
 
-Swipers (sliders or carousels) are mainly used for pictures *animated* as a
-managed *group*. Find below some examples of using simple (base) swipers for
-presenting images using the Swiper App.
+Sliders (also called swipers or carousels) are mostly used for showing
+a *group* of pictures with smooth animation. Below are some examples
+that use the basic image sliders.
 
-Find an example of a *full-width* slider with *pagination* control *enabled*
-to browse all images *back* and *forth*. Additionally, the pagination bullets
-below the Swiper App indicate how *many* slides (images) the slide show
-*contains* for improved usage experience.
+The first example is a *full-width* slider with *pagination* turned on,
+so visitors can move *back* and *forth* through the images. The
+pagination dots below the slider also show how *many* slides the show
+has, so visitors always know where they are.
 
 .Image Swiper · Full-width + Pagination
 swiper::swiper_image_base_full_width_pagination[role="mt-3 mb-4"]
 
-Important statements or topics can be placed on top of an article or
-a paragraph to give them better visibility. In one line, you can present
-many facts to know animated for the reader's attention within a
-*single line*.
+You can also place strong statements or key topics at the top of an
+article or section to make them stand out. With a single line, you
+can show a series of facts that move past the reader's eye and grab
+their attention.
 
 .Equal Image Sizes · Captions + Navigation + Pagination
 swiper::swiper_image_base_navigation_pagination[role="mt-3 mb-3"]
@@ -502,53 +501,55 @@ swiper::swiper_image_base_navigation_pagination[role="mt-3 mb-3"]
 [role="mt-4"]
 === Galleries
 
-Image and Video Galleries allow you to lay out groups of images or videos
-in very different ways. J1 supports JustifiedGallery is a great jQuery plugin
-to create responsive, infinite, and high-quality justified image galleries.
-The gallery uses a so-called masonry grid layout. It works by placing
-elements in an optimal position based on available horizontal and vertical
-space. Sort of like mason fitting stones in a wall.
+Image and video galleries let you arrange groups of images or videos
+in many different ways. J1 supports JustifiedGallery, a great jQuery
+plugin that builds responsive, infinite, and high-quality justified
+image galleries. The gallery uses a so-called masonry grid layout.
+It places elements in the best spot based on the available horizontal
+and vertical space — much like a mason fitting stones into a wall.
 
 [role="mt-4"]
 ==== Image Galleries
 
-*Masonry* for J1 is a great tool to create dynamic image galleries. Image
-galleries are popular on many websites, and masonry can be a useful tool for
-creating dynamic galleries.
+*Masonry* is a great tool for J1 to build dynamic image galleries.
+Image galleries are popular on many websites, and Masonry is a useful
+way to build them.
 
-By using the Masonry module, you can create a gallery that displays images of
-different sizes in an aesthetically pleasing and functional way.
+With the Masonry module, you can build a gallery that shows images of
+different sizes in a way that looks great and works well.
 
 .Grid of Images
 masonry::image_fixed_height_lb[role="mt-4 mb-5"]
 
 link:{url-justified-gallery--home}[JustifiedGallery, {browser-window--new}]
-is a great _jQuery_ Plugin to create responsive, infinite, and high-quality
-justified image galleries. J1 Template combines the Gallery with the lightboxes
-supported to enlarge the images of a gallery. See the gallery in action; and
-for sure, all that you see is even responsive. Change the size of your current
-browser window, by width or height to see what will happen!
+is a great _jQuery_ plugin that builds responsive, infinite, and
+high-quality justified image galleries. J1 Template combines the
+gallery with the supported lightboxes, so visitors can click an image
+to enlarge it. See the gallery below in action — it is also fully
+responsive. Try resizing your browser window to see how the layout
+adjusts.
 
 // [role="mb-4"]
-Pictures you've made are typically not even in size. Images may have the
-same size (resolution), but some are orientated landscapes, or others
-may be portraits. For that reason, a more powerful gallery is needed to create
-so-called justified views.
+The pictures you take are usually not all the same shape. They may
+share the same size (resolution), but some are landscape and others
+are portrait. To handle this well, you need a more advanced gallery
+that creates so-called justified views.
 
-.Gallery of Images + lightGaller
+.Gallery of Images + lightGallery
 gallery::jg_mega_cities[role="mt-4 mb-4"]
 
-It works by placing elements in an optimal position based on available
-horizontal and vertical space. Sort of like mason fitting stones in a wall.
-For sure, you'll have seen it in action all over the Internet.
+Each image is placed in the best spot based on the available
+horizontal and vertical space — like a mason fitting stones into a
+wall. You have probably seen this style of gallery many times across
+the web.
 
 [role="mt-5"]
 ==== Video Galleries
 
-Video galleries are collections that display videos organized around a
-specific theme, topic, or purpose. The gallery module (lightGallery) for
-J1 Template is a fast, modular, and responsive plugin for creating
-beautiful-looking, featured image and video galleries.
+A video gallery is a collection of videos arranged around a topic,
+theme, or purpose. The gallery module (lightGallery) for J1 Template
+is a fast, modular, and responsive plugin for building beautiful
+image and video galleries.
 
 .Markup to place the Video Gallery
 [source, apib, role="noclip"]
@@ -564,10 +565,11 @@ gallery::jg_video_youtube_james_and_adele[role="mb-4"]
 [role="mt-5"]
 == Extensions
 
-Frameworks like _Bootstrap_ and Asciidoc are enormously flexible and customizable.
-Changing or adding components to frameworks requires a lot of experience. That
-is not the idea of J1. Customizations for the base frameworks are prepared,
-simple to use, and usable out-of-the-box.
+Frameworks like _Bootstrap_ and Asciidoc are very flexible and
+customisable. Changing or adding parts to a framework usually takes a
+lot of experience. That is not how J1 works. The customisations for
+the base frameworks are already prepared, simple to use, and ready to
+go out of the box.
 
 mdi:bootstrap[24px, md-blue ml-3 mr-2]
 <<Bootstrap extensions>> +
@@ -590,47 +592,49 @@ mdi:image[24px, md-blue ml-3 mr-2]
 [role="mt-5"]
 === Bootstrap extensions
 
-A set of Advanced Bootstrap Modals (ABM), based on the free package of Material
-Design for Bootstrap, is integrated with the template system. _Bootstrap_
-modals are used to add dialogues to your web pages for user notifications.
+J1 includes a set of Advanced Bootstrap Modals (ABM), based on the
+free Material Design for Bootstrap package. _Bootstrap_ modals are
+pop-up dialogs that you can use to show notifications to your
+visitors.
 
-To improve your visitor’s experience on important information that shouldn’t
-be missed. ABMs are a great choice to bring the user’s attention. Using the
-J1 Template predefined modal styles, some emotional weight is added to the
-information displayed. Ranging from an info level, a simple warning to
-critical messages.
+You can use modals to draw attention to important messages that
+should not be missed. ABMs are a great choice when you want a message
+to stand out. With the predefined modal styles in J1 Template, you
+can give each message the right tone — from a friendly info note to
+a simple warning, or to a critical alert.
 
-Creating a design for responsive HTML tables is challenging. J1 integrates
-responsible HTML tables for _Bootstrap_ to be used for Mobile Devices.
+It is hard to design responsive HTML tables that look good on every
+screen. J1 includes responsive HTML tables for _Bootstrap_ that work
+well on mobile devices.
 
-.Responsible HTML table (RTable)
+.Responsive HTML table (RTable)
 [cols="6a,6a", options="header", width="100%", role="rtable mt-3"]
 |===
 |Variable |Description
 
 |`page.content`
-|The content of the Page, rendered or un-rendered
-depending upon what Liquid is being processed and what `page` is.
+|The content of the page, rendered or unrendered, depending on which
+Liquid is being processed and which `page` is in use.
 
 |`page.title`
-|The title of the Page.
+|The title of the page.
 
 |`page.date`
-|The Date assigned to the Post. This can be overridden in a
-Post's front matter by specifying a new date/time in the format
-`YYYY-MM-DD HH:MM:SS` (assuming UTC), or `YYYY-MM-DD HH:MM:SS +/-TTTT`
-(to specify a time zone using an offset from UTC. e.g.
-`2008-12-14 10:30:00 +0900`).
+|The date assigned to the post. You can override this in a post's
+front matter by entering a new date and time in the format
+`YYYY-MM-DD HH:MM:SS` (assumed to be UTC), or
+`YYYY-MM-DD HH:MM:SS +/-TTTT` if you want to set a time zone as an
+offset from UTC. For example: `2008-12-14 10:30:00 +0900`.
 |===
 
 
 [role="mt-5"]
 === Asciidoc extensions
 
-J1 Template implements a bunch of incubating Ruby-based extensions for
-Asciidoctor. Using Asciidoctor extensions, it's easy to integrate lightboxes,
-galleries, icon fonts, and other complex elements using Asciidoc tags with
-your content pages.
+J1 Template ships with a set of Ruby-based extensions for
+Asciidoctor. With these extensions, you can add lightboxes,
+galleries, icon fonts, and other complex elements to your content
+pages using simple Asciidoc tags.
 
 .MDI Icons
 [source, noformat, role="noclip"]
@@ -651,9 +655,10 @@ mdi:apple[2x, md-indigo ml-3 mr-2] Brand icon (colored)
 [role="mt-5"]
 === Banner and Panel
 
-Banners and panels are complex but configurable building blocks, typically
-used for home and landing pages. Examples how to use banners and panels
-can be found with the included starter web for the homepage.
+Banners and panels are powerful, configurable building blocks. They
+are mostly used on home pages and landing pages. You can find
+examples of how to use them in the starter web that comes with
+J1 Template, on its home page.
 
 .Teaser Banner
 lightbox::images--teaser-banner[ 1920, {data-images--teaser-banner} ]
@@ -662,10 +667,10 @@ lightbox::images--teaser-banner[ 1920, {data-images--teaser-banner} ]
 [role="mt-5"]
 === Blog Navigation
 
-To make your Blog Articles available to your vistors, J1 offers an easy to use
-navigation module for all your posts. The Blog Post Navigator automatically
-generates different views to explore articles by Categoy, Date, or all posts
-from an Archive View.
+To help visitors find your blog articles, J1 includes an easy-to-use
+navigation module just for blog posts. The Blog Post Navigator builds
+different views of your articles automatically, so visitors can browse
+them by *Category*, by *Date*, or in a full *Archive* view.
 
 .Blog Post Navigator
 lightbox::images--blog-post-navigator[ 1920, {data-images--blog-post-navigator} ]
@@ -674,9 +679,10 @@ lightbox::images--blog-post-navigator[ 1920, {data-images--blog-post-navigator} 
 [role="mt-5"]
 === Block elements
 
-Banners and panels are complex but configurable building blocks, typically
-used for home and landing pages. Examples how to use banners and panels
-can be found with the included starter web for the homepage.
+Banners and panels are powerful, configurable building blocks. They
+are mostly used on home pages and landing pages. You can find
+examples of how to use them in the starter web that comes with
+J1 Template, on its home page.
 
 .Teaser Banner
 lightbox::images--teaser-banner[ 1920, {data-images--teaser-banner} ]
@@ -685,9 +691,9 @@ lightbox::images--teaser-banner[ 1920, {data-images--teaser-banner} ]
 [role="mt-5"]
 === Sample content
 
-All pages from the roundtrip section are provided by the starter web
-included with the J1 Template. Many real-world examples for your content
-could be taken from these pages and are easy to use with your website.
+The pages in the roundtrip section all come from the starter web
+that ships with J1 Template. They give you many real-world examples
+that you can adapt for your own site with very little effort.
 
 .Example Content (Icon Fonts)
 lightbox::images--example-content[ 1920, {data-images--example-content} ]
@@ -696,18 +702,19 @@ lightbox::images--example-content[ 1920, {data-images--example-content} ]
 [role="mt-5"]
 === Royalty Free Images
 
-All images for a *Starter Web*, for example, from the roundtrip section, are
-included with J1 Template. All images are taken from Unsplash.com as
-*Royalty Free* images and can be used without paying any license fees.
+All the images in the *Starter Web* — for example, the ones in the
+roundtrip section — are included with J1 Template. They come from
+Unsplash.com as *royalty-free* images. You can use them on your own
+site without paying any licence fees.
 
 
 [role="mt-5"]
 == Integrations
 
-The Internet of today has changed a lot. The new digital world is called the cloud.
-Services out of the cloud is a fast-growing business. J1 Template integrates cloud
-services to extend the functionality of a web for commenting features or Bootstrap
-themes, for example.
+The internet has changed a lot. The new digital world is the cloud,
+and cloud services are a fast-growing business. J1 Template connects
+to cloud services to extend what your site can do — for example, by
+adding comment systems or Bootstrap themes.
 
 mdi:theme-light-dark[2x, md-blue ml-3 mr-2]
 <<Bootstrap Themes>> (Bootswatch) +
@@ -722,45 +729,45 @@ mdi:google-analytics[2x, md-blue ml-3 mr-2]
 [role="mt-5"]
 === Bootstrap Themes
 
-The Themes for the template system J1 are based on the free and Open Source
-CSS front-end framework _Bootstrap_ of version V5. Using _Bootstrap_ base style
-only results in a uniform appearance for the content in terms of the overall
-layout, text, tables, and form elements across all modern web browsers
-available on the market.
+The themes for the J1 template system are based on the free,
+open-source CSS framework _Bootstrap_ V5. Using the standard
+_Bootstrap_ styles gives your site a uniform look — across the
+overall layout, text, tables, and form elements — in every modern
+web browser.
 
-Thanks to the people at link:{url-bootswatch--home}[Bootswatch, {browser-window--new}],
-a great set of already prepared _Bootstrap_ stylesheets in various designs are
-available on their website. There is no need to start from scratch. Re-define
-all the _Bootstrap_ variables, and rebuild the framework files to create a new
-theme.
+The team at link:{url-bootswatch--home}[Bootswatch, {browser-window--new}]
+offers a great set of ready-made _Bootstrap_ stylesheets in many
+different designs. There is no need to start from scratch, redefine
+all the _Bootstrap_ variables, and rebuild the framework files to
+make a new theme.
 
 .Bootswatch Themes (Minty)
 lightbox::images--bootswatch-themes[ 1920, {data-images--bootswatch-themes} ]
 
-Many different styles are available. What is already available at
-link:{url-bootswatch--home}[Bootswatch, {browser-window--new}] is at least a
-good base for your modifications: your unique design. J1 integrates all
-available themes from _Bootswatch_ with the navigator module.
+Many different styles are already available. The themes at
+link:{url-bootswatch--home}[Bootswatch, {browser-window--new}] are a
+solid base for your own changes — and your unique design. J1 connects
+to all the available Bootswatch themes through the navigator module.
 
 [role="mt-5"]
 === Comment providers
 
-Comments became an integral part of almost each website on the web. People
-want to talk about what they currently read on your web, listen to or see.
-And they want it right there, under what they’ve read or seen, not on their
-social networks.
+Comments have become an important part of almost every website.
+People want to talk about what they read, watch, or hear, and they
+want to do it right where they found it — not on a separate social
+network.
 
-J1 Template supports currently two comment providers: Disqus (DQC) and
-Hyvor (HVC). The comment interfaces from the supported providers can be
-integrated by pure configuration.
+J1 Template currently supports two comment providers: Disqus (DQC)
+and Hyvor (HVC). You can connect to either provider through pure
+configuration.
 
 .Comments by Hyvor Talk
 lightbox::images--comments-hyvor[ 1920, {data-images--comments-hyvor} ]
 
-Enable the provider you want to use and add your access credentials to the
-configuration, and you're done. On all posts or pages you want to use for
-comments, the comment interface is shown automatically and can be used by
-your visitors.
+To get started, turn on the provider you want to use and add your
+account details to the configuration. That is all. After that, the
+comment section appears automatically on every post or page where you
+allow comments, ready for visitors to use.
 
 .Comments configuration for Hyvor
 [source, yaml, role="noclip"]
@@ -807,22 +814,22 @@ settings:
 # END config
 ----
 
-DQC is fully integrated with the GDPR-compatible Cookie Consent module. If
-your visitors do not agree on cookies needed for Diqus, DQC gets
-automatically disabled, and all related cookies are deleted from the user's
-system.
+DQC is fully connected to our GDPR-compatible Cookie Consent module.
+If a visitor does not accept the cookies that Disqus needs, DQC is
+turned off automatically and any related cookies are deleted from the
+visitor's device.
 
 [role="mt-5"]
 === Google Analytics
 
-Google Analytics (GAL) provides access to a massive amount of data related
-to how users find and interact with your site. For example, you can see how
-many people visited a specific page, how long they remained there, where your
-users live, how certain keywords perform, and so forth.
+Google Analytics (GAL) gives you a lot of data about how visitors
+find and use your site. You can see, for example, how many people
+visited a given page, how long they stayed, where in the world they
+are, and how well certain keywords work for your site.
 
-Google Analytics is integrated by pure configuration. Simply enable the
-provider and set your your access credentials to the configuration, and
-you're done.
+You can connect Google Analytics through pure configuration. Just
+turn on the provider, add your account details to the configuration,
+and you are done.
 
 .Google Analytics configuration
 [source, yaml, role="noclip"]
@@ -872,15 +879,15 @@ settings:
 ----
 
 [role="mb-8"]
-GAL is fully integrated with the GDPR-compatible Cookie Consent module.
-If your visitors do not agree on cooies for *Analysis*, Google Analytics gets
-automatically disabled and all cookies from Google are deleted from the
-user's system.
+GAL is fully connected to our GDPR-compatible Cookie Consent module.
+If a visitor does not accept cookies for *Analyses*, Google Analytics
+is turned off automatically and any cookies from Google are deleted
+from the visitor's device.
 
 // [role="mt-5"]
 // === Google Adsense
 
 // [role="mb-8"]
-// Google Adsense (GAD) is integrated by pure configuration. Simply enable the
-// provider and set your your access credentials to the configuration, and
-// you're done.
+// You can connect Google Adsense (GAD) through pure configuration.
+// Just turn on the provider, add your account details to the
+// configuration, and you are done.

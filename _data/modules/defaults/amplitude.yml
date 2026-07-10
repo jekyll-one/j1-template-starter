@@ -16,8 +16,8 @@
 #
 description:
   title:                                AmplitudeJS
-  scope:                                Default App settings
-  location:                             _data/modules/defaults/amplitude_app.yml
+  scope:                                Default settings
+  location:                             _data/modules/defaults/amplitude.yml
 
 # ------------------------------------------------------------------------------
 # Default settings
@@ -29,7 +29,7 @@ defaults:
   # ----------------------------------------------------------------------------
   #
   enabled:                              false
-  xhr_data_path:                        /assets/data/amplitude_app
+  xhr_data_path:                        /assets/data/amplitude
 
   # ----------------------------------------------------------------------------
   # PLAYLIST defaults
@@ -261,14 +261,41 @@ defaults:
 
     # --------------------------------------------------------------------------
     # GENERAL settings
-    #    
-    type:                               large                                   # default player type compact|large
-    source:                             audio                                   # default player source audio|video
-    loop:                               false                                   # true|false, start playing on FIRST item
-    display_hours:                      false                                   # use hours for timestamps in time container
- 
-    player_repeat:                      false                                   # ???
-    player_shuffle:                     false                                   # ???
+    # --------------------------------------------------------------------------
+    #
+    type:                               compact                                 # default type   (mini|compact|large)
+    source:                             audio                                   # default source (audio|video)
+
+    # --------------------------------------------------------------------------
+    # PLUGIN settings
+    # --------------------------------------------------------------------------
+    #
+    plugin_manager:
+      enabled:                          false                                   # true|false, load plugins
+      plugins:                          []                                      # [ ytp ], prepared as an array to support multiple plugins (NOT supported yet)
+
+  # waveforms:
+  #   enabled:                          false                                   # Amplitude plugin, currently NOT supported
+  #   sample_rate:                      0.25
+
+  # visualization:
+  #   enabled:                          false                                   # Amplitude plugin, currently NOT supported
+  #   name:                             [ bar ]                                 # prepared as an array to support multiple visualizations (NOT supported yet)
+
+    # --------------------------------------------------------------------------
+    # TIME settings
+    # --------------------------------------------------------------------------
+    #
+    display_hours:                      false                                   # display hour in timestamps
+
+    # --------------------------------------------------------------------------
+    # PLAYER settings
+    # --------------------------------------------------------------------------
+    #
+    loop:                               false                                   # true|false, start playing on first item on end
+
+    player_repeat:                      false                                   # enable|disable repeating the playlist on end (loop)
+    player_shuffle:                     false                                   # enable|disable random play (playlist)
 
     player_playback_rate:               small                                   # YT video resolution
     player_fade_audio:                  true                                    # enable|disable audio faden in|out
@@ -310,26 +337,18 @@ defaults:
       quality:                          small                                   # reduce amout of VIDEO data loaded at a minimum
       loop:                             0                                       # control looping by the AJS player
 
-    plugin_manager:
-      enabled:                          false                                   # true|false, load plugins
-      plugins:                          [ ytp ]                                 # prepared as an array to support multiple plugins (NOT supported yet)
-
-    waveforms:
-      enabled:                          false                                   # currently NOT supported
-      sample_rate:                      0.25
-
-    visualization:
-      enabled:                          false                                   # currently NOT supported
-      name:                             [ bar ]                                 # prepared as an array to support multiple visualizations (NOT supported yet)
-
     # --------------------------------------------------------------------------
     # CONTROL settings
+    #---------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # PLAYER RIGHT (item view)
     #
     delay_after_video_loaded:           500                                     # 0..1000 (ms), delay after yt video loaded
     shuffle_button:                     false                                   # true|false, shuffle button (currently NOT supported)
     repeat_button:                      false                                   # true|false, repeat  button (currently NOT supported)
-    song_progress_bar:                  false                                   # true|false, show progressbar in player
-    skip_forward_backward_button:       false
+    song_progress_bar:                  true                                    # true|false, show progressbar in player
+    skip_forward_backward_button:       true                                    # true|false, show skip buttons
     do_previous_button_on_first:        none                                    # none|last, item to select on click
     do_next_button_on_last:             first                                   # none|first, item to select on click
 
@@ -338,26 +357,16 @@ defaults:
       skip_forward:                     15                                      # seconds
       skipbackward:                     15                                      # seconds
 
-    volume_slider:
+    volume_slider:                                                              # defaults only
       enabled:                          true                                    # true|false, enable volume slider in player
       preset_value:                     50                                      # default volume level (percent)
-      min_value:                        0                                       # percent
-      max_value:                        100                                     # percent
-      preset_value:                     50                                      # percent
-      slider_step:                      1                                       # integer 1..10
 
     # --------------------------------------------------------------------------
-    # PLAYLIST settings
+    # PLAYER LEFT (playlist view)
     #
-    playlist:
+    playlist_pane:
       audio_info:                       true                                    # true|false, show info button in playlist
       audio_rating:                     true                                    # true|false, show ratings in playlist
-      audio_single:                     false                                   # true|false, a single audio (video) file used
-      audio_fade:                       false                                   # true|false, fadeIn|Out audio on start|end (if configured
-      controls:                         false                                   # true|false, show control buttons in playlist (currently NOT supported for YTP)
-      start:                            false                                   # false|timestanp, set video|audio start position
-      end:                              false                                   # false|timestanp, set video|audio start position
-      shuffle:                          false
 
 # ------------------------------------------------------------------------------
 # END config

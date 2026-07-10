@@ -1,0 +1,477 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/gallery_control.yml (1)
+# User (control) configuration settings for the module J1 Justified Gallery
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+# split J1 Gallery data #1
+# The single data file (gallery.yml) has been split into two files:
+#
+#   - gallery_control.yml per-gallery configuration (this file: galleries)
+#   - gallery_media.yml   per-gallery media content (images / videos)
+#
+# Both files use the same `- gallery:` list structure, keyed by `id`, modeled
+# on the Masonry scaffold (masonry_control.yml / masonry_media.yml). The
+# control config and the playlist content are merged ID-wise (deep_merge) in
+# gallery.html and gallery.js. See those files for the merge|sort logic.
+#
+# ------------------------------------------------------------------------------
+# split J1 Gallery data #2
+# DE-DUPLICATION. Every per-gallery value that was IDENTICAL to the default
+# defined in ~/_data/modules/defaults/gallery.yml has been removed from this
+# file. The adapter and the HTML template merge each gallery as
+#
+#     gallery_defaults <- gallery_control(this file) <- gallery_media
+#
+# (per-gallery deep_merge), so any key omitted here is inherited unchanged from
+# the defaults. Only per-gallery OVERRIDES (values that differ from the default)
+# and NET-NEW keys (not present in the defaults) are kept below. This mirrors
+# the Masonry overload strategy: control settings override defaults, defaults
+# are never restated as duplicates.
+#
+# Removed-as-duplicate (matched gallery.yml defaults):
+#   lightbox.enabled:true, lightbox.type:lg (lg galleries),
+#   lightGallery.plugins (when "lgThumbnail, lgVideo"),
+#   lightGallery.options.licenseKey/download/alignThumbnails/animateThumb/
+#   autoplayFirstVideo, gallery_options.rowHeight:150/gutters:1,
+#   filters.enabled:false, videojsOptions.muted/preload/controls,
+#   videojsOptions.controlBar.playbackRates/remainingTimeDisplay/
+#   pictureInPictureToggle/volumePanel.inline, and the matching enabled/options
+#   leaves of skipButtonsPlugin/zoomPlugin.
+#
+# ------------------------------------------------------------------------------
+
+# ==============================================================================
+# Description
+# ==============================================================================
+#
+description:
+  title:                                Justified Gallery
+  scope:                                User control settings
+  location:                             _data/gallery_control.yml
+
+# ==============================================================================
+# User configuration settings
+# ==============================================================================
+#
+settings:
+
+  # ============================================================================
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              true
+
+  # ============================================================================
+  # All galleries available
+  # ----------------------------------------------------------------------------
+  #
+  galleries:
+
+    # ==========================================================================
+    # Image Galleries
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # Old Times
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               jg_old_times
+      type:                             image
+      image_base_path:                  /assets/image/module/gallery/old_time/image/grand_pa
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings (override: defaults are 150 / 1)
+      #
+      gallery_options:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox settings
+      # split J1 Gallery data #2
+      # `lightbox.enabled: true` removed (identical to defaults). Only the
+      # override `type: ps` (default is `lg`) is kept.
+      #
+      lightbox:
+        type:                           ps                                      # ps | lb | lg
+
+      # ------------------------------------------------------------------------
+      # split J1 Gallery data #2
+      # `options:` block removed entirely: licenseKey/download/alignThumbnails
+      # were all identical to defaults.lightGallery.options. Only the plugin
+      # override (differs from default "lgThumbnail, lgVideo") is kept.
+      #
+      lightGallery:
+        plugins:                        lgFullscreen, lgRotate, lgThumbnail
+
+    # --------------------------------------------------------------------------
+    # Gallery Mega Cities
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               jg_mega_cities
+      type:                             image
+      image_base_path:                  /assets/image/module/swiper/simple/mega_city/image
+
+      # ------------------------------------------------------------------------
+      # split J1 Gallery data #2
+      # `gallery_options` block removed: rowHeight:150 / gutters:1 are identical
+      # to defaults.gallery_options. The gallery inherits them via deep_merge.
+      # ------------------------------------------------------------------------
+
+      # ------------------------------------------------------------------------
+      # Lightbox settings
+      # split J1 Gallery data #2
+      # `lightbox.enabled: true` removed (matches defaults). Kept `type: ps`.
+      #
+      lightbox:
+        type:                           ps                                      # ps | lb | lg
+
+      lightGallery:
+        plugins:                        lgFullscreen, lgRotate, lgThumbnail, lgZoom
+
+        # ----------------------------------------------------------------------
+        # split J1 Gallery data #2
+        # licenseKey/download/alignThumbnails removed (identical to defaults).
+        # Kept: animateThumb:false (override, default true) and the custom
+        # thumbnail keys (addClass/appendThumbnailsTo/allowMediaOverlap) that
+        # are NOT present in the defaults.
+        #
+        options:
+          animateThumb:                 false                                     # override (default: true)
+          addClass:                     lg-uno-thumbnails                         # customized thumbnails
+          appendThumbnailsTo:           .lg-outer                                 # required for customized thumbnails
+          allowMediaOverlap:            true                                      # required for customized thumbnails
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      # split J1 Gallery data #2
+      # filters.enabled:false / contrast:0.8 / brightness:0.4 removed (identical
+      # to defaults.filters). Kept grayscale:0 (override, default 1).
+      #
+      filters:
+        grayscale:                      0                                         # override (default: 1)
+
+    # ==========================================================================
+    # Video Galleries
+    # --------------------------------------------------------------------------
+
+    # --------------------------------------------------------------------------
+    # HTML5 VIDEO
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               jg_video_html5
+      type:                             video
+      video:                            html5
+      video_base_path:                  /assets/video/html5
+      image_base_path:                  /assets/video/poster/html5
+      thumb_base_path:                  /assets/video/poster/html5
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings (override: defaults are 150 / 1)
+      #
+      gallery_options:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox|lightGallery settings
+      # split J1 Gallery data #2
+      # `lightbox` block removed entirely (enabled:true + type:lg both match
+      # defaults). `lightGallery.plugins` removed ("lgThumbnail, lgVideo" equals
+      # the default). Within `options`, licenseKey/download/alignThumbnails/
+      # animateThumb/autoplayFirstVideo removed (identical to defaults); only
+      # the overrides videojs:true (default false) and the net-new videojsTheme
+      # are kept.
+      #
+      lightGallery:
+        options:
+          videojs:                      true                                    # override (default: false)
+          videojsTheme:                 vjs-theme-uno                           # net-new (not in defaults)
+
+        # ----------------------------------------------------------------------
+        # VideoJS options
+        # split J1 Gallery data #2
+        # muted:false / preload:true / controls:true removed (match defaults).
+        # Within controlBar: playbackRates / remainingTimeDisplay /
+        # pictureInPictureToggle / volumePanel.inline removed (match defaults).
+        # skipButtonsPlugin.enabled / zoomPlugin.enabled and zoomPlugin.options
+        # removed where identical to defaults. Kept: enabled:true (override,
+        # default false), tracks:true (net-new), hotKeysPlugin (net-new key /
+        # placement), skipButtonsPlugin.options (forward/backward differ; the
+        # *Index keys are net-new) and the zoomPlugin show* flags (net-new).
+        #
+        videojsOptions:
+          enabled:                      true                                    # override (default: false)
+          tracks:                       true                                    # net-new (not in defaults)
+
+          hotKeysPlugin:                                                        # net-new key/placement (default uses controlBar.hotkeysPlugin)
+            enabled:                    true
+            options:
+              volumeStep:               0.2
+
+          controlBar:
+            skipButtonsPlugin:
+              options:
+                forward:                5                                       # override (default: 15)
+                backward:               5                                       # override (default: 15)
+                backwardIndex:          0                                       # net-new
+                forwardIndex:           1                                       # net-new
+
+            zoomPlugin:
+              showZoom:                 true                                    # net-new
+              showMove:                 false                                   # net-new
+              showRotate:               false                                   # net-new
+              gestureHandler:           false                                   # net-new
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      # split J1 Gallery data #2
+      # filters.enabled:false removed (matches defaults). Kept grayscale:0,
+      # contrast:1, brightness:1 (all override the defaults 1 / 0.8 / 0.4).
+      #
+      filters:
+        grayscale:                      0                                       # override (default: 1)
+        contrast:                       1                                       # override (default: 0.8)
+        brightness:                     1                                       # override (default: 0.4)
+
+    # --------------------------------------------------------------------------
+    # Online VIDEO Carpool Karaoke (YouTube)
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               jg_video_youtube_james_and_adele
+      type:                             video
+      video:                            youtube
+      image_base_path:                  //img.youtube.com/vi
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings (override: defaults are 150 / 1)
+      #
+      gallery_options:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox|lightGallery settings
+      # split J1 Gallery data #2
+      # `lightbox` block removed (enabled:true + type:lg match defaults).
+      # `lightGallery.plugins` removed (equals default "lgThumbnail, lgVideo").
+      # options: licenseKey/download/alignThumbnails/animateThumb/
+      # autoplayFirstVideo removed (match defaults); kept videojs:true override
+      # and net-new videojsTheme.
+      #
+      lightGallery:
+        options:
+          videojs:                      true                                    # override (default: false)
+          videojsTheme:                 vjs-theme-uno                           # net-new (not in defaults)
+
+        # ----------------------------------------------------------------------
+        # VideoJS options
+        # split J1 Gallery data #2
+        # muted/preload/controls + controlBar.playbackRates/remainingTimeDisplay/
+        # pictureInPictureToggle/volumePanel.inline removed (match defaults).
+        # skipButtonsPlugin.enabled removed (matches default). zoomPlugin.options
+        # removed (matches default); zoomPlugin.enabled:false KEPT (override,
+        # default true). Kept enabled:true, tracks:false (net-new), hotKeysPlugin.
+        #
+        videojsOptions:
+          enabled:                      true                                    # override (default: false)
+          tracks:                       false                                   # net-new (not in defaults)
+
+          hotKeysPlugin:                                                        # net-new key/placement
+            enabled:                    true
+            options:
+              volumeStep:               0.2
+
+          controlBar:
+            skipButtonsPlugin:
+              options:
+                forward:                5                                       # override (default: 15)
+                backward:               5                                       # override (default: 15)
+                backwardIndex:          0                                       # net-new
+                forwardIndex:           1                                       # net-new
+
+            zoomPlugin:
+              enabled:                  false                                   # override (default: true)
+
+        playerParams:                                                           # net-new block (not in defaults)
+          enabled:                      true
+          # start:                      ["00:00:50", "00:00:50"]                # start time video1, vido2
+          autoplay:                     1                                       # autoplay = 1 only available for YouTube when muted.
+          # controls:                   1                                       # default = 0
+          # enablejsapi:                1                                       # default = 1
+          # hl:                         en                                      # default = en
+          # loop:                       0                                       # default = 0
+          mute:                         0                                       # default = 1
+          # playsinline:                1                                       # for mobile|iOS only
+          # wmode:                      opaque                                  # default = opaque
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      # split J1 Gallery data #2
+      # filters.enabled:false removed (matches defaults). Kept overrides.
+      #
+      filters:
+        grayscale:                      0                                       # override (default: 1)
+        contrast:                       1                                       # override (default: 0.8)
+        brightness:                     1                                       # override (default: 0.4)
+
+    # --------------------------------------------------------------------------
+    # HTML5 VIDEO (over VideoJS)
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               jg_video_html5_videojs
+      type:                             video
+      video:                            html5
+      video_base_path:                  /assets/video/html5
+      image_base_path:                  /assets/video/poster/html5
+      thumb_base_path:                  /assets/video/poster/html5
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings (override: defaults are 150 / 1)
+      #
+      gallery_options:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox|lightGallery settings
+      # split J1 Gallery data #2
+      # `lightbox` block removed (enabled:true + type:lg match defaults).
+      # `lightGallery.plugins` removed (equals default). options: licenseKey/
+      # download/alignThumbnails/animateThumb/autoplayFirstVideo removed (match
+      # defaults); kept videojs:true override + net-new videojsTheme.
+      #
+      lightGallery:
+        options:
+          videojs:                      true                                    # override (default: false)
+          videojsTheme:                 vjs-theme-uno                           # net-new (not in defaults)
+
+        # ----------------------------------------------------------------------
+        # VideoJS options
+        # split J1 Gallery data #2
+        # muted/preload/controls + controlBar.playbackRates/remainingTimeDisplay/
+        # pictureInPictureToggle/volumePanel.inline removed (match defaults).
+        # `zoomPlugin` removed ENTIRELY (enabled:true + options all matched the
+        # defaults). skipButtonsPlugin.enabled removed (matches default); its
+        # options are kept (overrides + net-new index keys). Kept enabled:true,
+        # hotKeysPlugin.
+        #
+        videojsOptions:
+          enabled:                      true                                    # override (default: false)
+
+          hotKeysPlugin:                                                        # net-new key/placement
+            enabled:                    true
+            options:
+              volumeStep:               0.2
+
+          controlBar:
+            skipButtonsPlugin:
+              options:
+                forward:                5                                       # override (default: 15)
+                backward:               5                                       # override (default: 15)
+                backwardIndex:          0                                       # net-new
+                forwardIndex:           1                                       # net-new
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      # split J1 Gallery data #2
+      # filters.enabled:false removed (matches defaults). Kept overrides.
+      #
+      filters:
+        grayscale:                      0                                       # override (default: 1)
+        contrast:                       1                                       # override (default: 0.8)
+        brightness:                     1                                       # override (default: 0.4)
+
+    # --------------------------------------------------------------------------
+    # TinyDesk Concerts, Latin (YouTube)
+    #
+    - gallery:
+      enabled:                          true
+
+      id:                               tdc_latin
+      type:                             video
+      video:                            youtube
+      image_base_path:                  //img.youtube.com/vi
+
+      # ------------------------------------------------------------------------
+      # Justified Gallery settings (override: defaults are 150 / 1)
+      #
+      gallery_options:
+        rowHeight:                      250
+        gutters:                        3
+
+      # ------------------------------------------------------------------------
+      # Lightbox|lightGallery settings
+      # split J1 Gallery data #2
+      # `lightbox` block removed (enabled:true + type:lg match defaults).
+      # `lightGallery.plugins` removed (equals default). options: licenseKey/
+      # download/alignThumbnails/animateThumb/autoplayFirstVideo removed (match
+      # defaults); kept videojs:true override + net-new videojsTheme.
+      #
+      lightGallery:
+        options:
+          videojs:                      true                                    # override (default: false)
+          videojsTheme:                 vjs-theme-uno                           # net-new (not in defaults)
+
+        # ----------------------------------------------------------------------
+        # VideoJS options
+        # split J1 Gallery data #2
+        # muted/preload/controls + controlBar.playbackRates/remainingTimeDisplay/
+        # pictureInPictureToggle/volumePanel.inline removed (match defaults).
+        # skipButtonsPlugin.enabled removed (matches default); zoomPlugin.options
+        # removed (matches default), zoomPlugin.enabled:false KEPT (override).
+        # Kept enabled:true, hotKeysPlugin.
+        #
+        videojsOptions:
+          enabled:                      true                                    # override (default: false)
+
+          hotKeysPlugin:                                                        # net-new key/placement
+            enabled:                    true
+            options:
+              volumeStep:               0.2
+
+          controlBar:
+            skipButtonsPlugin:
+              options:
+                forward:                5                                       # override (default: 15)
+                backward:               5                                       # override (default: 15)
+                backwardIndex:          0                                       # net-new
+                forwardIndex:           1                                       # net-new
+
+            zoomPlugin:
+              enabled:                  false                                   # override (default: true)
+
+        playerParams:                                                           # net-new block (not in defaults)
+          enabled:                      true
+          autoplay:                     1                                       # autoplay = 1 only available for YouTube when muted.
+          mute:                         0                                       # default = 1
+
+      # ------------------------------------------------------------------------
+      # CSS filter options
+      # split J1 Gallery data #2
+      # filters.enabled:false removed (matches defaults). Kept overrides.
+      #
+      filters:
+        grayscale:                      0                                       # override (default: 1)
+        contrast:                       1                                       # override (default: 0.8)
+        brightness:                     1                                       # override (default: 0.4)
+
+# ------------------------------------------------------------------------------
+# END config

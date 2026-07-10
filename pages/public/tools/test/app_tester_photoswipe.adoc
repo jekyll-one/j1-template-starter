@@ -1,0 +1,232 @@
+---
+title:                                  J1 Photoswipe Lightbox
+title_extention:                        Tester
+tagline:                                Alternative to Lightbox V3
+date:                                   2026-04-28
+#last_modified:                         2026-01-01
+
+description: >
+                                        PhotoSwipe Lightbox is a JavaScript library
+                                        to create lightboxes placed on images in webpages.
+                                        When you click such images, they open in a new,
+                                        overlaying layer, darkening the background and
+                                        focusing the image.
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap,
+                                        html, html5, sliders, carousels, SwiperJS
+
+categories:                             [ Tester ]
+tags:                                   [ Lightbox, Photoswipe ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/modern-dance.jpg
+  width:                                1920
+  height:                               1280
+
+compress:                               false
+regenerate:                             false
+personalization:                        true
+permalink:                              /pages/public/tools/tester/photoswipe/
+
+resources:                              [ photoswipejs ]
+resource_options:
+  - toccer:
+      collapseDepth:                    3
+  - attic:
+      enabled:                          false
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/modern-dance.jpg
+          alt:                          Photo Gemini AI
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Attribute settings for section control
+//
+:swiper--features:                      false
+
+// Set (local) page attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+//  Load Liquid procedures
+// -----------------------------------------------------------------------------
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{%endcapture%}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+PhotoSwipe Lightbox is a JavaScript library to create lightboxes placed on
+images in webpages. When you click such images, they open in a new,
+overlaying layer, darkening the background and focusing the image.
+
+[role="mt-5"]
+== Auto initialization
+
+Adds Lightbox V3-style auto-initialization to PhotoSwipeLightbox so
+that any element matching the configurable selector (default
+`[data-photoswipe-lightbox]`) is treated as a gallery container
+without requiring callers to instantiate `new PhotoSwipeLightbox(...)`
+and `.init()` themselves.
+
+[role="mt-4"]
+*Example*:
+++++
+<div class="featured" data-photoswipe-lightbox="auto-gallery">
+  <div class="featured-grid mt-3">
+    <a
+      href="https://images.unsplash.com/photo-1654394237275-081d5455774b?w=2400&q=80"
+      data-pswp-width="600" data-pswp-height="450">
+      <img
+        src="https://images.unsplash.com/photo-1654394237275-081d5455774b?w=600&h=450&fit=crop&q=80"
+        alt="A view of a town with mountains in the background">
+    </a>
+    <a
+      href="https://images.unsplash.com/photo-1567972042114-5a1eaba28886?w=2400&q=80"
+      data-pswp-width="600" data-pswp-height="450">
+      <img
+        src="https://images.unsplash.com/photo-1567972042114-5a1eaba28886?w=600&h=450&fit=crop&q=80"
+        alt="A view of a street with a lot of palm trees">
+    </a>
+    <a
+      href="https://images.unsplash.com/photo-1600663757626-0fc610ba60d4?w=2400&q=80"
+      data-pswp-width="626" data-pswp-height="1024">
+      <img
+        src="https://images.unsplash.com/photo-1600663757626-0fc610ba60d4?w=600&h=450&fit=crop&q=80"
+        alt="Red and white bridge over the trees">
+    </a>
+    <a
+      href="https://images.unsplash.com/photo-1576764225594-96ad970efffa?w=2400&q=80"
+      data-pswp-width="1092" data-pswp-height="614">
+      <img
+        src="https://images.unsplash.com/photo-1576764225594-96ad970efffa?w=600&h=450&fit=crop&q=80"
+        alt="A view of a city from a hill above the clouds">
+    </a>
+  </div>
+</div>
+++++
+
+*HTML pattern*:
+[source, html]
+----
+<div data-photoswipe-lightbox="auto-gallery">
+  <a
+    href="big-1.jpg"
+    data-pswp-width="1600" data-pswp-height="1067">
+    <img
+      src="thumb-1.jpg"
+      alt="caption text 1">
+  </a>
+  <a
+    href="big-2.jpg" data-pswp-width="1600"
+    data-pswp-height="1067">
+    <img
+      src="thumb-2.jpg"
+      alt="caption text 2">
+  </a>
+</div>
+----
+
+[role="mt-5"]
+The element carrying `data-photoswipe-lightbox` is the gallery; its
+descendant `<a>` tags are the slides. The attribute value is treated
+purely as a logical id (useful for getAutoInitInstance lookups) and
+is not required.
+
+Per-gallery overrides via data attributes on the gallery element:
+  data-pswp-children   children selector (default: 'a')
+  data-pswp-options    JSON object merged on top of the global options
+                       (e.g. data-pswp-options='{"bgOpacity":0.9}')
+
+Public static API on PhotoSwipeLightbox:
+  PhotoSwipeLightbox.autoInit([opts], [root])     scan & create instances
+  PhotoSwipeLightbox.autoInitDestroy()            destroy all auto instances
+  PhotoSwipeLightbox.autoInitObserve()            watch DOM for new galleries
+  PhotoSwipeLightbox.getAutoInitInstance(elOrSel) look up instance by element
+  PhotoSwipeLightbox.autoInitSelector             selector (overridable)
+  PhotoSwipeLightbox.autoInitOptions              defaults for autoInit()
+  PhotoSwipeLightbox.autoInitDisabled             skip DOMContentLoaded boot
+
+Default behaviour: a DOMContentLoaded listener inside this module
+calls autoInit() once with `PhotoSwipeLightbox.autoInitOptions` and
+then starts a MutationObserver so dynamically added galleries are
+covered too. To suppress the auto-bootstrap (e.g. when a J1 adapter
+wants full control of timing), set
+  PhotoSwipeLightbox.autoInitDisabled = true;
+before DOMContentLoaded fires, then call autoInit() yourself.
+
+Backwards compatibility: the existing `new PhotoSwipeLightbox(opts)`
++ manual `.init()` workflow is unchanged. The extension is purely
+additive and only acts on elements matching `autoInitSelector`.
+
+The element carrying `data-photoswipe-lightbox` becomes the gallery container.
+Its descendant `<a>` tags are the slides. This mirrors PhotoSwipe's standard
+markup convention (gallery + children), which is a better fit than
+Lightbox V3's per-link grouping because PhotoSwipe needs an ancestor element
+to bind a delegated click listener to. The attribute *value* is treated as
+a logical group id, useful only for `getAutoInitInstance` lookups.
+
+// [role="mt-5"]
+// === What was added 
+
+// One block, inserted right before `return PhotoSwipeLightbox;`
+
+// - `PhotoSwipeLightbox.autoInit([opts], [root])` — scans for 
+//   `[data-photoswipe-lightbox]` and creates a `PhotoSwipeLightbox` instance
+//   per match. Returns the new instances. Skips elements already bound, so it's
+//   safe to call repeatedly.
+// - `PhotoSwipeLightbox.autoInitDestroy()` — destroys every auto-init instance,
+//   removes click listeners, and disconnects the DOM observer.
+// - `PhotoSwipeLightbox.autoInitObserve()` — starts a debounced (rAF-coalesced) 
+//   MutationObserver` that re-runs `autoInit()` whenever new matching elements
+//   are inserted (galleries from AJAX, J1 carousels, hot reload ... ).
+// - `PhotoSwipeLightbox.getAutoInitInstance(elementOrSelector)` — looks up
+//   the instance attached to a gallery element.
+// - `PhotoSwipeLightbox.autoInitSelector` / `.autoInitOptions` / `.autoInitDisabled`
+//   overridable knobs for selector, default options, and bootstrap suppression.
+// - A DOMContentLoaded bootstrap that runs `autoInit()` + `autoInitObserve()`
+//   once with the current `autoInitOptions` (skipped if `autoInitDisabled = true`
+//   is set first).
+
+// [role="mt-4"]
+// Per-gallery overrides::
+// Via data attributes on the gallery element:
+//   - `data-pswp-children="..."` — children selector (default: `'a'`)
+//   - `data-pswp-options='{"bgOpacity":0.7,"showHideAnimationType":"fade"}'`
+//     JSON merged on top of the global options for that gallery only
+
+// `pswpModule` resolution:: 
+// If `pswpModule` is not in the merged options but `window.PhotoSwipe`
+// exists (which `photoswipe-core.js` registers via its UMD wrapper),
+// it is used automatically. So loading both UMD scripts in order is enough;
+// no manual wiring needed.
+
+// Backward compatibility::
+// Purely additive. The existing `new PhotoSwipeLightbox({gallery: '#my-gallery', children: 'a', pswpModule: PhotoSwipe}).init()` workflow you already use in your Swiper template is untouched. The auto-init
+// layer only acts on elements matching `autoInitSelector`, which is opt-in
+// markup.
+
+// Verified via smoke test::
+// That the modification correctly: creates one instance per gallery, attaches
+// click listeners to the gallery containers, merges per-gallery JSON options,
+// defaults `pswpModule` from `window.PhotoSwipe`, is idempotent on repeated
+// calls, and rebuilds cleanly after `autoInitDestroy()`.
+
+
+// [role="mt-4"]
+// If you want a separate J1 adapter wrapper (`adapter/js/photoswipe.js`)
+// that mirrors your `lightbox3.js` adapter — with Liquid-driven defaults,
+// a `setState`/`getState`/`messageHandler` shape, and a `frontmatterOptions`
+// merge — say the word and I'll produce one that calls `PhotoSwipeLightbox.autoInit(...)`
+// instead of doing its own DOM scanning.
