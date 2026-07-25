@@ -1,0 +1,148 @@
+---
+title:                                  J1 Video Player
+title_extention:                        Create & Playback Playlists
+tagline:                                Create and Playback Playlists
+
+date:                                   2026-04-17
+#last_modified:                         2026-01-01
+
+description: >
+                                        Native Player
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap
+
+categories:                             [ Tools ]
+tags:                                   [ videoPlayer ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/j1-launch.jpg
+  width:                                1920
+  height:                               1280
+
+regenerate:                             false
+permalink:                              /pages/public/tools/videoPlayer/
+
+resources:                              [ videoPlayer, videojs ]
+resource_options:
+  - attic:
+      opacity:                          .8
+      padding_top:                      600
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/j1-launch.jpg
+          alt:                          skipad-promo-image
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set page (local) attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+{% comment %} Liquid procedures
+-------------------------------------------------------------------------------- {% endcomment %}
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{% endcapture %}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+
+// Page content
+// -----------------------------------------------------------------------------
+[role="dropcap"]
+J1 VideoPlayer a complete video player engine built on top of VideoJS.
+It gives every video the same good-looking, skinnable player, and it adds
+a full playlist on top: a searchable, sortable list of videos that the
+viewer can play, rate, and continue from where they left off. It plays two
+kinds of video: native videos and YouTube videos.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5"]
+== Overview
+
+You do not write the player's HTML -- J1 generates it from your
+configuration. Still, it helps to know the parts a viewer sees, because the
+settings above map onto them.
+
+[role="mt-4"]
+=== The Header Bar
+
+Every player has a slim header bar with three slots:
+
+Show / Hide Playlist button (left)::
+  Opens and closes the playlist panel. It is disabled and greyed out until a
+  playlist is loaded.
+
+Title (centre)::
+  A short label, for example "Show Playlist".
+
+Manage Playlists button (right)::
+  Opens the *edit panel*, where the viewer can add, import, export, or clear
+  videos.
+
+[role="mt-4"]
+=== The Playlist Panel
+
+When opened, the playlist panel shows:
+
+* a *search box* to filter the list as you type;
+* a *sort* control to reorder the list;
+* a *list / cards* switch to change the layout;
+* a *merge* switch that decides whether importing adds to or replaces the
+  list;
+* a *loop* switch to repeat the playlist;
+* the videos themselves, each with its poster, title, author, and a star
+  rating.
+
+Which of these appear depends on the matching options in the `playlist:`
+block described above.
+
+[role="mt-4"]
+=== The Edit Panel
+
+The edit panel is where content is managed. It offers:
+
+* a box to *paste a video link* (for example a YouTube URL) to add one video;
+* an *Import* control to load a ready-made playlist from the server;
+* *Export Playlist* to save the current playlist to a file;
+* *Import Playlist* to load a playlist from a file on the viewer's computer;
+* *Clear Playlist* to empty the list.
+
+
+[role="mt-5"]
+== The Player
+
+Below the header is the video itself. Before anything is loaded, a friendly
+placeholder (the VideoJS logo) is shown in its place.
+
+You can place as many players on a page as you like. Every player has its
+own *id* (a short name such as `player_1`), its own playlist, and its own
+settings. Nothing leaks from one player to another: a video you add to
+`player_1` never shows up in `player_2`. Internally each player is a separate
+*instance* of the module, created through a factory function -- exactly the
+same idea Video.js uses.
+
+.VideoJS Multi-Player
+videoPlayer::player_1[role="mb-5"]
+
+
+// [role="mt-4"]
+// == Carpool Karaoke
+
+// Carpool Karaoke was one of the most successful and widely distributed viral
+// video formats in modern television history. It originally started as a
+// recurring segment on the American late-night show The Late Late Show with
+// James Corden on CBS. 
+
+// Host James Corden drives around town (usually in Los Angeles or London) with
+// world-famous musicians and celebrities, conducting personal interviews and
+// singing along to the car radio with their greatest hits.
+
+// .Carpool Karaoke
+// videoPlayer::player_2[role="mb-5"]
+

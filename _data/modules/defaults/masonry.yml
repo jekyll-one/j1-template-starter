@@ -1,5 +1,5 @@
 # ------------------------------------------------------------------------------
-# ~/_data/modules/defaults/masonry.yml
+# ~/_data/modules/defaults/masonry.yml (1)
 # Default configuration settings for J1 Masonry module
 #
 # Product/Info:
@@ -115,32 +115,6 @@ defaults:
             rotate:                     0
             zoom:                       1
 
-    # Vimeo
-    # --------------------------------------------------------------------------
-    vimeoPlayer:
-      enabled:                          true
-      api:                              native                                  # native|videojs
-
-      options:
-        autoPlay:                       true
-        muted:                          true
-#       byline:                         0
-#       portrait:                       0
-#       color:                          var(--md-gray-100)
-
-
-    # Wistia
-    # --------------------------------------------------------------------------
-    wistiaPlayer:
-      enabled:                          true
-      api:                              native                                  # native|videojs
-
-      options:
-        autoPlay:                       true
-        fullscreenButton:               true
-        muted:                          false
-        qualityControl:                 false
-
     # Youtube
     # --------------------------------------------------------------------------
     youTubePlayer:
@@ -153,7 +127,6 @@ defaults:
         showinfo:                       true
         controls:                       true
 
-
   # ----------------------------------------------------------------------------
   # Lightbox settings
   # See settings for lightbox:     https://jekyll.one/pages/public/manuals/modules/lightbox/
@@ -162,14 +135,21 @@ defaults:
   #
   lightbox:
     enabled:                            false
-    type:                               lb
+    type:                               ps                                      # ps | lb | lg
 
   lightGallery:
-    plugins:                            lgFullscreen, lgThumbnail
+    plugins:                            lgFullscreen, lgRotate, lgThumbnail, lgZoom
     options:
+      licenseKey:                       0000-0000-000-0000
       download:                         false
       alignThumbnails:                  left
-
+      animateThumb:                     true
+    # custom thumbnails
+    # --------------------------------------------------------------------------
+    # addClass:                         lg-uno-thumbnails                       # customized thumbnails
+    # appendThumbnailsTo:               .lg-outer                               # required for customized thumbnails
+    # animateThumb:                     false                                   # required for customized thumbnails
+    # allowMediaOverlap:                true                                    # required for customized thumbnails
 
   # ----------------------------------------------------------------------------
   # Masonry MODULE options
@@ -205,6 +185,17 @@ defaults:
     md:                                 6                                       # viewport: ≥  768px, 2 colum|s
     lg:                                 4                                       # viewport: ≥  992px, 3 colum|s
     xl:                                 4                                       # viewport: ≥ 1200px, 4 colum|s
+
+  # ----------------------------------------------------------------------------
+  # split J1 Masonry data #2
+  # Default per-grid caption settings. Moved here from masonry_player.yml
+  # because all grids declared the same values (enabled:true, position:bottom).
+  # Grids inherit these via deep_merge in masonry.html; override per grid
+  # only when a different position or disabled state is needed.
+  # ----------------------------------------------------------------------------
+  caption:
+    enabled:                            true
+    position:                           bottom                                  # top|bottom|center
 
   # ----------------------------------------------------------------------------
   # CSS filter options

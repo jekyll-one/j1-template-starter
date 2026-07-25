@@ -1,0 +1,56 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/claudeAI.yml
+# User configuration settings for J1 claudeAI module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# -----------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 claudeAI
+  scope:                                User settings
+  location:                             _data/modules/claudeAI.yml
+
+# ------------------------------------------------------------------------------
+# User configuration settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              true
+
+  # ----------------------------------------------------------------------------
+  # API V3 options
+  # ----------------------------------------------------------------------------
+  #
+  # The apiKey is intentionally NOT defined in this file anymore. It is
+  # injected at build time from the process environment variable
+  #
+  # CLAUDE_API_KEY via the plugin `_plugins/j1_env_vars.rb` and the adapter
+  # `/assets/theme/j1/adapter/js/claudeAI.js`.
+  #
+  # To provide the key, export it BEFORE running Jekyll, e.g.:
+  #   export CLAUDE_API_KEY="sk-ant-api03-..."
+  #   or on Windows
+  #   set CLAUDE_API_KEY="sk-ant-api03-..."
+  #
+  #   bundle exec jekyll build
+  #
+  # Do NOT uncomment the line below; committing a real key to source control
+  # is exactly the problem this change is solving.
+  #
+  # apiKey:                             sk-ant-api03-******                     # DEPRECATED - see note above
+
+# ------------------------------------------------------------------------------
+# END config

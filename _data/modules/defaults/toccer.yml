@@ -151,9 +151,19 @@ defaults:
 
   # ----------------------------------------------------------------------------
   # GENERAL options
-  # ----------------------------------------------------------------------------
   #
   enabled:                              false
+
+  # ----------------------------------------------------------------------------
+  # GLOBAL options
+  #
+  scrollToAnchor:                       true                                    # J1 scrollSmooth
+  scrollToAnchorDelay:                  750                                     # delay (ms), delay scrolling to selected headline (in page)
+  
+
+  # ----------------------------------------------------------------------------
+  # MODULE options
+  #
   log:                                  false
   tocSelector:                          .js-toc
   contentSelector:                      .js-toc-content
@@ -162,10 +172,28 @@ defaults:
   collapseDepth:                        3
   activeLinkColor:                      var(--bs-red)
   throttleTimeout:                      150
-  scrollSmooth:                         true
-  scrollSmoothDuration:                 300
-  scrollSmoothOffset:                   0
-  scrollContainer:                      null                                    # TODO: to be checked, what this option does
+  scrollContainer:                      null                                    # content scroll container, if content does not scroll with the page
+
+  scrollSmooth:                         false                                   # disabled, tocBot scrollSmooth
+  scrollSmoothDuration:                 420                                     # tocBot scrollSmooth
+  scrollSmoothOffset:                   0                                       # tocBot scrollSmooth
+  anchorScrollOffset:                   93                                      # workaround for positionieng on anchor in page
+
+  disableTocScrollSync:                 true
+  hasInnerContainers:                   false
+  includeHtml:                          false
+  linkClass:                            toc-link
+  extraLinkClasses:                     ''
+  activeLinkClass:                      is-active-link
+  listClass:                            toc-list
+  extraListClasses:                     ''
+  isCollapsedClass:                     is-collapsed
+  collapsibleClass:                     is-collapsible
+  listItemClass:                        toc-list-item
+  positionFixedSelector:                ''
+  positionFixedClass:                   is-position-fixed
+  fixedSidebarOffset:                   auto
+  scrollContainer:                      null
 
 # ------------------------------------------------------------------------------
 # END config

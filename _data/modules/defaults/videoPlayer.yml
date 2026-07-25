@@ -5,12 +5,10 @@
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023-2026 Juergen Adams
+# Copyright (C) 2026 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
-# ------------------------------------------------------------------------------
-# claude - change skipAd API to local files #1
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
@@ -28,68 +26,179 @@ defaults:
 
   # ----------------------------------------------------------------------------
   # GENERAL options
+  # ============================================================================
+  #
+  #  initTimeout
+  #  ---------------------------------------------------------------------------
+  #  Delays the initialization of a grid after the HTML code is loaded.
+  #  The delay depends on the browser used repectively how long it takes
+  #  the DOM is updated for the dynamically loaded HTML code (AJAX).
+  #
+  #  values:                           integer (ms)
+  #  default:                          500
+  #
+  #  hideDisabled
+  #  ---------------------------------------------------------------------------
+  #  Hide if the grid is disabled. The CSS style display is set to `none`
+  #  for the element specified by `id`.
+  #
+  #  values:                           true|false
+  #  default:                          true
+  #
   # ----------------------------------------------------------------------------
   #
   enabled:                              false
-
-  smoothScroll:
-    enabled:                            true
-
-  toolbox:
-    enabled:                            false
-
-  playlist:
-    enabled:                            true
-
-    search:
-      enabled:                          true
-
-    sort:
-      enabled:                          true
-
-    loop:
-      enabled:                          true
-      pip:                              false
-
-    type:                               cards                                   # list | cards
-
-    cards:
-      perRow:                           4
+  xhr_data_path:                        /assets/data/videoPlayer
+  playlist_url_base:                    /assets/data/apps/videoPlayer/playlists/lists
 
   # ----------------------------------------------------------------------------
   # MODULE options
+  # ============================================================================
+  #
+  #   videoJS.poster.autoGenerate
+  #   --------------------------------------------------------------------------
+  #   If true, the left and right navigation arrows which appear
+  #   on mouse hover when viewing image sets will always be visible
+  #   on devices which support touch.
+  #
+  #   values:                         boolean (false|true)
+  #   default:                        false
+  #
+  #  ---------------------------------------------------------------------------
+  #   enabled          master on/off switch
+  #   capturePosition  capture point in SECONDS (configurable start position).
+  #                    When <= 0 the captureFraction is used instead.
+  #   captureFraction  fraction (0..100) percent of the duration used as
+  #                    the image capture point when capturePosition <= 0
+  #   maxWidth         output is downscaled to at most this width in px
+  #                    (aspect preserved); 0 keeps the native frame size.
+  #   mimeType         output image type ('jpeg'|'png' |'webp')
+  #   quality          0..1 encoder quality (jpeg/webp only)
+  #
   # ----------------------------------------------------------------------------
+  #
+  ui_elements:
+    edit_playlist_button:               true
+    show_playlist_button:               true
+
+    playlist_rate_button:               true
+    playlist_edit_button:               true
+    playlist_delete_button:             true
+
+    modeSwitch:                         true
+    mergeSwitch:                        true
+
+    loop:                               true
+    search:                             true
+    sort:                               true
 
   # ----------------------------------------------------------------------------
-  # videoJS settings
+  # PLAYLIST options
+  # ============================================================================
+  #
+  #   playlist.cards.perRow
+  #   --------------------------------------------------------------------------
+  #   claude - Modify J1 VideoPlayer #51
+  #   Number of playlist cards rendered per row while the playlist is in CARD
+  #   mode (toggled by the switch div#playlistModeSwitch_<player.id>).
+  #
+  #   The value is resolved per player instance (defaults <- settings <-
+  #   per-player control) and written by videoPlayer.js onto that player's
+  #   container div#videoplayer_playlist_parent_<player.id> as the custom
+  #   property --playlist-cards-per-row plus the matching inline
+  #   grid-template-columns. It overrides the stylesheet default of 2 columns.
+  #
+  #   Values outside the supported range, or non-numeric values, fall back to 2.
+  #   On screens narrower than 992px videoPlayer.css forces a single column,
+  #   regardless of this setting.
+  #
+  #   values:                           integer (1 .. 6)
+  #   default:                          2
+  #
   # ----------------------------------------------------------------------------
+  #
+  playlist:
+    enabled:                            true
+
+    preload:                            []
+    preload_attempts:                   2
+
+    close_on_play:                      false
+    pip:                                false
+
+    type:                               list                                    # list | cards
+
+    cards:
+      perRow:                           2                                       # 1..6, cards per row in card mode
+  
+  # ----------------------------------------------------------------------------
+  # VIDEOJS options
+  # ============================================================================
+  #
+  #   autoStart
+  #   --------------------------------------------------------------------------
+  #
+  #
+  #   values:                           boolean
+  #   default:                          true
+  #
+  # ----------------------------------------------------------------------------
+  #
   videoJS:
 
     autoStart:                          true
     preloadVideo:                       true                                    # preload: 'auto' | 'metadata' | 'none'
 
-    # --------------------------------------------------------------------------
-    # videoJS playback rate settings
-    # --------------------------------------------------------------------------
     playbackRates:
       enabled:                          true
       values:                           [ 0.25, 0.5, 1, 1.5, 2 ]
 
-    # --------------------------------------------------------------------------
-    # videoJS native (HTML5) player settings
+    poster:
+      autoGenerate:
+        enabled:                        true
+        capturePosition:                5                                       # default: 5,    start position (seconds), when ≤ 0 captureFraction is used
+        captureFraction:                10                                      # default: 10,   start position (percent from duration)
+        maxWidth:                       540                                     # default: 320,  pixel (4/3 ratio)
+        mimeType:                       webp                                    # default: webp, image type (jpeg|png|webp)
+        quality:                        0.8                                     # default: 0.6,  0..1 encoder quality
+
     # --------------------------------------------------------------------------
     # claude - change skipAd API to local files #1
     # Replaced YouTube player tech with native HTML5 video.js player.
     # All YouTube-specific parameters (cc_load_policy, disablekb, enablejsapi,
     # modestbranding, rel, showinfo, etc.) have been removed.
     # --------------------------------------------------------------------------
+    #
+    # --------------------------------------------------------------------------
+    # PLAYER options
+    # ==========================================================================
+    #
+    #   videoJS.poster.autoGenerate
+    #   ------------------------------------------------------------------------
+    #   If true, the left and right navigation arrows which appear
+    #   on mouse hover when viewing image sets will always be visible
+    #   on devices which support touch.
+    #
+    #   values:                         boolean (false|true)
+    #   default:                        false
+    #
+    #  -------------------------------------------------------------------------
+    #   enabled          master on/off switch
+    #   capturePosition  capture point in SECONDS (configurable start position).
+    #                    When <= 0 the captureFraction is used instead.
+    #   captureFraction  fraction (0..100) percent of the duration used as
+    #                    the image capture point when capturePosition <= 0
+    #   maxWidth         output is downscaled to at most this width in px
+    #                    (aspect preserved); 0 keeps the native frame size.
+    #   mimeType         output image type ('jpeg'|'png' |'webp')
+    #   quality          0..1 encoder quality (jpeg/webp only)
+    #
+    # --------------------------------------------------------------------------
+    #
     players:
 
       native:
-
-        # player parameters
-        #
-        autoplay:                       false                                   # true | false | 'muted' | 'play' | 'any'
+        autoplay:                       true                                    # true | false
         controls:                       true
         fluid:                          true                                    # responsive, fills container width
         fill:                           false                                   # stretch to container dimensions
@@ -97,21 +206,101 @@ defaults:
         preload:                        auto                                    # auto | metadata | none
         playsinline:                    true                                    # prevent fullscreen on iOS by default
 
-        # video parameters
+        # poster settings
         #
+        poster:                         true
         default_poster:                 /assets/image/icon/videojs/videojs-poster.png
-        poster:                         poster.jpg                             # local poster image (same folder as video)
-        end:                            true                                    # set end (trim) of a video allowed
+        poster_base:                    video-folder                            # same folder as video
+        poster_image:                   poster.jpg                              # poster image
+
+        # video settings
+        #
         start:                          true                                    # set start (trim) of a video allowed
+        end:                            true                                    # set end (trim) of a video allowed
 
         # source type priorities (tried in order)
         #
-        sourceOrder:                    [ mp4, webm, ogv ]
+        sourceOrder:                    [ mp4 ]                                 # [ mp4, webm, ogv ]
+
+      # ------------------------------------------------------------------------
+      # claude - Extend J1 VideoPlayer #2
+      # The YouTube player used by J1 VideoPlayer now reads ALL its player 
+      # parameters from the players.native key above. The players.youtube
+      # section below is retained for backward-compatibility with other
+      # modules (e.g. Amplitude/YTP) that still reference it directly;
+      # it is NO LONGER used by VideoPlayer's YouTube playback path.
+      # ------------------------------------------------------------------------
+      #
+      youtube:
+
+        # privacy settings
+        #
+        privacy_enhanced:               true                                    # enable|disable privacy-enhanced host 'youtube-nocookie.com'
+
+        # core settings
+        #
+        autoplay:                       true                                    # true|false, play video after load
+        cc_load_policy:                 0                                       # 0|1, captions initially hidden
+        controls:                       1                                       # 0|1, disable|enable (vjs) controlbar
+        disablekb:                      1
+        enablejsapi:                    1    
+        fs:                             0
+        iv_load_policy:                 3                                       # video annotations not shown
+        loop:                           0
+        modestbranding:                 1
+        rel:                            0
+        showinfo:                       0
+
+        # poster settings
+        #
+        poster:                         false
+        default_poster:                 /assets/image/icon/videojs/videojs-poster.png
+        poster_base:                    //img.youtube.com/vi
+        poster_qualty:                  hqdefault                               # hqdefault|mqdefault, poster taken from poster_base at high quality resolution
+
+        # video settings
+        #
+        start:                          true                                    # set start (trim) of a video allowed
+        end:                            true                                    # set end (trim) of a video allowed
+
 
     # --------------------------------------------------------------------------
-    # videoJS Plugin settings
+    # PLUGIN options
+    # ==========================================================================
+    #
+    #   videoJS.poster.autoGenerate
+    #   ------------------------------------------------------------------------
+    #   If true, the left and right navigation arrows which appear
+    #   on mouse hover when viewing image sets will always be visible
+    #   on devices which support touch.
+    #
+    #   values:                         boolean (false|true)
+    #   default:                        false
+    #
+    #  -------------------------------------------------------------------------
+    #   enabled          master on/off switch
+    #   capturePosition  capture point in SECONDS (configurable start position).
+    #                    When <= 0 the captureFraction is used instead.
+    #   captureFraction  fraction (0..100) percent of the duration used as
+    #                    the image capture point when capturePosition <= 0
+    #   maxWidth         output is downscaled to at most this width in px
+    #                    (aspect preserved); 0 keeps the native frame size.
+    #   mimeType         output image type ('jpeg'|'png' |'webp')
+    #   quality          0..1 encoder quality (jpeg/webp only)
+    #
     # --------------------------------------------------------------------------
+    #
     plugins:
+
+      playlist:
+        enabled:                        true
+        autoplay:                       true                                    # play video after load
+        autoadvance:                    true                                    # play next item when current/active video ends
+        autoadvance_delay:              0                                       # delay (seconds) for playing next video
+        poster:                         true                                    # enable|disable poster settings
+#       repeat:                         false                                   # NOT supported, run playlist in (endless) loop
+#       reverse:                        false                                   # NOT supported, run playlist in reverse order
+#       shuffle:                        false                                   # NOT supported, randomize the contents of the playlist
 
       autoCaption:
         enabled:                        false
@@ -144,8 +333,12 @@ defaults:
         forward:                        10
         backward:                       10
 
+      nextPrevButtons:
+        enabled:                        true
+        autoplay:                       true                                    # play video after load
+
       zoomButtons:
-        enabled:                        false
+        enabled:                        true
 
         moveX:                          0
         moveY:                          0

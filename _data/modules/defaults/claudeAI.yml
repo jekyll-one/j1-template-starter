@@ -1,0 +1,90 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/claudeAI.yml
+# Default configuration settings for J1 claudeAI module
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                J1 claudeAI
+  scope:                                Default settings
+  location:                             _data/modules/defaults/claudeAI.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
+
+  # ----------------------------------------------------------------------------
+  # KB options
+  #
+  # ----------------------------------------------------------------------------
+  #
+  storage:
+    delivery:                           localstorage                            # localstorage | filesApi  
+    fallback:                           /assets/data/apps/claudeAI/knowledgebase.json
+    location:                           localstorage
+    key:                                ai-agent
+    maxTokenSize:                       120000                                  # 120k token/char
+
+  # ----------------------------------------------------------------------------
+  # AGENT options
+  #
+  # ----------------------------------------------------------------------------
+  #
+  maxInpuTokens:                        512
+
+  chatMessages:
+    agentConnected:                     ChatBot connected.
+    agentConnectedInfo:                 NOTE - Your question should not exceed ${s.maxInputTokens} chars.
+    agentDisConnected:                  ChatBot disconnected.
+    agentDisConnectedInfo:              NOTE - Please check your internet connection.
+
+  modelLabels:
+    claude-sonnet-4-20250514:           Claude Sonnet 4
+    claude-opus-4-20250514:             Claude Opus 4
+    claude-haiku-4-5-20251001:          Claude Haiku 4
+
+  chatHistory:
+    location:                           localstorage
+    key:                                agent-chat-history
+
+  # ----------------------------------------------------------------------------
+  # API options
+  #
+  # ----------------------------------------------------------------------------
+  #
+  apiEndPoint:                          //api.anthropic.com/v1/messages         # currently NOT used
+
+  modelLabels:
+    claude-sonnet-4-20250514:           Claude Sonnet 4                         # Optimal balance of intelligence, cost, and speed
+    claude-opus-4-20250514:             Claude Opus 4                           # Most intelligent model for agents and coding
+    claude-haiku-4-5-20251001:          Claude Haiku 4                          # Fastest, most cost-efficient model
+
+  model:                                claude-haiku-4-5-20251001  
+
+  maxOutputTokens:                      2048                                    # 64000, maximum allowed number of output tokens for claude-haiku-4-5-20251001
+
+  userPrompt:                           "J1 Template - "
+  systemPrompt: >
+                                        For default, respond in English.
+                                        When the users message language is different,
+                                        respond in the language the user writes in.
+
+# ------------------------------------------------------------------------------
+# END config

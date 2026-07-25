@@ -1,0 +1,357 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/amplitude_media.yml (1)
+# User (media) configuration settings for the module AmplitudeJS
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                AmplitudeJS
+  scope:                                User media settings
+  location:                             _data/modules/amplitude_media.yml
+
+# ------------------------------------------------------------------------------
+# User settings
+#
+settings:
+
+  # ----------------------------------------------------------------------------
+  # MEDIA configuration
+  #
+  playlists:
+
+    # --------------------------------------------------------------------------
+    # Emancipator - Royalty Free Music
+    #
+    - playlist:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      name:                             emancipator
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      # ------------------------------------------------------------------------
+      album:                            &album_emancipator_music
+
+        playlist:                       emancipator
+        name:                           Emancipator Music
+        artist:                         Emancipator
+        audio_base:                     /assets/audio/album/emancipator
+        cover_image:                    /assets/audio/cover/default/placeholder-blue.jpg
+        audio_info:                     //emancipatormusic.com/
+        audio_fade_in:                  true
+        audio_fade_out:                 true
+        repeat:                         false
+        shuffle:                        false        
+
+      # ------------------------------------------------------------------------
+      # Playlist Items (Songs)
+      #
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        First Snow
+          rating:                       2
+          start:                        false                                   # false | "00:01:00"
+          end:                          false                                   # false | "00:01:10"
+          audio:                        FirstSnow.mp3
+          cover_image:                  /assets/audio/cover/emancipator/soon-it-will-be-cold-enough.jpg
+          duration:                     "00:05:12"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        From Dusk To Dawn
+          rating:                       3
+          start:                        false                                   # false | "00:00:30"
+          end:                          false                                   # false | "00:00:40"
+          audio:                        DuskToDawn.mp3
+          cover_image:                  /assets/audio/cover/emancipator/from-dusk-to-dawn.jpg
+          duration:                     "00:05:25"
+
+        # title 03
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        Anthem
+          rating:                       3
+          start:                        false
+          end:                          false
+          audio:                        Anthem.mp3
+          cover_image:                  /assets/audio/cover/emancipator/anthem.jpg
+          duration:                     "00:05:40"
+
+        # title 04
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        Safe In The Steep Cliffs
+          rating:                       3
+          start:                        false
+          end:                          false
+          audio:                        SafeInTheSteepCliffs.mp3
+          cover_image:                  /assets/audio/cover/emancipator/safe-in-the-steep-cliffs.jpg
+          duration:                     "00:04:35"
+
+        # title 05
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        Time For Space
+          rating:                       3
+          start:                        false
+          end:                          false 
+          audio:                        TimeForSpace.mp3
+          cover_image:                  /assets/audio/cover/emancipator/tine-for-space.jpg
+          duration:                     "00:07:13"
+
+        # title 06
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        Sea To Sky
+          rating:                       3
+          start:                        false
+          end:                          false
+          audio:                        SeaToSky.mp3
+          cover_image:                  /assets/audio/cover/emancipator/sea-to-sky.jpg
+          duration:                     "00:04:24"
+
+        # title 07
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        Alligator
+          rating:                       3
+          start:                        false
+          end:                          false
+          audio:                        alligator.mp3
+          cover_image:                  /assets/audio/cover/emancipator/alligator.jpg
+          duration:                     "00:03:13"
+
+        # title 08
+        - item:
+          enabled:                      true
+          <<:                           *album_emancipator_music
+          title:                        Dab City
+          rating:                       3
+          start:                        false
+          end:                          false
+          audio:                        DabCity.mp3
+          cover_image:                  /assets/audio/cover/emancipator/dab-city.jpg
+          duration:                     "00:04:22"
+
+    # --------------------------------------------------------------------------
+    # Olivia Dean
+    # https://www.youtube.com/playlist?list=PL1dfVf_Yq5rGGTKx4Fi5PwX5TfPBXNP8p
+    #
+    - playlist:
+
+      # ------------------------------------------------------------------------
+      # GENERAL settings
+      #
+      enabled:                          true
+
+      # ------------------------------------------------------------------------
+      # PLAYLIST settings
+      #
+      name:                             olivia_dean_yt
+
+      # ------------------------------------------------------------------------
+      # ALBUM settings
+      #
+      album:                            &album_olivia_dean_yt
+
+        playlist:                       olivia_dean_yt
+        name:                           The Art Of Loving
+        artist:                         Olivia Dean
+        audio_base:                     //youtube.com
+        cover_image:                    /assets/audio/cover/default/placeholder-blue.jpg
+        audio_fade:                     false
+        audio_single:                   false
+        repeat:                         false
+        shuffle:                        false
+
+      # ------------------------------------------------------------------------
+      # TITLE settings (songs)
+      #
+      items:
+
+        # title 01
+        - item:
+          enabled:                      true
+          <<:                           *album_olivia_dean_yt
+          title:                        Nice To Each Other
+          audio:                        watch?v=VI0NDsh2b8k
+          rating:                       3
+          start:                        "00:00:01"                              # false | timestamp
+          end:                          "00:03:30"                              # false | timestamp
+          audio_info:                   //youtube.com/playlist?list=PL1dfVf_Yq5rGGTKx4Fi5PwX5TfPBXNP8p
+          cover_image:                  //img.youtube.com/vi/NM4e606yFJg/maxresdefault.jpg
+          duration:                     "00:03:30"
+
+        # title 02
+        - item:
+          enabled:                      true
+          <<:                           *album_olivia_dean_yt
+          title:                        Lady Lady
+          audio:                        watch?v=JN_Vyg_wURY
+          rating:                       3
+          start:                        "00:00:01"
+          end:                          "00:03:29"
+          audio_info:                   //youtube.com/playlist?list=PL1dfVf_Yq5rGGTKx4Fi5PwX5TfPBXNP8p
+          cover_image:                  //img.youtube.com/vi/NM4e606yFJg/maxresdefault.jpg
+          duration:                     "00:03:29"
+
+        # title 03
+        - item:
+          enabled:                      true
+          <<:                           *album_olivia_dean_yt
+          title:                        Close Up
+          audio:                        watch?v=YFSEc_cANhw
+          rating:                       3
+          start:                        "00:00:01"
+          end:                          "00:03:10"
+          audio_info:                   //youtube.com/playlist?list=PL1dfVf_Yq5rGGTKx4Fi5PwX5TfPBXNP8p
+          cover_image:                  //img.youtube.com/vi/NM4e606yFJg/maxresdefault.jpg
+          duration:                     "00:03:10"
+
+        # title 04
+        - item:
+          enabled:                      true
+          <<:                           *album_olivia_dean_yt
+          title:                        So Easy (To Fall In Love)
+          audio:                        watch?v=3sur4BmjQt8
+          rating:                       3
+          start:                        "00:00:10"
+          end:                          "00:02:58"
+          audio_info:                   //youtube.com/playlist?list=PL1dfVf_Yq5rGGTKx4Fi5PwX5TfPBXNP8p
+          cover_image:                  //img.youtube.com/vi/NM4e606yFJg/maxresdefault.jpg
+          duration:                     "00:02:48"
+
+        # title 05
+        - item:
+          enabled:                      true
+          <<:                           *album_olivia_dean_yt
+          title:                        Let Alone The One You Love
+          audio:                        watch?v=uxIjDwmc3uU
+          rating:                       3
+          start:                        "00:00:1"
+          end:                          "00:03:30"
+          audio_info:                   //youtube.com/playlist?list=PL1dfVf_Yq5rGGTKx4Fi5PwX5TfPBXNP8p
+          cover_image:                  //img.youtube.com/vi/NM4e606yFJg/maxresdefault.jpg
+          duration:                     "00:03:30"
+
+        # title 06
+        - item:
+          enabled:                      true
+          <<:                           *album_olivia_dean_yt
+          title:                        Man I Need
+          audio:                        watch?v=oIv_Y2RPQ_A
+          rating:                       3
+          start:                        "00:00:02"
+          end:                          "00:03:06"
+          audio_info:                   //youtube.com/playlist?list=PL1dfVf_Yq5rGGTKx4Fi5PwX5TfPBXNP8p
+          cover_image:                  //img.youtube.com/vi/NM4e606yFJg/maxresdefault.jpg
+          duration:                     "00:03:04"
+
+        # title 07
+        - item:
+          enabled:                      true
+          <<:                           *album_olivia_dean_yt
+          title:                        Something Inbetween
+          audio:                        watch?v=DXt6EGHFkWc
+          rating:                       3
+          start:                        "00:00:03"
+          end:                          "00:03:30"
+          audio_info:                   //youtube.com/playlist?list=PL1dfVf_Yq5rGGTKx4Fi5PwX5TfPBXNP8p
+          cover_image:                  //img.youtube.com/vi/NM4e606yFJg/maxresdefault.jpg
+          duration:                     "00:03:27"
+
+        # title 08
+        - item:
+          enabled:                      true
+          <<:                           *album_olivia_dean_yt
+          title:                        Loud
+          audio:                        watch?v=paKBrvjuemo
+          rating:                       3
+          start:                        "00:00:01"
+          end:                          "00:03:01"
+          audio_info:                   //youtube.com/playlist?list=PL1dfVf_Yq5rGGTKx4Fi5PwX5TfPBXNP8p
+          cover_image:                  //img.youtube.com/vi/NM4e606yFJg/maxresdefault.jpg
+          duration:                     "00:03:00"
+
+        # title 09
+        - item:
+          enabled:                      true
+          <<:                           *album_olivia_dean_yt
+          title:                        Baby Steps
+          audio:                        watch?v=6kLEQi0u5rA
+          rating:                       3
+          start:                        "00:00:02"
+          end:                          "00:03:14"
+          audio_info:                   //youtube.com/playlist?list=PL1dfVf_Yq5rGGTKx4Fi5PwX5TfPBXNP8p
+          cover_image:                  //img.youtube.com/vi/NM4e606yFJg/maxresdefault.jpg
+          duration:                     "00:03:12"
+
+        # title 10
+        - item:
+          enabled:                      true
+          <<:                           *album_olivia_dean_yt
+          title:                        A Couple Minutes
+          audio:                        watch?v=lrS1LC2cu-U
+          rating:                       3
+          start:                        false
+          end:                          false
+          audio_info:                   //youtube.com/playlist?list=PL1dfVf_Yq5rGGTKx4Fi5PwX5TfPBXNP8p
+          cover_image:                  //img.youtube.com/vi/NM4e606yFJg/maxresdefault.jpg
+          duration:                     "00:03:32"
+
+        # title 11
+        - item:
+          enabled:                      true
+          <<:                           *album_olivia_dean_yt
+          title:                        I've Seen It
+          audio:                        watch?v=_hgu16lRfbQ
+          rating:                       3
+          start:                        "00:00:01"
+          end:                          "00:02:04"
+          audio_info:                   //youtube.com/playlist?list=PL1dfVf_Yq5rGGTKx4Fi5PwX5TfPBXNP8p
+          cover_image:                  //img.youtube.com/vi/NM4e606yFJg/maxresdefault.jpg
+          duration:                     "00:02:00"
+
+        # title 12
+        - item:
+          enabled:                      true
+          <<:                           *album_olivia_dean_yt
+          title:                        Man I Need (Live)
+          audio:                        watch?v=JUGCQK8dUhc
+          rating:                       3
+          start:                        "00:00:01"
+          end:                          "00:02:03"
+          audio_info:                   //youtu.be/JUGCQK8dUhc
+          cover_image:                  //img.youtube.com/vi/NM4e606yFJg/maxresdefault.jpg
+          duration:                     "00:02:00"
+
+# ------------------------------------------------------------------------------
+# END config

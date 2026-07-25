@@ -1,10 +1,10 @@
 ---
 title:                                  Video
-title_extention:                        J1 Video Apps
-tagline:                                J1 Video Apps
+title_extention:                        Video players
+tagline:                                Playback Video and Playlists
 
-date:                                   2020-11-04
-#last_modified:                         2023-01-01
+date:                                   2026-05-07
+#last_modified:                         2026-01-01
 
 description: >
                                         J1 Template provides playing video on web pages
@@ -30,28 +30,23 @@ personalization:                        true
 regenerate:                             false
 permalink:                              /pages/public/tour/video_data/
 
-resources:                              [ gallery, lightgallery, videojs ]
-
-#resource_options:
-#  - toccer:
-#      collapseDepth:                    3
-#  - attic:
-#      slides:
-#        - url:                          /assets/image/module/attic/1920x1280/modern-dance.jpg
-#          alt:                          Photo Gemini AI
-
+resources:                              [
+                                          gallery, lightgallery, masonry,
+                                          videoPlayer, videojs
+                                        ]
 resource_options:
   - toccer:
-      collapseDepth:                    3
+      collapseDepth:                    4
   - attic:
-      slides:
+      opacity:                          .7
+      padding_top:                      600
+      slides:      
         - url:                          /assets/video/headers/present_videos/modern-dance.mp4
           alt:                          AI generated video
-          title:                        Video Player
-          tagline:                      Playback Video
+          title:                        Video Players
+          tagline:                      Playback Video and Playlists
           isVideo:                      true
-          mute:                         false
-#         loop:                         false
+          mute:                         true
 ---
 
 // Page Initializer
@@ -86,14 +81,15 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-The J1 Template system supports playing video on web pages using native HTML5,
-the current standard. Visitors can play video files without the need for an
-external player.
+The J1 Template plays *video* on web pages using *HTML5 video* -- the
+modern web standard. Every up-to-date browser already knows how to play
+HTML5 video, so your visitors do not need to install any extra software
+or plugin.
 
-Modern browsers support the video tag `<video>`. The previous proprietary
-software, like _Flash Player_, _Quicktime_, _Silverlight_ is no longer required
-as the J1 Template provides video support for local video files and online
-sources.
+Older tools such as *Flash Player*, *QuickTime*, and *Silverlight* are
+no longer needed -- and most browsers do not even support them anymore.
+Modern browsers can play videos right out of the box, both from your
+own website and from online sources like YouTube.
 
 [subs=attributes]
 ++++
@@ -103,31 +99,34 @@ sources.
 </div>
 ++++
 
-
 // Include sub-documents (if any)
+// See: https://docs.asciidoctor.org/asciidoc/latest/macros/audio-and-video/
 // -----------------------------------------------------------------------------
 [role="mt-5"]
-== HTML 5 Video
-// See: https://docs.asciidoctor.org/asciidoc/latest/macros/audio-and-video/
-//
-HTML5 video opens the doors to present local video content on your
-website. All modern browsers support the video tag `<video>.` This Browsers
-have a built-in multimedia framework for decoding and displaying video content.
+== Standalone Players
 
-Two types of video sources are supported:
+lorem:sentences[5]
 
-* Video from local folders from your webspace
-* Video from online sources like YouTube
+[role="mt-4"]
+[[video-html]]
+=== HTML Player
 
-Standalone video players embedded in websites are software components that
-integrate and play video sources directly within a web page. These players
-are essential for all current websites. Embedded players provide a seamless
-and user-friendly way to present multimedia content to your audience.
+HTML5 video lets you place video files directly on your website. The
+browser does the rest: it loads the file, plays it, and shows the
+standard playback controls.
+
+The J1 Template supports two kinds of video sources:
+
+* *Local video* -- video files stored on your own website,
+* *Online video* -- video from a streaming service such as YouTube.
+
+An *embedded video player* shows the video right inside the page,
+without sending visitors to another site. This makes a smoother
+experience for your audience and keeps them on your website.
 
 [role="mb-4"]
-All modern browsers universally support the video tag `<video>`. This tag
-offers an out-of-the-box framework for decoding and displaying video content
-without loading *external players*.
+The video tag `<video>` is built into every modern browser. You do not
+have to load any *external player* to make it work.
 
 ++++
 <div class="video-title">
@@ -142,22 +141,23 @@ video::/assets/video//html5/peck_pocketed.mp4[poster="/assets/video/poster/html5
 // video::RvRhUHTV_8k/PLDitloyBcHOm49bxNhvGgg0f9NRZ5lSaP[youtube]
 
 [role="mt-5"]
-== VideoJS
+[[videojs]]
+=== VideoJS Player
 
-VideoJS is a *free-to-use* open-source JavaScript framework for building
-custom video players for the web. Implementing VideoJS for J1 Template
-supports *local video* and several *online platforms*, such as YouTube.
+*VideoJS* is a free, open-source video player for the web. The J1
+Template uses VideoJS to play your own video files *and* video from
+several online platforms such as YouTube.
 
-For *online sources*, VideoJS uses plugins, such as the so-called VJS
-Playback Technology. With the help of *plugins*, it is possible to present
-*different media* using the *same player*, the same look and feel for a
-better user experience.
+VideoJS supports *plugins* that add new features. With plugins, the
+same player can show videos from many different sources, all with the
+same look and feel -- a much better experience for your visitors.
 
-[role="mt-5"]
-=== Local Video
+[role="mt-4"]
+[[videojs--local]]
+==== Local Video
 
-VideoJS provides a flexible and customizable platform for MPEG4 video content
-on web pages.
+With VideoJS, you can play *local MP4 video files* in a customizable
+player that matches your site design.
 
 .Peck Pocketed · Local Video over VideoJS
 videojs::/assets/video//html5/peck_pocketed.mp4[poster="/assets/video/poster/html5/peck_pocketed.jpg", opts="" role="mb-5"]
@@ -165,100 +165,168 @@ videojs::/assets/video//html5/peck_pocketed.mp4[poster="/assets/video/poster/htm
 // .Rolling Wild · MP4 Video (over VideoJS)
 // videojs::/assets/video//html5/rolling_wild.mp4[poster="/assets/video/poster/html5/rolling_wild.jpg", opts="" role="mb-5"]
 
-[role="mt-5"]
-=== YouTube
+[role="mt-4"]
+[[videojs--youtube]]
+==== YouTube
 
-Today, YouTube is the most used online video-sharing platform that allows
-users to upload, view, share, and comment on videos. YouTube provides services
-for people and organizations to publish various video content on the internet.
+The J1 Template can also embed videos straight from YouTube. Just give
+the YouTube video ID and the player appears on your page.
 
-Sky Elements uses the night sky as a canvas on which anything is possible.
-A large group of Drones is painting lights in the sky to reflect the most
-captivating narratives. 
+Sky Elements uses the night sky as its canvas. A large group of drones
+fly in formation to paint pictures of light, telling stories that are
+hard to forget.
 
 .Sky Elements · AGT 2024 
 youtube::brEXrQBIj68[poster="//img.youtube.com/vi/brEXrQBIj68/maxresdefault.jpg" role="mb-4"]
 
 
 [role="mt-5"]
+[[j1-video]]
+== J1 VideoPlayer
+
+VideoPlayer is a playlist-friendly player built using VideoJS. It lets every
+video use the same attractive, customizable player and adds a full playlist
+feature. Viewers can search, sort, play, rate videos, and pick up right where
+they left off.
+
+[role="mt-4"]
+=== The Playlist Panel
+
+When opened (click on button *Show playlist*/the *header bar*), the
+playlist panel shows:
+
+* a *search box* to filter the list as you type
+* a *sort* control to reorder the list
+* a *list / cards* switch to change the layout
+* a *merge* switch that decides whether importing adds to or replaces the list
+* a *loop* switch to repeat the playlist
+* the videos themselves, each with its poster, title, author, and a star rating
+
+[NOTE]
+====
+Which elements appear in the playlist panel depends on the configuration
+options set for the *playlist* block.
+====
+
+[role="mt-4"]
+=== The Player
+
+You can place as many players on a page as you like. Every player has its
+own id (a short name such as player_1), its own playlist, and its own settings.
+Nothing leaks from one player to another: a video you add to player_1 never
+shows up in player_2, and a setting you change for one player never changes
+another. Internally each player is a separate instance of the module, created
+through a factory function — exactly the same idea VideoJS uses.
+
+[role="mt-4"]
+==== Olivia Dean
+
+[role="mb-4"]
+Olivia Dean was born on March 14, 1999, in London. She grew up in the north
+of the city, in Walthamstow and Haringey. Her mother is from Jamaica and
+her father is English. Olivia is a neo-soul and pop singer who became known
+in 2019 for her own songs. In 2023, she released her first album, "Messy."
+Her international career started in 2026 with the album "The Art of Loving."
+
+[TIP]
+====
+If you want a plain audio version of the album *The Art of Loving*, you can
+play all the audio on the page: 
+link:/pages/public/tour/audio_data/#olivia-dean[Audio Players].
+====
+
+[role="mt-4"]
+.The Art Of Loving (2026)
+videoPlayer::player_olivia_dean[role="mb-5"]
+
+[role="mt-4"]
+==== Tiny Desk Concerts
+
+Tiny Desk Concerts is a popular, award-winning video series featuring live
+music performances at an actual office desk, hosted by NPR Music. Started
+in 2008 by radio host Bob Boilen and producer Stephen Thompson. The show has
+grown from a small platform for folk and indie artists into a worldwide
+pop-culture hit.
+
+.Tiny Desk Concerts
+videoPlayer::player_tiny_desk_concerts[role="mb-5"]
+
+
+[role="mt-5"]
+[[gallery-video]]
 == Galleries of Video
 
-Video galleries are collections that display videos organized around a
-specific theme, topic, or purpose. The gallery module (lightGallery) for
-J1 Template is a fast, modular, and responsive plugin for creating
-beautiful-looking, featured image and video galleries.
+A *video gallery* is a collection of videos shown together, often around
+a theme or topic. The gallery module in the J1 Template is called
+*lightGallery* -- a fast and modular plugin for building good-looking
+image and video galleries.
 
-The combination of a gallery and a lightbox is entirely usable for all
-the video content you want to present on your site. You can place galleries
-elsewhere with your content. You can use them for blogs by putting them into
-your article's content. The galley maker *justifiedGallery* in combination
-with the *lightbox* lightGallery is a great toolset for creating dynamic
-video galleries. The module combinati0n makes creating a gallery to access
-videos easy.
+When you combine a gallery with a *lightbox*, your visitors can browse
+the videos easily and watch them in a focused, full-screen view. You
+can place a video gallery anywhere -- on a regular page, in a blog
+post, or on a landing page. The J1 Template combines *justifiedGallery*
+(for the layout) with *lightGallery* (for the lightbox), making it
+easy to build a video gallery in just a few lines.
 
 [role="mt-4"]
 [CAUTION]
 ====
-The module lightGallery can be used for free for private use, but a
-*commercial license* is required for business or commercial websites. See
-link:{url-light-gallery--license}[LightGallery Licenses, {browser-window--new}]
-how to use lightGallery for *commercial* websites and projects.
+*lightGallery* is free for *private* use. If you want to use it on a
+*commercial* or *business* website, you need a paid license. See
+link:{url-light-gallery--license}[lightGallery Licenses, {browser-window--new}]
+for the current pricing and terms.
 ====
 
-Find below examples of video galleries of locally stored (MP4) video resources
-*and* video content provided online.
+Below you will find two examples: a gallery of *local MP4 videos* and a
+gallery of *YouTube videos*.
 
 [role="mt-4"]
-[[justified-gllery-local-video]]
+[[gallery-video--local]]
 === Local Video
 
-Videos created by a digicam or a mobile can be played by J1 Template using
-the lightGallery integration. Present videos you have made at it's best.
+Have videos you took with your phone or camera? You can show them on
+your website using the J1 Template's lightGallery integration.
 
 [role="mb-5"]
 [NOTE]
 ====
-The current file *size* of local video media files is limited to *50 MegaByte*.
-Using a modern MP4 Encoder for video compression, a video will play around
-*3-5 minutes* for HD 1080p (1920x1080 pixel) or up to *10 minutes* for
-HD 720p (1280x720 pixel).
+The maximum size for a local video file is *50 megabytes*. With a
+modern MP4 encoder you can fit:
+
+* about *3-5 minutes* of HD 1080p video (1920 x 1080 pixels), or
+* up to *10 minutes* of HD 720p video (1280 x 720 pixels).
 ====
 
-.Local MP4 Video · Justified Gallery + LightGallery
+.Justified Gallery
 gallery::jg_video_html5[role="mb-4"]
 
 
 [role="mt-5"]
-[[justified-gllery-youtube]]
+[[gallery-video--youtube]]
 === YouTube
 
-The community at link:{url-youtube--home}[YouTube, {browser-window--new}]
-is large, with over 1 billion users that watch hundreds of millions of
-hours of content every day. The number of YouTube channels is enormous.
-Today, it's a must for TV stations or musicians to publish videos of their
-shows or songs on YouTube.
+link:{url-youtube--home}[YouTube, {browser-window--new}] is the largest
+video platform on the Internet. With the J1 Template, you can pick a
+selection of YouTube videos and show them as a single gallery on your
+page -- great for music collections, tutorials, or interviews.
 
-.YouTube Video · justifiedGallery + LightGallery
-gallery::jg_video_youtube_james_and_adele[role="mb-4"]
+.Masonry Gallery
+masonry::youtube[role="mb-4"]
+
+// .Justified Gallery
+// gallery::jg_video_youtube_james_and_adele[role="mb-4"]
 
 
 [role="mt-5"]
 == What next
 
-Images and videos are pretty visual, and they can be impressive, for sure.
-However, the most visual component on all web pages is text for all sites
-on the Internet.
+Images and videos are powerful visual tools, but on most websites, the most
+important element is still the text and how it looks. Many website templates
+have trouble making text work well on different screen sizes. They might
+resize boxes and images, but the text size often stays the same. The J1 Template 
+fixes this with responsive text, which automatically changes its size and
+line height so it is always easy to read on any device. In the J1 Template,
+typography is seen as a key part of your website’s branding.
 
-Sadly, one common flaw in many templates and frameworks is a lack of support
-for *responsive text*. While other elements on a page resize fluidly, the
-text is still fixed. To avoid this issue, especially for heavily text-focused
-pages, the J1 Template supports a fluidly scaled text that changes
-in size and line height to optimize readability for the user.
-
-The JekyllOne Template J1 places the character font as one of the most crucial
-*branding elements* for any website. Typography matters for any media presenting
-text. The text will take on an important role of acting as plain text and as
-something like images. To see how text could be presented is great for modern
-responsive websites.
-
-Find out how it works and go for link:{url-tour--typography}[Typography], then.
+Good typography gives your site a clear character, almost like a logo.
+Want to see how it works? Move on to link:{url-tour--typography}[Typography].

@@ -57,6 +57,9 @@ defaults:
   #     default:                        true
   #   --------------------------------------------------------------------------
   #
+
+  # GLOBAL settings
+  #
   enabled:                              false                                   # enable|disable the plugin for feeds generation
 
   path:                                 /assets/data/feeds/feed.xml             # full output path/file of the generated feed XML data for all posts
@@ -68,15 +71,18 @@ defaults:
   excerpt_only:                         true                                    # if 'true', data in feed XML is generated without the '<content>' tag
   categories:                           []                                      # generate feeds each category
 
+  # ----------------------------------------------------------------------------
+  # Plugin settings
+  #
   tags:                                                                         # generate feeds each tag
     enabled:                            false                                   # enable|disable tag feeds
     path:                               /assets/data/feeds/tags/                # location of generated tag feeds
     except:                             []                                      # exclude tags for generated tag feeds
 
-  # articles:
-  #   enabled:                            false                                   # enable|disable feeds for articles
-  #   path:                               /assets/data/feeds/articles/            # output path/file of the generated feed XML
-  #   categories:                         []
+# articles:
+#   enabled:                            false                                   # enable|disable feeds for articles
+#   path:                               /assets/data/feeds/articles/            # output path/file of the generated feed XML
+#   categories:                         []
 
 # ------------------------------------------------------------------------------
 # END config

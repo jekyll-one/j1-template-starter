@@ -24,8 +24,14 @@ description:
 # User configuration settings
 #
 settings:
+
+  # GLOBAL settings
+  #
   enabled:                              true                                    # enable|disable feed generation
 
+  # ----------------------------------------------------------------------------
+  # Plugin settings
+  #
   tags:
     enabled:                            false                                    # enable|disable feeds each tag
     path:                               /assets/data/feeds/for_tags/            # location of generated tag feeds

@@ -65,8 +65,21 @@ defaults:
   # 
   # ----------------------------------------------------------------------------  
   #
+  
+  # GLOBAL settings
+  #
   enabled:                              false
 
   template_source_folder:               _data/templates
   robots_theme_name:                    robots.txt
   sitemap_theme_name:                   sitemap.xml
+
+  # PLUGIN settings
+  #
+  includedFileExtensions:               [
+                                          .htm,
+                                          .html
+                                        ]
+
+# ------------------------------------------------------------------------------
+# END config

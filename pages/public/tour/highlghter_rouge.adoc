@@ -1,10 +1,10 @@
 ---
 title:                                  Rouge
-title_extention:                        Themeable Code Highlighter for J1 Template
-tagline:                                Themeable code highlighter
+title_extention:                        Code Highlighter
+tagline:                                Code highlighter
 
-date:                                   2023-07-08
-#last_modified:                         2023-01-01
+date:                                   2026-05-07
+#last_modified:                         2026-01-01
 
 description: >
                                         Rouge is a native Ruby themeable syntax highlighter fully
@@ -24,7 +24,7 @@ image:
   width:                                1920
   height:                               1280
 
-regenerate:                             true
+regenerate:                             false
 permalink:                              /pages/public/tour/rouge/
 
 resources:                              []
@@ -65,12 +65,16 @@ resource_options:
 // Page content
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [role="dropcap"]
-Rouge is a native Ruby themeable syntax highlighter fully integrated width J1
-Template. The highlighter supports 100+ different languages and generates HTML
-output using standard ANSI 256-colors displayed by all current browsers.
+*Rouge* is a code highlighter built into the J1 Template. *Code highlighting*
+adds colors to source code so it is easier to read. Different parts of the
+code -- such as keywords, text strings, comments, or numbers -- get
+different colors.
 
-Find available themes for selected languages to see how highlighting works
-using Rouge.
+Rouge supports more than 100 programming languages and produces colored
+HTML output that works in every modern browser. You can also choose
+between many different *color themes* to match the look of your site.
+Below you can preview a few sample languages with the default Rouge themes
+and try out other themes from the menu.
 
 [subs=attributes]
 ++++
@@ -85,14 +89,14 @@ using Rouge.
 [role="mt-5"]
 == Select a Theme
 
-For the default themes `Uno` of J1 Template, the following _Rouge_ themes
-are used:
+The J1 Template uses two default Rouge themes -- one for *light mode*
+and one for *dark mode*:
 
-* theme_light: based on IgorPro theme `igorpro`
-* theme_dark:  based on Monokai theme Sublime `monokai.sublime`
+* *Light mode* uses the IgorPro theme `igorpro`.
+* *Dark mode* uses the Sublime version of Monokai `monokai.sublime`.
 
-The *default* themes used for the J1 Template can be configured with
-the global *template config* file `~/_data/j1_config.yml`.
+You can change the default Rouge themes in the global template
+configuration file `~/_data/j1_config.yml`:
 
 [source, yaml, role="noclip"]
 ----
@@ -105,8 +109,8 @@ rouge:
   theme_dark:                           uno.dark
 ----
 
-To preview *all* themes supported by *J1 Template*, make your selection
-from the button *AVAILABLE THEMES* below.
+To preview *all* themes supported by *J1 Template*, click the button
+*AVAILABLE THEMES* below and pick one from the list.
 
 ++++
 <div class="btn-group speak2me-ignore">
@@ -115,35 +119,35 @@ from the button *AVAILABLE THEMES* below.
   <!-- NOTE: set attribute data-flip="false" to open the SELECT list at the BOTTOM of the BUTTON -->
   <button
     class="btn btn-flex btn-lg btn-info dropdown-toggle mt-2 mb-4"
-    data-flip="false" type="button"
+    type="button"
     data-bs-toggle="dropdown"
     data-bs-target="#navbarDropdown"
     aria-haspopup="true"
     aria-expanded="false">
-    Available Themes <span class="ml-2 caret"></span>
+      Available Themes <span class="ml-2 caret"></span>
   </button>
 
   <ul class="dropdown-menu scrollable-menu" role="menu">
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16')">                 <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.dark')">            <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.dark</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.light')">           <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.light</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.monokai')">         <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.monokai</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.monokai.dark')">    <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.monokai.dark</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.monokai.light')">   <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.monokai.light</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.solarized')">       <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.solarized</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.solarized.dark')">  <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.solarized.dark</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.solarized.light')"> <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.solarized.light</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('colorful')">               <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>colorful</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('github')">                 <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>github</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('gruvbox')">                <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>gruvbox</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('gruvbox.light')">          <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>gruvbox.light</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('igorpro')">                <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>igorpro</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('molokai')">                <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>molokai</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('monokai')">                <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>monokai</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('monokai.sublime')">        <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>monokai.sublime</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('pastie')">                 <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>pastie</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('thankful_eyes')">          <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>thankful_eyes</a></li>
-    <li><a class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('tulip')">                  <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>tulip</a></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16')">                 <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.dark')">            <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.dark</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.light')">           <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.light</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.monokai')">         <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.monokai</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.monokai.dark')">    <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.monokai.dark</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.monokai.light')">   <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.monokai.light</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.solarized')">       <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.solarized</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.solarized.dark')">  <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.solarized.dark</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('base16.solarized.light')"> <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>base16.solarized.light</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('colorful')">               <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>colorful</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('github')">                 <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>github</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('gruvbox')">                <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>gruvbox</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('gruvbox.light')">          <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>gruvbox.light</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('igorpro')">                <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>igorpro</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('molokai')">                <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>molokai</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('monokai')">                <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>monokai</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('monokai.sublime')">        <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>monokai.sublime</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('pastie')">                 <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>pastie</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('thankful_eyes')">          <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>thankful_eyes</button></li>
+    <li><button type="button" class="dropdown-item" onclick="j1.adapter.rouge.reaplyStyles('tulip')">                  <i class="mdib mdib-view-quilt mdib-18px mr-2" style="color: #9E9E9E"></i>tulip</button></li>
   </ul>
 </div>
 <div id="selected" class="mt-1 mb-3"></div>
@@ -210,21 +214,15 @@ end
 [role="mt-5"]
 == What next
 
-The search module *site_search* for J1 Template is based on _Lunr_, a
-great search engine inspired by _Apache Solr_, written in Javscript by
-http://lunrjs.com[Oliver Nightingale, {browser-window--new}]. The engine
-is fully integrated with the template and is designed to provide users
-with a great search experience.
+The J1 Template includes a built-in *site search* feature, allowing visitors
+to find pages and posts by entering keywords in a search box. This search
+operates *within the browser*, so there is no need for external search
+engines like Google or Bing. The search engine, *Lunr*, is a small and fast
+JavaScript solution developed by link://lunrjs.com[Oliver Nightingale, {browser-window--new}].
+J1 automatically creates a search index for your entire site, enabling search
+functionality immediately.
 
-Using the search module *site_search* for J1 based websites, it is *not*
-longer needed to integrate complex external, server-sided search engines
-like _Google_ or _Bing_. Visitors are able to search your site to find pages
-and posts they are interested in.
-
-Usability is one of the top criteria for all visitors browsing your site.
-A good user experience and excellent content are key factors for the success
-of a website. Nothing in business is guaranteed, but excellent user experience
-efforts are good reasons your readers will return.
-
-Learn what is searching a J1 based websites all about at
-link:{url-tour--site_search}[Search Engine].
+An effective search box enhances user experience by helping visitors quickly
+find what they need, encouraging them to return. For more information on
+searching a J1-based website, visit the link:{url-tour--site_search}[Search Engine]
+page.

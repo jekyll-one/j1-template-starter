@@ -1,11 +1,12 @@
 # ------------------------------------------------------------------------------
 # ~/_data/modules/videoPlayer.yml
 # User configuration settings for J1 videoPlayer module
+# to setup global player configuration options
 #
 # Product/Info:
 # https://jekyll.one
 #
-# Copyright (C) 2023-2026 Juergen Adams
+# Copyright (C) 2026 Juergen Adams
 #
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
@@ -20,20 +21,19 @@ description:
   location:                             _data/modules/videoPlayer.yml
 
 # ------------------------------------------------------------------------------
-# User configuration settings
+# User configuration settings (all players)
 #
 settings:
 
-  # ----------------------------------------------------------------------------
-  # GENERAL options
-  # ----------------------------------------------------------------------------
+  # GENERAL settings
   #
   enabled:                              true
 
-  toolbox:
-    enabled:                            false
-
+  # PLAYLIST settings
+  #
   playlist:
+    enabled:                            true
+
     cards:
       perRow:                           2
 

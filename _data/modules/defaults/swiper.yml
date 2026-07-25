@@ -1,0 +1,182 @@
+# ------------------------------------------------------------------------------
+# ~/_data/modules/defaults/swiper.yml (2)
+# Default settings for J1 Swiper
+#
+# Product/Info:
+# https://jekyll.one
+#
+# Copyright (C) 2023-2026 Juergen Adams
+#
+# J1 Template is licensed under the MIT License.
+# See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
+# ------------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------------
+# Description
+#
+description:
+  title:                                SwiperJS
+  scope:                                Default settings
+  location:                             _data/modules/defaults/swiper.yml
+
+# ------------------------------------------------------------------------------
+# Default settings
+#
+defaults:
+
+  # ----------------------------------------------------------------------------
+  # GLOBAL App settings
+  #
+
+  # ----------------------------------------------------------------------------
+  # AJAX (JSON)
+  #
+  # The HTML portion of a slider are being read from a HTML file generated
+  # automatically from its configuration for all sliders configured.
+  # AJAX methods are used to supply the needed HTML code at the time
+  # a slider is initialized by the JS adapter.
+
+  # ----------------------------------------------------------------------------
+  # SWIPER options
+  #
+  # accessibility
+  # ----------------------------------------------------------------------------
+  #   Enables tabbing and arrow key navigation. Unless autoplay: true,
+  #   sets browser focus to current slide (or first of current slide set,
+  #   if multiple slidesToShow) after slide change. For full a11y compliance
+  #   enable focusOnChange in addition to this.
+  #
+  #   values:                           boolean
+  #   default:                          false
+  #
+  # adaptiveHeight
+  # ----------------------------------------------------------------------------
+  #   Adapts slider height to the current slide.
+  #
+  #   values:                           boolean
+  #   default:                          false
+  #
+  # ----------------------------------------------------------------------------
+
+  # ----------------------------------------------------------------------------
+  # GENERAL options
+  # ----------------------------------------------------------------------------
+  #
+  enabled:                              false
+  xhr_data_path:                        /assets/data/swiper
+  theme:                                uno
+
+  # ----------------------------------------------------------------------------
+  # CSS filter options
+  # ----------------------------------------------------------------------------
+  filters:
+    enabled:                            false
+    grayscale:                          0
+    contrast:                           1
+    brightness:                         1
+
+  # ----------------------------------------------------------------------------
+  # SWIPER options
+  # ----------------------------------------------------------------------------
+  swiper:
+
+    # --------------------------------------------------------------------------
+    # GENERAL options
+    # --------------------------------------------------------------------------
+    #
+    enabled:                          false
+    swiper_classes:                   false
+    container_classes:                false
+    wrapper_styles:                   false
+
+    # --------------------------------------------------------------------------
+    # CORE Options
+    # --------------------------------------------------------------------------
+    #
+    parameters:
+      autoHeight:                         false
+      loop:                               false
+      speed:                              600
+      slidesPerView:                      1
+      slidesPerGroup:                     1
+      spaceBetween:                       1
+
+    # --------------------------------------------------------------------------
+    # MODULE Options
+    # --------------------------------------------------------------------------
+    #
+    module_settings:
+      navigation:
+        enabled:                      false
+        nextEl:                       .swiper-button-next
+        prevEl:                       .swiper-button-prev
+
+      pagination:
+        enabled:                      false
+        clickable:                    true
+        nunbered:                     false
+        el:                           .swiper-pagination-outer
+
+    # --------------------------------------------------------------------------
+    # CAPTION options
+    # --------------------------------------------------------------------------
+    #
+    captions:                             
+      enabled:                        true
+      css_class:                      swp-caption-content
+
+    # --------------------------------------------------------------------------
+    # EVENT Options
+    # --------------------------------------------------------------------------
+    #
+    events:
+      enabled:                        false
+
+    # --------------------------------------------------------------------------
+    # LIGHTBOX options
+    # --------------------------------------------------------------------------
+    #
+    lightbox:
+      enabled:                          false
+
+      # ------------------------------------------------------------------------
+      # LIGHTBOX (Core) Parameters
+      #
+      parameters:
+        enabled:                        false
+        children:                       a
+        bgOpacity:                      1
+        showHideOpacity:                true
+        loop:                           true
+        wheelToZoom:                    true
+        showHideAnimationType:          zoom
+        imageClickAction:               next
+        tapAction:                      next
+        padding:                        { top: 0, bottom: 0, left: 80, right: 80 }
+
+      # ------------------------------------------------------------------------
+      # LIGHTBOX caption settings
+      #
+      captions:
+        enabled:                        false
+        css_class:                      pswp-caption-content
+
+      # ------------------------------------------------------------------------
+      # LIGHTBOX User Interface controls
+      #
+      ui_controls:
+        enabled:                        false
+        zoom:                           false
+        close:                          true
+        counter:                        true
+        arrowKeys:                      false
+
+      # ------------------------------------------------------------------------
+      # LIGHTBOX Keyboard controls
+      #
+      kbd_controls:
+        enabled:                        false
+        escKey:                         true
+
+# ------------------------------------------------------------------------------
+# END config

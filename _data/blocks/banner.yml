@@ -37,7 +37,7 @@ settings:
   # ----------------------------------------------------------------------------
   # DIVIDER banner
   #
-  #   Place a (dotted) line as a simple divider.
+  #   Adds a (dotted) line as a simple divider between sections.
   #
   # ----------------------------------------------------------------------------
   #
@@ -65,8 +65,8 @@ settings:
   # ----------------------------------------------------------------------------
   # TEASER banner
   #
-  #   Simple intro element for a page to give an overview on the contents
-  #   provided. Find the configuration with
+  #   A simple intro element for a page. Use it to give visitors a short
+  #   overview of what the page is about.
   #
   # ----------------------------------------------------------------------------
   #
@@ -94,36 +94,37 @@ settings:
               type:                     text
               position:                 left                                    # left | center
               title:                    Jekyll and J1 Template
-              tagline:                  <b>Create fast, secure, and powerful modern websites</b>
+              tagline:                  <b>Build fast, secure, and powerful modern websites</b>
               translate_description:    notranslate                             # translate|notranslate
               description_properties:   mt-3 mb-3
               description: >
                                         <p class="dropcap">
-                                          Jekyll is a <b>static website</b> generation engine that enables to
-                                          create websites and blogs from simple text files, eliminating the
-                                          need for a database or other complex server-side processing.
-                                          The content is written in <b>simple text</b> formats such as Markdown,
-                                          AsciiDoc, or native HTML and processed into static HTML pages using
-                                          content templates powered by the templating engine <b>Liquid</b>.
+                                          Jekyll is a tool that builds <b>static websites</b>. That means
+                                          it turns simple text files into ready-to-use HTML pages, so you
+                                          do not need a database or any complex server software.
+                                          You write your content in <b>simple text</b> formats such as
+                                          Markdown, AsciiDoc, or plain HTML. Jekyll then uses a template
+                                          system called <b>Liquid</b> to turn that text into finished
+                                          web pages.
                                           <br><br>
-                                          The static web can be delivered directly to any standard web server,
-                                          as they are already generated and ready to use. Jekyll is particularly
-                                          popular for personal websites, project pages, documentation, and blogs.
-                                          Thanks to its easy versioning and deployment, Jekyll is ideal for
-                                          <b>collaborative</b> web project development - via Github for example.
+                                          Because the pages are already built, you can put them on any
+                                          standard web server. Jekyll works well for personal sites,
+                                          project pages, documentation, and blogs. It is also a great
+                                          choice for <b>team projects</b>, since you can manage every
+                                          version of your site with tools like GitHub.
                                         </p>
                                         <p>
-                                          Jekyll One is a fully featured, free theme and template system for the
-                                          Jekyll site generator, specifically designed to create modern, dynamic,
-                                          and responsive websites.
-                                          It features a modern design with a focus on usability and accessibility.
-                                          Additionally, it comes with built-in support for search engine optimization
-                                          (SEO) and social media integration, making it easy to get your site off
-                                          the ground and running - <b>free to use</b> for both <b>personal</b> and
-                                          <b>business purposes</b>.
+                                          Jekyll One is a complete theme and template system for Jekyll.
+                                          It is designed to help you create modern, responsive websites
+                                          with a clean look. The theme focuses on usability and
+                                          accessibility. It also includes built-in support for search
+                                          engine optimisation (SEO) and social media, so your site is
+                                          ready to share from day one.
+                                          It is <b>free to use</b> for both <b>personal</b> and
+                                          <b>business</b> projects.
                                         </p>
                                         <p class="fw-bold d-flex justify-content-center flex-wrap mt-4" style="font-size: 1.5rem">
-                                          The most featured free Bootstrap V5 Theme for Jekyll
+                                          The most complete free Bootstrap V5 theme for Jekyll
                                         </p>
               buttons:
 
@@ -133,7 +134,7 @@ settings:
                     id:                 roundtrip
                     translate:          notranslate                             # translate|notranslate
                     title:              Roundtrip
-                    tagline:            learn top features
+                    tagline:            see the top features
                     class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
                     style:              "min-width: 270px"
                     icon:               briefcase-search-outline
@@ -148,7 +149,7 @@ settings:
                     id:                 rocketstart
                     translate:          notranslate                             # translate|notranslate
                     title:              Rocketstart
-                    tagline:            finished in minutes
+                    tagline:            ready in minutes
                     class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
                     style:              "min-width: 270px"
                     icon:               rocket-launch
@@ -163,7 +164,7 @@ settings:
                     id:                 download
                     translate:          notranslate                             # translate|notranslate
                     title:              Download
-                    tagline:            get on rubygems
+                    tagline:            get it on rubygems
                     class:              btn btn-raised btn-xl btn-primary text-uppercase text-left mr-2 mb-2
                     style:              "min-width: 270px"
                     icon:               briefcase-download-outline
@@ -175,9 +176,8 @@ settings:
   # ----------------------------------------------------------------------------
   # PARALLAX banner
   #
-  #   Places an image (full width) with a parallax effect. Additionally,
-  #   a quotation text is configurable and placed centered on top of
-  #   the image.
+  #   Shows a full-width image with a parallax (scrolling) effect. You can
+  #   also place a quote in the centre, on top of the image.
   #
   # ----------------------------------------------------------------------------
   #
@@ -220,7 +220,7 @@ settings:
   # ----------------------------------------------------------------------------
   # IMAGE banner
   #
-  #   Place an image (full width).
+  #   Shows a full-width image.
   #
   # ----------------------------------------------------------------------------
   #

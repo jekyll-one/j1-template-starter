@@ -105,11 +105,11 @@ end
 # Specify the THEME GEM used for the project
 
 # Loaded from RubyGems
-gem 'j1-template', '~> 2026.0'
+gem 'j1-template', '~> 2026.1'
 
 # Loaded from gem.fury.io
 #source 'https://gem.fury.io/jekyll-one-org/' do
-#  gem 'j1-template', '~> 2026.0'
+#  gem 'j1-template', '~> 2026.1'
 #end
 
 # ------------------------------------------------------------------------------
@@ -170,6 +170,7 @@ group :jekyll_plugins do
   gem 'asciidoctor', '~> 2.0'
   gem 'jekyll-asciidoc', '>= 3.0'
   gem 'j1-paginator', '>= 2024.1'
+  gem 'dotenv', '~> 3.1'
   #
   # Additional Supporting GEMs (optional)
   #

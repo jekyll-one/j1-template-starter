@@ -1,16 +1,15 @@
 ---
 title:                                  Image
-title_extention:                        J1 Image Apps
-tagline:                                J1 Image Apps
+title_extention:                        Embed images
+tagline:                                Embed Images
 
-date:                                   2020-11-03
-#last_modified:                         2023-01-01
+date:                                   2026-05-26
+#last_modified:                         2026-01-01
 
 description: >
                                         The image modules supported by J1 Template offer valuable
                                         features based on powerful Open Source libraries like
-                                        Masterslider, lightGallery, or Justified Gallery for high-end,
-                                        masonry-styled preview maps.
+                                        Masterslider, lightGallery, or Justified Gallery for high-end, masonry-styled preview maps.
 keywords: >
                                         open source, free, template, jekyll, jekyllone, web,
                                         sites, static, jamstack, bootstrap,
@@ -35,15 +34,13 @@ resources:                              [
                                         ]
 resource_options:
   - toccer:
-      collapseDepth:                    3
+      collapseDepth:                    4
   - attic:
+      opacity:                          .7
+      padding_top:                      600
       slides:
         - url:                          /assets/image/module/attic/1920x1280/modern-dance.jpg
           alt:                          Photo Gemini AI
-#          badge:
-#            type:                       unsplash
-#            author:                     Quino Al Angel
-#            href:                       //unsplash.com/@quinoal
 ---
 
 // Page Initializer
@@ -70,16 +67,24 @@ resource_options:
 
 
 // Page content
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// -----------------------------------------------------------------------------
 [role="dropcap"]
-Welcome to the preview page focussing on image modules. This page shows
-all of the powerful features of the J1 Template to manage your image-based
-content using lightboxes, carousels, sliders, grids, and galleries.
+Welcome to the J1 Template tour page about *images*. This page shows the
+features the template offers for displaying image content on a web page:
 
-The image-related modules of the J1 Template offer a wide range of complex
-functionality based on powerful open-source libraries, such as PhotoSwipeJS,
-LightGallery, SwiperJS, Masonry, and Justified-Gallery, to create masonry-styled
-image preview maps.
+* *Lightboxes* -- enlarge an image in a focused overlay,
+* *Sliders* (or carousels) -- show a series of images one after another,
+* *Grids* -- arrange images in evenly spaced rows or columns,
+* *Galleries* -- collections of images that visitors can browse.
+
+Behind the scenes, these features are powered by well-known open-source
+libraries:
+
+* *PhotoSwipeJS* -- the default lightbox,
+* *lightGallery* -- an alternative lightbox with extra features,
+* *SwiperJS* -- the slider library,
+* *Masonry* and *Justified Gallery* -- for grid- and brickwork-style
+  galleries.
 
 [subs=attributes]
 ++++
@@ -95,53 +100,55 @@ image preview maps.
 [role="mt-5"]
 == Lightboxes
 
-A lightbox is a helper which displays enlarged, almost screen-filling versions
-of images while dimming the remainder of the page. The technique, introduced
-by Lightbox Version 2, gained widespread popularity thanks to its simple style.
-The term *lightbox* has been employed since then for Javascript libraries to
-support such functionality.
+A *lightbox* is a small overlay that pops up when a visitor clicks an
+image. It enlarges the image to fill most of the screen and dims the
+rest of the page, so the picture gets all the attention. The trick was
+made popular by a JavaScript library called *Lightbox 2* in 2005, and
+the name has been used for similar tools ever since.
 
-For J1 Template, different lightbox modules are available:
+The J1 Template offers three lightbox options:
 
-* Lightbox V3  (default)
-* PhotoSwipeJS (optional)
-* lightGallery (optional)
+* *PhotoSwipe Lightbox V5* (default)
+* *Lightbox V3* (optional)
+* *lightGallery* (optional)
 
-The *default* tool employed by J1 Template is PhotoSwipeJS, a Javascript
-library free to use for private or business websites. For more complex use
-cases, like a thumbnail gallery preview or video support, *LightGallery* can
-be used alternatively.
+The default is *PhotoSwipe Lightbox V5*. It is free for both private
+and business websites and works equally well on desktop computers and
+mobile devices. On a phone, you can swipe, pan, and pinch-to-zoom in
+the lightbox just as you would in a native app.
+
+*Lightbox V3* is a lighter, simpler option. It is a good choice for
+sites that mostly run on desktop computers, but it also supports
+swipe and pan on mobile.
+
+For more advanced cases -- for example, a thumbnail preview strip or a
+gallery that mixes images and videos -- you can use *lightGallery*.
 
 [CAUTION]
 ====
-The Tool *LightGallery* is *free* to use based on a GPLv3 license for
-*non-business* websites. If you have plans to use this lightbox for your
-business or on a commercial site, you need to subscribe a so-called
-*Commercial License*. Find more on the *paid* solution on the page:
-https://www.lightgalleryjs.com/license[lightGallery license, {browser-window--new}].
+*lightGallery* is free under the *GPLv3* license for *non-commercial*
+websites. If you plan to use it on a *business* or commercial website,
+you must buy a *commercial license*. See
+https://www.lightgalleryjs.com/license[lightGallery Licenses, {browser-window--new}]
+for the current pricing and terms.
 ====
 
-All lightboxes are fully integrated to be used as standalone modules or
-used as helpers *under-the-hood* by other modules focussing on image-data
-like gallerys or carousels.
-
-[TIP]
-====
-For details of the default lightbox of J1 Template, see the documentation
-under the link:{url-j1-docs--lightbox-module}[Lightbox module, {browser-window--new}].
-====
+All three lightboxes are fully integrated. You can use them on their
+own *or* let them work in the background for other modules such as
+galleries and carousels.
 
 [role="mt-5"]
 === Lightbox V3
 
-Find below an example of using the the default lightbox used for standalone
-images. See how individual images are linked.
+The example below uses Lightbox V3 with *standalone* images. Each
+image opens in its own lightbox when you click it.
 
 .Lightbox for standalone images
 lightbox::example-standalone[800, {data-images-lightbox--standalone}, role="mt-4 mb-5"]
 
-The J1 lightbox module supports groups of images as well. Click on the image
-group below to see how a group is managed.
+The J1 lightbox can also handle a *group* of images. Click any image
+in the group below: the lightbox opens and you can step through the
+other images in the same group with the arrow buttons.
 
 .Lightbox for grouped images
 lightbox::example-group[395, {data-images-lightbox--group}, group, role="mt-4 mb-4 wm-800"]
@@ -150,30 +157,30 @@ lightbox::example-group[395, {data-images-lightbox--group}, group, role="mt-4 mb
 [role="mt-5"]
 == J1 Slider
 
-J1 Slider is based on *SwiperJS* in version *1.2.0* (January 7, 2025). The
-slider is a powerful tool to create fully responsive and touch-enabled
-slideshows.
+The *J1 Slider* is a slideshow that visitors can click or swipe
+through. It is built on *SwiperJS* (version 1.2.0, January 2025) and
+adapts to every screen size, from desktop to phone.
 
 [role="mt-4"]
 === Text Sliders
 
-Swipers are typically used for displaying images. Still, the implementation
-for the J1 Template supports a lot more sources to be displayed as a slide
-show -- simple text for example.
+A slider does not have to show images -- it can also show *text*. The
+J1 Template includes several styles of *text sliders* you can use as
+small banners or animated messages on a page.
 
 [TIP]
 ====
-Text sliders can be placed like banners on a page's section. For text sliders,
-different animations are available.
+A text slider is a great way to highlight important statements at the
+top of an article or section. The J1 Template offers different
+animations to match your style.
 ====
 
 [role="mt-4"]
 ==== Base Text Slider
 
-Important statements or topics can be placed on top of an article or
-a paragraph to give them better visibility. In one line, you can present
-many facts to know animated for the reader's attention within a single
-line.
+A *base text slider* shows a series of short statements one after
+another, all on a single line. It is a good way to grab the reader's
+attention and to fit several facts in a small space.
 
 .Base Text Swiper
 swiper::swiper_text_base[role="mt-4 mb-5"]
@@ -182,10 +189,10 @@ swiper::swiper_text_base[role="mt-4 mb-5"]
 [role="mt-4"]
 ==== Parallax Text Slider
 
-A more emphasized type of text-based slide is a *parallax* text slider. If you
-want to focus the meaning, this kind of a slide show may be interesting.
-Image-based slide may draw off the reader's attention from the text. Therefore,
-a pure text-based presentation may a better choice.
+A *parallax text slider* adds a small depth effect to the slides -- the text
+seems to move at a different speed than the background. Use this style when
+you want the text itself to be the main focus, without the distraction of
+background images.
 
 .Extended Text Swiper · Parallax
 swiper::swiper_text_parallax[role="mt-4 mb-5"]
@@ -194,74 +201,77 @@ swiper::swiper_text_parallax[role="mt-4 mb-5"]
 [role="mt-5"]
 === Image Slider
 
-Sliders (or carousels) are mostly used for picture data to animate images
-as a series. Find the following some examples of how to use a carousel for
-your image data.
-
-A simple image slideshow is useful, for example, as an animated
-(or non-animated) banner presenting exciting things about your site or
-the products offered.
+*Image sliders* (also called *carousels*) show a series of pictures
+one after another. They are perfect for an animated banner that
+introduces your site, your products, or any visual story you want to
+tell.
 
 [role="mt-4"]
-==== One Slide Slider + Pagination
+==== Multi Slide Slider
 
-The built-in Slider Module, *SwiperJS*, supports both multiple and single
-image shows. Here, you will find an example of a single-image slideshow
-with controls enabled to browse all images back and forth. An indicator
-below the slider shows how many images the show contains.
+You can also combine a slider with a *lightbox*. The result is a very
+compact image gallery: visitors browse the slides, and when they want
+a closer look, they click an image to enlarge it in the lightbox.
 
-.Image Slider · Full-width + Pagination
-swiper::swiper_image_base_full_width_pagination[role="mt-3 mb-4"]
+[NOTE]
+====
+The J1 *lightbox* module also supports *image groups*. Once one image
+is open in the lightbox, visitors can step through the rest of the
+group with simple arrow buttons.
+====
 
-[role="mt-4"]
-==== Image Slider + Lightbox
-
-Sliders are used for an exceptionally compact form of image galleries.
-This example displays pictures with individual caption text and features
-a lightbox to enlarge images to full size.
-
-.Image Slider + Lightbox
+.Slider + Pagination + Lightbox
 swiper::swiper_image_base_captions[role="mt-4 mb-4"]
 
-The J1 Module *lightbox* offers a bunch of impressive features for displaying
-images. For example, the lightbox can display all
-images as a group. If one picture is opened in the lightbox, others are
-browsed by easy-to-use control buttons.
+
+[role="mt-4"]
+==== One Slide Slider
+
+SwiperJS supports both *single-image* and *multi-image* slideshows.
+The example below shows a single image at a time, with arrow buttons
+to step back and forth and a row of dots ("pagination") that shows
+how many slides there are.
+
+.Slider + Navigation + Pagination (numbered)
+swiper::swiper_image_base_full_width_pagination[role="mt-3 mb-4"]
 
 
 [role="mt-5"]
-=== Extendend Image Slider
+=== Slider Layouts
 
-Layouts in terms of the Slider Module (SwiperJS) for J1 Template are
-*transformations* of a Swiper slider. A *layout* is used to rebuild it for
-a more complex visual *presentation* for the Swiper's slides. The Layout
-of a slider can improve the *useability* or make the *presentation* of a
-slideshow more *interesting*.
+A *layout* changes how a slider looks and behaves -- not the slides
+themselves, but the way they are arranged on screen. Layouts can make
+a slideshow easier to navigate or more visually striking:
+
+* Layout Thumb
+* Layout Neighbor
+* Layout Panorama
+
+The following examples show the layout options in action.
+
 
 [role="mt-4"]
 [[image_thumbs_top_bottom]]
-==== Layout Thumb Top|Bottom
+==== Layout Thumb
 
-To give users more visual control over a slideshow. The slider provides a
-*UI element* by placing minified images or text elements (thumbs)
-side-by-side (on the left|right) or at the bottom|top of a swiper.
-Find below examples of how to control such a slider.
+The *thumb* layout adds a row of small preview images (called
+*thumbnails*) above or below the main slider. Visitors can click a
+thumbnail to jump to that slide, or use the pagination buttons to
+step through them.
 
 [role="mt-4 mb-4"]
 [TIP]
 ====
-This Layout creates best results for high-quality images for websites mainly
-used on *desktop* computers.
+This layout looks best with high-quality images on websites that are
+mostly used on *desktop* computers, where you have more space.
 ====
 
-This Thumb Slider uses minified images that are placed to control the (main)
-slider at the *top* or the *bottom*. This swiper type creates a thumbed Swiper
-that uses *two lines*, which takes up a *lot of space* but can render the
-sliders' images *optimally*.
+This example places thumbnails *above* the main slider. The layout
+uses *two rows* (one for the big image and one for the thumbnails),
+which takes more space but shows the images at their best.
 
-.Extendend Swiper · Layout Thumb Top
+.Thumb Top + Pagination
 swiper::thumb_slider_top[role="mb-5"]
-
 
 // [role="mt-5"]
 // [[image_thumbs_right_left]]
@@ -279,129 +289,124 @@ swiper::thumb_slider_top[role="mb-5"]
 // presented *images*.
 // ====
 
-
 [role="mt-5"]
 ==== Layout Neighbor
 
-A slideshow typically presents a larger number of slides, which requires a
-sort of navigation. The effect *neighbors* accompanies the *active slide* by
-their *neighbors* on the left and right as *previews*. The neighbor on the
-*left* acts like a *previous button* and scrolls the slides *backward*. The
-neighbor on the *right* acts like a *next button* and scrolls the slides
-*forward*.
+The *Neighbor* layout shows the active slide with a *preview* of the
+slide before it on the left and a preview of the next slide on the
+right. Clicking the left preview goes *back* a slide, and clicking
+the right preview goes *forward* for navigation.
 
 [role="mb-5"]
 [TIP]
 ====
-The *effect* transforms a slider into a quite *compact* presentation that does
-*not* require any (additional) *navigation* elements.
+With the Neighbor layout, the slider feels compact and self-contained -- no
+need for extra navigation buttons.
 ====
 
-.Extendend Swiper · Layout Neighbor
+.Layout Neighbor
 swiper::neighbor_slider[role="mb-5"]
-
 
 [role="mt-5"]
 ==== Layout Panorama
 
-The *Panorama* layout in SwiperJS sliders is used to create a 3D-like
-panoramic effect, where the slides are animated as they swipe, creating
-a continuous, curved panorama. The layout creates an immersive sense of
-depth and movement, which is especially beneficial when presenting wide
-images, landscapes, or other visual content with a large aspect ratio.
+The *Panorama* layout adds a 3D-like curved effect to a slider. As
+you move from one slide to the next, the slides appear to flow along
+a curved surface, like looking through the window of a moving train.
+This works best for wide images such as landscapes or panoramic
+photos.
 
-.Extendend Swiper · Layout Panorama
+.Layout Panorama
 swiper::swiper_image_panorama[role="mt-4 mb-5"]
 
 
 [role="mt-5"]
-== J1 Galleries
+== J1 Gallery
 
-A J1 Gallery is a collection of images (or videos) displayed together. It
-helps display products, portfolios, or events in a visually appealing,
-easy-to-explore way. Visitors can view, zoom in, or swipe through the visuals,
-making the experience more engaging.
+A *Gallery* is a collection of images (or videos) shown together.
+Galleries are perfect for product photos, portfolios, and event
+pictures. Visitors can scroll through the gallery, click a single
+image to enlarge it, or swipe through them on a touchscreen.
 
-Find examples of available galleries suppoerted by J1-Template: 
+The J1 Template offers two gallery types:
 
-* **Grid**-styled Galleries
-* **Masonry**-styled Galleries
+* *Grid* gallery
+* *Block* gallery
 
-The difference between a **Grid**-styled gallery and a **Masonry**-styled
-gallery is how they handle image height and alignment. While a *grid* forces
-a *uniform structure*, *masonry* allows images to retain their natural
-proportions, creating a *brick wall* effect. 
+The two types differ in *how images* are *arranged*. A *grid* places
+indivudual images in optimal sizes in a so-called grid. All grid elements
+are placed dynamically in rows. When the bowser is resized, the grid (rows)
+are rearranged to make the images fit again.
 
-[role="mt-4"]
-=== Grid-styled Gallery
+[NOTE]
+====
+The Galleries for J1 Template combines both types with a (configurable) 
+lightbox so visitors can click any photo to view it in a larger size.
+====
 
-Masonry for J1 is a great tool to create dynamic image galleries. Image
-galleries are popular on many websites, and masonry can be a useful tool for
-creating dynamic galleries.
+A *block* gallery keeps every image in its natural shape and arranges
+them in a block element that looks like ricks in a wall, with shorter images
+filling the gaps left by taller ones.
 
 [role="mt-3 mb-4"]
 [TIP]
 ====
-See the gallery in action; and for sure, all that you see is even responsive.
-Change the size of your current browser window, by width or height to see
-what will happen.
-
-Find more on how the Masonry module can be used on the
-link:{url-j1-masonry-previewer}[Masonry Preview, {browser-window--new}] page.
+The galleries below are fully *responsive* -- they change the layout
+to fit the size (width) of your browser window. Try it yourselves:
+resize your window, or rotate your device, and watch the columns
+rearrange.
 ====
 
-Masonry arranges elements in a so-called **brickwork**-style, where the
-elements are staggered like bricks and arranged to maximize space efficiency.
-The elements are placed in optimal positions according to the available
-vertical space, creating columns of varying heights based on the natural
-height of the contents.
 
-.Grid-styled Image Gallery
-masonry::image_fixed_height_lb[role="mt-4 mb-5"]
+[role="mt-5"]
+=== Grid Gallery
 
-[role="mt-4"]
-=== Masonry-styled Gallery
+The link:{url-masonry--home}[Masonry, {browser-window--new}] module is a
+library that powers grid-styled galleries in the J1 Template. It places
+images in evenly aligned columns and efficiently fills the vertical space,
+even when the images have different heights.
+
+Masonry stacks images like *bricks*: it slots each image into the
+first place it fits, so the columns can have different heights but
+no big empty gaps. The result is a balanced layout that uses the
+available space well.
+
+.Grid Image Gallery
+masonry::image_fixed_height_lb[]
+
+
+[role="mt-5"]
+=== Block Gallery
 
 The link:{url-justified-gallery--home}[JustifiedGallery, {browser-window--new}]
-is a great *jQuery Plugin* to create responsive, infinite, and high-quality
-justified image galleries. J1 Template combines the Gallery with the lightboxes
-supported to enlarge the images of a gallery.
+module arranges images in *evenly aligned rows* as a block. Each row in
+such a block has the same height, but the images inside it can have different
+widths. This is the layout style you see on photo sites like *Flickr* or
+*Google Photos*.
 
-Justified Gallery creates galleries where images are arranged in even,
-horizontally aligned (justified) rows. The row height is constant, and the
-image width is adjusted proportionally so that each row uses the full
-container width, similar to _Flickr_ or _Google Photos_.
+The photos you take are usually a mix of *landscape* and *portrait*
+orientations. A simple grid would have to crop them or leave gaps.
+JustifiedGallery solves this by keeping each image in its original
+shape and adjusting the widths so every row fills the page neatly.
 
-Pictures you've made are typically not even in size. Images may have the
-same size (resolution), but some are orientated landscapes, and others
-may be portraits. For that reason, a more powerful gallery is needed to create
-so-called justified views. J1 Gallery is based on Justified Gallery to create
-so-called masonry grid layouts.
+The J1 Template combines JustifiedGallery with the lightbox so visitors
+can click any photo for an enlarged view. You will recognise this layout
+from many websites across the Internet.
 
-It works by placing elements in an optimal position based on available
-horizontal and vertical space, like fitting stones in a wall. For sure,
-you'll have seen it in action all over the Internet.
-
-.Masonry-styled Image Gallery
-gallery::jg_mega_cities[role="mt-4 mb-4"]
+.Block Image Gallery
+gallery::jg_mega_cities[]
 
 
 [role="mt-5"]
 == What next
 
-I hope you've enjoyed exploring the possibilities J1 offers for managing
-and displaying digital image content. However, there is much more that J1
-Template can do for your website.
+We hope you enjoyed exploring what the J1 Template can do with images.
+But there is much more -- next up is *audio*. The J1 Template plays both
+*audio* and *video* on web pages using *HTML5*, the modern web standard.
+HTML5 plays audio and video right in the browser, so visitors do not need
+any extra software. Older players such as *Flash Player*, *QuickTime*,
+and *Silverlight* are no longer needed. The J1 Template plays media files
+from your own website *and* from online sources on the Internet.
 
-The J1 Template system supports playing audio and video on web pages by
-utilizing HTML5 audio and video support, the latest standard in HTML.
-HTML5 provides a pure HTML approach to playing audio or video on the web.
-Modern browsers support the HTML5 audio tag `<audio>` and the video tag
-`<video>`.
-
-The previous proprietary de facto standard software like Flash Player,
-QuickTime or Silverlight is no longer needed, as the J1 Theme provides
-HTML5 video support for both local content and online sources on the
-Internet.
-
-Incredible? See the next example page link:{url-tour--audio_data}[Audio Player].
+Curious? Have a look at the link:{url-tour--audio_data}[Audio Player]
+page next.
