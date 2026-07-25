@@ -11,8 +11,11 @@
 # J1 Template is licensed under the MIT License.
 # See: https://github.com/jekyll-one-org/j1-template/blob/main/LICENSE
 # ------------------------------------------------------------------------------
+#
 require 'jekyll'
 require 'fileutils'
+require 'yaml'
+require 'date'
 
 module J1Feed
   class Generator < Jekyll::Generator
@@ -26,23 +29,41 @@ module J1Feed
 
       @mode                             = site.config['environment']
       @template                         = site.config['theme']
-      @project_path                     = File.join(File.dirname(__FILE__)).sub('_plugins/seo', '')
+
+      # Resolve config paths relative to the Jekyll source directory.
+      # The original `File.dirname(__FILE__).sub('_plugins/seo', '')`
+      # was a no-op (the path segment '_plugins/seo' never appears in
+      # __FILE__), which left @project_path pointing at the _plugins
+      # directory instead of the site root. `site.source` is the
+      # authoritative location of the Jekyll site source folder.
+      #
+      @project_path                     = site.source
       @plugin_data_path                 = File.join(@project_path, site.config['data_dir'])
-      @module_config_path               = File.join(@project_path, site.config['data_dir'], 'plugins')
+      @module_config_path               = File.join(@plugin_data_path, 'plugins')
 
-      @module_config_default            = YAML::load(File.open(File.join(@module_config_path, 'defaults', 'feed.yml')))
-      @module_config_user               = YAML::load(File.open(File.join(@module_config_path, 'feed.yml')))
+      # Safely load default + user settings. Replaces the original
+      # `YAML::load(File.open(...))` calls which leaked file handles,
+      # used the unsafe loader, and crashed on a missing file.
+      #
+      default_yaml                      = load_yaml(File.join(@module_config_path, 'defaults', 'feed.yml'))
+      user_yaml                         = load_yaml(File.join(@module_config_path, 'feed.yml'))
 
-      @module_config_default_settings   = @module_config_default['defaults']
-      @module_config_user_settings      = @module_config_user['settings']
-      @module_config                    = @module_config_default_settings.merge!(@module_config_user_settings)
+      @module_config_default_settings   = default_yaml['defaults'] || {}
+      @module_config_user_settings      = user_yaml['settings']    || {}
 
-      @feed_generation_path             = @module_config['path'].sub('feed.xml', 'for_categories')
+      # Non-destructive merge: user settings override defaults without
+      # mutating the loaded defaults hash (the original used `merge!`).
+      #
+      @module_config                    = @module_config_default_settings.merge(@module_config_user_settings)
+
+      @feed_generation_path             = @module_config['path'].to_s.sub('feed.xml', 'for_categories')
       @feed_generation_enabled          = @module_config['enabled']
 
-      @template_source_folder           = File.join(@project_path, @module_config['template_source_folder'])
+      @template_source_folder           = File.join(@project_path, @module_config['template_source_folder'].to_s)
       @template_name                    = @module_config['template_name']
-      @feed_output                      = @module_config['feed_output']
+
+      # Removed `@feed_output = @module_config['feed_output']` - the
+      # ivar was assigned but never referenced anywhere in the plugin.
 
       if disabled_in_development?
         Jekyll.logger.info "J1 Feeds:", "skipped in mode development"
@@ -60,7 +81,7 @@ module J1Feed
         Jekyll.logger.info "J1 Feeds:", "generate rss feeds for: excerpts only"
       end
 
-      if @module_config['posts_limit'] < 100
+      if @module_config['posts_limit'].to_i < 100
         Jekyll.logger.info "J1 Feeds:", "generate rss feeds for: #posts of #{@module_config['posts_limit']}"
       else
         Jekyll.logger.info "J1 Feeds:", "generate rss feeds for: #posts of unlimited"
@@ -72,10 +93,16 @@ module J1Feed
           Jekyll.logger.info "J1 Feeds:", "generate rss feeds for posts by category: #{category}" if category
           path = feed_path(:collection => name, :category => category)
 
-          # rebuild the feed xml file?
+          # Honor the documented "rebuild on every build" toggle. The
+          # defaults YAML ships the key as `rebuild_feed` (singular),
+          # but the original code read `rebuild_feeds` (plural) - the
+          # mismatch meant the option silently never took effect. We
+          # accept either spelling for backwards compatibility with any
+          # user configs that may have used the plural form. Also
+          # removed a redundant re-assignment of `path` inside the
+          # `unless` block (it was already computed above).
           #
-          unless @module_config['rebuild_feeds']
-            path = feed_path(:collection => name, :category => category)
+          unless rebuild_feeds?
             if file_exists?(path)
               Jekyll.logger.info "J1 Feeds:", "feed already exist, skip rebuild"
               next
@@ -91,7 +118,8 @@ module J1Feed
     private
 
     # Strip all whitespaces to minify the template.
-    # The regex matches all whitespace that follows
+    # The regex matches all whitespace that follows:
+    #
     #   '>' which match a closed XML tag
     #   '}' which match a closed Liquid tag
     #
@@ -100,10 +128,38 @@ module J1Feed
     # Returns the plugin's config or an empty hash if not set
     #
     def config
-      @config ||= @module_config  || {}
+      @config ||= @module_config || {}
+    end
+
+    # Resolve the rebuild flag from either the singular (`rebuild_feed`,
+    # which matches the shipped defaults YAML) or the plural form
+    # (`rebuild_feeds`, which matches the original Ruby code). Returns
+    # true when feeds should be regenerated unconditionally.
+    #
+    def rebuild_feeds?
+      flag = config['rebuild_feed']
+      flag = config['rebuild_feeds'] if flag.nil?
+      !!flag
+    end
+
+    # Safely load a YAML config file. Returns an empty hash if the file
+    # is missing or cannot be parsed.
+    #
+    def load_yaml(path)
+      return {} unless File.exist?(path)
+
+      YAML.safe_load(
+        File.read(path),
+        permitted_classes: [Symbol, Date, Time],
+        aliases: true
+      ) || {}
+    rescue StandardError => e
+      Jekyll.logger.warn 'J1 Feeds:', "failed to read #{path}: #{e.message}"
+      {}
     end
 
     # Determines the destination path of a given feed as:
+    #
     # 'collection', the name of a collection (example: 'posts')
     # 'category', a category within that collection (example: 'news')
     #
@@ -144,14 +200,24 @@ module J1Feed
     end
 
     def generate_feed_by_tag
-      tags_config = config['tags']
-      enabled     = config['tags']['enabled']
-      tags_config = {} unless tags_config.is_a?(Hash)
 
-      except      = tags_config["except"] || []
-      only        = tags_config["only"] || @site.tags.keys
+      # Defensively coerce config['tags'] to a Hash BEFORE accessing
+      # nested keys. The original sequence was:
+      #
+      #   tags_config = config['tags']
+      #   enabled     = config['tags']['enabled']    # NoMethodError if not a Hash
+      #   tags_config = {} unless tags_config.is_a?(Hash)
+      #
+      # i.e. the type guard ran AFTER the unsafe access, so `tags: true`
+      # in user config would raise instead of being treated as off.
+      #
+      tags_config = config['tags'].is_a?(Hash) ? config['tags'] : {}
+      enabled     = tags_config['enabled']
+
+      except      = tags_config['except'] || []
+      only        = tags_config['only']   || @site.tags.keys
       tags_pool   = only - except
-      tags_path   = tags_config["path"] || "/feed/by_tag/"
+      tags_path   = tags_config['path']   || '/feed/by_tag/'
 
       # enable|disable generation of feeds by tag
       #
@@ -162,13 +228,21 @@ module J1Feed
       tags_pool.each do |tag|
         # allow only tags with basic alphanumeric characters and underscore
         # to keep feed path simple.
-        #
         # next if %r![^a-zA-Z0-9_]!.match?(tag)
+        #
         next if %r!\W!.match?(tag)
 
         Jekyll.logger.info "J1 Feeds:", "generate rss feeds for posts by tag: #{tag}" if tag
         path = "#{tags_path}#{tag.downcase}.xml"
-        next if file_exists?(path)
+
+        # Honor the rebuild flag for tag feeds too. The original
+        # unconditionally skipped existing files, which made tag feeds
+        # impossible to refresh without a clean build - inconsistent
+        # with the collection-feed loop above.
+        #
+        if file_exists?(path) && !rebuild_feeds?
+          next
+        end
 
         @site.pages << make_page(path, :tags => tag)
       end
@@ -219,14 +293,12 @@ module J1Feed
       hash
     end
 
-    # Check if plugin is enabled|disabled
+    # Plugin is enabled when config['enabled'] is truthy. The original
+    # used a 5-line if/else/return; the negated boolean read is clearer
+    # and fails safe (missing config => disabled).
     #
     def plugin_disabled?
-      if config['enabled']
-        false
-      else
-        true
-      end
+      !config['enabled']
     end
 
     def disabled_in_development?
@@ -242,11 +314,13 @@ module J1Feed
 
   class MetaTag < Liquid::Tag
     # Use Jekyll's native relative_url filter
+    #
     include Jekyll::Filters::URLFilters
 
     def render(context)
       # Jekyll::Filters::URLFilters requires `@context`
       # to be set in the environment.
+      #
       @context = context
 
       config = context.registers[:site].config

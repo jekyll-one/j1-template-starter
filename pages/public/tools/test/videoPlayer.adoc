@@ -1,0 +1,92 @@
+---
+title:                                  J1 Video Player
+title_extention:                        Create & Playback Playlists
+tagline:                                Create and Playback Playlists
+
+date:                                   2026-04-17
+#last_modified:                         2026-01-01
+
+description: >
+                                        Native Player
+keywords: >
+                                        open source, free, template, jekyll, jekyllone, web,
+                                        sites, static, jamstack, bootstrap
+
+categories:                             [ Tools ]
+tags:                                   [ videoPlayer ]
+
+image:
+  path:                                 /assets/image/module/attic/1920x1280/j1-launch.jpg
+  width:                                1920
+  height:                               1280
+
+regenerate:                             false
+permalink:                              /pages/public/tools/test/videoPlayer/
+
+resources:                              [ videoPlayer, videojs ]
+resource_options:
+  - attic:
+      opacity:                          .8
+      padding_top:                      600
+      slides:
+        - url:                          /assets/image/module/attic/1920x1280/j1-launch.jpg
+          alt:                          skipad-promo-image
+---
+
+// Page Initializer
+// =============================================================================
+// Enable the Liquid Preprocessor
+:page-liquid:
+
+// Set page (local) attributes here
+// -----------------------------------------------------------------------------
+// :page--attr:                         <attr-value>
+
+{% comment %} Liquid procedures
+-------------------------------------------------------------------------------- {% endcomment %}
+{% capture load_attributes %}themes/{{site.template.name}}/procedures/global/attributes_loader.proc{% endcapture %}
+
+// Load page attributes
+// -----------------------------------------------------------------------------
+{% include {{load_attributes}} scope="none" %}
+
+
+// Page content
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[role="dropcap"]
+J1 VideoPlayer a complete video player engine built on top of VideoJS.
+It gives every video the same good-looking, skinnable player, and it adds
+a full playlist on top: a searchable, sortable list of videos that the
+viewer can play, rate, and continue from where they left off. It plays two
+kinds of video: native videos and YouTube videos.
+
+// Include sub-documents (if any)
+// -----------------------------------------------------------------------------
+[role="mt-5"]
+== Tiny Desk Concerts
+
+Tiny Desk Concerts is a popular, award-winning video series featuring live
+music performances at an actual office desk, hosted by NPR Music. Started
+in 2008 by radio host Bob Boilen and producer Stephen Thompson. The show has
+grown from a small platform for folk and indie artists into a worldwide
+pop-culture hit.
+
+.VideoJS Multi-Player
+videoPlayer::player_1[role="mb-5"]
+
+
+// [role="mt-4"]
+// == Carpool Karaoke
+
+// Carpool Karaoke was one of the most successful and widely distributed viral
+// video formats in modern television history. It originally started as a
+// recurring segment on the American late-night show The Late Late Show with
+// James Corden on CBS. 
+
+// Host James Corden drives around town (usually in Los Angeles or London) with
+// world-famous musicians and celebrities, conducting personal interviews and
+// singing along to the car radio with their greatest hits.
+
+// .Carpool Karaoke
+// videoPlayer::player_2[role="mb-5"]
+
